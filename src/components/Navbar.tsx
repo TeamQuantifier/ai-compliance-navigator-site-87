@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
@@ -166,9 +165,9 @@ export const Navbar = () => {
             <img 
               src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
               alt="Quantifier.ai Logo" 
-              className="h-10 w-10 mr-2" 
+              className="h-10 w-10 mr-3" 
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent whitespace-nowrap">
               Quantifier.ai
             </span>
           </Link>
@@ -182,7 +181,7 @@ export const Navbar = () => {
                   <>
                     <NavigationMenuTrigger 
                       className={cn(
-                        "h-9 px-4", 
+                        "h-9 px-3", 
                         item.title === "Frameworks" && "framework-nav-item"
                       )}
                     >
@@ -235,12 +234,11 @@ export const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
         
-        <div className="flex items-center gap-2">
-          <div className="hidden md:flex items-center space-x-2">
+        <div className="flex items-center">
+          <div className="hidden md:flex">
             <Button variant="outline" size="sm">
               Log In
             </Button>
-            <Button size="sm">Get Started</Button>
           </div>
           <MobileMenu items={menuItems} />
         </div>
