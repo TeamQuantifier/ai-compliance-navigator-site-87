@@ -3,6 +3,7 @@ import PageTemplate from '@/components/PageTemplate';
 import { FileCheck, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const Nist = () => {
   return (
@@ -21,13 +22,15 @@ const Nist = () => {
               <p className="text-xl opacity-90 mb-6">
                 From Identify to Recover — implement NIST controls with automation.
               </p>
-              <Button size="lg" className="bg-white text-compliance-800 hover:bg-white/90">
-                Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
+                <Link to="/contact" className="flex items-center">
+                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                 alt="NIST Compliance Dashboard" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -69,7 +72,7 @@ const Nist = () => {
                   <span>Alerts when controls fall out of scope</span>
                 </li>
               </ul>
-              <Button className="group">
+              <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
                 Get NIST Implementation Assessment
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -134,8 +137,10 @@ const Nist = () => {
                 Join organizations that trust our platform to automate their NIST compliance journey.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-white text-compliance-800 hover:bg-white/90 px-8">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8">
+                  <Link to="/contact" className="flex items-center">
+                    Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
                   Watch Platform Tour
