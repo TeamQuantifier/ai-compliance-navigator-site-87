@@ -9,9 +9,7 @@ const Contact = () => {
   return <PageTemplate title="Contact Us" description="Get in touch with our team to learn more about our AI-powered compliance solutions.">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 className="font-bold mb-6 gradient-heading text-6xl">
-            Get in Touch
-          </h2>
+          <h2 className="font-bold mb-6 gradient-heading text-6xl py-[20px]">Contact us</h2>
           <p className="text-lg text-slate-600 mb-8">
             Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.
           </p>
