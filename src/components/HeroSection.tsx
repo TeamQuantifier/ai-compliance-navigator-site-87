@@ -1,7 +1,9 @@
+
 import { ArrowRight, Shield, CheckCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+
 const HeroSection = () => {
   return <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
       {/* Background gradient */}
@@ -99,4 +101,5 @@ The AI-native compliance layer for organizations
       </div>
     </div>;
 };
+
 export default HeroSection;

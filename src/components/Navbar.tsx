@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { 
   NavigationMenu,
@@ -163,9 +163,13 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <Shield className="h-8 w-8 text-primary mr-2" />
+            <img 
+              src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
+              alt="Quantifier.ai Logo" 
+              className="h-10 w-10 mr-2" 
+            />
             <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
-              ComplianceAI
+              Quantifier.ai
             </span>
           </Link>
         </div>
