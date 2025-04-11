@@ -1,10 +1,10 @@
 
 import PageTemplate from '@/components/PageTemplate';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, CheckCircle, Lock, FileCheck, AlertTriangle, Server, Clock, Zap, Globe, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { Link } from 'react-router-dom';
 
 const Cybersecurity = () => {
   return (
@@ -98,155 +98,127 @@ const Cybersecurity = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="soc" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="soc" className="text-base py-3">SOC 1 & SOC 2</TabsTrigger>
-              <TabsTrigger value="nis2" className="text-base py-3">NIS 2 Directive (EU)</TabsTrigger>
-              <TabsTrigger value="nist" className="text-base py-3">NIST Cybersecurity</TabsTrigger>
-            </TabsList>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* SOC Framework Card */}
+            <Card className="border-compliance-100 hover:shadow-md transition-all">
+              <CardHeader className="pb-2">
+                <div className="flex items-center mb-4">
+                  <Shield className="h-8 w-8 text-compliance-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-slate-900">SOC 1 & SOC 2</h3>
+                </div>
+                <CardTitle className="text-base font-medium text-slate-700">
+                  Demonstrate trust to your customers, investors, and partners
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">
+                  Our platform ensures continuous readiness for both SOC 1 and SOC 2, covering controls 
+                  around data handling, privacy, availability, and more.
+                </p>
+                
+                <h4 className="font-semibold text-sm mb-2">You get:</h4>
+                <ul className="space-y-2 mb-6 text-sm">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Automated task assignment & evidence collection</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Control monitoring across Trust Services Criteria</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Real-time audit readiness dashboards</span>
+                  </li>
+                </ul>
+                <Button asChild variant="outline" className="w-full group">
+                  <Link to="/frameworks/cybersecurity/soc">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
             
-            <div className="bg-slate-50 p-1 rounded-xl">
-              <TabsContent value="soc" className="mt-0">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="lg:w-1/2">
-                      <div className="flex items-center mb-4">
-                        <Shield className="h-8 w-8 text-compliance-600 mr-3" />
-                        <h3 className="text-2xl font-bold text-slate-900">SOC 1 & SOC 2</h3>
-                      </div>
-                      <p className="text-lg font-medium text-slate-800 mb-4">
-                        Demonstrate trust to your customers, investors, and partners.
-                      </p>
-                      <p className="text-slate-700 mb-6">
-                        Our platform ensures continuous readiness for both SOC 1 and SOC 2, covering controls 
-                        around data handling, privacy, availability, and more.
-                      </p>
-                      
-                      <h4 className="font-semibold text-lg mb-3">You get:</h4>
-                      <ul className="space-y-2 mb-6">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Automated task assignment & evidence collection</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Control monitoring across the Trust Services Criteria</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Real-time audit readiness dashboards</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Secure data mapping to controls</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="lg:w-1/2">
-                      <img 
-                        src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                        alt="SOC Compliance Dashboard" 
-                        className="rounded-lg shadow-md w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
+            {/* NIS 2 Framework Card */}
+            <Card className="border-compliance-100 hover:shadow-md transition-all">
+              <CardHeader className="pb-2">
+                <div className="flex items-center mb-4">
+                  <Globe className="h-8 w-8 text-compliance-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-slate-900">NIS 2 Directive</h3>
                 </div>
-              </TabsContent>
-              
-              <TabsContent value="nis2" className="mt-0">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="lg:w-1/2">
-                      <div className="flex items-center mb-4">
-                        <Globe className="h-8 w-8 text-compliance-600 mr-3" />
-                        <h3 className="text-2xl font-bold text-slate-900">NIS 2 Directive (EU)</h3>
-                      </div>
-                      <p className="text-lg font-medium text-slate-800 mb-4">
-                        Stay ahead of critical infrastructure security regulations.
-                      </p>
-                      <p className="text-slate-700 mb-6">
-                        NIS 2 expands cybersecurity obligations across sectors in the EU. Our platform keeps you
-                        ahead—automatically identifying risks, assigning responsibilities, and ensuring compliance across your organization.
-                      </p>
-                      
-                      <h4 className="font-semibold text-lg mb-3">You get:</h4>
-                      <ul className="space-y-2 mb-6">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>AI agents driving real-time policy checks & enforcement</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Role-based actioning for IT, legal, and ops teams</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Gap analysis aligned with NIS 2 mandates</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Scalable compliance across multiple jurisdictions</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="lg:w-1/2">
-                      <img 
-                        src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                        alt="NIS 2 Compliance Dashboard" 
-                        className="rounded-lg shadow-md w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
+                <CardTitle className="text-base font-medium text-slate-700">
+                  Stay ahead of critical infrastructure security regulations
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">
+                  NIS 2 expands cybersecurity obligations across sectors in the EU. Our platform keeps you
+                  ahead—automatically identifying risks and ensuring compliance.
+                </p>
+                
+                <h4 className="font-semibold text-sm mb-2">You get:</h4>
+                <ul className="space-y-2 mb-6 text-sm">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>AI agents driving real-time policy checks</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Role-based actioning for IT, legal, and ops teams</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Gap analysis aligned with NIS 2 mandates</span>
+                  </li>
+                </ul>
+                <Button asChild variant="outline" className="w-full group">
+                  <Link to="/frameworks/cybersecurity/nis-ii">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            {/* NIST Framework Card */}
+            <Card className="border-compliance-100 hover:shadow-md transition-all">
+              <CardHeader className="pb-2">
+                <div className="flex items-center mb-4">
+                  <FileCheck className="h-8 w-8 text-compliance-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-slate-900">NIST Framework</h3>
                 </div>
-              </TabsContent>
-              
-              <TabsContent value="nist" className="mt-0">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="lg:w-1/2">
-                      <div className="flex items-center mb-4">
-                        <FileCheck className="h-8 w-8 text-compliance-600 mr-3" />
-                        <h3 className="text-2xl font-bold text-slate-900">NIST Cybersecurity Framework</h3>
-                      </div>
-                      <p className="text-lg font-medium text-slate-800 mb-4">
-                        Align your organization to the gold standard in security.
-                      </p>
-                      <p className="text-slate-700 mb-6">
-                        From Identify to Recover—our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.
-                      </p>
-                      
-                      <h4 className="font-semibold text-lg mb-3">You get:</h4>
-                      <ul className="space-y-2 mb-6">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Intelligent asset and risk mapping</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Proactive tasking aligned with NIST categories</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Integrated reporting for regulators and auditors</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                          <span>Alerts when controls fall out of scope</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="lg:w-1/2">
-                      <img 
-                        src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                        alt="NIST Compliance Dashboard" 
-                        className="rounded-lg shadow-md w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
-            </div>
-          </Tabs>
+                <CardTitle className="text-base font-medium text-slate-700">
+                  Align your organization to the gold standard in security
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">
+                  From Identify to Recover—our platform automates NIST implementation by continuously mapping your assets, 
+                  risks, and mitigations to the five NIST functions.
+                </p>
+                
+                <h4 className="font-semibold text-sm mb-2">You get:</h4>
+                <ul className="space-y-2 mb-6 text-sm">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Intelligent asset and risk mapping</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Proactive tasking aligned with NIST categories</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span>Integrated reporting for regulators and auditors</span>
+                  </li>
+                </ul>
+                <Button asChild variant="outline" className="w-full group">
+                  <Link to="/frameworks/cybersecurity/nist">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Why Quantifier */}
