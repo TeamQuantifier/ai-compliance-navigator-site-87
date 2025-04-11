@@ -18,7 +18,7 @@ const PageTemplate = ({
             <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
               {title}
             </h1>
-            <p className="text-xl text-slate-700 mb-8 py-[20px]">
+            <p className="text-xl text-slate-700 mb-8 py-[20px] font-semibold">
               {description}
             </p>
             
