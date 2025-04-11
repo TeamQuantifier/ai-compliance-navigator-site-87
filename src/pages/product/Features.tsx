@@ -14,7 +14,7 @@ const ProductFeatures = () => {
 
   return (
     <PageTemplate
-      title="Features, Built-In Intelligence, Embedded Compliance"
+      title="Built-in Intelligence, Embedded Compliance"
       description="Explore the features behind Quantifier's Autonomous Compliance Engine"
     >
       <div className="max-w-4xl mx-auto mb-12">
