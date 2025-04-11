@@ -1,4 +1,3 @@
-
 import { ArrowRight, Shield, CheckCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -93,7 +92,7 @@ const HeroSection = () => {
             <Button className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
               Request Demo
             </Button>
-            <Button variant="outline" size="lg" className="border-slate-700 text-white hover:bg-slate-800 hover:text-white group">
+            <Button variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
               Explore Features
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
