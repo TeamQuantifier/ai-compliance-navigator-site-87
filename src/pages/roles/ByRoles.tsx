@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { UserCog, User, FileCheck, Users, ArrowRight, CheckCircle, BarChart3, Calendar, Zap, Shield, Lock, FileText } from 'lucide-react';
@@ -6,13 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
-
 const ByRoles = () => {
-  return (
-    <PageTemplate
-      title="Built for Every Role"
-      description="Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you."
-    >
+  return <PageTemplate title="Built for Every Role" description="Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you.">
       {/* Hero section with darker colors */}
       <div className="bg-slate-900 text-white py-16 px-6 rounded-xl mb-12 relative overflow-hidden shadow-xl">
         {/* Decorative elements */}
@@ -36,7 +30,7 @@ const ByRoles = () => {
       <div className="mb-20">
         <Tabs defaultValue="managers" className="w-full">
           <TabsList className="w-full grid grid-cols-3 mb-8">
-            <TabsTrigger value="managers" className="data-[state=active]:bg-compliance-900 data-[state=active]:text-white py-6">
+            <TabsTrigger value="managers" className="data-[state=active]:text-white py-6 bg-zinc-900 hover:bg-zinc-800">
               <UserCog className="h-5 w-5 mr-2" />
               Managers
             </TabsTrigger>
@@ -66,18 +60,10 @@ const ByRoles = () => {
                   
                   <h4 className="text-lg font-semibold text-compliance-300 mt-8 mb-3">What they get with Quantifier:</h4>
                   <ul className="space-y-3 mb-8">
-                    {[
-                      "A unified compliance view across teams, frameworks, and entities",
-                      "Executive dashboards with risk scoring, progress tracking, and timeline oversight",
-                      "Clarity on what's done, what's pending, and where the biggest risks lie",
-                      "Full visibility into team contributions and bottlenecks",
-                      "A single platform that consolidates compliance workflows, documents, and audits"
-                    ].map((item, index) => (
-                      <li key={index} className="flex items-start">
+                    {["A unified compliance view across teams, frameworks, and entities", "Executive dashboards with risk scoring, progress tracking, and timeline oversight", "Clarity on what's done, what's pending, and where the biggest risks lie", "Full visibility into team contributions and bottlenecks", "A single platform that consolidates compliance workflows, documents, and audits"].map((item, index) => <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-compliance-400 mr-2 flex-shrink-0 mt-0.5" />
                         <span>{item}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -95,7 +81,9 @@ const ByRoles = () => {
                         <div className="text-sm text-slate-400 mb-1">Risk Status</div>
                         <div className="text-xl font-semibold text-white mb-2">87<span className="text-compliance-400 text-sm ml-1">/ 100</span></div>
                         <div className="w-full bg-slate-600 rounded-full h-2">
-                          <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '87%'}}></div>
+                          <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{
+                          width: '87%'
+                        }}></div>
                         </div>
                       </div>
                       
@@ -103,7 +91,9 @@ const ByRoles = () => {
                         <div className="text-sm text-slate-400 mb-1">Task Completion</div>
                         <div className="text-xl font-semibold text-white mb-2">92<span className="text-innovation-400 text-sm ml-1">%</span></div>
                         <div className="w-full bg-slate-600 rounded-full h-2">
-                          <div className="bg-innovation-500 h-2 rounded-full" style={{width: '92%'}}></div>
+                          <div className="bg-innovation-500 h-2 rounded-full" style={{
+                          width: '92%'
+                        }}></div>
                         </div>
                       </div>
                       
@@ -127,7 +117,9 @@ const ByRoles = () => {
                             <span>78%</span>
                           </div>
                           <div className="w-full bg-slate-600 rounded-full h-1.5">
-                            <div className="bg-compliance-500 h-1.5 rounded-full" style={{width: '78%'}}></div>
+                            <div className="bg-compliance-500 h-1.5 rounded-full" style={{
+                            width: '78%'
+                          }}></div>
                           </div>
                         </div>
                         <div>
@@ -136,7 +128,9 @@ const ByRoles = () => {
                             <span>93%</span>
                           </div>
                           <div className="w-full bg-slate-600 rounded-full h-1.5">
-                            <div className="bg-compliance-500 h-1.5 rounded-full" style={{width: '93%'}}></div>
+                            <div className="bg-compliance-500 h-1.5 rounded-full" style={{
+                            width: '93%'
+                          }}></div>
                           </div>
                         </div>
                         <div>
@@ -145,7 +139,9 @@ const ByRoles = () => {
                             <span>65%</span>
                           </div>
                           <div className="w-full bg-slate-600 rounded-full h-1.5">
-                            <div className="bg-compliance-500 h-1.5 rounded-full" style={{width: '65%'}}></div>
+                            <div className="bg-compliance-500 h-1.5 rounded-full" style={{
+                            width: '65%'
+                          }}></div>
                           </div>
                         </div>
                       </div>
@@ -155,17 +151,10 @@ const ByRoles = () => {
                   <div className="bg-compliance-900 rounded-xl p-6 shadow-lg border border-compliance-800">
                     <h4 className="text-lg font-semibold text-compliance-300 mb-3">What the AI Agent Officer does:</h4>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        "Delegates and assigns tasks across the organization",
-                        "Ensures integrations, data, and documentation are up to date",
-                        "Recommends implementation plans for standards like ISO 27001 or CSRD",
-                        "Drives the company toward continuous audit readiness"
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-start">
+                      {["Delegates and assigns tasks across the organization", "Ensures integrations, data, and documentation are up to date", "Recommends implementation plans for standards like ISO 27001 or CSRD", "Drives the company toward continuous audit readiness"].map((item, index) => <li key={index} className="flex items-start">
                           <Zap className="h-5 w-5 text-compliance-400 mr-2 flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     
                     <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
@@ -196,17 +185,10 @@ const ByRoles = () => {
                   
                   <h4 className="text-lg font-semibold text-innovation-300 mt-8 mb-3">What they get with Quantifier:</h4>
                   <ul className="space-y-3 mb-8">
-                    {[
-                      "A clear to-do list with deadlines, task status, and context",
-                      "One place to upload documents, answer evidence requests, and track progress",
-                      "Help resources and training embedded in the workflow",
-                      "Ability to collaborate and comment directly in the platform"
-                    ].map((item, index) => (
-                      <li key={index} className="flex items-start">
+                    {["A clear to-do list with deadlines, task status, and context", "One place to upload documents, answer evidence requests, and track progress", "Help resources and training embedded in the workflow", "Ability to collaborate and comment directly in the platform"].map((item, index) => <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-innovation-400 mr-2 flex-shrink-0 mt-0.5" />
                         <span>{item}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -261,17 +243,10 @@ const ByRoles = () => {
                   <div className="bg-innovation-900 rounded-xl p-6 shadow-lg border border-innovation-800">
                     <h4 className="text-lg font-semibold text-innovation-300 mb-3">What the AI Agent Officer does:</h4>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        "Sends smart reminders about required data or upcoming deadlines",
-                        "Provides suggestions on where to find necessary documentation",
-                        "Connects to internal systems via API to auto-fill and fetch data",
-                        "Minimizes manual work and reduces task confusion"
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-start">
+                      {["Sends smart reminders about required data or upcoming deadlines", "Provides suggestions on where to find necessary documentation", "Connects to internal systems via API to auto-fill and fetch data", "Minimizes manual work and reduces task confusion"].map((item, index) => <li key={index} className="flex items-start">
                           <Zap className="h-5 w-5 text-innovation-400 mr-2 flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     
                     <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
@@ -302,17 +277,10 @@ const ByRoles = () => {
                   
                   <h4 className="text-lg font-semibold text-compliance-300 mt-8 mb-3">What they get with Quantifier:</h4>
                   <ul className="space-y-3 mb-8">
-                    {[
-                      "Access to complete audit logs and evidence history",
-                      "One centralized workspace with mapped documents, task trails, and timelines",
-                      "Framework-specific audit methodology and control mappings",
-                      "Visibility into responses, remediation actions, and contributor trails"
-                    ].map((item, index) => (
-                      <li key={index} className="flex items-start">
+                    {["Access to complete audit logs and evidence history", "One centralized workspace with mapped documents, task trails, and timelines", "Framework-specific audit methodology and control mappings", "Visibility into responses, remediation actions, and contributor trails"].map((item, index) => <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-compliance-400 mr-2 flex-shrink-0 mt-0.5" />
                         <span>{item}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -383,17 +351,10 @@ const ByRoles = () => {
                   <div className="bg-compliance-900 rounded-xl p-6 shadow-lg border border-compliance-800">
                     <h4 className="text-lg font-semibold text-compliance-300 mb-3">What the AI Agent Officer does:</h4>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        "Organizes supporting materials automatically",
-                        "Reduces time spent reviewing and filtering irrelevant documents",
-                        "Structures evidence to match the auditor's methodology",
-                        "Flags potential risks or control gaps before audit day"
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-start">
+                      {["Organizes supporting materials automatically", "Reduces time spent reviewing and filtering irrelevant documents", "Structures evidence to match the auditor's methodology", "Flags potential risks or control gaps before audit day"].map((item, index) => <li key={index} className="flex items-start">
                           <Zap className="h-5 w-5 text-compliance-400 mr-2 flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     
                     <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
@@ -425,8 +386,6 @@ const ByRoles = () => {
           </Button>
         </div>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default ByRoles;
