@@ -3,6 +3,8 @@ import { ArrowRight, Brain, BarChart3, Database, ShieldAlert, ClipboardCheck, Za
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import PageTemplate from '@/components/PageTemplate';
+import { Link } from 'react-router-dom';
+
 const ProductFeatures = () => {
   const [activeTab, setActiveTab] = useState("ai-officer");
   const handleTabChange = (value: string) => {
@@ -701,9 +703,11 @@ const ProductFeatures = () => {
           Start Managing Compliance Intelligently
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <Button size="lg" className="group">
-            Book a Demo
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Button asChild size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 h-auto text-lg shadow-lg shadow-slate-900/30 group">
+            <Link to="/contact">
+              Book a Demo
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </div>
       </div>
