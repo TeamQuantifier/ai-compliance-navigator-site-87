@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -35,6 +34,11 @@ import Esg from "./pages/frameworks/Esg";
 import Environmental from "./pages/frameworks/Environmental";
 import Governance from "./pages/frameworks/Governance";
 import ProductLevel from "./pages/frameworks/ProductLevel";
+
+// Cybersecurity Framework specific pages
+import Soc from "./pages/frameworks/cybersecurity/Soc";
+import NisII from "./pages/frameworks/cybersecurity/NisII";
+import Nist from "./pages/frameworks/cybersecurity/Nist";
 
 // Plans, Partners, etc.
 import Plans from "./pages/Plans";
@@ -86,6 +90,11 @@ const App = () => (
               <Route path="/frameworks/environmental" element={<Environmental />} />
               <Route path="/frameworks/governance" element={<Governance />} />
               <Route path="/frameworks/product-level" element={<ProductLevel />} />
+              
+              {/* Cybersecurity Framework specific routes */}
+              <Route path="/frameworks/cybersecurity/soc" element={<Soc />} />
+              <Route path="/frameworks/cybersecurity/nis-ii" element={<NisII />} />
+              <Route path="/frameworks/cybersecurity/nist" element={<Nist />} />
               
               {/* Other main routes */}
               <Route path="/plans" element={<Plans />} />
