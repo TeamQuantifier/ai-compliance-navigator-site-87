@@ -10,14 +10,7 @@ import NotFound from "./pages/NotFound";
 
 // Product pages
 import ProductOverview from "./pages/product/ProductOverview";
-import ProductFeatures from "./pages/product/Features";
-import ComplianceOfficer from "./pages/product/ComplianceOfficer";
-import TaskDataManagement from "./pages/product/TaskDataManagement";
-import DocumentsManagement from "./pages/product/DocumentsManagement";
-import ValueChain from "./pages/product/ValueChain";
-import RiskAssessment from "./pages/product/RiskAssessment";
-import AnalyticsDashboards from "./pages/product/AnalyticsDashboards";
-import ApiIntegrations from "./pages/product/ApiIntegrations";
+import Features from "./pages/product/Features";
 
 // By Roles
 import ByRoles from "./pages/roles/ByRoles";
@@ -71,14 +64,14 @@ const App = () => (
               
               {/* Product routes */}
               <Route path="/product" element={<ProductOverview />} />
-              <Route path="/product/features" element={<ProductFeatures />} />
-              <Route path="/product/ai-compliance-officer" element={<ComplianceOfficer />} />
-              <Route path="/product/task-data-management" element={<TaskDataManagement />} />
-              <Route path="/product/documents-management" element={<DocumentsManagement />} />
-              <Route path="/product/value-chain" element={<ValueChain />} />
-              <Route path="/product/risk-assessment" element={<RiskAssessment />} />
-              <Route path="/product/analytics-dashboards" element={<AnalyticsDashboards />} />
-              <Route path="/product/api-integrations" element={<ApiIntegrations />} />
+              <Route path="/product/features" element={<Features />} />
+              <Route path="/product/ai-compliance-officer" element={<Features />} />
+              <Route path="/product/task-data-management" element={<Features />} />
+              <Route path="/product/documents-management" element={<Features />} />
+              <Route path="/product/value-chain" element={<Features />} />
+              <Route path="/product/risk-assessment" element={<Features />} />
+              <Route path="/product/analytics-dashboards" element={<Features />} />
+              <Route path="/product/api-integrations" element={<Features />} />
               
               {/* By Roles routes */}
               <Route path="/by-roles" element={<ByRoles />} />
