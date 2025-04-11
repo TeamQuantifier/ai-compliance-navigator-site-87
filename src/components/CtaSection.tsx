@@ -1,5 +1,8 @@
+
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+
 const CtaSection = () => {
   return <section className="py-16 relative overflow-hidden">
       {/* Background gradient */}
@@ -57,27 +60,20 @@ const CtaSection = () => {
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Affordable pricing
-
-
-
-
-
-
-
-
-              </p>
+                <p className="text-white/80">Affordable pricing</p>
               </div>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg" size="lg">
-              Request Demo
+            <Button asChild className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg" size="lg">
+              <Link to="/contact">Request Demo</Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-white/20 px-8 py-6 text-lg group bg-gray-50 text-innovation-900">
-              View Pricing
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <Button asChild variant="outline" size="lg" className="border-white/20 px-8 py-6 text-lg group bg-gray-50 text-innovation-900">
+              <Link to="/plans">
+                View Pricing
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
           </div>
         </div>

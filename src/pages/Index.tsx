@@ -7,6 +7,7 @@ import CtaSection from "@/components/CtaSection";
 import { ArrowRight, CheckCircle, Database, Shield, Users, FileCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -37,9 +38,11 @@ const Index = () => {
               <p className="text-slate-600 mb-4">
                 Comprehensive dashboards and reporting tools to oversee compliance activities and make informed decisions.
               </p>
-              <Button variant="outline" className="group" size="sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button asChild variant="outline" className="group" size="sm">
+                <Link to="/by-roles">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
             
@@ -51,9 +54,11 @@ const Index = () => {
               <p className="text-slate-600 mb-4">
                 Streamlined interfaces for data entry, task management, and evidence collection to simplify compliance work.
               </p>
-              <Button variant="outline" className="group" size="sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button asChild variant="outline" className="group" size="sm">
+                <Link to="/by-roles">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
             
@@ -65,9 +70,11 @@ const Index = () => {
               <p className="text-slate-600 mb-4">
                 Detailed audit trails, evidence repositories, and verification tools to validate compliance status.
               </p>
-              <Button variant="outline" className="group" size="sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button asChild variant="outline" className="group" size="sm">
+                <Link to="/by-roles">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
           </div>
