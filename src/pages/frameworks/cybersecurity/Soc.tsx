@@ -30,8 +30,8 @@ const Soc = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                alt="SOC Compliance Dashboard" 
+                src="/placeholder.svg" 
+                alt="SOC Compliance Dashboard showing automated controls monitoring" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>

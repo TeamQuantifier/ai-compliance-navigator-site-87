@@ -30,8 +30,8 @@ const Nist = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="NIST Compliance Dashboard" 
+                src="/placeholder.svg" 
+                alt="NIST Framework Implementation Dashboard showing the five functions" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>

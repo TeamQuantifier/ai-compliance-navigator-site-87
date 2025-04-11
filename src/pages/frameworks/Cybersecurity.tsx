@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -35,8 +34,8 @@ const Cybersecurity = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="Cybersecurity Dashboard" 
+                src="/placeholder.svg" 
+                alt="Cybersecurity Compliance Dashboard showing multiple framework status" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>
@@ -116,8 +115,8 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2034&q=80" 
-                      alt="Security Dashboard" 
+                      src="/placeholder.svg" 
+                      alt="AI-driven cybersecurity compliance automation interface" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />
                   </div>
@@ -382,8 +381,8 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                      alt="SOC Compliance" 
+                      src="/placeholder.svg" 
+                      alt="SOC 2 Trust Services Criteria monitoring dashboard with AI-powered controls validation" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />
                   </div>
@@ -539,8 +538,8 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="https://images.unsplash.com/photo-1591696331096-c72e9e608cf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                      alt="NIS 2 Compliance" 
+                      src="/placeholder.svg" 
+                      alt="NIS 2 compliance AI workflow automation showing automated risk assessment and incident management" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />
                   </div>
@@ -653,263 +652,4 @@ const Cybersecurity = () => {
                           <span className="text-sm">Security awareness training tracking</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Evidence repository for regulatory inspections</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </section>
-            </TabsContent>
-
-            {/* NIST Tab Content */}
-            <TabsContent value="nist">
-              <section className="mb-12">
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="md:w-1/2">
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
-                      <FileCheck className="w-5 h-5 mr-2" />
-                      <span className="font-medium">NIST Cybersecurity Framework</span>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-heading">
-                      Implement the Gold Standard in Security
-                    </h2>
-                    <p className="text-lg text-slate-700 mb-6">
-                      The NIST Cybersecurity Framework provides a structured approach to managing cybersecurity risk.
-                      Our platform automates implementation across all five NIST functions.
-                    </p>
-                    <div className="grid grid-cols-1 gap-4">
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Comprehensive coverage of all five NIST functions: Identify, Protect, Detect, Respond, Recover</span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Automated mapping of controls to framework categories</span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Maturity assessment and improvement planning</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2">
-                    <img 
-                      src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                      alt="NIST Framework" 
-                      className="rounded-xl shadow-lg border border-slate-200 w-full"
-                    />
-                  </div>
-                </div>
-              </section>
-
-              <section className="mb-12">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-4">NIST Framework Implementation</h3>
-                  <p className="text-lg text-slate-700 max-w-3xl mx-auto">
-                    Our platform provides comprehensive support for implementing the NIST Cybersecurity Framework across your organization.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card className="border-compliance-100">
-                    <CardHeader>
-                      <CardTitle>Identify</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-700 mb-4">
-                        Tools for developing an organizational understanding to manage cybersecurity risk to systems, assets, data, and capabilities.
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Asset management</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Business environment analysis</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Risk assessment</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Risk management strategy</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-compliance-100">
-                    <CardHeader>
-                      <CardTitle>Protect</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-700 mb-4">
-                        Develop and implement appropriate safeguards to ensure delivery of critical infrastructure services.
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Access control</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Awareness and training</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Data security</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Information protection processes</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-compliance-100">
-                    <CardHeader>
-                      <CardTitle>Detect</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-700 mb-4">
-                        Develop and implement appropriate activities to identify the occurrence of a cybersecurity event.
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Anomalies and events</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Security continuous monitoring</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Detection processes</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-compliance-100">
-                    <CardHeader>
-                      <CardTitle>Respond</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-700 mb-4">
-                        Develop and implement appropriate activities to take action regarding a detected cybersecurity event.
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Response planning</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Communications</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Analysis</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Mitigation</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-compliance-100">
-                    <CardHeader>
-                      <CardTitle>Recover</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-700 mb-4">
-                        Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services.
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Recovery planning</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Improvements</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Communications</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-compliance-100">
-                    <CardHeader>
-                      <CardTitle>Implementation Support</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-700 mb-4">
-                        Tools and resources to support the implementation of the NIST Cybersecurity Framework in your organization.
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Maturity assessment</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Gap analysis</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Implementation planning</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2" />
-                          <span className="text-sm">Continuous improvement</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </section>
-            </TabsContent>
-          </Tabs>
-        </section>
-
-        {/* CTA Section */}
-        <section className="mb-8">
-          <div className="bg-gradient-to-r from-compliance-800 to-innovation-700 rounded-xl p-8 md:p-12 text-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Let's Secure Your Organization. Automatically.
-              </h2>
-              <p className="text-xl opacity-90 mb-8">
-                Join hundreds of organizations that trust our platform to automate their cybersecurity compliance.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button asChild size="lg" className="bg-white text-compliance-800 hover:bg-white/90 px-8">
-                  <Link to="/contact">
-                    Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                  Watch Platform Tour
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </PageTemplate>
-  );
-};
-
-export default Cybersecurity;
+                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.
