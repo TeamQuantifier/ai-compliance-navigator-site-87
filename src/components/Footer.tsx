@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Shield, Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import { Shield, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -14,27 +14,36 @@ const Footer = () => {
             <Link to="/" className="flex items-center mb-4">
               <Shield className="h-6 w-6 text-primary mr-2" />
               <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
-                ComplianceAI
+                Quantifier.ai
               </span>
             </Link>
             
             <p className="text-slate-600 mb-6 max-w-md">
-              Empowering organizations to navigate the complex world of compliance with intelligent AI-driven solutions.
+              Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.
             </p>
             
             <div className="flex space-x-4">
               <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
+              <a href="mailto:contact@quantifier.ai" className="text-slate-500 hover:text-compliance-700 transition-colors">
                 <Mail className="h-5 w-5" />
               </a>
+            </div>
+
+            <div className="mt-5 space-y-2 text-sm text-slate-600">
+              <div className="flex items-center">
+                <Mail className="h-4 w-4 mr-2" />
+                <span>contact@quantifier.ai</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-4 w-4 mr-2" />
+                <span>415-799-8206</span>
+              </div>
+              <div className="flex items-start">
+                <MapPin className="h-4 w-4 mr-2 mt-0.5" />
+                <span>447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</span>
+              </div>
             </div>
           </div>
           
@@ -89,7 +98,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-slate-500 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} ComplianceAI. All rights reserved.
+            &copy; {new Date().getFullYear()} Quantifier.ai. All rights reserved.
           </div>
           
           <div className="flex flex-wrap gap-4 text-sm">
