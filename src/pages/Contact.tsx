@@ -1,3 +1,4 @@
+
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -92,6 +93,10 @@ const Contact = () => {
                   Message
                 </label>
                 <Textarea id="message" placeholder="How can we help you?" rows={5} />
+              </div>
+              
+              <div className="text-xs text-slate-500 mb-4">
+                You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "send" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.
               </div>
               
               <Button className="w-full group">
