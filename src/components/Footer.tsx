@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -95,6 +96,9 @@ const Footer = () => {
             />
             <Button>Subscribe</Button>
           </div>
+          <p className="text-xs text-slate-500 mt-3">
+            You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "Submit" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.
+          </p>
         </div>
         
         <Separator className="mb-8" />
