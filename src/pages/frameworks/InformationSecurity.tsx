@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
+import { Link } from 'react-router-dom';
 
 const InformationSecurity = () => {
   return (
@@ -93,6 +94,12 @@ const InformationSecurity = () => {
                       <span><span className="font-medium">Policy Enforcement:</span> Agents ensure policies are adhered to by your team members, proactively closing gaps</span>
                     </li>
                   </ul>
+
+                  <Button asChild>
+                    <Link to="/frameworks/information-security/iso-27001">
+                      Learn More About ISO 27001 <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
                 </div>
                 <div className="md:w-1/2">
                   <img 
@@ -134,6 +141,12 @@ const InformationSecurity = () => {
                       <span><span className="font-medium">Cross-Functional Alignment:</span> Involve relevant teams—IT, operations, HR, and legal—without manual oversight</span>
                     </li>
                   </ul>
+
+                  <Button asChild>
+                    <Link to="/frameworks/information-security/iso-9001">
+                      Learn More About ISO 9001 <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
                 </div>
                 <div className="md:w-1/2">
                   <img 
@@ -175,6 +188,12 @@ const InformationSecurity = () => {
                       <span><span className="font-medium">Real-Time Risk & Incident Reporting:</span> Track and mitigate risks before they affect your operations</span>
                     </li>
                   </ul>
+
+                  <Button asChild>
+                    <Link to="/frameworks/information-security/dora">
+                      Learn More About DORA <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
                 </div>
                 <div className="md:w-1/2">
                   <img 

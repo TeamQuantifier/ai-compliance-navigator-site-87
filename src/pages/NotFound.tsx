@@ -16,6 +16,7 @@ const NotFound = () => {
 
   // Check if the path is related to frameworks
   const isFramework = location.pathname.includes("/frameworks");
+  const isInfoSecurity = location.pathname.includes("/frameworks/information-security");
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -36,7 +37,16 @@ const NotFound = () => {
             </Link>
           </Button>
           
-          {isFramework && (
+          {isInfoSecurity && (
+            <Button asChild variant="outline" className="w-full">
+              <Link to="/frameworks/information-security">
+                <Shield className="mr-2 h-4 w-4" />
+                Back to Information Security
+              </Link>
+            </Button>
+          )}
+          
+          {isFramework && !isInfoSecurity && (
             <Button asChild variant="outline" className="w-full">
               <Link to="/frameworks">
                 <Shield className="mr-2 h-4 w-4" />

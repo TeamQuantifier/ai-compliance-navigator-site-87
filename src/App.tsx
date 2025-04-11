@@ -40,6 +40,11 @@ import Soc from "./pages/frameworks/cybersecurity/Soc";
 import NisII from "./pages/frameworks/cybersecurity/NisII";
 import Nist from "./pages/frameworks/cybersecurity/Nist";
 
+// Information Security Framework specific pages
+import Iso27001 from "./pages/frameworks/information-security/Iso27001";
+import Iso9001 from "./pages/frameworks/information-security/Iso9001";
+import Dora from "./pages/frameworks/information-security/Dora";
+
 // Plans, Partners, etc.
 import Plans from "./pages/Plans";
 import Partners from "./pages/Partners";
@@ -95,6 +100,11 @@ const App = () => (
               <Route path="/frameworks/cybersecurity/soc" element={<Soc />} />
               <Route path="/frameworks/cybersecurity/nis-ii" element={<NisII />} />
               <Route path="/frameworks/cybersecurity/nist" element={<Nist />} />
+              
+              {/* Information Security Framework specific routes */}
+              <Route path="/frameworks/information-security/iso-27001" element={<Iso27001 />} />
+              <Route path="/frameworks/information-security/iso-9001" element={<Iso9001 />} />
+              <Route path="/frameworks/information-security/dora" element={<Dora />} />
               
               {/* Other main routes */}
               <Route path="/plans" element={<Plans />} />
