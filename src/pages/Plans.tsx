@@ -1,8 +1,10 @@
+
 import PageTemplate from '@/components/PageTemplate';
 import { Shield, Check, ArrowRight, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 const Plans = () => {
   const planFeatures = [{
     name: "Starter",
@@ -29,6 +31,7 @@ const Plans = () => {
     buttonText: "Talk to Sales",
     highlighted: false
   }];
+
   return <PageTemplate title="Scalable plans for every stage of growth" description="Whether you're just starting out or managing compliance across global entities—there's a plan built for your needs.">
       <div className="max-w-3xl mx-auto text-center mb-12">
         
@@ -56,7 +59,7 @@ const Plans = () => {
             
             <div className="mt-auto">
               <p className="text-sm font-medium mb-4">{plan.cta}</p>
-              <Button className={`w-full ${plan.highlighted ? '' : 'bg-slate-800 hover:bg-slate-700'} group`} variant={plan.highlighted ? "default" : "outline"}>
+              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white group">
                 <MessageSquare className="mr-2 h-4 w-4" />
                 {plan.buttonText}
               </Button>
@@ -73,7 +76,7 @@ const Plans = () => {
           <p className="text-lg text-slate-600 mb-6">
             We understand that every organization has unique compliance needs. Contact our sales team to discuss a customized solution that perfectly fits your requirements.
           </p>
-          <Button size="lg" className="group">
+          <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white group">
             Contact Our Sales Team
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
@@ -81,4 +84,5 @@ const Plans = () => {
       </div>
     </PageTemplate>;
 };
+
 export default Plans;
