@@ -1,6 +1,5 @@
-
 import PageTemplate from '@/components/PageTemplate';
-import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building } from 'lucide-react';
+import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
@@ -46,15 +45,32 @@ const Partners = () => {
     >
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
-          <p className="text-lg text-slate-700 mb-6">
-            We collaborate with over 50+ trusted partners—including auditors, business connectors, 
-            banks, consulting firms, and NGOs. Together, we're helping companies across the world 
-            navigate the evolving landscape of compliance and sustainability with confidence.
-          </p>
-          <p className="text-lg text-slate-700 mb-6">
-            Let's grow together. Whether you're advising clients, managing audits, or driving 
-            innovation —there's a place for you in our partner network.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+            <div className="w-full md:w-1/2">
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800" 
+                  alt="Business partners collaborating" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
+                <Handshake className="w-5 h-5 mr-2" />
+                <span className="font-medium">Global Partnership Network</span>
+              </div>
+              <p className="text-lg text-slate-700 mb-4">
+                We collaborate with over 50+ trusted partners—including auditors, business connectors, 
+                banks, consulting firms, and NGOs. Together, we're helping companies across the world 
+                navigate the evolving landscape of compliance and sustainability with confidence.
+              </p>
+              <p className="text-lg text-slate-700">
+                Let's grow together. Whether you're advising clients, managing audits, or driving 
+                innovation —there's a place for you in our partner network.
+              </p>
+            </div>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
             {partnerTypes.map((type, idx) => (
@@ -110,7 +126,6 @@ const Partners = () => {
         <div className="mb-16">
           <Separator className="my-8" />
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
-            {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
             
