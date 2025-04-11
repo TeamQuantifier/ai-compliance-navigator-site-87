@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router-dom';
-import { Shield, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -12,7 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <Shield className="h-6 w-6 text-primary mr-2" />
+              <img 
+                src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
+                alt="Quantifier.ai Logo" 
+                className="h-8 w-8 mr-2" 
+              />
               <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
                 Quantifier.ai
               </span>
