@@ -1,12 +1,9 @@
-
 import { ArrowRight, Shield, CheckCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-
 const HeroSection = () => {
-  return (
-    <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
+  return <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 to-compliance-950/80 -z-10"></div>
       
@@ -17,23 +14,19 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Main Header - Full Width */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 text-white text-center leading-tight">
-            Quantifier.ai. The AI-native compliance layer for organizations
-          </h1>
+          <h1 className="text-4xl mb-8 text-white text-center leading-tight font-semibold md:text-7xl">Quantifier.ai
+The AI-native compliance layer for organizations
+
+        </h1>
           
           {/* Subheader - Full Width */}
-          <h2 className="text-xl md:text-2xl text-slate-300 mb-12 text-center leading-relaxed">
-            Your right hand AI Agent Compliance Officer that manages projects, collects data across your organization, and showcases results—significantly automating the entire compliance process
-          </h2>
+          <h2 className="text-xl md:text-2xl text-slate-300 mb-12 text-center leading-relaxed">Your right-hand AI Agent Compliance Officer that manages projects, collects data across your organization, and showcases results—significantly automating the entire compliance process</h2>
           
           {/* ChatGPT-like input */}
           <div className="max-w-3xl mx-auto mb-16 relative">
             <div className="bg-slate-800/80 shadow-xl shadow-slate-900/30 rounded-xl p-4 border border-slate-700">
               <div className="flex items-center">
-                <Input 
-                  className="flex-grow pr-20 pl-12 py-4 text-base rounded-lg bg-slate-700/50 text-white border-slate-600 placeholder:text-slate-400"
-                  placeholder="Let's chat about type of compliance you need..."
-                />
+                <Input className="flex-grow pr-20 pl-12 py-4 text-base rounded-lg bg-slate-700/50 text-white border-slate-600 placeholder:text-slate-400" placeholder="Let's chat about type of compliance you need..." />
                 <MessageSquare className="absolute left-8 text-slate-400" size={20} />
                 <Button className="absolute right-8 bg-innovation-600 hover:bg-innovation-700" size="sm">
                   <ArrowRight className="h-5 w-5" />
@@ -104,8 +97,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
