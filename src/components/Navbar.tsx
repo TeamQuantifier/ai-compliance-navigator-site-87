@@ -1,9 +1,17 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Lock, CheckSquare } from 'lucide-react';
+import { Shield, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { MegaMenu } from './MegaMenu';
+import { 
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle
+} from '@/components/ui/navigation-menu';
 import { MobileMenu } from './MobileMenu';
 import { Button } from '@/components/ui/button';
 
@@ -162,7 +170,58 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        <MegaMenu items={menuItems} />
+        <NavigationMenu className="hidden lg:flex">
+          <NavigationMenuList className="gap-1">
+            {menuItems.map((item) => (
+              <NavigationMenuItem key={item.title}>
+                {item.items ? (
+                  <>
+                    <NavigationMenuTrigger className="h-9 px-3">
+                      {item.title}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid gap-3 p-4 w-[220px]">
+                        {item.items.map((subItem) => (
+                          <li key={subItem.title}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                to={subItem.href}
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="text-sm font-medium leading-none">{subItem.title}</div>
+                                {subItem.items && (
+                                  <ul className="mt-2 ml-3">
+                                    {subItem.items.map((subSubItem) => (
+                                      <li key={subSubItem.title}>
+                                        <Link 
+                                          to={subSubItem.href}
+                                          className="text-xs text-muted-foreground hover:text-primary py-1 block"
+                                        >
+                                          {subSubItem.title}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </>
+                ) : (
+                  <Link 
+                    to={item.href}
+                    className={navigationMenuTriggerStyle() + " h-9 px-3"}
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
         
         <div className="flex items-center gap-2">
           <div className="hidden md:flex items-center space-x-2">
