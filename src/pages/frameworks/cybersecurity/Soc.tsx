@@ -31,7 +31,7 @@ const Soc = () => {
             <div className="md:w-2/5">
               <img 
                 src="/placeholder.svg" 
-                alt="SOC Compliance Dashboard showing automated controls monitoring" 
+                alt="SOC Compliance Dashboard showing automated controls monitoring and real-time audit readiness status" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>
