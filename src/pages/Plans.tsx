@@ -59,7 +59,7 @@ const Plans = () => {
             
             <div className="mt-auto">
               <p className="text-sm font-medium mb-4">{plan.cta}</p>
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white group">
+              <Button className="w-full bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-md hover:shadow-lg transition-all">
                 <MessageSquare className="mr-2 h-4 w-4" />
                 {plan.buttonText}
               </Button>
@@ -76,7 +76,7 @@ const Plans = () => {
           <p className="text-lg text-slate-600 mb-6">
             We understand that every organization has unique compliance needs. Contact our sales team to discuss a customized solution that perfectly fits your requirements.
           </p>
-          <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white group">
+          <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-lg hover:shadow-xl transition-all">
             Contact Our Sales Team
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
