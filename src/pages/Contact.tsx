@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -28,7 +27,7 @@ const Contact = () => {
               <Phone className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Call Us</h3>
-                <p className="text-slate-600">415-799-8206</p>
+                <p className="text-slate-600">(+1) 415-799-8206</p>
               </div>
             </div>
             
