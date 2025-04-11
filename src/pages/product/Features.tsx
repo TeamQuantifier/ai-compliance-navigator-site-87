@@ -45,7 +45,7 @@ const ProductFeatures = () => {
           </TabsTrigger>
           <TabsTrigger 
             value="task-hub" 
-            className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}
+            className={`data-[state=active]:bg-slate-800 data-[state=active]:text-white data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}
           >
             <Database className="h-5 w-5 mr-2" />
             <span>Task & Data Hub</span>
@@ -286,88 +286,91 @@ const ProductFeatures = () => {
         <TabsContent value="task-hub" className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 gradient-heading">Task & Data Hub</h3>
-              <h4 className="text-xl mb-4">Centralize Every Request, Task, Document, and Interaction</h4>
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-compliance-700 bg-clip-text text-transparent">Task & Data Hub</h3>
+              <h4 className="text-xl mb-4 text-slate-800">Centralize Every Request, Task, Document, and Interaction</h4>
               <p className="text-slate-700 mb-6">
                 The Task & Data Hub brings together all actions across your compliance program — into one clean, 
                 searchable, permissioned workspace.
               </p>
               
-              <h4 className="text-lg font-semibold mb-3">What You Can Do:</h4>
+              <h4 className="text-lg font-semibold mb-3 text-slate-800">What You Can Do:</h4>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                    <span className="text-compliance-700 text-sm">✓</span>
+                  <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                    <span className="text-white text-sm">✓</span>
                   </div>
-                  <span>Trigger evidence or input requests to specific individuals or teams</span>
+                  <span className="text-slate-700">Trigger evidence or input requests to specific individuals or teams</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                    <span className="text-compliance-700 text-sm">✓</span>
+                  <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                    <span className="text-white text-sm">✓</span>
                   </div>
-                  <span>Track and manage documentation submissions by control or framework</span>
+                  <span className="text-slate-700">Track and manage documentation submissions by control or framework</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                    <span className="text-compliance-700 text-sm">✓</span>
+                  <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                    <span className="text-white text-sm">✓</span>
                   </div>
-                  <span>Assign and reassign ownership, due dates, and priority levels</span>
+                  <span className="text-slate-700">Assign and reassign ownership, due dates, and priority levels</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                    <span className="text-compliance-700 text-sm">✓</span>
+                  <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                    <span className="text-white text-sm">✓</span>
                   </div>
-                  <span>Automate recurring workflows and SOPs</span>
+                  <span className="text-slate-700">Automate recurring workflows and SOPs</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                    <span className="text-compliance-700 text-sm">✓</span>
+                  <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                    <span className="text-white text-sm">✓</span>
                   </div>
-                  <span>See a real-time audit trail of what's done, what's delayed, and what's missing</span>
+                  <span className="text-slate-700">See a real-time audit trail of what's done, what's delayed, and what's missing</span>
                 </li>
               </ul>
               
-              <div className="bg-compliance-50 p-4 rounded-lg">
-                <p className="text-sm text-slate-700">
-                  <strong>Why it matters:</strong> No more chasing people in Slack or through platform. 
-                  No more shared folders or email chains. Everything is trackable, time-stamped, and mapped to your controls.
-                </p>
+              <div className="bg-slate-900 p-4 rounded-lg text-white">
+                <div className="flex items-start">
+                  <div className="text-compliance-400 mr-3">💡</div>
+                  <p className="text-sm">
+                    <strong>Why it matters:</strong> No more chasing people in Slack or through platform. 
+                    No more shared folders or email chains. Everything is trackable, time-stamped, and mapped to your controls.
+                  </p>
+                </div>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-compliance-50 to-compliance-100 rounded-xl p-6 border border-compliance-200 shadow-md">
-              <div className="bg-white rounded-lg p-4 shadow-sm mb-4">
-                <h4 className="font-medium text-slate-800 mb-3">Task Management</h4>
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 shadow-xl">
+              <div className="bg-slate-800 rounded-lg p-4 shadow-md mb-4 border border-slate-700">
+                <h4 className="font-medium text-white mb-3">Task Management</h4>
                 
                 <div className="space-y-3">
-                  <div className="bg-slate-50 p-3 rounded border border-slate-100">
+                  <div className="bg-slate-700 p-3 rounded border border-slate-600">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium">Update Privacy Policy</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded">Medium</span>
+                      <span className="text-sm font-medium text-white">Update Privacy Policy</span>
+                      <span className="bg-yellow-900 text-yellow-100 text-xs px-2 py-0.5 rounded">Medium</span>
                     </div>
-                    <div className="flex justify-between text-xs text-slate-500">
+                    <div className="flex justify-between text-xs text-slate-300">
                       <span>Assigned: Legal Team</span>
                       <span>Due: April 18</span>
                     </div>
                   </div>
                   
-                  <div className="bg-slate-50 p-3 rounded border border-slate-100">
+                  <div className="bg-slate-700 p-3 rounded border border-slate-600">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium">Security Control Review</span>
-                      <span className="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded">High</span>
+                      <span className="text-sm font-medium text-white">Security Control Review</span>
+                      <span className="bg-red-900 text-red-100 text-xs px-2 py-0.5 rounded">High</span>
                     </div>
-                    <div className="flex justify-between text-xs text-slate-500">
+                    <div className="flex justify-between text-xs text-slate-300">
                       <span>Assigned: CISO</span>
                       <span>Due: April 15</span>
                     </div>
                   </div>
                   
-                  <div className="bg-green-50 p-3 rounded border border-green-100">
+                  <div className="bg-slate-700 p-3 rounded border border-slate-600">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium">Vendor Assessment</span>
-                      <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded">Completed</span>
+                      <span className="text-sm font-medium text-white">Vendor Assessment</span>
+                      <span className="bg-green-900 text-green-100 text-xs px-2 py-0.5 rounded">Completed</span>
                     </div>
-                    <div className="flex justify-between text-xs text-slate-500">
+                    <div className="flex justify-between text-xs text-slate-300">
                       <span>Completed by: Procurement</span>
                       <span>April 10</span>
                     </div>
@@ -375,44 +378,44 @@ const ProductFeatures = () => {
                 </div>
               </div>
               
-              <div className="bg-white rounded-lg p-4 shadow-sm">
+              <div className="bg-slate-800 rounded-lg p-4 shadow-md border border-slate-700">
                 <div className="flex justify-between items-center mb-3">
-                  <h4 className="font-medium text-slate-800">Document Repository</h4>
-                  <div className="flex items-center text-xs text-slate-500">
+                  <h4 className="font-medium text-white">Document Repository</h4>
+                  <div className="flex items-center text-xs text-slate-400">
                     <ClipboardCheck className="h-3 w-3 mr-1" />
                     <span>256 Files</span>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between p-2 border-b border-slate-100">
+                  <div className="flex items-center justify-between p-2 border-b border-slate-700">
                     <div className="flex items-center">
-                      <div className="h-8 w-8 bg-blue-100 rounded flex items-center justify-center mr-3">
-                        <span className="text-xs text-blue-600">PDF</span>
+                      <div className="h-8 w-8 bg-blue-900 rounded flex items-center justify-center mr-3">
+                        <span className="text-xs text-blue-200">PDF</span>
                       </div>
-                      <span className="text-sm">Security_Policy_v2.4.pdf</span>
+                      <span className="text-sm text-white">Security_Policy_v2.4.pdf</span>
                     </div>
-                    <span className="text-xs text-slate-500">Updated 2d ago</span>
+                    <span className="text-xs text-slate-400">Updated 2d ago</span>
                   </div>
                   
-                  <div className="flex items-center justify-between p-2 border-b border-slate-100">
+                  <div className="flex items-center justify-between p-2 border-b border-slate-700">
                     <div className="flex items-center">
-                      <div className="h-8 w-8 bg-green-100 rounded flex items-center justify-center mr-3">
-                        <span className="text-xs text-green-600">XLS</span>
+                      <div className="h-8 w-8 bg-green-900 rounded flex items-center justify-center mr-3">
+                        <span className="text-xs text-green-200">XLS</span>
                       </div>
-                      <span className="text-sm">Risk_Register_Q2.xlsx</span>
+                      <span className="text-sm text-white">Risk_Register_Q2.xlsx</span>
                     </div>
-                    <span className="text-xs text-slate-500">Updated 1w ago</span>
+                    <span className="text-xs text-slate-400">Updated 1w ago</span>
                   </div>
                   
                   <div className="flex items-center justify-between p-2">
                     <div className="flex items-center">
-                      <div className="h-8 w-8 bg-purple-100 rounded flex items-center justify-center mr-3">
-                        <span className="text-xs text-purple-600">DOC</span>
+                      <div className="h-8 w-8 bg-purple-900 rounded flex items-center justify-center mr-3">
+                        <span className="text-xs text-purple-200">DOC</span>
                       </div>
-                      <span className="text-sm">GDPR_Compliance_Plan.docx</span>
+                      <span className="text-sm text-white">GDPR_Compliance_Plan.docx</span>
                     </div>
-                    <span className="text-xs text-slate-500">Updated 3d ago</span>
+                    <span className="text-xs text-slate-400">Updated 3d ago</span>
                   </div>
                 </div>
               </div>
