@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -115,8 +114,8 @@
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 
-  /* Added styles for wider framework nav item */
+  /* Updated style for wider framework nav item */
   .framework-nav-item {
-    @apply min-w-[120px] text-center;
+    @apply min-w-[180px] text-center font-medium;
   }
 }
