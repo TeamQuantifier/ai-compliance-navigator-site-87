@@ -1,10 +1,8 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Shield, Check, ArrowRight, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 const Plans = () => {
   const planFeatures = [{
     name: "Starter",
@@ -31,12 +29,9 @@ const Plans = () => {
     buttonText: "Talk to Sales",
     highlighted: false
   }];
-
   return <PageTemplate title="Scalable plans for every stage of growth" description="Whether you're just starting out or managing compliance across global entities—there's a plan built for your needs.">
       <div className="max-w-3xl mx-auto text-center mb-12">
-        <p className="text-slate-700 text-xl">
-          Whether you're just starting out or managing compliance across global entities—there's a plan built for your needs.
-        </p>
+        
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -86,5 +81,4 @@ const Plans = () => {
       </div>
     </PageTemplate>;
 };
-
 export default Plans;
