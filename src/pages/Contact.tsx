@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,16 +5,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Contact = () => {
-  return (
-    <PageTemplate
-      title="Contact Us"
-      description="Get in touch with our team to learn more about our AI-powered compliance solutions."
-    >
+  return <PageTemplate title="Contact Us" description="Get in touch with our team to learn more about our AI-powered compliance solutions.">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-2xl font-bold mb-6 gradient-heading">
+          <h2 className="font-bold mb-6 gradient-heading text-6xl">
             Get in Touch
           </h2>
           <p className="text-lg text-slate-600 mb-8">
@@ -99,11 +93,7 @@ const Contact = () => {
                 <label htmlFor="message" className="text-sm font-medium text-slate-700">
                   Message
                 </label>
-                <Textarea 
-                  id="message" 
-                  placeholder="How can we help you?" 
-                  rows={5} 
-                />
+                <Textarea id="message" placeholder="How can we help you?" rows={5} />
               </div>
               
               <Button className="w-full group">
@@ -114,8 +104,6 @@ const Contact = () => {
           </Card>
         </div>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default Contact;
