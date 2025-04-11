@@ -90,7 +90,7 @@ The AI-native compliance layer for organizations
             <Button className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-6 py-2.5 shadow-lg shadow-slate-900/20" size="lg">
               Request Demo
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-slate-600 hover:bg-slate-800/50 group">
+            <Button variant="outline" size="lg" className="border-slate-600 group text-slate-900 bg-gray-100">
               Explore Features
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
