@@ -12,7 +12,7 @@ const PageTemplate = ({
   children
 }: PageTemplateProps) => {
   return <div className="min-h-screen">
-      <div className="bg-gradient-to-b from-compliance-50 to-white pt-24 pb-16 py-[20px]">
+      <div className="bg-gradient-to-b from-compliance-50 to-white pt-24 pb-16 py-[20px] bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
