@@ -14,9 +14,6 @@ import Features from "./pages/product/Features";
 
 // By Roles
 import ByRoles from "./pages/roles/ByRoles";
-import Managers from "./pages/roles/Managers";
-import Contributors from "./pages/roles/Contributors";
-import Auditor from "./pages/roles/Auditor";
 
 // Frameworks
 import Frameworks from "./pages/frameworks/Frameworks";
@@ -73,11 +70,11 @@ const App = () => (
               <Route path="/product/analytics-dashboards" element={<Features />} />
               <Route path="/product/api-integrations" element={<Features />} />
               
-              {/* By Roles routes */}
+              {/* By Roles routes - all pointing to ByRoles component */}
               <Route path="/by-roles" element={<ByRoles />} />
-              <Route path="/by-roles/managers" element={<Managers />} />
-              <Route path="/by-roles/contributors" element={<Contributors />} />
-              <Route path="/by-roles/auditor" element={<Auditor />} />
+              <Route path="/by-roles/managers" element={<ByRoles />} />
+              <Route path="/by-roles/contributors" element={<ByRoles />} />
+              <Route path="/by-roles/auditor" element={<ByRoles />} />
               
               {/* Frameworks routes */}
               <Route path="/frameworks" element={<Frameworks />} />
