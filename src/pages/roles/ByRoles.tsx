@@ -30,7 +30,7 @@ const ByRoles = () => {
       <div className="mb-20">
         <Tabs defaultValue="managers" className="w-full">
           <TabsList className="w-full grid grid-cols-3 mb-8">
-            <TabsTrigger value="managers" className="data-[state=active]:text-white py-6 bg-zinc-900 hover:bg-zinc-800">
+            <TabsTrigger value="managers" className="data-[state=active]:text-white py-6 bg-slate-900 hover:bg-slate-800">
               <UserCog className="h-5 w-5 mr-2" />
               Managers
             </TabsTrigger>
@@ -263,7 +263,7 @@ const ByRoles = () => {
 
           {/* Auditors Tab Content */}
           <TabsContent value="auditors" className="mt-6">
-            <div className="bg-slate-900 text-white rounded-xl p-8 shadow-xl border border-slate-800">
+            <div className="text-white rounded-xl p-8 shadow-xl border border-slate-800 bg-compliance-900">
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
