@@ -5,54 +5,47 @@ import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
-
 const Partners = () => {
-  const partnerBenefits = [
-    {
-      title: "Expand your service offering with cutting-edge compliance tech",
-      description: "Add AI-powered compliance solutions to your portfolio and stay ahead of the competition.",
-      icon: <Sparkles className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Gain early access to innovation and product updates",
-      description: "Be the first to preview and implement new features before they reach the market.",
-      icon: <Gift className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Co-market and co-sell to grow your customer base",
-      description: "Leverage our marketing resources and joint go-to-market strategies to reach new audiences.",
-      icon: <Users className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Add measurable value to your clients' compliance efforts",
-      description: "Provide data-driven insights and improvement metrics that demonstrate your impact.",
-      icon: <BarChart className="h-10 w-10 text-primary" />,
-    },
-  ];
-
-  const partnerTypes = [
-    { name: "Consulting Firms", icon: <Building className="h-6 w-6 text-compliance-600" /> },
-    { name: "Audit Partners", icon: <Check className="h-6 w-6 text-compliance-600" /> },
-    { name: "Technology Integrators", icon: <Sparkles className="h-6 w-6 text-compliance-600" /> },
-    { name: "Financial Institutions", icon: <Building className="h-6 w-6 text-compliance-600" /> },
-    { name: "NGOs", icon: <Globe className="h-6 w-6 text-compliance-600" /> },
-  ];
-
-  return (
-    <PageTemplate
-      title="Partner With Us"
-      description="Join a global ecosystem driving smarter, simpler compliance."
-    >
+  const partnerBenefits = [{
+    title: "Expand your service offering with cutting-edge compliance tech",
+    description: "Add AI-powered compliance solutions to your portfolio and stay ahead of the competition.",
+    icon: <Sparkles className="h-10 w-10 text-primary" />
+  }, {
+    title: "Gain early access to innovation and product updates",
+    description: "Be the first to preview and implement new features before they reach the market.",
+    icon: <Gift className="h-10 w-10 text-primary" />
+  }, {
+    title: "Co-market and co-sell to grow your customer base",
+    description: "Leverage our marketing resources and joint go-to-market strategies to reach new audiences.",
+    icon: <Users className="h-10 w-10 text-primary" />
+  }, {
+    title: "Add measurable value to your clients' compliance efforts",
+    description: "Provide data-driven insights and improvement metrics that demonstrate your impact.",
+    icon: <BarChart className="h-10 w-10 text-primary" />
+  }];
+  const partnerTypes = [{
+    name: "Consulting Firms",
+    icon: <Building className="h-6 w-6 text-compliance-600" />
+  }, {
+    name: "Audit Partners",
+    icon: <Check className="h-6 w-6 text-compliance-600" />
+  }, {
+    name: "Technology Integrators",
+    icon: <Sparkles className="h-6 w-6 text-compliance-600" />
+  }, {
+    name: "Financial Institutions",
+    icon: <Building className="h-6 w-6 text-compliance-600" />
+  }, {
+    name: "NGOs",
+    icon: <Globe className="h-6 w-6 text-compliance-600" />
+  }];
+  return <PageTemplate title="Partner With Us" description="Join a global ecosystem driving smarter, simpler compliance.">
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
             <div className="w-full md:w-1/2">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800" 
-                  alt="Business partners collaborating" 
-                  className="w-full h-auto object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800" alt="Business partners collaborating" className="w-full h-auto object-cover" />
               </div>
             </div>
             <div className="w-full md:w-1/2">
@@ -73,12 +66,10 @@ const Partners = () => {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
-            {partnerTypes.map((type, idx) => (
-              <div key={idx} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-all">
+            {partnerTypes.map((type, idx) => <div key={idx} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-all">
                 {type.icon}
-                <p className="mt-2 text-sm font-medium text-slate-700">{type.name}</p>
-              </div>
-            ))}
+                <p className="mt-2 text-sm font-medium text-slate-700 text-center">{type.name}</p>
+              </div>)}
           </div>
         </section>
         
@@ -109,8 +100,7 @@ const Partners = () => {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-8 gradient-heading text-center">Why Partner With Us?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {partnerBenefits.map((benefit, index) => (
-              <Card key={index} className="p-6 border border-slate-200 h-full flex flex-col card-hover">
+            {partnerBenefits.map((benefit, index) => <Card key={index} className="p-6 border border-slate-200 h-full flex flex-col card-hover">
                 <div className="mb-4 p-3 rounded-full bg-compliance-50 w-fit">
                   {benefit.icon}
                 </div>
@@ -118,8 +108,7 @@ const Partners = () => {
                   <h3 className="text-xl font-medium text-slate-900 mb-2">{benefit.title}</h3>
                   <p className="text-slate-600">{benefit.description}</p>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </section>
         
@@ -148,8 +137,6 @@ const Partners = () => {
           </div>
         </div>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default Partners;
