@@ -180,11 +180,19 @@ export const Navbar = () => {
               <NavigationMenuItem key={item.title}>
                 {item.items ? (
                   <>
-                    <NavigationMenuTrigger className="h-9 px-3">
+                    <NavigationMenuTrigger 
+                      className={cn(
+                        "h-9 px-3", 
+                        item.title === "Frameworks" && "framework-nav-item"
+                      )}
+                    >
                       {item.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid gap-3 p-4 w-[220px]">
+                      <ul className={cn(
+                        "grid gap-3 p-4",
+                        item.title === "Frameworks" ? "w-[280px]" : "w-[220px]"
+                      )}>
                         {item.items.map((subItem) => (
                           <li key={subItem.title}>
                             <NavigationMenuLink asChild>
