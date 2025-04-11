@@ -96,11 +96,17 @@ const App = () => (
               <Route path="/frameworks/information-security/iso-9001" element={<Iso9001 />} />
               <Route path="/frameworks/information-security/dora" element={<Dora />} />
               
+              {/* Resources routes */}
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/blog/:id" element={<Resources />} />
+              <Route path="/resources/blog" element={<Resources />} />
+              <Route path="/resources/whitepapers" element={<Resources />} />
+              <Route path="/resources/webinars" element={<Resources />} />
+              
               {/* Other main routes */}
               <Route path="/plans" element={<Plans />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/success-stories" element={<SuccessStories />} />
-              <Route path="/resources" element={<Resources />} />
               <Route path="/about" element={<About />} />
               <Route path="/about/history" element={<History />} />
               <Route path="/about/press" element={<Press />} />
