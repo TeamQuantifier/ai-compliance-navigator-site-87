@@ -1,9 +1,7 @@
-
 import { ArrowRight, Shield, CheckCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-
 const HeroSection = () => {
   return <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
       {/* Background gradient - darkened further */}
@@ -17,10 +15,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Main Header - Full Width */}
-          <h1 className="text-4xl mb-8 text-white text-center leading-tight font-semibold md:text-7xl bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">Quantifier.ai
-The AI-native compliance layer for organizations
-
-        </h1>
+          <h1 className="text-4xl mb-8 text-white text-center leading-tight font-semibold md:text-7xl bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">Quantifier.ai 
+The AI-native compliance layer for organizations</h1>
           
           {/* Subheader - Full Width */}
           <h2 className="text-xl md:text-2xl text-slate-300 mb-12 text-center leading-relaxed">Your right-hand AI Agent Compliance Officer that manages projects, collects data across your organization, and showcases results—significantly automating the entire compliance process</h2>
@@ -102,5 +98,4 @@ The AI-native compliance layer for organizations
       </div>
     </div>;
 };
-
 export default HeroSection;
