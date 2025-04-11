@@ -1,10 +1,7 @@
-
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const CtaSection = () => {
-  return (
-    <section className="py-16 relative overflow-hidden">
+  return <section className="py-16 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-compliance-900 to-innovation-900 -z-10"></div>
       
@@ -30,11 +27,11 @@ const CtaSection = () => {
               <p className="text-white/70 mb-4">Comprehensive compliance management for complex regulatory environments.</p>
               <div className="flex items-start mb-2">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Multi-framework support</p>
+                <p className="text-white/80">Multi-entity managment</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Advanced AI analytics</p>
+                <p className="text-white/80">Full access to all features</p>
               </div>
             </div>
             
@@ -56,11 +53,20 @@ const CtaSection = () => {
               <p className="text-white/70 mb-4">Build compliance into your foundation from day one.</p>
               <div className="flex items-start mb-2">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Essential frameworks</p>
+                <p className="text-white/80">Essential features</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Affordable pricing</p>
+                <p className="text-white/80">Affordable pricing
+
+
+
+
+
+
+
+
+              </p>
               </div>
             </div>
           </div>
@@ -69,15 +75,13 @@ const CtaSection = () => {
             <Button className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg" size="lg">
               Request Demo
             </Button>
-            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg group" size="lg">
+            <Button variant="outline" size="lg" className="border-white/20 px-8 py-6 text-lg group bg-gray-50 text-innovation-900">
               View Pricing
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CtaSection;
