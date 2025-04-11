@@ -1,3 +1,4 @@
+
 import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { UserCog, User, FileCheck, Users, ArrowRight, CheckCircle, BarChart3, Calendar, Zap, Shield, Lock, FileText } from 'lucide-react';
@@ -5,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
+
 const ByRoles = () => {
   return <PageTemplate title="Built for Every Role" description="Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you.">
       {/* Hero section with darker colors */}
@@ -380,9 +383,11 @@ const ByRoles = () => {
           <p className="text-lg text-slate-300 mb-8">
             No matter your role, Quantifier adapts to how you work — and elevates how you manage compliance.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 shadow-lg">
-            Book a Demo
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button asChild size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 shadow-lg">
+            <Link to="/contact">
+              Book a Demo
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>
