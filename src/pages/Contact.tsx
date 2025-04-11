@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
@@ -18,7 +19,7 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="text-lg text-slate-600 mb-8">
-            Have questions about our platform? Ready to start your AI compliance journey? Our team is here to help.
+            Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.
           </p>
           
           <div className="space-y-6 mb-8">
@@ -26,8 +27,7 @@ const Contact = () => {
               <Mail className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Email Us</h3>
-                <p className="text-slate-600">info@complianceai.com</p>
-                <p className="text-slate-600">support@complianceai.com</p>
+                <p className="text-slate-600">contact@quantifier.ai</p>
               </div>
             </div>
             
@@ -35,8 +35,7 @@ const Contact = () => {
               <Phone className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Call Us</h3>
-                <p className="text-slate-600">+1 (555) 123-4567</p>
-                <p className="text-slate-600">Mon-Fri: 9AM - 6PM EST</p>
+                <p className="text-slate-600">415-799-8206</p>
               </div>
             </div>
             
@@ -44,11 +43,18 @@ const Contact = () => {
               <MapPin className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Visit Our Office</h3>
-                <p className="text-slate-600">123 Compliance Way</p>
-                <p className="text-slate-600">Suite 456</p>
-                <p className="text-slate-600">New York, NY 10001</p>
+                <p className="text-slate-600">447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</p>
               </div>
             </div>
+          </div>
+          
+          <div className="flex space-x-4">
+            <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="mailto:contact@quantifier.ai" className="text-slate-500 hover:text-compliance-700 transition-colors">
+              <Mail className="h-6 w-6" />
+            </a>
           </div>
         </div>
         
