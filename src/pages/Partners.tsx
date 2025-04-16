@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
+
 const Partners = () => {
   const partnerBenefits = [{
     title: "Expand your service offering with cutting-edge compliance tech",
@@ -23,6 +24,7 @@ const Partners = () => {
     description: "Provide data-driven insights and improvement metrics that demonstrate your impact.",
     icon: <BarChart className="h-10 w-10 text-primary" />
   }];
+  
   const partnerTypes = [{
     name: "Consulting Firms",
     icon: <Building className="h-6 w-6 text-compliance-600" />
@@ -39,24 +41,26 @@ const Partners = () => {
     name: "NGOs",
     icon: <Globe className="h-6 w-6 text-compliance-600" />
   }];
+  
   return <PageTemplate title="Partner With Us" description="Join a global ecosystem driving smarter, simpler compliance.">
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
-          <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
-            <div className="w-full md:w-1/2">
-              {/* Removed image div */}
+          <div className="bg-gradient-to-r from-compliance-50 to-blue-50 p-8 rounded-xl mb-10">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-6">
+              <Handshake className="w-5 h-5 mr-2" />
+              <span className="font-medium">Global Partnership Network</span>
             </div>
-            <div className="w-full md:w-1/2">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
-                <Handshake className="w-5 h-5 mr-2" />
-                <span className="font-medium">Global Partnership Network</span>
-              </div>
-              <p className="text-lg text-slate-700 mb-4">
+            
+            <h2 className="text-2xl font-bold mb-4 gradient-heading">Join Our Trusted Partner Network</h2>
+            
+            <div className="prose prose-lg max-w-none text-slate-700">
+              <p className="text-lg mb-4">
                 We collaborate with over 50+ trusted partners—including auditors, business connectors, 
                 banks, consulting firms, and NGOs. Together, we're helping companies across the world 
                 navigate the evolving landscape of compliance and sustainability with confidence.
               </p>
-              <p className="text-lg text-slate-700">
+              
+              <p className="text-lg">
                 Let's grow together. Whether you're advising clients, managing audits, or driving 
                 innovation —there's a place for you in our partner network.
               </p>
@@ -134,4 +138,5 @@ const Partners = () => {
       </div>
     </PageTemplate>;
 };
+
 export default Partners;
