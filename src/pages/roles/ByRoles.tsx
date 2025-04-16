@@ -33,7 +33,7 @@ const ByRoles = () => {
       <div className="mb-20">
         <Tabs defaultValue="managers" className="w-full">
           <TabsList className="w-full grid grid-cols-3 mb-8">
-            <TabsTrigger value="managers" className="py-6 text-slate-900 bg-slate-200 hover:bg-slate-100">
+            <TabsTrigger value="managers" className="py-6 text-white bg-slate-900 hover:bg-slate-800">
               <UserCog className="h-5 w-5 mr-2" />
               Managers
             </TabsTrigger>
