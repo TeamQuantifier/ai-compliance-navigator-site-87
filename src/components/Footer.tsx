@@ -1,10 +1,8 @@
-
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-
 const Footer = () => {
   return <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 pt-16 pb-8">
@@ -37,10 +35,7 @@ const Footer = () => {
                 <Mail className="h-4 w-4 mr-2" />
                 <span>contact@quantifier.ai</span>
               </div>
-              <div className="flex items-center justify-end">
-                <Phone className="h-4 w-4 mr-2" />
-                <span>415-799-8206</span>
-              </div>
+              
               <div className="flex items-start justify-end">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
                 <div className="text-right">
@@ -52,8 +47,8 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
                 <div className="text-right">
                   <div>Europe: (+48) 698 759 206</div>
-                  <div>Warsaw: Rondo Daszynskiego 1, Warsaw</div>
-                  <div>Lublin: Głowackiego 3/5/1</div>
+                  <div>Warsaw, Poland: Rondo Daszynskiego 1</div>
+                  <div>Lublin, Poland: Głowackiego 3/5/1</div>
                 </div>
               </div>
             </div>
@@ -92,5 +87,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
