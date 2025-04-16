@@ -37,7 +37,7 @@ const Dora = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1561414927-6d86591d0c4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/dora-compliance-detail.png" 
                 alt="DORA Compliance Dashboard" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -153,33 +153,6 @@ const Dora = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* Platform Screenshot Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-[#E5DEFF] to-[#F1F0FB] p-6 rounded-xl">
-            <div className="flex flex-col items-center text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#1A1F2C]">
-                DORA Compliance Dashboard
-              </h2>
-              <p className="text-lg text-slate-700 max-w-2xl">
-                Get a comprehensive view of your DORA compliance status with Quantifier's intuitive dashboard.
-              </p>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
-                alt="DORA Compliance Dashboard" 
-                className="rounded-lg shadow-lg border border-white w-full object-cover max-h-[500px]"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Button size="lg" className="bg-[#F97316] hover:bg-[#F97316]/90">
-                  Watch Demo Video
-                </Button>
-              </div>
-            </div>
           </div>
         </section>
 

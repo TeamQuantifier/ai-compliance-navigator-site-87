@@ -300,33 +300,6 @@ const InformationSecurity = () => {
           </div>
         </section>
 
-        {/* Platform Screenshot Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-[#E5DEFF] to-[#F1F0FB] p-6 rounded-xl">
-            <div className="flex flex-col items-center text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#1A1F2C]">
-                See the Quantifier Platform in Action
-              </h2>
-              <p className="text-lg text-slate-700 max-w-2xl">
-                Our intuitive dashboard gives you complete visibility into your information security compliance status.
-              </p>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="/mockups/quantifier-platform-dashboard.png" 
-                alt="Quantifier Platform Dashboard" 
-                className="rounded-lg shadow-lg border border-white w-full object-cover max-h-[500px]"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Button size="lg" className="bg-[#F97316] hover:bg-[#F97316]/90">
-                  Watch Demo Video
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="mb-8">
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
