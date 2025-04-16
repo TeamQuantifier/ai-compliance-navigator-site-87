@@ -1,3 +1,5 @@
+
+import React from 'react';
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -5,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const Contact = () => {
   return <PageTemplate title="Contact Us" description="Get in touch with our team to learn more about our AI-powered compliance solutions.">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -27,15 +30,23 @@ const Contact = () => {
               <Phone className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Call Us</h3>
-                <p className="text-slate-600">(+1) 415-799-8206</p>
+                <p className="text-slate-600">
+                  USA: (+1) 415-799-8206<br />
+                  Europe: (+48) 698 759 206
+                </p>
               </div>
             </div>
             
             <div className="flex items-start">
               <MapPin className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Visit Our Office</h3>
-                <p className="text-slate-600">447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</p>
+                <h3 className="font-semibold text-slate-900 mb-1">Visit Our Offices</h3>
+                <p className="text-slate-600">
+                  USA: 447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108<br />
+                  Europe:<br />
+                  Warsaw: Rondo Daszynskiego 1, Warsaw<br />
+                  Lublin: Głowackiego 3/5/1
+                </p>
               </div>
             </div>
           </div>
@@ -108,4 +119,5 @@ const Contact = () => {
       </div>
     </PageTemplate>;
 };
+
 export default Contact;
