@@ -96,7 +96,7 @@ const HeroSection = () => {
               <Link to="/contact">Request Demo</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
-              <Link to="/product">
+              <Link to="/product/features">
                 Explore Features
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
