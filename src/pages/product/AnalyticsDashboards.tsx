@@ -1,6 +1,6 @@
 
 import PageTemplate from '@/components/PageTemplate';
-import { ArrowRight, BarChart4, Shield, CheckCircle, FileText, PieChart } from 'lucide-react';
+import { ArrowRight, BarChart4, Shield, CheckCircle, FileText, PieChart, BrainCircuit, Activity, AlertTriangle, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
@@ -59,11 +59,11 @@ const AnalyticsDashboards = () => {
               <CardContent className="pt-6">
                 <div className="flex items-start mb-4">
                   <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <Shield className="h-6 w-6 text-[#9b87f5]" />
+                    <BrainCircuit className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Risk Intelligence</h3>
-                    <p className="text-slate-600">AI-powered risk assessments and predictions help you prioritize actions and prevent compliance gaps.</p>
+                    <h3 className="font-semibold text-lg mb-2">AI-Driven Insights</h3>
+                    <p className="text-slate-600">Leverage machine learning to identify patterns, predict risks, and receive intelligent recommendations for improvement.</p>
                   </div>
                 </div>
               </CardContent>
@@ -73,15 +73,72 @@ const AnalyticsDashboards = () => {
               <CardContent className="pt-6">
                 <div className="flex items-start mb-4">
                   <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <PieChart className="h-6 w-6 text-[#9b87f5]" />
+                    <AlertTriangle className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Custom Reports</h3>
-                    <p className="text-slate-600">Generate tailored reports for different stakeholders, from executive summaries to detailed technical documentation.</p>
+                    <h3 className="font-semibold text-lg mb-2">Risk Assessment</h3>
+                    <p className="text-slate-600">Visualize and quantify compliance risks with AI-powered analysis that prioritizes critical action areas.</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        {/* Detailed Features */}
+        <section className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-slate-50 p-6 rounded-xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
+                  <Activity className="h-5 w-5 text-[#9b87f5]" />
+                </div>
+                <h3 className="text-xl font-bold">Comprehensive Reporting</h3>
+              </div>
+              <p className="text-slate-700 mb-5">
+                Generate tailored reports for different stakeholders, from executive summaries to detailed technical documentation.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700">Customizable dashboard views for different roles</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700">Export capabilities in multiple formats (PDF, Excel, CSV)</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700">Automatic report generation and scheduling</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-slate-50 p-6 rounded-xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
+                  <Zap className="h-5 w-5 text-[#9b87f5]" />
+                </div>
+                <h3 className="text-xl font-bold">Intelligent Automation</h3>
+              </div>
+              <p className="text-slate-700 mb-5">
+                Let AI handle the heavy lifting of compliance monitoring and analysis, freeing your team to focus on strategic initiatives.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700">Automated evidence collection and verification</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700">Smart alerts for compliance gaps and approaching deadlines</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700">AI-generated action plans with specific remediation steps</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
