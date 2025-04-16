@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { UserCog, User, FileCheck, Users, ArrowRight, CheckCircle, BarChart3, Calendar, Zap, Shield, Lock, FileText } from 'lucide-react';
@@ -7,7 +6,6 @@ import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
-
 const ByRoles = () => {
   return <PageTemplate title="Built for Every Role" description="Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you.">
       {/* Hero section with darker colors */}
@@ -33,7 +31,7 @@ const ByRoles = () => {
       <div className="mb-20">
         <Tabs defaultValue="managers" className="w-full">
           <TabsList className="w-full grid grid-cols-3 mb-8">
-            <TabsTrigger value="managers" className="py-6 text-white bg-slate-900 hover:bg-slate-800">
+            <TabsTrigger value="managers" className="py-6 bg-slate-900 hover:bg-slate-800 text-slate-200">
               <UserCog className="h-5 w-5 mr-2" />
               Managers
             </TabsTrigger>
