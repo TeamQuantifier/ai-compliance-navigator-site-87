@@ -40,11 +40,21 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
-                <span>447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</span>
+                <div>
+                  <div>USA: (+1) 415-799-8206</div>
+                  <div>447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</div>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <MapPin className="h-4 w-4 mr-2 mt-0.5" />
+                <div>
+                  <div>Europe: (+48) 698 759 206</div>
+                  <div>Warsaw: Rondo Daszynskiego 1, Warsaw</div>
+                  <div>Lublin: Głowackiego 3/5/1</div>
+                </div>
               </div>
             </div>
           </div>
-          
         </div>
         
         <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12">
