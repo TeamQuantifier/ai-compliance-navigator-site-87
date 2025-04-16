@@ -41,7 +41,7 @@ const InformationSecurity = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/info-security-dashboard.png" 
                 alt="Information Security Dashboard" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -103,7 +103,7 @@ const InformationSecurity = () => {
                 </div>
                 <div className="md:w-1/2">
                   <img 
-                    src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                    src="/mockups/iso27001-dashboard.png" 
                     alt="ISO 27001 Security Dashboard" 
                     className="rounded-lg shadow-lg border border-[#E5DEFF] w-full"
                   />
@@ -150,7 +150,7 @@ const InformationSecurity = () => {
                 </div>
                 <div className="md:w-1/2">
                   <img 
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                    src="/mockups/iso9001-quality-dashboard.png" 
                     alt="ISO 9001 Quality Management Dashboard" 
                     className="rounded-lg shadow-lg border border-[#E5DEFF] w-full"
                   />
@@ -197,7 +197,7 @@ const InformationSecurity = () => {
                 </div>
                 <div className="md:w-1/2">
                   <img 
-                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                    src="/mockups/dora-compliance-dashboard.png" 
                     alt="DORA Compliance Dashboard" 
                     className="rounded-lg shadow-lg border border-[#E5DEFF] w-full"
                   />
@@ -314,7 +314,7 @@ const InformationSecurity = () => {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/quantifier-platform-dashboard.png" 
                 alt="Quantifier Platform Dashboard" 
                 className="rounded-lg shadow-lg border border-white w-full object-cover max-h-[500px]"
               />
