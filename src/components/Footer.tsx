@@ -29,26 +29,28 @@ const Footer = () => {
                 <Mail className="h-5 w-5" />
               </a>
             </div>
-
-            <div className="mt-5 space-y-2 text-sm text-slate-600">
-              <div className="flex items-center">
+          </div>
+          
+          <div className="lg:col-span-3 flex justify-end">
+            <div className="space-y-2 text-sm text-slate-600 text-right">
+              <div className="flex items-center justify-end">
                 <Mail className="h-4 w-4 mr-2" />
                 <span>contact@quantifier.ai</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-end">
                 <Phone className="h-4 w-4 mr-2" />
                 <span>415-799-8206</span>
               </div>
-              <div className="flex items-start">
+              <div className="flex items-start justify-end">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
-                <div>
+                <div className="text-right">
                   <div>USA: (+1) 415-799-8206</div>
                   <div>447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</div>
                 </div>
               </div>
-              <div className="flex items-start">
+              <div className="flex items-start justify-end">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
-                <div>
+                <div className="text-right">
                   <div>Europe: (+48) 698 759 206</div>
                   <div>Warsaw: Rondo Daszynskiego 1, Warsaw</div>
                   <div>Lublin: Głowackiego 3/5/1</div>
