@@ -14,7 +14,7 @@ const SuccessStories = () => {
     {
       icon: <Building />,
       value: "50+",
-      label: "Companies supported",
+      label: "Partnerships", // Updated label here
       bgColor: "bg-compliance-100",
       iconColor: "text-compliance-600"
     },
