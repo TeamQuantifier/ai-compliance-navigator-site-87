@@ -1,3 +1,4 @@
+
 import PageTemplate from '@/components/PageTemplate';
 import { 
   Shield, 
@@ -16,6 +17,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
+import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 
 const InformationSecurity = () => {
   return (
@@ -39,11 +41,9 @@ const InformationSecurity = () => {
               </Button>
             </div>
             <div className="md:w-2/5">
-              <img 
-                src="/mockups/ai-compliance-dashboard-wide.png" 
-                alt="Comprehensive AI Compliance Platform Dashboard" 
-                className="rounded-lg shadow-lg border border-white/20 w-full"
-              />
+              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20">
+                <AiComplianceDashboard />
+              </div>
             </div>
           </div>
         </section>
