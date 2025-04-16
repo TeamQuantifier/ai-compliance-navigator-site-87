@@ -41,8 +41,6 @@ import Partners from "./pages/Partners";
 import SuccessStories from "./pages/SuccessStories";
 import Resources from "./pages/Resources";
 import About from "./pages/About";
-import History from "./pages/about/History";
-import Press from "./pages/about/Press";
 import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
@@ -107,9 +105,9 @@ const App = () => (
               <Route path="/plans" element={<Plans />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/success-stories" element={<SuccessStories />} />
+              
+              {/* About routes */}
               <Route path="/about" element={<About />} />
-              <Route path="/about/history" element={<History />} />
-              <Route path="/about/press" element={<Press />} />
               <Route path="/contact" element={<Contact />} />
               
               {/* Catch-all route */}

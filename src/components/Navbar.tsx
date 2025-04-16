@@ -125,10 +125,6 @@ const menuItems = [
   {
     title: 'About Us',
     href: '/about',
-    items: [
-      { title: 'Our History', href: '/about/history' },
-      { title: 'Press Presence', href: '/about/press' },
-    ],
   },
   {
     title: 'Contact',
@@ -177,58 +173,12 @@ export const Navbar = () => {
           <NavigationMenuList className="gap-1">
             {menuItems.map((item) => (
               <NavigationMenuItem key={item.title}>
-                {item.items ? (
-                  <>
-                    <NavigationMenuTrigger 
-                      className={cn(
-                        "h-9 px-3", 
-                        item.title === "Frameworks" && "framework-nav-item"
-                      )}
-                    >
-                      {item.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className={cn(
-                        "grid gap-3 p-4",
-                        item.title === "Frameworks" ? "w-[400px]" : "w-[220px]"
-                      )}>
-                        {item.items.map((subItem) => (
-                          <li key={subItem.title}>
-                            <NavigationMenuLink asChild>
-                              <Link
-                                to={subItem.href}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                              >
-                                <div className="text-sm font-medium leading-none">{subItem.title}</div>
-                                {subItem.items && (
-                                  <ul className="mt-2 ml-3">
-                                    {subItem.items.map((subSubItem) => (
-                                      <li key={subSubItem.title}>
-                                        <Link 
-                                          to={subSubItem.href}
-                                          className="text-xs text-muted-foreground hover:text-primary py-1 block"
-                                        >
-                                          {subSubItem.title}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                )}
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </>
-                ) : (
-                  <Link 
-                    to={item.href}
-                    className={navigationMenuTriggerStyle() + " h-9 px-3"}
-                  >
-                    {item.title}
-                  </Link>
-                )}
+                <Link 
+                  to={item.href}
+                  className={navigationMenuTriggerStyle() + " h-9 px-3"}
+                >
+                  {item.title}
+                </Link>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
