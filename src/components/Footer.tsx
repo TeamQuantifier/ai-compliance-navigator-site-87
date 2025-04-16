@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -46,24 +45,6 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="font-semibold text-slate-900 mb-4">Product</h3>
-            <ul className="space-y-3">
-              <li><Link to="/product/features" className="text-slate-600 hover:text-primary transition-colors">Features</Link></li>
-              <li><Link to="/product/ai-compliance-officer" className="text-slate-600 hover:text-primary transition-colors">AI Compliance Officer</Link></li>
-              <li><Link to="/product/analytics-dashboards" className="text-slate-600 hover:text-primary transition-colors">Analytics & Dashboards</Link></li>
-              <li><Link to="/product/risk-assessment" className="text-slate-600 hover:text-primary transition-colors">Risk Assessment</Link></li>
-              <li><Link to="/product/api-integrations" className="text-slate-600 hover:text-primary transition-colors">API Integrations</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-slate-900 mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-slate-600 hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="text-slate-600 hover:text-primary transition-colors">Contact</Link></li>
-            </ul>
-          </div>
         </div>
         
         <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12">
