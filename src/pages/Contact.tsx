@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
@@ -52,7 +51,7 @@ const Contact = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
+            <a href="https://www.linkedin.com/company/quantifier-ai/about/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-compliance-700 transition-colors">
               <Linkedin className="h-6 w-6" />
             </a>
             <a href="mailto:contact@quantifier.ai" className="text-slate-500 hover:text-compliance-700 transition-colors">
