@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { 
   Shield, 
@@ -41,8 +40,8 @@ const InformationSecurity = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="/mockups/ai-compliance-dashboard.png" 
-                alt="AI Compliance Platform Dashboard" 
+                src="/mockups/ai-compliance-dashboard-wide.png" 
+                alt="Comprehensive AI Compliance Platform Dashboard" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>
