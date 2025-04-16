@@ -9,7 +9,10 @@ import {
   ClipboardCheck,
   Users,
   Settings,
-  Repeat
+  Repeat,
+  Laptop,
+  Database,
+  FileText
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -98,6 +101,102 @@ const Iso9001 = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Platform Screenshots Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
+            Quantifier AI Platform for ISO 9001
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <Laptop className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                Quality Management Dashboard
+              </h3>
+              <p className="text-slate-700 mb-4">
+                Get a comprehensive view of your organization's quality metrics and compliance status at a glance.
+              </p>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
+                <img 
+                  src="/mockups/iso9001-dashboard-wide.png" 
+                  alt="ISO 9001 Dashboard" 
+                  className="w-full"
+                />
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <Database className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                Process Management
+              </h3>
+              <p className="text-slate-700 mb-4">
+                Map, monitor, and optimize your core business processes to ensure quality at every step.
+              </p>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
+                <img 
+                  src="/mockups/process-management-screen.png" 
+                  alt="Process Management Screen" 
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <FileText className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                Documentation Control
+              </h3>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF] mb-4">
+                <img 
+                  src="/mockups/document-control-screen.png" 
+                  alt="Documentation Control Screen" 
+                  className="w-full"
+                />
+              </div>
+              <p className="text-slate-600">
+                Centralized document management with version control and approval workflows.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <BarChart4 className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                Performance Analytics
+              </h3>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF] mb-4">
+                <img 
+                  src="/mockups/performance-analytics-screen.png" 
+                  alt="Performance Analytics Screen" 
+                  className="w-full"
+                />
+              </div>
+              <p className="text-slate-600">
+                Real-time metrics and KPIs to track your quality objectives and improvement initiatives.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <ClipboardCheck className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                Audit Management
+              </h3>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF] mb-4">
+                <img 
+                  src="/mockups/audit-management-screen.png" 
+                  alt="Audit Management Screen" 
+                  className="w-full"
+                />
+              </div>
+              <p className="text-slate-600">
+                Schedule, conduct, and track internal audits with automated findings and action items.
+              </p>
             </div>
           </div>
         </section>
