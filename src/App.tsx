@@ -1,8 +1,9 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -57,7 +58,8 @@ const App = () => (
               <Route path="/" element={<Index />} />
               
               {/* Product routes */}
-              <Route path="/product" element={<ProductOverview />} />
+              <Route path="/product" element={<Features />} />
+              <Route path="/product/overview" element={<ProductOverview />} />
               <Route path="/product/features" element={<Features />} />
               <Route path="/product/ai-compliance-officer" element={<Features />} />
               <Route path="/product/task-data-management" element={<Features />} />
@@ -114,3 +116,4 @@ const App = () => (
 );
 
 export default App;
+
