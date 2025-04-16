@@ -5,7 +5,6 @@ import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
-
 const Partners = () => {
   const partnerBenefits = [{
     title: "Expand your service offering with cutting-edge compliance tech",
@@ -128,10 +127,7 @@ const Partners = () => {
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Contact Us
               </Button>
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg group">
-                View Partner Resources
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
+              
             </div>
           </div>
         </div>
