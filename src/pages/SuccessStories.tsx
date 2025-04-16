@@ -395,6 +395,149 @@ const SuccessStories = () => {
           </div>
         </div>
         
+        <div className="mt-16 border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <div className="bg-gradient-to-r from-compliance-50 to-innovation-50 p-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div>
+                <div className="text-sm font-medium text-slate-500 mb-2">Case Study: Financial Services</div>
+                <h2 className="text-2xl md:text-3xl font-bold gradient-heading mb-4">
+                  Driving ESG Compliance Through Innovation in Financial Services
+                </h2>
+                <div className="text-slate-700">
+                  <p className="font-medium">Industry: Banking and Financial Services</p>
+                </div>
+              </div>
+              <div className="rounded-md overflow-hidden shadow-md w-full md:w-64 h-32 bg-white flex items-center justify-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=150&fit=crop" 
+                  alt="Financial services" 
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">01. The Challenge</h3>
+              <p className="text-slate-700">
+                As ESG regulations grow more demanding, especially with the upcoming Corporate Sustainability Reporting Directive (CSRD), 
+                the bank recognized the urgent need to support its clients—especially SMEs and corporate clients—in aligning with these new standards.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">02. The Solution</h3>
+              <p className="text-slate-700 mb-4">
+                "Companies need more than capital—they need support in meeting ESG goals and compliance requirements," 
+                said the bank's Executive Director of Sustainable Development.
+                The chosen solution—a digital ESG compliance platform—supports reporting aligned with GHG Protocol and ISO 14064-1. 
+                During the pilot phase, clients used the platform to calculate their emissions and track reductions linked to 
+                energy efficiency improvements and building upgrades.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">03. Implementation</h3>
+              <p className="text-slate-700 mb-4">
+                Through the partnership, the bank equipped its clients with tools to:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Measure and report emissions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Analyze environmental impact</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Visualize ESG data with dashboards, infographics, and automated reports</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Identify hotspots and track progress toward climate goals</span>
+                </li>
+              </ul>
+              <p className="text-slate-700 mt-4">
+                The solution, powered by artificial intelligence, also simplifies the complex process of ESG data aggregation 
+                and supply chain emissions tracking—a critical capability for upcoming CSRD-aligned disclosures.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">04. Benefits</h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-medium text-slate-900">1. Tool Accessibility</p>
+                  <p className="text-slate-700">Business clients gained access to the platform at no cost during the pilot and now benefit from tailored ESG support at preferential rates.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-slate-900">2. Regulatory Readiness</p>
+                  <p className="text-slate-700">The solution provides structured, regulation-aligned reporting, helping clients prepare for CSRD requirements and beyond.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-slate-900">3. Cost Optimization</p>
+                  <p className="text-slate-700">Clients identified high-emission activities and implemented reduction strategies, leading to greater operational efficiency and lower costs.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-slate-900">4. Data Reliability</p>
+                  <p className="text-slate-700">The platform delivers accurate, verifiable emissions data based on robust methodologies, supporting informed and credible decision-making.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">05. Results</h3>
+              <p className="text-slate-700 mb-4">
+                Thanks to this collaboration, the bank's clients can now:
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <li className="flex items-start gap-2">
+                  <Check className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Systematically manage their carbon footprint</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Comply with CSRD and other ESG regulations</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Reduce GHG emissions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Improve ESG reporting practices</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Develop informed decarbonization strategies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Prioritize investments in sustainable technologies</span>
+                </li>
+              </ul>
+              <p className="text-slate-700 mt-4">
+                The platform's automation and AI capabilities reduce the burden of ESG reporting while enhancing transparency and stakeholder trust.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">06. Conclusion</h3>
+              <p className="text-slate-700 mb-4">
+                This case study highlights how strategic partnerships between financial institutions and ESG tech providers can accelerate compliance, 
+                empower businesses, and contribute to the broader EU goal of net-zero emissions by 2050.
+              </p>
+              <p className="text-slate-700">
+                By digitizing ESG data management and making compliance tools broadly available, the bank plays a critical role in building market resilience, 
+                climate awareness, and long-term competitiveness among its clients.
+              </p>
+            </div>
+          </div>
+        </div>
+        
         <div className="mt-24 mb-8">
           <h2 className="text-3xl font-bold gradient-heading text-center mb-12">Our Impact At A Glance</h2>
           
@@ -416,26 +559,4 @@ const SuccessStories = () => {
             </Card>
             
             <Card className="p-6 text-center card-hover">
-              <div className="mb-4 mx-auto w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                <BarChart className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-2">5</h3>
-              <p className="text-slate-600">Regulatory frameworks supported</p>
-            </Card>
-          </div>
-          
-          <div className="bg-gradient-to-r from-compliance-900 to-innovation-800 text-white rounded-xl p-8 md:p-12 text-center shadow-lg mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to achieve similar results for your organization?</h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">Join the growing number of companies transforming their compliance and sustainability processes.</p>
-            <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 group">
-              Schedule a Demo
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div>
-        </div>
-      </div>
-    </PageTemplate>
-  );
-};
-
-export default SuccessStories;
+              <div className="mb-4 mx-auto w-16 h
