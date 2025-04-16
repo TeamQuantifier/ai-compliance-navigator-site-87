@@ -35,7 +35,7 @@ const Cybersecurity = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="/placeholder.svg" 
+                src="/mockups/cybersecurity-compliance-dashboard.png" 
                 alt="AI-driven Cybersecurity Compliance Dashboard showing real-time risk monitoring" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -116,7 +116,7 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="/placeholder.svg" 
+                      src="/mockups/compliance-automation-dashboard.png" 
                       alt="AI-driven compliance automation dashboard showing automated task assignment and evidence collection" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />
@@ -382,7 +382,7 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="/placeholder.svg" 
+                      src="/mockups/soc2-trust-services-dashboard.png" 
                       alt="SOC 2 Trust Services Criteria dashboard showing real-time control monitoring and evidence status" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />
@@ -539,7 +539,7 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="/placeholder.svg" 
+                      src="/mockups/nis2-compliance-workflow.png" 
                       alt="NIS 2 compliance workflow with supplier risk management interface and incident response automation" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />
@@ -696,7 +696,7 @@ const Cybersecurity = () => {
                   </div>
                   <div className="md:w-1/2">
                     <img 
-                      src="/placeholder.svg" 
+                      src="/mockups/nist-framework-control-dashboard.png" 
                       alt="NIST framework controls dashboard showing five functions with automated compliance tracking and progress indicators" 
                       className="rounded-xl shadow-lg border border-slate-200 w-full"
                     />

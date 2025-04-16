@@ -30,7 +30,7 @@ const Nist = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/nist-framework-dashboard.png" 
                 alt="NIST Framework Implementation Dashboard showing the five functions" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -140,12 +140,12 @@ const Nist = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <img 
-                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/nist-functions-tracking.png" 
                 alt="NIST Functions Tracking Dashboard" 
                 className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
               />
               <img 
-                src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/nist-risk-assessment.png" 
                 alt="NIST Risk Assessment Interface" 
                 className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
               />

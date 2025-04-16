@@ -30,7 +30,7 @@ const NisII = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/nis2-dashboard-overview.png" 
                 alt="NIS 2 Compliance Dashboard showing EU compliance status" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -140,12 +140,12 @@ const NisII = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <img 
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/nis2-risk-management-dashboard.png" 
                 alt="NIS 2 Compliance Monitoring Dashboard" 
                 className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
               />
               <img 
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                src="/mockups/nis2-incident-response-planning.png" 
                 alt="NIS 2 Incident Response Planning Interface" 
                 className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
               />
