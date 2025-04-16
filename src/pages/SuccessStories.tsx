@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageTemplate from '@/components/PageTemplate';
 import { Building, Users } from 'lucide-react';
@@ -13,7 +12,7 @@ const SuccessStories = () => {
   const impactStats = [
     {
       icon: <Building />,
-      value: "250+",
+      value: "50+",
       label: "Partnerships", 
       bgColor: "bg-compliance-100",
       iconColor: "text-compliance-600"
