@@ -1,8 +1,10 @@
+
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, Phone, MapPin, Award, CheckSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+
 const Footer = () => {
   return <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 pt-16 pb-8">
@@ -78,6 +80,42 @@ const Footer = () => {
           </div>
         </div>
         
+        {/* Certificate of Quality Section */}
+        <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="flex-shrink-0">
+              <img 
+                src="/lovable-uploads/ef4b3473-8259-4ea0-8df7-f9108af23c7d.png" 
+                alt="TÜV NORD Certificate" 
+                className="h-40 w-auto"
+              />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Award className="h-5 w-5 text-compliance-700" />
+                <h3 className="font-semibold text-slate-900">Certificate of Quality</h3>
+              </div>
+              <p className="text-slate-600 mb-4">
+                Quantifier.ai has been awarded TÜV NORD certification, verifying our commitment to the highest quality standards in compliance management solutions. Our platform meets rigorous requirements for process control and product testing.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-start">
+                  <CheckSquare className="h-4 w-4 text-compliance-700 mt-0.5 mr-2" />
+                  <span className="text-sm text-slate-600">Process control verified by international standards</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckSquare className="h-4 w-4 text-compliance-700 mt-0.5 mr-2" />
+                  <span className="text-sm text-slate-600">Product testing adheres to comprehensive quality frameworks</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckSquare className="h-4 w-4 text-compliance-700 mt-0.5 mr-2" />
+                  <span className="text-sm text-slate-600">Certificate No. 0000118010</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12">
           <h3 className="font-semibold text-slate-900 mb-2">Subscribe to our newsletter</h3>
           <p className="text-slate-600 mb-4">Stay updated with the latest compliance insights and product updates.</p>
@@ -110,4 +148,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
