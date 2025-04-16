@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,7 +22,7 @@ const Footer = () => {
             </p>
             
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-500 hover:text-compliance-700 transition-colors">
+              <a href="https://www.linkedin.com/company/quantifier-ai/about/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-compliance-700 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
               <a href="mailto:contact@quantifier.ai" className="text-slate-500 hover:text-compliance-700 transition-colors">
@@ -89,4 +90,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
