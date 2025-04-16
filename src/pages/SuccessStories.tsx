@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Check, Building, Users, BarChart, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -122,7 +121,6 @@ const SuccessStories = () => {
           ))}
         </div>
         
-        {/* New Fashion Retailer ESG Case Study */}
         <div className="mt-16 border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
           <div className="bg-gradient-to-r from-compliance-50 to-innovation-50 p-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -281,6 +279,116 @@ const SuccessStories = () => {
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
                   <span className="text-slate-700"><span className="font-medium">Embed accountability.</span> Assign ownership to ensure the process stays on track.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-16 border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <div className="bg-gradient-to-r from-compliance-50 to-innovation-50 p-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div>
+                <div className="text-sm font-medium text-slate-500 mb-2">Case Study: ESG Compliance</div>
+                <h2 className="text-2xl md:text-3xl font-bold gradient-heading mb-4">
+                  A Leading Logistics Group's ESG Transformation
+                </h2>
+                <div className="text-slate-700">
+                  <p className="font-medium">Industry: Transport, Freight Forwarding & Logistics (TSL)</p>
+                  <p>Employees: &gt;1000 | Founded: 2010</p>
+                  <p>Reporting Year: 2025</p>
+                </div>
+              </div>
+              <div className="rounded-md overflow-hidden shadow-md w-full md:w-64 h-32 bg-white flex items-center justify-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=300&h=150&fit=crop" 
+                  alt="Logistics and transportation" 
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">01. Introduction</h3>
+              <p className="text-slate-700">
+                The company has been actively engaged in sustainability initiatives for many years, including supporting 
+                businesses in over 150 countries in developing modern workplace cultures built on trust and performance.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">02. Challenges</h3>
+              <p className="text-slate-700">
+                The biggest challenge was identifying and collecting the right data for ESG reporting—particularly 
+                carbon footprint data, which is critical in the TSL sector. As a logistics operator, not just a 
+                transport provider, the company required expert guidance to determine which data sets were necessary 
+                to meet the requirements of the CSRD directive.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">03. Nature of the Collaboration</h3>
+              <p className="text-slate-700 mb-4">
+                The collaboration consisted of several key phases:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Double Materiality Assessment – identifying the most relevant environmental, social, and governance topics for the company and its stakeholders</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Carbon Footprint Calculation – estimation of GHG emissions across Scopes 1, 2, and 3</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Governance & HR Policy Analysis – including anti-mobbing procedures, whistleblower protection, and anti-corruption measures</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Sustainability Strategy Development – building internal know-how and capabilities</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Training for Employees – to ensure a broader understanding of ESG principles</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">ESG Communication Strategy – defining the company's narrative and messaging</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">05. "We Want to Stay Ahead of Market Demands"</h3>
+              <p className="text-slate-700">
+                The client values competitiveness across all aspects of its business. It continuously improves TSL 
+                processes, measures performance, and assesses the effectiveness of initiatives across all subsidiaries. 
+                Through the partnership with Envirly, the organization gained tools and skills for monitoring, analyzing, 
+                and verifying sustainability metrics and ESG data.
+              </p>
+            </div>
+            
+            <div className="bg-slate-50 p-6 rounded-lg mt-6">
+              <h4 className="font-semibold text-xl text-slate-900 mb-4">Key Results:</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Comprehensive ESG strategy aligned with industry best practices</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Accurate carbon footprint measurement across all operations</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Enhanced internal capabilities for ongoing ESG management</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Competitive advantage through early CSRD compliance</span>
                 </li>
               </ul>
             </div>
