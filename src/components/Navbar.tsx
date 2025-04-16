@@ -1,6 +1,6 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { 
   NavigationMenu,
@@ -117,10 +117,6 @@ const menuItems = [
   {
     title: 'Success Stories',
     href: '/success-stories',
-  },
-  {
-    title: 'Resources',
-    href: '/resources',
   },
   {
     title: 'About Us',

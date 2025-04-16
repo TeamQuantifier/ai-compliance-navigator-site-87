@@ -39,7 +39,6 @@ import Dora from "./pages/frameworks/information-security/Dora";
 import Plans from "./pages/Plans";
 import Partners from "./pages/Partners";
 import SuccessStories from "./pages/SuccessStories";
-import Resources from "./pages/Resources";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -93,13 +92,6 @@ const App = () => (
               <Route path="/frameworks/information-security/iso-27001" element={<Iso27001 />} />
               <Route path="/frameworks/information-security/iso-9001" element={<Iso9001 />} />
               <Route path="/frameworks/information-security/dora" element={<Dora />} />
-              
-              {/* Resources routes */}
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/resources/blog/:id" element={<Resources />} />
-              <Route path="/resources/blog" element={<Resources />} />
-              <Route path="/resources/whitepapers" element={<Resources />} />
-              <Route path="/resources/webinars" element={<Resources />} />
               
               {/* Other main routes */}
               <Route path="/plans" element={<Plans />} />

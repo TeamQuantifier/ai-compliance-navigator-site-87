@@ -1,8 +1,10 @@
+
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+
 const Footer = () => {
   return <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 pt-16 pb-8">
@@ -52,17 +54,6 @@ const Footer = () => {
               <li><Link to="/product/analytics-dashboards" className="text-slate-600 hover:text-primary transition-colors">Analytics & Dashboards</Link></li>
               <li><Link to="/product/risk-assessment" className="text-slate-600 hover:text-primary transition-colors">Risk Assessment</Link></li>
               <li><Link to="/product/api-integrations" className="text-slate-600 hover:text-primary transition-colors">API Integrations</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-slate-900 mb-4">Resources</h3>
-            <ul className="space-y-3">
-              <li><Link to="/resources" className="text-slate-600 hover:text-primary transition-colors">Resource Center</Link></li>
-              <li><Link to="/resources/blog" className="text-slate-600 hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link to="/resources/documentation" className="text-slate-600 hover:text-primary transition-colors">Documentation</Link></li>
-              <li><Link to="/resources/webinars" className="text-slate-600 hover:text-primary transition-colors">Webinars</Link></li>
-              <li><Link to="/contact" className="text-slate-600 hover:text-primary transition-colors">Contact Support</Link></li>
             </ul>
           </div>
           
