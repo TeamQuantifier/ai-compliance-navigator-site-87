@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, Phone, MapPin, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+
 const Footer = () => {
   return <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 pt-16 pb-8">
@@ -88,6 +89,17 @@ const Footer = () => {
           <p className="text-xs text-slate-500 mt-3">You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "Subscribe" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.</p>
         </div>
         
+        <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12 flex items-center space-x-6">
+          <Award className="h-12 w-12 text-compliance-600" />
+          <div>
+            <h3 className="font-semibold text-slate-900 mb-2">Certificate of Quality</h3>
+            <p className="text-slate-600 text-sm">
+              Quantifier.ai is committed to maintaining the highest standards of compliance and quality assurance. 
+              Our platform has been rigorously tested and verified to meet industry-leading regulatory requirements.
+            </p>
+          </div>
+        </div>
+        
         <Separator className="mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -110,4 +122,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
