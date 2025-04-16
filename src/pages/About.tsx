@@ -1,16 +1,10 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Building2, Award, Users, BarChart4, Globe, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-
 const About = () => {
-  return (
-    <PageTemplate
-      title="About Us"
-      description="Learn about our mission to simplify compliance with AI-powered solutions."
-    >
+  return <PageTemplate title="About Us" description="Learn about our mission to simplify compliance with AI-powered solutions.">
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <div className="mb-16 text-center">
@@ -41,14 +35,7 @@ const About = () => {
               Our team includes some of the best engineers, lawyers, and advisors — many holding or pursuing PhDs — united by a mission to build the AI infrastructure powering the future of global compliance.
             </p>
             
-            <div className="pt-4">
-              <Button size="lg" className="mr-4">
-                Meet Our Team
-              </Button>
-              <Button variant="outline" size="lg">
-                Our Values
-              </Button>
-            </div>
+            
           </div>
           
           <div>
@@ -174,8 +161,6 @@ const About = () => {
           </Button>
         </div>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default About;
