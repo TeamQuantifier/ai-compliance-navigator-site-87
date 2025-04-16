@@ -4,9 +4,9 @@ import { Gauge, AlertCircle, AlertTriangle, Info } from 'lucide-react';
 
 const RiskAssessment = () => {
   const riskCategories = [
-    { name: 'Critical Risks', count: 2, icon: AlertCircle, color: 'text-red-600', bg: 'bg-red-100' },
-    { name: 'High Risks', count: 5, icon: AlertTriangle, color: 'text-amber-600', bg: 'bg-amber-100' },
-    { name: 'Medium Risks', count: 14, icon: Info, color: 'text-blue-600', bg: 'bg-blue-100' }
+    { name: 'Critical', count: 2, icon: AlertCircle, color: 'text-red-600', bg: 'bg-red-100' },
+    { name: 'High', count: 5, icon: AlertTriangle, color: 'text-amber-600', bg: 'bg-amber-100' },
+    { name: 'Medium', count: 14, icon: Info, color: 'text-blue-600', bg: 'bg-blue-100' }
   ];
 
   return (

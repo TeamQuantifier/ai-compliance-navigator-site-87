@@ -1,11 +1,8 @@
 
 import React from 'react';
-import { Shield, Bell, BrainCircuit, BarChart4, CheckCircle, AlertCircle } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
+import { Shield, Bell, BrainCircuit } from 'lucide-react';
 import QuickStatsBar from './components/QuickStatsBar';
-import ComplianceStatus from './components/ComplianceStatus';
-import RiskAssessment from './components/RiskAssessment';
-import AIInsights from './components/AIInsights';
+import KeyCharts from './components/KeyCharts';
 
 const AiComplianceDashboard = () => {
   return (
@@ -29,11 +26,7 @@ const AiComplianceDashboard = () => {
 
       <div className="p-4 space-y-4">
         <QuickStatsBar />
-        <ComplianceStatus />
-        <div className="grid grid-cols-2 gap-4">
-          <RiskAssessment />
-          <AIInsights />
-        </div>
+        <KeyCharts />
       </div>
     </div>
   );
