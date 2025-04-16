@@ -1,6 +1,6 @@
 
 import PageTemplate from '@/components/PageTemplate';
-import { Building2, Award, Users, BarChart4, Globe, GraduationCap } from 'lucide-react';
+import { Building2, Award, Users, BarChart4, Globe, GraduationCap, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -92,6 +92,78 @@ const About = () => {
                 </li>
               </ul>
             </Card>
+          </div>
+        </div>
+        
+        {/* Awards Section */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Awards</h2>
+            <p className="text-lg text-slate-700 max-w-3xl mx-auto">
+              We're honored to be recognized for our innovation and impact in the compliance industry
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+              <div className="flex justify-center items-center h-24 mb-4">
+                <img 
+                  src="/lovable-uploads/1790cc93-5eb8-428e-a56c-6ed0adc47925.png" 
+                  alt="Rzeczpospolita Logo" 
+                  className="h-16 object-contain"
+                  style={{ objectPosition: '0 0', objectFit: 'contain', clipPath: 'inset(0 75% 0 0)' }}
+                />
+              </div>
+              <h3 className="font-semibold mb-2 text-slate-900">Main Award the Eagle of Innovation</h3>
+              <p className="text-sm text-slate-600">
+                For "Solution for the Common Good" awarded by the leading Polish newspaper
+              </p>
+            </div>
+            
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+              <div className="flex justify-center items-center h-24 mb-4">
+                <img 
+                  src="/lovable-uploads/1790cc93-5eb8-428e-a56c-6ed0adc47925.png" 
+                  alt="ING Logo" 
+                  className="h-16 object-contain"
+                  style={{ objectPosition: '33.33% 0', objectFit: 'contain', clipPath: 'inset(0 25% 0 50%)' }}
+                />
+              </div>
+              <h3 className="font-semibold mb-2 text-slate-900">ING Grant Program Finalist</h3>
+              <p className="text-sm text-slate-600">
+                Final of the first edition of the "ING Grant Program" Competition for a solution to support the environmental revolution
+              </p>
+            </div>
+            
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+              <div className="flex justify-center items-center h-24 mb-4">
+                <img 
+                  src="/lovable-uploads/1790cc93-5eb8-428e-a56c-6ed0adc47925.png" 
+                  alt="WSA Logo" 
+                  className="h-16 object-contain"
+                  style={{ objectPosition: '66.66% 0', objectFit: 'contain', clipPath: 'inset(0 0 0 50%)' }}
+                />
+              </div>
+              <h3 className="font-semibold mb-2 text-slate-900">World Summit Awards</h3>
+              <p className="text-sm text-slate-600">
+                Polish representative in the 2022 Innovation Competition in the "Environment and Green Energy" category
+              </p>
+            </div>
+            
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+              <div className="flex justify-center items-center h-24 mb-4">
+                <img 
+                  src="/lovable-uploads/1790cc93-5eb8-428e-a56c-6ed0adc47925.png" 
+                  alt="Brief Magazine Logo" 
+                  className="h-16 object-contain"
+                  style={{ objectPosition: '100% 0', objectFit: 'contain', clipPath: 'inset(0 0 0 75%)' }}
+                />
+              </div>
+              <h3 className="font-semibold mb-2 text-slate-900">50 Most Creative Business</h3>
+              <p className="text-sm text-slate-600">
+                Laureate of the 50 Most Creative Business in Brief magazine in 2022
+              </p>
+            </div>
           </div>
         </div>
         
