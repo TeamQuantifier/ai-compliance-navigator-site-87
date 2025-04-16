@@ -5,7 +5,6 @@ import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
-
 const Partners = () => {
   const partnerBenefits = [{
     title: "Expand your service offering with cutting-edge compliance tech",
@@ -24,7 +23,6 @@ const Partners = () => {
     description: "Provide data-driven insights and improvement metrics that demonstrate your impact.",
     icon: <BarChart className="h-10 w-10 text-primary" />
   }];
-  
   const partnerTypes = [{
     name: "Consulting Firms",
     icon: <Building className="h-6 w-6 text-compliance-600" />
@@ -41,7 +39,6 @@ const Partners = () => {
     name: "NGOs",
     icon: <Globe className="h-6 w-6 text-compliance-600" />
   }];
-  
   return <PageTemplate title="Partner With Us" description="Join a global ecosystem driving smarter, simpler compliance.">
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
@@ -86,15 +83,10 @@ const Partners = () => {
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-primary">
-            <p className="text-lg italic text-slate-700 mb-4">
-              "Working with this team has transformed the way we support our clients' compliance journeys—faster, 
-              more transparent, and far more efficient."
-            </p>
+            <p className="text-lg italic text-slate-700 mb-4">"This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs."</p>
             <div className="flex items-center">
-              <div className="rounded-full bg-slate-200 w-10 h-10 flex items-center justify-center mr-3">
-                <Users className="h-5 w-5 text-slate-700" />
-              </div>
-              <p className="font-medium text-slate-900">— ESG Consultant, UK</p>
+              
+              <p className="font-medium text-slate-900">- Michał Miszulowicz, Director of Innovation Sector Collaboration, BNP Paribas Bank</p>
             </div>
           </div>
         </section>
@@ -138,5 +130,4 @@ const Partners = () => {
       </div>
     </PageTemplate>;
 };
-
 export default Partners;
