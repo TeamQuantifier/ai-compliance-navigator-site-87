@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
+
 const Partners = () => {
   const partnerBenefits = [{
     title: "Expand your service offering with cutting-edge compliance tech",
@@ -44,9 +45,7 @@ const Partners = () => {
         <section className="mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
             <div className="w-full md:w-1/2">
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800" alt="Business partners collaborating" className="w-full h-auto object-cover" />
-              </div>
+              {/* Removed image div */}
             </div>
             <div className="w-full md:w-1/2">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
