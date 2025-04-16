@@ -1,22 +1,15 @@
-
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-
 const Footer = () => {
-  return (
-    <footer className="bg-slate-50 border-t border-slate-200">
+  return <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img 
-                src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
-                alt="Quantifier.ai Logo" 
-                className="h-8 w-8 mr-2" 
-              />
+              <img src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" alt="Quantifier.ai Logo" className="h-8 w-8 mr-2" />
               <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
                 Quantifier.ai
               </span>
@@ -89,16 +82,10 @@ const Footer = () => {
           <h3 className="font-semibold text-slate-900 mb-2">Subscribe to our newsletter</h3>
           <p className="text-slate-600 mb-4">Stay updated with the latest compliance insights and product updates.</p>
           <div className="flex flex-col sm:flex-row gap-2">
-            <Input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-1" 
-            />
+            <Input type="email" placeholder="Enter your email" className="flex-1" />
             <Button>Subscribe</Button>
           </div>
-          <p className="text-xs text-slate-500 mt-3">
-            You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "Submit" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.
-          </p>
+          <p className="text-xs text-slate-500 mt-3">You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "Subscribe" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.</p>
         </div>
         
         <Separator className="mb-8" />
@@ -121,8 +108,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
