@@ -108,6 +108,25 @@ const FeatureSection = () => {
                   <p className="text-slate-700">Governance & Whistleblowing</p>
                 </div>
               </div>
+              
+              {/* Certificate of Quality */}
+              <div className="mt-8 flex flex-col items-center sm:items-start">
+                <div className="flex items-center space-x-3 mb-3">
+                  <img 
+                    src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" 
+                    alt="TÜV NORD Verified Product Certificate" 
+                    className="h-20 w-auto"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-slate-800">Certified Product Quality</h4>
+                    <p className="text-sm text-slate-600">Verified by TÜV NORD</p>
+                  </div>
+                </div>
+                <p className="text-sm text-slate-600 italic max-w-md">
+                  Our compliance solutions meet the highest standards of quality certification, 
+                  ensuring reliable and trustworthy operation across all supported frameworks.
+                </p>
+              </div>
             </div>
             
             <div className="md:w-1/2">
