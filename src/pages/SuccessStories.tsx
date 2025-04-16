@@ -1,3 +1,4 @@
+import React from 'react';
 import PageTemplate from '@/components/PageTemplate';
 import { Check, Building, Users, BarChart, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -559,4 +560,17 @@ const SuccessStories = () => {
             </Card>
             
             <Card className="p-6 text-center card-hover">
-              <div className="mb-4 mx-auto w-16 h
+              <div className="mb-4 mx-auto w-16 h-16 bg-compliance-100 rounded-full flex items-center justify-center">
+                <Building className="h-8 w-8 text-compliance-600" />
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 mb-2">50+</h3>
+              <p className="text-slate-600">Companies supported</p>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </PageTemplate>
+  );
+};
+
+export default SuccessStories;
