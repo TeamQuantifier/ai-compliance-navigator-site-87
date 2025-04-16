@@ -30,7 +30,7 @@ const Soc = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="/placeholder.svg" 
+                src="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
                 alt="SOC Compliance Dashboard showing automated controls monitoring and real-time audit readiness status" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -123,6 +123,33 @@ const Soc = () => {
                   </ul>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Platform Screenshot Section */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-r from-compliance-100 to-slate-100 p-6 rounded-xl">
+            <div className="flex flex-col items-center text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-compliance-900">
+                SOC Compliance Dashboard
+              </h2>
+              <p className="text-lg text-slate-700 max-w-2xl">
+                Get a comprehensive view of your SOC compliance status with our interactive dashboard.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                alt="SOC Controls Dashboard" 
+                className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
+              />
+              <img 
+                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                alt="SOC Evidence Collection Interface" 
+                className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
+              />
             </div>
           </div>
         </section>

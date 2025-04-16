@@ -30,7 +30,7 @@ const Nist = () => {
             </div>
             <div className="md:w-2/5">
               <img 
-                src="/placeholder.svg" 
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
                 alt="NIST Framework Implementation Dashboard showing the five functions" 
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
@@ -122,6 +122,33 @@ const Nist = () => {
                   </ul>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Platform Screenshot Section */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-r from-compliance-100 to-slate-100 p-6 rounded-xl">
+            <div className="flex flex-col items-center text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-compliance-900">
+                NIST Implementation Dashboard
+              </h2>
+              <p className="text-lg text-slate-700 max-w-2xl">
+                Monitor your NIST framework implementation with our comprehensive dashboard.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img 
+                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                alt="NIST Functions Tracking Dashboard" 
+                className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
+              />
+              <img 
+                src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                alt="NIST Risk Assessment Interface" 
+                className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
+              />
             </div>
           </div>
         </section>
