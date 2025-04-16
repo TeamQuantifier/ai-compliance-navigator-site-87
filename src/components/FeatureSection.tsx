@@ -1,30 +1,28 @@
-
 import { Shield, FileCheck, Users, BarChart3, RefreshCw, Database, CheckCircle, Zap } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-
 interface FeatureCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   className?: string;
 }
-
-const FeatureCard = ({ title, description, icon, className }: FeatureCardProps) => {
-  return (
-    <Card className={cn("p-6 border border-slate-200 card-hover", className)}>
+const FeatureCard = ({
+  title,
+  description,
+  icon,
+  className
+}: FeatureCardProps) => {
+  return <Card className={cn("p-6 border border-slate-200 card-hover", className)}>
       <div className="mb-4">
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-slate-600">{description}</p>
-    </Card>
-  );
+    </Card>;
 };
-
 const FeatureSection = () => {
-  return (
-    <section className="py-16 bg-white">
+  return <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">
@@ -36,41 +34,17 @@ const FeatureSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <FeatureCard
-            title="AI Compliance Officer"
-            description="AI-driven compliance assistant that continuously monitors your systems, identifies issues, and suggests remediation steps."
-            icon={<Shield className="h-10 w-10 text-compliance-600" />}
-          />
+          <FeatureCard title="AI Compliance Officer" description="AI-driven compliance assistant that continuously monitors your systems, identifies issues, and suggests remediation steps." icon={<Shield className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard
-            title="Document Management"
-            description="Centralized repository for all compliance documents with automated version control and audit trails."
-            icon={<FileCheck className="h-10 w-10 text-innovation-600" />}
-          />
+          <FeatureCard title="Document Management" description="Centralized repository for all compliance documents with automated version control and audit trails." icon={<FileCheck className="h-10 w-10 text-innovation-600" />} />
           
-          <FeatureCard
-            title="Role-Based Access"
-            description="Tailored interfaces and capabilities for managers, contributors, and auditors to ensure proper segregation of duties."
-            icon={<Users className="h-10 w-10 text-compliance-600" />}
-          />
+          <FeatureCard title="Role-Based Access" description="Tailored interfaces and capabilities for managers, contributors, and auditors to ensure proper segregation of duties." icon={<Users className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard
-            title="Analytics & Dashboards"
-            description="Real-time visualization of compliance status, risk levels, and key metrics to support informed decision-making."
-            icon={<BarChart3 className="h-10 w-10 text-innovation-600" />}
-          />
+          <FeatureCard title="Analytics & Dashboards" description="Real-time visualization of compliance status, risk levels, and key metrics to support informed decision-making." icon={<BarChart3 className="h-10 w-10 text-innovation-600" />} />
           
-          <FeatureCard
-            title="Automated Workflows"
-            description="Define and automate compliance processes to ensure consistency, reduce manual effort, and minimize human error."
-            icon={<RefreshCw className="h-10 w-10 text-compliance-600" />}
-          />
+          <FeatureCard title="Automated Workflows" description="Define and automate compliance processes to ensure consistency, reduce manual effort, and minimize human error." icon={<RefreshCw className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard
-            title="Data Management"
-            description="Secure handling of sensitive compliance data with built-in controls to ensure privacy and regulatory compliance."
-            icon={<Database className="h-10 w-10 text-innovation-600" />}
-          />
+          <FeatureCard title="Data Management" description="Secure handling of sensitive compliance data with built-in controls to ensure privacy and regulatory compliance." icon={<Database className="h-10 w-10 text-innovation-600" />} />
         </div>
         
         <div className="mt-16 bg-slate-50 rounded-2xl p-8 border border-slate-100">
@@ -112,20 +86,13 @@ const FeatureSection = () => {
               {/* Certificate of Quality */}
               <div className="mt-8 flex flex-col items-center sm:items-start">
                 <div className="flex items-center space-x-3 mb-3">
-                  <img 
-                    src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" 
-                    alt="TÜV NORD Verified Product Certificate" 
-                    className="h-20 w-auto"
-                  />
+                  <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="TÜV NORD Verified Product Certificate" className="h-20 w-auto" />
                   <div>
                     <h4 className="font-semibold text-slate-800">Certified Product Quality</h4>
                     <p className="text-sm text-slate-600">Verified by TÜV NORD</p>
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 italic max-w-md">
-                  Our compliance solutions meet the highest standards of quality certification, 
-                  ensuring reliable and trustworthy operation across all supported frameworks.
-                </p>
+                <p className="text-sm text-slate-600 italic max-w-md">Our ESG compliance solutions meet the highest standards of quality certification, ensuring reliable and trustworthy operation across all supported frameworks.</p>
               </div>
             </div>
             
@@ -143,7 +110,9 @@ const FeatureSection = () => {
                       <span className="text-sm text-slate-500">98%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div className="bg-compliance-600 h-2 rounded-full" style={{ width: '98%' }}></div>
+                      <div className="bg-compliance-600 h-2 rounded-full" style={{
+                      width: '98%'
+                    }}></div>
                     </div>
                   </div>
                   
@@ -153,7 +122,9 @@ const FeatureSection = () => {
                       <span className="text-sm text-slate-500">95%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div className="bg-innovation-600 h-2 rounded-full" style={{ width: '95%' }}></div>
+                      <div className="bg-innovation-600 h-2 rounded-full" style={{
+                      width: '95%'
+                    }}></div>
                     </div>
                   </div>
                   
@@ -163,7 +134,9 @@ const FeatureSection = () => {
                       <span className="text-sm text-slate-500">92%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div className="bg-compliance-500 h-2 rounded-full" style={{ width: '92%' }}></div>
+                      <div className="bg-compliance-500 h-2 rounded-full" style={{
+                      width: '92%'
+                    }}></div>
                     </div>
                   </div>
                   
@@ -173,7 +146,9 @@ const FeatureSection = () => {
                       <span className="text-sm text-slate-500">96%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div className="bg-innovation-500 h-2 rounded-full" style={{ width: '96%' }}></div>
+                      <div className="bg-innovation-500 h-2 rounded-full" style={{
+                      width: '96%'
+                    }}></div>
                     </div>
                   </div>
                   
@@ -183,7 +158,9 @@ const FeatureSection = () => {
                       <span className="text-sm text-slate-500">90%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div className="bg-compliance-400 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      <div className="bg-compliance-400 h-2 rounded-full" style={{
+                      width: '90%'
+                    }}></div>
                     </div>
                   </div>
                 </div>
@@ -192,8 +169,6 @@ const FeatureSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FeatureSection;
