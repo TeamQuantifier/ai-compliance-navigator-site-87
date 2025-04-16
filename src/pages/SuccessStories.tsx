@@ -1,6 +1,6 @@
 
 import PageTemplate from '@/components/PageTemplate';
-import { Check, Building, Users, BarChart, ArrowRight } from 'lucide-react';
+import { Check, Building, Users, BarChart, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
@@ -120,6 +120,171 @@ const SuccessStories = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* New Fashion Retailer ESG Case Study */}
+        <div className="mt-16 border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <div className="bg-gradient-to-r from-compliance-50 to-innovation-50 p-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div>
+                <div className="text-sm font-medium text-slate-500 mb-2">Case Study: ESG Compliance</div>
+                <h2 className="text-2xl md:text-3xl font-bold gradient-heading mb-4">
+                  ESG Compliance Journey of a Fashion Retailer
+                </h2>
+                <div className="text-slate-700">
+                  <p className="font-medium">Industry: Apparel Retail</p>
+                  <p>Employees: ~700 | Operations: Over 120 stores</p>
+                  <p>Reporting Year: 2025 | Year Established: Late 1990s</p>
+                </div>
+              </div>
+              <div className="rounded-md overflow-hidden shadow-md w-full md:w-64 h-32 bg-white flex items-center justify-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=300&h=150&fit=crop" 
+                  alt="Fashion retail store" 
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">01. Background</h3>
+              <p className="text-slate-700">
+                This well-established European fashion retailer has long championed quality and design longevity 
+                as part of its brand identity. These values inherently align with the principles of sustainable 
+                development. As the regulatory environment around sustainability disclosures evolved, the company 
+                recognized the need to transition from informal practices to structured ESG compliance, particularly 
+                in light of the Corporate Sustainability Reporting Directive (CSRD).
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">02. Trigger for ESG Compliance</h3>
+              <p className="text-slate-700 mb-4">
+                Despite a history of responsible product design and resource use, it was the upcoming CSRD requirements 
+                that catalyzed the company's formal ESG journey. The leadership team viewed ESG reporting as both a 
+                regulatory obligation and a strategic opportunity to:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Strengthen customer engagement by showcasing responsible business practices</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Prepare the organization for investor and stakeholder expectations</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Align with future-proof operational standards</span>
+                </li>
+              </ul>
+              <p className="text-slate-700 mt-4">
+                The company also identified a growing commercial upside in ESG efforts. Consumer willingness to pay 
+                a premium for sustainable products and packaging reinforced the business case for transparent sustainability reporting.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">03. ESG Implementation Strategy</h3>
+              <p className="text-slate-700 mb-4">
+                To navigate the compliance process efficiently and accurately, the company partnered with Envirly, 
+                a platform combining advanced ESG software with expert advisory.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">In-depth regulatory knowledge (CSRD, ESRS, GHG Protocol)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">All-in-one solution</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">High user satisfaction with the platform's intuitive interface</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Strong cost-to-value ratio</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">04. Governance and Cross-Functional Coordination</h3>
+              <p className="text-slate-700 mb-4">
+                To ensure smooth implementation and compliance, the company created a steering committee, composed of:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">A board member</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">A financial controller</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">A representative from finance and administration</span>
+                </li>
+              </ul>
+              <p className="text-slate-700 mt-4">
+                This core team was supported by stakeholders from HR, logistics, IT, controlling, and product development. 
+                The company also plans to bring on a dedicated ESG coordinator to oversee long-term sustainability 
+                strategy and regulatory reporting.
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">05. Outcomes of the ESG Compliance Process</h3>
+              <p className="text-slate-700 mb-4">
+                Key benefits realized:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Full visibility into emissions across Scopes 1, 2, and 3</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Streamlined data collection and internal ESG processes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Enhanced stakeholder alignment around sustainability goals</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700">Organizational readiness for upcoming ESRS-aligned reporting obligations</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-slate-50 p-6 rounded-lg mt-6">
+              <h4 className="font-semibold text-xl text-slate-900 mb-4">Key Takeaways for ESG Leaders:</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700"><span className="font-medium">Start early.</span> CSRD compliance requires months of preparation and organizational coordination.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700"><span className="font-medium">Invest in expertise.</span> A reliable partner helps demystify complex regulations.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700"><span className="font-medium">Form a cross-functional team.</span> ESG is a horizontal topic that spans departments.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
+                  <span className="text-slate-700"><span className="font-medium">Embed accountability.</span> Assign ownership to ensure the process stays on track.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         
         <div className="mt-24 mb-8">
