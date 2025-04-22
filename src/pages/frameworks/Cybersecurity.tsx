@@ -1,4 +1,3 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useState } from 'react';
+import AiComplianceDashboard from '@/components/AiComplianceDashboard';
 
 const Cybersecurity = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -34,10 +34,10 @@ const Cybersecurity = () => {
               </Button>
             </div>
             <div className="md:w-2/5">
-              <img 
-                src="/mockups/cybersecurity-compliance-dashboard.png" 
-                alt="AI-driven Cybersecurity Compliance Dashboard showing real-time risk monitoring" 
-                className="rounded-lg shadow-lg border border-white/20 w-full"
+              <AiComplianceDashboard 
+                title="SOC 2 Compliance" 
+                themeColor="#6E59A5"
+                variant="compact"
               />
             </div>
           </div>
@@ -115,10 +115,10 @@ const Cybersecurity = () => {
                     </div>
                   </div>
                   <div className="md:w-1/2">
-                    <img 
-                      src="/mockups/compliance-automation-dashboard.png" 
-                      alt="AI-driven compliance automation dashboard showing automated task assignment and evidence collection" 
-                      className="rounded-xl shadow-lg border border-slate-200 w-full"
+                    <AiComplianceDashboard 
+                      title="NIST Framework Overview" 
+                      themeColor="#3b82f6"
+                      variant="compact"
                     />
                   </div>
                 </div>
@@ -381,10 +381,9 @@ const Cybersecurity = () => {
                     </div>
                   </div>
                   <div className="md:w-1/2">
-                    <img 
-                      src="/mockups/soc2-trust-services-dashboard.png" 
-                      alt="SOC 2 Trust Services Criteria dashboard showing real-time control monitoring and evidence status" 
-                      className="rounded-xl shadow-lg border border-slate-200 w-full"
+                    <AiComplianceDashboard 
+                      title="SOC Trust Services" 
+                      themeColor="#8B5CF6"
                     />
                   </div>
                 </div>
@@ -538,10 +537,9 @@ const Cybersecurity = () => {
                     </div>
                   </div>
                   <div className="md:w-1/2">
-                    <img 
-                      src="/mockups/nis2-compliance-workflow.png" 
-                      alt="NIS 2 compliance workflow with supplier risk management interface and incident response automation" 
-                      className="rounded-xl shadow-lg border border-slate-200 w-full"
+                    <AiComplianceDashboard 
+                      title="NIS 2 Compliance Workflow" 
+                      themeColor="#6E59A5"
                     />
                   </div>
                 </div>
@@ -695,10 +693,9 @@ const Cybersecurity = () => {
                     </div>
                   </div>
                   <div className="md:w-1/2">
-                    <img 
-                      src="/mockups/nist-framework-control-dashboard.png" 
-                      alt="NIST framework controls dashboard showing five functions with automated compliance tracking and progress indicators" 
-                      className="rounded-xl shadow-lg border border-slate-200 w-full"
+                    <AiComplianceDashboard 
+                      title="NIST Framework Control Dashboard" 
+                      themeColor="#3b82f6"
                     />
                   </div>
                 </div>

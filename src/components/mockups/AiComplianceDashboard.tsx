@@ -3,15 +3,19 @@ import React from 'react';
 import { Shield, Bell, BrainCircuit } from 'lucide-react';
 import QuickStatsBar from './components/QuickStatsBar';
 import KeyCharts from './components/KeyCharts';
+import ComplianceStatus from './components/ComplianceStatus';
+import AIInsights from './components/AIInsights';
 
 interface AiComplianceDashboardProps {
   title?: string;
   themeColor?: string;
+  variant?: 'default' | 'compact';
 }
 
 const AiComplianceDashboard = ({ 
   title = "Quantifier AI Compliance",
-  themeColor = "#7E69AB"
+  themeColor = "#7E69AB",
+  variant = 'default'
 }: AiComplianceDashboardProps) => {
   return (
     <div className="w-full bg-slate-100 rounded-lg overflow-hidden border border-slate-200 shadow-lg">
@@ -34,7 +38,17 @@ const AiComplianceDashboard = ({
 
       <div className="p-4 space-y-4">
         <QuickStatsBar />
-        <KeyCharts />
+        {variant === 'default' ? (
+          <>
+            <div className="grid grid-cols-2 gap-4">
+              <KeyCharts />
+              <ComplianceStatus />
+            </div>
+            <AIInsights />
+          </>
+        ) : (
+          <KeyCharts />
+        )}
       </div>
     </div>
   );

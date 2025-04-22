@@ -6,9 +6,9 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart as RePieChar
 
 const KeyCharts = () => {
   const frameworkData = [
-    { name: 'ISO 27001', value: 78 },
-    { name: 'ISO 9001', value: 65 },
-    { name: 'DORA', value: 82 }
+    { name: 'SOC 2', value: 78 },
+    { name: 'NIS II', value: 65 },
+    { name: 'NIST', value: 82 }
   ];
 
   const riskData = [
@@ -30,12 +30,12 @@ const KeyCharts = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <>
       {/* Compliance Trend Chart */}
       <div className="bg-white rounded-lg border border-slate-200 p-3">
         <div className="flex items-center gap-2 mb-2">
           <BarChart4 className="h-4 w-4 text-[#7E69AB]" />
-          <h3 className="text-xs font-medium">Compliance Trend</h3>
+          <h3 className="text-xs font-medium">Cybersecurity Compliance Trend</h3>
         </div>
         <div className="h-32">
           <ChartContainer
@@ -62,7 +62,7 @@ const KeyCharts = () => {
       <div className="bg-white rounded-lg border border-slate-200 p-3">
         <div className="flex items-center gap-2 mb-2">
           <PieChart className="h-4 w-4 text-[#7E69AB]" />
-          <h3 className="text-xs font-medium">Risk Distribution</h3>
+          <h3 className="text-xs font-medium">Cybersecurity Risk Distribution</h3>
         </div>
         <div className="h-32">
           <ResponsiveContainer width="100%" height="100%">
@@ -90,7 +90,7 @@ const KeyCharts = () => {
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
