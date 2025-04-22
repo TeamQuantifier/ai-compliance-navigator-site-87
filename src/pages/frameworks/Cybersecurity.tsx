@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useState } from 'react';
-import AiComplianceDashboard from '@/components/AiComplianceDashboard';
+import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 
 const Cybersecurity = () => {
   const [activeTab, setActiveTab] = useState("overview");
