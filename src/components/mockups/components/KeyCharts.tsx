@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BarChart4, PieChart, ChartBar } from 'lucide-react';
+import { BarChart4, PieChart } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart as RePieChart, Pie, Cell, Legend } from 'recharts';
 
@@ -40,21 +40,19 @@ const KeyCharts = () => {
         <div className="h-32">
           <ChartContainer
             config={{
-              compliance: { theme: { light: '#9b87f5' } }
+              compliance: { 
+                theme: { 
+                  light: '#9b87f5',
+                  dark: '#7E69AB'
+                } 
+              }
             }}
           >
             <BarChart data={complianceData} margin={{ top: 5, right: 5, bottom: 5, left: 0 }}>
               <XAxis dataKey="month" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} />
               <YAxis hide domain={[0, 100]} />
-              <ChartTooltip
-                content={<ChartTooltipContent />}
-              />
-              <Bar 
-                dataKey="value" 
-                name="compliance" 
-                radius={[4, 4, 0, 0]} 
-                barSize={12}
-              />
+              <ChartTooltip content={<ChartTooltipContent />} />
+              <Bar dataKey="value" name="compliance" radius={[4, 4, 0, 0]} barSize={12} />
             </BarChart>
           </ChartContainer>
         </div>
