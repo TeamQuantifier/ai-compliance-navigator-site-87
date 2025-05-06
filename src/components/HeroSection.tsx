@@ -1,10 +1,8 @@
-
 import { ArrowRight, Shield, CheckCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
-
 const HeroSection = () => {
   return <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
       {/* Background gradient - darkened further */}
@@ -29,15 +27,7 @@ const HeroSection = () => {
           
           {/* ChatGPT-like input - darkened */}
           <div className="max-w-3xl mx-auto mb-16 relative">
-            <div className="bg-slate-950/90 shadow-xl shadow-black/60 rounded-xl p-4 border border-slate-800">
-              <div className="flex items-center">
-                <Input className="flex-grow pr-20 pl-12 py-4 text-base rounded-lg bg-slate-900/90 text-white border-slate-700 placeholder:text-slate-400" placeholder="Let's chat about type of compliance you need..." />
-                <MessageSquare className="absolute left-8 text-slate-400" size={20} />
-                <Button className="absolute right-8 bg-innovation-600 hover:bg-innovation-700 shadow-md shadow-innovation-900/50" size="sm">
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
+            
           </div>
           
           {/* Framework icons - updated with darker backgrounds and higher contrast */}
