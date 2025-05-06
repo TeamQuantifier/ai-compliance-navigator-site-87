@@ -38,7 +38,7 @@ const InsidersSection = () => {
           <p className="text-xl text-slate-300 mb-6">
             We combine cutting-edge tech with real compliance expertise.
           </p>
-          <p className="text-lg text-slate-400 mb-10">Join 250+ companies—from startups to multinational corporations —who trust us to simplify their compliance.</p>
+          <p className="text-lg text-slate-400 mb-10">Join 250+ companies—from startups to multinational corporations —who trust our ESG solutions to simplify their compliance.</p>
         </div>
 
         {/* Logo Carousel */}
