@@ -65,29 +65,41 @@ const KeyCharts = () => {
           <h3 className="text-xs font-medium">Cybersecurity Risk Distribution</h3>
         </div>
         <div className="h-32">
-          <ResponsiveContainer width="100%" height="100%">
-            <RePieChart>
-              <Pie
-                data={riskData}
-                cx="50%"
-                cy="50%"
-                innerRadius={25}
-                outerRadius={45}
-                paddingAngle={2}
-                dataKey="value"
-              >
-                {riskData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={RISK_COLORS[index % RISK_COLORS.length]} />
-                ))}
-              </Pie>
-              <Legend 
-                layout="horizontal" 
-                verticalAlign="bottom" 
-                align="center"
-                wrapperStyle={{ fontSize: '10px' }}
-              />
-            </RePieChart>
-          </ResponsiveContainer>
+          <ChartContainer
+            config={{
+              risk: { 
+                theme: { 
+                  light: '#7E69AB',
+                  dark: '#7E69AB'
+                } 
+              }
+            }}
+          >
+            <ResponsiveContainer width="100%" height="100%">
+              <RePieChart>
+                <Pie
+                  data={riskData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={25}
+                  outerRadius={45}
+                  paddingAngle={2}
+                  dataKey="value"
+                >
+                  {riskData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={RISK_COLORS[index % RISK_COLORS.length]} />
+                  ))}
+                </Pie>
+                <Legend 
+                  layout="horizontal" 
+                  verticalAlign="bottom" 
+                  align="center"
+                  wrapperStyle={{ fontSize: '10px' }}
+                />
+                <ChartTooltip content={<ChartTooltipContent />} />
+              </RePieChart>
+            </ResponsiveContainer>
+          </ChartContainer>
         </div>
       </div>
     </>

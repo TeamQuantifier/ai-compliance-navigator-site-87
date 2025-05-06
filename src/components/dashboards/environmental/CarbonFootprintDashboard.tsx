@@ -138,6 +138,7 @@ const CarbonFootprintDashboard = () => {
                     align="right"
                     wrapperStyle={{ fontSize: '10px' }}
                   />
+                  <ChartTooltip />
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -209,7 +210,7 @@ const CarbonFootprintDashboard = () => {
                     stroke="#0d9488" 
                     strokeWidth={2} 
                     activeDot={{ r: 6 }}
-                    strokeDasharray={(d) => d.estimated ? "5 5" : ""}
+                    strokeDasharray={d => d.estimated ? "5 5" : ""}
                   />
                 </LineChart>
               </ChartContainer>
@@ -220,7 +221,7 @@ const CarbonFootprintDashboard = () => {
                 <span>Actual</span>
               </div>
               <div className="flex items-center">
-                <div className="h-1 w-8 bg-teal-600 mr-2" style={{strokeDasharray: "5 5"}}></div>
+                <div className="h-1 w-8 bg-teal-600 mr-2" style={{backgroundImage: "linear-gradient(to right, #0d9488 50%, transparent 50%)", backgroundSize: "10px 1px"}}></div>
                 <span>Projected</span>
               </div>
             </div>

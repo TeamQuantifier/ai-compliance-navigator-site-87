@@ -93,29 +93,41 @@ const WhistleblowingDashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="h-48">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={casesByStatusData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={40}
-                    outerRadius={70}
-                    paddingAngle={2}
-                    dataKey="value"
-                  >
-                    {casesByStatusData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Legend 
-                    layout="vertical" 
-                    verticalAlign="middle" 
-                    align="right"
-                    wrapperStyle={{ fontSize: '10px' }}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+              <ChartContainer
+                config={{
+                  status: { 
+                    theme: { 
+                      light: '#818cf8',
+                      dark: '#6366f1'
+                    } 
+                  }
+                }}
+              >
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={casesByStatusData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={40}
+                      outerRadius={70}
+                      paddingAngle={2}
+                      dataKey="value"
+                    >
+                      {casesByStatusData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Legend 
+                      layout="vertical" 
+                      verticalAlign="middle" 
+                      align="right"
+                      wrapperStyle={{ fontSize: '10px' }}
+                    />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </ChartContainer>
             </div>
           </CardContent>
         </Card>
@@ -155,31 +167,42 @@ const WhistleblowingDashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={reportTrendData}>
-                  <XAxis 
-                    dataKey="month" 
-                    tick={{ fontSize: 10 }} 
-                    axisLine={false} 
-                    tickLine={false} 
-                  />
-                  <YAxis 
-                    tick={{ fontSize: 10 }} 
-                    axisLine={false} 
-                    tickLine={false} 
-                    width={30}
-                  />
-                  <ChartTooltip content={<ChartTooltipContent />} />
-                  <Line 
-                    type="monotone" 
-                    dataKey="reports" 
-                    name="Reports Submitted"
-                    stroke="#818cf8" 
-                    strokeWidth={2} 
-                    dot={{ r: 3 }} 
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+              <ChartContainer
+                config={{
+                  reports: { 
+                    theme: { 
+                      light: '#818cf8',
+                      dark: '#6366f1'
+                    } 
+                  }
+                }}
+              >
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={reportTrendData}>
+                    <XAxis 
+                      dataKey="month" 
+                      tick={{ fontSize: 10 }} 
+                      axisLine={false} 
+                      tickLine={false} 
+                    />
+                    <YAxis 
+                      tick={{ fontSize: 10 }} 
+                      axisLine={false} 
+                      tickLine={false} 
+                      width={30}
+                    />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Line 
+                      type="monotone" 
+                      dataKey="reports" 
+                      name="reports" 
+                      stroke="#818cf8" 
+                      strokeWidth={2} 
+                      dot={{ r: 3 }} 
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </ChartContainer>
             </div>
           </CardContent>
         </Card>
