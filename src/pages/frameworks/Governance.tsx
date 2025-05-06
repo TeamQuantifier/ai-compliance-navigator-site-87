@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -7,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText, Bell, Shield, Users, Clock, CheckCircle, Lock, AlertTriangle, BarChart3, Globe, MessageSquare } from 'lucide-react';
 import LegalPoliciesDashboard from '@/components/dashboards/governance/LegalPoliciesDashboard';
 import WhistleblowingDashboard from '@/components/dashboards/governance/WhistleblowingDashboard';
-
 const Governance = () => {
   const [activeTab, setActiveTab] = useState("legal-policies");
-
-  const FeatureItem = ({ icon: Icon, title, children }) => (
-    <div className="flex gap-3 mb-5">
+  const FeatureItem = ({
+    icon: Icon,
+    title,
+    children
+  }) => <div className="flex gap-3 mb-5">
       <div className="flex-shrink-0 mt-1">
         <div className="bg-purple-100 p-2 rounded-full">
           <Icon className="h-5 w-5 text-purple-600" />
@@ -22,14 +22,8 @@ const Governance = () => {
         <h4 className="font-medium text-slate-800 mb-1">{title}</h4>
         <p className="text-slate-600">{children}</p>
       </div>
-    </div>
-  );
-
-  return (
-    <PageTemplate
-      title="Governance on Autopilot"
-      description="Turn policies into action. Empower employees. Protect your organization. Quantifier automates governance compliance—from policy enforcement to whistleblower protection—so you can focus on running your business, not chasing signatures."
-    >
+    </div>;
+  return <PageTemplate title="Governance on Autopilot" description="Turn policies into action. Empower employees. Protect your organization. Quantifier automates governance compliance—from policy enforcement to whistleblower protection—so you can focus on running your business, not chasing signatures.">
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">
@@ -76,13 +70,7 @@ const Governance = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-lg border border-purple-100">
-                <img 
-                  src="https://placehold.co/600x400/f1e8fd/6b21a8?text=Legal+Policies+Dashboard" 
-                  alt="Legal Policies Dashboard" 
-                  className="rounded-lg shadow-md w-full"
-                />
-              </div>
+              
             </div>
           </TabsContent>
 
@@ -120,13 +108,7 @@ const Governance = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-lg border border-indigo-100">
-                <img 
-                  src="https://placehold.co/600x400/ede9fe/5b21b6?text=Whistleblowing+Platform" 
-                  alt="Whistleblowing Platform" 
-                  className="rounded-lg shadow-md w-full"
-                />
-              </div>
+              
             </div>
           </TabsContent>
         </Tabs>
@@ -179,8 +161,6 @@ const Governance = () => {
           </div>
         </div>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default Governance;
