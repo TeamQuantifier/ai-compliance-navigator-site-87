@@ -5,7 +5,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText, Bell, Shield, Users, Clock, CheckCircle, Lock, AlertTriangle, BarChart3, Globe, MessageSquare } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import LegalPoliciesDashboard from '@/components/dashboards/governance/LegalPoliciesDashboard';
+import WhistleblowingDashboard from '@/components/dashboards/governance/WhistleblowingDashboard';
 
 const Governance = () => {
   const [activeTab, setActiveTab] = useState("legal-policies");
@@ -31,7 +32,7 @@ const Governance = () => {
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">
           <TabsList className="grid grid-cols-2 w-full max-w-md mx-auto mb-8">
             <TabsTrigger value="legal-policies" className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800">
               Legal Policies
@@ -41,8 +42,13 @@ const Governance = () => {
             </TabsTrigger>
           </TabsList>
 
-          {/* Legal Policies Tab Content */}
+          {/* Dashboard Sections - Added before the description content */}
           <TabsContent value="legal-policies" className="space-y-8">
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
+              <h3 className="text-xl font-bold mb-6 text-slate-800">Legal Policies Dashboard</h3>
+              <LegalPoliciesDashboard />
+            </div>
+            
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
@@ -82,6 +88,11 @@ const Governance = () => {
 
           {/* Whistleblowing Tab Content */}
           <TabsContent value="whistleblowing" className="space-y-8">
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
+              <h3 className="text-xl font-bold mb-6 text-slate-800">Whistleblowing Dashboard</h3>
+              <WhistleblowingDashboard />
+            </div>
+            
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
