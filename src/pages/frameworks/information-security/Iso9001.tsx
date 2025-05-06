@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 
 const Iso9001 = () => {
   return (
@@ -39,11 +40,13 @@ const Iso9001 = () => {
               </Button>
             </div>
             <div className="md:w-2/5">
-              <img 
-                src="/mockups/iso9001-quality-detail.png" 
-                alt="ISO 9001 Quality Management Dashboard" 
-                className="rounded-lg shadow-lg border border-white/20 w-full"
-              />
+              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20">
+                <AiComplianceDashboard 
+                  title="ISO 9001 Quality Management" 
+                  themeColor="#9b87f5" 
+                  variant="compact"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -110,6 +113,24 @@ const Iso9001 = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
             Quantifier AI Platform for ISO 9001
           </h2>
+          
+          <div className="mb-10">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <Shield className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                AI-Powered ISO 9001 Dashboard
+              </h3>
+              <p className="text-slate-700 mb-4">
+                Monitor your organization's quality management system with our intuitive AI-powered dashboard.
+              </p>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
+                <AiComplianceDashboard 
+                  title="ISO 9001 Quality Management" 
+                  themeColor="#9b87f5"
+                />
+              </div>
+            </div>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">

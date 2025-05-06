@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 
 const Dora = () => {
   return (
@@ -36,11 +37,13 @@ const Dora = () => {
               </Button>
             </div>
             <div className="md:w-2/5">
-              <img 
-                src="/mockups/dora-compliance-detail.png" 
-                alt="DORA Compliance Dashboard" 
-                className="rounded-lg shadow-lg border border-white/20 w-full"
-              />
+              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20">
+                <AiComplianceDashboard 
+                  title="DORA Compliance" 
+                  themeColor="#6E59A5" 
+                  variant="compact"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -110,6 +113,24 @@ const Dora = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
             How Quantifier Automates DORA Compliance
           </h2>
+          
+          <div className="mb-10">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-[#E5DEFF]">
+              <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
+                <Shield className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
+                AI-Powered DORA Dashboard
+              </h3>
+              <p className="text-slate-700 mb-4">
+                Monitor your organization's operational resilience with our comprehensive AI-powered dashboard.
+              </p>
+              <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
+                <AiComplianceDashboard 
+                  title="DORA Operational Resilience" 
+                  themeColor="#6E59A5"
+                />
+              </div>
+            </div>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">

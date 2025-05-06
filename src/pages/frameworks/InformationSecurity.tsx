@@ -42,7 +42,10 @@ const InformationSecurity = () => {
             </div>
             <div className="md:w-2/5">
               <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20">
-                <AiComplianceDashboard />
+                <AiComplianceDashboard 
+                  title="Information Security Dashboard" 
+                  themeColor="#9b87f5" 
+                />
               </div>
             </div>
           </div>
@@ -101,11 +104,12 @@ const InformationSecurity = () => {
                   </Button>
                 </div>
                 <div className="md:w-1/2">
-                  <img 
-                    src="/mockups/iso27001-dashboard.png" 
-                    alt="ISO 27001 Security Dashboard" 
-                    className="rounded-lg shadow-lg border border-[#E5DEFF] w-full"
-                  />
+                  <div className="bg-[#E5DEFF]/30 p-4 rounded-lg shadow-lg border border-[#E5DEFF]">
+                    <AiComplianceDashboard 
+                      title="ISO 27001 Compliance" 
+                      themeColor="#7E69AB" 
+                    />
+                  </div>
                 </div>
               </div>
             </TabsContent>
@@ -148,11 +152,12 @@ const InformationSecurity = () => {
                   </Button>
                 </div>
                 <div className="md:w-1/2">
-                  <img 
-                    src="/mockups/iso9001-quality-dashboard.png" 
-                    alt="ISO 9001 Quality Management Dashboard" 
-                    className="rounded-lg shadow-lg border border-[#E5DEFF] w-full"
-                  />
+                  <div className="bg-[#E5DEFF]/30 p-4 rounded-lg shadow-lg border border-[#E5DEFF]">
+                    <AiComplianceDashboard 
+                      title="ISO 9001 Quality Management" 
+                      themeColor="#9b87f5" 
+                    />
+                  </div>
                 </div>
               </div>
             </TabsContent>
@@ -195,11 +200,12 @@ const InformationSecurity = () => {
                   </Button>
                 </div>
                 <div className="md:w-1/2">
-                  <img 
-                    src="/mockups/dora-compliance-dashboard.png" 
-                    alt="DORA Compliance Dashboard" 
-                    className="rounded-lg shadow-lg border border-[#E5DEFF] w-full"
-                  />
+                  <div className="bg-[#E5DEFF]/30 p-4 rounded-lg shadow-lg border border-[#E5DEFF]">
+                    <AiComplianceDashboard 
+                      title="DORA Compliance" 
+                      themeColor="#6E59A5" 
+                    />
+                  </div>
                 </div>
               </div>
             </TabsContent>
