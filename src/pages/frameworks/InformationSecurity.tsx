@@ -1,30 +1,13 @@
-
 import PageTemplate from '@/components/PageTemplate';
-import { 
-  Shield, 
-  CheckCircle, 
-  ArrowRight, 
-  FileCheck, 
-  Clock, 
-  BarChart4, 
-  Globe, 
-  Lock, 
-  AlertCircle,
-  FileText
-} from 'lucide-react';
+import { Shield, CheckCircle, ArrowRight, FileCheck, Clock, BarChart4, Globe, Lock, AlertCircle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
-
 const InformationSecurity = () => {
-  return (
-    <PageTemplate
-      title="Information Security Frameworks"
-      description="Protect your information assets with standards like ISO 27001, ISO 9001, and DORA."
-    >
+  return <PageTemplate title="Information Security Frameworks" description="Protect your information assets with standards like ISO 27001, ISO 9001, and DORA.">
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-12">
@@ -41,12 +24,7 @@ const InformationSecurity = () => {
               </Button>
             </div>
             <div className="md:w-2/5">
-              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20">
-                <AiComplianceDashboard 
-                  title="Information Security Dashboard" 
-                  themeColor="#9b87f5" 
-                />
-              </div>
+              
             </div>
           </div>
         </section>
@@ -105,10 +83,7 @@ const InformationSecurity = () => {
                 </div>
                 <div className="md:w-1/2">
                   <div className="bg-[#E5DEFF]/30 p-4 rounded-lg shadow-lg border border-[#E5DEFF]">
-                    <AiComplianceDashboard 
-                      title="ISO 27001 Compliance" 
-                      themeColor="#7E69AB" 
-                    />
+                    <AiComplianceDashboard title="ISO 27001 Compliance" themeColor="#7E69AB" />
                   </div>
                 </div>
               </div>
@@ -153,10 +128,7 @@ const InformationSecurity = () => {
                 </div>
                 <div className="md:w-1/2">
                   <div className="bg-[#E5DEFF]/30 p-4 rounded-lg shadow-lg border border-[#E5DEFF]">
-                    <AiComplianceDashboard 
-                      title="ISO 9001 Quality Management" 
-                      themeColor="#9b87f5" 
-                    />
+                    <AiComplianceDashboard title="ISO 9001 Quality Management" themeColor="#9b87f5" />
                   </div>
                 </div>
               </div>
@@ -201,10 +173,7 @@ const InformationSecurity = () => {
                 </div>
                 <div className="md:w-1/2">
                   <div className="bg-[#E5DEFF]/30 p-4 rounded-lg shadow-lg border border-[#E5DEFF]">
-                    <AiComplianceDashboard 
-                      title="DORA Compliance" 
-                      themeColor="#6E59A5" 
-                    />
+                    <AiComplianceDashboard title="DORA Compliance" themeColor="#6E59A5" />
                   </div>
                 </div>
               </div>
@@ -327,8 +296,6 @@ const InformationSecurity = () => {
           </div>
         </section>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default InformationSecurity;
