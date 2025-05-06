@@ -6,6 +6,9 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText, Scan, RefreshCw, QrCode, BarChart3, Shield, Leaf, Clock, CheckCircle, Zap, Recycle, Globe, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 const ProductLevel = () => {
   const [activeTab, setActiveTab] = useState("dpp");
@@ -23,6 +26,25 @@ const ProductLevel = () => {
       </div>
     </div>
   );
+
+  // Data for Digital Product Passport visualization
+  const dppCompletionData = [
+    { name: 'Materials', value: 85 },
+    { name: 'Manufacturing', value: 92 },
+    { name: 'Certifications', value: 78 },
+    { name: 'End of Life', value: 65 }
+  ];
+
+  const DPP_COLORS = ['#22c55e', '#16a34a', '#15803d', '#166534'];
+
+  // Data for LCA visualization
+  const lcaImpactData = [
+    { phase: 'Raw Materials', carbon: 38, water: 45, waste: 25 },
+    { phase: 'Manufacturing', carbon: 25, water: 20, waste: 30 },
+    { phase: 'Distribution', carbon: 15, water: 10, waste: 12 },
+    { phase: 'Usage', carbon: 12, water: 15, waste: 8 },
+    { phase: 'End of Life', carbon: 10, water: 10, waste: 25 }
+  ];
 
   return (
     <PageTemplate
@@ -70,12 +92,35 @@ const ProductLevel = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-                <img 
-                  src="https://placehold.co/600x400/f0fdf4/16a34a?text=Digital+Product+Passport" 
-                  alt="Digital Product Passport Dashboard" 
-                  className="rounded-lg shadow-md w-full"
-                />
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-100">
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">Digital Product Passport Completion</h3>
+                <div className="h-64">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={dppCompletionData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={90}
+                        paddingAngle={2}
+                        dataKey="value"
+                        label={({ name, value }) => `${name}: ${value}%`}
+                        labelLine={false}
+                      >
+                        {dppCompletionData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={DPP_COLORS[index % DPP_COLORS.length]} />
+                        ))}
+                      </Pie>
+                      <Tooltip formatter={(value) => `${value}%`} />
+                      <Legend layout="horizontal" verticalAlign="bottom" align="center" />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="mt-4 bg-white p-4 rounded-lg border border-green-100">
+                  <h4 className="text-sm font-medium text-green-700 mb-2">Quantifier's AI Generated Insights:</h4>
+                  <p className="text-xs text-slate-600">Your product passport is 82% complete. Add more end-of-life recycling details to improve compliance with upcoming EU regulations.</p>
+                </div>
               </div>
             </div>
           </TabsContent>
@@ -109,12 +154,51 @@ const ProductLevel = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-4 rounded-lg border border-emerald-100">
-                <img 
-                  src="https://placehold.co/600x400/f0fdfa/10b981?text=Life+Cycle+Assessment" 
-                  alt="Life Cycle Assessment Dashboard" 
-                  className="rounded-lg shadow-md w-full"
-                />
+              <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-lg border border-emerald-100">
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">Life Cycle Impact Assessment</h3>
+                <div className="h-64">
+                  <ChartContainer
+                    config={{
+                      carbon: { 
+                        theme: { 
+                          light: '#15803d',
+                          dark: '#166534'
+                        } 
+                      },
+                      water: { 
+                        theme: { 
+                          light: '#0ea5e9',
+                          dark: '#0284c7'
+                        } 
+                      },
+                      waste: { 
+                        theme: { 
+                          light: '#f97316',
+                          dark: '#ea580c'
+                        } 
+                      }
+                    }}
+                  >
+                    <BarChart 
+                      data={lcaImpactData} 
+                      margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+                      barGap={0}
+                      barCategoryGap="15%"
+                    >
+                      <XAxis dataKey="phase" angle={-45} textAnchor="end" height={80} />
+                      <YAxis />
+                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <Legend />
+                      <Bar dataKey="carbon" name="Carbon Impact" barSize={20} radius={[4, 4, 0, 0]} />
+                      <Bar dataKey="water" name="Water Usage" barSize={20} radius={[4, 4, 0, 0]} />
+                      <Bar dataKey="waste" name="Waste Production" barSize={20} radius={[4, 4, 0, 0]} />
+                    </BarChart>
+                  </ChartContainer>
+                </div>
+                <div className="mt-4 bg-white p-4 rounded-lg border border-emerald-100">
+                  <h4 className="text-sm font-medium text-emerald-700 mb-2">Quantifier's AI Recommendation:</h4>
+                  <p className="text-xs text-slate-600">Focus on raw material sourcing to reduce your largest environmental impacts. Consider alternative suppliers with documented sustainability practices.</p>
+                </div>
               </div>
             </div>
           </TabsContent>
