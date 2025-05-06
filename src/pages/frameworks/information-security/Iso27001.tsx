@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 
 const Iso27001 = () => {
   return (
@@ -37,28 +36,10 @@ const Iso27001 = () => {
               </Button>
             </div>
             <div className="md:w-2/5">
-              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-white/20">
-                <AiComplianceDashboard 
-                  title="ISO 27001 Compliance" 
-                  themeColor="#9b87f5"
-                  variant="compact"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dashboard Section */}
-        <section className="mb-12">
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-[#E5DEFF]">
-            <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">Real-Time Compliance Monitoring</h3>
-            <p className="text-slate-700 mb-6">
-              Track your organization's ISO 27001 compliance status in real-time with AI-powered insights and automated risk assessment.
-            </p>
-            <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
-              <AiComplianceDashboard 
-                title="ISO 27001 Information Security" 
-                themeColor="#7E69AB"
+              <img 
+                src="/mockups/iso27001-security-details.png" 
+                alt="ISO 27001 Security Dashboard" 
+                className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>
           </div>

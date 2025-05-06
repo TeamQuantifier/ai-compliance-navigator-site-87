@@ -5,7 +5,6 @@ import QuickStatsBar from './components/QuickStatsBar';
 import KeyCharts from './components/KeyCharts';
 import ComplianceStatus from './components/ComplianceStatus';
 import AIInsights from './components/AIInsights';
-import RiskAssessment from './components/RiskAssessment';
 
 interface AiComplianceDashboardProps {
   title?: string;
@@ -43,9 +42,6 @@ const AiComplianceDashboard = ({
           <>
             <div className="grid grid-cols-2 gap-4">
               <KeyCharts />
-              <RiskAssessment />
-            </div>
-            <div className="grid grid-cols-1 gap-4">
               <ComplianceStatus />
             </div>
             <AIInsights />
