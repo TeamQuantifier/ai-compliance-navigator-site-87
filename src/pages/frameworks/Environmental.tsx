@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -6,6 +5,10 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, Leaf, Recycle, FileText, BarChart3, Clock, Globe, AlertCircle, Zap, Shield, PieChart, Activity, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Iso14001Dashboard from '@/components/dashboards/environmental/Iso14001Dashboard';
+import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
+import CarbonFootprintDashboard from '@/components/dashboards/environmental/CarbonFootprintDashboard';
+import DecarbonisationDashboard from '@/components/dashboards/environmental/DecarbonisationDashboard';
 
 const Environmental = () => {
   const [activeTab, setActiveTab] = useState("iso14001");
@@ -74,11 +77,9 @@ const Environmental = () => {
                 </div>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-                <img 
-                  src="https://placehold.co/600x400/e2f3db/2c7e45?text=ISO+14001+Dashboard" 
-                  alt="ISO 14001 Compliance Dashboard" 
-                  className="rounded-lg shadow-md w-full"
-                />
+                <div className="rounded-lg shadow-md w-full overflow-hidden">
+                  <Iso14001Dashboard />
+                </div>
               </div>
             </div>
           </TabsContent>
@@ -110,11 +111,9 @@ const Environmental = () => {
                 </div>
               </div>
               <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-lg border border-emerald-100">
-                <img 
-                  src="https://placehold.co/600x400/d1f5e0/1d8a4e?text=LCA+Analysis+Tool" 
-                  alt="LCA Analysis Platform" 
-                  className="rounded-lg shadow-md w-full"
-                />
+                <div className="rounded-lg shadow-md w-full overflow-hidden">
+                  <LcaDashboard />
+                </div>
               </div>
             </div>
           </TabsContent>
@@ -146,11 +145,9 @@ const Environmental = () => {
                 </div>
               </div>
               <div className="bg-gradient-to-br from-teal-50 to-green-50 p-4 rounded-lg border border-teal-100">
-                <img 
-                  src="https://placehold.co/600x400/c6f6d5/25855a?text=Carbon+Tracking+Dashboard" 
-                  alt="Carbon Footprint Dashboard" 
-                  className="rounded-lg shadow-md w-full"
-                />
+                <div className="rounded-lg shadow-md w-full overflow-hidden">
+                  <CarbonFootprintDashboard />
+                </div>
               </div>
             </div>
           </TabsContent>
@@ -182,11 +179,9 @@ const Environmental = () => {
                 </div>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-                <img 
-                  src="https://placehold.co/600x400/e2f3db/2c7e45?text=Decarbonisation+Strategy+Tool" 
-                  alt="Decarbonisation Platform" 
-                  className="rounded-lg shadow-md w-full"
-                />
+                <div className="rounded-lg shadow-md w-full overflow-hidden">
+                  <DecarbonisationDashboard />
+                </div>
               </div>
             </div>
           </TabsContent>
