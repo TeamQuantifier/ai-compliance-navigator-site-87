@@ -34,13 +34,17 @@ const CarbonFootprintDashboard = () => {
   ];
   
   const emission_trend_data = [
-    { year: '2020', co2e: 1200 },
-    { year: '2021', co2e: 1150 },
-    { year: '2022', co2e: 1050 },
-    { year: '2023', co2e: 980 },
+    { year: '2020', co2e: 1200, estimated: false },
+    { year: '2021', co2e: 1150, estimated: false },
+    { year: '2022', co2e: 1050, estimated: false },
+    { year: '2023', co2e: 980, estimated: false },
     { year: '2024', co2e: 900, estimated: true },
     { year: '2025', co2e: 840, estimated: true },
   ];
+  
+  // Filter data for actual and estimated values
+  const actualEmissionData = emission_trend_data.filter(item => !item.estimated);
+  const estimatedEmissionData = emission_trend_data.filter(item => item.estimated);
   
   const RISK_COLORS = ['#ef4444', '#f97316', '#eab308', '#22c55e'];
   
@@ -203,14 +207,28 @@ const CarbonFootprintDashboard = () => {
                   <XAxis dataKey="year" />
                   <YAxis domain={[800, 1300]} />
                   <ChartTooltip content={<ChartTooltipContent />} />
+                  {/* Solid line for actual data */}
                   <Line 
                     type="monotone" 
-                    dataKey="co2e" 
+                    dataKey="co2e"
                     name="co2e" 
                     stroke="#0d9488" 
                     strokeWidth={2} 
                     activeDot={{ r: 6 }}
-                    strokeDasharray={d => d.estimated ? "5 5" : ""}
+                    connectNulls
+                    data={actualEmissionData}
+                  />
+                  {/* Dashed line for estimated data */}
+                  <Line 
+                    type="monotone" 
+                    dataKey="co2e"
+                    name="co2e (estimated)" 
+                    stroke="#0d9488" 
+                    strokeWidth={2}
+                    strokeDasharray="5 5"
+                    activeDot={{ r: 6 }}
+                    connectNulls
+                    data={estimatedEmissionData}
                   />
                 </LineChart>
               </ChartContainer>
