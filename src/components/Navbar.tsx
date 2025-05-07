@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -153,6 +152,11 @@ export const Navbar = () => {
     window.scrollTo(0, 0);
   };
 
+  // Function to handle login button click
+  const handleLoginClick = () => {
+    window.location.href = 'https://platform.quantifier.ai';
+  };
+
   return (
     <header
       className={cn(
@@ -194,7 +198,7 @@ export const Navbar = () => {
         
         <div className="flex items-center">
           <div className="hidden md:flex">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleLoginClick}>
               Log In
             </Button>
           </div>

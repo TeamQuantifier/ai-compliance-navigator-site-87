@@ -37,6 +37,11 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
     window.scrollTo(0, 0);
   };
 
+  // Function to handle login button click
+  const handleLoginClick = () => {
+    window.location.href = 'https://platform.quantifier.ai';
+  };
+
   return (
     <div className="lg:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
@@ -112,6 +117,17 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                 )}
               </div>
             ))}
+            
+            {/* Login button in mobile menu */}
+            <div className="px-4 pt-4 border-t border-gray-200">
+              <Button 
+                className="w-full" 
+                variant="outline"
+                onClick={handleLoginClick}
+              >
+                Log In
+              </Button>
+            </div>
           </div>
         </SheetContent>
       </Sheet>
