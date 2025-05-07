@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { 
   NavigationMenu,
@@ -130,6 +130,12 @@ const menuItems = [
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  // Effect to handle scroll position on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -142,6 +148,11 @@ export const Navbar = () => {
     };
   }, []);
 
+  // Function to handle link clicks - scroll to top
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header
       className={cn(
@@ -153,7 +164,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
             <img 
               src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
               alt="Quantifier.ai Logo" 
@@ -172,6 +183,7 @@ export const Navbar = () => {
                 <Link 
                   to={item.href}
                   className={navigationMenuTriggerStyle() + " h-9 px-3"}
+                  onClick={handleLinkClick}
                 >
                   {item.title}
                 </Link>

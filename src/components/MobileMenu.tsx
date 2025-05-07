@@ -1,8 +1,7 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronDown, ChevronRight, X, Menu as MenuIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Link, useLocation } from 'react-router-dom';
+import { X, Menu as MenuIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -30,6 +29,13 @@ interface MobileMenuProps {
 
 export const MobileMenu = ({ items }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  
+  // Function to handle link clicks
+  const handleLinkClick = () => {
+    setOpen(false);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className="lg:hidden">
@@ -71,7 +77,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                                             key={subSubItem.title}
                                             to={subSubItem.href}
                                             className="py-2 text-sm text-muted-foreground hover:text-foreground"
-                                            onClick={() => setOpen(false)}
+                                            onClick={handleLinkClick}
                                           >
                                             {subSubItem.title}
                                           </Link>
@@ -84,7 +90,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                                 <Link
                                   to={subItem.href}
                                   className="py-2 text-sm font-medium hover:text-primary"
-                                  onClick={() => setOpen(false)}
+                                  onClick={handleLinkClick}
                                 >
                                   {subItem.title}
                                 </Link>
@@ -99,7 +105,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                   <Link
                     to={item.href}
                     className="block py-2 text-base font-medium hover:text-primary"
-                    onClick={() => setOpen(false)}
+                    onClick={handleLinkClick}
                   >
                     {item.title}
                   </Link>
