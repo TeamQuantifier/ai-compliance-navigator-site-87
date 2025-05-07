@@ -116,7 +116,7 @@ const InsidersSection = () => {
             <CarouselContent>
               {logos.map(logo => (
                 <CarouselItem key={logo.id} className="md:basis-1/3 lg:basis-1/4">
-                  <div className="p-4 h-20 flex items-center justify-center">
+                  <div className="p-4 h-20 flex items-center justify-center bg-white rounded-md shadow-sm">
                     <img 
                       src={logo.src} 
                       alt={logo.alt} 
