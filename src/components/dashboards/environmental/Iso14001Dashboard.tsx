@@ -105,7 +105,8 @@ const Iso14001Dashboard = () => {
                       paddingAngle={2}
                       dataKey="value"
                       animationBegin={0}
-                      animationDuration={800}
+                      animationDuration={1000}
+                      isAnimationActive={true}
                     >
                       {documentsByStatusData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -162,7 +163,7 @@ const Iso14001Dashboard = () => {
             {aiAgentActions.map((item, index) => (
               <div key={index} className="flex items-start pb-3 border-b border-slate-100 last:border-0 last:pb-0">
                 <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <BrainCircuit className="h-4 w-4 text-green-600" />
+                  <BrainCircuit className="h-5 w-5 text-green-600" />
                 </div>
                 <div>
                   <p className="text-sm">{item.action}</p>
