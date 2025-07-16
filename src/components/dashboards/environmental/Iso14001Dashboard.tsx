@@ -45,7 +45,7 @@ const Iso14001Dashboard = () => {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
-              <FileCheck2 className="h-4 w-4 mr-2 text-green-600" />
+              <FileCheck2 className="h-5 w-5 mr-2 text-green-600" />
               ISO 14001 Compliance Status
             </CardTitle>
           </CardHeader>
@@ -78,7 +78,7 @@ const Iso14001Dashboard = () => {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
-              <BarChart3 className="h-4 w-4 mr-2 text-green-600" />
+              <BarChart3 className="h-5 w-5 mr-2 text-green-600" />
               Documentation Status
             </CardTitle>
           </CardHeader>
@@ -104,6 +104,8 @@ const Iso14001Dashboard = () => {
                       outerRadius={70}
                       paddingAngle={2}
                       dataKey="value"
+                      animationBegin={0}
+                      animationDuration={800}
                     >
                       {documentsByStatusData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -127,7 +129,7 @@ const Iso14001Dashboard = () => {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
-              <TreePine className="h-4 w-4 mr-2 text-green-600" />
+              <TreePine className="h-5 w-5 mr-2 text-green-600" />
               Environmental Objectives
             </CardTitle>
           </CardHeader>
@@ -150,10 +152,10 @@ const Iso14001Dashboard = () => {
       {/* AI Agent Activity */}
       <Card>
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium flex items-center">
-            <BrainCircuit className="h-4 w-4 mr-2 text-green-600" />
-            AI Agent Activity
-          </CardTitle>
+            <CardTitle className="text-sm font-medium flex items-center">
+              <BrainCircuit className="h-5 w-5 mr-2 text-green-600" />
+              AI Agent Activity
+            </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
