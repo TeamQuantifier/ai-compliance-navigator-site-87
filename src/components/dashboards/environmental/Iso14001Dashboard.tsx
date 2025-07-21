@@ -80,7 +80,7 @@ const Iso14001Dashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="pt-8">
-            <div className="h-40 mt-4">
+            <div className="h-40 mt-8">
               <ChartContainer
                 config={{
                   status: { 
