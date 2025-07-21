@@ -79,8 +79,8 @@ const Iso14001Dashboard = () => {
               Documentation Status
             </CardTitle>
           </CardHeader>
-          <CardContent className="pt-4">
-            <div className="h-48">
+          <CardContent className="pt-8">
+            <div className="h-40 mt-4">
               <ChartContainer
                 config={{
                   status: { 
