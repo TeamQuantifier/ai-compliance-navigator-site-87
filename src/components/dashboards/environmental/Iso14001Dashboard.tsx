@@ -2,7 +2,6 @@
 import React from 'react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
-import { BarChart3, FileCheck2, CheckCircle2, AlertTriangle, BrainCircuit, TreePine, Activity } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 
@@ -44,8 +43,7 @@ const Iso14001Dashboard = () => {
         {/* Compliance Progress Card */}
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <FileCheck2 className="h-5 w-5 mr-2 text-green-600" />
+            <CardTitle className="text-sm font-medium">
               ISO 14001 Compliance Status
             </CardTitle>
           </CardHeader>
@@ -77,8 +75,7 @@ const Iso14001Dashboard = () => {
         {/* Documentation Status */}
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <BarChart3 className="h-5 w-5 mr-2 text-green-600" />
+            <CardTitle className="text-sm font-medium">
               Documentation Status
             </CardTitle>
           </CardHeader>
@@ -129,8 +126,7 @@ const Iso14001Dashboard = () => {
         {/* Environmental Objectives */}
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <TreePine className="h-5 w-5 mr-2 text-green-600" />
+            <CardTitle className="text-sm font-medium">
               Environmental Objectives
             </CardTitle>
           </CardHeader>
@@ -153,18 +149,14 @@ const Iso14001Dashboard = () => {
       {/* AI Agent Activity */}
       <Card>
         <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <BrainCircuit className="h-5 w-5 mr-2 text-green-600" />
+            <CardTitle className="text-sm font-medium">
               AI Agent Activity
             </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             {aiAgentActions.map((item, index) => (
-              <div key={index} className="flex items-start pb-3 border-b border-slate-100 last:border-0 last:pb-0">
-                <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <BrainCircuit className="h-5 w-5 text-green-600" />
-                </div>
+              <div key={index} className="pb-3 border-b border-slate-100 last:border-0 last:pb-0">
                 <div>
                   <p className="text-sm">{item.action}</p>
                   <p className="text-xs text-slate-500 mt-1">{item.time}</p>
