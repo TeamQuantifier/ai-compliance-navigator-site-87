@@ -110,10 +110,10 @@ const Iso14001Dashboard = () => {
                       ))}
                     </Pie>
                     <Legend 
-                      layout="vertical" 
-                      verticalAlign="middle" 
-                      align="right"
-                      wrapperStyle={{ fontSize: '10px' }}
+                      layout="horizontal" 
+                      verticalAlign="bottom" 
+                      align="center"
+                      wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }}
                     />
                     <ChartTooltip content={<ChartTooltipContent />} />
                   </PieChart>
