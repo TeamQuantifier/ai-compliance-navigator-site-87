@@ -75,11 +75,11 @@ const Iso14001Dashboard = () => {
         {/* Documentation Status */}
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">
+            <CardTitle className="text-sm font-medium text-center">
               Documentation Status
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-4">
             <div className="h-48">
               <ChartContainer
                 config={{
