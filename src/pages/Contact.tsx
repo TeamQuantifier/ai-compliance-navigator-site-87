@@ -55,7 +55,7 @@ const Contact = () => {
     };
 
     const response = await fetch(
-      "http://localhost:8000/api/landing-page/send",
+      `${process.env.REACT_APP_API_URL}/api/landing-page/send`,
       {
         method: "POST",
         headers: {
