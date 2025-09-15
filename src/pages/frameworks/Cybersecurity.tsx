@@ -211,8 +211,10 @@ const Cybersecurity = () => {
                           <span>Gap analysis aligned with NIS 2 mandates</span>
                         </li>
                       </ul>
-                      <Button variant="outline" className="w-full group" onClick={() => setActiveTab("nis2")}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <Button variant="outline" className="w-full group" asChild>
+                        <Link to="/frameworks/cybersecurity/nis-ii">
+                          Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -657,6 +659,14 @@ const Cybersecurity = () => {
                       </ul>
                     </CardContent>
                   </Card>
+                </div>
+                
+                <div className="text-center mt-12">
+                  <Button size="lg" asChild className="bg-compliance-600 text-white hover:bg-compliance-700">
+                    <Link to="/frameworks/cybersecurity/nis-ii">
+                      Learn More About NIS2 Compliance <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
                 </div>
               </section>
             </TabsContent>
