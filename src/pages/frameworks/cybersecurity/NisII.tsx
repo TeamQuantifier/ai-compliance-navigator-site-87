@@ -548,60 +548,65 @@ const NisII = () => {
             <div className="flex items-center justify-center mb-6">
               
             </div>
-            <h3 className="text-2xl font-bold text-center mb-4 text-slate-900">
-              Continuous Compliance Operations
-            </h3>
-            <p className="text-lg text-slate-600 text-center mb-6 max-w-3xl mx-auto">
-              Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.
-            </p>
-            
-            {/* Request Demo Form */}
-            <div className="max-w-md mx-auto bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-              <h4 className="text-lg font-semibold text-slate-900 mb-4 text-center">Request a Demo</h4>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-                <div className="flex items-start">
-                  <input
-                    type="checkbox"
-                    id="marketing"
-                    name="marketing"
-                    className="mt-1 h-4 w-4 text-cyan-600 border-slate-300 rounded focus:ring-cyan-500"
-                  />
-                  <label htmlFor="marketing" className="ml-2 text-sm text-slate-600">
-                    I agree to receive marketing communications and updates about NIS2 compliance solutions
-                  </label>
-                </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white"
-                >
-                  Request Demo
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </form>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Request Demo Form - Left Side */}
+              <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4 text-center">Request a Demo</h4>
+                <form className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="marketing"
+                      name="marketing"
+                      className="mt-1 h-4 w-4 text-cyan-600 border-slate-300 rounded focus:ring-cyan-500"
+                    />
+                    <label htmlFor="marketing" className="ml-2 text-sm text-slate-600">
+                      I agree to receive marketing communications and updates about NIS2 compliance solutions
+                    </label>
+                  </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white"
+                  >
+                    Request Demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </form>
+              </div>
+
+              {/* Content - Right Side */}
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">
+                  Continuous Compliance Operations
+                </h3>
+                <p className="text-lg text-slate-600 mb-6">
+                  Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.
+                </p>
+              </div>
             </div>
           </div>
         </section>
