@@ -58,7 +58,7 @@ const NisII = () => {
                 <div className="lg:w-1/2">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-6 border border-cyan-500/30">
                     <Shield className="w-5 h-5 mr-2" />
-                    <span className="font-medium">NIS 2 Directive Landing Page</span>
+                    <span className="font-medium">NIS 2 Directive</span>
                   </div>
                   <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
                     NIS2 Compliance Made Simple
@@ -287,12 +287,8 @@ const NisII = () => {
         {/* Platform Mockups Section */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-              NIS2 Platform in Action
-            </h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
-              See how our AI-native platform transforms policies into automated procedures and provides real-time compliance analytics.
-            </p>
+            
+            
           </div>
 
           <div className="space-y-8">
@@ -317,16 +313,22 @@ const NisII = () => {
                 <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">100%</div>
                 <div className="text-sm text-slate-600">NIS2 Compliance Coverage</div>
               </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+              <div className="text-center animate-fade-in" style={{
+              animationDelay: '0.1s'
+            }}>
                 <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">6</div>
                 <div className="text-sm text-slate-600">Key Areas Addressed</div>
               </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="text-center animate-fade-in" style={{
+              animationDelay: '0.2s'
+            }}>
                 <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
                 <div className="text-sm text-slate-600">Continuous Monitoring</div>
               </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
-                <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">72h</div>
+              <div className="text-center animate-fade-in" style={{
+              animationDelay: '0.3s'
+            }}>
+                <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">24h</div>
                 <div className="text-sm text-slate-600">Incident Response Time</div>
               </div>
             </div>
@@ -334,17 +336,17 @@ const NisII = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Risk Assessment */}
-            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.1s'}}>
+            <div className="group animate-fade-in hover-scale" style={{
+            animationDelay: '0.1s'
+          }}>
               <Card className="border-slate-200 hover:shadow-xl hover:border-red-200 transition-all duration-500 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <AlertTriangle className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl font-semibold">Risk Assessment</CardTitle>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-red-500 to-red-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '95%', animationDelay: '0.5s'}}></div>
-                  </div>
-                  <span className="text-sm text-slate-500 mt-1">95% Complete</span>
+                  
+                  
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
@@ -374,17 +376,17 @@ const NisII = () => {
             </div>
 
             {/* Crisis Management */}
-            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.2s'}}>
+            <div className="group animate-fade-in hover-scale" style={{
+            animationDelay: '0.2s'
+          }}>
               <Card className="border-slate-200 hover:shadow-xl hover:border-orange-200 transition-all duration-500 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Shield className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl font-semibold">Crisis Management</CardTitle>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '88%', animationDelay: '0.6s'}}></div>
-                  </div>
-                  <span className="text-sm text-slate-500 mt-1">88% Complete</span>
+                  
+                  
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
@@ -410,17 +412,17 @@ const NisII = () => {
             </div>
 
             {/* Incidents */}
-            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.3s'}}>
+            <div className="group animate-fade-in hover-scale" style={{
+            animationDelay: '0.3s'
+          }}>
               <Card className="border-slate-200 hover:shadow-xl hover:border-yellow-200 transition-all duration-500 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <FileText className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl font-semibold">Incidents</CardTitle>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '92%', animationDelay: '0.7s'}}></div>
-                  </div>
-                  <span className="text-sm text-slate-500 mt-1">92% Complete</span>
+                  
+                  
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
@@ -446,17 +448,17 @@ const NisII = () => {
             </div>
 
             {/* Employees and Training */}
-            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.4s'}}>
+            <div className="group animate-fade-in hover-scale" style={{
+            animationDelay: '0.4s'
+          }}>
               <Card className="border-slate-200 hover:shadow-xl hover:border-blue-200 transition-all duration-500 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Users className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl font-semibold">Employees and Training</CardTitle>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '90%', animationDelay: '0.8s'}}></div>
-                  </div>
-                  <span className="text-sm text-slate-500 mt-1">90% Complete</span>
+                  
+                  
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
@@ -482,17 +484,17 @@ const NisII = () => {
             </div>
 
             {/* Suppliers */}
-            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.5s'}}>
+            <div className="group animate-fade-in hover-scale" style={{
+            animationDelay: '0.5s'
+          }}>
               <Card className="border-slate-200 hover:shadow-xl hover:border-purple-200 transition-all duration-500 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Building className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl font-semibold">Suppliers</CardTitle>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '87%', animationDelay: '0.9s'}}></div>
-                  </div>
-                  <span className="text-sm text-slate-500 mt-1">87% Complete</span>
+                  
+                  
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
@@ -518,17 +520,17 @@ const NisII = () => {
             </div>
 
             {/* Assets and Security Measures */}
-            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.6s'}}>
+            <div className="group animate-fade-in hover-scale" style={{
+            animationDelay: '0.6s'
+          }}>
               <Card className="border-slate-200 hover:shadow-xl hover:border-green-200 transition-all duration-500 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Monitor className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl font-semibold">Assets and Security Measures</CardTitle>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '94%', animationDelay: '1s'}}></div>
-                  </div>
-                  <span className="text-sm text-slate-500 mt-1">94% Complete</span>
+                  
+                  
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
@@ -555,7 +557,9 @@ const NisII = () => {
           </div>
 
           {/* Bottom Summary */}
-          <div className="mt-16 text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
+          <div className="mt-16 text-center animate-fade-in" style={{
+          animationDelay: '0.8s'
+        }}>
             <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Complete NIS2 Compliance Achieved</h3>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto">
