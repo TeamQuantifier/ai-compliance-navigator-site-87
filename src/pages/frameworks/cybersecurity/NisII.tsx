@@ -63,46 +63,27 @@ const NisII = () => {
                   </h1>
                   <p className="text-xl md:text-2xl opacity-90 mb-8 text-slate-300">Navigate EU cybersecurity requirements with confidence in weeks, not moths</p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 text-lg">
-                      <Link to="/contact" className="flex items-center">
-                        Get Started <ArrowRight className="ml-2 h-6 w-6" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg">
-                      Learn More
-                    </Button>
+                    
+                    
                   </div>
                 </div>
                 <div className="lg:w-1/2">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-xl blur-3xl"></div>
                     <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-xl font-semibold mb-4 text-white">Request NIS2 Demo</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-white">Check how Quantifier can help you</h3>
                       <form className="space-y-4">
                         <div>
-                          <Label htmlFor="name" className="text-white/90 text-sm">Full Name</Label>
-                          <Input 
-                            id="name" 
-                            placeholder="Enter your name" 
-                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400"
-                          />
+                          <Label htmlFor="name" className="text-white/90 text-sm">Name</Label>
+                          <Input id="name" placeholder="Enter your name" className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400" />
                         </div>
                         <div>
                           <Label htmlFor="email" className="text-white/90 text-sm">Work Email</Label>
-                          <Input 
-                            id="email" 
-                            type="email" 
-                            placeholder="Enter your work email" 
-                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400"
-                          />
+                          <Input id="email" type="email" placeholder="Enter your work email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400" />
                         </div>
                         <div>
-                          <Label htmlFor="company" className="text-white/90 text-sm">Company</Label>
-                          <Input 
-                            id="company" 
-                            placeholder="Enter your company name" 
-                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400"
-                          />
+                          
+                          
                         </div>
                         <div className="flex items-start space-x-2 pt-2">
                           <Checkbox id="marketing" className="border-white/30 data-[state=checked]:bg-cyan-500" />
@@ -202,7 +183,7 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mb-4">
                   <Monitor className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Automated Risk Assessment</h3>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">Risk Assessment</h3>
                 <p className="text-slate-600">
                   AI-powered continuous monitoring identifies vulnerabilities and assesses risks across your digital infrastructure in real-time.
                 </p>
@@ -232,10 +213,8 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Policy Automation</h3>
-                <p className="text-slate-600">
-                  Deploy and manage all 19 required cybersecurity policies with automated updates and compliance tracking.
-                </p>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">Policy & Procedures Automation</h3>
+                <p className="text-slate-600">Deploy and manage all required cybersecurity policies with automated updates and compliance tracking.</p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
@@ -243,9 +222,7 @@ const NisII = () => {
                   <Globe className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-slate-900">Multi-Jurisdiction Support</h3>
-                <p className="text-slate-600">
-                  Scale compliance across different EU member states with localized requirements and reporting capabilities.
-                </p>
+                <p className="text-slate-600">Continuously assessing vendor risks, enforcing contractual obligations, and ensuring timely incident reporting across all partners.</p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
@@ -272,7 +249,8 @@ const NisII = () => {
             </p>
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-slate-700 border border-cyan-200">
               <Shield className="w-5 h-5 mr-2 text-cyan-600" />
-              <span className="font-medium">From NIS2 Onboarding to Continuous Compliance – All in One Platform</span>
+              <span className="font-medium">Turn NIS2 From Obligation Into Operational Advantage
+            </span>
             </div>
           </div>
 
