@@ -52,8 +52,8 @@ const NisII = () => {
           <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 md:p-16 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
             <div className="relative z-10">
-              <div className="flex flex-col lg:flex-row items-center gap-12">
-                <div className="lg:w-3/5">
+              <div className="flex flex-col lg:flex-row items-start gap-12">
+                <div className="lg:w-1/2">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-6 border border-cyan-500/30">
                     <Shield className="w-5 h-5 mr-2" />
                     <span className="font-medium">NIS 2 Directive Landing Page</span>
@@ -73,7 +73,7 @@ const NisII = () => {
                     </Button>
                   </div>
                 </div>
-                <div className="lg:w-2/5">
+                <div className="lg:w-1/2">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-xl blur-3xl"></div>
                     <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
