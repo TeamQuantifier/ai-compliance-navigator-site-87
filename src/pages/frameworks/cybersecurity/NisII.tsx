@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from 'react-router-dom';
 import GanttChart from '@/components/charts/GanttChart';
+import ProcedureFlowMockup from '@/components/mockups/components/ProcedureFlowMockup';
+import NIS2AnalyticsMockup from '@/components/mockups/components/NIS2AnalyticsMockup';
 const NisII = () => {
   const ganttTasks = [{
     id: 'onboarding',
@@ -279,6 +281,23 @@ const NisII = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
+          </div>
+        </section>
+
+        {/* Platform Mockups Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              NIS2 Platform in Action
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              See how our AI-native platform transforms policies into automated procedures and provides real-time compliance analytics.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            <ProcedureFlowMockup />
+            <NIS2AnalyticsMockup />
           </div>
         </section>
 
