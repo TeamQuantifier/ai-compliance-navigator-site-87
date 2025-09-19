@@ -599,13 +599,79 @@ const NisII = () => {
               </div>
 
               {/* Content - Right Side */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">
+              <div className="animate-fade-in">
+                <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Continuous Compliance Operations
                 </h3>
-                <p className="text-lg text-slate-600 mb-6">
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.
                 </p>
+                
+                {/* Interactive Feature Cards */}
+                <div className="space-y-4">
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-cyan-200/30 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-fade-in" 
+                       style={{animationDelay: '0.1s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mr-4">
+                      <Monitor className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">Real-time Monitoring</h4>
+                      <p className="text-sm text-slate-600">24/7 automated surveillance of all compliance parameters</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-cyan-200/30 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-fade-in" 
+                       style={{animationDelay: '0.2s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                      <AlertTriangle className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">Risk Assessment</h4>
+                      <p className="text-sm text-slate-600">AI-powered continuous risk evaluation and mitigation</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-cyan-200/30 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-fade-in" 
+                       style={{animationDelay: '0.3s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">Automated Reporting</h4>
+                      <p className="text-sm text-slate-600">Regulatory reports generated and submitted automatically</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-cyan-200/30 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-fade-in" 
+                       style={{animationDelay: '0.4s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mr-4">
+                      <Shield className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">Incident Management</h4>
+                      <p className="text-sm text-slate-600">Automated incident detection, response, and documentation</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status Badge */}
+                <div className="mt-8 inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-700 border border-green-200 animate-fade-in" 
+                     style={{animationDelay: '0.5s'}}>
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  <span className="text-sm font-medium">Always Compliant • Always Protected</span>
+                </div>
               </div>
             </div>
           </div>
