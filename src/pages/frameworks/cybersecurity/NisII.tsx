@@ -364,6 +364,129 @@ const NisII = () => {
           </div>
         </section>
 
+        {/* Results Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              Results After Implementing Quantifier / NIS2
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              Upon completion of the implementation, your organization has a comprehensive system for risk, security, and compliance management.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Risk Assessment */}
+            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
+                  <AlertTriangle className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Risk Assessment</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  <li>• Complete list of identified risks and vulnerabilities</li>
+                  <li>• Probability and impact analysis with clear metrics</li>
+                  <li>• Risk evaluation with assigned significance levels</li>
+                  <li>• Comprehensive risk management plan</li>
+                  <li>• Technical and organizational controls implemented</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Crisis Management */}
+            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Crisis Management</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  <li>• Ready crisis communication plans</li>
+                  <li>• Identified critical technologies and operations</li>
+                  <li>• Defined priorities for system recovery</li>
+                  <li>• Coordinated action procedures</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Incidents */}
+            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Incidents</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  <li>• Classified incident types with assessment criteria</li>
+                  <li>• Efficient reporting and management system</li>
+                  <li>• Internal and external reporting procedures</li>
+                  <li>• Comprehensive incident handling tools</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Employees and Training */}
+            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Employees and Training</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  <li>• Assigned responsibilities for all employees</li>
+                  <li>• Regular training programs implemented</li>
+                  <li>• Enhanced security awareness and competencies</li>
+                  <li>• HR and recruitment standards compliance</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Suppliers */}
+            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                  <Building className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Suppliers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  <li>• Supplier audits conducted and compliance confirmed</li>
+                  <li>• Communication obligations fulfilled</li>
+                  <li>• Required information provision under NIS2</li>
+                  <li>• Incident response coordination established</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Assets and Security Measures */}
+            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4">
+                  <Monitor className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl">Assets and Security Measures</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  <li>• Complete asset inventory with responsible persons</li>
+                  <li>• Tailored security measures for each asset</li>
+                  <li>• Asset classification by significance</li>
+                  <li>• Security requirements properly assigned</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section className="mb-12">
           <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 md:p-16 text-white relative overflow-hidden">
