@@ -1,61 +1,48 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Globe, CheckCircle, ArrowRight, Shield, Users, FileText, Monitor, AlertTriangle, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import GanttChart from '@/components/charts/GanttChart';
-
 const NisII = () => {
-  const ganttTasks = [
-    {
-      id: 'onboarding',
-      name: 'Onboarding (NIS2): Data, Assets, Risk, Register',
-      startMonth: 1,
-      duration: 1,
-      roles: ['Administrator'],
-      color: 'bg-gradient-to-r from-blue-500 to-blue-600',
-    },
-    {
-      id: 'gap-analysis',
-      name: 'Gap Analysis & Implementation Strategy',
-      startMonth: 1,
-      duration: 1,
-      roles: ['Administrator'],
-      color: 'bg-gradient-to-r from-purple-500 to-purple-600',
-    },
-    {
-      id: 'implementation',
-      name: 'Implementation: 19 Cybersecurity Policies',
-      startMonth: 2,
-      duration: 1,
-      roles: ['Administrator', 'CISO'],
-      color: 'bg-gradient-to-r from-green-500 to-green-600',
-    },
-    {
-      id: 'procedures',
-      name: 'Procedures: Rollout, Monitoring, Verification',
-      startMonth: 3,
-      duration: 3,
-      roles: ['Administrator', 'CISO', 'HR Manager', 'Asset Manager'],
-      color: 'bg-gradient-to-r from-orange-500 to-orange-600',
-    },
-    {
-      id: 'continuous',
-      name: 'Continuous Compliance: Risk Monitoring, Incident Management, Reporting',
-      startMonth: 1,
-      duration: 6,
-      roles: ['AI', 'Administrator'],
-      color: 'bg-gradient-to-r from-cyan-500 to-cyan-600',
-      isContinuous: true,
-    },
-  ];
-
-  return (
-    <PageTemplate
-      title="NIS 2 Directive (EU)"
-      description="Comprehensive NIS2 compliance solution with AI-native workflows for European organizations."
-    >
+  const ganttTasks = [{
+    id: 'onboarding',
+    name: 'Onboarding (NIS2): Data, Assets, Risk, Register',
+    startMonth: 1,
+    duration: 1,
+    roles: ['Administrator'],
+    color: 'bg-gradient-to-r from-blue-500 to-blue-600'
+  }, {
+    id: 'gap-analysis',
+    name: 'Gap Analysis & Implementation Strategy',
+    startMonth: 1,
+    duration: 1,
+    roles: ['Administrator'],
+    color: 'bg-gradient-to-r from-purple-500 to-purple-600'
+  }, {
+    id: 'implementation',
+    name: 'Implementation: 19 Cybersecurity Policies',
+    startMonth: 2,
+    duration: 1,
+    roles: ['Administrator', 'CISO'],
+    color: 'bg-gradient-to-r from-green-500 to-green-600'
+  }, {
+    id: 'procedures',
+    name: 'Procedures: Rollout, Monitoring, Verification',
+    startMonth: 3,
+    duration: 3,
+    roles: ['Administrator', 'CISO', 'HR Manager', 'Asset Manager'],
+    color: 'bg-gradient-to-r from-orange-500 to-orange-600'
+  }, {
+    id: 'continuous',
+    name: 'Continuous Compliance: Risk Monitoring, Incident Management, Reporting',
+    startMonth: 1,
+    duration: 6,
+    roles: ['AI', 'Administrator'],
+    color: 'bg-gradient-to-r from-cyan-500 to-cyan-600',
+    isContinuous: true
+  }];
+  return <PageTemplate title="NIS 2 Directive (EU)" description="Comprehensive NIS2 compliance solution with AI-native workflows for European organizations.">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <section className="mb-20">
@@ -71,9 +58,7 @@ const NisII = () => {
                   <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
                     NIS2 Compliance Made Simple
                   </h1>
-                  <p className="text-xl md:text-2xl opacity-90 mb-8 text-slate-300">
-                    Navigate EU cybersecurity requirements with confidence. Our AI-native platform transforms complex NIS2 obligations into streamlined, automated workflows.
-                  </p>
+                  <p className="text-xl md:text-2xl opacity-90 mb-8 text-slate-300">Navigate EU cybersecurity requirements with confidence in weeks, not moths</p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 text-lg">
                       <Link to="/contact" className="flex items-center">
@@ -88,11 +73,7 @@ const NisII = () => {
                 <div className="lg:w-2/5">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-xl blur-3xl"></div>
-                    <img 
-                      src="/lovable-uploads/9c1dd21a-e99c-4c0d-b845-8ca517904897.png" 
-                      alt="NIS2 Compliance Dashboard" 
-                      className="relative rounded-xl shadow-2xl border border-white/20 w-full transform hover:scale-105 transition-transform duration-300"
-                    />
+                    
                   </div>
                 </div>
               </div>
@@ -256,11 +237,7 @@ const NisII = () => {
 
           {/* Gantt Chart */}
           <div className="mb-12">
-            <GanttChart 
-              title="NIS2 Implementation Timeline"
-              subtitle="Complete roadmap from initial onboarding to continuous compliance monitoring"
-              tasks={ganttTasks}
-            />
+            <GanttChart title="NIS2 Implementation Timeline" subtitle="Complete roadmap from initial onboarding to continuous compliance monitoring" tasks={ganttTasks} />
           </div>
 
           {/* Implementation Details */}
@@ -393,8 +370,6 @@ const NisII = () => {
           </div>
         </section>
       </div>
-    </PageTemplate>
-  );
+    </PageTemplate>;
 };
-
 export default NisII;
