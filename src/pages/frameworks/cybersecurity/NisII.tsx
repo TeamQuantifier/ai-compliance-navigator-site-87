@@ -2,6 +2,9 @@ import PageTemplate from '@/components/PageTemplate';
 import { Globe, CheckCircle, ArrowRight, Shield, Users, FileText, Monitor, AlertTriangle, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from 'react-router-dom';
 import GanttChart from '@/components/charts/GanttChart';
 const NisII = () => {
@@ -73,7 +76,45 @@ const NisII = () => {
                 <div className="lg:w-2/5">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-xl blur-3xl"></div>
-                    
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                      <h3 className="text-xl font-semibold mb-4 text-white">Request NIS2 Demo</h3>
+                      <form className="space-y-4">
+                        <div>
+                          <Label htmlFor="name" className="text-white/90 text-sm">Full Name</Label>
+                          <Input 
+                            id="name" 
+                            placeholder="Enter your name" 
+                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400"
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="email" className="text-white/90 text-sm">Work Email</Label>
+                          <Input 
+                            id="email" 
+                            type="email" 
+                            placeholder="Enter your work email" 
+                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400"
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="company" className="text-white/90 text-sm">Company</Label>
+                          <Input 
+                            id="company" 
+                            placeholder="Enter your company name" 
+                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400"
+                          />
+                        </div>
+                        <div className="flex items-start space-x-2 pt-2">
+                          <Checkbox id="marketing" className="border-white/30 data-[state=checked]:bg-cyan-500" />
+                          <Label htmlFor="marketing" className="text-xs text-white/80 leading-relaxed">
+                            I consent to Quantifier processing my personal data to send me marketing communications about NIS2 compliance solutions. You can unsubscribe at any time.
+                          </Label>
+                        </div>
+                        <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
+                          Request Demo
+                        </Button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
