@@ -407,27 +407,7 @@ const NisII = () => {
 
         {/* Final CTA Section */}
         <section className="mb-12">
-          <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 md:p-16 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
-            <div className="relative z-10 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Achieve NIS2 Compliance?
-              </h2>
-              <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-                Join European organizations that trust our AI-native platform to automate their NIS2 compliance journey from start to finish.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 text-lg">
-                  <Link to="/contact" className="flex items-center">
-                    Book a Demo <ArrowRight className="ml-2 h-6 w-6" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg">
-                  Download NIS2 Guide
-                </Button>
-              </div>
-            </div>
-          </div>
+          
         </section>
       </div>
     </PageTemplate>;
