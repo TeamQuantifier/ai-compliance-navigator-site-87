@@ -263,26 +263,6 @@ const NisII = () => {
           </div>
 
 
-          {/* Continuous Compliance Highlight */}
-          <div className="bg-gradient-to-r from-cyan-900/10 via-blue-900/10 to-purple-900/10 rounded-2xl p-8 border border-cyan-200/20">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
-                <Monitor className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-center mb-4 text-slate-900">
-              Continuous Compliance Operations
-            </h3>
-            <p className="text-lg text-slate-600 text-center mb-6 max-w-3xl mx-auto">
-              Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.
-            </p>
-            <div className="flex justify-center">
-              <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3">
-                Request a Demo of NIS2 AI-Native Compliance Module
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
         </section>
 
         {/* Platform Mockups Section */}
@@ -563,6 +543,29 @@ const NisII = () => {
               <p className="text-lg text-slate-600 max-w-3xl mx-auto">
                 Your organization now operates with a robust, AI-powered compliance framework that continuously monitors, assesses, and maintains NIS2 requirements across all critical areas.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Continuous Compliance Operations */}
+        <section className="mb-20">
+          <div className="bg-gradient-to-r from-cyan-900/10 via-blue-900/10 to-purple-900/10 rounded-2xl p-8 border border-cyan-200/20">
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
+                <Monitor className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-center mb-4 text-slate-900">
+              Continuous Compliance Operations
+            </h3>
+            <p className="text-lg text-slate-600 text-center mb-6 max-w-3xl mx-auto">
+              Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.
+            </p>
+            <div className="flex justify-center">
+              <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3">
+                Request a Demo of NIS2 AI-Native Compliance Module
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
         </section>
