@@ -538,12 +538,7 @@ const NisII = () => {
           <div className="mt-16 text-center animate-fade-in" style={{
           animationDelay: '0.8s'
         }}>
-            <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Complete NIS2 Compliance Achieved</h3>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                Your organization now operates with a robust, AI-powered compliance framework that continuously monitors, assesses, and maintains NIS2 requirements across all critical areas.
-              </p>
-            </div>
+            
           </div>
         </section>
 
@@ -551,9 +546,7 @@ const NisII = () => {
         <section className="mb-20">
           <div className="bg-gradient-to-r from-cyan-900/10 via-blue-900/10 to-purple-900/10 rounded-2xl p-8 border border-cyan-200/20">
             <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
-                <Monitor className="w-8 h-8 text-white" />
-              </div>
+              
             </div>
             <h3 className="text-2xl font-bold text-center mb-4 text-slate-900">
               Continuous Compliance Operations
