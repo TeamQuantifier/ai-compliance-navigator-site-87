@@ -292,11 +292,7 @@ const NisII = () => {
             
           </div>
 
-            <div className="space-y-8">
-              <ComplianceDashboardMockup />
-              <ProcedureFlowMockup />
-              <NIS2AnalyticsMockup />
-            </div>
+            
         </section>
 
         {/* Results Section */}
