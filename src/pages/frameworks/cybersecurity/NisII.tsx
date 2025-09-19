@@ -307,120 +307,261 @@ const NisII = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
               Results After Implementing Quantifier / NIS2
             </h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
               Upon completion of the implementation, your organization has a comprehensive system for risk, security, and compliance management.
             </p>
+            
+            {/* Success Metrics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-4xl mx-auto">
+              <div className="text-center animate-fade-in">
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">100%</div>
+                <div className="text-sm text-slate-600">NIS2 Compliance Coverage</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">6</div>
+                <div className="text-sm text-slate-600">Key Areas Addressed</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
+                <div className="text-sm text-slate-600">Continuous Monitoring</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">72h</div>
+                <div className="text-sm text-slate-600">Incident Response Time</div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Risk Assessment */}
-            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
-                  <AlertTriangle className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Risk Assessment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-slate-600 space-y-2">
-                  <li>• Complete list of identified risks and vulnerabilities</li>
-                  <li>• Probability and impact analysis with clear metrics</li>
-                  <li>• Risk evaluation with assigned significance levels</li>
-                  <li>• Comprehensive risk management plan</li>
-                  <li>• Technical and organizational controls implemented</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.1s'}}>
+              <Card className="border-slate-200 hover:shadow-xl hover:border-red-200 transition-all duration-500 h-full">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <AlertTriangle className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">Risk Assessment</CardTitle>
+                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
+                    <div className="bg-gradient-to-r from-red-500 to-red-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '95%', animationDelay: '0.5s'}}></div>
+                  </div>
+                  <span className="text-sm text-slate-500 mt-1">95% Complete</span>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="text-slate-600 space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Complete list of identified risks and vulnerabilities
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Probability and impact analysis with clear metrics
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Risk evaluation with assigned significance levels
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Comprehensive risk management plan
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Technical and organizational controls implemented
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Crisis Management */}
-            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Crisis Management</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-slate-600 space-y-2">
-                  <li>• Ready crisis communication plans</li>
-                  <li>• Identified critical technologies and operations</li>
-                  <li>• Defined priorities for system recovery</li>
-                  <li>• Coordinated action procedures</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.2s'}}>
+              <Card className="border-slate-200 hover:shadow-xl hover:border-orange-200 transition-all duration-500 h-full">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Shield className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">Crisis Management</CardTitle>
+                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '88%', animationDelay: '0.6s'}}></div>
+                  </div>
+                  <span className="text-sm text-slate-500 mt-1">88% Complete</span>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="text-slate-600 space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Ready crisis communication plans
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Identified critical technologies and operations
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Defined priorities for system recovery
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Coordinated action procedures
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Incidents */}
-            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Incidents</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-slate-600 space-y-2">
-                  <li>• Classified incident types with assessment criteria</li>
-                  <li>• Efficient reporting and management system</li>
-                  <li>• Internal and external reporting procedures</li>
-                  <li>• Comprehensive incident handling tools</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.3s'}}>
+              <Card className="border-slate-200 hover:shadow-xl hover:border-yellow-200 transition-all duration-500 h-full">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <FileText className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">Incidents</CardTitle>
+                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
+                    <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '92%', animationDelay: '0.7s'}}></div>
+                  </div>
+                  <span className="text-sm text-slate-500 mt-1">92% Complete</span>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="text-slate-600 space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Classified incident types with assessment criteria
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Efficient reporting and management system
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Internal and external reporting procedures
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Comprehensive incident handling tools
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Employees and Training */}
-            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Employees and Training</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-slate-600 space-y-2">
-                  <li>• Assigned responsibilities for all employees</li>
-                  <li>• Regular training programs implemented</li>
-                  <li>• Enhanced security awareness and competencies</li>
-                  <li>• HR and recruitment standards compliance</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.4s'}}>
+              <Card className="border-slate-200 hover:shadow-xl hover:border-blue-200 transition-all duration-500 h-full">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Users className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">Employees and Training</CardTitle>
+                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '90%', animationDelay: '0.8s'}}></div>
+                  </div>
+                  <span className="text-sm text-slate-500 mt-1">90% Complete</span>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="text-slate-600 space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Assigned responsibilities for all employees
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Regular training programs implemented
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Enhanced security awareness and competencies
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      HR and recruitment standards compliance
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Suppliers */}
-            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                  <Building className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Suppliers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-slate-600 space-y-2">
-                  <li>• Supplier audits conducted and compliance confirmed</li>
-                  <li>• Communication obligations fulfilled</li>
-                  <li>• Required information provision under NIS2</li>
-                  <li>• Incident response coordination established</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.5s'}}>
+              <Card className="border-slate-200 hover:shadow-xl hover:border-purple-200 transition-all duration-500 h-full">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Building className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">Suppliers</CardTitle>
+                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '87%', animationDelay: '0.9s'}}></div>
+                  </div>
+                  <span className="text-sm text-slate-500 mt-1">87% Complete</span>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="text-slate-600 space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Supplier audits conducted and compliance confirmed
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Communication obligations fulfilled
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Required information provision under NIS2
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Incident response coordination established
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Assets and Security Measures */}
-            <Card className="border-slate-200 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4">
-                  <Monitor className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Assets and Security Measures</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-slate-600 space-y-2">
-                  <li>• Complete asset inventory with responsible persons</li>
-                  <li>• Tailored security measures for each asset</li>
-                  <li>• Asset classification by significance</li>
-                  <li>• Security requirements properly assigned</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="group animate-fade-in hover-scale" style={{animationDelay: '0.6s'}}>
+              <Card className="border-slate-200 hover:shadow-xl hover:border-green-200 transition-all duration-500 h-full">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Monitor className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">Assets and Security Measures</CardTitle>
+                  <div className="w-full bg-slate-100 rounded-full h-2 mt-3">
+                    <div className="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full transition-all duration-1000 animate-fade-in" style={{width: '94%', animationDelay: '1s'}}></div>
+                  </div>
+                  <span className="text-sm text-slate-500 mt-1">94% Complete</span>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="text-slate-600 space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Complete asset inventory with responsible persons
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Tailored security measures for each asset
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Asset classification by significance
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Security requirements properly assigned
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Bottom Summary */}
+          <div className="mt-16 text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Complete NIS2 Compliance Achieved</h3>
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                Your organization now operates with a robust, AI-powered compliance framework that continuously monitors, assesses, and maintains NIS2 requirements across all critical areas.
+              </p>
+            </div>
           </div>
         </section>
 
