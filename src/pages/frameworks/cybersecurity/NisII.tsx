@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import GanttChart from '@/components/charts/GanttChart';
 import ProcedureFlowMockup from '@/components/mockups/components/ProcedureFlowMockup';
 import NIS2AnalyticsMockup from '@/components/mockups/components/NIS2AnalyticsMockup';
+import ComplianceDashboardMockup from '@/components/mockups/components/ComplianceDashboardMockup';
 const NisII = () => {
   const ganttTasks = [{
     id: 'onboarding',
@@ -291,10 +292,11 @@ const NisII = () => {
             
           </div>
 
-          <div className="space-y-8">
-            <ProcedureFlowMockup />
-            <NIS2AnalyticsMockup />
-          </div>
+            <div className="space-y-8">
+              <ComplianceDashboardMockup />
+              <ProcedureFlowMockup />
+              <NIS2AnalyticsMockup />
+            </div>
         </section>
 
         {/* Results Section */}
