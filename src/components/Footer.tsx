@@ -3,7 +3,50 @@ import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { newsletterClient } from '@/lib/newsletter-client';
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    
+    try {
+      await newsletterClient.subscribe(email, 'en', {
+        source: 'website_footer'
+      });
+      
+      toast({
+        title: "Subscribed successfully!",
+        description: "Thank you for subscribing to our newsletter.",
+      });
+      
+      setEmail('');
+    } catch (error) {
+      toast({
+        title: "Subscription failed",
+        description: error instanceof Error ? error.message : "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
@@ -58,10 +101,19 @@ const Footer = () => {
         <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12">
           <h3 className="font-semibold text-slate-900 mb-2">Subscribe to our newsletter</h3>
           <p className="text-slate-600 mb-4">Stay updated with the latest compliance insights and product updates.</p>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <Input type="email" placeholder="Enter your email" className="flex-1" />
-            <Button>Subscribe</Button>
-          </div>
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+            <Input 
+              type="email" 
+              placeholder="Enter your email" 
+              className="flex-1"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isLoading}
+            />
+            <Button type="submit" disabled={isLoading}>
+              {isLoading ? 'Subscribing...' : 'Subscribe'}
+            </Button>
+          </form>
           <p className="text-xs text-slate-500 mt-3">You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "Subscribe" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.</p>
         </div>
         
