@@ -27,7 +27,8 @@ const Footer = () => {
     
     try {
       await newsletterClient.subscribe(email, 'en', {
-        source: 'website_footer'
+        source: 'website_footer',
+        origin: window.location.origin
       });
       
       toast({
