@@ -6,7 +6,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
+import { newsletterClient } from '@/lib/newsletter-client';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -58,6 +59,22 @@ const Contact = () => {
         title: 'Message sent',
         description: 'Thanks! We will get back to you shortly.',
       });
+
+      // Also subscribe to newsletter with contact form data
+      try {
+        await newsletterClient.subscribe(email, 'en', {
+          source: 'contact_form',
+          first_name: firstName,
+          last_name: lastName,
+          company: company,
+          customer_message: message,
+          origin: window.location.origin,
+          tags: ['contact_form', 'newsletter']
+        });
+      } catch (newsletterError) {
+        // Don't fail the contact form if newsletter subscription fails
+        console.warn('Newsletter subscription failed:', newsletterError);
+      }
 
       setFirstName('');
       setLastName('');

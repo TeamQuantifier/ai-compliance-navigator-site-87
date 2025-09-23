@@ -28,7 +28,8 @@ const Footer = () => {
     try {
       await newsletterClient.subscribe(email, 'en', {
         source: 'website_footer',
-        origin: window.location.origin
+        origin: window.location.origin,
+        tags: ['newsletter', 'footer_signup']
       });
       
       toast({
