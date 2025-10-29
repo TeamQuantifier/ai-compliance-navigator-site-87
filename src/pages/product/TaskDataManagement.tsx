@@ -53,7 +53,7 @@ const TaskDataManagement = () => {
               <BarChart3 className="h-5 w-5 mr-2" />
               <span>Analytics</span>
             </TabsTrigger>
-            <TabsTrigger value="task-hub" className={`data-[state=active]:bg-slate-800 data-[state=active]:text-white data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}>
+            <TabsTrigger value="task-hub" className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}>
               <Database className="h-5 w-5 mr-2" />
               <span>Task & Data Hub</span>
             </TabsTrigger>
