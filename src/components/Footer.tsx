@@ -100,10 +100,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-xl p-6 border border-slate-200 mb-12">
-          <h3 className="font-semibold text-slate-900 mb-2">Subscribe to our newsletter</h3>
-          <p className="text-slate-600 mb-4">Stay updated with the latest compliance insights and product updates.</p>
-          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+        <div className="max-w-2xl mx-auto bg-white rounded-xl p-5 border border-slate-200 mb-12">
+          <h3 className="font-semibold text-slate-900 mb-2 text-center">Subscribe to our newsletter</h3>
+          <p className="text-slate-600 mb-4 text-center text-sm">Stay updated with compliance insights and product updates.</p>
+          <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
             <Input 
               type="email" 
               placeholder="Enter your email" 
@@ -116,7 +116,7 @@ const Footer = () => {
               {isLoading ? 'Subscribing...' : 'Subscribe'}
             </Button>
           </form>
-          <p className="text-xs text-slate-500 mt-3">You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "Subscribe" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.</p>
+          <p className="text-xs text-slate-500 mt-3 text-center">You can unsubscribe anytime. Review our Privacy Policy for more information.</p>
         </div>
         
         <Separator className="mb-8" />

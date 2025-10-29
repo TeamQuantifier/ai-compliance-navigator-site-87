@@ -25,7 +25,7 @@ const Index = () => {
               Tailored for Every Role
             </h2>
             <p className="text-lg text-slate-600">
-              Our platform provides specialized interfaces and features for different roles within your organization.
+              Specialized interfaces for different roles in your organization.
             </p>
           </div>
           
@@ -36,7 +36,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">For Managers</h3>
               <p className="text-slate-600 mb-4">
-                Comprehensive dashboards and reporting tools to oversee compliance activities and make informed decisions.
+                Comprehensive dashboards to oversee compliance and inform decisions.
               </p>
               <Button asChild variant="outline" className="group" size="sm">
                 <Link to="/by-roles">
@@ -52,7 +52,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">For Contributors</h3>
               <p className="text-slate-600 mb-4">
-                Streamlined interfaces for data entry, task management, and evidence collection to simplify compliance work.
+                Streamlined interfaces for data entry, tasks, and evidence collection.
               </p>
               <Button asChild variant="outline" className="group" size="sm">
                 <Link to="/by-roles">
@@ -68,7 +68,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">For Auditors</h3>
               <p className="text-slate-600 mb-4">
-                Detailed audit trails, evidence repositories, and verification tools to validate compliance status.
+                Detailed audit trails and verification tools to validate compliance.
               </p>
               <Button asChild variant="outline" className="group" size="sm">
                 <Link to="/by-roles">

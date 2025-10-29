@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const InsidersSection = () => {
   // Real partner logos
@@ -100,7 +101,7 @@ const InsidersSection = () => {
             We combine cutting-edge tech with real compliance expertise.
           </p>
           <p className="text-lg text-slate-400 mb-10">
-            Join 250+ companies—from startups to multinational corporations —who trust our ESG solutions to simplify their compliance.
+            Join 250+ companies—from startups to multinational corporations—who trust our solutions.
           </p>
         </div>
 
@@ -110,26 +111,27 @@ const InsidersSection = () => {
             opts={{
               align: "start",
               loop: true
-            }} 
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              })
+            ]}
             className="w-full"
           >
             <CarouselContent>
               {logos.map(logo => (
                 <CarouselItem key={logo.id} className="md:basis-1/3 lg:basis-1/4">
-                  <div className="p-4 h-20 flex items-center justify-center bg-white rounded-md shadow-sm">
+                  <div className="p-6 h-28 flex items-center justify-center bg-white rounded-md shadow-sm">
                     <img 
                       src={logo.src} 
                       alt={logo.alt} 
-                      className="max-h-16 max-w-full mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
+                      className="max-h-20 max-w-full mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <CarouselPrevious className="relative static mx-2 bg-slate-800 hover:bg-slate-700 border-slate-700" />
-              <CarouselNext className="relative static mx-2 bg-slate-800 hover:bg-slate-700 border-slate-700" />
-            </div>
           </Carousel>
         </div>
 

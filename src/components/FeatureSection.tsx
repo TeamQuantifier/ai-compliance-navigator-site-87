@@ -29,22 +29,22 @@ const FeatureSection = () => {
             Comprehensive AI-Powered Compliance Suite
           </h2>
           <p className="text-lg text-slate-600">
-            Our platform offers a complete set of tools to automate and streamline your compliance processes across multiple regulatory frameworks.
+            We offer complete tools to automate and streamline your compliance processes across multiple regulatory frameworks.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <FeatureCard title="AI Compliance Officer" description="AI-driven compliance assistant that continuously monitors your systems, identifies issues, and suggests remediation steps." icon={<Shield className="h-10 w-10 text-compliance-600" />} />
+          <FeatureCard title="AI Compliance Officer" description="AI-driven assistant that monitors systems, identifies issues, and suggests remediation." icon={<Shield className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard title="Document Management" description="Centralized repository for all compliance documents with automated version control and audit trails." icon={<FileCheck className="h-10 w-10 text-innovation-600" />} />
+          <FeatureCard title="Document Management" description="Centralized repository with automated version control and audit trails." icon={<FileCheck className="h-10 w-10 text-innovation-600" />} />
           
-          <FeatureCard title="Role-Based Access" description="Tailored interfaces and capabilities for managers, contributors, and auditors to ensure proper segregation of duties." icon={<Users className="h-10 w-10 text-compliance-600" />} />
+          <FeatureCard title="Role-Based Access" description="Tailored interfaces for managers, contributors, and auditors with proper segregation of duties." icon={<Users className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard title="Analytics & Dashboards" description="Real-time visualization of compliance status, risk levels, and key metrics to support informed decision-making." icon={<BarChart3 className="h-10 w-10 text-innovation-600" />} />
+          <FeatureCard title="Analytics & Dashboards" description="Real-time visualization of compliance status, risk levels, and key metrics." icon={<BarChart3 className="h-10 w-10 text-innovation-600" />} />
           
-          <FeatureCard title="Automated Workflows" description="Define and automate compliance processes to ensure consistency, reduce manual effort, and minimize human error." icon={<RefreshCw className="h-10 w-10 text-compliance-600" />} />
+          <FeatureCard title="Automated Workflows" description="Automate compliance processes to ensure consistency and minimize errors." icon={<RefreshCw className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard title="Data Management" description="Secure handling of sensitive compliance data with built-in controls to ensure privacy and regulatory compliance." icon={<Database className="h-10 w-10 text-innovation-600" />} />
+          <FeatureCard title="Data Management" description="Secure handling of sensitive data with built-in privacy controls." icon={<Database className="h-10 w-10 text-innovation-600" />} />
         </div>
         
         <div className="mt-16 bg-slate-50 rounded-2xl p-8 border border-slate-100">
@@ -54,7 +54,7 @@ const FeatureSection = () => {
                 Multi-Framework Support
               </h3>
               <p className="text-slate-600 mb-6">
-                Our platform covers a wide range of compliance frameworks, allowing you to manage multiple regulatory requirements from a single interface.
+                We cover multiple compliance frameworks from a single interface.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-start">
