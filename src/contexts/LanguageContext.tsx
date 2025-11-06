@@ -21,6 +21,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       ? locale as Locale 
       : 'en';
     
+    console.log('Locale from URL:', locale);
+    console.log('Current i18n language:', i18n.language);
+    console.log('Setting language to:', validLocale);
+    
     if (i18n.language !== validLocale) {
       i18n.changeLanguage(validLocale);
     }
