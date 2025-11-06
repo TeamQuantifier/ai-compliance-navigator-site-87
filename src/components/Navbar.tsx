@@ -12,6 +12,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import { MobileMenu } from './MobileMenu';
 import { Button } from '@/components/ui/button';
+import { LanguageSwitch } from './LanguageSwitch';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const menuItems = [
   {
@@ -130,6 +132,7 @@ const menuItems = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { currentLocale } = useLanguage();
 
   // Effect to handle scroll position on route change
   useEffect(() => {
@@ -168,7 +171,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
+          <Link to={`/${currentLocale}`} className="flex items-center" onClick={handleLinkClick}>
             <img 
               src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
               alt="Quantifier.ai Logo" 
@@ -185,7 +188,7 @@ export const Navbar = () => {
             {menuItems.map((item) => (
               <NavigationMenuItem key={item.title}>
                 <Link 
-                  to={item.href}
+                  to={`/${currentLocale}${item.href}`}
                   className={navigationMenuTriggerStyle() + " h-9 px-3"}
                   onClick={handleLinkClick}
                 >
@@ -196,7 +199,8 @@ export const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
         
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          <LanguageSwitch />
           <div className="hidden md:flex">
             <Button variant="outline" size="sm" onClick={handleLoginClick}>
               Log In

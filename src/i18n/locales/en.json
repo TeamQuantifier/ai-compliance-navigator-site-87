@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "product": "Product",
+    "frameworks": "Frameworks",
+    "roles": "By Roles",
+    "plans": "Plans",
+    "partners": "Partners",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "login": "Log In"
+  },
+  "hero": {
+    "title": "Compliance Management Made Simple",
+    "subtitle": "Streamline your compliance processes"
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "allRightsReserved": "All rights reserved"
+  },
+  "blog": {
+    "title": "Blog & Insights",
+    "subtitle": "Latest articles, guides, and compliance insights",
+    "readMore": "Read More",
+    "readingTime": "min read",
+    "publishedOn": "Published on",
+    "category": "Category",
+    "allCategories": "All Categories",
+    "relatedPosts": "Related Articles",
+    "shareArticle": "Share this article",
+    "backToBlog": "Back to Blog"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Page not found"
+  }
+}

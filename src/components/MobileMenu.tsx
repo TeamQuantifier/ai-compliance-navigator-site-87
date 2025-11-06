@@ -5,6 +5,7 @@ import { X, Menu as MenuIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SubSubMenuItem {
   title: string;
@@ -30,6 +31,7 @@ interface MobileMenuProps {
 export const MobileMenu = ({ items }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { currentLocale } = useLanguage();
   
   // Function to handle link clicks
   const handleLinkClick = () => {
@@ -80,7 +82,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                                         {subItem.items.map((subSubItem) => (
                                           <Link
                                             key={subSubItem.title}
-                                            to={subSubItem.href}
+                                            to={`/${currentLocale}${subSubItem.href}`}
                                             className="py-2 text-sm text-muted-foreground hover:text-foreground"
                                             onClick={handleLinkClick}
                                           >
@@ -93,7 +95,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                                 </Accordion>
                               ) : (
                                 <Link
-                                  to={subItem.href}
+                                  to={`/${currentLocale}${subItem.href}`}
                                   className="py-2 text-sm font-medium hover:text-primary"
                                   onClick={handleLinkClick}
                                 >
@@ -108,7 +110,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                   </Accordion>
                 ) : (
                   <Link
-                    to={item.href}
+                    to={`/${currentLocale}${item.href}`}
                     className="block py-2 text-base font-medium hover:text-primary"
                     onClick={handleLinkClick}
                   >

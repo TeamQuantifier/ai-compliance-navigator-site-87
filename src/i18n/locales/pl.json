@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "product": "Produkt",
+    "frameworks": "Frameworki",
+    "roles": "Według Ról",
+    "plans": "Plany",
+    "partners": "Partnerzy",
+    "about": "O Nas",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "login": "Zaloguj się"
+  },
+  "hero": {
+    "title": "Zarządzanie Zgodnością Uproszczone",
+    "subtitle": "Usprawnij procesy zgodności"
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Firma",
+    "legal": "Prawne",
+    "allRightsReserved": "Wszelkie prawa zastrzeżone"
+  },
+  "blog": {
+    "title": "Blog i Insights",
+    "subtitle": "Najnowsze artykuły, poradniki i informacje o compliance",
+    "readMore": "Czytaj więcej",
+    "readingTime": "min czytania",
+    "publishedOn": "Opublikowano",
+    "category": "Kategoria",
+    "allCategories": "Wszystkie Kategorie",
+    "relatedPosts": "Powiązane Artykuły",
+    "shareArticle": "Udostępnij artykuł",
+    "backToBlog": "Powrót do Bloga"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Wystąpił błąd",
+    "notFound": "Strona nie znaleziona"
+  }
+}
