@@ -6,7 +6,10 @@ import { Separator } from '@/components/ui/separator';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Footer = () => {
+  const { t, currentLocale } = useLanguage();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -16,8 +19,8 @@ const Footer = () => {
     
     if (!email.trim()) {
       toast({
-        title: "Email required",
-        description: "Please enter your email address.",
+        title: t('footer.toast.emailRequired'),
+        description: t('footer.toast.emailRequiredDesc'),
         variant: "destructive",
       });
       return;
@@ -26,22 +29,22 @@ const Footer = () => {
     setIsLoading(true);
     
     try {
-      await newsletterClient.subscribe(email, 'en', {
+      await newsletterClient.subscribe(email, currentLocale, {
         source: 'website_footer',
         origin: window.location.origin,
         tags: ['newsletter', 'footer_signup']
       });
       
       toast({
-        title: "Subscribed successfully!",
-        description: "Thank you for subscribing to our newsletter.",
+        title: t('footer.toast.subscribeSuccess'),
+        description: t('footer.toast.subscribeSuccessDesc'),
       });
       
       setEmail('');
     } catch (error) {
       toast({
-        title: "Subscription failed",
-        description: error instanceof Error ? error.message : "Please try again later.",
+        title: t('footer.toast.subscribeFailed'),
+        description: error instanceof Error ? error.message : t('footer.toast.subscribeFailedDesc'),
         variant: "destructive",
       });
     } finally {
@@ -61,7 +64,7 @@ const Footer = () => {
             </Link>
             
             <p className="text-slate-600 mb-6 max-w-md">
-              Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.
+              {t('footer.description')}
             </p>
             
             <div className="flex space-x-4">
@@ -101,40 +104,40 @@ const Footer = () => {
         </div>
         
         <div className="max-w-2xl mx-auto bg-white rounded-xl p-5 border border-slate-200 mb-12">
-          <h3 className="font-semibold text-slate-900 mb-2 text-center">Subscribe to our newsletter</h3>
-          <p className="text-slate-600 mb-4 text-center text-sm">Stay updated with compliance insights and product updates.</p>
+          <h3 className="font-semibold text-slate-900 mb-2 text-center">{t('footer.newsletter.title')}</h3>
+          <p className="text-slate-600 mb-4 text-center text-sm">{t('footer.newsletter.subtitle')}</p>
           <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
             <Input 
               type="email" 
-              placeholder="Enter your email" 
+              placeholder={t('footer.newsletter.placeholder')}
               className="flex-1"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={isLoading}
             />
             <Button type="submit" disabled={isLoading}>
-              {isLoading ? 'Subscribing...' : 'Subscribe'}
+              {isLoading ? t('footer.newsletter.subscribing') : t('footer.newsletter.subscribe')}
             </Button>
           </form>
-          <p className="text-xs text-slate-500 mt-3 text-center">You can unsubscribe anytime. Review our Privacy Policy for more information.</p>
+          <p className="text-xs text-slate-500 mt-3 text-center">{t('footer.newsletter.disclaimer')}</p>
         </div>
         
         <Separator className="mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-slate-500 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Quantifier.ai. All rights reserved.
+            &copy; {new Date().getFullYear()} Quantifier.ai. {t('footer.legal.allRightsReserved')}
           </div>
           
           <div className="flex flex-wrap gap-4 text-sm">
             <Link to="/legal/privacy" className="text-slate-500 hover:text-primary transition-colors">
-              Privacy Policy
+              {t('footer.legal.privacy')}
             </Link>
             <Link to="/legal/terms" className="text-slate-500 hover:text-primary transition-colors">
-              Terms of Service
+              {t('footer.legal.terms')}
             </Link>
             <Link to="/legal/cookies" className="text-slate-500 hover:text-primary transition-colors">
-              Cookie Policy
+              {t('footer.legal.cookies')}
             </Link>
           </div>
         </div>

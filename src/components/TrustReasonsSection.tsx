@@ -613,7 +613,7 @@ const TrustReasonsSection = () => {
           >
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h4 className="text-3xl font-bold mb-4 text-slate-800 relative">
-                Compliance made effortless. Trust built in.
+                {t('trust.credentials.title')}
                 <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-compliance-600 to-innovation-600"></span>
               </h4>
             </div>
@@ -626,8 +626,8 @@ const TrustReasonsSection = () => {
                   <div className="mb-4 text-compliance-600">
                     <Shield className="h-10 w-10" />
                   </div>
-                  <h5 className="text-xl font-semibold mb-3 text-slate-800">Battle-Tested in Dozens of Audits</h5>
-                  <p className="text-slate-600">We don't just talk compliance—we prove it in real-world scenarios.</p>
+                  <h5 className="text-xl font-semibold mb-3 text-slate-800">{t('trust.credentials.battleTested.title')}</h5>
+                  <p className="text-slate-600">{t('trust.credentials.battleTested.description')}</p>
                 </Card>
               </div>
 
@@ -638,8 +638,8 @@ const TrustReasonsSection = () => {
                   <div className="mb-4 text-innovation-600">
                     <Award className="h-10 w-10" />
                   </div>
-                  <h5 className="text-xl font-semibold mb-3 text-slate-800">Enterprise-Grade Security & Certification</h5>
-                  <p className="text-slate-600">Rigorous penetration testing and top-tier certifications ensure your data is safe.</p>
+                  <h5 className="text-xl font-semibold mb-3 text-slate-800">{t('trust.credentials.enterpriseSecurity.title')}</h5>
+                  <p className="text-slate-600">{t('trust.credentials.enterpriseSecurity.description')}</p>
                 </Card>
               </div>
 
@@ -650,8 +650,8 @@ const TrustReasonsSection = () => {
                   <div className="mb-4 text-compliance-600">
                     <Star className="h-10 w-10" />
                   </div>
-                  <h5 className="text-xl font-semibold mb-3 text-slate-800">Proven Success & Satisfaction</h5>
-                  <p className="text-slate-600">Happy clients, strong partnerships, and measurable impact.</p>
+                  <h5 className="text-xl font-semibold mb-3 text-slate-800">{t('trust.credentials.provenSuccess.title')}</h5>
+                  <p className="text-slate-600">{t('trust.credentials.provenSuccess.description')}</p>
                 </Card>
               </div>
             </div>
@@ -661,12 +661,12 @@ const TrustReasonsSection = () => {
               credentialsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}>
               <p className="text-xl italic text-slate-700 mb-6">
-                "This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs."
+                "{t('trust.credentials.testimonial.quote')}"
               </p>
               <div className="flex items-center justify-center">
                 <div>
-                  <p className="font-semibold text-slate-800">Michal Miszulowicz</p>
-                  <p className="text-slate-600 text-sm">Director of Innovation Sector Collaboration, BNP Paribas Bank</p>
+                  <p className="font-semibold text-slate-800">{t('trust.credentials.testimonial.author')}</p>
+                  <p className="text-slate-600 text-sm">{t('trust.credentials.testimonial.position')}</p>
                 </div>
               </div>
             </div>

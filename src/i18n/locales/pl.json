@@ -190,6 +190,28 @@
     "respond": "Odpowiedz",
     "activeWorkflows": "Aktywne workflow compliance"
   },
+  "trust": {
+    "credentials": {
+      "title": "Compliance stał się prosty. Zaufanie wbudowane.",
+      "battleTested": {
+        "title": "Sprawdzony w dziesiątkach audytów",
+        "description": "Nie tylko mówimy o zgodności—dowodzimy jej w rzeczywistych scenariuszach."
+      },
+      "enterpriseSecurity": {
+        "title": "Bezpieczeństwo i certyfikacja klasy enterprise",
+        "description": "Rygorystyczne testy penetracyjne i najwyższej klasy certyfikaty zapewniają bezpieczeństwo Twoich danych."
+      },
+      "provenSuccess": {
+        "title": "Udowodniony sukces i satysfakcja",
+        "description": "Zadowoleni klienci, silne partnerstwa i mierzalny wpływ."
+      },
+      "testimonial": {
+        "quote": "Te innowacyjne rozwiązania nie tylko spełniają surowe wymogi regulacyjne, ale także skutecznie odpowiadają na potrzeby biznesowe.",
+        "author": "Michał Miszulowicz",
+        "position": "Dyrektor ds. współpracy sektora innowacji, Bank BNP Paribas"
+      }
+    }
+  },
   "insiders": {
     "title": "Compliance, napędzany przez insiderów.",
     "subtitle": "Łączymy najnowsze technologie z prawdziwą ekspertyzą compliance.",
@@ -221,10 +243,29 @@
     "viewPricing": "Zobacz cennik"
   },
   "footer": {
-    "product": "Produkt",
-    "company": "Firma",
-    "legal": "Prawne",
-    "allRightsReserved": "Wszelkie prawa zastrzeżone"
+    "description": "Quantifier na nowo definiuje podejście firm do zgodności—dzięki działającej 24/7 autonomicznej platformie AI, która monitoruje, egzekwuje i napędza działania regulacyjne w całym przedsiębiorstwie.",
+    "newsletter": {
+      "title": "Zapisz się do naszego newslettera",
+      "subtitle": "Bądź na bieżąco z informacjami o zgodności i aktualizacjach produktu.",
+      "placeholder": "Wpisz swój email",
+      "subscribe": "Zapisz się",
+      "subscribing": "Zapisywanie...",
+      "disclaimer": "Możesz zrezygnować w każdej chwili. Sprawdź naszą politykę prywatności, aby uzyskać więcej informacji."
+    },
+    "toast": {
+      "emailRequired": "Email wymagany",
+      "emailRequiredDesc": "Proszę wpisać adres email.",
+      "subscribeSuccess": "Zapisano pomyślnie!",
+      "subscribeSuccessDesc": "Dziękujemy za zapisanie się do naszego newslettera.",
+      "subscribeFailed": "Zapis nieudany",
+      "subscribeFailedDesc": "Proszę spróbować później."
+    },
+    "legal": {
+      "allRightsReserved": "Wszelkie prawa zastrzeżone.",
+      "privacy": "Polityka prywatności",
+      "terms": "Regulamin",
+      "cookies": "Polityka cookies"
+    }
   },
   "blog": {
     "title": "Blog i insights",

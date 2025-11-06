@@ -190,11 +190,55 @@
     "respond": "Respond",
     "activeWorkflows": "Active Compliance Workflows"
   },
+  "trust": {
+    "credentials": {
+      "title": "Compliance made effortless. Trust built in.",
+      "battleTested": {
+        "title": "Battle-Tested in Dozens of Audits",
+        "description": "We don't just talk compliance—we prove it in real-world scenarios."
+      },
+      "enterpriseSecurity": {
+        "title": "Enterprise-Grade Security & Certification",
+        "description": "Rigorous penetration testing and top-tier certifications ensure your data is safe."
+      },
+      "provenSuccess": {
+        "title": "Proven Success & Satisfaction",
+        "description": "Happy clients, strong partnerships, and measurable impact."
+      },
+      "testimonial": {
+        "quote": "This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs.",
+        "author": "Michal Miszulowicz",
+        "position": "Director of Innovation Sector Collaboration, BNP Paribas Bank"
+      }
+    }
+  },
   "insiders": {
     "title": "Compliance, powered by insiders.",
     "subtitle": "We combine cutting-edge tech with real compliance expertise.",
     "companiesCount": "Join 250+ companies—from startups to multinational corporations—who trust our solutions.",
     "contactUs": "Contact Us"
+  },
+  "trust": {
+    "credentials": {
+      "title": "Compliance made effortless. Trust built in.",
+      "battleTested": {
+        "title": "Battle-Tested in Dozens of Audits",
+        "description": "We don't just talk compliance—we prove it in real-world scenarios."
+      },
+      "enterpriseSecurity": {
+        "title": "Enterprise-Grade Security & Certification",
+        "description": "Rigorous penetration testing and top-tier certifications ensure your data is safe."
+      },
+      "provenSuccess": {
+        "title": "Proven Success & Satisfaction",
+        "description": "Happy clients, strong partnerships, and measurable impact."
+      },
+      "testimonial": {
+        "quote": "This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs.",
+        "author": "Michal Miszulowicz",
+        "position": "Director of Innovation Sector Collaboration, BNP Paribas Bank"
+      }
+    }
   },
   "cta": {
     "title": "Start Your AI-Powered Compliance Journey Today",
@@ -221,10 +265,29 @@
     "viewPricing": "View Pricing"
   },
   "footer": {
-    "product": "Product",
-    "company": "Company",
-    "legal": "Legal",
-    "allRightsReserved": "All rights reserved"
+    "description": "Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.",
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "subtitle": "Stay updated with compliance insights and product updates.",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe",
+      "subscribing": "Subscribing...",
+      "disclaimer": "You can unsubscribe anytime. Review our Privacy Policy for more information."
+    },
+    "toast": {
+      "emailRequired": "Email required",
+      "emailRequiredDesc": "Please enter your email address.",
+      "subscribeSuccess": "Subscribed successfully!",
+      "subscribeSuccessDesc": "Thank you for subscribing to our newsletter.",
+      "subscribeFailed": "Subscription failed",
+      "subscribeFailedDesc": "Please try again later."
+    },
+    "legal": {
+      "allRightsReserved": "All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    }
   },
   "blog": {
     "title": "Blog & Insights",
