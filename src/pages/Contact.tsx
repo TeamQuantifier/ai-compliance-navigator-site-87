@@ -8,9 +8,11 @@ import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -26,8 +28,8 @@ const Contact = () => {
 
     if (!url) {
       toast({
-        title: 'Configuration error',
-        description: 'Contact form endpoint is not configured.',
+        title: t('contact.toast.configError'),
+        description: t('contact.toast.configErrorDesc'),
         variant: 'destructive',
       });
       return;
@@ -35,8 +37,8 @@ const Contact = () => {
 
     if (!firstName || !lastName || !email || !message) {
       toast({
-        title: 'Missing fields',
-        description: 'Please fill in all required fields.',
+        title: t('contact.toast.missingFields'),
+        description: t('contact.toast.missingFieldsDesc'),
         variant: 'destructive',
       });
       return;
@@ -56,8 +58,8 @@ const Contact = () => {
       }
 
       toast({
-        title: 'Message sent',
-        description: 'Thanks! We will get back to you shortly.',
+        title: t('contact.toast.messageSent'),
+        description: t('contact.toast.messageSentDesc'),
       });
 
       // Also subscribe to newsletter with contact form data
@@ -83,8 +85,8 @@ const Contact = () => {
       setMessage('');
     } catch (err: any) {
       toast({
-        title: 'Failed to send',
-        description: err?.message || 'Please try again later.',
+        title: t('contact.toast.failedToSend'),
+        description: err?.message || t('contact.toast.failedToSendDesc'),
         variant: 'destructive',
       });
     } finally {
@@ -92,19 +94,19 @@ const Contact = () => {
     }
   };
 
-  return <PageTemplate title="Contact Us" description="Get in touch with our team to learn more about our AI-powered compliance solutions.">
+  return <PageTemplate title={t('contact.title')} description={t('contact.description')}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 className="font-bold mb-6 gradient-heading text-6xl py-[20px]">Contact us</h2>
+          <h2 className="font-bold mb-6 gradient-heading text-6xl py-[20px]">{t('contact.heading')}</h2>
           <p className="text-lg text-slate-600 mb-8">
-            Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.
+            {t('contact.intro')}
           </p>
           
           <div className="space-y-6 mb-8">
             <div className="flex items-start">
               <Mail className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Email Us</h3>
+                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.emailUs')}</h3>
                 <p className="text-slate-600">contact@quantifier.ai</p>
               </div>
             </div>
@@ -112,10 +114,10 @@ const Contact = () => {
             <div className="flex items-start">
               <Phone className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Call Us</h3>
+                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.callUs')}</h3>
                 <p className="text-slate-600">
-                  USA: (+1) 415-799-8206<br />
-                  Europe: (+48) 698 759 206
+                  {t('contact.usaPhone')}<br />
+                  {t('contact.europePhone')}
                 </p>
               </div>
             </div>
@@ -123,12 +125,12 @@ const Contact = () => {
             <div className="flex items-start">
               <MapPin className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Visit Our Offices</h3>
+                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.visitOffices')}</h3>
                 <p className="text-slate-600">
-                  USA: 447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108<br />
-                  Europe:<br />
-                  Warsaw: Rondo Daszynskiego 1, Warsaw<br />
-                  Lublin: Głowackiego 3/5/1
+                  {t('contact.usaAddress')}<br />
+                  {t('contact.europeLabel')}<br />
+                  {t('contact.warsawAddress')}<br />
+                  {t('contact.lublinAddress')}
                 </p>
               </div>
             </div>
@@ -147,18 +149,18 @@ const Contact = () => {
         <div>
           <Card className="p-6 border border-slate-200">
             <h2 className="text-xl font-bold mb-6">
-              Send Us a Message
+              {t('contact.formTitle')}
             </h2>
             
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="firstName" className="text-sm font-medium text-slate-700">
-                    First Name
+                    {t('contact.firstName')}
                   </label>
                   <Input
                     id="firstName"
-                    placeholder="John"
+                    placeholder={t('contact.firstNamePlaceholder')}
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     required
@@ -168,11 +170,11 @@ const Contact = () => {
                 
                 <div className="space-y-2">
                   <label htmlFor="lastName" className="text-sm font-medium text-slate-700">
-                    Last Name
+                    {t('contact.lastName')}
                   </label>
                   <Input
                     id="lastName"
-                    placeholder="Doe"
+                    placeholder={t('contact.lastNamePlaceholder')}
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     required
@@ -183,12 +185,12 @@ const Contact = () => {
               
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-slate-700">
-                  Email Address
+                  {t('contact.emailAddress')}
                 </label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder={t('contact.emailPlaceholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -198,11 +200,11 @@ const Contact = () => {
               
               <div className="space-y-2">
                 <label htmlFor="company" className="text-sm font-medium text-slate-700">
-                  Company Name
+                  {t('contact.companyName')}
                 </label>
                 <Input
                   id="company"
-                  placeholder="Acme Inc."
+                  placeholder={t('contact.companyPlaceholder')}
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   disabled={loading}
@@ -211,11 +213,11 @@ const Contact = () => {
               
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-slate-700">
-                  Message
+                  {t('contact.message')}
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="How can we help you?"
+                  placeholder={t('contact.messagePlaceholder')}
                   rows={5}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -225,11 +227,11 @@ const Contact = () => {
               </div>
               
               <div className="text-xs text-slate-500 mb-4">
-                You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking "send" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.
+                {t('contact.disclaimer')}
               </div>
               
               <Button className="w-full group" type="submit" disabled={loading} aria-busy={loading}>
-                {loading ? 'Sending…' : 'Send Message'}
+                {loading ? t('contact.sending') : t('contact.sendMessage')}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>

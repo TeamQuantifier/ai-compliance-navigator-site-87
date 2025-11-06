@@ -1,38 +1,40 @@
-
 import PageTemplate from '@/components/PageTemplate';
 import { Shield, Check, ArrowRight, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Plans = () => {
+  const { t } = useLanguage();
+  
   const planFeatures = [{
-    name: "Starter",
-    subtitle: "For startups and small teams",
-    description: "Perfect if you're getting started with compliance and want smart automation without the complexity.",
-    features: ["Usage-based pricing (per request)", "Essential modules only", "Limited access to advanced features", "Basic reporting and dashboards"],
-    cta: "Get started easily and scale as you grow.",
-    buttonText: "Talk to Sales",
+    name: t('plans.starter.name'),
+    subtitle: t('plans.starter.subtitle'),
+    description: t('plans.starter.description'),
+    features: [t('plans.starter.feature1'), t('plans.starter.feature2'), t('plans.starter.feature3'), t('plans.starter.feature4')],
+    cta: t('plans.starter.cta'),
+    buttonText: t('plans.talkToSales'),
     highlighted: false
   }, {
-    name: "Growth",
-    subtitle: "For growing Mid-caps with broader compliance needs",
-    description: "Balance flexibility with full functionality",
-    features: ["Full access to all platform modules", "Unlimited users and roles (Admins, Contributors, Viewers, Auditors)", "Access to selected compliance frameworks", "Limits on number of requests (expandable)", "Limits on document storage limits (expandable)"],
-    cta: "Powerful tools to streamline and scale your compliance operations.",
-    buttonText: "Talk to Sales",
+    name: t('plans.growth.name'),
+    subtitle: t('plans.growth.subtitle'),
+    description: t('plans.growth.description'),
+    features: [t('plans.growth.feature1'), t('plans.growth.feature2'), t('plans.growth.feature3'), t('plans.growth.feature4'), t('plans.growth.feature5')],
+    cta: t('plans.growth.cta'),
+    buttonText: t('plans.talkToSales'),
     highlighted: true
   }, {
-    name: "Enterprise",
-    subtitle: "For large-scale organizations and multi-entity teams",
-    description: "Built for global scale and complexity—without compromising on control or visibility.",
-    features: ["Multi-entity management from one platform", "Unlimited AI agent interactions", "Unlimited document storage", "Full access to all compliance frameworks", "Advanced role and permission controls", "Dedicated support and onboarding"],
-    cta: "Enterprise-grade compliance. Simple, powerful, seamless.",
-    buttonText: "Talk to Sales",
+    name: t('plans.enterprise.name'),
+    subtitle: t('plans.enterprise.subtitle'),
+    description: t('plans.enterprise.description'),
+    features: [t('plans.enterprise.feature1'), t('plans.enterprise.feature2'), t('plans.enterprise.feature3'), t('plans.enterprise.feature4'), t('plans.enterprise.feature5'), t('plans.enterprise.feature6')],
+    cta: t('plans.enterprise.cta'),
+    buttonText: t('plans.talkToSales'),
     highlighted: false
   }];
 
-  return <PageTemplate title="Scalable plans for every stage of growth" description="Whether you're just starting out or managing compliance across global entities—there's a plan built for your needs.">
+  return <PageTemplate title={t('plans.title')} description={t('plans.description')}>
       <div className="max-w-3xl mx-auto text-center mb-12">
         
       </div>
@@ -41,7 +43,7 @@ const Plans = () => {
         {planFeatures.map(plan => <Card key={plan.name} className={`p-6 border ${plan.highlighted ? 'border-primary shadow-lg relative' : 'border-slate-200 overflow-hidden'} h-full flex flex-col card-hover`}>
             {plan.highlighted && <div className="absolute -top-1 -right-1 overflow-hidden w-24 h-24">
                 <div className="bg-primary text-white text-xs font-semibold px-8 py-1 transform rotate-45 translate-x-6 translate-y-4 shadow-md">
-                  Popular
+                  {t('plans.popular')}
                 </div>
               </div>}
             <div className="mb-6">
@@ -71,13 +73,13 @@ const Plans = () => {
         <div className="max-w-3xl mx-auto text-center">
           <Shield className="h-12 w-12 mx-auto mb-6 text-primary" />
           <h2 className="text-2xl font-bold mb-4 gradient-heading">
-            Need a Custom Solution?
+            {t('plans.customSolution.title')}
           </h2>
           <p className="text-lg text-slate-600 mb-6">
-            We understand that every organization has unique compliance needs. Contact our sales team to discuss a customized solution that perfectly fits your requirements.
+            {t('plans.customSolution.description')}
           </p>
           <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-lg hover:shadow-xl transition-all">
-            Contact Our Sales Team
+            {t('plans.customSolution.button')}
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>

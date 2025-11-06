@@ -281,5 +281,182 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "notFound": "Page not found"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to learn more about our AI-powered compliance solutions.",
+    "heading": "Contact us",
+    "intro": "Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "visitOffices": "Visit Our Offices",
+    "usaPhone": "USA: (+1) 415-799-8206",
+    "europePhone": "Europe: (+48) 698 759 206",
+    "usaAddress": "USA: 447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108",
+    "europeLabel": "Europe:",
+    "warsawAddress": "Warsaw: Rondo Daszynskiego 1, Warsaw",
+    "lublinAddress": "Lublin: Głowackiego 3/5/1",
+    "formTitle": "Send Us a Message",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "companyName": "Company Name",
+    "message": "Message",
+    "firstNamePlaceholder": "John",
+    "lastNamePlaceholder": "Doe",
+    "emailPlaceholder": "john@example.com",
+    "companyPlaceholder": "Acme Inc.",
+    "messagePlaceholder": "How can we help you?",
+    "disclaimer": "You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy. By clicking \"send\" above, you consent to allow Quantifier.ai to store and process the personal information submitted above to provide you the content requested.",
+    "sendMessage": "Send Message",
+    "sending": "Sending…",
+    "toast": {
+      "configError": "Configuration error",
+      "configErrorDesc": "Contact form endpoint is not configured.",
+      "missingFields": "Missing fields",
+      "missingFieldsDesc": "Please fill in all required fields.",
+      "messageSent": "Message sent",
+      "messageSentDesc": "Thanks! We will get back to you shortly.",
+      "failedToSend": "Failed to send",
+      "failedToSendDesc": "Please try again later."
+    }
+  },
+  "plans": {
+    "title": "Scalable plans for every stage of growth",
+    "description": "Whether you're just starting out or managing compliance across global entities—there's a plan built for your needs.",
+    "starter": {
+      "name": "Starter",
+      "subtitle": "For startups and small teams",
+      "description": "Perfect if you're getting started with compliance and want smart automation without the complexity.",
+      "feature1": "Usage-based pricing (per request)",
+      "feature2": "Essential modules only",
+      "feature3": "Limited access to advanced features",
+      "feature4": "Basic reporting and dashboards",
+      "cta": "Get started easily and scale as you grow."
+    },
+    "growth": {
+      "name": "Growth",
+      "subtitle": "For growing Mid-caps with broader compliance needs",
+      "description": "Balance flexibility with full functionality",
+      "feature1": "Full access to all platform modules",
+      "feature2": "Unlimited users and roles (Admins, Contributors, Viewers, Auditors)",
+      "feature3": "Access to selected compliance frameworks",
+      "feature4": "Limits on number of requests (expandable)",
+      "feature5": "Limits on document storage limits (expandable)",
+      "cta": "Powerful tools to streamline and scale your compliance operations."
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "subtitle": "For large-scale organizations and multi-entity teams",
+      "description": "Built for global scale and complexity—without compromising on control or visibility.",
+      "feature1": "Multi-entity management from one platform",
+      "feature2": "Unlimited AI agent interactions",
+      "feature3": "Unlimited document storage",
+      "feature4": "Full access to all compliance frameworks",
+      "feature5": "Advanced role and permission controls",
+      "feature6": "Dedicated support and onboarding",
+      "cta": "Enterprise-grade compliance. Simple, powerful, seamless."
+    },
+    "talkToSales": "Talk to Sales",
+    "popular": "Popular",
+    "customSolution": {
+      "title": "Need a Custom Solution?",
+      "description": "We understand that every organization has unique compliance needs. Contact our sales team to discuss a customized solution that perfectly fits your requirements.",
+      "button": "Contact Our Sales Team"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn about our mission to simplify compliance with AI-powered solutions.",
+    "heading": "Quantifier: The Autonomous Compliance Officer for the AI Era",
+    "subtitle": "Transforming how organizations manage compliance with an always-on, AI-native platform",
+    "intro1": "Quantifier is transforming how organizations manage compliance — with an always-on, AI-native platform that continuously monitors, enforces, and drives adherence to regulations like SOC, ISO, and GDPR. Acting as your virtual compliance officer, Quantifier automates data collection, task management, and oversight, ensuring continuous audit readiness and confidence in an ever-evolving regulatory landscape.",
+    "intro2": "Over the past three years, we've supported more than 250 organizations across Europe, the US, and Latin America — from global industry leaders in manufacturing, pharma, and professional services to fast-growing startups. Our network includes 50+ partners, including major banks, consulting firms, and NGOs.",
+    "intro3": "We're proud to be recognized by top media outlets and to have received multiple awards for innovation and impact.",
+    "intro4": "Our team includes some of the best engineers, lawyers, and advisors — many holding or pursuing PhDs — united by a mission to build the AI infrastructure powering the future of global compliance.",
+    "highlights": {
+      "title": "Key Highlights",
+      "organizations": "250+ Organizations",
+      "organizationsDesc": "Served across multiple industries",
+      "globalReach": "Global Reach",
+      "globalReachDesc": "Operating in Europe, US, and Latin America",
+      "partners": "50+ Partners",
+      "partnersDesc": "Including banks, consulting firms, and NGOs",
+      "awardWinning": "Award Winning",
+      "awardWinningDesc": "Recognized for innovation and impact",
+      "expertTeam": "Expert Team",
+      "expertTeamDesc": "Engineers, lawyers, and PhDs"
+    },
+    "impact": {
+      "title": "Our Impact",
+      "organizations": "Organizations Supported",
+      "years": "Years of Excellence",
+      "partners": "Partner Network"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "At Quantifier, we're on a mission to build the AI infrastructure that powers the future of global compliance. We believe that with the right technology, organizations can transform compliance from a burden into a competitive advantage.",
+      "different": "How We're Different",
+      "aiNative": "AI-Native Platform",
+      "aiNativeDesc": "Built from the ground up with AI at its core, not as an afterthought",
+      "expertise": "Interdisciplinary Expertise",
+      "expertiseDesc": "Engineers, lawyers, and domain experts working in unison",
+      "innovation": "Continuous Innovation",
+      "innovationDesc": "Constantly evolving our solutions for the changing regulatory landscape",
+      "global": "Global Perspective",
+      "globalDesc": "Solutions designed for international compliance requirements"
+    },
+    "cta": {
+      "title": "Ready to transform your compliance approach?",
+      "description": "Join the 250+ organizations already benefiting from Quantifier's autonomous compliance platform.",
+      "button": "Request a Demo"
+    }
+  },
+  "partners": {
+    "title": "Partner With Us",
+    "description": "Join a global ecosystem driving smarter, simpler compliance.",
+    "network": {
+      "badge": "Global Partnership Network",
+      "heading": "Join Our Trusted Partner Network",
+      "intro1": "We collaborate with over 50+ trusted partners—including auditors, business connectors, banks, consulting firms, and NGOs. Together, we're helping companies across the world navigate the evolving landscape of compliance and sustainability with confidence.",
+      "intro2": "Let's grow together. Whether you're advising clients, managing audits, or driving innovation —there's a place for you in our partner network."
+    },
+    "types": {
+      "consulting": "Consulting Firms",
+      "audit": "Audit Partners",
+      "technology": "Technology Integrators",
+      "financial": "Financial Institutions",
+      "ngos": "NGOs"
+    },
+    "map": {
+      "title": "Trusted by Partners Around the World",
+      "description": "We're proud to collaborate with organizations across:",
+      "testimonial": "\"This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs.\"",
+      "testimonialAuthor": "- Michał Miszulowicz, Director of Innovation Sector Collaboration, BNP Paribas Bank"
+    },
+    "benefits": {
+      "title": "Why Partner With Us?",
+      "expand": {
+        "title": "Expand your service offering with cutting-edge compliance tech",
+        "description": "Add AI-powered compliance solutions to your portfolio and stay ahead of the competition."
+      },
+      "access": {
+        "title": "Gain early access to innovation and product updates",
+        "description": "Be the first to preview and implement new features before they reach the market."
+      },
+      "comarket": {
+        "title": "Co-market and co-sell to grow your customer base",
+        "description": "Leverage our marketing resources and joint go-to-market strategies to reach new audiences."
+      },
+      "value": {
+        "title": "Add measurable value to your clients' compliance efforts",
+        "description": "Provide data-driven insights and improvement metrics that demonstrate your impact."
+      }
+    },
+    "cta": {
+      "title": "Ready to become a partner?",
+      "description": "Join a trusted network driving real change in compliance and ESG.",
+      "button": "Contact Us"
+    }
   }
 }

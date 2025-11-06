@@ -5,61 +5,64 @@ import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Partners = () => {
+  const { t } = useLanguage();
+  
   const partnerBenefits = [{
-    title: "Expand your service offering with cutting-edge compliance tech",
-    description: "Add AI-powered compliance solutions to your portfolio and stay ahead of the competition.",
+    title: t('partners.benefits.expand.title'),
+    description: t('partners.benefits.expand.description'),
     icon: <Sparkles className="h-10 w-10 text-primary" />
   }, {
-    title: "Gain early access to innovation and product updates",
-    description: "Be the first to preview and implement new features before they reach the market.",
+    title: t('partners.benefits.access.title'),
+    description: t('partners.benefits.access.description'),
     icon: <Gift className="h-10 w-10 text-primary" />
   }, {
-    title: "Co-market and co-sell to grow your customer base",
-    description: "Leverage our marketing resources and joint go-to-market strategies to reach new audiences.",
+    title: t('partners.benefits.comarket.title'),
+    description: t('partners.benefits.comarket.description'),
     icon: <Users className="h-10 w-10 text-primary" />
   }, {
-    title: "Add measurable value to your clients' compliance efforts",
-    description: "Provide data-driven insights and improvement metrics that demonstrate your impact.",
+    title: t('partners.benefits.value.title'),
+    description: t('partners.benefits.value.description'),
     icon: <BarChart className="h-10 w-10 text-primary" />
   }];
+  
   const partnerTypes = [{
-    name: "Consulting Firms",
+    name: t('partners.types.consulting'),
     icon: <Building className="h-6 w-6 text-compliance-600" />
   }, {
-    name: "Audit Partners",
+    name: t('partners.types.audit'),
     icon: <Check className="h-6 w-6 text-compliance-600" />
   }, {
-    name: "Technology Integrators",
+    name: t('partners.types.technology'),
     icon: <Sparkles className="h-6 w-6 text-compliance-600" />
   }, {
-    name: "Financial Institutions",
+    name: t('partners.types.financial'),
     icon: <Building className="h-6 w-6 text-compliance-600" />
   }, {
-    name: "NGOs",
+    name: t('partners.types.ngos'),
     icon: <Globe className="h-6 w-6 text-compliance-600" />
   }];
-  return <PageTemplate title="Partner With Us" description="Join a global ecosystem driving smarter, simpler compliance.">
+  
+  return <PageTemplate title={t('partners.title')} description={t('partners.description')}>
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
           <div className="bg-gradient-to-r from-compliance-50 to-blue-50 p-8 rounded-xl mb-10">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-6">
               <Handshake className="w-5 h-5 mr-2" />
-              <span className="font-medium">Global Partnership Network</span>
+              <span className="font-medium">{t('partners.network.badge')}</span>
             </div>
             
-            <h2 className="text-2xl font-bold mb-4 gradient-heading">Join Our Trusted Partner Network</h2>
+            <h2 className="text-2xl font-bold mb-4 gradient-heading">{t('partners.network.heading')}</h2>
             
             <div className="prose prose-lg max-w-none text-slate-700">
               <p className="text-lg mb-4">
-                We collaborate with over 50+ trusted partners—including auditors, business connectors, 
-                banks, consulting firms, and NGOs. Together, we're helping companies across the world 
-                navigate the evolving landscape of compliance and sustainability with confidence.
+                {t('partners.network.intro1')}
               </p>
               
               <p className="text-lg">
-                Let's grow together. Whether you're advising clients, managing audits, or driving 
-                innovation —there's a place for you in our partner network.
+                {t('partners.network.intro2')}
               </p>
             </div>
           </div>
@@ -73,9 +76,9 @@ const Partners = () => {
         </section>
         
         <section className="mb-12 bg-gradient-to-r from-blue-50 to-compliance-50 p-8 rounded-xl">
-          <h2 className="text-2xl font-bold mb-6 gradient-heading">Trusted by Partners Around the World</h2>
+          <h2 className="text-2xl font-bold mb-6 gradient-heading">{t('partners.map.title')}</h2>
           <p className="text-lg text-slate-700 mb-6">
-            We're proud to collaborate with organizations across:
+            {t('partners.map.description')}
           </p>
           
           <div className="h-[400px] mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
@@ -83,16 +86,15 @@ const Partners = () => {
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-primary">
-            <p className="text-lg italic text-slate-700 mb-4">"This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs."</p>
+            <p className="text-lg italic text-slate-700 mb-4">{t('partners.map.testimonial')}</p>
             <div className="flex items-center">
-              
-              <p className="font-medium text-slate-900">- Michał Miszulowicz, Director of Innovation Sector Collaboration, BNP Paribas Bank</p>
+              <p className="font-medium text-slate-900">{t('partners.map.testimonialAuthor')}</p>
             </div>
           </div>
         </section>
         
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-8 gradient-heading text-center">Why Partner With Us?</h2>
+          <h2 className="text-2xl font-bold mb-8 gradient-heading text-center">{t('partners.benefits.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {partnerBenefits.map((benefit, index) => <Card key={index} className="p-6 border border-slate-200 h-full flex flex-col card-hover">
                 <div className="mb-4 p-3 rounded-full bg-compliance-50 w-fit">
@@ -113,15 +115,15 @@ const Partners = () => {
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
             
             <h2 className="text-3xl font-bold mb-4 text-white">
-              Ready to become a partner?
+              {t('partners.cta.title')}
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto">
-              Join a trusted network driving real change in compliance and ESG.
+              {t('partners.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg group shadow-lg">
                 <MessageSquare className="mr-2 h-5 w-5" />
-                Contact Us
+                {t('partners.cta.button')}
               </Button>
               
             </div>
