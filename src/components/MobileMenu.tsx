@@ -31,7 +31,7 @@ interface MobileMenuProps {
 export const MobileMenu = ({ items }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const { currentLocale } = useLanguage();
+  const { currentLocale, t } = useLanguage();
   
   // Function to handle link clicks
   const handleLinkClick = () => {
@@ -127,7 +127,7 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
                 variant="outline"
                 onClick={handleLoginClick}
               >
-                Log In
+                {t('nav.login')}
               </Button>
             </div>
           </div>

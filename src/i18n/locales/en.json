@@ -10,6 +10,78 @@
     "blog": "Blog",
     "login": "Log In"
   },
+  "menu": {
+    "product": {
+      "title": "Product",
+      "items": {
+        "features": "Main Features",
+        "aiOfficer": "AI Compliance Officer",
+        "taskManagement": "Task and Data Management",
+        "documents": "Documents Management",
+        "valueChain": "Value Chain",
+        "riskAssessment": "Risk Assessment",
+        "analytics": "AI Analytics and Dashboards",
+        "apiIntegrations": "API Integrations"
+      }
+    },
+    "byRoles": {
+      "title": "By Roles",
+      "items": {
+        "managers": "Managers",
+        "contributors": "Contributors",
+        "auditor": "Auditor"
+      }
+    },
+    "frameworks": {
+      "title": "Frameworks",
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "soc": "SOC I and SOC II",
+        "nis": "NIS II",
+        "nist": "NIST"
+      },
+      "infoSecurity": {
+        "title": "Information Security",
+        "iso27001": "ISO 27001",
+        "iso9001": "ISO 9001",
+        "dora": "DORA"
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "gdpr": "GDPR",
+        "hipaa": "HIPAA",
+        "ccpa": "CCPA"
+      },
+      "esg": {
+        "title": "ESG",
+        "csdr": "CSDR Reporting",
+        "gri": "GRI Reporting",
+        "cbam": "CBAM Reporting"
+      },
+      "environmental": {
+        "title": "Environmental",
+        "iso14001": "ISO 14001",
+        "lca": "LCA",
+        "carbonFootprint": "Carbon Footprint, GHG",
+        "decarbonisation": "Decarbonisation"
+      },
+      "governance": {
+        "title": "Governance",
+        "legalPolicies": "Legal Policies",
+        "whistleblowing": "Whistleblowing"
+      },
+      "productLevel": {
+        "title": "Product Level",
+        "dpp": "DPP",
+        "lcaAnalysis": "LCA Analysis"
+      }
+    },
+    "plans": "Plans",
+    "partners": "Partners",
+    "successStories": "Success Stories",
+    "about": "About Us",
+    "contact": "Contact"
+  },
   "hero": {
     "title": "The AI-native compliance layer for organizations",
     "subtitle": "Your AI Agent Compliance Officer that manages projects, collects data, and showcases results—automating the entire compliance process",

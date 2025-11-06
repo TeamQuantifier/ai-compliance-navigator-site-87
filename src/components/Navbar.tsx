@@ -15,124 +15,125 @@ import { Button } from '@/components/ui/button';
 import { LanguageSwitch } from './LanguageSwitch';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const menuItems = [
-  {
-    title: 'Product',
-    href: '/product',
-    items: [
-      { title: 'Main Features', href: '/product/features' },
-      { title: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
-      { title: 'Task and Data Management', href: '/product/task-data-management' },
-      { title: 'Documents Management', href: '/product/documents-management' },
-      { title: 'Value Chain', href: '/product/value-chain' },
-      { title: 'Risk Assessment', href: '/product/risk-assessment' },
-      { title: 'AI Analytics and Dashboards', href: '/product/analytics-dashboards' },
-      { title: 'API Integrations', href: '/product/api-integrations' },
-    ],
-  },
-  {
-    title: 'By Roles',
-    href: '/by-roles',
-    items: [
-      { title: 'Managers', href: '/by-roles/managers' },
-      { title: 'Contributors', href: '/by-roles/contributors' },
-      { title: 'Auditor', href: '/by-roles/auditor' },
-    ],
-  },
-  {
-    title: 'Frameworks',
-    href: '/frameworks',
-    items: [
-      {
-        title: 'Cybersecurity',
-        href: '/frameworks/cybersecurity',
-        items: [
-          { title: 'SOC I and SOC II', href: '/frameworks/cybersecurity/soc' },
-          { title: 'NIS II', href: '/frameworks/cybersecurity/nis-ii' },
-          { title: 'NIST', href: '/frameworks/cybersecurity/nist' },
-        ],
-      },
-      {
-        title: 'Information Security',
-        href: '/frameworks/information-security',
-        items: [
-          { title: 'ISO 27001', href: '/frameworks/information-security/iso-27001' },
-          { title: 'ISO 9001', href: '/frameworks/information-security/iso-9001' },
-          { title: 'DORA', href: '/frameworks/information-security/dora' },
-        ],
-      },
-      {
-        title: 'Data Security',
-        href: '/frameworks/data-security',
-        items: [
-          { title: 'GDPR', href: '/frameworks/data-security/gdpr' },
-          { title: 'HIPPA', href: '/frameworks/data-security/hippa' },
-          { title: 'CCPA', href: '/frameworks/data-security/ccpa' },
-        ],
-      },
-      {
-        title: 'ESG',
-        href: '/frameworks/esg',
-        items: [
-          { title: 'CSDR Reporting', href: '/frameworks/esg/csdr-reporting' },
-          { title: 'GRI Reporting', href: '/frameworks/esg/gri-reporting' },
-          { title: 'CBAM Reporting', href: '/frameworks/esg/cbam-reporting' },
-        ],
-      },
-      {
-        title: 'Environmental',
-        href: '/frameworks/environmental',
-        items: [
-          { title: 'ISO 14001', href: '/frameworks/environmental/iso-14001' },
-          { title: 'LCA', href: '/frameworks/environmental/lca' },
-          { title: 'Carbon Footprint, GHG', href: '/frameworks/environmental/carbon-footprint' },
-          { title: 'Decarbonisation', href: '/frameworks/environmental/decarbonisation' },
-        ],
-      },
-      {
-        title: 'Governance',
-        href: '/frameworks/governance',
-        items: [
-          { title: 'Legal Policies', href: '/frameworks/governance/legal-policies' },
-          { title: 'Whistleblowing', href: '/frameworks/governance/whistleblowing' },
-        ],
-      },
-      {
-        title: 'Product Level',
-        href: '/frameworks/product-level',
-        items: [
-          { title: 'DPP', href: '/frameworks/product-level/dpp' },
-          { title: 'LCA Analysis', href: '/frameworks/product-level/lca-analysis' },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Plans',
-    href: '/plans',
-  },
-  {
-    title: 'Partners',
-    href: '/partners',
-  },
-  {
-    title: 'Success Stories',
-    href: '/success-stories',
-  },
-  {
-    title: 'About Us',
-    href: '/about',
-  },
-  {
-    title: 'Contact',
-    href: '/contact',
-  },
-];
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { currentLocale } = useLanguage();
+  const { currentLocale, t } = useLanguage();
+
+  const menuItems = [
+    {
+      title: t('menu.product.title'),
+      href: '/product',
+      items: [
+        { title: t('menu.product.items.features'), href: '/product/features' },
+        { title: t('menu.product.items.aiOfficer'), href: '/product/ai-compliance-officer' },
+        { title: t('menu.product.items.taskManagement'), href: '/product/task-data-management' },
+        { title: t('menu.product.items.documents'), href: '/product/documents-management' },
+        { title: t('menu.product.items.valueChain'), href: '/product/value-chain' },
+        { title: t('menu.product.items.riskAssessment'), href: '/product/risk-assessment' },
+        { title: t('menu.product.items.analytics'), href: '/product/analytics-dashboards' },
+        { title: t('menu.product.items.apiIntegrations'), href: '/product/api-integrations' },
+      ],
+    },
+    {
+      title: t('menu.byRoles.title'),
+      href: '/by-roles',
+      items: [
+        { title: t('menu.byRoles.items.managers'), href: '/by-roles/managers' },
+        { title: t('menu.byRoles.items.contributors'), href: '/by-roles/contributors' },
+        { title: t('menu.byRoles.items.auditor'), href: '/by-roles/auditor' },
+      ],
+    },
+    {
+      title: t('menu.frameworks.title'),
+      href: '/frameworks',
+      items: [
+        {
+          title: t('menu.frameworks.cybersecurity.title'),
+          href: '/frameworks/cybersecurity',
+          items: [
+            { title: t('menu.frameworks.cybersecurity.soc'), href: '/frameworks/cybersecurity/soc' },
+            { title: t('menu.frameworks.cybersecurity.nis'), href: '/frameworks/cybersecurity/nis-ii' },
+            { title: t('menu.frameworks.cybersecurity.nist'), href: '/frameworks/cybersecurity/nist' },
+          ],
+        },
+        {
+          title: t('menu.frameworks.infoSecurity.title'),
+          href: '/frameworks/information-security',
+          items: [
+            { title: t('menu.frameworks.infoSecurity.iso27001'), href: '/frameworks/information-security/iso-27001' },
+            { title: t('menu.frameworks.infoSecurity.iso9001'), href: '/frameworks/information-security/iso-9001' },
+            { title: t('menu.frameworks.infoSecurity.dora'), href: '/frameworks/information-security/dora' },
+          ],
+        },
+        {
+          title: t('menu.frameworks.dataSecurity.title'),
+          href: '/frameworks/data-security',
+          items: [
+            { title: t('menu.frameworks.dataSecurity.gdpr'), href: '/frameworks/data-security/gdpr' },
+            { title: t('menu.frameworks.dataSecurity.hipaa'), href: '/frameworks/data-security/hippa' },
+            { title: t('menu.frameworks.dataSecurity.ccpa'), href: '/frameworks/data-security/ccpa' },
+          ],
+        },
+        {
+          title: t('menu.frameworks.esg.title'),
+          href: '/frameworks/esg',
+          items: [
+            { title: t('menu.frameworks.esg.csdr'), href: '/frameworks/esg/csdr-reporting' },
+            { title: t('menu.frameworks.esg.gri'), href: '/frameworks/esg/gri-reporting' },
+            { title: t('menu.frameworks.esg.cbam'), href: '/frameworks/esg/cbam-reporting' },
+          ],
+        },
+        {
+          title: t('menu.frameworks.environmental.title'),
+          href: '/frameworks/environmental',
+          items: [
+            { title: t('menu.frameworks.environmental.iso14001'), href: '/frameworks/environmental/iso-14001' },
+            { title: t('menu.frameworks.environmental.lca'), href: '/frameworks/environmental/lca' },
+            { title: t('menu.frameworks.environmental.carbonFootprint'), href: '/frameworks/environmental/carbon-footprint' },
+            { title: t('menu.frameworks.environmental.decarbonisation'), href: '/frameworks/environmental/decarbonisation' },
+          ],
+        },
+        {
+          title: t('menu.frameworks.governance.title'),
+          href: '/frameworks/governance',
+          items: [
+            { title: t('menu.frameworks.governance.legalPolicies'), href: '/frameworks/governance/legal-policies' },
+            { title: t('menu.frameworks.governance.whistleblowing'), href: '/frameworks/governance/whistleblowing' },
+          ],
+        },
+        {
+          title: t('menu.frameworks.productLevel.title'),
+          href: '/frameworks/product-level',
+          items: [
+            { title: t('menu.frameworks.productLevel.dpp'), href: '/frameworks/product-level/dpp' },
+            { title: t('menu.frameworks.productLevel.lcaAnalysis'), href: '/frameworks/product-level/lca-analysis' },
+          ],
+        },
+      ],
+    },
+    {
+      title: t('menu.plans'),
+      href: '/plans',
+    },
+    {
+      title: t('menu.partners'),
+      href: '/partners',
+    },
+    {
+      title: t('menu.successStories'),
+      href: '/success-stories',
+    },
+    {
+      title: t('menu.about'),
+      href: '/about',
+    },
+    {
+      title: t('menu.contact'),
+      href: '/contact',
+    },
+  ];
 
   // Effect to handle scroll position on route change
   useEffect(() => {
@@ -203,7 +204,7 @@ export const Navbar = () => {
           <LanguageSwitch />
           <div className="hidden md:flex">
             <Button variant="outline" size="sm" onClick={handleLoginClick}>
-              Log In
+              {t('nav.login')}
             </Button>
           </div>
           <MobileMenu items={menuItems} />

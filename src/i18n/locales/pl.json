@@ -1,14 +1,86 @@
 {
   "nav": {
     "product": "Produkt",
-    "frameworks": "Frameworki",
-    "roles": "Według Ról",
+    "frameworks": "Standardy",
+    "roles": "Według ról",
     "plans": "Plany",
     "partners": "Partnerzy",
-    "about": "O Nas",
+    "about": "O nas",
     "contact": "Kontakt",
     "blog": "Blog",
     "login": "Zaloguj się"
+  },
+  "menu": {
+    "product": {
+      "title": "Produkt",
+      "items": {
+        "features": "Główne funkcje",
+        "aiOfficer": "AI Compliance Officer",
+        "taskManagement": "Zarządzanie zadaniami i danymi",
+        "documents": "Zarządzanie dokumentami",
+        "valueChain": "Łańcuch wartości",
+        "riskAssessment": "Ocena ryzyka",
+        "analytics": "Analityka AI i dashboardy",
+        "apiIntegrations": "Integracje API"
+      }
+    },
+    "byRoles": {
+      "title": "Według ról",
+      "items": {
+        "managers": "Menedżerowie",
+        "contributors": "Współpracownicy",
+        "auditor": "Audytor"
+      }
+    },
+    "frameworks": {
+      "title": "Standardy",
+      "cybersecurity": {
+        "title": "Cyberbezpieczeństwo",
+        "soc": "SOC I i SOC II",
+        "nis": "NIS II",
+        "nist": "NIST"
+      },
+      "infoSecurity": {
+        "title": "Bezpieczeństwo informacji",
+        "iso27001": "ISO 27001",
+        "iso9001": "ISO 9001",
+        "dora": "DORA"
+      },
+      "dataSecurity": {
+        "title": "Bezpieczeństwo danych",
+        "gdpr": "RODO",
+        "hipaa": "HIPAA",
+        "ccpa": "CCPA"
+      },
+      "esg": {
+        "title": "ESG",
+        "csdr": "Raportowanie CSDR",
+        "gri": "Raportowanie GRI",
+        "cbam": "Raportowanie CBAM"
+      },
+      "environmental": {
+        "title": "Środowisko",
+        "iso14001": "ISO 14001",
+        "lca": "LCA",
+        "carbonFootprint": "Ślad węglowy, GHG",
+        "decarbonisation": "Dekarbonizacja"
+      },
+      "governance": {
+        "title": "Governance",
+        "legalPolicies": "Polityki prawne",
+        "whistleblowing": "Whistleblowing"
+      },
+      "productLevel": {
+        "title": "Poziom produktu",
+        "dpp": "DPP",
+        "lcaAnalysis": "Analiza LCA"
+      }
+    },
+    "plans": "Plany",
+    "partners": "Partnerzy",
+    "successStories": "Historie sukcesu",
+    "about": "O nas",
+    "contact": "Kontakt"
   },
   "hero": {
     "title": "Warstwa compliance AI dla organizacji",
@@ -25,98 +97,98 @@
       "description": "Asystent AI monitorujący systemy, identyfikujący problemy i proponujący rozwiązania."
     },
     "documents": {
-      "title": "Zarządzanie Dokumentami",
+      "title": "Zarządzanie dokumentami",
       "description": "Scentralizowane repozytorium z automatyczną kontrolą wersji i ścieżką audytu."
     },
     "roleAccess": {
-      "title": "Dostęp Oparty na Rolach",
+      "title": "Dostęp oparty na rolach",
       "description": "Dedykowane interfejsy dla menedżerów, współpracowników i audytorów z odpowiednią segregacją obowiązków."
     },
     "analytics": {
-      "title": "Analityka i Dashboardy",
+      "title": "Analityka i dashboardy",
       "description": "Wizualizacja w czasie rzeczywistym statusu compliance, poziomu ryzyka i kluczowych metryk."
     },
     "workflows": {
-      "title": "Zautomatyzowane Workflow",
+      "title": "Zautomatyzowane workflow",
       "description": "Automatyzacja procesów zgodności zapewniająca spójność i minimalizująca błędy."
     },
     "dataManagement": {
-      "title": "Zarządzanie Danymi",
+      "title": "Zarządzanie danymi",
       "description": "Bezpieczna obsługa wrażliwych danych z wbudowanymi kontrolami prywatności."
     },
     "multiFramework": {
-      "title": "Wsparcie Wielu Standardów",
+      "title": "Wsparcie wielu standardów",
       "subtitle": "Obsługujemy wiele standardów compliance z jednego interfejsu.",
       "cybersecurity": "Cyberbezpieczeństwo (SOC, NIS II, NIST)",
-      "infoSecurity": "Bezpieczeństwo Informacji (ISO 27001)",
-      "dataPrivacy": "Prywatność Danych (RODO, HIPAA, CCPA)",
+      "infoSecurity": "Bezpieczeństwo informacji (ISO 27001)",
+      "dataPrivacy": "Prywatność danych (RODO, HIPAA, CCPA)",
       "environmental": "Środowisko (ISO 14001, GHG)",
       "esg": "Raportowanie ESG",
       "governance": "Governance i Whistleblowing",
-      "certified": "Certyfikowana Jakość Produktu",
+      "certified": "Certyfikowana jakość produktu",
       "verifiedBy": "Zweryfikowane przez TÜV NORD",
       "certDescription": "Nasze rozwiązania compliance ESG spełniają najwyższe standardy certyfikacji jakości, zapewniając niezawodne i godne zaufania działanie we wszystkich wspieranych standardach.",
-      "compatibility": "Kompatybilność ze Standardami"
+      "compatibility": "Kompatybilność ze standardami"
     }
   },
   "roles": {
-    "title": "Dostosowane do Każdej Roli",
+    "title": "Dostosowane do każdej roli",
     "subtitle": "Specjalizowane interfejsy dla różnych ról w Twojej organizacji.",
     "managers": {
-      "title": "Dla Menedżerów",
+      "title": "Dla menedżerów",
       "description": "Kompleksowe dashboardy do nadzoru compliance i wsparcia decyzji."
     },
     "contributors": {
-      "title": "Dla Współpracowników",
+      "title": "Dla współpracowników",
       "description": "Uproszczone interfejsy do wprowadzania danych, zadań i zbierania dowodów."
     },
     "auditors": {
-      "title": "Dla Audytorów",
+      "title": "Dla audytorów",
       "description": "Szczegółowe ścieżki audytu i narzędzia weryfikacyjne do walidacji zgodności."
     },
     "learnMore": "Dowiedz się więcej"
   },
   "trust": {
-    "title": "Dlaczego Zespoły Nam Ufają",
+    "title": "Dlaczego zespoły nam ufają",
     "subtitle": "Compliance kiedyś był czasochłonny. Teraz jest automatyczny.",
     "peaceOfMind": {
-      "title": "Spokój Ducha Dzięki Automatyzacji",
+      "title": "Spokój ducha dzięki automatyzacji",
       "description": "Koniec z gonieniem pracowników i niekończącymi przypomnieniami. Nasza platforma AI zapewnia terminową realizację zadań—bez ręcznych przypominań."
     },
     "noManualWork": {
-      "title": "Żegnaj Ręczny Nadzór",
+      "title": "Żegnaj ręczny nadzór",
       "description": "Nasze inteligentne agenty łączą się bezpośrednio z Twoim zespołem przez Slack i email, obsługując szkolenia, zbieranie danych i podpisywanie polityk—bez Twojego udziału."
     },
     "realTime": {
-      "title": "Bądź na Bieżąco z Widocznością Real-Time",
+      "title": "Bądź na bieżąco z widocznością real-time",
       "description": "Natychmiast zobacz co jest zrobione, co oczekuje i gdzie są ryzyka. Dzięki ciągłym insightom jesteś zawsze o krok przed brakiem zgodności."
     },
     "quickLaunch": {
-      "title": "Wdrożenie w Minuty, Nie Miesiące",
+      "title": "Wdrożenie w minuty, nie miesiące",
       "description": "Bez skomplikowanego onboardingu. Bez drogich konsultantów. Po prostu szybkie, płynne wdrożenie, które uruchomi Twój zespół—już dziś."
     },
     "allInOne": {
-      "title": "Wszystko Czego Potrzebujesz. Jedna Platforma.",
+      "title": "Wszystko czego potrzebujesz. Jedna platforma.",
       "description": "Zarządzaj SOC 2, ISO 27001, RODO i więcej—wszystko w jednym miejscu. Całkowicie zautomatyzowane. Całkowicie zintegrowane. Całkowicie pod kontrolą."
     },
-    "aiInAction": "AI-Powered Compliance w Akcji",
+    "aiInAction": "AI-powered compliance w akcji",
     "aiSubtitle": "Zobacz jak nasza platforma przekształca compliance z obciążenia w przewagę konkurencyjną",
-    "analyticsDashboard": "Dashboard Analityki Compliance",
-    "aiWorkflow": "Workflow Agenta AI",
-    "riskScore": "Wskaźnik Ryzyka",
+    "analyticsDashboard": "Dashboard analityki compliance",
+    "aiWorkflow": "Workflow agenta AI",
+    "riskScore": "Wskaźnik ryzyka",
     "compliance": "Zgodność",
     "tasks": "Zadania",
-    "trendTitle": "Trend Wskaźnika Zgodności",
+    "trendTitle": "Trend wskaźnika zgodności",
     "lastMonths": "Ostatnie 6 miesięcy",
-    "frameworkCoverage": "Pokrycie Standardów",
+    "frameworkCoverage": "Pokrycie standardów",
     "coverage": "Pokrycie",
-    "complianceAgent": "Agent Compliance",
+    "complianceAgent": "Agent compliance",
     "activeNow": "Aktywny teraz",
     "agentMessage1": "Przeanalizowałem najnowsze polityki bezpieczeństwa danych i znalazłem 3 potencjalne luki wymagające uwagi.",
     "agentMessage2": "Planuję automatyczne follow-upy z członkami zespołu IT w celu zebrania niezbędnej dokumentacji.",
     "viewDetails": "Zobacz szczegóły",
     "respond": "Odpowiedz",
-    "activeWorkflows": "Aktywne Workflow Compliance"
+    "activeWorkflows": "Aktywne workflow compliance"
   },
   "insiders": {
     "title": "Compliance, napędzany przez insiderów.",
@@ -125,22 +197,22 @@
     "contactUs": "Skontaktuj się z nami"
   },
   "cta": {
-    "title": "Rozpocznij Swoją Podróż AI-Powered Compliance Już Dziś",
+    "title": "Rozpocznij swoją podróż AI-powered compliance już dziś",
     "subtitle": "Dołącz do setek organizacji, które przekształciły swoje procesy compliance dzięki naszej inteligentnej platformie.",
     "enterprise": {
-      "title": "Dla Przedsiębiorstw",
+      "title": "Dla przedsiębiorstw",
       "description": "Kompleksowe zarządzanie compliance dla złożonych środowisk regulacyjnych.",
       "feature1": "Zarządzanie wieloma podmiotami",
       "feature2": "Pełny dostęp do wszystkich funkcji"
     },
     "midMarket": {
-      "title": "Dla Średnich Firm",
+      "title": "Dla średnich firm",
       "description": "Skalowalne rozwiązania rosnące wraz z Twoimi potrzebami compliance.",
       "feature1": "Elastyczna implementacja",
       "feature2": "Automatyzacja dopasowana do skali"
     },
     "startups": {
-      "title": "Dla Startupów",
+      "title": "Dla startupów",
       "description": "Zbuduj compliance w swoich fundamentach od pierwszego dnia.",
       "feature1": "Podstawowe funkcje",
       "feature2": "Przystępne ceny"
@@ -155,16 +227,16 @@
     "allRightsReserved": "Wszelkie prawa zastrzeżone"
   },
   "blog": {
-    "title": "Blog i Insights",
+    "title": "Blog i insights",
     "subtitle": "Najnowsze artykuły, poradniki i informacje o compliance",
     "readMore": "Czytaj więcej",
     "readingTime": "min czytania",
     "publishedOn": "Opublikowano",
     "category": "Kategoria",
-    "allCategories": "Wszystkie Kategorie",
-    "relatedPosts": "Powiązane Artykuły",
+    "allCategories": "Wszystkie kategorie",
+    "relatedPosts": "Powiązane artykuły",
     "shareArticle": "Udostępnij artykuł",
-    "backToBlog": "Powrót do Bloga"
+    "backToBlog": "Powrót do bloga"
   },
   "common": {
     "loading": "Ładowanie...",
