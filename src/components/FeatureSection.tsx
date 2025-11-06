@@ -1,6 +1,7 @@
 import { Shield, FileCheck, Users, BarChart3, RefreshCw, Database, CheckCircle, Zap } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 interface FeatureCardProps {
   title: string;
   description: string;
@@ -22,64 +23,66 @@ const FeatureCard = ({
     </Card>;
 };
 const FeatureSection = () => {
+  const { t } = useLanguage();
+  
   return <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">
-            Comprehensive AI-Powered Compliance Suite
+            {t('features.title')}
           </h2>
           <p className="text-lg text-slate-600">
-            We offer complete tools to automate and streamline your compliance processes across multiple regulatory frameworks.
+            {t('features.subtitle')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <FeatureCard title="AI Compliance Officer" description="AI-driven assistant that monitors systems, identifies issues, and suggests remediation." icon={<Shield className="h-10 w-10 text-compliance-600" />} />
+          <FeatureCard title={t('features.aiOfficer.title')} description={t('features.aiOfficer.description')} icon={<Shield className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard title="Document Management" description="Centralized repository with automated version control and audit trails." icon={<FileCheck className="h-10 w-10 text-innovation-600" />} />
+          <FeatureCard title={t('features.documents.title')} description={t('features.documents.description')} icon={<FileCheck className="h-10 w-10 text-innovation-600" />} />
           
-          <FeatureCard title="Role-Based Access" description="Tailored interfaces for managers, contributors, and auditors with proper segregation of duties." icon={<Users className="h-10 w-10 text-compliance-600" />} />
+          <FeatureCard title={t('features.roleAccess.title')} description={t('features.roleAccess.description')} icon={<Users className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard title="Analytics & Dashboards" description="Real-time visualization of compliance status, risk levels, and key metrics." icon={<BarChart3 className="h-10 w-10 text-innovation-600" />} />
+          <FeatureCard title={t('features.analytics.title')} description={t('features.analytics.description')} icon={<BarChart3 className="h-10 w-10 text-innovation-600" />} />
           
-          <FeatureCard title="Automated Workflows" description="Automate compliance processes to ensure consistency and minimize errors." icon={<RefreshCw className="h-10 w-10 text-compliance-600" />} />
+          <FeatureCard title={t('features.workflows.title')} description={t('features.workflows.description')} icon={<RefreshCw className="h-10 w-10 text-compliance-600" />} />
           
-          <FeatureCard title="Data Management" description="Secure handling of sensitive data with built-in privacy controls." icon={<Database className="h-10 w-10 text-innovation-600" />} />
+          <FeatureCard title={t('features.dataManagement.title')} description={t('features.dataManagement.description')} icon={<Database className="h-10 w-10 text-innovation-600" />} />
         </div>
         
         <div className="mt-16 bg-slate-50 rounded-2xl p-8 border border-slate-100">
           <div className="flex flex-col md:flex-row gap-8 md:items-center">
             <div className="md:w-1/2">
               <h3 className="text-2xl font-bold mb-4 gradient-heading">
-                Multi-Framework Support
+                {t('features.multiFramework.title')}
               </h3>
               <p className="text-slate-600 mb-6">
-                We cover multiple compliance frameworks from a single interface.
+                {t('features.multiFramework.subtitle')}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-slate-700">Cybersecurity (SOC, NIS II, NIST)</p>
+                  <p className="text-slate-700">{t('features.multiFramework.cybersecurity')}</p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-slate-700">Information Security (ISO 27001)</p>
+                  <p className="text-slate-700">{t('features.multiFramework.infoSecurity')}</p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-slate-700">Data Privacy (GDPR, HIPAA, CCPA)</p>
+                  <p className="text-slate-700">{t('features.multiFramework.dataPrivacy')}</p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-slate-700">Environmental (ISO 14001, GHG)</p>
+                  <p className="text-slate-700">{t('features.multiFramework.environmental')}</p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-slate-700">ESG Reporting Standards</p>
+                  <p className="text-slate-700">{t('features.multiFramework.esg')}</p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-slate-700">Governance & Whistleblowing</p>
+                  <p className="text-slate-700">{t('features.multiFramework.governance')}</p>
                 </div>
               </div>
               
@@ -88,18 +91,18 @@ const FeatureSection = () => {
                 <div className="flex items-center space-x-3 mb-3">
                   <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="TÜV NORD Verified Product Certificate" className="h-20 w-auto" />
                   <div>
-                    <h4 className="font-semibold text-slate-800">Certified Product Quality</h4>
-                    <p className="text-sm text-slate-600">Verified by TÜV NORD</p>
+                    <h4 className="font-semibold text-slate-800">{t('features.multiFramework.certified')}</h4>
+                    <p className="text-sm text-slate-600">{t('features.multiFramework.verifiedBy')}</p>
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 italic max-w-md">Our ESG compliance solutions meet the highest standards of quality certification, ensuring reliable and trustworthy operation across all supported frameworks.</p>
+                <p className="text-sm text-slate-600 italic max-w-md">{t('features.multiFramework.certDescription')}</p>
               </div>
             </div>
             
             <div className="md:w-1/2">
               <div className="bg-white rounded-xl shadow-md p-6 border border-slate-200">
                 <div className="flex items-center justify-between mb-6">
-                  <h4 className="font-medium text-slate-900">Framework Compatibility</h4>
+                  <h4 className="font-medium text-slate-900">{t('features.multiFramework.compatibility')}</h4>
                   <Zap className="h-5 w-5 text-yellow-500" />
                 </div>
                 

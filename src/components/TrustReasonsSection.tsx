@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TrustReasonCardProps {
   icon: React.ReactNode;
@@ -49,6 +50,7 @@ const TrustReasonCard = ({ icon, title, description, delay }: TrustReasonCardPro
 };
 
 const TrustReasonsSection = () => {
+  const { t } = useLanguage();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -57,28 +59,28 @@ const TrustReasonsSection = () => {
   const trustReasons = [
     {
       icon: <Clock className="h-10 w-10" />,
-      title: "Peace of Mind, Powered by Automation",
-      description: "No more chasing employees or endless follow-ups. Our AI-driven platform ensures tasks get done—on time, every time—without manual reminders."
+      title: t('trust.peaceOfMind.title'),
+      description: t('trust.peaceOfMind.description')
     },
     {
       icon: <Bot className="h-10 w-10" />,
-      title: "Say Goodbye to Manual Oversight",
-      description: "Our smart agents connect with your team directly via Slack and email, handling training, data collection, and policy sign-offs—so you don't have to."
+      title: t('trust.noManualWork.title'),
+      description: t('trust.noManualWork.description')
     },
     {
       icon: <LineChart className="h-10 w-10" />,
-      title: "Stay Ahead with Real-Time Visibility",
-      description: "Instantly see what's done, what's pending, and where the risks are. With continuous insights, you're always a step ahead of non-compliance."
+      title: t('trust.realTime.title'),
+      description: t('trust.realTime.description')
     },
     {
       icon: <Rocket className="h-10 w-10" />,
-      title: "Launch in Minutes, Not Months",
-      description: "No complex onboarding. No expensive consultants. Just a fast, seamless rollout that gets your team up and running—today."
+      title: t('trust.quickLaunch.title'),
+      description: t('trust.quickLaunch.description')
     },
     {
       icon: <Database className="h-10 w-10" />,
-      title: "Everything You Need. One Platform.",
-      description: "Manage SOC 2, ISO 27001, GDPR, and more—all in one place. Fully automated. Fully integrated. Fully under control."
+      title: t('trust.allInOne.title'),
+      description: t('trust.allInOne.description')
     }
   ];
 
@@ -105,11 +107,11 @@ const TrustReasonsSection = () => {
             }`}
           >
             <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white relative">
-              Why Teams Trust Us with Compliance
+              {t('trust.title')}
               <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-compliance-600 to-innovation-600"></span>
             </h4>
             <p className="text-xl text-slate-300 mt-6">
-              Compliance used to be time-consuming. Now, it's automatic.
+              {t('trust.subtitle')}
             </p>
           </div>
           
@@ -138,11 +140,11 @@ const TrustReasonsSection = () => {
           >
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h4 className="text-3xl font-bold mb-4 text-white relative">
-                AI-Powered Compliance in Action
+                {t('trust.aiInAction')}
                 <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-compliance-600 to-innovation-600"></span>
               </h4>
               <p className="text-xl text-slate-300 mt-6">
-                See how our platform transforms compliance from a burden into a competitive advantage
+                {t('trust.aiSubtitle')}
               </p>
             </div>
 
@@ -155,7 +157,7 @@ const TrustReasonsSection = () => {
                   <div className="bg-slate-900 px-4 py-3 flex items-center justify-between border-b border-slate-700">
                     <div className="flex items-center">
                       <BarChart3 className="h-5 w-5 text-innovation-400 mr-2" />
-                      <span className="text-white font-medium">Compliance Analytics Dashboard</span>
+                      <span className="text-white font-medium">{t('trust.analyticsDashboard')}</span>
                     </div>
                     <div className="flex space-x-1">
                       <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -287,7 +289,7 @@ const TrustReasonsSection = () => {
                   <div className="bg-slate-900 px-4 py-3 flex items-center justify-between border-b border-slate-700">
                     <div className="flex items-center">
                       <BrainCircuit className="h-5 w-5 text-compliance-400 mr-2" />
-                      <span className="text-white font-medium">AI Agent Workflow</span>
+                      <span className="text-white font-medium">{t('trust.aiWorkflow')}</span>
                     </div>
                     <div className="flex space-x-1">
                       <div className="w-3 h-3 rounded-full bg-red-500"></div>

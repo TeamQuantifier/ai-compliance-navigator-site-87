@@ -4,8 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const InsidersSection = () => {
+  const { t, currentLocale } = useLanguage();
   // Real partner logos
   const logos = [
     {
@@ -95,13 +97,13 @@ const InsidersSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h3 className="text-3xl font-bold mb-6 text-white">
-            Compliance, powered by insiders.
+            {t('insiders.title')}
           </h3>
           <p className="text-xl text-slate-300 mb-6">
-            We combine cutting-edge tech with real compliance expertise.
+            {t('insiders.subtitle')}
           </p>
           <p className="text-lg text-slate-400 mb-10">
-            Join 250+ companies—from startups to multinational corporations—who trust our solutions.
+            {t('insiders.companiesCount')}
           </p>
         </div>
 
@@ -137,9 +139,9 @@ const InsidersSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Link to="/contact">
+          <Link to={`/${currentLocale}/contact`}>
             <Button className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 h-auto text-lg shadow-lg shadow-slate-900/30 group">
-              Contact Us
+              {t('insiders.contactUs')}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>

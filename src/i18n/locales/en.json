@@ -11,8 +11,142 @@
     "login": "Log In"
   },
   "hero": {
-    "title": "Compliance Management Made Simple",
-    "subtitle": "Streamline your compliance processes"
+    "title": "The AI-native compliance layer for organizations",
+    "subtitle": "Your AI Agent Compliance Officer that manages projects, collects data, and showcases results—automating the entire compliance process",
+    "supportingFrameworks": "Supporting key compliance frameworks",
+    "requestDemo": "Request Demo",
+    "exploreFeatures": "Explore Features"
+  },
+  "features": {
+    "title": "Comprehensive AI-Powered Compliance Suite",
+    "subtitle": "We offer complete tools to automate and streamline your compliance processes across multiple regulatory frameworks.",
+    "aiOfficer": {
+      "title": "AI Compliance Officer",
+      "description": "AI-driven assistant that monitors systems, identifies issues, and suggests remediation."
+    },
+    "documents": {
+      "title": "Document Management",
+      "description": "Centralized repository with automated version control and audit trails."
+    },
+    "roleAccess": {
+      "title": "Role-Based Access",
+      "description": "Tailored interfaces for managers, contributors, and auditors with proper segregation of duties."
+    },
+    "analytics": {
+      "title": "Analytics & Dashboards",
+      "description": "Real-time visualization of compliance status, risk levels, and key metrics."
+    },
+    "workflows": {
+      "title": "Automated Workflows",
+      "description": "Automate compliance processes to ensure consistency and minimize errors."
+    },
+    "dataManagement": {
+      "title": "Data Management",
+      "description": "Secure handling of sensitive data with built-in privacy controls."
+    },
+    "multiFramework": {
+      "title": "Multi-Framework Support",
+      "subtitle": "We cover multiple compliance frameworks from a single interface.",
+      "cybersecurity": "Cybersecurity (SOC, NIS II, NIST)",
+      "infoSecurity": "Information Security (ISO 27001)",
+      "dataPrivacy": "Data Privacy (GDPR, HIPAA, CCPA)",
+      "environmental": "Environmental (ISO 14001, GHG)",
+      "esg": "ESG Reporting Standards",
+      "governance": "Governance & Whistleblowing",
+      "certified": "Certified Product Quality",
+      "verifiedBy": "Verified by TÜV NORD",
+      "certDescription": "Our ESG compliance solutions meet the highest standards of quality certification, ensuring reliable and trustworthy operation across all supported frameworks.",
+      "compatibility": "Framework Compatibility"
+    }
+  },
+  "roles": {
+    "title": "Tailored for Every Role",
+    "subtitle": "Specialized interfaces for different roles in your organization.",
+    "managers": {
+      "title": "For Managers",
+      "description": "Comprehensive dashboards to oversee compliance and inform decisions."
+    },
+    "contributors": {
+      "title": "For Contributors",
+      "description": "Streamlined interfaces for data entry, tasks, and evidence collection."
+    },
+    "auditors": {
+      "title": "For Auditors",
+      "description": "Detailed audit trails and verification tools to validate compliance."
+    },
+    "learnMore": "Learn More"
+  },
+  "trust": {
+    "title": "Why Teams Trust Us with Compliance",
+    "subtitle": "Compliance used to be time-consuming. Now, it's automatic.",
+    "peaceOfMind": {
+      "title": "Peace of Mind, Powered by Automation",
+      "description": "No more chasing employees or endless follow-ups. Our AI-driven platform ensures tasks get done—on time, every time—without manual reminders."
+    },
+    "noManualWork": {
+      "title": "Say Goodbye to Manual Oversight",
+      "description": "Our smart agents connect with your team directly via Slack and email, handling training, data collection, and policy sign-offs—so you don't have to."
+    },
+    "realTime": {
+      "title": "Stay Ahead with Real-Time Visibility",
+      "description": "Instantly see what's done, what's pending, and where the risks are. With continuous insights, you're always a step ahead of non-compliance."
+    },
+    "quickLaunch": {
+      "title": "Launch in Minutes, Not Months",
+      "description": "No complex onboarding. No expensive consultants. Just a fast, seamless rollout that gets your team up and running—today."
+    },
+    "allInOne": {
+      "title": "Everything You Need. One Platform.",
+      "description": "Manage SOC 2, ISO 27001, GDPR, and more—all in one place. Fully automated. Fully integrated. Fully under control."
+    },
+    "aiInAction": "AI-Powered Compliance in Action",
+    "aiSubtitle": "See how our platform transforms compliance from a burden into a competitive advantage",
+    "analyticsDashboard": "Compliance Analytics Dashboard",
+    "aiWorkflow": "AI Agent Workflow",
+    "riskScore": "Risk Score",
+    "compliance": "Compliance",
+    "tasks": "Tasks",
+    "trendTitle": "Compliance Score Trend",
+    "lastMonths": "Last 6 months",
+    "frameworkCoverage": "Framework Coverage",
+    "coverage": "Coverage",
+    "complianceAgent": "Compliance Agent",
+    "activeNow": "Active now",
+    "agentMessage1": "I've analyzed the latest data security policies and found 3 potential gaps that need attention.",
+    "agentMessage2": "Scheduling automated follow-ups with IT team members to collect necessary documentation.",
+    "viewDetails": "View Details",
+    "respond": "Respond",
+    "activeWorkflows": "Active Compliance Workflows"
+  },
+  "insiders": {
+    "title": "Compliance, powered by insiders.",
+    "subtitle": "We combine cutting-edge tech with real compliance expertise.",
+    "companiesCount": "Join 250+ companies—from startups to multinational corporations—who trust our solutions.",
+    "contactUs": "Contact Us"
+  },
+  "cta": {
+    "title": "Start Your AI-Powered Compliance Journey Today",
+    "subtitle": "Join hundreds of organizations that have transformed their compliance processes with our intelligent platform.",
+    "enterprise": {
+      "title": "For Enterprise",
+      "description": "Comprehensive compliance management for complex regulatory environments.",
+      "feature1": "Multi-entity management",
+      "feature2": "Full access to all features"
+    },
+    "midMarket": {
+      "title": "For Mid-Market",
+      "description": "Scalable solutions to grow with your compliance needs.",
+      "feature1": "Flexible implementation",
+      "feature2": "Right-sized automation"
+    },
+    "startups": {
+      "title": "For Startups",
+      "description": "Build compliance into your foundation from day one.",
+      "feature1": "Essential features",
+      "feature2": "Affordable pricing"
+    },
+    "requestDemo": "Request Demo",
+    "viewPricing": "View Pricing"
   },
   "footer": {
     "product": "Product",

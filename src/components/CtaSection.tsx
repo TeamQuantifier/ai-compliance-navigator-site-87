@@ -2,8 +2,10 @@
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CtaSection = () => {
+  const { t, currentLocale } = useLanguage();
   return <section className="py-16 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-compliance-900 to-innovation-900 -z-10"></div>
@@ -17,61 +19,61 @@ const CtaSection = () => {
           <Shield className="h-16 w-16 mx-auto mb-6 text-white/90" />
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
-            Start Your AI-Powered Compliance Journey Today
+            {t('cta.title')}
           </h2>
           
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Join hundreds of organizations that have transformed their compliance processes with our intelligent platform.
+            {t('cta.subtitle')}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-3">For Enterprise</h3>
-              <p className="text-white/70 mb-4">Comprehensive compliance management for complex regulatory environments.</p>
+              <h3 className="text-xl font-semibold text-white mb-3">{t('cta.enterprise.title')}</h3>
+              <p className="text-white/70 mb-4">{t('cta.enterprise.description')}</p>
               <div className="flex items-start mb-2">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Multi-entity managment</p>
+                <p className="text-white/80">{t('cta.enterprise.feature1')}</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Full access to all features</p>
+                <p className="text-white/80">{t('cta.enterprise.feature2')}</p>
               </div>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-3">For Mid-Market</h3>
-              <p className="text-white/70 mb-4">Scalable solutions to grow with your compliance needs.</p>
+              <h3 className="text-xl font-semibold text-white mb-3">{t('cta.midMarket.title')}</h3>
+              <p className="text-white/70 mb-4">{t('cta.midMarket.description')}</p>
               <div className="flex items-start mb-2">
                 <CheckCircle className="h-5 w-5 text-innovation-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Flexible implementation</p>
+                <p className="text-white/80">{t('cta.midMarket.feature1')}</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-innovation-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Right-sized automation</p>
+                <p className="text-white/80">{t('cta.midMarket.feature2')}</p>
               </div>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-3">For Startups</h3>
-              <p className="text-white/70 mb-4">Build compliance into your foundation from day one.</p>
+              <h3 className="text-xl font-semibold text-white mb-3">{t('cta.startups.title')}</h3>
+              <p className="text-white/70 mb-4">{t('cta.startups.description')}</p>
               <div className="flex items-start mb-2">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Essential features</p>
+                <p className="text-white/80">{t('cta.startups.feature1')}</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-compliance-300 mt-0.5 mr-2 flex-shrink-0" />
-                <p className="text-white/80">Affordable pricing</p>
+                <p className="text-white/80">{t('cta.startups.feature2')}</p>
               </div>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg" size="lg">
-              <Link to="/contact">Request Demo</Link>
+              <Link to={`/${currentLocale}/contact`}>{t('cta.requestDemo')}</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/20 px-8 py-6 text-lg group bg-gray-50 text-innovation-900">
-              <Link to="/plans">
-                View Pricing
+              <Link to={`/${currentLocale}/plans`}>
+                {t('cta.viewPricing')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

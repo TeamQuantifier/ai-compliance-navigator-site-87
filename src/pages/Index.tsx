@@ -8,8 +8,10 @@ import { ArrowRight, CheckCircle, Database, Shield, Users, FileCheck } from "luc
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t, currentLocale } = useLanguage();
   return (
     <div className="min-h-screen">
       <HeroSection />
@@ -22,10 +24,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">
-              Tailored for Every Role
+              {t('roles.title')}
             </h2>
             <p className="text-lg text-slate-600">
-              Specialized interfaces for different roles in your organization.
+              {t('roles.subtitle')}
             </p>
           </div>
           
@@ -34,13 +36,13 @@ const Index = () => {
               <div className="bg-compliance-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-compliance-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">For Managers</h3>
+              <h3 className="text-xl font-bold mb-3">{t('roles.managers.title')}</h3>
               <p className="text-slate-600 mb-4">
-                Comprehensive dashboards to oversee compliance and inform decisions.
+                {t('roles.managers.description')}
               </p>
               <Button asChild variant="outline" className="group" size="sm">
-                <Link to="/by-roles">
-                  Learn More
+                <Link to={`/${currentLocale}/by-roles`}>
+                  {t('roles.learnMore')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -50,13 +52,13 @@ const Index = () => {
               <div className="bg-innovation-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Database className="h-10 w-10 text-innovation-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">For Contributors</h3>
+              <h3 className="text-xl font-bold mb-3">{t('roles.contributors.title')}</h3>
               <p className="text-slate-600 mb-4">
-                Streamlined interfaces for data entry, tasks, and evidence collection.
+                {t('roles.contributors.description')}
               </p>
               <Button asChild variant="outline" className="group" size="sm">
-                <Link to="/by-roles">
-                  Learn More
+                <Link to={`/${currentLocale}/by-roles`}>
+                  {t('roles.learnMore')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -66,13 +68,13 @@ const Index = () => {
               <div className="bg-compliance-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <FileCheck className="h-10 w-10 text-compliance-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">For Auditors</h3>
+              <h3 className="text-xl font-bold mb-3">{t('roles.auditors.title')}</h3>
               <p className="text-slate-600 mb-4">
-                Detailed audit trails and verification tools to validate compliance.
+                {t('roles.auditors.description')}
               </p>
               <Button asChild variant="outline" className="group" size="sm">
-                <Link to="/by-roles">
-                  Learn More
+                <Link to={`/${currentLocale}/by-roles`}>
+                  {t('roles.learnMore')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

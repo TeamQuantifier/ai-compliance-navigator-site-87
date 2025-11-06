@@ -3,7 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const HeroSection = () => {
+  const { t, currentLocale } = useLanguage();
   return <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
       {/* Background gradient - darkened further */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 -z-10"></div>
@@ -17,11 +20,11 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Main Header - Full Width */}
           <h1 className="text-4xl mb-8 text-white text-center leading-tight font-semibold md:text-7xl bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
-            The AI-native compliance layer for organizations
+            {t('hero.title')}
           </h1>
           
           {/* Subheader - Full Width */}
-          <h2 className="text-xl md:text-2xl text-slate-300 mb-12 text-center leading-relaxed">Your AI Agent Compliance Officer that manages projects, collects data, and showcases results—automating the entire compliance process</h2>
+          <h2 className="text-xl md:text-2xl text-slate-300 mb-12 text-center leading-relaxed">{t('hero.subtitle')}</h2>
           
           {/* ChatGPT-like input - darkened */}
           <div className="max-w-3xl mx-auto mb-16 relative">
@@ -31,7 +34,7 @@ const HeroSection = () => {
           {/* Framework icons - updated with darker backgrounds and higher contrast */}
           <div className="text-center mb-16">
             <h3 className="text-lg font-medium text-white mb-6">
-              Supporting key compliance frameworks
+              {t('hero.supportingFrameworks')}
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
               <div className="flex flex-col items-center">
@@ -81,11 +84,11 @@ const HeroSection = () => {
           {/* Call-to-action buttons - enhanced with better contrast and darker gradients */}
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
-              <Link to="/contact">Request Demo</Link>
+              <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
-              <Link to="/product/features">
-                Explore Features
+              <Link to={`/${currentLocale}/product/features`}>
+                {t('hero.exploreFeatures')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
