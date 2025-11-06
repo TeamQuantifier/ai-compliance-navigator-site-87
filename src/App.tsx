@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { RedirectToPreferredLocale } from "./components/RedirectToPreferredLocale";
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -63,8 +64,8 @@ const App = () => (
               <Navbar />
               <main className="flex-grow pt-16">
                 <Routes>
-                  {/* Redirect root to default locale */}
-                  <Route path="/" element={<Navigate to="/en" replace />} />
+                  {/* Redirect root to preferred locale */}
+                  <Route path="/" element={<RedirectToPreferredLocale />} />
                   
                   {/* Locale-based routes */}
                   <Route path="/:locale" element={<Index />} />
