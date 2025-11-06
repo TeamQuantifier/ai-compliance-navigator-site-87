@@ -188,9 +188,7 @@
     "agentMessage2": "Scheduling automated follow-ups with IT team members to collect necessary documentation.",
     "viewDetails": "View Details",
     "respond": "Respond",
-    "activeWorkflows": "Active Compliance Workflows"
-  },
-  "trust": {
+    "activeWorkflows": "Active Compliance Workflows",
     "credentials": {
       "title": "Compliance made effortless. Trust built in.",
       "battleTested": {
@@ -217,28 +215,6 @@
     "subtitle": "We combine cutting-edge tech with real compliance expertise.",
     "companiesCount": "Join 250+ companies—from startups to multinational corporations—who trust our solutions.",
     "contactUs": "Contact Us"
-  },
-  "trust": {
-    "credentials": {
-      "title": "Compliance made effortless. Trust built in.",
-      "battleTested": {
-        "title": "Battle-Tested in Dozens of Audits",
-        "description": "We don't just talk compliance—we prove it in real-world scenarios."
-      },
-      "enterpriseSecurity": {
-        "title": "Enterprise-Grade Security & Certification",
-        "description": "Rigorous penetration testing and top-tier certifications ensure your data is safe."
-      },
-      "provenSuccess": {
-        "title": "Proven Success & Satisfaction",
-        "description": "Happy clients, strong partnerships, and measurable impact."
-      },
-      "testimonial": {
-        "quote": "This Innovative solutions not only meet strict regulatory requirements but also effectively address business needs.",
-        "author": "Michal Miszulowicz",
-        "position": "Director of Innovation Sector Collaboration, BNP Paribas Bank"
-      }
-    }
   },
   "cta": {
     "title": "Start Your AI-Powered Compliance Journey Today",

@@ -188,9 +188,7 @@
     "agentMessage2": "Planuję automatyczne follow-upy z członkami zespołu IT w celu zebrania niezbędnej dokumentacji.",
     "viewDetails": "Zobacz szczegóły",
     "respond": "Odpowiedz",
-    "activeWorkflows": "Aktywne workflow compliance"
-  },
-  "trust": {
+    "activeWorkflows": "Aktywne workflow compliance",
     "credentials": {
       "title": "Compliance stał się prosty. Zaufanie wbudowane.",
       "battleTested": {
