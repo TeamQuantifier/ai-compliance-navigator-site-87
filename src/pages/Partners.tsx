@@ -2,7 +2,7 @@ import PageTemplate from '@/components/PageTemplate';
 import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import WorldMap from '@/components/WorldMap';
+import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -82,7 +82,7 @@ const Partners = () => {
           </p>
           
           <div className="h-[400px] mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
-            <WorldMap />
+            <PartnerMap />
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-primary">
