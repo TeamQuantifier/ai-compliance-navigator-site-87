@@ -573,18 +573,16 @@
           "scheduleReview": "Schedule Review"
         }
       },
-      "auditManagement": {
+      "audit": {
         "title": "Internal & External Audit Management",
         "subtitle": "End-to-End Automation of the Audit Lifecycle",
         "description": "From audit prep to remediation, Quantifier streamlines the full process — reducing manual work and increasing audit confidence.",
-        "functionalityTitle": "Functionality Includes:",
-        "features": {
-          "feature1": "Pre-audit checklists and readiness scoring",
-          "feature2": "Role-based evidence collection from internal teams",
-          "feature3": "Dedicated portal for external auditors with controlled access",
-          "feature4": "Automated mapping of documents to control points",
-          "feature5": "Remediation plans with AI-generated action items and timelines"
-        }
+        "functionality": "Functionality Includes:",
+        "feature1": "Pre-audit checklists and readiness scoring",
+        "feature2": "Role-based evidence collection from internal teams",
+        "feature3": "Dedicated portal for external auditors with controlled access",
+        "feature4": "Automated mapping of documents to control points",
+        "feature5": "Remediation plans with AI-generated action items and timelines"
       },
       "apiIntegration": {
         "title": "Seamless API Integration",
@@ -592,31 +590,25 @@
         "description": "Quantifier connects directly to your systems—HRIS, ERP, cloud storage, financial tools, and more—through secure APIs to collect evidence, pull logs, and verify data automatically.",
         "noManual": "No more manual uploads. No more copy-paste.",
         "whatYouGet": "What You Get:",
-        "features": {
-          "feature1": "Real-time data syncing from internal systems",
-          "feature2": "Auto-filled evidence trails across multiple frameworks",
-          "feature3": "Instant access to relevant documents, usage logs, and activity records",
-          "feature4": "Fewer tasks for contributors, with higher confidence in data accuracy"
-        }
+        "feature1": "Real-time data syncing from internal systems",
+        "feature2": "Auto-filled evidence trails across multiple frameworks",
+        "feature3": "Instant access to relevant documents, usage logs, and activity records",
+        "feature4": "Fewer tasks for contributors, with higher confidence in data accuracy"
       },
-      "valueChainSection": {
+      "valueChain": {
         "title": "Value Chain Management",
         "subtitle": "Bring Suppliers and Partners into Your Compliance Process",
         "description": "Compliance doesn't stop at your organization's boundaries. Quantifier enables you to assess, manage, and collaborate with suppliers, vendors, and partners across your entire value chain.",
         "whatYouGet": "What You Get:",
-        "features": {
-          "feature1": "Secure access portals for third parties to respond to compliance requests",
-          "feature2": "Supplier-level risk scoring and automated due diligence",
-          "feature3": "Monitoring tools for ESG, cybersecurity, and regulatory performance",
-          "feature4": "Consolidated documentation for CBAM, Scope 3 emissions, GDPR contracts, and more"
-        },
-        "aiOfficerTitle": "What the AI Agent Officer does:",
-        "aiFeatures": {
-          "feature1": "Sends compliance requests directly to your suppliers",
-          "feature2": "Tracks progress and follows up automatically",
-          "feature3": "Evaluates submitted data for completeness and risk",
-          "feature4": "Flags gaps or inconsistencies before they affect your compliance posture"
-        }
+        "feature1": "Secure access portals for third parties to respond to compliance requests",
+        "feature2": "Supplier-level risk scoring and automated due diligence",
+        "feature3": "Monitoring tools for ESG, cybersecurity, and regulatory performance",
+        "feature4": "Consolidated documentation for CBAM, Scope 3 emissions, GDPR contracts, and more",
+        "whatAgentDoes": "What the AI Agent Officer does:",
+        "agentFeature1": "Sends compliance requests directly to your suppliers",
+        "agentFeature2": "Tracks progress and follows up automatically",
+        "agentFeature3": "Evaluates submitted data for completeness and risk",
+        "agentFeature4": "Flags gaps or inconsistencies before they affect your compliance posture"
       },
       "cta": {
         "title": "Start Managing Compliance Intelligently",
