@@ -415,22 +415,14 @@
       "title": "Nasza misja",
       "description": "Wierzymy, że compliance nie powinien być ciężarem—powinien być przewagą konkurencyjną. Nasza misja to wzmocnienie organizacji poprzez technologię AI, która czyni compliance prostszym, szybszym i bardziej niezawodnym.",
       "different": "Co nas wyróżnia",
-      "aiNative": {
-        "title": "Podejście AI-Native",
-        "description": "Zbudowaliśmy naszą platformę od podstaw z myślą o AI, nie jako dodatek."
-      },
-      "expertise": {
-        "title": "Głęboka ekspertyza",
-        "description": "Nasz zespół łączy doświadczenie w compliance i technologii z wiodących firm."
-      },
-      "innovation": {
-        "title": "Ciągłe innowacje",
-        "description": "Nieustannie rozwijamy naszą platformę, aby wyprzedzać zmieniające się wymogi regulacyjne."
-      },
-      "global": {
-        "title": "Perspektywa globalna",
-        "description": "Wspieramy standardy compliance z całego świata i rozumiemy lokalne niuanse."
-      }
+      "aiNative": "Podejście AI-Native",
+      "aiNativeDesc": "Zbudowaliśmy naszą platformę od podstaw z myślą o AI, nie jako dodatek.",
+      "expertise": "Głęboka ekspertyza",
+      "expertiseDesc": "Nasz zespół łączy doświadczenie w compliance i technologii z wiodących firm.",
+      "innovation": "Ciągłe innowacje",
+      "innovationDesc": "Nieustannie rozwijamy naszą platformę, aby wyprzedzać zmieniające się wymogi regulacyjne.",
+      "global": "Perspektywa globalna",
+      "globalDesc": "Wspieramy standardy compliance z całego świata i rozumiemy lokalne niuanse."
     },
     "cta": {
       "title": "Gotowy, aby przekształcić swój compliance?",
