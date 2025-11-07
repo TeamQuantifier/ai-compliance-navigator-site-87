@@ -4,13 +4,15 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import PageTemplate from '@/components/PageTemplate';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductFeatures = () => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("ai-officer");
   const handleTabChange = (value: string) => {
     setActiveTab(value);
   };
-  return <PageTemplate title="Built-in Intelligence, Embedded Compliance" description="Explore the features behind Quantifier's Autonomous Compliance Engine">
+  return <PageTemplate title={t('product.features.title')} description={t('product.features.description')}>
       <div className="max-w-4xl mx-auto mb-12">
         
         
@@ -20,19 +22,19 @@ const ProductFeatures = () => {
         <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-transparent h-auto p-0">
           <TabsTrigger value="ai-officer" className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}>
             <Brain className="h-5 w-5 mr-2" />
-            <span>AI Officer</span>
+            <span>{t('product.features.tabs.aiOfficer')}</span>
           </TabsTrigger>
           <TabsTrigger value="analytics" className={`data-[state=active]:bg-innovation-100 data-[state=active]:border-innovation-500 border-2 border-transparent px-4 py-3 h-auto`}>
             <BarChart3 className="h-5 w-5 mr-2" />
-            <span>Analytics</span>
+            <span>{t('product.features.tabs.analytics')}</span>
           </TabsTrigger>
           <TabsTrigger value="task-hub" className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}>
             <Database className="h-5 w-5 mr-2" />
-            <span>Task & Data Hub</span>
+            <span>{t('product.features.tabs.taskHub')}</span>
           </TabsTrigger>
           <TabsTrigger value="risk-assessment" className={`data-[state=active]:bg-innovation-100 data-[state=active]:border-innovation-500 border-2 border-transparent px-4 py-3 h-auto`}>
             <ShieldAlert className="h-5 w-5 mr-2" />
-            <span>Risk Assessment</span>
+            <span>{t('product.features.tabs.riskAssessment')}</span>
           </TabsTrigger>
         </TabsList>
 
@@ -40,43 +42,42 @@ const ProductFeatures = () => {
         <TabsContent value="ai-officer" className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 gradient-heading">AI Agent Officer</h3>
+              <h3 className="text-2xl font-bold mb-4 gradient-heading">{t('product.features.aiOfficer.title')}</h3>
               <p className="text-slate-700 mb-6">
-                Quantifier's AI Agent Officer acts as your always-on compliance assistant — trained to understand 
-                complex frameworks, coordinate tasks, assign responsibilities, and drive results in real time.
+                {t('product.features.aiOfficer.description')}
               </p>
               
-              <h4 className="text-lg font-semibold mb-3">What It Does:</h4>
+              <h4 className="text-lg font-semibold mb-3">{t('product.features.aiOfficer.whatItDoes')}</h4>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-compliance-700 text-sm">✓</span>
                   </div>
-                  <span>Onboards employees into the right controls and frameworks</span>
+                  <span>{t('product.features.aiOfficer.feature1')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-compliance-700 text-sm">✓</span>
                   </div>
-                  <span>Guides teams step-by-step through SOC 2, ISO 27001, GDPR, CSRD, and more</span>
+                  <span>{t('product.features.aiOfficer.feature2')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-compliance-700 text-sm">✓</span>
                   </div>
-                  <span>Sends intelligent nudges, escalations, and follow-ups</span>
+                  <span>{t('product.features.aiOfficer.feature3')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-compliance-700 text-sm">✓</span>
                   </div>
-                  <span>Interprets framework requirements and translates them into plain language and actionable tasks</span>
+                  <span>{t('product.features.aiOfficer.feature4')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-compliance-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-compliance-700 text-sm">✓</span>
                   </div>
-                  <span>Handles Q&A and training workflows across departments</span>
+                  <span>{t('product.features.aiOfficer.feature5')}</span>
                 </li>
               </ul>
               
@@ -84,8 +85,7 @@ const ProductFeatures = () => {
                 <div className="flex items-start">
                   <div className="text-compliance-600 mr-3">💡</div>
                   <p className="text-sm text-slate-700">
-                    <strong>Why it matters:</strong> AI agents eliminate the bottlenecks of human coordination and 
-                    static instructions. You get consistency, speed, and clarity — at scale.
+                    <strong>{t('product.features.aiOfficer.whyItMatters')}</strong> {t('product.features.aiOfficer.importance')}
                   </p>
                 </div>
               </div>
@@ -93,7 +93,7 @@ const ProductFeatures = () => {
             
             <div className="bg-gradient-to-br from-compliance-50 to-compliance-100 rounded-xl p-6 border border-compliance-200 shadow-md">
               <div className="rounded-lg bg-white p-4 shadow-sm mb-4">
-                <h4 className="font-medium text-slate-800 mb-2">AI Compliance Assistant</h4>
+                <h4 className="font-medium text-slate-800 mb-2">{t('product.features.aiOfficer.assistant')}</h4>
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="h-10 w-10 rounded-full bg-compliance-100 flex items-center justify-center">
                     <Brain className="h-5 w-5 text-compliance-600" />
@@ -104,19 +104,19 @@ const ProductFeatures = () => {
                 </div>
                 <div className="space-y-2">
                   <div className="bg-slate-50 rounded p-2 text-sm">
-                    <p className="text-slate-600">Good morning! I've detected 3 new control tasks for ISO 27001 that need your attention.</p>
+                    <p className="text-slate-600">{t('product.features.aiOfficer.greeting')}</p>
                   </div>
                   <div className="bg-compliance-50 rounded p-2 text-sm ml-8">
-                    <p className="text-slate-700">Please prioritize these for me by deadline.</p>
+                    <p className="text-slate-700">{t('product.features.aiOfficer.userRequest')}</p>
                   </div>
                   <div className="bg-slate-50 rounded p-2 text-sm">
-                    <p className="text-slate-600">I've sorted your tasks by urgency. Your top priority is updating the access control policy which is due in 3 days.</p>
+                    <p className="text-slate-600">{t('product.features.aiOfficer.response')}</p>
                   </div>
                 </div>
               </div>
               
               <div className="bg-white rounded-lg shadow-sm p-4">
-                <h4 className="font-medium text-slate-800 mb-3">Framework Progress</h4>
+                <h4 className="font-medium text-slate-800 mb-3">{t('product.features.aiOfficer.frameworkProgress')}</h4>
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
@@ -155,75 +155,73 @@ const ProductFeatures = () => {
         <TabsContent value="analytics" className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 gradient-heading">AI Analytics</h3>
-              <h4 className="text-xl mb-4">Powerful Dashboards. Actionable Insights. Full Control.</h4>
+              <h3 className="text-2xl font-bold mb-4 gradient-heading">{t('product.features.analytics.title')}</h3>
+              <h4 className="text-xl mb-4">{t('product.features.analytics.subtitle')}</h4>
               <p className="text-slate-700 mb-6">
-                Forget stale reports. Quantifier gives you real-time visibility across all your compliance 
-                domains — with powerful dashboards and full Power BI integrations.
+                {t('product.features.analytics.description')}
               </p>
               
-              <h4 className="text-lg font-semibold mb-3">Key Features:</h4>
+              <h4 className="text-lg font-semibold mb-3">{t('product.features.analytics.keyFeatures')}</h4>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Executive dashboards tailored to CFOs, CISOs, and compliance leads</span>
+                  <span>{t('product.features.analytics.feature1')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Live KPI monitoring by framework, team, entity, or risk domain</span>
+                  <span>{t('product.features.analytics.feature2')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Drill-down capability for granular evidence and documentation tracking</span>
+                  <span>{t('product.features.analytics.feature3')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>AI-generated risk summaries and insight recommendations</span>
+                  <span>{t('product.features.analytics.feature4')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Custom reporting with export to XLSX, PDF, or direct BI tools</span>
+                  <span>{t('product.features.analytics.feature5')}</span>
                 </li>
               </ul>
               
               <div className="bg-innovation-50 p-4 rounded-lg">
                 <p className="text-sm text-slate-700">
-                  <strong>Why it matters:</strong> You're not just tracking compliance — you're managing risk, 
-                  allocating resources, and reporting to the board with confidence.
+                  <strong>{t('product.features.analytics.whyItMatters')}</strong> {t('product.features.analytics.importance')}
                 </p>
               </div>
             </div>
             
             <div className="bg-gradient-to-br from-innovation-50 to-innovation-100 rounded-xl p-6 border border-innovation-200 shadow-md">
               <div className="bg-white rounded-lg p-4 shadow-sm mb-4">
-                <h4 className="font-medium text-slate-800 mb-3">Compliance Dashboard</h4>
+                <h4 className="font-medium text-slate-800 mb-3">{t('product.features.analytics.dashboard')}</h4>
                 
                 <div className="grid grid-cols-3 gap-3 mb-4">
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <div className="text-3xl font-bold text-innovation-600 mb-1">93%</div>
-                    <div className="text-xs text-slate-500">Overall Readiness</div>
+                    <div className="text-xs text-slate-500">{t('product.features.analytics.overallReadiness')}</div>
                   </div>
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <div className="text-3xl font-bold text-innovation-600 mb-1">12</div>
-                    <div className="text-xs text-slate-500">Pending Tasks</div>
+                    <div className="text-xs text-slate-500">{t('product.features.analytics.pendingTasks')}</div>
                   </div>
                   <div className="bg-slate-50 p-3 rounded-lg text-center">
                     <div className="text-3xl font-bold text-innovation-600 mb-1">4</div>
-                    <div className="text-xs text-slate-500">Frameworks</div>
+                    <div className="text-xs text-slate-500">{t('product.features.analytics.frameworks')}</div>
                   </div>
                 </div>
                 
-                <h5 className="text-sm font-medium mb-2">Framework Compliance</h5>
+                <h5 className="text-sm font-medium mb-2">{t('product.features.analytics.frameworkCompliance')}</h5>
                 <div className="flex items-center">
                   <div className="flex-1 h-28 flex items-end space-x-3">
                     <div className="w-1/4 bg-innovation-200 rounded-t-sm h-[65%]"></div>
@@ -236,21 +234,21 @@ const ProductFeatures = () => {
               
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="flex justify-between items-center mb-3">
-                  <h4 className="font-medium text-slate-800">Risk Analysis</h4>
+                  <h4 className="font-medium text-slate-800">{t('product.features.analytics.riskAnalysis')}</h4>
                   <FileSpreadsheet className="h-4 w-4 text-slate-400" />
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="flex items-center"><span className="h-3 w-3 rounded-full bg-green-500 mr-2"></span>Low Risk</span>
+                    <span className="flex items-center"><span className="h-3 w-3 rounded-full bg-green-500 mr-2"></span>{t('product.features.analytics.lowRisk')}</span>
                     <span>68%</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="flex items-center"><span className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></span>Medium Risk</span>
+                    <span className="flex items-center"><span className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></span>{t('product.features.analytics.mediumRisk')}</span>
                     <span>25%</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="flex items-center"><span className="h-3 w-3 rounded-full bg-red-500 mr-2"></span>High Risk</span>
+                    <span className="flex items-center"><span className="h-3 w-3 rounded-full bg-red-500 mr-2"></span>{t('product.features.analytics.highRisk')}</span>
                     <span>7%</span>
                   </div>
                 </div>
@@ -263,44 +261,43 @@ const ProductFeatures = () => {
         <TabsContent value="task-hub" className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-compliance-700 bg-clip-text text-transparent">Task & Data Hub</h3>
-              <h4 className="text-xl mb-4 text-slate-800">Centralize Every Request, Task, Document, and Interaction</h4>
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-compliance-700 bg-clip-text text-transparent">{t('product.features.taskHub.title')}</h3>
+              <h4 className="text-xl mb-4 text-slate-800">{t('product.features.taskHub.subtitle')}</h4>
               <p className="text-slate-700 mb-6">
-                The Task & Data Hub brings together all actions across your compliance program — into one clean, 
-                searchable, permissioned workspace.
+                {t('product.features.taskHub.description')}
               </p>
               
-              <h4 className="text-lg font-semibold mb-3 text-slate-800">What You Can Do:</h4>
+              <h4 className="text-lg font-semibold mb-3 text-slate-800">{t('product.features.taskHub.whatYouCanDo')}</h4>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-white text-sm">✓</span>
                   </div>
-                  <span className="text-slate-700">Trigger evidence or input requests to specific individuals or teams</span>
+                  <span className="text-slate-700">{t('product.features.taskHub.feature1')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-white text-sm">✓</span>
                   </div>
-                  <span className="text-slate-700">Track and manage documentation submissions by control or framework</span>
+                  <span className="text-slate-700">{t('product.features.taskHub.feature2')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-white text-sm">✓</span>
                   </div>
-                  <span className="text-slate-700">Assign and reassign ownership, due dates, and priority levels</span>
+                  <span className="text-slate-700">{t('product.features.taskHub.feature3')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-white text-sm">✓</span>
                   </div>
-                  <span className="text-slate-700">Automate recurring workflows and SOPs</span>
+                  <span className="text-slate-700">{t('product.features.taskHub.feature4')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-white text-sm">✓</span>
                   </div>
-                  <span className="text-slate-700">See a real-time audit trail of what's done, what's delayed, and what's missing</span>
+                  <span className="text-slate-700">{t('product.features.taskHub.feature5')}</span>
                 </li>
               </ul>
               
@@ -308,7 +305,7 @@ const ProductFeatures = () => {
                 <div className="flex items-start">
                   <div className="text-compliance-400 mr-3">💡</div>
                   <p className="text-sm text-slate-700">
-                    <strong>Why it matters:</strong> No more chasing people in Slack or through platform. 
+                    <strong>{t('product.features.taskHub.whyItMatters')}</strong> {t('product.features.taskHub.importance')}
                     No more shared folders or email chains. Everything is trackable, time-stamped, and mapped to your controls.
                   </p>
                 </div>
@@ -404,51 +401,49 @@ const ProductFeatures = () => {
         <TabsContent value="risk-assessment" className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 gradient-heading">AI Risk Assessment</h3>
-              <h4 className="text-xl mb-4">Continuous Risk Visibility and Remediation Guidance</h4>
+              <h3 className="text-2xl font-bold mb-4 gradient-heading">{t('product.features.riskAssessment.title')}</h3>
+              <h4 className="text-xl mb-4">{t('product.features.riskAssessment.subtitle')}</h4>
               <p className="text-slate-700 mb-6">
-                Quantifier's agents proactively monitor your organization's compliance risk posture — surfacing 
-                weaknesses, suggesting remediations, and tracking incidents automatically.
+                {t('product.features.riskAssessment.description')}
               </p>
               
-              <h4 className="text-lg font-semibold mb-3">Key Capabilities:</h4>
+              <h4 className="text-lg font-semibold mb-3">{t('product.features.riskAssessment.keyCapabilities')}</h4>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Real-time incident detection and flagging</span>
+                  <span>{t('product.features.riskAssessment.feature1')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Continuous control monitoring and deviation alerts</span>
+                  <span>{t('product.features.riskAssessment.feature2')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>AI-generated risk impact assessments</span>
+                  <span>{t('product.features.riskAssessment.feature3')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Smart recommendations for mitigations or corrective action</span>
+                  <span>{t('product.features.riskAssessment.feature4')}</span>
                 </li>
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-innovation-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                     <span className="text-innovation-700 text-sm">✓</span>
                   </div>
-                  <span>Integrated risk registers per entity, team, or framework</span>
+                  <span>{t('product.features.riskAssessment.feature5')}</span>
                 </li>
               </ul>
               
               <div className="bg-innovation-50 p-4 rounded-lg">
                 <p className="text-sm text-slate-700">
-                  <strong>Why it matters:</strong> You don't need a dedicated team to monitor every policy or control. 
-                  The platform watches, assesses, and responds — before risk turns into failure.
+                  <strong>{t('product.features.riskAssessment.whyItMatters')}</strong> {t('product.features.riskAssessment.importance')}
                 </p>
               </div>
             </div>
@@ -537,44 +532,44 @@ const ProductFeatures = () => {
           <div className="flex items-start mb-4">
             <ClipboardCheck className="h-10 w-10 text-compliance-600 mr-4" />
             <div>
-              <h3 className="text-xl font-bold mb-2">Internal & External Audit Management</h3>
-              <h4 className="text-lg mb-3">End-to-End Automation of the Audit Lifecycle</h4>
+              <h3 className="text-xl font-bold mb-2">{t('product.features.audit.title')}</h3>
+              <h4 className="text-lg mb-3">{t('product.features.audit.subtitle')}</h4>
             </div>
           </div>
           <p className="text-slate-700 mb-4">
-            From audit prep to remediation, Quantifier streamlines the full process — reducing manual work and increasing audit confidence.
+            {t('product.features.audit.description')}
           </p>
-          <h5 className="font-medium mb-3">Functionality Includes:</h5>
+          <h5 className="font-medium mb-3">{t('product.features.audit.functionality')}</h5>
           <ul className="space-y-2 mb-4">
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-compliance-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Pre-audit checklists and readiness scoring</span>
+              <span className="text-sm">{t('product.features.audit.feature1')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-compliance-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Role-based evidence collection from internal teams</span>
+              <span className="text-sm">{t('product.features.audit.feature2')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-compliance-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Dedicated portal for external auditors with controlled access</span>
+              <span className="text-sm">{t('product.features.audit.feature3')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-compliance-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Automated mapping of documents to control points</span>
+              <span className="text-sm">{t('product.features.audit.feature4')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-compliance-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Remediation plans with AI-generated action items and timelines</span>
+              <span className="text-sm">{t('product.features.audit.feature5')}</span>
             </li>
           </ul>
         </div>
@@ -583,40 +578,39 @@ const ProductFeatures = () => {
           <div className="flex items-start mb-4">
             <Zap className="h-10 w-10 text-innovation-600 mr-4" />
             <div>
-              <h3 className="text-xl font-bold mb-2">Seamless API Integration</h3>
-              <h4 className="text-lg mb-3">Automate Data Collection at the Source</h4>
+              <h3 className="text-xl font-bold mb-2">{t('product.features.apiIntegration.title')}</h3>
+              <h4 className="text-lg mb-3">{t('product.features.apiIntegration.subtitle')}</h4>
             </div>
           </div>
           <p className="text-slate-700 mb-4">
-            Quantifier connects directly to your systems—HRIS, ERP, cloud storage, financial tools, and more—through 
-            secure APIs to collect evidence, pull logs, and verify data automatically.
+            {t('product.features.apiIntegration.description')}
           </p>
-          <p className="text-slate-700 italic mb-4">No more manual uploads. No more copy-paste.</p>
-          <h5 className="font-medium mb-3">What You Get:</h5>
+          <p className="text-slate-700 italic mb-4">{t('product.features.apiIntegration.noManual')}</p>
+          <h5 className="font-medium mb-3">{t('product.features.apiIntegration.whatYouGet')}</h5>
           <ul className="space-y-2 mb-4">
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-innovation-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Real-time data syncing from internal systems</span>
+              <span className="text-sm">{t('product.features.apiIntegration.feature1')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-innovation-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Auto-filled evidence trails across multiple frameworks</span>
+              <span className="text-sm">{t('product.features.apiIntegration.feature2')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-innovation-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Instant access to relevant documents, usage logs, and activity records</span>
+              <span className="text-sm">{t('product.features.apiIntegration.feature3')}</span>
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <span className="text-innovation-700 text-xs">✓</span>
               </div>
-              <span className="text-sm">Fewer tasks for contributors, with higher confidence in data accuracy</span>
+              <span className="text-sm">{t('product.features.apiIntegration.feature4')}</span>
             </li>
           </ul>
         </div>
@@ -626,72 +620,71 @@ const ProductFeatures = () => {
         <div className="flex items-start mb-4">
           <Link2 className="h-10 w-10 text-compliance-600 mr-4" />
           <div>
-            <h3 className="text-xl font-bold mb-2">Value Chain Management</h3>
-            <h4 className="text-lg mb-3">Bring Suppliers and Partners into Your Compliance Process</h4>
+            <h3 className="text-xl font-bold mb-2">{t('product.features.valueChain.title')}</h3>
+            <h4 className="text-lg mb-3">{t('product.features.valueChain.subtitle')}</h4>
           </div>
         </div>
         <p className="text-slate-700 mb-4">
-          Compliance doesn't stop at your organization's boundaries. Quantifier enables you to assess, manage, 
-          and collaborate with suppliers, vendors, and partners across your entire value chain.
+          {t('product.features.valueChain.description')}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
           <div>
-            <h5 className="font-medium mb-3">What You Get:</h5>
+            <h5 className="font-medium mb-3">{t('product.features.valueChain.whatYouGet')}</h5>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-compliance-700 text-xs">✓</span>
                 </div>
-                <span className="text-sm">Secure access portals for third parties to respond to compliance requests</span>
-              </li>
-              <li className="flex items-center">
-                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-compliance-700 text-xs">✓</span>
-                </div>
-                <span className="text-sm">Supplier-level risk scoring and automated due diligence</span>
-              </li>
-              <li className="flex items-center">
-                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-compliance-700 text-xs">✓</span>
-                </div>
-                <span className="text-sm">Monitoring tools for ESG, cybersecurity, and regulatory performance</span>
-              </li>
-              <li className="flex items-center">
-                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-compliance-700 text-xs">✓</span>
-                </div>
-                <span className="text-sm">Consolidated documentation for CBAM, Scope 3 emissions, GDPR contracts, and more</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h5 className="font-medium mb-3">What the AI Agent Officer does:</h5>
+              <span className="text-sm">{t('product.features.valueChain.feature1')}</span>
+            </li>
+            <li className="flex items-center">
+              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-compliance-700 text-xs">✓</span>
+              </div>
+              <span className="text-sm">{t('product.features.valueChain.feature2')}</span>
+            </li>
+            <li className="flex items-center">
+              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-compliance-700 text-xs">✓</span>
+              </div>
+              <span className="text-sm">{t('product.features.valueChain.feature3')}</span>
+            </li>
+            <li className="flex items-center">
+              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-compliance-700 text-xs">✓</span>
+              </div>
+              <span className="text-sm">{t('product.features.valueChain.feature4')}</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 className="font-medium mb-3">{t('product.features.valueChain.whatAgentDoes')}</h5>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-innovation-700 text-xs">✓</span>
                 </div>
-                <span className="text-sm">Sends compliance requests directly to your suppliers</span>
-              </li>
-              <li className="flex items-center">
-                <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-innovation-700 text-xs">✓</span>
-                </div>
-                <span className="text-sm">Tracks progress and follows up automatically</span>
-              </li>
-              <li className="flex items-center">
-                <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-innovation-700 text-xs">✓</span>
-                </div>
-                <span className="text-sm">Evaluates submitted data for completeness and risk</span>
-              </li>
-              <li className="flex items-center">
-                <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-innovation-700 text-xs">✓</span>
-                </div>
-                <span className="text-sm">Flags gaps or inconsistencies before they affect your compliance posture</span>
+              <span className="text-sm">{t('product.features.valueChain.agentFeature1')}</span>
+            </li>
+            <li className="flex items-center">
+              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-innovation-700 text-xs">✓</span>
+              </div>
+              <span className="text-sm">{t('product.features.valueChain.agentFeature2')}</span>
+            </li>
+            <li className="flex items-center">
+              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-innovation-700 text-xs">✓</span>
+              </div>
+              <span className="text-sm">{t('product.features.valueChain.agentFeature3')}</span>
+            </li>
+            <li className="flex items-center">
+              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-innovation-700 text-xs">✓</span>
+              </div>
+              <span className="text-sm">{t('product.features.valueChain.agentFeature4')}</span>
               </li>
             </ul>
           </div>
@@ -700,12 +693,12 @@ const ProductFeatures = () => {
       
       <div className="mt-12 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-heading">
-          Start Managing Compliance Intelligently
+          {t('product.features.cta.title')}
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <Button asChild size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 h-auto text-lg shadow-lg shadow-slate-900/30 group">
             <Link to="/contact">
-              Book a Demo
+              {t('product.features.cta.bookDemo')}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
