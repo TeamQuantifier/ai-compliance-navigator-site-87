@@ -30,21 +30,22 @@ const PartnerMap = () => {
       
       // Create the base map container
       const mapVisual = document.createElement('div');
-      mapVisual.className = 'relative w-full h-full bg-slate-100 overflow-hidden';
-      mapVisual.style.backgroundImage = 'url("https://images.unsplash.com/photo-1589519160732-57fc6fef352b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")';
-      mapVisual.style.backgroundSize = 'cover';
+      mapVisual.className = 'relative w-full h-full bg-white overflow-hidden';
+      mapVisual.style.backgroundImage = 'url("/lovable-uploads/world-map-outline.png")';
+      mapVisual.style.backgroundSize = 'contain';
       mapVisual.style.backgroundPosition = 'center';
+      mapVisual.style.backgroundRepeat = 'no-repeat';
       
       // Add an overlay
       const overlay = document.createElement('div');
-      overlay.className = 'absolute inset-0 bg-slate-900/20';
+      overlay.className = 'absolute inset-0 bg-slate-50/10';
       mapVisual.appendChild(overlay);
       
       // Add region labels
       const regions = ["Europe", "North America", "South America"];
       regions.forEach((region, index) => {
         const regionLabel = document.createElement('div');
-        regionLabel.className = 'absolute text-white font-bold text-xl bg-compliance-900/50 px-3 py-1 rounded-full';
+        regionLabel.className = 'absolute text-compliance-900 font-bold text-xl bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-slate-200';
         
         // Position labels in different areas
         switch(region) {
@@ -82,7 +83,7 @@ const PartnerMap = () => {
         
         marker.innerHTML = `
           <div class="relative group">
-            <div class="text-innovation-600 animate-pulse">
+            <div class="text-innovation-600 animate-pulse drop-shadow-lg">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
             <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 py-1 px-2 bg-white text-compliance-900 text-xs font-medium rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10 whitespace-nowrap">
