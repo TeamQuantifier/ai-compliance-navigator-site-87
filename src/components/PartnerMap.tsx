@@ -2,19 +2,18 @@
 import React, { useEffect, useRef } from 'react';
 import { MapPin } from 'lucide-react';
 
-// Partner locations with coordinates [longitude, latitude]
+// Partner locations with precise percentage positioning
 const partnerLocations = [
-  { id: 1, name: "London", coords: [-0.1276, 51.5072], region: "Europe" },
-  { id: 2, name: "Paris", coords: [2.3522, 48.8566], region: "Europe" },
-  { id: 3, name: "Berlin", coords: [13.4050, 52.5200], region: "Europe" },
-  { id: 4, name: "Madrid", coords: [-3.7038, 40.4168], region: "Europe" },
-  { id: 5, name: "Rome", coords: [12.4964, 41.9028], region: "Europe" },
-  { id: 6, name: "New York", coords: [-74.0060, 40.7128], region: "North America" },
-  { id: 7, name: "San Francisco", coords: [-122.4194, 37.7749], region: "North America" },
-  { id: 8, name: "Chicago", coords: [-87.6298, 41.8781], region: "North America" },
-  { id: 9, name: "Mexico City", coords: [-99.1332, 19.4326], region: "North America" },
-  { id: 10, name: "São Paulo", coords: [-46.6333, -23.5505], region: "South America" },
-  { id: 11, name: "Rio de Janeiro", coords: [-43.1729, -22.9068], region: "South America" },
+  { id: 2, name: "Paris", left: "51%", top: "22%", region: "Europe" },
+  { id: 3, name: "Warsaw", left: "56%", top: "18%", region: "Europe" },
+  { id: 4, name: "Madrid", left: "48%", top: "29%", region: "Europe" },
+  { id: 5, name: "Rome", left: "54%", top: "27%", region: "Europe" },
+  { id: 6, name: "New York", left: "29%", top: "26%", region: "North America" },
+  { id: 7, name: "San Francisco", left: "16.5%", top: "28%", region: "North America" },
+  { id: 8, name: "Chicago", left: "25%", top: "24%", region: "North America" },
+  { id: 9, name: "Mexico City", left: "21%", top: "34%", region: "North America" },
+  { id: 10, name: "São Paulo", left: "34%", top: "60%", region: "South America" },
+  { id: 11, name: "Rio de Janeiro", left: "36%", top: "58%", region: "South America" },
 ];
 
 const PartnerMap = () => {
@@ -50,16 +49,16 @@ const PartnerMap = () => {
         // Position labels in different areas
         switch(region) {
           case "Europe":
-            regionLabel.style.top = '30%';
-            regionLabel.style.left = '55%';
+            regionLabel.style.top = '20%';
+            regionLabel.style.left = '50%';
             break;
           case "North America":
             regionLabel.style.top = '35%';
-            regionLabel.style.left = '25%';
+            regionLabel.style.left = '20%';
             break;
           case "South America":
             regionLabel.style.top = '70%';
-            regionLabel.style.left = '30%';
+            regionLabel.style.left = '25%';
             break;
         }
         
@@ -72,14 +71,9 @@ const PartnerMap = () => {
         const marker = document.createElement('div');
         marker.className = 'absolute';
         
-        // Convert geographic coordinates to relative positions on the map
-        // This is a simplified approach for visualization
-        // Real implementations would use proper mapping libraries
-        const left = ((location.coords[0] + 180) / 360) * 100;
-        const top = (1 - ((location.coords[1] + 90) / 180)) * 100;
-        
-        marker.style.left = `${left}%`;
-        marker.style.top = `${top}%`;
+        // Use precise percentage positioning from the locations data
+        marker.style.left = location.left;
+        marker.style.top = location.top;
         
         marker.innerHTML = `
           <div class="relative group">
