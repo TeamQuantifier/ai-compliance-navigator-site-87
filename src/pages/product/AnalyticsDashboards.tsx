@@ -4,12 +4,15 @@ import { ArrowRight, BarChart4, Shield, CheckCircle, FileText, PieChart, BrainCi
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AnalyticsDashboards = () => {
+  const { t } = useLanguage();
+  
   return (
     <PageTemplate
-      title="AI Analytics and Dashboards"
-      description="Gain insights with intelligent analytics and visualizations of your compliance data."
+      title={t('product.analyticsDashboards.title')}
+      description={t('product.analyticsDashboards.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
@@ -17,13 +20,13 @@ const AnalyticsDashboards = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                AI-Powered Analytics That Drive Compliance
+                {t('product.analyticsDashboards.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                Turn compliance data into actionable insights with Quantifier's AI analytics dashboards.
+                {t('product.analyticsDashboards.hero.subtitle')}
               </p>
               <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90">
-                Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                {t('product.analyticsDashboards.hero.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
             <div className="md:w-1/2">
@@ -37,7 +40,7 @@ const AnalyticsDashboards = () => {
         {/* Dashboard Features */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
-            Key Features of Our AI Analytics Dashboards
+            {t('product.analyticsDashboards.keyFeatures.title')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -48,8 +51,8 @@ const AnalyticsDashboards = () => {
                     <BarChart4 className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Real-Time Metrics</h3>
-                    <p className="text-slate-600">Monitor your compliance status across all frameworks in real-time, with instant updates as changes occur.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('product.analyticsDashboards.keyFeatures.realTime.title')}</h3>
+                    <p className="text-slate-600">{t('product.analyticsDashboards.keyFeatures.realTime.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -62,8 +65,8 @@ const AnalyticsDashboards = () => {
                     <BrainCircuit className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">AI-Driven Insights</h3>
-                    <p className="text-slate-600">Leverage machine learning to identify patterns, predict risks, and receive intelligent recommendations for improvement.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('product.analyticsDashboards.keyFeatures.aiInsights.title')}</h3>
+                    <p className="text-slate-600">{t('product.analyticsDashboards.keyFeatures.aiInsights.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -76,8 +79,8 @@ const AnalyticsDashboards = () => {
                     <AlertTriangle className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Risk Assessment</h3>
-                    <p className="text-slate-600">Visualize and quantify compliance risks with AI-powered analysis that prioritizes critical action areas.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('product.analyticsDashboards.keyFeatures.riskAssessment.title')}</h3>
+                    <p className="text-slate-600">{t('product.analyticsDashboards.keyFeatures.riskAssessment.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -93,23 +96,23 @@ const AnalyticsDashboards = () => {
                 <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
                   <Activity className="h-5 w-5 text-[#9b87f5]" />
                 </div>
-                <h3 className="text-xl font-bold">Comprehensive Reporting</h3>
+                <h3 className="text-xl font-bold">{t('product.analyticsDashboards.detailedFeatures.reporting.title')}</h3>
               </div>
               <p className="text-slate-700 mb-5">
-                Generate tailored reports for different stakeholders, from executive summaries to detailed technical documentation.
+                {t('product.analyticsDashboards.detailedFeatures.reporting.description')}
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">Customizable dashboard views for different roles</span>
+                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.reporting.feature1')}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">Export capabilities in multiple formats (PDF, Excel, CSV)</span>
+                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.reporting.feature2')}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">Automatic report generation and scheduling</span>
+                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.reporting.feature3')}</span>
                 </li>
               </ul>
             </div>
@@ -119,23 +122,23 @@ const AnalyticsDashboards = () => {
                 <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
                   <Zap className="h-5 w-5 text-[#9b87f5]" />
                 </div>
-                <h3 className="text-xl font-bold">Intelligent Automation</h3>
+                <h3 className="text-xl font-bold">{t('product.analyticsDashboards.detailedFeatures.automation.title')}</h3>
               </div>
               <p className="text-slate-700 mb-5">
-                Let AI handle the heavy lifting of compliance monitoring and analysis, freeing your team to focus on strategic initiatives.
+                {t('product.analyticsDashboards.detailedFeatures.automation.description')}
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">Automated evidence collection and verification</span>
+                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.automation.feature1')}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">Smart alerts for compliance gaps and approaching deadlines</span>
+                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.automation.feature2')}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">AI-generated action plans with specific remediation steps</span>
+                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.automation.feature3')}</span>
                 </li>
               </ul>
             </div>
@@ -147,17 +150,17 @@ const AnalyticsDashboards = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Elevate Your Compliance Reporting
+                {t('product.analyticsDashboards.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
-                Join organizations that use Quantifier's AI analytics to transform compliance data into strategic insights.
+                {t('product.analyticsDashboards.cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  {t('product.analyticsDashboards.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Explore Plans
+                  {t('product.analyticsDashboards.cta.explorePlans')}
                 </Button>
               </div>
             </div>

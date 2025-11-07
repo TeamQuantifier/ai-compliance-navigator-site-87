@@ -2,48 +2,51 @@
 import { ArrowRight, Shield, CheckCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductOverview = () => {
+  const { t } = useLanguage();
+  
   const features = [
     {
-      title: "Main Features",
+      title: t('product.overview.mainFeatures.title'),
       href: "/product/features",
-      description: "Explore the core capabilities of our AI-driven compliance platform."
+      description: t('product.overview.mainFeatures.description')
     },
     {
-      title: "AI Compliance Officer",
+      title: t('product.overview.aiOfficer.title'),
       href: "/product/ai-compliance-officer",
-      description: "Meet your virtual compliance assistant that monitors and guides your compliance program."
+      description: t('product.overview.aiOfficer.description')
     },
     {
-      title: "Task and Data Management",
+      title: t('product.overview.taskManagement.title'),
       href: "/product/task-data-management",
-      description: "Efficiently manage compliance tasks and sensitive data with built-in controls."
+      description: t('product.overview.taskManagement.description')
     },
     {
-      title: "Documents Management",
+      title: t('product.overview.documents.title'),
       href: "/product/documents-management",
-      description: "Centralize and control all your compliance documentation in one secure place."
+      description: t('product.overview.documents.description')
     },
     {
-      title: "Value Chain",
+      title: t('product.overview.valueChain.title'),
       href: "/product/value-chain",
-      description: "Map and monitor compliance across your entire organizational value chain."
+      description: t('product.overview.valueChain.description')
     },
     {
-      title: "Risk Assessment",
+      title: t('product.overview.riskAssessment.title'),
       href: "/product/risk-assessment",
-      description: "Identify, assess, and mitigate compliance risks with AI-powered analysis."
+      description: t('product.overview.riskAssessment.description')
     },
     {
-      title: "AI Analytics and Dashboards",
+      title: t('product.overview.analytics.title'),
       href: "/product/analytics-dashboards",
-      description: "Gain insights with intelligent analytics and visualizations of your compliance data."
+      description: t('product.overview.analytics.description')
     },
     {
-      title: "API Integrations",
+      title: t('product.overview.apiIntegrations.title'),
       href: "/product/api-integrations",
-      description: "Connect our platform with your existing tools and systems for seamless operation."
+      description: t('product.overview.apiIntegrations.description')
     }
   ];
 
@@ -53,14 +56,13 @@ const ProductOverview = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
-              AI-Powered Compliance Platform
+              {t('product.overview.title')}
             </h1>
             <p className="text-xl text-slate-700 mb-8">
-              Our comprehensive solution automates and streamlines compliance processes
-              using artificial intelligence and machine learning.
+              {t('product.overview.subtitle')}
             </p>
             <Button className="group">
-              Request Demo
+              {t('product.overview.requestDemo')}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
@@ -70,11 +72,10 @@ const ProductOverview = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 gradient-heading">
-            Product Features
+            {t('product.overview.featuresTitle')}
           </h2>
           <p className="text-lg text-slate-700 mb-8">
-            Explore the capabilities of our AI-driven compliance platform designed to
-            revolutionize how organizations approach regulatory compliance.
+            {t('product.overview.featuresSubtitle')}
           </p>
         </div>
 
@@ -84,7 +85,7 @@ const ProductOverview = () => {
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-600 mb-4">{feature.description}</p>
               <Link to={feature.href} className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
-                Learn more <ChevronRight className="ml-1 h-4 w-4" />
+                {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
             </div>
           ))}
