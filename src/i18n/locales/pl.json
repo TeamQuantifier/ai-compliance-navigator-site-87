@@ -281,5 +281,222 @@
     "loading": "Ładowanie...",
     "error": "Wystąpił błąd",
     "notFound": "Strona nie znaleziona"
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "description": "Jesteśmy tutaj, aby pomóc w Twojej podróży compliance",
+    "heading": "Porozmawiajmy o Twoich potrzebach compliance",
+    "intro": "Nasz zespół ekspertów jest gotowy, aby pomóc Ci uprościć Twoje procesy compliance. Skontaktuj się z nami i odkryj, jak możemy wspierać Twoją organizację.",
+    "methods": {
+      "email": "Wyślij nam e-mail",
+      "call": "Zadzwoń do nas",
+      "offices": "Nasze biura"
+    },
+    "addresses": {
+      "warsaw": {
+        "city": "Warszawa, Polska",
+        "line1": "ul. Przykładowa 123",
+        "line2": "00-001 Warszawa"
+      },
+      "poznan": {
+        "city": "Poznań, Polska",
+        "line1": "ul. Testowa 456",
+        "line2": "61-001 Poznań"
+      },
+      "sanfrancisco": {
+        "city": "San Francisco, USA",
+        "line1": "123 Market Street",
+        "line2": "San Francisco, CA 94102"
+      }
+    },
+    "form": {
+      "title": "Wyślij nam wiadomość",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "company": "Firma",
+      "message": "Wiadomość",
+      "placeholders": {
+        "firstName": "Jan",
+        "lastName": "Kowalski",
+        "email": "jan.kowalski@firma.pl",
+        "company": "Nazwa Twojej firmy",
+        "message": "Powiedz nam, jak możemy Ci pomóc..."
+      },
+      "disclaimer": "Przesyłając ten formularz, wyrażasz zgodę na przetwarzanie Twoich danych osobowych zgodnie z naszą polityką prywatności.",
+      "submit": "Wyślij wiadomość",
+      "submitting": "Wysyłanie..."
+    },
+    "toast": {
+      "success": "Wiadomość wysłana!",
+      "successDescription": "Dziękujemy za kontakt. Odpowiemy wkrótce.",
+      "error": "Nie udało się wysłać",
+      "errorDescription": "Wystąpił błąd. Spróbuj ponownie.",
+      "fillAllFields": "Wypełnij wszystkie pola",
+      "fillAllFieldsDescription": "Proszę uzupełnić wszystkie wymagane pola."
+    }
+  },
+  "plans": {
+    "title": "Wybierz plan dopasowany do Twojej organizacji",
+    "description": "Elastyczne plany skalowane wraz z Twoimi potrzebami compliance",
+    "popular": "Popularny",
+    "talkToSales": "Porozmawiaj z zespołem sprzedaży",
+    "starter": {
+      "name": "Starter",
+      "subtitle": "Idealne dla małych zespołów",
+      "description": "Rozpocznij swoją podróż compliance z niezbędnymi narzędziami i funkcjami dla małych organizacji.",
+      "feature1": "Wsparcie 1-2 standardów compliance",
+      "feature2": "Podstawowy AI Compliance Officer",
+      "feature3": "Zarządzanie podstawowymi dokumentami",
+      "feature4": "Dashboard analityczny",
+      "cta": "Świetne dla startupów rozpoczynających swoją podróż compliance"
+    },
+    "growth": {
+      "name": "Growth",
+      "subtitle": "Dla rozwijających się firm",
+      "description": "Kompleksowe rozwiązanie compliance dla rozwijających się organizacji z wieloma wymogami regulacyjnymi.",
+      "feature1": "Wsparcie do 5 standardów compliance",
+      "feature2": "Zaawansowany AI Compliance Officer",
+      "feature3": "Pełne zarządzanie dokumentami i workflow",
+      "feature4": "Zaawansowana analityka i raportowanie",
+      "feature5": "Dedykowany account manager",
+      "cta": "Najbardziej popularny wybór dla rozwijających się firm"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "subtitle": "Dla dużych organizacji",
+      "description": "Rozwiązanie enterprise z pełnym wsparciem dla złożonych środowisk compliance wielooddziałowych.",
+      "feature1": "Nieograniczone standardy compliance",
+      "feature2": "Zaawansowana automatyzacja AI",
+      "feature3": "Zarządzanie wieloma podmiotami",
+      "feature4": "Dedykowany Customer Success Manager",
+      "feature5": "Priorytetowe wsparcie 24/7",
+      "feature6": "Niestandardowe integracje i API",
+      "cta": "Kompletna platforma compliance dla przedsiębiorstw"
+    },
+    "customSolution": {
+      "title": "Potrzebujesz rozwiązania niestandardowego?",
+      "description": "Współpracujemy z Tobą, aby stworzyć dostosowane rozwiązanie compliance idealnie dopasowane do unikalnych wymagań Twojej organizacji.",
+      "button": "Skontaktuj się z nami"
+    }
+  },
+  "about": {
+    "title": "O nas",
+    "description": "Poznaj zespół rewolucjonizujący zarządzanie compliance dzięki AI",
+    "heading": "Transformujemy compliance poprzez AI",
+    "subtitle": "Quantifier został założony w 2019 roku przez zespół ekspertów compliance i innowatorów technologicznych, aby rozwiązać jeden z największych wyzwań współczesnych organizacji: złożoność zarządzania wieloma standardami compliance.",
+    "intro": {
+      "paragraph1": "Nasza podróż rozpoczęła się od prostego spostrzeżenia: podczas gdy wymogi regulacyjne stają się coraz bardziej złożone, organizacje wciąż polegają na przestarzałych, ręcznych procesach, które są czasochłonne, podatne na błędy i trudne do skalowania.",
+      "paragraph2": "Dziś, Quantifier jest zaufaną platformą AI-powered compliance dla ponad 250 organizacji na całym świecie, od innowacyjnych startupów po wiodące przedsiębiorstwa. Nasza platforma automatyzuje i upraszcza compliance w dziesiątkach standardów, pozwalając zespołom skupić się na tym, co naprawdę ważne: rozwijaniu ich biznesu."
+    },
+    "highlights": {
+      "title": "Nasza historia w liczbach",
+      "organizations": "Organizacji",
+      "organizationsDesc": "Ufających naszej platformie",
+      "globalReach": "Zasięg globalny",
+      "globalReachDesc": "Działalność w 15+ krajach",
+      "partners": "Partnerów",
+      "partnersDesc": "Certyfikowanych konsultantów",
+      "awardWinning": "Nagrodzony",
+      "awardWinningDesc": "Uznany przez branżowych liderów",
+      "expertTeam": "Zespół ekspertów",
+      "expertTeamDesc": "Compliance i technologia"
+    },
+    "impact": {
+      "title": "Nasz wpływ",
+      "organizations": "250+",
+      "organizationsLabel": "Organizacji",
+      "years": "5+",
+      "yearsLabel": "Lat działalności",
+      "partners": "50+",
+      "partnersLabel": "Globalnych partnerów"
+    },
+    "mission": {
+      "title": "Nasza misja",
+      "description": "Wierzymy, że compliance nie powinien być ciężarem—powinien być przewagą konkurencyjną. Nasza misja to wzmocnienie organizacji poprzez technologię AI, która czyni compliance prostszym, szybszym i bardziej niezawodnym.",
+      "different": "Co nas wyróżnia",
+      "aiNative": {
+        "title": "Podejście AI-Native",
+        "description": "Zbudowaliśmy naszą platformę od podstaw z myślą o AI, nie jako dodatek."
+      },
+      "expertise": {
+        "title": "Głęboka ekspertyza",
+        "description": "Nasz zespół łączy doświadczenie w compliance i technologii z wiodących firm."
+      },
+      "innovation": {
+        "title": "Ciągłe innowacje",
+        "description": "Nieustannie rozwijamy naszą platformę, aby wyprzedzać zmieniające się wymogi regulacyjne."
+      },
+      "global": {
+        "title": "Perspektywa globalna",
+        "description": "Wspieramy standardy compliance z całego świata i rozumiemy lokalne niuanse."
+      }
+    },
+    "cta": {
+      "title": "Gotowy, aby przekształcić swój compliance?",
+      "description": "Dołącz do setek organizacji, które już uprościły swoje procesy compliance dzięki Quantifier.",
+      "button": "Zaplanuj demo"
+    }
+  },
+  "partners": {
+    "title": "Program partnerski",
+    "description": "Dołącz do naszej globalnej sieci partnerów i pomóż organizacjom przekształcić ich podejście do compliance",
+    "network": {
+      "badge": "Globalna sieć",
+      "heading": "Rozwijaj swój biznes z Quantifier",
+      "intro": "Nasz program partnerski łączy wiodące firmy konsultingowe, audytorskie i technologiczne z organizacjami potrzebującymi ekspertyzy w zakresie compliance."
+    },
+    "types": {
+      "consulting": {
+        "title": "Partnerzy konsultingowi",
+        "description": "Firmy konsultingowe i doradcze specjalizujące się w compliance i zarządzaniu ryzykiem"
+      },
+      "audit": {
+        "title": "Partnerzy audytorzy",
+        "description": "Certyfikowane firmy audytorskie świadczące usługi oceny zgodności"
+      },
+      "technology": {
+        "title": "Partnerzy technologiczni",
+        "description": "Integratorzy systemów i dostawcy technologii uzupełniających naszą platformę"
+      },
+      "financial": {
+        "title": "Instytucje finansowe",
+        "description": "Banki i instytucje finansowe oferujące usługi compliance swoim klientom"
+      },
+      "ngo": {
+        "title": "NGO i organizacje non-profit",
+        "description": "Organizacje wspierające rozwój standardów compliance i najlepszych praktyk"
+      }
+    },
+    "map": {
+      "title": "Nasi partnerzy na całym świecie",
+      "description": "Współpracujemy z ponad 50 partnerami w 15+ krajach, zapewniając globalne wsparcie dla organizacji w ich podróży compliance.",
+      "testimonial": "Współpraca z Quantifier pozwoliła nam dostarczać naszym klientom najlepsze w swojej klasie rozwiązania compliance.",
+      "testimonialAuthor": "Jan Kowalski, Partner w ConsultCorp"
+    },
+    "benefits": {
+      "title": "Korzyści z partnerstwa",
+      "expand": {
+        "title": "Rozwijaj swoją ofertę",
+        "description": "Dodaj leading-edge rozwiązania AI compliance do swojego portfolio usług"
+      },
+      "access": {
+        "title": "Dostęp do klientów",
+        "description": "Zyskaj dostęp do naszej rosnącej bazy klientów szukających specjalistycznej ekspertyzy"
+      },
+      "comarket": {
+        "title": "Co-marketing",
+        "description": "Skorzystaj z wspólnych inicjatyw marketingowych i promocyjnych"
+      },
+      "value": {
+        "title": "Zwiększ wartość",
+        "description": "Zwiększ wartość dla klientów poprzez zintegrowane rozwiązania compliance"
+      }
+    },
+    "cta": {
+      "title": "Zainteresowany partnerstwem?",
+      "description": "Skontaktuj się z nami, aby dowiedzieć się więcej o naszym programie partnerskim i jak możemy rozwijać się razem.",
+      "button": "Zostań partnerem"
+    }
   }
 }
