@@ -412,6 +412,39 @@
       "button": "Request a Demo"
     }
   },
+  "product": {
+    "valueChain": {
+      "title": "Value Chain",
+      "description": "Map and monitor compliance across your entire organizational value chain.",
+      "placeholder": "Content for Value Chain will be added here."
+    },
+    "apiIntegrations": {
+      "title": "API Integrations",
+      "description": "Connect our platform with your existing tools and systems for seamless operation.",
+      "placeholder": "Content for API Integrations will be added here."
+    },
+    "documentsManagement": {
+      "title": "Documents Management",
+      "description": "Centralize and control all your compliance documentation in one secure place.",
+      "placeholder": "Content for Documents Management will be added here."
+    },
+    "taskDataManagement": {
+      "title": "Task and Data Management",
+      "description": "Centralized hub for managing all compliance tasks and data across your organization.",
+      "placeholder": "Content for Task and Data Management will be added here.",
+      "tabs": {
+        "aiOfficer": "AI Officer",
+        "analytics": "Analytics",
+        "taskHub": "Task & Data Hub",
+        "riskAssessment": "Risk Assessment"
+      }
+    },
+    "riskAssessment": {
+      "title": "Risk Assessment",
+      "description": "Identify, evaluate, and mitigate compliance risks across your organization.",
+      "placeholder": "Content for Risk Assessment will be added here."
+    }
+  },
   "partners": {
     "title": "Partner With Us",
     "description": "Join a global ecosystem driving smarter, simpler compliance.",

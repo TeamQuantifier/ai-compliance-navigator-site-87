@@ -1,15 +1,17 @@
-
 import PageTemplate from '@/components/PageTemplate';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const DocumentsManagement = () => {
+  const { t } = useLanguage();
+  
   return (
     <PageTemplate
-      title="Documents Management"
-      description="Centralize and control all your compliance documentation in one secure place."
+      title={t('product.documentsManagement.title')}
+      description={t('product.documentsManagement.description')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-slate-700 mb-6">
-          Content for Documents Management will be added here.
+          {t('product.documentsManagement.placeholder')}
         </p>
       </div>
     </PageTemplate>

@@ -430,6 +430,39 @@
       "button": "Zaplanuj demo"
     }
   },
+  "product": {
+    "valueChain": {
+      "title": "Łańcuch wartości",
+      "description": "Mapuj i monitoruj zgodność w całym łańcuchu wartości Twojej organizacji.",
+      "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj."
+    },
+    "apiIntegrations": {
+      "title": "Integracje API",
+      "description": "Połącz naszą platformę z Twoimi istniejącymi narzędziami i systemami dla płynnej pracy.",
+      "placeholder": "Treść dla Integracji API zostanie dodana tutaj."
+    },
+    "documentsManagement": {
+      "title": "Zarządzanie dokumentami",
+      "description": "Scentralizuj i kontroluj całą dokumentację compliance w jednym bezpiecznym miejscu.",
+      "placeholder": "Treść dla Zarządzania dokumentami zostanie dodana tutaj."
+    },
+    "taskDataManagement": {
+      "title": "Zarządzanie zadaniami i danymi",
+      "description": "Scentralizowany hub do zarządzania wszystkimi zadaniami i danymi compliance w Twojej organizacji.",
+      "placeholder": "Treść dla Zarządzania zadaniami i danymi zostanie dodana tutaj.",
+      "tabs": {
+        "aiOfficer": "AI Officer",
+        "analytics": "Analityka",
+        "taskHub": "Hub zadań i danych",
+        "riskAssessment": "Ocena ryzyka"
+      }
+    },
+    "riskAssessment": {
+      "title": "Ocena ryzyka",
+      "description": "Identyfikuj, oceniaj i łagodź ryzyka compliance w Twojej organizacji.",
+      "placeholder": "Treść dla Oceny ryzyka zostanie dodana tutaj."
+    }
+  },
   "partners": {
     "title": "Program partnerski",
     "description": "Dołącz do naszej globalnej sieci partnerów i pomóż organizacjom przekształcić ich podejście do compliance",

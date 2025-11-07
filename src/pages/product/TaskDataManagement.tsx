@@ -1,11 +1,12 @@
-
 import { useState } from 'react';
 import { Brain, BarChart3, Database, ShieldAlert } from 'lucide-react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import PageTemplate from '@/components/PageTemplate';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const TaskDataManagement = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("task-hub");
   
@@ -31,12 +32,12 @@ const TaskDataManagement = () => {
 
   return (
     <PageTemplate
-      title="Task and Data Management"
-      description="Efficiently manage compliance tasks and sensitive data with built-in controls."
+      title={t('product.taskDataManagement.title')}
+      description={t('product.taskDataManagement.description')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-slate-700 mb-6">
-          Content for Task and Data Management will be added here.
+          {t('product.taskDataManagement.placeholder')}
         </p>
       </div>
 
@@ -47,19 +48,19 @@ const TaskDataManagement = () => {
           <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-transparent h-auto p-0">
             <TabsTrigger value="ai-officer" className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}>
               <Brain className="h-5 w-5 mr-2" />
-              <span>AI Officer</span>
+              <span>{t('product.taskDataManagement.tabs.aiOfficer')}</span>
             </TabsTrigger>
             <TabsTrigger value="analytics" className={`data-[state=active]:bg-innovation-100 data-[state=active]:border-innovation-500 border-2 border-transparent px-4 py-3 h-auto`}>
               <BarChart3 className="h-5 w-5 mr-2" />
-              <span>Analytics</span>
+              <span>{t('product.taskDataManagement.tabs.analytics')}</span>
             </TabsTrigger>
             <TabsTrigger value="task-hub" className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}>
               <Database className="h-5 w-5 mr-2" />
-              <span>Task & Data Hub</span>
+              <span>{t('product.taskDataManagement.tabs.taskHub')}</span>
             </TabsTrigger>
             <TabsTrigger value="risk-assessment" className={`data-[state=active]:bg-innovation-100 data-[state=active]:border-innovation-500 border-2 border-transparent px-4 py-3 h-auto`}>
               <ShieldAlert className="h-5 w-5 mr-2" />
-              <span>Risk Assessment</span>
+              <span>{t('product.taskDataManagement.tabs.riskAssessment')}</span>
             </TabsTrigger>
           </TabsList>
         </Tabs>
