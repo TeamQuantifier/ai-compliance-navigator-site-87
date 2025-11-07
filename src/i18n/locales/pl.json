@@ -447,26 +447,11 @@
       "intro": "Nasz program partnerski łączy wiodące firmy konsultingowe, audytorskie i technologiczne z organizacjami potrzebującymi ekspertyzy w zakresie compliance."
     },
     "types": {
-      "consulting": {
-        "title": "Partnerzy konsultingowi",
-        "description": "Firmy konsultingowe i doradcze specjalizujące się w compliance i zarządzaniu ryzykiem"
-      },
-      "audit": {
-        "title": "Partnerzy audytorzy",
-        "description": "Certyfikowane firmy audytorskie świadczące usługi oceny zgodności"
-      },
-      "technology": {
-        "title": "Partnerzy technologiczni",
-        "description": "Integratorzy systemów i dostawcy technologii uzupełniających naszą platformę"
-      },
-      "financial": {
-        "title": "Instytucje finansowe",
-        "description": "Banki i instytucje finansowe oferujące usługi compliance swoim klientom"
-      },
-      "ngo": {
-        "title": "NGO i organizacje non-profit",
-        "description": "Organizacje wspierające rozwój standardów compliance i najlepszych praktyk"
-      }
+      "consulting": "Firmy konsultingowe",
+      "audit": "Partnerzy audytorzy",
+      "technology": "Integratorzy technologiczni",
+      "financial": "Instytucje finansowe",
+      "ngos": "NGO i organizacje non-profit"
     },
     "map": {
       "title": "Nasi partnerzy na całym świecie",
