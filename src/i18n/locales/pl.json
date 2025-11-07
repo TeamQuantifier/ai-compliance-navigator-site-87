@@ -385,10 +385,10 @@
     "description": "Poznaj zespół rewolucjonizujący zarządzanie compliance dzięki AI",
     "heading": "Transformujemy compliance poprzez AI",
     "subtitle": "Quantifier został założony w 2019 roku przez zespół ekspertów compliance i innowatorów technologicznych, aby rozwiązać jeden z największych wyzwań współczesnych organizacji: złożoność zarządzania wieloma standardami compliance.",
-    "intro": {
-      "paragraph1": "Nasza podróż rozpoczęła się od prostego spostrzeżenia: podczas gdy wymogi regulacyjne stają się coraz bardziej złożone, organizacje wciąż polegają na przestarzałych, ręcznych procesach, które są czasochłonne, podatne na błędy i trudne do skalowania.",
-      "paragraph2": "Dziś, Quantifier jest zaufaną platformą AI-powered compliance dla ponad 250 organizacji na całym świecie, od innowacyjnych startupów po wiodące przedsiębiorstwa. Nasza platforma automatyzuje i upraszcza compliance w dziesiątkach standardów, pozwalając zespołom skupić się na tym, co naprawdę ważne: rozwijaniu ich biznesu."
-    },
+    "intro1": "Quantifier na nowo definiuje sposób, w jaki organizacje zarządzają zgodnością regulacyjną — oferując działającą bez przerwy, natywnie opartą na AI platformę, która nieprzerwanie monitoruje, egzekwuje i zapewnia zgodność z przepisami takimi jak SOC, ISO czy RODO. Działając jako wirtualny compliance officer, Quantifier automatyzuje gromadzenie danych, zarządzanie zadaniami i nadzór, gwarantując ciągłą gotowość do audytu i pewność w dynamicznie zmieniającym się krajobrazie regulacyjnym.",
+    "intro2": "W ciągu ostatnich trzech lat wspieraliśmy ponad 250 organizacji w Europie, USA i Ameryce Łacińskiej — od globalnych liderów branżowych w sektorze produkcyjnym, farmaceutycznym i usług profesjonalnych po dynamicznie rozwijające się startupy. Nasza sieć obejmuje ponad 50 partnerów, w tym główne banki, firmy konsultingowe oraz organizacje pozarządowe.",
+    "intro3": "Jesteśmy dumni z uznania, jakie otrzymujemy od wiodących mediów, oraz z licznych nagród za innowacyjność i wpływ na branżę.",
+    "intro4": "Nasz zespół tworzą jedni z najlepszych inżynierów, prawników i doradców — wielu z nich posiada lub zdobywa stopnie doktorskie — połączeni misją budowania infrastruktury AI, która napędza przyszłość globalnej zgodności regulacyjnej.",
     "highlights": {
       "title": "Nasza historia w liczbach",
       "organizations": "Organizacji",
