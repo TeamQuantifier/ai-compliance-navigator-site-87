@@ -443,8 +443,9 @@
     "description": "Dołącz do naszej globalnej sieci partnerów i pomóż organizacjom przekształcić ich podejście do compliance",
     "network": {
       "badge": "Globalna sieć",
-      "heading": "Rozwijaj swój biznes z Quantifier",
-      "intro": "Nasz program partnerski łączy wiodące firmy konsultingowe, audytorskie i technologiczne z organizacjami potrzebującymi ekspertyzy w zakresie compliance."
+      "heading": "Dołącz do naszej zaufanej sieci partnerskiej",
+      "intro1": "Współpracujemy z ponad 50+ zaufanymi partnerami—w tym audytorami, łącznikami biznesowymi, bankami, firmami konsultingowymi i organizacjami pozarządowymi. Razem pomagamy firmom na całym świecie pewnie poruszać się w zmieniającym się krajobrazie compliance i zrównoważonego rozwoju.",
+      "intro2": "Rozwijajmy się razem. Niezależnie od tego, czy doradzasz klientom, zarządzasz audytami czy napędzasz innowacje—jest dla Ciebie miejsce w naszej sieci partnerskiej."
     },
     "types": {
       "consulting": "Firmy konsultingowe",
