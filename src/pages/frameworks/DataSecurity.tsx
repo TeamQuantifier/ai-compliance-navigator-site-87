@@ -57,28 +57,28 @@ const DataSecurity = () => {
 
   return (
     <PageTemplate
-      title="Data Security Frameworks"
-      description="Ensure compliance with data protection regulations like GDPR, HIPAA, and CCPA."
+      title={t('dataSecurityPage.title')}
+      description={t('dataSecurityPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-2 bg-gradient-to-r from-purple-700 to-indigo-600 bg-clip-text text-transparent">
-          Comprehensive Data Security Compliance
+          {t('dataSecurityPage.pageTitle')}
         </h1>
         <p className="text-lg text-slate-700 text-center mb-10 max-w-3xl mx-auto">
-          Navigate complex regulatory landscapes with Quantifier's AI-powered data security management
+          {t('dataSecurityPage.pageDescription')}
         </p>
         
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid grid-cols-3 w-full max-w-md mx-auto mb-8">
             <TabsTrigger value="gdpr" className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800">
-              GDPR
+              {t('dataSecurityPage.tabs.gdpr')}
             </TabsTrigger>
             <TabsTrigger value="hipaa" className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800">
-              HIPAA
+              {t('dataSecurityPage.tabs.hipaa')}
             </TabsTrigger>
             <TabsTrigger value="ccpa" className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800">
-              CCPA
+              {t('dataSecurityPage.tabs.ccpa')}
             </TabsTrigger>
           </TabsList>
 
@@ -273,7 +273,7 @@ const DataSecurity = () => {
         {/* Why Choose Quantifier Section */}
         <div className="my-16 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8 border border-purple-100">
           <h2 className="text-2xl font-bold mb-6 text-center text-slate-800">
-            Why Quantifier for Data Security Compliance?
+            {t('dataSecurityPage.whyQuantifier.title')}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -306,18 +306,17 @@ const DataSecurity = () => {
         {/* Call to Action */}
         <div className="mt-10 text-center mb-8">
           <h2 className="text-2xl font-bold mb-3 text-slate-800">
-            Simplify Your Data Protection Compliance Journey
+            {t('dataSecurityPage.cta.title')}
           </h2>
           <p className="text-lg text-slate-700 mb-6 max-w-3xl mx-auto">
-            Protect your customer data. Respect privacy rights. Avoid penalties.
-            Let Quantifier's AI handle the complexity of data security compliance.
+            {t('dataSecurityPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-              Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+              {t('dataSecurityPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50">
-              Talk to Our Data Privacy Expert
+              {t('dataSecurityPage.cta.talkExpert')}
             </Button>
           </div>
         </div>

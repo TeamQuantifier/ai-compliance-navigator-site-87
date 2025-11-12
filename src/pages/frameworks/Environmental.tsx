@@ -31,24 +31,24 @@ const Environmental = () => {
 
   return (
     <PageTemplate
-      title="Environmental Compliance, Fully Automated"
-      description="Quantifier powers your environmental strategy with AI-native automation — from ISO 14001 to decarbonization. Whether you're aiming for certification, tracking emissions, or building a science-based reduction plan, Quantifier takes the manual work out of environmental compliance and makes climate leadership scalable."
+      title={t('environmentalPage.title')}
+      description={t('environmentalPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid grid-cols-4 w-full max-w-3xl mx-auto mb-8">
             <TabsTrigger value="iso14001" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              ISO 14001
+              {t('environmentalPage.tabs.iso14001')}
             </TabsTrigger>
             <TabsTrigger value="lca" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              LCA
+              {t('environmentalPage.tabs.lca')}
             </TabsTrigger>
             <TabsTrigger value="carbon" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              Carbon Footprint
+              {t('environmentalPage.tabs.carbon')}
             </TabsTrigger>
             <TabsTrigger value="decarbonisation" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              Decarbonisation
+              {t('environmentalPage.tabs.decarbonisation')}
             </TabsTrigger>
           </TabsList>
 

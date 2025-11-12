@@ -50,18 +50,18 @@ const ProductLevel = () => {
 
   return (
     <PageTemplate
-      title="Product-Level Compliance, Powered by AI"
-      description="Build sustainable, transparent products from the ground up. Quantifier brings intelligence and automation to your product compliance—so you can meet regulatory demands and customer expectations with ease."
+      title={t('productLevelPage.title')}
+      description={t('productLevelPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid grid-cols-2 w-full max-w-md mx-auto mb-8">
             <TabsTrigger value="dpp" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              Digital Product Passport
+              {t('productLevelPage.tabs.dpp')}
             </TabsTrigger>
             <TabsTrigger value="lca" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              Life Cycle Assessment
+              {t('productLevelPage.tabs.lca')}
             </TabsTrigger>
           </TabsList>
 

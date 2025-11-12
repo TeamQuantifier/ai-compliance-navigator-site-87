@@ -26,16 +26,16 @@ const Governance = () => {
         <p className="text-slate-600">{children}</p>
       </div>
     </div>;
-  return <PageTemplate title="Governance on Autopilot" description="Turn policies into action. Empower employees. Protect your organization. Quantifier automates governance compliance—from policy enforcement to whistleblower protection—so you can focus on running your business, not chasing signatures.">
+  return <PageTemplate title={t('governancePage.title')} description={t('governancePage.description')}>
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">
           <TabsList className="grid grid-cols-2 w-full max-w-md mx-auto mb-8">
             <TabsTrigger value="legal-policies" className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800">
-              Legal Policies
+              {t('governancePage.tabs.legalPolicies')}
             </TabsTrigger>
             <TabsTrigger value="whistleblowing" className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800">
-              Whistleblowing
+              {t('governancePage.tabs.whistleblowing')}
             </TabsTrigger>
           </TabsList>
 

@@ -18,13 +18,13 @@ const InformationSecurity = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-3/5">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Information Security Compliance That Drives Trust
+                {t('informationSecurityPage.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                Achieve ISO 27001, ISO 9001 and DORA compliance with ease—automatically.
+                {t('informationSecurityPage.hero.subtitle')}
               </p>
               <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90">
-                Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                {t('informationSecurityPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
             <div className="md:w-2/5">
@@ -38,13 +38,13 @@ const InformationSecurity = () => {
           <Tabs defaultValue="iso27001" className="w-full">
             <TabsList className="w-full flex justify-between bg-[#E5DEFF]/70 p-1 rounded-lg mb-8">
               <TabsTrigger value="iso27001" className="flex-1 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white">
-                ISO 27001
+                {t('informationSecurityPage.tabs.iso27001')}
               </TabsTrigger>
               <TabsTrigger value="iso9001" className="flex-1 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white">
-                ISO 9001
+                {t('informationSecurityPage.tabs.iso9001')}
               </TabsTrigger>
               <TabsTrigger value="dora" className="flex-1 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white">
-                DORA
+                {t('informationSecurityPage.tabs.dora')}
               </TabsTrigger>
             </TabsList>
             
@@ -53,35 +53,25 @@ const InformationSecurity = () => {
               <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
                 <div className="md:w-1/2">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#1A1F2C]">
-                    ISO 27001: Protect Your Information, Build Trust
+                    {t('informationSecurityPage.iso27001.title')}
                   </h3>
                   <p className="text-lg text-slate-700 mb-6">
-                    ISO 27001 is the gold standard for information security management. Quantifier automates every step of your ISO 27001 journey—from establishing policies to ongoing audits—so you can focus on what truly matters: securing your business.
+                    {t('informationSecurityPage.iso27001.description')}
                   </p>
                   
-                  <h4 className="font-semibold text-lg mb-3">You get:</h4>
+                  <h4 className="font-semibold text-lg mb-3">{t('informationSecurityPage.iso27001.featuresTitle')}</h4>
                   <ul className="space-y-3 mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                      <span><span className="font-medium">Automated Risk Management:</span> Identify, assess, and mitigate risks in real-time</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                      <span><span className="font-medium">Continuous Compliance:</span> Stay prepared for audits and inspections—no more last-minute scrambling</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                      <span><span className="font-medium">Real-Time Evidence Collection:</span> Automatically collect the necessary documentation for ISO 27001 compliance</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                      <span><span className="font-medium">Policy Enforcement:</span> Agents ensure policies are adhered to by your team members, proactively closing gaps</span>
-                    </li>
+                    {(t('informationSecurityPage.iso27001.features', { returnObjects: true }) as Array<{title: string, description: string}>).map((feature, index) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
+                        <span><span className="font-medium">{feature.title}</span> {feature.description}</span>
+                      </li>
+                    ))}
                   </ul>
 
                   <Button asChild>
-                    <Link to="/frameworks/information-security/iso-27001">
-                      Learn More About ISO 27001 <ArrowRight className="ml-2 h-5 w-5" />
+                    <Link to={`/${currentLocale}/frameworks/information-security/iso-27001`}>
+                      {t('informationSecurityPage.iso27001.button')} <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                 </div>
@@ -188,7 +178,7 @@ const InformationSecurity = () => {
         {/* Why Choose Quantifier Section */}
         <section className="mb-16 bg-[#E5DEFF]/40 p-8 rounded-xl">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
-            Why Choose Quantifier for Information Security & Quality Compliance?
+            {t('informationSecurityPage.whyQuantifier.title')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -283,17 +273,17 @@ const InformationSecurity = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Get Ready for Your Next Audit—Faster and Smarter
+                {t('informationSecurityPage.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
-                Join organizations that trust Quantifier to automate their information security compliance journey.
+                {t('informationSecurityPage.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  {t('informationSecurityPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Explore Plans
+                  {t('informationSecurityPage.cta.explorePlans')}
                 </Button>
               </div>
             </div>

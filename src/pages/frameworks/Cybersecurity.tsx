@@ -54,28 +54,28 @@ const Cybersecurity = () => {
                 className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}
               >
                 <Shield className="h-5 w-5 mr-2" />
-                <span>Overview</span>
+                <span>{t('cybersecurityPage.tabs.overview')}</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="soc" 
                 className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}
               >
                 <Lock className="h-5 w-5 mr-2" />
-                <span>SOC 1 & SOC 2</span>
+                <span>{t('cybersecurityPage.tabs.soc')}</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="nis2" 
                 className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}
               >
                 <Globe className="h-5 w-5 mr-2" />
-                <span>NIS II</span>
+                <span>{t('cybersecurityPage.tabs.nis2')}</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="nist" 
                 className={`data-[state=active]:bg-compliance-100 data-[state=active]:border-compliance-500 border-2 border-transparent px-4 py-3 h-auto`}
               >
                 <FileCheck className="h-5 w-5 mr-2" />
-                <span>NIST</span>
+                <span>{t('cybersecurityPage.tabs.nist')}</span>
               </TabsTrigger>
             </TabsList>
 
@@ -87,33 +87,21 @@ const Cybersecurity = () => {
                   <div className="md:w-1/2">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
                       <Shield className="w-5 h-5 mr-2" />
-                      <span className="font-medium">Built for Modern Security Demands</span>
+                      <span className="font-medium">{t('cybersecurityPage.overview.badge')}</span>
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-heading">
-                      Automate Your Compliance Journey
+                      {t('cybersecurityPage.overview.title')}
                     </h2>
                     <p className="text-lg text-slate-700 mb-6">
-                      Cybersecurity frameworks are complex. Staying compliant shouldn't be. 
-                      Our autonomous agents manage every step—from assigning tasks to collecting audit-ready 
-                      evidence—so you can focus on what matters.
+                      {t('cybersecurityPage.overview.description')}
                     </p>
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Continuous Monitoring</span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Automated Evidence</span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Risk Identification</span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                        <span className="text-slate-700">Real-time Alerts</span>
-                      </div>
+                      {(t('cybersecurityPage.overview.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                        <div key={index} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
+                          <span className="text-slate-700">{feature}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="md:w-1/2">
@@ -131,14 +119,13 @@ const Cybersecurity = () => {
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
                     <Lock className="w-5 h-5 mr-2" />
-                    <span className="font-medium">Supported Frameworks</span>
+                    <span className="font-medium">{t('cybersecurityPage.overview.supportedFrameworks.badge')}</span>
                   </div>
                   <h2 className="text-3xl font-bold mb-4 gradient-heading">
-                    Comprehensive Framework Coverage
+                    {t('cybersecurityPage.overview.supportedFrameworks.title')}
                   </h2>
                   <p className="text-lg text-slate-700 max-w-3xl mx-auto">
-                    Our platform supports the most important cybersecurity frameworks, helping you stay compliant 
-                    across multiple standards simultaneously.
+                    {t('cybersecurityPage.overview.supportedFrameworks.description')}
                   </p>
                 </div>
 
@@ -148,35 +135,28 @@ const Cybersecurity = () => {
                     <CardHeader className="pb-2">
                       <div className="flex items-center mb-4">
                         <Shield className="h-8 w-8 text-compliance-600 mr-3" />
-                        <h3 className="text-2xl font-bold text-slate-900">SOC 1 & SOC 2</h3>
+                        <h3 className="text-2xl font-bold text-slate-900">{t('cybersecurityPage.soc.title')}</h3>
                       </div>
                       <CardTitle className="text-base font-medium text-slate-700">
-                        Demonstrate trust to your customers, investors, and partners
+                        {t('cybersecurityPage.soc.subtitle')}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-slate-600 mb-4">
-                        Our platform ensures continuous readiness for both SOC 1 and SOC 2, covering controls 
-                        around data handling, privacy, availability, and more.
+                        {t('cybersecurityPage.soc.description')}
                       </p>
                       
-                      <h4 className="font-semibold text-sm mb-2">You get:</h4>
+                      <h4 className="font-semibold text-sm mb-2">{t('cybersecurityPage.soc.featuresTitle')}</h4>
                       <ul className="space-y-2 mb-6 text-sm">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Automated task assignment & evidence collection</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Control monitoring across Trust Services Criteria</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Real-time audit readiness dashboards</span>
-                        </li>
+                        {(t('cybersecurityPage.soc.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
                       </ul>
                       <Button variant="outline" className="w-full group" onClick={() => setActiveTab("soc")}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        {t('cybersecurityPage.soc.button')} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </CardContent>
                   </Card>
@@ -186,36 +166,29 @@ const Cybersecurity = () => {
                     <CardHeader className="pb-2">
                       <div className="flex items-center mb-4">
                         <Globe className="h-8 w-8 text-compliance-600 mr-3" />
-                        <h3 className="text-2xl font-bold text-slate-900">NIS 2 Directive</h3>
+                        <h3 className="text-2xl font-bold text-slate-900">{t('cybersecurityPage.nis2.title')}</h3>
                       </div>
                       <CardTitle className="text-base font-medium text-slate-700">
-                        Stay ahead of critical infrastructure security regulations
+                        {t('cybersecurityPage.nis2.subtitle')}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-slate-600 mb-4">
-                        NIS 2 expands cybersecurity obligations across sectors in the EU. Our platform keeps you
-                        ahead—automatically identifying risks and ensuring compliance.
+                        {t('cybersecurityPage.nis2.description')}
                       </p>
                       
-                      <h4 className="font-semibold text-sm mb-2">You get:</h4>
+                      <h4 className="font-semibold text-sm mb-2">{t('cybersecurityPage.nis2.featuresTitle')}</h4>
                       <ul className="space-y-2 mb-6 text-sm">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>AI agents driving real-time policy checks</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Role-based actioning for IT, legal, and ops teams</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Gap analysis aligned with NIS 2 mandates</span>
-                        </li>
+                        {(t('cybersecurityPage.nis2.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
                       </ul>
                       <Button variant="outline" className="w-full group" asChild>
-                        <Link to="/frameworks/cybersecurity/nis-ii">
-                          Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <Link to={`/${currentLocale}/frameworks/cybersecurity/nis-ii`}>
+                          {t('cybersecurityPage.nis2.button')} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                       </Button>
                     </CardContent>
@@ -226,35 +199,28 @@ const Cybersecurity = () => {
                     <CardHeader className="pb-2">
                       <div className="flex items-center mb-4">
                         <FileCheck className="h-8 w-8 text-compliance-600 mr-3" />
-                        <h3 className="text-2xl font-bold text-slate-900">NIST Framework</h3>
+                        <h3 className="text-2xl font-bold text-slate-900">{t('cybersecurityPage.nist.title')}</h3>
                       </div>
                       <CardTitle className="text-base font-medium text-slate-700">
-                        Align your organization to the gold standard in security
+                        {t('cybersecurityPage.nist.subtitle')}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-slate-600 mb-4">
-                        From Identify to Recover—our platform automates NIST implementation by continuously mapping your assets, 
-                        risks, and mitigations to the five NIST functions.
+                        {t('cybersecurityPage.nist.description')}
                       </p>
                       
-                      <h4 className="font-semibold text-sm mb-2">You get:</h4>
+                      <h4 className="font-semibold text-sm mb-2">{t('cybersecurityPage.nist.featuresTitle')}</h4>
                       <ul className="space-y-2 mb-6 text-sm">
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Intelligent asset and risk mapping</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Proactive tasking aligned with NIST categories</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Integrated reporting for regulators and auditors</span>
-                        </li>
+                        {(t('cybersecurityPage.nist.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-compliance-600 mt-0.5 mr-2 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
                       </ul>
                       <Button variant="outline" className="w-full group" onClick={() => setActiveTab("nist")}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        {t('cybersecurityPage.nist.button')} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </CardContent>
                   </Card>
@@ -266,14 +232,13 @@ const Cybersecurity = () => {
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
                     <AlertTriangle className="w-5 h-5 mr-2" />
-                    <span className="font-medium">Why Choose Our Platform</span>
+                    <span className="font-medium">{t('cybersecurityPage.whyPlatform.badge')}</span>
                   </div>
                   <h2 className="text-3xl font-bold mb-4 gradient-heading">
-                    Why Our Platform for Cybersecurity Compliance?
+                    {t('cybersecurityPage.whyPlatform.title')}
                   </h2>
                   <p className="text-lg text-slate-700 max-w-3xl mx-auto">
-                    Our automated approach to cybersecurity compliance helps organizations stay secure
-                    while reducing the resource burden of manual compliance work.
+                    {t('cybersecurityPage.whyPlatform.description')}
                   </p>
                 </div>
 
@@ -281,11 +246,11 @@ const Cybersecurity = () => {
                   <Card className="border-compliance-100 hover:border-compliance-300 transition-all card-hover">
                     <CardHeader className="pb-2">
                       <Clock className="h-12 w-12 text-compliance-500 mb-2" />
-                      <CardTitle>Always-On Compliance</CardTitle>
+                      <CardTitle>{t('cybersecurityPage.whyPlatform.features.alwaysOn.title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="text-base text-slate-700">
-                        Agents run 24/7, so you're always prepared for audits and compliance reviews.
+                        {t('cybersecurityPage.whyPlatform.features.alwaysOn.description')}
                       </CardDescription>
                     </CardContent>
                   </Card>
@@ -293,11 +258,11 @@ const Cybersecurity = () => {
                   <Card className="border-compliance-100 hover:border-compliance-300 transition-all card-hover">
                     <CardHeader className="pb-2">
                       <Zap className="h-12 w-12 text-compliance-500 mb-2" />
-                      <CardTitle>Zero Manual Oversight</CardTitle>
+                      <CardTitle>{t('cybersecurityPage.whyPlatform.features.zeroManual.title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="text-base text-slate-700">
-                        Tasks are assigned, followed up, and closed—without project managers or manual tracking.
+                        {t('cybersecurityPage.whyPlatform.features.zeroManual.description')}
                       </CardDescription>
                     </CardContent>
                   </Card>
@@ -305,11 +270,11 @@ const Cybersecurity = () => {
                   <Card className="border-compliance-100 hover:border-compliance-300 transition-all card-hover">
                     <CardHeader className="pb-2">
                       <Shield className="h-12 w-12 text-compliance-500 mb-2" />
-                      <CardTitle>Full Framework Coverage</CardTitle>
+                      <CardTitle>{t('cybersecurityPage.whyPlatform.features.fullCoverage.title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="text-base text-slate-700">
-                        SOC 1 & 2, NIS 2, NIST—and growing library of supported frameworks and standards.
+                        {t('cybersecurityPage.whyPlatform.features.fullCoverage.description')}
                       </CardDescription>
                     </CardContent>
                   </Card>
@@ -317,11 +282,11 @@ const Cybersecurity = () => {
                   <Card className="border-compliance-100 hover:border-compliance-300 transition-all card-hover">
                     <CardHeader className="pb-2">
                       <ArrowRight className="h-12 w-12 text-compliance-500 mb-2" />
-                      <CardTitle>Faster Rollout</CardTitle>
+                      <CardTitle>{t('cybersecurityPage.whyPlatform.features.fasterRollout.title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="text-base text-slate-700">
-                        Go live in hours, not months, with pre-configured controls and compliance templates.
+                        {t('cybersecurityPage.whyPlatform.features.fasterRollout.description')}
                       </CardDescription>
                     </CardContent>
                   </Card>

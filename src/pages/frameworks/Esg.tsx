@@ -57,21 +57,21 @@ const Esg = () => {
 
   return (
     <PageTemplate
-      title="Simplify Your Sustainable & ESG Reporting"
-      description="Automate CSDR, GRI, and CBAM Reporting with Ease. Quantifier is your partner in achieving transparent, accurate, and efficient ESG reporting. Whether you're meeting global sustainability standards or navigating complex regulatory landscapes, we've got you covered with full automation."
+      title={t('esgPage.title')}
+      description={t('esgPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid grid-cols-3 w-full max-w-2xl mx-auto mb-8">
             <TabsTrigger value="csdr" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              CSDR Reporting
+              {t('esgPage.tabs.csdr')}
             </TabsTrigger>
             <TabsTrigger value="gri" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              GRI Reporting
+              {t('esgPage.tabs.gri')}
             </TabsTrigger>
             <TabsTrigger value="cbam" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              CBAM Reporting
+              {t('esgPage.tabs.cbam')}
             </TabsTrigger>
           </TabsList>
 
