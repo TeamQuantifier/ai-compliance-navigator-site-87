@@ -4,12 +4,15 @@ import { Shield, CheckCircle, ArrowRight, BarChart2, CheckSquare, Clock, FileTex
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Soc = () => {
+  const { t, currentLocale } = useLanguage();
+  
   return (
     <PageTemplate
-      title="SOC 1 & SOC 2 Compliance"
-      description="Demonstrate trust to your customers, investors, and partners with automated SOC compliance."
+      title={t('socPage.title')}
+      description={t('socPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
@@ -17,14 +20,14 @@ const Soc = () => {
           <div className="bg-gradient-to-r from-compliance-800 to-innovation-800 rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-3/5">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                SOC Compliance That Handles Itself
+                {t('socPage.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                Stay audit-ready with continuous SOC 1 & SOC 2 compliance automation.
+                {t('socPage.hero.subtitle')}
               </p>
               <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                <Link to="/contact" className="flex items-center">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <Link to={`/${currentLocale}/contact`} className="flex items-center">
+                  {t('socPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>

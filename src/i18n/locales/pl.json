@@ -1616,5 +1616,362 @@
       "bookDemo": "Umów demo",
       "talkExpert": "Porozmawiaj z naszym ekspertem ds. compliance produktowego"
     }
+  },
+  "nisIIPage": {
+    "title": "Dyrektywa NIS 2 (UE)",
+    "description": "Kompleksowe rozwiązanie zgodności NIS2 z przepływami pracy opartymi na AI dla organizacji europejskich.",
+    "hero": {
+      "badge": "Dyrektywa NIS 2",
+      "title": "Zgodność NIS2 uproszczona",
+      "subtitle": "Poruszaj się po wymogach cyberbezpieczeństwa UE z pewnością w tygodnie, nie miesiące",
+      "formTitle": "Sprawdź jak Quantifier może Ci pomóc",
+      "nameLabel": "Imię i nazwisko",
+      "namePlaceholder": "Wpisz swoje imię i nazwisko",
+      "emailLabel": "Email służbowy",
+      "emailPlaceholder": "Wpisz swój email służbowy",
+      "marketingConsent": "Wyrażam zgodę na przetwarzanie moich danych osobowych przez Quantifier w celu wysyłania mi komunikacji marketingowej dotyczącej rozwiązań zgodności NIS2. Możesz zrezygnować w dowolnym momencie.",
+      "requestDemoButton": "Poproś o demo"
+    },
+    "understanding": {
+      "title": "Zrozumienie Dyrektywy NIS 2",
+      "description": "Dyrektywa w sprawie bezpieczeństwa sieci i informacji (NIS) 2 wzmacnia cyberbezpieczeństwo w całej UE, rozszerzając wymagania na więcej sektorów i organizacji.",
+      "whatIs": {
+        "title": "Czym jest NIS2?",
+        "description": "Dyrektywa UE ustanawiająca wymogi w zakresie cyberbezpieczeństwa dla podmiotów kluczowych i ważnych w 18 sektorach, w tym energetyce, transporcie, bankowości, ochronie zdrowia i infrastrukturze cyfrowej."
+      },
+      "whoMustComply": {
+        "title": "Kto musi przestrzegać?",
+        "items": [
+          "Średnie i duże przedsiębiorstwa (50+ pracowników LUB 10M€+ obrotów)",
+          "Podmioty kluczowe w sektorach krytycznych",
+          "Podmioty ważne w kluczowych sektorach",
+          "Dostawcy usług cyfrowych"
+        ]
+      },
+      "keyRequirements": {
+        "title": "Kluczowe wymagania",
+        "items": [
+          "Środki zarządzania ryzykiem",
+          "Obsługa i raportowanie incydentów",
+          "Planowanie ciągłości działania",
+          "Bezpieczeństwo łańcucha dostaw",
+          "Odpowiedzialność zarządu"
+        ]
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier transformuje zgodność NIS2",
+      "description": "Nasza platforma natywnie oparta na AI eliminuje złożoność, automatyzuje przepływy pracy i zapewnia ciągłą zgodność w całej organizacji.",
+      "features": {
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "description": "Ciągłe monitorowanie oparte na AI identyfikuje luki w zabezpieczeniach i ocenia ryzyka w infrastrukturze cyfrowej w czasie rzeczywistym."
+        },
+        "roleBasedWorkflows": {
+          "title": "Przepływy pracy oparte na rolach",
+          "description": "Inteligentne przypisywanie zadań zapewnia, że odpowiednie osoby obsługują działania związane z compliance w zespołach IT, prawnych i operacyjnych."
+        },
+        "incidentManagement": {
+          "title": "Zarządzanie incydentami",
+          "description": "Usprawnienie przepływów pracy wykrywania, reagowania i raportowania incydentów zgodnych z wymogami powiadamiania NIS2."
+        },
+        "policyAutomation": {
+          "title": "Automatyzacja polityk i procedur",
+          "description": "Wdrażaj i zarządzaj wszystkimi wymaganymi politykami cyberbezpieczeństwa z automatycznymi aktualizacjami i śledzeniem zgodności."
+        },
+        "multiJurisdiction": {
+          "title": "Wsparcie wielojurysdykcyjne",
+          "description": "Ciągła ocena ryzyk dostawców, egzekwowanie zobowiązań umownych i zapewnienie terminowego raportowania incydentów u wszystkich partnerów."
+        },
+        "auditReady": {
+          "title": "Dokumentacja gotowa na audyt",
+          "description": "Generuj kompleksowe raporty zgodności i prowadź ścieżki audytu demonstrujące przestrzeganie NIS2."
+        }
+      }
+    },
+    "aiModule": {
+      "title": "Natywny moduł zgodności NIS2 oparty na AI",
+      "description": "Nasz moduł zgodności natywnie oparty na AI pomaga organizacjom osiągnąć zgodność NIS2 za pomocą inteligentnych przepływów pracy — od onboardingu i analizy luk po wdrożenie polityk i ciągłe monitorowanie.",
+      "badge": "Przekształć NIS2 z obowiązku w przewagę operacyjną",
+      "ganttChart": {
+        "title": "Harmonogram wdrażania NIS2",
+        "subtitle": "Kompletna mapa drogowa od początkowego onboardingu do ciągłego monitorowania zgodności",
+        "tasks": {
+          "onboarding": "Onboarding (NIS2): Dane, Aktywa, Ryzyko, Rejestr",
+          "gapAnalysis": "Analiza luk i strategia wdrażania",
+          "implementation": "Wdrożenie: 19 polityk cyberbezpieczeństwa",
+          "procedures": "Procedury: Wdrożenie, Monitorowanie, Weryfikacja",
+          "continuous": "Ciągła zgodność: Monitorowanie ryzyka, Zarządzanie incydentami, Raportowanie"
+        }
+      }
+    },
+    "results": {
+      "title": "Rezultaty po wdrożeniu Quantifier / NIS2",
+      "description": "Po zakończeniu wdrożenia Twoja organizacja posiada kompleksowy system zarządzania ryzykiem, bezpieczeństwem i compliance.",
+      "metrics": {
+        "compliance": "100%",
+        "complianceLabel": "Pokrycie zgodności NIS2",
+        "keyAreas": "6",
+        "keyAreasLabel": "Kluczowych obszarów",
+        "monitoring": "24/7",
+        "monitoringLabel": "Ciągłe monitorowanie",
+        "responseTime": "24h",
+        "responseTimeLabel": "Czas reakcji na incydent"
+      },
+      "areas": {
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "items": [
+            "Kompleksowy inwentarz aktywów we wszystkich jednostkach biznesowych",
+            "Skanowanie luk i wykrywanie zagrożeń oparte na AI",
+            "Matryca punktacji i priorytetyzacji ryzyka",
+            "Integracja z istniejącymi narzędziami bezpieczeństwa (SIEM, EDR)"
+          ]
+        },
+        "incidentResponse": {
+          "title": "Reagowanie na incydenty i raportowanie",
+          "items": [
+            "24-godzinne powiadamianie o incydentach właściwych organów",
+            "Automatyczna klasyfikacja incydentów i ocena wagi",
+            "Prekonfigurowane szablony komunikacji dla regulatorów",
+            "Analiza po incydencie i dokumentacja wyciągniętych wniosków"
+          ]
+        },
+        "businessContinuity": {
+          "title": "Ciągłość działania i zarządzanie kryzysowe",
+          "items": [
+            "Plany odzyskiwania po awarii dla systemów krytycznych",
+            "Regularna weryfikacja kopii zapasowych i testowanie przywracania",
+            "Procedury aktywacji zespołu zarządzania kryzysowego",
+            "Protokoły komunikacji podczas poważnych incydentów"
+          ]
+        },
+        "supplyChain": {
+          "title": "Bezpieczeństwo łańcucha dostaw",
+          "items": [
+            "Ocena ryzyka dostawców i ciągłe monitorowanie",
+            "Kwestionariusze bezpieczeństwa i audyty stron trzecich",
+            "Egzekwowanie umownych wymogów bezpieczeństwa",
+            "Obowiązki raportowania incydentów dla dostawców"
+          ]
+        },
+        "securityMeasures": {
+          "title": "Środki bezpieczeństwa",
+          "items": [
+            "19 polityk cyberbezpieczeństwa zgodnych z wymogami NIS2",
+            "Uwierzytelnianie wieloskładnikowe we wszystkich systemach krytycznych",
+            "Szyfrowanie danych w spoczynku i w tranzycie",
+            "Regularne szkolenia z zakresu świadomości bezpieczeństwa dla całego personelu"
+          ]
+        },
+        "governance": {
+          "title": "Zarządzanie i odpowiedzialność",
+          "items": [
+            "Ramy nadzoru i odpowiedzialności organu zarządzającego",
+            "Szkolenia z zakresu cyberbezpieczeństwa dla członków zarządu",
+            "Regularne raportowanie zgodności do zarządu i regulatorów",
+            "Dokumentacja decyzji inwestycyjnych w bezpieczeństwo"
+          ]
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje zgodności",
+      "formTitle": "Gotowy rozpocząć swoją podróż NIS2?",
+      "formDescription": "Uzyskaj spersonalizowaną ocenę gotowości NIS2",
+      "companyLabel": "Nazwa firmy",
+      "companyPlaceholder": "Wpisz nazwę firmy",
+      "emailLabel": "Email",
+      "emailPlaceholder": "twoj@email.com",
+      "phoneLabel": "Telefon (opcjonalnie)",
+      "phonePlaceholder": "+48 123 456 789",
+      "scheduleButton": "Zaplanuj ocenę",
+      "features": {
+        "automated": {
+          "title": "Automatyczne zarządzanie politykami",
+          "description": "19 gotowych polityk cyberbezpieczeństwa"
+        },
+        "realTime": {
+          "title": "Monitorowanie ryzyka w czasie rzeczywistym",
+          "description": "Wykrywanie zagrożeń oparte na AI 24/7"
+        },
+        "compliance": {
+          "title": "Raportowanie zgodności",
+          "description": "Gotowe do złożenia raporty regulacyjne"
+        },
+        "training": {
+          "title": "Szkolenia i świadomość personelu",
+          "description": "Ciągłe programy edukacji w zakresie bezpieczeństwa"
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Przekształć swoją ścieżkę zgodności NIS2",
+      "description": "Dołącz do wiodących europejskich organizacji używających Quantifier do osiągania i utrzymywania zgodności NIS2 bez wysiłku.",
+      "bookDemo": "Umów demo",
+      "talkExpert": "Porozmawiaj z ekspertem NIS2"
+    }
+  },
+  "socPage": {
+    "title": "Zgodność SOC 1 i SOC 2",
+    "description": "Zademonstruj zaufanie swoim klientom, inwestorom i partnerom dzięki automatycznej zgodności SOC.",
+    "hero": {
+      "title": "Zgodność SOC, która działa sama",
+      "subtitle": "Pozostań gotowy na audyt dzięki ciągłej automatyzacji zgodności SOC 1 i SOC 2.",
+      "button": "Umów demo",
+      "dashboard": {
+        "title": "Dashboard SOC Quantifier",
+        "readinessTitle": "Przegląd gotowości SOC 2",
+        "completeLabel": "Ukończone",
+        "controlsStatus": "Status kontroli",
+        "evidenceItems": "Elementy dowodowe",
+        "upToDate": "Na bieżąco",
+        "dueTasks": "Zadania do wykonania",
+        "task1": "Przejrzyj ocenę ryzyka bezpieczeństwa",
+        "task2": "Zaktualizuj logi kontroli dostępu",
+        "days": "dni",
+        "openDashboard": "Otwórz dashboard →"
+      }
+    },
+    "mainContent": {
+      "badge": "Zgodność SOC 1 i SOC 2",
+      "title": "Zademonstruj zaufanie swoim interesariuszom",
+      "description": "Nasza platforma zapewnia ciągłą gotowość dla SOC 1 i SOC 2, obejmując kontrole związane z obsługą danych, prywatnością, dostępnością i nie tylko.",
+      "benefitsTitle": "Kluczowe korzyści:",
+      "benefits": [
+        "Automatyczne przypisywanie zadań i zbieranie dowodów",
+        "Monitorowanie kontroli zgodnie z kryteriami Trust Services",
+        "Dashboardy gotowości audytowej w czasie rzeczywistym",
+        "Bezpieczne mapowanie danych do kontroli"
+      ],
+      "button": "Zaplanuj ocenę gotowości SOC",
+      "trustServices": {
+        "title": "Pokrycie kryteriów Trust Services SOC 2",
+        "security": {
+          "title": "Bezpieczeństwo:",
+          "description": "Ochrona przed nieautoryzowanym dostępem"
+        },
+        "availability": {
+          "title": "Dostępność:",
+          "description": "Systemy są dostępne do działania i użytkowania"
+        },
+        "processingIntegrity": {
+          "title": "Integralność przetwarzania:",
+          "description": "Przetwarzanie systemowe jest kompletne, dokładne i autoryzowane"
+        },
+        "confidentiality": {
+          "title": "Poufność:",
+          "description": "Informacje oznaczone jako poufne są chronione"
+        },
+        "privacy": {
+          "title": "Prywatność:",
+          "description": "Informacje osobiste są zbierane, używane i przechowywane odpowiednio"
+        }
+      }
+    },
+    "platformScreenshots": {
+      "title": "Dashboard zgodności SOC",
+      "description": "Uzyskaj kompleksowy widok statusu zgodności SOC dzięki naszemu interaktywnemu dashboardowi.",
+      "evidenceCollection": {
+        "title": "Zbieranie dowodów",
+        "badge": "SOC 2",
+        "verified": "Zweryfikowane",
+        "pending": "Oczekujące",
+        "accessControl": {
+          "title": "Dowody kontroli dostępu",
+          "controlId": "ID kontroli: CC6.1 - Dostęp do systemów jest ograniczony do autoryzowanych użytkowników"
+        },
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "controlId": "ID kontroli: CC3.1 - Identyfikacja i łagodzenie ryzyka"
+        },
+        "securityMonitoring": {
+          "title": "Monitorowanie bezpieczeństwa",
+          "controlId": "ID kontroli: CC7.2 - Incydenty bezpieczeństwa są identyfikowane i naprawiane",
+          "uploadButton": "Prześlij dowód"
+        }
+      },
+      "controlMonitoring": {
+        "title": "Monitorowanie kontroli",
+        "badge": "Analityka",
+        "categoriesTitle": "Kategorie Trust Services",
+        "timeOptions": {
+          "last30": "Ostatnie 30 dni",
+          "lastQuarter": "Ostatni kwartał",
+          "yearToDate": "Od początku roku"
+        },
+        "categories": {
+          "security": "Bezpieczeństwo",
+          "availability": "Dostępność",
+          "processingIntegrity": "Integralność przetwarzania",
+          "confidentiality": "Poufność",
+          "privacy": "Prywatność"
+        }
+      }
+    },
+    "cta": {
+      "title": "Gotowy osiągnąć zgodność SOC?",
+      "description": "Dołącz do organizacji, które ufają naszej platformie w automatyzacji ich ścieżki zgodności SOC 1 i SOC 2.",
+      "bookDemo": "Umów demo",
+      "watchTour": "Obejrzyj wycieczkę po platformie"
+    }
+  },
+  "nistPage": {
+    "title": "Standard Cyberbezpieczeństwa NIST",
+    "description": "Dostosuj swoją organizację do złotego standardu bezpieczeństwa dzięki automatycznemu wdrażaniu standardu NIST.",
+    "hero": {
+      "title": "Zgodność NIST, która działa sama",
+      "subtitle": "Od Identify do Recover — wdrażaj kontrole NIST z automatyzacją.",
+      "button": "Umów demo",
+      "dashboardAlt": "Dashboard wdrażania standardu NIST pokazujący pięć funkcji"
+    },
+    "mainContent": {
+      "badge": "Standard Cyberbezpieczeństwa NIST",
+      "title": "Dostosuj się do złotego standardu bezpieczeństwa",
+      "description": "Nasza platforma automatyzuje wdrażanie NIST poprzez ciągłe mapowanie Twoich aktywów, ryzyk i działań łagodzących do pięciu funkcji NIST.",
+      "benefitsTitle": "Kluczowe korzyści:",
+      "benefits": [
+        "Inteligentne mapowanie aktywów i ryzyka",
+        "Proaktywne zadania zgodne z kategoriami NIST",
+        "Zintegrowane raportowanie dla regulatorów i audytorów",
+        "Alerty gdy kontrole wykraczają poza zakres"
+      ],
+      "button": "Uzyskaj ocenę wdrożenia NIST",
+      "fiveFunctions": {
+        "title": "Pięć funkcji NIST",
+        "identify": {
+          "title": "Identify (Identyfikuj):",
+          "description": "Rozwijaj zrozumienie ryzyk dla systemów, aktywów, danych i możliwości"
+        },
+        "protect": {
+          "title": "Protect (Chroń):",
+          "description": "Rozwijaj i wdrażaj zabezpieczenia dla usług krytycznych"
+        },
+        "detect": {
+          "title": "Detect (Wykrywaj):",
+          "description": "Rozwijaj i wdrażaj działania identyfikujące wydarzenia cyberbezpieczeństwa"
+        },
+        "respond": {
+          "title": "Respond (Reaguj):",
+          "description": "Rozwijaj i wdrażaj odpowiednie działania w reakcji na wydarzenie cyberbezpieczeństwa"
+        },
+        "recover": {
+          "title": "Recover (Odzyskuj):",
+          "description": "Rozwijaj i wdrażaj odpowiednie działania przywracające możliwości osłabione z powodu wydarzenia cyberbezpieczeństwa"
+        }
+      }
+    },
+    "platformScreenshots": {
+      "title": "Dashboard wdrażania NIST",
+      "description": "Monitoruj wdrażanie standardu NIST za pomocą naszego kompleksowego dashboardu.",
+      "functionsTrackingAlt": "Dashboard śledzenia funkcji NIST",
+      "riskAssessmentAlt": "Interfejs oceny ryzyka NIST"
+    },
+    "cta": {
+      "title": "Gotowy wdrożyć standard NIST?",
+      "description": "Dołącz do organizacji, które ufają naszej platformie w automatyzacji ich ścieżki zgodności NIST.",
+      "bookDemo": "Umów demo",
+      "watchTour": "Obejrzyj wycieczkę po platformie"
+    }
   }
 }

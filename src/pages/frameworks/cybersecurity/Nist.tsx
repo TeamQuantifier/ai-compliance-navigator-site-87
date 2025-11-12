@@ -4,12 +4,15 @@ import { FileCheck, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Nist = () => {
+  const { t, currentLocale } = useLanguage();
+  
   return (
     <PageTemplate
-      title="NIST Cybersecurity Framework"
-      description="Align your organization to the gold standard in security with automated NIST framework implementation."
+      title={t('nistPage.title')}
+      description={t('nistPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
@@ -17,21 +20,21 @@ const Nist = () => {
           <div className="bg-gradient-to-r from-compliance-800 to-innovation-800 rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-3/5">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                NIST Compliance That Handles Itself
+                {t('nistPage.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                From Identify to Recover — implement NIST controls with automation.
+                {t('nistPage.hero.subtitle')}
               </p>
               <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                <Link to="/contact" className="flex items-center">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <Link to={`/${currentLocale}/contact`} className="flex items-center">
+                  {t('nistPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
             <div className="md:w-2/5">
               <img 
                 src="/mockups/nist-framework-dashboard.png" 
-                alt="NIST Framework Implementation Dashboard showing the five functions" 
+                alt={t('nistPage.hero.dashboardAlt')}
                 className="rounded-lg shadow-lg border border-white/20 w-full"
               />
             </div>

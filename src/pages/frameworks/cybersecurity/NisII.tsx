@@ -10,45 +10,49 @@ import GanttChart from '@/components/charts/GanttChart';
 import ProcedureFlowMockup from '@/components/mockups/components/ProcedureFlowMockup';
 import NIS2AnalyticsMockup from '@/components/mockups/components/NIS2AnalyticsMockup';
 import ComplianceDashboardMockup from '@/components/mockups/components/ComplianceDashboardMockup';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const NisII = () => {
+  const { t, currentLocale } = useLanguage();
+  
   const ganttTasks = [{
     id: 'onboarding',
-    name: 'Onboarding (NIS2): Data, Assets, Risk, Register',
+    name: t('nisIIPage.aiModule.ganttChart.tasks.onboarding'),
     startMonth: 1,
     duration: 1,
     roles: ['Administrator'],
     color: 'bg-gradient-to-r from-blue-500 to-blue-600'
   }, {
     id: 'gap-analysis',
-    name: 'Gap Analysis & Implementation Strategy',
+    name: t('nisIIPage.aiModule.ganttChart.tasks.gapAnalysis'),
     startMonth: 1,
     duration: 1,
     roles: ['Administrator'],
     color: 'bg-gradient-to-r from-purple-500 to-purple-600'
   }, {
     id: 'implementation',
-    name: 'Implementation: 19 Cybersecurity Policies',
+    name: t('nisIIPage.aiModule.ganttChart.tasks.implementation'),
     startMonth: 2,
     duration: 1,
     roles: ['Administrator', 'CISO'],
     color: 'bg-gradient-to-r from-green-500 to-green-600'
   }, {
     id: 'procedures',
-    name: 'Procedures: Rollout, Monitoring, Verification',
+    name: t('nisIIPage.aiModule.ganttChart.tasks.procedures'),
     startMonth: 3,
     duration: 3,
     roles: ['Administrator', 'CISO', 'HR Manager', 'Asset Manager'],
     color: 'bg-gradient-to-r from-orange-500 to-orange-600'
   }, {
     id: 'continuous',
-    name: 'Continuous Compliance: Risk Monitoring, Incident Management, Reporting',
+    name: t('nisIIPage.aiModule.ganttChart.tasks.continuous'),
     startMonth: 1,
     duration: 6,
     roles: ['AI', 'Administrator'],
     color: 'bg-gradient-to-r from-cyan-500 to-cyan-600',
     isContinuous: true
   }];
-  return <PageTemplate title="NIS 2 Directive (EU)" description="Comprehensive NIS2 compliance solution with AI-native workflows for European organizations.">
+  return <PageTemplate title={t('nisIIPage.title')} description={t('nisIIPage.description')}>
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <section className="mb-20">
@@ -59,12 +63,12 @@ const NisII = () => {
                 <div className="lg:w-1/2">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-6 border border-cyan-500/30">
                     <Shield className="w-5 h-5 mr-2" />
-                    <span className="font-medium">NIS 2 Directive</span>
+                    <span className="font-medium">{t('nisIIPage.hero.badge')}</span>
                   </div>
                   <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
-                    NIS2 Compliance Made Simple
+                    {t('nisIIPage.hero.title')}
                   </h1>
-                  <p className="text-xl md:text-2xl opacity-90 mb-8 text-slate-300">Navigate EU cybersecurity requirements with confidence in weeks, not moths</p>
+                  <p className="text-xl md:text-2xl opacity-90 mb-8 text-slate-300">{t('nisIIPage.hero.subtitle')}</p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     
                     
