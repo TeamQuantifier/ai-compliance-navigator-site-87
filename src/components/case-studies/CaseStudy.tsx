@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface Testimonial {
   quote: string;
@@ -28,6 +29,8 @@ const CaseStudy = ({
   results,
   testimonial,
 }: CaseStudyProps) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
       <div className="bg-gradient-to-r from-compliance-50 to-innovation-50 p-6">
@@ -49,17 +52,17 @@ const CaseStudy = ({
       
       <div className="p-6">
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-3 text-slate-900">Challenge</h3>
+          <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('successStoriesPage.caseStudy.challenge')}</h3>
           <p className="text-slate-700">{challenge}</p>
         </div>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-3 text-slate-900">Solution</h3>
+          <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('successStoriesPage.caseStudy.solution')}</h3>
           <p className="text-slate-700">{solution}</p>
         </div>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-3 text-slate-900">Results</h3>
+          <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('successStoriesPage.caseStudy.results')}</h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {results.map((result, idx) => (
               <li key={idx} className="flex items-start gap-2">

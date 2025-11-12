@@ -7,27 +7,29 @@ import LogisticsGroupCaseStudy from '@/components/case-studies/LogisticsGroupCas
 import FinancialServicesCaseStudy from '@/components/case-studies/FinancialServicesCaseStudy';
 import StatsSection from '@/components/case-studies/StatsSection';
 import { simpleCaseStudies } from '@/data/caseStudies';
+import { useTranslation } from 'react-i18next';
 
 const SuccessStories = () => {
+  const { t } = useTranslation();
   const impactStats = [
     {
       icon: <Building />,
       value: "50+",
-      label: "Partnerships", 
+      label: t('successStoriesPage.stats.partnerships'), 
       bgColor: "bg-compliance-100",
       iconColor: "text-compliance-600"
     },
     {
       icon: <Users />,
       value: "10,000+",
-      label: "User hours saved",
+      label: t('successStoriesPage.stats.userHoursSaved'),
       bgColor: "bg-innovation-100",
       iconColor: "text-innovation-600"
     },
     {
       icon: <Building />,
-      value: "50+",
-      label: "250+ Companies supported",
+      value: "250+",
+      label: t('successStoriesPage.stats.companiesSupported'),
       bgColor: "bg-compliance-100",
       iconColor: "text-compliance-600"
     }
@@ -35,8 +37,8 @@ const SuccessStories = () => {
 
   return (
     <PageTemplate
-      title="Success Stories"
-      description="Discover how organizations have transformed their compliance processes with our AI-powered platform."
+      title={t('successStoriesPage.title')}
+      description={t('successStoriesPage.description')}
     >
       <div className="container mx-auto py-12">
         <div className="grid grid-cols-1 gap-16">
@@ -58,7 +60,7 @@ const SuccessStories = () => {
         </div>
         
         <StatsSection 
-          title="Our Impact At A Glance"
+          title={t('successStoriesPage.impactTitle')}
           stats={impactStats}
         />
       </div>

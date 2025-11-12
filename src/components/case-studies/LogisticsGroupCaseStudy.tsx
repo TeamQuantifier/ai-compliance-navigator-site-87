@@ -7,95 +7,91 @@ import DetailedCaseStudy, {
   SummaryBox
 } from './DetailedCaseStudy';
 import { CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const LogisticsGroupCaseStudy = () => {
+  const { t } = useTranslation();
+  
   return (
     <DetailedCaseStudy
       header={
         <DetailedCaseStudyHeader
-          category="Case Study: ESG Compliance"
-          title="A Leading Logistics Group's ESG Transformation"
+          category={t('successStoriesPage.logisticsGroup.category')}
+          title={t('successStoriesPage.logisticsGroup.title')}
           details={
             <>
-              <p className="font-medium">Industry: Transport, Freight Forwarding & Logistics (TSL)</p>
-              <p>Employees: &gt;1000 | Founded: 2010</p>
-              <p>Reporting Year: 2025</p>
+              <p className="font-medium">{t('successStoriesPage.logisticsGroup.industryLabel')}: {t('successStoriesPage.logisticsGroup.industry')}</p>
+              <p>{t('successStoriesPage.logisticsGroup.employees')}</p>
+              <p>{t('successStoriesPage.logisticsGroup.reportingYear')}</p>
             </>
           }
           imageSrc="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=300&h=150&fit=crop"
-          imageAlt="Logistics and transportation"
+          imageAlt={t('successStoriesPage.logisticsGroup.imageAlt')}
         />
       }
     >
-      <Section title="01. Introduction">
+      <Section title={t('successStoriesPage.logisticsGroup.section1Title')}>
         <p className="text-slate-700">
-          The company has been actively engaged in sustainability initiatives for many years, including supporting 
-          businesses in over 150 countries in developing modern workplace cultures built on trust and performance.
+          {t('successStoriesPage.logisticsGroup.section1Text')}
         </p>
       </Section>
       
-      <Section title="02. Challenges">
+      <Section title={t('successStoriesPage.logisticsGroup.section2Title')}>
         <p className="text-slate-700">
-          The biggest challenge was identifying and collecting the right data for ESG reporting—particularly 
-          carbon footprint data, which is critical in the TSL sector. As a logistics operator, not just a 
-          transport provider, the company required expert guidance to determine which data sets were necessary 
-          to meet the requirements of the CSRD directive.
+          {t('successStoriesPage.logisticsGroup.section2Text')}
         </p>
       </Section>
       
-      <Section title="03. Nature of the Collaboration">
+      <Section title={t('successStoriesPage.logisticsGroup.section3Title')}>
         <p className="text-slate-700 mb-4">
-          The collaboration consisted of several key phases:
+          {t('successStoriesPage.logisticsGroup.section3Intro')}
         </p>
         <ul className="space-y-3">
           <li className="flex items-start gap-2">
             <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
-            <span className="text-slate-700">Double Materiality Assessment – identifying the most relevant environmental, social, and governance topics for the company and its stakeholders</span>
+            <span className="text-slate-700">{t('successStoriesPage.logisticsGroup.section3Item1')}</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
-            <span className="text-slate-700">Carbon Footprint Calculation – estimation of GHG emissions across Scopes 1, 2, and 3</span>
+            <span className="text-slate-700">{t('successStoriesPage.logisticsGroup.section3Item2')}</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
-            <span className="text-slate-700">Governance & HR Policy Analysis – including anti-mobbing procedures, whistleblower protection, and anti-corruption measures</span>
+            <span className="text-slate-700">{t('successStoriesPage.logisticsGroup.section3Item3')}</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
-            <span className="text-slate-700">Sustainability Strategy Development – building internal know-how and capabilities</span>
+            <span className="text-slate-700">{t('successStoriesPage.logisticsGroup.section3Item4')}</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
-            <span className="text-slate-700">Training for Employees – to ensure a broader understanding of ESG principles</span>
+            <span className="text-slate-700">{t('successStoriesPage.logisticsGroup.section3Item5')}</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="text-primary h-5 w-5 mt-1 shrink-0" />
-            <span className="text-slate-700">ESG Communication Strategy – defining the company's narrative and messaging</span>
+            <span className="text-slate-700">{t('successStoriesPage.logisticsGroup.section3Item6')}</span>
           </li>
         </ul>
       </Section>
       
-      <Section title="05. &quot;We Want to Stay Ahead of Market Demands&quot;">
+      <Section title={t('successStoriesPage.logisticsGroup.section4Title')}>
         <p className="text-slate-700">
-          The client values competitiveness across all aspects of its business. It continuously improves TSL 
-          processes, measures performance, and assesses the effectiveness of initiatives across all subsidiaries. 
-          Through the partnership with Envirly, the organization gained tools and skills for monitoring, analyzing, 
-          and verifying sustainability metrics and ESG data.
+          {t('successStoriesPage.logisticsGroup.section4Text')}
         </p>
       </Section>
       
-      <SummaryBox title="Key Results:">
+      <SummaryBox title={t('successStoriesPage.logisticsGroup.summaryTitle')}>
         <CheckListItem>
-          Comprehensive ESG strategy aligned with industry best practices
+          {t('successStoriesPage.logisticsGroup.summaryItem1')}
         </CheckListItem>
         <CheckListItem>
-          Accurate carbon footprint measurement across all operations
+          {t('successStoriesPage.logisticsGroup.summaryItem2')}
         </CheckListItem>
         <CheckListItem>
-          Enhanced internal capabilities for ongoing ESG management
+          {t('successStoriesPage.logisticsGroup.summaryItem3')}
         </CheckListItem>
         <CheckListItem>
-          Competitive advantage through early CSRD compliance
+          {t('successStoriesPage.logisticsGroup.summaryItem4')}
         </CheckListItem>
       </SummaryBox>
     </DetailedCaseStudy>
