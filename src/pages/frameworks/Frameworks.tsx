@@ -65,7 +65,7 @@ const Frameworks = () => {
                 {t('frameworksPage.labels.supportedFrameworks')}
               </h4>
               <ul className="space-y-1 pl-5 list-disc text-slate-600">
-                {(t(`frameworksPage.categories.${category.key}.items`) as unknown as string[]).map((item) => (
+                {(t(`frameworksPage.categories.${category.key}.items`, { returnObjects: true }) as string[]).map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>

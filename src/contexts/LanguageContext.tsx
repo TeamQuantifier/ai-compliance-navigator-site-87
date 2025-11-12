@@ -6,7 +6,7 @@ import { SUPPORTED_LOCALES, Locale } from '@/i18n/config';
 interface LanguageContextType {
   currentLocale: Locale;
   changeLanguage: (locale: Locale) => void;
-  t: (key: string) => string;
+  t: (key: string, options?: any) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
