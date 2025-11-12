@@ -317,32 +317,16 @@ const NisII = () => {
                   <div className="w-14 h-14 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <AlertTriangle className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">Risk Assessment</CardTitle>
-                  
-                  
+                  <CardTitle className="text-xl font-semibold">{t('nisIIPage.resultAreas.riskAssessment.title')}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Complete list of identified risks and vulnerabilities
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Probability and impact analysis with clear metrics
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Risk evaluation with assigned significance levels
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Comprehensive risk management plan
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Technical and organizational controls implemented
-                    </li>
+                    {t('nisIIPage.resultAreas.riskAssessment.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -357,28 +341,16 @@ const NisII = () => {
                   <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Shield className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">Crisis Management</CardTitle>
-                  
-                  
+                  <CardTitle className="text-xl font-semibold">{t('nisIIPage.resultAreas.crisisManagement.title')}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Ready crisis communication plans
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Identified critical technologies and operations
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Defined priorities for system recovery
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Coordinated action procedures
-                    </li>
+                    {t('nisIIPage.resultAreas.crisisManagement.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -393,28 +365,16 @@ const NisII = () => {
                   <div className="w-14 h-14 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <FileText className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">Incidents</CardTitle>
-                  
-                  
+                  <CardTitle className="text-xl font-semibold">{t('nisIIPage.resultAreas.incidents.title')}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Classified incident types with assessment criteria
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Efficient reporting and management system
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Internal and external reporting procedures
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Comprehensive incident handling tools
-                    </li>
+                    {t('nisIIPage.resultAreas.incidents.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -429,28 +389,16 @@ const NisII = () => {
                   <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Users className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">Employees and Training</CardTitle>
-                  
-                  
+                  <CardTitle className="text-xl font-semibold">{t('nisIIPage.resultAreas.employeesTraining.title')}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Assigned responsibilities for all employees
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Regular training programs implemented
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Enhanced security awareness and competencies
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      HR and recruitment standards compliance
-                    </li>
+                    {t('nisIIPage.resultAreas.employeesTraining.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -465,28 +413,16 @@ const NisII = () => {
                   <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Building className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">Suppliers</CardTitle>
-                  
-                  
+                  <CardTitle className="text-xl font-semibold">{t('nisIIPage.resultAreas.suppliers.title')}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Supplier audits conducted and compliance confirmed
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Communication obligations fulfilled
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Required information provision under NIS2
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Incident response coordination established
-                    </li>
+                    {t('nisIIPage.resultAreas.suppliers.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -501,28 +437,16 @@ const NisII = () => {
                   <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Monitor className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">Assets and Security Measures</CardTitle>
-                  
-                  
+                  <CardTitle className="text-xl font-semibold">{t('nisIIPage.resultAreas.assets.title')}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Complete asset inventory with responsible persons
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Tailored security measures for each asset
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Asset classification by significance
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Security requirements properly assigned
-                    </li>
+                    {t('nisIIPage.resultAreas.assets.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -546,30 +470,30 @@ const NisII = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Request Demo Form - Left Side */}
               <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-                <h4 className="text-lg font-semibold text-slate-900 mb-4 text-center">Request a Demo</h4>
+                <h4 className="text-lg font-semibold text-slate-900 mb-4 text-center">{t('nisIIPage.continuousCompliance.form.title')}</h4>
                 <form className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
-                      Full Name
+                      {t('nisIIPage.continuousCompliance.form.nameLabel')}
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                      placeholder="Enter your full name"
+                      placeholder={t('nisIIPage.continuousCompliance.form.namePlaceholder')}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-                      Email Address
+                      {t('nisIIPage.continuousCompliance.form.emailLabel')}
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                      placeholder="Enter your email address"
+                      placeholder={t('nisIIPage.continuousCompliance.form.emailPlaceholder')}
                     />
                   </div>
                   <div className="flex items-start">
@@ -580,14 +504,14 @@ const NisII = () => {
                       className="mt-1 h-4 w-4 text-cyan-600 border-slate-300 rounded focus:ring-cyan-500"
                     />
                     <label htmlFor="marketing" className="ml-2 text-sm text-slate-600">
-                      I agree to receive marketing communications and updates about NIS2 compliance solutions
+                      {t('nisIIPage.continuousCompliance.form.marketingConsent')}
                     </label>
                   </div>
                   <Button 
                     type="submit" 
                     className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white"
                   >
-                    Request Demo
+                    {t('nisIIPage.continuousCompliance.form.submitButton')}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
@@ -596,10 +520,10 @@ const NisII = () => {
               {/* Content - Right Side */}
               <div className="animate-fade-in">
                 <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                  Continuous Compliance Operations
+                  {t('nisIIPage.continuousCompliance.title')}
                 </h3>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.
+                  {t('nisIIPage.continuousCompliance.description')}
                 </p>
                 
                 {/* Interactive Feature Cards */}
@@ -610,8 +534,8 @@ const NisII = () => {
                       <Monitor className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Real-time Monitoring</h4>
-                      <p className="text-sm text-slate-600">24/7 automated surveillance of all compliance parameters</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('nisIIPage.continuousCompliance.features.monitoring.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('nisIIPage.continuousCompliance.features.monitoring.description')}</p>
                     </div>
                     <div className="ml-auto">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -624,8 +548,8 @@ const NisII = () => {
                       <AlertTriangle className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Risk Assessment</h4>
-                      <p className="text-sm text-slate-600">AI-powered continuous risk evaluation and mitigation</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('nisIIPage.continuousCompliance.features.riskAssessment.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('nisIIPage.continuousCompliance.features.riskAssessment.description')}</p>
                     </div>
                     <div className="ml-auto">
                       <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
@@ -638,8 +562,8 @@ const NisII = () => {
                       <FileText className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Automated Reporting</h4>
-                      <p className="text-sm text-slate-600">Regulatory reports generated and submitted automatically</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('nisIIPage.continuousCompliance.features.reporting.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('nisIIPage.continuousCompliance.features.reporting.description')}</p>
                     </div>
                     <div className="ml-auto">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -652,8 +576,8 @@ const NisII = () => {
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Incident Management</h4>
-                      <p className="text-sm text-slate-600">Automated incident detection, response, and documentation</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('nisIIPage.continuousCompliance.features.incidentManagement.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('nisIIPage.continuousCompliance.features.incidentManagement.description')}</p>
                     </div>
                     <div className="ml-auto">
                       <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
@@ -665,7 +589,7 @@ const NisII = () => {
                 <div className="mt-8 inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-700 border border-green-200 animate-fade-in" 
                      style={{animationDelay: '0.5s'}}>
                   <CheckCircle className="w-4 h-4 mr-2" />
-                  <span className="text-sm font-medium">Always Compliant • Always Protected</span>
+                  <span className="text-sm font-medium">{t('nisIIPage.continuousCompliance.statusBadge')}</span>
                 </div>
               </div>
             </div>

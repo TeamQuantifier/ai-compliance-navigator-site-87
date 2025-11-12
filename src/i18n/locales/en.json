@@ -1876,7 +1876,64 @@
         "monitoring": "24/7",
         "monitoringLabel": "Continuous Monitoring",
         "responseTime": "24h",
-        "responseTimeLabel": "Incident Response Time"
+        "responseTimeLabel": "Incident Response"
+      },
+      "resultAreas": {
+        "riskAssessment": {
+          "title": "Risk Assessment",
+          "items": [
+            "Complete list of identified risks and vulnerabilities",
+            "Probability and impact analysis with clear metrics",
+            "Risk evaluation with assigned significance levels",
+            "Comprehensive risk management plan",
+            "Technical and organizational controls implemented"
+          ]
+        },
+        "crisisManagement": {
+          "title": "Crisis Management",
+          "items": [
+            "Ready crisis communication plans",
+            "Identified critical technologies and operations",
+            "Defined priorities for system recovery",
+            "Coordinated action procedures"
+          ]
+        },
+        "incidents": {
+          "title": "Incidents",
+          "items": [
+            "Classified incident types with assessment criteria",
+            "Efficient reporting and management system",
+            "Internal and external reporting procedures",
+            "Comprehensive incident handling tools"
+          ]
+        },
+        "employeesTraining": {
+          "title": "Employees and Training",
+          "items": [
+            "Assigned responsibilities for all employees",
+            "Regular training programs implemented",
+            "Enhanced security awareness and competencies",
+            "HR and recruitment standards compliance"
+          ]
+        },
+        "suppliers": {
+          "title": "Suppliers",
+          "items": [
+            "Supplier audits conducted and compliance confirmed",
+            "Communication obligations fulfilled",
+            "Required information provision under NIS2",
+            "Incident response coordination established"
+          ]
+        },
+        "assets": {
+          "title": "Assets and Security Measures",
+          "items": [
+            "Complete asset inventory with responsible persons",
+            "Tailored security measures for each asset",
+            "Asset classification by significance",
+            "Security requirements properly assigned"
+          ]
+        }
       },
       "areas": {
         "riskAssessment": {
@@ -1937,6 +1994,16 @@
     },
     "continuousCompliance": {
       "title": "Continuous Compliance Operations",
+      "description": "Once implemented, our AI agents take over continuous monitoring, risk assessment, incident management, and regulatory reporting — ensuring your NIS2 compliance never lapses.",
+      "form": {
+        "title": "Request a Demo",
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Enter your full name",
+        "emailLabel": "Email Address",
+        "emailPlaceholder": "Enter your email address",
+        "marketingConsent": "I agree to receive marketing communications and updates about NIS2 compliance solutions",
+        "submitButton": "Request Demo"
+      },
       "formTitle": "Ready to Start Your NIS2 Journey?",
       "formDescription": "Get a personalized assessment of your NIS2 readiness",
       "companyLabel": "Company Name",
@@ -1947,6 +2014,22 @@
       "phonePlaceholder": "+48 123 456 789",
       "scheduleButton": "Schedule Assessment",
       "features": {
+        "monitoring": {
+          "title": "Real-time Monitoring",
+          "description": "24/7 automated surveillance of all compliance parameters"
+        },
+        "riskAssessment": {
+          "title": "Risk Assessment",
+          "description": "AI-powered continuous risk evaluation and mitigation"
+        },
+        "reporting": {
+          "title": "Automated Reporting",
+          "description": "Regulatory reports generated and submitted automatically"
+        },
+        "incidentManagement": {
+          "title": "Incident Management",
+          "description": "Automated incident detection, response, and documentation"
+        },
         "automated": {
           "title": "Automated Policy Management",
           "description": "19 pre-built cybersecurity policies"
@@ -1963,7 +2046,8 @@
           "title": "Staff Training & Awareness",
           "description": "Continuous security education programs"
         }
-      }
+      },
+      "statusBadge": "Always Compliant • Always Protected"
     },
     "finalCta": {
       "title": "Transform Your NIS2 Compliance Journey",

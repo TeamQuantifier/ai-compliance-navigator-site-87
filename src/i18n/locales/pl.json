@@ -1718,6 +1718,63 @@
         "responseTime": "24h",
         "responseTimeLabel": "Czas reakcji na incydent"
       },
+      "resultAreas": {
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "items": [
+            "Kompletna lista zidentyfikowanych ryzyk i zagrożeń",
+            "Analiza prawdopodobieństwa i wpływu z jasnymi metrykami",
+            "Ocena ryzyka z przypisanymi poziomami istotności",
+            "Kompleksowy plan zarządzania ryzykiem",
+            "Wdrożone kontrole techniczne i organizacyjne"
+          ]
+        },
+        "crisisManagement": {
+          "title": "Zarządzanie kryzysowe",
+          "items": [
+            "Gotowe plany komunikacji kryzysowej",
+            "Zidentyfikowane krytyczne technologie i operacje",
+            "Określone priorytety przywracania systemów",
+            "Skoordynowane procedury działania"
+          ]
+        },
+        "incidents": {
+          "title": "Incydenty",
+          "items": [
+            "Sklasyfikowane typy incydentów z kryteriami oceny",
+            "Skuteczny system raportowania i zarządzania",
+            "Procedury raportowania wewnętrznego i zewnętrznego",
+            "Kompleksowe narzędzia obsługi incydentów"
+          ]
+        },
+        "employeesTraining": {
+          "title": "Pracownicy i szkolenia",
+          "items": [
+            "Przypisane obowiązki dla wszystkich pracowników",
+            "Wdrożone regularne programy szkoleniowe",
+            "Zwiększona świadomość i kompetencje w zakresie bezpieczeństwa",
+            "Zgodność z standardami HR i rekrutacji"
+          ]
+        },
+        "suppliers": {
+          "title": "Dostawcy",
+          "items": [
+            "Przeprowadzone audyty dostawców i potwierdzona zgodność",
+            "Wypełnione obowiązki komunikacyjne",
+            "Wymagane przekazywanie informacji zgodnie z NIS2",
+            "Ustanowiona koordynacja reagowania na incydenty"
+          ]
+        },
+        "assets": {
+          "title": "Zasoby i środki bezpieczeństwa",
+          "items": [
+            "Kompletny wykaz zasobów z osobami odpowiedzialnymi",
+            "Dostosowane środki bezpieczeństwa dla każdego zasobu",
+            "Klasyfikacja zasobów według istotności",
+            "Prawidłowo przypisane wymagania bezpieczeństwa"
+          ]
+        }
+      },
       "areas": {
         "riskAssessment": {
           "title": "Ocena ryzyka",
@@ -1776,7 +1833,17 @@
       }
     },
     "continuousCompliance": {
-      "title": "Ciągłe operacje zgodności",
+      "title": "Ciągła zgodność operacyjna",
+      "description": "Po wdrożeniu nasze agenty AI przejmują ciągłe monitorowanie, ocenę ryzyka, zarządzanie incydentami i raportowanie regulacyjne — zapewniając, że Twoja zgodność z NIS2 nigdy nie wygasa.",
+      "form": {
+        "title": "Zamów demo",
+        "nameLabel": "Imię i nazwisko",
+        "namePlaceholder": "Wprowadź swoje imię i nazwisko",
+        "emailLabel": "Adres e-mail",
+        "emailPlaceholder": "Wprowadź swój adres e-mail",
+        "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej i aktualizacji dotyczących rozwiązań zgodności z NIS2",
+        "submitButton": "Zamów demo"
+      },
       "formTitle": "Gotowy rozpocząć swoją podróż NIS2?",
       "formDescription": "Uzyskaj spersonalizowaną ocenę gotowości NIS2",
       "companyLabel": "Nazwa firmy",
@@ -1787,6 +1854,22 @@
       "phonePlaceholder": "+48 123 456 789",
       "scheduleButton": "Zaplanuj ocenę",
       "features": {
+        "monitoring": {
+          "title": "Monitorowanie w czasie rzeczywistym",
+          "description": "Automatyczny nadzór 24/7 nad wszystkimi parametrami zgodności"
+        },
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "description": "Ciągła ocena i mitygacja ryzyka wspierana przez AI"
+        },
+        "reporting": {
+          "title": "Automatyczne raportowanie",
+          "description": "Raporty regulacyjne generowane i przesyłane automatycznie"
+        },
+        "incidentManagement": {
+          "title": "Zarządzanie incydentami",
+          "description": "Automatyczne wykrywanie, reagowanie i dokumentowanie incydentów"
+        },
         "automated": {
           "title": "Automatyczne zarządzanie politykami",
           "description": "19 gotowych polityk cyberbezpieczeństwa"
@@ -1803,7 +1886,8 @@
           "title": "Szkolenia i świadomość personelu",
           "description": "Ciągłe programy edukacji w zakresie bezpieczeństwa"
         }
-      }
+      },
+      "statusBadge": "Zawsze zgodny • Zawsze chroniony"
     },
     "finalCta": {
       "title": "Przekształć swoją ścieżkę zgodności NIS2",
