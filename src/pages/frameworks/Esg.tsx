@@ -7,9 +7,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, AreaChart, Area, CartesianGrid, Tooltip, LineChart, Line, PieChart as RePieChart, Pie, Cell, Legend } from 'recharts';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Esg = () => {
   const [activeTab, setActiveTab] = useState("csdr");
+  const { t, currentLocale } = useLanguage();
 
   // CSDR Chart Data
   const csdrComplianceData = [

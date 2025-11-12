@@ -7,14 +7,16 @@ import { Link } from 'react-router-dom';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useState } from 'react';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Cybersecurity = () => {
   const [activeTab, setActiveTab] = useState("overview");
+  const { t, currentLocale } = useLanguage();
 
   return (
     <PageTemplate
-      title="Cybersecurity Frameworks"
-      description="Ensure your systems and data are protected with comprehensive cybersecurity compliance solutions."
+      title={t('cybersecurityPage.title')}
+      description={t('cybersecurityPage.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
@@ -22,14 +24,14 @@ const Cybersecurity = () => {
           <div className="bg-gradient-to-r from-compliance-800 to-innovation-800 rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-3/5">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Cybersecurity Compliance That Handles Itself
+                {t('cybersecurityPage.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                From SOC to NIS 2 — stay secure, audit-ready, and fully aligned. Automatically.
+                {t('cybersecurityPage.hero.subtitle')}
               </p>
               <Button size="lg" asChild className="bg-white text-compliance-800 hover:bg-white/90">
-                <Link to="/contact">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <Link to={`/${currentLocale}/contact`}>
+                  {t('cybersecurityPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>

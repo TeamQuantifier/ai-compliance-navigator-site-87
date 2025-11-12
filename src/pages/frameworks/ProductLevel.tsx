@@ -9,9 +9,11 @@ import { Link } from 'react-router-dom';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductLevel = () => {
   const [activeTab, setActiveTab] = useState("dpp");
+  const { t, currentLocale } = useLanguage();
 
   const FeatureItem = ({ icon: Icon, title, children }) => (
     <div className="flex gap-3 mb-5">

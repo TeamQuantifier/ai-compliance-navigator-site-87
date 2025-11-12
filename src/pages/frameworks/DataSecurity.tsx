@@ -8,9 +8,11 @@ import { ArrowRight, Lock, Shield, Database, FileCheck, Globe, Eye, EyeOff, Key,
 import { Link } from 'react-router-dom';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const DataSecurity = () => {
   const [activeTab, setActiveTab] = useState("gdpr");
+  const { t, currentLocale } = useLanguage();
 
   const FeatureItem = ({ icon: Icon, title, children }) => (
     <div className="flex gap-3 mb-5">

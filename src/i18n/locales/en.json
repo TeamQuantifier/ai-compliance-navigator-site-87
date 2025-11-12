@@ -995,5 +995,786 @@
       "description": "No matter your role, Quantifier adapts to how you work — and elevates how you manage compliance.",
       "button": "Book a Demo"
     }
+  },
+  "cybersecurityPage": {
+    "title": "Cybersecurity Frameworks",
+    "description": "Ensure your systems and data are protected with comprehensive cybersecurity compliance solutions.",
+    "hero": {
+      "title": "Cybersecurity Compliance That Handles Itself",
+      "subtitle": "From SOC to NIS 2 — stay secure, audit-ready, and fully aligned. Automatically.",
+      "button": "Book a Demo"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "soc": "SOC 1 & SOC 2",
+      "nis2": "NIS II",
+      "nist": "NIST"
+    },
+    "overview": {
+      "badge": "Built for Modern Security Demands",
+      "title": "Automate Your Compliance Journey",
+      "description": "Cybersecurity frameworks are complex. Staying compliant shouldn't be. Our autonomous agents manage every step—from assigning tasks to collecting audit-ready evidence—so you can focus on what matters.",
+      "features": [
+        "Continuous Monitoring",
+        "Automated Evidence",
+        "Risk Identification",
+        "Real-time Alerts"
+      ],
+      "supportedFrameworks": {
+        "badge": "Supported Frameworks",
+        "title": "Comprehensive Framework Coverage",
+        "description": "Our platform supports the most important cybersecurity frameworks, helping you stay compliant across multiple standards simultaneously."
+      }
+    },
+    "soc": {
+      "title": "SOC 1 & SOC 2",
+      "subtitle": "Demonstrate trust to your customers, investors, and partners",
+      "description": "Our platform ensures continuous readiness for both SOC 1 and SOC 2, covering controls around data handling, privacy, availability, and more.",
+      "featuresTitle": "You get:",
+      "features": [
+        "Automated task assignment & evidence collection",
+        "Control monitoring across Trust Services Criteria",
+        "Real-time audit readiness dashboards"
+      ],
+      "button": "Learn More"
+    },
+    "nis2": {
+      "title": "NIS 2 Directive",
+      "subtitle": "Stay ahead of critical infrastructure security regulations",
+      "description": "NIS 2 expands cybersecurity obligations across sectors in the EU. Our platform keeps you ahead—automatically identifying risks and ensuring compliance.",
+      "featuresTitle": "You get:",
+      "features": [
+        "AI agents driving real-time policy checks",
+        "Role-based actioning for IT, legal, and ops teams",
+        "Gap analysis aligned with NIS 2 mandates"
+      ],
+      "button": "Learn More"
+    },
+    "nist": {
+      "title": "NIST Framework",
+      "subtitle": "Align your organization to the gold standard in security",
+      "description": "From Identify to Recover—our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.",
+      "featuresTitle": "You get:",
+      "features": [
+        "Intelligent asset and risk mapping",
+        "Proactive tasking aligned with NIST categories",
+        "Integrated reporting for regulators and auditors"
+      ],
+      "button": "Learn More"
+    },
+    "whyPlatform": {
+      "badge": "Why Choose Our Platform",
+      "title": "Why Our Platform for Cybersecurity Compliance?",
+      "description": "Our automated approach to cybersecurity compliance helps organizations stay secure while reducing the resource burden of manual compliance work.",
+      "features": {
+        "alwaysOn": {
+          "title": "Always-On Compliance",
+          "description": "Agents run 24/7, so you're always prepared for audits and compliance reviews."
+        },
+        "zeroManual": {
+          "title": "Zero Manual Oversight",
+          "description": "Tasks are assigned, followed up, and closed—without project managers or manual tracking."
+        },
+        "fullCoverage": {
+          "title": "Full Framework Coverage",
+          "description": "SOC 1 & 2, NIS 2, NIST—and growing library of supported frameworks and standards."
+        },
+        "fasterRollout": {
+          "title": "Faster Rollout",
+          "description": "Go live in hours, not months, with pre-configured controls and compliance templates."
+        },
+        "auditReady": {
+          "title": "Audit-Ready Evidence",
+          "description": "Automatically collected, version-controlled, and mapped to framework requirements."
+        },
+        "crossTeam": {
+          "title": "Cross-Team Collaboration",
+          "description": "Compliance, IT, legal, and operations teams all aligned in one platform."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Cybersecurity Compliance?",
+      "description": "Join forward-thinking organizations that trust our platform to handle their cybersecurity frameworks—autonomously.",
+      "bookDemo": "Book a Demo",
+      "watchTour": "Watch a Platform Tour"
+    }
+  },
+  "informationSecurityPage": {
+    "title": "Information Security Frameworks",
+    "description": "Protect your information assets with standards like ISO 27001, ISO 9001, and DORA.",
+    "hero": {
+      "title": "Information Security Compliance That Drives Trust",
+      "subtitle": "Achieve ISO 27001, ISO 9001 and DORA compliance with ease—automatically.",
+      "button": "Book a Demo"
+    },
+    "tabs": {
+      "iso27001": "ISO 27001",
+      "iso9001": "ISO 9001",
+      "dora": "DORA"
+    },
+    "iso27001": {
+      "title": "ISO 27001: Protect Your Information, Build Trust",
+      "description": "ISO 27001 is the gold standard for information security management. Quantifier automates every step of your ISO 27001 journey—from establishing policies to ongoing audits—so you can focus on what truly matters: securing your business.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Automated Risk Management:",
+          "description": "Identify, assess, and mitigate risks in real-time"
+        },
+        {
+          "title": "Continuous Compliance:",
+          "description": "Stay prepared for audits and inspections—no more last-minute scrambling"
+        },
+        {
+          "title": "Real-Time Evidence Collection:",
+          "description": "Automatically collect the necessary documentation for ISO 27001 compliance"
+        },
+        {
+          "title": "Policy Enforcement:",
+          "description": "Agents ensure policies are adhered to by your team members, proactively closing gaps"
+        }
+      ],
+      "button": "Learn More About ISO 27001"
+    },
+    "iso9001": {
+      "title": "ISO 9001: Streamline Quality Management",
+      "description": "ISO 9001 is the benchmark for quality management systems (QMS). Quantifier makes achieving and maintaining ISO 9001 compliance effortless by continuously driving quality management actions, tracking key metrics, and ensuring all necessary documentation is in place.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Automated Task Assignment:",
+          "description": "Ensure quality management activities are performed consistently and on schedule"
+        },
+        {
+          "title": "Audit-Ready Reporting:",
+          "description": "Gather the required quality evidence without lifting a finger"
+        },
+        {
+          "title": "Proactive Quality Control:",
+          "description": "Identify quality gaps and resolve them before they escalate"
+        },
+        {
+          "title": "Cross-Functional Alignment:",
+          "description": "Involve relevant teams—IT, operations, HR, and legal—without manual oversight"
+        }
+      ],
+      "button": "Learn More About ISO 9001"
+    },
+    "dora": {
+      "title": "DORA: Ensure Digital Operational Resilience",
+      "description": "The Digital Operational Resilience Act (DORA) ensures that financial institutions in the EU can withstand operational disruptions. Quantifier's platform automatically monitors, reports, and enforces resilience measures, ensuring your organization meets the stringent requirements of DORA.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Automated Risk Monitoring:",
+          "description": "Continuously monitor and manage risks to your digital operations"
+        },
+        {
+          "title": "Incident Response Planning:",
+          "description": "AI agents help build and execute comprehensive plans for operational disruptions"
+        },
+        {
+          "title": "Third-Party Compliance Management:",
+          "description": "Ensure your third-party suppliers comply with DORA requirements"
+        },
+        {
+          "title": "Real-Time Risk & Incident Reporting:",
+          "description": "Track and mitigate risks before they affect your operations"
+        }
+      ],
+      "button": "Learn More About DORA"
+    },
+    "whyQuantifier": {
+      "title": "Why Choose Quantifier for Information Security & Quality Compliance?",
+      "features": {
+        "autonomous": {
+          "title": "Autonomous Compliance",
+          "description": "Forget manual tracking. Quantifier's AI agents continuously ensure you're meeting ISO 27001 and ISO 9001, DORA standards."
+        },
+        "seamless": {
+          "title": "Seamless Integration",
+          "description": "From policies to procedures, integrate your information security and quality management processes across your organization—automatically."
+        },
+        "realTime": {
+          "title": "Real-Time, Zero Delay",
+          "description": "Achieve continuous compliance with real-time risk assessments and evidence collection."
+        },
+        "global": {
+          "title": "Global Standardization",
+          "description": "Manage compliance across multiple geographies and frameworks, all in one platform."
+        },
+        "dataFirst": {
+          "title": "Data Security First",
+          "description": "With built-in security, your organization's data is always protected throughout the compliance process."
+        },
+        "intelligent": {
+          "title": "Intelligent Reporting",
+          "description": "Get comprehensive insights with AI-generated reports that highlight risks and compliance status."
+        }
+      }
+    },
+    "cta": {
+      "title": "Get Ready for Your Next Audit—Faster and Smarter",
+      "description": "Join organizations that trust Quantifier to automate their information security compliance journey.",
+      "bookDemo": "Book a Demo",
+      "explorePlans": "Explore Plans"
+    }
+  },
+  "dataSecurityPage": {
+    "title": "Data Security Frameworks",
+    "description": "Ensure compliance with data protection regulations like GDPR, HIPAA, and CCPA.",
+    "pageTitle": "Comprehensive Data Security Compliance",
+    "pageDescription": "Navigate complex regulatory landscapes with Quantifier's AI-powered data security management",
+    "tabs": {
+      "gdpr": "GDPR",
+      "hipaa": "HIPAA",
+      "ccpa": "CCPA"
+    },
+    "gdpr": {
+      "title": "GDPR Compliance: Protect User Data and Build Trust",
+      "description": "The General Data Protection Regulation (GDPR) governs how organizations collect, process, and store EU citizens' personal data. Quantifier helps you systematically implement and document GDPR requirements, avoiding costly penalties.",
+      "benefitsTitle": "Key Benefits:",
+      "benefits": [
+        {
+          "title": "Thorough Documentation",
+          "description": "Automated generation of required GDPR documentation, including DPIAs and processing records"
+        },
+        {
+          "title": "User Rights Management",
+          "description": "Tools to efficiently handle data subject access requests and consent management"
+        },
+        {
+          "title": "Data Processing Oversight",
+          "description": "Track and document all data processing activities with clear audit trails"
+        },
+        {
+          "title": "Security by Design",
+          "description": "Implement technical and organizational measures that fulfill GDPR requirements"
+        }
+      ],
+      "dashboardTitle": "GDPR Compliance Status",
+      "insightTitle": "AI Compliance Insights:",
+      "insight": "Your GDPR implementation is 85% complete. Focus on strengthening your data processing documentation to improve overall compliance."
+    },
+    "hipaa": {
+      "title": "HIPAA: Healthcare Data Protection Made Simple",
+      "description": "HIPAA sets standards for protecting sensitive patient health information. Quantifier helps healthcare organizations and business associates implement compliant data handling practices with less effort and greater accuracy.",
+      "benefitsTitle": "Key Benefits:",
+      "benefits": [
+        {
+          "title": "PHI Protection",
+          "description": "Implement required safeguards for protected health information (PHI) across systems"
+        },
+        {
+          "title": "Access Controls",
+          "description": "Role-based access management with detailed audit logging for all PHI interactions"
+        },
+        {
+          "title": "Policy Management",
+          "description": "AI-generated policies and procedures specific to your healthcare organization"
+        },
+        {
+          "title": "Risk Assessment",
+          "description": "Continuous monitoring and automated risk assessment tools"
+        }
+      ],
+      "dashboardTitle": "HIPAA Compliance Status",
+      "insightTitle": "AI Compliance Insights:",
+      "insight": "Your breach notification procedures need strengthening. Consider implementing our automated incident response workflow to improve compliance."
+    },
+    "ccpa": {
+      "title": "CCPA/CPRA: California Privacy Compliance",
+      "description": "The California Consumer Privacy Act and its successor CPRA give California residents greater control over their personal information. Quantifier helps businesses comply with these evolving regulations efficiently and comprehensively.",
+      "benefitsTitle": "Key Benefits:",
+      "benefits": [
+        {
+          "title": "Data Discovery",
+          "description": "Automated scanning and classification of personal information in your systems"
+        },
+        {
+          "title": "Consumer Rights Portal",
+          "description": "Ready-to-deploy consumer request handling system with tracking and documentation"
+        },
+        {
+          "title": "Data Minimization",
+          "description": "Tools to implement and document data minimization and retention policies"
+        },
+        {
+          "title": "Data Deletion",
+          "description": "Streamlined workflows for verifiable consumer deletion requests"
+        }
+      ],
+      "dashboardTitle": "CCPA Risk Distribution",
+      "insightTitle": "AI Compliance Insights:",
+      "insight": "Most of your data processing activities are low-risk under CCPA. Address the 12% high-risk activities by implementing enhanced consent mechanisms."
+    },
+    "whyQuantifier": {
+      "title": "Why Quantifier for Data Security Compliance?",
+      "features": {
+        "multiJurisdiction": {
+          "title": "Multi-Jurisdiction Coverage",
+          "description": "One platform to manage compliance across global data protection regulations, preventing duplicative work."
+        },
+        "realTimeMonitoring": {
+          "title": "Real-time Monitoring",
+          "description": "Continuous scanning for compliance gaps and automated alerts when issues are detected."
+        },
+        "dataMapping": {
+          "title": "Data Mapping Automation",
+          "description": "AI-powered discovery and classification of personal data across your organization's systems."
+        },
+        "auditReady": {
+          "title": "Audit-Ready Documentation",
+          "description": "Generate comprehensive compliance reports and evidence with a single click."
+        }
+      }
+    },
+    "cta": {
+      "title": "Simplify Your Data Protection Compliance Journey",
+      "description": "Protect your customer data. Respect privacy rights. Avoid penalties. Let Quantifier's AI handle the complexity of data security compliance.",
+      "bookDemo": "Book a Demo",
+      "talkExpert": "Talk to Our Data Privacy Expert"
+    }
+  },
+  "esgPage": {
+    "title": "Simplify Your Sustainable & ESG Reporting",
+    "description": "Automate CSDR, GRI, and CBAM Reporting with Ease. Quantifier is your partner in achieving transparent, accurate, and efficient ESG reporting. Whether you're meeting global sustainability standards or navigating complex regulatory landscapes, we've got you covered with full automation.",
+    "tabs": {
+      "csdr": "CSDR Reporting",
+      "gri": "GRI Reporting",
+      "cbam": "CBAM Reporting"
+    },
+    "csdr": {
+      "title": "CSDR Reporting: Streamline Corporate Sustainability",
+      "description": "The Corporate Sustainability Reporting Directive (CSDR) requires companies to disclose their sustainability efforts, risks, and governance structures. With Quantifier, you can easily collect and report your sustainability data in compliance with CSDR regulations—automatically.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Automated Data Collection",
+          "description": "Quantifier aggregates sustainability data from across your organization, ensuring no data is left behind."
+        },
+        {
+          "title": "Double Materiality Assessment",
+          "description": "Identify and assess the impact of sustainability factors on your business and vice versa."
+        },
+        {
+          "title": "CSDR-Aligned Dashboards",
+          "description": "Visualize your sustainability performance in real time with CSDR-compliant reporting."
+        },
+        {
+          "title": "Gap Detection",
+          "description": "Identify areas for improvement and ensure you meet the standards for mandatory reporting."
+        },
+        {
+          "title": "Continuous Updates",
+          "description": "Stay up-to-date with regulatory changes—Quantifier automatically adjusts your reporting templates and criteria."
+        }
+      ],
+      "dashboardTitle": "CSDR Compliance Dashboard",
+      "chartTitle": "Sustainability Reporting Completion",
+      "insight": "Your CSDR compliance is at 78% overall - ahead of industry average by 12%"
+    },
+    "gri": {
+      "title": "GRI Reporting: Align with Global Standards",
+      "description": "The Global Reporting Initiative (GRI) standards are the most widely used framework for sustainability reporting worldwide. Quantifier makes GRI reporting effortless by automating the data collection, analysis, and presentation—allowing you to focus on actionable insights.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Comprehensive Data Aggregation",
+          "description": "Quantifier collects ESG data across all business units to provide a holistic view of your sustainability performance."
+        },
+        {
+          "title": "GRI-Compliant Templates",
+          "description": "Generate reports that comply with the latest GRI standards, ensuring your disclosures meet global expectations."
+        },
+        {
+          "title": "Impact Tracking",
+          "description": "Easily track your sustainability impact across key areas such as environment, governance, and social responsibility."
+        },
+        {
+          "title": "Audit-Ready Evidence",
+          "description": "Automatically capture and store evidence for all GRI disclosures, reducing the need for manual data gathering during audits."
+        }
+      ],
+      "dashboardTitle": "GRI Performance Trends",
+      "chartTitle": "ESG Performance Metrics (6-Month Trend)",
+      "insight": "All GRI metrics showing positive trends - Environmental impact score improved by 20% this quarter"
+    },
+    "cbam": {
+      "title": "CBAM Reporting: Navigate the Carbon Border Adjustment Mechanism",
+      "description": "The Carbon Border Adjustment Mechanism (CBAM) imposes carbon-related reporting on imported goods entering the EU. As the regulatory landscape evolves, Quantifier helps you automate CBAM reporting, ensuring your business stays compliant with minimal effort.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Automatic Emission Tracking",
+          "description": "Quantifier tracks emissions from your supply chain, making it easy to report on carbon intensity for imports."
+        },
+        {
+          "title": "CBAM Compliance Monitoring",
+          "description": "Stay ahead of CBAM regulations with automatic updates and reporting templates."
+        },
+        {
+          "title": "Supply Chain Integration",
+          "description": "Seamlessly integrate with your suppliers to track their emissions and ensure your imported goods meet EU standards."
+        },
+        {
+          "title": "Real-Time Alerts",
+          "description": "Receive proactive alerts when your emissions exceed thresholds, helping you manage CBAM-related costs."
+        }
+      ],
+      "dashboardTitle": "CBAM Emissions Breakdown",
+      "chartTitle": "Carbon Emissions Distribution by Source",
+      "insight1": "35% of emissions from imported goods",
+      "insight2": "Next CBAM report due in 28 days"
+    },
+    "whyQuantifier": {
+      "title": "Why Choose Quantifier for ESG Reporting?",
+      "features": {
+        "fullyAutomated": {
+          "title": "Fully Automated",
+          "description": "Let Quantifier handle your ESG reporting from data collection to compliance—saving you time and reducing errors."
+        },
+        "realTimeInsights": {
+          "title": "Real-Time Insights",
+          "description": "Stay ahead of regulatory changes and get real-time visibility into your ESG performance across all frameworks."
+        },
+        "seamlessIntegration": {
+          "title": "Seamless Integration",
+          "description": "From GRI to CBAM, Quantifier integrates with your existing systems to ensure all reporting is accurate and streamlined."
+        },
+        "globalCompliance": {
+          "title": "Global Compliance",
+          "description": "Manage compliance with global ESG standards and regulations—all from one platform."
+        },
+        "auditReady": {
+          "title": "Audit-Ready Documentation",
+          "description": "Automatically collect and organize evidence for audits and regulatory reviews."
+        },
+        "smartAlerts": {
+          "title": "Smart Alerts & Insights",
+          "description": "Receive timely notifications and AI-driven insights to keep you ahead of risks and opportunities."
+        }
+      }
+    },
+    "cta": {
+      "title": "Transform Your ESG Reporting with Quantifier",
+      "description": "Ready to automate your sustainability and ESG compliance? Quantifier makes it easy.",
+      "bookConsultation": "Book a Consultation",
+      "watchDemo": "Watch Demo Video"
+    }
+  },
+  "environmentalPage": {
+    "title": "Environmental Compliance, Fully Automated",
+    "description": "Quantifier powers your environmental strategy with AI-native automation — from ISO 14001 to decarbonization. Whether you're aiming for certification, tracking emissions, or building a science-based reduction plan, Quantifier takes the manual work out of environmental compliance and makes climate leadership scalable.",
+    "tabs": {
+      "iso14001": "ISO 14001",
+      "lca": "LCA",
+      "carbon": "Carbon Footprint",
+      "decarbonisation": "Decarbonisation"
+    },
+    "iso14001": {
+      "title": "ISO 14001: Build and Maintain a Certified EMS",
+      "description": "Achieve and sustain your Environmental Management System (EMS) with zero overhead. Quantifier automates the evidence collection, reporting, and policy enforcement required to stay aligned with ISO 14001 standards.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Autonomous task assignments",
+          "description": "Automated assignments for EMS implementation and reviews across your organization."
+        },
+        {
+          "title": "Real-time audit readiness",
+          "description": "Version-controlled documentation and evidence that's always ready for auditors."
+        },
+        {
+          "title": "Automated reminders",
+          "description": "Timely alerts for corrective actions, training requirements, and policy updates."
+        },
+        {
+          "title": "Full visibility",
+          "description": "Comprehensive dashboard showing compliance status across teams and sites."
+        }
+      ]
+    },
+    "lca": {
+      "title": "LCA (Life Cycle Assessment): Instant, Intelligent Impact Analysis",
+      "description": "Go beyond reporting—Quantifier gives you the tools to understand the true environmental impact of your products and processes with AI-powered LCA workflows.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Guided life cycle assessments",
+          "description": "Intelligent data ingestion makes complex assessments simple and accurate."
+        },
+        {
+          "title": "Automated data requests",
+          "description": "Streamlined collection from internal teams and suppliers with built-in follow-ups."
+        },
+        {
+          "title": "Built-in benchmarks",
+          "description": "Access comprehensive material libraries and industry comparisons."
+        },
+        {
+          "title": "Exportable reports",
+          "description": "Generate reports aligned with ISO 14040/44 standards at the click of a button."
+        }
+      ]
+    },
+    "carbon": {
+      "title": "Carbon Footprint & GHG: Track, Reduce, Report",
+      "description": "From Scope 1 to Scope 3, Quantifier helps you quantify, track, and report greenhouse gas (GHG) emissions across your value chain—with no spreadsheets, no gaps, and no stress.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Automated emissions calculations",
+          "description": "Accurate emissions data by location, activity, or supplier with minimal effort."
+        },
+        {
+          "title": "AI-powered data collection",
+          "description": "AI agents that gather activity data across your organization automatically."
+        },
+        {
+          "title": "Real-time dashboards",
+          "description": "Comprehensive visibility into Scope 1, 2, and 3 emissions in one place."
+        },
+        {
+          "title": "Ready-to-submit reports",
+          "description": "Formatted reports for GHG Protocol, ISO 14064, and regulatory submissions."
+        }
+      ]
+    },
+    "decarbonisation": {
+      "title": "Decarbonisation: Go from Reporting to Action",
+      "description": "Quantifier doesn't stop at carbon measurement—it helps you execute your decarbonization strategy. Set science-based targets, track reduction progress, and stay compliant with climate regulations.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Science-based goal setting",
+          "description": "Establish targets aligned with SBTi pathways for credible climate action."
+        },
+        {
+          "title": "Automated progress tracking",
+          "description": "Monitor emissions reduction initiatives with real-time data and insights."
+        },
+        {
+          "title": "Smart alerts",
+          "description": "Receive notifications when targets are off-track or risk thresholds are breached."
+        },
+        {
+          "title": "Full data integration",
+          "description": "Connect with procurement, travel, and operations systems for comprehensive visibility."
+        }
+      ]
+    },
+    "whyQuantifier": {
+      "title": "Why Quantifier for Environmental Compliance?",
+      "features": {
+        "aiNative": {
+          "title": "AI-Native & Autonomous",
+          "description": "Compliance agents collect data, follow up with teams, and drive timely reporting—so you don't have to."
+        },
+        "alwaysUpdated": {
+          "title": "Always Up to Date",
+          "description": "Get notified when regulations change and update your processes automatically—no lag, no consulting fees."
+        },
+        "endToEnd": {
+          "title": "End-to-End Coverage",
+          "description": "Manage ISO 14001, LCAs, GHG reporting, and decarbonization in one secure platform."
+        },
+        "fastImplementation": {
+          "title": "Fast Implementation",
+          "description": "Set up your environmental workflows in minutes. No complex onboarding required."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Make Environmental Compliance Effortless?",
+      "bookDemo": "Book a Demo",
+      "watchTour": "Watch a Quick Tour"
+    }
+  },
+  "governancePage": {
+    "title": "Governance on Autopilot",
+    "description": "Turn policies into action. Empower employees. Protect your organization. Quantifier automates governance compliance—from policy enforcement to whistleblower protection—so you can focus on running your business, not chasing signatures.",
+    "tabs": {
+      "legalPolicies": "Legal Policies",
+      "whistleblowing": "Whistleblowing"
+    },
+    "legalPolicies": {
+      "dashboardTitle": "Legal Policies Dashboard",
+      "title": "Legal Policies: From Documents to Day-to-Day Enforcement",
+      "description": "Having policies isn't enough—compliance means they're read, understood, and followed. Quantifier ensures your legal frameworks don't sit in drawers. They're alive, automated, and actionable.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "AI-powered delivery",
+          "description": "AI agents that deliver policies directly to employees via Slack or email."
+        },
+        {
+          "title": "Automated workflows",
+          "description": "Automated read & acknowledge workflows and version control."
+        },
+        {
+          "title": "Audit-ready evidence",
+          "description": "Evidence of acceptance, with audit-ready logs."
+        },
+        {
+          "title": "Smart alerts",
+          "description": "Alerts for expired policies or pending acknowledgments."
+        },
+        {
+          "title": "Real-time insights",
+          "description": "Real-time compliance dashboards and automated escalations."
+        }
+      ]
+    },
+    "whistleblowing": {
+      "dashboardTitle": "Whistleblowing Dashboard",
+      "title": "Whistleblowing: Confidential, Compliant, Always Monitored",
+      "description": "Stay ahead of regulation and foster a speak-up culture with Quantifier's secure, autonomous whistleblowing system—compliant with EU Whistleblower Directive, SOX, and other global frameworks.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Secure submission portal",
+          "description": "A secure, anonymous submission portal fully aligned with legal requirements."
+        },
+        {
+          "title": "AI-based triage",
+          "description": "AI-based triage and routing of reports to designated compliance officers."
+        },
+        {
+          "title": "Time-stamped tracking",
+          "description": "Time-stamped case tracking and resolution workflows."
+        },
+        {
+          "title": "Audit trails",
+          "description": "Audit trails and evidence logs for regulators and internal audits."
+        },
+        {
+          "title": "Confidentiality controls",
+          "description": "Built-in retention, escalation, and confidentiality controls."
+        }
+      ]
+    },
+    "whyQuantifier": {
+      "title": "Why Quantifier for Governance?",
+      "features": {
+        "fullyAutonomous": {
+          "title": "Fully Autonomous Enforcement",
+          "description": "Legal doesn't need to chase acknowledgments or monitor inboxes—our agents do it for you."
+        },
+        "alwaysAuditReady": {
+          "title": "Always Audit-Ready",
+          "description": "Every interaction is logged, tracked, and instantly exportable for internal or external audits."
+        },
+        "builtInPrivacy": {
+          "title": "Built-in Privacy & Compliance",
+          "description": "Stay compliant with GDPR, SOX, EU Directive 2019/1937, and beyond."
+        },
+        "multilingual": {
+          "title": "Multilingual, Multi-Entity Support",
+          "description": "Roll out governance processes across countries and business units with ease."
+        }
+      }
+    },
+    "cta": {
+      "title": "Take the Work Out of Governance",
+      "bookDemo": "Book a Demo",
+      "watchTour": "Watch a Quick Tour"
+    }
+  },
+  "productLevelPage": {
+    "title": "Product-Level Compliance, Powered by AI",
+    "description": "Build sustainable, transparent products from the ground up. Quantifier brings intelligence and automation to your product compliance—so you can meet regulatory demands and customer expectations with ease.",
+    "tabs": {
+      "dpp": "Digital Product Passport",
+      "lca": "Life Cycle Assessment"
+    },
+    "dpp": {
+      "title": "Digital Product Passport (DPP): Future-Proof Your Products",
+      "description": "DPP is the new standard for transparency and circularity. Quantifier helps you generate, manage, and update digital product passports automatically—ensuring compliance with EU regulations and positioning your brand for the next generation of sustainable markets.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "AI-generated DPPs",
+          "description": "Automatically aligned with EU Ecodesign Regulation (ESPR)"
+        },
+        {
+          "title": "Real-time data collection",
+          "description": "Gather information across your entire supply chain"
+        },
+        {
+          "title": "Automated updates",
+          "description": "When inputs, materials, or regulations change"
+        },
+        {
+          "title": "Easy integration",
+          "description": "With QR codes, NFC, or third-party platforms"
+        },
+        {
+          "title": "Ready-to-share passports",
+          "description": "That meet industry-specific requirements"
+        }
+      ],
+      "dashboardTitle": "Digital Product Passport Completion",
+      "insightTitle": "Quantifier's AI Generated Insights:",
+      "insight": "Your product passport is 82% complete. Add more end-of-life recycling details to improve compliance with upcoming EU regulations."
+    },
+    "lca": {
+      "title": "LCA (Life Cycle Assessment): Understand and Optimize Environmental Impact",
+      "description": "Quantifier transforms life cycle assessments from a one-off burden into a continuous, intelligent process. Automate data gathering, track changes over time, and reduce your environmental footprint with clarity.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Step-by-step, AI-guided LCA workflows",
+          "description": "Based on ISO 14040/44 standards"
+        },
+        {
+          "title": "Integrated supplier data collection",
+          "description": "And emissions calculations"
+        },
+        {
+          "title": "Material libraries and benchmarking tools",
+          "description": "Built in for easy comparison"
+        },
+        {
+          "title": "Exportable, audit-ready reports",
+          "description": "For internal and external use"
+        },
+        {
+          "title": "Full transparency",
+          "description": "From raw material to end-of-life"
+        }
+      ],
+      "dashboardTitle": "Life Cycle Impact Assessment",
+      "insightTitle": "Quantifier's AI Recommendation:",
+      "insight": "Focus on raw material sourcing to reduce your largest environmental impacts. Consider alternative suppliers with documented sustainability practices."
+    },
+    "whyQuantifier": {
+      "title": "Why Quantifier for Product-Level Compliance?",
+      "features": {
+        "aiPowered": {
+          "title": "AI-Powered Data Collection & Reporting",
+          "description": "Eliminate bottlenecks by letting autonomous agents gather and verify product data."
+        },
+        "alwaysUpdated": {
+          "title": "Always Up to Date",
+          "description": "Your passports and LCAs evolve in real time as materials, suppliers, or rules change."
+        },
+        "designedCircularity": {
+          "title": "Designed for Circularity",
+          "description": "From recyclability to emissions, Quantifier helps you build better products—and prove it."
+        },
+        "fastCompliance": {
+          "title": "Fast Time-to-Compliance",
+          "description": "Launch new products in new markets without worrying about regulatory delays."
+        }
+      }
+    },
+    "cta": {
+      "title": "Make Your Products Compliant—and Competitive",
+      "description": "Smarter compliance. Stronger transparency. Lower impact. Quantifier gives your products the intelligence they need to lead.",
+      "bookDemo": "Book a Demo",
+      "talkExpert": "Talk to Our Product Compliance Expert"
+    }
   }
 }

@@ -9,9 +9,11 @@ import Iso14001Dashboard from '@/components/dashboards/environmental/Iso14001Das
 import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
 import CarbonFootprintDashboard from '@/components/dashboards/environmental/CarbonFootprintDashboard';
 import DecarbonisationDashboard from '@/components/dashboards/environmental/DecarbonisationDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Environmental = () => {
   const [activeTab, setActiveTab] = useState("iso14001");
+  const { t, currentLocale } = useLanguage();
 
   const FeatureItem = ({ icon: Icon, title, children }) => (
     <div className="flex gap-3 mb-5">

@@ -6,8 +6,12 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const InformationSecurity = () => {
-  return <PageTemplate title="Information Security Frameworks" description="Protect your information assets with standards like ISO 27001, ISO 9001, and DORA.">
+  const { t, currentLocale } = useLanguage();
+  
+  return <PageTemplate title={t('informationSecurityPage.title')} description={t('informationSecurityPage.description')}>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-12">

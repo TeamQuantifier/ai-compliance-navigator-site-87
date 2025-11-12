@@ -835,5 +835,786 @@
       "description": "Niezależnie od Twojej roli, Quantifier dostosowuje się do tego, jak pracujesz — i podnosi sposób zarządzania compliance.",
       "button": "Umów demo"
     }
+  },
+  "cybersecurityPage": {
+    "title": "Standardy cyberbezpieczeństwa",
+    "description": "Zapewnij ochronę swoich systemów i danych dzięki kompleksowym rozwiązaniom compliance w zakresie cyberbezpieczeństwa.",
+    "hero": {
+      "title": "Compliance w zakresie cyberbezpieczeństwa, który działa sam",
+      "subtitle": "Od SOC do NIS 2 — pozostań bezpieczny, gotowy na audyt i w pełni zgodny. Automatycznie.",
+      "button": "Umów demo"
+    },
+    "tabs": {
+      "overview": "Przegląd",
+      "soc": "SOC 1 i SOC 2",
+      "nis2": "NIS II",
+      "nist": "NIST"
+    },
+    "overview": {
+      "badge": "Stworzone dla współczesnych wymagań bezpieczeństwa",
+      "title": "Zautomatyzuj swoją ścieżkę compliance",
+      "description": "Standardy cyberbezpieczeństwa są złożone. Pozostanie zgodnym nie powinno takie być. Nasze autonomiczne agenty zarządzają każdym krokiem—od przypisywania zadań po zbieranie dowodów gotowych na audyt—abyś mógł skupić się na tym, co ważne.",
+      "features": [
+        "Ciągłe monitorowanie",
+        "Automatyczne dowody",
+        "Identyfikacja ryzyka",
+        "Alerty w czasie rzeczywistym"
+      ],
+      "supportedFrameworks": {
+        "badge": "Wspierane standardy",
+        "title": "Kompleksowe pokrycie standardów",
+        "description": "Nasza platforma wspiera najważniejsze standardy cyberbezpieczeństwa, pomagając pozostać zgodnym z wieloma standardami jednocześnie."
+      }
+    },
+    "soc": {
+      "title": "SOC 1 i SOC 2",
+      "subtitle": "Zademonstruj zaufanie swoim klientom, inwestorom i partnerom",
+      "description": "Nasza platforma zapewnia ciągłą gotowość dla SOC 1 i SOC 2, obejmując kontrole związane z obsługą danych, prywatnością, dostępnością i nie tylko.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        "Automatyczne przypisywanie zadań i zbieranie dowodów",
+        "Monitorowanie kontroli zgodnie z kryteriami Trust Services",
+        "Dashboardy gotowości audytowej w czasie rzeczywistym"
+      ],
+      "button": "Dowiedz się więcej"
+    },
+    "nis2": {
+      "title": "Dyrektywa NIS 2",
+      "subtitle": "Wyprzedź regulacje dotyczące bezpieczeństwa infrastruktury krytycznej",
+      "description": "NIS 2 rozszerza obowiązki w zakresie cyberbezpieczeństwa w sektorach w UE. Nasza platforma utrzymuje Cię na przedzie—automatycznie identyfikując ryzyka i zapewniając zgodność.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        "Agenty AI prowadzące kontrole polityk w czasie rzeczywistym",
+        "Działania oparte na rolach dla zespołów IT, prawnych i operacyjnych",
+        "Analiza luk zgodna z wymogami NIS 2"
+      ],
+      "button": "Dowiedz się więcej"
+    },
+    "nist": {
+      "title": "Standard NIST",
+      "subtitle": "Dostosuj swoją organizację do złotego standardu bezpieczeństwa",
+      "description": "Od Identify do Recover—nasza platforma automatyzuje wdrażanie NIST poprzez ciągłe mapowanie Twoich zasobów, ryzyk i działań łagodzących do pięciu funkcji NIST.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        "Inteligentne mapowanie zasobów i ryzyka",
+        "Proaktywne zadania zgodne z kategoriami NIST",
+        "Zintegrowane raportowanie dla organów regulacyjnych i audytorów"
+      ],
+      "button": "Dowiedz się więcej"
+    },
+    "whyPlatform": {
+      "badge": "Dlaczego wybierz naszą platformę",
+      "title": "Dlaczego nasza platforma dla compliance w cyberbezpieczeństwie?",
+      "description": "Nasze automatyczne podejście do compliance w cyberbezpieczeństwie pomaga organizacjom pozostać bezpiecznymi, jednocześnie redukując obciążenie zasobów związane z ręczną pracą compliance.",
+      "features": {
+        "alwaysOn": {
+          "title": "Compliance zawsze aktywny",
+          "description": "Agenty działają 24/7, więc jesteś zawsze przygotowany na audyty i przeglądy compliance."
+        },
+        "zeroManual": {
+          "title": "Zerowy nadzór ręczny",
+          "description": "Zadania są przypisywane, monitorowane i zamykane—bez kierowników projektów czy ręcznego śledzenia."
+        },
+        "fullCoverage": {
+          "title": "Pełne pokrycie standardów",
+          "description": "SOC 1 i 2, NIS 2, NIST—i rosnąca biblioteka wspieranych standardów i ram."
+        },
+        "fasterRollout": {
+          "title": "Szybsze wdrożenie",
+          "description": "Uruchom się w godziny, nie miesiące, dzięki prekonfigurowanym kontrolom i szablonom compliance."
+        },
+        "auditReady": {
+          "title": "Dowody gotowe na audyt",
+          "description": "Automatycznie zebrane, kontrolowane wersyjnie i zmapowane do wymagań standardów."
+        },
+        "crossTeam": {
+          "title": "Współpraca międzyzespołowa",
+          "description": "Zespoły compliance, IT, prawne i operacyjne—wszyscy zharmonizowani w jednej platformie."
+        }
+      }
+    },
+    "cta": {
+      "title": "Gotowy na transformację compliance w cyberbezpieczeństwie?",
+      "description": "Dołącz do organizacji przyszłości, które ufają naszej platformie w zarządzaniu standardami cyberbezpieczeństwa—autonomicznie.",
+      "bookDemo": "Umów demo",
+      "watchTour": "Obejrzyj wycieczkę po platformie"
+    }
+  },
+  "informationSecurityPage": {
+    "title": "Standardy bezpieczeństwa informacji",
+    "description": "Chroń swoje zasoby informacyjne dzięki standardom takim jak ISO 27001, ISO 9001 i DORA.",
+    "hero": {
+      "title": "Compliance w zakresie bezpieczeństwa informacji, który buduje zaufanie",
+      "subtitle": "Osiągnij zgodność z ISO 27001, ISO 9001 i DORA z łatwością—automatycznie.",
+      "button": "Umów demo"
+    },
+    "tabs": {
+      "iso27001": "ISO 27001",
+      "iso9001": "ISO 9001",
+      "dora": "DORA"
+    },
+    "iso27001": {
+      "title": "ISO 27001: Chroń swoją informację, buduj zaufanie",
+      "description": "ISO 27001 to złoty standard zarządzania bezpieczeństwem informacji. Quantifier automatyzuje każdy krok Twojej ścieżki ISO 27001—od ustanawiania polityk po ciągłe audyty—abyś mógł skupić się na tym, co naprawdę się liczy: zabezpieczeniu swojego biznesu.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Automatyczne zarządzanie ryzykiem:",
+          "description": "Identyfikuj, oceniaj i łagodź ryzyka w czasie rzeczywistym"
+        },
+        {
+          "title": "Ciągłe compliance:",
+          "description": "Pozostań przygotowany na audyty i inspekcje—koniec z gorączkowym przygotowywaniem się w ostatniej chwili"
+        },
+        {
+          "title": "Zbieranie dowodów w czasie rzeczywistym:",
+          "description": "Automatycznie zbieraj niezbędną dokumentację dla zgodności z ISO 27001"
+        },
+        {
+          "title": "Egzekwowanie polityk:",
+          "description": "Agenty zapewniają przestrzeganie polityk przez członków Twojego zespołu, proaktywnie zamykając luki"
+        }
+      ],
+      "button": "Dowiedz się więcej o ISO 27001"
+    },
+    "iso9001": {
+      "title": "ISO 9001: Usprawnij zarządzanie jakością",
+      "description": "ISO 9001 to benchmark dla systemów zarządzania jakością (QMS). Quantifier sprawia, że osiągnięcie i utrzymanie zgodności z ISO 9001 jest bezwysiłkowe poprzez ciągłe prowadzenie działań w zakresie zarządzania jakością, śledzenie kluczowych wskaźników i zapewnienie posiadania całej niezbędnej dokumentacji.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Automatyczne przypisywanie zadań:",
+          "description": "Zapewnij, że działania w zakresie zarządzania jakością są wykonywane konsekwentnie i zgodnie z harmonogramem"
+        },
+        {
+          "title": "Raportowanie gotowe na audyt:",
+          "description": "Zbieraj wymagane dowody jakości bez wysiłku"
+        },
+        {
+          "title": "Proaktywna kontrola jakości:",
+          "description": "Identyfikuj luki w jakości i rozwiązuj je zanim się eskalują"
+        },
+        {
+          "title": "Wielofunkcyjne dostosowanie:",
+          "description": "Angażuj odpowiednie zespoły—IT, operacje, HR i prawny—bez ręcznego nadzoru"
+        }
+      ],
+      "button": "Dowiedz się więcej o ISO 9001"
+    },
+    "dora": {
+      "title": "DORA: Zapewnij cyfrową odporność operacyjną",
+      "description": "Ustawa o cyfrowej odporności operacyjnej (DORA) zapewnia, że instytucje finansowe w UE mogą wytrzymać zakłócenia operacyjne. Platforma Quantifier automatycznie monitoruje, raportuje i egzekwuje środki odporności, zapewniając, że Twoja organizacja spełnia surowe wymagania DORA.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Automatyczne monitorowanie ryzyka:",
+          "description": "Ciągle monitoruj i zarządzaj ryzykami dla Twoich operacji cyfrowych"
+        },
+        {
+          "title": "Planowanie reagowania na incydenty:",
+          "description": "Agenty AI pomagają budować i realizować kompleksowe plany na wypadek zakłóceń operacyjnych"
+        },
+        {
+          "title": "Zarządzanie compliance dostawców trzecich:",
+          "description": "Zapewnij, że Twoi dostawcy trzeciej strony są zgodnie z wymaganiami DORA"
+        },
+        {
+          "title": "Raportowanie ryzyka i incydentów w czasie rzeczywistym:",
+          "description": "Śledź i łagodź ryzyka zanim wpłyną na Twoje operacje"
+        }
+      ],
+      "button": "Dowiedz się więcej o DORA"
+    },
+    "whyQuantifier": {
+      "title": "Dlaczego Quantifier dla compliance w zakresie bezpieczeństwa informacji i jakości?",
+      "features": {
+        "autonomous": {
+          "title": "Autonomiczny compliance",
+          "description": "Zapomnij o ręcznym śledzeniu. Agenty AI Quantifier ciągle zapewniają, że spełniasz standardy ISO 27001, ISO 9001 i DORA."
+        },
+        "seamless": {
+          "title": "Bezproblemowa integracja",
+          "description": "Od polityk po procedury, zintegruj swoje procesy zarządzania bezpieczeństwem informacji i jakością w całej organizacji—automatycznie."
+        },
+        "realTime": {
+          "title": "Czas rzeczywisty, zero opóźnień",
+          "description": "Osiągnij ciągłe compliance dzięki ocenom ryzyka i zbieraniu dowodów w czasie rzeczywistym."
+        },
+        "global": {
+          "title": "Globalna standaryzacja",
+          "description": "Zarządzaj compliance w wielu lokalizacjach geograficznych i standardach, wszystko w jednej platformie."
+        },
+        "dataFirst": {
+          "title": "Bezpieczeństwo danych na pierwszym miejscu",
+          "description": "Dzięki wbudowanemu bezpieczeństwu, dane Twojej organizacji są zawsze chronione w trakcie procesu compliance."
+        },
+        "intelligent": {
+          "title": "Inteligentne raportowanie",
+          "description": "Uzyskaj kompleksowe informacje dzięki raportom generowanym przez AI, które podkreślają ryzyka i status compliance."
+        }
+      }
+    },
+    "cta": {
+      "title": "Przygotuj się na kolejny audyt—szybciej i mądrzej",
+      "description": "Dołącz do organizacji, które ufają Quantifier w automatyzacji ich ścieżki compliance w zakresie bezpieczeństwa informacji.",
+      "bookDemo": "Umów demo",
+      "explorePlans": "Poznaj plany"
+    }
+  },
+  "dataSecurityPage": {
+    "title": "Standardy bezpieczeństwa danych",
+    "description": "Zapewnij zgodność z przepisami o ochronie danych, takimi jak RODO, HIPAA i CCPA.",
+    "pageTitle": "Kompleksowa zgodność w zakresie bezpieczeństwa danych",
+    "pageDescription": "Poruszaj się po złożonych krajobrazach regulacyjnych dzięki zarządzaniu bezpieczeństwem danych opartemu na AI Quantifier",
+    "tabs": {
+      "gdpr": "RODO",
+      "hipaa": "HIPAA",
+      "ccpa": "CCPA"
+    },
+    "gdpr": {
+      "title": "Zgodność z RODO: Chroń dane użytkowników i buduj zaufanie",
+      "description": "Ogólne rozporządzenie o ochronie danych (RODO) reguluje sposób, w jaki organizacje zbierają, przetwarzają i przechowują dane osobowe obywateli UE. Quantifier pomaga systematycznie wdrażać i dokumentować wymagania RODO, unikając kosztownych kar.",
+      "benefitsTitle": "Kluczowe korzyści:",
+      "benefits": [
+        {
+          "title": "Dokładna dokumentacja",
+          "description": "Automatyczne generowanie wymaganej dokumentacji RODO, w tym DPIA i rejestrów przetwarzania"
+        },
+        {
+          "title": "Zarządzanie prawami użytkowników",
+          "description": "Narzędzia do efektywnej obsługi żądań dostępu do danych i zarządzania zgodami"
+        },
+        {
+          "title": "Nadzór nad przetwarzaniem danych",
+          "description": "Śledź i dokumentuj wszystkie działania przetwarzania danych z jasnymi ścieżkami audytu"
+        },
+        {
+          "title": "Bezpieczeństwo przez projektowanie",
+          "description": "Wdrażaj środki techniczne i organizacyjne spełniające wymagania RODO"
+        }
+      ],
+      "dashboardTitle": "Status zgodności z RODO",
+      "insightTitle": "Wgląd w compliance AI:",
+      "insight": "Twoja implementacja RODO jest w 85% ukończona. Skoncentruj się na wzmocnieniu dokumentacji przetwarzania danych, aby poprawić ogólną zgodność."
+    },
+    "hipaa": {
+      "title": "HIPAA: Uproszczona ochrona danych medycznych",
+      "description": "HIPAA ustanawia standardy ochrony wrażliwych informacji o pacjentach. Quantifier pomaga organizacjom opieki zdrowotnej i partnerom biznesowym wdrażać zgodne praktyki obsługi danych z mniejszym wysiłkiem i większą dokładnością.",
+      "benefitsTitle": "Kluczowe korzyści:",
+      "benefits": [
+        {
+          "title": "Ochrona PHI",
+          "description": "Wdrażaj wymagane zabezpieczenia dla chronionych informacji zdrowotnych (PHI) w systemach"
+        },
+        {
+          "title": "Kontrole dostępu",
+          "description": "Zarządzanie dostępem oparte na rolach z szczegółowym logowaniem audytu dla wszystkich interakcji z PHI"
+        },
+        {
+          "title": "Zarządzanie politykami",
+          "description": "Polityki i procedury generowane przez AI, specyficzne dla Twojej organizacji opieki zdrowotnej"
+        },
+        {
+          "title": "Ocena ryzyka",
+          "description": "Ciągłe monitorowanie i automatyczne narzędzia oceny ryzyka"
+        }
+      ],
+      "dashboardTitle": "Status zgodności HIPAA",
+      "insightTitle": "Wgląd w compliance AI:",
+      "insight": "Twoje procedury powiadamiania o naruszeniach wymagają wzmocnienia. Rozważ wdrożenie naszego automatycznego przepływu pracy reagowania na incydenty, aby poprawić zgodność."
+    },
+    "ccpa": {
+      "title": "CCPA/CPRA: Zgodność z przepisami o prywatności w Kalifornii",
+      "description": "California Consumer Privacy Act i jego następca CPRA dają mieszkańcom Kalifornii większą kontrolę nad ich informacjami osobistymi. Quantifier pomaga firmom przestrzegać tych rozwijających się przepisów efektywnie i kompleksowo.",
+      "benefitsTitle": "Kluczowe korzyści:",
+      "benefits": [
+        {
+          "title": "Wykrywanie danych",
+          "description": "Automatyczne skanowanie i klasyfikacja informacji osobowych w Twoich systemach"
+        },
+        {
+          "title": "Portal praw konsumentów",
+          "description": "Gotowy do wdrożenia system obsługi żądań konsumentów ze śledzeniem i dokumentacją"
+        },
+        {
+          "title": "Minimalizacja danych",
+          "description": "Narzędzia do wdrażania i dokumentowania polityk minimalizacji i retencji danych"
+        },
+        {
+          "title": "Usuwanie danych",
+          "description": "Usprawnienie przepływów pracy dla weryfikowalnych żądań usunięcia danych konsumentów"
+        }
+      ],
+      "dashboardTitle": "Dystrybucja ryzyka CCPA",
+      "insightTitle": "Wgląd w compliance AI:",
+      "insight": "Większość Twoich działań przetwarzania danych ma niskie ryzyko w ramach CCPA. Zajmij się 12% działań wysokiego ryzyka poprzez wdrożenie ulepszonych mechanizmów zgody."
+    },
+    "whyQuantifier": {
+      "title": "Dlaczego Quantifier dla zgodności z bezpieczeństwem danych?",
+      "features": {
+        "multiJurisdiction": {
+          "title": "Pokrycie wielu jurysdykcji",
+          "description": "Jedna platforma do zarządzania compliance w zakresie globalnych przepisów o ochronie danych, zapobiegająca powielaniu pracy."
+        },
+        "realTimeMonitoring": {
+          "title": "Monitorowanie w czasie rzeczywistym",
+          "description": "Ciągłe skanowanie w poszukiwaniu luk w compliance i automatyczne alerty po wykryciu problemów."
+        },
+        "dataMapping": {
+          "title": "Automatyzacja mapowania danych",
+          "description": "Odkrywanie i klasyfikacja danych osobowych w systemach Twojej organizacji przy użyciu AI."
+        },
+        "auditReady": {
+          "title": "Dokumentacja gotowa na audyt",
+          "description": "Generuj kompleksowe raporty compliance i dowody jednym kliknięciem."
+        }
+      }
+    },
+    "cta": {
+      "title": "Uprość swoją ścieżkę compliance w zakresie ochrony danych",
+      "description": "Chroń dane swoich klientów. Szanuj prawa do prywatności. Unikaj kar. Pozwól AI Quantifier obsłużyć złożoność compliance w zakresie bezpieczeństwa danych.",
+      "bookDemo": "Umów demo",
+      "talkExpert": "Porozmawiaj z naszym ekspertem ds. prywatności danych"
+    }
+  },
+  "esgPage": {
+    "title": "Uprość raportowanie ESG i zrównoważonego rozwoju",
+    "description": "Zautomatyzuj raportowanie CSDR, GRI i CBAM z łatwością. Quantifier jest Twoim partnerem w osiąganiu przejrzystego, dokładnego i efektywnego raportowania ESG. Niezależnie od tego, czy spełniasz globalne standardy zrównoważonego rozwoju, czy poruszasz się po złożonych krajobrazach regulacyjnych, jesteśmy z Tobą dzięki pełnej automatyzacji.",
+    "tabs": {
+      "csdr": "Raportowanie CSDR",
+      "gri": "Raportowanie GRI",
+      "cbam": "Raportowanie CBAM"
+    },
+    "csdr": {
+      "title": "Raportowanie CSDR: Usprawnij zrównoważony rozwój korporacyjny",
+      "description": "Dyrektywa w sprawie raportowania zrównoważonego rozwoju korporacyjnego (CSDR) wymaga od firm ujawnienia swoich wysiłków w zakresie zrównoważonego rozwoju, ryzyk i struktur zarządzania. Dzięki Quantifier możesz łatwo zbierać i raportować dane dotyczące zrównoważonego rozwoju zgodnie z przepisami CSDR—automatycznie.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Automatyczne zbieranie danych",
+          "description": "Quantifier agreguje dane dotyczące zrównoważonego rozwoju z całej Twojej organizacji, zapewniając, że żadne dane nie zostaną pominięte."
+        },
+        {
+          "title": "Ocena podwójnej istotności",
+          "description": "Identyfikuj i oceniaj wpływ czynników zrównoważonego rozwoju na Twój biznes i odwrotnie."
+        },
+        {
+          "title": "Dashboardy zgodne z CSDR",
+          "description": "Wizualizuj wydajność zrównoważonego rozwoju w czasie rzeczywistym dzięki raportowaniu zgodnemu z CSDR."
+        },
+        {
+          "title": "Wykrywanie luk",
+          "description": "Identyfikuj obszary do poprawy i zapewnij spełnienie standardów dla obowiązkowego raportowania."
+        },
+        {
+          "title": "Ciągłe aktualizacje",
+          "description": "Pozostań na bieżąco ze zmianami regulacyjnymi—Quantifier automatycznie dostosowuje Twoje szablony raportów i kryteria."
+        }
+      ],
+      "dashboardTitle": "Dashboard zgodności CSDR",
+      "chartTitle": "Ukończenie raportowania zrównoważonego rozwoju",
+      "insight": "Twoja zgodność CSDR wynosi ogólnie 78% - przed średnią branżową o 12%"
+    },
+    "gri": {
+      "title": "Raportowanie GRI: Dostosuj się do globalnych standardów",
+      "description": "Standardy Global Reporting Initiative (GRI) to najszerzej stosowane ramy raportowania zrównoważonego rozwoju na świecie. Quantifier sprawia, że raportowanie GRI jest bezwysiłkowe poprzez automatyzację zbierania, analizy i prezentacji danych—pozwalając Ci skupić się na działających spostrzeżeniach.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Kompleksowa agregacja danych",
+          "description": "Quantifier zbiera dane ESG ze wszystkich jednostek biznesowych, aby zapewnić holistyczny widok Twojej wydajności zrównoważonego rozwoju."
+        },
+        {
+          "title": "Szablony zgodne z GRI",
+          "description": "Generuj raporty zgodne z najnowszymi standardami GRI, zapewniając, że Twoje ujawnienia spełniają globalne oczekiwania."
+        },
+        {
+          "title": "Śledzenie wpływu",
+          "description": "Łatwo śledź swój wpływ zrównoważonego rozwoju w kluczowych obszarach, takich jak środowisko, zarządzanie i odpowiedzialność społeczna."
+        },
+        {
+          "title": "Dowody gotowe na audyt",
+          "description": "Automatycznie przechwytuj i przechowuj dowody dla wszystkich ujawnień GRI, zmniejszając potrzebę ręcznego zbierania danych podczas audytów."
+        }
+      ],
+      "dashboardTitle": "Trendy wydajności GRI",
+      "chartTitle": "Wskaźniki wydajności ESG (trend 6-miesięczny)",
+      "insight": "Wszystkie wskaźniki GRI wykazują pozytywne trendy - wynik wpływu środowiskowego poprawił się o 20% w tym kwartale"
+    },
+    "cbam": {
+      "title": "Raportowanie CBAM: Poruszaj się po mechanizmie dostosowania cen węgla na granicy",
+      "description": "Mechanizm dostosowania cen węgla na granicy (CBAM) nakłada raportowanie związane z węglem na towary importowane do UE. Wraz z ewolucją krajobrazu regulacyjnego, Quantifier pomaga automatyzować raportowanie CBAM, zapewniając, że Twój biznes pozostaje zgodny przy minimalnym wysiłku.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Automatyczne śledzenie emisji",
+          "description": "Quantifier śledzi emisje z Twojego łańcucha dostaw, ułatwiając raportowanie intensywności węglowej dla importów."
+        },
+        {
+          "title": "Monitorowanie zgodności CBAM",
+          "description": "Pozostań przed przepisami CBAM dzięki automatycznym aktualizacjom i szablonom raportów."
+        },
+        {
+          "title": "Integracja łańcucha dostaw",
+          "description": "Bezproblemowo integruj się ze swoimi dostawcami, aby śledzić ich emisje i zapewnić, że Twoje importowane towary spełniają standardy UE."
+        },
+        {
+          "title": "Alerty w czasie rzeczywistym",
+          "description": "Otrzymuj proaktywne alerty, gdy Twoje emisje przekroczą progi, pomagając zarządzać kosztami związanymi z CBAM."
+        }
+      ],
+      "dashboardTitle": "Podział emisji CBAM",
+      "chartTitle": "Dystrybucja emisji węgla według źródła",
+      "insight1": "35% emisji z importowanych towarów",
+      "insight2": "Kolejny raport CBAM do złożenia za 28 dni"
+    },
+    "whyQuantifier": {
+      "title": "Dlaczego Quantifier dla raportowania ESG?",
+      "features": {
+        "fullyAutomated": {
+          "title": "W pełni zautomatyzowane",
+          "description": "Pozwól Quantifier obsłużyć Twoje raportowanie ESG od zbierania danych po zgodność—oszczędzając czas i redukując błędy."
+        },
+        "realTimeInsights": {
+          "title": "Wgląd w czasie rzeczywistym",
+          "description": "Pozostań przed zmianami regulacyjnymi i uzyskaj widoczność w czasie rzeczywistym swojej wydajności ESG we wszystkich ramach."
+        },
+        "seamlessIntegration": {
+          "title": "Bezproblemowa integracja",
+          "description": "Od GRI po CBAM, Quantifier integruje się z Twoimi istniejącymi systemami, aby zapewnić dokładne i usprawione raportowanie."
+        },
+        "globalCompliance": {
+          "title": "Globalna zgodność",
+          "description": "Zarządzaj zgodnością z globalnymi standardami i przepisami ESG—wszystko z jednej platformy."
+        },
+        "auditReady": {
+          "title": "Dokumentacja gotowa na audyt",
+          "description": "Automatycznie zbieraj i organizuj dowody dla audytów i przeglądów regulacyjnych."
+        },
+        "smartAlerts": {
+          "title": "Inteligentne alerty i wglądy",
+          "description": "Otrzymuj terminowe powiadomienia i wglądy oparte na AI, aby pozostać przed ryzykami i możliwościami."
+        }
+      }
+    },
+    "cta": {
+      "title": "Przekształć swoje raportowanie ESG z Quantifier",
+      "description": "Gotowy do automatyzacji zgodności z zrównoważonym rozwojem i ESG? Quantifier to ułatwia.",
+      "bookConsultation": "Umów konsultację",
+      "watchDemo": "Obejrzyj wideo demo"
+    }
+  },
+  "environmentalPage": {
+    "title": "Compliance środowiskowy, w pełni zautomatyzowany",
+    "description": "Quantifier zasila Twoją strategię środowiskową dzięki automatyzacji opartej na AI — od ISO 14001 po dekarbonizację. Niezależnie od tego, czy dążysz do certyfikacji, śledzisz emisje, czy budujesz plan redukcji oparty na nauce, Quantifier eliminuje ręczną pracę z compliance środowiskowego i sprawia, że przywództwo klimatyczne jest skalowalne.",
+    "tabs": {
+      "iso14001": "ISO 14001",
+      "lca": "LCA",
+      "carbon": "Ślad węglowy",
+      "decarbonisation": "Dekarbonizacja"
+    },
+    "iso14001": {
+      "title": "ISO 14001: Zbuduj i utrzymuj certyfikowany EMS",
+      "description": "Osiągnij i utrzymuj swój system zarządzania środowiskowego (EMS) bez narzutu. Quantifier automatyzuje zbieranie dowodów, raportowanie i egzekwowanie polityk wymaganych do pozostania w zgodzie ze standardami ISO 14001.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Autonomiczne przypisywanie zadań",
+          "description": "Automatyczne przypisania do wdrażania i przeglądów EMS w całej organizacji."
+        },
+        {
+          "title": "Gotowość audytowa w czasie rzeczywistym",
+          "description": "Dokumentacja i dowody kontrolowane wersyjnie, zawsze gotowe dla audytorów."
+        },
+        {
+          "title": "Automatyczne przypomnienia",
+          "description": "Terminowe alerty dotyczące działań korygujących, wymagań szkoleniowych i aktualizacji polityk."
+        },
+        {
+          "title": "Pełna widoczność",
+          "description": "Kompleksowy dashboard pokazujący status zgodności w zespołach i lokalizacjach."
+        }
+      ]
+    },
+    "lca": {
+      "title": "LCA (ocena cyklu życia): Natychmiastowa, inteligentna analiza wpływu",
+      "description": "Wyjdź poza raportowanie—Quantifier daje Ci narzędzia do zrozumienia prawdziwego wpływu środowiskowego Twoich produktów i procesów dzięki przepływom pracy LCA opartym na AI.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Prowadzone oceny cyklu życia",
+          "description": "Inteligentne wprowadzanie danych sprawia, że złożone oceny są proste i dokładne."
+        },
+        {
+          "title": "Automatyczne żądania danych",
+          "description": "Usprawnienie zbierania danych od zespołów wewnętrznych i dostawców z wbudowanymi przypomnieniami."
+        },
+        {
+          "title": "Wbudowane benchmarki",
+          "description": "Dostęp do kompleksowych bibliotek materiałów i porównań branżowych."
+        },
+        {
+          "title": "Raporty do eksportu",
+          "description": "Generuj raporty zgodne ze standardami ISO 14040/44 jednym kliknięciem."
+        }
+      ]
+    },
+    "carbon": {
+      "title": "Ślad węglowy i GHG: Śledź, redukuj, raportuj",
+      "description": "Od zakresu 1 do zakresu 3, Quantifier pomaga kwantyfikować, śledzić i raportować emisje gazów cieplarnianych (GHG) w całym łańcuchu wartości—bez arkuszy kalkulacyjnych, bez luk i bez stresu.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Automatyczne obliczenia emisji",
+          "description": "Dokładne dane emisji według lokalizacji, aktywności lub dostawcy przy minimalnym wysiłku."
+        },
+        {
+          "title": "Zbieranie danych oparte na AI",
+          "description": "Agenty AI, które zbierają dane o działaniach w całej Twojej organizacji automatycznie."
+        },
+        {
+          "title": "Dashboardy w czasie rzeczywistym",
+          "description": "Kompleksowa widoczność emisji zakresu 1, 2 i 3 w jednym miejscu."
+        },
+        {
+          "title": "Raporty gotowe do złożenia",
+          "description": "Sformatowane raporty dla protokołu GHG, ISO 14064 i zgłoszeń regulacyjnych."
+        }
+      ]
+    },
+    "decarbonisation": {
+      "title": "Dekarbonizacja: Od raportowania do działania",
+      "description": "Quantifier nie zatrzymuje się na pomiarze węgla—pomaga realizować Twoją strategię dekarbonizacji. Ustaw cele oparte na nauce, śledź postęp redukcji i pozostań zgodny z przepisami klimatycznymi.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Wyznaczanie celów opartych na nauce",
+          "description": "Ustanów cele zgodne ze ścieżkami SBTi dla wiarygodnych działań klimatycznych."
+        },
+        {
+          "title": "Automatyczne śledzenie postępu",
+          "description": "Monitoruj inicjatywy redukcji emisji dzięki danym i wglądowi w czasie rzeczywistym."
+        },
+        {
+          "title": "Inteligentne alerty",
+          "description": "Otrzymuj powiadomienia, gdy cele są poza torem lub progi ryzyka są naruszone."
+        },
+        {
+          "title": "Pełna integracja danych",
+          "description": "Połącz się z systemami zamówień, podróży i operacji dla kompleksowej widoczności."
+        }
+      ]
+    },
+    "whyQuantifier": {
+      "title": "Dlaczego Quantifier dla compliance środowiskowego?",
+      "features": {
+        "aiNative": {
+          "title": "Natywnie AI i autonomiczny",
+          "description": "Agenty compliance zbierają dane, monitorują zespoły i prowadzą terminowe raportowanie—więc Ty nie musisz."
+        },
+        "alwaysUpdated": {
+          "title": "Zawsze na bieżąco",
+          "description": "Otrzymuj powiadomienia o zmianach przepisów i automatycznie aktualizuj swoje procesy—bez opóźnień, bez opłat konsultacyjnych."
+        },
+        "endToEnd": {
+          "title": "Pokrycie end-to-end",
+          "description": "Zarządzaj ISO 14001, LCA, raportowaniem GHG i dekarbonizacją w jednej bezpiecznej platformie."
+        },
+        "fastImplementation": {
+          "title": "Szybka implementacja",
+          "description": "Skonfiguruj swoje przepływy pracy środowiskowe w minuty. Nie wymagane jest skomplikowane wdrożenie."
+        }
+      }
+    },
+    "cta": {
+      "title": "Gotowy uczynić compliance środowiskowy bezwysiłkowym?",
+      "bookDemo": "Umów demo",
+      "watchTour": "Obejrzyj krótką wycieczkę"
+    }
+  },
+  "governancePage": {
+    "title": "Governance na autopilocie",
+    "description": "Przekształć polityki w działanie. Wzmocnij pracowników. Chroń swoją organizację. Quantifier automatyzuje compliance w zakresie governance—od egzekwowania polityk po ochronę sygnalistów—abyś mógł skupić się na prowadzeniu biznesu, a nie gonić podpisami.",
+    "tabs": {
+      "legalPolicies": "Polityki prawne",
+      "whistleblowing": "Whistleblowing"
+    },
+    "legalPolicies": {
+      "dashboardTitle": "Dashboard polityk prawnych",
+      "title": "Polityki prawne: Od dokumentów do codziennego egzekwowania",
+      "description": "Posiadanie polityk nie wystarczy—zgodność oznacza, że są czytane, rozumiane i przestrzegane. Quantifier zapewnia, że Twoje ramy prawne nie leżą w szufladach. Są żywe, zautomatyzowane i gotowe do działania.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Dostarczanie oparte na AI",
+          "description": "Agenty AI dostarczające polityki bezpośrednio do pracowników przez Slack lub email."
+        },
+        {
+          "title": "Automatyczne przepływy pracy",
+          "description": "Automatyczne przepływy pracy czytania i potwierdzania oraz kontrola wersji."
+        },
+        {
+          "title": "Dowody gotowe na audyt",
+          "description": "Dowody akceptacji z dziennikami gotowymi na audyt."
+        },
+        {
+          "title": "Inteligentne alerty",
+          "description": "Alerty dla wygasłych polityk lub oczekujących potwierdzeń."
+        },
+        {
+          "title": "Wgląd w czasie rzeczywistym",
+          "description": "Dashboardy compliance w czasie rzeczywistym i automatyczne eskalacje."
+        }
+      ]
+    },
+    "whistleblowing": {
+      "dashboardTitle": "Dashboard whistleblowingu",
+      "title": "Whistleblowing: Poufny, zgodny, zawsze monitorowany",
+      "description": "Pozostań przed przepisami i wspieraj kulturę wypowiadania się dzięki bezpiecznemu, autonomicznemu systemowi whistleblowingu Quantifier—zgodnemu z Dyrektywą UE o ochronie sygnalistów, SOX i innymi globalnymi ramami.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Bezpieczny portal składania zgłoszeń",
+          "description": "Bezpieczny, anonimowy portal składania zgłoszeń w pełni zgodny z wymogami prawnymi."
+        },
+        {
+          "title": "Triage oparte na AI",
+          "description": "Triage i routing zgłoszeń oparty na AI do wyznaczonych inspektorów compliance."
+        },
+        {
+          "title": "Śledzenie z sygnaturą czasową",
+          "description": "Śledzenie spraw z sygnaturą czasową i przepływy pracy rozwiązywania."
+        },
+        {
+          "title": "Ścieżki audytu",
+          "description": "Ścieżki audytu i dzienniki dowodów dla organów regulacyjnych i audytów wewnętrznych."
+        },
+        {
+          "title": "Kontrole poufności",
+          "description": "Wbudowane kontrole retencji, eskalacji i poufności."
+        }
+      ]
+    },
+    "whyQuantifier": {
+      "title": "Dlaczego Quantifier dla governance?",
+      "features": {
+        "fullyAutonomous": {
+          "title": "W pełni autonomiczne egzekwowanie",
+          "description": "Dział prawny nie musi gonić potwierdzeń ani monitorować skrzynek—nasze agenty robią to za Ciebie."
+        },
+        "alwaysAuditReady": {
+          "title": "Zawsze gotowy na audyt",
+          "description": "Każda interakcja jest logowana, śledzona i natychmiast eksportowalna dla audytów wewnętrznych lub zewnętrznych."
+        },
+        "builtInPrivacy": {
+          "title": "Wbudowana prywatność i zgodność",
+          "description": "Pozostań zgodny z RODO, SOX, dyrektywą UE 2019/1937 i nie tylko."
+        },
+        "multilingual": {
+          "title": "Wielojęzyczne, wielopodmiotowe wsparcie",
+          "description": "Wdrażaj procesy governance w krajach i jednostkach biznesowych z łatwością."
+        }
+      }
+    },
+    "cta": {
+      "title": "Wyeliminuj pracę z governance",
+      "bookDemo": "Umów demo",
+      "watchTour": "Obejrzyj krótką wycieczkę"
+    }
+  },
+  "productLevelPage": {
+    "title": "Compliance na poziomie produktu, napędzany przez AI",
+    "description": "Buduj zrównoważone, przejrzyste produkty od podstaw. Quantifier wnosi inteligencję i automatyzację do Twojego compliance produktowego—abyś mógł spełnić wymagania regulacyjne i oczekiwania klientów z łatwością.",
+    "tabs": {
+      "dpp": "Cyfrowy Paszport Produktowy",
+      "lca": "Ocena cyklu życia"
+    },
+    "dpp": {
+      "title": "Cyfrowy Paszport Produktowy (DPP): Przyszłościuj swoje produkty",
+      "description": "DPP to nowy standard przejrzystości i cyrkularności. Quantifier pomaga generować, zarządzać i aktualizować cyfrowe paszporty produktowe automatycznie—zapewniając zgodność z przepisami UE i pozycjonując Twoją markę dla następnej generacji zrównoważonych rynków.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "DPP generowane przez AI",
+          "description": "Automatycznie dostosowane do rozporządzenia UE w sprawie ekoprojektu (ESPR)"
+        },
+        {
+          "title": "Zbieranie danych w czasie rzeczywistym",
+          "description": "Zbieraj informacje w całym łańcuchu dostaw"
+        },
+        {
+          "title": "Automatyczne aktualizacje",
+          "description": "Kiedy zmienia się wejście, materiały lub przepisy"
+        },
+        {
+          "title": "Łatwa integracja",
+          "description": "Z kodami QR, NFC lub platformami stron trzecich"
+        },
+        {
+          "title": "Paszporty gotowe do udostępnienia",
+          "description": "Spełniające wymagania specyficzne dla branży"
+        }
+      ],
+      "dashboardTitle": "Ukończenie cyfrowego paszportu produktowego",
+      "insightTitle": "Wglądy AI generowane przez Quantifier:",
+      "insight": "Twój paszport produktowy jest w 82% ukończony. Dodaj więcej szczegółów dotyczących recyklingu pod koniec życia, aby poprawić zgodność z nadchodzącymi przepisami UE."
+    },
+    "lca": {
+      "title": "LCA (ocena cyklu życia): Zrozum i zoptymalizuj wpływ środowiskowy",
+      "description": "Quantifier przekształca oceny cyklu życia z jednorazowego obciążenia w ciągły, inteligentny proces. Automatyzuj zbieranie danych, śledź zmiany w czasie i redukuj swój ślad środowiskowy z jasnością.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Krok po kroku, przepływy pracy LCA prowadzone przez AI",
+          "description": "Oparte na standardach ISO 14040/44"
+        },
+        {
+          "title": "Zintegrowane zbieranie danych od dostawców",
+          "description": "I obliczenia emisji"
+        },
+        {
+          "title": "Biblioteki materiałów i narzędzia do benchmarkingu",
+          "description": "Wbudowane dla łatwego porównania"
+        },
+        {
+          "title": "Raporty do eksportu, gotowe na audyt",
+          "description": "Do użytku wewnętrznego i zewnętrznego"
+        },
+        {
+          "title": "Pełna przejrzystość",
+          "description": "Od surowca po koniec życia"
+        }
+      ],
+      "dashboardTitle": "Ocena wpływu cyklu życia",
+      "insightTitle": "Rekomendacja AI Quantifier:",
+      "insight": "Skoncentruj się na pozyskiwaniu surowców, aby zmniejszyć największe wpływy środowiskowe. Rozważ alternatywnych dostawców z udokumentowanymi praktykami zrównoważonego rozwoju."
+    },
+    "whyQuantifier": {
+      "title": "Dlaczego Quantifier dla compliance na poziomie produktu?",
+      "features": {
+        "aiPowered": {
+          "title": "Zbieranie i raportowanie danych oparte na AI",
+          "description": "Wyeliminuj wąskie gardła, pozwalając autonomicznym agentom zbierać i weryfikować dane produktów."
+        },
+        "alwaysUpdated": {
+          "title": "Zawsze na bieżąco",
+          "description": "Twoje paszporty i LCA ewoluują w czasie rzeczywistym, gdy zmieniają się materiały, dostawcy lub zasady."
+        },
+        "designedCircularity": {
+          "title": "Zaprojektowane dla cyrkularności",
+          "description": "Od recyklingu po emisje, Quantifier pomaga budować lepsze produkty—i to udowadniać."
+        },
+        "fastCompliance": {
+          "title": "Szybki czas do zgodności",
+          "description": "Uruchom nowe produkty na nowych rynkach bez martwienia się o opóźnienia regulacyjne."
+        }
+      }
+    },
+    "cta": {
+      "title": "Uczyń swoje produkty zgodnymi—i konkurencyjnymi",
+      "description": "Mądrzejsze compliance. Silniejsza przejrzystość. Niższy wpływ. Quantifier daje Twoim produktom inteligencję, której potrzebują do przewodzenia.",
+      "bookDemo": "Umów demo",
+      "talkExpert": "Porozmawiaj z naszym ekspertem ds. compliance produktowego"
+    }
   }
 }

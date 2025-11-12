@@ -6,8 +6,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText, Bell, Shield, Users, Clock, CheckCircle, Lock, AlertTriangle, BarChart3, Globe, MessageSquare } from 'lucide-react';
 import LegalPoliciesDashboard from '@/components/dashboards/governance/LegalPoliciesDashboard';
 import WhistleblowingDashboard from '@/components/dashboards/governance/WhistleblowingDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Governance = () => {
   const [activeTab, setActiveTab] = useState("legal-policies");
+  const { t, currentLocale } = useLanguage();
   const FeatureItem = ({
     icon: Icon,
     title,
