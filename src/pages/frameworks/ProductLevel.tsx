@@ -70,28 +70,18 @@ const ProductLevel = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  Digital Product Passport (DPP): Future-Proof Your Products
+                  {t('productLevelPage.dpp.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  DPP is the new standard for transparency and circularity. Quantifier helps you generate, manage, and update digital product passports automatically—ensuring compliance with EU regulations and positioning your brand for the next generation of sustainable markets.
+                  {t('productLevelPage.dpp.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">You get:</h3>
-                  <FeatureItem icon={FileText} title="AI-generated DPPs">
-                    Automatically aligned with EU Ecodesign Regulation (ESPR)
-                  </FeatureItem>
-                  <FeatureItem icon={Globe} title="Real-time data collection">
-                    Gather information across your entire supply chain
-                  </FeatureItem>
-                  <FeatureItem icon={RefreshCw} title="Automated updates">
-                    When inputs, materials, or regulations change
-                  </FeatureItem>
-                  <FeatureItem icon={QrCode} title="Easy integration">
-                    With QR codes, NFC, or third-party platforms
-                  </FeatureItem>
-                  <FeatureItem icon={CheckCircle} title="Ready-to-share passports">
-                    That meet industry-specific requirements
-                  </FeatureItem>
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('productLevelPage.dpp.featuresTitle')}</h3>
+                  {t('productLevelPage.dpp.features', { returnObjects: true }).map((feature: any, index: number) => (
+                    <FeatureItem key={index} icon={[FileText, Globe, RefreshCw, QrCode, CheckCircle][index]} title={feature.title}>
+                      {feature.description}
+                    </FeatureItem>
+                  ))}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-100">
@@ -120,8 +110,8 @@ const ProductLevel = () => {
                   </ResponsiveContainer>
                 </div>
                 <div className="mt-4 bg-white p-4 rounded-lg border border-green-100">
-                  <h4 className="text-sm font-medium text-green-700 mb-2">Quantifier's AI Generated Insights:</h4>
-                  <p className="text-xs text-slate-600">Your product passport is 82% complete. Add more end-of-life recycling details to improve compliance with upcoming EU regulations.</p>
+                  <h4 className="text-sm font-medium text-green-700 mb-2">{t('productLevelPage.dpp.insightTitle')}</h4>
+                  <p className="text-xs text-slate-600">{t('productLevelPage.dpp.insight')}</p>
                 </div>
               </div>
             </div>
@@ -132,32 +122,22 @@ const ProductLevel = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  LCA (Life Cycle Assessment): Understand and Optimize Environmental Impact
+                  {t('productLevelPage.lca.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  Quantifier transforms life cycle assessments from a one-off burden into a continuous, intelligent process. Automate data gathering, track changes over time, and reduce your environmental footprint with clarity.
+                  {t('productLevelPage.lca.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">You get:</h3>
-                  <FeatureItem icon={Leaf} title="Step-by-step, AI-guided LCA workflows">
-                    Based on ISO 14040/44 standards
-                  </FeatureItem>
-                  <FeatureItem icon={Globe} title="Integrated supplier data collection">
-                    And emissions calculations
-                  </FeatureItem>
-                  <FeatureItem icon={BarChart3} title="Material libraries and benchmarking tools">
-                    Built in for easy comparison
-                  </FeatureItem>
-                  <FeatureItem icon={FileText} title="Exportable, audit-ready reports">
-                    For internal and external use
-                  </FeatureItem>
-                  <FeatureItem icon={Recycle} title="Full transparency">
-                    From raw material to end-of-life
-                  </FeatureItem>
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('productLevelPage.lca.featuresTitle')}</h3>
+                  {t('productLevelPage.lca.features', { returnObjects: true }).map((feature: any, index: number) => (
+                    <FeatureItem key={index} icon={[Leaf, Globe, BarChart3, FileText, Recycle][index]} title={feature.title}>
+                      {feature.description}
+                    </FeatureItem>
+                  ))}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-lg border border-emerald-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">Life Cycle Impact Assessment</h3>
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('productLevelPage.lca.dashboardTitle')}</h3>
                 <div className="h-64">
                   <ChartContainer
                     config={{
@@ -198,8 +178,8 @@ const ProductLevel = () => {
                   </ChartContainer>
                 </div>
                 <div className="mt-4 bg-white p-4 rounded-lg border border-emerald-100">
-                  <h4 className="text-sm font-medium text-emerald-700 mb-2">Quantifier's AI Recommendation:</h4>
-                  <p className="text-xs text-slate-600">Focus on raw material sourcing to reduce your largest environmental impacts. Consider alternative suppliers with documented sustainability practices.</p>
+                  <h4 className="text-sm font-medium text-emerald-700 mb-2">{t('productLevelPage.lca.insightTitle')}</h4>
+                  <p className="text-xs text-slate-600">{t('productLevelPage.lca.insight')}</p>
                 </div>
               </div>
             </div>
@@ -209,32 +189,32 @@ const ProductLevel = () => {
         {/* Why Choose Quantifier Section */}
         <div className="my-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
           <h2 className="text-2xl font-bold mb-6 text-center text-slate-800">
-            Why Quantifier for Product-Level Compliance?
+            {t('productLevelPage.whyQuantifier.title')}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 border-green-100 bg-white/80">
               <Package className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">AI-Powered Data Collection & Reporting</h3>
-              <p className="text-slate-600">Eliminate bottlenecks by letting autonomous agents gather and verify product data.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.aiPowered.title')}</h3>
+              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.aiPowered.description')}</p>
             </Card>
             
             <Card className="p-6 border-green-100 bg-white/80">
               <RefreshCw className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Always Up to Date</h3>
-              <p className="text-slate-600">Your passports and LCAs evolve in real time as materials, suppliers, or rules change.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.alwaysUpdated.title')}</h3>
+              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.alwaysUpdated.description')}</p>
             </Card>
             
             <Card className="p-6 border-green-100 bg-white/80">
               <Recycle className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Designed for Circularity</h3>
-              <p className="text-slate-600">From recyclability to emissions, Quantifier helps you build better products—and prove it.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.designedCircularity.title')}</h3>
+              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.designedCircularity.description')}</p>
             </Card>
             
             <Card className="p-6 border-green-100 bg-white/80">
               <Zap className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Fast Time-to-Compliance</h3>
-              <p className="text-slate-600">Launch new products in new markets without worrying about regulatory delays.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.fastCompliance.title')}</h3>
+              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.fastCompliance.description')}</p>
             </Card>
           </div>
         </div>
@@ -242,18 +222,17 @@ const ProductLevel = () => {
         {/* Call to Action */}
         <div className="mt-10 text-center">
           <h2 className="text-2xl font-bold mb-3 text-slate-800">
-            Make Your Products Compliant—and Competitive
+            {t('productLevelPage.cta.title')}
           </h2>
           <p className="text-lg text-slate-700 mb-6 max-w-3xl mx-auto">
-            Smarter compliance. Stronger transparency. Lower impact.
-            Quantifier gives your products the intelligence they need to lead.
+            {t('productLevelPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-green-600 hover:bg-green-700">
-              Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+              {t('productLevelPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50">
-              Talk to Our Product Compliance Expert
+              {t('productLevelPage.cta.talkExpert')}
             </Button>
           </div>
         </div>

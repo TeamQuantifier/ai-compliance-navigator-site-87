@@ -87,29 +87,22 @@ const DataSecurity = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  GDPR Compliance: Protect User Data and Build Trust
+                  {t('dataSecurityPage.gdpr.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  The General Data Protection Regulation (GDPR) governs how organizations collect, process, and store EU citizens' personal data. Quantifier helps you systematically implement and document GDPR requirements, avoiding costly penalties.
+                  {t('dataSecurityPage.gdpr.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('dataSecurityPage.gdpr.featuresTitle')}</h3>
-                  <FeatureItem icon={FileCheck} title="Thorough Documentation">
-                    Automated generation of required GDPR documentation, including DPIAs and processing records
-                  </FeatureItem>
-                  <FeatureItem icon={UserCheck} title="User Rights Management">
-                    Tools to efficiently handle data subject access requests and consent management
-                  </FeatureItem>
-                  <FeatureItem icon={Database} title="Data Processing Oversight">
-                    Track and document all data processing activities with clear audit trails
-                  </FeatureItem>
-                  <FeatureItem icon={Shield} title="Security by Design">
-                    Implement technical and organizational measures that fulfill GDPR requirements
-                  </FeatureItem>
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('dataSecurityPage.gdpr.benefitsTitle')}</h3>
+                  {t('dataSecurityPage.gdpr.benefits', { returnObjects: true }).map((benefit: any, index: number) => (
+                    <FeatureItem key={index} icon={[FileCheck, UserCheck, Database, Shield][index]} title={benefit.title}>
+                      {benefit.description}
+                    </FeatureItem>
+                  ))}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-lg border border-purple-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">GDPR Compliance Status</h3>
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('dataSecurityPage.gdpr.dashboardTitle')}</h3>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
@@ -134,8 +127,8 @@ const DataSecurity = () => {
                   </ResponsiveContainer>
                 </div>
                 <div className="mt-4 bg-white p-4 rounded-lg border border-purple-100">
-                  <h4 className="text-sm font-medium text-purple-700 mb-2">AI Compliance Insights:</h4>
-                  <p className="text-xs text-slate-600">Your GDPR implementation is 85% complete. Focus on strengthening your data processing documentation to improve overall compliance.</p>
+                  <h4 className="text-sm font-medium text-purple-700 mb-2">{t('dataSecurityPage.gdpr.insightTitle')}</h4>
+                  <p className="text-xs text-slate-600">{t('dataSecurityPage.gdpr.insight')}</p>
                 </div>
               </div>
             </div>
@@ -146,29 +139,22 @@ const DataSecurity = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  HIPAA: Healthcare Data Protection Made Simple
+                  {t('dataSecurityPage.hipaa.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  HIPAA sets standards for protecting sensitive patient health information. Quantifier helps healthcare organizations and business associates implement compliant data handling practices with less effort and greater accuracy.
+                  {t('dataSecurityPage.hipaa.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">Key Benefits:</h3>
-                  <FeatureItem icon={Lock} title="PHI Protection">
-                    Implement required safeguards for protected health information (PHI) across systems
-                  </FeatureItem>
-                  <FeatureItem icon={Key} title="Access Controls">
-                    Role-based access management with detailed audit logging for all PHI interactions
-                  </FeatureItem>
-                  <FeatureItem icon={FileCheck} title="Policy Management">
-                    AI-generated policies and procedures specific to your healthcare organization
-                  </FeatureItem>
-                  <FeatureItem icon={ShieldCheck} title="Risk Assessment">
-                    Continuous monitoring and automated risk assessment tools
-                  </FeatureItem>
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('dataSecurityPage.hipaa.benefitsTitle')}</h3>
+                  {t('dataSecurityPage.hipaa.benefits', { returnObjects: true }).map((benefit: any, index: number) => (
+                    <FeatureItem key={index} icon={[Lock, Key, FileCheck, ShieldCheck][index]} title={benefit.title}>
+                      {benefit.description}
+                    </FeatureItem>
+                  ))}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-lg border border-purple-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">HIPAA Compliance Status</h3>
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('dataSecurityPage.hipaa.dashboardTitle')}</h3>
                 <div className="h-64">
                   <ChartContainer
                     config={{
@@ -203,8 +189,8 @@ const DataSecurity = () => {
                   </ChartContainer>
                 </div>
                 <div className="mt-4 bg-white p-4 rounded-lg border border-purple-100">
-                  <h4 className="text-sm font-medium text-purple-700 mb-2">AI Compliance Insights:</h4>
-                  <p className="text-xs text-slate-600">Your breach notification procedures need strengthening. Consider implementing our automated incident response workflow to improve compliance.</p>
+                  <h4 className="text-sm font-medium text-purple-700 mb-2">{t('dataSecurityPage.hipaa.insightTitle')}</h4>
+                  <p className="text-xs text-slate-600">{t('dataSecurityPage.hipaa.insight')}</p>
                 </div>
               </div>
             </div>
@@ -215,29 +201,22 @@ const DataSecurity = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  CCPA/CPRA: California Privacy Compliance
+                  {t('dataSecurityPage.ccpa.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  The California Consumer Privacy Act and its successor CPRA give California residents greater control over their personal information. Quantifier helps businesses comply with these evolving regulations efficiently and comprehensively.
+                  {t('dataSecurityPage.ccpa.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">Key Benefits:</h3>
-                  <FeatureItem icon={Eye} title="Data Discovery">
-                    Automated scanning and classification of personal information in your systems
-                  </FeatureItem>
-                  <FeatureItem icon={Globe} title="Consumer Rights Portal">
-                    Ready-to-deploy consumer request handling system with tracking and documentation
-                  </FeatureItem>
-                  <FeatureItem icon={EyeOff} title="Data Minimization">
-                    Tools to implement and document data minimization and retention policies
-                  </FeatureItem>
-                  <FeatureItem icon={DatabaseIcon} title="Data Deletion">
-                    Streamlined workflows for verifiable consumer deletion requests
-                  </FeatureItem>
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('dataSecurityPage.ccpa.benefitsTitle')}</h3>
+                  {t('dataSecurityPage.ccpa.benefits', { returnObjects: true }).map((benefit: any, index: number) => (
+                    <FeatureItem key={index} icon={[Eye, Globe, EyeOff, DatabaseIcon][index]} title={benefit.title}>
+                      {benefit.description}
+                    </FeatureItem>
+                  ))}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-lg border border-purple-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">CCPA Risk Distribution</h3>
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('dataSecurityPage.ccpa.dashboardTitle')}</h3>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
@@ -262,8 +241,8 @@ const DataSecurity = () => {
                   </ResponsiveContainer>
                 </div>
                 <div className="mt-4 bg-white p-4 rounded-lg border border-purple-100">
-                  <h4 className="text-sm font-medium text-purple-700 mb-2">AI Compliance Insights:</h4>
-                  <p className="text-xs text-slate-600">Most of your data processing activities are low-risk under CCPA. Address the 12% high-risk activities by implementing enhanced consent mechanisms.</p>
+                  <h4 className="text-sm font-medium text-purple-700 mb-2">{t('dataSecurityPage.ccpa.insightTitle')}</h4>
+                  <p className="text-xs text-slate-600">{t('dataSecurityPage.ccpa.insight')}</p>
                 </div>
               </div>
             </div>
@@ -279,26 +258,26 @@ const DataSecurity = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 border-purple-100 bg-white/80">
               <Lock className="h-8 w-8 text-purple-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Multi-Jurisdiction Coverage</h3>
-              <p className="text-slate-600">One platform to manage compliance across global data protection regulations, preventing duplicative work.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('dataSecurityPage.whyQuantifier.features.multiJurisdiction.title')}</h3>
+              <p className="text-slate-600">{t('dataSecurityPage.whyQuantifier.features.multiJurisdiction.description')}</p>
             </Card>
             
             <Card className="p-6 border-purple-100 bg-white/80">
               <Shield className="h-8 w-8 text-purple-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Real-time Monitoring</h3>
-              <p className="text-slate-600">Continuous scanning for compliance gaps and automated alerts when issues are detected.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('dataSecurityPage.whyQuantifier.features.realTimeMonitoring.title')}</h3>
+              <p className="text-slate-600">{t('dataSecurityPage.whyQuantifier.features.realTimeMonitoring.description')}</p>
             </Card>
             
             <Card className="p-6 border-purple-100 bg-white/80">
               <DatabaseIcon className="h-8 w-8 text-purple-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Data Mapping Automation</h3>
-              <p className="text-slate-600">AI-powered discovery and classification of personal data across your organization's systems.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('dataSecurityPage.whyQuantifier.features.dataMapping.title')}</h3>
+              <p className="text-slate-600">{t('dataSecurityPage.whyQuantifier.features.dataMapping.description')}</p>
             </Card>
             
             <Card className="p-6 border-purple-100 bg-white/80">
               <FileCheck className="h-8 w-8 text-purple-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Audit-Ready Documentation</h3>
-              <p className="text-slate-600">Generate comprehensive compliance reports and evidence with a single click.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('dataSecurityPage.whyQuantifier.features.auditReady.title')}</h3>
+              <p className="text-slate-600">{t('dataSecurityPage.whyQuantifier.features.auditReady.description')}</p>
             </Card>
           </div>
         </div>
