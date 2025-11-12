@@ -825,6 +825,58 @@
       "button": "Contact Us"
     }
   },
+  "frameworksPage": {
+    "hero": {
+      "title": "Compliance Frameworks",
+      "description": "Our platform supports a wide range of compliance frameworks to help your organization meet various regulatory requirements."
+    },
+    "categories": {
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "description": "Frameworks for protecting digital assets and systems from cyber threats.",
+        "items": ["SOC I and SOC II", "NIS II", "NIST"]
+      },
+      "informationSecurity": {
+        "title": "Information Security",
+        "description": "Standards for securing information assets and maintaining confidentiality.",
+        "items": ["ISO 27001", "ISO 9001", "DORA"]
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "description": "Regulations for protecting personal and sensitive data.",
+        "items": ["GDPR", "HIPPA", "CCPA"]
+      },
+      "esg": {
+        "title": "ESG",
+        "description": "Environmental, Social, and Governance reporting standards.",
+        "items": ["CSDR Reporting", "GRI Reporting", "CBAM Reporting"]
+      },
+      "environmental": {
+        "title": "Environmental",
+        "description": "Standards for environmental management and sustainability.",
+        "items": ["ISO 14001", "LCA", "Carbon Footprint, GHG", "Decarbonisation"]
+      },
+      "governance": {
+        "title": "Governance",
+        "description": "Guidelines for organizational governance and ethics.",
+        "items": ["Legal Policies", "Whistleblowing"]
+      },
+      "productLevel": {
+        "title": "Product Level",
+        "description": "Standards specific to product compliance and lifecycle.",
+        "items": ["DPP", "LCA Analysis"]
+      }
+    },
+    "labels": {
+      "supportedFrameworks": "Supported Frameworks:",
+      "exploreButton": "Explore"
+    },
+    "cta": {
+      "title": "Need Support for a Specific Framework?",
+      "description": "Our platform is constantly evolving to support new compliance frameworks. Contact us to discuss your specific requirements.",
+      "button": "Contact Our Compliance Experts"
+    }
+  },
   "byRoles": {
     "pageTitle": "Built for Every Role",
     "pageDescription": "Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you.",

@@ -665,6 +665,58 @@
       "button": "Zostań partnerem"
     }
   },
+  "frameworksPage": {
+    "hero": {
+      "title": "Standardy Compliance",
+      "description": "Nasza platforma wspiera szeroki zakres standardów compliance, pomagając Twojej organizacji spełnić różne wymagania regulacyjne."
+    },
+    "categories": {
+      "cybersecurity": {
+        "title": "Cyberbezpieczeństwo",
+        "description": "Standardy ochrony zasobów cyfrowych i systemów przed zagrożeniami cybernetycznymi.",
+        "items": ["SOC I i SOC II", "NIS II", "NIST"]
+      },
+      "informationSecurity": {
+        "title": "Bezpieczeństwo Informacji",
+        "description": "Standardy zabezpieczania zasobów informacyjnych i zachowania poufności.",
+        "items": ["ISO 27001", "ISO 9001", "DORA"]
+      },
+      "dataSecurity": {
+        "title": "Ochrona Danych",
+        "description": "Regulacje dotyczące ochrony danych osobowych i wrażliwych.",
+        "items": ["GDPR", "HIPPA", "CCPA"]
+      },
+      "esg": {
+        "title": "ESG",
+        "description": "Standardy raportowania środowiskowego, społecznego i zarządczego.",
+        "items": ["Raportowanie CSDR", "Raportowanie GRI", "Raportowanie CBAM"]
+      },
+      "environmental": {
+        "title": "Środowiskowe",
+        "description": "Standardy zarządzania środowiskowego i zrównoważonego rozwoju.",
+        "items": ["ISO 14001", "LCA", "Ślad węglowy, GHG", "Dekarbonizacja"]
+      },
+      "governance": {
+        "title": "Zarządzanie",
+        "description": "Wytyczne dotyczące ładu korporacyjnego i etyki organizacyjnej.",
+        "items": ["Polityki prawne", "Zgłaszanie nieprawidłowości"]
+      },
+      "productLevel": {
+        "title": "Poziom Produktu",
+        "description": "Standardy specyficzne dla compliance produktów i ich cyklu życia.",
+        "items": ["DPP", "Analiza LCA"]
+      }
+    },
+    "labels": {
+      "supportedFrameworks": "Wspierane standardy:",
+      "exploreButton": "Poznaj"
+    },
+    "cta": {
+      "title": "Potrzebujesz wsparcia dla konkretnego standardu?",
+      "description": "Nasza platforma stale ewoluuje, aby wspierać nowe standardy compliance. Skontaktuj się z nami, aby omówić Twoje specyficzne wymagania.",
+      "button": "Skontaktuj się z naszymi ekspertami"
+    }
+  },
   "byRoles": {
     "pageTitle": "Stworzone dla każdej roli",
     "pageDescription": "Niezależnie od tego, czy kierujesz strategią, dostarczasz dane, czy weryfikujesz kontrole — Quantifier jest dostosowany do Twoich potrzeb.",
