@@ -2076,62 +2076,207 @@
       "watchTour": "Watch Platform Tour"
     }
   },
-  "nistPage": {
-    "title": "NIST Cybersecurity Framework",
-    "description": "Align your organization to the gold standard in security with automated NIST framework implementation.",
+  "iso27001Page": {
+    "title": "ISO 27001 Framework",
+    "description": "Protect your information assets with the globally recognized ISO 27001 standard for information security management.",
     "hero": {
-      "title": "NIST Compliance That Handles Itself",
-      "subtitle": "From Identify to Recover — implement NIST controls with automation.",
-      "button": "Book a Demo",
-      "dashboardAlt": "NIST Framework Implementation Dashboard showing the five functions"
+      "title": "ISO 27001: Build Trust Through Information Security",
+      "subtitle": "Quantifier automates your ISO 27001 journey—from establishing policies to ongoing audits—so you can focus on what truly matters: securing your business.",
+      "button": "Book a Demo"
     },
-    "mainContent": {
-      "badge": "NIST Cybersecurity Framework",
-      "title": "Align with the Gold Standard in Security",
-      "description": "Our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.",
-      "benefitsTitle": "Key Benefits:",
-      "benefits": [
-        "Intelligent asset and risk mapping",
-        "Proactive tasking aligned with NIST categories",
-        "Integrated reporting for regulators and auditors",
-        "Alerts when controls fall out of scope"
-      ],
-      "button": "Get NIST Implementation Assessment",
-      "fiveFunctions": {
-        "title": "The Five NIST Functions",
-        "identify": {
-          "title": "Identify:",
-          "description": "Develop understanding of risks to systems, assets, data and capabilities"
+    "whatIs": {
+      "title": "What is ISO 27001?",
+      "description": "ISO 27001 is the international standard for information security management systems (ISMS). It provides a systematic approach to managing sensitive company information, ensuring it remains secure. ISO 27001 helps organizations identify, manage, and reduce risks to their information security.",
+      "keyRequirements": {
+        "title": "Key Requirements",
+        "items": [
+          "Risk Assessment and Treatment",
+          "Security Policy Documentation",
+          "114 Security Controls Across 14 Domains",
+          "Ongoing Monitoring and Improvement"
+        ]
+      },
+      "benefits": {
+        "title": "Benefits of Certification",
+        "items": [
+          "Increased customer and partner trust",
+          "Competitive advantage in the marketplace",
+          "Better risk management and reduced incidents",
+          "Legal and regulatory compliance"
+        ]
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "How Quantifier Automates ISO 27001 Compliance",
+      "dashboard": {
+        "title": "AI-Powered ISO 27001 Dashboard",
+        "description": "Monitor your organization's ISO 27001 compliance with our intuitive AI-powered dashboard."
+      },
+      "features": {
+        "riskManagement": {
+          "title": "Automated Risk Management",
+          "description": "Our AI identifies, assesses, and mitigates information security risks in real-time, continuously updating your risk register."
         },
-        "protect": {
-          "title": "Protect:",
-          "description": "Develop and implement safeguards for critical services"
+        "evidenceCollection": {
+          "title": "Evidence Collection",
+          "description": "Automatically collect and organize the necessary documentation for ISO 27001 compliance, ensuring you're always audit-ready."
         },
-        "detect": {
-          "title": "Detect:",
-          "description": "Develop and implement activities to identify cybersecurity events"
-        },
-        "respond": {
-          "title": "Respond:",
-          "description": "Develop and implement appropriate activities to act on a cybersecurity event"
-        },
-        "recover": {
-          "title": "Recover:",
-          "description": "Develop and implement appropriate activities to restore capabilities impaired due to a cybersecurity event"
+        "complianceMonitoring": {
+          "title": "Compliance Monitoring",
+          "description": "Track your ISO 27001 compliance status in real-time with comprehensive dashboards and automated alerts for potential issues."
         }
       }
     },
+    "cta": {
+      "title": "Ready to Simplify ISO 27001 Compliance?",
+      "description": "Join organizations that trust Quantifier to automate their ISO 27001 compliance journey.",
+      "bookDemo": "Book a Demo",
+      "explorePlans": "Explore Plans"
+    }
+  },
+  "iso9001Page": {
+    "title": "ISO 9001 Framework",
+    "description": "Streamline quality management with ISO 9001 - the international standard for quality management systems (QMS).",
+    "hero": {
+      "title": "ISO 9001: Quality Management Made Simple",
+      "subtitle": "Quantifier makes achieving and maintaining ISO 9001 compliance effortless by continuously driving quality management actions, tracking key metrics, and ensuring all necessary documentation is in place.",
+      "button": "Book a Demo"
+    },
+    "whatIs": {
+      "title": "What is ISO 9001?",
+      "description": "ISO 9001 is the international standard for quality management systems (QMS). It provides a framework for organizations to ensure they consistently deliver products and services that meet customer and regulatory requirements, while continuously improving their processes.",
+      "keyPrinciples": {
+        "title": "Key Principles",
+        "items": [
+          "Customer Focus",
+          "Process Approach",
+          "Evidence-Based Decision Making",
+          "Continual Improvement"
+        ]
+      },
+      "benefits": {
+        "title": "Benefits of Certification",
+        "items": [
+          "Increased customer satisfaction and loyalty",
+          "Process efficiency and cost reduction",
+          "Enhanced product and service quality",
+          "Access to new markets and opportunities"
+        ]
+      }
+    },
     "platformScreenshots": {
-      "title": "NIST Implementation Dashboard",
-      "description": "Monitor your NIST framework implementation with our comprehensive dashboard.",
-      "functionsTrackingAlt": "NIST Functions Tracking Dashboard",
-      "riskAssessmentAlt": "NIST Risk Assessment Interface"
+      "title": "Quantifier AI Platform for ISO 9001",
+      "dashboard": {
+        "title": "AI-Powered ISO 9001 Dashboard",
+        "description": "Monitor your organization's quality management system with our intuitive AI-powered dashboard."
+      },
+      "qualityManagement": {
+        "title": "Quality Management Dashboard",
+        "description": "Get a comprehensive view of your organization's quality metrics and compliance status at a glance.",
+        "alt": "ISO 9001 Dashboard"
+      },
+      "processManagement": {
+        "title": "Process Management",
+        "description": "Map, monitor, and optimize your core business processes to ensure quality at every step.",
+        "alt": "Process Management Screen"
+      },
+      "documentationControl": {
+        "title": "Documentation Control",
+        "description": "Centralized document management with version control and approval workflows.",
+        "alt": "Documentation Control Screen"
+      },
+      "performanceAnalytics": {
+        "title": "Performance Analytics",
+        "description": "Real-time metrics and KPIs to track your quality objectives and improvement initiatives.",
+        "alt": "Performance Analytics Screen"
+      },
+      "auditManagement": {
+        "title": "Audit Management",
+        "description": "Schedule, conduct, and track internal audits with automated findings and action items.",
+        "alt": "Audit Management Screen"
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "How Quantifier Automates ISO 9001 Compliance",
+      "features": {
+        "automatedTasks": {
+          "title": "Automated Task Assignment",
+          "description": "Ensure quality management activities are performed consistently and on schedule across your organization."
+        },
+        "auditReady": {
+          "title": "Audit-Ready Reporting",
+          "description": "Gather the required quality evidence without manual effort, ensuring you're always prepared for audits."
+        },
+        "qualityMonitoring": {
+          "title": "Quality Monitoring",
+          "description": "Identify quality gaps and resolve them before they escalate with real-time metrics and alerts."
+        }
+      }
     },
     "cta": {
-      "title": "Ready to Implement NIST Framework?",
-      "description": "Join organizations that trust our platform to automate their NIST compliance journey.",
+      "title": "Ready to Streamline Your Quality Management?",
+      "description": "Join organizations that trust Quantifier to automate their ISO 9001 compliance journey.",
       "bookDemo": "Book a Demo",
-      "watchTour": "Watch Platform Tour"
+      "explorePlans": "Explore Plans"
+    }
+  },
+  "doraPage": {
+    "title": "DORA Framework",
+    "description": "Digital Operational Resilience Act - Ensure your financial institution meets EU standards for operational resilience.",
+    "hero": {
+      "title": "DORA: Digital Operational Resilience Made Simple",
+      "subtitle": "Quantifier automates DORA compliance for financial institutions, making operational resilience a competitive advantage instead of a burden.",
+      "button": "Book a Demo"
+    },
+    "whatIs": {
+      "title": "What is DORA?",
+      "description": "The Digital Operational Resilience Act (DORA) is an EU regulation that requires financial institutions to ensure they can withstand, respond to, and recover from all types of ICT-related disruptions and threats. It establishes uniform requirements for the security of network and information systems of companies and organizations operating in the financial sector.",
+      "keyRequirements": {
+        "title": "Key Requirements",
+        "items": [
+          "ICT Risk Management",
+          "ICT-Related Incident Reporting",
+          "Digital Operational Resilience Testing",
+          "ICT Third-Party Risk Management"
+        ]
+      },
+      "whoMustComply": {
+        "title": "Who Must Comply",
+        "description": "DORA applies to a wide range of financial entities operating in the EU, including:",
+        "items": [
+          "Banks and credit institutions",
+          "Insurance and reinsurance companies",
+          "Investment firms and payment institutions",
+          "Crypto-asset service providers"
+        ]
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "How Quantifier Automates DORA Compliance",
+      "dashboard": {
+        "title": "AI-Powered DORA Dashboard",
+        "description": "Monitor your organization's operational resilience with our comprehensive AI-powered dashboard."
+      },
+      "features": {
+        "riskMonitoring": {
+          "title": "Automated Risk Monitoring",
+          "description": "Our AI continuously identifies, assesses, and mitigates risks to your digital operations in real-time, ensuring continuous compliance with DORA's risk management requirements."
+        },
+        "incidentResponse": {
+          "title": "Incident Response Automation",
+          "description": "Quantifier's AI agents help build, test, and execute comprehensive plans for operational disruptions, meeting DORA's incident reporting requirements."
+        },
+        "thirdPartyRisk": {
+          "title": "Third-Party Risk Management",
+          "description": "Monitor and manage your ICT third-party providers to ensure they comply with DORA requirements, reducing risk exposure across your supply chain."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Simplify DORA Compliance?",
+      "description": "Join financial institutions that trust Quantifier to automate their DORA compliance journey.",
+      "bookDemo": "Book a Demo",
+      "explorePlans": "Explore Plans"
     }
   }
 }

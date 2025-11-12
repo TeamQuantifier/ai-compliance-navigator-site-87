@@ -17,12 +17,15 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Iso9001 = () => {
+  const { t, currentLocale } = useLanguage();
+
   return (
     <PageTemplate
-      title="ISO 9001 Framework"
-      description="Streamline quality management with ISO 9001 - the international standard for quality management systems (QMS)."
+      title={t('iso9001Page.title')}
+      description={t('iso9001Page.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
@@ -30,13 +33,15 @@ const Iso9001 = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-3/5">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ISO 9001: Quality Management Made Simple
+                {t('iso9001Page.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                Quantifier makes achieving and maintaining ISO 9001 compliance effortless by continuously driving quality management actions, tracking key metrics, and ensuring all necessary documentation is in place.
+                {t('iso9001Page.hero.subtitle')}
               </p>
-              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90">
-                Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
+                <a href={`/${currentLocale}/contact`}>
+                  {t('iso9001Page.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
             <div className="md:w-2/5">
@@ -55,53 +60,36 @@ const Iso9001 = () => {
         <section className="mb-16">
           <div className="bg-[#E5DEFF]/40 p-8 rounded-xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#1A1F2C]">
-              What is ISO 9001?
+              {t('iso9001Page.whatIs.title')}
             </h2>
             <p className="text-lg text-slate-700 mb-8 max-w-4xl mx-auto">
-              ISO 9001 is the international standard for quality management systems (QMS). It provides a framework for organizations to ensure they consistently deliver products and services that meet customer and regulatory requirements, while continuously improving their processes.
+              {t('iso9001Page.whatIs.description')}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
-                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">Key Principles</h3>
+                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">{t('iso9001Page.whatIs.keyPrinciples.title')}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Users className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Customer Focus</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Settings className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Process Approach</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ClipboardCheck className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Evidence-Based Decision Making</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Repeat className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Continual Improvement</span>
-                  </li>
+                  {(t('iso9001Page.whatIs.keyPrinciples.items', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      {index === 0 && <Users className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      {index === 1 && <Settings className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      {index === 2 && <ClipboardCheck className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      {index === 3 && <Repeat className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
-                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">Benefits of Certification</h3>
+                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">{t('iso9001Page.whatIs.benefits.title')}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Increased customer satisfaction and loyalty</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Process efficiency and cost reduction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Enhanced product and service quality</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Access to new markets and opportunities</span>
-                  </li>
+                  {(t('iso9001Page.whatIs.benefits.items', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -111,17 +99,17 @@ const Iso9001 = () => {
         {/* Platform Screenshots Section */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
-            Quantifier AI Platform for ISO 9001
+            {t('iso9001Page.platformScreenshots.title')}
           </h2>
           
           <div className="mb-10">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <Shield className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                AI-Powered ISO 9001 Dashboard
+                {t('iso9001Page.platformScreenshots.dashboard.title')}
               </h3>
               <p className="text-slate-700 mb-4">
-                Monitor your organization's quality management system with our intuitive AI-powered dashboard.
+                {t('iso9001Page.platformScreenshots.dashboard.description')}
               </p>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
                 <AiComplianceDashboard 
@@ -136,15 +124,15 @@ const Iso9001 = () => {
             <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <Laptop className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                Quality Management Dashboard
+                {t('iso9001Page.platformScreenshots.qualityManagement.title')}
               </h3>
               <p className="text-slate-700 mb-4">
-                Get a comprehensive view of your organization's quality metrics and compliance status at a glance.
+                {t('iso9001Page.platformScreenshots.qualityManagement.description')}
               </p>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
                 <img 
                   src="/mockups/iso9001-dashboard-wide.png" 
-                  alt="ISO 9001 Dashboard" 
+                  alt={t('iso9001Page.platformScreenshots.qualityManagement.alt')}
                   className="w-full"
                 />
               </div>
@@ -153,15 +141,15 @@ const Iso9001 = () => {
             <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <Database className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                Process Management
+                {t('iso9001Page.platformScreenshots.processManagement.title')}
               </h3>
               <p className="text-slate-700 mb-4">
-                Map, monitor, and optimize your core business processes to ensure quality at every step.
+                {t('iso9001Page.platformScreenshots.processManagement.description')}
               </p>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
                 <img 
                   src="/mockups/process-management-screen.png" 
-                  alt="Process Management Screen" 
+                  alt={t('iso9001Page.platformScreenshots.processManagement.alt')}
                   className="w-full"
                 />
               </div>
@@ -172,51 +160,51 @@ const Iso9001 = () => {
             <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <FileText className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                Documentation Control
+                {t('iso9001Page.platformScreenshots.documentationControl.title')}
               </h3>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF] mb-4">
                 <img 
                   src="/mockups/document-control-screen.png" 
-                  alt="Documentation Control Screen" 
+                  alt={t('iso9001Page.platformScreenshots.documentationControl.alt')}
                   className="w-full"
                 />
               </div>
               <p className="text-slate-600">
-                Centralized document management with version control and approval workflows.
+                {t('iso9001Page.platformScreenshots.documentationControl.description')}
               </p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <BarChart4 className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                Performance Analytics
+                {t('iso9001Page.platformScreenshots.performanceAnalytics.title')}
               </h3>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF] mb-4">
                 <img 
                   src="/mockups/performance-analytics-screen.png" 
-                  alt="Performance Analytics Screen" 
+                  alt={t('iso9001Page.platformScreenshots.performanceAnalytics.alt')}
                   className="w-full"
                 />
               </div>
               <p className="text-slate-600">
-                Real-time metrics and KPIs to track your quality objectives and improvement initiatives.
+                {t('iso9001Page.platformScreenshots.performanceAnalytics.description')}
               </p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <ClipboardCheck className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                Audit Management
+                {t('iso9001Page.platformScreenshots.auditManagement.title')}
               </h3>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF] mb-4">
                 <img 
                   src="/mockups/audit-management-screen.png" 
-                  alt="Audit Management Screen" 
+                  alt={t('iso9001Page.platformScreenshots.auditManagement.alt')}
                   className="w-full"
                 />
               </div>
               <p className="text-slate-600">
-                Schedule, conduct, and track internal audits with automated findings and action items.
+                {t('iso9001Page.platformScreenshots.auditManagement.description')}
               </p>
             </div>
           </div>
@@ -225,7 +213,7 @@ const Iso9001 = () => {
         {/* How Quantifier Helps Section */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
-            How Quantifier Automates ISO 9001 Compliance
+            {t('iso9001Page.howQuantifierHelps.title')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -236,8 +224,8 @@ const Iso9001 = () => {
                     <ClipboardCheck className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Automated Task Assignment</h3>
-                    <p className="text-slate-600">Ensure quality management activities are performed consistently and on schedule across your organization.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('iso9001Page.howQuantifierHelps.features.automatedTasks.title')}</h3>
+                    <p className="text-slate-600">{t('iso9001Page.howQuantifierHelps.features.automatedTasks.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -250,8 +238,8 @@ const Iso9001 = () => {
                     <FileCheck className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Audit-Ready Reporting</h3>
-                    <p className="text-slate-600">Gather the required quality evidence without manual effort, ensuring you're always prepared for audits.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('iso9001Page.howQuantifierHelps.features.auditReady.title')}</h3>
+                    <p className="text-slate-600">{t('iso9001Page.howQuantifierHelps.features.auditReady.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -264,8 +252,8 @@ const Iso9001 = () => {
                     <BarChart4 className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Quality Monitoring</h3>
-                    <p className="text-slate-600">Identify quality gaps and resolve them before they escalate with real-time metrics and alerts.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('iso9001Page.howQuantifierHelps.features.qualityMonitoring.title')}</h3>
+                    <p className="text-slate-600">{t('iso9001Page.howQuantifierHelps.features.qualityMonitoring.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -278,17 +266,21 @@ const Iso9001 = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Streamline Your Quality Management?
+                {t('iso9001Page.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
-                Join organizations that trust Quantifier to automate their ISO 9001 compliance journey.
+                {t('iso9001Page.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8" asChild>
+                  <a href={`/${currentLocale}/contact`}>
+                    {t('iso9001Page.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Explore Plans
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10" asChild>
+                  <a href={`/${currentLocale}/plans`}>
+                    {t('iso9001Page.cta.explorePlans')}
+                  </a>
                 </Button>
               </div>
             </div>

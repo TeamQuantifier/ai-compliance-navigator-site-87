@@ -14,12 +14,15 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Iso27001 = () => {
+  const { t, currentLocale } = useLanguage();
+
   return (
     <PageTemplate
-      title="ISO 27001 Framework"
-      description="Protect your information assets with the globally recognized ISO 27001 standard for information security management."
+      title={t('iso27001Page.title')}
+      description={t('iso27001Page.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
@@ -27,13 +30,15 @@ const Iso27001 = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-3/5">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ISO 27001: Build Trust Through Information Security
+                {t('iso27001Page.hero.title')}
               </h2>
               <p className="text-xl opacity-90 mb-6">
-                Quantifier automates your ISO 27001 journey—from establishing policies to ongoing audits—so you can focus on what truly matters: securing your business.
+                {t('iso27001Page.hero.subtitle')}
               </p>
-              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90">
-                Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
+                <a href={`/${currentLocale}/contact`}>
+                  {t('iso27001Page.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
             <div className="md:w-2/5">
@@ -52,53 +57,36 @@ const Iso27001 = () => {
         <section className="mb-16">
           <div className="bg-[#E5DEFF]/40 p-8 rounded-xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#1A1F2C]">
-              What is ISO 27001?
+              {t('iso27001Page.whatIs.title')}
             </h2>
             <p className="text-lg text-slate-700 mb-8 max-w-4xl mx-auto">
-              ISO 27001 is the international standard for information security management systems (ISMS). It provides a systematic approach to managing sensitive company information, ensuring it remains secure. ISO 27001 helps organizations identify, manage, and reduce risks to their information security.
+              {t('iso27001Page.whatIs.description')}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
-                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">Key Requirements</h3>
+                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">{t('iso27001Page.whatIs.keyRequirements.title')}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <AlertTriangle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Risk Assessment and Treatment</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FileWarning className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Security Policy Documentation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ListChecks className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>114 Security Controls Across 14 Domains</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Lock className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Ongoing Monitoring and Improvement</span>
-                  </li>
+                  {(t('iso27001Page.whatIs.keyRequirements.items', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      {index === 0 && <AlertTriangle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      {index === 1 && <FileWarning className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      {index === 2 && <ListChecks className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      {index === 3 && <Lock className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />}
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm border border-[#E5DEFF]">
-                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">Benefits of Certification</h3>
+                <h3 className="text-xl font-semibold mb-4 text-[#7E69AB]">{t('iso27001Page.whatIs.benefits.title')}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Increased customer and partner trust</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Competitive advantage in the marketplace</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Better risk management and reduced incidents</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
-                    <span>Legal and regulatory compliance</span>
-                  </li>
+                  {(t('iso27001Page.whatIs.benefits.items', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-1 mr-3 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -108,17 +96,17 @@ const Iso27001 = () => {
         {/* How Quantifier Helps Section */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
-            How Quantifier Automates ISO 27001 Compliance
+            {t('iso27001Page.howQuantifierHelps.title')}
           </h2>
           
           <div className="mb-10">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-[#E5DEFF]">
               <h3 className="text-xl font-semibold mb-4 text-[#7E69AB] flex items-center">
                 <Shield className="h-5 w-5 text-[#9b87f5] mr-3 flex-shrink-0" />
-                AI-Powered ISO 27001 Dashboard
+                {t('iso27001Page.howQuantifierHelps.dashboard.title')}
               </h3>
               <p className="text-slate-700 mb-4">
-                Monitor your organization's ISO 27001 compliance with our intuitive AI-powered dashboard.
+                {t('iso27001Page.howQuantifierHelps.dashboard.description')}
               </p>
               <div className="rounded-lg overflow-hidden border border-[#E5DEFF]">
                 <AiComplianceDashboard 
@@ -137,8 +125,8 @@ const Iso27001 = () => {
                     <Shield className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Automated Risk Management</h3>
-                    <p className="text-slate-600">Our AI identifies, assesses, and mitigates information security risks in real-time, continuously updating your risk register.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('iso27001Page.howQuantifierHelps.features.riskManagement.title')}</h3>
+                    <p className="text-slate-600">{t('iso27001Page.howQuantifierHelps.features.riskManagement.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -151,8 +139,8 @@ const Iso27001 = () => {
                     <FileCheck className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Evidence Collection</h3>
-                    <p className="text-slate-600">Automatically collect and organize the necessary documentation for ISO 27001 compliance, ensuring you're always audit-ready.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('iso27001Page.howQuantifierHelps.features.evidenceCollection.title')}</h3>
+                    <p className="text-slate-600">{t('iso27001Page.howQuantifierHelps.features.evidenceCollection.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -165,8 +153,8 @@ const Iso27001 = () => {
                     <BarChart4 className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Compliance Monitoring</h3>
-                    <p className="text-slate-600">Track your ISO 27001 compliance status in real-time with comprehensive dashboards and automated alerts for potential issues.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('iso27001Page.howQuantifierHelps.features.complianceMonitoring.title')}</h3>
+                    <p className="text-slate-600">{t('iso27001Page.howQuantifierHelps.features.complianceMonitoring.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -179,17 +167,21 @@ const Iso27001 = () => {
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Simplify ISO 27001 Compliance?
+                {t('iso27001Page.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
-                Join organizations that trust Quantifier to automate their ISO 27001 compliance journey.
+                {t('iso27001Page.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8">
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8" asChild>
+                  <a href={`/${currentLocale}/contact`}>
+                    {t('iso27001Page.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Explore Plans
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10" asChild>
+                  <a href={`/${currentLocale}/plans`}>
+                    {t('iso27001Page.cta.explorePlans')}
+                  </a>
                 </Button>
               </div>
             </div>
