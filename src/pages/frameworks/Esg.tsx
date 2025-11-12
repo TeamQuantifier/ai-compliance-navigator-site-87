@@ -353,7 +353,7 @@ const Esg = () => {
         {/* Call to Action */}
         <div className="mt-10 text-center">
           <p className="text-lg text-slate-700 mb-6">
-            Ready to transform your ESG reporting process?
+            {t('esgPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-green-600 hover:bg-green-700">

@@ -95,7 +95,7 @@ const ProductLevel = () => {
                 </div>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">Digital Product Passport Completion</h3>
+                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('productLevelPage.dpp.dashboardTitle')}</h3>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>

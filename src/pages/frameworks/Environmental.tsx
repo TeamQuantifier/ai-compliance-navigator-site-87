@@ -57,24 +57,24 @@ const Environmental = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  ISO 14001: Build and Maintain a Certified EMS
+                  {t('environmentalPage.iso14001.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  Achieve and sustain your Environmental Management System (EMS) with zero overhead. Quantifier automates the evidence collection, reporting, and policy enforcement required to stay aligned with ISO 14001 standards.
+                  {t('environmentalPage.iso14001.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">You get:</h3>
-                  <FeatureItem icon={CheckCircle} title="Autonomous task assignments">
-                    Automated assignments for EMS implementation and reviews across your organization.
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('environmentalPage.iso14001.featuresTitle')}</h3>
+                  <FeatureItem icon={CheckCircle} title={t('environmentalPage.iso14001.features.0.title')}>
+                    {t('environmentalPage.iso14001.features.0.description')}
                   </FeatureItem>
-                  <FeatureItem icon={FileText} title="Real-time audit readiness">
-                    Version-controlled documentation and evidence that's always ready for auditors.
+                  <FeatureItem icon={FileText} title={t('environmentalPage.iso14001.features.1.title')}>
+                    {t('environmentalPage.iso14001.features.1.description')}
                   </FeatureItem>
-                  <FeatureItem icon={Clock} title="Automated reminders">
-                    Timely alerts for corrective actions, training requirements, and policy updates.
+                  <FeatureItem icon={Clock} title={t('environmentalPage.iso14001.features.2.title')}>
+                    {t('environmentalPage.iso14001.features.2.description')}
                   </FeatureItem>
-                  <FeatureItem icon={BarChart3} title="Full visibility">
-                    Comprehensive dashboard showing compliance status across teams and sites.
+                  <FeatureItem icon={BarChart3} title={t('environmentalPage.iso14001.features.3.title')}>
+                    {t('environmentalPage.iso14001.features.3.description')}
                   </FeatureItem>
                 </div>
               </div>
@@ -91,24 +91,24 @@ const Environmental = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  LCA (Life Cycle Assessment): Instant, Intelligent Impact Analysis
+                  {t('environmentalPage.lca.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  Go beyond reporting—Quantifier gives you the tools to understand the true environmental impact of your products and processes with AI-powered LCA workflows.
+                  {t('environmentalPage.lca.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">You get:</h3>
-                  <FeatureItem icon={Zap} title="Guided life cycle assessments">
-                    Intelligent data ingestion makes complex assessments simple and accurate.
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('environmentalPage.lca.featuresTitle')}</h3>
+                  <FeatureItem icon={Zap} title={t('environmentalPage.lca.features.0.title')}>
+                    {t('environmentalPage.lca.features.0.description')}
                   </FeatureItem>
-                  <FeatureItem icon={CheckCircle} title="Automated data requests">
-                    Streamlined collection from internal teams and suppliers with built-in follow-ups.
+                  <FeatureItem icon={CheckCircle} title={t('environmentalPage.lca.features.1.title')}>
+                    {t('environmentalPage.lca.features.1.description')}
                   </FeatureItem>
-                  <FeatureItem icon={BarChart3} title="Built-in benchmarks">
-                    Access comprehensive material libraries and industry comparisons.
+                  <FeatureItem icon={BarChart3} title={t('environmentalPage.lca.features.2.title')}>
+                    {t('environmentalPage.lca.features.2.description')}
                   </FeatureItem>
-                  <FeatureItem icon={FileText} title="Exportable reports">
-                    Generate reports aligned with ISO 14040/44 standards at the click of a button.
+                  <FeatureItem icon={FileText} title={t('environmentalPage.lca.features.3.title')}>
+                    {t('environmentalPage.lca.features.3.description')}
                   </FeatureItem>
                 </div>
               </div>
@@ -125,24 +125,24 @@ const Environmental = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  Carbon Footprint & GHG: Track, Reduce, Report
+                  {t('environmentalPage.carbon.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  From Scope 1 to Scope 3, Quantifier helps you quantify, track, and report greenhouse gas (GHG) emissions across your value chain—with no spreadsheets, no gaps, and no stress.
+                  {t('environmentalPage.carbon.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">You get:</h3>
-                  <FeatureItem icon={PieChart} title="Automated emissions calculations">
-                    Accurate emissions data by location, activity, or supplier with minimal effort.
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('environmentalPage.carbon.featuresTitle')}</h3>
+                  <FeatureItem icon={PieChart} title={t('environmentalPage.carbon.features.0.title')}>
+                    {t('environmentalPage.carbon.features.0.description')}
                   </FeatureItem>
-                  <FeatureItem icon={Zap} title="AI-powered data collection">
-                    AI agents that gather activity data across your organization automatically.
+                  <FeatureItem icon={Zap} title={t('environmentalPage.carbon.features.1.title')}>
+                    {t('environmentalPage.carbon.features.1.description')}
                   </FeatureItem>
-                  <FeatureItem icon={BarChart3} title="Real-time dashboards">
-                    Comprehensive visibility into Scope 1, 2, and 3 emissions in one place.
+                  <FeatureItem icon={BarChart3} title={t('environmentalPage.carbon.features.2.title')}>
+                    {t('environmentalPage.carbon.features.2.description')}
                   </FeatureItem>
-                  <FeatureItem icon={FileText} title="Ready-to-submit reports">
-                    Formatted reports for GHG Protocol, ISO 14064, and regulatory submissions.
+                  <FeatureItem icon={FileText} title={t('environmentalPage.carbon.features.3.title')}>
+                    {t('environmentalPage.carbon.features.3.description')}
                   </FeatureItem>
                 </div>
               </div>
@@ -159,24 +159,24 @@ const Environmental = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  Decarbonisation: Go from Reporting to Action
+                  {t('environmentalPage.decarbonisation.title')}
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  Quantifier doesn't stop at carbon measurement—it helps you execute your decarbonization strategy. Set science-based targets, track reduction progress, and stay compliant with climate regulations.
+                  {t('environmentalPage.decarbonisation.description')}
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">You get:</h3>
-                  <FeatureItem icon={Target} title="Science-based goal setting">
-                    Establish targets aligned with SBTi pathways for credible climate action.
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('environmentalPage.decarbonisation.featuresTitle')}</h3>
+                  <FeatureItem icon={Target} title={t('environmentalPage.decarbonisation.features.0.title')}>
+                    {t('environmentalPage.decarbonisation.features.0.description')}
                   </FeatureItem>
-                  <FeatureItem icon={Activity} title="Automated progress tracking">
-                    Monitor emissions reduction initiatives with real-time data and insights.
+                  <FeatureItem icon={Activity} title={t('environmentalPage.decarbonisation.features.1.title')}>
+                    {t('environmentalPage.decarbonisation.features.1.description')}
                   </FeatureItem>
-                  <FeatureItem icon={AlertCircle} title="Smart alerts">
-                    Receive notifications when targets are off-track or risk thresholds are breached.
+                  <FeatureItem icon={AlertCircle} title={t('environmentalPage.decarbonisation.features.2.title')}>
+                    {t('environmentalPage.decarbonisation.features.2.description')}
                   </FeatureItem>
-                  <FeatureItem icon={Globe} title="Full data integration">
-                    Connect with procurement, travel, and operations systems for comprehensive visibility.
+                  <FeatureItem icon={Globe} title={t('environmentalPage.decarbonisation.features.3.title')}>
+                    {t('environmentalPage.decarbonisation.features.3.description')}
                   </FeatureItem>
                 </div>
               </div>
@@ -192,32 +192,32 @@ const Environmental = () => {
         {/* Why Choose Quantifier Section */}
         <div className="my-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
           <h2 className="text-2xl font-bold mb-6 text-center text-slate-800">
-            Why Quantifier for Environmental Compliance?
+            {t('environmentalPage.whyQuantifier.title')}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 border-green-100 bg-white/80">
               <Zap className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">AI-Native & Autonomous</h3>
-              <p className="text-slate-600">Compliance agents collect data, follow up with teams, and drive timely reporting—so you don't have to.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('environmentalPage.whyQuantifier.features.aiNative.title')}</h3>
+              <p className="text-slate-600">{t('environmentalPage.whyQuantifier.features.aiNative.description')}</p>
             </Card>
             
             <Card className="p-6 border-green-100 bg-white/80">
               <Clock className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Always Up to Date</h3>
-              <p className="text-slate-600">Get notified when regulations change and update your processes automatically—no lag, no consulting fees.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('environmentalPage.whyQuantifier.features.alwaysUpdated.title')}</h3>
+              <p className="text-slate-600">{t('environmentalPage.whyQuantifier.features.alwaysUpdated.description')}</p>
             </Card>
             
             <Card className="p-6 border-green-100 bg-white/80">
               <Shield className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">End-to-End Coverage</h3>
-              <p className="text-slate-600">Manage ISO 14001, LCAs, GHG reporting, and decarbonization in one secure platform.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('environmentalPage.whyQuantifier.features.endToEnd.title')}</h3>
+              <p className="text-slate-600">{t('environmentalPage.whyQuantifier.features.endToEnd.description')}</p>
             </Card>
             
             <Card className="p-6 border-green-100 bg-white/80">
               <Leaf className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">Fast Implementation</h3>
-              <p className="text-slate-600">Set up your environmental workflows in minutes. No complex onboarding required.</p>
+              <h3 className="font-semibold text-slate-800 mb-2">{t('environmentalPage.whyQuantifier.features.fastImplementation.title')}</h3>
+              <p className="text-slate-600">{t('environmentalPage.whyQuantifier.features.fastImplementation.description')}</p>
             </Card>
           </div>
         </div>
@@ -225,14 +225,14 @@ const Environmental = () => {
         {/* Call to Action */}
         <div className="mt-10 text-center">
           <p className="text-lg text-slate-700 mb-6">
-            Ready to Make Environmental Compliance Effortless?
+            {t('environmentalPage.cta.title')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-green-600 hover:bg-green-700">
-              Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+              {t('environmentalPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50">
-              Watch a Quick Tour
+              {t('environmentalPage.cta.watchTour')}
             </Button>
           </div>
         </div>

@@ -93,7 +93,7 @@ const DataSecurity = () => {
                   The General Data Protection Regulation (GDPR) governs how organizations collect, process, and store EU citizens' personal data. Quantifier helps you systematically implement and document GDPR requirements, avoiding costly penalties.
                 </p>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">Key Benefits:</h3>
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('dataSecurityPage.gdpr.featuresTitle')}</h3>
                   <FeatureItem icon={FileCheck} title="Thorough Documentation">
                     Automated generation of required GDPR documentation, including DPIAs and processing records
                   </FeatureItem>
