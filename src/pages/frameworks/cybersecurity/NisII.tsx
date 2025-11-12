@@ -78,15 +78,15 @@ const NisII = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-xl blur-3xl"></div>
                     <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-xl font-semibold mb-4 text-white">Check how Quantifier can help you</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-white">{t('nisIIPage.hero.formTitle')}</h3>
                       <form className="space-y-4">
                         <div>
-                          <Label htmlFor="name" className="text-white/90 text-sm">Name</Label>
-                          <Input id="name" placeholder="Enter your name" className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400" />
+                          <Label htmlFor="name" className="text-white/90 text-sm">{t('nisIIPage.hero.nameLabel')}</Label>
+                          <Input id="name" placeholder={t('nisIIPage.hero.namePlaceholder')} className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400" />
                         </div>
                         <div>
-                          <Label htmlFor="email" className="text-white/90 text-sm">Work Email</Label>
-                          <Input id="email" type="email" placeholder="Enter your work email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400" />
+                          <Label htmlFor="email" className="text-white/90 text-sm">{t('nisIIPage.hero.emailLabel')}</Label>
+                          <Input id="email" type="email" placeholder={t('nisIIPage.hero.emailPlaceholder')} className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cyan-400" />
                         </div>
                         <div>
                           
@@ -95,11 +95,11 @@ const NisII = () => {
                         <div className="flex items-start space-x-2 pt-2">
                           <Checkbox id="marketing" className="border-white/30 data-[state=checked]:bg-cyan-500" />
                           <Label htmlFor="marketing" className="text-xs text-white/80 leading-relaxed">
-                            I consent to Quantifier processing my personal data to send me marketing communications about NIS2 compliance solutions. You can unsubscribe at any time.
+                            {t('nisIIPage.hero.marketingConsent')}
                           </Label>
                         </div>
                         <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
-                          Request Demo
+                          {t('nisIIPage.hero.requestDemoButton')}
                         </Button>
                       </form>
                     </div>
@@ -114,10 +114,10 @@ const NisII = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-              Understanding the NIS 2 Directive
+              {t('nisIIPage.understanding.title')}
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto">
-              The Network and Information Security (NIS) 2 Directive strengthens cybersecurity across the EU, expanding requirements to more sectors and organizations.
+              {t('nisIIPage.understanding.description')}
             </p>
           </div>
           
@@ -127,11 +127,11 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                   <FileText className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">What is NIS2?</CardTitle>
+                <CardTitle className="text-xl">{t('nisIIPage.understanding.whatIs.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  An EU directive that establishes cybersecurity requirements for essential and important entities across 18 sectors, including energy, transport, banking, health, and digital infrastructure.
+                  {t('nisIIPage.understanding.whatIs.description')}
                 </p>
               </CardContent>
             </Card>
@@ -141,14 +141,13 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
                   <Building className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">Who Must Comply?</CardTitle>
+                <CardTitle className="text-xl">{t('nisIIPage.understanding.whoMustComply.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-slate-600 space-y-2">
-                  <li>• Medium & large enterprises (50+ employees OR €10M+ turnover)</li>
-                  <li>• Essential entities in critical sectors</li>
-                  <li>• Important entities in key sectors</li>
-                  <li>• Digital service providers</li>
+                  {(t('nisIIPage.understanding.whoMustComply.items', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index}>• {item}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -158,15 +157,13 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">Key Requirements</CardTitle>
+                <CardTitle className="text-xl">{t('nisIIPage.understanding.keyRequirements.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-slate-600 space-y-2">
-                  <li>• Risk management measures</li>
-                  <li>• Incident handling & reporting</li>
-                  <li>• Business continuity planning</li>
-                  <li>• Supply chain security</li>
-                  <li>• Management accountability</li>
+                  {(t('nisIIPage.understanding.keyRequirements.items', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index}>• {item}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -178,10 +175,10 @@ const NisII = () => {
           <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 md:p-16">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
-                How Quantifier Transforms NIS2 Compliance
+                {t('nisIIPage.howQuantifierHelps.title')}
               </h2>
               <p className="text-xl text-slate-600 max-w-4xl mx-auto">
-                Our AI-native platform eliminates complexity, automates workflows, and ensures continuous compliance across your entire organization.
+                {t('nisIIPage.howQuantifierHelps.description')}
               </p>
             </div>
 
@@ -190,9 +187,9 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mb-4">
                   <Monitor className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Risk Assessment</h3>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('nisIIPage.howQuantifierHelps.features.riskAssessment.title')}</h3>
                 <p className="text-slate-600">
-                  AI-powered continuous monitoring identifies vulnerabilities and assesses risks across your digital infrastructure in real-time.
+                  {t('nisIIPage.howQuantifierHelps.features.riskAssessment.description')}
                 </p>
               </div>
 
@@ -200,9 +197,9 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Role-Based Workflows</h3>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('nisIIPage.howQuantifierHelps.features.roleBasedWorkflows.title')}</h3>
                 <p className="text-slate-600">
-                  Intelligent task assignment ensures the right people handle compliance activities across IT, legal, and operations teams.
+                  {t('nisIIPage.howQuantifierHelps.features.roleBasedWorkflows.description')}
                 </p>
               </div>
 
@@ -210,9 +207,9 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
                   <AlertTriangle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Incident Management</h3>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('nisIIPage.howQuantifierHelps.features.incidentManagement.title')}</h3>
                 <p className="text-slate-600">
-                  Streamlined incident detection, response, and reporting workflows that meet NIS2 notification requirements.
+                  {t('nisIIPage.howQuantifierHelps.features.incidentManagement.description')}
                 </p>
               </div>
 
@@ -220,25 +217,25 @@ const NisII = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Policy & Procedures Automation</h3>
-                <p className="text-slate-600">Deploy and manage all required cybersecurity policies with automated updates and compliance tracking.</p>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('nisIIPage.howQuantifierHelps.features.policyAutomation.title')}</h3>
+                <p className="text-slate-600">{t('nisIIPage.howQuantifierHelps.features.policyAutomation.description')}</p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
                   <Globe className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Multi-Jurisdiction Support</h3>
-                <p className="text-slate-600">Continuously assessing vendor risks, enforcing contractual obligations, and ensuring timely incident reporting across all partners.</p>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('nisIIPage.howQuantifierHelps.features.multiJurisdiction.title')}</h3>
+                <p className="text-slate-600">{t('nisIIPage.howQuantifierHelps.features.multiJurisdiction.description')}</p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
                   <FileText className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-slate-900">Audit-Ready Documentation</h3>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('nisIIPage.howQuantifierHelps.features.auditReady.title')}</h3>
                 <p className="text-slate-600">
-                  Generate comprehensive compliance reports and maintain audit trails that demonstrate NIS2 adherence.
+                  {t('nisIIPage.howQuantifierHelps.features.auditReady.description')}
                 </p>
               </div>
             </div>
@@ -249,14 +246,14 @@ const NisII = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-              NIS2 AI-Native Compliance Module
+              {t('nisIIPage.aiModule.title')}
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
-              Our AI-native compliance module helps organizations achieve NIS2 compliance using intelligent workflows — from onboarding and gap analysis to policy implementation and continuous monitoring.
+              {t('nisIIPage.aiModule.description')}
             </p>
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-slate-700 border border-cyan-200">
               <Shield className="w-5 h-5 mr-2 text-cyan-600" />
-              <span className="font-medium">Turn NIS2 From Obligation Into Operational Advantage
+              <span className="font-medium">{t('nisIIPage.aiModule.badge')}
             </span>
             </div>
           </div>
@@ -283,35 +280,29 @@ const NisII = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-              Results After Implementing Quantifier / NIS2
+              {t('nisIIPage.results.title')}
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
-              Upon completion of the implementation, your organization has a comprehensive system for risk, security, and compliance management.
+              {t('nisIIPage.results.description')}
             </p>
             
             {/* Success Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-4xl mx-auto">
               <div className="text-center animate-fade-in">
-                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">100%</div>
-                <div className="text-sm text-slate-600">NIS2 Compliance Coverage</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">{t('nisIIPage.results.metrics.compliance')}</div>
+                <div className="text-sm text-slate-600">{t('nisIIPage.results.metrics.complianceLabel')}</div>
               </div>
-              <div className="text-center animate-fade-in" style={{
-              animationDelay: '0.1s'
-            }}>
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">6</div>
-                <div className="text-sm text-slate-600">Key Areas Addressed</div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{t('nisIIPage.results.metrics.keyAreas')}</div>
+                <div className="text-sm text-slate-600">{t('nisIIPage.results.metrics.keyAreasLabel')}</div>
               </div>
-              <div className="text-center animate-fade-in" style={{
-              animationDelay: '0.2s'
-            }}>
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
-                <div className="text-sm text-slate-600">Continuous Monitoring</div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">{t('nisIIPage.results.metrics.monitoring')}</div>
+                <div className="text-sm text-slate-600">{t('nisIIPage.results.metrics.monitoringLabel')}</div>
               </div>
-              <div className="text-center animate-fade-in" style={{
-              animationDelay: '0.3s'
-            }}>
-                <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">24h</div>
-                <div className="text-sm text-slate-600">Incident Response Time</div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">{t('nisIIPage.results.metrics.responseTime')}</div>
+                <div className="text-sm text-slate-600">{t('nisIIPage.results.metrics.responseTimeLabel')}</div>
               </div>
             </div>
           </div>

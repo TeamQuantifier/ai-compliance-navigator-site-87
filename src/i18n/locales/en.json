@@ -2278,5 +2278,63 @@
       "bookDemo": "Book a Demo",
       "explorePlans": "Explore Plans"
     }
+  },
+  "nistPage": {
+    "title": "NIST Cybersecurity Framework",
+    "description": "Align your organization with the gold standard in cybersecurity with automated NIST implementation.",
+    "hero": {
+      "title": "NIST Compliance That Works for You",
+      "subtitle": "From Identify to Recover — implement NIST controls with automation.",
+      "button": "Book a Demo",
+      "dashboardAlt": "NIST Implementation Dashboard showing the five functions"
+    },
+    "mainContent": {
+      "badge": "NIST Cybersecurity Framework",
+      "title": "Align with the Gold Standard in Security",
+      "description": "Our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.",
+      "benefitsTitle": "Key Benefits:",
+      "benefits": [
+        "Intelligent asset and risk mapping",
+        "Proactive tasking aligned with NIST categories",
+        "Integrated reporting for regulators and auditors",
+        "Alerts when controls fall out of scope"
+      ],
+      "button": "Get NIST Implementation Assessment",
+      "fiveFunctions": {
+        "title": "The Five NIST Functions",
+        "identify": {
+          "title": "Identify:",
+          "description": "Develop understanding of risks to systems, assets, data and capabilities"
+        },
+        "protect": {
+          "title": "Protect:",
+          "description": "Develop and implement safeguards for critical services"
+        },
+        "detect": {
+          "title": "Detect:",
+          "description": "Develop and implement activities to identify cybersecurity events"
+        },
+        "respond": {
+          "title": "Respond:",
+          "description": "Develop and implement appropriate activities to act on a cybersecurity event"
+        },
+        "recover": {
+          "title": "Recover:",
+          "description": "Develop and implement appropriate activities to restore capabilities impaired due to a cybersecurity event"
+        }
+      }
+    },
+    "platformScreenshots": {
+      "title": "NIST Implementation Dashboard",
+      "description": "Monitor your NIST framework implementation with our comprehensive dashboard.",
+      "functionsTrackingAlt": "NIST Functions Tracking Dashboard",
+      "riskAssessmentAlt": "NIST Risk Assessment Interface"
+    },
+    "cta": {
+      "title": "Ready to Implement NIST Framework?",
+      "description": "Join organizations that trust our platform to automate their NIST compliance journey.",
+      "bookDemo": "Book a Demo",
+      "watchTour": "Watch Platform Tour"
+    }
   }
 }

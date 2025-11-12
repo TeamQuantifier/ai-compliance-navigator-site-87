@@ -47,79 +47,69 @@ const Nist = () => {
             <div className="md:w-1/2">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
                 <FileCheck className="w-5 h-5 mr-2" />
-                <span className="font-medium">NIST Cybersecurity Framework</span>
+                <span className="font-medium">{t('nistPage.mainContent.badge')}</span>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-heading">
-                Align with the Gold Standard in Security
+                {t('nistPage.mainContent.title')}
               </h2>
               <p className="text-lg text-slate-700 mb-6">
-                Our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.
+                {t('nistPage.mainContent.description')}
               </p>
               
-              <h4 className="font-semibold text-lg mb-3">Key Benefits:</h4>
+              <h4 className="font-semibold text-lg mb-3">{t('nistPage.mainContent.benefitsTitle')}</h4>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <span>Intelligent asset and risk mapping</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <span>Proactive tasking aligned with NIST categories</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <span>Integrated reporting for regulators and auditors</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                  <span>Alerts when controls fall out of scope</span>
-                </li>
+                {(t('nistPage.mainContent.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
               </ul>
               <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                Get NIST Implementation Assessment
+                {t('nistPage.mainContent.button')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
             <div className="md:w-1/2">
               <Card className="border-compliance-100">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-xl">The Five NIST Functions</CardTitle>
+                  <CardTitle className="text-xl">{t('nistPage.mainContent.fiveFunctions.title')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
                       <div>
-                        <span className="font-medium">Identify:</span>
-                        <span className="text-slate-600 ml-1">Develop understanding of risks to systems, assets, data and capabilities</span>
+                        <span className="font-medium">{t('nistPage.mainContent.fiveFunctions.identify.title')}</span>
+                        <span className="text-slate-600 ml-1">{t('nistPage.mainContent.fiveFunctions.identify.description')}</span>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
                       <div>
-                        <span className="font-medium">Protect:</span>
-                        <span className="text-slate-600 ml-1">Develop and implement safeguards for critical services</span>
+                        <span className="font-medium">{t('nistPage.mainContent.fiveFunctions.protect.title')}</span>
+                        <span className="text-slate-600 ml-1">{t('nistPage.mainContent.fiveFunctions.protect.description')}</span>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
                       <div>
-                        <span className="font-medium">Detect:</span>
-                        <span className="text-slate-600 ml-1">Develop and implement activities to identify cybersecurity events</span>
+                        <span className="font-medium">{t('nistPage.mainContent.fiveFunctions.detect.title')}</span>
+                        <span className="text-slate-600 ml-1">{t('nistPage.mainContent.fiveFunctions.detect.description')}</span>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
                       <div>
-                        <span className="font-medium">Respond:</span>
-                        <span className="text-slate-600 ml-1">Develop and implement appropriate activities to act on a cybersecurity event</span>
+                        <span className="font-medium">{t('nistPage.mainContent.fiveFunctions.respond.title')}</span>
+                        <span className="text-slate-600 ml-1">{t('nistPage.mainContent.fiveFunctions.respond.description')}</span>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
                       <div>
-                        <span className="font-medium">Recover:</span>
-                        <span className="text-slate-600 ml-1">Develop and implement appropriate activities to restore capabilities impaired due to a cybersecurity event</span>
+                        <span className="font-medium">{t('nistPage.mainContent.fiveFunctions.recover.title')}</span>
+                        <span className="text-slate-600 ml-1">{t('nistPage.mainContent.fiveFunctions.recover.description')}</span>
                       </div>
                     </li>
                   </ul>
@@ -134,22 +124,22 @@ const Nist = () => {
           <div className="bg-gradient-to-r from-compliance-100 to-slate-100 p-6 rounded-xl">
             <div className="flex flex-col items-center text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-compliance-900">
-                NIST Implementation Dashboard
+                {t('nistPage.platformScreenshots.title')}
               </h2>
               <p className="text-lg text-slate-700 max-w-2xl">
-                Monitor your NIST framework implementation with our comprehensive dashboard.
+                {t('nistPage.platformScreenshots.description')}
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <img 
                 src="/mockups/nist-functions-tracking.png" 
-                alt="NIST Functions Tracking Dashboard" 
+                alt={t('nistPage.platformScreenshots.functionsTrackingAlt')}
                 className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
               />
               <img 
                 src="/mockups/nist-risk-assessment.png" 
-                alt="NIST Risk Assessment Interface" 
+                alt={t('nistPage.platformScreenshots.riskAssessmentAlt')}
                 className="rounded-lg shadow-lg border border-compliance-200 w-full object-cover h-72"
               />
             </div>
@@ -161,19 +151,19 @@ const Nist = () => {
           <div className="bg-gradient-to-r from-compliance-800 to-innovation-700 rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Implement NIST Framework?
+                {t('nistPage.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
-                Join organizations that trust our platform to automate their NIST compliance journey.
+                {t('nistPage.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8">
-                  <Link to="/contact" className="flex items-center">
-                    Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  <Link to={`/${currentLocale}/contact`} className="flex items-center">
+                    {t('nistPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                  Watch Platform Tour
+                  {t('nistPage.cta.watchTour')}
                 </Button>
               </div>
             </div>
