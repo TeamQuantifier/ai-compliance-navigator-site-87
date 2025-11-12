@@ -39,6 +39,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
   const [currentLocale, setCurrentLocale] = useState<Locale>(getLocaleFromPath());
 
+  // Synchronize i18n language on mount
+  useEffect(() => {
+    const initialLocale = getLocaleFromPath();
+    i18n.changeLanguage(initialLocale);
+    setCurrentLocale(initialLocale);
+  }, [i18n]);
+
+  // Handle browser navigation (back/forward buttons)
   useEffect(() => {
     const handleLocationChange = () => {
       const newLocale = getLocaleFromPath();
@@ -48,13 +56,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         localStorage.setItem('preferred-language', newLocale);
       }
     };
-
-    // Initial sync
-    const initialLocale = getLocaleFromPath();
-    if (initialLocale !== currentLocale) {
-      setCurrentLocale(initialLocale);
-      i18n.changeLanguage(initialLocale);
-    }
 
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
