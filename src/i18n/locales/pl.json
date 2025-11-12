@@ -866,42 +866,6 @@
         "description": "Nasza platforma wspiera najważniejsze standardy cyberbezpieczeństwa, pomagając pozostać zgodnym z wieloma standardami jednocześnie."
       }
     },
-    "soc": {
-      "title": "SOC 1 i SOC 2",
-      "subtitle": "Zademonstruj zaufanie swoim klientom, inwestorom i partnerom",
-      "description": "Nasza platforma zapewnia ciągłą gotowość dla SOC 1 i SOC 2, obejmując kontrole związane z obsługą danych, prywatnością, dostępnością i nie tylko.",
-      "featuresTitle": "Otrzymujesz:",
-      "features": [
-        "Automatyczne przypisywanie zadań i zbieranie dowodów",
-        "Monitorowanie kontroli zgodnie z kryteriami Trust Services",
-        "Dashboardy gotowości audytowej w czasie rzeczywistym"
-      ],
-      "button": "Dowiedz się więcej"
-    },
-    "nis2": {
-      "title": "Dyrektywa NIS 2",
-      "subtitle": "Wyprzedź regulacje dotyczące bezpieczeństwa infrastruktury krytycznej",
-      "description": "NIS 2 rozszerza obowiązki w zakresie cyberbezpieczeństwa w sektorach w UE. Nasza platforma utrzymuje Cię na przedzie—automatycznie identyfikując ryzyka i zapewniając zgodność.",
-      "featuresTitle": "Otrzymujesz:",
-      "features": [
-        "Agenty AI prowadzące kontrole polityk w czasie rzeczywistym",
-        "Działania oparte na rolach dla zespołów IT, prawnych i operacyjnych",
-        "Analiza luk zgodna z wymogami NIS 2"
-      ],
-      "button": "Dowiedz się więcej"
-    },
-    "nist": {
-      "title": "Standard NIST",
-      "subtitle": "Dostosuj swoją organizację do złotego standardu bezpieczeństwa",
-      "description": "Od Identify do Recover—nasza platforma automatyzuje wdrażanie NIST poprzez ciągłe mapowanie Twoich zasobów, ryzyk i działań łagodzących do pięciu funkcji NIST.",
-      "featuresTitle": "Otrzymujesz:",
-      "features": [
-        "Inteligentne mapowanie zasobów i ryzyka",
-        "Proaktywne zadania zgodne z kategoriami NIST",
-        "Zintegrowane raportowanie dla organów regulacyjnych i audytorów"
-      ],
-      "button": "Dowiedz się więcej"
-    },
     "whyPlatform": {
       "badge": "Dlaczego wybierz naszą platformę",
       "title": "Dlaczego nasza platforma dla compliance w cyberbezpieczeństwie?",
@@ -942,6 +906,16 @@
       }
     },
     "soc": {
+      "title": "SOC 1 i SOC 2",
+      "subtitle": "Zademonstruj zaufanie swoim klientom, inwestorom i partnerom",
+      "description": "Nasza platforma zapewnia ciągłą gotowość dla SOC 1 i SOC 2, obejmując kontrole związane z obsługą danych, prywatnością, dostępnością i nie tylko.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        "Automatyczne przypisywanie zadań i zbieranie dowodów",
+        "Monitorowanie kontroli zgodnie z kryteriami Trust Services",
+        "Dashboardy gotowości audytowej w czasie rzeczywistym"
+      ],
+      "button": "Dowiedz się więcej",
       "detailedContent": {
         "badge": "SOC 1 i SOC 2",
         "title": "Uproszczona zgodność z Trust Services",
@@ -996,6 +970,16 @@
       }
     },
     "nis2": {
+      "title": "Dyrektywa NIS 2",
+      "subtitle": "Wyprzedź regulacje dotyczące bezpieczeństwa infrastruktury krytycznej",
+      "description": "NIS 2 rozszerza obowiązki w zakresie cyberbezpieczeństwa w sektorach w UE. Nasza platforma utrzymuje Cię na przedzie—automatycznie identyfikując ryzyka i zapewniając zgodność.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        "Agenty AI prowadzące kontrole polityk w czasie rzeczywistym",
+        "Działania oparte na rolach dla zespołów IT, prawnych i operacyjnych",
+        "Analiza luk zgodna z wymogami NIS 2"
+      ],
+      "button": "Dowiedz się więcej",
       "detailedContent": {
         "badge": "Dyrektywa NIS 2",
         "title": "Zgodność z regulacjami cyberbezpieczeństwa UE",
@@ -1051,6 +1035,16 @@
       }
     },
     "nist": {
+      "title": "Standard NIST",
+      "subtitle": "Dostosuj swoją organizację do złotego standardu bezpieczeństwa",
+      "description": "Od Identify do Recover—nasza platforma automatyzuje wdrażanie NIST poprzez ciągłe mapowanie Twoich zasobów, ryzyk i działań łagodzących do pięciu funkcji NIST.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        "Inteligentne mapowanie zasobów i ryzyka",
+        "Proaktywne zadania zgodne z kategoriami NIST",
+        "Zintegrowane raportowanie dla organów regulacyjnych i audytorów"
+      ],
+      "button": "Dowiedz się więcej",
       "detailedContent": {
         "badge": "Ramka NIST",
         "title": "Automatyzacja ramki cyberbezpieczeństwa NIST",

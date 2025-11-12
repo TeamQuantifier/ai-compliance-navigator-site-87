@@ -1026,42 +1026,6 @@
         "description": "Our platform supports the most important cybersecurity frameworks, helping you stay compliant across multiple standards simultaneously."
       }
     },
-    "soc": {
-      "title": "SOC 1 & SOC 2",
-      "subtitle": "Demonstrate trust to your customers, investors, and partners",
-      "description": "Our platform ensures continuous readiness for both SOC 1 and SOC 2, covering controls around data handling, privacy, availability, and more.",
-      "featuresTitle": "You get:",
-      "features": [
-        "Automated task assignment & evidence collection",
-        "Control monitoring across Trust Services Criteria",
-        "Real-time audit readiness dashboards"
-      ],
-      "button": "Learn More"
-    },
-    "nis2": {
-      "title": "NIS 2 Directive",
-      "subtitle": "Stay ahead of critical infrastructure security regulations",
-      "description": "NIS 2 expands cybersecurity obligations across sectors in the EU. Our platform keeps you ahead—automatically identifying risks and ensuring compliance.",
-      "featuresTitle": "You get:",
-      "features": [
-        "AI agents driving real-time policy checks",
-        "Role-based actioning for IT, legal, and ops teams",
-        "Gap analysis aligned with NIS 2 mandates"
-      ],
-      "button": "Learn More"
-    },
-    "nist": {
-      "title": "NIST Framework",
-      "subtitle": "Align your organization to the gold standard in security",
-      "description": "From Identify to Recover—our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.",
-      "featuresTitle": "You get:",
-      "features": [
-        "Intelligent asset and risk mapping",
-        "Proactive tasking aligned with NIST categories",
-        "Integrated reporting for regulators and auditors"
-      ],
-      "button": "Learn More"
-    },
     "whyPlatform": {
       "badge": "Why Choose Our Platform",
       "title": "Why Our Platform for Cybersecurity Compliance?",
@@ -1102,6 +1066,16 @@
       }
     },
     "soc": {
+      "title": "SOC 1 & SOC 2",
+      "subtitle": "Demonstrate trust to your customers, investors, and partners",
+      "description": "Our platform ensures continuous readiness for both SOC 1 and SOC 2, covering controls around data handling, privacy, availability, and more.",
+      "featuresTitle": "You get:",
+      "features": [
+        "Automated task assignment & evidence collection",
+        "Control monitoring across Trust Services Criteria",
+        "Real-time audit readiness dashboards"
+      ],
+      "button": "Learn More",
       "detailedContent": {
         "badge": "SOC 1 & SOC 2",
         "title": "Trust Services Compliance Simplified",
@@ -1156,6 +1130,16 @@
       }
     },
     "nis2": {
+      "title": "NIS 2 Directive",
+      "subtitle": "Stay ahead of critical infrastructure security regulations",
+      "description": "NIS 2 expands cybersecurity obligations across sectors in the EU. Our platform keeps you ahead—automatically identifying risks and ensuring compliance.",
+      "featuresTitle": "You get:",
+      "features": [
+        "AI agents driving real-time policy checks",
+        "Role-based actioning for IT, legal, and ops teams",
+        "Gap analysis aligned with NIS 2 mandates"
+      ],
+      "button": "Learn More",
       "detailedContent": {
         "badge": "NIS 2 Directive",
         "title": "EU Cybersecurity Regulatory Compliance",
@@ -1211,6 +1195,16 @@
       }
     },
     "nist": {
+      "title": "NIST Framework",
+      "subtitle": "Align your organization to the gold standard in security",
+      "description": "From Identify to Recover—our platform automates NIST implementation by continuously mapping your assets, risks, and mitigations to the five NIST functions.",
+      "featuresTitle": "You get:",
+      "features": [
+        "Intelligent asset and risk mapping",
+        "Proactive tasking aligned with NIST categories",
+        "Integrated reporting for regulators and auditors"
+      ],
+      "button": "Learn More",
       "detailedContent": {
         "badge": "NIST Framework",
         "title": "NIST Cybersecurity Framework Automation",
