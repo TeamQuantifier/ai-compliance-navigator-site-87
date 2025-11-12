@@ -1090,8 +1090,194 @@
         "crossTeam": {
           "title": "Cross-Team Collaboration",
           "description": "Compliance, IT, legal, and operations teams all aligned in one platform."
+        },
+        "globalReady": {
+          "title": "Global-Ready",
+          "description": "Designed for multi-entity, multi-region compliance across various regulatory landscapes."
+        },
+        "evidenceAutomation": {
+          "title": "Evidence Automation",
+          "description": "Automatically collect, organize, and maintain evidence needed for audits and certification."
         }
       }
+    },
+    "soc": {
+      "detailedContent": {
+        "badge": "SOC 1 & SOC 2",
+        "title": "Trust Services Compliance Simplified",
+        "description": "SOC compliance is critical for building trust with customers and partners. Our platform automates the entire SOC 1 and SOC 2 compliance journey, from initial gap assessment to ongoing monitoring.",
+        "checklist": [
+          "Automated evidence collection across all TSCs (Security, Availability, Processing Integrity, Confidentiality, Privacy)",
+          "Continuous compliance monitoring with real-time alerting",
+          "Pre-audit readiness assessments and remediation"
+        ],
+        "featuresSection": {
+          "title": "SOC Compliance Features",
+          "description": "Our platform covers all aspects of SOC compliance, making it easier for your organization to achieve and maintain certification."
+        },
+        "features": {
+          "trustServices": {
+            "title": "Trust Services Criteria Mapping",
+            "description": "Comprehensive mapping of all Trust Services Criteria (TSC) to your organization's controls, policies, and procedures. Our AI automatically identifies gaps and suggests remediation actions.",
+            "items": [
+              "Complete coverage of all TSC categories",
+              "Automated control implementation tracking",
+              "Control testing and validation workflows"
+            ]
+          },
+          "evidenceCollection": {
+            "title": "Evidence Collection & Management",
+            "description": "Streamlined evidence collection process with automated requests, reminders, and approvals. All evidence is securely stored and organized for easy retrieval during audits.",
+            "items": [
+              "Automated evidence collection schedules",
+              "Role-based assignments and notifications",
+              "Evidence review and approval workflows"
+            ]
+          },
+          "auditPreparation": {
+            "title": "Audit Preparation & Support",
+            "description": "Comprehensive audit preparation tools including readiness assessments, remediation planning, and auditor portal for secure document sharing and collaboration.",
+            "items": [
+              "Pre-audit readiness assessments",
+              "Secure auditor portal with controlled access",
+              "Audit finding tracking and remediation"
+            ]
+          },
+          "continuousMonitoring": {
+            "title": "Continuous Monitoring",
+            "description": "Real-time monitoring of control effectiveness with alerts for deviations or failures. Ensures your organization maintains compliance between audit cycles.",
+            "items": [
+              "Real-time control monitoring",
+              "Automated testing of technical controls",
+              "Deviation alerting and remediation tracking"
+            ]
+          }
+        }
+      }
+    },
+    "nis2": {
+      "detailedContent": {
+        "badge": "NIS 2 Directive",
+        "title": "EU Cybersecurity Regulatory Compliance",
+        "description": "The NIS 2 Directive expands cybersecurity obligations across more sectors in the EU. Our platform helps organizations prepare for and maintain compliance with these complex requirements.",
+        "checklist": [
+          "Comprehensive risk management framework aligned with NIS 2 requirements",
+          "Incident reporting and management workflows",
+          "Supply chain security assessment and monitoring"
+        ],
+        "featuresSection": {
+          "title": "NIS 2 Compliance Features",
+          "description": "Our platform provides comprehensive support for all aspects of NIS 2 compliance, from risk assessment to incident reporting."
+        },
+        "features": {
+          "riskAssessment": {
+            "title": "Risk Assessment & Management",
+            "description": "Structured risk assessment methodology aligned with NIS 2 requirements, including threat modeling, vulnerability assessment, and risk treatment planning.",
+            "items": [
+              "Automated risk assessment workflows",
+              "Risk treatment planning and tracking",
+              "Regular risk review and reassessment"
+            ]
+          },
+          "incidentManagement": {
+            "title": "Incident Management & Reporting",
+            "description": "Comprehensive incident management system including detection, classification, response, and mandatory reporting to competent authorities.",
+            "items": [
+              "Incident classification and severity assessment",
+              "Automated notification workflows",
+              "Regulatory reporting templates and tracking"
+            ]
+          },
+          "supplyChainSecurity": {
+            "title": "Supply Chain Security",
+            "description": "Tools for assessing and monitoring the security of your supply chain, including vendor risk assessments and ongoing monitoring.",
+            "items": [
+              "Vendor security assessment questionnaires",
+              "Third-party risk scoring and monitoring",
+              "Supplier security requirements management"
+            ]
+          },
+          "governance": {
+            "title": "Governance & Documentation",
+            "description": "Comprehensive governance framework including policy management, training, and documentation required for NIS 2 compliance.",
+            "items": [
+              "Policy and procedure management",
+              "Security awareness training tracking",
+              "Governance role assignment and monitoring"
+            ]
+          }
+        },
+        "learnMoreButton": "Learn More About NIS2 Compliance"
+      }
+    },
+    "nist": {
+      "detailedContent": {
+        "badge": "NIST Framework",
+        "title": "NIST Cybersecurity Framework Automation",
+        "description": "The NIST Cybersecurity Framework provides a structured approach to managing cybersecurity risk. Our platform automates the implementation and continuous monitoring of NIST controls.",
+        "checklist": [
+          "Complete coverage of all five NIST functions: Identify, Protect, Detect, Respond, Recover",
+          "Automated asset inventory and classification",
+          "Risk-based approach to security control implementation"
+        ],
+        "functionsSection": {
+          "title": "NIST Framework Functions",
+          "description": "Our platform automates each of the five core NIST Cybersecurity Framework functions, ensuring complete coverage."
+        },
+        "functions": {
+          "identify": {
+            "title": "Identify",
+            "description": "Develop an organizational understanding to manage cybersecurity risk to systems, assets, data, and capabilities.",
+            "items": [
+              "Automated asset management",
+              "Business environment mapping",
+              "Risk assessment automation"
+            ]
+          },
+          "protect": {
+            "title": "Protect",
+            "description": "Develop and implement appropriate safeguards to ensure delivery of critical infrastructure services.",
+            "items": [
+              "Access control management",
+              "Data security monitoring",
+              "Information protection processes"
+            ]
+          },
+          "detect": {
+            "title": "Detect",
+            "description": "Develop and implement appropriate activities to identify the occurrence of a cybersecurity event.",
+            "items": [
+              "Continuous monitoring automation",
+              "Anomaly detection",
+              "Event detection workflow"
+            ]
+          },
+          "respond": {
+            "title": "Respond",
+            "description": "Develop and implement appropriate activities to take action regarding a detected cybersecurity incident.",
+            "items": [
+              "Response planning automation",
+              "Communications coordination",
+              "Analysis and mitigation workflows"
+            ]
+          },
+          "recover": {
+            "title": "Recover",
+            "description": "Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services.",
+            "items": [
+              "Recovery planning automation",
+              "Improvements tracking",
+              "Communications management"
+            ]
+          }
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Streamline Your Cybersecurity Compliance?",
+      "description": "Join organizations that trust our platform to automate their cybersecurity compliance journey.",
+      "bookDemo": "Book a Demo",
+      "watchTour": "Watch Platform Tour"
     },
     "cta": {
       "title": "Ready to Transform Your Cybersecurity Compliance?",

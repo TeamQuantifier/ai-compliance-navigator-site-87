@@ -930,8 +930,194 @@
         "crossTeam": {
           "title": "Współpraca międzyzespołowa",
           "description": "Zespoły compliance, IT, prawne i operacyjne—wszyscy zharmonizowani w jednej platformie."
+        },
+        "globalReady": {
+          "title": "Gotowy globalnie",
+          "description": "Zaprojektowany dla compliance wielojednostkowego, wieloregionalnego w różnych krajobrazach regulacyjnych."
+        },
+        "evidenceAutomation": {
+          "title": "Automatyzacja dowodów",
+          "description": "Automatycznie zbieraj, organizuj i utrzymuj dowody potrzebne do audytów i certyfikacji."
         }
       }
+    },
+    "soc": {
+      "detailedContent": {
+        "badge": "SOC 1 i SOC 2",
+        "title": "Uproszczona zgodność z Trust Services",
+        "description": "Zgodność z SOC jest kluczowa dla budowania zaufania z klientami i partnerami. Nasza platforma automatyzuje całą podróż zgodności z SOC 1 i SOC 2, od początkowej oceny luk po bieżące monitorowanie.",
+        "checklist": [
+          "Automatyczne zbieranie dowodów we wszystkich TSC (Bezpieczeństwo, Dostępność, Integralność Przetwarzania, Poufność, Prywatność)",
+          "Ciągłe monitorowanie zgodności z alertami w czasie rzeczywistym",
+          "Oceny gotowości przed audytem i działania naprawcze"
+        ],
+        "featuresSection": {
+          "title": "Funkcje zgodności SOC",
+          "description": "Nasza platforma obejmuje wszystkie aspekty zgodności SOC, ułatwiając organizacji osiągnięcie i utrzymanie certyfikacji."
+        },
+        "features": {
+          "trustServices": {
+            "title": "Mapowanie kryteriów Trust Services",
+            "description": "Kompleksowe mapowanie wszystkich kryteriów Trust Services (TSC) na kontrole, polityki i procedury Twojej organizacji. Nasze AI automatycznie identyfikuje luki i sugeruje działania naprawcze.",
+            "items": [
+              "Pełne pokrycie wszystkich kategorii TSC",
+              "Automatyczne śledzenie implementacji kontroli",
+              "Przepływy testowania i walidacji kontroli"
+            ]
+          },
+          "evidenceCollection": {
+            "title": "Zbieranie i zarządzanie dowodami",
+            "description": "Usprawniony proces zbierania dowodów z automatycznymi żądaniami, przypomnieniami i zatwierdzeniami. Wszystkie dowody są bezpiecznie przechowywane i zorganizowane dla łatwego dostępu podczas audytów.",
+            "items": [
+              "Automatyczne harmonogramy zbierania dowodów",
+              "Przypisania i powiadomienia oparte na rolach",
+              "Przepływy przeglądania i zatwierdzania dowodów"
+            ]
+          },
+          "auditPreparation": {
+            "title": "Przygotowanie do audytu i wsparcie",
+            "description": "Kompleksowe narzędzia do przygotowania audytu, w tym oceny gotowości, planowanie działań naprawczych i portal audytora do bezpiecznego udostępniania dokumentów i współpracy.",
+            "items": [
+              "Oceny gotowości przed audytem",
+              "Bezpieczny portal audytora z kontrolowanym dostępem",
+              "Śledzenie ustaleń audytu i działań naprawczych"
+            ]
+          },
+          "continuousMonitoring": {
+            "title": "Ciągłe monitorowanie",
+            "description": "Monitorowanie w czasie rzeczywistym skuteczności kontroli z alertami o odchyleniach lub awariach. Zapewnia, że organizacja utrzymuje zgodność między cyklami audytowymi.",
+            "items": [
+              "Monitorowanie kontroli w czasie rzeczywistym",
+              "Automatyczne testowanie kontroli technicznych",
+              "Alerty o odchyleniach i śledzenie działań naprawczych"
+            ]
+          }
+        }
+      }
+    },
+    "nis2": {
+      "detailedContent": {
+        "badge": "Dyrektywa NIS 2",
+        "title": "Zgodność z regulacjami cyberbezpieczeństwa UE",
+        "description": "Dyrektywa NIS 2 rozszerza obowiązki w zakresie cyberbezpieczeństwa w większej liczbie sektorów w UE. Nasza platforma pomaga organizacjom przygotować się i utrzymać zgodność z tymi złożonymi wymogami.",
+        "checklist": [
+          "Kompleksowe ramy zarządzania ryzykiem zgodne z wymogami NIS 2",
+          "Przepływy raportowania i zarządzania incydentami",
+          "Ocena i monitorowanie bezpieczeństwa łańcucha dostaw"
+        ],
+        "featuresSection": {
+          "title": "Funkcje zgodności NIS 2",
+          "description": "Nasza platforma zapewnia kompleksowe wsparcie dla wszystkich aspektów zgodności NIS 2, od oceny ryzyka po raportowanie incydentów."
+        },
+        "features": {
+          "riskAssessment": {
+            "title": "Ocena i zarządzanie ryzykiem",
+            "description": "Ustrukturyzowana metodologia oceny ryzyka zgodna z wymogami NIS 2, w tym modelowanie zagrożeń, ocena podatności i planowanie traktowania ryzyka.",
+            "items": [
+              "Automatyczne przepływy oceny ryzyka",
+              "Planowanie i śledzenie traktowania ryzyka",
+              "Regularne przeglądy i ponowne oceny ryzyka"
+            ]
+          },
+          "incidentManagement": {
+            "title": "Zarządzanie incydentami i raportowanie",
+            "description": "Kompleksowy system zarządzania incydentami, w tym wykrywanie, klasyfikacja, reakcja i obowiązkowe raportowanie do właściwych organów.",
+            "items": [
+              "Klasyfikacja incydentów i ocena powagi",
+              "Automatyczne przepływy powiadomień",
+              "Szablony raportowania regulacyjnego i śledzenie"
+            ]
+          },
+          "supplyChainSecurity": {
+            "title": "Bezpieczeństwo łańcucha dostaw",
+            "description": "Narzędzia do oceny i monitorowania bezpieczeństwa łańcucha dostaw, w tym oceny ryzyka dostawców i bieżące monitorowanie.",
+            "items": [
+              "Kwestionariusze oceny bezpieczeństwa dostawców",
+              "Ocena i monitorowanie ryzyka stron trzecich",
+              "Zarządzanie wymogami bezpieczeństwa dostawców"
+            ]
+          },
+          "governance": {
+            "title": "Zarządzanie i dokumentacja",
+            "description": "Kompleksowe ramy zarządzania, w tym zarządzanie politykami, szkolenia i dokumentacja wymagana do zgodności z NIS 2.",
+            "items": [
+              "Zarządzanie politykami i procedurami",
+              "Śledzenie szkoleń z zakresu świadomości bezpieczeństwa",
+              "Przypisywanie i monitorowanie ról zarządzania"
+            ]
+          }
+        },
+        "learnMoreButton": "Dowiedz się więcej o zgodności z NIS2"
+      }
+    },
+    "nist": {
+      "detailedContent": {
+        "badge": "Ramka NIST",
+        "title": "Automatyzacja ramki cyberbezpieczeństwa NIST",
+        "description": "Ramka cyberbezpieczeństwa NIST zapewnia ustrukturyzowane podejście do zarządzania ryzykiem cyberbezpieczeństwa. Nasza platforma automatyzuje implementację i ciągłe monitorowanie kontroli NIST.",
+        "checklist": [
+          "Pełne pokrycie wszystkich pięciu funkcji NIST: Identyfikuj, Chroń, Wykrywaj, Reaguj, Odzyskaj",
+          "Automatyczna inwentaryzacja i klasyfikacja zasobów",
+          "Podejście oparte na ryzyku do implementacji kontroli bezpieczeństwa"
+        ],
+        "functionsSection": {
+          "title": "Funkcje ramki NIST",
+          "description": "Nasza platforma automatyzuje każdą z pięciu podstawowych funkcji ramki cyberbezpieczeństwa NIST, zapewniając pełne pokrycie."
+        },
+        "functions": {
+          "identify": {
+            "title": "Identyfikuj",
+            "description": "Rozwijaj organizacyjne zrozumienie do zarządzania ryzykiem cyberbezpieczeństwa systemów, zasobów, danych i możliwości.",
+            "items": [
+              "Automatyczne zarządzanie zasobami",
+              "Mapowanie środowiska biznesowego",
+              "Automatyzacja oceny ryzyka"
+            ]
+          },
+          "protect": {
+            "title": "Chroń",
+            "description": "Opracuj i wdróż odpowiednie zabezpieczenia, aby zapewnić dostarczanie usług infrastruktury krytycznej.",
+            "items": [
+              "Zarządzanie kontrolą dostępu",
+              "Monitorowanie bezpieczeństwa danych",
+              "Procesy ochrony informacji"
+            ]
+          },
+          "detect": {
+            "title": "Wykrywaj",
+            "description": "Opracuj i wdróż odpowiednie działania w celu zidentyfikowania wystąpienia zdarzenia cyberbezpieczeństwa.",
+            "items": [
+              "Automatyzacja ciągłego monitorowania",
+              "Wykrywanie anomalii",
+              "Przepływ wykrywania zdarzeń"
+            ]
+          },
+          "respond": {
+            "title": "Reaguj",
+            "description": "Opracuj i wdróż odpowiednie działania w celu podjęcia akcji dotyczącej wykrytego incydentu cyberbezpieczeństwa.",
+            "items": [
+              "Automatyzacja planowania reakcji",
+              "Koordynacja komunikacji",
+              "Przepływy analizy i łagodzenia"
+            ]
+          },
+          "recover": {
+            "title": "Odzyskaj",
+            "description": "Opracuj i wdróż odpowiednie działania w celu utrzymania planów odporności i przywrócenia wszelkich możliwości lub usług.",
+            "items": [
+              "Automatyzacja planowania odzyskiwania",
+              "Śledzenie ulepszeń",
+              "Zarządzanie komunikacją"
+            ]
+          }
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Gotowy na usprawnienie zgodności z cyberbezpieczeństwem?",
+      "description": "Dołącz do organizacji, które ufają naszej platformie w automatyzacji swojej podróży zgodności z cyberbezpieczeństwem.",
+      "bookDemo": "Umów demo",
+      "watchTour": "Obejrzyj wycieczkę po platformie"
     },
     "cta": {
       "title": "Gotowy na transformację compliance w cyberbezpieczeństwie?",
