@@ -664,5 +664,124 @@
       "description": "Skontaktuj się z nami, aby dowiedzieć się więcej o naszym programie partnerskim i jak możemy rozwijać się razem.",
       "button": "Zostań partnerem"
     }
+  },
+  "byRoles": {
+    "pageTitle": "Stworzone dla każdej roli",
+    "pageDescription": "Niezależnie od tego, czy kierujesz strategią, dostarczasz dane, czy weryfikujesz kontrole — Quantifier jest dostosowany do Twoich potrzeb.",
+    "hero": {
+      "title": "Dostęp i funkcjonalność dostosowane do roli",
+      "description": "Rozumiemy, że różne role mają różne potrzeby compliance. Nasza platforma zapewnia dostosowane doświadczenia dla menedżerów, współpracowników i audytorów, zapewniając każdemu odpowiednie narzędzia do ich konkretnych obowiązków."
+    },
+    "tabs": {
+      "managers": "Menedżerowie",
+      "contributors": "Współpracownicy",
+      "auditors": "Audytorzy"
+    },
+    "managers": {
+      "title": "Kontrola na poziomie zarządu. Wgląd w czasie rzeczywistym. Jedna platforma.",
+      "whoTheyAre": "Kim są:",
+      "whoDescription": "Menedżerowie to liderzy compliance, governance i zarządzania ryzykiem — od CFO po kluczowych menedżerów i dyrektorów szczebla zarządu — odpowiedzialni za nadzór, planowanie strategiczne i zapewnienie, że organizacja jest zawsze gotowa na audyt.",
+      "whatTheyGet": "Co otrzymują dzięki Quantifier:",
+      "feature1": "Ujednolicony widok compliance dla zespołów, standardów i podmiotów",
+      "feature2": "Dashboardy zarządcze z oceną ryzyka, śledzeniem postępów i nadzorem harmonogramu",
+      "feature3": "Jasność co do tego, co jest zrobione, co oczekuje i gdzie leżą największe ryzyka",
+      "feature4": "Pełna widoczność wkładu zespołu i wąskich gardeł",
+      "feature5": "Jedna platforma, która konsoliduje workflow compliance, dokumenty i audyty",
+      "dashboard": {
+        "title": "Dashboard zarządczy",
+        "riskStatus": "Status ryzyka",
+        "taskCompletion": "Ukończenie zadań",
+        "frameworks": "Standardy",
+        "active": "aktywne",
+        "dueTasks": "Zadania do wykonania",
+        "thisWeek": "w tym tygodniu",
+        "frameworkProgress": "Postęp standardów"
+      },
+      "aiAgent": {
+        "title": "Co robi AI Agent Officer:",
+        "feature1": "Deleguje i przypisuje zadania w całej organizacji",
+        "feature2": "Zapewnia, że integracje, dane i dokumentacja są aktualne",
+        "feature3": "Rekomenduje plany wdrożenia standardów takich jak ISO 27001 czy CSRD",
+        "feature4": "Prowadzi firmę w kierunku ciągłej gotowości do audytu"
+      },
+      "outcome": {
+        "title": "Rezultat:",
+        "description": "Dokładnie wiesz, gdzie stoi Twoja organizacja — bez konieczności ścigania aktualizacji. Podejmuj decyzje wsparte przez aktualne, inteligentne dane compliance."
+      }
+    },
+    "contributors": {
+      "title": "Zadania do działania. Usprawnienie procesów. Żadnych domysłów.",
+      "whoTheyAre": "Kim są:",
+      "whoDescription": "Współpracownicy to wewnętrzni eksperci i specjaliści z różnych działów — odpowiedzialni za dostarczanie dokumentów, potwierdzanie kontroli i wykonywanie konkretnych zadań compliance.",
+      "whatTheyGet": "Co otrzymują dzięki Quantifier:",
+      "feature1": "Przejrzysta lista zadań z terminami, statusem zadań i kontekstem",
+      "feature2": "Jedno miejsce do przesyłania dokumentów, odpowiadania na żądania dowodów i śledzenia postępów",
+      "feature3": "Zasoby pomocnicze i szkolenia wbudowane w workflow",
+      "feature4": "Możliwość współpracy i komentowania bezpośrednio na platformie",
+      "dashboard": {
+        "title": "Dashboard zadań",
+        "updatePolicy": "Zaktualizuj politykę reagowania na incydenty",
+        "uploadRecords": "Prześlij zapisy szkoleń bezpieczeństwa Q2",
+        "reviewPolicy": "Przejrzyj politykę haseł",
+        "dueToday": "Termin dziś",
+        "dueIn3Days": "Termin za 3 dni",
+        "dueIn7Days": "Termin za 7 dni",
+        "highPriority": "Wysoki priorytet",
+        "mediumPriority": "Średni priorytet",
+        "lowPriority": "Niski priorytet",
+        "markComplete": "Oznacz jako wykonane",
+        "uploadFiles": "Prześlij pliki",
+        "startReview": "Rozpocznij przegląd",
+        "for": "Dla:"
+      },
+      "aiAgent": {
+        "title": "Co robi AI Agent Officer:",
+        "feature1": "Wysyła inteligentne przypomnienia o wymaganych danych lub nadchodzących terminach",
+        "feature2": "Podpowiada, gdzie znaleźć niezbędną dokumentację",
+        "feature3": "Łączy się z wewnętrznymi systemami przez API, aby automatycznie wypełniać i pobierać dane",
+        "feature4": "Minimalizuje pracę ręczną i redukuje zamieszanie związane z zadaniami"
+      },
+      "outcome": {
+        "title": "Rezultat:",
+        "description": "Spędzaj mniej czasu na poszukiwaniu danych, a więcej na swojej pracy. Współpracownicy pozostają poinformowani, wspierani i skoncentrowani — z AI prowadzącym drogę."
+      }
+    },
+    "auditors": {
+      "title": "Wszystko czego potrzebują. Nic zbędnego.",
+      "whoTheyAre": "Kim są:",
+      "whoDescription": "Audytorzy wewnętrzni i zewnętrzni weryfikujący compliance, kontrole i dokumentację w ramach standardów takich jak SOC 2, ISO, RODO i innych.",
+      "whatTheyGet": "Co otrzymują dzięki Quantifier:",
+      "feature1": "Dostęp do kompletnych logów audytu i historii dowodów",
+      "feature2": "Jedna scentralizowana przestrzeń robocza z zmapowanymi dokumentami, ścieżkami zadań i harmonogramami",
+      "feature3": "Metodologia audytu specyficzna dla standardu i mapowanie kontroli",
+      "feature4": "Widoczność odpowiedzi, działań naprawczych i ścieżek współpracowników",
+      "dashboard": {
+        "title": "Portal dowodów audytowych",
+        "accessControl": "Polityka kontroli dostępu",
+        "riskAssessment": "Roczna ocena ryzyka",
+        "securityTraining": "Szkolenie z zakresu świadomości bezpieczeństwa",
+        "lastUpdated": "Ostatnio zaktualizowano:",
+        "multipleFrameworks": "Wiele standardów",
+        "files": "pliki",
+        "screenshots": "zrzuty ekranu",
+        "video": "wideo"
+      },
+      "aiAgent": {
+        "title": "Co robi AI Agent Officer:",
+        "feature1": "Automatycznie organizuje materiały pomocnicze",
+        "feature2": "Redukuje czas spędzony na przeglądaniu i filtrowaniu nieistotnych dokumentów",
+        "feature3": "Strukturalizuje dowody zgodnie z metodologią audytora",
+        "feature4": "Oznacza potencjalne ryzyka lub luki w kontrolach przed dniem audytu"
+      },
+      "outcome": {
+        "title": "Rezultat:",
+        "description": "Szybsze, jaśniejsze audyty z mniejszymi tarciami. Audytorzy mogą skupić się na walidacji — nie na administracji."
+      }
+    },
+    "cta": {
+      "title": "Gotowy zobaczyć jak Quantifier działa dla Ciebie?",
+      "description": "Niezależnie od Twojej roli, Quantifier dostosowuje się do tego, jak pracujesz — i podnosi sposób zarządzania compliance.",
+      "button": "Umów demo"
+    }
   }
 }

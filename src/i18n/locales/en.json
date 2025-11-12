@@ -824,5 +824,124 @@
       "description": "Join a trusted network driving real change in compliance and ESG.",
       "button": "Contact Us"
     }
+  },
+  "byRoles": {
+    "pageTitle": "Built for Every Role",
+    "pageDescription": "Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you.",
+    "hero": {
+      "title": "Role-Based Access and Functionality",
+      "description": "We understand that different roles have different compliance needs. Our platform provides tailored experiences for managers, contributors, and auditors, ensuring everyone has the right tools for their specific responsibilities."
+    },
+    "tabs": {
+      "managers": "Managers",
+      "contributors": "Contributors",
+      "auditors": "Auditors"
+    },
+    "managers": {
+      "title": "Executive Control. Real-Time Insights. One Platform.",
+      "whoTheyAre": "Who they are:",
+      "whoDescription": "Managers are compliance, governance, and risk leaders — from CFOs to key managers and board-level executives — responsible for oversight, strategic planning, and ensuring their organization is always audit-ready.",
+      "whatTheyGet": "What they get with Quantifier:",
+      "feature1": "A unified compliance view across teams, frameworks, and entities",
+      "feature2": "Executive dashboards with risk scoring, progress tracking, and timeline oversight",
+      "feature3": "Clarity on what's done, what's pending, and where the biggest risks lie",
+      "feature4": "Full visibility into team contributions and bottlenecks",
+      "feature5": "A single platform that consolidates compliance workflows, documents, and audits",
+      "dashboard": {
+        "title": "Executive Dashboard",
+        "riskStatus": "Risk Status",
+        "taskCompletion": "Task Completion",
+        "frameworks": "Frameworks",
+        "active": "active",
+        "dueTasks": "Due Tasks",
+        "thisWeek": "this week",
+        "frameworkProgress": "Framework Progress"
+      },
+      "aiAgent": {
+        "title": "What the AI Agent Officer does:",
+        "feature1": "Delegates and assigns tasks across the organization",
+        "feature2": "Ensures integrations, data, and documentation are up to date",
+        "feature3": "Recommends implementation plans for standards like ISO 27001 or CSRD",
+        "feature4": "Drives the company toward continuous audit readiness"
+      },
+      "outcome": {
+        "title": "Outcome:",
+        "description": "Know exactly where your organization stands — without having to chase updates. Make decisions backed by live, intelligent compliance data."
+      }
+    },
+    "contributors": {
+      "title": "Actionable Tasks. Streamlined Workflows. No Guesswork.",
+      "whoTheyAre": "Who they are:",
+      "whoDescription": "Contributors are the internal experts and specialists across departments — responsible for providing documents, confirming controls, and executing specific compliance tasks.",
+      "whatTheyGet": "What they get with Quantifier:",
+      "feature1": "A clear to-do list with deadlines, task status, and context",
+      "feature2": "One place to upload documents, answer evidence requests, and track progress",
+      "feature3": "Help resources and training embedded in the workflow",
+      "feature4": "Ability to collaborate and comment directly in the platform",
+      "dashboard": {
+        "title": "Task Dashboard",
+        "updatePolicy": "Update Incident Response Policy",
+        "uploadRecords": "Upload Q2 Security Training Records",
+        "reviewPolicy": "Review Password Policy",
+        "dueToday": "Due today",
+        "dueIn3Days": "Due in 3 days",
+        "dueIn7Days": "Due in 7 days",
+        "highPriority": "High Priority",
+        "mediumPriority": "Medium Priority",
+        "lowPriority": "Low Priority",
+        "markComplete": "Mark Complete",
+        "uploadFiles": "Upload Files",
+        "startReview": "Start Review",
+        "for": "For:"
+      },
+      "aiAgent": {
+        "title": "What the AI Agent Officer does:",
+        "feature1": "Sends smart reminders about required data or upcoming deadlines",
+        "feature2": "Provides suggestions on where to find necessary documentation",
+        "feature3": "Connects to internal systems via API to auto-fill and fetch data",
+        "feature4": "Minimizes manual work and reduces task confusion"
+      },
+      "outcome": {
+        "title": "Outcome:",
+        "description": "Spend less time digging for data and more time doing your job. Contributors stay informed, supported, and focused — with AI guiding the way."
+      }
+    },
+    "auditors": {
+      "title": "Everything They Need. Nothing They Don't.",
+      "whoTheyAre": "Who they are:",
+      "whoDescription": "Internal and external auditors verifying compliance, controls, and documentation across frameworks like SOC 2, ISO, GDPR, and more.",
+      "whatTheyGet": "What they get with Quantifier:",
+      "feature1": "Access to complete audit logs and evidence history",
+      "feature2": "One centralized workspace with mapped documents, task trails, and timelines",
+      "feature3": "Framework-specific audit methodology and control mappings",
+      "feature4": "Visibility into responses, remediation actions, and contributor trails",
+      "dashboard": {
+        "title": "Audit Evidence Portal",
+        "accessControl": "Access Control Policy",
+        "riskAssessment": "Annual Risk Assessment",
+        "securityTraining": "Security Awareness Training",
+        "lastUpdated": "Last updated:",
+        "multipleFrameworks": "Multiple frameworks",
+        "files": "files",
+        "screenshots": "screenshots",
+        "video": "video"
+      },
+      "aiAgent": {
+        "title": "What the AI Agent Officer does:",
+        "feature1": "Organizes supporting materials automatically",
+        "feature2": "Reduces time spent reviewing and filtering irrelevant documents",
+        "feature3": "Structures evidence to match the auditor's methodology",
+        "feature4": "Flags potential risks or control gaps before audit day"
+      },
+      "outcome": {
+        "title": "Outcome:",
+        "description": "Faster, clearer audits with less friction. Auditors can focus on validation — not administration."
+      }
+    },
+    "cta": {
+      "title": "Ready to See How Quantifier Works for You?",
+      "description": "No matter your role, Quantifier adapts to how you work — and elevates how you manage compliance.",
+      "button": "Book a Demo"
+    }
   }
 }

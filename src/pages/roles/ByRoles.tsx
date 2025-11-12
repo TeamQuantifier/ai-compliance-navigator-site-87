@@ -6,8 +6,12 @@ import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const ByRoles = () => {
-  return <PageTemplate title="Built for Every Role" description="Whether you're driving strategy, contributing data, or verifying controls — Quantifier is tailored to you.">
+  const { t } = useLanguage();
+  
+  return <PageTemplate title={t('byRoles.pageTitle')} description={t('byRoles.pageDescription')}>
       {/* Hero section with darker colors */}
       <div className="bg-gradient-to-br from-blue-50 to-slate-100 py-16 px-6 rounded-xl mb-12 relative overflow-hidden shadow-xl">
         {/* Decorative elements */}
@@ -19,10 +23,10 @@ const ByRoles = () => {
             <Users className="h-10 w-10 text-innovation-600" />
           </div>
           <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-            Role-Based Access and Functionality
+            {t('byRoles.hero.title')}
           </h2>
           <p className="text-lg text-slate-600 mb-8">
-            We understand that different roles have different compliance needs. Our platform provides tailored experiences for managers, contributors, and auditors, ensuring everyone has the right tools for their specific responsibilities.
+            {t('byRoles.hero.description')}
           </p>
         </div>
       </div>
@@ -33,15 +37,15 @@ const ByRoles = () => {
           <TabsList className="w-full grid grid-cols-3 mb-8">
             <TabsTrigger value="managers" className="py-6 data-[state=active]:bg-compliance-100">
               <UserCog className="h-5 w-5 mr-2" />
-              Managers
+              {t('byRoles.tabs.managers')}
             </TabsTrigger>
             <TabsTrigger value="contributors" className="data-[state=active]:bg-innovation-100 py-6">
               <User className="h-5 w-5 mr-2" />
-              Contributors
+              {t('byRoles.tabs.contributors')}
             </TabsTrigger>
             <TabsTrigger value="auditors" className="data-[state=active]:bg-compliance-100 py-6">
               <FileCheck className="h-5 w-5 mr-2" />
-              Auditors
+              {t('byRoles.tabs.auditors')}
             </TabsTrigger>
           </TabsList>
 
@@ -51,17 +55,23 @@ const ByRoles = () => {
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                    Executive Control. Real-Time Insights. One Platform.
+                    {t('byRoles.managers.title')}
                   </h3>
                   
-                  <h4 className="text-lg font-semibold text-compliance-600 mt-6 mb-3">Who they are:</h4>
+                  <h4 className="text-lg font-semibold text-compliance-600 mt-6 mb-3">{t('byRoles.managers.whoTheyAre')}</h4>
                   <p className="text-slate-700 mb-6">
-                    Managers are compliance, governance, and risk leaders — from CFOs to key managers and board-level executives — responsible for oversight, strategic planning, and ensuring their organization is always audit-ready.
+                    {t('byRoles.managers.whoDescription')}
                   </p>
                   
-                  <h4 className="text-lg font-semibold text-compliance-600 mt-8 mb-3">What they get with Quantifier:</h4>
+                  <h4 className="text-lg font-semibold text-compliance-600 mt-8 mb-3">{t('byRoles.managers.whatTheyGet')}</h4>
                   <ul className="space-y-3 mb-8">
-                    {["A unified compliance view across teams, frameworks, and entities", "Executive dashboards with risk scoring, progress tracking, and timeline oversight", "Clarity on what's done, what's pending, and where the biggest risks lie", "Full visibility into team contributions and bottlenecks", "A single platform that consolidates compliance workflows, documents, and audits"].map((item, index) => <li key={index} className="flex items-start">
+                    {[
+                      t('byRoles.managers.feature1'),
+                      t('byRoles.managers.feature2'),
+                      t('byRoles.managers.feature3'),
+                      t('byRoles.managers.feature4'),
+                      t('byRoles.managers.feature5')
+                    ].map((item, index) => <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-compliance-600 mr-2 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-700">{item}</span>
                       </li>)}
@@ -72,14 +82,14 @@ const ByRoles = () => {
                   {/* Manager visualization */}
                   <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200 mb-8">
                     <div className="flex justify-between items-center mb-4">
-                      <h5 className="font-medium text-slate-900">Executive Dashboard</h5>
+                      <h5 className="font-medium text-slate-900">{t('byRoles.managers.dashboard.title')}</h5>
                       <BarChart3 className="h-5 w-5 text-compliance-600" />
                     </div>
                     
                     {/* Mock dashboard visualization */}
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-sm text-slate-600 mb-1">Risk Status</div>
+                        <div className="text-sm text-slate-600 mb-1">{t('byRoles.managers.dashboard.riskStatus')}</div>
                         <div className="text-xl font-semibold text-slate-900 mb-2">87<span className="text-compliance-600 text-sm ml-1">/ 100</span></div>
                         <div className="w-full bg-slate-200 rounded-full h-2">
                           <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{
@@ -89,7 +99,7 @@ const ByRoles = () => {
                       </div>
                       
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-sm text-slate-600 mb-1">Task Completion</div>
+                        <div className="text-sm text-slate-600 mb-1">{t('byRoles.managers.dashboard.taskCompletion')}</div>
                         <div className="text-xl font-semibold text-slate-900 mb-2">92<span className="text-innovation-600 text-sm ml-1">%</span></div>
                         <div className="w-full bg-slate-200 rounded-full h-2">
                           <div className="bg-innovation-500 h-2 rounded-full" style={{
@@ -99,18 +109,18 @@ const ByRoles = () => {
                       </div>
                       
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-sm text-slate-600 mb-1">Frameworks</div>
-                        <div className="text-xl font-semibold text-slate-900">3<span className="text-slate-600 text-sm ml-1">active</span></div>
+                        <div className="text-sm text-slate-600 mb-1">{t('byRoles.managers.dashboard.frameworks')}</div>
+                        <div className="text-xl font-semibold text-slate-900">3<span className="text-slate-600 text-sm ml-1">{t('byRoles.managers.dashboard.active')}</span></div>
                       </div>
                       
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-sm text-slate-600 mb-1">Due Tasks</div>
-                        <div className="text-xl font-semibold text-slate-900">7<span className="text-slate-600 text-sm ml-1">this week</span></div>
+                        <div className="text-sm text-slate-600 mb-1">{t('byRoles.managers.dashboard.dueTasks')}</div>
+                        <div className="text-xl font-semibold text-slate-900">7<span className="text-slate-600 text-sm ml-1">{t('byRoles.managers.dashboard.thisWeek')}</span></div>
                       </div>
                     </div>
                     
                     <div className="bg-white rounded-lg p-3 border border-slate-200">
-                      <div className="text-sm text-slate-600 mb-2">Framework Progress</div>
+                      <div className="text-sm text-slate-600 mb-2">{t('byRoles.managers.dashboard.frameworkProgress')}</div>
                       <div className="space-y-2">
                         <div>
                           <div className="flex justify-between text-xs mb-1 text-slate-700">
@@ -150,18 +160,23 @@ const ByRoles = () => {
                   </div>
                   
                   <div className="bg-compliance-50 rounded-xl p-6 shadow-md border border-compliance-200">
-                    <h4 className="text-lg font-semibold text-compliance-700 mb-3">What the AI Agent Officer does:</h4>
+                    <h4 className="text-lg font-semibold text-compliance-700 mb-3">{t('byRoles.managers.aiAgent.title')}</h4>
                     <ul className="space-y-3 mb-6">
-                      {["Delegates and assigns tasks across the organization", "Ensures integrations, data, and documentation are up to date", "Recommends implementation plans for standards like ISO 27001 or CSRD", "Drives the company toward continuous audit readiness"].map((item, index) => <li key={index} className="flex items-start">
+                      {[
+                        t('byRoles.managers.aiAgent.feature1'),
+                        t('byRoles.managers.aiAgent.feature2'),
+                        t('byRoles.managers.aiAgent.feature3'),
+                        t('byRoles.managers.aiAgent.feature4')
+                      ].map((item, index) => <li key={index} className="flex items-start">
                           <Zap className="h-5 w-5 text-compliance-600 mr-2 flex-shrink-0 mt-0.5" />
                           <span className="text-slate-700">{item}</span>
                         </li>)}
                     </ul>
                     
                     <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <h5 className="font-semibold text-slate-900 mb-2">Outcome:</h5>
+                      <h5 className="font-semibold text-slate-900 mb-2">{t('byRoles.managers.outcome.title')}</h5>
                       <p className="text-slate-700">
-                        Know exactly where your organization stands — without having to chase updates. Make decisions backed by live, intelligent compliance data.
+                        {t('byRoles.managers.outcome.description')}
                       </p>
                     </div>
                   </div>
@@ -176,17 +191,22 @@ const ByRoles = () => {
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                    Actionable Tasks. Streamlined Workflows. No Guesswork.
+                    {t('byRoles.contributors.title')}
                   </h3>
                   
-                  <h4 className="text-lg font-semibold text-innovation-600 mt-6 mb-3">Who they are:</h4>
+                  <h4 className="text-lg font-semibold text-innovation-600 mt-6 mb-3">{t('byRoles.contributors.whoTheyAre')}</h4>
                   <p className="text-slate-700 mb-6">
-                    Contributors are the internal experts and specialists across departments — responsible for providing documents, confirming controls, and executing specific compliance tasks.
+                    {t('byRoles.contributors.whoDescription')}
                   </p>
                   
-                  <h4 className="text-lg font-semibold text-innovation-600 mt-8 mb-3">What they get with Quantifier:</h4>
+                  <h4 className="text-lg font-semibold text-innovation-600 mt-8 mb-3">{t('byRoles.contributors.whatTheyGet')}</h4>
                   <ul className="space-y-3 mb-8">
-                    {["A clear to-do list with deadlines, task status, and context", "One place to upload documents, answer evidence requests, and track progress", "Help resources and training embedded in the workflow", "Ability to collaborate and comment directly in the platform"].map((item, index) => <li key={index} className="flex items-start">
+                    {[
+                      t('byRoles.contributors.feature1'),
+                      t('byRoles.contributors.feature2'),
+                      t('byRoles.contributors.feature3'),
+                      t('byRoles.contributors.feature4')
+                    ].map((item, index) => <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-innovation-600 mr-2 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-700">{item}</span>
                       </li>)}
@@ -197,7 +217,7 @@ const ByRoles = () => {
                   {/* Contributor visualization */}
                   <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200 mb-8">
                     <div className="flex justify-between items-center mb-4">
-                      <h5 className="font-medium text-slate-900">Task Dashboard</h5>
+                      <h5 className="font-medium text-slate-900">{t('byRoles.contributors.dashboard.title')}</h5>
                       <Calendar className="h-5 w-5 text-innovation-600" />
                     </div>
                     
@@ -205,55 +225,60 @@ const ByRoles = () => {
                     <div className="space-y-3">
                       <div className="bg-white rounded-lg p-3 border-l-4 border-red-500 border border-slate-200">
                         <div className="flex justify-between">
-                          <div className="text-sm font-medium mb-1 text-slate-900">Update Incident Response Policy</div>
-                          <div className="text-xs text-red-600">Due today</div>
+                          <div className="text-sm font-medium mb-1 text-slate-900">{t('byRoles.contributors.dashboard.updatePolicy')}</div>
+                          <div className="text-xs text-red-600">{t('byRoles.contributors.dashboard.dueToday')}</div>
                         </div>
-                        <div className="text-xs text-slate-600 mb-2">For: ISO 27001 - A.16.1.1</div>
+                        <div className="text-xs text-slate-600 mb-2">{t('byRoles.contributors.dashboard.for')} ISO 27001 - A.16.1.1</div>
                         <div className="flex justify-between items-center">
-                          <div className="text-xs px-2 py-1 bg-slate-100 rounded text-slate-700">High Priority</div>
-                          <button className="text-xs text-innovation-600 hover:text-innovation-700">Mark Complete</button>
+                          <div className="text-xs px-2 py-1 bg-slate-100 rounded text-slate-700">{t('byRoles.contributors.dashboard.highPriority')}</div>
+                          <button className="text-xs text-innovation-600 hover:text-innovation-700">{t('byRoles.contributors.dashboard.markComplete')}</button>
                         </div>
                       </div>
                       
                       <div className="bg-white rounded-lg p-3 border-l-4 border-yellow-500 border border-slate-200">
                         <div className="flex justify-between">
-                          <div className="text-sm font-medium mb-1 text-slate-900">Upload Q2 Security Training Records</div>
-                          <div className="text-xs text-yellow-600">Due in 3 days</div>
+                          <div className="text-sm font-medium mb-1 text-slate-900">{t('byRoles.contributors.dashboard.uploadRecords')}</div>
+                          <div className="text-xs text-yellow-600">{t('byRoles.contributors.dashboard.dueIn3Days')}</div>
                         </div>
-                        <div className="text-xs text-slate-600 mb-2">For: SOC 2 - CC1.4</div>
+                        <div className="text-xs text-slate-600 mb-2">{t('byRoles.contributors.dashboard.for')} SOC 2 - CC1.4</div>
                         <div className="flex justify-between items-center">
-                          <div className="text-xs px-2 py-1 bg-slate-100 rounded text-slate-700">Medium Priority</div>
-                          <button className="text-xs text-innovation-600 hover:text-innovation-700">Upload Files</button>
+                          <div className="text-xs px-2 py-1 bg-slate-100 rounded text-slate-700">{t('byRoles.contributors.dashboard.mediumPriority')}</div>
+                          <button className="text-xs text-innovation-600 hover:text-innovation-700">{t('byRoles.contributors.dashboard.uploadFiles')}</button>
                         </div>
                       </div>
                       
                       <div className="bg-white rounded-lg p-3 border-l-4 border-green-500 border border-slate-200">
                         <div className="flex justify-between">
-                          <div className="text-sm font-medium mb-1 text-slate-900">Review Password Policy</div>
-                          <div className="text-xs text-green-600">Due in 7 days</div>
+                          <div className="text-sm font-medium mb-1 text-slate-900">{t('byRoles.contributors.dashboard.reviewPolicy')}</div>
+                          <div className="text-xs text-green-600">{t('byRoles.contributors.dashboard.dueIn7Days')}</div>
                         </div>
-                        <div className="text-xs text-slate-600 mb-2">For: GDPR - Art. 32</div>
+                        <div className="text-xs text-slate-600 mb-2">{t('byRoles.contributors.dashboard.for')} GDPR - Art. 32</div>
                         <div className="flex justify-between items-center">
-                          <div className="text-xs px-2 py-1 bg-slate-100 rounded text-slate-700">Low Priority</div>
-                          <button className="text-xs text-innovation-600 hover:text-innovation-700">Start Review</button>
+                          <div className="text-xs px-2 py-1 bg-slate-100 rounded text-slate-700">{t('byRoles.contributors.dashboard.lowPriority')}</div>
+                          <button className="text-xs text-innovation-600 hover:text-innovation-700">{t('byRoles.contributors.dashboard.startReview')}</button>
                         </div>
                       </div>
                     </div>
                   </div>
                   
                   <div className="bg-innovation-50 rounded-xl p-6 shadow-md border border-innovation-200">
-                    <h4 className="text-lg font-semibold text-innovation-700 mb-3">What the AI Agent Officer does:</h4>
+                    <h4 className="text-lg font-semibold text-innovation-700 mb-3">{t('byRoles.contributors.aiAgent.title')}</h4>
                     <ul className="space-y-3 mb-6">
-                      {["Sends smart reminders about required data or upcoming deadlines", "Provides suggestions on where to find necessary documentation", "Connects to internal systems via API to auto-fill and fetch data", "Minimizes manual work and reduces task confusion"].map((item, index) => <li key={index} className="flex items-start">
+                      {[
+                        t('byRoles.contributors.aiAgent.feature1'),
+                        t('byRoles.contributors.aiAgent.feature2'),
+                        t('byRoles.contributors.aiAgent.feature3'),
+                        t('byRoles.contributors.aiAgent.feature4')
+                      ].map((item, index) => <li key={index} className="flex items-start">
                           <Zap className="h-5 w-5 text-innovation-600 mr-2 flex-shrink-0 mt-0.5" />
                           <span className="text-slate-700">{item}</span>
                         </li>)}
                     </ul>
                     
                     <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <h5 className="font-semibold text-slate-900 mb-2">Outcome:</h5>
+                      <h5 className="font-semibold text-slate-900 mb-2">{t('byRoles.contributors.outcome.title')}</h5>
                       <p className="text-slate-700">
-                        Spend less time digging for data and more time doing your job. Contributors stay informed, supported, and focused — with AI guiding the way.
+                        {t('byRoles.contributors.outcome.description')}
                       </p>
                     </div>
                   </div>
@@ -268,17 +293,22 @@ const ByRoles = () => {
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                    Everything They Need. Nothing They Don't.
+                    {t('byRoles.auditors.title')}
                   </h3>
                   
-                  <h4 className="text-lg font-semibold text-compliance-600 mt-6 mb-3">Who they are:</h4>
+                  <h4 className="text-lg font-semibold text-compliance-600 mt-6 mb-3">{t('byRoles.auditors.whoTheyAre')}</h4>
                   <p className="text-slate-700 mb-6">
-                    Internal and external auditors verifying compliance, controls, and documentation across frameworks like SOC 2, ISO, GDPR, and more.
+                    {t('byRoles.auditors.whoDescription')}
                   </p>
                   
-                  <h4 className="text-lg font-semibold text-compliance-600 mt-8 mb-3">What they get with Quantifier:</h4>
+                  <h4 className="text-lg font-semibold text-compliance-600 mt-8 mb-3">{t('byRoles.auditors.whatTheyGet')}</h4>
                   <ul className="space-y-3 mb-8">
-                    {["Access to complete audit logs and evidence history", "One centralized workspace with mapped documents, task trails, and timelines", "Framework-specific audit methodology and control mappings", "Visibility into responses, remediation actions, and contributor trails"].map((item, index) => <li key={index} className="flex items-start">
+                    {[
+                      t('byRoles.auditors.feature1'),
+                      t('byRoles.auditors.feature2'),
+                      t('byRoles.auditors.feature3'),
+                      t('byRoles.auditors.feature4')
+                    ].map((item, index) => <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-compliance-600 mr-2 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-700">{item}</span>
                       </li>)}
@@ -289,7 +319,7 @@ const ByRoles = () => {
                   {/* Auditor visualization */}
                   <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200 mb-8">
                     <div className="flex justify-between items-center mb-4">
-                      <h5 className="font-medium text-slate-900">Audit Evidence Portal</h5>
+                      <h5 className="font-medium text-slate-900">{t('byRoles.auditors.dashboard.title')}</h5>
                       <Shield className="h-5 w-5 text-compliance-600" />
                     </div>
                     
@@ -298,11 +328,11 @@ const ByRoles = () => {
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Lock className="h-4 w-4 text-compliance-600" />
-                          <div className="text-sm font-medium text-slate-900">Access Control Policy</div>
+                          <div className="text-sm font-medium text-slate-900">{t('byRoles.auditors.dashboard.accessControl')}</div>
                         </div>
                         <div className="flex justify-between text-xs text-slate-600 mb-2">
                           <span>ISO 27001 - A.9.2</span>
-                          <span>Last updated: 2025-01-15</span>
+                          <span>{t('byRoles.auditors.dashboard.lastUpdated')} 2025-01-15</span>
                         </div>
                         <div className="flex items-center gap-1 text-xs text-slate-600">
                           <FileText className="h-3 w-3 text-slate-600" />
@@ -313,11 +343,11 @@ const ByRoles = () => {
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Shield className="h-4 w-4 text-compliance-600" />
-                          <div className="text-sm font-medium text-slate-900">Annual Risk Assessment</div>
+                          <div className="text-sm font-medium text-slate-900">{t('byRoles.auditors.dashboard.riskAssessment')}</div>
                         </div>
                         <div className="flex justify-between text-xs text-slate-600 mb-2">
                           <span>SOC 2 - CC3.1</span>
-                          <span>Last updated: 2025-03-22</span>
+                          <span>{t('byRoles.auditors.dashboard.lastUpdated')} 2025-03-22</span>
                         </div>
                         <div className="flex items-center gap-1 text-xs text-slate-600">
                           <FileText className="h-3 w-3 text-slate-600" />
@@ -328,21 +358,21 @@ const ByRoles = () => {
                       <div className="bg-white rounded-lg p-3 border border-slate-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Shield className="h-4 w-4 text-compliance-600" />
-                          <div className="text-sm font-medium text-slate-900">Security Awareness Training</div>
+                          <div className="text-sm font-medium text-slate-900">{t('byRoles.auditors.dashboard.securityTraining')}</div>
                         </div>
                         <div className="flex justify-between text-xs text-slate-600 mb-2">
-                          <span>Multiple frameworks</span>
-                          <span>Last updated: 2025-02-10</span>
+                          <span>{t('byRoles.auditors.dashboard.multipleFrameworks')}</span>
+                          <span>{t('byRoles.auditors.dashboard.lastUpdated')} 2025-02-10</span>
                         </div>
                         <div className="flex flex-wrap gap-1 mt-1">
                           <div className="text-xs px-2 py-0.5 bg-slate-100 rounded flex items-center text-slate-700">
-                            <span>4 files</span>
+                            <span>4 {t('byRoles.auditors.dashboard.files')}</span>
                           </div>
                           <div className="text-xs px-2 py-0.5 bg-slate-100 rounded flex items-center text-slate-700">
-                            <span>2 screenshots</span>
+                            <span>2 {t('byRoles.auditors.dashboard.screenshots')}</span>
                           </div>
                           <div className="text-xs px-2 py-0.5 bg-slate-100 rounded flex items-center text-slate-700">
-                            <span>1 video</span>
+                            <span>1 {t('byRoles.auditors.dashboard.video')}</span>
                           </div>
                         </div>
                       </div>
@@ -350,18 +380,23 @@ const ByRoles = () => {
                   </div>
                   
                   <div className="bg-compliance-50 rounded-xl p-6 shadow-md border border-compliance-200">
-                    <h4 className="text-lg font-semibold text-compliance-700 mb-3">What the AI Agent Officer does:</h4>
+                    <h4 className="text-lg font-semibold text-compliance-700 mb-3">{t('byRoles.auditors.aiAgent.title')}</h4>
                     <ul className="space-y-3 mb-6">
-                      {["Organizes supporting materials automatically", "Reduces time spent reviewing and filtering irrelevant documents", "Structures evidence to match the auditor's methodology", "Flags potential risks or control gaps before audit day"].map((item, index) => <li key={index} className="flex items-start">
+                      {[
+                        t('byRoles.auditors.aiAgent.feature1'),
+                        t('byRoles.auditors.aiAgent.feature2'),
+                        t('byRoles.auditors.aiAgent.feature3'),
+                        t('byRoles.auditors.aiAgent.feature4')
+                      ].map((item, index) => <li key={index} className="flex items-start">
                           <Zap className="h-5 w-5 text-compliance-600 mr-2 flex-shrink-0 mt-0.5" />
                           <span className="text-slate-700">{item}</span>
                         </li>)}
                     </ul>
                     
                     <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <h5 className="font-semibold text-slate-900 mb-2">Outcome:</h5>
+                      <h5 className="font-semibold text-slate-900 mb-2">{t('byRoles.auditors.outcome.title')}</h5>
                       <p className="text-slate-700">
-                        Faster, clearer audits with less friction. Auditors can focus on validation — not administration.
+                        {t('byRoles.auditors.outcome.description')}
                       </p>
                     </div>
                   </div>
@@ -376,14 +411,14 @@ const ByRoles = () => {
       <div className="bg-gradient-to-br from-slate-900 to-compliance-950 text-white rounded-xl p-8 shadow-xl border border-slate-800 mt-16">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-            Ready to See How Quantifier Works for You?
+            {t('byRoles.cta.title')}
           </h2>
           <p className="text-lg text-slate-300 mb-8">
-            No matter your role, Quantifier adapts to how you work — and elevates how you manage compliance.
+            {t('byRoles.cta.description')}
           </p>
           <Button asChild size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 shadow-lg">
             <Link to="/contact">
-              Book a Demo
+              {t('byRoles.cta.button')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
