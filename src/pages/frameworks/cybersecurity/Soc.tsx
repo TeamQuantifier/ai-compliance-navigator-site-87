@@ -25,8 +25,8 @@ const Soc = () => {
               <p className="text-xl opacity-90 mb-6">
                 {t('socPage.hero.subtitle')}
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                <Link to={`/${currentLocale}/contact`} className="flex items-center">
+              <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white" asChild>
+                <Link to={`/${currentLocale}/contact`}>
                   {t('socPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -124,9 +124,11 @@ const Soc = () => {
                   </li>
                 ))}
               </ul>
-              <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                {t('socPage.mainContent.button')}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white" asChild>
+                <Link to={`/${currentLocale}/contact`}>
+                  {t('socPage.mainContent.button')}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
             <div className="md:w-1/2">

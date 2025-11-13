@@ -291,11 +291,15 @@ const DataSecurity = () => {
             {t('dataSecurityPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-              {t('dataSecurityPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+            <Button size="lg" className="bg-purple-600 hover:bg-purple-700" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('dataSecurityPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50">
-              {t('dataSecurityPage.cta.talkExpert')}
+            <Button size="lg" variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('dataSecurityPage.cta.talkExpert')}
+              </Link>
             </Button>
           </div>
         </div>

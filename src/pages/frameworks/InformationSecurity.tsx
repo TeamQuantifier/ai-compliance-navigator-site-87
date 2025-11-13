@@ -23,8 +23,10 @@ const InformationSecurity = () => {
               <p className="text-xl opacity-90 mb-6">
                 {t('informationSecurityPage.hero.subtitle')}
               </p>
-              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90">
-                {t('informationSecurityPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
+                <Link to={`/${currentLocale}/contact`}>
+                  {t('informationSecurityPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
             <div className="md:w-2/5">
@@ -279,11 +281,15 @@ const InformationSecurity = () => {
                 {t('informationSecurityPage.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8">
-                  {t('informationSecurityPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('informationSecurityPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  {t('informationSecurityPage.cta.explorePlans')}
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10" asChild>
+                  <Link to={`/${currentLocale}/plans`}>
+                    {t('informationSecurityPage.cta.explorePlans')}
+                  </Link>
                 </Button>
               </div>
             </div>

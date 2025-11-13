@@ -25,8 +25,8 @@ const Nist = () => {
               <p className="text-xl opacity-90 mb-6">
                 {t('nistPage.hero.subtitle')}
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                <Link to={`/${currentLocale}/contact`} className="flex items-center">
+              <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white" asChild>
+                <Link to={`/${currentLocale}/contact`}>
                   {t('nistPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -65,9 +65,11 @@ const Nist = () => {
                   </li>
                 ))}
               </ul>
-              <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white">
-                {t('nistPage.mainContent.button')}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white" asChild>
+                <Link to={`/${currentLocale}/contact`}>
+                  {t('nistPage.mainContent.button')}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
             <div className="md:w-1/2">
@@ -157,13 +159,15 @@ const Nist = () => {
                 {t('nistPage.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8">
-                  <Link to={`/${currentLocale}/contact`} className="flex items-center">
+                <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
                     {t('nistPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                  {t('nistPage.cta.watchTour')}
+                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('nistPage.cta.watchTour')}
+                  </Link>
                 </Button>
               </div>
             </div>

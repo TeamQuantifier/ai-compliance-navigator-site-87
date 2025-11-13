@@ -7,6 +7,7 @@ import { ArrowRight, FileText, Bell, Shield, Users, Clock, CheckCircle, Lock, Al
 import LegalPoliciesDashboard from '@/components/dashboards/governance/LegalPoliciesDashboard';
 import WhistleblowingDashboard from '@/components/dashboards/governance/WhistleblowingDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Governance = () => {
   const [activeTab, setActiveTab] = useState("legal-policies");
@@ -135,11 +136,15 @@ const Governance = () => {
             {t('governancePage.cta.title')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-              {t('governancePage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+            <Button size="lg" className="bg-purple-600 hover:bg-purple-700" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('governancePage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50">
-              {t('governancePage.cta.watchTour')}
+            <Button size="lg" variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('governancePage.cta.watchTour')}
+              </Link>
             </Button>
           </div>
         </div>
