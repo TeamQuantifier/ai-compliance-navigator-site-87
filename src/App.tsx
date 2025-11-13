@@ -66,11 +66,11 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
         <BrowserRouter>
           <AuthProvider>
             <LanguageProvider>
+              <Toaster />
+              <Sonner />
               <div className="min-h-screen flex flex-col">
                 <Navbar />
                 <main className="flex-grow pt-16">
