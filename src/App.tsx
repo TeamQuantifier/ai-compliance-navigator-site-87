@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { AuthProvider } from "./contexts/AuthContext";
 import { RedirectToPreferredLocale } from "./components/RedirectToPreferredLocale";
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -50,6 +51,14 @@ import Contact from "./pages/Contact";
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 
+// Admin pages
+import Login from "./pages/admin/Login";
+import { ProtectedRoute } from "./components/admin/ProtectedRoute";
+import { AdminLayout } from "./components/admin/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import PostsList from "./pages/admin/PostsList";
+import StoriesList from "./pages/admin/StoriesList";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -59,11 +68,12 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <LanguageProvider>
-            <div className="min-h-screen flex flex-col">
-              <Navbar />
-              <main className="flex-grow pt-16">
-                <Routes>
+          <AuthProvider>
+            <LanguageProvider>
+              <div className="min-h-screen flex flex-col">
+                <Navbar />
+                <main className="flex-grow pt-16">
+                  <Routes>
                   {/* Redirect root to preferred locale */}
                   <Route path="/" element={<RedirectToPreferredLocale />} />
                   
@@ -121,6 +131,22 @@ const App = () => (
                   <Route path="/:locale/about" element={<About />} />
                   <Route path="/:locale/contact" element={<Contact />} />
                   
+                  {/* Admin routes */}
+                  <Route path="/admin/login" element={<Login />} />
+                  <Route path="/admin" element={
+                    <ProtectedRoute>
+                      <AdminLayout />
+                    </ProtectedRoute>
+                  }>
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="posts" element={<PostsList />} />
+                    <Route path="stories" element={<StoriesList />} />
+                    <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
+                    <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
+                    <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />
+                    <Route path="settings" element={<div className="p-6"><h1 className="text-3xl font-bold">Settings (Coming Soon)</h1></div>} />
+                  </Route>
+                  
                   {/* Catch-all route */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
@@ -128,6 +154,7 @@ const App = () => (
               <Footer />
             </div>
           </LanguageProvider>
+          </AuthProvider>
         </BrowserRouter>
       </TooltipProvider>
     </HelmetProvider>
