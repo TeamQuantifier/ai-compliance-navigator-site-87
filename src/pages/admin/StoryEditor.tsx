@@ -15,6 +15,7 @@ import {
 import RichTextEditor from '@/components/editor/RichTextEditor';
 import { toast } from 'sonner';
 import { ArrowLeft, Save } from 'lucide-react';
+import { AdminLayout } from '@/components/admin/AdminLayout';
 
 const StoryEditor = () => {
   const { id } = useParams();
@@ -99,7 +100,7 @@ const StoryEditor = () => {
   };
 
   const renderContent = () => (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Button
@@ -292,9 +293,9 @@ const StoryEditor = () => {
   );
 
   return (
-    <AdminLayout>
+    <div className="min-h-screen bg-background">
       {renderContent()}
-    </AdminLayout>
+    </div>
   );
 };
 
