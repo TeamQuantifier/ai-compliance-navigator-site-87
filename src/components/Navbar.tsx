@@ -126,6 +126,10 @@ export const Navbar = () => {
       href: '/success-stories',
     },
     {
+      title: t('menu.blog'),
+      href: '/blog',
+    },
+    {
       title: t('menu.about'),
       href: '/about',
     },
