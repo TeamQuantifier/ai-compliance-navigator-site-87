@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Plus, Pencil, Trash2, Eye } from 'lucide-react';
@@ -29,6 +30,7 @@ interface Story {
 }
 
 export default function StoriesList() {
+  const navigate = useNavigate();
   const [stories, setStories] = useState<Story[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
@@ -112,7 +114,7 @@ export default function StoriesList() {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Success Stories</h1>
-        <Button>
+        <Button onClick={() => navigate('/admin/stories/new')}>
           <Plus className="mr-2 h-4 w-4" />
           New Story
         </Button>
@@ -161,10 +163,20 @@ export default function StoriesList() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
-                      <Button variant="ghost" size="icon" title="View">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        title="View"
+                        onClick={() => window.open(`/${story.lang}/success-stories/${story.slug}`, '_blank')}
+                      >
                         <Eye className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="icon" title="Edit">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        title="Edit"
+                        onClick={() => navigate(`/admin/stories/${story.id}`)}
+                      >
                         <Pencil className="h-4 w-4" />
                       </Button>
                       <Button 
