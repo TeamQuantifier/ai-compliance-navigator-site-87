@@ -14,7 +14,351 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      alternates: {
+        Row: {
+          alternate_id: string
+          alternate_lang: string
+          content_type: Database["public"]["Enums"]["content_type"]
+          created_at: string
+          id: string
+          primary_id: string
+          primary_lang: string
+        }
+        Insert: {
+          alternate_id: string
+          alternate_lang: string
+          content_type: Database["public"]["Enums"]["content_type"]
+          created_at?: string
+          id?: string
+          primary_id: string
+          primary_lang: string
+        }
+        Update: {
+          alternate_id?: string
+          alternate_lang?: string
+          content_type?: Database["public"]["Enums"]["content_type"]
+          created_at?: string
+          id?: string
+          primary_id?: string
+          primary_lang?: string
+        }
+        Relationships: []
+      }
+      authors: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          id: string
+          name: string
+          slug: string
+          social: Json | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          slug: string
+          social?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          slug?: string
+          social?: Json | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          lang: string
+          name: string
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          lang: string
+          name: string
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          lang?: string
+          name?: string
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      posts: {
+        Row: {
+          author_id: string | null
+          body_rich: Json
+          category_id: string | null
+          created_at: string
+          excerpt: string | null
+          id: string
+          lang: string
+          meta_desc: string | null
+          meta_title: string | null
+          og_image_url: string | null
+          published_at: string | null
+          related_post_ids: string[] | null
+          seo_score: number | null
+          slug: string
+          status: Database["public"]["Enums"]["post_status"]
+          tags: string[] | null
+          title: string
+          topic_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          author_id?: string | null
+          body_rich?: Json
+          category_id?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          lang: string
+          meta_desc?: string | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          published_at?: string | null
+          related_post_ids?: string[] | null
+          seo_score?: number | null
+          slug: string
+          status?: Database["public"]["Enums"]["post_status"]
+          tags?: string[] | null
+          title: string
+          topic_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string | null
+          body_rich?: Json
+          category_id?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          lang?: string
+          meta_desc?: string | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          published_at?: string | null
+          related_post_ids?: string[] | null
+          seo_score?: number | null
+          slug?: string
+          status?: Database["public"]["Enums"]["post_status"]
+          tags?: string[] | null
+          title?: string
+          topic_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "posts_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "authors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "posts_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "posts_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      redirects: {
+        Row: {
+          created_at: string
+          from_path: string
+          hits: number
+          http_code: number
+          id: string
+          is_active: boolean
+          to_path: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          from_path: string
+          hits?: number
+          http_code?: number
+          id?: string
+          is_active?: boolean
+          to_path: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          from_path?: string
+          hits?: number
+          http_code?: number
+          id?: string
+          is_active?: boolean
+          to_path?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      settings: {
+        Row: {
+          id: string
+          key: string
+          updated_at: string
+          value: Json
+        }
+        Insert: {
+          id?: string
+          key: string
+          updated_at?: string
+          value: Json
+        }
+        Update: {
+          id?: string
+          key?: string
+          updated_at?: string
+          value?: Json
+        }
+        Relationships: []
+      }
+      stories: {
+        Row: {
+          author_id: string | null
+          body_rich: Json
+          client_name: string | null
+          country: string | null
+          created_at: string
+          id: string
+          industry: string | null
+          lang: string
+          logo_url: string | null
+          meta_desc: string | null
+          meta_title: string | null
+          og_image_url: string | null
+          published_at: string | null
+          results_kpis: Json | null
+          seo_score: number | null
+          slug: string
+          status: Database["public"]["Enums"]["post_status"]
+          summary: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_id?: string | null
+          body_rich?: Json
+          client_name?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          industry?: string | null
+          lang: string
+          logo_url?: string | null
+          meta_desc?: string | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          published_at?: string | null
+          results_kpis?: Json | null
+          seo_score?: number | null
+          slug: string
+          status?: Database["public"]["Enums"]["post_status"]
+          summary?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string | null
+          body_rich?: Json
+          client_name?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          industry?: string | null
+          lang?: string
+          logo_url?: string | null
+          meta_desc?: string | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          published_at?: string | null
+          results_kpis?: Json | null
+          seo_score?: number | null
+          slug?: string
+          status?: Database["public"]["Enums"]["post_status"]
+          summary?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stories_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "authors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      topics: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          lang: string
+          name: string
+          target_keyword: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          lang: string
+          name: string
+          target_keyword?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          lang?: string
+          name?: string
+          target_keyword?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +367,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      content_type: "post" | "story"
+      post_status: "draft" | "scheduled" | "published" | "archived"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +495,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      content_type: ["post", "story"],
+      post_status: ["draft", "scheduled", "published", "archived"],
+    },
   },
 } as const
