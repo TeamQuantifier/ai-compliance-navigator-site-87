@@ -228,11 +228,15 @@ const ProductLevel = () => {
             {t('productLevelPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
-              {t('productLevelPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+            <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('productLevelPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50">
-              {t('productLevelPage.cta.talkExpert')}
+            <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('productLevelPage.cta.talkExpert')}
+              </Link>
             </Button>
           </div>
         </div>

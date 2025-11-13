@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Iso9001 = () => {
   const { t, currentLocale } = useLanguage();
@@ -39,9 +40,9 @@ const Iso9001 = () => {
                 {t('iso9001Page.hero.subtitle')}
               </p>
               <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
-                <a href={`/${currentLocale}/contact`}>
+                <Link to={`/${currentLocale}/contact`}>
                   {t('iso9001Page.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
             </div>
             <div className="md:w-2/5">
@@ -273,14 +274,14 @@ const Iso9001 = () => {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90 px-8" asChild>
-                  <a href={`/${currentLocale}/contact`}>
+                  <Link to={`/${currentLocale}/contact`}>
                     {t('iso9001Page.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10" asChild>
-                  <a href={`/${currentLocale}/plans`}>
+                  <Link to={`/${currentLocale}/plans`}>
                     {t('iso9001Page.cta.explorePlans')}
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
