@@ -380,6 +380,20 @@
       "button": "Skontaktuj się z nami"
     }
   },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Wskazówki, przewodniki i najlepsze praktyki dotyczące compliance i bezpieczeństwa",
+    "allCategories": "Wszystkie kategorie",
+    "readingTime": "min czytania",
+    "readMore": "Czytaj więcej",
+    "backToBlog": "Powrót do bloga",
+    "share": "Udostępnij",
+    "published": "Opublikowano",
+    "loading": "Ładowanie...",
+    "error": "Błąd ładowania treści",
+    "notFound": "Nie znaleziono wpisu",
+    "relatedPosts": "Powiązane wpisy"
+  },
   "about": {
     "title": "O nas",
     "description": "Poznaj zespół rewolucjonizujący zarządzanie compliance dzięki AI",

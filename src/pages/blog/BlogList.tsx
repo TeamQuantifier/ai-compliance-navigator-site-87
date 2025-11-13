@@ -2,66 +2,38 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { usePosts, useCategories } from '@/hooks/useBlog';
+import { calculateReadingTime } from '@/lib/reading-time';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Clock, Calendar, ArrowRight } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Clock, Calendar, ArrowRight, AlertCircle } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
-
-// Mock data - będzie zastąpione przez Sanity
-const mockPosts = {
-  en: [
-    {
-      id: '1',
-      title: 'Getting Started with ISO 27001 Compliance',
-      slug: 'getting-started-iso-27001',
-      excerpt: 'A comprehensive guide to implementing ISO 27001 in your organization.',
-      category: 'Information Security',
-      publishedAt: '2024-01-15',
-      readingTime: 8,
-      featuredImage: '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png'
-    },
-    {
-      id: '2',
-      title: 'GDPR Compliance Checklist for 2024',
-      slug: 'gdpr-compliance-checklist-2024',
-      excerpt: 'Essential steps to ensure your organization meets GDPR requirements.',
-      category: 'Data Security',
-      publishedAt: '2024-01-10',
-      readingTime: 6,
-      featuredImage: '/lovable-uploads/2fc8c576-cb69-4fea-822a-b157b5b6c412.png'
-    }
-  ],
-  pl: [
-    {
-      id: '1',
-      title: 'Wprowadzenie do zgodności ISO 27001',
-      slug: 'wprowadzenie-zgodnosc-iso-27001',
-      excerpt: 'Kompleksowy przewodnik po wdrażaniu ISO 27001 w organizacji.',
-      category: 'Bezpieczeństwo Informacji',
-      publishedAt: '2024-01-15',
-      readingTime: 8,
-      featuredImage: '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png'
-    },
-    {
-      id: '2',
-      title: 'Lista kontrolna zgodności RODO na 2024',
-      slug: 'lista-kontrolna-rodo-2024',
-      excerpt: 'Niezbędne kroki zapewnienia zgodności z wymogami RODO.',
-      category: 'Bezpieczeństwo Danych',
-      publishedAt: '2024-01-10',
-      readingTime: 6,
-      featuredImage: '/lovable-uploads/2fc8c576-cb69-4fea-822a-b157b5b6c412.png'
-    }
-  ]
-};
 
 const BlogList = () => {
   const { currentLocale, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   
-  const posts = mockPosts[currentLocale as keyof typeof mockPosts] || mockPosts.en;
+  const { data: posts, isLoading: postsLoading, error: postsError } = usePosts(
+    currentLocale, 
+    selectedCategory
+  );
+  const { data: categories, isLoading: categoriesLoading } = useCategories(currentLocale);
+  
   const canonicalUrl = `https://quantifier.ai/${currentLocale}/blog`;
+
+  if (postsError) {
+    return (
+      <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
+        <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>{t('blog.error')}</AlertDescription>
+        </Alert>
+      </PageTemplate>
+    );
+  }
 
   return (
     <>
@@ -85,70 +57,112 @@ const BlogList = () => {
 
       <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
         <div className="max-w-7xl mx-auto">
-          {/* Category filter - placeholder */}
+          {/* Category filter */}
           <div className="mb-8 flex gap-2 flex-wrap">
-            <Badge 
-              variant={selectedCategory === 'all' ? 'default' : 'outline'}
-              className="cursor-pointer"
-              onClick={() => setSelectedCategory('all')}
-            >
-              {t('blog.allCategories')}
-            </Badge>
+            {categoriesLoading ? (
+              <>
+                <Skeleton className="h-8 w-24" />
+                <Skeleton className="h-8 w-32" />
+                <Skeleton className="h-8 w-28" />
+              </>
+            ) : (
+              <>
+                <Badge 
+                  variant={selectedCategory === 'all' ? 'default' : 'outline'}
+                  className="cursor-pointer"
+                  onClick={() => setSelectedCategory('all')}
+                >
+                  {t('blog.allCategories')}
+                </Badge>
+                {categories?.map((category) => (
+                  <Badge 
+                    key={category.id}
+                    variant={selectedCategory === category.id ? 'default' : 'outline'}
+                    className="cursor-pointer"
+                    onClick={() => setSelectedCategory(category.id)}
+                  >
+                    {category.name}
+                  </Badge>
+                ))}
+              </>
+            )}
           </div>
 
           {/* Blog posts grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={post.featuredImage} 
-                    alt={post.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge variant="secondary">{post.category}</Badge>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Clock className="h-3 w-3" />
-                      <span>{post.readingTime} {t('blog.readingTime')}</span>
+          {postsLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <Card key={i} className="overflow-hidden">
+                  <Skeleton className="aspect-video" />
+                  <CardHeader>
+                    <Skeleton className="h-4 w-20 mb-2" />
+                    <Skeleton className="h-6 w-full mb-2" />
+                    <Skeleton className="h-4 w-full" />
+                  </CardHeader>
+                  <CardContent>
+                    <Skeleton className="h-4 w-32" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : posts && posts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {posts.map((post) => {
+                const readingTime = calculateReadingTime(post.body_rich as any);
+                const imageUrl = post.og_image_url || '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png';
+                
+                return (
+                  <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="aspect-video overflow-hidden">
+                      <img 
+                        src={imageUrl} 
+                        alt={post.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                  </div>
-                  <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-                  <CardDescription className="line-clamp-3">{post.excerpt}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Calendar className="h-3 w-3" />
-                      <span>{new Date(post.publishedAt).toLocaleDateString(currentLocale)}</span>
-                    </div>
-                    <Link to={`/${currentLocale}/blog/${post.slug}`}>
-                      <Button variant="ghost" size="sm" className="group">
-                        {t('blog.readMore')}
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Info banner about Sanity integration */}
-          <div className="mt-12 p-6 bg-muted rounded-lg">
-            <h3 className="text-lg font-semibold mb-2">🚀 Next Steps: Sanity CMS Integration</h3>
-            <p className="text-muted-foreground">
-              This is a placeholder blog structure. To complete the implementation:
-            </p>
-            <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
-              <li>Set up Sanity.io project with multi-language schema</li>
-              <li>Replace mock data with real Sanity queries</li>
-              <li>Add category filtering and search functionality</li>
-              <li>Implement pagination or infinite scroll</li>
-            </ul>
-          </div>
+                    <CardHeader>
+                      <div className="flex items-center gap-2 mb-2">
+                        {post.category && (
+                          <Badge variant="secondary">{post.category.name}</Badge>
+                        )}
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Clock className="h-3 w-3" />
+                          <span>{readingTime} {t('blog.readingTime')}</span>
+                        </div>
+                      </div>
+                      <CardTitle className="line-clamp-2">{post.title}</CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        {post.excerpt || post.meta_desc}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Calendar className="h-3 w-3" />
+                          <span>
+                            {post.published_at 
+                              ? new Date(post.published_at).toLocaleDateString(currentLocale)
+                              : new Date(post.created_at).toLocaleDateString(currentLocale)
+                            }
+                          </span>
+                        </div>
+                        <Link to={`/${currentLocale}/blog/${post.slug}`}>
+                          <Button variant="ghost" size="sm" className="group">
+                            {t('blog.readMore')}
+                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">{t('blog.notFound')}</p>
+            </div>
+          )}
         </div>
       </PageTemplate>
     </>

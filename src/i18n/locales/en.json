@@ -365,6 +365,20 @@
       "button": "Contact Our Sales Team"
     }
   },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Insights, guides, and best practices for compliance and security",
+    "allCategories": "All Categories",
+    "readingTime": "min read",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "share": "Share",
+    "published": "Published",
+    "loading": "Loading...",
+    "error": "Error loading content",
+    "notFound": "Post not found",
+    "relatedPosts": "Related Posts"
+  },
   "about": {
     "title": "About Us",
     "description": "Learn about our mission to simplify compliance with AI-powered solutions.",
