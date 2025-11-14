@@ -1,0 +1,366 @@
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import RichTextEditor from '@/components/editor/RichTextEditor';
+import { toast } from 'sonner';
+import { ArrowLeft, Save } from 'lucide-react';
+
+const PostEditor = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [categories, setCategories] = useState<any[]>([]);
+  const [authors, setAuthors] = useState<any[]>([]);
+  const [post, setPost] = useState({
+    title: '',
+    slug: '',
+    lang: 'pl',
+    status: 'draft' as 'draft' | 'published' | 'scheduled' | 'archived',
+    body_rich: {},
+    excerpt: '',
+    category_id: null as string | null,
+    author_id: null as string | null,
+    meta_title: '',
+    meta_desc: '',
+    og_image_url: '',
+    tags: [] as string[],
+    related_post_ids: [] as string[],
+    seo_score: 0,
+    published_at: null as string | null,
+  });
+
+  useEffect(() => {
+    loadCategories();
+    loadAuthors();
+    if (id && id !== 'new') {
+      loadPost();
+    }
+  }, [id]);
+
+  const loadCategories = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('categories')
+        .select('id, name, lang')
+        .order('name');
+
+      if (error) throw error;
+      setCategories(data || []);
+    } catch (error) {
+      console.error('Error loading categories:', error);
+    }
+  };
+
+  const loadAuthors = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('authors')
+        .select('id, name')
+        .order('name');
+
+      if (error) throw error;
+      setAuthors(data || []);
+    } catch (error) {
+      console.error('Error loading authors:', error);
+    }
+  };
+
+  const loadPost = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('posts')
+        .select('*')
+        .eq('id', id)
+        .single();
+
+      if (error) throw error;
+      if (data) {
+        setPost({
+          ...data,
+          tags: data.tags || [],
+          related_post_ids: data.related_post_ids || [],
+        });
+      }
+    } catch (error) {
+      console.error('Error loading post:', error);
+      toast.error('Błąd podczas wczytywania posta');
+    }
+  };
+
+  const generateSlug = (title: string) => {
+    return title
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+  };
+
+  const handleTitleChange = (value: string) => {
+    setPost({
+      ...post,
+      title: value,
+      slug: post.slug || generateSlug(value),
+    });
+  };
+
+  const handleSave = async () => {
+    if (!post.title) {
+      toast.error('Tytuł jest wymagany');
+      return;
+    }
+
+    if (post.seo_score < 0 || post.seo_score > 100) {
+      toast.error('SEO score musi być między 0 a 100');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const postData = {
+        ...post,
+        updated_at: new Date().toISOString(),
+      };
+
+      if (id && id !== 'new') {
+        const { error } = await supabase
+          .from('posts')
+          .update(postData)
+          .eq('id', id);
+
+        if (error) throw error;
+        toast.success('Post zaktualizowany');
+      } else {
+        const { error } = await supabase
+          .from('posts')
+          .insert([postData]);
+
+        if (error) throw error;
+        toast.success('Post utworzony');
+        navigate('/admin/posts');
+      }
+    } catch (error) {
+      console.error('Error saving post:', error);
+      toast.error('Błąd podczas zapisywania');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const renderContent = () => (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => navigate('/admin/posts')}
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Powrót
+          </Button>
+          <h1 className="text-3xl font-bold">
+            {id === 'new' ? 'Nowy Post' : 'Edytuj Post'}
+          </h1>
+        </div>
+        <Button onClick={handleSave} disabled={loading}>
+          <Save className="h-4 w-4 mr-2" />
+          Zapisz
+        </Button>
+      </div>
+
+      <div className="grid gap-6">
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="title">Tytuł</Label>
+            <Input
+              id="title"
+              value={post.title}
+              onChange={(e) => handleTitleChange(e.target.value)}
+              placeholder="Tytuł posta"
+            />
+          </div>
+          <div>
+            <Label htmlFor="slug">Slug</Label>
+            <Input
+              id="slug"
+              value={post.slug}
+              onChange={(e) => setPost({ ...post, slug: e.target.value })}
+              placeholder="slug-posta"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-4">
+          <div>
+            <Label htmlFor="lang">Język</Label>
+            <Select value={post.lang} onValueChange={(value) => setPost({ ...post, lang: value })}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="pl">Polski</SelectItem>
+                <SelectItem value="en">English</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label htmlFor="status">Status</Label>
+            <Select value={post.status} onValueChange={(value: any) => setPost({ ...post, status: value })}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="draft">Draft</SelectItem>
+                <SelectItem value="published">Published</SelectItem>
+                <SelectItem value="scheduled">Scheduled</SelectItem>
+                <SelectItem value="archived">Archived</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label htmlFor="published_at">Data publikacji</Label>
+            <Input
+              id="published_at"
+              type="datetime-local"
+              value={post.published_at ? new Date(post.published_at).toISOString().slice(0, 16) : ''}
+              onChange={(e) => setPost({ ...post, published_at: e.target.value ? new Date(e.target.value).toISOString() : null })}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="category">Kategoria</Label>
+            <Select value={post.category_id || ''} onValueChange={(value) => setPost({ ...post, category_id: value || null })}>
+              <SelectTrigger>
+                <SelectValue placeholder="Wybierz kategorię" />
+              </SelectTrigger>
+              <SelectContent>
+                {categories.filter(c => c.lang === post.lang).map((category) => (
+                  <SelectItem key={category.id} value={category.id}>
+                    {category.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label htmlFor="author">Autor</Label>
+            <Select value={post.author_id || ''} onValueChange={(value) => setPost({ ...post, author_id: value || null })}>
+              <SelectTrigger>
+                <SelectValue placeholder="Wybierz autora" />
+              </SelectTrigger>
+              <SelectContent>
+                {authors.map((author) => (
+                  <SelectItem key={author.id} value={author.id}>
+                    {author.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        <div>
+          <Label htmlFor="excerpt">Krótkie podsumowanie (excerpt)</Label>
+          <Textarea
+            id="excerpt"
+            value={post.excerpt}
+            onChange={(e) => setPost({ ...post, excerpt: e.target.value })}
+            placeholder="Krótkie podsumowanie posta..."
+            rows={3}
+          />
+        </div>
+
+        <div>
+          <Label>Treść posta</Label>
+          <RichTextEditor
+            content={post.body_rich}
+            onChange={(content) => setPost({ ...post, body_rich: content })}
+            placeholder="Zacznij pisać treść posta..."
+          />
+        </div>
+
+        <div className="border-t pt-6">
+          <h2 className="text-xl font-semibold mb-4">SEO</h2>
+          <div className="grid gap-4">
+            <div>
+              <Label htmlFor="meta_title">Meta Title</Label>
+              <Input
+                id="meta_title"
+                value={post.meta_title}
+                onChange={(e) => setPost({ ...post, meta_title: e.target.value })}
+                placeholder="SEO title"
+              />
+            </div>
+            <div>
+              <Label htmlFor="meta_desc">Meta Description</Label>
+              <Textarea
+                id="meta_desc"
+                value={post.meta_desc}
+                onChange={(e) => setPost({ ...post, meta_desc: e.target.value })}
+                placeholder="SEO description"
+                rows={2}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="og_image_url">OG Image URL</Label>
+                <Input
+                  id="og_image_url"
+                  value={post.og_image_url}
+                  onChange={(e) => setPost({ ...post, og_image_url: e.target.value })}
+                  placeholder="https://..."
+                />
+              </div>
+              <div>
+                <Label htmlFor="seo_score">SEO Score (0-100)</Label>
+                <Input
+                  id="seo_score"
+                  type="number"
+                  min="0"
+                  max="100"
+                  value={post.seo_score}
+                  onChange={(e) => setPost({ ...post, seo_score: parseInt(e.target.value) || 0 })}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t pt-6">
+          <h2 className="text-xl font-semibold mb-4">Tagi</h2>
+          <div>
+            <Label htmlFor="tags">Tagi (oddzielone przecinkiem)</Label>
+            <Input
+              id="tags"
+              value={post.tags.join(', ')}
+              onChange={(e) => setPost({ ...post, tags: e.target.value.split(',').map(t => t.trim()).filter(Boolean) })}
+              placeholder="tag1, tag2, tag3"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="p-6 max-w-5xl mx-auto">
+      {renderContent()}
+    </div>
+  );
+};
+
+export default PostEditor;
