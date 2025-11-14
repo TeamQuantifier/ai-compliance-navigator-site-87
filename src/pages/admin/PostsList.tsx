@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Plus, Pencil, Trash2, Eye } from 'lucide-react';
@@ -27,6 +28,7 @@ interface Post {
 }
 
 export default function PostsList() {
+  const navigate = useNavigate();
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
@@ -110,7 +112,7 @@ export default function PostsList() {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Blog Posts</h1>
-        <Button>
+        <Button onClick={() => navigate('/admin/posts/new')}>
           <Plus className="mr-2 h-4 w-4" />
           New Post
         </Button>
@@ -162,10 +164,20 @@ export default function PostsList() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
-                      <Button variant="ghost" size="icon" title="View">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        title="View"
+                        onClick={() => window.open(`/${post.lang}/blog/${post.slug}`, '_blank')}
+                      >
                         <Eye className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="icon" title="Edit">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        title="Edit"
+                        onClick={() => navigate(`/admin/posts/${post.id}`)}
+                      >
                         <Pencil className="h-4 w-4" />
                       </Button>
                       <Button 

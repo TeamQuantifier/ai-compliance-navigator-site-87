@@ -57,6 +57,7 @@ import { ProtectedRoute } from "./components/admin/ProtectedRoute";
 import { AdminLayout } from "./components/admin/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import PostsList from "./pages/admin/PostsList";
+import PostEditor from "./pages/admin/PostEditor";
 import StoriesList from "./pages/admin/StoriesList";
 import StoryEditor from "./pages/admin/StoryEditor";
 
@@ -141,6 +142,8 @@ const App = () => (
                   }>
                     <Route path="dashboard" element={<Dashboard />} />
                     <Route path="posts" element={<PostsList />} />
+                    <Route path="posts/new" element={<PostEditor />} />
+                    <Route path="posts/:id" element={<PostEditor />} />
                     <Route path="stories" element={<StoriesList />} />
                     <Route path="stories/:id" element={<StoryEditor />} />
                     <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
