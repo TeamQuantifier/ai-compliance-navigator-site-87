@@ -21,7 +21,6 @@ const PostEditor = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState<any[]>([]);
-  const [authors, setAuthors] = useState<any[]>([]);
   const [post, setPost] = useState({
     title: '',
     slug: '',
@@ -30,19 +29,16 @@ const PostEditor = () => {
     body_rich: {},
     excerpt: '',
     category_id: null as string | null,
-    author_id: null as string | null,
     meta_title: '',
     meta_desc: '',
     og_image_url: '',
     tags: [] as string[],
     related_post_ids: [] as string[],
-    seo_score: 0,
     published_at: null as string | null,
   });
 
   useEffect(() => {
     loadCategories();
-    loadAuthors();
     if (id && id !== 'new') {
       loadPost();
     }
@@ -62,19 +58,6 @@ const PostEditor = () => {
     }
   };
 
-  const loadAuthors = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('authors')
-        .select('id, name')
-        .order('name');
-
-      if (error) throw error;
-      setAuthors(data || []);
-    } catch (error) {
-      console.error('Error loading authors:', error);
-    }
-  };
 
   const loadPost = async () => {
     try {
@@ -121,8 +104,23 @@ const PostEditor = () => {
       return;
     }
 
-    if (post.seo_score < 0 || post.seo_score > 100) {
-      toast.error('SEO score musi być między 0 a 100');
+    if (post.title.length > 200) {
+      toast.error('Tytuł może mieć maksymalnie 200 znaków');
+      return;
+    }
+
+    if (post.meta_title && post.meta_title.length > 60) {
+      toast.error('Meta Title może mieć maksymalnie 60 znaków');
+      return;
+    }
+
+    if (post.meta_desc && post.meta_desc.length > 160) {
+      toast.error('Meta Description może mieć maksymalnie 160 znaków');
+      return;
+    }
+
+    if (post.slug.length > 250) {
+      toast.error('Slug może mieć maksymalnie 250 znaków');
       return;
     }
 
@@ -189,7 +187,11 @@ const PostEditor = () => {
               value={post.title}
               onChange={(e) => handleTitleChange(e.target.value)}
               placeholder="Tytuł posta"
+              maxLength={200}
             />
+            <p className="text-xs text-muted-foreground mt-1">
+              {post.title.length}/200 znaków
+            </p>
           </div>
           <div>
             <Label htmlFor="slug">Slug</Label>
@@ -198,7 +200,11 @@ const PostEditor = () => {
               value={post.slug}
               onChange={(e) => setPost({ ...post, slug: e.target.value })}
               placeholder="slug-posta"
+              maxLength={250}
             />
+            <p className="text-xs text-muted-foreground mt-1">
+              {post.slug.length}/250 znaków
+            </p>
           </div>
         </div>
 
@@ -240,37 +246,20 @@ const PostEditor = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="category">Kategoria</Label>
-            <Select value={post.category_id || ''} onValueChange={(value) => setPost({ ...post, category_id: value || null })}>
-              <SelectTrigger>
-                <SelectValue placeholder="Wybierz kategorię" />
-              </SelectTrigger>
-              <SelectContent>
-                {categories.filter(c => c.lang === post.lang).map((category) => (
-                  <SelectItem key={category.id} value={category.id}>
-                    {category.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div>
-            <Label htmlFor="author">Autor</Label>
-            <Select value={post.author_id || ''} onValueChange={(value) => setPost({ ...post, author_id: value || null })}>
-              <SelectTrigger>
-                <SelectValue placeholder="Wybierz autora" />
-              </SelectTrigger>
-              <SelectContent>
-                {authors.map((author) => (
-                  <SelectItem key={author.id} value={author.id}>
-                    {author.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+        <div>
+          <Label htmlFor="category">Kategoria</Label>
+          <Select value={post.category_id || ''} onValueChange={(value) => setPost({ ...post, category_id: value || null })}>
+            <SelectTrigger>
+              <SelectValue placeholder="Wybierz kategorię" />
+            </SelectTrigger>
+            <SelectContent>
+              {categories.filter(c => c.lang === post.lang).map((category) => (
+                <SelectItem key={category.id} value={category.id}>
+                  {category.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <div>
@@ -303,7 +292,11 @@ const PostEditor = () => {
                 value={post.meta_title}
                 onChange={(e) => setPost({ ...post, meta_title: e.target.value })}
                 placeholder="SEO title"
+                maxLength={60}
               />
+              <p className="text-xs text-muted-foreground mt-1">
+                {post.meta_title.length}/60 znaków
+              </p>
             </div>
             <div>
               <Label htmlFor="meta_desc">Meta Description</Label>
@@ -313,29 +306,20 @@ const PostEditor = () => {
                 onChange={(e) => setPost({ ...post, meta_desc: e.target.value })}
                 placeholder="SEO description"
                 rows={2}
+                maxLength={160}
               />
+              <p className="text-xs text-muted-foreground mt-1">
+                {post.meta_desc.length}/160 znaków
+              </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="og_image_url">OG Image URL</Label>
-                <Input
-                  id="og_image_url"
-                  value={post.og_image_url}
-                  onChange={(e) => setPost({ ...post, og_image_url: e.target.value })}
-                  placeholder="https://..."
-                />
-              </div>
-              <div>
-                <Label htmlFor="seo_score">SEO Score (0-100)</Label>
-                <Input
-                  id="seo_score"
-                  type="number"
-                  min="0"
-                  max="100"
-                  value={post.seo_score}
-                  onChange={(e) => setPost({ ...post, seo_score: parseInt(e.target.value) || 0 })}
-                />
-              </div>
+            <div>
+              <Label htmlFor="og_image_url">OG Image URL</Label>
+              <Input
+                id="og_image_url"
+                value={post.og_image_url}
+                onChange={(e) => setPost({ ...post, og_image_url: e.target.value })}
+                placeholder="https://..."
+              />
             </div>
           </div>
         </div>
