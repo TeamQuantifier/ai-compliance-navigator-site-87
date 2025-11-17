@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/select';
 import RichTextEditor from '@/components/editor/RichTextEditor';
 import { toast } from 'sonner';
-import { ArrowLeft, Save } from 'lucide-react';
+import { ArrowLeft, Save, CheckCircle } from 'lucide-react';
 
 const PostEditor = () => {
   const { id } = useParams();
@@ -98,36 +98,38 @@ const PostEditor = () => {
     });
   };
 
-  const handleSave = async () => {
+  const validatePost = () => {
     if (!post.title) {
       toast.error('Tytuł jest wymagany');
-      return;
+      return false;
     }
-
     if (post.title.length > 200) {
       toast.error('Tytuł może mieć maksymalnie 200 znaków');
-      return;
+      return false;
     }
-
     if (post.meta_title && post.meta_title.length > 60) {
       toast.error('Meta Title może mieć maksymalnie 60 znaków');
-      return;
+      return false;
     }
-
     if (post.meta_desc && post.meta_desc.length > 160) {
       toast.error('Meta Description może mieć maksymalnie 160 znaków');
-      return;
+      return false;
     }
-
     if (post.slug.length > 250) {
       toast.error('Slug może mieć maksymalnie 250 znaków');
-      return;
+      return false;
     }
+    return true;
+  };
+
+  const handleSaveAsDraft = async () => {
+    if (!validatePost()) return;
 
     setLoading(true);
     try {
       const postData = {
         ...post,
+        status: 'draft',
         updated_at: new Date().toISOString(),
       };
 
@@ -138,19 +140,54 @@ const PostEditor = () => {
           .eq('id', id);
 
         if (error) throw error;
-        toast.success('Post zaktualizowany');
+        toast.success('Draft zapisany');
       } else {
         const { error } = await supabase
           .from('posts')
           .insert([postData]);
 
         if (error) throw error;
-        toast.success('Post utworzony');
+        toast.success('Draft utworzony');
         navigate('/admin/posts');
       }
-    } catch (error) {
-      console.error('Error saving post:', error);
-      toast.error('Błąd podczas zapisywania');
+    } catch (error: any) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePublish = async () => {
+    if (!validatePost()) return;
+
+    setLoading(true);
+    try {
+      const postData = {
+        ...post,
+        status: 'published',
+        published_at: post.published_at || new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      };
+
+      if (id && id !== 'new') {
+        const { error } = await supabase
+          .from('posts')
+          .update(postData)
+          .eq('id', id);
+
+        if (error) throw error;
+        toast.success('Post opublikowany!');
+      } else {
+        const { error } = await supabase
+          .from('posts')
+          .insert([postData]);
+
+        if (error) throw error;
+        toast.success('Post opublikowany!');
+        navigate('/admin/posts');
+      }
+    } catch (error: any) {
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
@@ -172,10 +209,23 @@ const PostEditor = () => {
             {id === 'new' ? 'Nowy Post' : 'Edytuj Post'}
           </h1>
         </div>
-        <Button onClick={handleSave} disabled={loading}>
-          <Save className="h-4 w-4 mr-2" />
-          Zapisz
-        </Button>
+        <div className="flex gap-2">
+          <Button 
+            variant="outline" 
+            onClick={handleSaveAsDraft} 
+            disabled={loading}
+          >
+            <Save className="h-4 w-4 mr-2" />
+            Save Draft
+          </Button>
+          <Button 
+            onClick={handlePublish} 
+            disabled={loading}
+          >
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Publish
+          </Button>
+        </div>
       </div>
 
       <div className="grid gap-6">
