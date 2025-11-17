@@ -109,7 +109,6 @@ export type Database = {
       }
       posts: {
         Row: {
-          author_id: string | null
           body_rich: Json
           category_id: string | null
           created_at: string
@@ -121,7 +120,6 @@ export type Database = {
           og_image_url: string | null
           published_at: string | null
           related_post_ids: string[] | null
-          seo_score: number | null
           slug: string
           status: Database["public"]["Enums"]["post_status"]
           tags: string[] | null
@@ -130,7 +128,6 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-          author_id?: string | null
           body_rich?: Json
           category_id?: string | null
           created_at?: string
@@ -142,7 +139,6 @@ export type Database = {
           og_image_url?: string | null
           published_at?: string | null
           related_post_ids?: string[] | null
-          seo_score?: number | null
           slug: string
           status?: Database["public"]["Enums"]["post_status"]
           tags?: string[] | null
@@ -151,7 +147,6 @@ export type Database = {
           updated_at?: string
         }
         Update: {
-          author_id?: string | null
           body_rich?: Json
           category_id?: string | null
           created_at?: string
@@ -163,7 +158,6 @@ export type Database = {
           og_image_url?: string | null
           published_at?: string | null
           related_post_ids?: string[] | null
-          seo_score?: number | null
           slug?: string
           status?: Database["public"]["Enums"]["post_status"]
           tags?: string[] | null
@@ -172,13 +166,6 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
-          {
-            foreignKeyName: "posts_author_id_fkey"
-            columns: ["author_id"]
-            isOneToOne: false
-            referencedRelation: "authors"
-            referencedColumns: ["id"]
-          },
           {
             foreignKeyName: "posts_category_id_fkey"
             columns: ["category_id"]
