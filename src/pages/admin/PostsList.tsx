@@ -22,7 +22,6 @@ interface Post {
   slug: string;
   lang: string;
   status: string;
-  seo_score: number;
   published_at: string | null;
   created_at: string;
 }
@@ -41,7 +40,7 @@ export default function PostsList() {
     try {
       const { data, error } = await supabase
         .from('posts')
-        .select('id, title, slug, lang, status, seo_score, published_at, created_at')
+        .select('id, title, slug, lang, status, published_at, created_at')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
@@ -125,7 +124,6 @@ export default function PostsList() {
               <TableHead>Title</TableHead>
               <TableHead>Language</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>SEO Score</TableHead>
               <TableHead>Published</TableHead>
               <TableHead className="text-right">Actions</TableHead>
             </TableRow>
@@ -133,7 +131,7 @@ export default function PostsList() {
           <TableBody>
             {posts.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
+                <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
                   No posts yet. Create your first one!
                 </TableCell>
               </TableRow>
@@ -147,13 +145,6 @@ export default function PostsList() {
                   <TableCell>
                     <Badge variant={getStatusColor(post.status)}>
                       {post.status}
-                    </Badge>
-                  </TableCell>
-                  <TableCell>
-                    <Badge 
-                      variant={post.seo_score >= 80 ? 'default' : 'destructive'}
-                    >
-                      {post.seo_score}/100
                     </Badge>
                   </TableCell>
                   <TableCell>
