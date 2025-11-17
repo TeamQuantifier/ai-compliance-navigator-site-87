@@ -10,7 +10,6 @@ type Alternate = Database['public']['Tables']['alternates']['Row'];
 
 export interface PostWithRelations extends Post {
   category?: Category | null;
-  author?: Author | null;
   alternate?: Alternate | null;
 }
 
@@ -27,8 +26,7 @@ export const usePosts = (lang: string, categoryId?: string) => {
         .from('posts')
         .select(`
           *,
-          category:categories(*),
-          author:authors(*)
+          category:categories(*)
         `)
         .eq('lang', lang)
         .eq('status', 'published')
@@ -54,8 +52,7 @@ export const usePost = (slug: string, lang: string) => {
         .from('posts')
         .select(`
           *,
-          category:categories(*),
-          author:authors(*)
+          category:categories(*)
         `)
         .eq('slug', slug)
         .eq('lang', lang)

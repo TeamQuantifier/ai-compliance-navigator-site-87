@@ -114,9 +114,6 @@ const BlogPost = () => {
         {post.updated_at && (
           <meta property="article:modified_time" content={post.updated_at} />
         )}
-        {post.author && (
-          <meta property="article:author" content={post.author.name} />
-        )}
         {post.tags && post.tags.map((tag: string) => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
@@ -133,7 +130,7 @@ const BlogPost = () => {
             dateModified: post.updated_at,
             author: {
               '@type': 'Person',
-              name: post.author?.name || 'Quantifier Team',
+              name: 'Quantifier Team',
             },
             publisher: {
               '@type': 'Organization',
@@ -177,21 +174,6 @@ const BlogPost = () => {
             <h1 className="text-4xl font-bold mb-4 text-foreground">{post.title}</h1>
             
             <div className="flex items-center gap-4 text-muted-foreground">
-              {post.author && (
-                <div className="flex items-center gap-2">
-                  {post.author.avatar_url && (
-                    <img 
-                      src={post.author.avatar_url} 
-                      alt={post.author.name}
-                      className="w-8 h-8 rounded-full"
-                    />
-                  )}
-                  <span>{post.author.name}</span>
-                </div>
-              )}
-              
-              <Separator orientation="vertical" className="h-4" />
-              
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 <span>
