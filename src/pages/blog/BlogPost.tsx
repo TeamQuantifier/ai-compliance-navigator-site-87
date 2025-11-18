@@ -155,13 +155,11 @@ const BlogPost = () => {
           </Link>
 
           {/* Featured image */}
-          <div className="aspect-video overflow-hidden rounded-lg mb-8">
-            <img 
-              src={imageUrl} 
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <img 
+            src={post.featured_image_url || imageUrl} 
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
 
           {/* Article header */}
           <header className="mb-8">

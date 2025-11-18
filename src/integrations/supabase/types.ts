@@ -113,6 +113,7 @@ export type Database = {
           category_id: string | null
           created_at: string
           excerpt: string | null
+          featured_image_url: string | null
           id: string
           lang: string
           meta_desc: string | null
@@ -132,6 +133,7 @@ export type Database = {
           category_id?: string | null
           created_at?: string
           excerpt?: string | null
+          featured_image_url?: string | null
           id?: string
           lang: string
           meta_desc?: string | null
@@ -151,6 +153,7 @@ export type Database = {
           category_id?: string | null
           created_at?: string
           excerpt?: string | null
+          featured_image_url?: string | null
           id?: string
           lang?: string
           meta_desc?: string | null
