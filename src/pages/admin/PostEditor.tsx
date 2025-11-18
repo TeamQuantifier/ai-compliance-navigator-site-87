@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/select';
 import RichTextEditor from '@/components/editor/RichTextEditor';
 import { toast } from 'sonner';
-import { ArrowLeft, Save, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Save, CheckCircle, Upload, X } from 'lucide-react';
 
 const PostEditor = () => {
   const { id } = useParams();
@@ -32,6 +32,7 @@ const PostEditor = () => {
     meta_title: '',
     meta_desc: '',
     og_image_url: '',
+    featured_image_url: '',
     tags: [] as string[],
     related_post_ids: [] as string[],
     published_at: null as string | null,
@@ -96,6 +97,50 @@ const PostEditor = () => {
       title: value,
       slug: post.slug || generateSlug(value),
     });
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      toast.error('Proszę wybrać plik graficzny');
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('Obrazek jest za duży (max 5MB)');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const filePath = fileName;
+
+      const { error: uploadError } = await supabase.storage
+        .from('blog-images')
+        .upload(filePath, file);
+
+      if (uploadError) throw uploadError;
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('blog-images')
+        .getPublicUrl(filePath);
+
+      setPost({ ...post, featured_image_url: publicUrl });
+      toast.success('Obrazek dodany!');
+    } catch (error: any) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const removeFeaturedImage = () => {
+    setPost({ ...post, featured_image_url: '' });
+    toast.success('Obrazek usunięty');
   };
 
   const validatePost = () => {
@@ -321,6 +366,41 @@ const PostEditor = () => {
             placeholder="Krótkie podsumowanie posta..."
             rows={3}
           />
+        </div>
+
+        <div>
+          <Label htmlFor="featured_image">Główny obrazek artykułu (thumbnail)</Label>
+          <div className="mt-2">
+            {post.featured_image_url ? (
+              <div className="relative inline-block">
+                <img 
+                  src={post.featured_image_url} 
+                  alt="Featured" 
+                  className="max-w-xs rounded-lg border"
+                />
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  className="absolute top-2 right-2"
+                  onClick={removeFeaturedImage}
+                  type="button"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Input
+                  id="featured_image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={loading}
+                />
+                <Upload className="h-4 w-4 text-muted-foreground" />
+              </div>
+            )}
+          </div>
         </div>
 
         <div>

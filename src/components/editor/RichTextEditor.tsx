@@ -1,4 +1,5 @@
 import { useEditor, EditorContent } from '@tiptap/react';
+import { useEffect } from 'react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
@@ -46,6 +47,15 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
       },
     },
   });
+
+  useEffect(() => {
+    if (editor && content) {
+      const currentContent = editor.getJSON();
+      if (JSON.stringify(currentContent) !== JSON.stringify(content)) {
+        editor.commands.setContent(content);
+      }
+    }
+  }, [content, editor]);
 
   if (!editor) {
     return null;

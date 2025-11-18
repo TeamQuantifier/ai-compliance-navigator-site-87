@@ -113,12 +113,12 @@ const BlogList = () => {
                 
                 return (
                   <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                    <div className="aspect-video overflow-hidden">
-                      <img 
-                        src={imageUrl} 
-                        alt={post.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+            <div className="aspect-video overflow-hidden">
+              <img 
+                src={post.featured_image_url || imageUrl} 
+                alt={post.title}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
                     </div>
                     <CardHeader>
                       <div className="flex items-center gap-2 mb-2">

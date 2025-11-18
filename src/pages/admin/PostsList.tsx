@@ -24,6 +24,7 @@ interface Post {
   status: string;
   published_at: string | null;
   created_at: string;
+  featured_image_url?: string;
 }
 
 export default function PostsList() {
@@ -40,7 +41,7 @@ export default function PostsList() {
     try {
       const { data, error } = await supabase
         .from('posts')
-        .select('id, title, slug, lang, status, published_at, created_at')
+        .select('id, title, slug, lang, status, published_at, created_at, featured_image_url')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
@@ -121,6 +122,7 @@ export default function PostsList() {
         <Table>
           <TableHeader>
             <TableRow>
+              <TableHead>Thumbnail</TableHead>
               <TableHead>Title</TableHead>
               <TableHead>Language</TableHead>
               <TableHead>Status</TableHead>
@@ -138,6 +140,17 @@ export default function PostsList() {
             ) : (
               posts.map((post) => (
                 <TableRow key={post.id}>
+                  <TableCell>
+                    {post.featured_image_url ? (
+                      <img 
+                        src={post.featured_image_url} 
+                        alt={post.title}
+                        className="w-16 h-16 object-cover rounded"
+                      />
+                    ) : (
+                      <span className="text-muted-foreground text-xs">Brak</span>
+                    )}
+                  </TableCell>
                   <TableCell className="font-medium">{post.title}</TableCell>
                   <TableCell>
                     <Badge variant="outline">{post.lang.toUpperCase()}</Badge>
