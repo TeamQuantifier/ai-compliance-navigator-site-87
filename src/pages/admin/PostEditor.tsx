@@ -129,7 +129,7 @@ const PostEditor = () => {
     try {
       const postData = {
         ...post,
-        status: 'draft',
+        status: 'draft' as const,
         updated_at: new Date().toISOString(),
       };
 
@@ -164,7 +164,7 @@ const PostEditor = () => {
     try {
       const postData = {
         ...post,
-        status: 'published',
+        status: 'published' as const,
         published_at: post.published_at || new Date().toISOString(),
         updated_at: new Date().toISOString(),
       };
