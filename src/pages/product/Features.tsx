@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductFeatures = () => {
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
   const [activeTab, setActiveTab] = useState("ai-officer");
   const handleTabChange = (value: string) => {
     setActiveTab(value);
@@ -697,7 +697,7 @@ const ProductFeatures = () => {
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <Button asChild size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 h-auto text-lg shadow-lg shadow-slate-900/30 group">
-            <Link to="/contact">
+            <Link to={`/${currentLocale}/contact`}>
               {t('product.features.cta.bookDemo')}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
