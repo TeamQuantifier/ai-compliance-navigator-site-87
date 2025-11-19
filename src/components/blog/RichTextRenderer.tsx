@@ -35,21 +35,21 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
 
       case 'bulletList':
         return (
-          <ul key={index} className="list-disc list-inside mb-4 ml-4 space-y-2 text-foreground">
+          <ul key={index} className="list-disc list-outside mb-4 ml-8 space-y-2 text-foreground">
             {node.content?.map((child, i) => renderNode(child, i))}
           </ul>
         );
 
       case 'orderedList':
         return (
-          <ol key={index} className="list-decimal list-inside mb-4 ml-4 space-y-2 text-foreground">
+          <ol key={index} className="list-decimal list-outside mb-4 ml-8 space-y-2 text-foreground">
             {node.content?.map((child, i) => renderNode(child, i))}
           </ol>
         );
 
       case 'listItem':
         return (
-          <li key={index} className="text-foreground">
+          <li key={index} className="text-foreground pl-2">
             {node.content?.map((child, i) => renderNode(child, i))}
           </li>
         );
