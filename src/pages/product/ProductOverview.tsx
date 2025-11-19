@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductOverview = () => {
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
   
   const features = [
     {
@@ -61,9 +61,11 @@ const ProductOverview = () => {
             <p className="text-xl text-slate-700 mb-8">
               {t('product.overview.subtitle')}
             </p>
-            <Button className="group">
-              {t('product.overview.requestDemo')}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button className="group" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('product.overview.requestDemo')}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
           </div>
         </div>

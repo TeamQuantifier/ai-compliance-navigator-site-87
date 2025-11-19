@@ -98,8 +98,10 @@ const NisII = () => {
                             {t('nisIIPage.hero.marketingConsent')}
                           </Label>
                         </div>
-                        <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium">
-                          {t('nisIIPage.hero.requestDemoButton')}
+                        <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium" asChild>
+                          <Link to={`/${currentLocale}/contact`}>
+                            {t('nisIIPage.hero.requestDemoButton')}
+                          </Link>
                         </Button>
                       </form>
                     </div>

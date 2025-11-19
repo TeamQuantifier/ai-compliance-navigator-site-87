@@ -348,8 +348,8 @@ const Soc = () => {
                 {t('socPage.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8">
-                  <Link to={`/${currentLocale}/contact`} className="flex items-center">
+                <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
                     {t('socPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
