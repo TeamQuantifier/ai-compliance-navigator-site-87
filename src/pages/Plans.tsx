@@ -4,9 +4,10 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Plans = () => {
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
   
   const planFeatures = [{
     name: t('plans.starter.name'),
@@ -61,9 +62,11 @@ const Plans = () => {
             
             <div className="mt-auto">
               <p className="text-sm font-medium mb-4">{plan.cta}</p>
-              <Button className="w-full bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-md hover:shadow-lg transition-all">
-                <MessageSquare className="mr-2 h-4 w-4" />
-                {plan.buttonText}
+              <Button className="w-full bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-md hover:shadow-lg transition-all" asChild>
+                <Link to={`/${currentLocale}/contact`}>
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  {plan.buttonText}
+                </Link>
               </Button>
             </div>
           </Card>)}
@@ -78,9 +81,11 @@ const Plans = () => {
           <p className="text-lg text-slate-600 mb-6">
             {t('plans.customSolution.description')}
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-lg hover:shadow-xl transition-all">
-            {t('plans.customSolution.button')}
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white group shadow-lg hover:shadow-xl transition-all" asChild>
+            <Link to={`/${currentLocale}/contact`}>
+              {t('plans.customSolution.button')}
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </div>
       </div>

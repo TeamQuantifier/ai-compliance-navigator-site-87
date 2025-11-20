@@ -6,9 +6,10 @@ import PartnerMap from '@/components/PartnerMap';
 import { Separator } from '@/components/ui/separator';
 import CtaSection from '@/components/CtaSection';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Partners = () => {
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
   
   const partnerBenefits = [{
     title: t('partners.benefits.expand.title'),
@@ -121,10 +122,12 @@ const Partners = () => {
               {t('partners.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg group shadow-lg">
-                <MessageSquare className="mr-2 h-5 w-5" />
-                {t('partners.cta.button')}
-              </Button>
+          <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg group shadow-lg" asChild>
+            <Link to={`/${currentLocale}/contact`}>
+              <MessageSquare className="mr-2 h-5 w-5" />
+              {t('partners.cta.button')}
+            </Link>
+          </Button>
               
             </div>
           </div>
