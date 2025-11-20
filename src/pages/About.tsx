@@ -4,9 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
   
   return <PageTemplate title={t('about.title')} description={t('about.description')}>
       <div className="max-w-6xl mx-auto">
@@ -158,8 +159,14 @@ const About = () => {
           <p className="mb-6 max-w-2xl mx-auto">
             {t('about.cta.description')}
           </p>
-          <Button variant="secondary" size="lg">
-            {t('about.cta.button')}
+          <Button 
+            size="lg" 
+            className="bg-white text-compliance-900 hover:bg-white/90 font-semibold border-2 border-white shadow-lg hover:shadow-xl transition-all"
+            asChild
+          >
+            <Link to={`/${currentLocale}/contact`}>
+              {t('about.cta.button')}
+            </Link>
           </Button>
         </div>
       </div>
