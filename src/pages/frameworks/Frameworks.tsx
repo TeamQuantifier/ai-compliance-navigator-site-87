@@ -87,10 +87,12 @@ const Frameworks = () => {
         <p className="text-lg text-slate-600 mb-6 max-w-2xl mx-auto">
           {t('frameworksPage.cta.description')}
         </p>
-        <Button className="group">
-          {t('frameworksPage.cta.button')}
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Button>
+            <Button className="group" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('frameworksPage.cta.button')}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
       </div>
     </PageTemplate>
   );
