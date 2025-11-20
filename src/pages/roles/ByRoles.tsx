@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ByRoles = () => {
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
   
   return <PageTemplate title={t('byRoles.pageTitle')} description={t('byRoles.pageDescription')}>
       {/* Hero section with darker colors */}
@@ -417,7 +417,7 @@ const ByRoles = () => {
             {t('byRoles.cta.description')}
           </p>
           <Button asChild size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8 py-6 shadow-lg">
-            <Link to="/contact">
+            <Link to={`/${currentLocale}/contact`}>
               {t('byRoles.cta.button')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
