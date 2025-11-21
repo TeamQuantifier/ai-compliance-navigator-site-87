@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Lock, Network, Leaf, FileKey, Layers } from 'lucide-react';
+import { ArrowRight, Shield, Lock, Network, Leaf, FileCheck, Brain, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Main Header - Full Width */}
-          <h1 className="text-4xl mb-8 text-white text-center leading-tight font-semibold md:text-7xl bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
+          <h1 className="text-3xl mb-8 text-white text-center leading-tight font-semibold md:text-5xl bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
             {t('hero.title')}
           </h1>
           
@@ -48,14 +48,14 @@ const HeroSection = () => {
                 <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30">
                   <Lock className="h-8 w-8 text-innovation-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">SOC</span>
+                <span className="text-sm font-medium text-slate-300">SOC 1/2</span>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
                   <Network className="h-8 w-8 text-compliance-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">NIS</span>
+                <span className="text-sm font-medium text-slate-300">NIS 2</span>
               </div>
               
               <div className="flex flex-col items-center">
@@ -67,16 +67,23 @@ const HeroSection = () => {
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
-                  <FileKey className="h-8 w-8 text-compliance-300" />
+                  <FileCheck className="h-8 w-8 text-compliance-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">CCPA</span>
+                <span className="text-sm font-medium text-slate-300">GDPR</span>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30">
-                  <Layers className="h-8 w-8 text-innovation-300" />
+                  <Brain className="h-8 w-8 text-innovation-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">Others</span>
+                <span className="text-sm font-medium text-slate-300">AI Act</span>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
+                  <Award className="h-8 w-8 text-compliance-300" />
+                </div>
+                <span className="text-sm font-medium text-slate-300">ISO 42001</span>
               </div>
             </div>
           </div>
