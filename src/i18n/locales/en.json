@@ -369,6 +369,10 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Insights, guides, and best practices for compliance and security",
+    "hero": {
+      "title": "Quantifier Blog",
+      "description": "A solid dose of insight from Quantifier on ESG and other regulations, cybersecurity and AI agent-powered compliance automation, focused on competitiveness and key trends."
+    },
     "allCategories": "All Categories",
     "readingTime": "min read",
     "readMore": "Read More",

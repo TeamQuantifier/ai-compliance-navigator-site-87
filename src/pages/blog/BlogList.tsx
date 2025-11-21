@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Clock, Calendar, ArrowRight, AlertCircle } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, AlertCircle, BookOpen } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
 
 const BlogList = () => {
@@ -56,6 +56,25 @@ const BlogList = () => {
       </Helmet>
 
       <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
+        {/* Hero section */}
+        <div className="bg-gradient-to-br from-blue-50 to-slate-100 py-16 px-6 rounded-xl mb-12 relative overflow-hidden shadow-xl">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-innovation-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-compliance-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+          
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center p-4 bg-white rounded-full mb-8 border border-slate-200 shadow-sm">
+              <BookOpen className="h-10 w-10 text-innovation-600" />
+            </div>
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('blog.hero.title')}
+            </h2>
+            <p className="text-lg text-slate-600 mb-8">
+              {t('blog.hero.description')}
+            </p>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto">
           {/* Category filter */}
           <div className="mb-8 flex gap-2 flex-wrap">
@@ -130,7 +149,7 @@ const BlogList = () => {
                           <span>{readingTime} {t('blog.readingTime')}</span>
                         </div>
                       </div>
-                      <CardTitle className="line-clamp-2">{post.title}</CardTitle>
+                      <CardTitle className="line-clamp-2 text-lg">{post.title}</CardTitle>
                       <CardDescription className="line-clamp-3">
                         {post.excerpt || post.meta_desc}
                       </CardDescription>
