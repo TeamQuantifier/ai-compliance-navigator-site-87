@@ -130,10 +130,6 @@ export const Navbar = () => {
       href: '/blog',
     },
     {
-      title: t('menu.about'),
-      href: '/about',
-    },
-    {
       title: t('menu.contact'),
       href: '/contact',
     },
