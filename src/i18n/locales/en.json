@@ -84,9 +84,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "The AI-native compliance layer for organizations",
-    "subtitle": "Your AI Agent Compliance Officer that manages projects, collects data, and showcases results—automating the entire compliance process",
-    "supportingFrameworks": "Supporting key compliance frameworks",
+    "title": "One AI-native platform for managing GRC: corporate governance, risk and regulatory compliance.",
+    "subtitle": "Quantifier brings together risks, policies, tasks and reports in one place. AI agents automate compliance, while experienced consultants ensure effective and auditable implementation.",
+    "supportingFrameworks": "Selected frameworks and standards: ISO 27001, SOC 1/2, NIS 2, ESG (EU & global), GDPR, the EU AI Act, ISO 42001 and others.",
     "requestDemo": "Request Demo",
     "exploreFeatures": "Explore Features"
   },
