@@ -44,7 +44,7 @@ import Dora from "./pages/frameworks/information-security/Dora";
 import Plans from "./pages/Plans";
 import Partners from "./pages/Partners";
 import SuccessStories from "./pages/SuccessStories";
-import About from "./pages/About";
+
 import Contact from "./pages/Contact";
 
 // Blog pages
@@ -129,8 +129,6 @@ const App = () => (
                   <Route path="/:locale/partners" element={<Partners />} />
                   <Route path="/:locale/success-stories" element={<SuccessStories />} />
                   
-                  {/* About routes */}
-                  <Route path="/:locale/about" element={<About />} />
                   <Route path="/:locale/contact" element={<Contact />} />
                   
                   {/* Admin routes */}
