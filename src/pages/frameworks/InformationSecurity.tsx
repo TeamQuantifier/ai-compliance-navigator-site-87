@@ -191,8 +191,8 @@ const InformationSecurity = () => {
                     <Shield className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Autonomous Compliance</h3>
-                    <p className="text-slate-600">Forget manual tracking. Quantifier's AI agents continuously ensure you're meeting ISO 27001 and ISO 9001, DORA standards.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('informationSecurityPage.whyQuantifier.features.autonomous.title')}</h3>
+                    <p className="text-slate-600">{t('informationSecurityPage.whyQuantifier.features.autonomous.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -205,8 +205,8 @@ const InformationSecurity = () => {
                     <FileCheck className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Seamless Integration</h3>
-                    <p className="text-slate-600">From policies to procedures, integrate your information security and quality management processes across your organization—automatically.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('informationSecurityPage.whyQuantifier.features.seamless.title')}</h3>
+                    <p className="text-slate-600">{t('informationSecurityPage.whyQuantifier.features.seamless.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -219,8 +219,8 @@ const InformationSecurity = () => {
                     <Clock className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Real-Time, Zero Delay</h3>
-                    <p className="text-slate-600">Achieve continuous compliance with real-time risk assessments and evidence collection.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('informationSecurityPage.whyQuantifier.features.realTime.title')}</h3>
+                    <p className="text-slate-600">{t('informationSecurityPage.whyQuantifier.features.realTime.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -233,8 +233,8 @@ const InformationSecurity = () => {
                     <Globe className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Global Standardization</h3>
-                    <p className="text-slate-600">Manage compliance across multiple geographies and frameworks, all in one platform.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('informationSecurityPage.whyQuantifier.features.global.title')}</h3>
+                    <p className="text-slate-600">{t('informationSecurityPage.whyQuantifier.features.global.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -247,8 +247,8 @@ const InformationSecurity = () => {
                     <Lock className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Data Security First</h3>
-                    <p className="text-slate-600">With built-in security, your organization's data is always protected throughout the compliance process.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('informationSecurityPage.whyQuantifier.features.dataFirst.title')}</h3>
+                    <p className="text-slate-600">{t('informationSecurityPage.whyQuantifier.features.dataFirst.description')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -261,8 +261,8 @@ const InformationSecurity = () => {
                     <BarChart4 className="h-6 w-6 text-[#9b87f5]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Intelligent Reporting</h3>
-                    <p className="text-slate-600">Get comprehensive insights with AI-generated reports that highlight risks and compliance status.</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('informationSecurityPage.whyQuantifier.features.intelligent.title')}</h3>
+                    <p className="text-slate-600">{t('informationSecurityPage.whyQuantifier.features.intelligent.description')}</p>
                   </div>
                 </div>
               </CardContent>
