@@ -9,6 +9,9 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Calendar, ArrowRight, AlertCircle, Trophy, Building2 } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
+import FashionRetailerCaseStudy from '@/components/case-studies/FashionRetailerCaseStudy';
+import LogisticsGroupCaseStudy from '@/components/case-studies/LogisticsGroupCaseStudy';
+import FinancialServicesCaseStudy from '@/components/case-studies/FinancialServicesCaseStudy';
 
 const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
@@ -145,6 +148,19 @@ const SuccessStories = () => {
               <p className="text-muted-foreground">{t('successStories.notFound')}</p>
             </div>
           )}
+
+          {/* Featured Case Studies Section */}
+          <div className="mt-24">
+            <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('successStories.featuredTitle')}
+            </h2>
+            
+            <div className="space-y-16">
+              <FashionRetailerCaseStudy />
+              <LogisticsGroupCaseStudy />
+              <FinancialServicesCaseStudy />
+            </div>
+          </div>
         </div>
       </PageTemplate>
     </>
