@@ -12,9 +12,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogFooter,
+} from '@/components/ui/dialog';
 import RichTextEditor from '@/components/editor/RichTextEditor';
 import { toast } from 'sonner';
-import { ArrowLeft, Save, CheckCircle, Upload, X } from 'lucide-react';
+import { ArrowLeft, Save, CheckCircle, Upload, X, Plus } from 'lucide-react';
 
 const PostEditor = () => {
   const { id } = useParams();
@@ -38,12 +46,26 @@ const PostEditor = () => {
     published_at: null as string | null,
   });
 
+  // New category dialog state
+  const [showNewCategoryDialog, setShowNewCategoryDialog] = useState(false);
+  const [newCategoryName, setNewCategoryName] = useState('');
+  const [newCategorySlug, setNewCategorySlug] = useState('');
+  const [creatingCategory, setCreatingCategory] = useState(false);
+
+  // Tags input state
+  const [tagsInput, setTagsInput] = useState('');
+
   useEffect(() => {
     loadCategories();
     if (id && id !== 'new') {
       loadPost();
     }
   }, [id]);
+
+  // Sync tags input when post loads
+  useEffect(() => {
+    setTagsInput(post.tags.join(', '));
+  }, [post.tags]);
 
   const loadCategories = async () => {
     try {
@@ -97,6 +119,65 @@ const PostEditor = () => {
       title: value,
       slug: post.slug || generateSlug(value),
     });
+  };
+
+  const handleNewCategoryNameChange = (value: string) => {
+    setNewCategoryName(value);
+    setNewCategorySlug(generateSlug(value));
+  };
+
+  const createCategory = async () => {
+    if (!newCategoryName.trim()) {
+      toast.error('Nazwa kategorii jest wymagana');
+      return;
+    }
+    if (!newCategorySlug.trim()) {
+      toast.error('Slug kategorii jest wymagany');
+      return;
+    }
+
+    setCreatingCategory(true);
+    try {
+      const { data, error } = await supabase
+        .from('categories')
+        .insert([{ 
+          name: newCategoryName.trim(), 
+          slug: newCategorySlug.trim(), 
+          lang: post.lang 
+        }])
+        .select()
+        .single();
+
+      if (error) throw error;
+
+      if (data) {
+        setCategories([...categories, data]);
+        setPost({ ...post, category_id: data.id });
+        setShowNewCategoryDialog(false);
+        setNewCategoryName('');
+        setNewCategorySlug('');
+        toast.success('Kategoria utworzona!');
+      }
+    } catch (error: any) {
+      toast.error(error.message || 'Błąd podczas tworzenia kategorii');
+    } finally {
+      setCreatingCategory(false);
+    }
+  };
+
+  const processTags = () => {
+    const newTags = tagsInput
+      .split(/[,;]+/)
+      .map(t => t.trim())
+      .filter(Boolean);
+    setPost({ ...post, tags: newTags });
+  };
+
+  const handleTagsKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      processTags();
+    }
   };
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -343,18 +424,63 @@ const PostEditor = () => {
 
         <div>
           <Label htmlFor="category">Kategoria</Label>
-          <Select value={post.category_id || ''} onValueChange={(value) => setPost({ ...post, category_id: value || null })}>
-            <SelectTrigger>
-              <SelectValue placeholder="Wybierz kategorię" />
-            </SelectTrigger>
-            <SelectContent>
-              {categories.filter(c => c.lang === post.lang).map((category) => (
-                <SelectItem key={category.id} value={category.id}>
-                  {category.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className="flex gap-2">
+            <Select value={post.category_id || ''} onValueChange={(value) => setPost({ ...post, category_id: value || null })}>
+              <SelectTrigger className="flex-1">
+                <SelectValue placeholder="Wybierz kategorię" />
+              </SelectTrigger>
+              <SelectContent>
+                {categories.filter(c => c.lang === post.lang).map((category) => (
+                  <SelectItem key={category.id} value={category.id}>
+                    {category.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Dialog open={showNewCategoryDialog} onOpenChange={setShowNewCategoryDialog}>
+              <DialogTrigger asChild>
+                <Button variant="outline" size="icon" title="Dodaj nową kategorię">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Dodaj nową kategorię</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4 py-4">
+                  <div>
+                    <Label htmlFor="new-category-name">Nazwa kategorii</Label>
+                    <Input
+                      id="new-category-name"
+                      value={newCategoryName}
+                      onChange={(e) => handleNewCategoryNameChange(e.target.value)}
+                      placeholder="np. Sztuczna Inteligencja"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="new-category-slug">Slug</Label>
+                    <Input
+                      id="new-category-slug"
+                      value={newCategorySlug}
+                      onChange={(e) => setNewCategorySlug(e.target.value)}
+                      placeholder="np. sztuczna-inteligencja"
+                    />
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Kategoria zostanie utworzona dla języka: <strong>{post.lang === 'pl' ? 'Polski' : 'English'}</strong>
+                  </p>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => setShowNewCategoryDialog(false)}>
+                    Anuluj
+                  </Button>
+                  <Button onClick={createCategory} disabled={creatingCategory}>
+                    {creatingCategory ? 'Tworzenie...' : 'Utwórz kategorię'}
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
 
         <div>
@@ -457,13 +583,18 @@ const PostEditor = () => {
         <div className="border-t pt-6">
           <h2 className="text-xl font-semibold mb-4">Tagi</h2>
           <div>
-            <Label htmlFor="tags">Tagi (oddzielone przecinkiem)</Label>
+            <Label htmlFor="tags">Tagi (oddzielone przecinkiem lub średnikiem)</Label>
             <Input
               id="tags"
-              value={post.tags.join(', ')}
-              onChange={(e) => setPost({ ...post, tags: e.target.value.split(',').map(t => t.trim()).filter(Boolean) })}
+              value={tagsInput}
+              onChange={(e) => setTagsInput(e.target.value)}
+              onBlur={processTags}
+              onKeyDown={handleTagsKeyDown}
               placeholder="tag1, tag2, tag3"
             />
+            <p className="text-xs text-muted-foreground mt-1">
+              Naciśnij Enter lub kliknij poza pole aby zatwierdzić. Aktualne tagi: {post.tags.length > 0 ? post.tags.join(', ') : 'brak'}
+            </p>
           </div>
         </div>
       </div>
