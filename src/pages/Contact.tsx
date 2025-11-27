@@ -97,7 +97,7 @@ const Contact = () => {
   return <PageTemplate title={t('contact.title')} description={t('contact.description')}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 className="font-bold mb-6 gradient-heading text-6xl py-[20px]">{t('contact.heading')}</h2>
+          <h2 className="font-bold mb-6 gradient-heading text-3xl md:text-4xl leading-tight py-[20px]">{t('contact.heading')}</h2>
           <p className="text-lg text-slate-600 mb-8">
             {t('contact.intro')}
           </p>
