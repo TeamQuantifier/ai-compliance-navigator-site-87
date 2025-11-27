@@ -134,6 +134,26 @@ export const useCategories = (lang: string) => {
   });
 };
 
+export const useStories = (lang: string) => {
+  return useQuery({
+    queryKey: ['stories', lang],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('stories')
+        .select(`
+          *,
+          author:authors(*)
+        `)
+        .eq('lang', lang)
+        .eq('status', 'published')
+        .order('published_at', { ascending: false });
+      
+      if (error) throw error;
+      return data as StoryWithRelations[];
+    },
+  });
+};
+
 export const useAlternatePost = (postId: string) => {
   return useQuery({
     queryKey: ['alternate-post', postId],
