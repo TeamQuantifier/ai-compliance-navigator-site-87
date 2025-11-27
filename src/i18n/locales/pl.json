@@ -399,6 +399,23 @@
     "notFound": "Nie znaleziono wpisu",
     "relatedPosts": "Powiązane wpisy"
   },
+  "successStories": {
+    "title": "Historie sukcesu",
+    "subtitle": "Odkryj, jak organizacje osiągają doskonałość compliance z Quantifier",
+    "hero": {
+      "title": "Prawdziwe wyniki od prawdziwych klientów",
+      "description": "Zobacz, jak firmy z różnych branż przekształciły swoje procesy compliance i osiągnęły wymierne rezultaty dzięki naszej platformie AI."
+    },
+    "readMore": "Czytaj historię",
+    "notFound": "Brak historii sukcesu",
+    "error": "Błąd ładowania historii sukcesu",
+    "loading": "Ładowanie...",
+    "backToStories": "Powrót do historii sukcesu",
+    "results": "Kluczowe wyniki",
+    "tags": "Tagi",
+    "client": "Klient",
+    "industry": "Branża"
+  },
   "about": {
     "title": "O nas",
     "description": "Poznaj zespół rewolucjonizujący zarządzanie compliance dzięki AI",

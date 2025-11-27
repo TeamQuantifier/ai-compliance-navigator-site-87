@@ -384,6 +384,23 @@
     "notFound": "Post not found",
     "relatedPosts": "Related Posts"
   },
+  "successStories": {
+    "title": "Success Stories",
+    "subtitle": "Discover how organizations achieve compliance excellence with Quantifier",
+    "hero": {
+      "title": "Real Results from Real Clients",
+      "description": "See how companies across industries have transformed their compliance processes and achieved measurable results with our AI-powered platform."
+    },
+    "readMore": "Read Story",
+    "notFound": "No success stories found",
+    "error": "Error loading success stories",
+    "loading": "Loading...",
+    "backToStories": "Back to Success Stories",
+    "results": "Key Results",
+    "tags": "Tags",
+    "client": "Client",
+    "industry": "Industry"
+  },
   "about": {
     "title": "About Us",
     "description": "Learn about our mission to simplify compliance with AI-powered solutions.",

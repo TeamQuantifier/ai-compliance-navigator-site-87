@@ -50,6 +50,7 @@ import Contact from "./pages/Contact";
 // Blog pages
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
+import StoryDetail from "./pages/blog/StoryDetail";
 
 // Admin pages
 import Login from "./pages/admin/Login";
@@ -128,6 +129,7 @@ const App = () => (
                   <Route path="/:locale/plans" element={<Plans />} />
                   <Route path="/:locale/partners" element={<Partners />} />
                   <Route path="/:locale/success-stories" element={<SuccessStories />} />
+                  <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
                   
                   <Route path="/:locale/contact" element={<Contact />} />
                   
