@@ -286,55 +286,40 @@
   "contact": {
     "title": "Skontaktuj się z nami",
     "description": "Jesteśmy tutaj, aby pomóc w Twojej podróży compliance",
-    "heading": "Porozmawiajmy o potrzebach Twojej firmy w ramach zagodności z regulacjami, zarządzania ryzykiem i ładem zarządczym",
+    "heading": "Porozmawiajmy o potrzebach Twojej firmy w ramach zgodności z regulacjami, zarządzania ryzykiem i ładem zarządczym",
     "intro": "Zespół ekspertów Quantifier jest gotowy, aby pomóc Ci uprościć Twoje procesy compliance. Skontaktuj się z nami i odkryj, jak możemy wspierać Twoją organizację.",
-    "methods": {
-      "email": "Wyślij nam e-mail",
-      "call": "Zadzwoń do nas",
-      "offices": "Nasze biura"
-    },
-    "addresses": {
-      "warsaw": {
-        "city": "Warszawa, Polska",
-        "line1": "ul. Przykładowa 123",
-        "line2": "00-001 Warszawa"
-      },
-      "poznan": {
-        "city": "Poznań, Polska",
-        "line1": "ul. Testowa 456",
-        "line2": "61-001 Poznań"
-      },
-      "sanfrancisco": {
-        "city": "San Francisco, USA",
-        "line1": "123 Market Street",
-        "line2": "San Francisco, CA 94102"
-      }
-    },
-    "form": {
-      "title": "Wyślij nam wiadomość",
-      "firstName": "Imię",
-      "lastName": "Nazwisko",
-      "email": "Email",
-      "company": "Firma",
-      "message": "Wiadomość",
-      "placeholders": {
-        "firstName": "Jan",
-        "lastName": "Kowalski",
-        "email": "jan.kowalski@firma.pl",
-        "company": "Nazwa Twojej firmy",
-        "message": "Powiedz nam, jak możemy Ci pomóc..."
-      },
-      "disclaimer": "Przesyłając ten formularz, wyrażasz zgodę na przetwarzanie Twoich danych osobowych zgodnie z naszą polityką prywatności.",
-      "submit": "Wyślij wiadomość",
-      "submitting": "Wysyłanie..."
-    },
+    "emailUs": "Napisz do nas",
+    "callUs": "Zadzwoń do nas",
+    "usaPhone": "USA: (+1) 415-799-8206",
+    "europePhone": "Europa: (+48) 698 759 206",
+    "visitOffices": "Odwiedź nasze biura",
+    "usaAddress": "USA: 447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108",
+    "europeLabel": "Europa:",
+    "warsawAddress": "Warszawa: Rondo Daszyńskiego 1, Warsaw",
+    "lublinAddress": "Lublin: Głowackiego 3/5/1",
+    "formTitle": "Wyślij nam wiadomość",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "emailAddress": "Adres email",
+    "companyName": "Nazwa firmy",
+    "message": "Wiadomość",
+    "firstNamePlaceholder": "Jan",
+    "lastNamePlaceholder": "Kowalski",
+    "emailPlaceholder": "jan.kowalski@firma.pl",
+    "companyPlaceholder": "Nazwa Twojej firmy",
+    "messagePlaceholder": "Jak możemy Ci pomóc?",
+    "disclaimer": "Przesyłając ten formularz, wyrażasz zgodę na przetwarzanie Twoich danych osobowych zgodnie z naszą polityką prywatności.",
+    "sendMessage": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
     "toast": {
-      "success": "Wiadomość wysłana!",
-      "successDescription": "Dziękujemy za kontakt. Odpowiemy wkrótce.",
-      "error": "Nie udało się wysłać",
-      "errorDescription": "Wystąpił błąd. Spróbuj ponownie.",
-      "fillAllFields": "Wypełnij wszystkie pola",
-      "fillAllFieldsDescription": "Proszę uzupełnić wszystkie wymagane pola."
+      "configError": "Błąd konfiguracji",
+      "configErrorDesc": "Endpoint formularza kontaktowego nie jest skonfigurowany.",
+      "missingFields": "Brakujące pola",
+      "missingFieldsDesc": "Proszę wypełnić wszystkie wymagane pola.",
+      "messageSent": "Wiadomość wysłana",
+      "messageSentDesc": "Dziękujemy za kontakt. Odpowiemy wkrótce.",
+      "failedToSend": "Nie udało się wysłać",
+      "failedToSendDesc": "Spróbuj ponownie później."
     }
   },
   "plans": {
