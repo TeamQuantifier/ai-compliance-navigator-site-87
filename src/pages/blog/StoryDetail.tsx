@@ -9,10 +9,6 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ArrowLeft, Calendar, Building2, Globe, AlertCircle, Trophy } from 'lucide-react';
 import RichTextRenderer from '@/components/blog/RichTextRenderer';
 import PageTemplate from '@/components/PageTemplate';
-import FashionRetailerCaseStudy from '@/components/case-studies/FashionRetailerCaseStudy';
-import LogisticsGroupCaseStudy from '@/components/case-studies/LogisticsGroupCaseStudy';
-import FinancialServicesCaseStudy from '@/components/case-studies/FinancialServicesCaseStudy';
-import type { Json } from '@/integrations/supabase/types';
 import type { JSONContent } from '@tiptap/react';
 
 interface KPI {
@@ -21,92 +17,16 @@ interface KPI {
   unit?: string;
 }
 
-// Static case study slugs
-const STATIC_CASE_STUDIES = ['fashion-retailer', 'logistics-group', 'financial-services'] as const;
-type StaticCaseStudySlug = typeof STATIC_CASE_STUDIES[number];
-
-const isStaticCaseStudy = (slug: string): slug is StaticCaseStudySlug => {
-  return STATIC_CASE_STUDIES.includes(slug as StaticCaseStudySlug);
-};
-
-const StaticCaseStudyDetail = ({ slug }: { slug: StaticCaseStudySlug }) => {
+const StoryDetail = () => {
+  const { slug } = useParams<{ slug: string }>();
   const { currentLocale, t } = useLanguage();
   
-  const caseStudyComponents: Record<StaticCaseStudySlug, React.ReactNode> = {
-    'fashion-retailer': <FashionRetailerCaseStudy />,
-    'logistics-group': <LogisticsGroupCaseStudy />,
-    'financial-services': <FinancialServicesCaseStudy />,
-  };
-
-  const titles: Record<StaticCaseStudySlug, string> = {
-    'fashion-retailer': t('successStoriesPage.fashionRetailer.title'),
-    'logistics-group': t('successStoriesPage.logisticsGroup.title'),
-    'financial-services': t('successStoriesPage.financialServices.title'),
-  };
-
-  const descriptions: Record<StaticCaseStudySlug, string> = {
-    'fashion-retailer': t('successStoriesPage.fashionRetailer.section1Text'),
-    'logistics-group': t('successStoriesPage.logisticsGroup.section1Text'),
-    'financial-services': t('successStoriesPage.financialServices.section1Text'),
-  };
-
-  const canonicalUrl = `https://quantifier.ai/${currentLocale}/success-stories/${slug}`;
-
-  return (
-    <>
-      <Helmet>
-        <title>{titles[slug]} | Quantifier.ai</title>
-        <meta name="description" content={descriptions[slug].substring(0, 160)} />
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* hreflang tags */}
-        <link rel="alternate" hrefLang="en" href={`https://quantifier.ai/en/success-stories/${slug}`} />
-        <link rel="alternate" hrefLang="pl" href={`https://quantifier.ai/pl/success-stories/${slug}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://quantifier.ai/en/success-stories/${slug}`} />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={titles[slug]} />
-        <meta property="og:description" content={descriptions[slug].substring(0, 160)} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : 'en_US'} />
-      </Helmet>
-
-      <PageTemplate title="" description="">
-        <div className="max-w-4xl mx-auto">
-          {/* Back button */}
-          <div className="mb-8">
-            <Link to={`/${currentLocale}/success-stories`}>
-              <Button variant="ghost" size="sm">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                {t('successStories.backToStories')}
-              </Button>
-            </Link>
-          </div>
-
-          {/* Case study content */}
-          {caseStudyComponents[slug]}
-
-          {/* Back button */}
-          <div className="mt-12 pt-8 border-t text-center">
-            <Link to={`/${currentLocale}/success-stories`}>
-              <Button>
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                {t('successStories.backToStories')}
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </PageTemplate>
-    </>
-  );
-};
-
-const DatabaseStoryDetail = ({ slug }: { slug: string }) => {
-  const { currentLocale, t } = useLanguage();
+  const { data: story, isLoading, error } = useStory(slug || '', currentLocale);
   
-  const { data: story, isLoading, error } = useStory(slug, currentLocale);
-  
+  if (!slug) {
+    return null;
+  }
+
   if (isLoading) {
     return (
       <PageTemplate title={t('successStories.loading')} description="">
@@ -292,22 +212,6 @@ const DatabaseStoryDetail = ({ slug }: { slug: string }) => {
       </PageTemplate>
     </>
   );
-};
-
-const StoryDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
-  
-  if (!slug) {
-    return null;
-  }
-
-  // Check if this is a static case study
-  if (isStaticCaseStudy(slug)) {
-    return <StaticCaseStudyDetail slug={slug} />;
-  }
-
-  // Otherwise, fetch from database
-  return <DatabaseStoryDetail slug={slug} />;
 };
 
 export default StoryDetail;
