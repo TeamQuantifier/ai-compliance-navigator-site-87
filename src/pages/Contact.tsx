@@ -5,14 +5,13 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact = () => {
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { t, currentLocale } = useLanguage();
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -20,6 +19,8 @@ const Contact = () => {
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -237,6 +238,79 @@ const Contact = () => {
             </form>
           </Card>
         </div>
+      </div>
+
+      {/* Newsletter Section */}
+      <div className="mt-16">
+        <Card className="p-8 border border-slate-200 bg-gradient-to-br from-compliance-50 to-background">
+          <div className="max-w-2xl mx-auto text-center">
+            <Mail className="h-12 w-12 text-compliance-600 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-foreground mb-3">
+              {t('contact.newsletter.title')}
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              {t('contact.newsletter.subtitle')}
+            </p>
+            
+            <form 
+              onSubmit={async (e) => {
+                e.preventDefault();
+                
+                if (!newsletterEmail) {
+                  toast({
+                    title: t('contact.newsletter.emailRequired'),
+                    description: t('contact.newsletter.emailRequiredDesc'),
+                    variant: 'destructive',
+                  });
+                  return;
+                }
+                
+                setNewsletterLoading(true);
+                try {
+                  await newsletterClient.subscribe(newsletterEmail, currentLocale, {
+                    source: 'contact_page_newsletter',
+                    origin: window.location.origin,
+                    tags: ['newsletter', 'contact_page_signup']
+                  });
+                  
+                  toast({
+                    title: t('contact.newsletter.success'),
+                    description: t('contact.newsletter.successDesc'),
+                  });
+                  
+                  setNewsletterEmail('');
+                } catch (error) {
+                  toast({
+                    title: t('contact.newsletter.error'),
+                    description: t('contact.newsletter.errorDesc'),
+                    variant: 'destructive',
+                  });
+                } finally {
+                  setNewsletterLoading(false);
+                }
+              }} 
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <Input
+                type="email"
+                placeholder={t('contact.newsletter.placeholder')}
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                className="flex-1"
+                disabled={newsletterLoading}
+              />
+              <Button type="submit" disabled={newsletterLoading}>
+                {newsletterLoading 
+                  ? t('contact.newsletter.subscribing') 
+                  : t('contact.newsletter.subscribe')}
+              </Button>
+            </form>
+            
+            <p className="text-xs text-muted-foreground mt-4">
+              {t('contact.newsletter.disclaimer')}
+            </p>
+          </div>
+        </Card>
       </div>
     </PageTemplate>;
 };
