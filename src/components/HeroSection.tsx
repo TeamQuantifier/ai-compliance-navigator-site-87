@@ -69,12 +69,20 @@ const HeroSection = () => {
               </div>
             </div>
             
-            {/* Right column - platform screenshot */}
-            <div className="relative">
+            {/* Right column - overlapping platform screenshots */}
+            <div className="relative pb-[30%]">
+              {/* Screenshot 1 - on top (Multi-Framework Policy Hub) */}
               <img 
                 src="/lovable-uploads/platform-screenshot.png" 
                 alt="Quantifier Platform - Multi-Framework Policy Hub"
-                className="rounded-xl shadow-2xl border border-slate-700/50 w-full"
+                className="relative z-10 rounded-xl shadow-2xl border border-slate-700/50 w-full"
+              />
+              
+              {/* Screenshot 2 - underneath with offset (GHG Compliance) */}
+              <img 
+                src="/lovable-uploads/ghg-compliance-screenshot.png" 
+                alt="Quantifier Platform - GHG Compliance and Reporting"
+                className="absolute top-[40%] left-[8%] z-0 rounded-xl shadow-xl border border-slate-700/50 w-[95%] opacity-85"
               />
             </div>
           </div>
