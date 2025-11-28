@@ -84,8 +84,15 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "AI compliance layer for your organization",
+    "title": "End-to-end GRC.",
+    "titleLine2": "In one AI-native platform",
+    "grcExplanation": "GRC stands for Governance, Risk, and Compliance",
     "subtitle": "Your AI Compliance Officer that manages projects, collects data and presents results, automating the entire compliance process.",
+    "bullet1": "Policy creation and implementation",
+    "bullet2": "Execution and automation",
+    "bullet3": "Compliance monitoring and maintenance",
+    "bullet4": "Audit preparation",
+    "bullet5": "Quantifier.ai expert support",
     "supportingFrameworks": "We support key compliance standards:",
     "requestDemo": "Request Demo",
     "exploreFeatures": "Explore Features"
@@ -320,6 +327,20 @@
       "messageSentDesc": "Thanks! We will get back to you shortly.",
       "failedToSend": "Failed to send",
       "failedToSendDesc": "Please try again later."
+    },
+    "newsletter": {
+      "title": "Subscribe to our Newsletter",
+      "subtitle": "Stay updated with the latest compliance insights, product updates, and practical tips for your business.",
+      "placeholder": "Enter your email address",
+      "subscribe": "Subscribe",
+      "subscribing": "Subscribing...",
+      "success": "Thank you for subscribing!",
+      "successDesc": "We'll keep you updated with the latest news.",
+      "error": "Failed to subscribe",
+      "errorDesc": "Please try again later.",
+      "emailRequired": "Email is required",
+      "emailRequiredDesc": "Please enter a valid email address.",
+      "disclaimer": "You can unsubscribe at any time. We respect your privacy."
     }
   },
   "plans": {
@@ -383,6 +404,24 @@
     "error": "Error loading content",
     "notFound": "Post not found",
     "relatedPosts": "Related Posts"
+  },
+  "successStories": {
+    "title": "Success Stories",
+    "subtitle": "Discover how organizations achieve compliance excellence with Quantifier",
+    "hero": {
+      "title": "Real Results from Real Clients",
+      "description": "See how companies across industries have transformed their compliance processes and achieved measurable results with our AI-powered platform."
+    },
+    "readMore": "Read Story",
+    "notFound": "No success stories found",
+    "error": "Error loading success stories",
+    "loading": "Loading...",
+    "backToStories": "Back to Success Stories",
+    "results": "Key Results",
+    "tags": "Tags",
+    "featuredTitle": "Featured Case Studies",
+    "client": "Client",
+    "industry": "Industry"
   },
   "about": {
     "title": "About Us",

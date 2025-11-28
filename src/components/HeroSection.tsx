@@ -1,7 +1,5 @@
-import { ArrowRight, Shield, Lock, Network, Leaf, FileCheck, Brain, Award } from 'lucide-react';
+import { ArrowRight, Shield, Lock, Network, Leaf, FileCheck, Brain, Award, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -17,22 +15,80 @@ const HeroSection = () => {
       <div className="absolute top-40 left-20 w-72 h-72 bg-slate-800 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Main Header - Full Width */}
-          <h1 className="text-3xl mb-8 text-white text-center leading-tight font-semibold md:text-5xl bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
-            {t('hero.title')}
-          </h1>
-          
-          {/* Subheader - Full Width */}
-          <h2 className="text-xl md:text-2xl text-slate-300 mb-12 text-center leading-relaxed">{t('hero.subtitle')}</h2>
-          
-          {/* ChatGPT-like input - darkened */}
-          <div className="max-w-3xl mx-auto mb-16 relative">
+        <div className="max-w-6xl mx-auto">
+          {/* Two-column layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Left column - text content */}
+            <div className="text-left">
+              {/* H1 with two lines */}
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                {t('hero.title')}<br />
+                {t('hero.titleLine2')}
+              </h1>
+              
+              {/* GRC Explanation - smaller subtitle */}
+              <p className="text-xl text-slate-400 mb-8">
+                {t('hero.grcExplanation')}
+              </p>
+              
+              {/* Bullet points - left aligned */}
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center text-lg text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet1')}
+                </li>
+                <li className="flex items-center text-lg text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet2')}
+                </li>
+                <li className="flex items-center text-lg text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet3')}
+                </li>
+                <li className="flex items-center text-lg text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet4')}
+                </li>
+                <li className="flex items-center text-lg text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet5')}
+                </li>
+              </ul>
+              
+              {/* Call-to-action buttons - left aligned */}
+              <div className="flex flex-wrap gap-4">
+                <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
+                  <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
+                  <Link to={`/${currentLocale}/product/features`}>
+                    {t('hero.exploreFeatures')}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
             
+            {/* Right column - overlapping platform screenshots */}
+            <div className="relative pb-[30%]">
+              {/* Screenshot 1 - on top (Multi-Framework Policy Hub) */}
+              <img 
+                src="/lovable-uploads/platform-screenshot.png" 
+                alt="Quantifier Platform - Multi-Framework Policy Hub"
+                className="relative z-10 rounded-xl shadow-2xl border border-slate-700/50 w-full"
+              />
+              
+              {/* Screenshot 2 - underneath with offset (GHG Compliance) */}
+              <img 
+                src="/lovable-uploads/ghg-compliance-screenshot.png" 
+                alt="Quantifier Platform - GHG Compliance and Reporting"
+                className="absolute top-[40%] left-[8%] z-0 rounded-xl shadow-xl border border-slate-700/50 w-[95%] opacity-85"
+              />
+            </div>
           </div>
           
-          {/* Framework icons - updated with darker backgrounds and higher contrast */}
-          <div className="text-center mb-16">
+          {/* Framework icons - centered section */}
+          <div className="text-center">
             <h3 className="text-lg font-medium text-white mb-6">
               {t('hero.supportingFrameworks')}
             </h3>
@@ -86,19 +142,6 @@ const HeroSection = () => {
                 <span className="text-sm font-medium text-slate-300">ISO 42001</span>
               </div>
             </div>
-          </div>
-          
-          {/* Call-to-action buttons - enhanced with better contrast and darker gradients */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
-              <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
-              <Link to={`/${currentLocale}/product/features`}>
-                {t('hero.exploreFeatures')}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
           </div>
         </div>
       </div>

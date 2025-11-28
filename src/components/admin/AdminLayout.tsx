@@ -6,8 +6,6 @@ import {
   FileText, 
   Award, 
   FolderOpen, 
-  Users, 
-  Link2, 
   Settings, 
   LogOut,
   Menu,
@@ -19,10 +17,8 @@ import { cn } from '@/lib/utils';
 const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/admin/dashboard' },
   { icon: FileText, label: 'Posts', path: '/admin/posts' },
-  { icon: Award, label: 'Success Stories', path: '/admin/stories' },
+  { icon: Award, label: 'Case Study', path: '/admin/stories' },
   { icon: FolderOpen, label: 'Categories', path: '/admin/categories' },
-  { icon: Users, label: 'Authors', path: '/admin/authors' },
-  { icon: Link2, label: 'Redirects', path: '/admin/redirects' },
   { icon: Settings, label: 'Settings', path: '/admin/settings' },
 ];
 

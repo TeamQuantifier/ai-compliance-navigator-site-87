@@ -84,8 +84,14 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "title": "Jedna platforma AI-native do zarządzania GRC: ładem korporacyjnym, ryzykiem i zgodnością z regulacjami.",
-    "subtitle": "Quantifier łączy ryzyka, polityki, zadania i raporty w jednym miejscu. Agenci AI automatyzują obszar compliance, a doświadczeni konsultanci zapewniają skuteczne i audytowalne wdrożenie.",
+    "title": "End-to-end GRC.",
+    "titleLine2": "W jednej AI-native platformie",
+    "grcExplanation": "GRC to ład zarządczy, ryzyko, zgodność z regulacjami",
+    "bullet1": "Stworzenie i wdrożenie polityk oraz procedur",
+    "bullet2": "Egzekucja i automatyzacja",
+    "bullet3": "Monitoring i utrzymanie zgodności",
+    "bullet4": "Przygotowanie do audytu",
+    "bullet5": "Wsparcie ekspertów Quantifier.ai",
     "supportingFrameworks": "Wspieramy kluczowe standardy compliance:",
     "requestDemo": "Umów demo",
     "exploreFeatures": "Poznaj funkcje"
@@ -218,8 +224,8 @@
     "contactUs": "Skontaktuj się z nami"
   },
   "cta": {
-    "title": "Rozpocznij swoją podróż AI-powered compliance już dziś",
-    "subtitle": "Dołącz do setek organizacji, które przekształciły swoje procesy compliance dzięki naszej inteligentnej platformie.",
+    "title": "Zacznij napędzać swój compliance najnowszą technologią już dziś!",
+    "subtitle": "Dołącz do setek organizacji, które przekształciły swoje procesy compliance z Quantifier",
     "enterprise": {
       "title": "Dla przedsiębiorstw",
       "description": "Kompleksowe zarządzanie compliance dla złożonych środowisk regulacyjnych.",
@@ -227,13 +233,13 @@
       "feature2": "Pełny dostęp do wszystkich funkcji"
     },
     "midMarket": {
-      "title": "Dla średnich firm",
+      "title": "Dla średnich i małych firm",
       "description": "Skalowalne rozwiązania rosnące wraz z Twoimi potrzebami compliance.",
       "feature1": "Elastyczna implementacja",
       "feature2": "Automatyzacja dopasowana do skali"
     },
     "startups": {
-      "title": "Dla startupów",
+      "title": "Dla startupów i dynamicznie rozwijających się firm",
       "description": "Zbuduj compliance w swoich fundamentach od pierwszego dnia.",
       "feature1": "Podstawowe funkcje",
       "feature2": "Przystępne ceny"
@@ -286,55 +292,54 @@
   "contact": {
     "title": "Skontaktuj się z nami",
     "description": "Jesteśmy tutaj, aby pomóc w Twojej podróży compliance",
-    "heading": "Porozmawiajmy o Twoich potrzebach compliance",
-    "intro": "Nasz zespół ekspertów jest gotowy, aby pomóc Ci uprościć Twoje procesy compliance. Skontaktuj się z nami i odkryj, jak możemy wspierać Twoją organizację.",
-    "methods": {
-      "email": "Wyślij nam e-mail",
-      "call": "Zadzwoń do nas",
-      "offices": "Nasze biura"
-    },
-    "addresses": {
-      "warsaw": {
-        "city": "Warszawa, Polska",
-        "line1": "ul. Przykładowa 123",
-        "line2": "00-001 Warszawa"
-      },
-      "poznan": {
-        "city": "Poznań, Polska",
-        "line1": "ul. Testowa 456",
-        "line2": "61-001 Poznań"
-      },
-      "sanfrancisco": {
-        "city": "San Francisco, USA",
-        "line1": "123 Market Street",
-        "line2": "San Francisco, CA 94102"
-      }
-    },
-    "form": {
-      "title": "Wyślij nam wiadomość",
-      "firstName": "Imię",
-      "lastName": "Nazwisko",
-      "email": "Email",
-      "company": "Firma",
-      "message": "Wiadomość",
-      "placeholders": {
-        "firstName": "Jan",
-        "lastName": "Kowalski",
-        "email": "jan.kowalski@firma.pl",
-        "company": "Nazwa Twojej firmy",
-        "message": "Powiedz nam, jak możemy Ci pomóc..."
-      },
-      "disclaimer": "Przesyłając ten formularz, wyrażasz zgodę na przetwarzanie Twoich danych osobowych zgodnie z naszą polityką prywatności.",
-      "submit": "Wyślij wiadomość",
-      "submitting": "Wysyłanie..."
-    },
+    "heading": "Porozmawiajmy o potrzebach Twojej firmy w ramach zgodności z regulacjami, zarządzania ryzykiem i ładem zarządczym",
+    "intro": "Zespół ekspertów Quantifier jest gotowy, aby pomóc Ci uprościć Twoje procesy compliance. Skontaktuj się z nami i odkryj, jak możemy wspierać Twoją organizację.",
+    "emailUs": "Napisz do nas",
+    "callUs": "Zadzwoń do nas",
+    "usaPhone": "USA: (+1) 415-799-8206",
+    "europePhone": "Europa: (+48) 698 759 206",
+    "visitOffices": "Odwiedź nasze biura",
+    "usaAddress": "USA: 447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108",
+    "europeLabel": "Europa:",
+    "warsawAddress": "Warszawa: Rondo Daszyńskiego 1, Warsaw",
+    "lublinAddress": "Lublin: Głowackiego 3/5/1",
+    "formTitle": "Wyślij nam wiadomość",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "emailAddress": "Adres email",
+    "companyName": "Nazwa firmy",
+    "message": "Wiadomość",
+    "firstNamePlaceholder": "Jan",
+    "lastNamePlaceholder": "Kowalski",
+    "emailPlaceholder": "jan.kowalski@firma.pl",
+    "companyPlaceholder": "Nazwa Twojej firmy",
+    "messagePlaceholder": "Jak możemy Ci pomóc?",
+    "disclaimer": "Przesyłając ten formularz, wyrażasz zgodę na przetwarzanie Twoich danych osobowych zgodnie z naszą polityką prywatności.",
+    "sendMessage": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
     "toast": {
-      "success": "Wiadomość wysłana!",
-      "successDescription": "Dziękujemy za kontakt. Odpowiemy wkrótce.",
-      "error": "Nie udało się wysłać",
-      "errorDescription": "Wystąpił błąd. Spróbuj ponownie.",
-      "fillAllFields": "Wypełnij wszystkie pola",
-      "fillAllFieldsDescription": "Proszę uzupełnić wszystkie wymagane pola."
+      "configError": "Błąd konfiguracji",
+      "configErrorDesc": "Endpoint formularza kontaktowego nie jest skonfigurowany.",
+      "missingFields": "Brakujące pola",
+      "missingFieldsDesc": "Proszę wypełnić wszystkie wymagane pola.",
+      "messageSent": "Wiadomość wysłana",
+      "messageSentDesc": "Dziękujemy za kontakt. Odpowiemy wkrótce.",
+      "failedToSend": "Nie udało się wysłać",
+      "failedToSendDesc": "Spróbuj ponownie później."
+    },
+    "newsletter": {
+      "title": "Zapisz się do newslettera",
+      "subtitle": "Bądź na bieżąco z najnowszymi informacjami o zgodności regulacyjnej, aktualizacjami produktu i praktycznymi wskazówkami dla Twojej firmy.",
+      "placeholder": "Wpisz swój adres email",
+      "subscribe": "Zapisz się",
+      "subscribing": "Zapisuję...",
+      "success": "Dziękujemy za zapisanie się!",
+      "successDesc": "Będziemy Cię informować o najnowszych aktualizacjach.",
+      "error": "Nie udało się zapisać",
+      "errorDesc": "Spróbuj ponownie później.",
+      "emailRequired": "Email jest wymagany",
+      "emailRequiredDesc": "Wprowadź poprawny adres email.",
+      "disclaimer": "Możesz zrezygnować z subskrypcji w dowolnym momencie. Szanujemy Twoją prywatność."
     }
   },
   "plans": {
@@ -386,7 +391,7 @@
     "subtitle": "Wskazówki, przewodniki i najlepsze praktyki dotyczące compliance i bezpieczeństwa",
     "hero": {
       "title": "Blog Quantifier",
-      "description": "Solidna dawka wiedzy od Quantifier o regulacjach (w tym ESG), cyberbezpieczeństwie i automatyzacji compliance z wykorzystaniem agentów AI, skupiona na konkurencyjności i kluczowych trendach."
+      "description": "Aktualna wiedza o regulacjach, bezpieczeństwie informacji i zarządzaniu compliance. Przeglądy trendów, interpretacje wymogów oraz praktyczne zastosowania agentów AI w dużych organizacjach."
     },
     "allCategories": "Wszystkie kategorie",
     "readingTime": "min czytania",
@@ -398,6 +403,24 @@
     "error": "Błąd ładowania treści",
     "notFound": "Nie znaleziono wpisu",
     "relatedPosts": "Powiązane wpisy"
+  },
+  "successStories": {
+    "title": "Historie sukcesu",
+    "subtitle": "Odkryj, jak organizacje osiągają doskonałość compliance z Quantifier",
+    "hero": {
+      "title": "Prawdziwe wyniki od prawdziwych klientów",
+      "description": "Zobacz, jak firmy z różnych branż przekształciły swoje procesy compliance i osiągnęły wymierne rezultaty dzięki naszej platformie AI."
+    },
+    "readMore": "Czytaj historię",
+    "notFound": "Brak historii sukcesu",
+    "error": "Błąd ładowania historii sukcesu",
+    "loading": "Ładowanie...",
+    "backToStories": "Powrót do historii sukcesu",
+    "results": "Kluczowe wyniki",
+    "tags": "Tagi",
+    "featuredTitle": "Wyróżnione studia przypadków",
+    "client": "Klient",
+    "industry": "Branża"
   },
   "about": {
     "title": "O nas",
