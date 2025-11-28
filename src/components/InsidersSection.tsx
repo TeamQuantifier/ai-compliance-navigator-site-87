@@ -89,6 +89,16 @@ const InsidersSection = () => {
       id: 16,
       src: "/lovable-uploads/f6b1d6fd-988e-45fe-8a9a-ae06db0a5f62.png",
       alt: "BNP Paribas"
+    },
+    {
+      id: 17,
+      src: "/lovable-uploads/cash-director-logo.png",
+      alt: "Cash Director"
+    },
+    {
+      id: 18,
+      src: "/lovable-uploads/unicell-logo.png",
+      alt: "Unicell International"
     }
   ];
 
