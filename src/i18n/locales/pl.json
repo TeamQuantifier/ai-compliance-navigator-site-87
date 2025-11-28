@@ -84,8 +84,13 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "title": "Jedna platforma AI-native do zarządzania GRC: ładem korporacyjnym, ryzykiem i zgodnością z regulacjami.",
-    "subtitle": "Quantifier łączy ryzyka, polityki, zadania i raporty w jednym miejscu. Agenci AI automatyzują obszar compliance, a doświadczeni konsultanci zapewniają skuteczne i audytowalne wdrożenie.",
+    "title": "End-to-end GRC w jednej AI-native platformie",
+    "grcExplanation": "GRC to ład zarządczy, ryzyko, zgodność z regulacjami",
+    "bullet1": "Stworzenie i wdrożenie polityk oraz procedur",
+    "bullet2": "Egzekucja i automatyzacja",
+    "bullet3": "Monitoring i utrzymanie zgodności",
+    "bullet4": "Przygotowanie do audytu",
+    "bullet5": "Wsparcie ekspertów Quantifier.ai",
     "supportingFrameworks": "Wspieramy kluczowe standardy compliance:",
     "requestDemo": "Umów demo",
     "exploreFeatures": "Poznaj funkcje"
@@ -218,8 +223,8 @@
     "contactUs": "Skontaktuj się z nami"
   },
   "cta": {
-    "title": "Rozpocznij swoją podróż AI-powered compliance już dziś",
-    "subtitle": "Dołącz do setek organizacji, które przekształciły swoje procesy compliance dzięki naszej inteligentnej platformie.",
+    "title": "Zacznij napędzać swój compliance najnowszą technologią już dziś!",
+    "subtitle": "Dołącz do setek organizacji, które przekształciły swoje procesy compliance z Quantifier",
     "enterprise": {
       "title": "Dla przedsiębiorstw",
       "description": "Kompleksowe zarządzanie compliance dla złożonych środowisk regulacyjnych.",
@@ -227,13 +232,13 @@
       "feature2": "Pełny dostęp do wszystkich funkcji"
     },
     "midMarket": {
-      "title": "Dla średnich firm",
+      "title": "Dla średnich i małych firm",
       "description": "Skalowalne rozwiązania rosnące wraz z Twoimi potrzebami compliance.",
       "feature1": "Elastyczna implementacja",
       "feature2": "Automatyzacja dopasowana do skali"
     },
     "startups": {
-      "title": "Dla startupów",
+      "title": "Dla startupów i dynamicznie rozwijających się firm",
       "description": "Zbuduj compliance w swoich fundamentach od pierwszego dnia.",
       "feature1": "Podstawowe funkcje",
       "feature2": "Przystępne ceny"

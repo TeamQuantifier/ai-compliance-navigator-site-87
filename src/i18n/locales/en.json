@@ -85,7 +85,13 @@
   },
   "hero": {
     "title": "AI compliance layer for your organization",
+    "grcExplanation": "GRC stands for Governance, Risk, and Compliance",
     "subtitle": "Your AI Compliance Officer that manages projects, collects data and presents results, automating the entire compliance process.",
+    "bullet1": "Policy creation and implementation",
+    "bullet2": "Execution and automation",
+    "bullet3": "Compliance monitoring and maintenance",
+    "bullet4": "Audit preparation",
+    "bullet5": "Quantifier.ai expert support",
     "supportingFrameworks": "We support key compliance standards:",
     "requestDemo": "Request Demo",
     "exploreFeatures": "Explore Features"
