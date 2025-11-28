@@ -1,47 +1,19 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useStories } from '@/hooks/useBlog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Calendar, ArrowRight, Trophy } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
 
 const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
+  const { data: stories, isLoading } = useStories(currentLocale);
   
   const canonicalUrl = `https://quantifier.ai/${currentLocale}/success-stories`;
-
-  // Static case studies data
-  const staticCaseStudies = [
-    {
-      id: 'fashion-retailer',
-      title: t('successStoriesPage.fashionRetailer.title'),
-      summary: t('successStoriesPage.fashionRetailer.section1Text'),
-      industry: t('successStoriesPage.fashionRetailer.industry'),
-      slug: 'fashion-retailer',
-      imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
-      publishedAt: '2025-01-15'
-    },
-    {
-      id: 'logistics-group',
-      title: t('successStoriesPage.logisticsGroup.title'),
-      summary: t('successStoriesPage.logisticsGroup.section1Text'),
-      industry: t('successStoriesPage.logisticsGroup.industry'),
-      slug: 'logistics-group',
-      imageUrl: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=600&fit=crop',
-      publishedAt: '2025-01-10'
-    },
-    {
-      id: 'financial-services',
-      title: t('successStoriesPage.financialServices.title'),
-      summary: t('successStoriesPage.financialServices.section1Text'),
-      industry: t('successStoriesPage.financialServices.industry'),
-      slug: 'financial-services',
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      publishedAt: '2025-01-05'
-    }
-  ];
 
   return (
     <>
@@ -84,45 +56,77 @@ const SuccessStories = () => {
         </div>
 
         <div className="max-w-7xl mx-auto">
+          {/* Loading state */}
+          {isLoading && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map((i) => (
+                <Card key={i} className="overflow-hidden">
+                  <Skeleton className="aspect-video" />
+                  <CardHeader>
+                    <Skeleton className="h-6 w-24 mb-2" />
+                    <Skeleton className="h-6 w-full mb-2" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-3/4" />
+                  </CardHeader>
+                  <CardContent>
+                    <Skeleton className="h-8 w-32" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
           {/* Stories grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {staticCaseStudies.map((story) => (
-              <Card key={story.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video overflow-hidden bg-slate-100">
-                  <img 
-                    src={story.imageUrl} 
-                    alt={story.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2 flex-wrap">
-                    <Badge variant="secondary">{story.industry}</Badge>
+          {!isLoading && stories && stories.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {stories.map((story) => (
+                <Card key={story.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-video overflow-hidden bg-slate-100">
+                    <img 
+                      src={story.og_image_url || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop'} 
+                      alt={story.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <CardTitle className="line-clamp-2 text-lg">{story.title}</CardTitle>
-                  <CardDescription className="line-clamp-3">
-                    {story.summary}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Calendar className="h-3 w-3" />
-                      <span>
-                        {new Date(story.publishedAt).toLocaleDateString(currentLocale)}
-                      </span>
+                  <CardHeader>
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                      {story.industry && (
+                        <Badge variant="secondary">{story.industry}</Badge>
+                      )}
                     </div>
-                    <Link to={`/${currentLocale}/success-stories/${story.slug}`}>
-                      <Button variant="ghost" size="sm" className="group">
-                        {t('successStories.readMore')}
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <CardTitle className="line-clamp-2 text-lg">{story.title}</CardTitle>
+                    <CardDescription className="line-clamp-3">
+                      {story.summary}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Calendar className="h-3 w-3" />
+                        <span>
+                          {new Date(story.published_at || story.created_at).toLocaleDateString(currentLocale)}
+                        </span>
+                      </div>
+                      <Link to={`/${currentLocale}/success-stories/${story.slug}`}>
+                        <Button variant="ghost" size="sm" className="group">
+                          {t('successStories.readMore')}
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
+          {/* Empty state */}
+          {!isLoading && (!stories || stories.length === 0) && (
+            <div className="text-center py-12">
+              <Trophy className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-medium mb-2">{t('successStories.notFound')}</h3>
+            </div>
+          )}
         </div>
       </PageTemplate>
     </>
