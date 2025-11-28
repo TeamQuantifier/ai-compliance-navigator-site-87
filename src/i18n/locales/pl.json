@@ -326,6 +326,20 @@
       "messageSentDesc": "Dziękujemy za kontakt. Odpowiemy wkrótce.",
       "failedToSend": "Nie udało się wysłać",
       "failedToSendDesc": "Spróbuj ponownie później."
+    },
+    "newsletter": {
+      "title": "Zapisz się do newslettera",
+      "subtitle": "Bądź na bieżąco z najnowszymi informacjami o zgodności regulacyjnej, aktualizacjami produktu i praktycznymi wskazówkami dla Twojej firmy.",
+      "placeholder": "Wpisz swój adres email",
+      "subscribe": "Zapisz się",
+      "subscribing": "Zapisuję...",
+      "success": "Dziękujemy za zapisanie się!",
+      "successDesc": "Będziemy Cię informować o najnowszych aktualizacjach.",
+      "error": "Nie udało się zapisać",
+      "errorDesc": "Spróbuj ponownie później.",
+      "emailRequired": "Email jest wymagany",
+      "emailRequiredDesc": "Wprowadź poprawny adres email.",
+      "disclaimer": "Możesz zrezygnować z subskrypcji w dowolnym momencie. Szanujemy Twoją prywatność."
     }
   },
   "plans": {
