@@ -18,8 +18,8 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          {/* Main content - left aligned */}
-          <div className="text-left mb-16">
+          {/* Main content - centered */}
+          <div className="text-center mb-16">
             {/* H1 */}
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               {t('hero.title')}
@@ -31,31 +31,31 @@ const HeroSection = () => {
             </p>
             
             {/* Bullet points */}
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center text-lg text-slate-300">
+            <ul className="space-y-3 mb-8 max-w-2xl mx-auto">
+              <li className="flex items-center justify-center text-lg text-slate-300">
                 <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                 {t('hero.bullet1')}
               </li>
-              <li className="flex items-center text-lg text-slate-300">
+              <li className="flex items-center justify-center text-lg text-slate-300">
                 <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                 {t('hero.bullet2')}
               </li>
-              <li className="flex items-center text-lg text-slate-300">
+              <li className="flex items-center justify-center text-lg text-slate-300">
                 <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                 {t('hero.bullet3')}
               </li>
-              <li className="flex items-center text-lg text-slate-300">
+              <li className="flex items-center justify-center text-lg text-slate-300">
                 <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                 {t('hero.bullet4')}
               </li>
-              <li className="flex items-center text-lg text-slate-300">
+              <li className="flex items-center justify-center text-lg text-slate-300">
                 <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                 {t('hero.bullet5')}
               </li>
             </ul>
             
-            {/* Call-to-action buttons - left aligned */}
-            <div className="flex flex-wrap gap-4">
+            {/* Call-to-action buttons - centered */}
+            <div className="flex flex-wrap gap-4 justify-center">
               <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
                 <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
               </Button>
