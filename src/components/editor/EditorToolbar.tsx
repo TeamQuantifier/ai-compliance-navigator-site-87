@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { useState } from 'react';
+import { useState, useId, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import {
   Dialog,
@@ -24,6 +24,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface EditorToolbarProps {
   editor: Editor;
@@ -35,31 +40,54 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
   const [isKpiDialogOpen, setIsKpiDialogOpen] = useState(false);
   const [kpiValue, setKpiValue] = useState('');
   const [kpiLabel, setKpiLabel] = useState('');
+  const imageInputId = useId();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    // Walidacja typu pliku
+    if (!file.type.startsWith('image/')) {
+      toast.error('Wybrany plik nie jest obrazem');
+      return;
+    }
+
+    // Walidacja rozmiaru (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('Obraz jest zbyt duży (maksymalnie 5MB)');
+      return;
+    }
+
+    const loadingToast = toast.loading('Przesyłanie obrazu...');
+
     try {
       const fileExt = file.name.split('.').pop();
-      const fileName = `${Math.random()}.${fileExt}`;
-      const filePath = `${fileName}`;
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage
         .from('stories-images')
-        .upload(filePath, file);
+        .upload(fileName, file);
 
-      if (uploadError) throw uploadError;
+      if (uploadError) {
+        console.error('Upload error:', uploadError);
+        throw uploadError;
+      }
 
       const { data } = supabase.storage
         .from('stories-images')
-        .getPublicUrl(filePath);
+        .getPublicUrl(fileName);
 
       editor.chain().focus().setImage({ src: data.publicUrl }).run();
-      toast.success('Obraz dodany');
-    } catch (error) {
+      toast.success('Obraz dodany pomyślnie', { id: loadingToast });
+    } catch (error: any) {
       console.error('Error uploading image:', error);
-      toast.error('Błąd podczas przesyłania obrazu');
+      toast.error(error.message || 'Błąd podczas przesyłania obrazu', { id: loadingToast });
+    } finally {
+      // Reset inputa, żeby można było wybrać ten sam plik ponownie
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
     }
   };
 
@@ -173,18 +201,26 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         </DialogContent>
       </Dialog>
 
-      <Button variant="ghost" size="sm" asChild>
-        <label htmlFor="image-upload" className="cursor-pointer">
-          <ImageIcon className="h-4 w-4" />
-          <input
-            id="image-upload"
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={handleImageUpload}
-          />
-        </label>
-      </Button>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant="ghost" size="sm" asChild>
+            <label htmlFor={imageInputId} className="cursor-pointer">
+              <ImageIcon className="h-4 w-4" />
+              <input
+                ref={fileInputRef}
+                id={imageInputId}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={handleImageUpload}
+              />
+            </label>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Dodaj obraz (max 5MB)</p>
+        </TooltipContent>
+      </Tooltip>
 
       <Separator orientation="vertical" className="h-8" />
 
