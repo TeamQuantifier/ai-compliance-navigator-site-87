@@ -1,10 +1,10 @@
 import { useEditor, EditorContent } from '@tiptap/react';
 import { useEffect } from 'react';
 import StarterKit from '@tiptap/starter-kit';
-import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
 import { KpiBlock } from './KpiBlockExtension';
+import { ResizableImage } from './ResizableImageExtension';
 import EditorToolbar from './EditorToolbar';
 import './editor-styles.css';
 
@@ -22,8 +22,8 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
           levels: [1, 2, 3],
         },
       }),
-      Image.configure({
-        inline: true,
+      ResizableImage.configure({
+        inline: false,
         allowBase64: true,
       }),
       Link.configure({
