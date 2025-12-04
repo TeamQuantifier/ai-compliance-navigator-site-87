@@ -145,10 +145,10 @@ const StoryDetail = () => {
           </header>
 
           {/* Featured image */}
-          {(story.og_image_url || story.logo_url) && (
+          {(story.featured_image_url || story.og_image_url || story.logo_url) && (
             <div className="aspect-video overflow-hidden rounded-xl mb-8 bg-slate-100">
               <img 
-                src={story.og_image_url || story.logo_url || ''} 
+                src={story.featured_image_url || story.og_image_url || story.logo_url || ''} 
                 alt={story.title}
                 className="w-full h-full object-cover"
               />
