@@ -14,13 +14,14 @@ import {
 } from '@/components/ui/select';
 import RichTextEditor from '@/components/editor/RichTextEditor';
 import { toast } from 'sonner';
-import { ArrowLeft, Save } from 'lucide-react';
+import { ArrowLeft, Save, Upload, X, Loader2 } from 'lucide-react';
 import { AdminLayout } from '@/components/admin/AdminLayout';
 
 const StoryEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [initialLoading, setInitialLoading] = useState(!!id && id !== 'new');
   const [story, setStory] = useState({
     title: '',
     slug: '',
@@ -34,7 +35,8 @@ const StoryEditor = () => {
     meta_title: '',
     meta_desc: '',
     og_image_url: '',
-    body_rich: {},
+    featured_image_url: '',
+    body_rich: {} as any,
     tags: [] as string[],
     seo_score: 0,
   });
@@ -58,11 +60,14 @@ const StoryEditor = () => {
         setStory({
           ...data,
           tags: data.tags || [],
+          featured_image_url: (data as any).featured_image_url || '',
         });
       }
     } catch (error) {
       console.error('Error loading story:', error);
       toast.error('Błąd podczas wczytywania success story');
+    } finally {
+      setInitialLoading(false);
     }
   };
 
@@ -97,6 +102,49 @@ const StoryEditor = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      toast.error('Proszę wybrać plik graficzny');
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('Obrazek jest za duży (max 5MB)');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from('stories-images')
+        .upload(fileName, file);
+
+      if (uploadError) throw uploadError;
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('stories-images')
+        .getPublicUrl(fileName);
+
+      setStory({ ...story, featured_image_url: publicUrl });
+      toast.success('Obrazek dodany!');
+    } catch (error: any) {
+      console.error('Upload error:', error);
+      toast.error(error.message || 'Błąd podczas uploadu');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const removeFeaturedImage = () => {
+    setStory({ ...story, featured_image_url: '' });
   };
 
   const renderContent = () => (
@@ -236,6 +284,44 @@ const StoryEditor = () => {
             </div>
           </div>
 
+          {/* Thumbnail Upload Section */}
+          <div>
+            <Label>Główny obrazek (thumbnail)</Label>
+            <div className="mt-2">
+              {story.featured_image_url ? (
+                <div className="relative inline-block">
+                  <img 
+                    src={story.featured_image_url} 
+                    alt="Thumbnail" 
+                    className="max-w-xs rounded-lg shadow-md"
+                  />
+                  <Button
+                    variant="destructive"
+                    size="icon"
+                    className="absolute top-2 right-2"
+                    onClick={removeFeaturedImage}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+              ) : (
+                <Button variant="outline" asChild disabled={loading}>
+                  <label htmlFor="featured-image-upload" className="cursor-pointer">
+                    <Upload className="h-4 w-4 mr-2" />
+                    Wybierz obrazek
+                    <input
+                      id="featured-image-upload"
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleImageUpload}
+                    />
+                  </label>
+                </Button>
+              )}
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="meta_title">Meta Title</Label>
@@ -282,11 +368,17 @@ const StoryEditor = () => {
 
           <div>
             <Label>Treść (Rich Text)</Label>
-            <RichTextEditor
-              content={story.body_rich}
-              onChange={(content) => setStory({ ...story, body_rich: content })}
-              placeholder="Napisz treść success story..."
-            />
+            {initialLoading ? (
+              <div className="flex justify-center items-center p-8 border rounded-lg">
+                <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+              </div>
+            ) : (
+              <RichTextEditor
+                content={story.body_rich}
+                onChange={(content) => setStory({ ...story, body_rich: content })}
+                placeholder="Napisz treść success story..."
+              />
+            )}
           </div>
         </div>
     </div>
