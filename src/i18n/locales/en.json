@@ -271,6 +271,13 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "cookies": "Cookie Policy"
+    },
+    "contact": {
+      "usaPhone": "USA: (+1) 415-799-8206",
+      "usaAddress": "447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108",
+      "europePhone": "Europe: (+48) 698 759 206",
+      "warsawAddress": "Warsaw, Poland: Rondo Daszynskiego 1",
+      "lublinAddress": "Lublin, Poland: Głowackiego 3/5/1"
     }
   },
   "blog": {
