@@ -486,7 +486,7 @@
       "tabs": {
         "aiOfficer": "AI Officer",
         "analytics": "Analityka",
-        "taskHub": "Hub zadań i danych",
+        "taskHub": "Centrum zadań i danych",
         "riskAssessment": "Ocena ryzyka"
       },
       "aiOfficer": {
@@ -530,9 +530,9 @@
         "highRisk": "Wysokie ryzyko"
       },
       "taskHub": {
-        "title": "Hub zadań i danych",
+        "title": "Centrum zadań i danych",
         "subtitle": "Scentralizuj każde żądanie, zadanie, dokument i interakcję",
-        "description": "Hub zadań i danych łączy wszystkie działania w ramach Twojego programu zgodności — w jednej czystej, przeszukiwalnej przestrzeni roboczej z uprawnieniami.",
+        "description": "Centrum zadań i danych porządkuje wszystkie działania w Twoim programie zgodności. Zapewnia jedną klarowną, przeszukiwalną przestrzeń roboczą z kontrolą uprawnień.",
         "whatYouCanDo": "Co możesz zrobić:",
         "feature1": "Wyzwalaj żądania dowodów lub danych dla konkretnych osób lub zespołów",
         "feature2": "Śledź i zarządzaj zgłoszeniami dokumentacji według kontroli lub standardu",
@@ -657,7 +657,7 @@
       "tabs": {
         "aiOfficer": "AI Officer",
         "analytics": "Analityka",
-        "taskHub": "Hub zadań i danych",
+        "taskHub": "Centrum zadań i danych",
         "riskAssessment": "Ocena ryzyka"
       }
     },
