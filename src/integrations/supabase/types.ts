@@ -246,6 +246,7 @@ export type Database = {
           client_name: string | null
           country: string | null
           created_at: string
+          featured_image_url: string | null
           id: string
           industry: string | null
           lang: string
@@ -269,6 +270,7 @@ export type Database = {
           client_name?: string | null
           country?: string | null
           created_at?: string
+          featured_image_url?: string | null
           id?: string
           industry?: string | null
           lang: string
@@ -292,6 +294,7 @@ export type Database = {
           client_name?: string | null
           country?: string | null
           created_at?: string
+          featured_image_url?: string | null
           id?: string
           industry?: string | null
           lang?: string

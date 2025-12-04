@@ -1,5 +1,5 @@
 import { useEditor, EditorContent } from '@tiptap/react';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
@@ -15,6 +15,9 @@ interface RichTextEditorProps {
 }
 
 const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }: RichTextEditorProps) => {
+  const [isInitialized, setIsInitialized] = useState(false);
+  const initialContentRef = useRef(content);
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -37,7 +40,7 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
       }),
       KpiBlock,
     ],
-    content,
+    content: '',
     onUpdate: ({ editor }) => {
       onChange(editor.getJSON());
     },
@@ -48,14 +51,32 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
     },
   });
 
+  // Set content only once after editor is ready and content is loaded
   useEffect(() => {
-    if (editor && content) {
-      const currentContent = editor.getJSON();
-      if (JSON.stringify(currentContent) !== JSON.stringify(content)) {
+    if (editor && !isInitialized) {
+      // Check if content is non-empty
+      const hasContent = content && 
+        typeof content === 'object' && 
+        Object.keys(content).length > 0 &&
+        (content.content?.length > 0 || content.type);
+      
+      if (hasContent) {
         editor.commands.setContent(content);
+        setIsInitialized(true);
+      } else if (content === null || content === undefined || 
+                (typeof content === 'object' && Object.keys(content).length === 0)) {
+        // Empty content is also valid initial state for new posts
+        setIsInitialized(true);
       }
     }
-  }, [content, editor]);
+  }, [content, editor, isInitialized]);
+
+  // Update initial content ref if content changes externally (e.g., loading from DB)
+  useEffect(() => {
+    if (!isInitialized) {
+      initialContentRef.current = content;
+    }
+  }, [content, isInitialized]);
 
   if (!editor) {
     return null;
