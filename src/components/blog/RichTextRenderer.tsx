@@ -55,12 +55,16 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
         );
 
       case 'image':
+      case 'resizableImage':
+        const imageWidth = node.attrs?.width;
+        const imageStyle = imageWidth ? { width: `${imageWidth}px`, maxWidth: '100%' } : {};
         return (
           <div key={index} className="my-6">
             <img
               src={node.attrs?.src}
               alt={node.attrs?.alt || ''}
-              className="rounded-lg w-full h-auto shadow-md"
+              className="rounded-lg h-auto shadow-md"
+              style={imageStyle}
             />
           </div>
         );
