@@ -305,8 +305,7 @@ const ProductFeatures = () => {
                 <div className="flex items-start">
                   <div className="text-compliance-400 mr-3">💡</div>
                   <p className="text-sm text-slate-700">
-                    <strong>{t('product.features.taskHub.whyItMatters')}</strong> {t('product.features.taskHub.importance')}
-                    No more shared folders or email chains. Everything is trackable, time-stamped, and mapped to your controls.
+                    <strong>{t('product.features.taskHub.whyItMatters')}</strong> {t('product.features.taskHub.importance')} {t('product.features.taskHub.importance2')}
                   </p>
                 </div>
               </div>

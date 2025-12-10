@@ -581,6 +581,7 @@
         "feature5": "See a real-time audit trail of what's done, what's delayed, and what's missing",
         "whyItMatters": "Why it matters:",
         "importance": "No more chasing people in Slack or through email. Tasks, data, and documents are centralized — with full transparency and accountability.",
+        "importance2": "No more shared folders or email chains. Everything is trackable, time-stamped, and mapped to your controls.",
         "taskManager": "Task Manager",
         "activeTasks": "Active Tasks",
         "completed": "Completed",
