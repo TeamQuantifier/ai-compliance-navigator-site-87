@@ -28,6 +28,7 @@ const PostEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [postLoaded, setPostLoaded] = useState(!id || id === 'new');
   const [categories, setCategories] = useState<any[]>([]);
   const [post, setPost] = useState({
     title: '',
@@ -101,6 +102,8 @@ const PostEditor = () => {
     } catch (error) {
       console.error('Error loading post:', error);
       toast.error('Błąd podczas wczytywania posta');
+    } finally {
+      setPostLoaded(true);
     }
   };
 
@@ -531,11 +534,17 @@ const PostEditor = () => {
 
         <div>
           <Label>Treść posta</Label>
-          <RichTextEditor
-            content={post.body_rich}
-            onChange={(content) => setPost({ ...post, body_rich: content })}
-            placeholder="Zacznij pisać treść posta..."
-          />
+          {postLoaded ? (
+            <RichTextEditor
+              content={post.body_rich}
+              onChange={(content) => setPost({ ...post, body_rich: content })}
+              placeholder="Zacznij pisać treść posta..."
+            />
+          ) : (
+            <div className="border rounded-lg h-[400px] flex items-center justify-center text-muted-foreground">
+              Ładowanie treści...
+            </div>
+          )}
         </div>
 
         <div className="border-t pt-6">
