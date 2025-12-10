@@ -2,7 +2,7 @@
   "nav": {
     "product": "Produkt",
     "frameworks": "Standardy",
-    "roles": "Według ról",
+    "roles": "Dla kogo",
     "plans": "Plany",
     "partners": "Partnerzy",
     "about": "O nas",
@@ -25,7 +25,7 @@
       }
     },
     "byRoles": {
-      "title": "Według ról",
+      "title": "Dla kogo",
       "items": {
         "managers": "Menedżerowie",
         "contributors": "Współpracownicy",
@@ -180,8 +180,8 @@
     },
     "aiInAction": "AI-powered compliance w akcji",
     "aiSubtitle": "Zobacz jak nasza platforma przekształca compliance z obciążenia w przewagę konkurencyjną",
-    "analyticsDashboard": "Dashboard analityki compliance",
-    "aiWorkflow": "Workflow agenta AI",
+    "analyticsDashboard": "Compliance Analytics Dashboard",
+    "aiWorkflow": "AI Agent Workflow",
     "riskScore": "Wskaźnik ryzyka",
     "compliance": "Zgodność",
     "tasks": "Zadania",
