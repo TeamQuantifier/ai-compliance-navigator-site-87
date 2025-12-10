@@ -87,16 +87,16 @@ const Footer = () => {
               <div className="flex items-start justify-end">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
                 <div className="text-right">
-                  <div>USA: (+1) 415-799-8206</div>
-                  <div>447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108</div>
+                  <div>{t('footer.contact.usaPhone')}</div>
+                  <div>{t('footer.contact.usaAddress')}</div>
                 </div>
               </div>
               <div className="flex items-start justify-end">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
                 <div className="text-right">
-                  <div>Europe: (+48) 698 759 206</div>
-                  <div>Warsaw, Poland: Rondo Daszynskiego 1</div>
-                  <div>Lublin, Poland: Głowackiego 3/5/1</div>
+                  <div>{t('footer.contact.europePhone')}</div>
+                  <div>{t('footer.contact.warsawAddress')}</div>
+                  <div>{t('footer.contact.lublinAddress')}</div>
                 </div>
               </div>
             </div>

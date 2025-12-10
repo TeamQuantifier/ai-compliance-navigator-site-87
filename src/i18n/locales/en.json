@@ -271,6 +271,13 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "cookies": "Cookie Policy"
+    },
+    "contact": {
+      "usaPhone": "USA: (+1) 415-799-8206",
+      "usaAddress": "447 Sutter St Ste 405 PMB 137, San Francisco, CA 94108",
+      "europePhone": "Europe: (+48) 698 759 206",
+      "warsawAddress": "Warsaw, Poland: Rondo Daszynskiego 1",
+      "lublinAddress": "Lublin, Poland: Głowackiego 3/5/1"
     }
   },
   "blog": {
@@ -574,6 +581,7 @@
         "feature5": "See a real-time audit trail of what's done, what's delayed, and what's missing",
         "whyItMatters": "Why it matters:",
         "importance": "No more chasing people in Slack or through email. Tasks, data, and documents are centralized — with full transparency and accountability.",
+        "importance2": "No more shared folders or email chains. Everything is trackable, time-stamped, and mapped to your controls.",
         "taskManager": "Task Manager",
         "activeTasks": "Active Tasks",
         "completed": "Completed",

@@ -2,7 +2,7 @@
   "nav": {
     "product": "Produkt",
     "frameworks": "Standardy",
-    "roles": "Według ról",
+    "roles": "Dla kogo",
     "plans": "Plany",
     "partners": "Partnerzy",
     "about": "O nas",
@@ -25,7 +25,7 @@
       }
     },
     "byRoles": {
-      "title": "Według ról",
+      "title": "Dla kogo",
       "items": {
         "managers": "Menedżerowie",
         "contributors": "Współpracownicy",
@@ -164,7 +164,7 @@
     },
     "noManualWork": {
       "title": "Żegnaj ręczny nadzór",
-      "description": "Nasze inteligentne agenty łączą się bezpośrednio z Twoim zespołem przez Slack i email, obsługując szkolenia, zbieranie danych i podpisywanie polityk—bez Twojego udziału."
+      "description": "Nasi inteligentni agenci łączą się bezpośrednio z Twoim zespołem przez Slack i email, obsługując szkolenia, zbieranie danych i podpisywanie polityk—bez Twojego udziału."
     },
     "realTime": {
       "title": "Bądź na bieżąco z widocznością real-time",
@@ -180,8 +180,8 @@
     },
     "aiInAction": "AI-powered compliance w akcji",
     "aiSubtitle": "Zobacz jak nasza platforma przekształca compliance z obciążenia w przewagę konkurencyjną",
-    "analyticsDashboard": "Dashboard analityki compliance",
-    "aiWorkflow": "Workflow agenta AI",
+    "analyticsDashboard": "Compliance Analytics Dashboard",
+    "aiWorkflow": "AI Agent Workflow",
     "riskScore": "Wskaźnik ryzyka",
     "compliance": "Zgodność",
     "tasks": "Zadania",
@@ -270,6 +270,13 @@
       "privacy": "Polityka prywatności",
       "terms": "Regulamin",
       "cookies": "Polityka cookies"
+    },
+    "contact": {
+      "usaPhone": "USA: (+1) 415-799-8206",
+      "usaAddress": "447 Sutter St Ste 405 PMB 137, San Francisco, Kalifornia 94108",
+      "europePhone": "Europa: (+48) 698 759 206",
+      "warsawAddress": "Warszawa, Polska: Rondo Daszyńskiego 1",
+      "lublinAddress": "Lublin, Polska: Głowackiego 3/5/1"
     }
   },
   "blog": {
@@ -479,7 +486,7 @@
       "tabs": {
         "aiOfficer": "AI Officer",
         "analytics": "Analityka",
-        "taskHub": "Hub zadań i danych",
+        "taskHub": "Centrum zadań i danych",
         "riskAssessment": "Ocena ryzyka"
       },
       "aiOfficer": {
@@ -502,8 +509,8 @@
       },
       "analytics": {
         "title": "Analityka AI",
-        "subtitle": "Potężne dashboardy. Praktyczne wnioski. Pełna kontrola.",
-        "description": "Zapomnij o nieaktualnych raportach. Quantifier zapewnia widoczność w czasie rzeczywistym we wszystkich domenach zgodności — z potężnymi dashboardami i pełnymi integracjami Power BI.",
+        "subtitle": "Intuicyjne dashboardy. Praktyczne wnioski. Pełna kontrola.",
+        "description": "Zapomnij o nieaktualnych raportach. Quantifier zapewnia widoczność w czasie rzeczywistym we wszystkich domenach zgodności — z intuicyjnymi dashboardami i pełnymi integracjami Power BI.",
         "keyFeatures": "Kluczowe funkcje:",
         "feature1": "Dashboardy wykonawcze dostosowane do CFO, CISO i liderów zgodności",
         "feature2": "Monitorowanie KPI na żywo według standardu, zespołu, podmiotu lub domeny ryzyka",
@@ -523,9 +530,9 @@
         "highRisk": "Wysokie ryzyko"
       },
       "taskHub": {
-        "title": "Hub zadań i danych",
+        "title": "Centrum zadań i danych",
         "subtitle": "Scentralizuj każde żądanie, zadanie, dokument i interakcję",
-        "description": "Hub zadań i danych łączy wszystkie działania w ramach Twojego programu zgodności — w jednej czystej, przeszukiwalnej przestrzeni roboczej z uprawnieniami.",
+        "description": "Centrum zadań i danych porządkuje wszystkie działania w Twoim programie zgodności. Zapewnia jedną klarowną, przeszukiwalną przestrzeń roboczą z kontrolą uprawnień.",
         "whatYouCanDo": "Co możesz zrobić:",
         "feature1": "Wyzwalaj żądania dowodów lub danych dla konkretnych osób lub zespołów",
         "feature2": "Śledź i zarządzaj zgłoszeniami dokumentacji według kontroli lub standardu",
@@ -534,6 +541,7 @@
         "feature5": "Zobacz ścieżkę audytu w czasie rzeczywistym tego, co zostało zrobione, co jest opóźnione i czego brakuje",
         "whyItMatters": "Dlaczego to ważne:",
         "importance": "Koniec z gonieniem ludzi na Slacku lub przez platformę. Zadania, dane i dokumenty są scentralizowane — z pełną przejrzystością i odpowiedzialnością.",
+        "importance2": "Koniec z folderami współdzielonymi lub łańcuchami e-maili. Wszystko jest śledzone, oznaczone czasowo i powiązane z Twoimi kontrolami.",
         "taskManager": "Menedżer zadań",
         "activeTasks": "Aktywne zadania",
         "completed": "Zakończone",
@@ -650,7 +658,7 @@
       "tabs": {
         "aiOfficer": "AI Officer",
         "analytics": "Analityka",
-        "taskHub": "Hub zadań i danych",
+        "taskHub": "Centrum zadań i danych",
         "riskAssessment": "Ocena ryzyka"
       }
     },
@@ -895,7 +903,7 @@
     "overview": {
       "badge": "Stworzone dla współczesnych wymagań bezpieczeństwa",
       "title": "Zautomatyzuj swoją ścieżkę compliance",
-      "description": "Standardy cyberbezpieczeństwa są złożone. Pozostanie zgodnym nie powinno takie być. Nasze autonomiczne agenty zarządzają każdym krokiem—od przypisywania zadań po zbieranie dowodów gotowych na audyt—abyś mógł skupić się na tym, co ważne.",
+      "description": "Standardy cyberbezpieczeństwa są złożone. Pozostanie zgodnym nie powinno takie być. Nasi autonomiczni agenci zarządzają każdym krokiem—od przypisywania zadań po zbieranie dowodów gotowych na audyt—abyś mógł skupić się na tym, co ważne.",
       "features": [
         "Ciągłe monitorowanie",
         "Automatyczne dowody",
@@ -904,8 +912,8 @@
       ],
       "supportedFrameworks": {
         "badge": "Wspierane standardy",
-        "title": "Kompleksowe pokrycie standardów",
-        "description": "Nasza platforma wspiera najważniejsze standardy cyberbezpieczeństwa, pomagając pozostać zgodnym z wieloma standardami jednocześnie."
+        "title": "Szerokie pokrycie",
+        "description": "Nasza platforma obsługuje kluczowe standardy cyberbezpieczeństwa, pomagając utrzymać zgodność z wieloma z nich jednocześnie."
       }
     },
     "whyPlatform": {
@@ -915,7 +923,7 @@
       "features": {
         "alwaysOn": {
           "title": "Compliance zawsze aktywny",
-          "description": "Agenty działają 24/7, więc jesteś zawsze przygotowany na audyty i przeglądy compliance."
+          "description": "Agenci działają 24/7, więc jesteś zawsze przygotowany na audyty i przeglądy compliance."
         },
         "zeroManual": {
           "title": "Zerowy nadzór ręczny",
@@ -1017,7 +1025,7 @@
       "description": "NIS 2 rozszerza obowiązki w zakresie cyberbezpieczeństwa w sektorach w UE. Nasza platforma utrzymuje Cię na przedzie—automatycznie identyfikując ryzyka i zapewniając zgodność.",
       "featuresTitle": "Otrzymujesz:",
       "features": [
-        "Agenty AI prowadzące kontrole polityk w czasie rzeczywistym",
+        "Agenci AI prowadzący kontrole polityk w czasie rzeczywistym",
         "Działania oparte na rolach dla zespołów IT, prawnych i operacyjnych",
         "Analiza luk zgodna z wymogami NIS 2"
       ],
@@ -1194,7 +1202,7 @@
         },
         {
           "title": "Egzekwowanie polityk:",
-          "description": "Agenty zapewniają przestrzeganie polityk przez członków Twojego zespołu, proaktywnie zamykając luki"
+          "description": "Agenci zapewniają przestrzeganie polityk przez członków Twojego zespołu, proaktywnie zamykając luki"
         }
       ],
       "button": "Dowiedz się więcej o ISO 27001"
@@ -1234,7 +1242,7 @@
         },
         {
           "title": "Planowanie reagowania na incydenty:",
-          "description": "Agenty AI pomagają budować i realizować kompleksowe plany na wypadek zakłóceń operacyjnych"
+          "description": "Agenci AI pomagają budować i realizować kompleksowe plany na wypadek zakłóceń operacyjnych"
         },
         {
           "title": "Zarządzanie compliance dostawców trzecich:",
@@ -1252,7 +1260,7 @@
       "features": {
         "autonomous": {
           "title": "Autonomiczny compliance",
-          "description": "Zapomnij o ręcznym śledzeniu. Agenty AI Quantifier ciągle zapewniają, że spełniasz standardy ISO 27001, ISO 9001 i DORA."
+          "description": "Zapomnij o ręcznym śledzeniu. Agenci AI Quantifier ciągle zapewniają, że spełniasz standardy ISO 27001, ISO 9001 i DORA."
         },
         "seamless": {
           "title": "Bezproblemowa integracja",
@@ -1592,7 +1600,7 @@
         },
         {
           "title": "Zbieranie danych oparte na AI",
-          "description": "Agenty AI, które zbierają dane o działaniach w całej Twojej organizacji automatycznie."
+          "description": "Agenci AI, którzy zbierają dane o działaniach w całej Twojej organizacji automatycznie."
         },
         {
           "title": "Dashboardy w czasie rzeczywistym",
@@ -1632,7 +1640,7 @@
       "features": {
         "aiNative": {
           "title": "Natywnie AI i autonomiczny",
-          "description": "Agenty compliance zbierają dane, monitorują zespoły i prowadzą terminowe raportowanie—więc Ty nie musisz."
+          "description": "Agenci compliance zbierają dane, monitorują zespoły i prowadzą terminowe raportowanie—więc Ty nie musisz."
         },
         "alwaysUpdated": {
           "title": "Zawsze na bieżąco",
@@ -1669,7 +1677,7 @@
       "features": [
         {
           "title": "Dostarczanie oparte na AI",
-          "description": "Agenty AI dostarczające polityki bezpośrednio do pracowników przez Slack lub email."
+          "description": "Agenci AI dostarczający polityki bezpośrednio do pracowników przez Slack lub email."
         },
         {
           "title": "Automatyczne przepływy pracy",
@@ -1722,7 +1730,7 @@
       "features": {
         "fullyAutonomous": {
           "title": "W pełni autonomiczne egzekwowanie",
-          "description": "Dział prawny nie musi gonić potwierdzeń ani monitorować skrzynek—nasze agenty robią to za Ciebie."
+          "description": "Dział prawny nie musi gonić potwierdzeń ani monitorować skrzynek—nasi agenci robią to za Ciebie."
         },
         "alwaysAuditReady": {
           "title": "Zawsze gotowy na audyt",
@@ -2056,7 +2064,7 @@
     },
     "continuousCompliance": {
       "title": "Ciągła zgodność operacyjna",
-      "description": "Po wdrożeniu nasze agenty AI przejmują ciągłe monitorowanie, ocenę ryzyka, zarządzanie incydentami i raportowanie regulacyjne — zapewniając, że Twoja zgodność z NIS2 nigdy nie wygasa.",
+      "description": "Po wdrożeniu nasi agenci AI przejmują ciągłe monitorowanie, ocenę ryzyka, zarządzanie incydentami i raportowanie regulacyjne — zapewniając, że Twoja zgodność z NIS2 nigdy nie wygasa.",
       "form": {
         "title": "Zamów demo",
         "nameLabel": "Imię i nazwisko",

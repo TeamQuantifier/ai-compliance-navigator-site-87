@@ -30,7 +30,7 @@ const KeyCharts = () => {
   ];
 
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-full">
       {/* Compliance Trend Chart */}
       <div className="bg-white rounded-lg border border-slate-200 p-3">
         <div className="flex items-center gap-2 mb-2">
@@ -52,7 +52,7 @@ const KeyCharts = () => {
               <XAxis dataKey="month" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} />
               <YAxis hide domain={[0, 100]} />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Bar dataKey="value" name="compliance" radius={[4, 4, 0, 0]} barSize={12} />
+              <Bar dataKey="value" name="compliance" radius={[4, 4, 0, 0]} barSize={12} fill="var(--color-compliance)" />
             </BarChart>
           </ChartContainer>
         </div>
@@ -102,7 +102,7 @@ const KeyCharts = () => {
           </ChartContainer>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

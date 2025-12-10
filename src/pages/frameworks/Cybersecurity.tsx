@@ -333,14 +333,14 @@ const Cybersecurity = () => {
                     <p className="text-lg text-slate-700 mb-6">
                       {t('cybersecurityPage.soc.detailedContent.description')}
                     </p>
-                    <div className="grid grid-cols-1 gap-4">
+                    <ul className="space-y-4 list-none">
                       {(t('cybersecurityPage.soc.detailedContent.checklist', { returnObjects: true }) as string[]).map((item, index) => (
-                        <div key={index} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                          <span className="text-slate-700">{item}</span>
-                        </div>
+                        <li key={index} className="flex gap-3">
+                          <CheckCircle className="h-6 w-6 text-compliance-600 flex-shrink-0 mt-0.5" />
+                          <span className="text-lg leading-relaxed text-slate-700">{item}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                   <div className="md:w-1/2">
                     <AiComplianceDashboard 
@@ -652,8 +652,10 @@ const Cybersecurity = () => {
                     {t('cybersecurityPage.finalCta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                  {t('cybersecurityPage.finalCta.watchTour')}
+                <Button variant="outline" size="lg" className="border-white/20 bg-gray-50 text-compliance-800 hover:bg-white px-8" asChild>
+                  <Link to={`/${currentLocale}/plans`}>
+                    {t('cybersecurityPage.finalCta.watchTour')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </div>
             </div>
