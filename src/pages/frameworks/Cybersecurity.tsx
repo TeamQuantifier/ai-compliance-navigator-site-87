@@ -337,7 +337,7 @@ const Cybersecurity = () => {
                       {(t('cybersecurityPage.soc.detailedContent.checklist', { returnObjects: true }) as string[]).map((item, index) => (
                         <div key={index} className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                          <span className="text-base text-slate-700">{item}</span>
+                          <span className="text-lg text-slate-700">{item}</span>
                         </div>
                       ))}
                     </div>
