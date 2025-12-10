@@ -333,14 +333,14 @@ const Cybersecurity = () => {
                     <p className="text-lg text-slate-700 mb-6">
                       {t('cybersecurityPage.soc.detailedContent.description')}
                     </p>
-                    <div className="grid grid-cols-1 gap-4">
+                    <ul className="space-y-4 list-none">
                       {(t('cybersecurityPage.soc.detailedContent.checklist', { returnObjects: true }) as string[]).map((item, index) => (
-                        <div key={index} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2" />
-                          <span className="text-lg text-slate-700" style={{ fontSize: '1.125rem', lineHeight: '1.75rem' }}>{item}</span>
-                        </div>
+                        <li key={index} className="flex gap-3">
+                          <CheckCircle className="h-6 w-6 text-compliance-600 flex-shrink-0 mt-0.5" />
+                          <span className="text-lg leading-relaxed text-slate-700">{item}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                   <div className="md:w-1/2">
                     <AiComplianceDashboard 
