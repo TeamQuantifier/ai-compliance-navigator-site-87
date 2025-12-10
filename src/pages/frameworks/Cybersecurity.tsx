@@ -652,8 +652,10 @@ const Cybersecurity = () => {
                     {t('cybersecurityPage.finalCta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                  {t('cybersecurityPage.finalCta.watchTour')}
+                <Button variant="outline" size="lg" className="border-white/20 bg-gray-50 text-compliance-800 hover:bg-white px-8" asChild>
+                  <Link to={`/${currentLocale}/plans`}>
+                    {t('cybersecurityPage.finalCta.watchTour')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </div>
             </div>
