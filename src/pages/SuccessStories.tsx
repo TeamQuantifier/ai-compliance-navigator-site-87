@@ -81,20 +81,24 @@ const SuccessStories = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {stories.map((story) => (
                 <Card key={story.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video overflow-hidden bg-slate-100">
-                    <img 
-                      src={story.featured_image_url || story.og_image_url || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop'} 
-                      alt={story.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                  <Link to={`/${currentLocale}/success-stories/${story.slug}`} className="block">
+                    <div className="aspect-video overflow-hidden bg-slate-100">
+                      <img 
+                        src={story.featured_image_url || story.og_image_url || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop'} 
+                        alt={story.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      />
+                    </div>
+                  </Link>
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-2 flex-wrap">
                       {story.industry && (
                         <Badge variant="secondary">{story.industry}</Badge>
                       )}
                     </div>
-                    <CardTitle className="line-clamp-2 text-lg">{story.title}</CardTitle>
+                    <Link to={`/${currentLocale}/success-stories/${story.slug}`}>
+                      <CardTitle className="line-clamp-2 text-lg hover:text-primary transition-colors cursor-pointer">{story.title}</CardTitle>
+                    </Link>
                     <CardDescription className="line-clamp-3">
                       {story.summary}
                     </CardDescription>
