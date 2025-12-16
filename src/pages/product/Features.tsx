@@ -526,166 +526,173 @@ const ProductFeatures = () => {
         </TabsContent>
       </Tabs>
       
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <div className="flex items-start mb-4">
-            <ClipboardCheck className="h-10 w-10 text-compliance-600 mr-4" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">{t('product.features.audit.title')}</h3>
-              <h4 className="text-lg mb-3">{t('product.features.audit.subtitle')}</h4>
-            </div>
-          </div>
-          <p className="text-slate-700 mb-4">
-            {t('product.features.audit.description')}
-          </p>
-          <h5 className="font-medium mb-3">{t('product.features.audit.functionality')}</h5>
-          <ul className="space-y-2 mb-4">
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.audit.feature1')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.audit.feature2')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.audit.feature3')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.audit.feature4')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.audit.feature5')}</span>
-            </li>
-          </ul>
-        </div>
+      {/* Platform Advantages Section */}
+      <div className="mt-16 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center gradient-heading">
+          {t('product.features.advantages.title')}
+        </h2>
         
-        <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <div className="flex items-start mb-4">
-            <Zap className="h-10 w-10 text-innovation-600 mr-4" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">{t('product.features.apiIntegration.title')}</h3>
-              <h4 className="text-lg mb-3">{t('product.features.apiIntegration.subtitle')}</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+            <div className="flex items-start mb-4">
+              <ClipboardCheck className="h-10 w-10 text-compliance-600 mr-4" />
+              <div>
+                <h3 className="text-xl font-bold mb-2">{t('product.features.audit.title')}</h3>
+                <h4 className="text-lg mb-3">{t('product.features.audit.subtitle')}</h4>
+              </div>
             </div>
-          </div>
-          <p className="text-slate-700 mb-4">
-            {t('product.features.apiIntegration.description')}
-          </p>
-          <p className="text-slate-700 italic mb-4">{t('product.features.apiIntegration.noManual')}</p>
-          <h5 className="font-medium mb-3">{t('product.features.apiIntegration.whatYouGet')}</h5>
-          <ul className="space-y-2 mb-4">
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.apiIntegration.feature1')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.apiIntegration.feature2')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.apiIntegration.feature3')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.apiIntegration.feature4')}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <div className="mt-8 bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-        <div className="flex items-start mb-4">
-          <Link2 className="h-10 w-10 text-compliance-600 mr-4" />
-          <div>
-            <h3 className="text-xl font-bold mb-2">{t('product.features.valueChain.title')}</h3>
-            <h4 className="text-lg mb-3">{t('product.features.valueChain.subtitle')}</h4>
-          </div>
-        </div>
-        <p className="text-slate-700 mb-4">
-          {t('product.features.valueChain.description')}
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-          <div>
-            <h5 className="font-medium mb-3">{t('product.features.valueChain.whatYouGet')}</h5>
-            <ul className="space-y-2">
+            <p className="text-slate-700 mb-4">
+              {t('product.features.audit.description')}
+            </p>
+            <h5 className="font-medium mb-3">{t('product.features.audit.functionality')}</h5>
+            <ul className="space-y-2 mb-4">
               <li className="flex items-center">
                 <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-compliance-700 text-xs">✓</span>
                 </div>
-              <span className="text-sm">{t('product.features.valueChain.feature1')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
+                <span className="text-sm">{t('product.features.audit.feature1')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-compliance-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.audit.feature2')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-compliance-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.audit.feature3')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-compliance-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.audit.feature4')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-compliance-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.audit.feature5')}</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+            <div className="flex items-start mb-4">
+              <Zap className="h-10 w-10 text-innovation-600 mr-4" />
+              <div>
+                <h3 className="text-xl font-bold mb-2">{t('product.features.apiIntegration.title')}</h3>
+                <h4 className="text-lg mb-3">{t('product.features.apiIntegration.subtitle')}</h4>
               </div>
-              <span className="text-sm">{t('product.features.valueChain.feature2')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.valueChain.feature3')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-compliance-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.valueChain.feature4')}</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div>
-          <h5 className="font-medium mb-3">{t('product.features.valueChain.whatAgentDoes')}</h5>
-            <ul className="space-y-2">
+            </div>
+            <p className="text-slate-700 mb-4">
+              {t('product.features.apiIntegration.description')}
+            </p>
+            <p className="text-slate-700 italic mb-4">{t('product.features.apiIntegration.noManual')}</p>
+            <h5 className="font-medium mb-3">{t('product.features.apiIntegration.whatYouGet')}</h5>
+            <ul className="space-y-2 mb-4">
               <li className="flex items-center">
                 <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-innovation-700 text-xs">✓</span>
                 </div>
-              <span className="text-sm">{t('product.features.valueChain.agentFeature1')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.valueChain.agentFeature2')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.valueChain.agentFeature3')}</span>
-            </li>
-            <li className="flex items-center">
-              <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-innovation-700 text-xs">✓</span>
-              </div>
-              <span className="text-sm">{t('product.features.valueChain.agentFeature4')}</span>
+                <span className="text-sm">{t('product.features.apiIntegration.feature1')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-innovation-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.apiIntegration.feature2')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-innovation-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.apiIntegration.feature3')}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-innovation-700 text-xs">✓</span>
+                </div>
+                <span className="text-sm">{t('product.features.apiIntegration.feature4')}</span>
               </li>
             </ul>
+          </div>
+        </div>
+        
+        <div className="mt-8 bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <div className="flex items-start mb-4">
+            <Link2 className="h-10 w-10 text-compliance-600 mr-4" />
+            <div>
+              <h3 className="text-xl font-bold mb-2">{t('product.features.valueChain.title')}</h3>
+              <h4 className="text-lg mb-3">{t('product.features.valueChain.subtitle')}</h4>
+            </div>
+          </div>
+          <p className="text-slate-700 mb-4">
+            {t('product.features.valueChain.description')}
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+            <div>
+              <h5 className="font-medium mb-3">{t('product.features.valueChain.whatYouGet')}</h5>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-compliance-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.feature1')}</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-compliance-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.feature2')}</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-compliance-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.feature3')}</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-compliance-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-compliance-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.feature4')}</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-medium mb-3">{t('product.features.valueChain.whatAgentDoes')}</h5>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-innovation-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.agentFeature1')}</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-innovation-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.agentFeature2')}</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-innovation-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.agentFeature3')}</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-5 w-5 rounded-full bg-innovation-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-innovation-700 text-xs">✓</span>
+                  </div>
+                  <span className="text-sm">{t('product.features.valueChain.agentFeature4')}</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

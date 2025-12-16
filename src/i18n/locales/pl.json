@@ -630,6 +630,9 @@
         "agentFeature3": "Ocenia przesłane dane pod kątem kompletności i ryzyka",
         "agentFeature4": "Flaguje luki lub niespójności, zanim wpłyną na Twoją pozycję zgodności"
       },
+      "advantages": {
+        "title": "Zalety naszej platformy"
+      },
       "cta": {
         "title": "Rozpocznij inteligentne zarządzanie zgodnością",
         "bookDemo": "Zaplanuj demo",
