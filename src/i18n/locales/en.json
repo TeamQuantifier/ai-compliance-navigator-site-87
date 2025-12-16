@@ -670,6 +670,9 @@
         "agentFeature3": "Evaluates submitted data for completeness and risk",
         "agentFeature4": "Flags gaps or inconsistencies before they affect your compliance posture"
       },
+      "advantages": {
+        "title": "Advantages of our platform"
+      },
       "cta": {
         "title": "Start Managing Compliance Intelligently",
         "bookDemo": "Book a Demo"
