@@ -46,7 +46,7 @@ const Partners = () => {
     icon: <Globe className="h-6 w-6 text-compliance-600" />
   }];
   
-  return <PageTemplate title={t('partners.title')} description={t('partners.description')}>
+  return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
           <div className="bg-gradient-to-r from-compliance-50 to-blue-50 p-8 rounded-xl mb-10">

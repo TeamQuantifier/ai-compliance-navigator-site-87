@@ -48,8 +48,8 @@ const Frameworks = () => {
 
   return (
     <PageTemplate
-      title={t('frameworksPage.hero.title')}
-      description={t('frameworksPage.hero.description')}
+      title={t('seo.frameworks.title')}
+      description={t('seo.frameworks.description')}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {frameworkCategories.map((category) => (
