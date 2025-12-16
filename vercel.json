@@ -1,6 +1,23 @@
-
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/sitemap.xml",
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/sitemap"
+    },
+    {
+      "source": "/:locale(en|pl)/success-stories/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
+        }
+      ],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-story?locale=:locale&slug=:slug"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useStory } from '@/hooks/useBlog';
+import { useStory, useAlternatePost } from '@/hooks/useBlog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -16,6 +16,50 @@ interface KPI {
   value: string;
   unit?: string;
 }
+
+// JSON-LD structured data component
+const ArticleJsonLd = ({ story, canonicalUrl, locale }: { 
+  story: any; 
+  canonicalUrl: string; 
+  locale: string;
+}) => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": story.title,
+    "description": story.meta_desc || story.summary || '',
+    "image": story.og_image_url || story.featured_image_url || story.logo_url || 'https://quantifier.ai/og-image.png',
+    "datePublished": story.published_at || story.created_at,
+    "dateModified": story.updated_at,
+    "author": {
+      "@type": "Organization",
+      "name": "Quantifier.ai",
+      "url": "https://quantifier.ai"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Quantifier.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://quantifier.ai/lovable-uploads/unicell-logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "inLanguage": locale === 'pl' ? 'pl-PL' : 'en-US',
+    "keywords": story.tags?.join(', ') || '',
+    "articleSection": story.industry || 'Case Study'
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+};
 
 const StoryDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -67,6 +111,7 @@ const StoryDetail = () => {
   const canonicalUrl = `https://quantifier.ai/${currentLocale}/success-stories/${story.slug}`;
   const alternateLocale = currentLocale === 'en' ? 'pl' : 'en';
   const kpis = (Array.isArray(story.results_kpis) ? story.results_kpis : []) as unknown as KPI[];
+  const imageUrl = story.og_image_url || story.featured_image_url || story.logo_url || 'https://quantifier.ai/og-image.png';
 
   return (
     <>
@@ -85,15 +130,27 @@ const StoryDetail = () => {
         <meta property="og:description" content={story.meta_desc || story.summary || ''} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
-        {story.og_image_url && <meta property="og:image" content={story.og_image_url} />}
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:site_name" content="Quantifier.ai" />
         <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : 'en_US'} />
         <meta property="og:locale:alternate" content={alternateLocale === 'pl' ? 'pl_PL' : 'en_US'} />
+        
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={story.meta_title || story.title} />
+        <meta name="twitter:description" content={story.meta_desc || story.summary || ''} />
+        <meta name="twitter:image" content={imageUrl} />
         
         {/* Article metadata */}
         <meta property="article:published_time" content={story.published_at || story.created_at} />
         <meta property="article:modified_time" content={story.updated_at} />
+        {story.tags?.map((tag: string) => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
       </Helmet>
-
+      
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd story={story} canonicalUrl={canonicalUrl} locale={currentLocale} />
       <PageTemplate title="" description="">
         <article className="max-w-4xl mx-auto">
           {/* Back button */}
