@@ -107,6 +107,12 @@ const BlogPost = () => {
           <meta property="og:locale:alternate" content={altLang === 'pl' ? 'pl_PL' : 'en_US'} />
         )}
         
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.meta_title || post.title} />
+        <meta name="twitter:description" content={post.meta_desc || post.excerpt || ''} />
+        <meta name="twitter:image" content={imageUrl} />
+        
         {/* Article metadata */}
         {post.published_at && (
           <meta property="article:published_time" content={post.published_at} />
