@@ -6,8 +6,8 @@ const ValueChain = () => {
   
   return (
     <PageTemplate
-      title={t('product.valueChain.title')}
-      description={t('product.valueChain.description')}
+      title={t('seo.product.valueChain.title')}
+      description={t('seo.product.valueChain.description')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-slate-700 mb-6">

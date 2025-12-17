@@ -12,7 +12,7 @@ const ProductFeatures = () => {
   const handleTabChange = (value: string) => {
     setActiveTab(value);
   };
-  return <PageTemplate title={t('product.features.title')} description={t('product.features.description')}>
+  return <PageTemplate title={t('seo.product.title')} description={t('seo.product.description')}>
       <div className="max-w-4xl mx-auto mb-12">
         
         
