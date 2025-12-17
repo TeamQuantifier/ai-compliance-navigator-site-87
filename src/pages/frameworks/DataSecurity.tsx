@@ -57,8 +57,8 @@ const DataSecurity = () => {
 
   return (
     <PageTemplate
-      title={t('dataSecurityPage.title')}
-      description={t('dataSecurityPage.description')}
+      title={t('seo.frameworks.dataSecurity.title')}
+      description={t('seo.frameworks.dataSecurity.description')}
     >
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-2 bg-gradient-to-r from-purple-700 to-indigo-600 bg-clip-text text-transparent">

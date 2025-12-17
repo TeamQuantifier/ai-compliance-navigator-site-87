@@ -27,7 +27,7 @@ const Governance = () => {
         <p className="text-slate-600">{children}</p>
       </div>
     </div>;
-  return <PageTemplate title={t('governancePage.title')} description={t('governancePage.description')}>
+  return <PageTemplate title={t('seo.frameworks.governance.title')} description={t('seo.frameworks.governance.description')}>
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">

@@ -57,8 +57,8 @@ const Esg = () => {
 
   return (
     <PageTemplate
-      title={t('esgPage.title')}
-      description={t('esgPage.description')}
+      title={t('seo.frameworks.esg.title')}
+      description={t('seo.frameworks.esg.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}

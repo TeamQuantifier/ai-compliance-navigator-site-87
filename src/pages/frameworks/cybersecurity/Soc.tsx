@@ -11,8 +11,8 @@ const Soc = () => {
   
   return (
     <PageTemplate
-      title={t('socPage.title')}
-      description={t('socPage.description')}
+      title={t('seo.frameworks.cybersecurity.soc.title')}
+      description={t('seo.frameworks.cybersecurity.soc.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
