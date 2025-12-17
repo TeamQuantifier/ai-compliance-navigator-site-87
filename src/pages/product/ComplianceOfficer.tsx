@@ -12,8 +12,8 @@ const ComplianceOfficer = () => {
   
   return (
     <PageTemplate
-      title={t('product.complianceOfficer.title')}
-      description={t('product.complianceOfficer.description')}
+      title={t('seo.product.complianceOfficer.title')}
+      description={t('seo.product.complianceOfficer.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}

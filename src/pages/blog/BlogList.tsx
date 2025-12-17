@@ -132,13 +132,15 @@ const BlogList = () => {
                 
                 return (
                   <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="aspect-video overflow-hidden">
-              <img 
-                src={post.featured_image_url || imageUrl} 
-                alt={post.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-                    </div>
+                    <Link to={`/${currentLocale}/blog/${post.slug}`} className="block">
+                      <div className="aspect-video overflow-hidden">
+                        <img 
+                          src={post.featured_image_url || imageUrl} 
+                          alt={post.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        />
+                      </div>
+                    </Link>
                     <CardHeader>
                       <div className="flex items-center gap-2 mb-2">
                         {post.category && (
@@ -149,7 +151,9 @@ const BlogList = () => {
                           <span>{readingTime} {t('blog.readingTime')}</span>
                         </div>
                       </div>
-                      <CardTitle className="line-clamp-2 text-lg">{post.title}</CardTitle>
+                      <Link to={`/${currentLocale}/blog/${post.slug}`}>
+                        <CardTitle className="line-clamp-2 text-lg hover:text-primary transition-colors cursor-pointer">{post.title}</CardTitle>
+                      </Link>
                       <CardDescription className="line-clamp-3">
                         {post.excerpt || post.meta_desc}
                       </CardDescription>

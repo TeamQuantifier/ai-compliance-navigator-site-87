@@ -52,7 +52,7 @@ const NisII = () => {
     color: 'bg-gradient-to-r from-cyan-500 to-cyan-600',
     isContinuous: true
   }];
-  return <PageTemplate title={t('nisIIPage.title')} description={t('nisIIPage.description')}>
+  return <PageTemplate title={t('seo.frameworks.cybersecurity.nisII.title')} description={t('seo.frameworks.cybersecurity.nisII.description')}>
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <section className="mb-20">

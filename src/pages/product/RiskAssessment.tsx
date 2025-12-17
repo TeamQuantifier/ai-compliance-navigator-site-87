@@ -32,8 +32,8 @@ const RiskAssessment = () => {
 
   return (
     <PageTemplate
-      title={t('product.riskAssessment.title')}
-      description={t('product.riskAssessment.description')}
+      title={t('seo.product.riskAssessment.title')}
+      description={t('seo.product.riskAssessment.description')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-slate-700 mb-6">

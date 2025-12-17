@@ -22,8 +22,8 @@ const Iso27001 = () => {
 
   return (
     <PageTemplate
-      title={t('iso27001Page.title')}
-      description={t('iso27001Page.description')}
+      title={t('seo.frameworks.informationSecurity.iso27001.title')}
+      description={t('seo.frameworks.informationSecurity.iso27001.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}

@@ -15,8 +15,8 @@ const Cybersecurity = () => {
 
   return (
     <PageTemplate
-      title={t('cybersecurityPage.title')}
-      description={t('cybersecurityPage.description')}
+      title={t('seo.frameworks.cybersecurity.title')}
+      description={t('seo.frameworks.cybersecurity.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}

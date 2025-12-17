@@ -6,8 +6,8 @@ const DocumentsManagement = () => {
   
   return (
     <PageTemplate
-      title={t('product.documentsManagement.title')}
-      description={t('product.documentsManagement.description')}
+      title={t('seo.product.documentsManagement.title')}
+      description={t('seo.product.documentsManagement.description')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-slate-700 mb-6">

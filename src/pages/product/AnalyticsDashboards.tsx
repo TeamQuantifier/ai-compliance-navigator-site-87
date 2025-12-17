@@ -12,8 +12,8 @@ const AnalyticsDashboards = () => {
   
   return (
     <PageTemplate
-      title={t('product.analyticsDashboards.title')}
-      description={t('product.analyticsDashboards.description')}
+      title={t('seo.product.analyticsDashboards.title')}
+      description={t('seo.product.analyticsDashboards.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}

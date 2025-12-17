@@ -670,6 +670,9 @@
         "agentFeature3": "Evaluates submitted data for completeness and risk",
         "agentFeature4": "Flags gaps or inconsistencies before they affect your compliance posture"
       },
+      "advantages": {
+        "title": "Advantages of our platform"
+      },
       "cta": {
         "title": "Start Managing Compliance Intelligently",
         "bookDemo": "Book a Demo"
@@ -2791,6 +2794,132 @@
       "section6Title": "06. Conclusion",
       "section6Text1": "This case study highlights how strategic partnerships between financial institutions and ESG tech providers can accelerate compliance, empower businesses, and contribute to the broader EU goal of net-zero emissions by 2050.",
       "section6Text2": "By digitizing ESG data management and making compliance tools broadly available, the bank plays a critical role in building market resilience, climate awareness, and long-term competitiveness among its clients."
+    }
+  },
+  "seo": {
+    "index": {
+      "title": "AI-Native GRC Platform for Compliance Automation",
+      "description": "Quantifier.ai is an AI-native GRC platform that automates compliance processes, manages regulatory frameworks like SOC 2, ISO 27001, GDPR, and more. Simplify compliance with our AI Compliance Officer."
+    },
+    "product": {
+      "title": "Product Features",
+      "description": "Discover Quantifier.ai's AI-powered compliance platform features: AI Compliance Officer, Document Management, Risk Assessment, Analytics Dashboards, and seamless API integrations.",
+      "overview": {
+        "title": "Product Overview - AI-Powered GRC Platform",
+        "description": "Complete overview of Quantifier.ai's AI-powered GRC platform. Explore all features for compliance automation, risk management, and regulatory frameworks."
+      },
+      "complianceOfficer": {
+        "title": "AI Compliance Officer - Automated Compliance Monitoring",
+        "description": "Meet your AI Compliance Officer - automated compliance monitoring, expert guidance, and proactive risk management powered by artificial intelligence."
+      },
+      "analyticsDashboards": {
+        "title": "Analytics Dashboards - Real-Time Compliance Insights",
+        "description": "Real-time compliance analytics and AI-powered insights. Interactive dashboards for monitoring, reporting, and decision-making across all frameworks."
+      },
+      "taskDataManagement": {
+        "title": "Task & Data Management - Compliance Workflow Hub",
+        "description": "Streamline compliance workflows with centralized task management. Organize, assign, and track compliance activities across your organization."
+      },
+      "riskAssessment": {
+        "title": "Risk Assessment - AI-Driven Risk Analysis",
+        "description": "AI-driven risk assessment and monitoring for proactive compliance. Identify, evaluate, and mitigate risks before they become issues."
+      },
+      "documentsManagement": {
+        "title": "Document Management - Compliance Documentation Hub",
+        "description": "Centralized document management for policies, procedures, and compliance evidence. Version control, audit trails, and secure storage."
+      },
+      "valueChain": {
+        "title": "Value Chain Management - Supply Chain Compliance",
+        "description": "End-to-end value chain compliance and sustainability tracking. Monitor suppliers, assess risks, and ensure regulatory compliance across your supply chain."
+      },
+      "apiIntegrations": {
+        "title": "API Integrations - Seamless Connectivity",
+        "description": "Seamless API integrations with your existing tools and systems. Connect Quantifier.ai to your tech stack for unified compliance management."
+      }
+    },
+    "plans": {
+      "title": "Pricing Plans",
+      "description": "Choose the right Quantifier.ai plan for your organization. Scalable compliance solutions from Starter to Enterprise, with full GRC automation capabilities."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with Quantifier.ai team. Request a demo, ask questions, or discuss your compliance needs with our experts in San Francisco or Warsaw."
+    },
+    "partners": {
+      "title": "Partner Network",
+      "description": "Join Quantifier.ai's global partner network. Collaborate with us to deliver AI-powered compliance solutions to organizations worldwide."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about Quantifier.ai's mission to revolutionize compliance with AI. Our team combines deep regulatory expertise with cutting-edge technology."
+    },
+    "frameworks": {
+      "title": "Compliance Frameworks",
+      "description": "Quantifier.ai supports multiple compliance frameworks: SOC 2, ISO 27001, GDPR, NIS II, DORA, ESG, and more. Manage all your regulatory requirements in one platform.",
+      "cybersecurity": {
+        "title": "Cybersecurity Compliance Frameworks",
+        "description": "Master cybersecurity compliance with SOC 2, NIS II, and NIST frameworks. AI-powered automation for security controls, risk assessment, and continuous monitoring.",
+        "nisII": {
+          "title": "NIS II Compliance - EU Cybersecurity Directive",
+          "description": "Achieve NIS II compliance with Quantifier.ai. AI-powered gap analysis, implementation timeline, and continuous monitoring for EU cybersecurity requirements."
+        },
+        "nist": {
+          "title": "NIST Cybersecurity Framework Compliance",
+          "description": "Implement NIST CSF with Quantifier.ai. Identify, Protect, Detect, Respond, Recover - all automated with AI-powered compliance management."
+        },
+        "soc": {
+          "title": "SOC 1 & SOC 2 Compliance Platform",
+          "description": "Streamline SOC 1 and SOC 2 audits with Quantifier.ai. Automated evidence collection, control monitoring, and audit-ready reporting."
+        }
+      },
+      "informationSecurity": {
+        "title": "Information Security Frameworks",
+        "description": "ISO 27001, ISO 9001, and DORA compliance automation. Build robust information security management systems with AI-powered workflows.",
+        "iso27001": {
+          "title": "ISO 27001 Compliance - ISMS Certification",
+          "description": "Achieve ISO 27001 certification with Quantifier.ai. AI-powered ISMS implementation, risk assessment, and audit preparation for information security."
+        },
+        "iso9001": {
+          "title": "ISO 9001 Quality Management System",
+          "description": "Implement ISO 9001 QMS with Quantifier.ai. Automated quality management, process documentation, and continuous improvement tracking."
+        },
+        "dora": {
+          "title": "DORA Compliance - Digital Operational Resilience",
+          "description": "Meet DORA requirements with Quantifier.ai. ICT risk management, incident reporting, and third-party risk monitoring for financial entities."
+        }
+      },
+      "dataSecurity": {
+        "title": "Data Security & Privacy Frameworks",
+        "description": "GDPR, HIPAA, and CCPA compliance automation. Protect personal data and ensure privacy regulation compliance with AI-powered monitoring."
+      },
+      "environmental": {
+        "title": "Environmental Compliance Frameworks",
+        "description": "ISO 14001, LCA, Carbon Footprint, and Decarbonisation management. Track environmental impact and meet sustainability requirements with AI automation."
+      },
+      "esg": {
+        "title": "ESG Reporting Frameworks",
+        "description": "CSRD, GRI, and CBAM reporting automation. Comprehensive ESG data collection, analysis, and disclosure management for sustainability compliance."
+      },
+      "governance": {
+        "title": "Governance & Legal Compliance",
+        "description": "Legal policies management and whistleblowing compliance. Ensure corporate governance and ethical business practices with automated workflows."
+      },
+      "productLevel": {
+        "title": "Product Level Compliance",
+        "description": "Digital Product Passport (DPP) and Life Cycle Assessment (LCA). Product-level sustainability and regulatory compliance tracking."
+      }
+    },
+    "byRoles": {
+      "title": "Solutions by Role",
+      "description": "Tailored compliance solutions for Managers, Contributors, and Auditors. Quantifier.ai provides role-based access and workflows for every team member."
+    },
+    "successStories": {
+      "title": "Customer Success Stories",
+      "description": "Discover how organizations achieve compliance excellence with Quantifier.ai. Real case studies and proven results from our clients."
+    },
+    "blog": {
+      "title": "Blog & Insights",
+      "description": "Latest articles, guides, and insights on compliance, GRC, cybersecurity, and regulatory frameworks from the Quantifier.ai team."
     }
   }
 }

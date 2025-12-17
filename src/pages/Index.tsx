@@ -1,4 +1,5 @@
-
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
 import InsidersSection from "@/components/InsidersSection";
@@ -12,8 +13,115 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const { t, currentLocale } = useLanguage();
+  const location = useLocation();
+  
+  const baseUrl = 'https://quantifier.ai';
+  const currentPath = location.pathname.replace(/^\/(en|pl)/, '');
+  const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
+  const altLocale = currentLocale === 'en' ? 'pl' : 'en';
+  const altUrl = `${baseUrl}/${altLocale}${currentPath}`;
+  const defaultUrl = `${baseUrl}/en${currentPath}`;
+  
+  const title = t('seo.index.title');
+  const description = t('seo.index.description');
+  const fullTitle = `${title} | Quantifier.ai`;
+
+  // Organization JSON-LD Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Quantifier.ai",
+    "url": "https://quantifier.ai",
+    "logo": "https://quantifier.ai/lovable-uploads/b5ac5352-8089-4e7d-a1d4-6c879bd4f57e.png",
+    "description": currentLocale === 'en' 
+      ? "AI-Native GRC Platform for Compliance Automation" 
+      : "AI-Native Platforma GRC do Automatyzacji Compliance",
+    "foundingDate": "2020",
+    "sameAs": [
+      "https://www.linkedin.com/company/quantifier-ai"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "447 Sutter St Ste 405 PMB 137",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "postalCode": "94108",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Rondo Daszynskiego 1",
+        "addressLocality": "Warsaw",
+        "addressCountry": "PL"
+      }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1-415-799-8206",
+        "contactType": "sales",
+        "areaServed": "US"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+48-698-759-206",
+        "contactType": "sales",
+        "areaServed": "EU"
+      }
+    ]
+  };
+
+  // WebSite JSON-LD Schema
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Quantifier.ai",
+    "url": "https://quantifier.ai",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://quantifier.ai/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{fullTitle}</title>
+        <meta name="description" content={description} />
+        
+        {/* Canonical & hreflang */}
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="en" href={currentLocale === 'en' ? canonicalUrl : altUrl} />
+        <link rel="alternate" hrefLang="pl" href={currentLocale === 'pl' ? canonicalUrl : altUrl} />
+        <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/og-image.png`} />
+        <meta property="og:site_name" content="Quantifier.ai" />
+        <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : 'pl_PL'} />
+        <meta property="og:locale:alternate" content={currentLocale === 'en' ? 'pl_PL' : 'en_US'} />
+        
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={`${baseUrl}/og-image.png`} />
+        
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+      </Helmet>
+
       <HeroSection />
       <FeatureSection />
       <InsidersSection />

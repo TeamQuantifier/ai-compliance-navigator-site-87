@@ -35,7 +35,7 @@ const Plans = () => {
     highlighted: false
   }];
 
-  return <PageTemplate title={t('plans.title')} description={t('plans.description')}>
+  return <PageTemplate title={t('seo.plans.title')} description={t('seo.plans.description')}>
       <div className="max-w-3xl mx-auto text-center mb-12">
         
       </div>
