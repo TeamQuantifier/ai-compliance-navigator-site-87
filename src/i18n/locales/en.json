@@ -2803,7 +2803,39 @@
     },
     "product": {
       "title": "Product Features",
-      "description": "Discover Quantifier.ai's AI-powered compliance platform features: AI Compliance Officer, Document Management, Risk Assessment, Analytics Dashboards, and seamless API integrations."
+      "description": "Discover Quantifier.ai's AI-powered compliance platform features: AI Compliance Officer, Document Management, Risk Assessment, Analytics Dashboards, and seamless API integrations.",
+      "overview": {
+        "title": "Product Overview - AI-Powered GRC Platform",
+        "description": "Complete overview of Quantifier.ai's AI-powered GRC platform. Explore all features for compliance automation, risk management, and regulatory frameworks."
+      },
+      "complianceOfficer": {
+        "title": "AI Compliance Officer - Automated Compliance Monitoring",
+        "description": "Meet your AI Compliance Officer - automated compliance monitoring, expert guidance, and proactive risk management powered by artificial intelligence."
+      },
+      "analyticsDashboards": {
+        "title": "Analytics Dashboards - Real-Time Compliance Insights",
+        "description": "Real-time compliance analytics and AI-powered insights. Interactive dashboards for monitoring, reporting, and decision-making across all frameworks."
+      },
+      "taskDataManagement": {
+        "title": "Task & Data Management - Compliance Workflow Hub",
+        "description": "Streamline compliance workflows with centralized task management. Organize, assign, and track compliance activities across your organization."
+      },
+      "riskAssessment": {
+        "title": "Risk Assessment - AI-Driven Risk Analysis",
+        "description": "AI-driven risk assessment and monitoring for proactive compliance. Identify, evaluate, and mitigate risks before they become issues."
+      },
+      "documentsManagement": {
+        "title": "Document Management - Compliance Documentation Hub",
+        "description": "Centralized document management for policies, procedures, and compliance evidence. Version control, audit trails, and secure storage."
+      },
+      "valueChain": {
+        "title": "Value Chain Management - Supply Chain Compliance",
+        "description": "End-to-end value chain compliance and sustainability tracking. Monitor suppliers, assess risks, and ensure regulatory compliance across your supply chain."
+      },
+      "apiIntegrations": {
+        "title": "API Integrations - Seamless Connectivity",
+        "description": "Seamless API integrations with your existing tools and systems. Connect Quantifier.ai to your tech stack for unified compliance management."
+      }
     },
     "plans": {
       "title": "Pricing Plans",

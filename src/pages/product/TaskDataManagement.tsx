@@ -32,8 +32,8 @@ const TaskDataManagement = () => {
 
   return (
     <PageTemplate
-      title={t('product.taskDataManagement.title')}
-      description={t('product.taskDataManagement.description')}
+      title={t('seo.product.taskDataManagement.title')}
+      description={t('seo.product.taskDataManagement.description')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-slate-700 mb-6">

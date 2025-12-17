@@ -2627,7 +2627,39 @@
     },
     "product": {
       "title": "Funkcje Produktu",
-      "description": "Poznaj funkcje platformy compliance opartej na AI od Quantifier.ai: AI Compliance Officer, Zarządzanie Dokumentami, Ocena Ryzyka, Dashboardy Analityczne i integracje API."
+      "description": "Poznaj funkcje platformy compliance opartej na AI od Quantifier.ai: AI Compliance Officer, Zarządzanie Dokumentami, Ocena Ryzyka, Dashboardy Analityczne i integracje API.",
+      "overview": {
+        "title": "Przegląd Produktu - Platforma GRC oparta na AI",
+        "description": "Kompleksowy przegląd platformy GRC opartej na AI od Quantifier.ai. Poznaj wszystkie funkcje automatyzacji compliance, zarządzania ryzykiem i standardów regulacyjnych."
+      },
+      "complianceOfficer": {
+        "title": "AI Compliance Officer - Automatyczny Monitoring Zgodności",
+        "description": "Poznaj swojego AI Compliance Officer - automatyczny monitoring zgodności, eksperckie wsparcie i proaktywne zarządzanie ryzykiem oparte na sztucznej inteligencji."
+      },
+      "analyticsDashboards": {
+        "title": "Dashboardy Analityczne - Wgląd w Compliance w Czasie Rzeczywistym",
+        "description": "Analityka compliance w czasie rzeczywistym i wglądy oparte na AI. Interaktywne dashboardy do monitorowania, raportowania i podejmowania decyzji."
+      },
+      "taskDataManagement": {
+        "title": "Zarządzanie Zadaniami i Danymi - Centrum Workflow Compliance",
+        "description": "Usprawnij workflow compliance dzięki scentralizowanemu zarządzaniu zadaniami. Organizuj, przydzielaj i śledź działania compliance w całej organizacji."
+      },
+      "riskAssessment": {
+        "title": "Ocena Ryzyka - Analiza Ryzyka oparta na AI",
+        "description": "Ocena i monitoring ryzyka oparty na AI dla proaktywnego compliance. Identyfikuj, oceniaj i minimalizuj ryzyka zanim staną się problemami."
+      },
+      "documentsManagement": {
+        "title": "Zarządzanie Dokumentami - Centrum Dokumentacji Compliance",
+        "description": "Scentralizowane zarządzanie dokumentami dla polityk, procedur i dowodów compliance. Kontrola wersji, ścieżki audytu i bezpieczne przechowywanie."
+      },
+      "valueChain": {
+        "title": "Zarządzanie Łańcuchem Wartości - Compliance Łańcucha Dostaw",
+        "description": "End-to-end compliance łańcucha wartości i śledzenie zrównoważoności. Monitoruj dostawców, oceniaj ryzyka i zapewniaj zgodność regulacyjną."
+      },
+      "apiIntegrations": {
+        "title": "Integracje API - Bezproblemowa Łączność",
+        "description": "Bezproblemowe integracje API z istniejącymi narzędziami i systemami. Połącz Quantifier.ai ze swoim stosem technologicznym dla ujednoliconego zarządzania compliance."
+      }
     },
     "plans": {
       "title": "Plany Cenowe",

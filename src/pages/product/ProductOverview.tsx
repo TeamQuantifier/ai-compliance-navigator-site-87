@@ -1,8 +1,8 @@
-
 import { ArrowRight, Shield, CheckCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import PageTemplate from '@/components/PageTemplate';
 
 const ProductOverview = () => {
   const { t, currentLocale } = useLanguage();
@@ -51,8 +51,11 @@ const ProductOverview = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <div className="bg-gradient-to-b from-compliance-50 to-white pt-24 pb-16">
+    <PageTemplate
+      title={t('seo.product.overview.title')}
+      description={t('seo.product.overview.description')}
+    >
+      <div className="bg-gradient-to-b from-compliance-50 to-white -mt-12 pt-12 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
@@ -93,7 +96,7 @@ const ProductOverview = () => {
           ))}
         </div>
       </div>
-    </div>
+    </PageTemplate>
   );
 };
 
