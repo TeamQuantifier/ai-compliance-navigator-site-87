@@ -25,8 +25,8 @@ const Iso9001 = () => {
 
   return (
     <PageTemplate
-      title={t('iso9001Page.title')}
-      description={t('iso9001Page.description')}
+      title={t('seo.frameworks.informationSecurity.iso9001.title')}
+      description={t('seo.frameworks.informationSecurity.iso9001.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}

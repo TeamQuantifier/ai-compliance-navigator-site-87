@@ -11,8 +11,8 @@ const Nist = () => {
   
   return (
     <PageTemplate
-      title={t('nistPage.title')}
-      description={t('nistPage.description')}
+      title={t('seo.frameworks.cybersecurity.nist.title')}
+      description={t('seo.frameworks.cybersecurity.nist.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}

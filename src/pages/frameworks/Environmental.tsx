@@ -31,8 +31,8 @@ const Environmental = () => {
 
   return (
     <PageTemplate
-      title={t('environmentalPage.title')}
-      description={t('environmentalPage.description')}
+      title={t('seo.frameworks.environmental.title')}
+      description={t('seo.frameworks.environmental.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}

@@ -50,8 +50,8 @@ const ProductLevel = () => {
 
   return (
     <PageTemplate
-      title={t('productLevelPage.title')}
-      description={t('productLevelPage.description')}
+      title={t('seo.frameworks.productLevel.title')}
+      description={t('seo.frameworks.productLevel.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Framework Tabs */}

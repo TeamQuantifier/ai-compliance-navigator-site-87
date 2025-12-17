@@ -11,7 +11,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const InformationSecurity = () => {
   const { t, currentLocale } = useLanguage();
   
-  return <PageTemplate title={t('informationSecurityPage.title')} description={t('informationSecurityPage.description')}>
+  return <PageTemplate title={t('seo.frameworks.informationSecurity.title')} description={t('seo.frameworks.informationSecurity.description')}>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-12">

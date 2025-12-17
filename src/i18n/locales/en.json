@@ -2855,7 +2855,59 @@
     },
     "frameworks": {
       "title": "Compliance Frameworks",
-      "description": "Quantifier.ai supports multiple compliance frameworks: SOC 2, ISO 27001, GDPR, NIS II, DORA, ESG, and more. Manage all your regulatory requirements in one platform."
+      "description": "Quantifier.ai supports multiple compliance frameworks: SOC 2, ISO 27001, GDPR, NIS II, DORA, ESG, and more. Manage all your regulatory requirements in one platform.",
+      "cybersecurity": {
+        "title": "Cybersecurity Compliance Frameworks",
+        "description": "Master cybersecurity compliance with SOC 2, NIS II, and NIST frameworks. AI-powered automation for security controls, risk assessment, and continuous monitoring.",
+        "nisII": {
+          "title": "NIS II Compliance - EU Cybersecurity Directive",
+          "description": "Achieve NIS II compliance with Quantifier.ai. AI-powered gap analysis, implementation timeline, and continuous monitoring for EU cybersecurity requirements."
+        },
+        "nist": {
+          "title": "NIST Cybersecurity Framework Compliance",
+          "description": "Implement NIST CSF with Quantifier.ai. Identify, Protect, Detect, Respond, Recover - all automated with AI-powered compliance management."
+        },
+        "soc": {
+          "title": "SOC 1 & SOC 2 Compliance Platform",
+          "description": "Streamline SOC 1 and SOC 2 audits with Quantifier.ai. Automated evidence collection, control monitoring, and audit-ready reporting."
+        }
+      },
+      "informationSecurity": {
+        "title": "Information Security Frameworks",
+        "description": "ISO 27001, ISO 9001, and DORA compliance automation. Build robust information security management systems with AI-powered workflows.",
+        "iso27001": {
+          "title": "ISO 27001 Compliance - ISMS Certification",
+          "description": "Achieve ISO 27001 certification with Quantifier.ai. AI-powered ISMS implementation, risk assessment, and audit preparation for information security."
+        },
+        "iso9001": {
+          "title": "ISO 9001 Quality Management System",
+          "description": "Implement ISO 9001 QMS with Quantifier.ai. Automated quality management, process documentation, and continuous improvement tracking."
+        },
+        "dora": {
+          "title": "DORA Compliance - Digital Operational Resilience",
+          "description": "Meet DORA requirements with Quantifier.ai. ICT risk management, incident reporting, and third-party risk monitoring for financial entities."
+        }
+      },
+      "dataSecurity": {
+        "title": "Data Security & Privacy Frameworks",
+        "description": "GDPR, HIPAA, and CCPA compliance automation. Protect personal data and ensure privacy regulation compliance with AI-powered monitoring."
+      },
+      "environmental": {
+        "title": "Environmental Compliance Frameworks",
+        "description": "ISO 14001, LCA, Carbon Footprint, and Decarbonisation management. Track environmental impact and meet sustainability requirements with AI automation."
+      },
+      "esg": {
+        "title": "ESG Reporting Frameworks",
+        "description": "CSRD, GRI, and CBAM reporting automation. Comprehensive ESG data collection, analysis, and disclosure management for sustainability compliance."
+      },
+      "governance": {
+        "title": "Governance & Legal Compliance",
+        "description": "Legal policies management and whistleblowing compliance. Ensure corporate governance and ethical business practices with automated workflows."
+      },
+      "productLevel": {
+        "title": "Product Level Compliance",
+        "description": "Digital Product Passport (DPP) and Life Cycle Assessment (LCA). Product-level sustainability and regulatory compliance tracking."
+      }
     },
     "byRoles": {
       "title": "Solutions by Role",

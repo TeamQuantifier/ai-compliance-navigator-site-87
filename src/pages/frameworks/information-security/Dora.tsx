@@ -22,8 +22,8 @@ const Dora = () => {
 
   return (
     <PageTemplate
-      title={t('doraPage.title')}
-      description={t('doraPage.description')}
+      title={t('seo.frameworks.informationSecurity.dora.title')}
+      description={t('seo.frameworks.informationSecurity.dora.description')}
     >
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
