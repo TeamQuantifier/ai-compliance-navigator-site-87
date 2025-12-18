@@ -4,14 +4,20 @@ import { Separator } from '@/components/ui/separator';
 import {
   Bold,
   Italic,
+  Underline as UnderlineIcon,
   List,
   ListOrdered,
   Heading1,
   Heading2,
   Heading3,
+  Heading4,
   Link as LinkIcon,
   Image as ImageIcon,
   BarChart3,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -78,7 +84,9 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         .from('stories-images')
         .getPublicUrl(fileName);
 
-      editor.chain().focus().setImage({ src: data.publicUrl }).run();
+      // Generate alt text from filename
+      const altFromFilename = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+      editor.chain().focus().setImage({ src: data.publicUrl, alt: altFromFilename }).run();
       toast.success('Obraz dodany pomyślnie', { id: loadingToast });
     } catch (error: any) {
       console.error('Error uploading image:', error);
@@ -110,81 +118,216 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
 
   return (
     <div className="border-b bg-muted/50 p-2 flex flex-wrap gap-1">
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={editor.isActive('bold') ? 'bg-muted' : ''}
-      >
-        <Bold className="h-4 w-4" />
-      </Button>
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={editor.isActive('italic') ? 'bg-muted' : ''}
-      >
-        <Italic className="h-4 w-4" />
-      </Button>
-
-      <Separator orientation="vertical" className="h-8" />
-
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        className={editor.isActive('heading', { level: 1 }) ? 'bg-muted' : ''}
-      >
-        <Heading1 className="h-4 w-4" />
-      </Button>
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={editor.isActive('heading', { level: 2 }) ? 'bg-muted' : ''}
-      >
-        <Heading2 className="h-4 w-4" />
-      </Button>
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={editor.isActive('heading', { level: 3 }) ? 'bg-muted' : ''}
-      >
-        <Heading3 className="h-4 w-4" />
-      </Button>
-
-      <Separator orientation="vertical" className="h-8" />
-
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={editor.isActive('bulletList') ? 'bg-muted' : ''}
-      >
-        <List className="h-4 w-4" />
-      </Button>
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={editor.isActive('orderedList') ? 'bg-muted' : ''}
-      >
-        <ListOrdered className="h-4 w-4" />
-      </Button>
-
-      <Separator orientation="vertical" className="h-8" />
-
-      <Dialog open={isLinkDialogOpen} onOpenChange={setIsLinkDialogOpen}>
-        <DialogTrigger asChild>
+      {/* Text formatting */}
+      <Tooltip>
+        <TooltipTrigger asChild>
           <Button
             variant="ghost"
             size="sm"
-            className={editor.isActive('link') ? 'bg-muted' : ''}
+            onClick={() => editor.chain().focus().toggleBold().run()}
+            className={editor.isActive('bold') ? 'bg-muted' : ''}
           >
-            <LinkIcon className="h-4 w-4" />
+            <Bold className="h-4 w-4" />
           </Button>
-        </DialogTrigger>
+        </TooltipTrigger>
+        <TooltipContent>Pogrubienie</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleItalic().run()}
+            className={editor.isActive('italic') ? 'bg-muted' : ''}
+          >
+            <Italic className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Kursywa</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleUnderline().run()}
+            className={editor.isActive('underline') ? 'bg-muted' : ''}
+          >
+            <UnderlineIcon className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Podkreślenie</TooltipContent>
+      </Tooltip>
+
+      <Separator orientation="vertical" className="h-8" />
+
+      {/* Headings */}
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+            className={editor.isActive('heading', { level: 1 }) ? 'bg-muted' : ''}
+          >
+            <Heading1 className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Nagłówek H1</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+            className={editor.isActive('heading', { level: 2 }) ? 'bg-muted' : ''}
+          >
+            <Heading2 className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Nagłówek H2</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+            className={editor.isActive('heading', { level: 3 }) ? 'bg-muted' : ''}
+          >
+            <Heading3 className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Nagłówek H3</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
+            className={editor.isActive('heading', { level: 4 }) ? 'bg-muted' : ''}
+          >
+            <Heading4 className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Nagłówek H4</TooltipContent>
+      </Tooltip>
+
+      <Separator orientation="vertical" className="h-8" />
+
+      {/* Text alignment */}
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().setTextAlign('left').run()}
+            className={editor.isActive({ textAlign: 'left' }) ? 'bg-muted' : ''}
+          >
+            <AlignLeft className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Wyrównaj do lewej</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().setTextAlign('center').run()}
+            className={editor.isActive({ textAlign: 'center' }) ? 'bg-muted' : ''}
+          >
+            <AlignCenter className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Wyrównaj do środka</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().setTextAlign('right').run()}
+            className={editor.isActive({ textAlign: 'right' }) ? 'bg-muted' : ''}
+          >
+            <AlignRight className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Wyrównaj do prawej</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().setTextAlign('justify').run()}
+            className={editor.isActive({ textAlign: 'justify' }) ? 'bg-muted' : ''}
+          >
+            <AlignJustify className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Wyjustuj</TooltipContent>
+      </Tooltip>
+
+      <Separator orientation="vertical" className="h-8" />
+
+      {/* Lists */}
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleBulletList().run()}
+            className={editor.isActive('bulletList') ? 'bg-muted' : ''}
+          >
+            <List className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Lista punktowana</TooltipContent>
+      </Tooltip>
+      
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => editor.chain().focus().toggleOrderedList().run()}
+            className={editor.isActive('orderedList') ? 'bg-muted' : ''}
+          >
+            <ListOrdered className="h-4 w-4" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Lista numerowana</TooltipContent>
+      </Tooltip>
+
+      <Separator orientation="vertical" className="h-8" />
+
+      {/* Link */}
+      <Dialog open={isLinkDialogOpen} onOpenChange={setIsLinkDialogOpen}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DialogTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                className={editor.isActive('link') ? 'bg-muted' : ''}
+              >
+                <LinkIcon className="h-4 w-4" />
+              </Button>
+            </DialogTrigger>
+          </TooltipTrigger>
+          <TooltipContent>Dodaj link</TooltipContent>
+        </Tooltip>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Dodaj link</DialogTitle>
@@ -201,6 +344,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         </DialogContent>
       </Dialog>
 
+      {/* Image */}
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="ghost" size="sm" asChild>
@@ -224,12 +368,18 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
 
       <Separator orientation="vertical" className="h-8" />
 
+      {/* KPI Block */}
       <Dialog open={isKpiDialogOpen} onOpenChange={setIsKpiDialogOpen}>
-        <DialogTrigger asChild>
-          <Button variant="ghost" size="sm">
-            <BarChart3 className="h-4 w-4" />
-          </Button>
-        </DialogTrigger>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DialogTrigger asChild>
+              <Button variant="ghost" size="sm">
+                <BarChart3 className="h-4 w-4" />
+              </Button>
+            </DialogTrigger>
+          </TooltipTrigger>
+          <TooltipContent>Dodaj blok KPI</TooltipContent>
+        </Tooltip>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Dodaj blok KPI</DialogTitle>

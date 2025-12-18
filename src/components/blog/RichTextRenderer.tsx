@@ -12,23 +12,29 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
 
     switch (node.type) {
       case 'paragraph':
+        const textAlign = node.attrs?.textAlign;
+        const alignClass = textAlign ? `text-${textAlign}` : '';
         return (
-          <p key={index} className="mb-4 text-foreground leading-relaxed">
+          <p key={index} className={`mb-4 text-foreground leading-relaxed ${alignClass}`}>
             {node.content?.map((child, i) => renderNode(child, i))}
           </p>
         );
 
       case 'heading':
         const level = node.attrs?.level || 1;
+        const headingAlign = node.attrs?.textAlign;
+        const headingAlignClass = headingAlign ? `text-${headingAlign}` : '';
         const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
-        const headingClasses = {
+        const headingClasses: Record<number, string> = {
           1: 'text-4xl font-bold mb-6 mt-8 text-foreground',
           2: 'text-3xl font-semibold mb-5 mt-7 text-foreground',
           3: 'text-2xl font-semibold mb-4 mt-6 text-foreground',
-        }[level] || 'text-xl font-semibold mb-3 mt-5 text-foreground';
+          4: 'text-xl font-semibold mb-3 mt-5 text-foreground',
+        };
+        const baseHeadingClass = headingClasses[level] || 'text-lg font-semibold mb-3 mt-5 text-foreground';
 
         return (
-          <HeadingTag key={index} className={headingClasses}>
+          <HeadingTag key={index} className={`${baseHeadingClass} ${headingAlignClass}`}>
             {node.content?.map((child, i) => renderNode(child, i))}
           </HeadingTag>
         );
@@ -57,16 +63,22 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
       case 'image':
       case 'resizableImage':
         const imageWidth = node.attrs?.width;
+        const imageAlt = node.attrs?.alt || '';
         const imageStyle = imageWidth ? { width: `${imageWidth}px`, maxWidth: '100%' } : {};
         return (
-          <div key={index} className="my-6">
+          <figure key={index} className="my-6">
             <img
               src={node.attrs?.src}
-              alt={node.attrs?.alt || ''}
+              alt={imageAlt}
               className="rounded-lg h-auto shadow-md"
               style={imageStyle}
             />
-          </div>
+            {imageAlt && (
+              <figcaption className="text-sm text-muted-foreground mt-2 text-center italic">
+                {imageAlt}
+              </figcaption>
+            )}
+          </figure>
         );
 
       case 'kpiBlock':
@@ -95,6 +107,9 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
                 break;
               case 'italic':
                 textContent = <em className="italic">{textContent}</em>;
+                break;
+              case 'underline':
+                textContent = <u className="underline">{textContent}</u>;
                 break;
               case 'link':
                 textContent = (
