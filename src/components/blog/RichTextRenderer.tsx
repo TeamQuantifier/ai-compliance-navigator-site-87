@@ -158,6 +158,38 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
       case 'horizontalRule':
         return <hr key={index} className="my-8 border-border" />;
 
+      case 'table':
+        return (
+          <div key={index} className="overflow-x-auto my-6">
+            <table className="w-full border-collapse border border-border">
+              <tbody>
+                {node.content?.map((child, i) => renderNode(child, i))}
+              </tbody>
+            </table>
+          </div>
+        );
+
+      case 'tableRow':
+        return (
+          <tr key={index} className="border-b border-border">
+            {node.content?.map((child, i) => renderNode(child, i))}
+          </tr>
+        );
+
+      case 'tableCell':
+        return (
+          <td key={index} className="border border-border p-3 text-foreground">
+            {node.content?.map((child, i) => renderNode(child, i))}
+          </td>
+        );
+
+      case 'tableHeader':
+        return (
+          <th key={index} className="border border-border p-3 bg-muted font-semibold text-left text-foreground">
+            {node.content?.map((child, i) => renderNode(child, i))}
+          </th>
+        );
+
       default:
         // Fallback for unknown node types
         if (node.content) {

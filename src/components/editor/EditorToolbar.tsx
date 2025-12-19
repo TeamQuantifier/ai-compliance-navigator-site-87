@@ -18,6 +18,10 @@ import {
   AlignCenter,
   AlignRight,
   AlignJustify,
+  Table as TableIcon,
+  Plus,
+  Minus,
+  Trash2,
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -35,6 +39,13 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface EditorToolbarProps {
   editor: Editor;
@@ -365,6 +376,87 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
           <p>Dodaj obraz (max 5MB)</p>
         </TooltipContent>
       </Tooltip>
+
+      <Separator orientation="vertical" className="h-8" />
+
+      {/* Table */}
+      <DropdownMenu>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                className={editor.isActive('table') ? 'bg-muted' : ''}
+              >
+                <TableIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+          </TooltipTrigger>
+          <TooltipContent>Tabela</TooltipContent>
+        </Tooltip>
+        <DropdownMenuContent>
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Wstaw tabelę 3x3
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().addRowBefore().run()}
+            disabled={!editor.can().addRowBefore()}
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Dodaj wiersz powyżej
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().addRowAfter().run()}
+            disabled={!editor.can().addRowAfter()}
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Dodaj wiersz poniżej
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().deleteRow().run()}
+            disabled={!editor.can().deleteRow()}
+          >
+            <Minus className="h-4 w-4 mr-2" />
+            Usuń wiersz
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().addColumnBefore().run()}
+            disabled={!editor.can().addColumnBefore()}
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Dodaj kolumnę przed
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().addColumnAfter().run()}
+            disabled={!editor.can().addColumnAfter()}
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Dodaj kolumnę za
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().deleteColumn().run()}
+            disabled={!editor.can().deleteColumn()}
+          >
+            <Minus className="h-4 w-4 mr-2" />
+            Usuń kolumnę
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            onClick={() => editor.chain().focus().deleteTable().run()}
+            disabled={!editor.can().deleteTable()}
+            className="text-destructive"
+          >
+            <Trash2 className="h-4 w-4 mr-2" />
+            Usuń tabelę
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
 
       <Separator orientation="vertical" className="h-8" />
 
