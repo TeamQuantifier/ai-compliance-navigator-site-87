@@ -19,6 +19,13 @@ export const ResizableImage = Image.extend({
           };
         },
       },
+      alt: {
+        default: '',
+        parseHTML: element => element.getAttribute('alt') || '',
+        renderHTML: attributes => {
+          return { alt: attributes.alt || '' };
+        },
+      },
     };
   },
 

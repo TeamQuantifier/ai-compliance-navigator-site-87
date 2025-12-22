@@ -3,6 +3,12 @@ import { useEffect, useState, useRef } from 'react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
+import TextAlign from '@tiptap/extension-text-align';
+import Underline from '@tiptap/extension-underline';
+import { Table } from '@tiptap/extension-table';
+import { TableRow } from '@tiptap/extension-table';
+import { TableCell } from '@tiptap/extension-table';
+import { TableHeader } from '@tiptap/extension-table';
 import { KpiBlock } from './KpiBlockExtension';
 import { ResizableImage } from './ResizableImageExtension';
 import EditorToolbar from './EditorToolbar';
@@ -22,7 +28,7 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
     extensions: [
       StarterKit.configure({
         heading: {
-          levels: [1, 2, 3],
+          levels: [1, 2, 3, 4],
         },
       }),
       ResizableImage.configure({
@@ -38,6 +44,20 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
       Placeholder.configure({
         placeholder,
       }),
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
+        alignments: ['left', 'center', 'right', 'justify'],
+      }),
+      Underline,
+      Table.configure({
+        resizable: true,
+        HTMLAttributes: {
+          class: 'editor-table',
+        },
+      }),
+      TableRow,
+      TableHeader,
+      TableCell,
       KpiBlock,
     ],
     content: '',
