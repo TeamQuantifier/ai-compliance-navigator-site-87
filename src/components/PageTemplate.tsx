@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,6 +10,38 @@ interface PageTemplateProps {
   ogImage?: string;
   noIndex?: boolean;
 }
+
+// Helper to generate breadcrumb items from path
+const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
+  const pathSegments = pathname.split('/').filter(Boolean);
+  const breadcrumbs = [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": baseUrl
+    }
+  ];
+
+  let currentPath = baseUrl;
+  pathSegments.forEach((segment, index) => {
+    // Skip locale segment for display name but include in path
+    currentPath += `/${segment}`;
+    const displayName = segment
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+    
+    breadcrumbs.push({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": displayName,
+      "item": currentPath
+    });
+  });
+
+  return breadcrumbs;
+};
 
 const PageTemplate = ({
   title,
@@ -30,6 +62,13 @@ const PageTemplate = ({
   
   const fullTitle = `${title} | Quantifier.ai`;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
+
+  // Generate BreadcrumbList schema
+  const breadcrumbSchema = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": generateBreadcrumbs(location.pathname, baseUrl)
+  }), [location.pathname]);
 
   return (
     <>
@@ -61,6 +100,11 @@ const PageTemplate = ({
         
         {/* Robots */}
         {noIndex && <meta name="robots" content="noindex, nofollow" />}
+        
+        {/* BreadcrumbList JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
       
       <div className="min-h-screen">
