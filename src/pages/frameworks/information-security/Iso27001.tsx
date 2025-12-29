@@ -163,6 +163,23 @@ const Iso27001 = () => {
           </div>
         </section>
 
+        {/* Related Solution Link */}
+        <section className="mb-12">
+          <div className="bg-[#E5DEFF]/40 rounded-xl p-6 border border-[#E5DEFF]">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">{t('iso27001Page.relatedSolution.title')}</h3>
+                <p className="text-slate-600">{t('iso27001Page.relatedSolution.description')}</p>
+              </div>
+              <Button className="bg-[#7E69AB] hover:bg-[#6E59A5] text-white whitespace-nowrap" asChild>
+                <Link to={`/${currentLocale}/iso27001`}>
+                  {t('iso27001Page.relatedSolution.button')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="mb-8">
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">

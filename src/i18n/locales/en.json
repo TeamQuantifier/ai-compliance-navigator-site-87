@@ -250,6 +250,25 @@
   },
   "footer": {
     "description": "Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.",
+    "solutions": {
+      "title": "Solutions",
+      "soc2": "SOC 2 Automation",
+      "iso27001": "ISO 27001 Compliance",
+      "gdpr": "GDPR Compliance",
+      "nis2": "NIS2 Compliance",
+      "grcPlatform": "GRC Platform"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "partners": "Partners",
+      "successStories": "Success Stories",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contactUs": {
+      "title": "Contact Us"
+    },
     "newsletter": {
       "title": "Subscribe to our newsletter",
       "subtitle": "Stay updated with compliance insights and product updates.",
@@ -944,6 +963,11 @@
       "title": "Need Support for a Specific Framework?",
       "description": "Our platform is constantly evolving to support new compliance frameworks. Contact us to discuss your specific requirements.",
       "button": "Contact Our Compliance Experts"
+    },
+    "grcPlatform": {
+      "title": "Discover Our Complete GRC Platform",
+      "description": "Get a comprehensive overview of our governance, risk, and compliance capabilities across all frameworks.",
+      "button": "Explore GRC Platform"
     }
   },
   "byRoles": {
@@ -1584,6 +1608,11 @@
       "description": "Protect your customer data. Respect privacy rights. Avoid penalties. Let Quantifier's AI handle the complexity of data security compliance.",
       "bookDemo": "Book a Demo",
       "talkExpert": "Talk to Our Data Privacy Expert"
+    },
+    "relatedSolution": {
+      "title": "Need comprehensive GDPR compliance?",
+      "description": "Explore our dedicated GDPR landing page with detailed data protection automation features.",
+      "button": "Explore GDPR Solution"
     }
   },
   "esgPage": {
@@ -2303,6 +2332,11 @@
       "description": "Join leading European organizations using Quantifier to achieve and maintain NIS2 compliance effortlessly.",
       "bookDemo": "Book a Demo",
       "talkExpert": "Talk to NIS2 Expert"
+    },
+    "relatedSolution": {
+      "title": "Looking for a complete NIS2 compliance solution?",
+      "description": "Explore our dedicated NIS2 landing page with detailed automation features and compliance roadmap.",
+      "button": "Explore NIS2 Solution"
     }
   },
   "socPage": {
@@ -2407,6 +2441,11 @@
       "description": "Join organizations that trust our platform to automate their SOC 1 & SOC 2 compliance journey.",
       "bookDemo": "Book a Demo",
       "watchTour": "Watch Platform Tour"
+    },
+    "relatedSolution": {
+      "title": "Want faster SOC 2 certification?",
+      "description": "Explore our dedicated SOC 2 automation solution with AI-powered evidence collection and continuous monitoring.",
+      "button": "Explore SOC 2 Automation"
     }
   },
   "iso27001Page": {
@@ -2465,6 +2504,11 @@
       "description": "Join organizations that trust Quantifier to automate their ISO 27001 compliance journey.",
       "bookDemo": "Book a Demo",
       "explorePlans": "Explore Plans"
+    },
+    "relatedSolution": {
+      "title": "Looking for comprehensive ISO 27001 automation?",
+      "description": "Explore our dedicated ISO 27001 landing page with detailed ISMS implementation features.",
+      "button": "Explore ISO 27001 Solution"
     }
   },
   "iso9001Page": {
