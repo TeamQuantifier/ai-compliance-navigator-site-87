@@ -2921,5 +2921,342 @@
       "title": "Blog & Insights",
       "description": "Latest articles, guides, and insights on compliance, GRC, cybersecurity, and regulatory frameworks from the Quantifier.ai team."
     }
+  },
+  "seoLanding": {
+    "common": {
+      "requestDemo": "Request Demo",
+      "learnMore": "Learn More",
+      "viewPricing": "View Pricing",
+      "readyToStart": "Ready to Get Started?",
+      "relatedPages": "Explore related solutions:"
+    },
+    "soc2": {
+      "seo": {
+        "title": "SOC 2 Automation Platform - Achieve Compliance 10x Faster | Quantifier",
+        "description": "Automate SOC 2 compliance with Quantifier.ai. AI-powered evidence collection, continuous monitoring, and audit-ready reports. Get certified faster."
+      },
+      "hero": {
+        "badge": "SOC 2 Compliance",
+        "title": "SOC 2 Automation Platform",
+        "subtitle": "Achieve SOC 2 Type I and Type II certification 10x faster with AI-powered evidence collection and continuous monitoring."
+      },
+      "problem": {
+        "title": "The Problem with Manual SOC 2 Compliance",
+        "subtitle": "Traditional approaches are slow, expensive, and error-prone.",
+        "items": [
+          { "stat": "6-12", "title": "Months of Manual Work", "description": "Traditional SOC 2 preparation takes months of collecting evidence and documentation." },
+          { "stat": "$50K+", "title": "Consultant Costs", "description": "Most companies spend tens of thousands on external consultants." },
+          { "stat": "80%", "title": "Time on Evidence", "description": "Compliance teams spend most of their time gathering evidence manually." }
+        ]
+      },
+      "solution": {
+        "title": "How Quantifier Automates SOC 2",
+        "subtitle": "Our AI-native platform handles the heavy lifting so you can focus on your business."
+      },
+      "features": {
+        "automated": { "title": "Automated Evidence Collection", "description": "Connect your tools and automatically collect evidence for all Trust Services Criteria." },
+        "continuous": { "title": "Continuous Monitoring", "description": "Real-time monitoring of your compliance posture with instant alerts." },
+        "evidence": { "title": "Audit-Ready Reports", "description": "Generate comprehensive reports your auditors will love." },
+        "ai": { "title": "AI Compliance Officer", "description": "Get intelligent guidance and automated remediation suggestions." }
+      },
+      "criteria": {
+        "title": "Complete Trust Services Criteria Coverage",
+        "subtitle": "We help you meet all five SOC 2 Trust Services Criteria."
+      },
+      "results": {
+        "title": "Results Our Customers Achieve",
+        "items": [
+          { "stat": "10x", "label": "Faster Certification" },
+          { "stat": "80%", "label": "Less Manual Work" },
+          { "stat": "100%", "label": "Audit Success Rate" }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "question": "What is SOC 2 automation?", "answer": "SOC 2 automation uses software to continuously collect evidence, monitor controls, and maintain compliance with SOC 2 requirements, reducing manual effort by up to 80%." },
+          { "question": "How long does it take to get SOC 2 certified with Quantifier?", "answer": "Most customers achieve SOC 2 Type I certification within 4-6 weeks and Type II within 3-6 months, compared to 6-12 months with traditional approaches." },
+          { "question": "What Trust Services Criteria does Quantifier cover?", "answer": "Quantifier covers all five Trust Services Criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy." },
+          { "question": "Do you integrate with our existing tools?", "answer": "Yes, Quantifier integrates with 100+ tools including AWS, Azure, GCP, Okta, GitHub, Jira, and many more." },
+          { "question": "How much does SOC 2 automation cost?", "answer": "Pricing varies based on company size and complexity. Contact us for a customized quote. Most customers save 50-70% compared to traditional consulting approaches." },
+          { "question": "Can Quantifier help with both SOC 2 Type I and Type II?", "answer": "Yes, Quantifier supports both Type I (point-in-time) and Type II (ongoing monitoring) audits with continuous evidence collection." }
+        ]
+      },
+      "cta": {
+        "description": "Join hundreds of companies that have streamlined their SOC 2 compliance with Quantifier."
+      }
+    },
+    "iso27001": {
+      "seo": {
+        "title": "ISO 27001 Compliance Software - Build Your ISMS with AI | Quantifier",
+        "description": "Implement ISO 27001 with AI-powered ISMS management. Automated gap analysis, policy generation, and continuous compliance monitoring."
+      },
+      "hero": {
+        "badge": "ISO 27001 Certification",
+        "title": "ISO 27001 Compliance Software",
+        "subtitle": "Build and maintain your Information Security Management System (ISMS) with AI-powered automation."
+      },
+      "why": {
+        "title": "Why ISO 27001 Certification Matters",
+        "subtitle": "ISO 27001 is the gold standard for information security management.",
+        "items": [
+          { "title": "Global Recognition", "description": "ISO 27001 is recognized worldwide as proof of robust security practices." },
+          { "title": "Customer Trust", "description": "Demonstrate your commitment to protecting customer data." },
+          { "title": "Competitive Advantage", "description": "Win more deals by meeting enterprise security requirements." }
+        ]
+      },
+      "challenges": {
+        "title": "Challenges of ISO 27001 Implementation",
+        "items": [
+          { "title": "Complex Requirements", "description": "ISO 27001 has 93 controls across 4 themes requiring detailed documentation." },
+          { "title": "Resource Intensive", "description": "Traditional implementation requires dedicated teams and expensive consultants." },
+          { "title": "Ongoing Maintenance", "description": "Maintaining certification requires continuous monitoring and updates." },
+          { "title": "Documentation Burden", "description": "Creating and maintaining hundreds of policies and procedures." }
+        ]
+      },
+      "solution": {
+        "title": "AI-Powered ISMS Implementation",
+        "subtitle": "Quantifier automates the most time-consuming aspects of ISO 27001."
+      },
+      "features": {
+        "isms": { "title": "ISMS Framework", "description": "Pre-built templates and workflows aligned with ISO 27001:2022." },
+        "policies": { "title": "Policy Generation", "description": "AI-generated policies customized to your organization." },
+        "risk": { "title": "Risk Assessment", "description": "Automated risk identification and treatment planning." },
+        "training": { "title": "Awareness Training", "description": "Built-in security awareness programs for employees." }
+      },
+      "annexA": {
+        "title": "Complete Annex A Controls Coverage",
+        "subtitle": "We help you implement all ISO 27001:2022 control categories."
+      },
+      "results": {
+        "title": "From Gap Analysis to Certification",
+        "items": [
+          { "stat": "60%", "label": "Faster Implementation" },
+          { "stat": "70%", "label": "Less Documentation Time" },
+          { "stat": "93", "label": "Controls Covered" }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "question": "What is ISO 27001?", "answer": "ISO 27001 is an international standard for information security management systems (ISMS). It provides a framework for managing sensitive company and customer information securely." },
+          { "question": "How does Quantifier help with ISO 27001 certification?", "answer": "Quantifier provides pre-built ISMS templates, automated policy generation, risk assessment tools, and continuous monitoring to streamline your path to certification." },
+          { "question": "What's the timeline for ISO 27001 certification?", "answer": "With Quantifier, most organizations achieve certification within 3-6 months, compared to 12-18 months with traditional approaches." },
+          { "question": "Do I need consultants for ISO 27001?", "answer": "Quantifier reduces the need for external consultants by providing built-in expertise and guidance, though some organizations choose to use consultants for audit support." },
+          { "question": "How does continuous compliance work?", "answer": "Quantifier continuously monitors your controls, tracks evidence, and alerts you to any gaps, ensuring you maintain compliance between audits." },
+          { "question": "Can I manage ISO 27001 and SOC 2 together?", "answer": "Yes, Quantifier supports multiple frameworks with control mapping, so evidence collected for one framework can be used for others." }
+        ]
+      },
+      "cta": {
+        "description": "Start your ISO 27001 journey with AI-powered automation."
+      }
+    },
+    "gdpr": {
+      "seo": {
+        "title": "GDPR Compliance Software - Automate Data Privacy Management | Quantifier",
+        "description": "Complete GDPR compliance solution. Automate DSAR handling, ROPA management, and data protection impact assessments."
+      },
+      "hero": {
+        "badge": "Data Privacy",
+        "title": "GDPR Compliance Software",
+        "subtitle": "Automate your data privacy management with AI-powered GDPR compliance tools."
+      },
+      "overview": {
+        "title": "GDPR Requirements Overview",
+        "subtitle": "The GDPR requires organizations to protect EU citizens' personal data.",
+        "items": [
+          { "stat": "€20M", "title": "Maximum Fines", "description": "Or 4% of annual global turnover for serious violations." },
+          { "stat": "72h", "title": "Breach Notification", "description": "Time limit to report data breaches to authorities." },
+          { "stat": "30 Days", "title": "DSAR Response", "description": "Maximum time to respond to data subject requests." }
+        ]
+      },
+      "challenges": {
+        "title": "Common GDPR Compliance Challenges",
+        "items": [
+          { "title": "Data Mapping Complexity", "description": "Tracking personal data across systems and third parties." },
+          { "title": "DSAR Volume", "description": "Managing increasing data subject access requests efficiently." },
+          { "title": "Cross-Border Transfers", "description": "Ensuring lawful data transfers outside the EU." },
+          { "title": "Consent Management", "description": "Tracking and managing consent across touchpoints." }
+        ]
+      },
+      "solution": {
+        "title": "Complete GDPR Management Solution",
+        "subtitle": "Quantifier provides end-to-end GDPR compliance automation."
+      },
+      "features": {
+        "ropa": { "title": "ROPA Management", "description": "Automated Records of Processing Activities with data mapping." },
+        "dsar": { "title": "DSAR Automation", "description": "Streamline data subject requests with automated workflows." },
+        "dpia": { "title": "DPIA Tools", "description": "Conduct Data Protection Impact Assessments efficiently." },
+        "transfers": { "title": "Transfer Mechanisms", "description": "Manage SCCs, BCRs, and adequacy decisions." }
+      },
+      "rights": {
+        "title": "Data Subject Rights Automation",
+        "subtitle": "Automate responses to all GDPR data subject rights."
+      },
+      "results": {
+        "title": "Proven Results",
+        "items": [
+          { "stat": "90%", "label": "Faster DSAR Response" },
+          { "stat": "100%", "label": "Rights Coverage" },
+          { "stat": "Zero", "label": "Compliance Fines" }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "question": "What is GDPR compliance?", "answer": "GDPR compliance means meeting the requirements of the EU General Data Protection Regulation, which governs how organizations collect, process, and protect personal data of EU residents." },
+          { "question": "How does Quantifier help with GDPR?", "answer": "Quantifier provides automated ROPA management, DSAR workflows, consent tracking, breach notification tools, and DPIA templates to ensure comprehensive GDPR compliance." },
+          { "question": "Can you automate DSAR handling?", "answer": "Yes, Quantifier automates the entire DSAR process from intake to fulfillment, including identity verification, data collection, and response generation." },
+          { "question": "How do you handle cross-border data transfers?", "answer": "Quantifier helps manage transfer impact assessments, Standard Contractual Clauses, and tracks adequacy decisions for international data transfers." },
+          { "question": "What about cookie consent management?", "answer": "Quantifier integrates with cookie consent platforms and helps track consent status across your organization." },
+          { "question": "Do you support other privacy regulations?", "answer": "Yes, Quantifier supports CCPA, HIPAA, and other privacy frameworks with unified compliance management." }
+        ]
+      },
+      "cta": {
+        "description": "Take control of your data privacy compliance with Quantifier."
+      }
+    },
+    "nis2": {
+      "seo": {
+        "title": "NIS2 Compliance Platform - Meet EU Cybersecurity Requirements | Quantifier",
+        "description": "Prepare for NIS2 Directive requirements. Risk management, incident reporting, and supply chain security compliance."
+      },
+      "hero": {
+        "badge": "EU Cybersecurity",
+        "title": "NIS2 Compliance Platform",
+        "subtitle": "Meet EU cybersecurity requirements with comprehensive NIS2 Directive compliance."
+      },
+      "understanding": {
+        "title": "Understanding the NIS2 Directive",
+        "subtitle": "NIS2 expands EU cybersecurity requirements to more sectors.",
+        "items": [
+          { "stat": "18", "title": "Sectors Covered", "description": "Essential and important entities across healthcare, energy, transport, and more." },
+          { "stat": "€10M+", "title": "Potential Fines", "description": "Up to 2% of global turnover for essential entities." },
+          { "stat": "Oct 2024", "title": "Compliance Deadline", "description": "Member states must transpose NIS2 into national law." }
+        ]
+      },
+      "sectors": {
+        "title": "Who Must Comply with NIS2",
+        "subtitle": "NIS2 applies to essential and important entities across multiple sectors."
+      },
+      "solution": {
+        "title": "NIS2 Implementation Roadmap",
+        "subtitle": "Quantifier guides you through every NIS2 requirement."
+      },
+      "features": {
+        "risk": { "title": "Risk Management", "description": "Comprehensive cyber risk assessment and treatment plans." },
+        "incident": { "title": "Incident Response", "description": "Automated incident detection, response, and reporting workflows." },
+        "policies": { "title": "Security Policies", "description": "Pre-built policy templates aligned with NIS2 requirements." },
+        "monitoring": { "title": "Continuous Monitoring", "description": "Real-time security posture monitoring and alerts." }
+      },
+      "incident": {
+        "title": "Incident Response & Reporting",
+        "subtitle": "Meet NIS2's strict incident notification requirements.",
+        "steps": [
+          { "time": "24h", "title": "Early Warning", "description": "Initial notification to authorities within 24 hours." },
+          { "time": "72h", "title": "Incident Notice", "description": "Detailed incident notification within 72 hours." },
+          { "time": "1mo", "title": "Final Report", "description": "Comprehensive final report within one month." }
+        ]
+      },
+      "results": {
+        "title": "Achieve NIS2 Readiness",
+        "items": [
+          { "stat": "100%", "label": "Requirement Coverage" },
+          { "stat": "50%", "label": "Faster Implementation" },
+          { "stat": "24/7", "label": "Monitoring" }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "question": "What is the NIS2 Directive?", "answer": "NIS2 is the EU's updated Network and Information Security Directive, expanding cybersecurity requirements to more sectors and introducing stricter penalties." },
+          { "question": "Which organizations must comply with NIS2?", "answer": "NIS2 applies to essential entities (energy, healthcare, transport) and important entities (digital services, manufacturing) meeting size thresholds." },
+          { "question": "What are the NIS2 penalties for non-compliance?", "answer": "Essential entities face fines up to €10M or 2% of global turnover. Important entities face fines up to €7M or 1.4% of turnover." },
+          { "question": "How does Quantifier help with NIS2?", "answer": "Quantifier provides risk assessment tools, incident reporting workflows, policy templates, and continuous monitoring aligned with NIS2 requirements." },
+          { "question": "What's the NIS2 compliance deadline?", "answer": "EU member states had until October 17, 2024 to transpose NIS2 into national law. Organizations should be compliant now." },
+          { "question": "How long does NIS2 implementation take?", "answer": "With Quantifier, most organizations can achieve NIS2 compliance within 3-6 months depending on their current security maturity." }
+        ]
+      },
+      "cta": {
+        "description": "Get ahead of NIS2 requirements with Quantifier's compliance platform."
+      }
+    },
+    "grc": {
+      "seo": {
+        "title": "AI-Native GRC Platform - Unified Governance, Risk & Compliance | Quantifier",
+        "description": "Modern GRC software with AI automation. Manage multiple compliance frameworks, risk assessment, and governance from one unified platform."
+      },
+      "hero": {
+        "badge": "GRC Platform",
+        "title": "AI-Native GRC Platform",
+        "subtitle": "Unified Governance, Risk, and Compliance management powered by AI agents."
+      },
+      "whatIs": {
+        "title": "What is a GRC Platform?",
+        "subtitle": "GRC integrates governance, risk management, and compliance into a unified approach.",
+        "pillars": [
+          { "letter": "G", "title": "Governance", "description": "Strategic alignment, policies, and oversight of organizational objectives." },
+          { "letter": "R", "title": "Risk", "description": "Identification, assessment, and mitigation of risks across the organization." },
+          { "letter": "C", "title": "Compliance", "description": "Adherence to laws, regulations, and internal policies." }
+        ]
+      },
+      "problems": {
+        "title": "Why Traditional GRC Tools Fall Short",
+        "items": [
+          { "title": "Siloed Systems", "description": "Multiple tools that don't communicate, creating data gaps and redundancy." },
+          { "title": "Manual Processes", "description": "Heavy reliance on spreadsheets and manual data collection." },
+          { "title": "Point-in-Time Audits", "description": "Compliance checked periodically rather than continuously monitored." },
+          { "title": "Limited Scalability", "description": "Difficult to add new frameworks or scale across entities." }
+        ]
+      },
+      "solution": {
+        "title": "The Quantifier Difference: AI-Native GRC",
+        "subtitle": "Built from the ground up with AI agents for autonomous compliance."
+      },
+      "features": {
+        "unified": { "title": "Unified Platform", "description": "Manage all frameworks, risks, and controls from one interface." },
+        "ai": { "title": "AI Compliance Officer", "description": "Autonomous agents that monitor, collect evidence, and suggest actions." },
+        "analytics": { "title": "Real-Time Analytics", "description": "Live dashboards showing compliance posture across all frameworks." },
+        "automation": { "title": "Workflow Automation", "description": "Automated tasks, reminders, and evidence collection." }
+      },
+      "frameworks": {
+        "title": "Multi-Framework Compliance",
+        "subtitle": "Manage all your compliance programs from one platform."
+      },
+      "comparison": {
+        "title": "Quantifier vs Traditional GRC",
+        "subtitle": "See how we compare to legacy solutions.",
+        "feature": "Feature",
+        "traditional": "Traditional GRC",
+        "rows": [
+          { "feature": "Implementation Time", "traditional": "6-12 months", "quantifier": "Days to weeks" },
+          { "feature": "Evidence Collection", "traditional": "Manual", "quantifier": "Automated" },
+          { "feature": "Monitoring", "traditional": "Periodic", "quantifier": "Continuous" },
+          { "feature": "AI Assistance", "traditional": "None", "quantifier": "Built-in AI agents" }
+        ]
+      },
+      "results": {
+        "title": "Transform Your GRC Operations",
+        "items": [
+          { "stat": "10x", "label": "Faster Implementation" },
+          { "stat": "80%", "label": "Less Manual Work" },
+          { "stat": "360°", "label": "Risk Visibility" }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "question": "What is GRC?", "answer": "GRC stands for Governance, Risk, and Compliance. It's an integrated approach to aligning IT with business goals, managing risks, and meeting regulatory requirements." },
+          { "question": "Why do I need a GRC platform?", "answer": "A GRC platform centralizes compliance management, reduces manual work, provides real-time visibility, and scales as your regulatory requirements grow." },
+          { "question": "What frameworks does Quantifier support?", "answer": "Quantifier supports SOC 2, ISO 27001, GDPR, NIS2, HIPAA, NIST, ISO 14001, ESG reporting frameworks, and many more." },
+          { "question": "How is Quantifier different from Vanta or Drata?", "answer": "Quantifier is AI-native with autonomous compliance agents, supports broader frameworks including ESG and environmental, and offers deeper customization for enterprise needs." },
+          { "question": "Can I manage multiple compliance programs?", "answer": "Yes, Quantifier enables multi-framework management with control mapping so evidence collected for one framework applies to overlapping controls in others." },
+          { "question": "What integrations are available?", "answer": "Quantifier integrates with 100+ tools including cloud providers (AWS, Azure, GCP), identity providers, ticketing systems, and communication tools." }
+        ]
+      },
+      "cta": {
+        "description": "Experience the future of GRC with Quantifier's AI-native platform."
+      }
+    }
   }
 }

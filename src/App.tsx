@@ -52,6 +52,13 @@ import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import StoryDetail from "./pages/blog/StoryDetail";
 
+// SEO Landing pages
+import Soc2Automation from "./pages/seo-landing/Soc2Automation";
+import Iso27001Landing from "./pages/seo-landing/Iso27001Landing";
+import GdprCompliance from "./pages/seo-landing/GdprCompliance";
+import Nis2Landing from "./pages/seo-landing/Nis2Landing";
+import GrcPlatform from "./pages/seo-landing/GrcPlatform";
+
 // Admin pages
 import Login from "./pages/admin/Login";
 import { ProtectedRoute } from "./components/admin/ProtectedRoute";
@@ -121,6 +128,13 @@ const App = () => (
                   <Route path="/:locale/frameworks/information-security/iso-9001" element={<Iso9001 />} />
                   <Route path="/:locale/frameworks/information-security/dora" element={<Dora />} />
               
+                  {/* SEO Landing Pages */}
+                  <Route path="/:locale/soc2-automation" element={<Soc2Automation />} />
+                  <Route path="/:locale/iso27001" element={<Iso27001Landing />} />
+                  <Route path="/:locale/gdpr-compliance" element={<GdprCompliance />} />
+                  <Route path="/:locale/nis2" element={<Nis2Landing />} />
+                  <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
+
                   {/* Blog routes */}
                   <Route path="/:locale/blog" element={<BlogList />} />
                   <Route path="/:locale/blog/:slug" element={<BlogPost />} />
