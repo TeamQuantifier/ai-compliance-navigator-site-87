@@ -85,6 +85,45 @@ const Index = () => {
     }
   };
 
+  // SoftwareApplication JSON-LD Schema
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": currentLocale === 'en'
+      ? "AI-native GRC platform for automated compliance with SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG frameworks. Continuous compliance monitoring with autonomous AI agents."
+      : "AI-natywna platforma GRC do automatyzacji zgodności z SOC 2, ISO 27001, GDPR, NIS2, DORA i ESG. Ciągłe monitorowanie zgodności z autonomicznymi agentami AI.",
+    "featureList": [
+      "SOC 2 Type I/II Automation",
+      "ISO 27001 Compliance",
+      "GDPR Compliance Management",
+      "NIS2 Directive Compliance",
+      "DORA Compliance",
+      "ESG Reporting",
+      "Autonomous AI Compliance Officer",
+      "Continuous Control Monitoring",
+      "Automated Evidence Collection",
+      "Risk Assessment & Management",
+      "Policy & Document Management",
+      "Audit-Ready Reporting"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://quantifier.ai/en/plans",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/OnlineOnly"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Quantifier.ai",
+      "url": "https://quantifier.ai"
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <Helmet>
@@ -119,6 +158,9 @@ const Index = () => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(softwareApplicationSchema)}
         </script>
       </Helmet>
 

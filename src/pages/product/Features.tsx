@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Brain, BarChart3, Database, ShieldAlert, ClipboardCheck, Zap, Link2, FileSpreadsheet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -12,7 +13,47 @@ const ProductFeatures = () => {
   const handleTabChange = (value: string) => {
     setActiveTab(value);
   };
+
+  // SoftwareApplication JSON-LD Schema for Product page
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai/en/product",
+    "description": currentLocale === 'en'
+      ? "AI-native GRC platform featuring autonomous AI Compliance Officer, real-time analytics dashboards, task & data hub, and comprehensive risk assessment for SOC 2, ISO 27001, GDPR, NIS2, and ESG compliance."
+      : "AI-natywna platforma GRC z autonomicznym AI Compliance Officer, dashboardami analitycznymi w czasie rzeczywistym, hubem zadań i danych oraz kompleksową oceną ryzyka dla SOC 2, ISO 27001, GDPR, NIS2 i ESG.",
+    "featureList": [
+      "AI Compliance Officer - Autonomous compliance monitoring",
+      "Analytics Dashboards - Real-time compliance posture",
+      "Task & Data Hub - Centralized compliance management",
+      "Risk Assessment - AI-powered risk scoring",
+      "Document Management - Policy generation and control",
+      "Value Chain - Third-party risk management",
+      "API Integrations - Connect to existing tools"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://quantifier.ai/en/plans",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/OnlineOnly"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Quantifier.ai",
+      "url": "https://quantifier.ai"
+    }
+  };
+
   return <PageTemplate title={t('seo.product.title')} description={t('seo.product.description')}>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(softwareApplicationSchema)}
+        </script>
+      </Helmet>
       <div className="max-w-4xl mx-auto mb-12">
         
         
