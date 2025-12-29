@@ -337,6 +337,23 @@ const Soc = () => {
           </div>
         </section>
 
+        {/* Related Solution Link */}
+        <section className="mb-12">
+          <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">{t('socPage.relatedSolution.title')}</h3>
+                <p className="text-slate-600">{t('socPage.relatedSolution.description')}</p>
+              </div>
+              <Button className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white whitespace-nowrap" asChild>
+                <Link to={`/${currentLocale}/soc2-automation`}>
+                  {t('socPage.relatedSolution.button')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="mb-8">
           <div className="bg-gradient-to-r from-compliance-800 to-innovation-700 rounded-xl p-8 md:p-12 text-white">

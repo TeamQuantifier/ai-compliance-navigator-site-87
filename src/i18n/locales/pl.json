@@ -249,6 +249,25 @@
   },
   "footer": {
     "description": "Quantifier na nowo definiuje podejście firm do zgodności—dzięki działającej 24/7 autonomicznej platformie AI, która monitoruje, egzekwuje i napędza działania regulacyjne w całym przedsiębiorstwie.",
+    "solutions": {
+      "title": "Rozwiązania",
+      "soc2": "Automatyzacja SOC 2",
+      "iso27001": "Zgodność ISO 27001",
+      "gdpr": "Zgodność GDPR",
+      "nis2": "Zgodność NIS2",
+      "grcPlatform": "Platforma GRC"
+    },
+    "company": {
+      "title": "Firma",
+      "about": "O nas",
+      "partners": "Partnerzy",
+      "successStories": "Historie sukcesu",
+      "blog": "Blog",
+      "contact": "Kontakt"
+    },
+    "contactUs": {
+      "title": "Kontakt"
+    },
     "newsletter": {
       "title": "Zapisz się do naszego newslettera",
       "subtitle": "Bądź na bieżąco z informacjami o zgodności i aktualizacjach produktu.",
@@ -768,6 +787,11 @@
       "title": "Potrzebujesz wsparcia dla konkretnego standardu?",
       "description": "Nasza platforma stale ewoluuje, aby wspierać nowe standardy compliance. Skontaktuj się z nami, aby omówić Twoje specyficzne wymagania.",
       "button": "Skontaktuj się z naszymi ekspertami"
+    },
+    "grcPlatform": {
+      "title": "Odkryj naszą kompletną platformę GRC",
+      "description": "Uzyskaj kompleksowy przegląd naszych możliwości zarządzania, ryzyka i zgodności we wszystkich standardach.",
+      "button": "Poznaj platformę GRC"
     }
   },
   "byRoles": {
@@ -1408,6 +1432,11 @@
       "description": "Chroń dane swoich klientów. Szanuj prawa do prywatności. Unikaj kar. Pozwól AI Quantifier obsłużyć złożoność compliance w zakresie bezpieczeństwa danych.",
       "bookDemo": "Umów demo",
       "talkExpert": "Porozmawiaj z naszym ekspertem ds. prywatności danych"
+    },
+    "relatedSolution": {
+      "title": "Potrzebujesz kompleksowej zgodności z GDPR?",
+      "description": "Poznaj naszą dedykowaną stronę GDPR ze szczegółowymi funkcjami automatyzacji ochrony danych.",
+      "button": "Poznaj rozwiązanie GDPR"
     }
   },
   "esgPage": {
@@ -2127,6 +2156,11 @@
       "description": "Dołącz do wiodących europejskich organizacji używających Quantifier do osiągania i utrzymywania zgodności NIS2 bez wysiłku.",
       "bookDemo": "Umów demo",
       "talkExpert": "Porozmawiaj z ekspertem NIS2"
+    },
+    "relatedSolution": {
+      "title": "Szukasz kompletnego rozwiązania zgodności NIS2?",
+      "description": "Poznaj naszą dedykowaną stronę NIS2 ze szczegółowymi funkcjami automatyzacji i mapą drogową zgodności.",
+      "button": "Poznaj rozwiązanie NIS2"
     }
   },
   "socPage": {
@@ -2231,6 +2265,11 @@
       "description": "Dołącz do organizacji, które ufają naszej platformie w automatyzacji ich ścieżki zgodności SOC 1 i SOC 2.",
       "bookDemo": "Umów demo",
       "watchTour": "Obejrzyj wycieczkę po platformie"
+    },
+    "relatedSolution": {
+      "title": "Chcesz szybszej certyfikacji SOC 2?",
+      "description": "Poznaj nasze dedykowane rozwiązanie automatyzacji SOC 2 z zbieraniem dowodów opartym na AI i ciągłym monitoringiem.",
+      "button": "Poznaj automatyzację SOC 2"
     }
   },
   "nistPage": {
@@ -2347,6 +2386,11 @@
       "description": "Dołącz do organizacji, które ufają Quantifier w automatyzacji zgodności z ISO 27001.",
       "bookDemo": "Umów demo",
       "explorePlans": "Zobacz plany"
+    },
+    "relatedSolution": {
+      "title": "Szukasz kompleksowej automatyzacji ISO 27001?",
+      "description": "Poznaj naszą dedykowaną stronę ISO 27001 ze szczegółowymi funkcjami wdrożenia ISMS.",
+      "button": "Poznaj rozwiązanie ISO 27001"
     }
   },
   "iso9001Page": {

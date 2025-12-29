@@ -598,9 +598,21 @@ const NisII = () => {
           </div>
         </section>
 
-        {/* Final CTA Section */}
+        {/* Related Solution Link */}
         <section className="mb-12">
-          
+          <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">{t('nisIIPage.relatedSolution.title')}</h3>
+                <p className="text-slate-600">{t('nisIIPage.relatedSolution.description')}</p>
+              </div>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white whitespace-nowrap" asChild>
+                <Link to={`/${currentLocale}/nis2`}>
+                  {t('nisIIPage.relatedSolution.button')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </section>
       </div>
     </PageTemplate>;
