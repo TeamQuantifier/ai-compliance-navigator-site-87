@@ -116,7 +116,7 @@ const InformationSecurity = () => {
                   </ul>
 
                   <Button asChild>
-                    <Link to="/frameworks/information-security/iso-9001">
+                    <Link to={`/${currentLocale}/frameworks/information-security/iso-9001`}>
                       Learn More About ISO 9001 <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
@@ -161,7 +161,7 @@ const InformationSecurity = () => {
                   </ul>
 
                   <Button asChild>
-                    <Link to="/frameworks/information-security/dora">
+                    <Link to={`/${currentLocale}/frameworks/information-security/dora`}>
                       Learn More About DORA <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
