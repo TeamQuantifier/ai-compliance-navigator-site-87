@@ -72,7 +72,7 @@ export const Navbar = () => {
           href: '/frameworks/data-security',
           items: [
             { title: t('menu.frameworks.dataSecurity.gdpr'), href: '/frameworks/data-security/gdpr' },
-            { title: t('menu.frameworks.dataSecurity.hipaa'), href: '/frameworks/data-security/hippa' },
+            { title: t('menu.frameworks.dataSecurity.hipaa'), href: '/frameworks/data-security/hipaa' },
             { title: t('menu.frameworks.dataSecurity.ccpa'), href: '/frameworks/data-security/ccpa' },
           ],
         },

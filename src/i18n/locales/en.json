@@ -4072,5 +4072,453 @@
       "bookDemo": "Book a Demo",
       "seePricing": "View Pricing"
     }
+  },
+  "hipaaPage": {
+    "seo": {
+      "title": "HIPAA Compliance Software | Healthcare Data Protection | Quantifier",
+      "description": "Automate HIPAA compliance with AI-powered PHI protection, access controls, audit trails, and breach detection. Protect patient data and meet healthcare regulations."
+    },
+    "hero": {
+      "badge": "HIPAA Compliance",
+      "title": "Automate HIPAA Compliance with AI",
+      "subtitle": "Protect patient health information, streamline compliance workflows, and ensure continuous HIPAA readiness with our intelligent platform.",
+      "button": "Get Started",
+      "formTitle": "Request a Demo",
+      "nameLabel": "Your Name",
+      "emailLabel": "Work Email",
+      "marketingConsent": "I agree to receive compliance updates",
+      "requestDemoButton": "Request Demo"
+    },
+    "whyCritical": {
+      "title": "Why HIPAA Compliance Is Critical",
+      "subtitle": "Healthcare organizations face severe penalties and reputational damage for failing to protect patient data.",
+      "cards": {
+        "fines": {
+          "stat": "$1.5M",
+          "title": "Maximum Annual Penalty",
+          "description": "Fines range from $100 to $50,000 per violation, up to $1.5M annually per violation category"
+        },
+        "complexity": {
+          "stat": "4",
+          "title": "Core Rules",
+          "description": "Privacy, Security, Breach Notification, and Enforcement Rules create complex compliance requirements"
+        },
+        "scope": {
+          "stat": "330M+",
+          "title": "Patients Protected",
+          "description": "Every US patient's health information must be protected under HIPAA regulations"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Understanding HIPAA",
+      "description": "The Health Insurance Portability and Accountability Act establishes national standards for protecting sensitive patient health information.",
+      "whatIs": {
+        "title": "What is HIPAA?",
+        "description": "HIPAA is a US federal law that created national standards to protect sensitive patient health information from being disclosed without the patient's consent or knowledge."
+      },
+      "whoItApplies": {
+        "title": "Who Must Comply?",
+        "description": "Covered entities (healthcare providers, health plans, clearinghouses) and their business associates who handle Protected Health Information (PHI)."
+      },
+      "keyRules": {
+        "title": "4 Key HIPAA Rules",
+        "items": [
+          "Privacy Rule - PHI use and disclosure",
+          "Security Rule - ePHI safeguards",
+          "Breach Notification Rule - Incident reporting",
+          "Enforcement Rule - Penalties and compliance"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "For Healthcare Leaders",
+      "title": "Why HIPAA Should Be a Top Priority",
+      "description": "HIPAA violations can result in criminal charges, massive fines, and loss of patient trust that takes years to rebuild.",
+      "points": {
+        "criminal": {
+          "title": "Criminal Liability",
+          "description": "Willful HIPAA violations can result in criminal charges with fines up to $250,000 and imprisonment"
+        },
+        "trust": {
+          "title": "Patient Trust",
+          "description": "Data breaches erode patient confidence and can lead to patients seeking care elsewhere"
+        },
+        "reputation": {
+          "title": "Reputational Damage",
+          "description": "HIPAA violations are publicly reported, causing lasting damage to organizational reputation"
+        },
+        "fines": {
+          "title": "Significant Financial Impact",
+          "description": "Beyond fines, breaches cost an average of $10.9M per incident in healthcare"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "How Quantifier Helps with HIPAA",
+      "description": "Our AI-powered platform automates HIPAA compliance, from PHI protection to breach detection and staff training.",
+      "features": {
+        "phiProtection": {
+          "title": "PHI Protection",
+          "description": "Automated discovery and classification of Protected Health Information across all systems and workflows."
+        },
+        "accessControls": {
+          "title": "Access Controls",
+          "description": "Role-based access management with minimum necessary standards and automatic access reviews."
+        },
+        "auditTrails": {
+          "title": "Audit Trails",
+          "description": "Comprehensive logging of all PHI access, modifications, and disclosures for compliance reporting."
+        },
+        "breachDetection": {
+          "title": "Breach Detection",
+          "description": "Real-time monitoring and automated incident response with breach notification workflow management."
+        },
+        "trainingManagement": {
+          "title": "Training Management",
+          "description": "Automated HIPAA training assignments, tracking, and certification management for all staff."
+        },
+        "complianceReporting": {
+          "title": "Compliance Reporting",
+          "description": "Automated compliance status reports and documentation for audits and regulatory requirements."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native HIPAA Compliance Module",
+      "description": "Our AI compliance officer continuously monitors your healthcare systems, identifies potential PHI exposure risks, automates security assessments, and ensures your organization stays ahead of evolving HIPAA requirements."
+    },
+    "results": {
+      "title": "Proven HIPAA Compliance Results",
+      "description": "Healthcare organizations using Quantifier achieve faster compliance and better patient data protection.",
+      "metrics": {
+        "coverage": {
+          "value": "100%",
+          "label": "HIPAA Rules Covered"
+        },
+        "breach": {
+          "value": "< 24h",
+          "label": "Breach Detection Time"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Continuous Monitoring"
+        },
+        "reduction": {
+          "value": "75%",
+          "label": "Audit Prep Reduction"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Built for Healthcare Compliance Leaders",
+      "subtitle": "Quantifier serves privacy and compliance professionals across the healthcare industry.",
+      "personas": {
+        "privacyOfficer": {
+          "title": "Privacy Officer",
+          "description": "Complete oversight of PHI handling with automated monitoring and incident response"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Align security controls with HIPAA Security Rule requirements and manage risk"
+        },
+        "healthcareAdmin": {
+          "title": "Healthcare Administrator",
+          "description": "Ensure organization-wide compliance and manage business associate agreements"
+        },
+        "complianceDirector": {
+          "title": "Compliance Director",
+          "description": "Streamline compliance programs and prepare for OCR audits with confidence"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Continuous HIPAA Operations",
+      "description": "Maintain ongoing compliance with automated monitoring, access control management, and incident response capabilities.",
+      "statusBadge": "Always Compliant",
+      "form": {
+        "nameLabel": "Your Name",
+        "emailLabel": "Work Email",
+        "button": "Schedule Demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Real-Time Monitoring",
+          "description": "Continuous tracking of PHI access and potential security incidents"
+        },
+        "accessControl": {
+          "title": "Access Control",
+          "description": "Automated user access reviews and minimum necessary enforcement"
+        },
+        "riskAssessment": {
+          "title": "Risk Assessment",
+          "description": "Ongoing security risk assessments with remediation tracking"
+        },
+        "incidentResponse": {
+          "title": "Incident Response",
+          "description": "Automated breach detection and notification workflow management"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about HIPAA",
+      "items": [
+        {
+          "question": "What is HIPAA?",
+          "answer": "HIPAA (Health Insurance Portability and Accountability Act) is a US federal law enacted in 1996 that establishes national standards for protecting sensitive patient health information. It applies to covered entities and their business associates who handle Protected Health Information (PHI)."
+        },
+        {
+          "question": "Who must comply with HIPAA?",
+          "answer": "HIPAA applies to covered entities including healthcare providers, health plans, and healthcare clearinghouses. It also applies to business associates—organizations that handle PHI on behalf of covered entities, such as IT vendors, billing companies, and cloud service providers."
+        },
+        {
+          "question": "What are the penalties for HIPAA violations?",
+          "answer": "HIPAA violations can result in civil penalties ranging from $100 to $50,000 per violation, with annual maximums of $1.5 million per violation category. Criminal violations can result in fines up to $250,000 and imprisonment up to 10 years for offenses committed with intent to sell PHI."
+        },
+        {
+          "question": "What is Protected Health Information (PHI)?",
+          "answer": "PHI includes any individually identifiable health information that is transmitted or maintained in any form. This includes patient names, addresses, dates, Social Security numbers, medical records, billing information, and any data that could identify a patient."
+        },
+        {
+          "question": "How does Quantifier help with HIPAA compliance?",
+          "answer": "Quantifier automates key HIPAA requirements including PHI discovery and protection, access control management, audit trail maintenance, breach detection and notification, staff training management, and continuous compliance monitoring. Our AI-powered platform reduces manual compliance work by 75%."
+        },
+        {
+          "question": "What is the HIPAA Breach Notification Rule?",
+          "answer": "The Breach Notification Rule requires covered entities to notify affected individuals within 60 days of discovering a breach affecting more than 500 individuals. Smaller breaches must be reported annually to HHS. Quantifier automates breach detection and notification workflows to ensure timely compliance."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Start Your HIPAA Compliance Journey Today",
+      "description": "Join leading healthcare organizations that trust Quantifier to automate their HIPAA compliance and protect patient data.",
+      "bookDemo": "Book a Demo",
+      "seePricing": "View Pricing"
+    }
+  },
+  "ccpaPage": {
+    "seo": {
+      "title": "CCPA Compliance Software | California Privacy Protection | Quantifier",
+      "description": "Automate CCPA compliance with AI-powered consumer request handling, opt-out management, and data inventory. Protect California consumer privacy rights."
+    },
+    "hero": {
+      "badge": "CCPA Compliance",
+      "title": "Automate CCPA Compliance with AI",
+      "subtitle": "Handle consumer requests, manage opt-outs, and maintain California privacy compliance with our intelligent platform.",
+      "button": "Get Started",
+      "formTitle": "Request a Demo",
+      "nameLabel": "Your Name",
+      "emailLabel": "Work Email",
+      "marketingConsent": "I agree to receive compliance updates",
+      "requestDemoButton": "Request Demo"
+    },
+    "whyCritical": {
+      "title": "Why CCPA Compliance Is Critical",
+      "subtitle": "Businesses serving California residents must respect consumer privacy rights or face significant penalties.",
+      "cards": {
+        "fines": {
+          "stat": "$7,500",
+          "title": "Per Violation",
+          "description": "Intentional violations cost $7,500 each; unintentional violations cost $2,500 per incident"
+        },
+        "scope": {
+          "stat": "40M+",
+          "title": "Californians Protected",
+          "description": "The largest US state economy with strict privacy rights for all residents"
+        },
+        "rights": {
+          "stat": "4",
+          "title": "Consumer Rights",
+          "description": "Know, Delete, Opt-Out, and Non-Discrimination rights must be honored"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Understanding CCPA",
+      "description": "The California Consumer Privacy Act gives California residents unprecedented control over their personal information collected by businesses.",
+      "whatIs": {
+        "title": "What is CCPA?",
+        "description": "CCPA is a California state privacy law that gives residents the right to know what personal information is collected, request deletion, opt-out of data sales, and receive equal service regardless of privacy choices."
+      },
+      "whoItApplies": {
+        "title": "Who Must Comply?",
+        "description": "Businesses that collect California residents' data and meet thresholds: $25M+ annual revenue, 100K+ consumers/devices, or 50%+ revenue from selling data."
+      },
+      "consumerRights": {
+        "title": "4 Consumer Rights",
+        "items": [
+          "Right to Know - What data is collected and how it's used",
+          "Right to Delete - Request removal of personal information",
+          "Right to Opt-Out - Stop the sale of personal information",
+          "Right to Non-Discrimination - Equal service regardless of privacy choices"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "For Business Leaders",
+      "title": "Why CCPA Should Be a Strategic Priority",
+      "description": "CCPA compliance isn't just about avoiding fines—it's about building consumer trust and preparing for expanding US privacy regulations.",
+      "points": {
+        "litigation": {
+          "title": "Private Right of Action",
+          "description": "Consumers can sue directly for data breaches, with damages of $100-$750 per incident"
+        },
+        "trust": {
+          "title": "Consumer Trust",
+          "description": "73% of consumers consider privacy when making purchasing decisions"
+        },
+        "marketAccess": {
+          "title": "California Market Access",
+          "description": "California's $3.6 trillion economy is too large to ignore for most businesses"
+        },
+        "trend": {
+          "title": "Privacy Law Trend",
+          "description": "12+ US states have enacted CCPA-style laws; compliance now prepares you for the future"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "How Quantifier Helps with CCPA",
+      "description": "Our AI-powered platform automates CCPA compliance, from consumer request handling to data inventory and opt-out management.",
+      "features": {
+        "consumerRequests": {
+          "title": "Consumer Request Handling",
+          "description": "Automated intake, verification, and fulfillment of consumer access, deletion, and opt-out requests."
+        },
+        "dataInventory": {
+          "title": "Data Inventory",
+          "description": "AI-powered discovery and mapping of personal information across all systems and third parties."
+        },
+        "optOutManagement": {
+          "title": "Opt-Out Management",
+          "description": "Streamlined opt-out workflows with \"Do Not Sell My Personal Information\" link management."
+        },
+        "privacyPolicy": {
+          "title": "Privacy Policy Generator",
+          "description": "CCPA-compliant privacy policy templates with automatic updates for regulatory changes."
+        },
+        "vendorManagement": {
+          "title": "Vendor Management",
+          "description": "Third-party data sharing tracking with service provider and contractor contract management."
+        },
+        "complianceDashboard": {
+          "title": "Compliance Dashboard",
+          "description": "Real-time visibility into CCPA compliance status, request metrics, and potential risks."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native CCPA Compliance Module",
+      "description": "Our AI compliance officer continuously monitors your data practices, automates consumer request processing, identifies compliance gaps, and keeps your privacy notices up-to-date with the latest California privacy regulations."
+    },
+    "results": {
+      "title": "Proven CCPA Compliance Results",
+      "description": "Organizations using Quantifier achieve faster request fulfillment and stronger consumer privacy protection.",
+      "metrics": {
+        "requests": {
+          "value": "45 days",
+          "label": "Avg. Request Response"
+        },
+        "optOut": {
+          "value": "< 24h",
+          "label": "Opt-Out Processing"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Continuous Monitoring"
+        },
+        "reduction": {
+          "value": "70%",
+          "label": "Manual Work Reduction"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Built for Privacy and Compliance Leaders",
+      "subtitle": "Quantifier serves privacy professionals across all industries serving California consumers.",
+      "personas": {
+        "privacyOfficer": {
+          "title": "Privacy Officer",
+          "description": "Complete oversight of consumer data practices with automated request management"
+        },
+        "legal": {
+          "title": "Legal Counsel",
+          "description": "Manage privacy notices, contracts, and regulatory compliance documentation"
+        },
+        "marketing": {
+          "title": "Marketing Director",
+          "description": "Balance data-driven marketing with consumer privacy preferences and opt-outs"
+        },
+        "cto": {
+          "title": "CTO",
+          "description": "Implement technical controls for data access, deletion, and opt-out honoring"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Continuous CCPA Operations",
+      "description": "Maintain ongoing compliance with automated monitoring, opt-out tracking, and consumer request processing.",
+      "statusBadge": "Always Compliant",
+      "form": {
+        "nameLabel": "Your Name",
+        "emailLabel": "Work Email",
+        "button": "Schedule Demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Real-Time Monitoring",
+          "description": "Continuous tracking of data collection and consumer preferences"
+        },
+        "optOutTracking": {
+          "title": "Opt-Out Tracking",
+          "description": "Automated management of consumer opt-out preferences across systems"
+        },
+        "requestProcessing": {
+          "title": "Request Processing",
+          "description": "Streamlined workflow for handling consumer requests within 45-day deadline"
+        },
+        "saleOfData": {
+          "title": "Data Sale Controls",
+          "description": "Track and control personal information sharing with third parties"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about CCPA",
+      "items": [
+        {
+          "question": "What is CCPA?",
+          "answer": "The California Consumer Privacy Act (CCPA) is a state privacy law that gives California residents the right to know what personal information businesses collect, request deletion of their data, opt-out of the sale of their personal information, and receive equal service regardless of their privacy choices."
+        },
+        {
+          "question": "Who must comply with CCPA?",
+          "answer": "CCPA applies to for-profit businesses that collect California residents' personal information and meet at least one threshold: annual gross revenue over $25 million, buy/sell/share data of 100,000+ consumers or devices, or derive 50%+ of annual revenue from selling personal information."
+        },
+        {
+          "question": "What are the penalties for CCPA violations?",
+          "answer": "CCPA violations can result in civil penalties of $2,500 per unintentional violation and $7,500 per intentional violation. Additionally, consumers have a private right of action for data breaches, with statutory damages of $100-$750 per consumer per incident, or actual damages if greater."
+        },
+        {
+          "question": "What consumer rights does CCPA provide?",
+          "answer": "CCPA provides four main rights: the right to know what personal information is collected and how it's used, the right to delete personal information, the right to opt-out of the sale of personal information, and the right to non-discrimination for exercising privacy rights."
+        },
+        {
+          "question": "How does Quantifier help with CCPA compliance?",
+          "answer": "Quantifier automates key CCPA requirements including consumer request intake and fulfillment, data inventory and mapping, opt-out preference management, privacy policy compliance, vendor contract management, and continuous compliance monitoring. Our AI-powered platform reduces manual work by 70%."
+        },
+        {
+          "question": "How does CCPA differ from GDPR?",
+          "answer": "While both protect consumer privacy, CCPA focuses specifically on California residents and emphasizes the right to opt-out of data sales. GDPR requires opt-in consent, applies to EU residents, and has broader scope. Quantifier helps organizations comply with both regulations from a single platform."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Start Your CCPA Compliance Journey Today",
+      "description": "Join leading organizations that trust Quantifier to automate their California privacy compliance and protect consumer data.",
+      "bookDemo": "Book a Demo",
+      "seePricing": "View Pricing"
+    }
   }
 }
