@@ -629,11 +629,14 @@ const Hipaa = () => {
 
         {/* FAQ Section */}
         <section className="mb-16">
-          <FAQSection
-            title={t("hipaaPage.faq.title")}
-            items={faqItems}
-            schemaId="hipaa-faq"
-          />
+      <FAQSection
+        title={t("hipaaPage.faq.title")}
+        faqs={faqItems.map((item) => ({
+          question: item.question,
+          answer: item.answer,
+        }))}
+        pageUrl={`https://quantifier.io/${currentLocale}/frameworks/data-security/hipaa`}
+      />
         </section>
 
         {/* Final CTA Section */}

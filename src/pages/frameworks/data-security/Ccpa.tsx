@@ -630,11 +630,14 @@ const Ccpa = () => {
 
         {/* FAQ Section */}
         <section className="mb-16">
-          <FAQSection
-            title={t("ccpaPage.faq.title")}
-            items={faqItems}
-            schemaId="ccpa-faq"
-          />
+      <FAQSection
+        title={t("ccpaPage.faq.title")}
+        faqs={faqItems.map((item) => ({
+          question: item.question,
+          answer: item.answer,
+        }))}
+        pageUrl={`https://quantifier.io/${currentLocale}/frameworks/data-security/ccpa`}
+      />
         </section>
 
         {/* Final CTA Section */}
