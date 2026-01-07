@@ -290,7 +290,7 @@ const DataSecurity = () => {
               <p className="text-slate-600">{t('dataSecurityPage.relatedSolution.description')}</p>
             </div>
             <Button className="bg-purple-600 hover:bg-purple-700 text-white whitespace-nowrap" asChild>
-              <Link to={`/${currentLocale}/gdpr-compliance`}>
+              <Link to={`/${currentLocale}/contact`}>
                 {t('dataSecurityPage.relatedSolution.button')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
