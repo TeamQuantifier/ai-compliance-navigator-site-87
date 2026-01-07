@@ -3844,5 +3844,233 @@
         "description": "Experience the future of GRC with Quantifier's AI-native platform."
       }
     }
+  },
+  "gdprPage": {
+    "seo": {
+      "title": "GDPR Compliance Software | Automated Data Protection | Quantifier",
+      "description": "Automate GDPR compliance with Quantifier. Manage consent, DSARs, data mapping, breach notifications, and DPIAs with AI-powered automation."
+    },
+    "hero": {
+      "badge": "GDPR Compliance",
+      "title": "GDPR Compliance Made Simple with AI",
+      "subtitle": "Automate data protection compliance with intelligent consent management, DSAR processing, and continuous monitoring. Protect EU citizen data and avoid costly fines.",
+      "button": "Start Your GDPR Journey",
+      "formTitle": "Request a Demo",
+      "nameLabel": "Your Name",
+      "emailLabel": "Work Email",
+      "marketingConsent": "I agree to receive marketing communications",
+      "requestDemoButton": "Get Started"
+    },
+    "whyCritical": {
+      "title": "Why GDPR Compliance Is Critical",
+      "subtitle": "The General Data Protection Regulation has transformed how businesses handle personal data, with significant penalties for non-compliance.",
+      "cards": {
+        "fines": {
+          "stat": "4%",
+          "title": "Maximum Fine",
+          "description": "Up to 4% of annual global turnover or €20 million, whichever is higher"
+        },
+        "complexity": {
+          "stat": "99",
+          "title": "Articles",
+          "description": "99 articles covering complex data protection requirements to implement"
+        },
+        "scope": {
+          "stat": "500M+",
+          "title": "EU Citizens",
+          "description": "Applies to any business processing data of EU residents"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Understanding GDPR",
+      "description": "The General Data Protection Regulation is the world's most comprehensive data privacy law, giving individuals control over their personal data.",
+      "whatIs": {
+        "title": "What is GDPR?",
+        "description": "GDPR is an EU regulation that standardizes data protection law across all member states. It applies to any organization that processes personal data of EU residents, regardless of where the organization is located."
+      },
+      "whoItApplies": {
+        "title": "Who Must Comply?",
+        "description": "Any organization that collects, stores, or processes personal data of EU residents must comply with GDPR, including companies outside the EU that offer goods or services to EU citizens."
+      },
+      "dataSubjectRights": {
+        "title": "8 Data Subject Rights",
+        "items": [
+          "Right to be informed",
+          "Right of access",
+          "Right to rectification",
+          "Right to erasure (right to be forgotten)",
+          "Right to restrict processing",
+          "Right to data portability",
+          "Right to object",
+          "Rights related to automated decision-making"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "For Leadership",
+      "title": "Why GDPR Should Be a Board-Level Priority",
+      "description": "GDPR compliance is not just a legal requirement—it's a strategic business imperative that affects customer trust, competitive positioning, and financial risk.",
+      "points": {
+        "liability": {
+          "title": "Personal Liability",
+          "description": "Senior executives can be held personally liable for data protection failures and breaches"
+        },
+        "trust": {
+          "title": "Customer Trust",
+          "description": "70% of consumers say they would stop doing business with a company after a data breach"
+        },
+        "advantage": {
+          "title": "Competitive Advantage",
+          "description": "Privacy-first companies gain market share as consumers prioritize data protection"
+        },
+        "fines": {
+          "title": "Avoid Massive Fines",
+          "description": "Meta was fined €1.2 billion in 2023—the largest GDPR fine ever issued"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "How Quantifier Helps with GDPR",
+      "description": "Our AI-powered platform automates the most complex aspects of GDPR compliance, from data mapping to breach notification.",
+      "features": {
+        "dataMapping": {
+          "title": "Data Mapping & Inventory",
+          "description": "Automatically discover and map personal data flows across your organization with AI-powered data classification."
+        },
+        "consentManagement": {
+          "title": "Consent Management",
+          "description": "Track and manage consent across all touchpoints with granular preference centers and audit trails."
+        },
+        "dsarAutomation": {
+          "title": "DSAR Automation",
+          "description": "Automate Data Subject Access Requests with intelligent data discovery and response generation."
+        },
+        "dpiaTemplates": {
+          "title": "DPIA Templates",
+          "description": "Pre-built Data Protection Impact Assessment templates with guided workflows for high-risk processing."
+        },
+        "breachManagement": {
+          "title": "Breach Management",
+          "description": "72-hour breach notification workflow with automated impact assessment and authority reporting."
+        },
+        "auditReadiness": {
+          "title": "Audit Readiness",
+          "description": "Continuous evidence collection and documentation for supervisory authority inspections."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native GDPR Compliance Module",
+      "description": "Our AI compliance officer continuously monitors your data processing activities, identifies gaps, suggests remediation actions, and automates routine compliance tasks so your team can focus on strategic privacy initiatives."
+    },
+    "results": {
+      "title": "Proven GDPR Compliance Results",
+      "description": "Organizations using Quantifier achieve faster compliance and significant operational improvements.",
+      "metrics": {
+        "coverage": {
+          "value": "99",
+          "label": "GDPR Articles Covered"
+        },
+        "dsar": {
+          "value": "72h",
+          "label": "Average DSAR Response"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Continuous Monitoring"
+        },
+        "reduction": {
+          "value": "80%",
+          "label": "Manual Work Reduction"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Built for Data Protection Leaders",
+      "subtitle": "Quantifier serves privacy and compliance professionals across all industries.",
+      "personas": {
+        "dpo": {
+          "title": "Data Protection Officer",
+          "description": "Complete oversight of GDPR compliance with actionable insights and automated monitoring"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Align data security with GDPR requirements and manage data breach response"
+        },
+        "ceo": {
+          "title": "CEO / Board",
+          "description": "Strategic visibility into privacy risks and compliance posture"
+        },
+        "legal": {
+          "title": "Legal Counsel",
+          "description": "Manage legal basis documentation and regulatory correspondence"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Continuous GDPR Operations",
+      "description": "Maintain ongoing compliance with automated monitoring, consent tracking, and breach response capabilities.",
+      "statusBadge": "Always Compliant",
+      "form": {
+        "nameLabel": "Your Name",
+        "emailLabel": "Work Email",
+        "button": "Schedule Demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Real-Time Monitoring",
+          "description": "Continuous tracking of data processing activities and compliance status"
+        },
+        "consentTracking": {
+          "title": "Consent Tracking",
+          "description": "Monitor consent validity and manage preference changes automatically"
+        },
+        "dsarProcessing": {
+          "title": "DSAR Processing",
+          "description": "Streamlined workflow for handling data subject requests within deadlines"
+        },
+        "breachNotification": {
+          "title": "Breach Notification",
+          "description": "Automated 72-hour notification workflow with impact assessment"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about GDPR",
+      "items": [
+        {
+          "question": "What is GDPR?",
+          "answer": "The General Data Protection Regulation (GDPR) is a comprehensive EU data protection law that gives individuals control over their personal data. It applies to any organization processing personal data of EU residents, regardless of where the organization is based."
+        },
+        {
+          "question": "Who does GDPR apply to?",
+          "answer": "GDPR applies to any organization that collects, processes, or stores personal data of EU residents. This includes companies headquartered outside the EU if they offer goods or services to EU citizens or monitor their behavior."
+        },
+        {
+          "question": "What are the penalties for GDPR non-compliance?",
+          "answer": "GDPR violations can result in fines of up to €20 million or 4% of annual global turnover, whichever is higher. Additionally, organizations may face reputational damage, legal action from data subjects, and regulatory restrictions."
+        },
+        {
+          "question": "What are data subject rights under GDPR?",
+          "answer": "GDPR grants individuals eight key rights: the right to be informed, right of access, right to rectification, right to erasure, right to restrict processing, right to data portability, right to object, and rights related to automated decision-making and profiling."
+        },
+        {
+          "question": "How does Quantifier help with GDPR compliance?",
+          "answer": "Quantifier automates key GDPR requirements including data mapping, consent management, DSAR processing, DPIA workflows, breach notification, and continuous compliance monitoring. Our AI-powered platform reduces manual work by 80% and ensures you meet all 99 GDPR articles."
+        },
+        {
+          "question": "Does GDPR apply to companies outside the EU?",
+          "answer": "Yes, GDPR has extraterritorial scope. Any company worldwide that offers goods or services to EU residents or monitors their behavior must comply with GDPR, regardless of where the company is located."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Start Your GDPR Compliance Journey Today",
+      "description": "Join leading organizations that trust Quantifier to automate their data protection compliance and protect EU citizen data.",
+      "bookDemo": "Book a Demo",
+      "seePricing": "View Pricing"
+    }
   }
 }
