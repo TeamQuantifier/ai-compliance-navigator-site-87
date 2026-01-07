@@ -748,7 +748,14 @@ const NisII = () => {
         {/* FAQ Section */}
         <FAQSection 
           title={t('seoLanding.nis2.faq.title')}
-          faqs={t('seoLanding.nis2.faq.items', { returnObjects: true }) as Array<{question: string, answer: string}>}
+          faqs={[
+            { question: t('seoLanding.nis2.faq.items.0.question'), answer: t('seoLanding.nis2.faq.items.0.answer') },
+            { question: t('seoLanding.nis2.faq.items.1.question'), answer: t('seoLanding.nis2.faq.items.1.answer') },
+            { question: t('seoLanding.nis2.faq.items.2.question'), answer: t('seoLanding.nis2.faq.items.2.answer') },
+            { question: t('seoLanding.nis2.faq.items.3.question'), answer: t('seoLanding.nis2.faq.items.3.answer') },
+            { question: t('seoLanding.nis2.faq.items.4.question'), answer: t('seoLanding.nis2.faq.items.4.answer') },
+            { question: t('seoLanding.nis2.faq.items.5.question'), answer: t('seoLanding.nis2.faq.items.5.answer') }
+          ]}
           pageUrl={`https://quantifier.com/${currentLocale}/frameworks/cybersecurity/nis-ii`}
         />
 
