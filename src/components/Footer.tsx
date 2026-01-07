@@ -82,22 +82,22 @@ const Footer = () => {
             <h4 className="font-semibold text-slate-900 mb-4">{t('footer.solutions.title')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to={`/${currentLocale}/soc2-automation`} className="text-slate-600 hover:text-compliance-700 transition-colors">
+                <Link to={`/${currentLocale}/frameworks/cybersecurity/soc`} className="text-slate-600 hover:text-compliance-700 transition-colors">
                   {t('footer.solutions.soc2')}
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/iso27001`} className="text-slate-600 hover:text-compliance-700 transition-colors">
+                <Link to={`/${currentLocale}/frameworks/information-security/iso-27001`} className="text-slate-600 hover:text-compliance-700 transition-colors">
                   {t('footer.solutions.iso27001')}
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/gdpr-compliance`} className="text-slate-600 hover:text-compliance-700 transition-colors">
+                <Link to={`/${currentLocale}/frameworks/data-security`} className="text-slate-600 hover:text-compliance-700 transition-colors">
                   {t('footer.solutions.gdpr')}
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/nis2`} className="text-slate-600 hover:text-compliance-700 transition-colors">
+                <Link to={`/${currentLocale}/frameworks/cybersecurity/nis-ii`} className="text-slate-600 hover:text-compliance-700 transition-colors">
                   {t('footer.solutions.nis2')}
                 </Link>
               </li>

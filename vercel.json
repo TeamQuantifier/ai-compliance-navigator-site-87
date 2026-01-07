@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/:locale(en|pl)/soc2-automation",
+      "destination": "/:locale/frameworks/cybersecurity/soc",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(en|pl)/iso27001",
+      "destination": "/:locale/frameworks/information-security/iso-27001",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(en|pl)/gdpr-compliance",
+      "destination": "/:locale/frameworks/data-security",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(en|pl)/nis2",
+      "destination": "/:locale/frameworks/cybersecurity/nis-ii",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/sitemap.xml",
@@ -16,7 +38,7 @@
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=index"
     },
     {
-      "source": "/:locale(en|pl)/soc2-automation",
+      "source": "/:locale(en|pl)/frameworks/cybersecurity/soc",
       "has": [
         {
           "type": "header",
@@ -27,7 +49,7 @@
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=soc2-automation"
     },
     {
-      "source": "/:locale(en|pl)/iso27001",
+      "source": "/:locale(en|pl)/frameworks/information-security/iso-27001",
       "has": [
         {
           "type": "header",
@@ -38,7 +60,7 @@
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=iso27001"
     },
     {
-      "source": "/:locale(en|pl)/gdpr-compliance",
+      "source": "/:locale(en|pl)/frameworks/data-security",
       "has": [
         {
           "type": "header",
@@ -49,7 +71,7 @@
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=gdpr-compliance"
     },
     {
-      "source": "/:locale(en|pl)/nis2",
+      "source": "/:locale(en|pl)/frameworks/cybersecurity/nis-ii",
       "has": [
         {
           "type": "header",
