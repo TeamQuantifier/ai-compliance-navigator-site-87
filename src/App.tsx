@@ -42,6 +42,8 @@ import Dora from "./pages/frameworks/information-security/Dora";
 
 // Data Security Framework specific pages
 import Gdpr from "./pages/frameworks/data-security/Gdpr";
+import Hipaa from "./pages/frameworks/data-security/Hipaa";
+import Ccpa from "./pages/frameworks/data-security/Ccpa";
 
 // Plans, Partners, etc.
 import Plans from "./pages/Plans";
@@ -129,6 +131,8 @@ const App = () => (
                   
                   {/* Data Security Framework specific routes */}
                   <Route path="/:locale/frameworks/data-security/gdpr" element={<Gdpr />} />
+                  <Route path="/:locale/frameworks/data-security/hipaa" element={<Hipaa />} />
+                  <Route path="/:locale/frameworks/data-security/ccpa" element={<Ccpa />} />
               
                   {/* SEO Landing Pages - Redirects to framework pages */}
                   <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/cybersecurity/soc" replace />} />

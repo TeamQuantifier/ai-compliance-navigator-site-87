@@ -3896,5 +3896,453 @@
       "bookDemo": "Umów demo",
       "seePricing": "Zobacz cennik"
     }
+  },
+  "hipaaPage": {
+    "seo": {
+      "title": "Oprogramowanie zgodności HIPAA | Ochrona danych zdrowotnych | Quantifier",
+      "description": "Zautomatyzuj zgodność z HIPAA dzięki ochronie PHI opartej na AI, kontroli dostępu, ścieżkom audytu i wykrywaniu naruszeń. Chroń dane pacjentów i spełniaj przepisy ochrony zdrowia."
+    },
+    "hero": {
+      "badge": "Zgodność z HIPAA",
+      "title": "Zautomatyzuj zgodność z HIPAA dzięki AI",
+      "subtitle": "Chroń informacje zdrowotne pacjentów, usprawnij przepływy pracy compliance i zapewnij ciągłą gotowość HIPAA dzięki naszej inteligentnej platformie.",
+      "button": "Rozpocznij",
+      "formTitle": "Umów demo",
+      "nameLabel": "Twoje imię",
+      "emailLabel": "Email służbowy",
+      "marketingConsent": "Zgadzam się na otrzymywanie aktualizacji compliance",
+      "requestDemoButton": "Umów demo"
+    },
+    "whyCritical": {
+      "title": "Dlaczego zgodność z HIPAA jest kluczowa",
+      "subtitle": "Organizacje ochrony zdrowia narażają się na surowe kary i utratę reputacji za brak ochrony danych pacjentów.",
+      "cards": {
+        "fines": {
+          "stat": "$1.5M",
+          "title": "Maksymalna roczna kara",
+          "description": "Kary od $100 do $50,000 za naruszenie, do $1.5M rocznie na kategorię naruszenia"
+        },
+        "complexity": {
+          "stat": "4",
+          "title": "Główne zasady",
+          "description": "Zasady prywatności, bezpieczeństwa, powiadamiania o naruszeniach i egzekwowania tworzą złożone wymagania"
+        },
+        "scope": {
+          "stat": "330M+",
+          "title": "Chronionych pacjentów",
+          "description": "Informacje zdrowotne każdego pacjenta w USA muszą być chronione zgodnie z przepisami HIPAA"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Zrozumienie HIPAA",
+      "description": "Ustawa o przenośności i odpowiedzialności ubezpieczeń zdrowotnych ustanawia krajowe standardy ochrony wrażliwych informacji zdrowotnych pacjentów.",
+      "whatIs": {
+        "title": "Czym jest HIPAA?",
+        "description": "HIPAA to amerykańska ustawa federalna, która stworzyła krajowe standardy ochrony wrażliwych informacji zdrowotnych pacjentów przed ujawnieniem bez zgody lub wiedzy pacjenta."
+      },
+      "whoItApplies": {
+        "title": "Kto musi przestrzegać?",
+        "description": "Podmioty objęte (dostawcy usług zdrowotnych, plany zdrowotne, izby rozliczeniowe) oraz ich partnerzy biznesowi, którzy przetwarzają chronione informacje zdrowotne (PHI)."
+      },
+      "keyRules": {
+        "title": "4 kluczowe zasady HIPAA",
+        "items": [
+          "Zasada prywatności - używanie i ujawnianie PHI",
+          "Zasada bezpieczeństwa - zabezpieczenia ePHI",
+          "Zasada powiadamiania o naruszeniach - raportowanie incydentów",
+          "Zasada egzekwowania - kary i zgodność"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Dla liderów ochrony zdrowia",
+      "title": "Dlaczego HIPAA powinno być priorytetem",
+      "description": "Naruszenia HIPAA mogą skutkować zarzutami karnymi, ogromnymi karami i utratą zaufania pacjentów, którego odbudowa zajmuje lata.",
+      "points": {
+        "criminal": {
+          "title": "Odpowiedzialność karna",
+          "description": "Umyślne naruszenia HIPAA mogą skutkować zarzutami karnymi z karami do $250,000 i karą więzienia"
+        },
+        "trust": {
+          "title": "Zaufanie pacjentów",
+          "description": "Naruszenia danych osłabiają zaufanie pacjentów i mogą prowadzić do szukania opieki gdzie indziej"
+        },
+        "reputation": {
+          "title": "Utrata reputacji",
+          "description": "Naruszenia HIPAA są publicznie raportowane, powodując trwałe szkody dla reputacji organizacji"
+        },
+        "fines": {
+          "title": "Znaczący wpływ finansowy",
+          "description": "Poza karami, naruszenia kosztują średnio $10.9M za incydent w ochronie zdrowia"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomaga z HIPAA",
+      "description": "Nasza platforma oparta na AI automatyzuje zgodność z HIPAA, od ochrony PHI po wykrywanie naruszeń i szkolenie personelu.",
+      "features": {
+        "phiProtection": {
+          "title": "Ochrona PHI",
+          "description": "Automatyczne wykrywanie i klasyfikacja chronionych informacji zdrowotnych we wszystkich systemach i przepływach pracy."
+        },
+        "accessControls": {
+          "title": "Kontrola dostępu",
+          "description": "Zarządzanie dostępem oparte na rolach z minimalnym niezbędnym standardem i automatycznymi przeglądami dostępu."
+        },
+        "auditTrails": {
+          "title": "Ścieżki audytu",
+          "description": "Kompleksowe logowanie wszystkich dostępów, modyfikacji i ujawnień PHI do raportowania zgodności."
+        },
+        "breachDetection": {
+          "title": "Wykrywanie naruszeń",
+          "description": "Monitoring w czasie rzeczywistym i automatyczna reakcja na incydenty z zarządzaniem przepływem powiadomień o naruszeniach."
+        },
+        "trainingManagement": {
+          "title": "Zarządzanie szkoleniami",
+          "description": "Automatyczne przydzielanie szkoleń HIPAA, śledzenie i zarządzanie certyfikatami dla całego personelu."
+        },
+        "complianceReporting": {
+          "title": "Raportowanie zgodności",
+          "description": "Automatyczne raporty statusu zgodności i dokumentacja dla audytów i wymogów regulacyjnych."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "Napędzane AI",
+      "title": "Natywny moduł zgodności HIPAA oparty na AI",
+      "description": "Nasz AI compliance officer ciągle monitoruje Twoje systemy ochrony zdrowia, identyfikuje potencjalne ryzyka ekspozycji PHI, automatyzuje oceny bezpieczeństwa i zapewnia, że Twoja organizacja wyprzedza zmieniające się wymagania HIPAA."
+    },
+    "results": {
+      "title": "Udowodnione wyniki zgodności z HIPAA",
+      "description": "Organizacje ochrony zdrowia korzystające z Quantifier osiągają szybszą zgodność i lepszą ochronę danych pacjentów.",
+      "metrics": {
+        "coverage": {
+          "value": "100%",
+          "label": "Pokrycie zasad HIPAA"
+        },
+        "breach": {
+          "value": "< 24h",
+          "label": "Czas wykrycia naruszenia"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Ciągły monitoring"
+        },
+        "reduction": {
+          "value": "75%",
+          "label": "Redukcja przygotowania do audytu"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Stworzone dla liderów zgodności w ochronie zdrowia",
+      "subtitle": "Quantifier służy profesjonalistom prywatności i zgodności w całej branży ochrony zdrowia.",
+      "personas": {
+        "privacyOfficer": {
+          "title": "Oficer ds. prywatności",
+          "description": "Pełny nadzór nad przetwarzaniem PHI z automatycznym monitorowaniem i reagowaniem na incydenty"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Dopasuj kontrole bezpieczeństwa do wymagań zasady bezpieczeństwa HIPAA i zarządzaj ryzykiem"
+        },
+        "healthcareAdmin": {
+          "title": "Administrator ochrony zdrowia",
+          "description": "Zapewnij zgodność w całej organizacji i zarządzaj umowami z partnerami biznesowymi"
+        },
+        "complianceDirector": {
+          "title": "Dyrektor ds. zgodności",
+          "description": "Usprawnij programy zgodności i przygotuj się pewnie na audyty OCR"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje HIPAA",
+      "description": "Utrzymuj bieżącą zgodność z automatycznym monitorowaniem, zarządzaniem kontrolą dostępu i możliwościami reagowania na incydenty.",
+      "statusBadge": "Zawsze zgodny",
+      "form": {
+        "nameLabel": "Twoje imię",
+        "emailLabel": "Email służbowy",
+        "button": "Zaplanuj demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitoring w czasie rzeczywistym",
+          "description": "Ciągłe śledzenie dostępu do PHI i potencjalnych incydentów bezpieczeństwa"
+        },
+        "accessControl": {
+          "title": "Kontrola dostępu",
+          "description": "Automatyczne przeglądy dostępu użytkowników i egzekwowanie minimalnego niezbędnego"
+        },
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "description": "Bieżące oceny ryzyka bezpieczeństwa ze śledzeniem remediacji"
+        },
+        "incidentResponse": {
+          "title": "Reagowanie na incydenty",
+          "description": "Automatyczne wykrywanie naruszeń i zarządzanie przepływem powiadomień"
+        }
+      }
+    },
+    "faq": {
+      "title": "Często zadawane pytania o HIPAA",
+      "items": [
+        {
+          "question": "Czym jest HIPAA?",
+          "answer": "HIPAA (Health Insurance Portability and Accountability Act) to amerykańska ustawa federalna uchwalona w 1996 roku, która ustanawia krajowe standardy ochrony wrażliwych informacji zdrowotnych pacjentów. Dotyczy podmiotów objętych i ich partnerów biznesowych, którzy przetwarzają chronione informacje zdrowotne (PHI)."
+        },
+        {
+          "question": "Kogo dotyczy HIPAA?",
+          "answer": "HIPAA dotyczy podmiotów objętych, w tym dostawców usług zdrowotnych, planów zdrowotnych i izb rozliczeniowych. Dotyczy również partnerów biznesowych — organizacji, które przetwarzają PHI w imieniu podmiotów objętych, takich jak dostawcy IT, firmy rozliczeniowe i dostawcy usług chmurowych."
+        },
+        {
+          "question": "Jakie są kary za naruszenia HIPAA?",
+          "answer": "Naruszenia HIPAA mogą skutkować karami cywilnymi od $100 do $50,000 za naruszenie, z rocznymi maksymalnymi kwotami $1.5 miliona na kategorię naruszenia. Naruszenia karne mogą skutkować karami do $250,000 i karą więzienia do 10 lat za przestępstwa popełnione z zamiarem sprzedaży PHI."
+        },
+        {
+          "question": "Czym są chronione informacje zdrowotne (PHI)?",
+          "answer": "PHI obejmuje wszelkie indywidualnie identyfikowalne informacje zdrowotne, które są przesyłane lub przechowywane w dowolnej formie. Obejmuje to imiona pacjentów, adresy, daty, numery ubezpieczenia społecznego, dokumentację medyczną, informacje rozliczeniowe i wszelkie dane, które mogą zidentyfikować pacjenta."
+        },
+        {
+          "question": "Jak Quantifier pomaga w zgodności z HIPAA?",
+          "answer": "Quantifier automatyzuje kluczowe wymagania HIPAA, w tym wykrywanie i ochronę PHI, zarządzanie kontrolą dostępu, utrzymywanie ścieżek audytu, wykrywanie i powiadamianie o naruszeniach, zarządzanie szkoleniami personelu i ciągły monitoring zgodności. Nasza platforma oparta na AI redukuje ręczną pracę compliance o 75%."
+        },
+        {
+          "question": "Czym jest zasada powiadamiania o naruszeniach HIPAA?",
+          "answer": "Zasada powiadamiania o naruszeniach wymaga od podmiotów objętych powiadomienia dotkniętych osób w ciągu 60 dni od wykrycia naruszenia dotyczącego więcej niż 500 osób. Mniejsze naruszenia muszą być raportowane corocznie do HHS. Quantifier automatyzuje wykrywanie naruszeń i przepływy powiadomień, aby zapewnić terminową zgodność."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Rozpocznij swoją podróż zgodności z HIPAA już dziś",
+      "description": "Dołącz do wiodących organizacji ochrony zdrowia, które powierzają Quantifier automatyzację zgodności z HIPAA i ochronę danych pacjentów.",
+      "bookDemo": "Umów demo",
+      "seePricing": "Zobacz cennik"
+    }
+  },
+  "ccpaPage": {
+    "seo": {
+      "title": "Oprogramowanie zgodności CCPA | Ochrona prywatności w Kalifornii | Quantifier",
+      "description": "Zautomatyzuj zgodność z CCPA dzięki obsłudze żądań konsumentów opartej na AI, zarządzaniu rezygnacjami i inwentaryzacji danych. Chroń prawa prywatności konsumentów w Kalifornii."
+    },
+    "hero": {
+      "badge": "Zgodność z CCPA",
+      "title": "Zautomatyzuj zgodność z CCPA dzięki AI",
+      "subtitle": "Obsługuj żądania konsumentów, zarządzaj rezygnacjami i utrzymuj zgodność z przepisami prywatności Kalifornii dzięki naszej inteligentnej platformie.",
+      "button": "Rozpocznij",
+      "formTitle": "Umów demo",
+      "nameLabel": "Twoje imię",
+      "emailLabel": "Email służbowy",
+      "marketingConsent": "Zgadzam się na otrzymywanie aktualizacji compliance",
+      "requestDemoButton": "Umów demo"
+    },
+    "whyCritical": {
+      "title": "Dlaczego zgodność z CCPA jest kluczowa",
+      "subtitle": "Firmy obsługujące rezydentów Kalifornii muszą respektować prawa prywatności konsumentów lub ponosić znaczące kary.",
+      "cards": {
+        "fines": {
+          "stat": "$7,500",
+          "title": "Za naruszenie",
+          "description": "Umyślne naruszenia kosztują $7,500 każde; nieumyślne naruszenia kosztują $2,500 za incydent"
+        },
+        "scope": {
+          "stat": "40M+",
+          "title": "Chronionych Kalifornijczyków",
+          "description": "Największa gospodarka stanowa USA z surowymi prawami prywatności dla wszystkich mieszkańców"
+        },
+        "rights": {
+          "stat": "4",
+          "title": "Prawa konsumentów",
+          "description": "Prawa do wiedzy, usunięcia, rezygnacji i niedyskryminacji muszą być respektowane"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Zrozumienie CCPA",
+      "description": "California Consumer Privacy Act daje mieszkańcom Kalifornii bezprecedensową kontrolę nad ich danymi osobowymi zbieranymi przez firmy.",
+      "whatIs": {
+        "title": "Czym jest CCPA?",
+        "description": "CCPA to kalifornijska ustawa o prywatności, która daje mieszkańcom prawo do wiedzy, jakie dane osobowe są zbierane, żądania usunięcia, rezygnacji ze sprzedaży danych i równego traktowania niezależnie od wyborów prywatności."
+      },
+      "whoItApplies": {
+        "title": "Kto musi przestrzegać?",
+        "description": "Firmy zbierające dane mieszkańców Kalifornii spełniające progi: roczny przychód powyżej $25M, dane 100K+ konsumentów/urządzeń lub 50%+ przychodów ze sprzedaży danych."
+      },
+      "consumerRights": {
+        "title": "4 prawa konsumentów",
+        "items": [
+          "Prawo do wiedzy - jakie dane są zbierane i jak używane",
+          "Prawo do usunięcia - żądanie usunięcia danych osobowych",
+          "Prawo do rezygnacji - zatrzymanie sprzedaży danych osobowych",
+          "Prawo do niedyskryminacji - równe traktowanie niezależnie od wyborów prywatności"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Dla liderów biznesu",
+      "title": "Dlaczego CCPA powinno być strategicznym priorytetem",
+      "description": "Zgodność z CCPA to nie tylko unikanie kar — to budowanie zaufania konsumentów i przygotowanie na rozszerzające się przepisy prywatności w USA.",
+      "points": {
+        "litigation": {
+          "title": "Prawo do pozwu",
+          "description": "Konsumenci mogą pozywać bezpośrednio za naruszenia danych, z odszkodowaniami $100-$750 za incydent"
+        },
+        "trust": {
+          "title": "Zaufanie konsumentów",
+          "description": "73% konsumentów uwzględnia prywatność przy podejmowaniu decyzji zakupowych"
+        },
+        "marketAccess": {
+          "title": "Dostęp do rynku Kalifornii",
+          "description": "Gospodarka Kalifornii o wartości $3.6 biliona jest zbyt duża, by ją ignorować"
+        },
+        "trend": {
+          "title": "Trend przepisów prywatności",
+          "description": "12+ stanów USA uchwaliło przepisy w stylu CCPA; zgodność teraz przygotowuje na przyszłość"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomaga z CCPA",
+      "description": "Nasza platforma oparta na AI automatyzuje zgodność z CCPA, od obsługi żądań konsumentów po inwentaryzację danych i zarządzanie rezygnacjami.",
+      "features": {
+        "consumerRequests": {
+          "title": "Obsługa żądań konsumentów",
+          "description": "Automatyczny odbiór, weryfikacja i realizacja żądań dostępu, usunięcia i rezygnacji konsumentów."
+        },
+        "dataInventory": {
+          "title": "Inwentaryzacja danych",
+          "description": "Wykrywanie i mapowanie danych osobowych oparte na AI we wszystkich systemach i u podmiotów trzecich."
+        },
+        "optOutManagement": {
+          "title": "Zarządzanie rezygnacjami",
+          "description": "Usprawnione przepływy rezygnacji z zarządzaniem linkiem \"Nie sprzedawaj moich danych osobowych\"."
+        },
+        "privacyPolicy": {
+          "title": "Generator polityki prywatności",
+          "description": "Szablony polityki prywatności zgodne z CCPA z automatycznymi aktualizacjami dla zmian regulacyjnych."
+        },
+        "vendorManagement": {
+          "title": "Zarządzanie dostawcami",
+          "description": "Śledzenie udostępniania danych podmiotom trzecim z zarządzaniem umowami z dostawcami usług i kontrahentami."
+        },
+        "complianceDashboard": {
+          "title": "Dashboard zgodności",
+          "description": "Widoczność w czasie rzeczywistym statusu zgodności z CCPA, metryki żądań i potencjalne ryzyka."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "Napędzane AI",
+      "title": "Natywny moduł zgodności CCPA oparty na AI",
+      "description": "Nasz AI compliance officer ciągle monitoruje Twoje praktyki dotyczące danych, automatyzuje przetwarzanie żądań konsumentów, identyfikuje luki w zgodności i utrzymuje aktualne informacje o prywatności zgodnie z najnowszymi kalifornijskimi przepisami prywatności."
+    },
+    "results": {
+      "title": "Udowodnione wyniki zgodności z CCPA",
+      "description": "Organizacje korzystające z Quantifier osiągają szybszą realizację żądań i silniejszą ochronę prywatności konsumentów.",
+      "metrics": {
+        "requests": {
+          "value": "45 dni",
+          "label": "Śr. czas odpowiedzi na żądanie"
+        },
+        "optOut": {
+          "value": "< 24h",
+          "label": "Przetwarzanie rezygnacji"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Ciągły monitoring"
+        },
+        "reduction": {
+          "value": "70%",
+          "label": "Redukcja pracy ręcznej"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Stworzone dla liderów prywatności i zgodności",
+      "subtitle": "Quantifier służy profesjonalistom prywatności we wszystkich branżach obsługujących konsumentów z Kalifornii.",
+      "personas": {
+        "privacyOfficer": {
+          "title": "Oficer ds. prywatności",
+          "description": "Pełny nadzór nad praktykami dotyczącymi danych konsumentów z automatycznym zarządzaniem żądaniami"
+        },
+        "legal": {
+          "title": "Radca prawny",
+          "description": "Zarządzaj informacjami o prywatności, umowami i dokumentacją zgodności regulacyjnej"
+        },
+        "marketing": {
+          "title": "Dyrektor marketingu",
+          "description": "Balansuj marketing oparty na danych z preferencjami prywatności konsumentów i rezygnacjami"
+        },
+        "cto": {
+          "title": "CTO",
+          "description": "Wdrażaj kontrole techniczne dostępu do danych, usuwania i respektowania rezygnacji"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje CCPA",
+      "description": "Utrzymuj bieżącą zgodność z automatycznym monitorowaniem, śledzeniem rezygnacji i przetwarzaniem żądań konsumentów.",
+      "statusBadge": "Zawsze zgodny",
+      "form": {
+        "nameLabel": "Twoje imię",
+        "emailLabel": "Email służbowy",
+        "button": "Zaplanuj demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitoring w czasie rzeczywistym",
+          "description": "Ciągłe śledzenie zbierania danych i preferencji konsumentów"
+        },
+        "optOutTracking": {
+          "title": "Śledzenie rezygnacji",
+          "description": "Automatyczne zarządzanie preferencjami rezygnacji konsumentów we wszystkich systemach"
+        },
+        "requestProcessing": {
+          "title": "Przetwarzanie żądań",
+          "description": "Usprawniony przepływ pracy do obsługi żądań konsumentów w 45-dniowym terminie"
+        },
+        "saleOfData": {
+          "title": "Kontrola sprzedaży danych",
+          "description": "Śledź i kontroluj udostępnianie danych osobowych podmiotom trzecim"
+        }
+      }
+    },
+    "faq": {
+      "title": "Często zadawane pytania o CCPA",
+      "items": [
+        {
+          "question": "Czym jest CCPA?",
+          "answer": "California Consumer Privacy Act (CCPA) to kalifornijska ustawa o prywatności, która daje mieszkańcom Kalifornii prawo do wiedzy, jakie dane osobowe zbierają firmy, żądania usunięcia danych, rezygnacji ze sprzedaży danych osobowych i równego traktowania niezależnie od wyborów prywatności."
+        },
+        {
+          "question": "Kogo dotyczy CCPA?",
+          "answer": "CCPA dotyczy firm nastawionych na zysk, które zbierają dane osobowe mieszkańców Kalifornii i spełniają co najmniej jeden próg: roczny przychód brutto powyżej $25 milionów, kupowanie/sprzedawanie/udostępnianie danych 100,000+ konsumentów lub urządzeń, lub uzyskiwanie 50%+ rocznego przychodu ze sprzedaży danych osobowych."
+        },
+        {
+          "question": "Jakie są kary za naruszenia CCPA?",
+          "answer": "Naruszenia CCPA mogą skutkować karami cywilnymi $2,500 za nieumyślne naruszenie i $7,500 za umyślne naruszenie. Dodatkowo konsumenci mają prawo do pozwu za naruszenia danych, z ustawowymi odszkodowaniami $100-$750 na konsumenta za incydent, lub rzeczywistymi szkodami, jeśli są wyższe."
+        },
+        {
+          "question": "Jakie prawa konsumentów zapewnia CCPA?",
+          "answer": "CCPA zapewnia cztery główne prawa: prawo do wiedzy, jakie dane osobowe są zbierane i jak używane, prawo do usunięcia danych osobowych, prawo do rezygnacji ze sprzedaży danych osobowych oraz prawo do niedyskryminacji za korzystanie z praw prywatności."
+        },
+        {
+          "question": "Jak Quantifier pomaga w zgodności z CCPA?",
+          "answer": "Quantifier automatyzuje kluczowe wymagania CCPA, w tym odbiór i realizację żądań konsumentów, inwentaryzację i mapowanie danych, zarządzanie preferencjami rezygnacji, zgodność polityki prywatności, zarządzanie umowami z dostawcami i ciągły monitoring zgodności. Nasza platforma oparta na AI redukuje pracę ręczną o 70%."
+        },
+        {
+          "question": "Czym różni się CCPA od RODO?",
+          "answer": "Choć oba chronią prywatność konsumentów, CCPA koncentruje się konkretnie na mieszkańcach Kalifornii i kładzie nacisk na prawo do rezygnacji ze sprzedaży danych. RODO wymaga zgody opt-in, dotyczy rezydentów UE i ma szerszy zakres. Quantifier pomaga organizacjom przestrzegać obu regulacji z jednej platformy."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Rozpocznij swoją podróż zgodności z CCPA już dziś",
+      "description": "Dołącz do wiodących organizacji, które powierzają Quantifier automatyzację zgodności z przepisami prywatności Kalifornii i ochronę danych konsumentów.",
+      "bookDemo": "Umów demo",
+      "seePricing": "Zobacz cennik"
+    }
   }
 }
