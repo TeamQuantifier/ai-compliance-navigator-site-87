@@ -2327,16 +2327,77 @@
       },
       "statusBadge": "Always Compliant • Always Protected"
     },
-    "finalCta": {
-      "title": "Transform Your NIS2 Compliance Journey",
-      "description": "Join leading European organizations using Quantifier to achieve and maintain NIS2 compliance effortlessly.",
-      "bookDemo": "Book a Demo",
-      "talkExpert": "Talk to NIS2 Expert"
+    "whyProblem": {
+      "title": "Why NIS2 Is a Challenge",
+      "subtitle": "Most organizations struggle with NIS2 compliance due to:",
+      "cards": {
+        "penalties": {
+          "title": "High Stakes Penalties",
+          "stat": "€10M+",
+          "description": "Fines up to €10M or 2% of global turnover, plus personal liability for management board members"
+        },
+        "complexity": {
+          "title": "Complex Requirements",
+          "stat": "19",
+          "description": "Security domains to address with unclear implementation guidelines across the EU"
+        },
+        "timeline": {
+          "title": "Strict Reporting Timeline",
+          "stat": "24h/72h",
+          "description": "Incident notification deadlines that require automated workflows and rapid response"
+        }
+      }
     },
-    "relatedSolution": {
-      "title": "Looking for a complete NIS2 compliance solution?",
-      "description": "Explore our dedicated NIS2 landing page with detailed automation features and compliance roadmap.",
-      "button": "Explore NIS2 Solution"
+    "whyManagement": {
+      "badge": "Management Accountability",
+      "title": "Why NIS2 Matters for Your Management Board",
+      "description": "NIS2 introduces direct accountability for company leadership. Board members can no longer delegate cybersecurity responsibility.",
+      "points": [
+        {
+          "title": "Personal Liability",
+          "description": "Management board members can be held personally responsible for NIS2 violations and may face temporary bans"
+        },
+        {
+          "title": "Mandatory Reporting",
+          "description": "Direct obligation to report significant incidents to regulatory authorities within strict timeframes"
+        },
+        {
+          "title": "Reputational Risk",
+          "description": "Public disclosure of breaches and non-compliance can severely impact business relationships and market position"
+        },
+        {
+          "title": "Compliance as Advantage",
+          "description": "Demonstrating NIS2 compliance builds trust with customers, partners, and positions you ahead of competitors"
+        }
+      ]
+    },
+    "forWhom": {
+      "title": "Who Benefits from Quantifier for NIS2",
+      "subtitle": "Our platform serves all stakeholders involved in NIS2 compliance journey",
+      "personas": {
+        "ceo": {
+          "title": "Management Board / CEO",
+          "description": "Full visibility into compliance status, risk exposure, and regulatory obligations with executive dashboards"
+        },
+        "ciso": {
+          "title": "CISO / IT Security",
+          "description": "Automated security monitoring, incident workflows, and seamless integration with existing security tools"
+        },
+        "compliance": {
+          "title": "Compliance / Legal",
+          "description": "Complete audit trails, policy management, regulatory reporting templates, and documentation automation"
+        },
+        "coo": {
+          "title": "COO / Operations",
+          "description": "Business continuity planning, supply chain risk management, and operational resilience monitoring"
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Simplify NIS2 Compliance?",
+      "description": "Join leading European organizations that trust Quantifier for their NIS2 journey. Get compliant faster with AI-powered automation.",
+      "bookDemo": "Request Demo",
+      "talkExpert": "See Pricing"
     }
   },
   "socPage": {
