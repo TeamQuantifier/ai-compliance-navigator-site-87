@@ -2821,62 +2821,232 @@
     }
   },
   "doraPage": {
-    "title": "DORA",
-    "description": "Digital Operational Resilience Act - Zapewnij swojej instytucji finansowej zgodność ze standardami UE dotyczącymi odporności operacyjnej.",
+    "meta": {
+      "title": "Platforma zgodności DORA | Digital Operational Resilience Act",
+      "description": "Osiągnij zgodność z DORA dzięki automatyzacji opartej na AI. Zarządzaj ryzykiem ICT, raportowaniem incydentów i nadzorem nad stronami trzecimi."
+    },
     "hero": {
-      "title": "DORA: Odporność operacyjna w prosty sposób",
-      "subtitle": "Quantifier automatyzuje zgodność z DORA dla instytucji finansowych, przekształcając odporność operacyjną w przewagę konkurencyjną zamiast obciążenia.",
-      "button": "Umów demo"
+      "badge": "Zgodność z DORA",
+      "title": "DORA: Cyfrowa odporność operacyjna bez komplikacji",
+      "subtitle": "Quantifier automatyzuje zgodność z DORA dla instytucji finansowych, przekształcając odporność operacyjną w przewagę konkurencyjną.",
+      "formTitle": "Zamów demo",
+      "nameLabel": "Imię i nazwisko",
+      "namePlaceholder": "Wpisz swoje imię",
+      "emailLabel": "Email służbowy",
+      "emailPlaceholder": "Wpisz swój email",
+      "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej",
+      "requestDemoButton": "Zamów demo"
     },
-    "whatIs": {
-      "title": "Czym jest DORA?",
-      "description": "Digital Operational Resilience Act (DORA) to rozporządzenie UE wymagające od instytucji finansowych zapewnienia, że mogą wytrzymać, odpowiedzieć i odzyskać się po wszelkich zakłóceniach i zagrożeniach związanych z ICT. Ustala jednolite wymagania dotyczące bezpieczeństwa systemów sieciowych i informacyjnych firm działających w sektorze finansowym.",
-      "keyRequirements": {
-        "title": "Kluczowe wymagania",
-        "items": [
-          "Zarządzanie ryzykiem ICT",
-          "Zgłaszanie incydentów związanych z ICT",
-          "Testowanie odporności operacyjnej cyfrowej",
-          "Zarządzanie ryzykiem stron trzecich ICT"
-        ]
-      },
-      "whoMustComply": {
-        "title": "Kto musi być zgodny",
-        "description": "DORA dotyczy szerokiego zakresu podmiotów finansowych działających w UE, w tym:",
-        "items": [
-          "Banki i instytucje kredytowe",
-          "Firmy ubezpieczeniowe i reasekuracyjne",
-          "Firmy inwestycyjne i instytucje płatnicze",
-          "Dostawcy usług kryptowalutowych"
-        ]
-      }
-    },
-    "howQuantifierHelps": {
-      "title": "Jak Quantifier automatyzuje zgodność z DORA",
-      "dashboard": {
-        "title": "Panel DORA oparty na AI",
-        "description": "Monitoruj odporność operacyjną organizacji za pomocą naszego kompleksowego panelu opartego na AI."
-      },
-      "features": {
-        "riskMonitoring": {
-          "title": "Automatyczne monitorowanie ryzyka",
-          "description": "Nasze AI ciągle identyfikuje, ocenia i redukuje ryzyka dla operacji cyfrowych w czasie rzeczywistym, zapewniając zgodność z wymaganiami zarządzania ryzykiem DORA."
+    "whyCritical": {
+      "title": "Dlaczego zgodność z DORA jest kluczowa",
+      "subtitle": "DORA ustanawia jednolite wymagania dla podmiotów finansowych w celu zapewnienia cyfrowej odporności operacyjnej w całej UE.",
+      "cards": {
+        "penalties": {
+          "stat": "€10M+",
+          "title": "Kary finansowe",
+          "description": "Znaczące kary za niezgodność z wymaganiami DORA"
         },
-        "incidentResponse": {
-          "title": "Automatyzacja reagowania na incydenty",
-          "description": "Agenci AI Quantifier pomagają budować, testować i realizować kompleksowe plany reagowania na zakłócenia operacyjne, spełniając wymagania DORA dotyczące zgłaszania incydentów."
+        "complexity": {
+          "stat": "5 filarów",
+          "title": "Złożoność regulacyjna",
+          "description": "Pięć kluczowych filarów wymagań do spełnienia"
         },
-        "thirdPartyRisk": {
-          "title": "Zarządzanie ryzykiem stron trzecich",
-          "description": "Monitoruj i zarządzaj dostawcami ICT aby zapewnić zgodność z wymaganiami DORA, redukując ekspozycję na ryzyko w łańcuchu dostaw."
+        "deadline": {
+          "stat": "Sty 2025",
+          "title": "Data egzekwowania",
+          "description": "DORA jest teraz w pełni obowiązująca dla wszystkich podmiotów"
         }
       }
     },
-    "cta": {
-      "title": "Gotowy na uproszczenie zgodności z DORA?",
-      "description": "Dołącz do instytucji finansowych, które ufają Quantifier w automatyzacji zgodności z DORA.",
+    "understanding": {
+      "title": "Zrozumieć DORA",
+      "description": "Digital Operational Resilience Act (DORA) to rozporządzenie UE zapewniające, że podmioty finansowe mogą wytrzymać i odzyskać się po zakłóceniach ICT.",
+      "whatIs": {
+        "title": "Czym jest DORA?",
+        "description": "DORA to rozporządzenie UE ustanawiające jednolite wymagania dotyczące bezpieczeństwa systemów sieciowych i informacyjnych firm działających w sektorze finansowym. Ma na celu zapewnienie, że podmioty finansowe mogą wytrzymać, zareagować i odzyskać się po wszelkich zakłóceniach ICT."
+      },
+      "whoMustComply": {
+        "title": "Kogo dotyczy DORA?",
+        "items": [
+          "Banki i instytucje kredytowe",
+          "Firmy ubezpieczeniowe i reasekuracyjne",
+          "Firmy inwestycyjne",
+          "Instytucje płatnicze",
+          "Dostawcy usług kryptowalutowych",
+          "Zewnętrzni dostawcy usług ICT"
+        ]
+      },
+      "pillars": {
+        "title": "5 filarów DORA",
+        "items": [
+          "Zarządzanie ryzykiem ICT",
+          "Raportowanie incydentów ICT",
+          "Testowanie odporności operacyjnej",
+          "Zarządzanie ryzykiem stron trzecich ICT",
+          "Uzgodnienia dotyczące wymiany informacji"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Imperatyw zarządu",
+      "title": "Dlaczego DORA ma znaczenie dla Twojego zarządu",
+      "description": "DORA nakłada bezpośrednią odpowiedzialność na organy zarządzające za zarządzanie ryzykiem ICT i cyfrową odpornością operacyjną.",
+      "points": [
+        {
+          "title": "Osobista odpowiedzialność",
+          "description": "Organy zarządzające są bezpośrednio odpowiedzialne za zatwierdzenie i nadzór nad ramami zarządzania ryzykiem ICT"
+        },
+        {
+          "title": "Ciągłość działania",
+          "description": "Zapewnij nieprzerwane operacje i chroń reputację organizacji w sektorze finansowym"
+        },
+        {
+          "title": "Nadzór nad łańcuchem dostaw",
+          "description": "Utrzymuj kontrolę i widoczność nad zewnętrznymi dostawcami usług ICT i ich ryzykami"
+        },
+        {
+          "title": "Przewaga konkurencyjna",
+          "description": "Pozycjonuj swoją organizację jako zaufanego, odpornego partnera w ekosystemie finansowym"
+        }
+      ]
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier przyspiesza zgodność z DORA",
+      "description": "Nasza platforma oparta na AI automatyzuje zarządzanie ryzykiem ICT, raportowanie incydentów i nadzór nad stronami trzecimi.",
+      "features": {
+        "ictRisk": {
+          "title": "Ocena ryzyka ICT",
+          "description": "Kompleksowa identyfikacja, ocena i zarządzanie ryzykami ICT w całej organizacji"
+        },
+        "incidentResponse": {
+          "title": "Automatyzacja reagowania na incydenty",
+          "description": "Automatyczna klasyfikacja incydentów, przepływy raportowania i zarządzanie powiadomieniami regulacyjnymi"
+        },
+        "resilienceTesting": {
+          "title": "Wsparcie testów odporności",
+          "description": "Ramy dla testów penetracyjnych opartych na zagrożeniach i programów testowania odporności operacyjnej"
+        },
+        "thirdPartyRisk": {
+          "title": "Zarządzanie ryzykiem stron trzecich",
+          "description": "Monitoruj i oceniaj zewnętrznych dostawców usług ICT pod kątem zgodności i ekspozycji na ryzyko"
+        },
+        "policyManagement": {
+          "title": "Zarządzanie politykami",
+          "description": "Scentralizowane zarządzanie politykami bezpieczeństwa ICT, procedurami i dokumentacją"
+        },
+        "auditReadiness": {
+          "title": "Gotowość do audytu",
+          "description": "Utrzymuj ciągłą gotowość do audytu dzięki automatycznemu zbieraniu dowodów i raportowaniu"
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "Automatyzacja DORA oparta na AI",
+      "title": "Moduł DORA oparty na AI",
+      "description": "Wykorzystaj sztuczną inteligencję do automatyzacji identyfikacji ryzyk ICT, usprawnienia raportowania incydentów i utrzymania ciągłej zgodności z wymaganiami DORA."
+    },
+    "results": {
+      "title": "Rezultaty po wdrożeniu Quantifier",
+      "description": "Instytucje finansowe korzystające z Quantifier osiągają zgodność z DORA szybciej i z mniejszym obciążeniem operacyjnym.",
+      "metrics": {
+        "compliance": "100%",
+        "complianceLabel": "Pokrycie wymagań DORA",
+        "pillars": "5",
+        "pillarsLabel": "Obsługiwanych filarów",
+        "monitoring": "24/7",
+        "monitoringLabel": "Ciągłe monitorowanie",
+        "reduction": "65%",
+        "reductionLabel": "Redukcja czasu"
+      }
+    },
+    "forWhom": {
+      "title": "Dla kogo jest nasze rozwiązanie DORA?",
+      "subtitle": "Nasza platforma jest zaprojektowana dla podmiotów finansowych szukających efektywnej zgodności z DORA.",
+      "personas": {
+        "cro": {
+          "title": "Chief Risk Officer",
+          "description": "Kompleksowy nadzór nad ryzykiem i ramy zarządzania ryzykiem ICT"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Zarządzanie bezpieczeństwem informacji i koordynacja reagowania na incydenty"
+        },
+        "ceo": {
+          "title": "CEO / Zarząd",
+          "description": "Strategiczny nadzór i odpowiedzialność za cyfrową odporność"
+        },
+        "compliance": {
+          "title": "Compliance Officer",
+          "description": "Raportowanie regulacyjne i monitorowanie zgodności"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje DORA",
+      "description": "Utrzymuj zgodność regulacyjną przez cały rok dzięki automatycznemu monitorowaniu i raportowaniu.",
+      "form": {
+        "title": "Zamów demo",
+        "nameLabel": "Imię i nazwisko",
+        "namePlaceholder": "Wpisz swoje imię",
+        "emailLabel": "Email służbowy",
+        "emailPlaceholder": "Wpisz swój email",
+        "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej",
+        "submitButton": "Zamów demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Ciągłe monitorowanie",
+          "description": "Śledzenie ryzyk ICT i statusu zgodności w czasie rzeczywistym"
+        },
+        "riskAssessment": {
+          "title": "Ocena ryzyka",
+          "description": "Ciągła identyfikacja i ocena ryzyk ICT"
+        },
+        "incidentReporting": {
+          "title": "Raportowanie incydentów",
+          "description": "Automatyczna klasyfikacja incydentów i raportowanie regulacyjne"
+        },
+        "thirdPartyOversight": {
+          "title": "Nadzór nad stronami trzecimi",
+          "description": "Ciągłe monitorowanie ryzyk dostawców usług ICT"
+        }
+      },
+      "statusBadge": "Zawsze gotowy do zgodności"
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania o DORA",
+      "items": [
+        {
+          "question": "Czym jest DORA?",
+          "answer": "DORA (Digital Operational Resilience Act) to rozporządzenie UE ustanawiające jednolite wymagania dotyczące bezpieczeństwa systemów sieciowych i informacyjnych firm działających w sektorze finansowym. Ma na celu zapewnienie, że podmioty finansowe mogą wytrzymać, zareagować i odzyskać się po zakłóceniach ICT."
+        },
+        {
+          "question": "Kogo dotyczy DORA?",
+          "answer": "DORA dotyczy szerokiego zakresu podmiotów finansowych, w tym banków, firm ubezpieczeniowych, firm inwestycyjnych, instytucji płatniczych, dostawców usług kryptowalutowych oraz zewnętrznych dostawców usług ICT obsługujących sektor finansowy."
+        },
+        {
+          "question": "Kiedy DORA weszła w życie?",
+          "answer": "DORA weszła w życie 16 stycznia 2023 roku, z 24-miesięcznym okresem wdrożeniowym. Pełne egzekwowanie rozpoczęło się 17 stycznia 2025 roku, co oznacza, że wszystkie objęte podmioty muszą teraz spełniać wymagania DORA."
+        },
+        {
+          "question": "Jakie są kary za niezgodność z DORA?",
+          "answer": "Kary za niezgodność z DORA mogą być znaczące, w tym grzywny do 10 milionów euro lub 5% rocznego obrotu dla podmiotów oraz do 1 miliona euro dla osób fizycznych. Regulatorzy mogą również nakładać ograniczenia operacyjne."
+        },
+        {
+          "question": "Jak Quantifier pomaga w zgodności z DORA?",
+          "answer": "Quantifier automatyzuje kluczowe wymagania DORA, w tym zarządzanie ryzykiem ICT, raportowanie incydentów, nadzór nad ryzykiem stron trzecich i testowanie odporności. Nasza platforma oparta na AI zapewnia ciągłe monitorowanie, automatyczne zbieranie dowodów i usprawnione raportowanie regulacyjne."
+        },
+        {
+          "question": "Jakie są 5 filarów DORA?",
+          "answer": "5 filarów DORA to: Zarządzanie ryzykiem ICT, Raportowanie incydentów ICT, Testowanie cyfrowej odporności operacyjnej, Zarządzanie ryzykiem stron trzecich ICT oraz Uzgodnienia dotyczące wymiany informacji."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Gotowy na zgodność z DORA?",
+      "description": "Dołącz do wiodących instytucji finansowych, które ufają Quantifier w automatyzacji zgodności z DORA.",
       "bookDemo": "Umów demo",
-      "explorePlans": "Zobacz plany"
+      "seePricing": "Zobacz cennik"
     }
   },
   "successStoriesPage": {

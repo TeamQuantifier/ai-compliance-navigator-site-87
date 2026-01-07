@@ -2939,62 +2939,232 @@
     }
   },
   "doraPage": {
-    "title": "DORA Framework",
-    "description": "Digital Operational Resilience Act - Ensure your financial institution meets EU standards for operational resilience.",
+    "meta": {
+      "title": "DORA Compliance Platform | Digital Operational Resilience Act",
+      "description": "Achieve DORA compliance with AI-powered automation. Manage ICT risk, incident reporting, and third-party oversight for financial institutions."
+    },
     "hero": {
+      "badge": "DORA Compliance",
       "title": "DORA: Digital Operational Resilience Made Simple",
       "subtitle": "Quantifier automates DORA compliance for financial institutions, making operational resilience a competitive advantage instead of a burden.",
-      "button": "Book a Demo"
+      "formTitle": "Request a Demo",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Enter your name",
+      "emailLabel": "Business Email",
+      "emailPlaceholder": "Enter your email",
+      "marketingConsent": "I agree to receive marketing communications",
+      "requestDemoButton": "Request Demo"
     },
-    "whatIs": {
-      "title": "What is DORA?",
-      "description": "The Digital Operational Resilience Act (DORA) is an EU regulation that requires financial institutions to ensure they can withstand, respond to, and recover from all types of ICT-related disruptions and threats. It establishes uniform requirements for the security of network and information systems of companies and organizations operating in the financial sector.",
-      "keyRequirements": {
-        "title": "Key Requirements",
+    "whyCritical": {
+      "title": "Why DORA Compliance Is Critical",
+      "subtitle": "DORA establishes uniform requirements for financial entities to ensure digital operational resilience across the EU.",
+      "cards": {
+        "penalties": {
+          "stat": "€10M+",
+          "title": "Financial Penalties",
+          "description": "Significant fines for non-compliance with DORA requirements"
+        },
+        "complexity": {
+          "stat": "5 Pillars",
+          "title": "Regulatory Complexity",
+          "description": "Five key pillars of requirements that must be addressed"
+        },
+        "deadline": {
+          "stat": "Jan 2025",
+          "title": "Enforcement Date",
+          "description": "DORA is now in full effect for all financial entities"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Understanding DORA",
+      "description": "The Digital Operational Resilience Act (DORA) is an EU regulation that ensures financial entities can withstand and recover from ICT-related disruptions.",
+      "whatIs": {
+        "title": "What is DORA?",
+        "description": "DORA is an EU regulation establishing uniform requirements for the security of network and information systems of companies operating in the financial sector. It aims to ensure financial entities can withstand, respond to, and recover from all types of ICT-related disruptions."
+      },
+      "whoMustComply": {
+        "title": "Who Must Comply?",
+        "items": [
+          "Banks and credit institutions",
+          "Insurance and reinsurance companies",
+          "Investment firms",
+          "Payment institutions",
+          "Crypto-asset service providers",
+          "ICT third-party service providers"
+        ]
+      },
+      "pillars": {
+        "title": "The 5 Pillars of DORA",
         "items": [
           "ICT Risk Management",
           "ICT-Related Incident Reporting",
           "Digital Operational Resilience Testing",
-          "ICT Third-Party Risk Management"
-        ]
-      },
-      "whoMustComply": {
-        "title": "Who Must Comply",
-        "description": "DORA applies to a wide range of financial entities operating in the EU, including:",
-        "items": [
-          "Banks and credit institutions",
-          "Insurance and reinsurance companies",
-          "Investment firms and payment institutions",
-          "Crypto-asset service providers"
+          "ICT Third-Party Risk Management",
+          "Information Sharing Arrangements"
         ]
       }
     },
+    "whyLeadership": {
+      "badge": "Leadership Imperative",
+      "title": "Why DORA Matters for Your Leadership Team",
+      "description": "DORA places direct accountability on management bodies for ICT risk management and digital operational resilience.",
+      "points": [
+        {
+          "title": "Personal Accountability",
+          "description": "Management bodies are directly responsible for ICT risk management framework approval and oversight"
+        },
+        {
+          "title": "Business Continuity",
+          "description": "Ensure uninterrupted operations and protect your organization's reputation in the financial sector"
+        },
+        {
+          "title": "Supply Chain Oversight",
+          "description": "Maintain control and visibility over ICT third-party service providers and their risks"
+        },
+        {
+          "title": "Competitive Advantage",
+          "description": "Position your organization as a trusted, resilient partner in the financial ecosystem"
+        }
+      ]
+    },
     "howQuantifierHelps": {
-      "title": "How Quantifier Automates DORA Compliance",
-      "dashboard": {
-        "title": "AI-Powered DORA Dashboard",
-        "description": "Monitor your organization's operational resilience with our comprehensive AI-powered dashboard."
-      },
+      "title": "How Quantifier Accelerates DORA Compliance",
+      "description": "Our AI-powered platform automates ICT risk management, incident reporting, and third-party oversight to keep you DORA-ready.",
       "features": {
-        "riskMonitoring": {
-          "title": "Automated Risk Monitoring",
-          "description": "Our AI continuously identifies, assesses, and mitigates risks to your digital operations in real-time, ensuring continuous compliance with DORA's risk management requirements."
+        "ictRisk": {
+          "title": "ICT Risk Assessment",
+          "description": "Comprehensive identification, assessment, and management of ICT risks across your organization"
         },
         "incidentResponse": {
           "title": "Incident Response Automation",
-          "description": "Quantifier's AI agents help build, test, and execute comprehensive plans for operational disruptions, meeting DORA's incident reporting requirements."
+          "description": "Automated incident classification, reporting workflows, and regulatory notification management"
+        },
+        "resilienceTesting": {
+          "title": "Resilience Testing Support",
+          "description": "Framework for threat-led penetration testing and digital operational resilience testing programs"
         },
         "thirdPartyRisk": {
           "title": "Third-Party Risk Management",
-          "description": "Monitor and manage your ICT third-party providers to ensure they comply with DORA requirements, reducing risk exposure across your supply chain."
+          "description": "Monitor and assess ICT third-party service providers for compliance and risk exposure"
+        },
+        "policyManagement": {
+          "title": "Policy Management",
+          "description": "Centralized management of ICT security policies, procedures, and documentation"
+        },
+        "auditReadiness": {
+          "title": "Audit Readiness",
+          "description": "Maintain continuous audit readiness with automated evidence collection and reporting"
         }
       }
     },
-    "cta": {
-      "title": "Ready to Simplify DORA Compliance?",
-      "description": "Join financial institutions that trust Quantifier to automate their DORA compliance journey.",
+    "aiModule": {
+      "badge": "AI-Powered DORA Automation",
+      "title": "AI-Native DORA Module",
+      "description": "Leverage artificial intelligence to automate ICT risk identification, streamline incident reporting, and maintain continuous compliance with DORA requirements."
+    },
+    "results": {
+      "title": "Results After Implementing Quantifier",
+      "description": "Financial institutions using Quantifier achieve DORA compliance faster and with less operational overhead.",
+      "metrics": {
+        "compliance": "100%",
+        "complianceLabel": "DORA Requirements Coverage",
+        "pillars": "5",
+        "pillarsLabel": "Pillars Addressed",
+        "monitoring": "24/7",
+        "monitoringLabel": "Continuous Monitoring",
+        "reduction": "65%",
+        "reductionLabel": "Time Reduction"
+      }
+    },
+    "forWhom": {
+      "title": "Who Benefits from Our DORA Solution?",
+      "subtitle": "Our platform is designed for financial entities seeking efficient DORA compliance.",
+      "personas": {
+        "cro": {
+          "title": "Chief Risk Officer",
+          "description": "Comprehensive risk oversight and ICT risk management framework"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Information security management and incident response coordination"
+        },
+        "ceo": {
+          "title": "CEO / Board",
+          "description": "Strategic oversight and accountability for digital resilience"
+        },
+        "compliance": {
+          "title": "Compliance Officer",
+          "description": "Regulatory reporting and compliance monitoring"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Continuous DORA Operations",
+      "description": "Maintain regulatory compliance year-round with automated monitoring and reporting.",
+      "form": {
+        "title": "Request a Demo",
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Enter your name",
+        "emailLabel": "Business Email",
+        "emailPlaceholder": "Enter your email",
+        "marketingConsent": "I agree to receive marketing communications",
+        "submitButton": "Request Demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Continuous Monitoring",
+          "description": "Real-time tracking of ICT risks and compliance status"
+        },
+        "riskAssessment": {
+          "title": "Risk Assessment",
+          "description": "Ongoing identification and evaluation of ICT risks"
+        },
+        "incidentReporting": {
+          "title": "Incident Reporting",
+          "description": "Automated incident classification and regulatory reporting"
+        },
+        "thirdPartyOversight": {
+          "title": "Third-Party Oversight",
+          "description": "Continuous monitoring of ICT service provider risks"
+        }
+      },
+      "statusBadge": "Always Compliance-Ready"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about DORA",
+      "items": [
+        {
+          "question": "What is DORA?",
+          "answer": "DORA (Digital Operational Resilience Act) is an EU regulation that establishes uniform requirements for the security of network and information systems of companies and organizations operating in the financial sector. It aims to ensure financial entities can withstand, respond to, and recover from ICT-related disruptions."
+        },
+        {
+          "question": "Who does DORA apply to?",
+          "answer": "DORA applies to a wide range of financial entities including banks, insurance companies, investment firms, payment institutions, crypto-asset service providers, and ICT third-party service providers that serve the financial sector."
+        },
+        {
+          "question": "When did DORA come into effect?",
+          "answer": "DORA entered into force on January 16, 2023, with a 24-month implementation period. Full enforcement began on January 17, 2025, meaning all in-scope entities must now comply with DORA requirements."
+        },
+        {
+          "question": "What are the penalties for DORA non-compliance?",
+          "answer": "Penalties for DORA non-compliance can be significant, including fines of up to 10 million euros or 5% of annual turnover for entities, and up to 1 million euros for individuals. Regulators can also impose operational restrictions."
+        },
+        {
+          "question": "How does Quantifier help with DORA compliance?",
+          "answer": "Quantifier automates key DORA requirements including ICT risk management, incident reporting, third-party risk oversight, and resilience testing. Our AI-powered platform provides continuous monitoring, automated evidence collection, and streamlined regulatory reporting."
+        },
+        {
+          "question": "What are the 5 pillars of DORA?",
+          "answer": "The 5 pillars of DORA are: ICT Risk Management, ICT-Related Incident Reporting, Digital Operational Resilience Testing, ICT Third-Party Risk Management, and Information Sharing Arrangements."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Ready to Achieve DORA Compliance?",
+      "description": "Join leading financial institutions that trust Quantifier for DORA compliance automation.",
       "bookDemo": "Book a Demo",
-      "explorePlans": "Explore Plans"
+      "seePricing": "See Pricing"
     }
   },
   "nistPage": {
