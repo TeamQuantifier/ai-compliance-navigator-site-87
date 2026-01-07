@@ -646,6 +646,7 @@ const Dora = () => {
               question: item.question,
               answer: item.answer,
             }))}
+            pageUrl={`https://quantifier.io/${currentLocale}/frameworks/information-security/dora`}
           />
         </section>
 
@@ -664,7 +665,7 @@ const Dora = () => {
                 size="lg"
                 className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold"
               >
-                <Link to={`/${language}/contact`}>
+                <Link to={`/${currentLocale}/contact`}>
                   {t("doraPage.finalCta.bookDemo")}
                 </Link>
               </Button>
@@ -674,7 +675,7 @@ const Dora = () => {
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10"
               >
-                <Link to={`/${language}/plans`}>
+                <Link to={`/${currentLocale}/plans`}>
                   {t("doraPage.finalCta.seePricing")}
                 </Link>
               </Button>
