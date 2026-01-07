@@ -13,6 +13,18 @@ import FAQSection from '@/components/seo/FAQSection';
 const NisII = () => {
   const { t, currentLocale } = useLanguage();
   
+  // Helper to safely get array from translations
+  const getArrayTranslation = (key: string): string[] => {
+    const result = t(key, { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  };
+  
+  // Helper to safely get object array from translations
+  const getObjectArrayTranslation = <T,>(key: string): T[] => {
+    const result = t(key, { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  };
+  
   const ganttTasks = [{
     id: 'onboarding',
     name: t('nisIIPage.aiModule.ganttChart.tasks.onboarding'),
@@ -198,7 +210,7 @@ const NisII = () => {
               </CardHeader>
               <CardContent>
                 <ul className="text-slate-600 space-y-2">
-                  {(t('nisIIPage.understanding.whoMustComply.items', { returnObjects: true }) as string[]).map((item, index) => (
+                  {getArrayTranslation('nisIIPage.understanding.whoMustComply.items').map((item, index) => (
                     <li key={index}>• {item}</li>
                   ))}
                 </ul>
@@ -214,7 +226,7 @@ const NisII = () => {
               </CardHeader>
               <CardContent>
                 <ul className="text-slate-600 space-y-2">
-                  {(t('nisIIPage.understanding.keyRequirements.items', { returnObjects: true }) as string[]).map((item, index) => (
+                  {getArrayTranslation('nisIIPage.understanding.keyRequirements.items').map((item, index) => (
                     <li key={index}>• {item}</li>
                   ))}
                 </ul>
@@ -242,7 +254,7 @@ const NisII = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {(t('nisIIPage.whyManagement.points', { returnObjects: true }) as Array<{title: string, description: string, icon: string}>).map((point, index) => {
+                {getObjectArrayTranslation<{title: string, description: string}>('nisIIPage.whyManagement.points').map((point, index) => {
                   const icons = [Gavel, AlertTriangle, TrendingUp, Shield];
                   const IconComponent = icons[index % icons.length];
                   const colors = ['from-red-500 to-red-600', 'from-orange-500 to-orange-600', 'from-yellow-500 to-yellow-600', 'from-green-500 to-green-600'];
@@ -414,7 +426,7 @@ const NisII = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    {t('nisIIPage.resultAreas.riskAssessment.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {getArrayTranslation('nisIIPage.resultAreas.riskAssessment.items').map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         {item}
@@ -438,7 +450,7 @@ const NisII = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    {t('nisIIPage.resultAreas.crisisManagement.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {getArrayTranslation('nisIIPage.resultAreas.crisisManagement.items').map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         {item}
@@ -462,7 +474,7 @@ const NisII = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    {t('nisIIPage.resultAreas.incidents.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {getArrayTranslation('nisIIPage.resultAreas.incidents.items').map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         {item}
@@ -486,7 +498,7 @@ const NisII = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    {t('nisIIPage.resultAreas.employeesTraining.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {getArrayTranslation('nisIIPage.resultAreas.employeesTraining.items').map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         {item}
@@ -510,7 +522,7 @@ const NisII = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    {t('nisIIPage.resultAreas.suppliers.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {getArrayTranslation('nisIIPage.resultAreas.suppliers.items').map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         {item}
@@ -534,7 +546,7 @@ const NisII = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-slate-600 space-y-3">
-                    {t('nisIIPage.resultAreas.assets.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {getArrayTranslation('nisIIPage.resultAreas.assets.items').map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         {item}
