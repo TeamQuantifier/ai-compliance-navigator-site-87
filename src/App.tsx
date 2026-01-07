@@ -53,10 +53,6 @@ import BlogPost from "./pages/blog/BlogPost";
 import StoryDetail from "./pages/blog/StoryDetail";
 
 // SEO Landing pages
-import Soc2Automation from "./pages/seo-landing/Soc2Automation";
-import Iso27001Landing from "./pages/seo-landing/Iso27001Landing";
-import GdprCompliance from "./pages/seo-landing/GdprCompliance";
-import Nis2Landing from "./pages/seo-landing/Nis2Landing";
 import GrcPlatform from "./pages/seo-landing/GrcPlatform";
 
 // Admin pages
@@ -128,11 +124,11 @@ const App = () => (
                   <Route path="/:locale/frameworks/information-security/iso-9001" element={<Iso9001 />} />
                   <Route path="/:locale/frameworks/information-security/dora" element={<Dora />} />
               
-                  {/* SEO Landing Pages */}
-                  <Route path="/:locale/soc2-automation" element={<Soc2Automation />} />
-                  <Route path="/:locale/iso27001" element={<Iso27001Landing />} />
-                  <Route path="/:locale/gdpr-compliance" element={<GdprCompliance />} />
-                  <Route path="/:locale/nis2" element={<Nis2Landing />} />
+                  {/* SEO Landing Pages - Redirects to framework pages */}
+                  <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/cybersecurity/soc" replace />} />
+                  <Route path="/:locale/iso27001" element={<Navigate to="frameworks/information-security/iso-27001" replace />} />
+                  <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/data-security" replace />} />
+                  <Route path="/:locale/nis2" element={<Navigate to="frameworks/cybersecurity/nis-ii" replace />} />
                   <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
 
                   {/* Blog routes */}
