@@ -3668,5 +3668,233 @@
         "description": "Doświadcz przyszłości GRC dzięki natywnej dla AI platformie Quantifier."
       }
     }
+  },
+  "gdprPage": {
+    "seo": {
+      "title": "Oprogramowanie do zgodności z RODO | Automatyczna ochrona danych | Quantifier",
+      "description": "Zautomatyzuj zgodność z RODO dzięki Quantifier. Zarządzaj zgodami, żądaniami DSAR, mapowaniem danych, powiadomieniami o naruszeniach i DPIA z automatyzacją opartą na AI."
+    },
+    "hero": {
+      "badge": "Zgodność z RODO",
+      "title": "Zgodność z RODO uproszczona dzięki AI",
+      "subtitle": "Automatyzuj zgodność z ochroną danych dzięki inteligentnemu zarządzaniu zgodami, przetwarzaniu DSAR i ciągłemu monitorowaniu. Chroń dane obywateli UE i unikaj kosztownych kar.",
+      "button": "Rozpocznij swoją podróż z RODO",
+      "formTitle": "Umów demo",
+      "nameLabel": "Twoje imię",
+      "emailLabel": "Email służbowy",
+      "marketingConsent": "Wyrażam zgodę na otrzymywanie komunikatów marketingowych",
+      "requestDemoButton": "Rozpocznij"
+    },
+    "whyCritical": {
+      "title": "Dlaczego zgodność z RODO jest kluczowa",
+      "subtitle": "Ogólne Rozporządzenie o Ochronie Danych zmieniło sposób, w jaki firmy przetwarzają dane osobowe, z poważnymi karami za niezgodność.",
+      "cards": {
+        "fines": {
+          "stat": "4%",
+          "title": "Maksymalna kara",
+          "description": "Do 4% rocznego globalnego obrotu lub 20 milionów euro, w zależności od tego, co jest wyższe"
+        },
+        "complexity": {
+          "stat": "99",
+          "title": "Artykułów",
+          "description": "99 artykułów obejmujących złożone wymagania ochrony danych do wdrożenia"
+        },
+        "scope": {
+          "stat": "500M+",
+          "title": "Obywateli UE",
+          "description": "Dotyczy każdej firmy przetwarzającej dane rezydentów UE"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Zrozumienie RODO",
+      "description": "Ogólne Rozporządzenie o Ochronie Danych to najbardziej kompleksowe prawo o prywatności danych na świecie, dające jednostkom kontrolę nad ich danymi osobowymi.",
+      "whatIs": {
+        "title": "Czym jest RODO?",
+        "description": "RODO to rozporządzenie UE, które ujednolica prawo o ochronie danych we wszystkich państwach członkowskich. Ma zastosowanie do każdej organizacji, która przetwarza dane osobowe rezydentów UE, niezależnie od lokalizacji organizacji."
+      },
+      "whoItApplies": {
+        "title": "Kto musi przestrzegać?",
+        "description": "Każda organizacja, która zbiera, przechowuje lub przetwarza dane osobowe rezydentów UE, musi przestrzegać RODO, w tym firmy spoza UE, które oferują towary lub usługi obywatelom UE."
+      },
+      "dataSubjectRights": {
+        "title": "8 praw osób, których dane dotyczą",
+        "items": [
+          "Prawo do informacji",
+          "Prawo dostępu",
+          "Prawo do sprostowania",
+          "Prawo do usunięcia (prawo do bycia zapomnianym)",
+          "Prawo do ograniczenia przetwarzania",
+          "Prawo do przenoszenia danych",
+          "Prawo do sprzeciwu",
+          "Prawa związane z automatycznym podejmowaniem decyzji"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Dla kadry zarządzającej",
+      "title": "Dlaczego RODO powinno być priorytetem zarządu",
+      "description": "Zgodność z RODO to nie tylko wymóg prawny — to strategiczny imperatyw biznesowy, który wpływa na zaufanie klientów, pozycję konkurencyjną i ryzyko finansowe.",
+      "points": {
+        "liability": {
+          "title": "Odpowiedzialność osobista",
+          "description": "Kadra kierownicza może być osobiście odpowiedzialna za naruszenia ochrony danych"
+        },
+        "trust": {
+          "title": "Zaufanie klientów",
+          "description": "70% konsumentów twierdzi, że przestałoby korzystać z usług firmy po naruszeniu danych"
+        },
+        "advantage": {
+          "title": "Przewaga konkurencyjna",
+          "description": "Firmy stawiające na prywatność zyskują udział w rynku, gdy konsumenci priorytetowo traktują ochronę danych"
+        },
+        "fines": {
+          "title": "Unikaj ogromnych kar",
+          "description": "Meta została ukarana karą 1,2 miliarda euro w 2023 roku — największą karą RODO w historii"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomaga z RODO",
+      "description": "Nasza platforma oparta na AI automatyzuje najbardziej złożone aspekty zgodności z RODO, od mapowania danych po powiadomienia o naruszeniach.",
+      "features": {
+        "dataMapping": {
+          "title": "Mapowanie i inwentaryzacja danych",
+          "description": "Automatycznie odkrywaj i mapuj przepływy danych osobowych w całej organizacji dzięki klasyfikacji danych opartej na AI."
+        },
+        "consentManagement": {
+          "title": "Zarządzanie zgodami",
+          "description": "Śledź i zarządzaj zgodami we wszystkich punktach kontaktu z granularnymi centrami preferencji i ścieżkami audytu."
+        },
+        "dsarAutomation": {
+          "title": "Automatyzacja DSAR",
+          "description": "Automatyzuj żądania dostępu do danych z inteligentnym wykrywaniem danych i generowaniem odpowiedzi."
+        },
+        "dpiaTemplates": {
+          "title": "Szablony DPIA",
+          "description": "Gotowe szablony oceny skutków dla ochrony danych z prowadzonymi przepływami pracy dla przetwarzania wysokiego ryzyka."
+        },
+        "breachManagement": {
+          "title": "Zarządzanie naruszeniami",
+          "description": "72-godzinny przepływ pracy powiadamiania o naruszeniach z automatyczną oceną wpływu i raportowaniem do organów."
+        },
+        "auditReadiness": {
+          "title": "Gotowość do audytu",
+          "description": "Ciągłe zbieranie dowodów i dokumentacji dla inspekcji organów nadzorczych."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "Napędzane AI",
+      "title": "Natywny moduł zgodności z RODO oparty na AI",
+      "description": "Nasz AI compliance officer ciągle monitoruje Twoje działania związane z przetwarzaniem danych, identyfikuje luki, sugeruje działania naprawcze i automatyzuje rutynowe zadania zgodności, aby Twój zespół mógł skupić się na strategicznych inicjatywach prywatności."
+    },
+    "results": {
+      "title": "Udowodnione wyniki zgodności z RODO",
+      "description": "Organizacje korzystające z Quantifier osiągają szybszą zgodność i znaczące usprawnienia operacyjne.",
+      "metrics": {
+        "coverage": {
+          "value": "99",
+          "label": "Pokrytych artykułów RODO"
+        },
+        "dsar": {
+          "value": "72h",
+          "label": "Średni czas odpowiedzi DSAR"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Ciągły monitoring"
+        },
+        "reduction": {
+          "value": "80%",
+          "label": "Redukcja pracy ręcznej"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Stworzone dla liderów ochrony danych",
+      "subtitle": "Quantifier służy profesjonalistom prywatności i zgodności we wszystkich branżach.",
+      "personas": {
+        "dpo": {
+          "title": "Inspektor Ochrony Danych",
+          "description": "Pełny nadzór nad zgodnością z RODO z praktycznymi spostrzeżeniami i automatycznym monitorowaniem"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Dopasuj bezpieczeństwo danych do wymagań RODO i zarządzaj reagowaniem na naruszenia danych"
+        },
+        "ceo": {
+          "title": "CEO / Zarząd",
+          "description": "Strategiczna widoczność ryzyk prywatności i stanu zgodności"
+        },
+        "legal": {
+          "title": "Radca prawny",
+          "description": "Zarządzaj dokumentacją podstaw prawnych i korespondencją regulacyjną"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje RODO",
+      "description": "Utrzymuj bieżącą zgodność z automatycznym monitorowaniem, śledzeniem zgód i możliwościami reagowania na naruszenia.",
+      "statusBadge": "Zawsze zgodny",
+      "form": {
+        "nameLabel": "Twoje imię",
+        "emailLabel": "Email służbowy",
+        "button": "Zaplanuj demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitoring w czasie rzeczywistym",
+          "description": "Ciągłe śledzenie działań związanych z przetwarzaniem danych i stanu zgodności"
+        },
+        "consentTracking": {
+          "title": "Śledzenie zgód",
+          "description": "Monitoruj ważność zgód i zarządzaj zmianami preferencji automatycznie"
+        },
+        "dsarProcessing": {
+          "title": "Przetwarzanie DSAR",
+          "description": "Usprawniony przepływ pracy do obsługi żądań osób, których dane dotyczą, w terminach"
+        },
+        "breachNotification": {
+          "title": "Powiadomienie o naruszeniu",
+          "description": "Automatyczny 72-godzinny przepływ pracy powiadamiania z oceną wpływu"
+        }
+      }
+    },
+    "faq": {
+      "title": "Często zadawane pytania o RODO",
+      "items": [
+        {
+          "question": "Czym jest RODO?",
+          "answer": "Ogólne Rozporządzenie o Ochronie Danych (RODO) to kompleksowe prawo UE o ochronie danych, które daje jednostkom kontrolę nad ich danymi osobowymi. Ma zastosowanie do każdej organizacji przetwarzającej dane osobowe rezydentów UE, niezależnie od siedziby organizacji."
+        },
+        {
+          "question": "Kogo dotyczy RODO?",
+          "answer": "RODO dotyczy każdej organizacji, która zbiera, przetwarza lub przechowuje dane osobowe rezydentów UE. Obejmuje to firmy z siedzibą poza UE, jeśli oferują towary lub usługi obywatelom UE lub monitorują ich zachowanie."
+        },
+        {
+          "question": "Jakie są kary za niezgodność z RODO?",
+          "answer": "Naruszenia RODO mogą skutkować karami do 20 milionów euro lub 4% rocznego globalnego obrotu, w zależności od tego, co jest wyższe. Dodatkowo organizacje mogą ponieść straty reputacyjne, postępowania sądowe od osób, których dane dotyczą, oraz ograniczenia regulacyjne."
+        },
+        {
+          "question": "Jakie są prawa osób, których dane dotyczą w ramach RODO?",
+          "answer": "RODO przyznaje jednostkom osiem kluczowych praw: prawo do informacji, prawo dostępu, prawo do sprostowania, prawo do usunięcia, prawo do ograniczenia przetwarzania, prawo do przenoszenia danych, prawo do sprzeciwu oraz prawa związane z automatycznym podejmowaniem decyzji i profilowaniem."
+        },
+        {
+          "question": "Jak Quantifier pomaga w zgodności z RODO?",
+          "answer": "Quantifier automatyzuje kluczowe wymagania RODO, w tym mapowanie danych, zarządzanie zgodami, przetwarzanie DSAR, przepływy pracy DPIA, powiadamianie o naruszeniach i ciągły monitoring zgodności. Nasza platforma oparta na AI redukuje pracę ręczną o 80% i zapewnia spełnienie wszystkich 99 artykułów RODO."
+        },
+        {
+          "question": "Czy RODO dotyczy firm spoza UE?",
+          "answer": "Tak, RODO ma zasięg eksterytorialny. Każda firma na świecie, która oferuje towary lub usługi rezydentom UE lub monitoruje ich zachowanie, musi przestrzegać RODO, niezależnie od lokalizacji firmy."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Rozpocznij swoją podróż zgodności z RODO już dziś",
+      "description": "Dołącz do wiodących organizacji, które powierzają Quantifier automatyzację zgodności z ochroną danych i ochronę danych obywateli UE.",
+      "bookDemo": "Umów demo",
+      "seePricing": "Zobacz cennik"
+    }
   }
 }
