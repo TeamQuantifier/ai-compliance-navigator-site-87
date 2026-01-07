@@ -2395,63 +2395,226 @@
     "title": "ISO 27001",
     "description": "Chroń zasoby informacyjne dzięki uznanemu na całym świecie standardowi ISO 27001 dotyczącemu zarządzania bezpieczeństwem informacji.",
     "hero": {
-      "title": "ISO 27001: Buduj zaufanie poprzez bezpieczeństwo informacji",
-      "subtitle": "Quantifier automatyzuje Twoją podróż z ISO 27001 — od wdrożenia polityk po bieżące audyty — abyś mógł skupić się na tym, co naprawdę ważne: zabezpieczeniu swojego biznesu.",
-      "button": "Umów demo"
+      "badge": "ISO 27001 Bezpieczeństwo Informacji",
+      "title": "Certyfikacja ISO 27001 w prosty sposób",
+      "subtitle": "Quantifier automatyzuje całą Twoją podróż z ISO 27001 — od oceny ryzyka po certyfikację — abyś mógł skupić się na bezpiecznym rozwoju biznesu.",
+      "formTitle": "Zamów demo",
+      "nameLabel": "Imię i nazwisko",
+      "namePlaceholder": "Wprowadź swoje imię i nazwisko",
+      "emailLabel": "Adres e-mail",
+      "emailPlaceholder": "Wprowadź swój adres e-mail",
+      "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej i aktualizacji dotyczących rozwiązań zgodności z ISO 27001",
+      "requestDemoButton": "Zamów demo"
     },
-    "whatIs": {
-      "title": "Czym jest ISO 27001?",
-      "description": "ISO 27001 to międzynarodowy standard dla systemów zarządzania bezpieczeństwem informacji (ISMS). Zapewnia systematyczne podejście do zarządzania wrażliwymi informacjami firmowymi, gwarantując ich bezpieczeństwo. ISO 27001 pomaga organizacjom identyfikować, zarządzać i redukować ryzyka związane z bezpieczeństwem informacji.",
-      "keyRequirements": {
-        "title": "Kluczowe wymagania",
-        "items": [
-          "Ocena i zarządzanie ryzykiem",
-          "Dokumentacja polityki bezpieczeństwa",
-          "114 kontroli bezpieczeństwa w 14 domenach",
-          "Ciągłe monitorowanie i doskonalenie"
-        ]
-      },
-      "benefits": {
-        "title": "Korzyści z certyfikacji",
-        "items": [
-          "Zwiększone zaufanie klientów i partnerów",
-          "Przewaga konkurencyjna na rynku",
-          "Lepsze zarządzanie ryzykiem i mniej incydentów",
-          "Zgodność prawna i regulacyjna"
-        ]
-      }
-    },
-    "howQuantifierHelps": {
-      "title": "Jak Quantifier automatyzuje zgodność z ISO 27001",
-      "dashboard": {
-        "title": "Panel zgodności ISO 27001 oparty na AI",
-        "description": "Monitoruj zgodność Twojej organizacji z ISO 27001 za pomocą naszego intuicyjnego panelu opartego na AI."
-      },
-      "features": {
-        "riskManagement": {
-          "title": "Automatyczne zarządzanie ryzykiem",
-          "description": "Nasze AI identyfikuje, ocenia i redukuje ryzyka bezpieczeństwa informacji w czasie rzeczywistym, ciągle aktualizując rejestr ryzyka."
+    "whyImportant": {
+      "title": "Dlaczego ISO 27001 jest ważne",
+      "subtitle": "Certyfikacja bezpieczeństwa informacji nie jest już opcjonalna — to biznesowa konieczność",
+      "cards": {
+        "breachCost": {
+          "title": "Średni koszt naruszenia",
+          "stat": "4,45M $",
+          "description": "Średni koszt naruszenia danych w 2023 roku. ISO 27001 pomaga zapobiegać kosztownym incydentom."
         },
-        "evidenceCollection": {
-          "title": "Zbieranie dowodów",
-          "description": "Automatycznie zbieraj i organizuj niezbędną dokumentację dla zgodności z ISO 27001, zapewniając stałą gotowość audytową."
+        "clientDemand": {
+          "title": "Wymagania klientów",
+          "stat": "80%+",
+          "description": "Klienci korporacyjni wymagają teraz certyfikacji ISO 27001 przed podpisaniem umów z dostawcami."
         },
-        "complianceMonitoring": {
-          "title": "Monitorowanie zgodności",
-          "description": "Śledź status zgodności z ISO 27001 w czasie rzeczywistym dzięki kompleksowym panelom i automatycznym alertom o potencjalnych problemach."
+        "timeline": {
+          "title": "Typowy czas wdrożenia",
+          "stat": "6-12 mies.",
+          "description": "Średni czas na certyfikację bez automatyzacji — Quantifier znacząco to skraca."
         }
       }
     },
-    "cta": {
-      "title": "Gotowy na uproszczenie zgodności z ISO 27001?",
-      "description": "Dołącz do organizacji, które ufają Quantifier w automatyzacji zgodności z ISO 27001.",
-      "bookDemo": "Umów demo",
-      "explorePlans": "Zobacz plany"
+    "understanding": {
+      "title": "Zrozumienie ISO 27001",
+      "description": "Międzynarodowy standard ustanawiania, wdrażania, utrzymywania i ciągłego doskonalenia Systemu Zarządzania Bezpieczeństwem Informacji (ISMS).",
+      "whatIs": {
+        "title": "Czym jest ISO 27001?",
+        "description": "ISO 27001 to globalnie uznany standard zarządzania bezpieczeństwem informacji. Zapewnia systematyczne ramy ochrony wrażliwych danych, zarządzania ryzykiem i demonstrowania zaangażowania w bezpieczeństwo."
+      },
+      "whoMustComply": {
+        "title": "Kto powinien wdrożyć?",
+        "items": [
+          "Organizacje przetwarzające wrażliwe dane klientów",
+          "Firmy pozyskujące klientów korporacyjnych",
+          "Dostawcy SaaS i technologii",
+          "Sektory zdrowia i finansów",
+          "Kontrahenci rządowi"
+        ]
+      },
+      "keyRequirements": {
+        "title": "Kluczowe wymagania",
+        "items": [
+          "Metodologia oceny i postępowania z ryzykiem",
+          "Ramy polityki bezpieczeństwa informacji",
+          "93 kontrole w 4 tematach (Załącznik A)",
+          "Audyt wewnętrzny i przegląd zarządu",
+          "Proces ciągłego doskonalenia"
+        ]
+      }
     },
-    "relatedSolution": {
-      "title": "Szukasz kompleksowej automatyzacji ISO 27001?",
-      "description": "Poznaj naszą dedykowaną stronę ISO 27001 ze szczegółowymi funkcjami wdrożenia ISMS.",
-      "button": "Poznaj rozwiązanie ISO 27001"
+    "whyLeadership": {
+      "badge": "Odpowiedzialność kierownictwa",
+      "title": "Dlaczego ISO 27001 ma znaczenie dla Twojego biznesu",
+      "description": "Certyfikacja ISO 27001 demonstruje klientom, partnerom i regulatorom, że traktujesz bezpieczeństwo informacji poważnie.",
+      "points": [
+        {
+          "title": "Przewaga konkurencyjna",
+          "description": "Wyróżnij się w przetargach i procesach sprzedaży demonstrując światowej klasy praktyki bezpieczeństwa"
+        },
+        {
+          "title": "Zgodność regulacyjna",
+          "description": "ISO 27001 pomaga spełnić wymagania RODO, HIPAA, SOC 2 i innych standardów"
+        },
+        {
+          "title": "Redukcja ryzyka",
+          "description": "Systematyczne zarządzanie ryzykiem zmniejsza prawdopodobieństwo i wpływ incydentów bezpieczeństwa"
+        },
+        {
+          "title": "Zaufanie klientów",
+          "description": "Certyfikacja buduje zaufanie klientów, którzy powierzają Ci swoje wrażliwe dane"
+        }
+      ]
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier automatyzuje ISO 27001",
+      "description": "Nasza platforma oparta na AI przejmuje ciężką pracę wdrażania i utrzymywania ISMS",
+      "features": {
+        "riskAssessment": {
+          "title": "Ocena i postępowanie z ryzykiem",
+          "description": "Identyfikacja ryzyka, scoring i planowanie postępowania oparte na AI z automatyczną aktualizacją rejestru ryzyka"
+        },
+        "policyManagement": {
+          "title": "Zarządzanie politykami i dokumentami",
+          "description": "Gotowe szablony polityk, kontrola wersji i automatyczne cykle przeglądu całej dokumentacji ISMS"
+        },
+        "assetInventory": {
+          "title": "Inwentaryzacja aktywów",
+          "description": "Kompleksowe odkrywanie i klasyfikacja aktywów z automatycznym mapowaniem wymagań bezpieczeństwa"
+        },
+        "incidentManagement": {
+          "title": "Zarządzanie incydentami",
+          "description": "Strukturalne workflow reagowania na incydenty z zbieraniem dowodów i dokumentacją wniosków"
+        },
+        "internalAudit": {
+          "title": "Wsparcie audytu wewnętrznego",
+          "description": "Automatyczne planowanie audytów, zbieranie dowodów i śledzenie niezgodności"
+        },
+        "certificationReadiness": {
+          "title": "Gotowość do certyfikacji",
+          "description": "Dashboard analizy luk pokazujący dokładnie co jest potrzebne do udanej certyfikacji"
+        }
+      }
+    },
+    "aiModule": {
+      "title": "Moduł ISMS oparty na AI",
+      "description": "Nasze AI ciągle monitoruje Twój poziom bezpieczeństwa, identyfikuje luki i rekomenduje usprawnienia — zapewniając gotowość audytową 24/7.",
+      "badge": "Napędzane przez Quantifier AI"
+    },
+    "results": {
+      "title": "Co możesz osiągnąć",
+      "description": "Organizacje używające Quantifier dla ISO 27001 widzą wymierne usprawnienia",
+      "metrics": {
+        "coverage": "100%",
+        "coverageLabel": "Pokrycie kontroli",
+        "controls": "93",
+        "controlsLabel": "Kontrole Załącznika A",
+        "monitoring": "24/7",
+        "monitoringLabel": "Ciągły monitoring",
+        "reduction": "70%",
+        "reductionLabel": "Redukcja czasu"
+      }
+    },
+    "forWhom": {
+      "title": "Kto skorzysta z Quantifier dla ISO 27001",
+      "subtitle": "Nasza platforma obsługuje wszystkich interesariuszy w Twojej podróży ISMS",
+      "personas": {
+        "ciso": {
+          "title": "CISO / Lider bezpieczeństwa",
+          "description": "Pełna widoczność poziomu bezpieczeństwa, statusu ryzyka i luk zgodności z dashboardami dla kadry zarządzającej"
+        },
+        "ceo": {
+          "title": "CEO / Zarząd",
+          "description": "Raportowanie na poziomie zarządu, widoczność ROI i pewność, że inwestycja w bezpieczeństwo jest efektywna"
+        },
+        "itManager": {
+          "title": "IT Manager",
+          "description": "Uproszczone wdrażanie kontroli, zarządzanie aktywami i zbieranie technicznych dowodów"
+        },
+        "complianceOfficer": {
+          "title": "Compliance Officer",
+          "description": "Ścieżki audytu, zarządzanie politykami, śledzenie certyfikacji i zgodność regulacyjna"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje ISMS",
+      "description": "Po wdrożeniu, nasi agenci AI utrzymują Twój ISMS z ciągłym monitoringiem, aktualizacjami ryzyka i przygotowaniem do audytu — zapewniając, że Twoja certyfikacja nigdy nie wygaśnie.",
+      "form": {
+        "title": "Zamów demo",
+        "nameLabel": "Imię i nazwisko",
+        "namePlaceholder": "Wprowadź swoje imię i nazwisko",
+        "emailLabel": "Adres e-mail",
+        "emailPlaceholder": "Wprowadź swój adres e-mail",
+        "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej i aktualizacji dotyczących rozwiązań ISO 27001",
+        "submitButton": "Zamów demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Ciągły monitoring",
+          "description": "Nadzór 24/7 nad wszystkimi kontrolami ISMS i parametrami bezpieczeństwa"
+        },
+        "gapAnalysis": {
+          "title": "Analiza luk",
+          "description": "Identyfikacja luk zgodności w czasie rzeczywistym z wytycznymi naprawczymi"
+        },
+        "reporting": {
+          "title": "Raportowanie i dashboardy",
+          "description": "Automatyczne raporty zgodności dla zarządu i audytorów"
+        },
+        "auditTrail": {
+          "title": "Ścieżka audytu",
+          "description": "Kompletna dokumentacja wszystkich działań i zmian ISMS"
+        }
+      },
+      "statusBadge": "Zawsze zgodny • Zawsze bezpieczny"
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": [
+        {
+          "question": "Czym jest ISO 27001?",
+          "answer": "ISO 27001 to międzynarodowy standard dla systemów zarządzania bezpieczeństwem informacji (ISMS). Zapewnia systematyczne podejście do zarządzania wrażliwymi informacjami firmowymi, aby pozostały bezpieczne, w tym polityki, procesy i kontrole technologiczne."
+        },
+        {
+          "question": "Kto potrzebuje certyfikacji ISO 27001?",
+          "answer": "Każda organizacja przetwarzająca wrażliwe dane powinna rozważyć ISO 27001. Jest szczególnie ważna dla firm technologicznych, dostawców SaaS, organizacji ochrony zdrowia, usług finansowych i każdej firmy obsługującej klientów korporacyjnych wymagających certyfikacji bezpieczeństwa."
+        },
+        {
+          "question": "Jak długo trwa certyfikacja?",
+          "answer": "Tradycyjne wdrożenie ISO 27001 trwa 6-12 miesięcy. Z automatyczną platformą Quantifier organizacje mogą znacząco skrócić ten czas, zapewniając kompleksowe pokrycie wszystkich 93 kontroli Załącznika A."
+        },
+        {
+          "question": "Jakie są koszty?",
+          "answer": "Koszty obejmują platformę/konsultantów, czas personelu i opłaty jednostki certyfikującej. Quantifier pomaga obniżyć całkowity koszt posiadania automatyzując ręczne zadania i redukując potrzebę drogich konsultantów."
+        },
+        {
+          "question": "Jak Quantifier pomaga w certyfikacji?",
+          "answer": "Quantifier automatyzuje ocenę ryzyka, tworzenie polityk, zbieranie dowodów i analizę luk. Nasze AI ciągle monitoruje Twój ISMS i zapewnia, że jesteś zawsze gotowy na audyt, dramatycznie redukując wysiłek wymagany do początkowej certyfikacji i bieżącego utrzymania."
+        },
+        {
+          "question": "Czy ISO 27001 jest obowiązkowe?",
+          "answer": "ISO 27001 jest dobrowolne, ale coraz częściej wymagane przez klientów korporacyjnych, regulatorów i partnerów. Wiele kontraktów wymaga teraz certyfikacji, a standard pomaga wykazać zgodność z RODO, HIPAA i innymi regulacjami."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Gotowy uprościć certyfikację ISO 27001?",
+      "description": "Dołącz do wiodących organizacji, które ufają Quantifier we wdrożeniu ISMS. Uzyskaj certyfikację szybciej dzięki automatyzacji opartej na AI.",
+      "bookDemo": "Zamów demo",
+      "talkExpert": "Zobacz cennik"
     }
   },
   "iso9001Page": {
