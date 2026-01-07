@@ -2228,109 +2228,226 @@
     "title": "Zgodność SOC 1 i SOC 2",
     "description": "Zademonstruj zaufanie swoim klientom, inwestorom i partnerom dzięki automatycznej zgodności SOC.",
     "hero": {
-      "title": "Zgodność SOC, która działa sama",
-      "subtitle": "Pozostań gotowy na audyt dzięki ciągłej automatyzacji zgodności SOC 1 i SOC 2.",
-      "button": "Umów demo",
-      "dashboard": {
-        "title": "Dashboard SOC Quantifier",
-        "readinessTitle": "Przegląd gotowości SOC 2",
-        "completeLabel": "Ukończone",
-        "controlsStatus": "Status kontroli",
-        "evidenceItems": "Elementy dowodowe",
-        "upToDate": "Na bieżąco",
-        "dueTasks": "Zadania do wykonania",
-        "task1": "Przejrzyj ocenę ryzyka bezpieczeństwa",
-        "task2": "Zaktualizuj logi kontroli dostępu",
-        "days": "dni",
-        "openDashboard": "Otwórz dashboard →"
-      }
+      "badge": "Zgodność SOC 2",
+      "title": "Certyfikacja SOC 2 bez komplikacji",
+      "subtitle": "Quantifier automatyzuje całą ścieżkę SOC 2—od zbierania dowodów do audytu—abyś mógł budować zaufanie z klientami enterprise.",
+      "formTitle": "Zamów demo",
+      "nameLabel": "Imię i nazwisko",
+      "namePlaceholder": "Wpisz swoje imię",
+      "emailLabel": "Email służbowy",
+      "emailPlaceholder": "Wpisz swój email",
+      "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej",
+      "requestDemoButton": "Zamów demo"
     },
-    "mainContent": {
-      "badge": "Zgodność SOC 1 i SOC 2",
-      "title": "Zademonstruj zaufanie swoim interesariuszom",
-      "description": "Nasza platforma zapewnia ciągłą gotowość dla SOC 1 i SOC 2, obejmując kontrole związane z obsługą danych, prywatnością, dostępnością i nie tylko.",
-      "benefitsTitle": "Kluczowe korzyści:",
-      "benefits": [
-        "Automatyczne przypisywanie zadań i zbieranie dowodów",
-        "Monitorowanie kontroli zgodnie z kryteriami Trust Services",
-        "Dashboardy gotowości audytowej w czasie rzeczywistym",
-        "Bezpieczne mapowanie danych do kontroli"
-      ],
-      "button": "Zaplanuj ocenę gotowości SOC",
-      "trustServices": {
-        "title": "Pokrycie kryteriów Trust Services SOC 2",
-        "security": {
-          "title": "Bezpieczeństwo:",
-          "description": "Ochrona przed nieautoryzowanym dostępem"
+    "whyImportant": {
+      "title": "Dlaczego SOC 2 jest krytyczny dla biznesu",
+      "subtitle": "Certyfikacja SOC 2 stała się złotym standardem demonstrowania bezpieczeństwa i zaufania dla klientów enterprise.",
+      "cards": {
+        "clients": {
+          "stat": "82%",
+          "title": "Klienci Enterprise",
+          "description": "Klienci enterprise wymagają certyfikacji SOC 2 przed podpisaniem umów z dostawcami SaaS"
         },
-        "availability": {
-          "title": "Dostępność:",
-          "description": "Systemy są dostępne do działania i użytkowania"
+        "timeline": {
+          "stat": "6 miesięcy",
+          "title": "Średni czas",
+          "description": "Typowy czas uzyskania certyfikacji SOC 2 bez narzędzi automatyzacji"
         },
-        "processingIntegrity": {
-          "title": "Integralność przetwarzania:",
-          "description": "Przetwarzanie systemowe jest kompletne, dokładne i autoryzowane"
-        },
-        "confidentiality": {
-          "title": "Poufność:",
-          "description": "Informacje oznaczone jako poufne są chronione"
-        },
-        "privacy": {
-          "title": "Prywatność:",
-          "description": "Informacje osobiste są zbierane, używane i przechowywane odpowiednio"
+        "breach": {
+          "stat": "4,35M$",
+          "title": "Koszt naruszenia",
+          "description": "Średni koszt naruszenia danych dla organizacji bez odpowiednich kontroli bezpieczeństwa"
         }
       }
     },
-    "platformScreenshots": {
-      "title": "Dashboard zgodności SOC",
-      "description": "Uzyskaj kompleksowy widok statusu zgodności SOC dzięki naszemu interaktywnemu dashboardowi.",
-      "evidenceCollection": {
-        "title": "Zbieranie dowodów",
-        "badge": "SOC 2",
-        "verified": "Zweryfikowane",
-        "pending": "Oczekujące",
-        "accessControl": {
-          "title": "Dowody kontroli dostępu",
-          "controlId": "ID kontroli: CC6.1 - Dostęp do systemów jest ograniczony do autoryzowanych użytkowników"
+    "understanding": {
+      "title": "Zrozumienie SOC 2",
+      "description": "SOC 2 to framework audytowy opracowany przez AICPA dla organizacji usługowych przetwarzających dane klientów.",
+      "whatIs": {
+        "title": "Czym jest SOC 2?",
+        "description": "Raporty SOC 2 Typ I/II weryfikują kontrole organizacji związane z bezpieczeństwem, dostępnością, integralnością przetwarzania, poufnością i prywatnością w oparciu o kryteria Trust Services."
+      },
+      "whoNeeds": {
+        "title": "Kto potrzebuje SOC 2?",
+        "items": [
+          "Firmy SaaS",
+          "Dostawcy usług chmurowych",
+          "Firmy przetwarzające dane",
+          "Dostawcy technologii",
+          "Firmy healthcare tech"
+        ]
+      },
+      "trustCriteria": {
+        "title": "Kryteria Trust Services",
+        "items": [
+          "Bezpieczeństwo (wymagane)",
+          "Dostępność",
+          "Integralność przetwarzania",
+          "Poufność",
+          "Prywatność"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Imperatyw zarządu",
+      "title": "Dlaczego SOC 2 jest ważny dla zarządu",
+      "description": "Certyfikacja SOC 2 demonstruje zaangażowanie w bezpieczeństwo i buduje zaufanie z klientami i partnerami.",
+      "points": [
+        {
+          "title": "Zaufanie klientów",
+          "description": "Certyfikacja SOC 2 buduje zaufanie wśród klientów enterprise i partnerów, którzy potrzebują pewności co do praktyk bezpieczeństwa"
         },
-        "riskAssessment": {
-          "title": "Ocena ryzyka",
-          "controlId": "ID kontroli: CC3.1 - Identyfikacja i łagodzenie ryzyka"
+        {
+          "title": "Przewaga konkurencyjna",
+          "description": "Wyróżnij się na konkurencyjnych rynkach, gdzie certyfikacja bezpieczeństwa jest kluczowym wyróżnikiem w pozyskiwaniu kontraktów enterprise"
         },
-        "securityMonitoring": {
-          "title": "Monitorowanie bezpieczeństwa",
-          "controlId": "ID kontroli: CC7.2 - Incydenty bezpieczeństwa są identyfikowane i naprawiane",
-          "uploadButton": "Prześlij dowód"
+        {
+          "title": "Redukcja ryzyka",
+          "description": "Proaktywne środki bezpieczeństwa zmniejszają prawdopodobieństwo i finansowe skutki naruszeń danych"
+        },
+        {
+          "title": "Szybsze cykle sprzedaży",
+          "description": "Istniejąca certyfikacja SOC 2 przyspiesza sprzedaż enterprise, eliminując tarcia związane z ankietami bezpieczeństwa"
+        }
+      ]
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier przyspiesza zgodność SOC 2",
+      "description": "Nasza platforma napędzana AI automatyzuje zbieranie dowodów, monitoruje kontrole i utrzymuje gotowość audytową przez cały rok.",
+      "features": {
+        "evidenceCollection": {
+          "title": "Automatyczne zbieranie dowodów",
+          "description": "Automatycznie zbieraj i organizuj dowody z infrastruktury chmurowej, dostawców tożsamości i systemów biznesowych"
+        },
+        "controlMonitoring": {
+          "title": "Dashboard monitorowania kontroli",
+          "description": "Widoczność w czasie rzeczywistym statusu kontroli, luk compliance i wyniku gotowości audytowej"
+        },
+        "trustMapping": {
+          "title": "Mapowanie Trust Services",
+          "description": "Automatycznie mapuj kontrole na kryteria Trust Services SOC 2 dla pełnego pokrycia"
+        },
+        "auditTrail": {
+          "title": "Ślad audytowy i dokumentacja",
+          "description": "Kompletna historia dokumentacji i śledzenie zmian dla płynnego przeglądu audytora"
+        },
+        "gapAnalysis": {
+          "title": "Analiza luk",
+          "description": "Identyfikuj luki w kontrolach i otrzymuj rekomendacje działań przed audytorami"
+        },
+        "certificationReadiness": {
+          "title": "Gotowość do certyfikacji",
+          "description": "Wiedz dokładnie, kiedy jesteś gotowy na audyt SOC 2 dzięki naszej ocenie gotowości"
+        }
+      }
+    },
+    "aiModule": {
+      "title": "Moduł SOC 2 natywny dla AI",
+      "description": "Wykorzystaj sztuczną inteligencję do automatyzacji zbierania dowodów, identyfikacji luk w kontrolach i utrzymania ciągłej zgodności przy minimalnym wysiłku manualnym.",
+      "badge": "Automatyzacja SOC 2 napędzana AI"
+    },
+    "results": {
+      "title": "Wyniki po wdrożeniu Quantifier",
+      "description": "Organizacje korzystające z Quantifier osiągają certyfikację SOC 2 szybciej i przy znacznie mniejszym wysiłku manualnym.",
+      "metrics": {
+        "controls": "93%",
+        "controlsLabel": "Pokrycie kontroli",
+        "evidence": "243",
+        "evidenceLabel": "Elementy dowodowe",
+        "monitoring": "24/7",
+        "monitoringLabel": "Ciągły monitoring",
+        "reduction": "70%",
+        "reductionLabel": "Redukcja czasu"
+      }
+    },
+    "forWhom": {
+      "title": "Kto korzysta z naszego rozwiązania SOC 2?",
+      "subtitle": "Nasza platforma jest zaprojektowana dla organizacji szukających efektywnej certyfikacji SOC 2.",
+      "personas": {
+        "ciso": {
+          "title": "CISO",
+          "description": "Kompleksowy nadzór bezpieczeństwa i zarządzanie ryzykiem dla wszystkich kontroli SOC 2"
+        },
+        "cto": {
+          "title": "CTO",
+          "description": "Strategia technologiczna zgodna z wymaganiami compliance bezpieczeństwa"
+        },
+        "compliance": {
+          "title": "Compliance Officer",
+          "description": "Usprawnione zarządzanie zgodnością i przygotowanie do audytu"
+        },
+        "it": {
+          "title": "IT Manager",
+          "description": "Uproszczona implementacja techniczna i monitoring kontroli"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Ciągłe operacje SOC 2",
+      "description": "Utrzymuj gotowość audytową przez cały rok dzięki automatycznemu monitoringowi i zbieraniu dowodów działającemu w tle.",
+      "form": {
+        "title": "Zamów demo",
+        "nameLabel": "Imię i nazwisko",
+        "namePlaceholder": "Wpisz swoje imię",
+        "emailLabel": "Email służbowy",
+        "emailPlaceholder": "Wpisz swój email",
+        "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej",
+        "submitButton": "Zamów demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Ciągły monitoring",
+          "description": "Śledzenie w czasie rzeczywistym wszystkich kontroli SOC 2 i statusu dowodów"
+        },
+        "evidence": {
+          "title": "Automatyzacja dowodów",
+          "description": "Automatyczne zbieranie i organizacja dowodów compliance"
+        },
+        "reporting": {
+          "title": "Raportowanie i dashboardy",
+          "description": "Widoczność compliance na poziomie zarządu i śledzenie postępów"
+        },
+        "auditTrail": {
+          "title": "Ślad audytowy",
+          "description": "Kompletna historia wszystkich aktywności compliance i zmian"
         }
       },
-      "controlMonitoring": {
-        "title": "Monitorowanie kontroli",
-        "badge": "Analityka",
-        "categoriesTitle": "Kategorie Trust Services",
-        "timeOptions": {
-          "last30": "Ostatnie 30 dni",
-          "lastQuarter": "Ostatni kwartał",
-          "yearToDate": "Od początku roku"
+      "statusBadge": "Zawsze gotowy na audyt"
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania o SOC 2",
+      "items": [
+        {
+          "question": "Czym jest SOC 2?",
+          "answer": "SOC 2 to framework audytowy opracowany przez American Institute of CPAs (AICPA), który ocenia kontrole organizacji usługowych związane z bezpieczeństwem, dostępnością, integralnością przetwarzania, poufnością i prywatnością."
         },
-        "categories": {
-          "security": "Bezpieczeństwo",
-          "availability": "Dostępność",
-          "processingIntegrity": "Integralność przetwarzania",
-          "confidentiality": "Poufność",
-          "privacy": "Prywatność"
+        {
+          "question": "Kto potrzebuje certyfikacji SOC 2?",
+          "answer": "Każda organizacja przetwarzająca dane klientów, szczególnie firmy SaaS, dostawcy usług chmurowych, centra danych i dostawcy technologii sprzedający klientom enterprise."
+        },
+        {
+          "question": "Jak długo trwa certyfikacja SOC 2?",
+          "answer": "Z odpowiednim przygotowaniem i narzędziami automatyzacji jak Quantifier, organizacje mogą uzyskać certyfikację SOC 2 w 3-6 miesięcy. Bez automatyzacji trwa to zwykle 6-12 miesięcy."
+        },
+        {
+          "question": "Jakie są 5 kryteriów Trust Services?",
+          "answer": "Kryteria Trust Services to: Bezpieczeństwo (wymagane), Dostępność, Integralność przetwarzania, Poufność i Prywatność. Bezpieczeństwo jest obowiązkowe; pozostałe są wybierane w zależności od oferowanych usług."
+        },
+        {
+          "question": "Jak Quantifier pomaga z SOC 2?",
+          "answer": "Quantifier automatyzuje zbieranie dowodów z systemów, ciągle monitoruje kontrole, identyfikuje luki i utrzymuje gotowość audytową z dashboardami i raportowaniem w czasie rzeczywistym."
+        },
+        {
+          "question": "Czy SOC 2 jest obowiązkowy?",
+          "answer": "Choć nie jest prawnie wymagany, SOC 2 jest często wymogiem kontraktowym dla firm B2B SaaS. Ponad 80% klientów enterprise wymaga certyfikacji SOC 2 przed podpisaniem umów z dostawcami."
         }
-      }
+      ]
     },
-    "cta": {
-      "title": "Gotowy osiągnąć zgodność SOC?",
-      "description": "Dołącz do organizacji, które ufają naszej platformie w automatyzacji ich ścieżki zgodności SOC 1 i SOC 2.",
+    "finalCta": {
+      "title": "Gotowy na certyfikację SOC 2?",
+      "description": "Dołącz do wiodących organizacji, które ufają Quantifier w automatyzacji zgodności SOC 2.",
       "bookDemo": "Umów demo",
-      "watchTour": "Obejrzyj wycieczkę po platformie"
-    },
-    "relatedSolution": {
-      "title": "Chcesz szybszej certyfikacji SOC 2?",
-      "description": "Poznaj nasze dedykowane rozwiązanie automatyzacji SOC 2 z zbieraniem dowodów opartym na AI i ciągłym monitoringiem.",
-      "button": "Poznaj automatyzację SOC 2"
+      "seePricing": "Zobacz cennik"
     }
   },
   "nistPage": {
