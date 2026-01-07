@@ -2151,16 +2151,77 @@
       },
       "statusBadge": "Zawsze zgodny • Zawsze chroniony"
     },
-    "finalCta": {
-      "title": "Przekształć swoją ścieżkę zgodności NIS2",
-      "description": "Dołącz do wiodących europejskich organizacji używających Quantifier do osiągania i utrzymywania zgodności NIS2 bez wysiłku.",
-      "bookDemo": "Umów demo",
-      "talkExpert": "Porozmawiaj z ekspertem NIS2"
+    "whyProblem": {
+      "title": "Dlaczego NIS2 to wyzwanie",
+      "subtitle": "Większość organizacji zmaga się z zgodnością NIS2 z powodu:",
+      "cards": {
+        "penalties": {
+          "title": "Wysokie kary finansowe",
+          "stat": "10M €+",
+          "description": "Grzywny do 10 mln € lub 2% globalnego obrotu, plus odpowiedzialność osobista członków zarządu"
+        },
+        "complexity": {
+          "title": "Złożone wymagania",
+          "stat": "19",
+          "description": "Obszarów bezpieczeństwa do wdrożenia z niejasnymi wytycznymi implementacyjnymi w całej UE"
+        },
+        "timeline": {
+          "title": "Rygorystyczne terminy",
+          "stat": "24h/72h",
+          "description": "Terminy zgłaszania incydentów wymagające zautomatyzowanych workflow i szybkiej reakcji"
+        }
+      }
     },
-    "relatedSolution": {
-      "title": "Szukasz kompletnego rozwiązania zgodności NIS2?",
-      "description": "Poznaj naszą dedykowaną stronę NIS2 ze szczegółowymi funkcjami automatyzacji i mapą drogową zgodności.",
-      "button": "Poznaj rozwiązanie NIS2"
+    "whyManagement": {
+      "badge": "Odpowiedzialność zarządu",
+      "title": "Dlaczego NIS2 jest ważne dla Twojego zarządu",
+      "description": "NIS2 wprowadza bezpośrednią odpowiedzialność kierownictwa firmy. Członkowie zarządu nie mogą już delegować odpowiedzialności za cyberbezpieczeństwo.",
+      "points": [
+        {
+          "title": "Odpowiedzialność osobista",
+          "description": "Członkowie zarządu mogą być pociągnięci do osobistej odpowiedzialności za naruszenia NIS2 i mogą podlegać tymczasowym zakazom"
+        },
+        {
+          "title": "Obowiązkowe raportowanie",
+          "description": "Bezpośredni obowiązek zgłaszania znaczących incydentów organom regulacyjnym w ściśle określonych terminach"
+        },
+        {
+          "title": "Ryzyko reputacyjne",
+          "description": "Publiczne ujawnienie naruszeń i braku zgodności może poważnie wpłynąć na relacje biznesowe i pozycję rynkową"
+        },
+        {
+          "title": "Compliance jako przewaga",
+          "description": "Wykazanie zgodności z NIS2 buduje zaufanie klientów, partnerów i pozycjonuje Cię przed konkurencją"
+        }
+      ]
+    },
+    "forWhom": {
+      "title": "Kto skorzysta z Quantifier dla NIS2",
+      "subtitle": "Nasza platforma obsługuje wszystkich interesariuszy zaangażowanych w ścieżkę zgodności NIS2",
+      "personas": {
+        "ceo": {
+          "title": "Zarząd / CEO",
+          "description": "Pełna widoczność statusu zgodności, ekspozycji na ryzyko i obowiązków regulacyjnych z dashboardami dla kadry zarządzającej"
+        },
+        "ciso": {
+          "title": "CISO / IT Security",
+          "description": "Automatyczny monitoring bezpieczeństwa, workflow incydentów i bezproblemowa integracja z istniejącymi narzędziami"
+        },
+        "compliance": {
+          "title": "Compliance / Dział prawny",
+          "description": "Kompletne ścieżki audytu, zarządzanie politykami, szablony raportowania regulacyjnego i automatyzacja dokumentacji"
+        },
+        "coo": {
+          "title": "COO / Operacje",
+          "description": "Planowanie ciągłości działania, zarządzanie ryzykiem łańcucha dostaw i monitoring odporności operacyjnej"
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Gotowy uprościć zgodność NIS2?",
+      "description": "Dołącz do wiodących europejskich organizacji, które powierzają Quantifier swoją ścieżkę NIS2. Osiągnij zgodność szybciej dzięki automatyzacji opartej na AI.",
+      "bookDemo": "Zamów demo",
+      "talkExpert": "Zobacz cennik"
     }
   },
   "socPage": {

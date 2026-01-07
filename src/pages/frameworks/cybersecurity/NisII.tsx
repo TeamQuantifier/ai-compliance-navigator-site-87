@@ -1,5 +1,5 @@
 import PageTemplate from '@/components/PageTemplate';
-import { Globe, CheckCircle, ArrowRight, Shield, Users, FileText, Monitor, AlertTriangle, Building } from 'lucide-react';
+import { Globe, CheckCircle, ArrowRight, Shield, Users, FileText, Monitor, AlertTriangle, Building, Gavel, Clock, Euro, Briefcase, Scale, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -7,10 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from 'react-router-dom';
 import GanttChart from '@/components/charts/GanttChart';
-import ProcedureFlowMockup from '@/components/mockups/components/ProcedureFlowMockup';
-import NIS2AnalyticsMockup from '@/components/mockups/components/NIS2AnalyticsMockup';
-import ComplianceDashboardMockup from '@/components/mockups/components/ComplianceDashboardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const NisII = () => {
   const { t, currentLocale } = useLanguage();
@@ -112,6 +110,59 @@ const NisII = () => {
           </div>
         </section>
 
+        {/* Why NIS2 Is a Problem Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('nisIIPage.whyProblem.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              {t('nisIIPage.whyProblem.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-red-200 hover:shadow-xl hover:border-red-300 transition-all duration-300 bg-gradient-to-br from-red-50 to-white">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                  <Euro className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-red-600 mb-2">{t('nisIIPage.whyProblem.cards.penalties.stat')}</div>
+                <CardTitle className="text-xl">{t('nisIIPage.whyProblem.cards.penalties.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600">{t('nisIIPage.whyProblem.cards.penalties.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-orange-200 hover:shadow-xl hover:border-orange-300 transition-all duration-300 bg-gradient-to-br from-orange-50 to-white">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">{t('nisIIPage.whyProblem.cards.complexity.stat')}</div>
+                <CardTitle className="text-xl">{t('nisIIPage.whyProblem.cards.complexity.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600">{t('nisIIPage.whyProblem.cards.complexity.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-yellow-200 hover:shadow-xl hover:border-yellow-300 transition-all duration-300 bg-gradient-to-br from-yellow-50 to-white">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-yellow-600 mb-2">{t('nisIIPage.whyProblem.cards.timeline.stat')}</div>
+                <CardTitle className="text-xl">{t('nisIIPage.whyProblem.cards.timeline.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600">{t('nisIIPage.whyProblem.cards.timeline.description')}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* What is NIS2 Section */}
         <section className="mb-20">
           <div className="text-center mb-12">
@@ -169,6 +220,46 @@ const NisII = () => {
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        {/* Why NIS2 Matters for Management Section */}
+        <section className="mb-20">
+          <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 md:p-16 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 text-purple-300 mb-6 border border-purple-500/30">
+                  <Gavel className="w-5 h-5 mr-2" />
+                  <span className="font-medium">{t('nisIIPage.whyManagement.badge')}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+                  {t('nisIIPage.whyManagement.title')}
+                </h2>
+                <p className="text-xl text-slate-300 max-w-4xl mx-auto">
+                  {t('nisIIPage.whyManagement.description')}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {(t('nisIIPage.whyManagement.points', { returnObjects: true }) as Array<{title: string, description: string, icon: string}>).map((point, index) => {
+                  const icons = [Gavel, AlertTriangle, TrendingUp, Shield];
+                  const IconComponent = icons[index % icons.length];
+                  const colors = ['from-red-500 to-red-600', 'from-orange-500 to-orange-600', 'from-yellow-500 to-yellow-600', 'from-green-500 to-green-600'];
+                  return (
+                    <div key={index} className="flex items-start p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-r ${colors[index % colors.length]} rounded-lg flex items-center justify-center mr-4`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-white mb-2">{point.title}</h3>
+                        <p className="text-slate-300 text-sm">{point.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -455,11 +546,67 @@ const NisII = () => {
             </div>
           </div>
 
-          {/* Bottom Summary */}
-          <div className="mt-16 text-center animate-fade-in" style={{
-          animationDelay: '0.8s'
-        }}>
-            
+        </section>
+
+        {/* For Whom Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('nisIIPage.forWhom.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              {t('nisIIPage.forWhom.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border-slate-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">{t('nisIIPage.forWhom.personas.ceo.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('nisIIPage.forWhom.personas.ceo.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-slate-200 hover:shadow-xl hover:border-cyan-300 transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">{t('nisIIPage.forWhom.personas.ciso.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('nisIIPage.forWhom.personas.ciso.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-slate-200 hover:shadow-xl hover:border-purple-300 transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Scale className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">{t('nisIIPage.forWhom.personas.compliance.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('nisIIPage.forWhom.personas.compliance.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-slate-200 hover:shadow-xl hover:border-green-300 transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-green-700 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Building className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">{t('nisIIPage.forWhom.personas.coo.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('nisIIPage.forWhom.personas.coo.description')}</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -598,19 +745,36 @@ const NisII = () => {
           </div>
         </section>
 
-        {/* Related Solution Link */}
+        {/* FAQ Section */}
+        <FAQSection 
+          title={t('seoLanding.nis2.faq.title')}
+          faqs={t('seoLanding.nis2.faq.items', { returnObjects: true }) as Array<{question: string, answer: string}>}
+          pageUrl={`https://quantifier.com/${currentLocale}/frameworks/cybersecurity/nis-ii`}
+        />
+
+        {/* Final CTA Section */}
         <section className="mb-12">
-          <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">{t('nisIIPage.relatedSolution.title')}</h3>
-                <p className="text-slate-600">{t('nisIIPage.relatedSolution.description')}</p>
+          <div className="bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 rounded-2xl p-8 md:p-16 text-white text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5"></div>
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                {t('nisIIPage.finalCta.title')}
+              </h2>
+              <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
+                {t('nisIIPage.finalCta.description')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-slate-100 font-semibold px-8" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('nisIIPage.finalCta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-semibold px-8" asChild>
+                  <Link to={`/${currentLocale}/plans`}>
+                    {t('nisIIPage.finalCta.talkExpert')}
+                  </Link>
+                </Button>
               </div>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white whitespace-nowrap" asChild>
-                <Link to={`/${currentLocale}/nis2`}>
-                  {t('nisIIPage.relatedSolution.button')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
             </div>
           </div>
         </section>
