@@ -1,3 +1,4 @@
+// i18n configuration - force rebuild 2026-01-08
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
