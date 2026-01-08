@@ -662,7 +662,7 @@ const Hipaa = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white/20 bg-gray-50 text-[#324691] hover:bg-white"
               >
                 <Link to={`/${currentLocale}/plans`}>
                   {t("hipaaPage.finalCta.seePricing")}

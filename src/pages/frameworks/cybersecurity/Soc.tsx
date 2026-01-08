@@ -580,7 +580,7 @@ const Soc = () => {
                     {t('socPage.finalCta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-semibold px-8" asChild>
+                <Button size="lg" variant="outline" className="border-white/20 bg-gray-50 text-[#324691] hover:bg-white font-semibold px-8" asChild>
                   <Link to={`/${currentLocale}/plans`}>
                     {t('socPage.finalCta.seePricing')}
                   </Link>
