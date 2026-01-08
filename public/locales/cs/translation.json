@@ -1736,5 +1736,1700 @@
       "subtitle": "Governance, Riziko a Compliance—jednotně na jedné AI-native platformě. Od ISO 27001 po ESG, od hodnocení rizik po připravenost na audit—Quantifier má vše pokryto.",
       "requestDemo": "Požádat o demo"
     }
+  },
+  "nisIIPage": {
+    "title": "Směrnice NIS 2 (EU)",
+    "description": "Komplexní řešení NIS2 compliance s AI-native workflow pro evropské organizace.",
+    "hero": {
+      "badge": "Směrnice NIS 2",
+      "title": "NIS2 Compliance jednoduše",
+      "subtitle": "Zvládněte požadavky EU kybernetické bezpečnosti s jistotou za týdny, ne měsíce",
+      "formTitle": "Zjistěte, jak vám Quantifier může pomoci",
+      "nameLabel": "Jméno",
+      "namePlaceholder": "Zadejte své jméno",
+      "emailLabel": "Pracovní email",
+      "emailPlaceholder": "Zadejte svůj pracovní email",
+      "marketingConsent": "Souhlasím se zpracováním mých osobních údajů společností Quantifier pro zasílání marketingových sdělení o řešeních NIS2 compliance. Můžete se kdykoli odhlásit.",
+      "requestDemoButton": "Požádat o demo"
+    },
+    "understanding": {
+      "title": "Porozumění směrnici NIS 2",
+      "description": "Směrnice o bezpečnosti sítí a informací (NIS) 2 posiluje kybernetickou bezpečnost v celé EU a rozšiřuje požadavky na více sektorů a organizací.",
+      "whatIs": {
+        "title": "Co je NIS2?",
+        "description": "Směrnice EU, která stanoví požadavky na kybernetickou bezpečnost pro základní a důležité subjekty ve 18 sektorech, včetně energetiky, dopravy, bankovnictví, zdravotnictví a digitální infrastruktury."
+      },
+      "whoMustComply": {
+        "title": "Kdo musí splňovat?",
+        "items": [
+          "Střední a velké podniky (50+ zaměstnanců NEBO obrat 10M€+)",
+          "Základní subjekty v kritických sektorech",
+          "Důležité subjekty v klíčových sektorech",
+          "Poskytovatelé digitálních služeb"
+        ]
+      },
+      "keyRequirements": {
+        "title": "Klíčové požadavky",
+        "items": [
+          "Opatření pro řízení rizik",
+          "Řešení a hlášení incidentů",
+          "Plánování kontinuity podnikání",
+          "Bezpečnost dodavatelského řetězce",
+          "Odpovědnost managementu"
+        ]
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier transformuje NIS2 Compliance",
+      "description": "Naše AI-native platforma eliminuje složitost, automatizuje workflow a zajišťuje kontinuální compliance napříč celou organizací.",
+      "features": {
+        "riskAssessment": {
+          "title": "Hodnocení rizik",
+          "description": "AI-powered kontinuální monitorování identifikuje zranitelnosti a hodnotí rizika napříč vaší digitální infrastrukturou v reálném čase."
+        },
+        "roleBasedWorkflows": {
+          "title": "Workflow založené na rolích",
+          "description": "Inteligentní přidělování úkolů zajišťuje, že správní lidé zvládají compliance aktivity napříč IT, právním a operačním týmem."
+        },
+        "incidentManagement": {
+          "title": "Správa incidentů",
+          "description": "Zefektivněná detekce incidentů, reakce a workflow hlášení splňující požadavky NIS2 na notifikaci."
+        },
+        "policyAutomation": {
+          "title": "Automatizace politik a procedur",
+          "description": "Nasazení a správa všech požadovaných politik kybernetické bezpečnosti s automatizovanými aktualizacemi a sledováním compliance."
+        },
+        "multiJurisdiction": {
+          "title": "Podpora více jurisdikcí",
+          "description": "Kontinuální hodnocení rizik dodavatelů, prosazování smluvních závazků a zajištění včasného hlášení incidentů napříč všemi partnery."
+        },
+        "auditReady": {
+          "title": "Dokumentace připravená na audit",
+          "description": "Generování komplexních compliance reportů a udržování auditních záznamů prokazujících dodržování NIS2."
+        }
+      }
+    },
+    "aiModule": {
+      "title": "NIS2 AI-Native Compliance modul",
+      "description": "Náš AI-native compliance modul pomáhá organizacím dosáhnout NIS2 compliance pomocí inteligentních workflow — od onboardingu a gap analýzy po implementaci politik a kontinuální monitorování.",
+      "badge": "Proměňte NIS2 z povinnosti v operační výhodu",
+      "ganttChart": {
+        "title": "Časová osa implementace NIS2",
+        "subtitle": "Kompletní roadmap od počátečního onboardingu po kontinuální monitorování compliance",
+        "tasks": {
+          "onboarding": "Onboarding (NIS2): Data, Aktiva, Rizika, Registr",
+          "gapAnalysis": "Gap analýza a implementační strategie",
+          "implementation": "Implementace: 19 politik kybernetické bezpečnosti",
+          "procedures": "Procedury: Nasazení, Monitorování, Ověření",
+          "continuous": "Kontinuální Compliance: Monitorování rizik, Správa incidentů, Reporting"
+        }
+      }
+    },
+    "results": {
+      "title": "Výsledky po implementaci Quantifier / NIS2",
+      "description": "Po dokončení implementace má vaše organizace komplexní systém pro řízení rizik, bezpečnosti a compliance.",
+      "metrics": {
+        "compliance": "100%",
+        "complianceLabel": "Pokrytí NIS2 Compliance",
+        "keyAreas": "6",
+        "keyAreasLabel": "Klíčových oblastí řešeno",
+        "monitoring": "24/7",
+        "monitoringLabel": "Kontinuální monitorování",
+        "responseTime": "24h",
+        "responseTimeLabel": "Reakce na incidenty"
+      },
+      "resultAreas": {
+        "riskAssessment": {
+          "title": "Hodnocení rizik",
+          "items": [
+            "Kompletní seznam identifikovaných rizik a zranitelností",
+            "Analýza pravděpodobnosti a dopadu s jasnými metrikami",
+            "Hodnocení rizik s přiřazenými úrovněmi významnosti",
+            "Komplexní plán řízení rizik",
+            "Implementovaná technická a organizační opatření"
+          ]
+        },
+        "crisisManagement": {
+          "title": "Krizové řízení",
+          "items": [
+            "Připravené plány krizové komunikace",
+            "Identifikované kritické technologie a operace",
+            "Definované priority pro obnovu systémů",
+            "Koordinované akční procedury"
+          ]
+        },
+        "incidents": {
+          "title": "Incidenty",
+          "items": [
+            "Klasifikované typy incidentů s kritérii hodnocení",
+            "Efektivní systém hlášení a správy",
+            "Interní a externí reportovací procedury",
+            "Komplexní nástroje pro řešení incidentů"
+          ]
+        },
+        "employeesTraining": {
+          "title": "Zaměstnanci a školení",
+          "items": [
+            "Přidělené odpovědnosti pro všechny zaměstnance",
+            "Implementované pravidelné školící programy",
+            "Zvýšené bezpečnostní povědomí a kompetence",
+            "Compliance HR a náborových standardů"
+          ]
+        },
+        "suppliers": {
+          "title": "Dodavatelé",
+          "items": [
+            "Provedeny audity dodavatelů a potvrzena compliance",
+            "Splněny komunikační povinnosti",
+            "Zajištěno požadované poskytování informací dle NIS2",
+            "Zavedena koordinace reakce na incidenty"
+          ]
+        },
+        "assets": {
+          "title": "Aktiva a bezpečnostní opatření",
+          "items": [
+            "Kompletní inventář aktiv s odpovědnými osobami",
+            "Přizpůsobená bezpečnostní opatření pro každé aktivum",
+            "Klasifikace aktiv podle významnosti",
+            "Správně přiřazené bezpečnostní požadavky"
+          ]
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální Compliance operace",
+      "description": "Po implementaci naši AI agenti převezmou kontinuální monitorování, hodnocení rizik, správu incidentů a regulatorní reporting — zajišťující, že vaše NIS2 compliance nikdy neselže.",
+      "form": {
+        "title": "Požádat o demo",
+        "nameLabel": "Celé jméno",
+        "namePlaceholder": "Zadejte celé jméno",
+        "emailLabel": "Emailová adresa",
+        "emailPlaceholder": "Zadejte emailovou adresu",
+        "marketingConsent": "Souhlasím se zasíláním marketingových sdělení a aktualizací o řešeních NIS2 compliance",
+        "submitButton": "Požádat o demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitorování v reálném čase",
+          "description": "24/7 automatizovaný dohled nad všemi compliance parametry"
+        },
+        "riskAssessment": {
+          "title": "Hodnocení rizik",
+          "description": "AI-powered kontinuální vyhodnocování a zmírňování rizik"
+        },
+        "reporting": {
+          "title": "Automatizovaný reporting",
+          "description": "Regulatorní reporty generované a odesílané automaticky"
+        },
+        "incidentManagement": {
+          "title": "Správa incidentů",
+          "description": "Automatizovaná detekce incidentů, reakce a dokumentace"
+        }
+      },
+      "statusBadge": "Vždy v souladu • Vždy chráněni"
+    },
+    "whyProblem": {
+      "title": "Proč je NIS2 výzvou",
+      "subtitle": "Většina organizací bojuje s NIS2 compliance kvůli:",
+      "cards": {
+        "penalties": {
+          "title": "Vysoké pokuty",
+          "stat": "10M€+",
+          "description": "Pokuty až 10M€ nebo 2% globálního obratu, plus osobní odpovědnost členů představenstva"
+        },
+        "complexity": {
+          "title": "Složité požadavky",
+          "stat": "19",
+          "description": "Bezpečnostních domén k řešení s nejasným implementačním návodem napříč EU"
+        },
+        "timeline": {
+          "title": "Přísné reportovací termíny",
+          "stat": "24h/72h",
+          "description": "Termíny pro notifikaci incidentů vyžadující automatizované workflow a rychlou reakci"
+        }
+      }
+    },
+    "whyManagement": {
+      "badge": "Odpovědnost managementu",
+      "title": "Proč NIS2 záleží vašemu představenstvu",
+      "description": "NIS2 zavádí přímou odpovědnost vedení společnosti. Členové představenstva již nemohou delegovat odpovědnost za kybernetickou bezpečnost.",
+      "points": [
+        {
+          "title": "Osobní odpovědnost",
+          "description": "Členové představenstva mohou být osobně odpovědní za porušení NIS2 a mohou čelit dočasným zákazům"
+        },
+        {
+          "title": "Povinné hlášení",
+          "description": "Přímá povinnost hlásit významné incidenty regulačním orgánům v přísných termínech"
+        },
+        {
+          "title": "Reputační riziko",
+          "description": "Veřejné zveřejnění porušení a nesouladu může vážně ovlivnit obchodní vztahy a tržní pozici"
+        },
+        {
+          "title": "Compliance jako výhoda",
+          "description": "Prokázání NIS2 compliance buduje důvěru u zákazníků, partnerů a staví vás před konkurenci"
+        }
+      ]
+    },
+    "forWhom": {
+      "title": "Kdo má prospěch z Quantifier pro NIS2",
+      "subtitle": "Naše platforma slouží všem zainteresovaným stranám zapojeným do cesty k NIS2 compliance",
+      "personas": {
+        "ceo": {
+          "title": "Představenstvo / CEO",
+          "description": "Plná viditelnost stavu compliance, vystavení rizikům a regulačních povinností s executive dashboardy"
+        },
+        "ciso": {
+          "title": "CISO / IT bezpečnost",
+          "description": "Automatizované bezpečnostní monitorování, workflow incidentů a bezproblémová integrace se stávajícími bezpečnostními nástroji"
+        },
+        "compliance": {
+          "title": "Compliance / Právní",
+          "description": "Správa dokumentů, auditní záznamy a přímá integrace s regulačními rámci napříč členskými státy EU"
+        },
+        "it": {
+          "title": "IT operace",
+          "description": "Technická implementace bezpečnostních kontrol, správa aktiv a monitorování infrastruktury"
+        }
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky o NIS2",
+      "items": [
+        {
+          "question": "Co je směrnice NIS 2?",
+          "answer": "NIS 2 je směrnice EU o kybernetické bezpečnosti, která rozšiřuje požadavky svého předchůdce NIS 1 na více sektorů a organizací. Stanoví základní bezpečnostní požadavky a povinnosti hlášení incidentů."
+        },
+        {
+          "question": "Kdo musí splňovat NIS2?",
+          "answer": "NIS2 se vztahuje na základní a důležité subjekty ve 18 sektorech včetně energetiky, dopravy, zdravotnictví, financí, digitální infrastruktury a dalších. Střední a velké podniky (50+ zaměstnanců nebo 10M€+ obrat) v těchto sektorech musí splňovat."
+        },
+        {
+          "question": "Jaké jsou pokuty za nedodržení NIS2?",
+          "answer": "Pokuty mohou dosáhnout až 10 milionů € nebo 2% celosvětového ročního obratu pro základní subjekty, a 7 milionů € nebo 1,4% obratu pro důležité subjekty. Navíc členové představenstva mohou čelit osobní odpovědnosti."
+        },
+        {
+          "question": "Jak rychle musím hlásit incidenty dle NIS2?",
+          "answer": "Organizace musí poskytnout počáteční upozornění do 24 hodin od zjištění významného incidentu, následované podrobným oznámením incidentu do 72 hodin a závěrečnou zprávou do jednoho měsíce."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s NIS2 compliance?",
+          "answer": "Quantifier automatizuje klíčové požadavky NIS2 včetně hodnocení rizik, správy incidentů, správy politik, bezpečnosti dodavatelského řetězce a kontinuálního monitorování compliance. Naše AI-native platforma snižuje manuální práci o 80% a zajišťuje, že splňujete všechny regulační termíny."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Jste připraveni zjednodušit NIS2 Compliance?",
+      "description": "Připojte se k předním evropským organizacím, které důvěřují Quantifier pro jejich cestu k NIS2. Dosáhněte compliance rychleji s AI-powered automatizací.",
+      "bookDemo": "Požádat o demo",
+      "talkExpert": "Zobrazit ceny"
+    }
+  },
+  "socPage": {
+    "title": "SOC 1 & SOC 2 Compliance",
+    "description": "Prokažte důvěru svým zákazníkům, investorům a partnerům s automatizovanou SOC compliance.",
+    "hero": {
+      "badge": "SOC 2 Compliance",
+      "title": "SOC 2 certifikace jednoduše",
+      "subtitle": "Quantifier automatizuje celou vaši SOC 2 cestu—od sběru důkazů po audit—abyste mohli budovat důvěru s enterprise zákazníky.",
+      "formTitle": "Požádat o demo",
+      "nameLabel": "Celé jméno",
+      "namePlaceholder": "Zadejte své jméno",
+      "emailLabel": "Pracovní email",
+      "emailPlaceholder": "Zadejte svůj email",
+      "marketingConsent": "Souhlasím se zasíláním marketingových sdělení",
+      "requestDemoButton": "Požádat o demo"
+    },
+    "whyImportant": {
+      "title": "Proč je SOC 2 kritický pro byznys",
+      "subtitle": "SOC 2 certifikace se stala zlatým standardem pro prokázání bezpečnosti a důvěry enterprise zákazníkům.",
+      "cards": {
+        "clients": {
+          "stat": "82%",
+          "title": "Enterprise klienti",
+          "description": "Enterprise kupující vyžadují SOC 2 certifikaci před podpisem smluv s SaaS dodavateli"
+        },
+        "timeline": {
+          "stat": "6 měsíců",
+          "title": "Průměrná časová osa",
+          "description": "Typický čas k dosažení SOC 2 certifikace bez automatizačních nástrojů"
+        },
+        "breach": {
+          "stat": "$4.35M",
+          "title": "Náklady na únik",
+          "description": "Průměrné náklady na únik dat pro organizace bez řádných bezpečnostních kontrol"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Porozumění SOC 2",
+      "description": "SOC 2 je auditní rámec vyvinutý AICPA pro servisní organizace zpracovávající zákaznická data.",
+      "whatIs": {
+        "title": "Co je SOC 2?",
+        "description": "SOC 2 Type I/II reporty ověřují kontroly organizace související s bezpečností, dostupností, integritou zpracování, důvěrností a soukromím na základě Trust Services Criteria."
+      },
+      "whoNeeds": {
+        "title": "Kdo potřebuje SOC 2?",
+        "items": [
+          "SaaS společnosti",
+          "Poskytovatelé cloudových služeb",
+          "Firmy zpracovávající data",
+          "Technologičtí dodavatelé",
+          "Zdravotnické tech společnosti"
+        ]
+      },
+      "trustCriteria": {
+        "title": "Trust Services Criteria",
+        "items": [
+          "Bezpečnost (povinné)",
+          "Dostupnost",
+          "Integrita zpracování",
+          "Důvěrnost",
+          "Soukromí"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Imperativ vedení",
+      "title": "Proč SOC 2 záleží vašemu vedení",
+      "description": "SOC 2 certifikace demonstruje váš závazek k bezpečnosti a buduje důvěru u zákazníků a partnerů.",
+      "points": [
+        {
+          "title": "Důvěra zákazníků",
+          "description": "SOC 2 certifikace buduje důvěru u enterprise zákazníků a partnerů, kteří potřebují ujištění o vašich bezpečnostních praktikách"
+        },
+        {
+          "title": "Konkurenční výhoda",
+          "description": "Vynikněte na konkurenčních trzích, kde je bezpečnostní certifikace klíčovým diferenciátorem pro získání enterprise zakázek"
+        },
+        {
+          "title": "Snížení rizik",
+          "description": "Proaktivní bezpečnostní opatření snižují pravděpodobnost a finanční dopad úniků dat"
+        },
+        {
+          "title": "Rychlejší prodejní cykly",
+          "description": "Existující SOC 2 certifikace urychluje enterprise prodej odstraněním tření s bezpečnostními dotazníky"
+        }
+      ]
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier urychluje SOC 2 Compliance",
+      "description": "Naše AI-powered platforma automatizuje sběr důkazů, monitoruje kontroly a udržuje vás připraveny na audit po celý rok.",
+      "features": {
+        "evidenceCollection": {
+          "title": "Automatizovaný sběr důkazů",
+          "description": "Automaticky shromažďujte a organizujte důkazy z vaší cloudové infrastruktury, poskytovatelů identity a business systémů"
+        },
+        "controlMonitoring": {
+          "title": "Dashboard monitorování kontrol",
+          "description": "Viditelnost stavu vašich kontrol, compliance mezer a skóre připravenosti na audit v reálném čase"
+        },
+        "trustMapping": {
+          "title": "Mapování Trust Services",
+          "description": "Automaticky mapujte vaše kontroly na SOC 2 Trust Services Criteria pro kompletní pokrytí"
+        },
+        "auditTrail": {
+          "title": "Auditní záznamy a dokumentace",
+          "description": "Kompletní historie dokumentace a sledování změn pro bezproblémový přezkum auditorem"
+        },
+        "gapAnalysis": {
+          "title": "Gap analýza",
+          "description": "Identifikujte mezery ve vašich kontrolách a získejte akční doporučení dříve, než to udělají auditoři"
+        },
+        "certificationReadiness": {
+          "title": "Připravenost na certifikaci",
+          "description": "Přesně víte, kdy jste připraveni na SOC 2 audit s naším hodnocením připravenosti"
+        }
+      }
+    },
+    "aiModule": {
+      "title": "AI-Native SOC 2 modul",
+      "description": "Využijte umělou inteligenci k automatizaci sběru důkazů, identifikaci mezer v kontrolách a udržení kontinuální compliance s minimálním manuálním úsilím.",
+      "badge": "AI-Powered SOC 2 Automatizace"
+    },
+    "results": {
+      "title": "Výsledky po implementaci Quantifier",
+      "description": "Organizace používající Quantifier dosahují SOC 2 certifikace rychleji a s výrazně menším manuálním úsilím.",
+      "metrics": {
+        "controls": "93%",
+        "controlsLabel": "Pokryté kontroly",
+        "evidence": "243",
+        "evidenceLabel": "Důkazních položek",
+        "monitoring": "24/7",
+        "monitoringLabel": "Kontinuální monitorování",
+        "reduction": "70%",
+        "reductionLabel": "Úspora času"
+      }
+    },
+    "forWhom": {
+      "title": "Kdo má prospěch z našeho SOC 2 řešení?",
+      "subtitle": "Naše platforma je navržena pro organizace usilující o efektivní SOC 2 certifikaci.",
+      "personas": {
+        "ciso": {
+          "title": "CISO",
+          "description": "Komplexní bezpečnostní dohled a řízení rizik napříč všemi SOC 2 kontrolami"
+        },
+        "cto": {
+          "title": "CTO",
+          "description": "Technologická strategie sladěná s požadavky bezpečnostní compliance"
+        },
+        "compliance": {
+          "title": "Compliance Officer",
+          "description": "Zefektivněná správa compliance a příprava na audit"
+        },
+        "it": {
+          "title": "IT Manager",
+          "description": "Technická implementace a monitorování kontrol zjednodušené"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální SOC 2 operace",
+      "description": "Udržujte připravenost na audit po celý rok s automatizovaným monitorováním a sběrem důkazů běžícím nepřetržitě na pozadí.",
+      "form": {
+        "title": "Požádat o demo",
+        "nameLabel": "Celé jméno",
+        "namePlaceholder": "Zadejte své jméno",
+        "emailLabel": "Pracovní email",
+        "emailPlaceholder": "Zadejte svůj email",
+        "marketingConsent": "Souhlasím se zasíláním marketingových sdělení",
+        "submitButton": "Požádat o demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Kontinuální monitorování",
+          "description": "Sledování všech SOC 2 kontrol a stavu důkazů v reálném čase"
+        },
+        "evidence": {
+          "title": "Automatizace důkazů",
+          "description": "Automatický sběr a organizace compliance důkazů"
+        },
+        "reporting": {
+          "title": "Reporting a dashboardy",
+          "description": "Executive-level viditelnost compliance a sledování pokroku"
+        },
+        "auditTrail": {
+          "title": "Auditní záznamy",
+          "description": "Kompletní historie všech compliance aktivit a změn"
+        }
+      },
+      "statusBadge": "Vždy připraveni na audit"
+    },
+    "faq": {
+      "title": "Často kladené otázky o SOC 2",
+      "items": [
+        {
+          "question": "Co je SOC 2?",
+          "answer": "SOC 2 je auditní rámec vyvinutý American Institute of CPAs (AICPA), který hodnotí kontroly servisních organizací související s bezpečností, dostupností, integritou zpracování, důvěrností a soukromím."
+        },
+        {
+          "question": "Kdo potřebuje SOC 2 certifikaci?",
+          "answer": "Každá organizace zpracovávající zákaznická data, zejména SaaS společnosti, poskytovatelé cloudových služeb, datová centra a technologičtí dodavatelé prodávající enterprise klientům."
+        },
+        {
+          "question": "Jak dlouho trvá SOC 2 certifikace?",
+          "answer": "S řádnou přípravou a automatizačními nástroji jako Quantifier mohou organizace dosáhnout SOC 2 certifikace za 3-6 měsíců. Bez automatizace to obvykle trvá 6-12 měsíců."
+        },
+        {
+          "question": "Jakých je 5 Trust Services Criteria?",
+          "answer": "Trust Services Criteria jsou: Bezpečnost (povinné), Dostupnost, Integrita zpracování, Důvěrnost a Soukromí. Bezpečnost je povinná; ostatní se vybírají na základě vašich služeb."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s SOC 2?",
+          "answer": "Quantifier automatizuje sběr důkazů z vašich systémů, kontinuálně monitoruje kontroly, identifikuje mezery a udržuje vás připraveny na audit s dashboardy a reporty v reálném čase."
+        },
+        {
+          "question": "Je SOC 2 povinné?",
+          "answer": "I když není právně vyžadované, SOC 2 je často smluvním požadavkem pro B2B SaaS společnosti. Více než 80% enterprise kupujících vyžaduje SOC 2 certifikaci před podpisem smluv s dodavateli."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Jste připraveni dosáhnout SOC 2 certifikace?",
+      "description": "Připojte se k předním organizacím, které důvěřují Quantifier pro automatizaci SOC 2 compliance.",
+      "bookDemo": "Objednat demo",
+      "seePricing": "Zobrazit ceny"
+    }
+  },
+  "iso27001Page": {
+    "title": "ISO 27001 Framework",
+    "description": "Chraňte svá informační aktiva s globálně uznávaným standardem ISO 27001 pro řízení informační bezpečnosti.",
+    "hero": {
+      "badge": "ISO 27001 Informační bezpečnost",
+      "title": "ISO 27001 certifikace jednoduše",
+      "subtitle": "Quantifier automatizuje celou vaši ISO 27001 cestu—od hodnocení rizik po certifikaci—abyste se mohli soustředit na bezpečný růst vašeho podnikání.",
+      "formTitle": "Požádat o demo",
+      "nameLabel": "Celé jméno",
+      "emailLabel": "Emailová adresa",
+      "marketingConsent": "Souhlasím se zasíláním marketingových sdělení o ISO 27001 řešeních",
+      "requestDemoButton": "Požádat o demo",
+      "button": "Objednat demo"
+    },
+    "whyMatters": {
+      "title": "Proč záleží na ISO 27001",
+      "subtitle": "Certifikace informační bezpečnosti již není volitelná—je to byznys imperativ",
+      "cards": {
+        "breachCost": {
+          "title": "Průměrné náklady na únik",
+          "stat": "$4.45M",
+          "description": "Průměrné náklady na únik dat v roce 2023. ISO 27001 pomáhá předcházet nákladným bezpečnostním incidentům."
+        },
+        "clientRequirement": {
+          "title": "Požadavky klientů",
+          "stat": "80%+",
+          "description": "Enterprise klienti nyní vyžadují ISO 27001 certifikaci před podpisem smluv s dodavateli."
+        },
+        "timeline": {
+          "title": "Typická časová osa",
+          "stat": "6-12 měs.",
+          "description": "Průměrný čas k dosažení certifikace bez automatizace—Quantifier to výrazně zkracuje."
+        }
+      }
+    },
+    "understanding": {
+      "title": "Porozumění ISO 27001",
+      "description": "Mezinárodní standard pro zavedení, implementaci, udržování a neustálé zlepšování Systému řízení informační bezpečnosti (ISMS).",
+      "whatIs": {
+        "title": "Co je ISO 27001?",
+        "description": "ISO 27001 je globálně uznávaný standard pro řízení informační bezpečnosti. Poskytuje systematický rámec pro ochranu citlivých dat, řízení rizik a prokázání závazku k bezpečnosti."
+      },
+      "whoNeeds": {
+        "title": "Kdo by měl implementovat?",
+        "description": "Organizace zpracovávající citlivá zákaznická data, společnosti usilující o enterprise klienty, SaaS a technologické poskytovatele, zdravotnické a finanční služby a vládní dodavatele."
+      },
+      "keyRequirements": {
+        "title": "Klíčové požadavky",
+        "items": [
+          "Metodologie hodnocení a ošetření rizik",
+          "Rámec politik informační bezpečnosti",
+          "93 kontrol ve 4 tématech (Příloha A)",
+          "Interní audit a přezkum managementem",
+          "Proces neustálého zlepšování"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Odpovědnost vedení",
+      "title": "Proč ISO 27001 záleží vašemu podnikání",
+      "description": "ISO 27001 certifikace demonstruje zákazníkům, partnerům a regulátorům, že berete informační bezpečnost vážně.",
+      "points": [
+        {
+          "title": "Konkurenční výhoda",
+          "description": "Vynikněte v RFP a prodejních procesech prokázáním světové třídy bezpečnostních praktik potenciálním klientům"
+        },
+        {
+          "title": "Regulatorní soulad",
+          "description": "ISO 27001 pomáhá splnit požadavky GDPR, HIPAA, SOC 2 a dalších rámců"
+        },
+        {
+          "title": "Snížení rizik",
+          "description": "Systematické řízení rizik snižuje pravděpodobnost a dopad bezpečnostních incidentů"
+        },
+        {
+          "title": "Důvěra zákazníků",
+          "description": "Certifikace buduje důvěru u zákazníků, kteří vám svěřují svá citlivá data"
+        }
+      ]
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier automatizuje ISO 27001",
+      "description": "Naše AI-powered platforma zvládá těžkou práci implementace a údržby ISMS",
+      "features": {
+        "riskAssessment": {
+          "title": "Hodnocení a ošetření rizik",
+          "description": "AI-powered identifikace rizik, hodnocení a plánování ošetření s automatizovanými aktualizacemi registru rizik"
+        },
+        "policyManagement": {
+          "title": "Správa politik a dokumentů",
+          "description": "Předpřipravené šablony politik, kontrola verzí a automatizované cykly přezkumu pro veškerou ISMS dokumentaci"
+        },
+        "assetInventory": {
+          "title": "Inventář aktiv",
+          "description": "Komplexní objevování a klasifikace aktiv s automatickým mapováním bezpečnostních požadavků"
+        },
+        "incidentManagement": {
+          "title": "Správa incidentů",
+          "description": "Strukturované workflow reakce na incidenty se sběrem důkazů a dokumentací poučení"
+        },
+        "internalAudit": {
+          "title": "Podpora interního auditu",
+          "description": "Automatizované plánování auditu, sběr důkazů a sledování neshod"
+        },
+        "certificationReadiness": {
+          "title": "Připravenost na certifikaci",
+          "description": "Dashboard gap analýzy ukazující přesně, co je potřeba pro úspěšnou certifikaci"
+        }
+      }
+    },
+    "aiModule": {
+      "title": "AI-Native ISMS modul",
+      "description": "Naše AI kontinuálně monitoruje vaši bezpečnostní pozici, identifikuje mezery a doporučuje zlepšení—udržuje vás připraveny na audit 24/7.",
+      "badge": "Poháněno Quantifier AI"
+    },
+    "results": {
+      "title": "Čeho můžete dosáhnout",
+      "description": "Organizace používající Quantifier pro ISO 27001 vidí měřitelná zlepšení",
+      "metrics": {
+        "coverage": {
+          "value": "100%",
+          "label": "Pokrytí kontrol"
+        },
+        "controls": {
+          "value": "93",
+          "label": "Kontrol Přílohy A"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Kontinuální monitorování"
+        },
+        "reduction": {
+          "value": "70%",
+          "label": "Úspora času"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Kdo má prospěch z Quantifier pro ISO 27001",
+      "subtitle": "Naše platforma slouží všem zainteresovaným stranám na vaší ISMS cestě",
+      "personas": {
+        "ciso": {
+          "title": "CISO / Security Lead",
+          "description": "Kompletní viditelnost bezpečnostní pozice, stavu rizik a compliance mezer s executive dashboardy"
+        },
+        "ceo": {
+          "title": "CEO / Management",
+          "description": "Reporting na úrovni představenstva, viditelnost ROI a ujištění, že bezpečnostní investice jsou efektivní"
+        },
+        "itManager": {
+          "title": "IT Manager",
+          "description": "Zefektivněná implementace kontrol, správa aktiv a sběr technických důkazů"
+        },
+        "compliance": {
+          "title": "Compliance Officer",
+          "description": "Auditní záznamy, správa politik, sledování certifikace a regulatorní soulad"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální ISMS operace",
+      "description": "Udržujte kontinuální compliance s automatizovaným monitorováním, revizemi politik a hodnocením rizik běžícím po celý rok.",
+      "statusBadge": "Vždy připraveni na audit",
+      "form": {
+        "nameLabel": "Vaše jméno",
+        "emailLabel": "Pracovní email",
+        "button": "Naplánovat demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitorování v reálném čase",
+          "description": "Kontinuální sledování ISMS kontrol a compliance stavu"
+        },
+        "policyManagement": {
+          "title": "Správa politik",
+          "description": "Automatizované revize politik, aktualizace a potvrzení zaměstnanci"
+        },
+        "riskMonitoring": {
+          "title": "Monitorování rizik",
+          "description": "Průběžné hodnocení rizik s automatizovanými upozorněními na změny"
+        },
+        "auditTrail": {
+          "title": "Auditní záznamy",
+          "description": "Kompletní historie dokumentace a compliance aktivit"
+        }
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky o ISO 27001",
+      "items": [
+        {
+          "question": "Co je ISO 27001?",
+          "answer": "ISO 27001 je mezinárodní standard specifikující požadavky pro zavedení, implementaci, udržování a neustálé zlepšování systému řízení informační bezpečnosti (ISMS). Pomáhá organizacím systematicky řídit informační bezpečnostní rizika."
+        },
+        {
+          "question": "Kdo potřebuje ISO 27001 certifikaci?",
+          "answer": "Každá organizace zpracovávající citlivé informace může mít prospěch z ISO 27001. Je obzvláště cenná pro poskytovatele technologií, finanční služby, zdravotnictví a organizace usilující o enterprise klienty vyžadující bezpečnostní ujištění."
+        },
+        {
+          "question": "Jak dlouho trvá ISO 27001 certifikace?",
+          "answer": "S automatizačními nástroji jako Quantifier mohou organizace dosáhnout certifikace za 3-6 měsíců. Bez automatizace typická časová osa je 6-12 měsíců v závislosti na velikosti a složitosti organizace."
+        },
+        {
+          "question": "Jakých je 93 kontrol v Příloze A?",
+          "answer": "Příloha A obsahuje 93 kontrol organizovaných do 4 témat: Organizační kontroly (37), Lidské kontroly (8), Fyzické kontroly (14) a Technologické kontroly (34). Tyto pokrývají vše od politik po šifrování."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s ISO 27001?",
+          "answer": "Quantifier automatizuje klíčové ISO 27001 požadavky včetně hodnocení rizik, správy politik, inventáře aktiv, správy incidentů a podpory interního auditu. Naše AI-powered platforma snižuje manuální práci o 70% a udržuje vás připraveny na audit."
+        },
+        {
+          "question": "Je ISO 27001 povinné?",
+          "answer": "I když není univerzálně povinné, ISO 27001 je často vyžadováno smlouvami, zejména pro poskytovatele technologií obsluhující enterprise klienty. Mnoho průmyslů a regionů má předpisy, které efektivně vyžadují jeho principy."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Začněte svou ISO 27001 cestu ještě dnes",
+      "description": "Připojte se k předním organizacím, které důvěřují Quantifier pro automatizaci jejich informační bezpečnostní compliance.",
+      "bookDemo": "Objednat demo",
+      "seePricing": "Zobrazit ceny"
+    }
+  },
+  "doraPage": {
+    "title": "DORA Compliance",
+    "description": "Dosáhněte a udržujte DORA compliance s AI-powered automatizací pro finanční instituce.",
+    "hero": {
+      "badge": "DORA Compliance",
+      "title": "Automatizujte DORA Compliance s AI",
+      "subtitle": "Splňte požadavky EU na digitální operační odolnost s naší inteligentní platformou, která automatizuje řízení rizik, hlášení incidentů a testování odolnosti.",
+      "button": "Začít",
+      "formTitle": "Požádat o demo",
+      "nameLabel": "Vaše jméno",
+      "emailLabel": "Pracovní email",
+      "marketingConsent": "Souhlasím se zasíláním aktualizací o compliance",
+      "requestDemoButton": "Požádat o demo"
+    },
+    "whyCritical": {
+      "title": "Proč je DORA Compliance kritická",
+      "subtitle": "Finanční instituce čelí přísným požadavkům na digitální operační odolnost od ledna 2025.",
+      "cards": {
+        "fines": {
+          "stat": "1% denně",
+          "title": "Průběžné pokuty",
+          "description": "Periodické sankční platby založené na denním průměrném obratu za nesoulad"
+        },
+        "complexity": {
+          "stat": "5",
+          "title": "Základní pilíře",
+          "description": "Řízení rizik ICT, Hlášení incidentů, Testování odolnosti, Riziko třetích stran, Sdílení informací"
+        },
+        "scope": {
+          "stat": "22 000+",
+          "title": "Ovlivněné subjekty",
+          "description": "Finanční subjekty a poskytovatelé ICT služeb třetích stran napříč EU"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Porozumění DORA",
+      "description": "Zákon o digitální operační odolnosti (DORA) zavádí jednotný regulatorní rámec pro digitální operační odolnost finančního sektoru EU.",
+      "whatIs": {
+        "title": "Co je DORA?",
+        "description": "DORA je nařízení EU zaměřené na zajištění odolnosti finančního sektoru vůči kybernetickým hrozbám a poruchám ICT prostřednictvím komplexního řízení rizik a testování."
+      },
+      "whoItApplies": {
+        "title": "Kdo musí splňovat?",
+        "description": "Banky, pojišťovny, investiční firmy, platební instituce a kritičtí poskytovatelé ICT služeb třetích stran působící v EU."
+      },
+      "keyPillars": {
+        "title": "5 klíčových pilířů DORA",
+        "items": [
+          "Řízení a správa rizik ICT",
+          "Hlášení a správa incidentů ICT",
+          "Testování digitální operační odolnosti",
+          "Řízení rizik ICT třetích stran",
+          "Sdílení informací a kybernetických hrozeb"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Pro finanční vedení",
+      "title": "Proč by DORA měla být prioritou",
+      "description": "Nedodržení DORA může mít za následek značné finanční sankce a reputační poškození finančních institucí.",
+      "points": {
+        "regulatory": {
+          "title": "Regulatorní tlak",
+          "description": "Regulátoři EU aktivně prosazují DORA s pravidelnými audity a přezkumy compliance"
+        },
+        "operational": {
+          "title": "Operační odolnost",
+          "description": "Rámec DORA zajišťuje, že vaše organizace přežije a zotaví se z ICT incidentů"
+        },
+        "thirdParty": {
+          "title": "Dohled nad třetími stranami",
+          "description": "Nové požadavky na monitorování a řízení rizik ICT poskytovatelů služeb"
+        },
+        "competitive": {
+          "title": "Konkurenční postavení",
+          "description": "Včasná DORA compliance signalizuje provozní vyspělost zákazníkům a partnerům"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomáhá s DORA",
+      "description": "Naše AI-powered platforma automatizuje DORA compliance od řízení rizik po testování odolnosti a hlášení incidentů.",
+      "features": {
+        "riskManagement": {
+          "title": "Řízení rizik ICT",
+          "description": "Automatizovaná identifikace, hodnocení a monitorování rizik ICT s kontinuálními aktualizacemi registru rizik."
+        },
+        "incidentReporting": {
+          "title": "Hlášení incidentů",
+          "description": "Zefektivněná klasifikace incidentů, workflow a hlášení regulátorům v požadovaných termínech."
+        },
+        "resilienceTesting": {
+          "title": "Testování odolnosti",
+          "description": "Podpora plánování a dokumentace pro programy testování digitální operační odolnosti."
+        },
+        "thirdPartyRisk": {
+          "title": "Riziko třetích stran",
+          "description": "Správa registru smluv ICT, due diligence dodavatelů a monitorování koncentračního rizika."
+        },
+        "infoSharing": {
+          "title": "Sdílení informací",
+          "description": "Bezpečné kanály pro výměnu informací o kybernetických hrozbách s finančním sektorem."
+        },
+        "complianceReporting": {
+          "title": "Compliance reporting",
+          "description": "Automatizované generování compliance reportů a dokumentace pro regulátory."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native DORA Compliance modul",
+      "description": "Náš AI compliance officer kontinuálně monitoruje vaše ICT systémy, identifikuje rizika odolnosti, automatizuje testování a zajišťuje, že vaše organizace splňuje vyvíjející se DORA požadavky."
+    },
+    "results": {
+      "title": "Prokázané výsledky DORA Compliance",
+      "description": "Finanční instituce používající Quantifier dosahují DORA compliance rychleji a s větší jistotou.",
+      "metrics": {
+        "coverage": {
+          "value": "100%",
+          "label": "Pokrytí pilířů DORA"
+        },
+        "incident": {
+          "value": "< 4h",
+          "label": "Čas klasifikace incidentu"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Kontinuální monitorování"
+        },
+        "reduction": {
+          "value": "65%",
+          "label": "Snížení přípravy na audit"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Vytvořeno pro lídry finanční compliance",
+      "subtitle": "Quantifier slouží profesionálům řízení rizik a compliance napříč finančním sektorem.",
+      "personas": {
+        "cro": {
+          "title": "Chief Risk Officer",
+          "description": "Komplexní přehled rizik ICT s automatizovaným monitorováním a reportingem"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Slaďte bezpečnostní kontroly s požadavky DORA a spravujte testování odolnosti"
+        },
+        "compliance": {
+          "title": "Compliance Director",
+          "description": "Zefektivněte compliance programy a připravte se na regulatorní audity s jistotou"
+        },
+        "vendorManager": {
+          "title": "Vendor Manager",
+          "description": "Spravujte smlouvy ICT třetích stran, due diligence a průběžné monitorování"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální DORA operace",
+      "description": "Udržujte průběžnou compliance s automatizovaným monitorováním, správou rizik a schopnostmi reakce na incidenty.",
+      "statusBadge": "Vždy odolní",
+      "form": {
+        "nameLabel": "Vaše jméno",
+        "emailLabel": "Pracovní email",
+        "button": "Naplánovat demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitorování v reálném čase",
+          "description": "Kontinuální sledování systémů ICT a parametrů odolnosti"
+        },
+        "riskManagement": {
+          "title": "Řízení rizik",
+          "description": "Průběžné hodnocení rizik a automatizované aktualizace registru"
+        },
+        "incidentResponse": {
+          "title": "Reakce na incidenty",
+          "description": "Automatizovaná klasifikace, eskalace a workflow hlášení"
+        },
+        "vendorMonitoring": {
+          "title": "Monitorování dodavatelů",
+          "description": "Kontinuální sledování poskytovatelů ICT služeb třetích stran"
+        }
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky o DORA",
+      "items": [
+        {
+          "question": "Co je DORA?",
+          "answer": "Zákon o digitální operační odolnosti (DORA) je nařízení EU, které stanoví jednotný rámec pro řízení rizik ICT ve finančním sektoru. Pokrývá bezpečnost ICT, hlášení incidentů, testování odolnosti a řízení rizik třetích stran."
+        },
+        {
+          "question": "Kdo musí splňovat DORA?",
+          "answer": "DORA se vztahuje na finanční subjekty včetně bank, pojišťoven, investičních firem, platebních institucí a kritických poskytovatelů ICT služeb třetích stran obsluhujících finanční sektor v EU."
+        },
+        {
+          "question": "Kdy vstupuje DORA v platnost?",
+          "answer": "DORA vstoupila v platnost 16. ledna 2023 s aplikací od 17. ledna 2025. Finanční subjekty musí být v souladu do tohoto data."
+        },
+        {
+          "question": "Jakých je 5 pilířů DORA?",
+          "answer": "Pět pilířů DORA je: Řízení a správa rizik ICT, Hlášení incidentů souvisejících s ICT, Testování digitální operační odolnosti, Řízení rizik ICT třetích stran a Ujednání o sdílení informací."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s DORA compliance?",
+          "answer": "Quantifier automatizuje klíčové DORA požadavky včetně hodnocení rizik ICT, klasifikace a hlášení incidentů, dokumentace testování odolnosti a monitorování třetích stran. Naše AI-powered platforma snižuje manuální compliance práci o 65%."
+        },
+        {
+          "question": "Jaké jsou sankce za nedodržení DORA?",
+          "answer": "Sankce DORA zahrnují administrativní pokuty, periodické sankční platby (až 1% denního průměrného obratu), veřejné napomenutí a potenciální dočasné zákazy pro členy managementu."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Začněte svou DORA Compliance cestu ještě dnes",
+      "description": "Připojte se k předním finančním institucím, které důvěřují Quantifier pro automatizaci DORA compliance.",
+      "bookDemo": "Objednat demo",
+      "seePricing": "Zobrazit ceny"
+    }
+  },
+  "nistPage": {
+    "title": "NIST Cybersecurity Framework",
+    "description": "Slaďte vaši organizaci se zlatým standardem kybernetické bezpečnosti s automatizovanou implementací NIST.",
+    "hero": {
+      "title": "NIST Compliance, která pracuje pro vás",
+      "subtitle": "Od Identify po Recover — implementujte NIST kontroly s automatizací.",
+      "button": "Objednat demo",
+      "dashboardAlt": "NIST Implementation Dashboard zobrazující pět funkcí"
+    },
+    "mainContent": {
+      "badge": "NIST Cybersecurity Framework",
+      "title": "Slaďte se se zlatým standardem bezpečnosti",
+      "description": "Naše platforma automatizuje NIST implementaci kontinuálním mapováním vašich aktiv, rizik a zmírnění na pět NIST funkcí.",
+      "benefitsTitle": "Klíčové výhody:",
+      "benefits": [
+        "Inteligentní mapování aktiv a rizik",
+        "Proaktivní úkoly sladěné s NIST kategoriemi",
+        "Integrovaný reporting pro regulátory a auditory",
+        "Upozornění, když kontroly vypadnou z rozsahu"
+      ],
+      "button": "Získat NIST hodnocení implementace",
+      "fiveFunctions": {
+        "title": "Pět NIST funkcí",
+        "identify": {
+          "title": "Identify:",
+          "description": "Rozvíjet porozumění rizikům pro systémy, aktiva, data a schopnosti"
+        },
+        "protect": {
+          "title": "Protect:",
+          "description": "Rozvíjet a implementovat záruky pro kritické služby"
+        },
+        "detect": {
+          "title": "Detect:",
+          "description": "Rozvíjet a implementovat aktivity k identifikaci kybernetických událostí"
+        },
+        "respond": {
+          "title": "Respond:",
+          "description": "Rozvíjet a implementovat vhodné aktivity k reakci na kybernetickou událost"
+        },
+        "recover": {
+          "title": "Recover:",
+          "description": "Rozvíjet a implementovat vhodné aktivity k obnovení schopností narušených kybernetickou událostí"
+        }
+      }
+    },
+    "platformScreenshots": {
+      "title": "NIST Implementation Dashboard",
+      "description": "Monitorujte vaši NIST framework implementaci s naším komplexním dashboardem.",
+      "functionsTrackingAlt": "NIST Functions Tracking Dashboard",
+      "riskAssessmentAlt": "NIST Risk Assessment Interface"
+    },
+    "cta": {
+      "title": "Jste připraveni implementovat NIST Framework?",
+      "description": "Připojte se k organizacím, které důvěřují naší platformě v automatizaci jejich NIST compliance cesty.",
+      "bookDemo": "Objednat demo",
+      "watchTour": "Sledovat prohlídku platformy"
+    }
+  },
+  "gdprPage": {
+    "seo": {
+      "title": "GDPR Compliance Software | Ochrana dat | Quantifier",
+      "description": "Automatizujte GDPR compliance s AI-powered správou souhlasů, zpracováním DSAR, mapováním dat a notifikací o únicích. Chraňte osobní data a splňte EU regulace."
+    },
+    "hero": {
+      "badge": "GDPR Compliance",
+      "title": "Automatizujte GDPR Compliance s AI",
+      "subtitle": "Chraňte osobní data, respektujte práva subjektů údajů a vyhněte se nákladným pokutám s naší inteligentní platformou.",
+      "button": "Začít",
+      "formTitle": "Požádat o demo",
+      "nameLabel": "Vaše jméno",
+      "emailLabel": "Pracovní email",
+      "marketingConsent": "Souhlasím se zasíláním aktualizací o compliance",
+      "requestDemoButton": "Požádat o demo"
+    },
+    "whyCritical": {
+      "title": "Proč je GDPR Compliance kritická",
+      "subtitle": "Organizace zpracovávající data EU rezidentů čelí přísným regulatorním požadavkům a značným pokutám za nesoulad.",
+      "cards": {
+        "fines": {
+          "stat": "20M€",
+          "title": "Maximální pokuta",
+          "description": "Nebo 4% celosvětového ročního obratu, podle toho, co je vyšší, za závažná porušení GDPR"
+        },
+        "complexity": {
+          "stat": "99",
+          "title": "Články",
+          "description": "Komplexní regulace pokrývající práva subjektů údajů, soulad zpracování a organizační povinnosti"
+        },
+        "scope": {
+          "stat": "450M+",
+          "title": "Chráněných občanů",
+          "description": "GDPR chrání osobní data všech občanů a rezidentů EU"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Porozumění GDPR",
+      "description": "Obecné nařízení o ochraně osobních údajů (GDPR) stanoví pravidla pro zpracování osobních údajů jednotlivců v Evropské unii.",
+      "whatIs": {
+        "title": "Co je GDPR?",
+        "description": "GDPR je komplexní zákon EU o ochraně dat dávající jednotlivcům kontrolu nad jejich osobními údaji. Vztahuje se na jakoukoli organizaci zpracovávající osobní údaje EU rezidentů bez ohledu na to, kde se organizace nachází."
+      },
+      "whoItApplies": {
+        "title": "Kdo musí splňovat?",
+        "description": "Jakákoliv organizace shromažďující, zpracovávající nebo ukládající osobní údaje EU rezidentů, včetně společností sídlících mimo EU nabízejících zboží nebo služby občanům EU."
+      },
+      "dataSubjectRights": {
+        "title": "8 práv subjektů údajů",
+        "items": [
+          "Právo být informován",
+          "Právo na přístup",
+          "Právo na opravu",
+          "Právo na výmaz",
+          "Právo na omezení zpracování",
+          "Právo na přenositelnost údajů",
+          "Právo vznést námitku",
+          "Práva týkající se automatizovaného rozhodování"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Pro vedení",
+      "title": "Proč by GDPR mělo být prioritou",
+      "description": "GDPR porušení mohou mít za následek značné pokuty, právní kroky a vážné poškození reputace vaší organizace.",
+      "points": {
+        "liability": {
+          "title": "Osobní odpovědnost",
+          "description": "Členové představenstva mohou být osobně odpovědní za selhání v ochraně dat a čelit právním důsledkům"
+        },
+        "trust": {
+          "title": "Důvěra zákazníků",
+          "description": "GDPR compliance buduje důvěru spotřebitelů a demonstruje respekt k právům na soukromí"
+        },
+        "competitive": {
+          "title": "Konkurenční výhoda",
+          "description": "Organizace s robustní ochranou dat získávají zákazníky, kteří si cení soukromí"
+        },
+        "fines": {
+          "title": "Významný finanční dopad",
+          "description": "Pokuty GDPR dosáhly stovek milionů eur za závažná porušení"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomáhá s GDPR",
+      "description": "Naše AI-powered platforma automatizuje GDPR compliance od mapování dat po správu souhlasů a zpracování DSAR.",
+      "features": {
+        "dataMapping": {
+          "title": "Mapování dat",
+          "description": "Automatizované objevování a klasifikace osobních dat napříč všemi systémy a workflow vaší organizace."
+        },
+        "consentManagement": {
+          "title": "Správa souhlasů",
+          "description": "Sledování platnosti souhlasů, správa změn preferencí a udržování auditovatelných záznamů souhlasů."
+        },
+        "dsarAutomation": {
+          "title": "Automatizace DSAR",
+          "description": "Zefektivněné workflow pro zpracování žádostí subjektů údajů v požadovaných termínech."
+        },
+        "dpiaManagement": {
+          "title": "Správa DPIA",
+          "description": "Řízená posouzení dopadu na ochranu osobních údajů s automatizovanou dokumentací a sledováním."
+        },
+        "breachNotification": {
+          "title": "Notifikace o úniku",
+          "description": "Automatizované 72hodinové notifikační workflow s hodnocením dopadu a komunikačními šablonami."
+        },
+        "complianceReporting": {
+          "title": "Compliance reporting",
+          "description": "Automatizované generování compliance reportů a dokumentace pro úřady pro ochranu dat."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native GDPR Compliance modul",
+      "description": "Náš AI compliance officer kontinuálně monitoruje vaše aktivity zpracování dat, identifikuje potenciální compliance mezery, automatizuje zpracování práv subjektů údajů a zajišťuje, že vaše organizace zůstává v souladu s vyvíjejícími se GDPR požadavky."
+    },
+    "results": {
+      "title": "Prokázané výsledky GDPR Compliance",
+      "description": "Organizace používající Quantifier dosahují GDPR compliance rychleji a s větší jistotou.",
+      "metrics": {
+        "coverage": {
+          "value": "99",
+          "label": "Článků GDPR pokryto"
+        },
+        "dsar": {
+          "value": "< 24h",
+          "label": "Čas zpracování DSAR"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Kontinuální monitorování"
+        },
+        "reduction": {
+          "value": "80%",
+          "label": "Snížení manuální práce"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Vytvořeno pro lídry ochrany dat",
+      "subtitle": "Quantifier slouží profesionálům soukromí a compliance v různých organizacích.",
+      "personas": {
+        "dpo": {
+          "title": "DPO",
+          "description": "Kompletní dohled nad GDPR compliance s akčními insights a automatizovaným monitorováním"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Slaďte bezpečnost dat s GDPR požadavky a spravujte reakci na úniky dat"
+        },
+        "ceo": {
+          "title": "CEO / Představenstvo",
+          "description": "Strategická viditelnost rizik soukromí a compliance pozice"
+        },
+        "legal": {
+          "title": "Právní poradce",
+          "description": "Spravujte dokumentaci právního základu a regulatorní korespondenci"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální GDPR operace",
+      "description": "Udržujte průběžnou compliance s automatizovaným monitorováním, sledováním souhlasů a schopnostmi reakce na úniky.",
+      "statusBadge": "Vždy v souladu",
+      "form": {
+        "nameLabel": "Vaše jméno",
+        "emailLabel": "Pracovní email",
+        "button": "Naplánovat demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitorování v reálném čase",
+          "description": "Kontinuální sledování aktivit zpracování dat a compliance stavu"
+        },
+        "consentTracking": {
+          "title": "Sledování souhlasů",
+          "description": "Monitorujte platnost souhlasů a spravujte změny preferencí automaticky"
+        },
+        "dsarProcessing": {
+          "title": "Zpracování DSAR",
+          "description": "Zefektivněné workflow pro zpracování žádostí subjektů údajů v termínech"
+        },
+        "breachNotification": {
+          "title": "Notifikace o úniku",
+          "description": "Automatizované 72hodinové notifikační workflow s hodnocením dopadu"
+        }
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky o GDPR",
+      "items": [
+        {
+          "question": "Co je GDPR?",
+          "answer": "Obecné nařízení o ochraně osobních údajů (GDPR) je komplexní zákon EU o ochraně dat, který dává jednotlivcům kontrolu nad jejich osobními údaji. Vztahuje se na jakoukoli organizaci zpracovávající osobní údaje EU rezidentů bez ohledu na to, kde se organizace nachází."
+        },
+        {
+          "question": "Na koho se GDPR vztahuje?",
+          "answer": "GDPR se vztahuje na jakoukoli organizaci, která shromažďuje, zpracovává nebo ukládá osobní údaje EU rezidentů. To zahrnuje společnosti sídlící mimo EU, pokud nabízejí zboží nebo služby občanům EU nebo monitorují jejich chování."
+        },
+        {
+          "question": "Jaké jsou sankce za nesoulad s GDPR?",
+          "answer": "Porušení GDPR může vést k pokutám až 20 milionů eur nebo 4% ročního celosvětového obratu, podle toho, co je vyšší. Organizace mohou také čelit reputačnímu poškození, právním krokům od subjektů údajů a regulatorním omezením."
+        },
+        {
+          "question": "Jaká jsou práva subjektů údajů podle GDPR?",
+          "answer": "GDPR uděluje jednotlivcům osm klíčových práv: právo být informován, právo na přístup, právo na opravu, právo na výmaz, právo na omezení zpracování, právo na přenositelnost údajů, právo vznést námitku a práva týkající se automatizovaného rozhodování a profilování."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s GDPR compliance?",
+          "answer": "Quantifier automatizuje klíčové GDPR požadavky včetně mapování dat, správy souhlasů, zpracování DSAR, workflow DPIA, notifikace o úniku a kontinuálního monitorování compliance. Naše AI-powered platforma snižuje manuální práci o 80% a zajišťuje, že splňujete všech 99 článků GDPR."
+        },
+        {
+          "question": "Vztahuje se GDPR na společnosti mimo EU?",
+          "answer": "Ano, GDPR má extrateritoriální rozsah. Jakákoliv společnost na světě, která nabízí zboží nebo služby EU rezidentům nebo monitoruje jejich chování, musí splňovat GDPR bez ohledu na to, kde se nachází."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Začněte svou GDPR Compliance cestu ještě dnes",
+      "description": "Připojte se k předním organizacím, které důvěřují Quantifier v automatizaci jejich ochrany dat a ochrany dat občanů EU.",
+      "bookDemo": "Objednat demo",
+      "seePricing": "Zobrazit ceny"
+    }
+  },
+  "hipaaPage": {
+    "seo": {
+      "title": "HIPAA Compliance Software | Ochrana zdravotnických dat | Quantifier",
+      "description": "Automatizujte HIPAA compliance s AI-powered ochranou PHI, řízením přístupu, auditními záznamy a detekcí úniků. Chraňte data pacientů a splňte zdravotnické regulace."
+    },
+    "hero": {
+      "badge": "HIPAA Compliance",
+      "title": "Automatizujte HIPAA Compliance s AI",
+      "subtitle": "Chraňte zdravotní informace pacientů, zefektivněte compliance workflow a zajistěte kontinuální HIPAA připravenost s naší inteligentní platformou.",
+      "button": "Začít",
+      "formTitle": "Požádat o demo",
+      "nameLabel": "Vaše jméno",
+      "emailLabel": "Pracovní email",
+      "marketingConsent": "Souhlasím se zasíláním aktualizací o compliance",
+      "requestDemoButton": "Požádat o demo"
+    },
+    "whyCritical": {
+      "title": "Proč je HIPAA Compliance kritická",
+      "subtitle": "Zdravotnické organizace čelí přísným sankcím a reputačnímu poškození za neschopnost chránit data pacientů.",
+      "cards": {
+        "fines": {
+          "stat": "$1.5M",
+          "title": "Maximální roční pokuta",
+          "description": "Pokuty se pohybují od $100 do $50,000 za porušení, až $1.5M ročně za kategorii porušení"
+        },
+        "complexity": {
+          "stat": "4",
+          "title": "Základní pravidla",
+          "description": "Pravidlo soukromí, Bezpečnostní pravidlo, Pravidlo notifikace úniku a Pravidlo vynucování vytvářejí komplexní compliance požadavky"
+        },
+        "scope": {
+          "stat": "330M+",
+          "title": "Chráněných pacientů",
+          "description": "Zdravotní informace každého amerického pacienta musí být chráněny dle HIPAA regulací"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Porozumění HIPAA",
+      "description": "Zákon o přenositelnosti a odpovědnosti zdravotního pojištění stanoví národní standardy pro ochranu citlivých zdravotních informací pacientů.",
+      "whatIs": {
+        "title": "Co je HIPAA?",
+        "description": "HIPAA je americký federální zákon, který vytvořil národní standardy pro ochranu citlivých zdravotních informací pacientů před zveřejněním bez souhlasu nebo vědomí pacienta."
+      },
+      "whoItApplies": {
+        "title": "Kdo musí splňovat?",
+        "description": "Pokryté subjekty (poskytovatelé zdravotní péče, zdravotní plány, clearinghouses) a jejich obchodní partneři, kteří zpracovávají Chráněné zdravotní informace (PHI)."
+      },
+      "keyRules": {
+        "title": "4 klíčová pravidla HIPAA",
+        "items": [
+          "Pravidlo soukromí - Použití a zveřejnění PHI",
+          "Bezpečnostní pravidlo - Záruky pro ePHI",
+          "Pravidlo notifikace úniku - Hlášení incidentů",
+          "Pravidlo vynucování - Sankce a compliance"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Pro zdravotnické vedení",
+      "title": "Proč by HIPAA měla být prioritou",
+      "description": "Porušení HIPAA může vést k trestnímu stíhání, masivním pokutám a ztrátě důvěry pacientů, jejíž obnovení trvá roky.",
+      "points": {
+        "criminal": {
+          "title": "Trestní odpovědnost",
+          "description": "Úmyslná porušení HIPAA mohou vést k trestnímu stíhání s pokutami až $250,000 a vězením"
+        },
+        "trust": {
+          "title": "Důvěra pacientů",
+          "description": "Úniky dat narušují důvěru pacientů a mohou vést k tomu, že pacienti vyhledají péči jinde"
+        },
+        "reputation": {
+          "title": "Reputační poškození",
+          "description": "Porušení HIPAA jsou veřejně oznamována, což způsobuje trvalé poškození reputace organizace"
+        },
+        "fines": {
+          "title": "Významný finanční dopad",
+          "description": "Kromě pokut stojí úniky v průměru $10.9M za incident ve zdravotnictví"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomáhá s HIPAA",
+      "description": "Naše AI-powered platforma automatizuje HIPAA compliance od ochrany PHI po detekci úniků a školení personálu.",
+      "features": {
+        "phiProtection": {
+          "title": "Ochrana PHI",
+          "description": "Automatizované objevování a klasifikace Chráněných zdravotních informací napříč všemi systémy a workflow."
+        },
+        "accessControls": {
+          "title": "Řízení přístupu",
+          "description": "Správa přístupu založená na rolích se standardy minimální nutnosti a automatickými revizemi přístupu."
+        },
+        "auditTrails": {
+          "title": "Auditní záznamy",
+          "description": "Komplexní logování všech přístupů k PHI, modifikací a zveřejnění pro compliance reporting."
+        },
+        "breachDetection": {
+          "title": "Detekce úniků",
+          "description": "Monitorování v reálném čase a automatizovaná reakce na incidenty se správou workflow notifikace úniku."
+        },
+        "trainingManagement": {
+          "title": "Správa školení",
+          "description": "Automatizované přidělování HIPAA školení, sledování a správa certifikací pro veškerý personál."
+        },
+        "complianceReporting": {
+          "title": "Compliance reporting",
+          "description": "Automatizované reporty compliance stavu a dokumentace pro audity a regulatorní požadavky."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native HIPAA Compliance modul",
+      "description": "Náš AI compliance officer kontinuálně monitoruje vaše zdravotnické systémy, identifikuje potenciální rizika expozice PHI, automatizuje bezpečnostní hodnocení a zajišťuje, že vaše organizace zůstává před vyvíjejícími se HIPAA požadavky."
+    },
+    "results": {
+      "title": "Prokázané výsledky HIPAA Compliance",
+      "description": "Zdravotnické organizace používající Quantifier dosahují rychlejší compliance a lepší ochrany dat pacientů.",
+      "metrics": {
+        "coverage": {
+          "value": "100%",
+          "label": "Pokrytí pravidel HIPAA"
+        },
+        "breach": {
+          "value": "< 24h",
+          "label": "Čas detekce úniku"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Kontinuální monitorování"
+        },
+        "reduction": {
+          "value": "75%",
+          "label": "Snížení přípravy na audit"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Vytvořeno pro lídry zdravotnické compliance",
+      "subtitle": "Quantifier slouží profesionálům soukromí a compliance ve zdravotnickém průmyslu.",
+      "personas": {
+        "privacyOfficer": {
+          "title": "Privacy Officer",
+          "description": "Kompletní dohled nad zpracováním PHI s automatizovaným monitorováním a reakcí na incidenty"
+        },
+        "ciso": {
+          "title": "CISO",
+          "description": "Slaďte bezpečnostní kontroly s požadavky HIPAA Security Rule a spravujte rizika"
+        },
+        "healthcareAdmin": {
+          "title": "Zdravotnický administrátor",
+          "description": "Zajistěte compliance v celé organizaci a spravujte smlouvy s obchodními partnery"
+        },
+        "complianceDirector": {
+          "title": "Compliance Director",
+          "description": "Zefektivněte compliance programy a připravte se na OCR audity s jistotou"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální HIPAA operace",
+      "description": "Udržujte průběžnou compliance s automatizovaným monitorováním, správou řízení přístupu a schopnostmi reakce na incidenty.",
+      "statusBadge": "Vždy v souladu",
+      "form": {
+        "nameLabel": "Vaše jméno",
+        "emailLabel": "Pracovní email",
+        "button": "Naplánovat demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitorování v reálném čase",
+          "description": "Kontinuální sledování přístupu k PHI a potenciálních bezpečnostních incidentů"
+        },
+        "accessControl": {
+          "title": "Řízení přístupu",
+          "description": "Automatizované revize přístupu uživatelů a vynucování minimální nutnosti"
+        },
+        "riskAssessment": {
+          "title": "Hodnocení rizik",
+          "description": "Průběžná hodnocení bezpečnostních rizik se sledováním nápravy"
+        },
+        "incidentResponse": {
+          "title": "Reakce na incidenty",
+          "description": "Automatizovaná detekce úniku a správa workflow notifikace"
+        }
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky o HIPAA",
+      "items": [
+        {
+          "question": "Co je HIPAA?",
+          "answer": "HIPAA (Health Insurance Portability and Accountability Act) je americký federální zákon přijatý v roce 1996, který stanoví národní standardy pro ochranu citlivých zdravotních informací pacientů. Vztahuje se na pokryté subjekty a jejich obchodní partnery zpracovávající Chráněné zdravotní informace (PHI)."
+        },
+        {
+          "question": "Kdo musí splňovat HIPAA?",
+          "answer": "HIPAA se vztahuje na pokryté subjekty včetně poskytovatelů zdravotní péče, zdravotních plánů a zdravotnických clearinghouses. Vztahuje se také na obchodní partnery—organizace zpracovávající PHI jménem pokrytých subjektů, jako jsou IT dodavatelé, fakturační společnosti a poskytovatelé cloudových služeb."
+        },
+        {
+          "question": "Jaké jsou sankce za porušení HIPAA?",
+          "answer": "Porušení HIPAA může vést k civilním pokutám od $100 do $50,000 za porušení, s ročními maximy $1.5 milionu za kategorii porušení. Trestní porušení mohou vést k pokutám až $250,000 a vězení až 10 let za přestupky spáchané s úmyslem prodat PHI."
+        },
+        {
+          "question": "Co jsou Chráněné zdravotní informace (PHI)?",
+          "answer": "PHI zahrnují jakékoliv individuálně identifikovatelné zdravotní informace přenášené nebo udržované v jakékoliv formě. To zahrnuje jména pacientů, adresy, data, čísla sociálního zabezpečení, zdravotní záznamy, fakturační informace a jakákoliv data, která by mohla identifikovat pacienta."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s HIPAA compliance?",
+          "answer": "Quantifier automatizuje klíčové HIPAA požadavky včetně objevování a ochrany PHI, správy řízení přístupu, údržby auditních záznamů, detekce a notifikace úniku, správy školení personálu a kontinuálního monitorování compliance. Naše AI-powered platforma snižuje manuální compliance práci o 75%."
+        },
+        {
+          "question": "Co je pravidlo HIPAA o notifikaci úniku?",
+          "answer": "Pravidlo notifikace úniku vyžaduje, aby pokryté subjekty oznámily dotčeným jednotlivcům do 60 dnů od zjištění úniku postihujícího více než 500 jednotlivců. Menší úniky musí být hlášeny ročně HHS. Quantifier automatizuje workflow detekce a notifikace úniku pro zajištění včasné compliance."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Začněte svou HIPAA Compliance cestu ještě dnes",
+      "description": "Připojte se k předním zdravotnickým organizacím, které důvěřují Quantifier v automatizaci jejich HIPAA compliance a ochraně dat pacientů.",
+      "bookDemo": "Objednat demo",
+      "seePricing": "Zobrazit ceny"
+    }
+  },
+  "ccpaPage": {
+    "seo": {
+      "title": "CCPA Compliance Software | Kalifornská ochrana soukromí | Quantifier",
+      "description": "Automatizujte CCPA compliance s AI-powered zpracováním spotřebitelských žádostí, správou opt-out a inventářem dat. Chraňte práva kalifornských spotřebitelů na soukromí."
+    },
+    "hero": {
+      "badge": "CCPA Compliance",
+      "title": "Automatizujte CCPA Compliance s AI",
+      "subtitle": "Zpracovávejte spotřebitelské žádosti, spravujte opt-outy a udržujte kalifornskou compliance soukromí s naší inteligentní platformou.",
+      "button": "Začít",
+      "formTitle": "Požádat o demo",
+      "nameLabel": "Vaše jméno",
+      "emailLabel": "Pracovní email",
+      "marketingConsent": "Souhlasím se zasíláním aktualizací o compliance",
+      "requestDemoButton": "Požádat o demo"
+    },
+    "whyCritical": {
+      "title": "Proč je CCPA Compliance kritická",
+      "subtitle": "Podniky obsluhující kalifornské rezidenty musí respektovat práva spotřebitelů na soukromí nebo čelit významným pokutám.",
+      "cards": {
+        "fines": {
+          "stat": "$7,500",
+          "title": "Za porušení",
+          "description": "Úmyslná porušení stojí $7,500 každé; neúmyslná porušení stojí $2,500 za incident"
+        },
+        "scope": {
+          "stat": "40M+",
+          "title": "Chráněných Kaliforňanů",
+          "description": "Největší ekonomika amerického státu s přísnými právy na soukromí pro všechny rezidenty"
+        },
+        "rights": {
+          "stat": "4",
+          "title": "Práva spotřebitelů",
+          "description": "Právo vědět, Právo na smazání, Právo na opt-out a Právo na nediskriminaci musí být dodržována"
+        }
+      }
+    },
+    "understanding": {
+      "title": "Porozumění CCPA",
+      "description": "Kalifornský zákon o ochraně soukromí spotřebitelů dává kalifornským rezidentům bezprecedentní kontrolu nad jejich osobními informacemi shromažďovanými podniky.",
+      "whatIs": {
+        "title": "Co je CCPA?",
+        "description": "CCPA je kalifornský státní zákon o soukromí, který dává rezidentům právo vědět, jaké osobní informace jsou shromažďovány, požádat o smazání, odmítnout prodej dat a dostávat rovnocenné služby bez ohledu na volby soukromí."
+      },
+      "whoItApplies": {
+        "title": "Kdo musí splňovat?",
+        "description": "Podniky shromažďující data kalifornských rezidentů splňující prahy: roční příjmy $25M+, 100K+ spotřebitelů/zařízení, nebo 50%+ příjmů z prodeje dat."
+      },
+      "consumerRights": {
+        "title": "4 práva spotřebitelů",
+        "items": [
+          "Právo vědět - Jaká data jsou shromažďována",
+          "Právo na smazání - Odstranění osobních dat",
+          "Právo na opt-out - Zastavení prodeje dat",
+          "Právo na nediskriminaci - Rovnocenné služby"
+        ]
+      }
+    },
+    "whyLeadership": {
+      "badge": "Pro vedení",
+      "title": "Proč by CCPA měla být prioritou",
+      "description": "Nedodržení CCPA vystavuje podniky vymáhání státního prokurátora, soukromým žalobám a značnému reputačnímu poškození.",
+      "points": {
+        "litigation": {
+          "title": "Riziko žaloby",
+          "description": "Spotřebitelé mohou žalovat za $100-$750 za únik dat, nebo skutečnou škodu, pokud je vyšší"
+        },
+        "trust": {
+          "title": "Důvěra spotřebitelů",
+          "description": "CCPA compliance buduje důvěru spotřebitelů a demonstruje respekt k právům na soukromí"
+        },
+        "marketAccess": {
+          "title": "Přístup na trh",
+          "description": "Compliance otevírá kalifornský trh—5. největší ekonomiku na světě"
+        },
+        "trend": {
+          "title": "Regulatorní trend",
+          "description": "CCPA je vzorem pro další státní zákony o soukromí; compliance nyní připravuje na budoucnost"
+        }
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier pomáhá s CCPA",
+      "description": "Naše AI-powered platforma automatizuje CCPA compliance od spotřebitelských žádostí po inventář dat a správu opt-out.",
+      "features": {
+        "consumerRequests": {
+          "title": "Spotřebitelské žádosti",
+          "description": "Automatizované workflow pro zpracování žádostí o právo vědět, smazat a opt-out v 45denních termínech."
+        },
+        "dataInventory": {
+          "title": "Inventář dat",
+          "description": "Kontinuální objevování a klasifikace osobních informací napříč všemi systémy a dodavateli."
+        },
+        "optOutManagement": {
+          "title": "Správa opt-out",
+          "description": "Centralizovaná správa preferencí se sledováním souhlasů a automatizovaným zpracováním signálů."
+        },
+        "vendorManagement": {
+          "title": "Správa dodavatelů",
+          "description": "Sledujte tok dat k dodavatelům, spravujte smlouvy a zajistěte compliance třetích stran."
+        },
+        "nonDiscrimination": {
+          "title": "Nediskriminace",
+          "description": "Monitorujte a dokumentujte spravedlivé zacházení bez ohledu na volby soukromí spotřebitelů."
+        },
+        "complianceReporting": {
+          "title": "Compliance reporting",
+          "description": "Automatizované generování compliance reportů a dokumentace pro regulátory."
+        }
+      }
+    },
+    "aiModule": {
+      "badge": "AI-Powered",
+      "title": "AI-Native CCPA Compliance modul",
+      "description": "Náš AI compliance officer kontinuálně monitoruje vaše shromažďování a zpracování dat, automatizuje spotřebitelské žádosti, spravuje opt-out preference a zajišťuje, že vaše organizace splňuje vyvíjející se kalifornské požadavky na soukromí."
+    },
+    "results": {
+      "title": "Prokázané výsledky CCPA Compliance",
+      "description": "Organizace používající Quantifier dosahují CCPA compliance rychleji a s větší jistotou.",
+      "metrics": {
+        "coverage": {
+          "value": "100%",
+          "label": "Pokrytí požadavků CCPA"
+        },
+        "requests": {
+          "value": "< 24h",
+          "label": "Čas zpracování žádosti"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Kontinuální monitorování"
+        },
+        "reduction": {
+          "value": "70%",
+          "label": "Snížení manuální práce"
+        }
+      }
+    },
+    "forWhom": {
+      "title": "Vytvořeno pro lídry soukromí",
+      "subtitle": "Quantifier slouží profesionálům soukromí a compliance v různých průmyslech.",
+      "personas": {
+        "privacyOfficer": {
+          "title": "Privacy Officer",
+          "description": "Kompletní dohled nad programem kalifornského soukromí s automatizovaným monitorováním"
+        },
+        "legal": {
+          "title": "Právní poradce",
+          "description": "Spravujte regulatorní odpovědi a dokumentaci ochrany před žalobami"
+        },
+        "marketing": {
+          "title": "Marketing",
+          "description": "Vyvážte personalizaci s dodržováním opt-out preferencí"
+        },
+        "cto": {
+          "title": "CTO",
+          "description": "Implementujte technické kontroly pro inventář dat a žádosti o smazání"
+        }
+      }
+    },
+    "continuousCompliance": {
+      "title": "Kontinuální CCPA operace",
+      "description": "Udržujte průběžnou compliance s automatizovaným monitorováním, zpracováním spotřebitelských žádostí a správou opt-out.",
+      "statusBadge": "Vždy v souladu",
+      "form": {
+        "nameLabel": "Vaše jméno",
+        "emailLabel": "Pracovní email",
+        "button": "Naplánovat demo"
+      },
+      "features": {
+        "monitoring": {
+          "title": "Monitorování v reálném čase",
+          "description": "Kontinuální sledování aktivit shromažďování dat a compliance stavu"
+        },
+        "requestProcessing": {
+          "title": "Zpracování žádostí",
+          "description": "Automatizované workflow pro spotřebitelské žádosti v 45denních termínech"
+        },
+        "optOutTracking": {
+          "title": "Sledování opt-out",
+          "description": "Centralizovaná správa preferencí a zpracování signálů"
+        },
+        "vendorCompliance": {
+          "title": "Compliance dodavatelů",
+          "description": "Monitorování toku dat třetích stran a smluvních povinností"
+        }
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky o CCPA",
+      "items": [
+        {
+          "question": "Co je CCPA?",
+          "answer": "Kalifornský zákon o ochraně soukromí spotřebitelů (CCPA) je kalifornský státní zákon o soukromí, který dává rezidentům právo vědět, jaké osobní informace jsou shromažďovány, požádat o smazání, odmítnout prodej dat a dostávat rovnocenné služby bez ohledu na volby soukromí."
+        },
+        {
+          "question": "Kdo musí splňovat CCPA?",
+          "answer": "CCPA se vztahuje na podniky, které shromažďují osobní informace kalifornských rezidentů A splňují alespoň jeden práh: roční hrubé příjmy přesahující $25 milionů, nákup/prodej/sdílení osobních informací 100,000+ spotřebitelů, nebo odvození 50%+ ročních příjmů z prodeje osobních informací."
+        },
+        {
+          "question": "Jaké jsou sankce za nesoulad s CCPA?",
+          "answer": "CCPA vymáhání může vést k pokutám od $2,500 za neúmyslné porušení do $7,500 za úmyslné porušení. Navíc spotřebitelé mohou žalovat za úniky dat a požadovat $100-$750 na spotřebitele za incident nebo skutečnou škodu."
+        },
+        {
+          "question": "Jaká jsou 4 spotřebitelská práva CCPA?",
+          "answer": "CCPA uděluje spotřebitelům čtyři klíčová práva: Právo vědět (jaké osobní informace jsou shromažďovány), Právo na smazání (odstranění jejich osobních informací), Právo na opt-out (zastavení prodeje jejich dat) a Právo na nediskriminaci (rovnocenné služby a ceny)."
+        },
+        {
+          "question": "Jak Quantifier pomáhá s CCPA compliance?",
+          "answer": "Quantifier automatizuje klíčové CCPA požadavky včetně zpracování spotřebitelských žádostí, inventáře dat, správy opt-out, compliance dodavatelů a kontinuálního monitorování. Naše AI-powered platforma snižuje manuální compliance práci o 70% a zajišťuje, že splňujete všechny termíny žádostí."
+        },
+        {
+          "question": "Jaký je rozdíl mezi CCPA a GDPR?",
+          "answer": "Zatímco oba chrání osobní data, CCPA se zaměřuje na kalifornské rezidenty a zdůrazňuje opt-out z prodeje dat, zatímco GDPR pokrývá EU rezidenty a vyžaduje opt-in souhlas. CCPA má prahy podnikání; GDPR se vztahuje na všechny zpracovatele EU dat. Sankce a specifická práva se také liší."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Začněte svou CCPA Compliance cestu ještě dnes",
+      "description": "Připojte se k předním organizacím, které důvěřují Quantifier v automatizaci jejich kalifornské privacy compliance a ochraně práv spotřebitelů.",
+      "bookDemo": "Objednat demo",
+      "seePricing": "Zobrazit ceny"
+    }
   }
 }
