@@ -7,19 +7,21 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Locale } from '@/i18n/config';
 
-const languages = [
+const languages: { code: Locale; name: string; flag: string }[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'pl', name: 'Polski', flag: '🇵🇱' }
-] as const;
+  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+  { code: 'cs', name: 'Čeština', flag: '🇨🇿' }
+];
 
 export const LanguageSwitch = () => {
-  const { currentLocale, changeLanguage } = useLanguage();
+  const { currentLocale, changeLanguage, isLoading } = useLanguage();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2">
+        <Button variant="ghost" size="sm" className="gap-2" disabled={isLoading}>
           <Globe className="h-4 w-4" />
           <span className="text-sm font-medium">
             {languages.find(l => l.code === currentLocale)?.flag}

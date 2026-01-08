@@ -50,7 +50,17 @@ const staticPages = [
   { path: '/frameworks/information-security/dora', changefreq: 'monthly', priority: '0.7' },
 ];
 
-const locales = ['en', 'pl'];
+const locales = ['en', 'pl', 'cs'];
+
+// Helper to generate hreflang links for all locales
+const generateHreflangLinks = (path: string, currentLocale: string): string => {
+  return locales
+    .map(locale => {
+      const href = `${BASE_URL}/${locale}${path}`;
+      return `<xhtml:link rel="alternate" hreflang="${locale}" href="${href}" />`;
+    })
+    .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${path}" />`;
+};
 
 serve(async (req) => {
   try {
@@ -89,15 +99,11 @@ serve(async (req) => {
     for (const page of staticPages) {
       for (const locale of locales) {
         const fullPath = `${BASE_URL}/${locale}${page.path}`;
-        const altLocale = locale === 'en' ? 'pl' : 'en';
-        const altPath = `${BASE_URL}/${altLocale}${page.path}`;
         
         urlEntries += `
   <url>
     <loc>${fullPath}</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="${locale === 'en' ? fullPath : altPath}" />
-    <xhtml:link rel="alternate" hreflang="pl" href="${locale === 'pl' ? fullPath : altPath}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${page.path}" />
+    ${generateHreflangLinks(page.path, locale)}
     <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
@@ -107,32 +113,16 @@ serve(async (req) => {
 
     // Success Stories
     if (stories && stories.length > 0) {
-      // Group stories by slug to find alternates
-      const storyMap = new Map<string, any[]>();
-      stories.forEach(story => {
-        const existing = storyMap.get(story.slug) || [];
-        existing.push(story);
-        storyMap.set(story.slug, existing);
-      });
-
       for (const story of stories) {
         const fullPath = `${BASE_URL}/${story.lang}/success-stories/${story.slug}`;
-        const altLocale = story.lang === 'en' ? 'pl' : 'en';
-        
-        // Try to find alternate language version
-        const altStory = stories.find(s => s.lang === altLocale && s.slug === story.slug);
-        const altPath = altStory 
-          ? `${BASE_URL}/${altLocale}/success-stories/${altStory.slug}`
-          : `${BASE_URL}/${altLocale}/success-stories/${story.slug}`;
+        const storyPath = `/success-stories/${story.slug}`;
         
         const lastmod = story.updated_at?.split('T')[0] || story.published_at?.split('T')[0] || today;
         
         urlEntries += `
   <url>
     <loc>${fullPath}</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="${story.lang === 'en' ? fullPath : altPath}" />
-    <xhtml:link rel="alternate" hreflang="pl" href="${story.lang === 'pl' ? fullPath : altPath}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${story.lang === 'en' ? fullPath : altPath}" />
+    ${generateHreflangLinks(storyPath, story.lang)}
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -144,22 +134,14 @@ serve(async (req) => {
     if (posts && posts.length > 0) {
       for (const post of posts) {
         const fullPath = `${BASE_URL}/${post.lang}/blog/${post.slug}`;
-        const altLocale = post.lang === 'en' ? 'pl' : 'en';
-        
-        // Try to find alternate language version
-        const altPost = posts.find(p => p.lang === altLocale && p.slug === post.slug);
-        const altPath = altPost 
-          ? `${BASE_URL}/${altLocale}/blog/${altPost.slug}`
-          : `${BASE_URL}/${altLocale}/blog/${post.slug}`;
+        const postPath = `/blog/${post.slug}`;
         
         const lastmod = post.updated_at?.split('T')[0] || post.published_at?.split('T')[0] || today;
         
         urlEntries += `
   <url>
     <loc>${fullPath}</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="${post.lang === 'en' ? fullPath : altPath}" />
-    <xhtml:link rel="alternate" hreflang="pl" href="${post.lang === 'pl' ? fullPath : altPath}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${post.lang === 'en' ? fullPath : altPath}" />
+    ${generateHreflangLinks(postPath, post.lang)}
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -172,7 +154,7 @@ serve(async (req) => {
         xmlns:xhtml="http://www.w3.org/1999/xhtml">${urlEntries}
 </urlset>`;
 
-    console.log(`Sitemap generated with ${(stories?.length || 0) + (posts?.length || 0)} dynamic entries`);
+    console.log(`Sitemap generated with ${(stories?.length || 0) + (posts?.length || 0)} dynamic entries for ${locales.length} locales`);
 
     return new Response(sitemap, {
       status: 200,

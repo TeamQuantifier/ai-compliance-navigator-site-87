@@ -1,19 +1,22 @@
 import { createContext, useContext, ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { SUPPORTED_LOCALES, Locale } from '@/i18n/config';
+import { SUPPORTED_LOCALES, Locale, LOCALE_REGEX } from '@/i18n/config';
 
 interface LanguageContextType {
   currentLocale: Locale;
   changeLanguage: (locale: Locale) => void;
   t: (key: string, options?: any) => any;
+  isLoading: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const localeRegex = new RegExp(`^/(${LOCALE_REGEX})(/|$)`);
+
 const getLocaleFromPath = (): Locale => {
   const path = window.location.pathname;
-  const match = path.match(/^\/(en|pl)(\/|$)/);
+  const match = path.match(localeRegex);
   return match ? (match[1] as Locale) : 'en';
 };
 
@@ -38,11 +41,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const [currentLocale, setCurrentLocale] = useState<Locale>(getLocaleFromPath());
+  const [isLoading, setIsLoading] = useState(false);
 
   // Synchronize i18n language on mount
   useEffect(() => {
     const initialLocale = getLocaleFromPath();
-    i18n.changeLanguage(initialLocale);
+    setIsLoading(true);
+    i18n.changeLanguage(initialLocale).finally(() => setIsLoading(false));
     setCurrentLocale(initialLocale);
   }, [i18n]);
 
@@ -52,7 +57,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       const newLocale = getLocaleFromPath();
       if (newLocale !== currentLocale) {
         setCurrentLocale(newLocale);
-        i18n.changeLanguage(newLocale);
+        setIsLoading(true);
+        i18n.changeLanguage(newLocale).finally(() => setIsLoading(false));
         localStorage.setItem('preferred-language', newLocale);
       }
     };
@@ -61,19 +67,21 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, [currentLocale, i18n]);
 
-  const changeLanguage = (newLocale: Locale) => {
+  const changeLanguage = async (newLocale: Locale) => {
     // Save to localStorage
     localStorage.setItem('preferred-language', newLocale);
     
     // Update state
     setCurrentLocale(newLocale);
     
-    // Change i18n language
-    i18n.changeLanguage(newLocale);
+    // Change i18n language with loading state
+    setIsLoading(true);
+    await i18n.changeLanguage(newLocale);
+    setIsLoading(false);
     
     // Navigate with corrected path
     const currentPath = window.location.pathname;
-    const pathWithoutLocale = currentPath.replace(/^\/(en|pl)(\/|$)/, '');
+    const pathWithoutLocale = currentPath.replace(localeRegex, '');
     const newPath = `/${newLocale}${pathWithoutLocale ? '/' + pathWithoutLocale : ''}`;
     
     navigate(newPath);
@@ -83,7 +91,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     <LanguageContext.Provider value={{
       currentLocale,
       changeLanguage,
-      t
+      t,
+      isLoading
     }}>
       {children}
     </LanguageContext.Provider>
