@@ -164,7 +164,7 @@ const Nist = () => {
                     {t('nistPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+                <Button variant="outline" size="lg" className="border-white/20 bg-gray-50 text-[#324691] hover:bg-white" asChild>
                   <Link to={`/${currentLocale}/contact`}>
                     {t('nistPage.cta.watchTour')}
                   </Link>
