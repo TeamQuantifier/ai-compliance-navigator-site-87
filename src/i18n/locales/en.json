@@ -299,34 +299,6 @@
       "lublinAddress": "Lublin, Poland: Głowackiego 3/5/1"
     }
   },
-  "blog": {
-    "title": "Blog & Insights",
-    "subtitle": "Latest articles, guides, and compliance insights",
-    "readMore": "Read More",
-    "readingTime": "min read",
-    "publishedOn": "Published on",
-    "category": "Category",
-    "allCategories": "All Categories",
-    "relatedPosts": "Related Articles",
-    "shareArticle": "Share this article",
-    "backToBlog": "Back to Blog",
-    "ebookSection": {
-      "title": "Compliance Calendar 2026!",
-      "subtitle": "What will 2026 bring for compliance?",
-      "cta": "Download calendar",
-      "formTitle": "Enter your email to get the Compliance Calendar 2026:",
-      "emailPlaceholder": "Your email address",
-      "downloadButton": "Download",
-      "downloading": "Downloading...",
-      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the Privacy Policy. This site is protected by reCAPTCHA and Google. See:",
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service",
-      "consentRequired": "You must accept the consent to process data",
-      "emailRequired": "Please enter a valid email address",
-      "successTitle": "Thank you!",
-      "successDesc": "Your download will start shortly."
-    }
-  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
@@ -445,7 +417,23 @@
     "loading": "Loading...",
     "error": "Error loading content",
     "notFound": "Post not found",
-    "relatedPosts": "Related Posts"
+    "relatedPosts": "Related Posts",
+    "ebookSection": {
+      "title": "Compliance Calendar 2026!",
+      "subtitle": "What will 2026 bring for compliance?",
+      "cta": "Download calendar",
+      "formTitle": "Enter your email to get the Compliance Calendar 2026:",
+      "emailPlaceholder": "Your email address",
+      "downloadButton": "Download",
+      "downloading": "Downloading...",
+      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the Privacy Policy. This site is protected by reCAPTCHA and Google. See:",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "consentRequired": "You must accept the consent to process data",
+      "emailRequired": "Please enter a valid email address",
+      "successTitle": "Thank you!",
+      "successDesc": "Your download will start shortly."
+    }
   },
   "successStories": {
     "title": "Success Stories",
