@@ -308,7 +308,23 @@
     "allCategories": "Wszystkie kategorie",
     "relatedPosts": "Powiązane artykuły",
     "shareArticle": "Udostępnij artykuł",
-    "backToBlog": "Powrót do bloga"
+    "backToBlog": "Powrót do bloga",
+    "ebookSection": {
+      "title": "Compliance Kalendarz na 2026 rok!",
+      "subtitle": "Jaki będzie rok 2026 w compliance?",
+      "cta": "Pobierz kalendarz",
+      "formTitle": "Podaj adres e-mail i odbierz Compliance Kalendarz 2026:",
+      "emailPlaceholder": "Twój adres e-mail",
+      "downloadButton": "Pobierz",
+      "downloading": "Pobieranie...",
+      "consent": "Zgadzam się na przetwarzanie swoich danych osobowych przez Administratora – Quantifier Sp. z o.o. z siedzibą w Warszawie Rondo Daszyńskiego 1 oraz w Lublinie, ul. Głowackiego 3/5/1 w celu informacyjnym i marketingowym, opisanym w Polityce Prywatności. Strona jest chroniona przez reCAPTCHA i Google. Zobacz:",
+      "privacyPolicy": "Politykę Prywatności",
+      "termsOfService": "Warunki Korzystania z usługi",
+      "consentRequired": "Musisz zaakceptować zgodę na przetwarzanie danych",
+      "emailRequired": "Podaj poprawny adres e-mail",
+      "successTitle": "Dziękujemy!",
+      "successDesc": "Twoje pobieranie rozpocznie się za chwilę."
+    }
   },
   "common": {
     "loading": "Ładowanie...",
