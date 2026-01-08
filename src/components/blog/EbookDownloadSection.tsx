@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useToast } from '@/hooks/use-toast';
@@ -9,7 +10,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Download, Loader2 } from 'lucide-react';
 
 const EbookDownloadSection = () => {
-  const { currentLocale, t } = useLanguage();
+  const { currentLocale } = useLanguage();
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
