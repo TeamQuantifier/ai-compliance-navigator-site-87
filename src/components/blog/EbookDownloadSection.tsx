@@ -46,6 +46,7 @@ const EbookDownloadSection = () => {
     try {
       await newsletterClient.subscribe(email, currentLocale, {
         source: 'compliance_calendar_2026',
+        origin: window.location.origin,
         tags: ['ebook', 'compliance_calendar_2026']
       });
     } catch (error) {
