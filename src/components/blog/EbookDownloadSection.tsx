@@ -152,11 +152,13 @@ const EbookDownloadSection = () => {
 
         {/* Right column - image */}
         <div className="flex justify-center">
-          <img 
-            src="/lovable-uploads/compliance-calendar-2026.png" 
-            alt="Compliance Kalendarz 2026"
-            className="max-w-full h-auto rounded-lg shadow-xl"
-          />
+          <div className="bg-white p-4 rounded-xl shadow-xl">
+            <img 
+              src="/lovable-uploads/compliance-calendar-2026.png" 
+              alt="Compliance Kalendarz 2026"
+              className="max-w-full h-auto rounded-lg"
+            />
+          </div>
         </div>
       </div>
     </section>
