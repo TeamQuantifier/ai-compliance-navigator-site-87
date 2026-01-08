@@ -11,7 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Clock, Calendar, ArrowRight, AlertCircle, BookOpen } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
-
+import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
 const BlogList = () => {
   const { currentLocale, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -74,6 +74,9 @@ const BlogList = () => {
             </p>
           </div>
         </div>
+
+        {/* Ebook download section */}
+        <EbookDownloadSection />
 
         <div className="max-w-7xl mx-auto">
           {/* Category filter */}
