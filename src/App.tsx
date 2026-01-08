@@ -40,6 +40,11 @@ import Iso27001 from "./pages/frameworks/information-security/Iso27001";
 import Iso9001 from "./pages/frameworks/information-security/Iso9001";
 import Dora from "./pages/frameworks/information-security/Dora";
 
+// Data Security Framework specific pages
+import Gdpr from "./pages/frameworks/data-security/Gdpr";
+import Hipaa from "./pages/frameworks/data-security/Hipaa";
+import Ccpa from "./pages/frameworks/data-security/Ccpa";
+
 // Plans, Partners, etc.
 import Plans from "./pages/Plans";
 import Partners from "./pages/Partners";
@@ -51,6 +56,9 @@ import Contact from "./pages/Contact";
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import StoryDetail from "./pages/blog/StoryDetail";
+
+// SEO Landing pages
+import GrcPlatform from "./pages/seo-landing/GrcPlatform";
 
 // Admin pages
 import Login from "./pages/admin/Login";
@@ -120,7 +128,19 @@ const App = () => (
                   <Route path="/:locale/frameworks/information-security/iso-27001" element={<Iso27001 />} />
                   <Route path="/:locale/frameworks/information-security/iso-9001" element={<Iso9001 />} />
                   <Route path="/:locale/frameworks/information-security/dora" element={<Dora />} />
+                  
+                  {/* Data Security Framework specific routes */}
+                  <Route path="/:locale/frameworks/data-security/gdpr" element={<Gdpr />} />
+                  <Route path="/:locale/frameworks/data-security/hipaa" element={<Hipaa />} />
+                  <Route path="/:locale/frameworks/data-security/ccpa" element={<Ccpa />} />
               
+                  {/* SEO Landing Pages - Redirects to framework pages */}
+                  <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/cybersecurity/soc" replace />} />
+                  <Route path="/:locale/iso27001" element={<Navigate to="frameworks/information-security/iso-27001" replace />} />
+                  <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/data-security" replace />} />
+                  <Route path="/:locale/nis2" element={<Navigate to="frameworks/cybersecurity/nis-ii" replace />} />
+                  <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
+
                   {/* Blog routes */}
                   <Route path="/:locale/blog" element={<BlogList />} />
                   <Route path="/:locale/blog/:slug" element={<BlogPost />} />

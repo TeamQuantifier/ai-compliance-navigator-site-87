@@ -1,9 +1,11 @@
+# Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 
@@ -13,7 +15,36 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
+# AI/LLM Crawlers - Allow for discoverability
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Default rule
 User-agent: *
 Allow: /
+
+# LLM-readable metadata
+# See /llms.txt for structured information about Quantifier.ai
 
 Sitemap: https://quantifier.ai/sitemap.xml

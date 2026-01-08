@@ -282,6 +282,21 @@ const DataSecurity = () => {
           </div>
         </div>
         
+        {/* Related Solution Link - GDPR */}
+        <div className="my-10 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-100">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-1">{t('dataSecurityPage.relatedSolution.title')}</h3>
+              <p className="text-slate-600">{t('dataSecurityPage.relatedSolution.description')}</p>
+            </div>
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white whitespace-nowrap" asChild>
+              <Link to={`/${currentLocale}/contact`}>
+                {t('dataSecurityPage.relatedSolution.button')} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="mt-10 text-center mb-8">
           <h2 className="text-2xl font-bold mb-3 text-slate-800">

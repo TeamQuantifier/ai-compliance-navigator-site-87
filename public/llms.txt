@@ -1,0 +1,64 @@
+# Quantifier.ai - AI-Native GRC & Compliance Platform
+
+## Canonical Description
+
+Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform that automates continuous compliance for frameworks including SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG standards. The platform uses autonomous AI agents to collect evidence, assess controls, generate documentation, and maintain audit-readiness without manual spreadsheet work.
+
+## Core Capabilities
+
+- Autonomous AI Compliance Officer: AI agents that continuously monitor controls, collect evidence, and identify gaps
+- Multi-Framework Support: SOC 2 Type I/II, ISO 27001, ISO 9001, GDPR, NIS2, DORA, NIST CSF, ESG reporting
+- Continuous Compliance: Real-time control monitoring instead of point-in-time assessments
+- Automated Evidence Collection: Integrates with cloud providers, identity systems, and business tools
+- Risk Assessment: AI-powered risk identification, scoring, and mitigation tracking
+- Document Management: Automated policy generation, version control, and audit trails
+- Analytics Dashboards: Real-time compliance posture, gap analysis, and board-ready reporting
+- Value Chain Management: Supply chain risk assessment and third-party compliance tracking
+
+## Key Links
+
+- Homepage: https://quantifier.ai
+- Product Overview: https://quantifier.ai/en/product
+- Frameworks: https://quantifier.ai/en/frameworks
+- Pricing: https://quantifier.ai/en/plans
+- Contact: https://quantifier.ai/en/contact
+- Success Stories: https://quantifier.ai/en/success-stories
+- Blog: https://quantifier.ai/en/blog
+
+## Framework-Specific Pages
+
+- ISO 27001: https://quantifier.ai/en/frameworks/information-security
+- SOC 2: https://quantifier.ai/en/frameworks/cybersecurity
+- NIS2: https://quantifier.ai/en/frameworks/cybersecurity/nis-ii
+- GDPR: https://quantifier.ai/en/frameworks/data-security
+- ESG: https://quantifier.ai/en/frameworks/esg
+- DORA: https://quantifier.ai/en/frameworks/information-security/dora
+
+## Target Users
+
+- Compliance Officers and GRC Teams
+- CISOs and Security Leaders
+- CTOs and Engineering Teams
+- Auditors and Risk Managers
+- SMBs and Enterprises seeking SOC 2 / ISO 27001 certification
+
+## Company Information
+
+- Founded: 2020
+- Headquarters: San Francisco, CA (US) and Warsaw (Poland)
+- Website: https://quantifier.ai
+- LinkedIn: https://www.linkedin.com/company/quantifier-ai
+
+## Disambiguation
+
+Quantifier.ai is distinct from:
+- "Quantified AI" - a different company/product
+- "Quantify" - generic measurement tools
+- Academic "quantifier" logic terminology
+
+This is Quantifier.ai, the GRC compliance automation platform.
+
+## Languages
+
+- English: https://quantifier.ai/en
+- Polish: https://quantifier.ai/pl

@@ -1,98 +1,78 @@
-
 import PageTemplate from '@/components/PageTemplate';
-import { Shield, CheckCircle, ArrowRight, BarChart2, CheckSquare, Clock, FileText } from 'lucide-react';
+import { Shield, CheckCircle, ArrowRight, Users, FileText, Monitor, AlertTriangle, Building, Gavel, Clock, Briefcase, Scale, Lock, Eye, Database, Server, TrendingUp, CheckSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Soc = () => {
   const { t, currentLocale } = useLanguage();
   
+  // Helper to safely get array from translations
+  const getArrayTranslation = (key: string): string[] => {
+    const result = t(key, { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  };
+  
+  // Helper to safely get object array from translations
+  const getObjectArrayTranslation = <T,>(key: string): T[] => {
+    const result = t(key, { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  };
+
   return (
     <PageTemplate
       title={t('seo.frameworks.cybersecurity.soc.title')}
       description={t('seo.frameworks.cybersecurity.soc.description')}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-compliance-800 to-innovation-800 rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-3/5">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {t('socPage.hero.title')}
-              </h2>
-              <p className="text-xl opacity-90 mb-6">
-                {t('socPage.hero.subtitle')}
-              </p>
-              <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white" asChild>
-                <Link to={`/${currentLocale}/contact`}>
-                  {t('socPage.hero.button')} <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-            <div className="md:w-2/5">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
-                <div className="bg-innovation-900 text-white p-3 flex items-center justify-between">
-                  <div className="flex items-center">
-                    <Shield className="h-5 w-5 mr-2 text-innovation-400" />
-                    <span className="font-medium">Quantifier SOC Dashboard</span>
+        <section className="mb-20">
+          <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple rounded-2xl p-8 md:p-16 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/5"></div>
+            <div className="relative z-10">
+              <div className="flex flex-col lg:flex-row items-start gap-12">
+                <div className="lg:w-1/2">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white/90 mb-6 border border-white/20">
+                    <Shield className="w-5 h-5 mr-2" />
+                    <span className="font-medium">{t('socPage.hero.badge')}</span>
                   </div>
-                  <div className="flex space-x-1">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  </div>
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+                    {t('socPage.hero.title')}
+                  </h1>
+                  <p className="text-xl md:text-2xl opacity-90 mb-8 text-white/80">{t('socPage.hero.subtitle')}</p>
                 </div>
-                <div className="p-4 bg-slate-50">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="font-semibold text-slate-800">SOC 2 Readiness Overview</h3>
-                    <div className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">93% Complete</div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mb-3">
-                    <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                      <div className="flex items-center text-sm text-slate-500 mb-1">
-                        <CheckSquare className="h-4 w-4 mr-1 text-innovation-600" />
-                        <span>Controls Status</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold text-slate-800">107/115</span>
-                        <div className="w-16 bg-slate-200 rounded-full h-2">
-                          <div className="bg-innovation-600 h-2 rounded-full" style={{ width: '93%' }}></div>
+                <div className="lg:w-1/2">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-white/10 rounded-xl blur-3xl"></div>
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                      <h3 className="text-xl font-semibold mb-4 text-white">{t('socPage.hero.formTitle')}</h3>
+                      <form className="space-y-4">
+                        <div>
+                          <Label htmlFor="name" className="text-white/90 text-sm">{t('socPage.hero.nameLabel')}</Label>
+                          <Input id="name" placeholder={t('socPage.hero.namePlaceholder')} className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-brand-blue" />
                         </div>
-                      </div>
-                    </div>
-                    <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                      <div className="flex items-center text-sm text-slate-500 mb-1">
-                        <FileText className="h-4 w-4 mr-1 text-compliance-600" />
-                        <span>Evidence Items</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold text-slate-800">243</span>
-                        <div className="text-xs text-compliance-600 bg-compliance-100 px-2 py-0.5 rounded">
-                          Up to date
+                        <div>
+                          <Label htmlFor="email" className="text-white/90 text-sm">{t('socPage.hero.emailLabel')}</Label>
+                          <Input id="email" type="email" placeholder={t('socPage.hero.emailPlaceholder')} className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-brand-blue" />
                         </div>
-                      </div>
+                        <div className="flex items-start space-x-2 pt-2">
+                          <Checkbox id="marketing" className="border-white/30 data-[state=checked]:bg-brand-blue" />
+                          <Label htmlFor="marketing" className="text-xs text-white/80 leading-relaxed">
+                            {t('socPage.hero.marketingConsent')}
+                          </Label>
+                        </div>
+                        <Button className="w-full bg-white text-brand-blue-dark hover:bg-brand-gray-light font-medium" asChild>
+                          <Link to={`/${currentLocale}/contact`}>
+                            {t('socPage.hero.requestDemoButton')}
+                          </Link>
+                        </Button>
+                      </form>
                     </div>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm mb-3">
-                    <div className="flex items-center text-sm text-slate-500 mb-1">
-                      <Clock className="h-4 w-4 mr-1 text-yellow-600" />
-                      <span>Due Tasks</span>
-                    </div>
-                    <div className="space-y-2 mt-1">
-                      <div className="flex justify-between text-xs">
-                        <span className="text-slate-600">Review security risk assessment</span>
-                        <span className="text-yellow-600">3 days</span>
-                      </div>
-                      <div className="flex justify-between text-xs">
-                        <span className="text-slate-600">Update access control logs</span>
-                        <span className="text-yellow-600">5 days</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-end">
-                    <button className="text-xs text-innovation-600 hover:text-innovation-700 font-medium">Open Dashboard →</button>
                   </div>
                 </div>
               </div>
@@ -100,261 +80,510 @@ const Soc = () => {
           </div>
         </section>
 
-        {/* Main Content */}
-        <section className="mb-16">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="md:w-1/2">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-4">
-                <Shield className="w-5 h-5 mr-2" />
-                <span className="font-medium">{t('socPage.mainContent.badge')}</span>
+        {/* Why SOC 2 Is Important Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('socPage.whyImportant.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              {t('socPage.whyImportant.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-brand-gray-light hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-brand-purple/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <Users className="w-8 h-8 text-brand-purple" />
+                </div>
+                <div className="text-4xl font-bold text-brand-purple mb-2">{t('socPage.whyImportant.cards.clients.stat')}</div>
+                <CardTitle className="text-xl">{t('socPage.whyImportant.cards.clients.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600">{t('socPage.whyImportant.cards.clients.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <Clock className="w-8 h-8 text-brand-blue" />
+                </div>
+                <div className="text-4xl font-bold text-brand-blue mb-2">{t('socPage.whyImportant.cards.timeline.stat')}</div>
+                <CardTitle className="text-xl">{t('socPage.whyImportant.cards.timeline.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600">{t('socPage.whyImportant.cards.timeline.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-brand-blue-dark/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <AlertTriangle className="w-8 h-8 text-brand-blue-dark" />
+                </div>
+                <div className="text-4xl font-bold text-brand-blue-dark mb-2">{t('socPage.whyImportant.cards.breach.stat')}</div>
+                <CardTitle className="text-xl">{t('socPage.whyImportant.cards.breach.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600">{t('socPage.whyImportant.cards.breach.description')}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* What is SOC 2 Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('socPage.understanding.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              {t('socPage.understanding.description')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <Card className="border-brand-gray-light hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-brand-blue" />
+                </div>
+                <CardTitle className="text-xl">{t('socPage.understanding.whatIs.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  {t('socPage.understanding.whatIs.description')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-brand-purple/10 rounded-lg flex items-center justify-center mb-4">
+                  <Building className="w-6 h-6 text-brand-purple" />
+                </div>
+                <CardTitle className="text-xl">{t('socPage.understanding.whoNeeds.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  {getArrayTranslation('socPage.understanding.whoNeeds.items').map((item, index) => (
+                    <li key={index}>• {item}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-brand-blue-dark/10 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-brand-blue-dark" />
+                </div>
+                <CardTitle className="text-xl">{t('socPage.understanding.trustCriteria.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-slate-600 space-y-2">
+                  {getArrayTranslation('socPage.understanding.trustCriteria.items').map((item, index) => (
+                    <li key={index} className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-brand-blue mr-2 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Why SOC 2 Matters for Leadership Section */}
+        <section className="mb-20">
+          <div className="bg-gradient-to-r from-brand-blue-dark to-brand-purple rounded-2xl p-8 md:p-16 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/5"></div>
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white/90 mb-6 border border-white/20">
+                  <Gavel className="w-5 h-5 mr-2" />
+                  <span className="font-medium">{t('socPage.whyLeadership.badge')}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                  {t('socPage.whyLeadership.title')}
+                </h2>
+                <p className="text-xl text-white/80 max-w-4xl mx-auto">
+                  {t('socPage.whyLeadership.description')}
+                </p>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-heading">
-                {t('socPage.mainContent.title')}
-              </h2>
-              <p className="text-lg text-slate-700 mb-6">
-                {t('socPage.mainContent.description')}
-              </p>
-              
-              <h4 className="font-semibold text-lg mb-3">{t('socPage.mainContent.benefitsTitle')}</h4>
-              <ul className="space-y-3 mb-6">
-                {(t('socPage.mainContent.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button className="group bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white" asChild>
-                <Link to={`/${currentLocale}/contact`}>
-                  {t('socPage.mainContent.button')}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-            <div className="md:w-1/2">
-              <Card className="border-compliance-100">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xl">{t('socPage.mainContent.trustServices.title')}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium">{t('socPage.mainContent.trustServices.security.title')}</span>
-                        <span className="text-slate-600 ml-1">{t('socPage.mainContent.trustServices.security.description')}</span>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {getObjectArrayTranslation<{title: string, description: string}>('socPage.whyLeadership.points').map((point, index) => {
+                  const icons = [Users, TrendingUp, Shield, Clock];
+                  const IconComponent = icons[index % icons.length];
+                  return (
+                    <div key={index} className="flex items-start p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                        <IconComponent className="w-6 h-6 text-white" />
                       </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
                       <div>
-                        <span className="font-medium">{t('socPage.mainContent.trustServices.availability.title')}</span>
-                        <span className="text-slate-600 ml-1">{t('socPage.mainContent.trustServices.availability.description')}</span>
+                        <h3 className="text-lg font-semibold text-white mb-2">{point.title}</h3>
+                        <p className="text-white/70 text-sm">{point.description}</p>
                       </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium">{t('socPage.mainContent.trustServices.processingIntegrity.title')}</span>
-                        <span className="text-slate-600 ml-1">{t('socPage.mainContent.trustServices.processingIntegrity.description')}</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium">{t('socPage.mainContent.trustServices.confidentiality.title')}</span>
-                        <span className="text-slate-600 ml-1">{t('socPage.mainContent.trustServices.confidentiality.description')}</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-compliance-600 mt-1 mr-2 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium">{t('socPage.mainContent.trustServices.privacy.title')}</span>
-                        <span className="text-slate-600 ml-1">{t('socPage.mainContent.trustServices.privacy.description')}</span>
-                      </div>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Platform Screenshot Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-compliance-100 to-slate-100 p-6 rounded-xl">
-            <div className="flex flex-col items-center text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-compliance-900">
-                {t('socPage.platformScreenshots.title')}
+        {/* How Quantifier Helps */}
+        <section className="mb-20">
+          <div className="bg-brand-gray-light/30 rounded-2xl p-8 md:p-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+                {t('socPage.howQuantifierHelps.title')}
               </h2>
-              <p className="text-lg text-slate-700 max-w-2xl">
-                {t('socPage.platformScreenshots.description')}
+              <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+                {t('socPage.howQuantifierHelps.description')}
               </p>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Database className="w-6 h-6 text-brand-blue" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('socPage.howQuantifierHelps.features.evidenceCollection.title')}</h3>
+                <p className="text-slate-600">
+                  {t('socPage.howQuantifierHelps.features.evidenceCollection.description')}
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-purple/10 rounded-lg flex items-center justify-center mb-4">
+                  <Monitor className="w-6 h-6 text-brand-purple" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('socPage.howQuantifierHelps.features.controlMonitoring.title')}</h3>
+                <p className="text-slate-600">
+                  {t('socPage.howQuantifierHelps.features.controlMonitoring.description')}
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-blue-dark/10 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-brand-blue-dark" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('socPage.howQuantifierHelps.features.trustMapping.title')}</h3>
+                <p className="text-slate-600">
+                  {t('socPage.howQuantifierHelps.features.trustMapping.description')}
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-mint rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-brand-blue-dark" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('socPage.howQuantifierHelps.features.auditTrail.title')}</h3>
+                <p className="text-slate-600">{t('socPage.howQuantifierHelps.features.auditTrail.description')}</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <AlertTriangle className="w-6 h-6 text-brand-blue" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('socPage.howQuantifierHelps.features.gapAnalysis.title')}</h3>
+                <p className="text-slate-600">{t('socPage.howQuantifierHelps.features.gapAnalysis.description')}</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-purple/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckSquare className="w-6 h-6 text-brand-purple" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-slate-900">{t('socPage.howQuantifierHelps.features.certificationReadiness.title')}</h3>
+                <p className="text-slate-600">
+                  {t('socPage.howQuantifierHelps.features.certificationReadiness.description')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SOC 2 AI-Native Module Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+              {t('socPage.aiModule.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
+              {t('socPage.aiModule.description')}
+            </p>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-brand-mint text-brand-blue-dark border border-brand-blue/20">
+              <Shield className="w-5 h-5 mr-2 text-brand-blue" />
+              <span className="font-medium">{t('socPage.aiModule.badge')}</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Results Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('socPage.results.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
+              {t('socPage.results.description')}
+            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* First Screenshot: Evidence Collection */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
-                <div className="bg-compliance-900 text-white p-3 flex justify-between items-center">
-                  <div className="flex items-center">
-                    <FileText className="h-4 w-4 mr-2 text-compliance-400" />
-                    <span className="font-medium">Evidence Collection</span>
-                  </div>
-                  <div className="flex space-x-2">
-                    <div className="text-xs bg-compliance-700 px-2 py-0.5 rounded-full">SOC 2</div>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="mb-4 border-b border-slate-200 pb-3">
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="font-medium text-slate-800">Access Control Evidence</h3>
-                      <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Verified</span>
-                    </div>
-                    <p className="text-sm text-slate-600 mb-2">Control ID: CC6.1 - Access to systems is limited to authorized users</p>
-                    <div className="flex flex-wrap gap-2">
-                      <div className="text-xs px-2 py-1 bg-slate-100 rounded-full flex items-center">
-                        <FileText className="h-3 w-3 mr-1 text-slate-600" />
-                        <span>Access_Policy_v2.pdf</span>
-                      </div>
-                      <div className="text-xs px-2 py-1 bg-slate-100 rounded-full flex items-center">
-                        <FileText className="h-3 w-3 mr-1 text-slate-600" />
-                        <span>User_Access_Log_Q2.xlsx</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-4 border-b border-slate-200 pb-3">
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="font-medium text-slate-800">Risk Assessment</h3>
-                      <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Verified</span>
-                    </div>
-                    <p className="text-sm text-slate-600 mb-2">Control ID: CC3.1 - Risk identification and mitigation</p>
-                    <div className="flex flex-wrap gap-2">
-                      <div className="text-xs px-2 py-1 bg-slate-100 rounded-full flex items-center">
-                        <FileText className="h-3 w-3 mr-1 text-slate-600" />
-                        <span>Risk_Assessment_2025.pdf</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-2">
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="font-medium text-slate-800">Security Monitoring</h3>
-                      <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">Pending</span>
-                    </div>
-                    <p className="text-sm text-slate-600 mb-2">Control ID: CC7.2 - Security incidents are identified and remediated</p>
-                    <button className="text-xs bg-compliance-600 text-white px-3 py-1 rounded-full hover:bg-compliance-700">
-                      Upload Evidence
-                    </button>
-                  </div>
-                </div>
+            {/* Success Metrics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-4xl mx-auto">
+              <div className="text-center animate-fade-in">
+                <div className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-2">{t('socPage.results.metrics.controls')}</div>
+                <div className="text-sm text-slate-600">{t('socPage.results.metrics.controlsLabel')}</div>
               </div>
-              
-              {/* Second Screenshot: Control Monitoring */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
-                <div className="bg-innovation-900 text-white p-3 flex justify-between items-center">
-                  <div className="flex items-center">
-                    <BarChart2 className="h-4 w-4 mr-2 text-innovation-400" />
-                    <span className="font-medium">Control Monitoring</span>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">{t('socPage.results.metrics.evidence')}</div>
+                <div className="text-sm text-slate-600">{t('socPage.results.metrics.evidenceLabel')}</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-brand-purple mb-2">{t('socPage.results.metrics.monitoring')}</div>
+                <div className="text-sm text-slate-600">{t('socPage.results.metrics.monitoringLabel')}</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">{t('socPage.results.metrics.reduction')}</div>
+                <div className="text-sm text-slate-600">{t('socPage.results.metrics.reductionLabel')}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* For Whom Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              {t('socPage.forWhom.title')}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+              {t('socPage.forWhom.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border-brand-gray-light hover:shadow-md transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <Shield className="w-8 h-8 text-brand-blue" />
+                </div>
+                <CardTitle className="text-lg">{t('socPage.forWhom.personas.ciso.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('socPage.forWhom.personas.ciso.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-md transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-brand-blue-dark/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <Server className="w-8 h-8 text-brand-blue-dark" />
+                </div>
+                <CardTitle className="text-lg">{t('socPage.forWhom.personas.cto.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('socPage.forWhom.personas.cto.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-md transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-brand-purple/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <Scale className="w-8 h-8 text-brand-purple" />
+                </div>
+                <CardTitle className="text-lg">{t('socPage.forWhom.personas.compliance.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('socPage.forWhom.personas.compliance.description')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-brand-gray-light hover:shadow-md transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-brand-mint rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <Briefcase className="w-8 h-8 text-brand-blue-dark" />
+                </div>
+                <CardTitle className="text-lg">{t('socPage.forWhom.personas.it.title')}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-slate-600 text-sm">{t('socPage.forWhom.personas.it.description')}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Continuous SOC Operations */}
+        <section className="mb-20">
+          <div className="bg-brand-mint/30 rounded-2xl p-8 border border-brand-blue/10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Request Demo Form - Left Side */}
+              <div className="bg-white p-6 rounded-lg border border-brand-gray-light shadow-sm">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4 text-center">{t('socPage.continuousCompliance.form.title')}</h4>
+                <form className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
+                      {t('socPage.continuousCompliance.form.nameLabel')}
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="w-full px-3 py-2 border border-brand-gray-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      placeholder={t('socPage.continuousCompliance.form.namePlaceholder')}
+                    />
                   </div>
-                  <div className="flex space-x-2">
-                    <div className="text-xs bg-innovation-700 px-2 py-0.5 rounded-full">Analytics</div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+                      {t('socPage.continuousCompliance.form.emailLabel')}
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full px-3 py-2 border border-brand-gray-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      placeholder={t('socPage.continuousCompliance.form.emailPlaceholder')}
+                    />
+                  </div>
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="marketing"
+                      name="marketing"
+                      className="mt-1 h-4 w-4 text-brand-blue border-brand-gray-light rounded focus:ring-brand-blue"
+                    />
+                    <label htmlFor="marketing" className="ml-2 text-sm text-slate-600">
+                      {t('socPage.continuousCompliance.form.marketingConsent')}
+                    </label>
+                  </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white"
+                  >
+                    {t('socPage.continuousCompliance.form.submitButton')}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </form>
+              </div>
+
+              {/* Content - Right Side */}
+              <div className="animate-fade-in">
+                <h3 className="text-3xl font-bold mb-6 text-slate-900">
+                  {t('socPage.continuousCompliance.title')}
+                </h3>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                  {t('socPage.continuousCompliance.description')}
+                </p>
+                
+                {/* Interactive Feature Cards */}
+                <div className="space-y-4">
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-brand-gray-light hover:bg-white/80 transition-all duration-300 hover:shadow-md animate-fade-in" 
+                       style={{animationDelay: '0.1s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mr-4">
+                      <Monitor className="w-6 h-6 text-brand-blue" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('socPage.continuousCompliance.features.monitoring.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('socPage.continuousCompliance.features.monitoring.description')}</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-brand-blue rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-brand-gray-light hover:bg-white/80 transition-all duration-300 hover:shadow-md animate-fade-in" 
+                       style={{animationDelay: '0.2s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-purple/10 rounded-lg flex items-center justify-center mr-4">
+                      <Database className="w-6 h-6 text-brand-purple" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('socPage.continuousCompliance.features.evidence.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('socPage.continuousCompliance.features.evidence.description')}</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-brand-purple rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-brand-gray-light hover:bg-white/80 transition-all duration-300 hover:shadow-md animate-fade-in" 
+                       style={{animationDelay: '0.3s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-mint rounded-lg flex items-center justify-center mr-4">
+                      <FileText className="w-6 h-6 text-brand-blue-dark" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('socPage.continuousCompliance.features.reporting.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('socPage.continuousCompliance.features.reporting.description')}</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-brand-blue-dark rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-brand-gray-light hover:bg-white/80 transition-all duration-300 hover:shadow-md animate-fade-in" 
+                       style={{animationDelay: '0.4s'}}>
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-blue-dark/10 rounded-lg flex items-center justify-center mr-4">
+                      <Eye className="w-6 h-6 text-brand-blue-dark" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t('socPage.continuousCompliance.features.auditTrail.title')}</h4>
+                      <p className="text-sm text-slate-600">{t('socPage.continuousCompliance.features.auditTrail.description')}</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-brand-blue rounded-full animate-pulse"></div>
+                    </div>
                   </div>
                 </div>
-                <div className="p-4">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="font-medium text-slate-800">Trust Services Categories</h3>
-                    <select className="text-xs border border-slate-300 rounded py-1 px-2">
-                      <option>Last 30 days</option>
-                      <option>Last quarter</option>
-                      <option>Year to date</option>
-                    </select>
-                  </div>
-                  
-                  <div className="space-y-4 mb-5">
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-800">Security</span>
-                        <span className="text-slate-600">98%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '98%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-800">Availability</span>
-                        <span className="text-slate-600">85%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '85%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-800">Processing Integrity</span>
-                        <span className="text-slate-600">90%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-800">Confidentiality</span>
-                        <span className="text-slate-600">95%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-800">Privacy</span>
-                        <span className="text-slate-600">92%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '92%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-slate-50 p-3 rounded border border-slate-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="p-1.5 bg-innovation-100 rounded-full">
-                        <Shield className="h-4 w-4 text-innovation-700" />
-                      </div>
-                      <h4 className="font-medium text-sm text-slate-800">AI Suggestions</h4>
-                    </div>
-                    <p className="text-xs text-slate-600">
-                      Consider improving your change management documentation to strengthen your Processing Integrity score. Our AI has identified 3 controls that need attention.
-                    </p>
-                    <button className="text-xs text-innovation-600 hover:text-innovation-700 font-medium mt-2">
-                      View Recommendations →
-                    </button>
-                  </div>
+
+                {/* Status Badge */}
+                <div className="mt-8 inline-flex items-center px-4 py-2 rounded-full bg-brand-mint text-brand-blue-dark border border-brand-blue/20 animate-fade-in" 
+                     style={{animationDelay: '0.5s'}}>
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  <span className="text-sm font-medium">{t('socPage.continuousCompliance.statusBadge')}</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="mb-8">
-          <div className="bg-gradient-to-r from-compliance-800 to-innovation-700 rounded-xl p-8 md:p-12 text-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {t('socPage.cta.title')}
+        {/* FAQ Section */}
+        <FAQSection 
+          title={t('socPage.faq.title')}
+          faqs={[
+            { question: t('socPage.faq.items.0.question'), answer: t('socPage.faq.items.0.answer') },
+            { question: t('socPage.faq.items.1.question'), answer: t('socPage.faq.items.1.answer') },
+            { question: t('socPage.faq.items.2.question'), answer: t('socPage.faq.items.2.answer') },
+            { question: t('socPage.faq.items.3.question'), answer: t('socPage.faq.items.3.answer') },
+            { question: t('socPage.faq.items.4.question'), answer: t('socPage.faq.items.4.answer') },
+            { question: t('socPage.faq.items.5.question'), answer: t('socPage.faq.items.5.answer') }
+          ]}
+          pageUrl={`https://quantifier.com/${currentLocale}/frameworks/cybersecurity/soc`}
+        />
+
+        {/* Final CTA Section */}
+        <section className="mb-12">
+          <div className="bg-gradient-to-r from-brand-blue-dark to-brand-purple rounded-2xl p-8 md:p-16 text-white text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/5"></div>
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                {t('socPage.finalCta.title')}
               </h2>
-              <p className="text-xl opacity-90 mb-8">
-                {t('socPage.cta.description')}
+              <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                {t('socPage.finalCta.description')}
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white px-8" asChild>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-white text-brand-blue-dark hover:bg-brand-gray-light font-semibold px-8" asChild>
                   <Link to={`/${currentLocale}/contact`}>
-                    {t('socPage.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                    {t('socPage.finalCta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                  {t('socPage.cta.watchTour')}
+                <Button size="lg" variant="outline" className="border-white/20 bg-gray-50 text-[#324691] hover:bg-white font-semibold px-8" asChild>
+                  <Link to={`/${currentLocale}/plans`}>
+                    {t('socPage.finalCta.seePricing')}
+                  </Link>
                 </Button>
               </div>
             </div>

@@ -80,6 +80,22 @@ const Frameworks = () => {
         ))}
       </div>
       
+      {/* GRC Platform Link */}
+      <div className="mt-12 bg-gradient-to-r from-compliance-50 to-innovation-50 rounded-xl p-6 border border-compliance-100">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-semibold text-slate-900 mb-1">{t('frameworksPage.grcPlatform.title')}</h3>
+            <p className="text-slate-600">{t('frameworksPage.grcPlatform.description')}</p>
+          </div>
+          <Button className="bg-gradient-to-r from-compliance-600 to-innovation-600 hover:from-compliance-700 hover:to-innovation-700 text-white whitespace-nowrap group" asChild>
+            <Link to={`/${currentLocale}/grc-platform`}>
+              {t('frameworksPage.grcPlatform.button')}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+
       <div className="mt-16 text-center">
         <h2 className="text-2xl font-bold mb-4 gradient-heading">
           {t('frameworksPage.cta.title')}

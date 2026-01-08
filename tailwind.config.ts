@@ -88,6 +88,13 @@ export default {
 					800: '#5b21b6',
 					900: '#4c1d95',
 					950: '#2e1065',
+				},
+				brand: {
+					'gray-light': '#e0e2e9',
+					'mint': '#d4f1ed',
+					'purple': '#6d38a8',
+					'blue': '#387fef',
+					'blue-dark': '#324691',
 				}
 			},
 			borderRadius: {
