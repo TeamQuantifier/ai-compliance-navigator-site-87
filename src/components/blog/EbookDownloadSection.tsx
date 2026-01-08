@@ -41,37 +41,35 @@ const EbookDownloadSection = () => {
     }
 
     setIsLoading(true);
+    
+    // Try to subscribe to newsletter (but don't block PDF download on failure)
     try {
       await newsletterClient.subscribe(email, currentLocale, {
         source: 'compliance_calendar_2026',
         tags: ['ebook', 'compliance_calendar_2026']
       });
-
-      toast({
-        title: t('blog.ebookSection.successTitle'),
-        description: t('blog.ebookSection.successDesc'),
-      });
-
-      // Trigger PDF download
-      const link = document.createElement('a');
-      link.href = '/downloads/compliance-kalendarz-2026.pdf';
-      link.download = 'Compliance-Kalendarz-2026.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Reset form
-      setEmail('');
-      setConsent(false);
     } catch (error) {
-      toast({
-        variant: 'destructive',
-        title: t('footer.toast.subscribeFailed'),
-        description: t('footer.toast.subscribeFailedDesc'),
-      });
-    } finally {
-      setIsLoading(false);
+      console.error('Newsletter subscription failed:', error);
+      // Continue anyway - allow PDF download
     }
+
+    // Always trigger PDF download
+    const link = document.createElement('a');
+    link.href = '/downloads/compliance-kalendarz-2026.pdf';
+    link.download = 'Compliance-Kalendarz-2026.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    toast({
+      title: t('blog.ebookSection.successTitle'),
+      description: t('blog.ebookSection.successDesc'),
+    });
+
+    // Reset form
+    setEmail('');
+    setConsent(false);
+    setIsLoading(false);
   };
 
   return (
