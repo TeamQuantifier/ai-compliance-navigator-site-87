@@ -196,13 +196,13 @@ const Footer = () => {
           </div>
           
           <div className="flex flex-wrap gap-4 text-sm">
-            <Link to="/legal/privacy" className="text-slate-500 hover:text-primary transition-colors">
+            <Link to={`/${currentLocale}/legal/privacy`} className="text-slate-500 hover:text-primary transition-colors">
               {t('footer.legal.privacy')}
             </Link>
-            <Link to="/legal/terms" className="text-slate-500 hover:text-primary transition-colors">
+            <Link to={`/${currentLocale}/legal/terms`} className="text-slate-500 hover:text-primary transition-colors">
               {t('footer.legal.terms')}
             </Link>
-            <Link to="/legal/cookies" className="text-slate-500 hover:text-primary transition-colors">
+            <Link to={`/${currentLocale}/legal/cookies`} className="text-slate-500 hover:text-primary transition-colors">
               {t('footer.legal.cookies')}
             </Link>
           </div>

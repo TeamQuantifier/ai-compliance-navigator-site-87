@@ -426,13 +426,80 @@
       "emailPlaceholder": "Vaše emailová adresa",
       "downloadButton": "Stáhnout",
       "downloading": "Stahování...",
-      "consent": "Souhlasím se zpracováním mých osobních údajů Správcem – Quantifier Sp. z o.o. se sídlem ve Varšavě, Rondo Daszyńskiego 1 a v Lublinu, ul. Głowackiego 3/5/1 pro informační a marketingové účely, jak je popsáno v Zásadách ochrany osobních údajů. Tato stránka je chráněna reCAPTCHA a Google. Viz:",
-      "privacyPolicy": "Zásady ochrany osobních údajů",
-      "termsOfService": "Podmínky služby",
+      "consent": "Souhlasím se zpracováním mých osobních údajů Správcem – Quantifier Sp. z o.o. se sídlem ve Varšavě, Rondo Daszyńského 1 a v Lublinu, ul. Głowackiego 3/5/1 pro informační a marketingové účely, jak je popsáno v",
+      "privacyPolicy": "Zásadách ochrany osobních údajů",
+      "termsOfService": "Podmínkách služby",
+      "and": "a",
+      "googleProtection": "Tato stránka je chráněna reCAPTCHA a Google",
+      "googlePrivacy": "Zásady ochrany osobních údajů",
+      "googleTerms": "Podmínky služby",
       "consentRequired": "Musíte přijmout souhlas se zpracováním údajů",
       "emailRequired": "Prosím zadejte platnou emailovou adresu",
       "successTitle": "Děkujeme!",
       "successDesc": "Vaše stahování začne brzy."
+    }
+  },
+  "legal": {
+    "cookies": {
+      "title": "Zásady používání cookies",
+      "metaDescription": "Zjistěte, jak Quantifier.ai používá cookies a sledovací technologie na našich webových stránkách.",
+      "lastUpdated": "Poslední aktualizace",
+      "whatAreCookies": {
+        "title": "Co jsou cookies?",
+        "content": "Cookies jsou malé textové soubory, které se ukládají do vašeho zařízení při návštěvě webových stránek. Pomáhají webům zapamatovat si informace o vaší návštěvě, což usnadňuje a zefektivňuje další návštěvy."
+      },
+      "cookiesWeUse": {
+        "title": "Jaké cookies používáme",
+        "googleAnalytics": "Používáme Google Analytics k pochopení toho, jak návštěvníci interagují s naším webem. To nám pomáhá zlepšovat uživatelskou zkušenost a měřit efektivitu našeho obsahu.",
+        "gaCookie": "Jedinečný identifikátor uživatele (vyprší po 2 letech)",
+        "gaSessionCookie": "Údržba relace (vyprší po 2 letech)"
+      },
+      "emailCollection": {
+        "title": "Sběr e-mailových adres",
+        "content": "Sbíráme e-mailové adresy pouze tehdy, když je uživatelé dobrovolně poskytnou prostřednictvím našich formulářů, jako je přihlášení k odběru newsletteru nebo stahování materiálů. Tyto údaje jsou bezpečně uloženy a používány pouze pro účely popsané v okamžiku jejich sběru. Z naší komunikace se můžete kdykoli odhlásit."
+      },
+      "manageCookies": {
+        "title": "Správa cookies",
+        "content": "Cookies můžete kontrolovat a mazat prostřednictvím nastavení prohlížeče. Vezměte prosím na vědomí, že vypnutí cookies může ovlivnit funkčnost našeho webu. Většina prohlížečů vám umožňuje odmítnout cookies nebo je po uložení smazat."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Máte-li jakékoli dotazy ohledně našich zásad cookies, kontaktujte nás na: privacy@quantifier.ai"
+      }
+    },
+    "privacy": {
+      "title": "Zásady ochrany osobních údajů",
+      "metaDescription": "Zjistěte, jak Quantifier.ai shromažďuje, používá a chrání vaše osobní údaje.",
+      "intro": "V Quantifier.ai se zavazujeme chránit vaše soukromí a zajistit bezpečnost vašich osobních údajů. Tyto Zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a chráníme vaše informace.",
+      "dataCollection": {
+        "title": "Jaké údaje shromažďujeme",
+        "content": "Shromažďujeme informace, které nám přímo poskytujete, jako je vaše jméno, e-mailová adresa a informace o společnosti při registraci k našim službám, žádosti o demo nebo přihlášení k odběru newsletteru. Prostřednictvím cookies a podobných technologií také shromažďujeme údaje o používání."
+      },
+      "dataUse": {
+        "title": "Jak používáme vaše údaje",
+        "content": "Vaše osobní údaje používáme k poskytování a zlepšování našich služeb, ke komunikaci s vámi o aktualizacích a nabídkách a k zajištění bezpečnosti naší platformy. Vaše osobní údaje neprodáváme třetím stranám."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "V případě jakýchkoli dotazů ohledně našich postupů ochrany osobních údajů nás prosím kontaktujte na: privacy@quantifier.ai"
+      }
+    },
+    "terms": {
+      "title": "Podmínky služby",
+      "metaDescription": "Přečtěte si podmínky používání služeb Quantifier.ai.",
+      "intro": "Vítejte v Quantifier.ai. Přístupem a používáním našich služeb souhlasíte s tím, že budete vázáni těmito Podmínkami služby. Před použitím naší platformy si je prosím pečlivě přečtěte.",
+      "useOfService": {
+        "title": "Používání služby",
+        "content": "Souhlasíte s tím, že budete naše služby používat pouze pro zákonné účely a v souladu s těmito Podmínkami. Jste zodpovědní za zachování důvěrnosti přihlašovacích údajů k účtu a za veškeré aktivity, které se na vašem účtu odehrávají."
+      },
+      "intellectualProperty": {
+        "title": "Duševní vlastnictví",
+        "content": "Veškerý obsah, funkce a funkčnost našich služeb jsou majetkem Quantifier.ai a jsou chráněny mezinárodním autorským právem, ochrannými známkami a dalšími právy duševního vlastnictví."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "V případě jakýchkoli dotazů ohledně těchto Podmínek služby nás prosím kontaktujte na: legal@quantifier.ai"
+      }
     }
   },
   "successStories": {

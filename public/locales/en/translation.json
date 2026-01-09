@@ -426,13 +426,80 @@
       "emailPlaceholder": "Your email address",
       "downloadButton": "Download",
       "downloading": "Downloading...",
-      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the Privacy Policy. This site is protected by reCAPTCHA and Google. See:",
+      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
+      "and": "and",
+      "googleProtection": "This site is protected by reCAPTCHA and Google",
+      "googlePrivacy": "Privacy Policy",
+      "googleTerms": "Terms of Service",
       "consentRequired": "You must accept the consent to process data",
       "emailRequired": "Please enter a valid email address",
       "successTitle": "Thank you!",
       "successDesc": "Your download will start shortly."
+    }
+  },
+  "legal": {
+    "cookies": {
+      "title": "Cookie Policy",
+      "metaDescription": "Learn about how Quantifier.ai uses cookies and tracking technologies on our website.",
+      "lastUpdated": "Last updated",
+      "whatAreCookies": {
+        "title": "What are cookies?",
+        "content": "Cookies are small text files that are stored on your device when you visit websites. They help websites remember information about your visit, making your next visit easier and more useful."
+      },
+      "cookiesWeUse": {
+        "title": "Cookies we use",
+        "googleAnalytics": "We use Google Analytics to understand how visitors interact with our website. This helps us improve user experience and measure the effectiveness of our content.",
+        "gaCookie": "Unique user identifier (expires after 2 years)",
+        "gaSessionCookie": "Session maintenance (expires after 2 years)"
+      },
+      "emailCollection": {
+        "title": "Email collection",
+        "content": "We collect email addresses only when users voluntarily submit them through our forms, such as newsletter subscriptions or resource downloads. This data is stored securely and used only for the purposes described at the time of collection. You can unsubscribe from our communications at any time."
+      },
+      "manageCookies": {
+        "title": "Managing cookies",
+        "content": "You can control and delete cookies through your browser settings. Please note that disabling cookies may affect the functionality of our website. Most browsers allow you to refuse cookies or delete them after they have been set."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "If you have any questions about our cookie policy, please contact us at: privacy@quantifier.ai"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "metaDescription": "Learn how Quantifier.ai collects, uses, and protects your personal data.",
+      "intro": "At Quantifier.ai, we are committed to protecting your privacy and ensuring the security of your personal data. This Privacy Policy explains how we collect, use, and safeguard your information.",
+      "dataCollection": {
+        "title": "Data we collect",
+        "content": "We collect information you provide directly to us, such as your name, email address, and company information when you sign up for our services, request a demo, or subscribe to our newsletter. We also collect usage data through cookies and similar technologies."
+      },
+      "dataUse": {
+        "title": "How we use your data",
+        "content": "We use your personal data to provide and improve our services, communicate with you about updates and offers, and ensure the security of our platform. We do not sell your personal data to third parties."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any questions about our privacy practices, please contact us at: privacy@quantifier.ai"
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "metaDescription": "Read the terms and conditions for using Quantifier.ai services.",
+      "intro": "Welcome to Quantifier.ai. By accessing and using our services, you agree to be bound by these Terms of Service. Please read them carefully before using our platform.",
+      "useOfService": {
+        "title": "Use of Service",
+        "content": "You agree to use our services only for lawful purposes and in accordance with these Terms. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account."
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "All content, features, and functionality of our services are owned by Quantifier.ai and are protected by international copyright, trademark, and other intellectual property laws."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any questions about these Terms of Service, please contact us at: legal@quantifier.ai"
+      }
     }
   },
   "successStories": {
