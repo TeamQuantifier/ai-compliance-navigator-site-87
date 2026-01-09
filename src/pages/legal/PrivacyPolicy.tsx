@@ -42,6 +42,25 @@ const PrivacyPolicy = () => {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-800 mb-4">
+              {t('legal.privacy.thirdParty.title')}
+            </h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              {t('legal.privacy.thirdParty.content')}
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              <a 
+                href="https://policies.google.com/privacy" 
+                className="text-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('legal.privacy.thirdParty.googleLink')}
+              </a>
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4">
               {t('legal.privacy.contact.title')}
             </h2>
             <p className="text-slate-600 leading-relaxed">

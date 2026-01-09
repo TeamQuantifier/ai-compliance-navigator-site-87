@@ -42,6 +42,25 @@ const TermsOfService = () => {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-800 mb-4">
+              {t('legal.terms.thirdParty.title')}
+            </h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              {t('legal.terms.thirdParty.content')}
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              <a 
+                href="https://policies.google.com/terms" 
+                className="text-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('legal.terms.thirdParty.googleLink')}
+              </a>
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4">
               {t('legal.terms.contact.title')}
             </h2>
             <p className="text-slate-600 leading-relaxed">

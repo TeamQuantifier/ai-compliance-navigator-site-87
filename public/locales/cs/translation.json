@@ -482,6 +482,11 @@
       "contact": {
         "title": "Kontakt",
         "content": "V případě jakýchkoli dotazů ohledně našich postupů ochrany osobních údajů nás prosím kontaktujte na: privacy@quantifier.ai"
+      },
+      "thirdParty": {
+        "title": "Služby třetích stran",
+        "content": "Na našich webových stránkách používáme služby Google (včetně Google Analytics a reCAPTCHA). Tyto služby podléhají zásadám ochrany osobních údajů Google.",
+        "googleLink": "Zobrazit Zásady ochrany osobních údajů Google"
       }
     },
     "terms": {
@@ -495,6 +500,11 @@
       "intellectualProperty": {
         "title": "Duševní vlastnictví",
         "content": "Veškerý obsah, funkce a funkčnost našich služeb jsou majetkem Quantifier.ai a jsou chráněny mezinárodním autorským právem, ochrannými známkami a dalšími právy duševního vlastnictví."
+      },
+      "thirdParty": {
+        "title": "Služby třetích stran",
+        "content": "Naše webové stránky využívají služby Google. Používání těchto služeb podléhá podmínkám služby Google.",
+        "googleLink": "Zobrazit Podmínky služby Google"
       },
       "contact": {
         "title": "Kontakt",
