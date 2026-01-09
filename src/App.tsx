@@ -60,6 +60,11 @@ import StoryDetail from "./pages/blog/StoryDetail";
 // SEO Landing pages
 import GrcPlatform from "./pages/seo-landing/GrcPlatform";
 
+// Legal pages
+import CookiesPolicy from "./pages/legal/CookiesPolicy";
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import TermsOfService from "./pages/legal/TermsOfService";
+
 // Admin pages
 import Login from "./pages/admin/Login";
 import { ProtectedRoute } from "./components/admin/ProtectedRoute";
@@ -152,6 +157,11 @@ const App = () => (
                   <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
                   
                   <Route path="/:locale/contact" element={<Contact />} />
+                  
+                  {/* Legal routes */}
+                  <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
+                  <Route path="/:locale/legal/terms" element={<TermsOfService />} />
+                  <Route path="/:locale/legal/cookies" element={<CookiesPolicy />} />
                   
                   {/* Admin routes */}
                   <Route path="/admin/login" element={<Login />} />

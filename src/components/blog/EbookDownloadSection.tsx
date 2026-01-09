@@ -119,7 +119,7 @@ const EbookDownloadSection = () => {
                 >
                   {t('blog.ebookSection.privacyPolicy')}
                 </Link>
-                {' '}{currentLocale === 'pl' ? 'oraz' : 'and'}{' '}
+                {' '}{t('blog.ebookSection.and')}{' '}
                 <Link 
                   to={`/${currentLocale}/legal/terms`} 
                   className="text-primary hover:underline"
@@ -127,6 +127,25 @@ const EbookDownloadSection = () => {
                 >
                   {t('blog.ebookSection.termsOfService')}
                 </Link>
+                {'. '}{t('blog.ebookSection.googleProtection')}{' '}
+                <a 
+                  href="https://policies.google.com/privacy" 
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('blog.ebookSection.googlePrivacy')}
+                </a>
+                {' '}{t('blog.ebookSection.and')}{' '}
+                <a 
+                  href="https://policies.google.com/terms" 
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('blog.ebookSection.googleTerms')}
+                </a>
+                {'.'}
               </label>
             </div>
 

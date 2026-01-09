@@ -425,13 +425,80 @@
       "emailPlaceholder": "Twój adres e-mail",
       "downloadButton": "Pobierz",
       "downloading": "Pobieranie...",
-      "consent": "Zgadzam się na przetwarzanie swoich danych osobowych przez Administratora – Quantifier Sp. z o.o. z siedzibą w Warszawie Rondo Daszyńskiego 1 oraz w Lublinie, ul. Głowackiego 3/5/1 w celu informacyjnym i marketingowym, opisanym w Polityce Prywatności. Strona jest chroniona przez reCAPTCHA i Google. Zobacz:",
-      "privacyPolicy": "Politykę Prywatności",
-      "termsOfService": "Warunki Korzystania z usługi",
+      "consent": "Zgadzam się na przetwarzanie swoich danych osobowych przez Administratora – Quantifier Sp. z o.o. z siedzibą w Warszawie Rondo Daszyńskiego 1 oraz w Lublinie, ul. Głowackiego 3/5/1 w celu informacyjnym i marketingowym, opisanym w",
+      "privacyPolicy": "Polityce Prywatności",
+      "termsOfService": "Warunkach Korzystania z usługi",
+      "and": "oraz",
+      "googleProtection": "Strona jest chroniona przez reCAPTCHA i Google",
+      "googlePrivacy": "Politykę Prywatności",
+      "googleTerms": "Warunki Korzystania z usługi",
       "consentRequired": "Musisz zaakceptować zgodę na przetwarzanie danych",
       "emailRequired": "Podaj poprawny adres e-mail",
       "successTitle": "Dziękujemy!",
       "successDesc": "Twoje pobieranie rozpocznie się za chwilę."
+    }
+  },
+  "legal": {
+    "cookies": {
+      "title": "Polityka Cookies",
+      "metaDescription": "Dowiedz się, jak Quantifier.ai wykorzystuje pliki cookies i technologie śledzenia na naszej stronie.",
+      "lastUpdated": "Ostatnia aktualizacja",
+      "whatAreCookies": {
+        "title": "Czym są pliki cookies?",
+        "content": "Pliki cookies to małe pliki tekstowe przechowywane na Twoim urządzeniu podczas odwiedzania stron internetowych. Pomagają stronom zapamiętać informacje o Twojej wizycie, co ułatwia i usprawnia kolejne odwiedziny."
+      },
+      "cookiesWeUse": {
+        "title": "Jakie cookies używamy",
+        "googleAnalytics": "Używamy Google Analytics, aby zrozumieć, jak odwiedzający korzystają z naszej strony. Pomaga nam to poprawić doświadczenie użytkownika i mierzyć skuteczność naszych treści.",
+        "gaCookie": "Unikalny identyfikator użytkownika (wygasa po 2 latach)",
+        "gaSessionCookie": "Utrzymanie sesji (wygasa po 2 latach)"
+      },
+      "emailCollection": {
+        "title": "Zbieranie adresów email",
+        "content": "Zbieramy adresy email tylko wtedy, gdy użytkownicy dobrowolnie je podają poprzez nasze formularze, takie jak subskrypcja newslettera czy pobieranie materiałów. Dane te są bezpiecznie przechowywane i używane wyłącznie w celach opisanych w momencie ich zbierania. Możesz zrezygnować z naszej komunikacji w dowolnym momencie."
+      },
+      "manageCookies": {
+        "title": "Zarządzanie plikami cookies",
+        "content": "Możesz kontrolować i usuwać pliki cookies poprzez ustawienia przeglądarki. Zwróć uwagę, że wyłączenie cookies może wpłynąć na funkcjonalność naszej strony. Większość przeglądarek pozwala odmówić przyjęcia cookies lub usunąć je po zapisaniu."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Jeśli masz pytania dotyczące naszej polityki cookies, skontaktuj się z nami: privacy@quantifier.ai"
+      }
+    },
+    "privacy": {
+      "title": "Polityka Prywatności",
+      "metaDescription": "Dowiedz się, jak Quantifier.ai zbiera, wykorzystuje i chroni Twoje dane osobowe.",
+      "intro": "W Quantifier.ai zobowiązujemy się do ochrony Twojej prywatności i zapewnienia bezpieczeństwa Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, jak zbieramy, wykorzystujemy i chronimy Twoje informacje.",
+      "dataCollection": {
+        "title": "Dane, które zbieramy",
+        "content": "Zbieramy informacje, które przekazujesz nam bezpośrednio, takie jak imię i nazwisko, adres email oraz informacje o firmie podczas rejestracji w naszych usługach, prośby o demo lub subskrypcji newslettera. Zbieramy również dane o użytkowaniu poprzez pliki cookies i podobne technologie."
+      },
+      "dataUse": {
+        "title": "Jak wykorzystujemy Twoje dane",
+        "content": "Wykorzystujemy Twoje dane osobowe do świadczenia i ulepszania naszych usług, komunikacji z Tobą na temat aktualizacji i ofert oraz zapewnienia bezpieczeństwa naszej platformy. Nie sprzedajemy Twoich danych osobowych stronom trzecim."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "W przypadku pytań dotyczących naszych praktyk prywatności, skontaktuj się z nami: privacy@quantifier.ai"
+      }
+    },
+    "terms": {
+      "title": "Regulamin",
+      "metaDescription": "Przeczytaj warunki korzystania z usług Quantifier.ai.",
+      "intro": "Witamy w Quantifier.ai. Korzystając z naszych usług, zgadzasz się przestrzegać niniejszego Regulaminu. Przeczytaj go uważnie przed rozpoczęciem korzystania z naszej platformy.",
+      "useOfService": {
+        "title": "Korzystanie z usługi",
+        "content": "Zgadzasz się korzystać z naszych usług wyłącznie w celach zgodnych z prawem i zgodnie z niniejszym Regulaminem. Jesteś odpowiedzialny za zachowanie poufności danych logowania do konta oraz za wszelkie działania wykonywane na Twoim koncie."
+      },
+      "intellectualProperty": {
+        "title": "Własność intelektualna",
+        "content": "Wszystkie treści, funkcje i funkcjonalność naszych usług są własnością Quantifier.ai i są chronione przez międzynarodowe prawo autorskie, znaki towarowe i inne prawa własności intelektualnej."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "W przypadku pytań dotyczących niniejszego Regulaminu, skontaktuj się z nami: legal@quantifier.ai"
+      }
     }
   },
   "successStories": {
