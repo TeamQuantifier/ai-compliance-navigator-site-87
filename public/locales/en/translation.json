@@ -482,6 +482,11 @@
       "contact": {
         "title": "Contact",
         "content": "For any questions about our privacy practices, please contact us at: privacy@quantifier.ai"
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "We use Google services (including Google Analytics and reCAPTCHA) on our website. These services are subject to Google's privacy policy.",
+        "googleLink": "View Google Privacy Policy"
       }
     },
     "terms": {
@@ -495,6 +500,11 @@
       "intellectualProperty": {
         "title": "Intellectual Property",
         "content": "All content, features, and functionality of our services are owned by Quantifier.ai and are protected by international copyright, trademark, and other intellectual property laws."
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "Our website uses Google services. Use of these services is subject to Google's terms of service.",
+        "googleLink": "View Google Terms of Service"
       },
       "contact": {
         "title": "Contact",

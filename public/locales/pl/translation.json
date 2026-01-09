@@ -481,6 +481,11 @@
       "contact": {
         "title": "Kontakt",
         "content": "W przypadku pytań dotyczących naszych praktyk prywatności, skontaktuj się z nami: privacy@quantifier.ai"
+      },
+      "thirdParty": {
+        "title": "Usługi podmiotów trzecich",
+        "content": "Korzystamy z usług Google (w tym Google Analytics i reCAPTCHA) na naszej stronie. Usługi te podlegają polityce prywatności Google.",
+        "googleLink": "Zobacz Politykę Prywatności Google"
       }
     },
     "terms": {
@@ -494,6 +499,11 @@
       "intellectualProperty": {
         "title": "Własność intelektualna",
         "content": "Wszystkie treści, funkcje i funkcjonalność naszych usług są własnością Quantifier.ai i są chronione przez międzynarodowe prawo autorskie, znaki towarowe i inne prawa własności intelektualnej."
+      },
+      "thirdParty": {
+        "title": "Usługi podmiotów trzecich",
+        "content": "Nasza strona korzysta z usług Google. Korzystanie z tych usług podlega warunkom korzystania z usługi Google.",
+        "googleLink": "Zobacz Warunki Korzystania z usługi Google"
       },
       "contact": {
         "title": "Kontakt",
