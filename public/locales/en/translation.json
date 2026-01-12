@@ -426,13 +426,165 @@
       "emailPlaceholder": "Your email address",
       "downloadButton": "Download",
       "downloading": "Downloading...",
-      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the Privacy Policy. This site is protected by reCAPTCHA and Google. See:",
+      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
+      "and": "and",
+      "googleProtection": "This site is protected by reCAPTCHA and Google",
+      "googlePrivacy": "Privacy Policy",
+      "googleTerms": "Terms of Service",
       "consentRequired": "You must accept the consent to process data",
       "emailRequired": "Please enter a valid email address",
       "successTitle": "Thank you!",
       "successDesc": "Your download will start shortly."
+    }
+  },
+  "legal": {
+    "cookies": {
+      "title": "Cookie Policy",
+      "metaDescription": "Learn about how Quantifier.ai uses cookies and tracking technologies on our website.",
+      "lastUpdated": "Last updated",
+      "whatAreCookies": {
+        "title": "What are cookies?",
+        "content": "Cookies are small text files that are stored on your device when you visit websites. They help websites remember information about your visit, making your next visit easier and more useful."
+      },
+      "cookiesWeUse": {
+        "title": "Cookies we use",
+        "googleAnalytics": "We use Google Analytics to understand how visitors interact with our website. This helps us improve user experience and measure the effectiveness of our content.",
+        "gaCookie": "Unique user identifier (expires after 2 years)",
+        "gaSessionCookie": "Session maintenance (expires after 2 years)"
+      },
+      "emailCollection": {
+        "title": "Email collection",
+        "content": "We collect email addresses only when users voluntarily submit them through our forms, such as newsletter subscriptions or resource downloads. This data is stored securely and used only for the purposes described at the time of collection. You can unsubscribe from our communications at any time."
+      },
+      "manageCookies": {
+        "title": "Managing cookies",
+        "content": "You can control and delete cookies through your browser settings. Please note that disabling cookies may affect the functionality of our website. Most browsers allow you to refuse cookies or delete them after they have been set."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "If you have any questions about our cookie policy, please contact us at: privacy@quantifier.ai"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "metaDescription": "Learn how Quantifier.ai collects, uses, and protects your personal data.",
+      "lastUpdated": "Last updated",
+      "admin": {
+        "title": "1. Data Controller",
+        "content": "The controller of your personal data is Quantifier (the Quantifier.ai service). The Controller's identification details and registered address are available on the Website in the Contact section.",
+        "contactEmail": "For data protection enquiries, please contact:"
+      },
+      "dataProcessed": {
+        "title": "2. Data We Process",
+        "intro": "Depending on how you use the Website, we may process:",
+        "formData": "data you provide through forms (e.g. your email address when subscribing to the newsletter, or data and message content when contacting us or requesting a demo);",
+        "technicalData": "technical and operational data related to your use of the Website (e.g. IP address, cookie identifiers, browser and device information, server logs)."
+      },
+      "purposes": {
+        "title": "3. Purposes and Legal Bases for Processing",
+        "newsletter": {
+          "title": "3.1 Newsletter and Email Marketing",
+          "content": "If you subscribe to our newsletter, we process your email address to send you the newsletter and commercial or marketing information about Quantifier (e.g. updates, offers, resources, events).",
+          "legalBasis": "Legal basis (GDPR): your consent (Article 6(1)(a) GDPR).",
+          "electronicComm": "E-Privacy requirements: marketing communications are sent only after obtaining your prior consent.",
+          "withdrawal": "You may withdraw your consent at any time by clicking the unsubscribe link in the email footer or by contacting us at contact@quantifier.ai. Withdrawal of consent does not affect the lawfulness of processing carried out prior to withdrawal."
+        },
+        "contact": {
+          "title": "3.2 Contact, Enquiries and Demo Requests",
+          "content": "When you contact us (e.g. request a demo), we process the data provided in your correspondence to handle the enquiry and communicate with you.",
+          "legalBasis": "Legal basis: taking steps at your request prior to entering into a contract, or performance of a contract (Article 6(1)(b) GDPR), where applicable, and the Controller's legitimate interest (Article 6(1)(f) GDPR) in handling enquiries and maintaining communication."
+        },
+        "security": {
+          "title": "3.3 Website Security and Operation",
+          "content": "We process technical data (e.g. logs, IP addresses) to ensure security, detect abuse, and maintain and improve the Website.",
+          "legalBasis": "Legal basis: the Controller's legitimate interest (Article 6(1)(f) GDPR)."
+        }
+      },
+      "recipients": {
+        "title": "4. Data Recipients",
+        "intro": "Your data may be shared with entities that support us in operating the Website and communications, including:",
+        "hosting": "hosting and IT infrastructure providers;",
+        "newsletter": "newsletter and communication tool providers;",
+        "analytics": "analytics and security tool providers (where used on the Website);",
+        "legal": "entities entitled to receive data under applicable law.",
+        "processors": "Data processors act on our behalf under data processing agreements and only to the extent necessary to deliver their services."
+      },
+      "googleServices": {
+        "title": "5. Google Services",
+        "content": "We may use Google services on the Website, including Google Analytics and Google reCAPTCHA. Use of these services is subject to Google's policies:",
+        "privacyLink": "Google Privacy Policy",
+        "termsLink": "Google Terms of Service",
+        "recaptchaNote": "Where reCAPTCHA is used, a notice about form protection by reCAPTCHA, together with the above links, may be displayed in the Website interface."
+      },
+      "internationalTransfer": {
+        "title": "6. Transfers Outside the EEA",
+        "content": "Due to our use of service providers (e.g. analytics or security tools), your data may be transferred outside the European Economic Area. In such cases, we apply the transfer mechanisms required by law (e.g. Standard Contractual Clauses) or other legal bases permitted under applicable regulations. For details on how Google processes data, please refer to the Google policies linked above."
+      },
+      "retention": {
+        "title": "7. Data Retention Periods",
+        "newsletter": "Newsletter: until you withdraw consent or successfully unsubscribe; thereafter, for the period necessary to demonstrate consent was given or withdrawn, and for the defence of legal claims.",
+        "contact": "Contact / demo: for the duration of handling the matter and correspondence, then for the limitation period for claims or until you successfully object—depending on the legal basis.",
+        "technical": "Technical data (logs): for the period necessary to ensure security and diagnostics, and in accordance with our internal retention schedules.",
+        "cookies": "Cookies: in accordance with cookie lifespans and your settings (see the Cookies section for details)."
+      },
+      "rights": {
+        "title": "8. Your Rights",
+        "intro": "You have the right to:",
+        "access": "access your data;",
+        "rectification": "rectify your data;",
+        "erasure": "erase your data;",
+        "restriction": "restrict processing;",
+        "portability": "data portability (where processing is based on consent or a contract and carried out by automated means);",
+        "objection": "object to processing based on legitimate interests;",
+        "withdrawConsent": "withdraw consent at any time (where processing is based on consent).",
+        "howToExercise": "To exercise your rights, please contact us:"
+      },
+      "complaint": {
+        "title": "9. Right to Lodge a Complaint",
+        "content": "If you believe we are processing your data unlawfully, you have the right to lodge a complaint with the relevant supervisory authority (in Poland: the President of the Personal Data Protection Office, UODO)."
+      },
+      "mandatory": {
+        "title": "10. Is Providing Data Mandatory?",
+        "newsletter": "Newsletter: providing your email address is voluntary but necessary to receive the newsletter.",
+        "contact": "Contact / demo: providing data is voluntary but may be necessary to respond to your enquiry or fulfil your request."
+      },
+      "automatedDecisions": {
+        "title": "11. Automated Decision-Making",
+        "content": "We do not make decisions about you based solely on automated processing, including profiling, that would produce legal effects concerning you or similarly significantly affect you."
+      },
+      "cookies": {
+        "title": "12. Cookies",
+        "content": "The Website uses cookies and similar technologies. Essential cookies are used to ensure the proper functioning and security of the Website. Analytical and functional cookies (where used) may be deployed based on your consent, which you may withdraw or modify at any time via the cookie settings available on the Website (if we provide a consent panel) or your browser settings.",
+        "manage": "You can manage cookies in your browser settings. Restricting cookies may affect the functionality of certain Website features."
+      },
+      "changes": {
+        "title": "13. Changes to this Privacy Policy",
+        "content": "We may update this Privacy Policy, particularly in the event of changes to the way the Website operates or to applicable laws. The current version is published on this page together with the date of the last update."
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "metaDescription": "Read the terms and conditions for using Quantifier.ai services.",
+      "intro": "Welcome to Quantifier.ai. By accessing and using our services, you agree to be bound by these Terms of Service. Please read them carefully before using our platform.",
+      "useOfService": {
+        "title": "Use of Service",
+        "content": "You agree to use our services only for lawful purposes and in accordance with these Terms. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account."
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "All content, features, and functionality of our services are owned by Quantifier.ai and are protected by international copyright, trademark, and other intellectual property laws."
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "Our website uses Google services. Use of these services is subject to Google's terms of service.",
+        "googleLink": "View Google Terms of Service"
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any questions about these Terms of Service, please contact us at: legal@quantifier.ai"
+      }
     }
   },
   "successStories": {

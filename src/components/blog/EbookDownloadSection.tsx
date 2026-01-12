@@ -119,7 +119,7 @@ const EbookDownloadSection = () => {
                 >
                   {t('blog.ebookSection.privacyPolicy')}
                 </Link>
-                {' '}{currentLocale === 'pl' ? 'oraz' : 'and'}{' '}
+                {' '}{t('blog.ebookSection.and')}{' '}
                 <Link 
                   to={`/${currentLocale}/legal/terms`} 
                   className="text-primary hover:underline"
@@ -127,6 +127,7 @@ const EbookDownloadSection = () => {
                 >
                   {t('blog.ebookSection.termsOfService')}
                 </Link>
+                {'.'}
               </label>
             </div>
 

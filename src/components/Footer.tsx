@@ -114,11 +114,6 @@ const Footer = () => {
             <h4 className="font-semibold text-slate-900 mb-4">{t('footer.company.title')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to={`/${currentLocale}/about`} className="text-slate-600 hover:text-compliance-700 transition-colors">
-                  {t('footer.company.about')}
-                </Link>
-              </li>
-              <li>
                 <Link to={`/${currentLocale}/partners`} className="text-slate-600 hover:text-compliance-700 transition-colors">
                   {t('footer.company.partners')}
                 </Link>
@@ -196,13 +191,13 @@ const Footer = () => {
           </div>
           
           <div className="flex flex-wrap gap-4 text-sm">
-            <Link to="/legal/privacy" className="text-slate-500 hover:text-primary transition-colors">
+            <Link to={`/${currentLocale}/legal/privacy`} className="text-slate-500 hover:text-primary transition-colors">
               {t('footer.legal.privacy')}
             </Link>
-            <Link to="/legal/terms" className="text-slate-500 hover:text-primary transition-colors">
+            <Link to={`/${currentLocale}/legal/terms`} className="text-slate-500 hover:text-primary transition-colors">
               {t('footer.legal.terms')}
             </Link>
-            <Link to="/legal/cookies" className="text-slate-500 hover:text-primary transition-colors">
+            <Link to={`/${currentLocale}/legal/cookies`} className="text-slate-500 hover:text-primary transition-colors">
               {t('footer.legal.cookies')}
             </Link>
           </div>
