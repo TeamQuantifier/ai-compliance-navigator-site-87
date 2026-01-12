@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,19 +25,14 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const url = "https://cuzufmphilriynstexsv.supabase.co/functions/v1/contact-submit";
-    const supabase_anon_api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1enVmbXBoaWxyaXluc3RleHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU2MjMyMDIsImV4cCI6MjA3MTE5OTIwMn0.PJFJKz4M-aDo-7r1a6g2JHOjnUB1UsYb8QxvZ9GjFNk"
 
-    if (!url) {
-      toast({
-        title: t('contact.toast.configError'),
-        description: t('contact.toast.configErrorDesc'),
-        variant: 'destructive',
-      });
-      return;
-    }
+    // Client-side validation
+    const trimmedFirstName = firstName.trim();
+    const trimmedLastName = lastName.trim();
+    const trimmedEmail = email.trim().toLowerCase();
+    const trimmedMessage = message.trim();
 
-    if (!firstName || !lastName || !email || !message) {
+    if (!trimmedFirstName || !trimmedLastName || !trimmedEmail || !trimmedMessage) {
       toast({
         title: t('contact.toast.missingFields'),
         description: t('contact.toast.missingFieldsDesc'),
@@ -45,17 +41,50 @@ const Contact = () => {
       return;
     }
 
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      toast({
+        title: t('contact.toast.invalidEmail') || 'Invalid email',
+        description: t('contact.toast.invalidEmailDesc') || 'Please enter a valid email address',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    // Length validation
+    if (trimmedFirstName.length > 100 || trimmedLastName.length > 100) {
+      toast({
+        title: t('contact.toast.fieldTooLong') || 'Field too long',
+        description: t('contact.toast.nameTooLongDesc') || 'Name must be less than 100 characters',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (trimmedMessage.length > 5000) {
+      toast({
+        title: t('contact.toast.fieldTooLong') || 'Field too long',
+        description: t('contact.toast.messageTooLongDesc') || 'Message must be less than 5000 characters',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setLoading(true);
     try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${supabase_anon_api_key}` },
-        body: JSON.stringify({ firstName, lastName, email, company, message }),
+      const { data, error } = await supabase.functions.invoke('contact-submit', {
+        body: {
+          firstName: trimmedFirstName,
+          lastName: trimmedLastName,
+          email: trimmedEmail,
+          company: company.trim(),
+          message: trimmedMessage,
+        },
       });
-      const data = await res.json().catch(() => ({}));
 
-      if (!res.ok) {
-        throw new Error(data?.error || 'Failed to send message');
+      if (error) {
+        throw new Error(error.message || 'Failed to send message');
       }
 
       toast({
