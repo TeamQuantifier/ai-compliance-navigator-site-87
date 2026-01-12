@@ -114,11 +114,6 @@ const Footer = () => {
             <h4 className="font-semibold text-slate-900 mb-4">{t('footer.company.title')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to={`/${currentLocale}/about`} className="text-slate-600 hover:text-compliance-700 transition-colors">
-                  {t('footer.company.about')}
-                </Link>
-              </li>
-              <li>
                 <Link to={`/${currentLocale}/partners`} className="text-slate-600 hover:text-compliance-700 transition-colors">
                   {t('footer.company.partners')}
                 </Link>
