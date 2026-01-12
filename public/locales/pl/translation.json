@@ -469,23 +469,98 @@
     "privacy": {
       "title": "Polityka Prywatności",
       "metaDescription": "Dowiedz się, jak Quantifier.ai zbiera, wykorzystuje i chroni Twoje dane osobowe.",
-      "intro": "W Quantifier.ai zobowiązujemy się do ochrony Twojej prywatności i zapewnienia bezpieczeństwa Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, jak zbieramy, wykorzystujemy i chronimy Twoje informacje.",
-      "dataCollection": {
-        "title": "Dane, które zbieramy",
-        "content": "Przetwarzamy dane, które przekazujesz nam bezpośrednio (np. adres e-mail w przypadku prośby o demo lub zapisu do newslettera). Ponadto automatycznie zbieramy informacje o sposobie korzystania ze strony za pomocą plików cookies i podobnych technologii."
+      "lastUpdated": "Ostatnia aktualizacja",
+      "admin": {
+        "title": "1. Administrator danych",
+        "content": "Administratorem Twoich danych osobowych jest Quantifier (serwis Quantifier.ai). Dane identyfikacyjne oraz adres siedziby Administratora są dostępne w Serwisie w zakładce Kontakt.",
+        "contactEmail": "Kontakt w sprawach związanych z ochroną danych:"
       },
-      "dataUse": {
-        "title": "Jak wykorzystujemy Twoje dane",
-        "content": "Wykorzystujemy Twoje dane osobowe do świadczenia i ulepszania naszych usług, komunikacji z Tobą na temat aktualizacji i ofert oraz zapewnienia bezpieczeństwa naszej platformy. Nie sprzedajemy Twoich danych osobowych stronom trzecim."
+      "dataProcessed": {
+        "title": "2. Jakie dane przetwarzamy",
+        "intro": "W zależności od tego, jak korzystasz z Serwisu, możemy przetwarzać:",
+        "formData": "dane podane przez Ciebie w formularzach (np. adres e-mail przy zapisie do newslettera, dane i treść wiadomości przy kontakcie/prośbie o demo),",
+        "technicalData": "dane techniczne i eksploatacyjne związane z korzystaniem z Serwisu (np. adres IP, identyfikatory cookies, dane o przeglądarce i urządzeniu, logi serwera)."
       },
-      "contact": {
-        "title": "Kontakt",
-        "content": "W przypadku pytań dotyczących naszych praktyk prywatności, skontaktuj się z nami: privacy@quantifier.ai"
+      "purposes": {
+        "title": "3. Cele i podstawy prawne przetwarzania",
+        "newsletter": {
+          "title": "3.1 Newsletter i marketing e-mail",
+          "content": "Jeżeli zapisujesz się do newslettera, przetwarzamy Twój adres e-mail w celu przesyłania newslettera oraz informacji handlowych i marketingowych dotyczących Quantifier (np. aktualizacji, ofert, materiałów, wydarzeń).",
+          "legalBasis": "Podstawa prawna (RODO): Twoja zgoda (art. 6 ust. 1 lit. a RODO).",
+          "electronicComm": "Wymogi prawa komunikacji elektronicznej: wysyłka komunikacji marketingowej drogą elektroniczną odbywa się wyłącznie po uzyskaniu wymaganej zgody na taki kontakt.",
+          "withdrawal": "Zgodę możesz wycofać w dowolnym momencie, w szczególności klikając link wypisu w stopce wiadomości e-mail lub kontaktując się z nami pod adresem contact@quantifier.ai. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania przed jej wycofaniem."
+        },
+        "contact": {
+          "title": "3.2 Kontakt, zapytania i prośby o demo",
+          "content": "Jeżeli kontaktujesz się z nami (np. prosisz o demo), przetwarzamy dane podane w korespondencji w celu obsługi zapytania i komunikacji.",
+          "legalBasis": "Podstawa prawna: podjęcie działań na Twoje żądanie przed zawarciem umowy lub wykonanie umowy (art. 6 ust. 1 lit. b RODO) – w zakresie, w jakim ma to zastosowanie, oraz prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO) polegający na komunikacji i obsłudze zapytań."
+        },
+        "security": {
+          "title": "3.3 Bezpieczeństwo i prawidłowe działanie Serwisu",
+          "content": "Przetwarzamy dane techniczne (np. logi, adres IP) w celu zapewnienia bezpieczeństwa, wykrywania nadużyć oraz utrzymania i poprawy działania Serwisu.",
+          "legalBasis": "Podstawa prawna: prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO)."
+        }
       },
-      "thirdParty": {
-        "title": "Usługi podmiotów trzecich",
-        "content": "Korzystamy z usług Google (w tym Google Analytics i reCAPTCHA) na naszej stronie. Usługi te podlegają polityce prywatności Google.",
-        "googleLink": "Zobacz Politykę Prywatności Google"
+      "recipients": {
+        "title": "4. Odbiorcy danych",
+        "intro": "Twoje dane mogą być przekazywane podmiotom wspierającym nas w prowadzeniu Serwisu i komunikacji, w szczególności:",
+        "hosting": "dostawcom hostingu i infrastruktury IT,",
+        "newsletter": "dostawcom narzędzi do wysyłki newslettera i obsługi komunikacji,",
+        "analytics": "dostawcom narzędzi analitycznych i zabezpieczeń (jeżeli są wykorzystywane w Serwisie),",
+        "legal": "podmiotom uprawnionym do ich otrzymania na podstawie przepisów prawa.",
+        "processors": "Podmioty przetwarzające działają na nasze zlecenie i na podstawie umów powierzenia, w zakresie niezbędnym do realizacji usług."
+      },
+      "googleServices": {
+        "title": "5. Usługi Google",
+        "content": "W Serwisie możemy korzystać z usług Google, w tym m.in. Google Analytics oraz Google reCAPTCHA. Korzystanie z tych usług podlega politykom Google:",
+        "privacyLink": "Polityka prywatności Google",
+        "termsLink": "Warunki korzystania z usług Google",
+        "recaptchaNote": "W przypadku reCAPTCHA w interfejsie Serwisu może być prezentowana informacja o ochronie formularzy przez reCAPTCHA wraz z powyższymi linkami."
+      },
+      "internationalTransfer": {
+        "title": "6. Przekazywanie danych poza EOG",
+        "content": "W związku z korzystaniem z dostawców usług (np. narzędzi analitycznych lub zabezpieczeń) Twoje dane mogą być przekazywane poza Europejski Obszar Gospodarczy. W takich przypadkach stosujemy mechanizmy wymagane prawem dla takiego transferu danych (np. standardowe klauzule umowne) lub inne podstawy dopuszczone przepisami. Szczegółowe informacje o przetwarzaniu danych przez Google znajdują się w politykach Google podlinkowanych powyżej."
+      },
+      "retention": {
+        "title": "7. Okres przechowywania danych",
+        "newsletter": "Newsletter: do czasu wycofania zgody lub skutecznego wypisania się; następnie przez okres niezbędny do wykazania faktu udzielenia/wycofania zgody oraz do celów obrony przed roszczeniami.",
+        "contact": "Kontakt / demo: przez czas obsługi sprawy i korespondencji, a następnie przez okres przedawnienia roszczeń lub do czasu wniesienia skutecznego sprzeciwu – zależnie od podstawy przetwarzania.",
+        "technical": "Dane techniczne (logi): przez okres niezbędny do zapewnienia bezpieczeństwa i diagnostyki oraz zgodnie z naszymi wewnętrznymi okresami retencji.",
+        "cookies": "Cookies: zgodnie z czasem życia plików cookies oraz Twoimi ustawieniami (szczegóły w sekcji Cookies)."
+      },
+      "rights": {
+        "title": "8. Twoje prawa",
+        "intro": "Masz prawo do:",
+        "access": "dostępu do danych,",
+        "rectification": "sprostowania danych,",
+        "erasure": "usunięcia danych,",
+        "restriction": "ograniczenia przetwarzania,",
+        "portability": "przenoszenia danych (gdy przetwarzanie odbywa się na podstawie zgody lub umowy i w sposób zautomatyzowany),",
+        "objection": "wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie,",
+        "withdrawConsent": "wycofania zgody w dowolnym momencie (gdy przetwarzanie odbywa się na podstawie zgody).",
+        "howToExercise": "Aby skorzystać z praw, skontaktuj się z nami:"
+      },
+      "complaint": {
+        "title": "9. Skarga do organu",
+        "content": "Jeżeli uważasz, że przetwarzamy Twoje dane niezgodnie z prawem, masz prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (PUODO)."
+      },
+      "mandatory": {
+        "title": "10. Czy podanie danych jest obowiązkowe",
+        "newsletter": "Newsletter: podanie adresu e-mail jest dobrowolne, ale niezbędne, aby otrzymywać newsletter.",
+        "contact": "Kontakt / demo: podanie danych jest dobrowolne, ale może być niezbędne do udzielenia odpowiedzi lub realizacji prośby."
+      },
+      "automatedDecisions": {
+        "title": "11. Zautomatyzowane podejmowanie decyzji",
+        "content": "Nie podejmujemy wobec Ciebie decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, które wywoływałyby wobec Ciebie skutki prawne lub w podobny sposób istotnie na Ciebie wpływały."
+      },
+      "cookies": {
+        "title": "12. Cookies",
+        "content": "Serwis wykorzystuje pliki cookies i podobne technologie. Cookies niezbędne służą zapewnieniu prawidłowego działania Serwisu oraz bezpieczeństwa. Cookies analityczne i funkcjonalne (jeżeli są stosowane) mogą być wykorzystywane na podstawie Twojej zgody, którą możesz w każdej chwili wycofać lub zmienić poprzez ustawienia cookies dostępne w Serwisie (jeśli udostępniamy panel zgód) lub ustawienia przeglądarki.",
+        "manage": "Możesz zarządzać cookies w ustawieniach swojej przeglądarki. Ograniczenie cookies może wpłynąć na działanie niektórych funkcji Serwisu."
+      },
+      "changes": {
+        "title": "13. Zmiany Polityki Prywatności",
+        "content": "Możemy aktualizować niniejszą Politykę Prywatności, w szczególności w razie zmian w sposobie działania Serwisu lub przepisach prawa. Aktualna wersja jest publikowana na tej stronie wraz z datą ostatniej aktualizacji."
       }
     },
     "terms": {
