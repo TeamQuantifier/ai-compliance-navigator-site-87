@@ -54,6 +54,30 @@ export class NewsletterClient {
   }
 
   /**
+   * Submit contact form
+   * @param data - Contact form data
+   */
+  async submitContact(data: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    company?: string;
+    message: string;
+  }) {
+    const pageUrl = (typeof window !== 'undefined' && window.location && window.location.href) || undefined;
+
+    return this._request('/contact', 'POST', {
+      email: data.email,
+      first_name: data.firstName,
+      last_name: data.lastName,
+      company: data.company,
+      customer_message: data.message,
+      origin: pageUrl,
+      source: pageUrl,
+    });
+  }
+
+  /**
    * Unsubscribe from newsletter
    * @param emailOrToken - Email address or subscription token
    */

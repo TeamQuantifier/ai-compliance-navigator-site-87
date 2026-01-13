@@ -8,7 +8,6 @@ import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -73,39 +72,30 @@ const Contact = () => {
 
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke('contact-submit', {
-        body: {
-          firstName: trimmedFirstName,
-          lastName: trimmedLastName,
-          email: trimmedEmail,
-          company: company.trim(),
-          message: trimmedMessage,
-        },
+      await newsletterClient.submitContact({
+        firstName: trimmedFirstName,
+        lastName: trimmedLastName,
+        email: trimmedEmail,
+        company: company.trim() || undefined,
+        message: trimmedMessage,
       });
-
-      if (error) {
-        throw new Error(error.message || 'Failed to send message');
-      }
 
       toast({
         title: t('contact.toast.messageSent'),
         description: t('contact.toast.messageSentDesc'),
       });
 
-      // Also subscribe to newsletter with contact form data
+      // Also subscribe to newsletter
       try {
-        await newsletterClient.subscribe(email, 'en', {
+        await newsletterClient.subscribe(trimmedEmail, currentLocale, {
           source: 'contact_form',
-          first_name: firstName,
-          last_name: lastName,
-          company: company,
-          customer_message: message,
-          origin: window.location.origin,
+          first_name: trimmedFirstName,
+          last_name: trimmedLastName,
+          company: company.trim() || undefined,
           tags: ['contact_form', 'newsletter']
         });
       } catch (newsletterError) {
         // Don't fail the contact form if newsletter subscription fails
-        console.warn('Newsletter subscription failed:', newsletterError);
       }
 
       setFirstName('');
