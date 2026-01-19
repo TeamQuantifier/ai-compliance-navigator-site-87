@@ -31,7 +31,7 @@ const EbookDownloadSection = () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (!email || !isValidEmail(email)) {
@@ -50,27 +50,25 @@ const EbookDownloadSection = () => {
       return;
     }
 
-    setIsLoading(true);
+    // IMMEDIATELY show dialog with download link
+    setShowNis2Dialog(true);
     
-    // Try to subscribe to newsletter (but don't block PDF download on failure)
-    try {
-      await newsletterClient.subscribe(email, currentLocale, {
-        source: 'compliance_calendar_2026',
-        origin: window.location.origin,
-        tags: ['ebook', 'compliance_calendar_2026']
-      });
-    } catch (error) {
-      console.error('Newsletter subscription failed:', error);
-      // Continue anyway - allow PDF download
-    }
-
-    // Reset form and show success dialog with download link
+    // Store email for background subscription
+    const emailToSubscribe = email;
+    
+    // Reset form immediately
     setEmail('');
     setConsent(false);
-    setIsLoading(false);
     
-    // Show success dialog with download link (user clicks to download - avoids Safe Browsing blocks)
-    setShowNis2Dialog(true);
+    // Fire-and-forget: subscribe to newsletter in background (don't block UI)
+    newsletterClient.subscribe(emailToSubscribe, currentLocale, {
+      source: 'compliance_calendar_2026',
+      origin: window.location.origin,
+      tags: ['ebook', 'compliance_calendar_2026']
+    }).catch(error => {
+      console.error('Newsletter subscription failed:', error);
+      // Ignore errors - user already got the download link
+    });
   };
 
   return (
