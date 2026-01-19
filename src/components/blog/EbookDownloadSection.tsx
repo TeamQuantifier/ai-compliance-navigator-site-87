@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { newsletterClient } from '@/lib/newsletter-client';
@@ -7,15 +7,25 @@ import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Download, Loader2 } from 'lucide-react';
+import { Download, Loader2, Shield } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const EbookDownloadSection = () => {
   const { currentLocale } = useLanguage();
   const { t } = useTranslation();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showNis2Dialog, setShowNis2Dialog] = useState(false);
 
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -71,6 +81,9 @@ const EbookDownloadSection = () => {
     setEmail('');
     setConsent(false);
     setIsLoading(false);
+    
+    // Show NIS2 dialog after successful download
+    setShowNis2Dialog(true);
   };
 
   return (
@@ -161,6 +174,43 @@ const EbookDownloadSection = () => {
           />
         </div>
       </div>
+
+      {/* NIS2 Promotion Dialog */}
+      <Dialog open={showNis2Dialog} onOpenChange={setShowNis2Dialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-primary/10 p-2.5 rounded-lg">
+                <Shield className="h-6 w-6 text-primary" />
+              </div>
+              <DialogTitle className="text-xl">
+                {t('blog.ebookSection.nis2Dialog.title')}
+              </DialogTitle>
+            </div>
+            <DialogDescription className="text-base leading-relaxed">
+              {t('blog.ebookSection.nis2Dialog.description')}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="flex-col sm:flex-row gap-2 mt-4">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowNis2Dialog(false)}
+              className="w-full sm:w-auto"
+            >
+              {t('blog.ebookSection.nis2Dialog.close')}
+            </Button>
+            <Button 
+              onClick={() => {
+                setShowNis2Dialog(false);
+                navigate(`/${currentLocale}/frameworks/cybersecurity/nis-ii`);
+              }}
+              className="w-full sm:w-auto"
+            >
+              {t('blog.ebookSection.nis2Dialog.goToNis2')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

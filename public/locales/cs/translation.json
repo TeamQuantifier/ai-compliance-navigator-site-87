@@ -436,7 +436,13 @@
       "consentRequired": "Musíte přijmout souhlas se zpracováním údajů",
       "emailRequired": "Prosím zadejte platnou emailovou adresu",
       "successTitle": "Děkujeme!",
-      "successDesc": "Vaše stahování začne brzy."
+      "successDesc": "Vaše stahování začne brzy.",
+      "nis2Dialog": {
+        "title": "Kalendář se stahuje!",
+        "description": "Věděli jste, že směrnice NIS2 je jednou z klíčových regulací kybernetické bezpečnosti v roce 2026? Zjistěte, jak připravit vaši organizaci na nadcházející požadavky.",
+        "goToNis2": "Zjistit více o NIS2",
+        "close": "Zavřít"
+      }
     }
   },
   "legal": {
