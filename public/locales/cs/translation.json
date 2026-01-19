@@ -442,6 +442,11 @@
         "description": "Věděli jste, že směrnice NIS2 je jednou z klíčových regulací kybernetické bezpečnosti v roce 2026? Zjistěte, jak připravit vaši organizaci na nadcházející požadavky.",
         "goToNis2": "Zjistit více o NIS2",
         "close": "Zavřít"
+      },
+      "successDialog": {
+        "title": "Děkujeme za registraci!",
+        "description": "Váš kalendář je připraven ke stažení. Klikněte na odkaz níže pro stažení.",
+        "downloadLink": "Stáhnout Compliance Kalendář 2026"
       }
     }
   },

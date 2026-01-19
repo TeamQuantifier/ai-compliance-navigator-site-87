@@ -442,6 +442,11 @@
         "description": "Did you know that the NIS2 directive is one of the key cybersecurity regulations in 2026? Learn how to prepare your organisation for the upcoming requirements.",
         "goToNis2": "Learn about NIS2",
         "close": "Close"
+      },
+      "successDialog": {
+        "title": "Thank you for signing up!",
+        "description": "Your calendar is ready to download. Click the link below to get it.",
+        "downloadLink": "Download Compliance Calendar 2026"
       }
     }
   },

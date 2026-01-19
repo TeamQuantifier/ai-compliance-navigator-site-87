@@ -7,7 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Download, Loader2, Shield } from 'lucide-react';
+import { Download, Loader2, CheckCircle } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -64,25 +64,12 @@ const EbookDownloadSection = () => {
       // Continue anyway - allow PDF download
     }
 
-    // Always trigger PDF download
-    const link = document.createElement('a');
-    link.href = '/downloads/compliance-kalendarz-2026.pdf';
-    link.download = 'Compliance-Kalendarz-2026.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    toast({
-      title: t('blog.ebookSection.successTitle'),
-      description: t('blog.ebookSection.successDesc'),
-    });
-
-    // Reset form
+    // Reset form and show success dialog with download link
     setEmail('');
     setConsent(false);
     setIsLoading(false);
     
-    // Show NIS2 dialog after successful download
+    // Show success dialog with download link (user clicks to download - avoids Safe Browsing blocks)
     setShowNis2Dialog(true);
   };
 
@@ -175,23 +162,42 @@ const EbookDownloadSection = () => {
         </div>
       </div>
 
-      {/* NIS2 Promotion Dialog */}
+      {/* Success + Download + NIS2 Dialog */}
       <Dialog open={showNis2Dialog} onOpenChange={setShowNis2Dialog}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <div className="flex items-center gap-3 mb-2">
-              <div className="bg-primary/10 p-2.5 rounded-lg">
-                <Shield className="h-6 w-6 text-primary" />
+              <div className="bg-green-100 p-2.5 rounded-lg">
+                <CheckCircle className="h-6 w-6 text-green-600" />
               </div>
               <DialogTitle className="text-xl">
-                {t('blog.ebookSection.nis2Dialog.title')}
+                {t('blog.ebookSection.successDialog.title')}
               </DialogTitle>
             </div>
             <DialogDescription className="text-base leading-relaxed">
-              {t('blog.ebookSection.nis2Dialog.description')}
+              {t('blog.ebookSection.successDialog.description')}
             </DialogDescription>
           </DialogHeader>
-          <DialogFooter className="flex-col sm:flex-row gap-2 mt-4">
+          
+          {/* Download link - user clicks to download (avoids Safe Browsing blocks) */}
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <a 
+              href="/downloads/compliance-kalendarz-2026.pdf"
+              download="Compliance-Kalendarz-2026.pdf"
+              className="flex items-center gap-2 text-primary hover:underline font-medium"
+            >
+              <Download className="h-5 w-5" />
+              {t('blog.ebookSection.successDialog.downloadLink')}
+            </a>
+          </div>
+
+          <div className="pt-2">
+            <p className="text-sm text-muted-foreground mb-3">
+              {t('blog.ebookSection.nis2Dialog.description')}
+            </p>
+          </div>
+
+          <DialogFooter className="flex-col sm:flex-row gap-2 mt-2">
             <Button 
               variant="outline" 
               onClick={() => setShowNis2Dialog(false)}
