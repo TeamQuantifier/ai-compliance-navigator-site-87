@@ -441,6 +441,11 @@
         "description": "Czy wiesz, że dyrektywa NIS2 to jedna z kluczowych regulacji cyberbezpieczeństwa w 2026 roku? Dowiedz się, jak przygotować swoją organizację na nadchodzące wymagania.",
         "goToNis2": "Przejdź do NIS2",
         "close": "Zamknij"
+      },
+      "successDialog": {
+        "title": "Dziękujemy za zapis!",
+        "description": "Twój kalendarz jest gotowy do pobrania. Kliknij poniższy link, aby go pobrać.",
+        "downloadLink": "Pobierz Compliance Kalendarz 2026"
       }
     }
   },
