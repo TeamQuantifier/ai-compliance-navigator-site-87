@@ -446,7 +446,10 @@
       "successDialog": {
         "title": "Děkujeme za registraci!",
         "description": "Váš kalendář je připraven ke stažení. Klikněte na odkaz níže pro stažení.",
-        "downloadLink": "Stáhnout Compliance Kalendář 2026"
+        "downloadLink": "Stáhnout Compliance Kalendář 2026",
+        "nis2Intro": "NIS2 je klíčová regulace pro rok 2026. Podívejte se, jak vám můžeme pomoci:",
+        "nis2Button": "Zjistěte více o NIS2",
+        "close": "Zavřít"
       }
     }
   },
