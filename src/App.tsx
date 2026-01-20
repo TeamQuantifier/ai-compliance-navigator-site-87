@@ -67,6 +67,7 @@ import PostsList from "./pages/admin/PostsList";
 import PostEditor from "./pages/admin/PostEditor";
 import StoriesList from "./pages/admin/StoriesList";
 import StoryEditor from "./pages/admin/StoryEditor";
+import SeoAudit from "./pages/admin/SeoAudit";
 
 const queryClient = new QueryClient();
 
@@ -178,6 +179,7 @@ const App = () => (
                     <Route path="posts/:id" element={<PostEditor />} />
                     <Route path="stories" element={<StoriesList />} />
                     <Route path="stories/:id" element={<StoryEditor />} />
+                    <Route path="seo-audit" element={<SeoAudit />} />
                     <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
                     <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
                     <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />
