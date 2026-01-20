@@ -124,7 +124,7 @@ const EbookDownloadSection = () => {
         </div>
       </section>
 
-      {/* Success Dialog with DIRECT download link */}
+      {/* Success Dialog with DIRECT download link and NIS2 CTA */}
       <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -141,21 +141,36 @@ const EbookDownloadSection = () => {
             </DialogDescription>
           </DialogHeader>
           
-          {/* Direct download link - no JavaScript, no API, no blocking */}
-          <div className="bg-slate-50 p-4 rounded-lg border mt-4">
-            <Button asChild size="lg" className="w-full">
-              <a 
-                href="/downloads/compliance-kalendarz-2026.pdf" 
-                download="Compliance-Kalendarz-2026.pdf"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                {t('blog.ebookSection.successDialog.downloadLink')}
-              </a>
-            </Button>
+          {/* Direct download link - pure HTML, no auth, no blocking */}
+          <div className="space-y-3 mt-4">
+            <div className="bg-slate-50 p-4 rounded-lg border">
+              <Button asChild size="lg" className="w-full">
+                <a 
+                  href="/downloads/compliance-kalendarz-2026.pdf" 
+                  download="Compliance-Kalendarz-2026.pdf"
+                  target="_self"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  {t('blog.ebookSection.successDialog.downloadLink')}
+                </a>
+              </Button>
+            </div>
+
+            {/* NIS2 Cross-sell CTA */}
+            <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
+              <p className="text-sm text-slate-600 mb-3">
+                {t('blog.ebookSection.successDialog.nis2Intro', 'NIS2 to kluczowa regulacja na 2026 rok. Sprawdź jak możemy Ci pomóc:')}
+              </p>
+              <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                <Link to={`/${currentLocale}/frameworks/cybersecurity/nis-ii`}>
+                  {t('blog.ebookSection.successDialog.nis2Button', 'Dowiedz się więcej o NIS2')}
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <DialogFooter className="mt-4">
-            <Button variant="outline" onClick={() => setShowSuccessDialog(false)}>
+            <Button variant="ghost" onClick={() => setShowSuccessDialog(false)}>
               {t('blog.ebookSection.successDialog.close') || 'Zamknij'}
             </Button>
           </DialogFooter>
