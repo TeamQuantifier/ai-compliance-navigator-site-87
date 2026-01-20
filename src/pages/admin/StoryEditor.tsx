@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Badge } from '@/components/ui/badge';
 import {
   Select,
   SelectContent,
@@ -14,10 +15,14 @@ import {
 } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { LanguageTabs, type Language, LANGUAGE_CONFIG } from '@/components/admin/LanguageTabs';
-import { useMultiLangStory } from '@/hooks/useMultiLangStory';
+import { useMultiLangStory, type StoryVersion } from '@/hooks/useMultiLangStory';
+import { SeoSidePanel, useSeoScore } from '@/components/admin/SeoSidePanel';
+import { SeoFieldsData } from '@/components/seo/SeoToolkitPanel';
 import RichTextEditor from '@/components/editor/RichTextEditor';
 import { toast } from 'sonner';
-import { ArrowLeft, Save, Upload, X, Copy, Loader2 } from 'lucide-react';
+import { ArrowLeft, Save, Upload, X, Copy, Loader2, Search } from 'lucide-react';
+import { getScoreColor, getScoreBgColor } from '@/lib/seo-rules';
+import { cn } from '@/lib/utils';
 
 const StoryEditor = () => {
   const { id } = useParams();
@@ -42,6 +47,7 @@ const StoryEditor = () => {
   const [activeLanguage, setActiveLanguage] = useState<Language>('pl');
   const [tagsInput, setTagsInput] = useState('');
   const [uploading, setUploading] = useState(false);
+  const [seoOpen, setSeoOpen] = useState(false);
 
   // Load story by ID (legacy route support)
   useEffect(() => {
@@ -50,12 +56,82 @@ const StoryEditor = () => {
     }
   }, [id, groupIdParam, loadByStoryId]);
 
+  // Check URL param for openSeo (from SEO Audit navigation)
+  useEffect(() => {
+    if (searchParams.get('openSeo') === 'true') {
+      setSeoOpen(true);
+    }
+  }, [searchParams]);
+
   // Sync tags input when active language changes
   useEffect(() => {
     setTagsInput(versions[activeLanguage].tags.join(', '));
   }, [activeLanguage, versions]);
 
   const currentVersion = versions[activeLanguage];
+
+  // Get SEO score for button display
+  const seoFields: SeoFieldsData = {
+    focusKeyword: currentVersion.focus_keyword,
+    canonicalUrl: currentVersion.canonical_url,
+    robotsIndex: currentVersion.robots_index,
+    robotsFollow: currentVersion.robots_follow,
+    ogTitle: currentVersion.og_title,
+    ogDescription: currentVersion.og_description,
+    ogImage: currentVersion.og_image_url,
+    twitterCardType: currentVersion.twitter_card_type,
+    twitterTitle: currentVersion.twitter_title,
+    twitterDescription: currentVersion.twitter_description,
+    twitterImage: currentVersion.twitter_image_url,
+    schemaType: currentVersion.schema_type,
+    schemaJsonOverride: currentVersion.schema_json_override,
+    breadcrumbsEnabled: currentVersion.breadcrumbs_enabled,
+    featuredImageAlt: currentVersion.featured_image_alt,
+  };
+
+  const { score, status: scoreStatus } = useSeoScore(
+    {
+      title: currentVersion.title,
+      slug: currentVersion.slug,
+      excerpt: currentVersion.summary,
+      metaTitle: currentVersion.meta_title,
+      metaDesc: currentVersion.meta_desc,
+      bodyRich: currentVersion.body_rich,
+      featuredImageUrl: currentVersion.featured_image_url,
+      status: currentVersion.status,
+    },
+    seoFields,
+    'story'
+  );
+
+  // Update SEO score in version when it changes
+  useEffect(() => {
+    if (score !== currentVersion.seo_score) {
+      updateVersion(activeLanguage, { seo_score: score });
+    }
+  }, [score, currentVersion.seo_score, activeLanguage, updateVersion]);
+
+  const handleUpdateSeoFields = (fields: Partial<SeoFieldsData>) => {
+    const updates: Partial<StoryVersion> = {};
+    
+    if ('focusKeyword' in fields) updates.focus_keyword = fields.focusKeyword || '';
+    if ('canonicalUrl' in fields) updates.canonical_url = fields.canonicalUrl || '';
+    if ('robotsIndex' in fields) updates.robots_index = fields.robotsIndex ?? true;
+    if ('robotsFollow' in fields) updates.robots_follow = fields.robotsFollow ?? true;
+    if ('ogTitle' in fields) updates.og_title = fields.ogTitle || '';
+    if ('ogDescription' in fields) updates.og_description = fields.ogDescription || '';
+    if ('ogImage' in fields) updates.og_image_url = fields.ogImage || '';
+    if ('twitterCardType' in fields) updates.twitter_card_type = fields.twitterCardType || '';
+    if ('twitterTitle' in fields) updates.twitter_title = fields.twitterTitle || '';
+    if ('twitterDescription' in fields) updates.twitter_description = fields.twitterDescription || '';
+    if ('twitterImage' in fields) updates.twitter_image_url = fields.twitterImage || '';
+    if ('schemaType' in fields) updates.schema_type = fields.schemaType || '';
+    if ('schemaJsonOverride' in fields) updates.schema_json_override = fields.schemaJsonOverride;
+    if ('breadcrumbsEnabled' in fields) updates.breadcrumbs_enabled = fields.breadcrumbsEnabled ?? true;
+    if ('featuredImageAlt' in fields) updates.featured_image_alt = fields.featuredImageAlt || '';
+    
+    updateVersion(activeLanguage, updates);
+  };
 
   const generateSlug = (title: string) => {
     return title
@@ -173,14 +249,34 @@ const StoryEditor = () => {
             {isNew ? 'Nowe Success Story' : 'Edytuj Success Story'}
           </h1>
         </div>
-        <Button onClick={handleSave} disabled={isSaving}>
-          {isSaving ? (
-            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-          ) : (
-            <Save className="h-4 w-4 mr-2" />
-          )}
-          Zapisz wszystkie wersje
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            onClick={() => setSeoOpen(true)}
+            className="gap-2"
+          >
+            <Search className="h-4 w-4" />
+            SEO Toolkit
+            <Badge 
+              variant="outline"
+              className={cn(
+                "ml-1",
+                getScoreBgColor(scoreStatus),
+                getScoreColor(scoreStatus)
+              )}
+            >
+              {score}
+            </Badge>
+          </Button>
+          <Button onClick={handleSave} disabled={isSaving}>
+            {isSaving ? (
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+            ) : (
+              <Save className="h-4 w-4 mr-2" />
+            )}
+            Zapisz wszystkie wersje
+          </Button>
+        </div>
       </div>
 
       {/* Language Tabs */}
@@ -253,8 +349,8 @@ const StoryEditor = () => {
           </div>
         </div>
 
-        {/* Status & SEO Score */}
-        <div className="grid grid-cols-3 gap-4">
+        {/* Status & Country */}
+        <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="status">Status</Label>
             <Select 
@@ -271,17 +367,6 @@ const StoryEditor = () => {
                 <SelectItem value="archived">Archived</SelectItem>
               </SelectContent>
             </Select>
-          </div>
-          <div>
-            <Label htmlFor="seo_score">SEO Score</Label>
-            <Input
-              id="seo_score"
-              type="number"
-              min="0"
-              max="100"
-              value={currentVersion.seo_score}
-              onChange={(e) => updateVersion(activeLanguage, { seo_score: parseInt(e.target.value) || 0 })}
-            />
           </div>
           <div>
             <Label htmlFor="country">Kraj</Label>
@@ -394,12 +479,15 @@ const StoryEditor = () => {
           />
         </div>
 
-        {/* SEO Section */}
+        {/* Basic SEO Fields */}
         <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">SEO</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="pt-6 space-y-4">
+            <div className="flex items-center justify-between mb-2">
+              <Label className="text-base font-medium">SEO Podstawowe</Label>
+              <Button variant="link" size="sm" onClick={() => setSeoOpen(true)}>
+                Otwórz pełny panel SEO →
+              </Button>
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="meta_title">Meta Title</Label>
@@ -410,27 +498,24 @@ const StoryEditor = () => {
                   placeholder="SEO title"
                   maxLength={60}
                 />
+                <p className="text-xs text-muted-foreground mt-1">
+                  {currentVersion.meta_title.length}/60 znaków
+                </p>
               </div>
               <div>
-                <Label htmlFor="og_image_url">OG Image URL</Label>
-                <Input
-                  id="og_image_url"
-                  value={currentVersion.og_image_url}
-                  onChange={(e) => updateVersion(activeLanguage, { og_image_url: e.target.value })}
-                  placeholder="https://..."
+                <Label htmlFor="meta_desc">Meta Description</Label>
+                <Textarea
+                  id="meta_desc"
+                  value={currentVersion.meta_desc}
+                  onChange={(e) => updateVersion(activeLanguage, { meta_desc: e.target.value })}
+                  placeholder="SEO description"
+                  maxLength={160}
+                  rows={2}
                 />
+                <p className="text-xs text-muted-foreground mt-1">
+                  {currentVersion.meta_desc.length}/160 znaków
+                </p>
               </div>
-            </div>
-            <div>
-              <Label htmlFor="meta_desc">Meta Description</Label>
-              <Textarea
-                id="meta_desc"
-                value={currentVersion.meta_desc}
-                onChange={(e) => updateVersion(activeLanguage, { meta_desc: e.target.value })}
-                placeholder="SEO description"
-                maxLength={160}
-                rows={2}
-              />
             </div>
           </CardContent>
         </Card>
@@ -448,6 +533,24 @@ const StoryEditor = () => {
           />
         </div>
       </div>
+
+      {/* SEO Side Panel */}
+      <SeoSidePanel
+        open={seoOpen}
+        onOpenChange={setSeoOpen}
+        title={currentVersion.title}
+        slug={currentVersion.slug}
+        excerpt={currentVersion.summary}
+        metaTitle={currentVersion.meta_title}
+        metaDesc={currentVersion.meta_desc}
+        bodyRich={currentVersion.body_rich}
+        featuredImageUrl={currentVersion.featured_image_url}
+        status={currentVersion.status}
+        lang={activeLanguage}
+        contentType="story"
+        seoFields={seoFields}
+        onUpdateSeoFields={handleUpdateSeoFields}
+      />
     </div>
   );
 };

@@ -20,8 +20,8 @@ const menuItems = [
   { icon: FileText, label: 'Posts', path: '/admin/posts' },
   { icon: Award, label: 'Case Study', path: '/admin/stories' },
   { icon: Search, label: 'SEO Audit', path: '/admin/seo-audit' },
+  { icon: Settings, label: 'SEO Settings', path: '/admin/seo-settings' },
   { icon: FolderOpen, label: 'Categories', path: '/admin/categories' },
-  { icon: Settings, label: 'Settings', path: '/admin/settings' },
 ];
 
 export function AdminLayout() {

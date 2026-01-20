@@ -22,6 +22,21 @@ export interface StoryVersion {
   tags: string[];
   seo_score: number;
   group_id: string | null;
+  // New SEO fields
+  focus_keyword: string;
+  canonical_url: string;
+  robots_index: boolean;
+  robots_follow: boolean;
+  og_title: string;
+  og_description: string;
+  twitter_card_type: string;
+  twitter_title: string;
+  twitter_description: string;
+  twitter_image_url: string;
+  schema_type: string;
+  schema_json_override: any;
+  breadcrumbs_enabled: boolean;
+  featured_image_alt: string;
 }
 
 const createEmptyVersion = (lang: Language): StoryVersion => ({
@@ -42,6 +57,21 @@ const createEmptyVersion = (lang: Language): StoryVersion => ({
   tags: [],
   seo_score: 0,
   group_id: null,
+  // New SEO fields with defaults
+  focus_keyword: '',
+  canonical_url: '',
+  robots_index: true,
+  robots_follow: true,
+  og_title: '',
+  og_description: '',
+  twitter_card_type: 'summary_large_image',
+  twitter_title: '',
+  twitter_description: '',
+  twitter_image_url: '',
+  schema_type: 'Article',
+  schema_json_override: null,
+  breadcrumbs_enabled: true,
+  featured_image_alt: '',
 });
 
 export interface MultiLangStoryState {
@@ -101,6 +131,21 @@ export function useMultiLangStory(groupId?: string) {
             tags: story.tags || [],
             seo_score: story.seo_score || 0,
             group_id: story.group_id,
+            // New SEO fields
+            focus_keyword: story.focus_keyword || '',
+            canonical_url: story.canonical_url || '',
+            robots_index: story.robots_index !== false,
+            robots_follow: story.robots_follow !== false,
+            og_title: story.og_title || '',
+            og_description: story.og_description || '',
+            twitter_card_type: story.twitter_card_type || 'summary_large_image',
+            twitter_title: story.twitter_title || '',
+            twitter_description: story.twitter_description || '',
+            twitter_image_url: story.twitter_image_url || '',
+            schema_type: story.schema_type || 'Article',
+            schema_json_override: story.schema_json_override || null,
+            breadcrumbs_enabled: story.breadcrumbs_enabled !== false,
+            featured_image_alt: story.featured_image_alt || '',
           };
         }
       });
@@ -202,6 +247,21 @@ export function useMultiLangStory(groupId?: string) {
           seo_score: version.seo_score,
           group_id: currentGroupId,
           updated_at: new Date().toISOString(),
+          // New SEO fields
+          focus_keyword: version.focus_keyword || null,
+          canonical_url: version.canonical_url || null,
+          robots_index: version.robots_index,
+          robots_follow: version.robots_follow,
+          og_title: version.og_title || null,
+          og_description: version.og_description || null,
+          twitter_card_type: version.twitter_card_type || null,
+          twitter_title: version.twitter_title || null,
+          twitter_description: version.twitter_description || null,
+          twitter_image_url: version.twitter_image_url || null,
+          schema_type: version.schema_type || null,
+          schema_json_override: version.schema_json_override || null,
+          breadcrumbs_enabled: version.breadcrumbs_enabled,
+          featured_image_alt: version.featured_image_alt || null,
         };
 
         if (version.id) {
