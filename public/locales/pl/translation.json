@@ -445,7 +445,10 @@
       "successDialog": {
         "title": "Dziękujemy za zapis!",
         "description": "Twój kalendarz jest gotowy do pobrania. Kliknij poniższy link, aby go pobrać.",
-        "downloadLink": "Pobierz Compliance Kalendarz 2026"
+        "downloadLink": "Pobierz Compliance Kalendarz 2026",
+        "nis2Intro": "NIS2 to kluczowa regulacja na 2026 rok. Sprawdź jak możemy Ci pomóc:",
+        "nis2Button": "Dowiedz się więcej o NIS2",
+        "close": "Zamknij"
       }
     }
   },

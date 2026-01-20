@@ -446,7 +446,10 @@
       "successDialog": {
         "title": "Thank you for signing up!",
         "description": "Your calendar is ready to download. Click the link below to get it.",
-        "downloadLink": "Download Compliance Calendar 2026"
+        "downloadLink": "Download Compliance Calendar 2026",
+        "nis2Intro": "NIS2 is a key regulation for 2026. See how we can help you:",
+        "nis2Button": "Learn more about NIS2",
+        "close": "Close"
       }
     }
   },
