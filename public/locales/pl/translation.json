@@ -924,7 +924,7 @@
       "informationSecurity": {
         "title": "Bezpieczeństwo Informacji",
         "description": "Standardy zabezpieczania zasobów informacyjnych i zachowania poufności.",
-        "items": ["ISO 27001", "ISO 9001", "DORA"]
+        "items": ["ISO 27001", "ISO 9001"]
       },
       "dataSecurity": {
         "title": "Ochrona Danych",

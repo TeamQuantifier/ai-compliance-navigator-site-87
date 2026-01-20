@@ -58,7 +58,6 @@ export const Navbar = () => {
             { title: 'ISO 27001', href: '/frameworks/iso-27001' },
             { title: 'SOC 2', href: '/frameworks/soc' },
             { title: 'GDPR', href: '/frameworks/gdpr' },
-            { title: 'DORA', href: '/frameworks/dora' },
             { title: 'NIST', href: '/frameworks/nist' },
           ],
         },
