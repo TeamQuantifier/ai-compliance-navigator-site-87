@@ -816,61 +816,110 @@ const getPageContent = (locale: string, page: string): PageData | null => {
     },
     'frameworks': {
       en: {
-        title: 'Compliance Frameworks - ISO, SOC 2, GDPR & More | Quantifier',
-        description: 'Explore compliance frameworks supported by Quantifier: ISO 27001, SOC 2, GDPR, NIS2, DORA, NIST, and more.',
+        title: 'Compliance Frameworks - ISO 27001, SOC 2, NIS II, GDPR & More | Quantifier',
+        description: 'Comprehensive support for key regulatory standards: NIS II, ISO 27001, SOC 2, GDPR, NIST and more. Automation, monitoring and reporting in one platform.',
         h1: 'Compliance Frameworks',
-        subtitle: 'Explore the frameworks Quantifier supports for automated compliance management.',
+        subtitle: 'Comprehensive support for key regulatory standards. Automation, monitoring and reporting in one platform.',
         sections: [
           {
-            h2: 'Information Security',
+            h2: 'Most Popular Frameworks',
             content: [
-              'ISO 27001 - Information Security Management System',
-              'ISO 9001 - Quality Management System',
-              'DORA - Digital Operational Resilience Act'
+              'NIS II - EU Cybersecurity Directive for essential and important entities',
+              'ISO 27001 - Information Security Management System standard',
+              'SOC 2 - Service Organization Controls for trust and security',
+              'GDPR - General Data Protection Regulation for EU data privacy',
+              'NIST - National Institute of Standards and Technology Cybersecurity Framework'
             ]
           },
           {
-            h2: 'Cybersecurity',
+            h2: 'Cybersecurity Standards',
             content: [
-              'SOC 2 - Trust Services Criteria',
-              'NIS2 - EU Network and Information Security',
+              'NIS II - Network and Information Security Directive',
+              'SOC 1 & SOC 2 - Trust Services Criteria',
               'NIST - Cybersecurity Framework'
             ]
           },
           {
-            h2: 'Data Privacy',
+            h2: 'Information Security',
+            content: [
+              'ISO 27001 - Information Security Management System',
+              'ISO 9001 - Quality Management System'
+            ]
+          },
+          {
+            h2: 'Data Protection',
             content: [
               'GDPR - General Data Protection Regulation',
-              'CCPA - California Consumer Privacy Act',
-              'Data localization requirements'
+              'HIPAA - Health Insurance Portability and Accountability Act',
+              'CCPA - California Consumer Privacy Act'
+            ]
+          },
+          {
+            h2: 'ESG & Environmental',
+            content: [
+              'ESG Reporting - Environmental, Social and Governance',
+              'ISO 14001 - Environmental Management',
+              'Carbon Footprint & GHG Protocol',
+              'LCA - Life Cycle Assessment'
             ]
           }
         ],
         internalLinks: [
-          { text: 'ISO 27001', href: '/iso27001' },
-          { text: 'SOC 2 Automation', href: '/soc2-automation' },
-          { text: 'GDPR Compliance', href: '/gdpr-compliance' },
-          { text: 'NIS2 Compliance', href: '/nis2' }
+          { text: 'NIS II', href: '/frameworks/nis-ii' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2', href: '/frameworks/soc' },
+          { text: 'GDPR', href: '/frameworks/gdpr' },
+          { text: 'NIST', href: '/frameworks/nist' },
+          { text: 'GRC Platform', href: '/grc-platform' }
         ]
       },
       pl: {
-        title: 'Frameworki Zgodności - ISO, SOC 2, GDPR i Więcej | Quantifier',
-        description: 'Poznaj frameworki zgodności wspierane przez Quantifier: ISO 27001, SOC 2, GDPR, NIS2, DORA, NIST.',
-        h1: 'Frameworki Zgodności',
-        subtitle: 'Poznaj frameworki wspierane przez Quantifier.',
+        title: 'Standardy Compliance - ISO 27001, SOC 2, NIS II, GDPR i Więcej | Quantifier',
+        description: 'Kompleksowe wsparcie dla kluczowych standardów regulacyjnych: NIS II, ISO 27001, SOC 2, GDPR, NIST i wiele innych. Automatyzacja, monitoring i raportowanie.',
+        h1: 'Standardy Compliance',
+        subtitle: 'Kompleksowe wsparcie dla kluczowych standardów regulacyjnych. Automatyzacja, monitoring i raportowanie w jednej platformie.',
         sections: [
+          {
+            h2: 'Najpopularniejsze Standardy',
+            content: [
+              'NIS II - Dyrektywa UE o cyberbezpieczeństwie',
+              'ISO 27001 - System Zarządzania Bezpieczeństwem Informacji',
+              'SOC 2 - Kontrole organizacji usługowych',
+              'GDPR/RODO - Rozporządzenie o ochronie danych osobowych',
+              'NIST - Framework cyberbezpieczeństwa'
+            ]
+          },
+          {
+            h2: 'Cyberbezpieczeństwo',
+            content: [
+              'NIS II - Dyrektywa o bezpieczeństwie sieci i informacji',
+              'SOC 1 i SOC 2 - Kontrole organizacji usługowych',
+              'NIST - Framework cyberbezpieczeństwa'
+            ]
+          },
           {
             h2: 'Bezpieczeństwo Informacji',
             content: [
               'ISO 27001 - System Zarządzania Bezpieczeństwem Informacji',
-              'ISO 9001 - System Zarządzania Jakością',
-              'DORA - Akt o Cyfrowej Odporności Operacyjnej'
+              'ISO 9001 - System Zarządzania Jakością'
+            ]
+          },
+          {
+            h2: 'Ochrona Danych',
+            content: [
+              'GDPR/RODO - Rozporządzenie o ochronie danych osobowych',
+              'HIPAA - Ustawa o przenośności i odpowiedzialności ubezpieczeń zdrowotnych',
+              'CCPA - Kalifornijska ustawa o ochronie prywatności konsumentów'
             ]
           }
         ],
         internalLinks: [
-          { text: 'ISO 27001', href: '/iso27001' },
-          { text: 'Automatyzacja SOC 2', href: '/soc2-automation' }
+          { text: 'NIS II', href: '/frameworks/nis-ii' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2', href: '/frameworks/soc' },
+          { text: 'GDPR', href: '/frameworks/gdpr' },
+          { text: 'NIST', href: '/frameworks/nist' },
+          { text: 'Platforma GRC', href: '/grc-platform' }
         ]
       }
     }
