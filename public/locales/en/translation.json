@@ -1100,7 +1100,7 @@
       "informationSecurity": {
         "title": "Information Security",
         "description": "Standards for securing information assets and maintaining confidentiality.",
-        "items": ["ISO 27001", "ISO 9001", "DORA"]
+        "items": ["ISO 27001", "ISO 9001"]
       },
       "dataSecurity": {
         "title": "Data Security",

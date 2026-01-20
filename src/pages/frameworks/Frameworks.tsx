@@ -1,50 +1,62 @@
 import PageTemplate from '@/components/PageTemplate';
-import { Shield, ArrowRight, Star, Zap } from 'lucide-react';
+import { Shield, Lock, Network, FileCheck, ArrowRight, Star, Zap } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { LucideIcon } from 'lucide-react';
 
 const Frameworks = () => {
   const { t, currentLocale } = useLanguage();
   
-  // Popular frameworks with direct links
-  const popularFrameworks = [
+  // Popular frameworks with direct links - icons matched from HeroSection
+  const popularFrameworks: {
+    key: string;
+    name: string;
+    href: string;
+    icon: LucideIcon;
+    bgColor: string;
+    iconColor: string;
+  }[] = [
     {
       key: "nisII",
       name: "NIS II",
       href: `/${currentLocale}/frameworks/nis-ii`,
-      color: "from-red-500 to-orange-500"
+      icon: Network,
+      bgColor: "bg-compliance-950",
+      iconColor: "text-compliance-300"
     },
     {
       key: "iso27001",
       name: "ISO 27001",
       href: `/${currentLocale}/frameworks/iso-27001`,
-      color: "from-blue-500 to-cyan-500"
+      icon: Shield,
+      bgColor: "bg-compliance-950",
+      iconColor: "text-compliance-300"
     },
     {
       key: "soc2",
       name: "SOC 2",
       href: `/${currentLocale}/frameworks/soc`,
-      color: "from-purple-500 to-pink-500"
+      icon: Lock,
+      bgColor: "bg-innovation-950",
+      iconColor: "text-innovation-300"
     },
     {
       key: "gdpr",
       name: "GDPR / RODO",
       href: `/${currentLocale}/frameworks/gdpr`,
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      key: "dora",
-      name: "DORA",
-      href: `/${currentLocale}/frameworks/dora`,
-      color: "from-amber-500 to-yellow-500"
+      icon: FileCheck,
+      bgColor: "bg-compliance-950",
+      iconColor: "text-compliance-300"
     },
     {
       key: "nist",
       name: "NIST",
       href: `/${currentLocale}/frameworks/nist`,
-      color: "from-indigo-500 to-violet-500"
+      icon: Shield,
+      bgColor: "bg-innovation-950",
+      iconColor: "text-innovation-300"
     }
   ];
 
@@ -62,8 +74,7 @@ const Frameworks = () => {
       categoryKey: "informationSecurity",
       frameworks: [
         { name: "ISO 27001", href: `/${currentLocale}/frameworks/iso-27001` },
-        { name: "ISO 9001", href: `/${currentLocale}/frameworks/iso-9001` },
-        { name: "DORA", href: `/${currentLocale}/frameworks/dora` }
+        { name: "ISO 9001", href: `/${currentLocale}/frameworks/iso-9001` }
       ]
     },
     {
@@ -113,27 +124,30 @@ const Frameworks = () => {
           {t('frameworksPage.popular.description')}
         </p>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {popularFrameworks.map((framework) => (
-            <Link 
-              key={framework.key} 
-              to={framework.href}
-              className="group"
-            >
-              <Card className="p-4 h-full border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${framework.color} flex items-center justify-center mb-3`}>
-                  <Shield className="h-5 w-5 text-white" />
-                </div>
-                <h3 className="font-semibold text-slate-900 group-hover:text-primary transition-colors">
-                  {framework.name}
-                </h3>
-                <div className="flex items-center gap-1 mt-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>{t('frameworksPage.labels.learnMore')}</span>
-                  <ArrowRight className="h-3 w-3" />
-                </div>
-              </Card>
-            </Link>
-          ))}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {popularFrameworks.map((framework) => {
+            const IconComponent = framework.icon;
+            return (
+              <Link 
+                key={framework.key} 
+                to={framework.href}
+                className="group"
+              >
+                <Card className="p-4 h-full border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <div className={`w-12 h-12 rounded-full ${framework.bgColor} flex items-center justify-center mb-3 shadow-lg shadow-black/20 border border-slate-700/30`}>
+                    <IconComponent className={`h-6 w-6 ${framework.iconColor}`} />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 group-hover:text-primary transition-colors">
+                    {framework.name}
+                  </h3>
+                  <div className="flex items-center gap-1 mt-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>{t('frameworksPage.labels.learnMore')}</span>
+                    <ArrowRight className="h-3 w-3" />
+                  </div>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </div>
 
