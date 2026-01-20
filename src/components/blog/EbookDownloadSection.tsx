@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { newsletterClient } from '@/lib/newsletter-client';
+import { Link } from 'react-router-dom';
 
 const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -81,17 +82,26 @@ const EbookDownloadSection = () => {
                   checked={consent}
                   onCheckedChange={(checked) => setConsent(checked as boolean)}
                   disabled={isLoading}
+                  className="mt-1"
                 />
                 <label htmlFor="consent" className="text-sm text-slate-600 leading-tight cursor-pointer">
-                  {t('blog.ebookSection.consentText')}
+                  {t('blog.ebookSection.consent')}{' '}
+                  <Link to={`/${currentLocale}/legal/privacy`} className="text-primary hover:underline">
+                    {t('blog.ebookSection.privacyPolicy')}
+                  </Link>
+                  {' '}{t('blog.ebookSection.and')}{' '}
+                  <Link to={`/${currentLocale}/legal/terms`} className="text-primary hover:underline">
+                    {t('blog.ebookSection.termsOfService')}
+                  </Link>
+                  .
                 </label>
               </div>
               
-              <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90" disabled={isLoading}>
+              <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    {t('blog.ebookSection.loading')}
+                    {t('blog.ebookSection.downloading')}
                   </>
                 ) : (
                   <>
@@ -133,7 +143,7 @@ const EbookDownloadSection = () => {
           
           {/* Direct download link - no JavaScript, no API, no blocking */}
           <div className="bg-slate-50 p-4 rounded-lg border mt-4">
-            <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90">
+            <Button asChild size="lg" className="w-full">
               <a 
                 href="/downloads/compliance-kalendarz-2026.pdf" 
                 download="Compliance-Kalendarz-2026.pdf"
@@ -146,7 +156,7 @@ const EbookDownloadSection = () => {
 
           <DialogFooter className="mt-4">
             <Button variant="outline" onClick={() => setShowSuccessDialog(false)}>
-              {t('blog.ebookSection.successDialog.close')}
+              {t('blog.ebookSection.successDialog.close') || 'Zamknij'}
             </Button>
           </DialogFooter>
         </DialogContent>
