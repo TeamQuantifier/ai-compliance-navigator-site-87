@@ -9,7 +9,8 @@ import {
   Settings, 
   LogOut,
   Menu,
-  X
+  X,
+  Search
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -18,6 +19,7 @@ const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/admin/dashboard' },
   { icon: FileText, label: 'Posts', path: '/admin/posts' },
   { icon: Award, label: 'Case Study', path: '/admin/stories' },
+  { icon: Search, label: 'SEO Audit', path: '/admin/seo-audit' },
   { icon: FolderOpen, label: 'Categories', path: '/admin/categories' },
   { icon: Settings, label: 'Settings', path: '/admin/settings' },
 ];
