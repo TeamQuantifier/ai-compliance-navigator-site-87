@@ -19,6 +19,13 @@ const Frameworks = () => {
   };
 
   // Popular frameworks with direct links - icons matched from HeroSection
+  // Helper for 3-language text
+  const getLocalizedText = (texts: { en: string; pl: string; cs: string }) => {
+    if (currentLocale === 'cs') return texts.cs;
+    if (currentLocale === 'pl') return texts.pl;
+    return texts.en;
+  };
+
   const popularFrameworks: {
     key: string;
     name: string;
@@ -29,35 +36,55 @@ const Frameworks = () => {
     {
       key: "nisII",
       name: "NIS II",
-      description: currentLocale === 'pl' ? "Dyrektywa cyberbezpieczeństwa UE" : "EU Cybersecurity Directive",
+      description: getLocalizedText({
+        en: "EU Cybersecurity Directive",
+        pl: "Dyrektywa cyberbezpieczeństwa UE",
+        cs: "Směrnice EU o kybernetické bezpečnosti"
+      }),
       href: `/${currentLocale}/frameworks/nis-ii`,
       icon: Network,
     },
     {
       key: "iso27001",
       name: "ISO 27001",
-      description: currentLocale === 'pl' ? "Zarządzanie bezpieczeństwem informacji" : "Information Security Management",
+      description: getLocalizedText({
+        en: "Information Security Management",
+        pl: "Zarządzanie bezpieczeństwem informacji",
+        cs: "Řízení bezpečnosti informací"
+      }),
       href: `/${currentLocale}/frameworks/iso-27001`,
       icon: Shield,
     },
     {
       key: "soc2",
       name: "SOC 2",
-      description: currentLocale === 'pl' ? "Kontrola usług i organizacji" : "Service Organization Controls",
+      description: getLocalizedText({
+        en: "Service Organization Controls",
+        pl: "Kontrola usług i organizacji",
+        cs: "Kontroly služeb a organizace"
+      }),
       href: `/${currentLocale}/frameworks/soc`,
       icon: Lock,
     },
     {
       key: "gdpr",
       name: "GDPR / RODO",
-      description: currentLocale === 'pl' ? "Ochrona danych osobowych" : "Data Protection Regulation",
+      description: getLocalizedText({
+        en: "Data Protection Regulation",
+        pl: "Ochrona danych osobowych",
+        cs: "Ochrana osobních údajů"
+      }),
       href: `/${currentLocale}/frameworks/gdpr`,
       icon: FileCheck,
     },
     {
       key: "nist",
       name: "NIST",
-      description: currentLocale === 'pl' ? "Framework cyberbezpieczeństwa" : "Cybersecurity Framework",
+      description: getLocalizedText({
+        en: "Cybersecurity Framework",
+        pl: "Framework cyberbezpieczeństwa",
+        cs: "Rámec kybernetické bezpečnosti"
+      }),
       href: `/${currentLocale}/frameworks/nist`,
       icon: Shield,
     }
@@ -75,8 +102,8 @@ const Frameworks = () => {
   }[] = [
     {
       categoryKey: "cybersecurity",
-      title: { pl: "Cyberbezpieczeństwo", en: "Cybersecurity" },
-      description: { pl: "Ochrona przed zagrożeniami cybernetycznymi", en: "Protection against cyber threats" },
+      title: { pl: "Cyberbezpieczeństwo", en: "Cybersecurity", cs: "Kybernetická bezpečnost" },
+      description: { pl: "Ochrona przed zagrożeniami cybernetycznymi", en: "Protection against cyber threats", cs: "Ochrana před kybernetickými hrozbami" },
       icon: Network,
       frameworks: [
         { name: "NIS II", href: `/${currentLocale}/frameworks/nis-ii` },
@@ -86,8 +113,8 @@ const Frameworks = () => {
     },
     {
       categoryKey: "informationSecurity",
-      title: { pl: "Bezpieczeństwo Informacji", en: "Information Security" },
-      description: { pl: "Ochrona zasobów informacyjnych", en: "Securing information assets" },
+      title: { pl: "Bezpieczeństwo Informacji", en: "Information Security", cs: "Informační bezpečnost" },
+      description: { pl: "Ochrona zasobów informacyjnych", en: "Securing information assets", cs: "Zabezpečení informačních aktiv" },
       icon: Shield,
       frameworks: [
         { name: "ISO 27001", href: `/${currentLocale}/frameworks/iso-27001` },
@@ -96,8 +123,8 @@ const Frameworks = () => {
     },
     {
       categoryKey: "dataSecurity",
-      title: { pl: "Ochrona Danych", en: "Data Protection" },
-      description: { pl: "Regulacje dotyczące danych osobowych", en: "Personal data regulations" },
+      title: { pl: "Ochrona Danych", en: "Data Protection", cs: "Ochrana dat" },
+      description: { pl: "Regulacje dotyczące danych osobowych", en: "Personal data regulations", cs: "Regulace osobních údajů" },
       icon: Lock,
       frameworks: [
         { name: "GDPR / RODO", href: `/${currentLocale}/frameworks/gdpr` },
@@ -107,45 +134,49 @@ const Frameworks = () => {
     },
     {
       categoryKey: "esg",
-      title: { pl: "ESG", en: "ESG" },
-      description: { pl: "Raportowanie środowiskowe, społeczne i zarządcze", en: "Environmental, Social & Governance" },
+      title: { pl: "ESG", en: "ESG", cs: "ESG" },
+      description: { pl: "Raportowanie środowiskowe, społeczne i zarządcze", en: "Environmental, Social & Governance", cs: "Environmentální, sociální a správní aspekty" },
       icon: Scale,
       href: `/${currentLocale}/frameworks/esg`,
       isCategory: true
     },
     {
       categoryKey: "environmental",
-      title: { pl: "Środowisko", en: "Environmental" },
-      description: { pl: "Zarządzanie środowiskowe i zrównoważony rozwój", en: "Environmental management & sustainability" },
+      title: { pl: "Środowisko", en: "Environmental", cs: "Životní prostředí" },
+      description: { pl: "Zarządzanie środowiskowe i zrównoważony rozwój", en: "Environmental management & sustainability", cs: "Environmentální management a udržitelnost" },
       icon: Leaf,
       href: `/${currentLocale}/frameworks/environmental`,
       isCategory: true
     },
     {
       categoryKey: "governance",
-      title: { pl: "Governance", en: "Governance" },
-      description: { pl: "Ład korporacyjny i etyka", en: "Corporate governance & ethics" },
+      title: { pl: "Governance", en: "Governance", cs: "Governance" },
+      description: { pl: "Ład korporacyjny i etyka", en: "Corporate governance & ethics", cs: "Firemní správa a etika" },
       icon: Scale,
       href: `/${currentLocale}/frameworks/governance`,
       isCategory: true
     },
     {
       categoryKey: "productLevel",
-      title: { pl: "Poziom Produktu", en: "Product Level", cs: "Digitální pas produktu" },
-      description: { pl: "Compliance produktu i cykl życia", en: "Product compliance & lifecycle", cs: "Digitální pasy produktů a analýza životního cyklu" },
+      title: { pl: "Poziom Produktu", en: "Product Level", cs: "Úroveň produktu" },
+      description: { pl: "Compliance produktu i cykl życia", en: "Product compliance & lifecycle", cs: "Compliance produktu a životní cyklus" },
       icon: Package,
       href: `/${currentLocale}/frameworks/product-level`,
       isCategory: true
     }
   ];
 
-  const pageTitle = currentLocale === 'pl' 
-    ? "Standardy Compliance | Quantifier.ai" 
-    : "Compliance Frameworks | Quantifier.ai";
+  const pageTitle = getLocalizedText({
+    en: "Compliance Frameworks | Quantifier.ai",
+    pl: "Standardy Compliance | Quantifier.ai",
+    cs: "Standardy Compliance | Quantifier.ai"
+  });
   
-  const pageDescription = currentLocale === 'pl'
-    ? "Nasza platforma wspiera szeroki zakres standardów compliance: NIS II, ISO 27001, SOC 2, GDPR i wiele innych. Rozpocznij swoją ścieżkę zgodności."
-    : "Our platform supports a wide range of compliance frameworks: NIS II, ISO 27001, SOC 2, GDPR and more. Start your compliance journey.";
+  const pageDescription = getLocalizedText({
+    en: "Our platform supports a wide range of compliance frameworks: NIS II, ISO 27001, SOC 2, GDPR and more. Start your compliance journey.",
+    pl: "Nasza platforma wspiera szeroki zakres standardów compliance: NIS II, ISO 27001, SOC 2, GDPR i wiele innych. Rozpocznij swoją ścieżkę zgodności.",
+    cs: "Naše platforma podporuje širokou škálu compliance standardů: NIS II, ISO 27001, SOC 2, GDPR a další. Začněte svou cestu k souladu."
+  });
 
   return (
     <PageTemplate
@@ -155,24 +186,36 @@ const Frameworks = () => {
       {/* Hero Section */}
       <section className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
-          {currentLocale === 'pl' ? 'Standardy Compliance' : 'Compliance Frameworks'}
+          {getLocalizedText({
+            en: 'Compliance Frameworks',
+            pl: 'Standardy Compliance',
+            cs: 'Standardy Compliance'
+          })}
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          {currentLocale === 'pl' 
-            ? 'Kompleksowe wsparcie dla kluczowych standardów regulacyjnych. Automatyzacja, monitoring i raportowanie w jednej platformie.'
-            : 'Comprehensive support for key regulatory standards. Automation, monitoring and reporting in one platform.'}
+          {getLocalizedText({
+            en: 'Comprehensive support for key regulatory standards. Automation, monitoring and reporting in one platform.',
+            pl: 'Kompleksowe wsparcie dla kluczowych standardów regulacyjnych. Automatyzacja, monitoring i raportowanie w jednej platformie.',
+            cs: 'Komplexní podpora pro klíčové regulační standardy. Automatizace, monitoring a reporting v jedné platformě.'
+          })}
         </p>
       </section>
 
       {/* Popular Frameworks Section */}
       <section className="mb-20" aria-labelledby="popular-frameworks">
         <h2 id="popular-frameworks" className="text-2xl md:text-3xl font-bold text-center mb-4">
-          {currentLocale === 'pl' ? 'Najpopularniejsze Standardy' : 'Most Popular Frameworks'}
+          {getLocalizedText({
+            en: 'Most Popular Frameworks',
+            pl: 'Najpopularniejsze Standardy',
+            cs: 'Nejpopulárnější standardy'
+          })}
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-          {currentLocale === 'pl' 
-            ? 'Bezpośredni dostęp do najważniejszych standardów compliance'
-            : 'Direct access to the most important compliance standards'}
+          {getLocalizedText({
+            en: 'Direct access to the most important compliance standards',
+            pl: 'Bezpośredni dostęp do najważniejszych standardów compliance',
+            cs: 'Přímý přístup k nejdůležitějším compliance standardům'
+          })}
         </p>
         
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
@@ -202,7 +245,11 @@ const Frameworks = () => {
       {/* All Frameworks by Category */}
       <section className="mb-20" aria-labelledby="all-frameworks">
         <h2 id="all-frameworks" className="text-2xl md:text-3xl font-bold text-center mb-10">
-          {currentLocale === 'pl' ? 'Wszystkie Standardy' : 'All Frameworks'}
+          {getLocalizedText({
+            en: 'All Frameworks',
+            pl: 'Wszystkie Standardy',
+            cs: 'Všechny standardy'
+          })}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -228,7 +275,7 @@ const Frameworks = () => {
                 {category.isCategory ? (
                   <Link to={category.href!}>
                     <Button variant="outline" className="w-full group" size="sm">
-                      {currentLocale === 'pl' ? 'Poznaj' : 'Explore'}
+                      {getLocalizedText({ en: 'Explore', pl: 'Poznaj', cs: 'Prozkoumat' })}
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </Link>
@@ -258,25 +305,29 @@ const Frameworks = () => {
       {/* GRC Platform CTA */}
       <section className="rounded-2xl bg-gradient-to-r from-compliance-900 to-innovation-900 p-8 md:p-12 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-          {currentLocale === 'pl' 
-            ? 'Potrzebujesz wsparcia dla konkretnego standardu?' 
-            : 'Need support for a specific framework?'}
+          {getLocalizedText({
+            en: 'Need support for a specific framework?',
+            pl: 'Potrzebujesz wsparcia dla konkretnego standardu?',
+            cs: 'Potřebujete podporu pro konkrétní standard?'
+          })}
         </h2>
         <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-          {currentLocale === 'pl'
-            ? 'Nasza platforma stale ewoluuje. Skontaktuj się z nami, aby omówić Twoje wymagania.'
-            : 'Our platform is constantly evolving. Contact us to discuss your requirements.'}
+          {getLocalizedText({
+            en: 'Our platform is constantly evolving. Contact us to discuss your requirements.',
+            pl: 'Nasza platforma stale ewoluuje. Skontaktuj się z nami, aby omówić Twoje wymagania.',
+            cs: 'Naše platforma se neustále vyvíjí. Kontaktujte nás a probereme vaše požadavky.'
+          })}
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100" asChild>
             <Link to={`/${currentLocale}/contact`}>
-              {currentLocale === 'pl' ? 'Skontaktuj się z nami' : 'Contact Us'}
+              {getLocalizedText({ en: 'Contact Us', pl: 'Skontaktuj się z nami', cs: 'Kontaktujte nás' })}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white/20" asChild>
             <Link to={`/${currentLocale}/grc-platform`}>
-              {currentLocale === 'pl' ? 'Poznaj platformę GRC' : 'Explore GRC Platform'}
+              {getLocalizedText({ en: 'Explore GRC Platform', pl: 'Poznaj platformę GRC', cs: 'Prozkoumat GRC platformu' })}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
