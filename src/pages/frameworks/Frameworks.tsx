@@ -66,8 +66,8 @@ const Frameworks = () => {
   // All frameworks organized by category with icons
   const frameworksByCategory: {
     categoryKey: string;
-    title: { pl: string; en: string };
-    description: { pl: string; en: string };
+    title: { pl: string; en: string; cs?: string };
+    description: { pl: string; en: string; cs?: string };
     icon: LucideIcon;
     frameworks?: { name: string; href: string }[];
     href?: string;
@@ -131,8 +131,8 @@ const Frameworks = () => {
     },
     {
       categoryKey: "productLevel",
-      title: { pl: "Poziom Produktu", en: "Product Level" },
-      description: { pl: "Compliance produktu i cykl życia", en: "Product compliance & lifecycle" },
+      title: { pl: "Poziom Produktu", en: "Product Level", cs: "Digitální pas produktu" },
+      description: { pl: "Compliance produktu i cykl życia", en: "Product compliance & lifecycle", cs: "Digitální pasy produktů a analýza životního cyklu" },
       icon: Package,
       href: `/${currentLocale}/frameworks/product-level`,
       isCategory: true
@@ -218,11 +218,11 @@ const Frameworks = () => {
                     <IconComponent className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">
-                    {currentLocale === 'pl' ? category.title.pl : category.title.en}
+                    {currentLocale === 'cs' && category.title.cs ? category.title.cs : (currentLocale === 'pl' ? category.title.pl : category.title.en)}
                   </h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {currentLocale === 'pl' ? category.description.pl : category.description.en}
+                  {currentLocale === 'cs' && category.description.cs ? category.description.cs : (currentLocale === 'pl' ? category.description.pl : category.description.en)}
                 </p>
                 
                 {category.isCategory ? (
