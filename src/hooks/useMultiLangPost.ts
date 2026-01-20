@@ -20,6 +20,22 @@ export interface PostVersion {
   related_post_ids: string[];
   published_at: string | null;
   group_id: string | null;
+  // New SEO fields
+  focus_keyword: string;
+  canonical_url: string;
+  robots_index: boolean;
+  robots_follow: boolean;
+  og_title: string;
+  og_description: string;
+  twitter_card_type: string;
+  twitter_title: string;
+  twitter_description: string;
+  twitter_image_url: string;
+  schema_type: string;
+  schema_json_override: any;
+  breadcrumbs_enabled: boolean;
+  featured_image_alt: string;
+  seo_score: number;
 }
 
 const createEmptyVersion = (lang: Language): PostVersion => ({
@@ -38,6 +54,22 @@ const createEmptyVersion = (lang: Language): PostVersion => ({
   related_post_ids: [],
   published_at: null,
   group_id: null,
+  // New SEO fields with defaults
+  focus_keyword: '',
+  canonical_url: '',
+  robots_index: true,
+  robots_follow: true,
+  og_title: '',
+  og_description: '',
+  twitter_card_type: 'summary_large_image',
+  twitter_title: '',
+  twitter_description: '',
+  twitter_image_url: '',
+  schema_type: 'BlogPosting',
+  schema_json_override: null,
+  breadcrumbs_enabled: true,
+  featured_image_alt: '',
+  seo_score: 0,
 });
 
 export interface MultiLangPostState {
@@ -95,6 +127,22 @@ export function useMultiLangPost(groupId?: string) {
             related_post_ids: post.related_post_ids || [],
             published_at: post.published_at,
             group_id: post.group_id,
+            // New SEO fields
+            focus_keyword: post.focus_keyword || '',
+            canonical_url: post.canonical_url || '',
+            robots_index: post.robots_index !== false,
+            robots_follow: post.robots_follow !== false,
+            og_title: post.og_title || '',
+            og_description: post.og_description || '',
+            twitter_card_type: post.twitter_card_type || 'summary_large_image',
+            twitter_title: post.twitter_title || '',
+            twitter_description: post.twitter_description || '',
+            twitter_image_url: post.twitter_image_url || '',
+            schema_type: post.schema_type || 'BlogPosting',
+            schema_json_override: post.schema_json_override || null,
+            breadcrumbs_enabled: post.breadcrumbs_enabled !== false,
+            featured_image_alt: post.featured_image_alt || '',
+            seo_score: post.seo_score || 0,
           };
         }
       });
@@ -194,6 +242,22 @@ export function useMultiLangPost(groupId?: string) {
           published_at: version.published_at,
           group_id: currentGroupId,
           updated_at: new Date().toISOString(),
+          // New SEO fields
+          focus_keyword: version.focus_keyword || null,
+          canonical_url: version.canonical_url || null,
+          robots_index: version.robots_index,
+          robots_follow: version.robots_follow,
+          og_title: version.og_title || null,
+          og_description: version.og_description || null,
+          twitter_card_type: version.twitter_card_type || null,
+          twitter_title: version.twitter_title || null,
+          twitter_description: version.twitter_description || null,
+          twitter_image_url: version.twitter_image_url || null,
+          schema_type: version.schema_type || null,
+          schema_json_override: version.schema_json_override || null,
+          breadcrumbs_enabled: version.breadcrumbs_enabled,
+          featured_image_alt: version.featured_image_alt || null,
+          seo_score: version.seo_score || 0,
         };
 
         if (version.id) {
