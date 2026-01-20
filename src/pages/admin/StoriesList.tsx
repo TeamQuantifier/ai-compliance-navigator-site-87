@@ -14,24 +14,22 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
-import { format } from 'date-fns';
 
-interface Story {
-  id: string;
+interface GroupedStory {
+  group_id: string;
   title: string;
-  slug: string;
-  lang: string;
-  status: string;
   client_name: string | null;
   industry: string | null;
+  languages: string[];
+  status: string;
   seo_score: number;
-  published_at: string | null;
-  created_at: string;
+  primary_slug: string;
+  primary_lang: string;
 }
 
 export default function StoriesList() {
   const navigate = useNavigate();
-  const [stories, setStories] = useState<Story[]>([]);
+  const [stories, setStories] = useState<GroupedStory[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
 
@@ -43,44 +41,56 @@ export default function StoriesList() {
     try {
       const { data, error } = await supabase
         .from('stories')
-        .select('id, title, slug, lang, status, client_name, industry, seo_score, published_at, created_at')
+        .select('id, title, slug, lang, status, client_name, industry, seo_score, group_id')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setStories(data || []);
+
+      // Group stories by group_id
+      const grouped = new Map<string, GroupedStory>();
+      
+      data?.forEach(story => {
+        const groupKey = story.group_id || story.id;
+        
+        if (!grouped.has(groupKey)) {
+          grouped.set(groupKey, {
+            group_id: groupKey,
+            title: story.title,
+            client_name: story.client_name,
+            industry: story.industry,
+            languages: [story.lang],
+            status: story.status,
+            seo_score: story.seo_score || 0,
+            primary_slug: story.slug,
+            primary_lang: story.lang,
+          });
+        } else {
+          const existing = grouped.get(groupKey)!;
+          existing.languages.push(story.lang);
+          if (story.status === 'published') existing.status = 'published';
+          if (story.seo_score > existing.seo_score) existing.seo_score = story.seo_score;
+        }
+      });
+
+      setStories(Array.from(grouped.values()));
     } catch (error) {
       console.error('Error loading stories:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to load success stories',
-        variant: 'destructive',
-      });
+      toast({ title: 'Error', description: 'Failed to load stories', variant: 'destructive' });
     } finally {
       setLoading(false);
     }
   };
 
-  const deleteStory = async (id: string, title: string) => {
-    if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
+  const deleteGroup = async (groupId: string, title: string) => {
+    if (!confirm(`Czy na pewno chcesz usunąć "${title}" we wszystkich wersjach językowych?`)) return;
 
     try {
-      const { error } = await supabase.from('stories').delete().eq('id', id);
-      
+      const { error } = await supabase.from('stories').delete().eq('group_id', groupId);
       if (error) throw error;
-      
-      toast({
-        title: 'Success',
-        description: 'Success story deleted',
-      });
-      
+      toast({ title: 'Success', description: 'Success story usunięte' });
       loadStories();
     } catch (error) {
-      console.error('Error deleting story:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to delete success story',
-        variant: 'destructive',
-      });
+      toast({ title: 'Error', description: 'Failed to delete', variant: 'destructive' });
     }
   };
 
@@ -88,9 +98,16 @@ export default function StoriesList() {
     switch (status) {
       case 'published': return 'default';
       case 'draft': return 'secondary';
-      case 'scheduled': return 'outline';
-      case 'archived': return 'destructive';
       default: return 'secondary';
+    }
+  };
+
+  const getLangFlag = (lang: string) => {
+    switch (lang) {
+      case 'pl': return '🇵🇱';
+      case 'en': return '🇬🇧';
+      case 'cs': return '🇨🇿';
+      default: return lang.toUpperCase();
     }
   };
 
@@ -102,9 +119,7 @@ export default function StoriesList() {
           <Skeleton className="h-10 w-32" />
         </div>
         <div className="space-y-4">
-          {[...Array(5)].map((_, i) => (
-            <Skeleton key={i} className="h-16 w-full" />
-          ))}
+          {[...Array(5)].map((_, i) => <Skeleton key={i} className="h-16 w-full" />)}
         </div>
       </div>
     );
@@ -116,7 +131,7 @@ export default function StoriesList() {
         <h1 className="text-3xl font-bold">Success Stories</h1>
         <Button onClick={() => navigate('/admin/stories/new')}>
           <Plus className="mr-2 h-4 w-4" />
-          New Story
+          Nowe Story
         </Button>
       </div>
 
@@ -124,66 +139,65 @@ export default function StoriesList() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Title</TableHead>
-              <TableHead>Client</TableHead>
-              <TableHead>Industry</TableHead>
-              <TableHead>Language</TableHead>
+              <TableHead>Tytuł</TableHead>
+              <TableHead>Klient</TableHead>
+              <TableHead>Branża</TableHead>
+              <TableHead className="w-32">Języki</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>SEO Score</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>SEO</TableHead>
+              <TableHead className="text-right">Akcje</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {stories.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
-                  No success stories yet. Create your first one!
+                  Brak success stories. Utwórz pierwsze!
                 </TableCell>
               </TableRow>
             ) : (
               stories.map((story) => (
-                <TableRow key={story.id}>
-                  <TableCell className="font-medium">{story.title}</TableCell>
+                <TableRow key={story.group_id}>
+                  <TableCell className="font-medium max-w-xs truncate">{story.title}</TableCell>
                   <TableCell>{story.client_name || '-'}</TableCell>
                   <TableCell>{story.industry || '-'}</TableCell>
                   <TableCell>
-                    <Badge variant="outline">{story.lang.toUpperCase()}</Badge>
+                    <div className="flex gap-1">
+                      {story.languages.sort().map(lang => (
+                        <span key={lang} className="text-lg" title={lang.toUpperCase()}>
+                          {getLangFlag(lang)}
+                        </span>
+                      ))}
+                    </div>
                   </TableCell>
                   <TableCell>
-                    <Badge variant={getStatusColor(story.status)}>
-                      {story.status}
-                    </Badge>
+                    <Badge variant={getStatusColor(story.status)}>{story.status}</Badge>
                   </TableCell>
                   <TableCell>
-                    <Badge 
-                      variant={story.seo_score >= 80 ? 'default' : 'destructive'}
-                    >
+                    <Badge variant={story.seo_score >= 80 ? 'default' : 'destructive'}>
                       {story.seo_score}/100
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right">
-                    <div className="flex justify-end gap-2">
+                    <div className="flex justify-end gap-1">
                       <Button 
                         variant="ghost" 
-                        size="icon" 
-                        title="View"
-                        onClick={() => window.open(`/${story.lang}/success-stories/${story.slug}`, '_blank')}
+                        size="icon"
+                        onClick={() => window.open(`/${story.primary_lang}/success-stories/${story.primary_slug}`, '_blank')}
                       >
                         <Eye className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="ghost" 
-                        size="icon" 
-                        title="Edit"
-                        onClick={() => navigate(`/admin/stories/${story.id}`)}
+                        size="icon"
+                        onClick={() => navigate(`/admin/stories/edit?group=${story.group_id}`)}
                       >
                         <Pencil className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="ghost" 
-                        size="icon" 
-                        title="Delete"
-                        onClick={() => deleteStory(story.id, story.title)}
+                        size="icon"
+                        onClick={() => deleteGroup(story.group_id, story.title)}
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
