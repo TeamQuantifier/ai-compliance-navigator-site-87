@@ -1,5 +1,5 @@
 import PageTemplate from '@/components/PageTemplate';
-import { Shield, ArrowRight } from 'lucide-react';
+import { Shield, ArrowRight, Star, Zap } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -8,41 +8,91 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Frameworks = () => {
   const { t, currentLocale } = useLanguage();
   
-  const frameworkCategories = [
+  // Popular frameworks with direct links
+  const popularFrameworks = [
     {
-      key: "cybersecurity",
-      href: `/${currentLocale}/frameworks/cybersecurity`,
-      color: "bg-compliance-50"
+      key: "nisII",
+      name: "NIS II",
+      href: `/${currentLocale}/frameworks/nis-ii`,
+      color: "from-red-500 to-orange-500"
     },
     {
-      key: "informationSecurity",
-      href: `/${currentLocale}/frameworks/information-security`,
-      color: "bg-innovation-50"
+      key: "iso27001",
+      name: "ISO 27001",
+      href: `/${currentLocale}/frameworks/iso-27001`,
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      key: "dataSecurity",
-      href: `/${currentLocale}/frameworks/data-security`,
-      color: "bg-compliance-50"
+      key: "soc2",
+      name: "SOC 2",
+      href: `/${currentLocale}/frameworks/soc`,
+      color: "from-purple-500 to-pink-500"
     },
     {
-      key: "esg",
+      key: "gdpr",
+      name: "GDPR / RODO",
+      href: `/${currentLocale}/frameworks/gdpr`,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      key: "dora",
+      name: "DORA",
+      href: `/${currentLocale}/frameworks/dora`,
+      color: "from-amber-500 to-yellow-500"
+    },
+    {
+      key: "nist",
+      name: "NIST",
+      href: `/${currentLocale}/frameworks/nist`,
+      color: "from-indigo-500 to-violet-500"
+    }
+  ];
+
+  // All frameworks organized by category
+  const frameworksByCategory = [
+    {
+      categoryKey: "cybersecurity",
+      frameworks: [
+        { name: "NIS II", href: `/${currentLocale}/frameworks/nis-ii` },
+        { name: "SOC I & SOC II", href: `/${currentLocale}/frameworks/soc` },
+        { name: "NIST", href: `/${currentLocale}/frameworks/nist` }
+      ]
+    },
+    {
+      categoryKey: "informationSecurity",
+      frameworks: [
+        { name: "ISO 27001", href: `/${currentLocale}/frameworks/iso-27001` },
+        { name: "ISO 9001", href: `/${currentLocale}/frameworks/iso-9001` },
+        { name: "DORA", href: `/${currentLocale}/frameworks/dora` }
+      ]
+    },
+    {
+      categoryKey: "dataSecurity",
+      frameworks: [
+        { name: "GDPR / RODO", href: `/${currentLocale}/frameworks/gdpr` },
+        { name: "HIPAA", href: `/${currentLocale}/frameworks/hipaa` },
+        { name: "CCPA", href: `/${currentLocale}/frameworks/ccpa` }
+      ]
+    },
+    {
+      categoryKey: "esg",
       href: `/${currentLocale}/frameworks/esg`,
-      color: "bg-innovation-50"
+      isCategory: true
     },
     {
-      key: "environmental",
+      categoryKey: "environmental",
       href: `/${currentLocale}/frameworks/environmental`,
-      color: "bg-compliance-50"
+      isCategory: true
     },
     {
-      key: "governance",
+      categoryKey: "governance",
       href: `/${currentLocale}/frameworks/governance`,
-      color: "bg-innovation-50"
+      isCategory: true
     },
     {
-      key: "productLevel",
+      categoryKey: "productLevel",
       href: `/${currentLocale}/frameworks/product-level`,
-      color: "bg-compliance-50"
+      isCategory: true
     }
   ];
 
@@ -51,33 +101,87 @@ const Frameworks = () => {
       title={t('seo.frameworks.title')}
       description={t('seo.frameworks.description')}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {frameworkCategories.map((category) => (
-          <Card key={category.key} className={`p-6 border border-slate-200 card-hover ${category.color}`}>
-            <h3 className="text-xl font-semibold mb-3">
-              {t(`frameworksPage.categories.${category.key}.title`)}
-            </h3>
-            <p className="text-slate-600 mb-4">
-              {t(`frameworksPage.categories.${category.key}.description`)}
-            </p>
-            <div className="mb-4">
-              <h4 className="font-medium text-slate-800 mb-2">
-                {t('frameworksPage.labels.supportedFrameworks')}
-              </h4>
-              <ul className="space-y-1 pl-5 list-disc text-slate-600">
-                {(t(`frameworksPage.categories.${category.key}.items`, { returnObjects: true }) as string[]).map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <Link to={category.href}>
-              <Button variant="outline" className="w-full group" size="sm">
-                {t('frameworksPage.labels.exploreButton')} {t(`frameworksPage.categories.${category.key}.title`)}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+      {/* Popular Frameworks Section */}
+      <div className="mb-16">
+        <div className="flex items-center gap-2 mb-6">
+          <Star className="h-6 w-6 text-amber-500 fill-amber-500" />
+          <h2 className="text-2xl font-bold text-slate-900">
+            {t('frameworksPage.popular.title')}
+          </h2>
+        </div>
+        <p className="text-slate-600 mb-8 max-w-3xl">
+          {t('frameworksPage.popular.description')}
+        </p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {popularFrameworks.map((framework) => (
+            <Link 
+              key={framework.key} 
+              to={framework.href}
+              className="group"
+            >
+              <Card className="p-4 h-full border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${framework.color} flex items-center justify-center mb-3`}>
+                  <Shield className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="font-semibold text-slate-900 group-hover:text-primary transition-colors">
+                  {framework.name}
+                </h3>
+                <div className="flex items-center gap-1 mt-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span>{t('frameworksPage.labels.learnMore')}</span>
+                  <ArrowRight className="h-3 w-3" />
+                </div>
+              </Card>
             </Link>
-          </Card>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      {/* All Frameworks by Category */}
+      <div className="mb-16">
+        <div className="flex items-center gap-2 mb-6">
+          <Zap className="h-6 w-6 text-primary" />
+          <h2 className="text-2xl font-bold text-slate-900">
+            {t('frameworksPage.allFrameworks.title')}
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {frameworksByCategory.map((category) => (
+            <Card key={category.categoryKey} className="p-6 border border-slate-200 hover:border-primary/30 transition-colors">
+              <h3 className="text-lg font-semibold mb-4 text-slate-900">
+                {t(`frameworksPage.categories.${category.categoryKey}.title`)}
+              </h3>
+              <p className="text-sm text-slate-600 mb-4">
+                {t(`frameworksPage.categories.${category.categoryKey}.description`)}
+              </p>
+              
+              {category.isCategory ? (
+                <Link to={category.href!}>
+                  <Button variant="outline" className="w-full group" size="sm">
+                    {t('frameworksPage.labels.exploreButton')}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+              ) : (
+                <div className="space-y-2">
+                  {category.frameworks?.map((framework) => (
+                    <Link 
+                      key={framework.name} 
+                      to={framework.href}
+                      className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 group transition-colors"
+                    >
+                      <span className="text-slate-700 group-hover:text-primary transition-colors">
+                        {framework.name}
+                      </span>
+                      <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </Card>
+          ))}
+        </div>
       </div>
       
       {/* GRC Platform Link */}

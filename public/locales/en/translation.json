@@ -76,6 +76,9 @@
         "lcaAnalysis": "LCA Analysis"
       }
     },
+    "popular": {
+      "title": "Popular"
+    },
     "plans": "Plans",
     "partners": "Partners",
     "successStories": "Success Stories",
@@ -1127,7 +1130,15 @@
     },
     "labels": {
       "supportedFrameworks": "Supported Frameworks:",
-      "exploreButton": "Explore"
+      "exploreButton": "Explore",
+      "learnMore": "Learn more"
+    },
+    "popular": {
+      "title": "Most Popular Frameworks",
+      "description": "Direct access to the most sought-after compliance standards. Start your compliance journey with just one click."
+    },
+    "allFrameworks": {
+      "title": "All Frameworks by Category"
     },
     "cta": {
       "title": "Need Support for a Specific Framework?",

@@ -22,25 +22,18 @@ import ByRoles from "./pages/roles/ByRoles";
 
 // Frameworks
 import Frameworks from "./pages/frameworks/Frameworks";
-import Cybersecurity from "./pages/frameworks/Cybersecurity";
-import InformationSecurity from "./pages/frameworks/InformationSecurity";
-import DataSecurity from "./pages/frameworks/DataSecurity";
 import Esg from "./pages/frameworks/Esg";
 import Environmental from "./pages/frameworks/Environmental";
 import Governance from "./pages/frameworks/Governance";
 import ProductLevel from "./pages/frameworks/ProductLevel";
 
-// Cybersecurity Framework specific pages
+// Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
 import NisII from "./pages/frameworks/cybersecurity/NisII";
 import Nist from "./pages/frameworks/cybersecurity/Nist";
-
-// Information Security Framework specific pages
 import Iso27001 from "./pages/frameworks/information-security/Iso27001";
 import Iso9001 from "./pages/frameworks/information-security/Iso9001";
 import Dora from "./pages/frameworks/information-security/Dora";
-
-// Data Security Framework specific pages
 import Gdpr from "./pages/frameworks/data-security/Gdpr";
 import Hipaa from "./pages/frameworks/data-security/Hipaa";
 import Ccpa from "./pages/frameworks/data-security/Ccpa";
@@ -114,36 +107,45 @@ const App = () => (
                   <Route path="/:locale/by-roles/contributors" element={<ByRoles />} />
                   <Route path="/:locale/by-roles/auditor" element={<ByRoles />} />
               
-                  {/* Frameworks routes */}
+                  {/* Frameworks main page */}
                   <Route path="/:locale/frameworks" element={<Frameworks />} />
-                  <Route path="/:locale/frameworks/cybersecurity" element={<Cybersecurity />} />
-                  <Route path="/:locale/frameworks/information-security" element={<InformationSecurity />} />
-                  <Route path="/:locale/frameworks/data-security" element={<DataSecurity />} />
+                  
+                  {/* Flattened framework routes - direct access */}
+                  <Route path="/:locale/frameworks/soc" element={<Soc />} />
+                  <Route path="/:locale/frameworks/nis-ii" element={<NisII />} />
+                  <Route path="/:locale/frameworks/nist" element={<Nist />} />
+                  <Route path="/:locale/frameworks/iso-27001" element={<Iso27001 />} />
+                  <Route path="/:locale/frameworks/iso-9001" element={<Iso9001 />} />
+                  <Route path="/:locale/frameworks/dora" element={<Dora />} />
+                  <Route path="/:locale/frameworks/gdpr" element={<Gdpr />} />
+                  <Route path="/:locale/frameworks/hipaa" element={<Hipaa />} />
+                  <Route path="/:locale/frameworks/ccpa" element={<Ccpa />} />
+                  
+                  {/* Category pages - still needed for ESG, Environmental, Governance, Product Level */}
                   <Route path="/:locale/frameworks/esg" element={<Esg />} />
                   <Route path="/:locale/frameworks/environmental" element={<Environmental />} />
                   <Route path="/:locale/frameworks/governance" element={<Governance />} />
                   <Route path="/:locale/frameworks/product-level" element={<ProductLevel />} />
                   
-                  {/* Cybersecurity Framework specific routes */}
-                  <Route path="/:locale/frameworks/cybersecurity/soc" element={<Soc />} />
-                  <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<NisII />} />
-                  <Route path="/:locale/frameworks/cybersecurity/nist" element={<Nist />} />
-                  
-                  {/* Information Security Framework specific routes */}
-                  <Route path="/:locale/frameworks/information-security/iso-27001" element={<Iso27001 />} />
-                  <Route path="/:locale/frameworks/information-security/iso-9001" element={<Iso9001 />} />
-                  <Route path="/:locale/frameworks/information-security/dora" element={<Dora />} />
-                  
-                  {/* Data Security Framework specific routes */}
-                  <Route path="/:locale/frameworks/data-security/gdpr" element={<Gdpr />} />
-                  <Route path="/:locale/frameworks/data-security/hipaa" element={<Hipaa />} />
-                  <Route path="/:locale/frameworks/data-security/ccpa" element={<Ccpa />} />
+                  {/* Redirects from old nested URLs to new flattened URLs */}
+                  <Route path="/:locale/frameworks/cybersecurity" element={<Navigate to="../frameworks" replace />} />
+                  <Route path="/:locale/frameworks/information-security" element={<Navigate to="../frameworks" replace />} />
+                  <Route path="/:locale/frameworks/data-security" element={<Navigate to="../frameworks" replace />} />
+                  <Route path="/:locale/frameworks/cybersecurity/soc" element={<Navigate to="../../soc" replace />} />
+                  <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-ii" replace />} />
+                  <Route path="/:locale/frameworks/cybersecurity/nist" element={<Navigate to="../../nist" replace />} />
+                  <Route path="/:locale/frameworks/information-security/iso-27001" element={<Navigate to="../../iso-27001" replace />} />
+                  <Route path="/:locale/frameworks/information-security/iso-9001" element={<Navigate to="../../iso-9001" replace />} />
+                  <Route path="/:locale/frameworks/information-security/dora" element={<Navigate to="../../dora" replace />} />
+                  <Route path="/:locale/frameworks/data-security/gdpr" element={<Navigate to="../../gdpr" replace />} />
+                  <Route path="/:locale/frameworks/data-security/hipaa" element={<Navigate to="../../hipaa" replace />} />
+                  <Route path="/:locale/frameworks/data-security/ccpa" element={<Navigate to="../../ccpa" replace />} />
               
                   {/* SEO Landing Pages - Redirects to framework pages */}
-                  <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/cybersecurity/soc" replace />} />
-                  <Route path="/:locale/iso27001" element={<Navigate to="frameworks/information-security/iso-27001" replace />} />
-                  <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/data-security" replace />} />
-                  <Route path="/:locale/nis2" element={<Navigate to="frameworks/cybersecurity/nis-ii" replace />} />
+                  <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/soc" replace />} />
+                  <Route path="/:locale/iso27001" element={<Navigate to="frameworks/iso-27001" replace />} />
+                  <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
+                  <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
                   <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
 
                   {/* Blog routes */}
@@ -197,4 +199,3 @@ const App = () => (
 );
 
 export default App;
-

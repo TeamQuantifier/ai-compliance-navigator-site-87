@@ -6,7 +6,7 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const BASE_URL = 'https://quantifier.ai';
 
-// Static pages for the sitemap
+// Static pages for the sitemap - flattened framework structure
 const staticPages = [
   { path: '', changefreq: 'weekly', priority: '1.0' },
   { path: '/about', changefreq: 'monthly', priority: '0.8' },
@@ -31,23 +31,23 @@ const staticPages = [
   { path: '/by-roles/managers', changefreq: 'monthly', priority: '0.7' },
   { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7' },
   { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7' },
-  // Frameworks main pages
-  { path: '/frameworks', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/cybersecurity', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/environmental', changefreq: 'monthly', priority: '0.8' },
+  // Frameworks main page
+  { path: '/frameworks', changefreq: 'monthly', priority: '0.9' },
+  // Flattened framework pages - direct access (high priority)
+  { path: '/frameworks/nis-ii', changefreq: 'monthly', priority: '0.9' },
+  { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9' },
+  { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9' },
+  { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9' },
+  { path: '/frameworks/dora', changefreq: 'monthly', priority: '0.9' },
+  { path: '/frameworks/nist', changefreq: 'monthly', priority: '0.8' },
+  { path: '/frameworks/iso-9001', changefreq: 'monthly', priority: '0.8' },
+  { path: '/frameworks/hipaa', changefreq: 'monthly', priority: '0.8' },
+  { path: '/frameworks/ccpa', changefreq: 'monthly', priority: '0.8' },
+  // Category pages (still exist for ESG, Environmental, Governance, Product Level)
   { path: '/frameworks/esg', changefreq: 'monthly', priority: '0.8' },
+  { path: '/frameworks/environmental', changefreq: 'monthly', priority: '0.8' },
   { path: '/frameworks/governance', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/information-security', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/data-security', changefreq: 'monthly', priority: '0.8' },
   { path: '/frameworks/product-level', changefreq: 'monthly', priority: '0.8' },
-  // Cybersecurity subpages
-  { path: '/frameworks/cybersecurity/soc', changefreq: 'monthly', priority: '0.7' },
-  { path: '/frameworks/cybersecurity/nis-ii', changefreq: 'monthly', priority: '0.7' },
-  { path: '/frameworks/cybersecurity/nist', changefreq: 'monthly', priority: '0.7' },
-  // Information Security subpages
-  { path: '/frameworks/information-security/iso-27001', changefreq: 'monthly', priority: '0.7' },
-  { path: '/frameworks/information-security/iso-9001', changefreq: 'monthly', priority: '0.7' },
-  { path: '/frameworks/information-security/dora', changefreq: 'monthly', priority: '0.7' },
 ];
 
 const locales = ['en', 'pl', 'cs'];

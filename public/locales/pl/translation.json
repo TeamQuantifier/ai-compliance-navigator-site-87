@@ -76,6 +76,9 @@
         "lcaAnalysis": "Analiza LCA"
       }
     },
+    "popular": {
+      "title": "Popularne"
+    },
     "plans": "Plany",
     "partners": "Partnerzy",
     "successStories": "Historie sukcesu",
@@ -951,7 +954,15 @@
     },
     "labels": {
       "supportedFrameworks": "Wspierane standardy:",
-      "exploreButton": "Poznaj"
+      "exploreButton": "Poznaj",
+      "learnMore": "Dowiedz się więcej"
+    },
+    "popular": {
+      "title": "Najpopularniejsze standardy",
+      "description": "Bezpośredni dostęp do najważniejszych standardów compliance. Rozpocznij swoją ścieżkę zgodności jednym kliknięciem."
+    },
+    "allFrameworks": {
+      "title": "Wszystkie standardy według kategorii"
     },
     "cta": {
       "title": "Potrzebujesz wsparcia dla konkretnego standardu?",
