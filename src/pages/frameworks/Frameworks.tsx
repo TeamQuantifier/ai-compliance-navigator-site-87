@@ -185,7 +185,7 @@ const Frameworks = () => {
     >
       {/* Hero Section */}
       <section className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent leading-tight pb-1">
           {getLocalizedText({
             en: 'Compliance Frameworks',
             pl: 'Standardy Compliance',
