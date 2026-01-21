@@ -61,6 +61,63 @@ const Esg = () => {
       description={t('seo.frameworks.esg.description')}
     >
       <div className="max-w-6xl mx-auto">
+        {/* Envirly Promotion Section */}
+        <div className="mb-12 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-2xl p-8 border border-amber-200 shadow-lg">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Left Column - Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Leaf className="h-4 w-4" />
+                {t('esgPage.envirly.badge')}
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+                {t('esgPage.envirly.title')}
+              </h2>
+              <ul className="space-y-3 text-slate-700 mb-6">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <span>{t('esgPage.envirly.features.csrd')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <span>{t('esgPage.envirly.features.ghg')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <span>{t('esgPage.envirly.features.lca')}</span>
+                </li>
+              </ul>
+              <Button 
+                size="lg" 
+                className="bg-amber-500 hover:bg-amber-600 text-white"
+                asChild
+              >
+                <a 
+                  href={currentLocale === 'pl' ? 'https://www.envirly.pl/' : 'https://www.envirly.com/'} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {t('esgPage.envirly.cta')} <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+            
+            {/* Right Column - Image */}
+            <div className="relative">
+              <div className="bg-white rounded-xl shadow-xl border border-amber-100 p-2 transform rotate-1 hover:rotate-0 transition-transform">
+                <img 
+                  src="/lovable-uploads/envirly-dashboard.png" 
+                  alt="Envirly ESG Dashboard"
+                  className="rounded-lg w-full"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-amber-400 rounded-full opacity-20 -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-orange-400 rounded-full opacity-20 -z-10" />
+            </div>
+          </div>
+        </div>
+
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid grid-cols-3 w-full max-w-2xl mx-auto mb-8">

@@ -1410,6 +1410,16 @@
     }
   },
   "esgPage": {
+    "envirly": {
+      "badge": "Modul Envirly by Quantifier",
+      "title": "ESG Reporting: Poradenství a nástroje",
+      "features": {
+        "csrd": "ESG sustainability reporting v souladu s CSRD a ESRS",
+        "ghg": "Uhlíková stopa organizací ve scopech 1, 2 a 3 dle GHG Protocol",
+        "lca": "Environmentální analýza životního cyklu (LCA)"
+      },
+      "cta": "Přejít na Envirly"
+    },
     "title": "Zjednodušte své Udržitelné a ESG Reportování",
     "description": "Automatizujte CSDR, GRI a CBAM Reportování s lehkostí. Quantifier je váš partner v dosahování transparentního, přesného a efektivního ESG reportování. Ať už splňujete globální standardy udržitelnosti nebo navigujete složitými regulačními prostředími, máme vás pokryto s plnou automatizací.",
     "tabs": {
