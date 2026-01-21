@@ -1538,7 +1538,131 @@
   },
   "environmentalPage": {
     "title": "Environmentální Compliance, plně automatizovaná",
-    "description": "Quantifier pohání vaši environmentální strategii s AI-native automatizací—od ISO 14001 po dekarbonizaci. Ať už usilujete o certifikaci, sledujete emise nebo budujete plán redukce založený na vědě, Quantifier odstraňuje manuální práci z environmentální compliance a činí klimatické vedení škálovatelným."
+    "description": "Quantifier pohání vaši environmentální strategii s AI-native automatizací—od ISO 14001 po dekarbonizaci. Ať už usilujete o certifikaci, sledujete emise nebo budujete plán redukce založený na vědě, Quantifier odstraňuje manuální práci z environmentální compliance a činí klimatické vedení škálovatelným.",
+    "tabs": {
+      "iso14001": "ISO 14001",
+      "lca": "LCA",
+      "carbon": "Uhlíková stopa",
+      "decarbonisation": "Dekarbonizace"
+    },
+    "iso14001": {
+      "title": "ISO 14001: Vybudujte a udržujte certifikovaný EMS",
+      "description": "Dosáhněte a udržujte svůj systém environmentálního managementu (EMS) bez zbytečné režie. Quantifier automatizuje sběr důkazů, reporting a vynucování politik potřebných pro soulad s normou ISO 14001.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Autonomní přidělování úkolů",
+          "description": "Automatizované přidělování úkolů pro implementaci a revize EMS napříč organizací."
+        },
+        {
+          "title": "Připravenost na audit v reálném čase",
+          "description": "Verzovaná dokumentace a důkazy vždy připravené pro auditory."
+        },
+        {
+          "title": "Automatizovaná upozornění",
+          "description": "Včasné upozornění na nápravná opatření, požadavky na školení a aktualizace politik."
+        },
+        {
+          "title": "Kompletní přehled",
+          "description": "Komplexní dashboard zobrazující stav compliance napříč týmy a lokalitami."
+        }
+      ]
+    },
+    "lca": {
+      "title": "LCA (Analýza životního cyklu): Okamžitá, inteligentní analýza dopadu",
+      "description": "Jděte za hranice reportingu—Quantifier vám dává nástroje pro pochopení skutečného environmentálního dopadu vašich produktů a procesů s AI-podporovanými LCA workflow.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Řízené hodnocení životního cyklu",
+          "description": "Inteligentní příjem dat činí složitá hodnocení jednoduchými a přesnými."
+        },
+        {
+          "title": "Automatizované požadavky na data",
+          "description": "Zjednodušený sběr od interních týmů a dodavatelů s integrovanými follow-upy."
+        },
+        {
+          "title": "Integrované benchmarky",
+          "description": "Přístup ke komplexním knihovnám materiálů a průmyslovým srovnáním."
+        },
+        {
+          "title": "Exportovatelné reporty",
+          "description": "Generujte reporty v souladu s normami ISO 14040/44 jedním kliknutím."
+        }
+      ]
+    },
+    "carbon": {
+      "title": "Uhlíková stopa a GHG: Sledujte, redukujte, reportujte",
+      "description": "Od Scope 1 po Scope 3, Quantifier vám pomáhá kvantifikovat, sledovat a reportovat emise skleníkových plynů (GHG) napříč vaším hodnotovým řetězcem—bez tabulek, bez mezer, bez stresu.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Automatizované výpočty emisí",
+          "description": "Přesná data o emisích podle lokace, aktivity nebo dodavatele s minimálním úsilím."
+        },
+        {
+          "title": "AI-podporovaný sběr dat",
+          "description": "AI agenti, kteří automaticky sbírají data o aktivitách napříč vaší organizací."
+        },
+        {
+          "title": "Dashboardy v reálném čase",
+          "description": "Komplexní přehled emisí Scope 1, 2 a 3 na jednom místě."
+        },
+        {
+          "title": "Reporty připravené k odeslání",
+          "description": "Formátované reporty pro GHG Protocol, ISO 14064 a regulatorní podání."
+        }
+      ]
+    },
+    "decarbonisation": {
+      "title": "Dekarbonizace: Od reportingu k akci",
+      "description": "Quantifier nekončí u měření uhlíku—pomáhá vám realizovat vaši dekarbonizační strategii. Stanovte cíle založené na vědě, sledujte pokrok v redukci a zůstaňte v souladu s klimatickými regulacemi.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Stanovení cílů založených na vědě",
+          "description": "Stanovte cíle v souladu s SBTi trajektoriemi pro důvěryhodnou klimatickou akci."
+        },
+        {
+          "title": "Automatizované sledování pokroku",
+          "description": "Monitorujte iniciativy na redukci emisí s daty a insights v reálném čase."
+        },
+        {
+          "title": "Chytrá upozornění",
+          "description": "Přijímejte notifikace, když jsou cíle mimo plán nebo jsou překročeny rizikové prahy."
+        },
+        {
+          "title": "Úplná integrace dat",
+          "description": "Propojte se systémy nákupu, cestování a provozu pro komplexní přehled."
+        }
+      ]
+    },
+    "whyQuantifier": {
+      "title": "Proč Quantifier pro environmentální compliance?",
+      "features": {
+        "aiNative": {
+          "title": "AI-Native a autonomní",
+          "description": "Compliance agenti sbírají data, kontaktují týmy a zajišťují včasný reporting—takže vy to nemusíte dělat."
+        },
+        "alwaysUpdated": {
+          "title": "Vždy aktuální",
+          "description": "Dostanete notifikaci, když se změní regulace, a vaše procesy se automaticky aktualizují—bez zpoždění, bez poradenských poplatků."
+        },
+        "endToEnd": {
+          "title": "End-to-end pokrytí",
+          "description": "Spravujte ISO 14001, LCA, GHG reporting a dekarbonizaci v jedné bezpečné platformě."
+        },
+        "fastImplementation": {
+          "title": "Rychlá implementace",
+          "description": "Nastavte si environmentální workflow během několika minut. Bez složitého onboardingu."
+        }
+      }
+    },
+    "cta": {
+      "title": "Připraveni učinit environmentální compliance snadnou?",
+      "bookDemo": "Objednat demo",
+      "watchTour": "Zhlédnout rychlou prohlídku"
+    }
   },
   "governancePage": {
     "title": "Governance, právní politiky a Whistleblowing",
