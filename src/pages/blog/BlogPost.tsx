@@ -1,9 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternatePost } from '@/hooks/useBlog';
 import { calculateReadingTime } from '@/lib/reading-time';
 import RichTextRenderer from '@/components/blog/RichTextRenderer';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -73,82 +73,40 @@ const BlogPost = () => {
   }
 
   const readingTime = calculateReadingTime(post.body_rich as any);
-  const canonicalUrl = `https://quantifier.ai/${currentLocale}/blog/${post.slug}`;
-  const imageUrl = post.og_image_url || '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png';
-
-  // Build alternate URLs for hreflang
-  const alternateUrl = alternatePost 
-    ? `https://quantifier.ai/${alternatePost.lang}/blog/${alternatePost.slug}`
-    : null;
-  const altLang = currentLocale === 'en' ? 'pl' : 'en';
 
   return (
     <>
-      <Helmet>
-        <title>{post.meta_title || post.title} | Quantifier.ai</title>
-        <meta name="description" content={post.meta_desc || post.excerpt || ''} />
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* hreflang tags */}
-        <link rel="alternate" hrefLang={currentLocale} href={canonicalUrl} />
-        {alternateUrl && (
-          <link rel="alternate" hrefLang={altLang} href={alternateUrl} />
-        )}
-        <link rel="alternate" hrefLang="x-default" href={`https://quantifier.ai/en/blog/${slug}`} />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={post.meta_title || post.title} />
-        <meta property="og:description" content={post.meta_desc || post.excerpt || ''} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : 'en_US'} />
-        {alternateUrl && (
-          <meta property="og:locale:alternate" content={altLang === 'pl' ? 'pl_PL' : 'en_US'} />
-        )}
-        
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.meta_title || post.title} />
-        <meta name="twitter:description" content={post.meta_desc || post.excerpt || ''} />
-        <meta name="twitter:image" content={imageUrl} />
-        
-        {/* Article metadata */}
-        {post.published_at && (
-          <meta property="article:published_time" content={post.published_at} />
-        )}
-        {post.updated_at && (
-          <meta property="article:modified_time" content={post.updated_at} />
-        )}
-        {post.tags && post.tags.map((tag: string) => (
-          <meta key={tag} property="article:tag" content={tag} />
-        ))}
-        
-        {/* JSON-LD Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.title,
-            description: post.meta_desc || post.excerpt,
-            image: imageUrl,
-            datePublished: post.published_at || post.created_at,
-            dateModified: post.updated_at,
-            author: {
-              '@type': 'Person',
-              name: 'Quantifier Team',
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Quantifier.ai',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://quantifier.ai/logo.png',
-              },
-            },
-          })}
-        </script>
-      </Helmet>
+      <SEOHead
+        title={post.title}
+        description={post.excerpt || ''}
+        slug={post.slug}
+        lang={currentLocale}
+        contentType="post"
+        featuredImageUrl={post.featured_image_url}
+        featuredImageAlt={post.featured_image_alt}
+        ogImageUrl={post.og_image_url}
+        publishedAt={post.published_at}
+        updatedAt={post.updated_at}
+        createdAt={post.created_at}
+        metaTitle={post.meta_title}
+        metaDesc={post.meta_desc}
+        focusKeyword={post.focus_keyword}
+        canonicalUrl={post.canonical_url}
+        robotsIndex={post.robots_index}
+        robotsFollow={post.robots_follow}
+        ogTitle={post.og_title}
+        ogDescription={post.og_description}
+        twitterCardType={post.twitter_card_type}
+        twitterTitle={post.twitter_title}
+        twitterDescription={post.twitter_description}
+        twitterImageUrl={post.twitter_image_url}
+        schemaType={post.schema_type}
+        schemaJsonOverride={post.schema_json_override}
+        breadcrumbsEnabled={post.breadcrumbs_enabled}
+        tags={post.tags}
+        category={post.category?.name}
+        alternatePost={alternatePost ? { lang: alternatePost.lang, slug: alternatePost.slug } : null}
+      />
 
       <PageTemplate title="" description="">
         <article className="max-w-4xl mx-auto">
@@ -161,11 +119,13 @@ const BlogPost = () => {
           </Link>
 
           {/* Featured image */}
-          <img 
-            src={post.featured_image_url || imageUrl} 
-            alt={post.title}
-            className="w-full h-full object-cover"
-          />
+          {post.featured_image_url && (
+            <img 
+              src={post.featured_image_url} 
+              alt={post.featured_image_alt || post.title}
+              className="w-full aspect-video object-cover rounded-lg mb-8"
+            />
+          )}
 
           {/* Article header */}
           <header className="mb-8">
