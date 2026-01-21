@@ -1797,6 +1797,16 @@
     }
   },
   "esgPage": {
+    "envirly": {
+      "badge": "Envirly by Quantifier Module",
+      "title": "ESG Reporting: Consulting and Tools",
+      "features": {
+        "csrd": "ESG sustainability reporting in accordance with CSRD and ESRS",
+        "ghg": "Carbon footprint of organisations in scopes 1, 2 and 3 of the GHG Protocol",
+        "lca": "Environmental Life Cycle Assessment (LCA)"
+      },
+      "cta": "Go to Envirly"
+    },
     "title": "Simplify Your Sustainable & ESG Reporting",
     "description": "Automate CSDR, GRI, and CBAM Reporting with Ease. Quantifier is your partner in achieving transparent, accurate, and efficient ESG reporting. Whether you're meeting global sustainability standards or navigating complex regulatory landscapes, we've got you covered with full automation.",
     "tabs": {

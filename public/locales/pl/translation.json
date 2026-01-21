@@ -1621,6 +1621,16 @@
     }
   },
   "esgPage": {
+    "envirly": {
+      "badge": "Moduł Envirly by Quantifier",
+      "title": "ESG Reporting: Doradztwo i narzędzia",
+      "features": {
+        "csrd": "Raportowanie zrównoważonego rozwoju ESG zgodnie z CSRD i ESRS",
+        "ghg": "Ślad węglowy organizacji w zakresach 1, 2 i 3 GHG Protocol",
+        "lca": "Środowiskowa analiza cyklu życia (LCA)"
+      },
+      "cta": "Przejdź do Envirly"
+    },
     "title": "Uprość raportowanie ESG i zrównoważonego rozwoju",
     "description": "Zautomatyzuj raportowanie CSDR, GRI i CBAM z łatwością. Quantifier jest Twoim partnerem w osiąganiu przejrzystego, dokładnego i efektywnego raportowania ESG. Niezależnie od tego, czy spełniasz globalne standardy zrównoważonego rozwoju, czy poruszasz się po złożonych krajobrazach regulacyjnych, jesteśmy z Tobą dzięki pełnej automatyzacji.",
     "tabs": {
