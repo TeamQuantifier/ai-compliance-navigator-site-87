@@ -2711,6 +2711,102 @@
       "seePricing": "Zobrazit ceny"
     }
   },
+  "iso9001Page": {
+    "title": "ISO 9001",
+    "description": "Zjednodušte řízení kvality s ISO 9001 - mezinárodním standardem pro systémy managementu kvality (QMS).",
+    "hero": {
+      "title": "ISO 9001: Řízení kvality jednoduše",
+      "subtitle": "Quantifier činí dosažení a udržení souladu s ISO 9001 bezproblémovým - neustále podporuje činnosti řízení kvality, sleduje klíčové metriky a zajišťuje kompletní dokumentaci.",
+      "button": "Rezervovat demo"
+    },
+    "whatIs": {
+      "title": "Co je ISO 9001?",
+      "description": "ISO 9001 je mezinárodní standard pro systémy managementu kvality (QMS). Poskytuje rámec pro organizace, aby konzistentně dodávaly produkty a služby splňující požadavky zákazníků a regulačních orgánů, a zároveň neustále zlepšovaly své procesy.",
+      "keyPrinciples": {
+        "title": "Klíčové principy",
+        "items": [
+          "Zaměření na zákazníka",
+          "Procesní přístup",
+          "Rozhodování založené na důkazech",
+          "Neustálé zlepšování"
+        ]
+      },
+      "benefits": {
+        "title": "Výhody certifikace",
+        "items": [
+          "Zvýšená spokojenost a loajalita zákazníků",
+          "Efektivita procesů a snížení nákladů",
+          "Vyšší kvalita produktů a služeb",
+          "Přístup na nové trhy a příležitosti"
+        ]
+      }
+    },
+    "platformScreenshots": {
+      "title": "Platforma Quantifier AI pro ISO 9001",
+      "dashboard": {
+        "title": "AI-powered dashboard pro ISO 9001",
+        "description": "Sledujte systém managementu kvality ve vaší organizaci s naším intuitivním dashboardem poháněným AI."
+      },
+      "qualityManagement": {
+        "title": "Dashboard řízení kvality",
+        "description": "Získejte komplexní přehled o metrikách kvality vaší organizace a stavu shody.",
+        "alt": "Dashboard ISO 9001"
+      },
+      "processManagement": {
+        "title": "Řízení procesů",
+        "description": "Mapujte, monitorujte a optimalizujte klíčové obchodní procesy pro zajištění kvality v každém kroku.",
+        "alt": "Obrazovka řízení procesů"
+      },
+      "documentationControl": {
+        "title": "Kontrola dokumentace",
+        "description": "Centralizovaná správa dokumentů s verzováním a schvalovacími workflow.",
+        "alt": "Obrazovka kontroly dokumentace"
+      },
+      "performanceAnalytics": {
+        "title": "Analýza výkonnosti",
+        "description": "Metriky v reálném čase pro sledování cílů kvality a iniciativ zlepšování.",
+        "alt": "Obrazovka analýzy výkonnosti"
+      },
+      "auditManagement": {
+        "title": "Správa auditů",
+        "description": "Plánujte, provádějte a sledujte interní audity s automatizovanými nálezy a úkoly.",
+        "alt": "Obrazovka správy auditů"
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier automatizuje soulad s ISO 9001",
+      "features": {
+        "automatedTasks": {
+          "title": "Automatizované přidělování úkolů",
+          "description": "Zajistěte konzistentní a včasné provádění činností řízení kvality v celé organizaci."
+        },
+        "auditReady": {
+          "title": "Reporty připravené na audit",
+          "description": "Shromažďujte požadované důkazy o kvalitě bez manuálního úsilí a zajistěte připravenost na audity."
+        },
+        "qualityMonitoring": {
+          "title": "Monitoring kvality",
+          "description": "Identifikujte mezery v kvalitě a řešte je dříve, než eskalují, díky metrikám a upozorněním v reálném čase."
+        }
+      }
+    },
+    "cta": {
+      "title": "Jste připraveni zjednodušit řízení kvality?",
+      "description": "Připojte se k organizacím, které důvěřují Quantifieru v automatizaci souladu s ISO 9001.",
+      "bookDemo": "Rezervovat demo",
+      "explorePlans": "Prozkoumat plány"
+    }
+  },
+  "seo": {
+    "frameworks": {
+      "informationSecurity": {
+        "iso9001": {
+          "title": "Systém managementu kvality ISO 9001",
+          "description": "Implementujte ISO 9001 QMS s Quantifier.ai. Automatizované řízení kvality, dokumentace procesů a sledování neustálého zlepšování."
+        }
+      }
+    }
+  },
   "doraPage": {
     "title": "DORA Compliance",
     "description": "Dosáhněte a udržujte DORA compliance s AI-powered automatizací pro finanční instituce.",
