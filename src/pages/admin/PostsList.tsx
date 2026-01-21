@@ -16,20 +16,20 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
 
-interface Post {
-  id: string;
+interface GroupedPost {
+  group_id: string;
   title: string;
-  slug: string;
-  lang: string;
+  languages: string[];
   status: string;
   published_at: string | null;
-  created_at: string;
-  featured_image_url?: string;
+  featured_image_url: string | null;
+  primary_slug: string;
+  primary_lang: string;
 }
 
 export default function PostsList() {
   const navigate = useNavigate();
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<GroupedPost[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
 
@@ -41,11 +41,43 @@ export default function PostsList() {
     try {
       const { data, error } = await supabase
         .from('posts')
-        .select('id, title, slug, lang, status, published_at, created_at, featured_image_url')
+        .select('id, title, slug, lang, status, published_at, created_at, featured_image_url, group_id')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setPosts(data || []);
+
+      // Group posts by group_id
+      const grouped = new Map<string, GroupedPost>();
+      
+      data?.forEach(post => {
+        const groupKey = post.group_id || post.id;
+        
+        if (!grouped.has(groupKey)) {
+          grouped.set(groupKey, {
+            group_id: groupKey,
+            title: post.title,
+            languages: [post.lang],
+            status: post.status,
+            published_at: post.published_at,
+            featured_image_url: post.featured_image_url,
+            primary_slug: post.slug,
+            primary_lang: post.lang,
+          });
+        } else {
+          const existing = grouped.get(groupKey)!;
+          existing.languages.push(post.lang);
+          // Prefer published status
+          if (post.status === 'published') {
+            existing.status = 'published';
+          }
+          // Use most recent published_at
+          if (post.published_at && (!existing.published_at || post.published_at > existing.published_at)) {
+            existing.published_at = post.published_at;
+          }
+        }
+      });
+
+      setPosts(Array.from(grouped.values()));
     } catch (error) {
       console.error('Error loading posts:', error);
       toast({
@@ -58,27 +90,18 @@ export default function PostsList() {
     }
   };
 
-  const deletePost = async (id: string, title: string) => {
-    if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
+  const deleteGroup = async (groupId: string, title: string) => {
+    if (!confirm(`Czy na pewno chcesz usunąć "${title}" we wszystkich wersjach językowych?`)) return;
 
     try {
-      const { error } = await supabase.from('posts').delete().eq('id', id);
-      
+      const { error } = await supabase.from('posts').delete().eq('group_id', groupId);
       if (error) throw error;
       
-      toast({
-        title: 'Success',
-        description: 'Post deleted successfully',
-      });
-      
+      toast({ title: 'Success', description: 'Artykuł usunięty' });
       loadPosts();
     } catch (error) {
-      console.error('Error deleting post:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to delete post',
-        variant: 'destructive',
-      });
+      console.error('Error deleting posts:', error);
+      toast({ title: 'Error', description: 'Failed to delete', variant: 'destructive' });
     }
   };
 
@@ -89,6 +112,15 @@ export default function PostsList() {
       case 'scheduled': return 'outline';
       case 'archived': return 'destructive';
       default: return 'secondary';
+    }
+  };
+
+  const getLangFlag = (lang: string) => {
+    switch (lang) {
+      case 'pl': return '🇵🇱';
+      case 'en': return '🇬🇧';
+      case 'cs': return '🇨🇿';
+      default: return lang.toUpperCase();
     }
   };
 
@@ -114,7 +146,7 @@ export default function PostsList() {
         <h1 className="text-3xl font-bold">Blog Posts</h1>
         <Button onClick={() => navigate('/admin/posts/new')}>
           <Plus className="mr-2 h-4 w-4" />
-          New Post
+          Nowy Artykuł
         </Button>
       </div>
 
@@ -122,38 +154,44 @@ export default function PostsList() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Thumbnail</TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead>Language</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Published</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead className="w-20">Obrazek</TableHead>
+              <TableHead>Tytuł</TableHead>
+              <TableHead className="w-32">Języki</TableHead>
+              <TableHead className="w-24">Status</TableHead>
+              <TableHead className="w-32">Publikacja</TableHead>
+              <TableHead className="text-right w-32">Akcje</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {posts.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
-                  No posts yet. Create your first one!
+                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
+                  Brak artykułów. Utwórz pierwszy!
                 </TableCell>
               </TableRow>
             ) : (
               posts.map((post) => (
-                <TableRow key={post.id}>
+                <TableRow key={post.group_id}>
                   <TableCell>
                     {post.featured_image_url ? (
                       <img 
                         src={post.featured_image_url} 
                         alt={post.title}
-                        className="w-16 h-16 object-cover rounded"
+                        className="w-16 h-12 object-cover rounded"
                       />
                     ) : (
                       <span className="text-muted-foreground text-xs">Brak</span>
                     )}
                   </TableCell>
-                  <TableCell className="font-medium">{post.title}</TableCell>
+                  <TableCell className="font-medium max-w-xs truncate">{post.title}</TableCell>
                   <TableCell>
-                    <Badge variant="outline">{post.lang.toUpperCase()}</Badge>
+                    <div className="flex gap-1">
+                      {post.languages.sort().map(lang => (
+                        <span key={lang} className="text-lg" title={lang.toUpperCase()}>
+                          {getLangFlag(lang)}
+                        </span>
+                      ))}
+                    </div>
                   </TableCell>
                   <TableCell>
                     <Badge variant={getStatusColor(post.status)}>
@@ -162,33 +200,33 @@ export default function PostsList() {
                   </TableCell>
                   <TableCell>
                     {post.published_at 
-                      ? format(new Date(post.published_at), 'MMM d, yyyy')
+                      ? format(new Date(post.published_at), 'dd MMM yyyy')
                       : '-'
                     }
                   </TableCell>
                   <TableCell className="text-right">
-                    <div className="flex justify-end gap-2">
+                    <div className="flex justify-end gap-1">
                       <Button 
                         variant="ghost" 
                         size="icon" 
-                        title="View"
-                        onClick={() => window.open(`/${post.lang}/blog/${post.slug}`, '_blank')}
+                        title="Podgląd"
+                        onClick={() => window.open(`/${post.primary_lang}/blog/${post.primary_slug}`, '_blank')}
                       >
                         <Eye className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="ghost" 
                         size="icon" 
-                        title="Edit"
-                        onClick={() => navigate(`/admin/posts/${post.id}`)}
+                        title="Edytuj"
+                        onClick={() => navigate(`/admin/posts/edit?group=${post.group_id}`)}
                       >
                         <Pencil className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="ghost" 
                         size="icon" 
-                        title="Delete"
-                        onClick={() => deletePost(post.id, post.title)}
+                        title="Usuń"
+                        onClick={() => deleteGroup(post.group_id, post.title)}
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>

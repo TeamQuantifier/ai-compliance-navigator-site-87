@@ -49,31 +49,32 @@ export const Navbar = () => {
       title: t('menu.frameworks.title'),
       href: '/frameworks',
       items: [
+        // Popular frameworks - direct links (flattened)
         {
-          title: t('menu.frameworks.cybersecurity.title'),
-          href: '/frameworks/cybersecurity',
+          title: t('menu.frameworks.popular.title'),
+          href: '/frameworks',
           items: [
-            { title: t('menu.frameworks.cybersecurity.soc'), href: '/frameworks/cybersecurity/soc' },
-            { title: t('menu.frameworks.cybersecurity.nis'), href: '/frameworks/cybersecurity/nis-ii' },
-            { title: t('menu.frameworks.cybersecurity.nist'), href: '/frameworks/cybersecurity/nist' },
+            { title: 'NIS II', href: '/frameworks/nis-ii' },
+            { title: 'ISO 27001', href: '/frameworks/iso-27001' },
+            { title: 'SOC 2', href: '/frameworks/soc' },
+            { title: 'GDPR', href: '/frameworks/gdpr' },
+            { title: 'NIST', href: '/frameworks/nist' },
+          ],
+        },
+        // Other standards by category
+        {
+          title: t('menu.frameworks.dataSecurity.title'),
+          href: '/frameworks',
+          items: [
+            { title: t('menu.frameworks.dataSecurity.hipaa'), href: '/frameworks/hipaa' },
+            { title: t('menu.frameworks.dataSecurity.ccpa'), href: '/frameworks/ccpa' },
           ],
         },
         {
           title: t('menu.frameworks.infoSecurity.title'),
-          href: '/frameworks/information-security',
+          href: '/frameworks',
           items: [
-            { title: t('menu.frameworks.infoSecurity.iso27001'), href: '/frameworks/information-security/iso-27001' },
-            { title: t('menu.frameworks.infoSecurity.iso9001'), href: '/frameworks/information-security/iso-9001' },
-            { title: t('menu.frameworks.infoSecurity.dora'), href: '/frameworks/information-security/dora' },
-          ],
-        },
-        {
-          title: t('menu.frameworks.dataSecurity.title'),
-          href: '/frameworks/data-security',
-          items: [
-            { title: t('menu.frameworks.dataSecurity.gdpr'), href: '/frameworks/data-security/gdpr' },
-            { title: t('menu.frameworks.dataSecurity.hipaa'), href: '/frameworks/data-security/hipaa' },
-            { title: t('menu.frameworks.dataSecurity.ccpa'), href: '/frameworks/data-security/ccpa' },
+            { title: t('menu.frameworks.infoSecurity.iso9001'), href: '/frameworks/iso-9001' },
           ],
         },
         {
@@ -173,14 +174,18 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link to={`/${currentLocale}`} className="flex items-center" onClick={handleLinkClick}>
+            {/* Full logotype on desktop */}
             <img 
-              src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
-              alt="Quantifier.ai Logo" 
-              className="h-10 w-10 mr-3" 
+              src="/logo-quantifier.png" 
+              alt="Quantifier.ai" 
+              className="h-12 hidden sm:block" 
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent whitespace-nowrap">
-              Quantifier.ai
-            </span>
+            {/* Sygnet only on mobile */}
+            <img 
+              src="/logo-sygnet.png" 
+              alt="Quantifier.ai" 
+              className="h-12 w-12 sm:hidden" 
+            />
           </Link>
         </div>
 

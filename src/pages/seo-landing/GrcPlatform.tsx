@@ -66,6 +66,7 @@ const GrcPlatform = () => {
         <link rel="canonical" href={pageUrl} />
         <link rel="alternate" hrefLang="en" href="https://www.quantifier.ai/en/grc-platform" />
         <link rel="alternate" hrefLang="pl" href="https://www.quantifier.ai/pl/grc-platform" />
+        <link rel="alternate" hrefLang="cs" href="https://www.quantifier.ai/cs/grc-platform" />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:url" content={pageUrl} />

@@ -44,6 +44,27 @@ export type Database = {
         }
         Relationships: []
       }
+      article_groups: {
+        Row: {
+          content_type: Database["public"]["Enums"]["content_type"]
+          created_at: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          content_type: Database["public"]["Enums"]["content_type"]
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          content_type?: Database["public"]["Enums"]["content_type"]
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       authors: {
         Row: {
           avatar_url: string | null
@@ -110,62 +131,110 @@ export type Database = {
       posts: {
         Row: {
           body_rich: Json
+          breadcrumbs_enabled: boolean | null
+          canonical_url: string | null
           category_id: string | null
           created_at: string
           excerpt: string | null
+          featured_image_alt: string | null
           featured_image_url: string | null
+          focus_keyword: string | null
+          group_id: string | null
           id: string
           lang: string
           meta_desc: string | null
           meta_title: string | null
+          og_description: string | null
           og_image_url: string | null
+          og_title: string | null
           published_at: string | null
           related_post_ids: string[] | null
+          robots_follow: boolean | null
+          robots_index: boolean | null
+          schema_json_override: Json | null
+          schema_type: string | null
+          seo_score: number | null
           slug: string
           status: Database["public"]["Enums"]["post_status"]
           tags: string[] | null
           title: string
           topic_id: string | null
+          twitter_card_type: string | null
+          twitter_description: string | null
+          twitter_image_url: string | null
+          twitter_title: string | null
           updated_at: string
         }
         Insert: {
           body_rich?: Json
+          breadcrumbs_enabled?: boolean | null
+          canonical_url?: string | null
           category_id?: string | null
           created_at?: string
           excerpt?: string | null
+          featured_image_alt?: string | null
           featured_image_url?: string | null
+          focus_keyword?: string | null
+          group_id?: string | null
           id?: string
           lang: string
           meta_desc?: string | null
           meta_title?: string | null
+          og_description?: string | null
           og_image_url?: string | null
+          og_title?: string | null
           published_at?: string | null
           related_post_ids?: string[] | null
+          robots_follow?: boolean | null
+          robots_index?: boolean | null
+          schema_json_override?: Json | null
+          schema_type?: string | null
+          seo_score?: number | null
           slug: string
           status?: Database["public"]["Enums"]["post_status"]
           tags?: string[] | null
           title: string
           topic_id?: string | null
+          twitter_card_type?: string | null
+          twitter_description?: string | null
+          twitter_image_url?: string | null
+          twitter_title?: string | null
           updated_at?: string
         }
         Update: {
           body_rich?: Json
+          breadcrumbs_enabled?: boolean | null
+          canonical_url?: string | null
           category_id?: string | null
           created_at?: string
           excerpt?: string | null
+          featured_image_alt?: string | null
           featured_image_url?: string | null
+          focus_keyword?: string | null
+          group_id?: string | null
           id?: string
           lang?: string
           meta_desc?: string | null
           meta_title?: string | null
+          og_description?: string | null
           og_image_url?: string | null
+          og_title?: string | null
           published_at?: string | null
           related_post_ids?: string[] | null
+          robots_follow?: boolean | null
+          robots_index?: boolean | null
+          schema_json_override?: Json | null
+          schema_type?: string | null
+          seo_score?: number | null
           slug?: string
           status?: Database["public"]["Enums"]["post_status"]
           tags?: string[] | null
           title?: string
           topic_id?: string | null
+          twitter_card_type?: string | null
+          twitter_description?: string | null
+          twitter_image_url?: string | null
+          twitter_title?: string | null
           updated_at?: string
         }
         Relationships: [
@@ -174,6 +243,13 @@ export type Database = {
             columns: ["category_id"]
             isOneToOne: false
             referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "posts_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "article_groups"
             referencedColumns: ["id"]
           },
           {
@@ -243,73 +319,118 @@ export type Database = {
         Row: {
           author_id: string | null
           body_rich: Json
+          breadcrumbs_enabled: boolean | null
+          canonical_url: string | null
           client_name: string | null
           country: string | null
           created_at: string
+          featured_image_alt: string | null
           featured_image_url: string | null
+          focus_keyword: string | null
+          group_id: string | null
           id: string
           industry: string | null
           lang: string
           logo_url: string | null
           meta_desc: string | null
           meta_title: string | null
+          og_description: string | null
           og_image_url: string | null
+          og_title: string | null
           published_at: string | null
           results_kpis: Json | null
+          robots_follow: boolean | null
+          robots_index: boolean | null
+          schema_json_override: Json | null
+          schema_type: string | null
           seo_score: number | null
           slug: string
           status: Database["public"]["Enums"]["post_status"]
           summary: string | null
           tags: string[] | null
           title: string
+          twitter_card_type: string | null
+          twitter_description: string | null
+          twitter_image_url: string | null
+          twitter_title: string | null
           updated_at: string
         }
         Insert: {
           author_id?: string | null
           body_rich?: Json
+          breadcrumbs_enabled?: boolean | null
+          canonical_url?: string | null
           client_name?: string | null
           country?: string | null
           created_at?: string
+          featured_image_alt?: string | null
           featured_image_url?: string | null
+          focus_keyword?: string | null
+          group_id?: string | null
           id?: string
           industry?: string | null
           lang: string
           logo_url?: string | null
           meta_desc?: string | null
           meta_title?: string | null
+          og_description?: string | null
           og_image_url?: string | null
+          og_title?: string | null
           published_at?: string | null
           results_kpis?: Json | null
+          robots_follow?: boolean | null
+          robots_index?: boolean | null
+          schema_json_override?: Json | null
+          schema_type?: string | null
           seo_score?: number | null
           slug: string
           status?: Database["public"]["Enums"]["post_status"]
           summary?: string | null
           tags?: string[] | null
           title: string
+          twitter_card_type?: string | null
+          twitter_description?: string | null
+          twitter_image_url?: string | null
+          twitter_title?: string | null
           updated_at?: string
         }
         Update: {
           author_id?: string | null
           body_rich?: Json
+          breadcrumbs_enabled?: boolean | null
+          canonical_url?: string | null
           client_name?: string | null
           country?: string | null
           created_at?: string
+          featured_image_alt?: string | null
           featured_image_url?: string | null
+          focus_keyword?: string | null
+          group_id?: string | null
           id?: string
           industry?: string | null
           lang?: string
           logo_url?: string | null
           meta_desc?: string | null
           meta_title?: string | null
+          og_description?: string | null
           og_image_url?: string | null
+          og_title?: string | null
           published_at?: string | null
           results_kpis?: Json | null
+          robots_follow?: boolean | null
+          robots_index?: boolean | null
+          schema_json_override?: Json | null
+          schema_type?: string | null
           seo_score?: number | null
           slug?: string
           status?: Database["public"]["Enums"]["post_status"]
           summary?: string | null
           tags?: string[] | null
           title?: string
+          twitter_card_type?: string | null
+          twitter_description?: string | null
+          twitter_image_url?: string | null
+          twitter_title?: string | null
           updated_at?: string
         }
         Relationships: [
@@ -318,6 +439,13 @@ export type Database = {
             columns: ["author_id"]
             isOneToOne: false
             referencedRelation: "authors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stories_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "article_groups"
             referencedColumns: ["id"]
           },
         ]

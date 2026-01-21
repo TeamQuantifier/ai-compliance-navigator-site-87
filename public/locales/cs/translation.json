@@ -71,7 +71,7 @@
         "whistleblowing": "Whistleblowing"
       },
       "productLevel": {
-        "title": "Úroveň produktu",
+        "title": "Digitální pas produktu",
         "dpp": "DPP",
         "lcaAnalysis": "LCA analýza"
       }
@@ -393,7 +393,7 @@
       "feature6": "Dedikovaná podpora a onboarding",
       "cta": "Enterprise-grade compliance. Jednoduchý, výkonný, bezproblémový."
     },
-    "talkToSales": "Promluvte s prodejem",
+    "talkToSales": "Proberte s námi",
     "popular": "Populární",
     "customSolution": {
       "title": "Potřebujete vlastní řešení?",
@@ -829,6 +829,17 @@
       "subtitle": "Připojte se k naší rostoucí síti partnerů a rozvíjejte své podnikání s AI-powered compliance řešeními.",
       "button": "Kontaktujte nás"
     },
+    "network": {
+      "badge": "Partnerská síť",
+      "heading": "Připojte se k naší důvěryhodné partnerské síti",
+      "intro1": "Spolupracujeme s více než 50 důvěryhodnými partnery—včetně auditorů, obchodních konektorů, bank, poradenských firem a neziskových organizací. Společně pomáháme společnostem po celém světě orientovat se ve vyvíjejícím se prostředí compliance a udržitelnosti s jistotou.",
+      "intro2": "Pojďme růst společně. Ať už radíte klientům, spravujete audity nebo řídíte inovace—v naší partnerské síti je místo pro vás."
+    },
+    "map": {
+      "title": "Naše globální síť",
+      "testimonial": "Spolupráce s Quantifier nám umožnila rozšířit naše služby a pomáhat klientům efektivněji spravovat jejich compliance procesy.",
+      "testimonialAuthor": "Partner Quantifier"
+    },
     "featured": {
       "heading": "Partneři po celém světě",
       "description": "Naše globální síť partnerů nám pomáhá přinášet AI-powered compliance řešení organizacím po celém světě."
@@ -1057,7 +1068,7 @@
       }
     },
     "cta": {
-      "title": "Jste připraveni vidět, jak Quantifier funguje pro vás?",
+      "title": "Jste připraveni se podívat, jak Quantifier může i pro Vás pracovat?",
       "description": "Bez ohledu na vaši roli se Quantifier přizpůsobuje tomu, jak pracujete—a posouvá způsob, jakým spravujete compliance.",
       "button": "Objednat demo"
     }
@@ -1399,6 +1410,16 @@
     }
   },
   "esgPage": {
+    "envirly": {
+      "badge": "Modul Envirly by Quantifier",
+      "title": "ESG Reporting: Poradenství a nástroje",
+      "features": {
+        "csrd": "ESG sustainability reporting v souladu s CSRD a ESRS",
+        "ghg": "Uhlíková stopa organizací ve scopech 1, 2 a 3 dle GHG Protocol",
+        "lca": "Environmentální analýza životního cyklu (LCA)"
+      },
+      "cta": "Přejít na Envirly"
+    },
     "title": "Zjednodušte své Udržitelné a ESG Reportování",
     "description": "Automatizujte CSDR, GRI a CBAM Reportování s lehkostí. Quantifier je váš partner v dosahování transparentního, přesného a efektivního ESG reportování. Ať už splňujete globální standardy udržitelnosti nebo navigujete složitými regulačními prostředími, máme vás pokryto s plnou automatizací.",
     "tabs": {
@@ -1527,7 +1548,131 @@
   },
   "environmentalPage": {
     "title": "Environmentální Compliance, plně automatizovaná",
-    "description": "Quantifier pohání vaši environmentální strategii s AI-native automatizací—od ISO 14001 po dekarbonizaci. Ať už usilujete o certifikaci, sledujete emise nebo budujete plán redukce založený na vědě, Quantifier odstraňuje manuální práci z environmentální compliance a činí klimatické vedení škálovatelným."
+    "description": "Quantifier pohání vaši environmentální strategii s AI-native automatizací—od ISO 14001 po dekarbonizaci. Ať už usilujete o certifikaci, sledujete emise nebo budujete plán redukce založený na vědě, Quantifier odstraňuje manuální práci z environmentální compliance a činí klimatické vedení škálovatelným.",
+    "tabs": {
+      "iso14001": "ISO 14001",
+      "lca": "LCA",
+      "carbon": "Uhlíková stopa",
+      "decarbonisation": "Dekarbonizace"
+    },
+    "iso14001": {
+      "title": "ISO 14001: Vybudujte a udržujte certifikovaný EMS",
+      "description": "Dosáhněte a udržujte svůj systém environmentálního managementu (EMS) bez zbytečné režie. Quantifier automatizuje sběr důkazů, reporting a vynucování politik potřebných pro soulad s normou ISO 14001.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Autonomní přidělování úkolů",
+          "description": "Automatizované přidělování úkolů pro implementaci a revize EMS napříč organizací."
+        },
+        {
+          "title": "Připravenost na audit v reálném čase",
+          "description": "Verzovaná dokumentace a důkazy vždy připravené pro auditory."
+        },
+        {
+          "title": "Automatizovaná upozornění",
+          "description": "Včasné upozornění na nápravná opatření, požadavky na školení a aktualizace politik."
+        },
+        {
+          "title": "Kompletní přehled",
+          "description": "Komplexní dashboard zobrazující stav compliance napříč týmy a lokalitami."
+        }
+      ]
+    },
+    "lca": {
+      "title": "LCA (Analýza životního cyklu): Okamžitá, inteligentní analýza dopadu",
+      "description": "Jděte za hranice reportingu—Quantifier vám dává nástroje pro pochopení skutečného environmentálního dopadu vašich produktů a procesů s AI-podporovanými LCA workflow.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Řízené hodnocení životního cyklu",
+          "description": "Inteligentní příjem dat činí složitá hodnocení jednoduchými a přesnými."
+        },
+        {
+          "title": "Automatizované požadavky na data",
+          "description": "Zjednodušený sběr od interních týmů a dodavatelů s integrovanými follow-upy."
+        },
+        {
+          "title": "Integrované benchmarky",
+          "description": "Přístup ke komplexním knihovnám materiálů a průmyslovým srovnáním."
+        },
+        {
+          "title": "Exportovatelné reporty",
+          "description": "Generujte reporty v souladu s normami ISO 14040/44 jedním kliknutím."
+        }
+      ]
+    },
+    "carbon": {
+      "title": "Uhlíková stopa a GHG: Sledujte, redukujte, reportujte",
+      "description": "Od Scope 1 po Scope 3, Quantifier vám pomáhá kvantifikovat, sledovat a reportovat emise skleníkových plynů (GHG) napříč vaším hodnotovým řetězcem—bez tabulek, bez mezer, bez stresu.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Automatizované výpočty emisí",
+          "description": "Přesná data o emisích podle lokace, aktivity nebo dodavatele s minimálním úsilím."
+        },
+        {
+          "title": "AI-podporovaný sběr dat",
+          "description": "AI agenti, kteří automaticky sbírají data o aktivitách napříč vaší organizací."
+        },
+        {
+          "title": "Dashboardy v reálném čase",
+          "description": "Komplexní přehled emisí Scope 1, 2 a 3 na jednom místě."
+        },
+        {
+          "title": "Reporty připravené k odeslání",
+          "description": "Formátované reporty pro GHG Protocol, ISO 14064 a regulatorní podání."
+        }
+      ]
+    },
+    "decarbonisation": {
+      "title": "Dekarbonizace: Od reportingu k akci",
+      "description": "Quantifier nekončí u měření uhlíku—pomáhá vám realizovat vaši dekarbonizační strategii. Stanovte cíle založené na vědě, sledujte pokrok v redukci a zůstaňte v souladu s klimatickými regulacemi.",
+      "featuresTitle": "Získáte:",
+      "features": [
+        {
+          "title": "Stanovení cílů založených na vědě",
+          "description": "Stanovte cíle v souladu s SBTi trajektoriemi pro důvěryhodnou klimatickou akci."
+        },
+        {
+          "title": "Automatizované sledování pokroku",
+          "description": "Monitorujte iniciativy na redukci emisí s daty a insights v reálném čase."
+        },
+        {
+          "title": "Chytrá upozornění",
+          "description": "Přijímejte notifikace, když jsou cíle mimo plán nebo jsou překročeny rizikové prahy."
+        },
+        {
+          "title": "Úplná integrace dat",
+          "description": "Propojte se systémy nákupu, cestování a provozu pro komplexní přehled."
+        }
+      ]
+    },
+    "whyQuantifier": {
+      "title": "Proč Quantifier pro environmentální compliance?",
+      "features": {
+        "aiNative": {
+          "title": "AI-Native a autonomní",
+          "description": "Compliance agenti sbírají data, kontaktují týmy a zajišťují včasný reporting—takže vy to nemusíte dělat."
+        },
+        "alwaysUpdated": {
+          "title": "Vždy aktuální",
+          "description": "Dostanete notifikaci, když se změní regulace, a vaše procesy se automaticky aktualizují—bez zpoždění, bez poradenských poplatků."
+        },
+        "endToEnd": {
+          "title": "End-to-end pokrytí",
+          "description": "Spravujte ISO 14001, LCA, GHG reporting a dekarbonizaci v jedné bezpečné platformě."
+        },
+        "fastImplementation": {
+          "title": "Rychlá implementace",
+          "description": "Nastavte si environmentální workflow během několika minut. Bez složitého onboardingu."
+        }
+      }
+    },
+    "cta": {
+      "title": "Připraveni učinit environmentální compliance snadnou?",
+      "bookDemo": "Objednat demo",
+      "watchTour": "Zhlédnout rychlou prohlídku"
+    }
   },
   "governancePage": {
     "title": "Governance, právní politiky a Whistleblowing",
@@ -2566,6 +2711,102 @@
       "seePricing": "Zobrazit ceny"
     }
   },
+  "iso9001Page": {
+    "title": "ISO 9001",
+    "description": "Zjednodušte řízení kvality s ISO 9001 - mezinárodním standardem pro systémy managementu kvality (QMS).",
+    "hero": {
+      "title": "ISO 9001: Řízení kvality jednoduše",
+      "subtitle": "Quantifier činí dosažení a udržení souladu s ISO 9001 bezproblémovým - neustále podporuje činnosti řízení kvality, sleduje klíčové metriky a zajišťuje kompletní dokumentaci.",
+      "button": "Rezervovat demo"
+    },
+    "whatIs": {
+      "title": "Co je ISO 9001?",
+      "description": "ISO 9001 je mezinárodní standard pro systémy managementu kvality (QMS). Poskytuje rámec pro organizace, aby konzistentně dodávaly produkty a služby splňující požadavky zákazníků a regulačních orgánů, a zároveň neustále zlepšovaly své procesy.",
+      "keyPrinciples": {
+        "title": "Klíčové principy",
+        "items": [
+          "Zaměření na zákazníka",
+          "Procesní přístup",
+          "Rozhodování založené na důkazech",
+          "Neustálé zlepšování"
+        ]
+      },
+      "benefits": {
+        "title": "Výhody certifikace",
+        "items": [
+          "Zvýšená spokojenost a loajalita zákazníků",
+          "Efektivita procesů a snížení nákladů",
+          "Vyšší kvalita produktů a služeb",
+          "Přístup na nové trhy a příležitosti"
+        ]
+      }
+    },
+    "platformScreenshots": {
+      "title": "Platforma Quantifier AI pro ISO 9001",
+      "dashboard": {
+        "title": "AI-powered dashboard pro ISO 9001",
+        "description": "Sledujte systém managementu kvality ve vaší organizaci s naším intuitivním dashboardem poháněným AI."
+      },
+      "qualityManagement": {
+        "title": "Dashboard řízení kvality",
+        "description": "Získejte komplexní přehled o metrikách kvality vaší organizace a stavu shody.",
+        "alt": "Dashboard ISO 9001"
+      },
+      "processManagement": {
+        "title": "Řízení procesů",
+        "description": "Mapujte, monitorujte a optimalizujte klíčové obchodní procesy pro zajištění kvality v každém kroku.",
+        "alt": "Obrazovka řízení procesů"
+      },
+      "documentationControl": {
+        "title": "Kontrola dokumentace",
+        "description": "Centralizovaná správa dokumentů s verzováním a schvalovacími workflow.",
+        "alt": "Obrazovka kontroly dokumentace"
+      },
+      "performanceAnalytics": {
+        "title": "Analýza výkonnosti",
+        "description": "Metriky v reálném čase pro sledování cílů kvality a iniciativ zlepšování.",
+        "alt": "Obrazovka analýzy výkonnosti"
+      },
+      "auditManagement": {
+        "title": "Správa auditů",
+        "description": "Plánujte, provádějte a sledujte interní audity s automatizovanými nálezy a úkoly.",
+        "alt": "Obrazovka správy auditů"
+      }
+    },
+    "howQuantifierHelps": {
+      "title": "Jak Quantifier automatizuje soulad s ISO 9001",
+      "features": {
+        "automatedTasks": {
+          "title": "Automatizované přidělování úkolů",
+          "description": "Zajistěte konzistentní a včasné provádění činností řízení kvality v celé organizaci."
+        },
+        "auditReady": {
+          "title": "Reporty připravené na audit",
+          "description": "Shromažďujte požadované důkazy o kvalitě bez manuálního úsilí a zajistěte připravenost na audity."
+        },
+        "qualityMonitoring": {
+          "title": "Monitoring kvality",
+          "description": "Identifikujte mezery v kvalitě a řešte je dříve, než eskalují, díky metrikám a upozorněním v reálném čase."
+        }
+      }
+    },
+    "cta": {
+      "title": "Jste připraveni zjednodušit řízení kvality?",
+      "description": "Připojte se k organizacím, které důvěřují Quantifieru v automatizaci souladu s ISO 9001.",
+      "bookDemo": "Rezervovat demo",
+      "explorePlans": "Prozkoumat plány"
+    }
+  },
+  "seo": {
+    "frameworks": {
+      "informationSecurity": {
+        "iso9001": {
+          "title": "Systém managementu kvality ISO 9001",
+          "description": "Implementujte ISO 9001 QMS s Quantifier.ai. Automatizované řízení kvality, dokumentace procesů a sledování neustálého zlepšování."
+        }
+      }
+    }
+  },
   "doraPage": {
     "title": "DORA Compliance",
     "description": "Dosáhněte a udržujte DORA compliance s AI-powered automatizací pro finanční instituce.",
@@ -3521,6 +3762,92 @@
       "description": "Připojte se k předním organizacím, které důvěřují Quantifier v automatizaci jejich kalifornské privacy compliance a ochraně práv spotřebitelů.",
       "bookDemo": "Objednat demo",
       "seePricing": "Zobrazit ceny"
+    }
+  },
+  "seoLanding": {
+    "common": {
+      "requestDemo": "Požádat o demo",
+      "learnMore": "Zjistit více",
+      "readyToStart": "Jste připraveni začít?",
+      "viewPricing": "Zobrazit ceny",
+      "relatedPages": "Související stránky"
+    },
+    "grc": {
+      "seo": {
+        "title": "AI-Native GRC Platforma - Jednotná Governance, Riziko a Compliance | Quantifier",
+        "description": "Moderní GRC software s AI automatizací. Spravujte více compliance standardů, hodnocení rizik a governance z jedné jednotné platformy."
+      },
+      "hero": {
+        "badge": "GRC Platforma",
+        "title": "AI-Native GRC Platforma",
+        "subtitle": "Jednotná správa Governance, Rizika a Compliance poháněná AI agenty."
+      },
+      "whatIs": {
+        "title": "Co je GRC Platforma?",
+        "subtitle": "GRC integruje governance, řízení rizik a compliance do jednotného přístupu.",
+        "pillars": [
+          { "letter": "G", "title": "Governance", "description": "Strategické sladění, politiky a dohled nad organizačními cíli." },
+          { "letter": "R", "title": "Riziko", "description": "Identifikace, hodnocení a zmírňování rizik napříč organizací." },
+          { "letter": "C", "title": "Compliance", "description": "Dodržování zákonů, předpisů a interních politik." }
+        ]
+      },
+      "problems": {
+        "title": "Proč tradiční GRC nástroje selhávají",
+        "items": [
+          { "title": "Izolované systémy", "description": "Více nástrojů, které spolu nekomunikují, což vytváří datové mezery a redundanci." },
+          { "title": "Manuální procesy", "description": "Silná závislost na tabulkách a manuálním sběru dat." },
+          { "title": "Jednorázové audity", "description": "Compliance kontrolována periodicky namísto kontinuálního monitorování." },
+          { "title": "Omezená škálovatelnost", "description": "Obtížné přidávání nových standardů nebo škálování napříč entitami." }
+        ]
+      },
+      "solution": {
+        "title": "Rozdíl Quantifier: AI-Native GRC",
+        "subtitle": "Vybudováno od základů s AI agenty pro autonomní compliance."
+      },
+      "features": {
+        "unified": { "title": "Jednotná platforma", "description": "Spravujte všechny standardy, rizika a kontroly z jednoho rozhraní." },
+        "ai": { "title": "AI Compliance Officer", "description": "Autonomní agenti, kteří monitorují, sbírají důkazy a navrhují akce." },
+        "analytics": { "title": "Analytika v reálném čase", "description": "Živé dashboardy zobrazující stav compliance napříč všemi standardy." },
+        "automation": { "title": "Automatizace workflow", "description": "Automatizované úkoly, připomínky a sběr důkazů." }
+      },
+      "frameworks": {
+        "title": "Multi-Framework Compliance",
+        "subtitle": "Spravujte všechny své compliance programy z jedné platformy."
+      },
+      "comparison": {
+        "title": "Quantifier vs Tradiční GRC",
+        "subtitle": "Podívejte se, jak se srovnáváme s legacy řešeními.",
+        "feature": "Funkce",
+        "traditional": "Tradiční GRC",
+        "rows": [
+          { "feature": "Doba implementace", "traditional": "6-12 měsíců", "quantifier": "Dny až týdny" },
+          { "feature": "Sběr důkazů", "traditional": "Manuální", "quantifier": "Automatizovaný" },
+          { "feature": "Monitorování", "traditional": "Periodické", "quantifier": "Kontinuální" },
+          { "feature": "AI asistence", "traditional": "Žádná", "quantifier": "Vestavění AI agenti" }
+        ]
+      },
+      "results": {
+        "title": "Transformujte své GRC operace",
+        "items": [
+          { "stat": "10x", "label": "Rychlejší implementace" },
+          { "stat": "80%", "label": "Méně manuální práce" },
+          { "stat": "360°", "label": "Viditelnost rizik" }
+        ]
+      },
+      "faq": {
+        "title": "Často kladené otázky",
+        "items": [
+          { "question": "Co je GRC?", "answer": "GRC znamená Governance, Riziko a Compliance. Je to integrovaný přístup k sladění IT s obchodními cíli, řízení rizik a splnění regulačních požadavků." },
+          { "question": "Proč potřebuji GRC platformu?", "answer": "GRC platforma centralizuje správu compliance, snižuje manuální práci, poskytuje viditelnost v reálném čase a škáluje jak vaše regulační požadavky rostou." },
+          { "question": "Jaké standardy Quantifier podporuje?", "answer": "Quantifier podporuje SOC 2, ISO 27001, GDPR, NIS2, HIPAA, NIST, ISO 14001, ESG reporting standardy a mnoho dalších." },
+          { "question": "Čím se Quantifier liší od Vanta nebo Drata?", "answer": "Quantifier je AI-native s autonomními compliance agenty, podporuje širší standardy včetně ESG a environmentálních, a nabízí hlubší customizaci pro enterprise potřeby." },
+          { "question": "Mohu spravovat více compliance programů?", "answer": "Ano, Quantifier umožňuje multi-framework správu s mapováním kontrol, takže důkazy sbírané pro jeden standard se aplikují na překrývající se kontroly v ostatních." },
+          { "question": "Jaké integrace jsou k dispozici?", "answer": "Quantifier se integruje s 100+ nástroji včetně cloudových poskytovatelů (AWS, Azure, GCP), identity providerů, ticketovacích systémů a komunikačních nástrojů." }
+        ]
+      },
+      "cta": {
+        "description": "Zažijte budoucnost GRC s AI-native platformou Quantifier."
+      }
     }
   }
 }

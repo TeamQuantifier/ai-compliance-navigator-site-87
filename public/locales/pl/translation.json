@@ -76,6 +76,9 @@
         "lcaAnalysis": "Analiza LCA"
       }
     },
+    "popular": {
+      "title": "Popularne"
+    },
     "plans": "Plany",
     "partners": "Partnerzy",
     "successStories": "Historie sukcesu",
@@ -921,7 +924,7 @@
       "informationSecurity": {
         "title": "Bezpieczeństwo Informacji",
         "description": "Standardy zabezpieczania zasobów informacyjnych i zachowania poufności.",
-        "items": ["ISO 27001", "ISO 9001", "DORA"]
+        "items": ["ISO 27001", "ISO 9001"]
       },
       "dataSecurity": {
         "title": "Ochrona Danych",
@@ -951,7 +954,15 @@
     },
     "labels": {
       "supportedFrameworks": "Wspierane standardy:",
-      "exploreButton": "Poznaj"
+      "exploreButton": "Poznaj",
+      "learnMore": "Dowiedz się więcej"
+    },
+    "popular": {
+      "title": "Najpopularniejsze standardy",
+      "description": "Bezpośredni dostęp do najważniejszych standardów compliance. Rozpocznij swoją ścieżkę zgodności jednym kliknięciem."
+    },
+    "allFrameworks": {
+      "title": "Wszystkie standardy według kategorii"
     },
     "cta": {
       "title": "Potrzebujesz wsparcia dla konkretnego standardu?",
@@ -1610,6 +1621,16 @@
     }
   },
   "esgPage": {
+    "envirly": {
+      "badge": "Moduł Envirly by Quantifier",
+      "title": "ESG Reporting: Doradztwo i narzędzia",
+      "features": {
+        "csrd": "Raportowanie zrównoważonego rozwoju ESG zgodnie z CSRD i ESRS",
+        "ghg": "Ślad węglowy organizacji w zakresach 1, 2 i 3 GHG Protocol",
+        "lca": "Środowiskowa analiza cyklu życia (LCA)"
+      },
+      "cta": "Przejdź do Envirly"
+    },
     "title": "Uprość raportowanie ESG i zrównoważonego rozwoju",
     "description": "Zautomatyzuj raportowanie CSDR, GRI i CBAM z łatwością. Quantifier jest Twoim partnerem w osiąganiu przejrzystego, dokładnego i efektywnego raportowania ESG. Niezależnie od tego, czy spełniasz globalne standardy zrównoważonego rozwoju, czy poruszasz się po złożonych krajobrazach regulacyjnych, jesteśmy z Tobą dzięki pełnej automatyzacji.",
     "tabs": {

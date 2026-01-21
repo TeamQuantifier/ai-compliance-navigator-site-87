@@ -1,15 +1,17 @@
-
 import PageTemplate from '@/components/PageTemplate';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contributors = () => {
+  const { t } = useLanguage();
+  
   return (
     <PageTemplate
-      title="For Contributors"
-      description="Streamlined interfaces for team members responsible for implementing compliance measures."
+      title={t('roles.contributors.title')}
+      description={t('roles.contributors.description')}
     >
       <div className="max-w-3xl mx-auto">
-        <p className="text-lg text-slate-700 mb-6">
-          Content for Contributors will be added here.
+        <p className="text-lg text-muted-foreground mb-6">
+          {t('byRoles.contributors.whoDescription')}
         </p>
       </div>
     </PageTemplate>
