@@ -1,15 +1,17 @@
-
 import PageTemplate from '@/components/PageTemplate';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Managers = () => {
+  const { t } = useLanguage();
+  
   return (
     <PageTemplate
-      title="For Managers"
-      description="Comprehensive tools for executives and compliance managers to oversee your compliance program."
+      title={t('roles.managers.title')}
+      description={t('roles.managers.description')}
     >
       <div className="max-w-3xl mx-auto">
-        <p className="text-lg text-slate-700 mb-6">
-          Content for Managers will be added here.
+        <p className="text-lg text-muted-foreground mb-6">
+          {t('byRoles.managers.whoDescription')}
         </p>
       </div>
     </PageTemplate>
