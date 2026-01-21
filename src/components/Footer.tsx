@@ -60,7 +60,7 @@ const Footer = () => {
               <img 
                 src="/logo-quantifier.png" 
                 alt="Quantifier.ai" 
-                className="h-9" 
+                className="h-11" 
               />
             </Link>
             
