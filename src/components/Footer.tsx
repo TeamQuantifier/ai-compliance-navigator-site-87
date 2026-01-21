@@ -56,11 +56,12 @@ const Footer = () => {
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center mb-4">
-              <img src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" alt="Quantifier.ai Logo" className="h-8 w-8 mr-2" />
-              <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent">
-                Quantifier.ai
-              </span>
+            <Link to={`/${currentLocale}`} className="flex items-center mb-4">
+              <img 
+                src="/logo-quantifier.png" 
+                alt="Quantifier.ai" 
+                className="h-9" 
+              />
             </Link>
             
             <p className="text-slate-600 mb-6 max-w-md text-sm">

@@ -174,14 +174,18 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link to={`/${currentLocale}`} className="flex items-center" onClick={handleLinkClick}>
+            {/* Full logotype on desktop */}
             <img 
-              src="/lovable-uploads/dc230f24-69a0-48e6-952c-3811d16e1833.png" 
-              alt="Quantifier.ai Logo" 
-              className="h-10 w-10 mr-3" 
+              src="/logo-quantifier.png" 
+              alt="Quantifier.ai" 
+              className="h-10 hidden sm:block" 
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-compliance-700 to-innovation-600 bg-clip-text text-transparent whitespace-nowrap">
-              Quantifier.ai
-            </span>
+            {/* Sygnet only on mobile */}
+            <img 
+              src="/logo-sygnet.png" 
+              alt="Quantifier.ai" 
+              className="h-10 w-10 sm:hidden" 
+            />
           </Link>
         </div>
 
