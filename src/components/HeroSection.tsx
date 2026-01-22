@@ -93,54 +93,54 @@ const HeroSection = () => {
               {t('hero.supportingFrameworks')}
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
+              <Link to={`/${currentLocale}/frameworks/iso-27001`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
                   <Shield className="h-8 w-8 text-compliance-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">ISO 27001</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">ISO 27001</span>
+              </Link>
               
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30">
+              <Link to={`/${currentLocale}/frameworks/soc`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30 group-hover:scale-110 transition-transform">
                   <Lock className="h-8 w-8 text-innovation-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">SOC 1/2</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">SOC 1/2</span>
+              </Link>
               
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
+              <Link to={`/${currentLocale}/frameworks/nis-ii`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
                   <Network className="h-8 w-8 text-compliance-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">NIS 2</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">NIS 2</span>
+              </Link>
               
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30">
+              <Link to={`/${currentLocale}/frameworks/esg`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30 group-hover:scale-110 transition-transform">
                   <Leaf className="h-8 w-8 text-innovation-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">ESG</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">ESG</span>
+              </Link>
               
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
+              <Link to={`/${currentLocale}/frameworks/gdpr`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
                   <FileCheck className="h-8 w-8 text-compliance-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">GDPR</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">GDPR</span>
+              </Link>
               
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30">
+              <Link to={`/${currentLocale}/frameworks`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30 group-hover:scale-110 transition-transform">
                   <Brain className="h-8 w-8 text-innovation-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">AI Act</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">AI Act</span>
+              </Link>
               
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30">
+              <Link to={`/${currentLocale}/frameworks`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
                   <Award className="h-8 w-8 text-compliance-300" />
                 </div>
-                <span className="text-sm font-medium text-slate-300">ISO 42001</span>
-              </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">ISO 42001</span>
+              </Link>
             </div>
           </div>
         </div>

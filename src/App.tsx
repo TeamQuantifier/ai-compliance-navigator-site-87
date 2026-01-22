@@ -30,7 +30,7 @@ import ProductLevel from "./pages/frameworks/ProductLevel";
 // Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
 import NisII from "./pages/frameworks/cybersecurity/NisII";
-import Nist from "./pages/frameworks/cybersecurity/Nist";
+
 import Iso27001 from "./pages/frameworks/information-security/Iso27001";
 import Iso9001 from "./pages/frameworks/information-security/Iso9001";
 import Dora from "./pages/frameworks/information-security/Dora";
@@ -115,7 +115,7 @@ const App = () => (
                   {/* Flattened framework routes - direct access */}
                   <Route path="/:locale/frameworks/soc" element={<Soc />} />
                   <Route path="/:locale/frameworks/nis-ii" element={<NisII />} />
-                  <Route path="/:locale/frameworks/nist" element={<Nist />} />
+                  
                   <Route path="/:locale/frameworks/iso-27001" element={<Iso27001 />} />
                   <Route path="/:locale/frameworks/iso-9001" element={<Iso9001 />} />
                   <Route path="/:locale/frameworks/dora" element={<Dora />} />
@@ -135,7 +135,7 @@ const App = () => (
                   <Route path="/:locale/frameworks/data-security" element={<Navigate to="../frameworks" replace />} />
                   <Route path="/:locale/frameworks/cybersecurity/soc" element={<Navigate to="../../soc" replace />} />
                   <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-ii" replace />} />
-                  <Route path="/:locale/frameworks/cybersecurity/nist" element={<Navigate to="../../nist" replace />} />
+                  
                   <Route path="/:locale/frameworks/information-security/iso-27001" element={<Navigate to="../../iso-27001" replace />} />
                   <Route path="/:locale/frameworks/information-security/iso-9001" element={<Navigate to="../../iso-9001" replace />} />
                   <Route path="/:locale/frameworks/information-security/dora" element={<Navigate to="../../dora" replace />} />

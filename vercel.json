@@ -46,11 +46,6 @@
       "permanent": true
     },
     {
-      "source": "/:locale(en|pl|cs)/frameworks/cybersecurity/nist",
-      "destination": "/:locale/frameworks/nist",
-      "permanent": true
-    },
-    {
       "source": "/:locale(en|pl|cs)/frameworks/information-security/iso-27001",
       "destination": "/:locale/frameworks/iso-27001",
       "permanent": true
