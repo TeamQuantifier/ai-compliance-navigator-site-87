@@ -77,17 +77,6 @@ const Frameworks = () => {
       href: `/${currentLocale}/frameworks/gdpr`,
       icon: FileCheck,
     },
-    {
-      key: "nist",
-      name: "NIST",
-      description: getLocalizedText({
-        en: "Cybersecurity Framework",
-        pl: "Framework cyberbezpieczeństwa",
-        cs: "Rámec kybernetické bezpečnosti"
-      }),
-      href: `/${currentLocale}/frameworks/nist`,
-      icon: Shield,
-    }
   ];
 
   // All frameworks organized by category with icons
@@ -107,8 +96,7 @@ const Frameworks = () => {
       icon: Network,
       frameworks: [
         { name: "NIS II", href: `/${currentLocale}/frameworks/nis-ii` },
-        { name: "SOC I & SOC II", href: `/${currentLocale}/frameworks/soc` },
-        { name: "NIST", href: `/${currentLocale}/frameworks/nist` }
+        { name: "SOC I & SOC II", href: `/${currentLocale}/frameworks/soc` }
       ]
     },
     {
