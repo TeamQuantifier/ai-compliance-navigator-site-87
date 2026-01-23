@@ -145,15 +145,18 @@
     "title": "Dostosowane do każdej roli",
     "subtitle": "Specjalizowane interfejsy dla różnych ról w Twojej organizacji.",
     "managers": {
-      "title": "Dla menedżerów",
+      "title": "Dla Zarządów i Leadershipu",
+      "subtitle": "(CFO, COO, CISO, Head of Risk)",
       "description": "Kompleksowe dashboardy do nadzoru compliance i wsparcia decyzji."
     },
     "contributors": {
-      "title": "Dla współpracowników",
+      "title": "Dla zespołów operacyjnych",
+      "subtitle": "(Compliance, IT, Security, ESG)",
       "description": "Uproszczone interfejsy do wprowadzania danych, zadań i zbierania dowodów."
     },
     "auditors": {
-      "title": "Dla audytorów",
+      "title": "Dla audytorów wewnętrznych i zewnętrznych",
+      "subtitle": "",
       "description": "Szczegółowe ścieżki audytu i narzędzia weryfikacyjne do walidacji zgodności."
     },
     "learnMore": "Dowiedz się więcej"
@@ -309,8 +312,18 @@
   "contact": {
     "title": "Skontaktuj się z nami",
     "description": "Jesteśmy tutaj, aby pomóc w Twojej podróży compliance",
-    "heading": "Porozmawiajmy o potrzebach Twojej firmy w ramach zgodności z regulacjami, zarządzania ryzykiem i ładem zarządczym",
-    "intro": "Zespół ekspertów Quantifier jest gotowy, aby pomóc Ci uprościć Twoje procesy compliance. Skontaktuj się z nami i odkryj, jak możemy wspierać Twoją organizację.",
+    "heading": "Porozmawiajmy o nowej generacji compliance",
+    "intro": "Quantifier to autonomiczna platforma AI, która 24/7 monitoruje, egzekwuje i automatyzuje zgodność regulacyjną w całej organizacji — od cyberbezpieczeństwa, zrównoważonego rozwoju i AI Act po ład zarządczy i ochronę danych.",
+    "offerIntro": "Zamiast chaosu projektowego ręcznie uzupełnianych arkuszy oferujemy:",
+    "features": [
+      "ciągłą zgodność i zarządzanie procedurami",
+      "automatyczne mapowanie regulacji (NIS2, AI Act, ISO 27001, CSRD i inn.)",
+      "AI-driven risk scoring i monitoring zmian",
+      "centralne repozytorium polityk, kontroli i dowodów",
+      "gotowość audytową w czasie rzeczywistym"
+    ],
+    "summary": "Platforma automatyzuje większość pracy operacyjnej, a nasi eksperci czuwają nad jakością modeli, logiką regulacyjną i poprawnością mapowań.",
+    "cta": "Skontaktuj się z nami i zobacz, jak wygląda compliance zaprojektowane na erę AI.",
     "emailUs": "Napisz do nas",
     "callUs": "Zadzwoń do nas",
     "usaPhone": "USA: (+1) 415-799-8206",
@@ -983,9 +996,9 @@
       "description": "Rozumiemy, że różne role mają różne potrzeby compliance. Nasza platforma zapewnia dostosowane doświadczenia dla menedżerów, współpracowników i audytorów, zapewniając każdemu odpowiednie narzędzia do ich konkretnych obowiązków."
     },
     "tabs": {
-      "managers": "Menedżerowie",
-      "contributors": "Współpracownicy",
-      "auditors": "Audytorzy"
+      "managers": "Zarząd & Leadership",
+      "contributors": "Zespoły operacyjne",
+      "auditors": "Audyt wewnętrzny & zewnętrzny"
     },
     "managers": {
       "title": "Kontrola na poziomie zarządu. Wgląd w czasie rzeczywistym. Jedna platforma.",
@@ -1086,6 +1099,23 @@
       "outcome": {
         "title": "Rezultat:",
         "description": "Szybsze, jaśniejsze audyty z mniejszymi tarciami. Audytorzy mogą skupić się na walidacji — nie na administracji."
+      }
+    },
+    "aiSection": {
+      "title": "Autonomiczny AI Compliance Officer",
+      "subtitle": "Agent AI pracuje 24/7, automatyzując powtarzalne zadania compliance i wspierając każdą rolę w organizacji.",
+      "managers": {
+        "title": "Dla Zarządu i Leadershipu"
+      },
+      "contributors": {
+        "title": "Dla Zespołów Operacyjnych"
+      },
+      "auditors": {
+        "title": "Dla Audytorów"
+      },
+      "outcome": {
+        "title": "Efekt końcowy",
+        "description": "Mniej pracy manualnej, szybsze audyty i ciągła zgodność bez dodatkowego obciążenia zespołu."
       }
     },
     "cta": {

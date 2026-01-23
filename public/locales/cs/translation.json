@@ -143,15 +143,18 @@
     "title": "Přizpůsobeno každé roli",
     "subtitle": "Specializovaná rozhraní pro různé role ve vaší organizaci.",
     "managers": {
-      "title": "Pro manažery",
+      "title": "Pro vedení a leadership",
+      "subtitle": "(CFO, COO, CISO, Head of Risk)",
       "description": "Komplexní dashboardy pro dohled nad compliance a informované rozhodování."
     },
     "contributors": {
-      "title": "Pro přispěvatele",
+      "title": "Pro operační týmy",
+      "subtitle": "(Compliance, IT, Security, ESG)",
       "description": "Zjednodušená rozhraní pro zadávání dat, úkoly a sběr důkazů."
     },
     "auditors": {
-      "title": "Pro auditory",
+      "title": "Pro interní a externí auditory",
+      "subtitle": "",
       "description": "Podrobné auditní záznamy a ověřovací nástroje pro validaci compliance."
     },
     "learnMore": "Zjistit více"
@@ -307,8 +310,18 @@
   "contact": {
     "title": "Kontaktujte nás",
     "description": "Kontaktujte náš tým pro více informací o našich AI-powered compliance řešeních.",
-    "heading": "Kontaktujte nás",
-    "intro": "Quantifier nově definuje přístup firem ke compliance—s nepřetržitou, autonomní AI platformou, která monitoruje, prosazuje a řídí regulační akce napříč celým podnikem.",
+    "heading": "Pojďme si promluvit o nové generaci compliance",
+    "intro": "Quantifier je autonomní AI platforma, která 24/7 monitoruje, prosazuje a automatizuje regulační soulad v celé organizaci — od kybernetické bezpečnosti, udržitelnosti a AI Act po správu a ochranu dat.",
+    "offerIntro": "Místo projektového chaosu ručně vyplňovaných tabulek nabízíme:",
+    "features": [
+      "kontinuální soulad a správu procedur",
+      "automatické mapování regulací (NIS2, AI Act, ISO 27001, CSRD a další)",
+      "AI-driven hodnocení rizik a monitoring změn",
+      "centrální repozitář politik, kontrol a důkazů",
+      "připravenost na audit v reálném čase"
+    ],
+    "summary": "Platforma automatizuje většinu operativní práce, zatímco naši experti dohlížejí na kvalitu modelů, regulační logiku a správnost mapování.",
+    "cta": "Kontaktujte nás a podívejte se, jak vypadá compliance navržené pro éru AI.",
     "emailUs": "Napište nám",
     "callUs": "Zavolejte nám",
     "visitOffices": "Navštivte naše kanceláře",
@@ -962,9 +975,9 @@
       "description": "Chápeme, že různé role mají různé compliance potřeby. Naše platforma poskytuje přizpůsobené zkušenosti pro manažery, přispěvatele a auditory, zajišťující, že každý má správné nástroje pro své specifické odpovědnosti."
     },
     "tabs": {
-      "managers": "Manažeři",
-      "contributors": "Přispěvatelé",
-      "auditors": "Auditoři"
+      "managers": "Vedení & Leadership",
+      "contributors": "Operační týmy",
+      "auditors": "Interní & externí audit"
     },
     "managers": {
       "title": "Executive kontrola. Insights v reálném čase. Jedna platforma.",
@@ -1065,6 +1078,23 @@
       "outcome": {
         "title": "Výsledek:",
         "description": "Rychlejší, jasnější audity s méně tření. Auditoři se mohou soustředit na validaci—ne na administraci."
+      }
+    },
+    "aiSection": {
+      "title": "Autonomní AI Compliance Officer",
+      "subtitle": "AI Agent pracuje 24/7, automatizuje opakující se úkoly compliance a podporuje každou roli v organizaci.",
+      "managers": {
+        "title": "Pro vedení a management"
+      },
+      "contributors": {
+        "title": "Pro operativní týmy"
+      },
+      "auditors": {
+        "title": "Pro auditory"
+      },
+      "outcome": {
+        "title": "Výsledek",
+        "description": "Méně manuální práce, rychlejší audity a nepřetržitý soulad bez dodatečné zátěže týmu."
       }
     },
     "cta": {

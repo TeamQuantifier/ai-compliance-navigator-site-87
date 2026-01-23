@@ -118,8 +118,25 @@ const Contact = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <h2 className="font-bold mb-6 gradient-heading text-3xl md:text-4xl leading-tight py-[20px]">{t('contact.heading')}</h2>
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-lg text-slate-600 mb-4">
             {t('contact.intro')}
+          </p>
+          <p className="text-base text-slate-600 mb-3">
+            {t('contact.offerIntro')}
+          </p>
+          <ul className="list-disc list-inside text-slate-600 mb-4 space-y-1">
+            {(Array.isArray(t('contact.features', { returnObjects: true })) 
+              ? (t('contact.features', { returnObjects: true }) as string[])
+              : []
+            ).map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+          <p className="text-slate-600 mb-3">
+            {t('contact.summary')}
+          </p>
+          <p className="text-slate-700 font-medium mb-8">
+            {t('contact.cta')}
           </p>
           
           <div className="space-y-6 mb-8">

@@ -10,29 +10,50 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const ByRoles = () => {
   const { t, currentLocale } = useLanguage();
+
+  // AI Agent features for each role (for the standalone section)
+  const aiManagersFeatures = [
+    t('byRoles.managers.aiAgent.feature1'),
+    t('byRoles.managers.aiAgent.feature2'),
+    t('byRoles.managers.aiAgent.feature3'),
+    t('byRoles.managers.aiAgent.feature4')
+  ];
+
+  const aiContributorsFeatures = [
+    t('byRoles.contributors.aiAgent.feature1'),
+    t('byRoles.contributors.aiAgent.feature2'),
+    t('byRoles.contributors.aiAgent.feature3'),
+    t('byRoles.contributors.aiAgent.feature4')
+  ];
+
+  const aiAuditorsFeatures = [
+    t('byRoles.auditors.aiAgent.feature1'),
+    t('byRoles.auditors.aiAgent.feature2'),
+    t('byRoles.auditors.aiAgent.feature3'),
+    t('byRoles.auditors.aiAgent.feature4')
+  ];
   
   return <PageTemplate title={t('byRoles.pageTitle')} description={t('byRoles.pageDescription')}>
-      {/* Hero section with darker colors */}
-      <div className="bg-gradient-to-br from-blue-50 to-slate-100 py-16 px-6 rounded-xl mb-12 relative overflow-hidden shadow-xl">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-innovation-200 rounded-full blur-3xl opacity-30 -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-compliance-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+      {/* Compact Hero Section */}
+      <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
+        {/* Subtle decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-innovation-300 rounded-full blur-2xl"></div>
+        </div>
         
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center p-4 bg-white rounded-full mb-8 border border-slate-200 shadow-sm">
-            <Users className="h-10 w-10 text-innovation-600" />
-          </div>
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
             {t('byRoles.hero.title')}
           </h2>
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto">
             {t('byRoles.hero.description')}
           </p>
         </div>
       </div>
 
       {/* Tabs with role-specific content */}
-      <div className="mb-20">
+      <div className="mb-12">
         <Tabs defaultValue="managers" className="w-full">
           <TabsList className="w-full grid grid-cols-3 mb-8">
             <TabsTrigger value="managers" className="py-6 data-[state=active]:bg-compliance-100">
@@ -78,9 +99,9 @@ const ByRoles = () => {
                   </ul>
                 </div>
                 
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col">
                   {/* Manager visualization */}
-                  <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200 mb-8">
+                  <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200">
                     <div className="flex justify-between items-center mb-4">
                       <h5 className="font-medium text-slate-900">{t('byRoles.managers.dashboard.title')}</h5>
                       <BarChart3 className="h-5 w-5 text-compliance-600" />
@@ -158,28 +179,6 @@ const ByRoles = () => {
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="bg-compliance-50 rounded-xl p-6 shadow-md border border-compliance-200">
-                    <h4 className="text-lg font-semibold text-compliance-700 mb-3">{t('byRoles.managers.aiAgent.title')}</h4>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        t('byRoles.managers.aiAgent.feature1'),
-                        t('byRoles.managers.aiAgent.feature2'),
-                        t('byRoles.managers.aiAgent.feature3'),
-                        t('byRoles.managers.aiAgent.feature4')
-                      ].map((item, index) => <li key={index} className="flex items-start">
-                          <Zap className="h-5 w-5 text-compliance-600 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-700">{item}</span>
-                        </li>)}
-                    </ul>
-                    
-                    <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <h5 className="font-semibold text-slate-900 mb-2">{t('byRoles.managers.outcome.title')}</h5>
-                      <p className="text-slate-700">
-                        {t('byRoles.managers.outcome.description')}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -213,9 +212,9 @@ const ByRoles = () => {
                   </ul>
                 </div>
                 
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col">
                   {/* Contributor visualization */}
-                  <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200 mb-8">
+                  <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200">
                     <div className="flex justify-between items-center mb-4">
                       <h5 className="font-medium text-slate-900">{t('byRoles.contributors.dashboard.title')}</h5>
                       <Calendar className="h-5 w-5 text-innovation-600" />
@@ -260,28 +259,6 @@ const ByRoles = () => {
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="bg-innovation-50 rounded-xl p-6 shadow-md border border-innovation-200">
-                    <h4 className="text-lg font-semibold text-innovation-700 mb-3">{t('byRoles.contributors.aiAgent.title')}</h4>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        t('byRoles.contributors.aiAgent.feature1'),
-                        t('byRoles.contributors.aiAgent.feature2'),
-                        t('byRoles.contributors.aiAgent.feature3'),
-                        t('byRoles.contributors.aiAgent.feature4')
-                      ].map((item, index) => <li key={index} className="flex items-start">
-                          <Zap className="h-5 w-5 text-innovation-600 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-700">{item}</span>
-                        </li>)}
-                    </ul>
-                    
-                    <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <h5 className="font-semibold text-slate-900 mb-2">{t('byRoles.contributors.outcome.title')}</h5>
-                      <p className="text-slate-700">
-                        {t('byRoles.contributors.outcome.description')}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -315,9 +292,9 @@ const ByRoles = () => {
                   </ul>
                 </div>
                 
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col">
                   {/* Auditor visualization */}
-                  <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200 mb-8">
+                  <div className="bg-slate-50 rounded-xl p-6 shadow-md border border-slate-200">
                     <div className="flex justify-between items-center mb-4">
                       <h5 className="font-medium text-slate-900">{t('byRoles.auditors.dashboard.title')}</h5>
                       <Shield className="h-5 w-5 text-compliance-600" />
@@ -378,28 +355,6 @@ const ByRoles = () => {
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="bg-compliance-50 rounded-xl p-6 shadow-md border border-compliance-200">
-                    <h4 className="text-lg font-semibold text-compliance-700 mb-3">{t('byRoles.auditors.aiAgent.title')}</h4>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        t('byRoles.auditors.aiAgent.feature1'),
-                        t('byRoles.auditors.aiAgent.feature2'),
-                        t('byRoles.auditors.aiAgent.feature3'),
-                        t('byRoles.auditors.aiAgent.feature4')
-                      ].map((item, index) => <li key={index} className="flex items-start">
-                          <Zap className="h-5 w-5 text-compliance-600 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-700">{item}</span>
-                        </li>)}
-                    </ul>
-                    
-                    <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <h5 className="font-semibold text-slate-900 mb-2">{t('byRoles.auditors.outcome.title')}</h5>
-                      <p className="text-slate-700">
-                        {t('byRoles.auditors.outcome.description')}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -407,8 +362,100 @@ const ByRoles = () => {
         </Tabs>
       </div>
 
+      {/* Standalone AI Compliance Officer Section */}
+      <section className="mb-16">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-compliance-100 to-innovation-100 mb-6 shadow-lg">
+            <Zap className="h-8 w-8 text-compliance-600" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">
+            {t('byRoles.aiSection.title')}
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            {t('byRoles.aiSection.subtitle')}
+          </p>
+        </div>
+
+        {/* 3-column grid with role cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card: Managers */}
+          <Card className="bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 p-6 hover:border-compliance-200">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-compliance-100 to-compliance-200 flex items-center justify-center shadow-sm">
+                <UserCog className="h-6 w-6 text-compliance-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900">
+                {t('byRoles.aiSection.managers.title')}
+              </h3>
+            </div>
+            <ul className="space-y-3">
+              {aiManagersFeatures.map((feat, i) => (
+                <li key={i} className="flex items-start">
+                  <Zap className="h-4 w-4 text-compliance-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-slate-700">{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          {/* Card: Contributors */}
+          <Card className="bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 p-6 hover:border-innovation-200">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-innovation-100 to-innovation-200 flex items-center justify-center shadow-sm">
+                <User className="h-6 w-6 text-innovation-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900">
+                {t('byRoles.aiSection.contributors.title')}
+              </h3>
+            </div>
+            <ul className="space-y-3">
+              {aiContributorsFeatures.map((feat, i) => (
+                <li key={i} className="flex items-start">
+                  <Zap className="h-4 w-4 text-innovation-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-slate-700">{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          {/* Card: Auditors */}
+          <Card className="bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 p-6 hover:border-compliance-200">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-compliance-100 to-compliance-200 flex items-center justify-center shadow-sm">
+                <FileCheck className="h-6 w-6 text-compliance-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900">
+                {t('byRoles.aiSection.auditors.title')}
+              </h3>
+            </div>
+            <ul className="space-y-3">
+              {aiAuditorsFeatures.map((feat, i) => (
+                <li key={i} className="flex items-start">
+                  <Zap className="h-4 w-4 text-compliance-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-slate-700">{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+
+        {/* Outcome Section */}
+        <div className="mt-8 bg-gradient-to-r from-slate-50 via-compliance-50/50 to-innovation-50/50 rounded-xl p-8 border border-slate-200 shadow-sm">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-4">
+              <CheckCircle className="h-5 w-5 text-compliance-600" />
+              <span className="font-semibold text-slate-900">{t('byRoles.aiSection.outcome.title')}</span>
+            </div>
+            <p className="text-slate-700 text-lg leading-relaxed">
+              {t('byRoles.aiSection.outcome.description')}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-slate-900 to-compliance-950 text-white rounded-xl p-8 shadow-xl border border-slate-800 mt-16">
+      <div className="bg-gradient-to-br from-slate-900 to-compliance-950 text-white rounded-xl p-8 shadow-xl border border-slate-800">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
             {t('byRoles.cta.title')}
