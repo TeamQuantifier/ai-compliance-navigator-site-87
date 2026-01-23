@@ -1159,9 +1159,9 @@
       "description": "We understand that different roles have different compliance needs. Our platform provides tailored experiences for managers, contributors, and auditors, ensuring everyone has the right tools for their specific responsibilities."
     },
     "tabs": {
-      "managers": "Managers",
-      "contributors": "Contributors",
-      "auditors": "Auditors"
+      "managers": "Leadership & Executive",
+      "contributors": "Operational Teams",
+      "auditors": "Internal & External Audit"
     },
     "managers": {
       "title": "Executive Control. Real-Time Insights. One Platform.",

@@ -983,9 +983,9 @@
       "description": "Rozumiemy, że różne role mają różne potrzeby compliance. Nasza platforma zapewnia dostosowane doświadczenia dla menedżerów, współpracowników i audytorów, zapewniając każdemu odpowiednie narzędzia do ich konkretnych obowiązków."
     },
     "tabs": {
-      "managers": "Menedżerowie",
-      "contributors": "Współpracownicy",
-      "auditors": "Audytorzy"
+      "managers": "Zarząd & Leadership",
+      "contributors": "Zespoły operacyjne",
+      "auditors": "Audyt wewnętrzny & zewnętrzny"
     },
     "managers": {
       "title": "Kontrola na poziomie zarządu. Wgląd w czasie rzeczywistym. Jedna platforma.",
