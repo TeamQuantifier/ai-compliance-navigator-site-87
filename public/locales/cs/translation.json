@@ -1080,6 +1080,23 @@
         "description": "Rychlejší, jasnější audity s méně tření. Auditoři se mohou soustředit na validaci—ne na administraci."
       }
     },
+    "aiSection": {
+      "title": "Autonomní AI Compliance Officer",
+      "subtitle": "AI Agent pracuje 24/7, automatizuje opakující se úkoly compliance a podporuje každou roli v organizaci.",
+      "managers": {
+        "title": "Pro vedení a management"
+      },
+      "contributors": {
+        "title": "Pro operativní týmy"
+      },
+      "auditors": {
+        "title": "Pro auditory"
+      },
+      "outcome": {
+        "title": "Výsledek",
+        "description": "Méně manuální práce, rychlejší audity a nepřetržitý soulad bez dodatečné zátěže týmu."
+      }
+    },
     "cta": {
       "title": "Jste připraveni se podívat, jak Quantifier může i pro Vás pracovat?",
       "description": "Bez ohledu na vaši roli se Quantifier přizpůsobuje tomu, jak pracujete—a posouvá způsob, jakým spravujete compliance.",

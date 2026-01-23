@@ -1101,6 +1101,23 @@
         "description": "Szybsze, jaśniejsze audyty z mniejszymi tarciami. Audytorzy mogą skupić się na walidacji — nie na administracji."
       }
     },
+    "aiSection": {
+      "title": "Autonomiczny AI Compliance Officer",
+      "subtitle": "Agent AI pracuje 24/7, automatyzując powtarzalne zadania compliance i wspierając każdą rolę w organizacji.",
+      "managers": {
+        "title": "Dla Zarządu i Leadershipu"
+      },
+      "contributors": {
+        "title": "Dla Zespołów Operacyjnych"
+      },
+      "auditors": {
+        "title": "Dla Audytorów"
+      },
+      "outcome": {
+        "title": "Efekt końcowy",
+        "description": "Mniej pracy manualnej, szybsze audyty i ciągła zgodność bez dodatkowego obciążenia zespołu."
+      }
+    },
     "cta": {
       "title": "Gotowy zobaczyć jak Quantifier działa dla Ciebie?",
       "description": "Niezależnie od Twojej roli, Quantifier dostosowuje się do tego, jak pracujesz — i podnosi sposób zarządzania compliance.",
