@@ -12,20 +12,19 @@ const ByRoles = () => {
   const { t, currentLocale } = useLanguage();
   
   return <PageTemplate title={t('byRoles.pageTitle')} description={t('byRoles.pageDescription')}>
-      {/* Hero section with darker colors */}
-      <div className="bg-gradient-to-br from-blue-50 to-slate-100 py-16 px-6 rounded-xl mb-12 relative overflow-hidden shadow-xl">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-innovation-200 rounded-full blur-3xl opacity-30 -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-compliance-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+      {/* Compact Hero Section */}
+      <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
+        {/* Subtle decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-innovation-300 rounded-full blur-2xl"></div>
+        </div>
         
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center p-4 bg-white rounded-full mb-8 border border-slate-200 shadow-sm">
-            <Users className="h-10 w-10 text-innovation-600" />
-          </div>
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
             {t('byRoles.hero.title')}
           </h2>
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto">
             {t('byRoles.hero.description')}
           </p>
         </div>
