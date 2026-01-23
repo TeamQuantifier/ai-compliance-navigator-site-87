@@ -67,18 +67,6 @@ const HeroSection = () => {
                   </Link>
                 </Button>
               </div>
-              
-              {/* TÜV NORD Certificate Badge */}
-              <div className="mt-8 flex items-center gap-4 p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 backdrop-blur-sm w-fit">
-                <img 
-                  src="/images/tuv-nord-certificate.png" 
-                  alt="TÜV NORD Verified Product Certificate"
-                  className="h-14 w-auto"
-                />
-                <span className="text-sm text-slate-300 font-medium">
-                  {t('hero.tuvCertified')}
-                </span>
-              </div>
             </div>
             
             {/* Right column - overlapping platform screenshots */}
