@@ -313,8 +313,18 @@
   "contact": {
     "title": "Contact Us",
     "description": "Get in touch with our team to learn more about our AI-powered compliance solutions.",
-    "heading": "Contact us",
-    "intro": "Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.",
+    "heading": "Let's talk about next-generation compliance",
+    "intro": "Quantifier is an autonomous AI platform that monitors, enforces, and automates regulatory compliance 24/7 across your entire organization — from cybersecurity, sustainability, and AI Act to corporate governance and data protection.",
+    "offerIntro": "Instead of project chaos and manually filled spreadsheets, we offer:",
+    "features": [
+      "continuous compliance and procedure management",
+      "automatic regulation mapping (NIS2, AI Act, ISO 27001, CSRD, and more)",
+      "AI-driven risk scoring and change monitoring",
+      "central repository for policies, controls, and evidence",
+      "real-time audit readiness"
+    ],
+    "summary": "The platform automates most operational work, while our experts oversee model quality, regulatory logic, and mapping accuracy.",
+    "cta": "Contact us and see what compliance designed for the AI era looks like.",
     "emailUs": "Email Us",
     "callUs": "Call Us",
     "visitOffices": "Visit Our Offices",

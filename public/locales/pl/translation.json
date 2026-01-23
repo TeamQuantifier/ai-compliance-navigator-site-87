@@ -312,8 +312,18 @@
   "contact": {
     "title": "Skontaktuj się z nami",
     "description": "Jesteśmy tutaj, aby pomóc w Twojej podróży compliance",
-    "heading": "Porozmawiajmy o potrzebach Twojej firmy w ramach zgodności z regulacjami, zarządzania ryzykiem i ładem zarządczym",
-    "intro": "Zespół ekspertów Quantifier jest gotowy, aby pomóc Ci uprościć Twoje procesy compliance. Skontaktuj się z nami i odkryj, jak możemy wspierać Twoją organizację.",
+    "heading": "Porozmawiajmy o nowej generacji compliance",
+    "intro": "Quantifier to autonomiczna platforma AI, która 24/7 monitoruje, egzekwuje i automatyzuje zgodność regulacyjną w całej organizacji — od cyberbezpieczeństwa, zrównoważonego rozwoju i AI Act po ład zarządczy i ochronę danych.",
+    "offerIntro": "Zamiast chaosu projektowego ręcznie uzupełnianych arkuszy oferujemy:",
+    "features": [
+      "ciągłą zgodność i zarządzanie procedurami",
+      "automatyczne mapowanie regulacji (NIS2, AI Act, ISO 27001, CSRD i inn.)",
+      "AI-driven risk scoring i monitoring zmian",
+      "centralne repozytorium polityk, kontroli i dowodów",
+      "gotowość audytową w czasie rzeczywistym"
+    ],
+    "summary": "Platforma automatyzuje większość pracy operacyjnej, a nasi eksperci czuwają nad jakością modeli, logiką regulacyjną i poprawnością mapowań.",
+    "cta": "Skontaktuj się z nami i zobacz, jak wygląda compliance zaprojektowane na erę AI.",
     "emailUs": "Napisz do nas",
     "callUs": "Zadzwoń do nas",
     "usaPhone": "USA: (+1) 415-799-8206",
