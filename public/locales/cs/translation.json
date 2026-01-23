@@ -962,9 +962,9 @@
       "description": "Chápeme, že různé role mají různé compliance potřeby. Naše platforma poskytuje přizpůsobené zkušenosti pro manažery, přispěvatele a auditory, zajišťující, že každý má správné nástroje pro své specifické odpovědnosti."
     },
     "tabs": {
-      "managers": "Manažeři",
-      "contributors": "Přispěvatelé",
-      "auditors": "Auditoři"
+      "managers": "Vedení & Leadership",
+      "contributors": "Operační týmy",
+      "auditors": "Interní & externí audit"
     },
     "managers": {
       "title": "Executive kontrola. Insights v reálném čase. Jedna platforma.",
