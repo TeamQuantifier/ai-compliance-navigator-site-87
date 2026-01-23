@@ -125,7 +125,10 @@ const Contact = () => {
             {t('contact.offerIntro')}
           </p>
           <ul className="list-disc list-inside text-slate-600 mb-4 space-y-1">
-            {(t('contact.features', { returnObjects: true }) as string[]).map((feature, index) => (
+            {(Array.isArray(t('contact.features', { returnObjects: true })) 
+              ? (t('contact.features', { returnObjects: true }) as string[])
+              : []
+            ).map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
           </ul>
