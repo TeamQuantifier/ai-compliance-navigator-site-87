@@ -1277,6 +1277,23 @@
         "description": "Faster, clearer audits with less friction. Auditors can focus on validation — not administration."
       }
     },
+    "aiSection": {
+      "title": "Autonomous AI Compliance Officer",
+      "subtitle": "AI Agent works 24/7, automating repetitive compliance tasks and supporting every role in the organization.",
+      "managers": {
+        "title": "For Leadership & Executives"
+      },
+      "contributors": {
+        "title": "For Operational Teams"
+      },
+      "auditors": {
+        "title": "For Auditors"
+      },
+      "outcome": {
+        "title": "The Result",
+        "description": "Less manual work, faster audits, and continuous compliance without additional team burden."
+      }
+    },
     "cta": {
       "title": "Ready to See How Quantifier Works for You?",
       "description": "No matter your role, Quantifier adapts to how you work — and elevates how you manage compliance.",
