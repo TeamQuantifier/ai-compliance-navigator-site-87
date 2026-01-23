@@ -186,7 +186,10 @@ const Index = () => {
               <div className="bg-compliance-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-compliance-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{t('roles.managers.title')}</h3>
+              <h3 className="text-xl font-bold mb-1">{t('roles.managers.title')}</h3>
+              {t('roles.managers.subtitle') && (
+                <p className="text-sm text-slate-500 mb-3">{t('roles.managers.subtitle')}</p>
+              )}
               <p className="text-slate-600 mb-4">
                 {t('roles.managers.description')}
               </p>
@@ -202,7 +205,10 @@ const Index = () => {
               <div className="bg-innovation-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Database className="h-10 w-10 text-innovation-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{t('roles.contributors.title')}</h3>
+              <h3 className="text-xl font-bold mb-1">{t('roles.contributors.title')}</h3>
+              {t('roles.contributors.subtitle') && (
+                <p className="text-sm text-slate-500 mb-3">{t('roles.contributors.subtitle')}</p>
+              )}
               <p className="text-slate-600 mb-4">
                 {t('roles.contributors.description')}
               </p>
@@ -218,7 +224,10 @@ const Index = () => {
               <div className="bg-compliance-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <FileCheck className="h-10 w-10 text-compliance-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{t('roles.auditors.title')}</h3>
+              <h3 className="text-xl font-bold mb-1">{t('roles.auditors.title')}</h3>
+              {t('roles.auditors.subtitle') && (
+                <p className="text-sm text-slate-500 mb-3">{t('roles.auditors.subtitle')}</p>
+              )}
               <p className="text-slate-600 mb-4">
                 {t('roles.auditors.description')}
               </p>

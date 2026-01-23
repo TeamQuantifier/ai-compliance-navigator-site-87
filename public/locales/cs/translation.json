@@ -143,15 +143,18 @@
     "title": "Přizpůsobeno každé roli",
     "subtitle": "Specializovaná rozhraní pro různé role ve vaší organizaci.",
     "managers": {
-      "title": "Pro manažery",
+      "title": "Pro vedení a leadership",
+      "subtitle": "(CFO, COO, CISO, Head of Risk)",
       "description": "Komplexní dashboardy pro dohled nad compliance a informované rozhodování."
     },
     "contributors": {
-      "title": "Pro přispěvatele",
+      "title": "Pro operační týmy",
+      "subtitle": "(Compliance, IT, Security, ESG)",
       "description": "Zjednodušená rozhraní pro zadávání dat, úkoly a sběr důkazů."
     },
     "auditors": {
-      "title": "Pro auditory",
+      "title": "Pro interní a externí auditory",
+      "subtitle": "",
       "description": "Podrobné auditní záznamy a ověřovací nástroje pro validaci compliance."
     },
     "learnMore": "Zjistit více"

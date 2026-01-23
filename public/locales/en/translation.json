@@ -146,15 +146,18 @@
     "title": "Tailored for Every Role",
     "subtitle": "Specialized interfaces for different roles in your organization.",
     "managers": {
-      "title": "For Managers",
+      "title": "For Leadership & Executive",
+      "subtitle": "(CFO, COO, CISO, Head of Risk)",
       "description": "Comprehensive dashboards to oversee compliance and inform decisions."
     },
     "contributors": {
-      "title": "For Contributors",
+      "title": "For Operational Teams",
+      "subtitle": "(Compliance, IT, Security, ESG)",
       "description": "Streamlined interfaces for data entry, tasks, and evidence collection."
     },
     "auditors": {
-      "title": "For Auditors",
+      "title": "For Internal & External Auditors",
+      "subtitle": "",
       "description": "Detailed audit trails and verification tools to validate compliance."
     },
     "learnMore": "Learn More"
