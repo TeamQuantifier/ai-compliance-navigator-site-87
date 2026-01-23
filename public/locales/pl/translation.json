@@ -145,15 +145,18 @@
     "title": "Dostosowane do każdej roli",
     "subtitle": "Specjalizowane interfejsy dla różnych ról w Twojej organizacji.",
     "managers": {
-      "title": "Dla menedżerów",
+      "title": "Dla Zarządów i Leadershipu",
+      "subtitle": "(CFO, COO, CISO, Head of Risk)",
       "description": "Kompleksowe dashboardy do nadzoru compliance i wsparcia decyzji."
     },
     "contributors": {
-      "title": "Dla współpracowników",
+      "title": "Dla zespołów operacyjnych",
+      "subtitle": "(Compliance, IT, Security, ESG)",
       "description": "Uproszczone interfejsy do wprowadzania danych, zadań i zbierania dowodów."
     },
     "auditors": {
-      "title": "Dla audytorów",
+      "title": "Dla audytorów wewnętrznych i zewnętrznych",
+      "subtitle": "",
       "description": "Szczegółowe ścieżki audytu i narzędzia weryfikacyjne do walidacji zgodności."
     },
     "learnMore": "Dowiedz się więcej"
