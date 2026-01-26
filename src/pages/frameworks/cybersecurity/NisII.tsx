@@ -565,7 +565,7 @@ const NisII = () => {
             { question: t('seoLanding.nis2.faq.items.4.question'), answer: t('seoLanding.nis2.faq.items.4.answer') },
             { question: t('seoLanding.nis2.faq.items.5.question'), answer: t('seoLanding.nis2.faq.items.5.answer') }
           ]}
-          pageUrl={`https://quantifier.com/${currentLocale}/frameworks/cybersecurity/nis-ii`}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/nis-ii`}
         />
 
         {/* Final CTA Section */}

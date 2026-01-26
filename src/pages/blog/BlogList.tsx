@@ -40,11 +40,16 @@ const BlogList = () => {
       <Helmet>
         <title>{t('blog.title')} | Quantifier.ai</title>
         <meta name="description" content={t('blog.subtitle')} />
+        
+        {/* Robots - explicit index/follow */}
+        <meta name="robots" content="index, follow" />
+        
         <link rel="canonical" href={canonicalUrl} />
         
-        {/* hreflang tags */}
+        {/* hreflang tags - all supported locales */}
         <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/blog" />
         <link rel="alternate" hrefLang="pl" href="https://quantifier.ai/pl/blog" />
+        <link rel="alternate" hrefLang="cs" href="https://quantifier.ai/cs/blog" />
         <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/blog" />
         
         {/* Open Graph */}
@@ -52,7 +57,7 @@ const BlogList = () => {
         <meta property="og:description" content={t('blog.subtitle')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : 'en_US'} />
+        <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : currentLocale === 'cs' ? 'cs_CZ' : 'en_US'} />
       </Helmet>
 
       <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
