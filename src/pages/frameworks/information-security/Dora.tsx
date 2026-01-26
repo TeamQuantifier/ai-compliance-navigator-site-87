@@ -646,7 +646,7 @@ const Dora = () => {
               question: item.question,
               answer: item.answer,
             }))}
-            pageUrl={`https://quantifier.io/${currentLocale}/frameworks/information-security/dora`}
+            pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/dora`}
           />
         </section>
 

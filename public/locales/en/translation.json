@@ -2619,6 +2619,27 @@
       "description": "Join leading European organizations that trust Quantifier for their NIS2 journey. Get compliant faster with AI-powered automation.",
       "bookDemo": "Request Demo",
       "talkExpert": "See Pricing"
+    },
+    "definitions": {
+      "title": "Key NIS2 Terms & Definitions",
+      "items": {
+        "nis2Directive": {
+          "term": "NIS2 Directive",
+          "definition": "The NIS2 Directive (Network and Information Security Directive 2) is a European Union cybersecurity regulation that establishes minimum security requirements for network and information systems across essential and important sectors. It replaces the original NIS Directive and significantly expands its scope."
+        },
+        "essentialEntities": {
+          "term": "Essential Entities",
+          "definition": "Organizations in critical sectors (energy, transport, health, banking, digital infrastructure, public administration) with more than 250 employees or annual turnover exceeding EUR 50 million. Essential entities face stricter requirements, including 24-hour incident reporting and potential personal liability for management."
+        },
+        "importantEntities": {
+          "term": "Important Entities",
+          "definition": "Medium-sized organizations (50-250 employees) operating in sectors covered by NIS2 but not classified as essential. Important entities must comply with the same security requirements but face less stringent supervision and lower maximum penalties."
+        },
+        "incidentReporting": {
+          "term": "Incident Reporting",
+          "definition": "Under NIS2, significant cybersecurity incidents must be reported to national authorities within 24 hours of detection (early warning), followed by a detailed report within 72 hours and a final report within one month. Non-compliance can result in fines up to EUR 10 million or 2% of global turnover."
+        }
+      }
     }
   },
   "socPage": {

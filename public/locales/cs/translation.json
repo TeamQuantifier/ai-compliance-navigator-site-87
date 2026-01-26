@@ -2290,6 +2290,27 @@
       "description": "Připojte se k předním evropským organizacím, které důvěřují Quantifier pro jejich cestu k NIS2. Dosáhněte compliance rychleji s AI-powered automatizací.",
       "bookDemo": "Požádat o demo",
       "talkExpert": "Zobrazit ceny"
+    },
+    "definitions": {
+      "title": "Klíčové pojmy NIS2",
+      "items": {
+        "nis2Directive": {
+          "term": "Směrnice NIS2",
+          "definition": "Směrnice NIS2 (Network and Information Security Directive 2) je evropské nařízení o kybernetické bezpečnosti, které stanovuje minimální bezpečnostní požadavky pro síťové a informační systémy v klíčových a důležitých sektorech. Nahrazuje původní směrnici NIS a výrazně rozšiřuje její působnost."
+        },
+        "essentialEntities": {
+          "term": "Klíčové subjekty",
+          "definition": "Organizace v kritických sektorech (energetika, doprava, zdravotnictví, bankovnictví, digitální infrastruktura, veřejná správa) s více než 250 zaměstnanci nebo ročním obratem přesahujícím 50 mil. EUR. Klíčové subjekty podléhají přísnějším požadavkům, včetně 24hodinového hlášení incidentů a potenciální osobní odpovědnosti vedení."
+        },
+        "importantEntities": {
+          "term": "Důležité subjekty",
+          "definition": "Středně velké organizace (50-250 zaměstnanců) působící v sektorech pokrytých NIS2, ale neklasifikované jako klíčové. Důležité subjekty musí splňovat stejné bezpečnostní požadavky, ale podléhají méně přísnému dohledu a nižším maximálním pokutám."
+        },
+        "incidentReporting": {
+          "term": "Hlášení incidentů",
+          "definition": "Podle NIS2 musí být významné kybernetické incidenty hlášeny národním orgánům do 24 hodin od zjištění (včasné varování), následované podrobnou zprávou do 72 hodin a závěrečnou zprávou do jednoho měsíce. Nedodržení může mít za následek pokuty až 10 mil. EUR nebo 2 % globálního obratu."
+        }
+      }
     }
   },
   "socPage": {

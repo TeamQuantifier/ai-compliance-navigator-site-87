@@ -2443,6 +2443,27 @@
       "description": "Dołącz do wiodących europejskich organizacji, które powierzają Quantifier swoją ścieżkę NIS2. Osiągnij zgodność szybciej dzięki automatyzacji opartej na AI.",
       "bookDemo": "Zamów demo",
       "talkExpert": "Zobacz cennik"
+    },
+    "definitions": {
+      "title": "Kluczowe pojęcia NIS2",
+      "items": {
+        "nis2Directive": {
+          "term": "Dyrektywa NIS2",
+          "definition": "Dyrektywa NIS2 (Network and Information Security Directive 2) to europejskie rozporządzenie dotyczące cyberbezpieczeństwa, które ustanawia minimalne wymogi bezpieczeństwa dla systemów sieciowych i informacyjnych w sektorach kluczowych i ważnych. Zastępuje pierwotną dyrektywę NIS i znacząco rozszerza jej zakres."
+        },
+        "essentialEntities": {
+          "term": "Podmioty kluczowe",
+          "definition": "Organizacje w sektorach krytycznych (energetyka, transport, zdrowie, bankowość, infrastruktura cyfrowa, administracja publiczna) zatrudniające ponad 250 pracowników lub z rocznym obrotem przekraczającym 50 mln EUR. Podmioty kluczowe podlegają surowszym wymogom, w tym 24-godzinnemu raportowaniu incydentów i potencjalnej odpowiedzialności osobistej zarządu."
+        },
+        "importantEntities": {
+          "term": "Podmioty ważne",
+          "definition": "Średnie organizacje (50-250 pracowników) działające w sektorach objętych NIS2, ale niesklasyfikowane jako kluczowe. Podmioty ważne muszą spełniać te same wymogi bezpieczeństwa, ale podlegają mniej rygorystycznemu nadzorowi i niższym maksymalnym karom."
+        },
+        "incidentReporting": {
+          "term": "Raportowanie incydentów",
+          "definition": "Zgodnie z NIS2 znaczące incydenty cyberbezpieczeństwa muszą być zgłaszane organom krajowym w ciągu 24 godzin od wykrycia (wczesne ostrzeżenie), następnie szczegółowy raport w ciągu 72 godzin i raport końcowy w ciągu miesiąca. Brak zgodności może skutkować karami do 10 mln EUR lub 2% globalnego obrotu."
+        }
+      }
     }
   },
   "socPage": {

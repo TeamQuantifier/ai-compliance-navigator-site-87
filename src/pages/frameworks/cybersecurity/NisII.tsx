@@ -8,6 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
+import DefinitionsBlock from '@/components/seo/DefinitionsBlock';
 
 const NisII = () => {
   const { t, currentLocale } = useLanguage();
@@ -195,6 +196,30 @@ const NisII = () => {
             </Card>
           </div>
         </section>
+
+        {/* Key Definitions Section - AI SEO Optimization */}
+        <DefinitionsBlock
+          title={t('nisIIPage.definitions.title')}
+          definitions={[
+            {
+              term: t('nisIIPage.definitions.items.nis2Directive.term'),
+              definition: t('nisIIPage.definitions.items.nis2Directive.definition')
+            },
+            {
+              term: t('nisIIPage.definitions.items.essentialEntities.term'),
+              definition: t('nisIIPage.definitions.items.essentialEntities.definition')
+            },
+            {
+              term: t('nisIIPage.definitions.items.importantEntities.term'),
+              definition: t('nisIIPage.definitions.items.importantEntities.definition')
+            },
+            {
+              term: t('nisIIPage.definitions.items.incidentReporting.term'),
+              definition: t('nisIIPage.definitions.items.incidentReporting.definition')
+            }
+          ]}
+          className="mb-20"
+        />
 
         {/* Why NIS2 Matters for Management Section */}
         <section className="mb-20">
