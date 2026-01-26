@@ -560,7 +560,7 @@ const Soc = () => {
             { question: t('socPage.faq.items.4.question'), answer: t('socPage.faq.items.4.answer') },
             { question: t('socPage.faq.items.5.question'), answer: t('socPage.faq.items.5.answer') }
           ]}
-          pageUrl={`https://quantifier.com/${currentLocale}/frameworks/cybersecurity/soc`}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/soc`}
         />
 
         {/* Final CTA Section */}

@@ -625,7 +625,7 @@ const Gdpr = () => {
               question: item.question,
               answer: item.answer,
             }))}
-            pageUrl={`https://quantifier.io/${currentLocale}/frameworks/data-security/gdpr`}
+            pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/gdpr`}
           />
         </section>
 

@@ -590,7 +590,7 @@ const Iso27001 = () => {
               question: item.question,
               answer: item.answer,
             }))}
-            pageUrl={`https://quantifier.io/${currentLocale}/frameworks/information-security/iso-27001`}
+            pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/iso-27001`}
           />
         </section>
 
