@@ -10,17 +10,21 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SUPPORTED_LOCALES } from "@/i18n/config";
+
+// Strip tracking parameters from URL path
+const stripTrackingParams = (pathname: string): string => {
+  const [path] = pathname.split('?');
+  return path;
+};
 
 const Index = () => {
   const { t, currentLocale } = useLanguage();
   const location = useLocation();
   
   const baseUrl = 'https://quantifier.ai';
-  const currentPath = location.pathname.replace(/^\/(en|pl)/, '');
+  const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
   const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
-  const altLocale = currentLocale === 'en' ? 'pl' : 'en';
-  const altUrl = `${baseUrl}/${altLocale}${currentPath}`;
-  const defaultUrl = `${baseUrl}/en${currentPath}`;
   
   const title = t('seo.index.title');
   const description = t('seo.index.description');
@@ -35,7 +39,9 @@ const Index = () => {
     "logo": "https://quantifier.ai/lovable-uploads/b5ac5352-8089-4e7d-a1d4-6c879bd4f57e.png",
     "description": currentLocale === 'en' 
       ? "AI-Native GRC Platform for Compliance Automation" 
-      : "AI-Native Platforma GRC do Automatyzacji Compliance",
+      : currentLocale === 'pl'
+      ? "AI-Native Platforma GRC do Automatyzacji Compliance"
+      : "AI-Native GRC Platforma pro Automatizaci Compliance",
     "foundingDate": "2020",
     "sameAs": [
       "https://www.linkedin.com/company/quantifier-ai"
@@ -96,7 +102,9 @@ const Index = () => {
     "url": "https://quantifier.ai",
     "description": currentLocale === 'en'
       ? "AI-native GRC platform for automated compliance with SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG frameworks. Continuous compliance monitoring with autonomous AI agents."
-      : "AI-natywna platforma GRC do automatyzacji zgodności z SOC 2, ISO 27001, GDPR, NIS2, DORA i ESG. Ciągłe monitorowanie zgodności z autonomicznymi agentami AI.",
+      : currentLocale === 'pl'
+      ? "AI-natywna platforma GRC do automatyzacji zgodności z SOC 2, ISO 27001, GDPR, NIS2, DORA i ESG. Ciągłe monitorowanie zgodności z autonomicznymi agentami AI."
+      : "AI-nativní GRC platforma pro automatizaci compliance s SOC 2, ISO 27001, GDPR, NIS2, DORA a ESG. Kontinuální monitoring compliance s autonomními AI agenty.",
     "featureList": [
       "SOC 2 Type I/II Automation",
       "ISO 27001 Compliance",
@@ -124,17 +132,32 @@ const Index = () => {
     }
   };
 
+  // Get locale for og:locale
+  const getOgLocale = (locale: string) => {
+    switch(locale) {
+      case 'pl': return 'pl_PL';
+      case 'cs': return 'cs_CZ';
+      default: return 'en_US';
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <Helmet>
         <title>{fullTitle}</title>
         <meta name="description" content={description} />
         
-        {/* Canonical & hreflang */}
+        {/* Robots - explicit index/follow */}
+        <meta name="robots" content="index, follow" />
+        
+        {/* Canonical */}
         <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hrefLang="en" href={currentLocale === 'en' ? canonicalUrl : altUrl} />
-        <link rel="alternate" hrefLang="pl" href={currentLocale === 'pl' ? canonicalUrl : altUrl} />
-        <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
+        
+        {/* hreflang for all supported locales */}
+        {SUPPORTED_LOCALES.map(locale => (
+          <link key={locale} rel="alternate" hrefLang={locale} href={`${baseUrl}/${locale}${currentPath}`} />
+        ))}
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={fullTitle} />
@@ -143,8 +166,10 @@ const Index = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${baseUrl}/og-image.png`} />
         <meta property="og:site_name" content="Quantifier.ai" />
-        <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : 'pl_PL'} />
-        <meta property="og:locale:alternate" content={currentLocale === 'en' ? 'pl_PL' : 'en_US'} />
+        <meta property="og:locale" content={getOgLocale(currentLocale)} />
+        {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
+          <meta key={locale} property="og:locale:alternate" content={getOgLocale(locale)} />
+        ))}
         
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />

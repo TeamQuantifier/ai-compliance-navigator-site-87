@@ -2,6 +2,7 @@ import { ReactNode, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SUPPORTED_LOCALES } from '@/i18n/config';
 
 interface PageTemplateProps {
   title: string;
@@ -11,9 +12,20 @@ interface PageTemplateProps {
   noIndex?: boolean;
 }
 
+// Tracking parameters to strip from canonical URLs
+const TRACKING_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'ref', 'source'];
+
+// Strip tracking parameters from URL path
+const stripTrackingParams = (pathname: string): string => {
+  // Split path and query string
+  const [path] = pathname.split('?');
+  return path;
+};
+
 // Helper to generate breadcrumb items from path
 const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
-  const pathSegments = pathname.split('/').filter(Boolean);
+  const cleanPath = stripTrackingParams(pathname);
+  const pathSegments = cleanPath.split('/').filter(Boolean);
   const breadcrumbs = [
     {
       "@type": "ListItem",
@@ -54,14 +66,20 @@ const PageTemplate = ({
   const location = useLocation();
   
   const baseUrl = 'https://quantifier.ai';
-  const currentPath = location.pathname.replace(/^\/(en|pl)/, '');
+  // Strip locale prefix AND any tracking parameters
+  const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
   const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
-  const altLocale = currentLocale === 'en' ? 'pl' : 'en';
-  const altUrl = `${baseUrl}/${altLocale}${currentPath}`;
-  const defaultUrl = `${baseUrl}/en${currentPath}`;
   
   const fullTitle = `${title} | Quantifier.ai`;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
+
+  // Generate hreflang for all supported locales
+  const hreflangUrls = useMemo(() => {
+    return SUPPORTED_LOCALES.map(locale => ({
+      locale,
+      url: `${baseUrl}/${locale}${currentPath}`
+    }));
+  }, [currentPath]);
 
   // Generate BreadcrumbList schema
   const breadcrumbSchema = useMemo(() => ({
@@ -76,11 +94,17 @@ const PageTemplate = ({
         <title>{fullTitle}</title>
         <meta name="description" content={description} />
         
-        {/* Canonical & hreflang */}
+        {/* Robots - explicit index/follow */}
+        <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+        
+        {/* Canonical */}
         <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hrefLang="en" href={currentLocale === 'en' ? canonicalUrl : altUrl} />
-        <link rel="alternate" hrefLang="pl" href={currentLocale === 'pl' ? canonicalUrl : altUrl} />
-        <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
+        
+        {/* hreflang for all supported locales */}
+        {hreflangUrls.map(({ locale, url }) => (
+          <link key={locale} rel="alternate" hrefLang={locale} href={url} />
+        ))}
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={fullTitle} />
@@ -89,17 +113,16 @@ const PageTemplate = ({
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImageUrl} />
         <meta property="og:site_name" content="Quantifier.ai" />
-        <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : 'pl_PL'} />
-        <meta property="og:locale:alternate" content={currentLocale === 'en' ? 'pl_PL' : 'en_US'} />
+        <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : currentLocale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
+        {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
+          <meta key={locale} property="og:locale:alternate" content={locale === 'en' ? 'en_US' : locale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
+        ))}
         
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImageUrl} />
-        
-        {/* Robots */}
-        {noIndex && <meta name="robots" content="noindex, nofollow" />}
         
         {/* BreadcrumbList JSON-LD */}
         <script type="application/ld+json">

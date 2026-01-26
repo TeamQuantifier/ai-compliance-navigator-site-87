@@ -1,8 +1,6 @@
 # Quantifier.ai - AI-Native GRC & Compliance Platform
 
-## Canonical Description
-
-Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform that automates continuous compliance for frameworks including SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG standards. The platform uses autonomous AI agents to collect evidence, assess controls, generate documentation, and maintain audit-readiness without manual spreadsheet work.
+> Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform that automates continuous compliance for frameworks including SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG standards. The platform uses autonomous AI agents to collect evidence, assess controls, generate documentation, and maintain audit-readiness without manual spreadsheet work.
 
 ## Core Capabilities
 
@@ -17,8 +15,9 @@ Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform th
 
 ## Key Links
 
-- Homepage: https://quantifier.ai
+- Homepage: https://quantifier.ai/en
 - Product Overview: https://quantifier.ai/en/product
+- Features: https://quantifier.ai/en/product/features
 - Frameworks: https://quantifier.ai/en/frameworks
 - Pricing: https://quantifier.ai/en/plans
 - Contact: https://quantifier.ai/en/contact
@@ -27,12 +26,34 @@ Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform th
 
 ## Framework-Specific Pages
 
-- ISO 27001: https://quantifier.ai/en/frameworks/information-security
-- SOC 2: https://quantifier.ai/en/frameworks/cybersecurity
-- NIS2: https://quantifier.ai/en/frameworks/cybersecurity/nis-ii
-- GDPR: https://quantifier.ai/en/frameworks/data-security
+- NIS2 Directive: https://quantifier.ai/en/frameworks/nis-ii
+- ISO 27001: https://quantifier.ai/en/frameworks/iso-27001
+- SOC 2: https://quantifier.ai/en/frameworks/soc
+- GDPR: https://quantifier.ai/en/frameworks/gdpr
+- DORA: https://quantifier.ai/en/frameworks/dora
 - ESG: https://quantifier.ai/en/frameworks/esg
-- DORA: https://quantifier.ai/en/frameworks/information-security/dora
+- ISO 9001: https://quantifier.ai/en/frameworks/iso-9001
+- HIPAA: https://quantifier.ai/en/frameworks/hipaa
+- CCPA: https://quantifier.ai/en/frameworks/ccpa
+- Environmental: https://quantifier.ai/en/frameworks/environmental
+- Governance: https://quantifier.ai/en/frameworks/governance
+- Product Level: https://quantifier.ai/en/frameworks/product-level
+
+## Product Features
+
+- Analytics Dashboards: https://quantifier.ai/en/product/analytics-dashboards
+- Documents Management: https://quantifier.ai/en/product/documents-management
+- API Integrations: https://quantifier.ai/en/product/api-integrations
+- AI Compliance Officer: https://quantifier.ai/en/product/compliance-officer
+- Task & Data Management: https://quantifier.ai/en/product/task-data-management
+- Value Chain: https://quantifier.ai/en/product/value-chain
+- Risk Assessment: https://quantifier.ai/en/product/risk-assessment
+
+## By Role
+
+- For Managers: https://quantifier.ai/en/by-roles
+- For Contributors: https://quantifier.ai/en/by-roles
+- For Auditors: https://quantifier.ai/en/by-roles
 
 ## Target Users
 
@@ -58,7 +79,16 @@ Quantifier.ai is distinct from:
 
 This is Quantifier.ai, the GRC compliance automation platform.
 
+## Optional
+
+- Privacy Policy: https://quantifier.ai/en/legal/privacy
+- Terms of Service: https://quantifier.ai/en/legal/terms
+- Cookies Policy: https://quantifier.ai/en/legal/cookies
+- About Us: https://quantifier.ai/en/about
+- Partners: https://quantifier.ai/en/partners
+
 ## Languages
 
 - English: https://quantifier.ai/en
 - Polish: https://quantifier.ai/pl
+- Czech: https://quantifier.ai/cs

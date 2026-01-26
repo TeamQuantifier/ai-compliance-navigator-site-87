@@ -6,48 +6,52 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const BASE_URL = 'https://quantifier.ai';
 
-// Static pages for the sitemap - flattened framework structure
+// Static pages for the sitemap - flattened framework structure with real lastmod dates
 const staticPages = [
-  { path: '', changefreq: 'weekly', priority: '1.0' },
-  { path: '/about', changefreq: 'monthly', priority: '0.8' },
-  { path: '/contact', changefreq: 'monthly', priority: '0.7' },
-  { path: '/partners', changefreq: 'monthly', priority: '0.7' },
-  { path: '/plans', changefreq: 'weekly', priority: '0.9' },
-  { path: '/success-stories', changefreq: 'weekly', priority: '0.9' },
-  { path: '/blog', changefreq: 'daily', priority: '0.9' },
+  { path: '', changefreq: 'weekly', priority: '1.0', lastmod: '2026-01-26' },
+  { path: '/about', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/contact', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/partners', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-12' },
+  { path: '/plans', changefreq: 'weekly', priority: '0.9', lastmod: '2026-01-20' },
+  { path: '/success-stories', changefreq: 'weekly', priority: '0.9', lastmod: '2026-01-25' },
+  { path: '/blog', changefreq: 'daily', priority: '0.9', lastmod: '2026-01-26' },
   // Product pages
-  { path: '/product', changefreq: 'monthly', priority: '0.9' },
-  { path: '/product/overview', changefreq: 'monthly', priority: '0.8' },
-  { path: '/product/features', changefreq: 'monthly', priority: '0.8' },
-  { path: '/product/analytics-dashboards', changefreq: 'monthly', priority: '0.7' },
-  { path: '/product/documents-management', changefreq: 'monthly', priority: '0.7' },
-  { path: '/product/api-integrations', changefreq: 'monthly', priority: '0.7' },
-  { path: '/product/compliance-officer', changefreq: 'monthly', priority: '0.7' },
-  { path: '/product/task-data-management', changefreq: 'monthly', priority: '0.7' },
-  { path: '/product/value-chain', changefreq: 'monthly', priority: '0.7' },
-  { path: '/product/risk-assessment', changefreq: 'monthly', priority: '0.7' },
+  { path: '/product', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-15' },
+  { path: '/product/overview', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/product/features', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/product/analytics-dashboards', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/product/documents-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/product/api-integrations', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/product/compliance-officer', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/product/task-data-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/product/value-chain', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  { path: '/product/risk-assessment', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   // By Roles pages
-  { path: '/by-roles', changefreq: 'monthly', priority: '0.8' },
-  { path: '/by-roles/managers', changefreq: 'monthly', priority: '0.7' },
-  { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7' },
-  { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7' },
+  { path: '/by-roles', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-26' },
+  { path: '/by-roles/managers', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
+  { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
+  { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
   // Frameworks main page
-  { path: '/frameworks', changefreq: 'monthly', priority: '0.9' },
+  { path: '/frameworks', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-22' },
   // Flattened framework pages - direct access (high priority)
-  { path: '/frameworks/nis-ii', changefreq: 'monthly', priority: '0.9' },
-  { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9' },
-  { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9' },
-  { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9' },
-  { path: '/frameworks/dora', changefreq: 'monthly', priority: '0.9' },
-  { path: '/frameworks/nist', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/iso-9001', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/hipaa', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/ccpa', changefreq: 'monthly', priority: '0.8' },
+  { path: '/frameworks/nis-ii', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-25' },
+  { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
+  { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
+  { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
+  { path: '/frameworks/dora', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
+  { path: '/frameworks/nist', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/frameworks/iso-9001', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/frameworks/hipaa', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/frameworks/ccpa', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
   // Category pages (still exist for ESG, Environmental, Governance, Product Level)
-  { path: '/frameworks/esg', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/environmental', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/governance', changefreq: 'monthly', priority: '0.8' },
-  { path: '/frameworks/product-level', changefreq: 'monthly', priority: '0.8' },
+  { path: '/frameworks/esg', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-20' },
+  { path: '/frameworks/environmental', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-22' },
+  { path: '/frameworks/governance', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-18' },
+  { path: '/frameworks/product-level', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  // Legal pages
+  { path: '/legal/privacy', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
+  { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
+  { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
 ];
 
 const locales = ['en', 'pl', 'cs'];
@@ -95,16 +99,17 @@ serve(async (req) => {
     // Generate URL entries
     let urlEntries = '';
 
-    // Static pages for each locale
+    // Static pages for each locale - use real lastmod from config
     for (const page of staticPages) {
       for (const locale of locales) {
         const fullPath = `${BASE_URL}/${locale}${page.path}`;
+        const lastmod = page.lastmod || today;
         
         urlEntries += `
   <url>
     <loc>${fullPath}</loc>
     ${generateHreflangLinks(page.path, locale)}
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`;
