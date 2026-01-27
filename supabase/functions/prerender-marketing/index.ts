@@ -30,67 +30,146 @@ interface PageData {
 // Page content database
 const getPageContent = (locale: string, page: string): PageData | null => {
   const isPolish = locale === 'pl';
+  const isCzech = locale === 'cs';
   
   const pages: Record<string, Record<string, PageData>> = {
     'index': {
       en: {
-        title: 'Quantifier.ai - AI-Powered Compliance & Risk Management Platform',
-        description: 'Automate GRC workflows with AI. Manage ISO 27001, SOC 2, GDPR, NIS2, and more from one platform. Reduce compliance time by 80%.',
-        h1: 'AI-Powered Compliance Management',
-        subtitle: 'Automate your compliance workflows, reduce manual effort by 80%, and achieve certifications faster with our AI-native GRC platform.',
+        title: 'Quantifier.ai - AI-Powered GRC Platform | Compliance & Risk Management',
+        description: 'End-to-end GRC in one AI-native platform. Automate ISO 27001, SOC 2, GDPR, NIS2 compliance. Reduce manual work by 80%. Trusted by 250+ companies.',
+        h1: 'End-to-end GRC. In one AI-native platform.',
+        subtitle: 'Your AI Compliance Officer that manages projects, collects data and presents results, automating the entire compliance process.',
         sections: [
           {
-            h2: 'Why Choose Quantifier',
+            h2: 'Comprehensive AI-Powered Compliance Suite',
             content: [
-              'AI-powered evidence collection and gap analysis',
-              'Multi-framework support: ISO 27001, SOC 2, GDPR, NIS2, DORA',
-              'Continuous compliance monitoring',
-              'Automated risk assessments',
-              'Real-time dashboards and reporting'
+              'AI Compliance Officer - AI-driven assistant that monitors systems, identifies issues, and suggests remediation',
+              'Document Management - Centralized repository with automated version control and audit trails',
+              'Role-Based Access - Tailored interfaces for managers, contributors, and auditors',
+              'Analytics & Dashboards - Real-time visualization of compliance status and risk levels',
+              'Automated Workflows - Automate compliance processes to ensure consistency',
+              'Data Management - Secure handling of sensitive data with privacy controls'
             ]
           },
           {
-            h2: 'Trusted by Leading Companies',
+            h2: 'Why Teams Trust Us with Compliance',
             content: [
-              'Join 500+ organizations that trust Quantifier for their compliance needs',
-              'Average 80% reduction in compliance effort',
-              '10x faster audit preparation',
-              '95% customer satisfaction rate'
+              'Peace of Mind, Powered by Automation - No more chasing employees or endless follow-ups',
+              'Say Goodbye to Manual Oversight - AI agents handle training, data collection, and policy sign-offs',
+              'Stay Ahead with Real-Time Visibility - Instantly see what\'s done, pending, and risky',
+              'Launch in Minutes, Not Months - Fast, seamless rollout without expensive consultants',
+              'Everything You Need in One Platform - Manage SOC 2, ISO 27001, GDPR, and more'
+            ]
+          },
+          {
+            h2: 'Compliance, powered by insiders',
+            content: [
+              'Join 250+ companies—from startups to multinational corporations—who trust our solutions',
+              'We combine cutting-edge tech with real compliance expertise'
+            ]
+          },
+          {
+            h2: 'Tailored for Every Role',
+            content: [
+              'For Leadership & Executive (CFO, COO, CISO, Head of Risk) - Comprehensive dashboards to oversee compliance',
+              'For Operational Teams (Compliance, IT, Security, ESG) - Streamlined interfaces for data entry and tasks',
+              'For Internal & External Auditors - Detailed audit trails and verification tools'
+            ]
+          },
+          {
+            h2: 'Start Your AI-Powered Compliance Journey Today',
+            content: [
+              'For Enterprise - Comprehensive compliance management for complex regulatory environments',
+              'For Mid-Market - Scalable solutions to grow with your compliance needs',
+              'For Startups - Build compliance into your foundation from day one'
             ]
           }
         ],
         faqs: [
           { question: 'What is Quantifier.ai?', answer: 'Quantifier.ai is an AI-powered GRC (Governance, Risk, and Compliance) platform that helps organizations automate compliance workflows, manage risks, and achieve certifications faster.' },
-          { question: 'Which compliance frameworks does Quantifier support?', answer: 'Quantifier supports ISO 27001, SOC 2, GDPR, NIS2, DORA, ISO 9001, NIST, and many more frameworks with cross-mapping capabilities.' },
+          { question: 'Which compliance frameworks does Quantifier support?', answer: 'Quantifier supports ISO 27001, SOC 2, GDPR, NIS2, DORA, ISO 9001, NIST, HIPAA, CCPA and many more frameworks with cross-mapping capabilities.' },
           { question: 'How much time can I save with Quantifier?', answer: 'Organizations typically reduce compliance effort by 80% and achieve certifications 10x faster compared to manual processes.' }
         ],
         internalLinks: [
           { text: 'Product Features', href: '/product/features' },
           { text: 'Pricing Plans', href: '/plans' },
-          { text: 'SOC 2 Automation', href: '/soc2-automation' },
-          { text: 'ISO 27001 Compliance', href: '/iso27001' }
+          { text: 'ISO 27001 Compliance', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2 Automation', href: '/frameworks/soc' },
+          { text: 'NIS 2 Directive', href: '/frameworks/nis-ii' },
+          { text: 'GDPR Compliance', href: '/frameworks/gdpr' }
         ]
       },
       pl: {
-        title: 'Quantifier.ai - Platforma do Zarządzania Zgodnością i Ryzykiem z AI',
-        description: 'Automatyzuj procesy GRC z AI. Zarządzaj ISO 27001, SOC 2, GDPR, NIS2 z jednej platformy. Zmniejsz czas zgodności o 80%.',
-        h1: 'Zarządzanie Zgodnością Wspierane przez AI',
-        subtitle: 'Automatyzuj procesy zgodności, zmniejsz nakład pracy o 80% i szybciej uzyskuj certyfikaty dzięki naszej natywnej platformie GRC opartej na AI.',
+        title: 'Quantifier.ai - Platforma GRC oparta na AI | Zarządzanie Zgodnością i Ryzykiem',
+        description: 'Kompleksowe GRC w jednej platformie AI. Automatyzuj ISO 27001, SOC 2, GDPR, NIS2. Zmniejsz pracę ręczną o 80%. Zaufało nam 250+ firm.',
+        h1: 'Kompleksowe GRC. W jednej platformie AI.',
+        subtitle: 'Twój AI Compliance Officer, który zarządza projektami, zbiera dane i prezentuje wyniki, automatyzując cały proces zgodności.',
         sections: [
           {
-            h2: 'Dlaczego Quantifier',
+            h2: 'Kompleksowy pakiet zgodności oparty na AI',
             content: [
-              'Zbieranie dowodów i analiza luk wspierane przez AI',
-              'Wsparcie wielu standardów: ISO 27001, SOC 2, GDPR, NIS2, DORA',
-              'Ciągłe monitorowanie zgodności',
-              'Automatyczne oceny ryzyka',
-              'Pulpity nawigacyjne i raporty w czasie rzeczywistym'
+              'AI Compliance Officer - Asystent AI monitorujący systemy i identyfikujący problemy',
+              'Zarządzanie dokumentami - Centralne repozytorium z automatyczną kontrolą wersji',
+              'Dostęp oparty na rolach - Interfejsy dla menedżerów, współpracowników i audytorów',
+              'Analityka i dashboardy - Wizualizacja statusu zgodności w czasie rzeczywistym',
+              'Zautomatyzowane przepływy pracy - Automatyzacja procesów zgodności',
+              'Zarządzanie danymi - Bezpieczna obsługa wrażliwych danych'
+            ]
+          },
+          {
+            h2: 'Dlaczego zespoły nam ufają',
+            content: [
+              'Spokój ducha dzięki automatyzacji - Koniec z poganianiem pracowników',
+              'Pożegnaj ręczny nadzór - Agenci AI obsługują szkolenia i zbieranie danych',
+              'Bądź o krok do przodu - Natychmiast zobacz co zrobione, co w toku, gdzie ryzyko'
+            ]
+          },
+          {
+            h2: 'Zgodność napędzana przez ekspertów',
+            content: [
+              'Dołącz do 250+ firm - od startupów po korporacje międzynarodowe',
+              'Łączymy najnowsze technologie z prawdziwą wiedzą ekspercką'
             ]
           }
         ],
         internalLinks: [
-          { text: 'Funkcje Produktu', href: '/product/features' },
-          { text: 'Cennik', href: '/plans' }
+          { text: 'Funkcje produktu', href: '/product/features' },
+          { text: 'Cennik', href: '/plans' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2', href: '/frameworks/soc' },
+          { text: 'NIS 2', href: '/frameworks/nis-ii' },
+          { text: 'GDPR', href: '/frameworks/gdpr' }
+        ]
+      },
+      cs: {
+        title: 'Quantifier.ai - GRC platforma poháněná AI | Správa shody a rizik',
+        description: 'Komplexní GRC v jedné AI platformě. Automatizujte ISO 27001, SOC 2, GDPR, NIS2. Snižte manuální práci o 80%. Důvěřuje nám 250+ firem.',
+        h1: 'Komplexní GRC. V jedné AI platformě.',
+        subtitle: 'Váš AI Compliance Officer, který řídí projekty, sbírá data a prezentuje výsledky, automatizuje celý proces shody.',
+        sections: [
+          {
+            h2: 'Komplexní sada pro shodu poháněná AI',
+            content: [
+              'AI Compliance Officer - AI asistent monitorující systémy a identifikující problémy',
+              'Správa dokumentů - Centrální repozitář s automatickou kontrolou verzí',
+              'Přístup založený na rolích - Rozhraní pro manažery, přispěvatele a auditory',
+              'Analytika a dashboardy - Vizualizace stavu shody v reálném čase'
+            ]
+          },
+          {
+            h2: 'Proč nám týmy důvěřují',
+            content: [
+              'Klid díky automatizaci - Konec s honěním zaměstnanců',
+              'Rozlučte se s manuálním dohledem - AI agenti zajistí školení a sběr dat'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Funkce produktu', href: '/product/features' },
+          { text: 'Ceník', href: '/plans' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2', href: '/frameworks/soc' },
+          { text: 'NIS 2', href: '/frameworks/nis-ii' }
         ]
       }
     },
@@ -1022,10 +1101,36 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
 function generateHtml(locale: string, page: string, pageData: PageData): string {
   const baseUrl = `${BASE_URL}/${locale}`;
   const pageUrl = page === 'index' ? baseUrl : `${baseUrl}/${page}`;
-  const altLocale = locale === 'en' ? 'pl' : 'en';
-  const altUrl = page === 'index' ? `${BASE_URL}/${altLocale}` : `${BASE_URL}/${altLocale}/${page}`;
+  
+  // Generate all locale URLs for hreflang
+  const locales = ['en', 'pl', 'cs'];
+  const hreflangTags = locales.map(l => {
+    const url = page === 'index' ? `${BASE_URL}/${l}` : `${BASE_URL}/${l}/${page}`;
+    return `<link rel="alternate" hreflang="${l}" href="${url}">`;
+  }).join('\n  ');
   
   const schemas = generateSchemas(locale, page, pageData);
+  
+  // Generate main navigation HTML
+  const navLabels = {
+    en: { product: 'Product', frameworks: 'Frameworks', plans: 'Plans', partners: 'Partners', blog: 'Blog', contact: 'Contact' },
+    pl: { product: 'Produkt', frameworks: 'Standardy', plans: 'Cennik', partners: 'Partnerzy', blog: 'Blog', contact: 'Kontakt' },
+    cs: { product: 'Produkt', frameworks: 'Standardy', plans: 'Ceník', partners: 'Partneři', blog: 'Blog', contact: 'Kontakt' }
+  };
+  const labels = navLabels[locale as keyof typeof navLabels] || navLabels.en;
+  
+  const mainNavHtml = `
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="${BASE_URL}/${locale}/product/features">${labels.product}</a></li>
+        <li><a href="${BASE_URL}/${locale}/frameworks">${labels.frameworks}</a></li>
+        <li><a href="${BASE_URL}/${locale}/plans">${labels.plans}</a></li>
+        <li><a href="${BASE_URL}/${locale}/partners">${labels.partners}</a></li>
+        <li><a href="${BASE_URL}/${locale}/blog">${labels.blog}</a></li>
+        <li><a href="${BASE_URL}/${locale}/contact">${labels.contact}</a></li>
+      </ul>
+    </nav>
+  `;
   
   // Generate sections HTML
   const sectionsHtml = pageData.sections.map(section => `
@@ -1038,9 +1143,10 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   `).join('\n');
   
   // Generate FAQ HTML
+  const faqTitle = locale === 'pl' ? 'Często Zadawane Pytania' : (locale === 'cs' ? 'Často Kladené Otázky' : 'Frequently Asked Questions');
   const faqHtml = pageData.faqs ? `
     <section class="faq-section">
-      <h2>${locale === 'pl' ? 'Często Zadawane Pytania' : 'Frequently Asked Questions'}</h2>
+      <h2>${faqTitle}</h2>
       ${pageData.faqs.map(faq => `
         <div class="faq-item">
           <h3>${faq.question}</h3>
@@ -1051,25 +1157,32 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   ` : '';
   
   // Generate internal links HTML
+  const relatedTitle = locale === 'pl' ? 'Powiązane Strony' : (locale === 'cs' ? 'Související Stránky' : 'Related Pages');
   const linksHtml = pageData.internalLinks ? `
     <nav class="internal-links">
-      <h2>${locale === 'pl' ? 'Powiązane Strony' : 'Related Pages'}</h2>
+      <h2>${relatedTitle}</h2>
       <ul>
         ${pageData.internalLinks.map(link => `<li><a href="${BASE_URL}/${locale}${link.href}">${link.text}</a></li>`).join('\n        ')}
       </ul>
     </nav>
   ` : '';
   
+  const ogLocale = locale === 'pl' ? 'pl_PL' : (locale === 'cs' ? 'cs_CZ' : 'en_US');
+  const ctaTitle = locale === 'pl' ? 'Rozpocznij z Quantifier' : (locale === 'cs' ? 'Začněte s Quantifier' : 'Get Started with Quantifier');
+  const ctaText = locale === 'pl' ? 'Dołącz do setek organizacji, które zautomatyzowały swoją zgodność z Quantifier.' : (locale === 'cs' ? 'Připojte se ke stovkám organizací, které automatizovaly svou shodu s Quantifier.' : 'Join hundreds of organizations that have automated their compliance with Quantifier.');
+  const ctaButton = locale === 'pl' ? 'Umów Demo' : (locale === 'cs' ? 'Naplánovat Demo' : 'Schedule a Demo');
+  const footerText = locale === 'pl' ? 'Wszelkie prawa zastrzeżone.' : (locale === 'cs' ? 'Všechna práva vyhrazena.' : 'All rights reserved.');
+
   return `<!DOCTYPE html>
 <html lang="${locale}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
   <title>${pageData.title}</title>
   <meta name="description" content="${pageData.description}">
   <link rel="canonical" href="${pageUrl}">
-  <link rel="alternate" hreflang="${locale}" href="${pageUrl}">
-  <link rel="alternate" hreflang="${altLocale}" href="${altUrl}">
+  ${hreflangTags}
   <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/${page === 'index' ? '' : page}">
   
   <!-- Open Graph -->
@@ -1079,7 +1192,7 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   <meta property="og:site_name" content="Quantifier">
   <meta property="og:type" content="website">
   <meta property="og:image" content="${BASE_URL}/og-image.png">
-  <meta property="og:locale" content="${locale === 'pl' ? 'pl_PL' : 'en_US'}">
+  <meta property="og:locale" content="${ogLocale}">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -1100,6 +1213,8 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
     li { margin-bottom: 0.5rem; color: #475569; }
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    nav[aria-label="Main navigation"] ul { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0; margin-bottom: 2rem; }
+    nav[aria-label="Main navigation"] li a { background: #f1f5f9; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block; }
     .subtitle { font-size: 1.25rem; color: #64748b; margin-bottom: 2rem; }
     section { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
     .faq-section { background: #f8fafc; padding: 1.5rem; border-radius: 8px; }
@@ -1121,6 +1236,8 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   </script>
 </head>
 <body>
+  ${mainNavHtml}
+  
   <header>
     <h1>${pageData.h1}</h1>
     ${pageData.subtitle ? `<p class="subtitle">${pageData.subtitle}</p>` : ''}
@@ -1131,16 +1248,16 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
     ${faqHtml}
     
     <section class="cta-section">
-      <h2>${locale === 'pl' ? 'Rozpocznij z Quantifier' : 'Get Started with Quantifier'}</h2>
-      <p>${locale === 'pl' ? 'Dołącz do setek organizacji, które zautomatyzowały swoją zgodność z Quantifier.' : 'Join hundreds of organizations that have automated their compliance with Quantifier.'}</p>
-      <a href="${BASE_URL}/${locale}/contact" class="cta">${locale === 'pl' ? 'Umów Demo' : 'Schedule a Demo'}</a>
+      <h2>${ctaTitle}</h2>
+      <p>${ctaText}</p>
+      <a href="${BASE_URL}/${locale}/contact" class="cta">${ctaButton}</a>
     </section>
     
     ${linksHtml}
   </main>
   
   <footer>
-    <p>&copy; ${new Date().getFullYear()} Quantifier. ${locale === 'pl' ? 'Wszelkie prawa zastrzeżone.' : 'All rights reserved.'}</p>
+    <p>&copy; ${new Date().getFullYear()} Quantifier. ${footerText}</p>
   </footer>
 </body>
 </html>`;
@@ -1160,7 +1277,7 @@ serve(async (req: Request) => {
     console.log(`Prerendering marketing page: locale=${locale}, page=${page}`);
     
     // Validate locale
-    if (!['en', 'pl'].includes(locale)) {
+    if (!['en', 'pl', 'cs'].includes(locale)) {
       return new Response('Invalid locale', { status: 400, headers: corsHeaders });
     }
     
