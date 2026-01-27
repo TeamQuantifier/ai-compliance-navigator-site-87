@@ -106,9 +106,9 @@ const InsidersSection = () => {
     <section className="py-16 bg-slate-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h3 className="text-3xl font-bold mb-6 text-white">
+          <h2 className="text-3xl font-bold mb-6 text-white">
             {t('insiders.title')}
-          </h3>
+          </h2>
           <p className="text-xl text-slate-300 mb-6">
             {t('insiders.subtitle')}
           </p>
@@ -137,7 +137,10 @@ const InsidersSection = () => {
                   <div className="p-6 h-28 flex items-center justify-center bg-white rounded-md shadow-sm">
                     <img 
                       src={logo.src} 
-                      alt={logo.alt} 
+                      alt={logo.alt}
+                      loading="lazy"
+                      width="160"
+                      height="80"
                       className="max-h-20 max-w-full mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
                     />
                   </div>

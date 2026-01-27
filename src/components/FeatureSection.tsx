@@ -89,7 +89,7 @@ const FeatureSection = () => {
               {/* Certificate of Quality */}
               <div className="mt-8 flex flex-col items-center sm:items-start">
                 <div className="flex items-center space-x-3 mb-3">
-                  <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="TÜV NORD Verified Product Certificate" className="h-20 w-auto" />
+                  <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="TÜV NORD Verified Product Certificate" loading="lazy" width="80" height="80" className="h-20 w-auto" />
                   <div>
                     <h4 className="font-semibold text-slate-800">{t('features.multiFramework.certified')}</h4>
                     <p className="text-sm text-slate-600">{t('features.multiFramework.verifiedBy')}</p>

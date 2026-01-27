@@ -42,7 +42,7 @@ const TrustReasonCard = ({ icon, title, description, delay }: TrustReasonCardPro
     >
       <Card className="p-6 border border-slate-200 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 h-full hover:shadow-lg hover:shadow-innovation-900/20 hover:-translate-y-1">
         <div className="mb-4 text-innovation-400 animate-pulse">{icon}</div>
-        <h5 className="text-xl font-semibold mb-3 text-white">{title}</h5>
+        <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
         <p className="text-slate-300">{description}</p>
       </Card>
     </div>
@@ -106,10 +106,10 @@ const TrustReasonsSection = () => {
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white relative">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white relative">
               {t('trust.title')}
               <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-compliance-600 to-innovation-600"></span>
-            </h4>
+            </h2>
             <p className="text-xl text-slate-300 mt-6">
               {t('trust.subtitle')}
             </p>
@@ -139,10 +139,10 @@ const TrustReasonsSection = () => {
             }`}
           >
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h4 className="text-3xl font-bold mb-4 text-white relative">
+              <h2 className="text-3xl font-bold mb-4 text-white relative">
                 {t('trust.aiInAction')}
                 <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-compliance-600 to-innovation-600"></span>
-              </h4>
+              </h2>
               <p className="text-xl text-slate-300 mt-6">
                 {t('trust.aiSubtitle')}
               </p>
@@ -612,10 +612,10 @@ const TrustReasonsSection = () => {
             }`}
           >
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h4 className="text-3xl font-bold mb-4 text-slate-800 relative">
+              <h2 className="text-3xl font-bold mb-4 text-slate-800 relative">
                 {t('trust.credentials.title')}
                 <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-compliance-600 to-innovation-600"></span>
-              </h4>
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

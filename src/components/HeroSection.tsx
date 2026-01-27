@@ -75,6 +75,8 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/platform-screenshot.png" 
                 alt="Quantifier Platform - Multi-Framework Policy Hub"
+                width="800"
+                height="500"
                 className="relative z-10 rounded-xl shadow-2xl border border-slate-700/50 w-full"
               />
               
@@ -82,6 +84,9 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/ghg-compliance-screenshot.png" 
                 alt="Quantifier Platform - GHG Compliance and Reporting"
+                width="760"
+                height="475"
+                loading="lazy"
                 className="absolute top-[40%] left-[8%] z-0 rounded-xl shadow-xl border border-slate-700/50 w-[95%] opacity-85"
               />
             </div>
@@ -89,9 +94,9 @@ const HeroSection = () => {
           
           {/* Framework icons - centered section */}
           <div className="text-center">
-            <h3 className="text-lg font-medium text-white mb-6">
+            <h2 className="text-lg font-medium text-white mb-6">
               {t('hero.supportingFrameworks')}
-            </h3>
+            </h2>
             <div className="flex flex-wrap justify-center items-center gap-8">
               <Link to={`/${currentLocale}/frameworks/iso-27001`} className="flex flex-col items-center group">
                 <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
