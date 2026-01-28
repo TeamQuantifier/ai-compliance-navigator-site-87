@@ -294,7 +294,8 @@
       "allRightsReserved": "Wszelkie prawa zastrzeżone.",
       "privacy": "Polityka prywatności",
       "terms": "Regulamin",
-      "cookies": "Polityka cookies"
+      "cookies": "Polityka cookies",
+      "cookieSettings": "Ustawienia cookies"
     },
     "contact": {
       "usaPhone": "USA: (+1) 415-799-8206",
@@ -4586,5 +4587,40 @@
       "bookDemo": "Umów demo",
       "seePricing": "Zobacz cennik"
     }
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Cenimy Twoją prywatność",
+      "description": "Używamy plików cookie, aby ulepszyć Twoje wrażenia z przeglądania, zapewnić niezbędną funkcjonalność i analizować ruch na stronie. Możesz dostosować swoje preferencje lub zaakceptować/odrzucić nieistotne pliki cookie.",
+      "acceptAll": "Zaakceptuj wszystkie",
+      "rejectNonEssential": "Odrzuć nieistotne",
+      "managePreferences": "Zarządzaj preferencjami"
+    },
+    "modal": {
+      "title": "Preferencje plików cookie",
+      "description": "Zarządzaj swoimi preferencjami plików cookie. Możesz włączyć lub wyłączyć różne typy plików cookie poniżej.",
+      "saveChoices": "Zapisz wybory",
+      "acceptAll": "Zaakceptuj wszystkie",
+      "rejectAll": "Odrzuć nieistotne"
+    },
+    "categories": {
+      "necessary": {
+        "title": "Niezbędne pliki cookie",
+        "description": "Wymagane do prawidłowego działania strony. Nie można ich wyłączyć."
+      },
+      "analytics": {
+        "title": "Analityczne pliki cookie",
+        "description": "Pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną. Obejmują Google Analytics i Microsoft Clarity."
+      },
+      "marketing": {
+        "title": "Marketingowe pliki cookie",
+        "description": "Używane do dostarczania spersonalizowanych reklam i mierzenia skuteczności kampanii reklamowych."
+      },
+      "preferences": {
+        "title": "Preferencyjne pliki cookie",
+        "description": "Zapamiętują Twoje ustawienia, takie jak język i preferencje regionalne."
+      }
+    }
   }
+}
 }
