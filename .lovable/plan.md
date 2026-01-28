@@ -1,320 +1,505 @@
 
 
-# SEO Crawlability & Semantic Structure Implementation Plan
+# GDPR/ePrivacy-Compliant Cookie Consent System Implementation Plan
 
 ## Executive Summary
 
-The quantifier.ai website is a React SPA (Vite + TypeScript) with an existing bot pre-rendering solution via Supabase Edge Functions. While the prerender system exists, it has gaps that prevent crawlers from seeing the full semantic structure. This plan focuses on **improving the prerender quality** and **adding semantic markup** without changing marketing copy.
+This plan implements a fully GDPR/ePrivacy-compliant cookie consent system for quantifier.ai. The key requirement is **blocking all non-essential tracking scripts until explicit consent is obtained**. Currently, Google Tag Manager, Google Analytics, and Microsoft Clarity load immediately in `index.html` - this violates GDPR/ePrivacy regulations.
 
 ---
 
 ## Current State Analysis
 
-### What Works Well
-- **Bot detection and prerendering**: `vercel.json` routes bots to Edge Functions that return static HTML
-- **Technical SEO tags**: Canonical, hreflang (EN/PL/CS), OG/Twitter cards, robots.txt, sitemap.xml
-- **Schema.org**: Organization, WebSite, SoftwareApplication, FAQPage schemas
-- **Navigation**: Real `<a>` links with text in Navbar/Footer
+### Problem: Scripts Load Before Consent
 
-### Critical Issues Identified
+```html
+<!-- index.html - CURRENT (NON-COMPLIANT) -->
+<head>
+  <!-- GTM loads immediately - VIOLATION -->
+  <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-TF3F89BP');</script>
+  
+  <!-- GA4 loads immediately - VIOLATION -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN6YD4Z1D5"></script>
+  
+  <!-- Clarity loads immediately - VIOLATION -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){...})(window, document, "clarity", "script", "v4vvg5pveg");</script>
+</head>
+```
 
-| Issue | Impact | Root Cause |
-|-------|--------|------------|
-| **Prerender HTML lacks full content** | Bots see only hardcoded subset, not actual page text | Edge Function has static content database, not rendering actual components |
-| **Heading hierarchy problems** | `<h4>` and `<h5>` used instead of `<h2>`/`<h3>` | Semantic HTML patterns not followed in components |
-| **Missing `loading="lazy"` on images** | Slower LCP, missed CWV optimization | Not implemented |
-| **No explicit width/height on images** | CLS issues | Images use CSS classes only |
-| **Footer has incorrect framework URLs** | 404s or wrong pages | Old URL structure `/frameworks/cybersecurity/soc` instead of `/frameworks/soc` |
+### Compliance Checklist (from user request)
+| Requirement | Current | After Implementation |
+|-------------|---------|---------------------|
+| No GA/GTM/Clarity before consent | NO | YES |
+| "Reject non-essential" on first layer | N/A | YES |
+| Consent = positive action (not scroll) | N/A | YES |
+| Change mind from footer in 2 clicks | N/A | YES |
+
+---
+
+## Architecture Overview
+
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           index.html                                     │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  REMOVE: GTM, GA4, Clarity inline scripts                       │    │
+│  │  KEEP: preconnect/dns-prefetch (no tracking, just performance)  │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        React App (App.tsx)                               │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  <CookieConsentProvider>                                         │    │
+│  │    ├── Manages consent state                                     │    │
+│  │    ├── Loads scripts ONLY after consent                          │    │
+│  │    └── Provides context to components                            │    │
+│  │                                                                   │    │
+│  │  <CookieConsentBanner />  (first layer)                          │    │
+│  │    ├── Accept All / Reject Non-Essential / Manage Preferences    │    │
+│  │    └── Links to Privacy & Cookie Policy                          │    │
+│  │                                                                   │    │
+│  │  <CookiePreferencesModal /> (second layer)                       │    │
+│  │    ├── Category toggles (Necessary locked, others default OFF)   │    │
+│  │    └── Save / Accept All / Reject All buttons                    │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     Consent Manager (lib/consent.ts)                     │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  Storage: Cookie "qa_consent" (6 months, JSON)                   │    │
+│  │  API:                                                            │    │
+│  │    - getConsent(): ConsentState                                  │    │
+│  │    - setConsent(categories): void                                │    │
+│  │    - hasConsent(category): boolean                               │    │
+│  │    - onConsentChange(callback): unsubscribe                      │    │
+│  │    - revokeConsent(category): void (+ cookie cleanup)            │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
 ## Implementation Plan
 
-### Phase 1: Fix Heading Hierarchy (P0)
+### Phase 1: Consent Manager Utility
 
-**Problem**: Components use `<h3>`, `<h4>`, `<h5>` where `<h2>` should be used for section headings.
+**File: `src/lib/consent.ts`**
 
-**Changes Required**:
+Core consent management with cookie storage:
 
-| Component | Current | Should Be |
-|-----------|---------|-----------|
-| `HeroSection.tsx` line 24 | `<h1>` | OK |
-| `HeroSection.tsx` line 92 | `<h3>` (frameworks subtitle) | `<h2>` |
-| `FeatureSection.tsx` line 31 | `<h2>` | OK |
-| `FeatureSection.tsx` line 56 | `<h3>` | OK (sub-section) |
-| `TrustReasonsSection.tsx` line 109 | `<h4>` | `<h2>` |
-| `TrustReasonsSection.tsx` line 142 | `<h4>` | `<h2>` |
-| `TrustReasonsSection.tsx` line 45 | `<h5>` (card titles) | `<h3>` |
-| `InsidersSection.tsx` line 109 | `<h3>` | `<h2>` |
-| `CtaSection.tsx` line 21 | `<h2>` | OK |
-| `Index.tsx` line 201 | `<h2>` | OK |
+```typescript
+// Consent state interface
+interface ConsentCategories {
+  necessary: boolean;  // Always true, cannot be changed
+  analytics: boolean;  // GA4, Clarity
+  marketing: boolean;  // GTM (marketing tags)
+  preferences: boolean; // Future: language, theme preferences
+}
 
-**Files to modify**:
-- `src/components/HeroSection.tsx`
-- `src/components/TrustReasonsSection.tsx`
-- `src/components/InsidersSection.tsx`
+interface ConsentState {
+  version: string;      // "2026-01-28" - re-prompt on change
+  timestamp: string;    // ISO date of consent
+  categories: ConsentCategories;
+}
+
+// Constants
+const CONSENT_COOKIE_NAME = 'qa_consent';
+const CONSENT_VERSION = '2026-01-28';
+const CONSENT_EXPIRY_DAYS = 180; // 6 months
+
+// Core functions
+export function getConsent(): ConsentState | null;
+export function setConsent(categories: Partial<ConsentCategories>): void;
+export function hasConsent(category: keyof ConsentCategories): boolean;
+export function needsConsent(): boolean; // true if no consent or version mismatch
+export function onConsentChange(callback: (state: ConsentState) => void): () => void;
+export function clearNonEssentialCookies(): void; // Best-effort cleanup
+```
+
+**Cookie cleanup on revocation:**
+- `_ga`, `_ga_*` (Google Analytics)
+- `_clck`, `_clsk` (Microsoft Clarity)
 
 ---
 
-### Phase 2: Update Prerender Edge Function (P0)
+### Phase 2: Script Loader
 
-**Problem**: The prerender function has a static content database that doesn't match the actual React components' text. Bots see a subset of content.
+**File: `src/lib/script-loader.ts`**
 
-**Solution**: Enhance the prerender function to include more complete content matching the actual page sections.
+Loads tracking scripts only after consent:
 
-**File**: `supabase/functions/prerender-marketing/index.ts`
-
-**Changes**:
-1. Update the `index` page content to include all major sections:
-   - Hero (already has H1)
-   - Features section content
-   - Trust reasons section
-   - Insiders section
-   - Roles section
-   - CTA section
-
-2. Add CS locale support (currently only EN/PL)
-
-3. Ensure FAQ section is included for homepage
-
-**Example structure enhancement**:
 ```typescript
-'index': {
-  en: {
-    title: 'Quantifier.ai - AI-Powered Compliance & Risk Management Platform',
-    description: 'Automate GRC workflows with AI...',
-    h1: 'End-to-end GRC. In one AI-native platform.',
-    subtitle: 'Your AI Compliance Officer that manages projects, collects data and presents results...',
-    sections: [
-      {
-        h2: 'Comprehensive AI-Powered Compliance Suite',
-        content: [
-          'AI Compliance Officer - AI-driven assistant that monitors systems, identifies issues, and suggests remediation.',
-          'Document Management - Centralized repository with automated version control and audit trails.',
-          // ... all 6 feature cards
-        ]
+// Script configurations
+const ANALYTICS_SCRIPTS = [
+  {
+    id: 'ga4',
+    src: 'https://www.googletagmanager.com/gtag/js?id=G-PN6YD4Z1D5',
+    init: () => {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', 'G-PN6YD4Z1D5');
+    }
+  },
+  {
+    id: 'clarity',
+    init: () => {
+      (function(c,l,a,r,i,t,y){...})(window, document, "clarity", "script", "v4vvg5pveg");
+    }
+  }
+];
+
+const MARKETING_SCRIPTS = [
+  {
+    id: 'gtm',
+    init: () => {
+      (function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-TF3F89BP');
+    }
+  }
+];
+
+// Load scripts based on consent
+export function loadConsentedScripts(categories: ConsentCategories): void;
+```
+
+---
+
+### Phase 3: Cookie Consent Context
+
+**File: `src/contexts/CookieConsentContext.tsx`**
+
+React context for consent state:
+
+```typescript
+interface CookieConsentContextType {
+  consent: ConsentState | null;
+  showBanner: boolean;
+  showModal: boolean;
+  acceptAll: () => void;
+  rejectNonEssential: () => void;
+  savePreferences: (categories: Partial<ConsentCategories>) => void;
+  openPreferences: () => void;
+  closePreferences: () => void;
+}
+
+export const CookieConsentProvider: React.FC<{children: ReactNode}>;
+export const useCookieConsent: () => CookieConsentContextType;
+```
+
+---
+
+### Phase 4: Cookie Consent Banner (First Layer)
+
+**File: `src/components/cookies/CookieConsentBanner.tsx`**
+
+UI requirements:
+- Fixed position at bottom of viewport
+- Same visual weight for all buttons (no dark patterns)
+- Links to Privacy Policy and Cookie Policy
+- Respects current locale
+
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│  🍪 We value your privacy                                               │
+│                                                                          │
+│  We use cookies to enhance your browsing experience, provide essential  │
+│  functionality, and analyze site traffic. You can customize your        │
+│  preferences or accept/reject non-essential cookies.                    │
+│                                                                          │
+│  [Privacy Policy] [Cookie Policy]                                       │
+│                                                                          │
+│  ┌──────────────┐  ┌─────────────────────┐  ┌───────────────────────┐   │
+│  │  Accept All  │  │ Reject Non-Essential│  │ Manage Preferences    │   │
+│  └──────────────┘  └─────────────────────┘  └───────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Accessibility:**
+- `role="dialog"` with `aria-labelledby`
+- Focus trap when banner is visible
+- Keyboard navigation (Tab, Enter, Escape)
+
+---
+
+### Phase 5: Cookie Preferences Modal (Second Layer)
+
+**File: `src/components/cookies/CookiePreferencesModal.tsx`**
+
+Uses existing `Dialog` component from shadcn/ui:
+
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│  Cookie Preferences                                            [X]      │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  Necessary Cookies                                    [■■■■■■]  │    │
+│  │  Required for the website to function properly.      (locked)   │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  Analytics Cookies                                    [      ]  │    │
+│  │  Help us understand how visitors interact with our    (off)     │    │
+│  │  website. Includes Google Analytics and Clarity.                │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  Marketing Cookies                                    [      ]  │    │
+│  │  Used to deliver personalized ads and measure        (off)      │    │
+│  │  advertising campaign performance.                              │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  Preference Cookies                                   [      ]  │    │
+│  │  Remember your settings like language and region.    (off)      │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│  ┌──────────────┐  ┌─────────────────────┐  ┌───────────────────────┐   │
+│  │ Save Choices │  │ Reject Non-Essential│  │      Accept All       │   │
+│  └──────────────┘  └─────────────────────┘  └───────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Accessibility:**
+- Focus trap using Radix Dialog
+- ESC closes modal
+- All toggles keyboard accessible
+- `aria-describedby` for each category
+
+---
+
+### Phase 6: Update index.html
+
+**File: `index.html`**
+
+Remove all tracking scripts, keep only performance hints:
+
+```html
+<head>
+  <!-- REMOVED: GTM, GA4, Clarity scripts -->
+  
+  <!-- KEEP: DNS Prefetch & Preconnect (no tracking, just performance) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="https://zcrnfrijqasbrjrxconi.supabase.co">
+  <link rel="dns-prefetch" href="https://www.clarity.ms">
+  
+  <!-- ... rest of head ... -->
+</head>
+
+<body>
+  <!-- REMOVED: GTM noscript iframe -->
+  <div id="root"></div>
+  <!-- ... -->
+</body>
+```
+
+---
+
+### Phase 7: Update App.tsx
+
+Wrap app with consent provider:
+
+```tsx
+import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
+import { CookieConsentBanner } from "@/components/cookies/CookieConsentBanner";
+import { CookiePreferencesModal } from "@/components/cookies/CookiePreferencesModal";
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <HelmetProvider>
+      <TooltipProvider>
+        <BrowserRouter>
+          <AuthProvider>
+            <LanguageProvider>
+              <CookieConsentProvider>  {/* NEW */}
+                <Toaster />
+                <Sonner />
+                <div className="min-h-screen flex flex-col">
+                  <Navbar />
+                  <main className="flex-grow pt-16">
+                    <Routes>...</Routes>
+                  </main>
+                  <Footer />
+                </div>
+                <CookieConsentBanner />  {/* NEW */}
+                <CookiePreferencesModal />  {/* NEW */}
+              </CookieConsentProvider>
+            </LanguageProvider>
+          </AuthProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </HelmetProvider>
+  </QueryClientProvider>
+);
+```
+
+---
+
+### Phase 8: Update Footer.tsx
+
+Add "Cookie Settings" link:
+
+```tsx
+// In the legal links section (around line 196-206)
+<div className="flex flex-wrap gap-4 text-sm">
+  <Link to={`/${currentLocale}/legal/privacy`} className="...">
+    {t('footer.legal.privacy')}
+  </Link>
+  <Link to={`/${currentLocale}/legal/terms`} className="...">
+    {t('footer.legal.terms')}
+  </Link>
+  <Link to={`/${currentLocale}/legal/cookies`} className="...">
+    {t('footer.legal.cookies')}
+  </Link>
+  {/* NEW: Cookie Settings button */}
+  <button 
+    onClick={() => openCookiePreferences()}
+    className="text-muted-foreground hover:text-primary transition-colors"
+  >
+    {t('footer.legal.cookieSettings')}
+  </button>
+</div>
+```
+
+---
+
+### Phase 9: Add Translations
+
+**Files: `public/locales/{en,pl,cs}/translation.json`**
+
+Add new translation keys under `cookieConsent`:
+
+```json
+{
+  "cookieConsent": {
+    "banner": {
+      "title": "We value your privacy",
+      "description": "We use cookies to enhance your browsing experience, provide essential functionality, and analyze site traffic. You can customize your preferences or accept/reject non-essential cookies.",
+      "acceptAll": "Accept All",
+      "rejectNonEssential": "Reject Non-Essential",
+      "managePreferences": "Manage Preferences"
+    },
+    "modal": {
+      "title": "Cookie Preferences",
+      "description": "Manage your cookie preferences. You can enable or disable different types of cookies below.",
+      "saveChoices": "Save Choices",
+      "acceptAll": "Accept All",
+      "rejectAll": "Reject Non-Essential"
+    },
+    "categories": {
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "Required for the website to function properly. Cannot be disabled."
       },
-      {
-        h2: 'Why Teams Trust Us with Compliance',
-        content: [
-          'Peace of Mind, Powered by Automation',
-          'Say Goodbye to Manual Oversight',
-          // ... all trust reasons
-        ]
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors interact with our website. Includes Google Analytics and Microsoft Clarity."
       },
-      {
-        h2: 'Compliance, powered by insiders',
-        content: ['Join 250+ companies from startups to multinational corporations...']
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "Used to deliver personalized advertisements and measure advertising campaign performance."
       },
-      {
-        h2: 'Tailored for Every Role',
-        content: [
-          'For Leadership & Executive (CFO, COO, CISO, Head of Risk)',
-          'For Operational Teams (Compliance, IT, Security, ESG)',
-          'For Internal & External Auditors'
-        ]
-      },
-      {
-        h2: 'Start Your AI-Powered Compliance Journey Today',
-        content: [
-          'For Enterprise - Comprehensive compliance management',
-          'For Mid-Market - Scalable solutions',
-          'For Startups - Build compliance into your foundation'
-        ]
+      "preferences": {
+        "title": "Preference Cookies",
+        "description": "Remember your settings like language and region preferences."
       }
-    ],
-    // Add FAQ for homepage
-    faqs: [
-      { question: 'What is Quantifier.ai?', answer: '...' },
-      { question: 'Which compliance frameworks does Quantifier support?', answer: '...' },
-      { question: 'How much time can I save with Quantifier?', answer: '...' }
-    ],
-    internalLinks: [
-      { text: 'Product Features', href: '/product/features' },
-      { text: 'Pricing Plans', href: '/plans' },
-      { text: 'ISO 27001 Compliance', href: '/frameworks/iso-27001' },
-      { text: 'SOC 2 Automation', href: '/frameworks/soc' },
-      { text: 'NIS 2 Directive', href: '/frameworks/nis-ii' },
-      { text: 'GDPR Compliance', href: '/frameworks/gdpr' }
-    ]
+    }
+  },
+  "footer": {
+    "legal": {
+      "cookieSettings": "Cookie Settings"
+    }
   }
 }
 ```
 
 ---
 
-### Phase 3: Fix Footer Internal Links (P0)
+## Files to Create/Modify
 
-**Problem**: Footer has old URL structure that doesn't match current routing.
-
-**File**: `src/components/Footer.tsx`
-
-**Changes**:
-| Line | Current | Should Be |
-|------|---------|-----------|
-| 86 | `/frameworks/cybersecurity/soc` | `/frameworks/soc` |
-| 91 | `/frameworks/information-security/iso-27001` | `/frameworks/iso-27001` |
-| 96 | `/frameworks/data-security` | `/frameworks/gdpr` |
-| 101 | `/frameworks/cybersecurity/nis-ii` | `/frameworks/nis-ii` |
-
----
-
-### Phase 4: Image Optimization (P1)
-
-**Problem**: Images lack `loading="lazy"`, explicit dimensions, and some have generic alt text.
-
-**Files to modify**:
-- `src/components/HeroSection.tsx` (platform screenshots)
-- `src/components/InsidersSection.tsx` (partner logos)
-- `src/components/FeatureSection.tsx` (TÜV certificate)
-- `src/components/Navbar.tsx` (logo)
-- `src/components/Footer.tsx` (logo)
-
-**Changes**:
-
-1. **Add `loading="lazy"` to below-fold images**:
-```tsx
-// InsidersSection.tsx - partner logos
-<img 
-  src={logo.src} 
-  alt={logo.alt} 
-  loading="lazy"
-  width="160"
-  height="80"
-  className="max-h-20 max-w-full mx-auto object-contain..." 
-/>
-```
-
-2. **Add explicit dimensions to key images**:
-```tsx
-// HeroSection.tsx - hero images (above fold - no lazy)
-<img 
-  src="/lovable-uploads/platform-screenshot.png" 
-  alt="Quantifier Platform - Multi-Framework Policy Hub"
-  width="800"
-  height="500"
-  className="..."
-/>
-```
-
-3. **Keep decorative images with empty alt**:
-```tsx
-// Background/decorative elements
-<img src="..." alt="" role="presentation" />
-```
+| File | Action | Description |
+|------|--------|-------------|
+| `src/lib/consent.ts` | CREATE | Consent manager utility |
+| `src/lib/script-loader.ts` | CREATE | Script loading logic |
+| `src/contexts/CookieConsentContext.tsx` | CREATE | React context for consent |
+| `src/components/cookies/CookieConsentBanner.tsx` | CREATE | First layer banner |
+| `src/components/cookies/CookiePreferencesModal.tsx` | CREATE | Second layer modal |
+| `index.html` | MODIFY | Remove tracking scripts |
+| `src/App.tsx` | MODIFY | Add consent provider |
+| `src/components/Footer.tsx` | MODIFY | Add cookie settings link |
+| `public/locales/en/translation.json` | MODIFY | Add EN translations |
+| `public/locales/pl/translation.json` | MODIFY | Add PL translations |
+| `public/locales/cs/translation.json` | MODIFY | Add CS translations |
 
 ---
 
-### Phase 5: Add CS Locale to Prerender (P1)
+## Technical Details
 
-**Problem**: Prerender function only validates EN/PL but site has CS locale.
+### Cookie Storage Format
 
-**File**: `supabase/functions/prerender-marketing/index.ts`
+```json
+{
+  "version": "2026-01-28",
+  "timestamp": "2026-01-28T14:30:00.000Z",
+  "categories": {
+    "necessary": true,
+    "analytics": false,
+    "marketing": false,
+    "preferences": false
+  }
+}
+```
 
-**Changes**:
-1. Line 1163: Change `['en', 'pl']` to `['en', 'pl', 'cs']`
-2. Add CS translations to `getPageContent()` for all pages
+### Cookie Attributes
+- Name: `qa_consent`
+- Path: `/`
+- SameSite: `Lax`
+- Secure: `true` (in production)
+- Max-Age: `15552000` (180 days = 6 months)
+
+### Script Loading Order
+1. User clicks "Accept All" or enables specific categories
+2. Consent is saved to cookie
+3. `onConsentChange` callback fires
+4. `loadConsentedScripts()` checks each category
+5. Scripts are dynamically injected into `<head>`
+
+### Consent Revocation Flow
+1. User opens preferences modal
+2. Disables a category (e.g., analytics)
+3. Clicks "Save Choices"
+4. `setConsent()` updates cookie
+5. `clearNonEssentialCookies()` removes known tracking cookies
+6. Scripts already loaded cannot be "unloaded", but no new data is sent
 
 ---
 
-### Phase 6: Enhance Navigation for Bots (P1)
+## Validation Checklist
 
-**Problem**: Prerender HTML has internal links but Navbar menu items aren't included.
+After implementation, verify:
 
-**Solution**: Add a semantic nav section to prerender output with key navigation links.
-
-**File**: `supabase/functions/prerender-marketing/index.ts`
-
-Add to `generateHtml()` function:
-```html
-<nav aria-label="Main navigation">
-  <ul>
-    <li><a href="${baseUrl}/product/features">Product</a></li>
-    <li><a href="${baseUrl}/frameworks">Frameworks</a></li>
-    <li><a href="${baseUrl}/plans">Plans</a></li>
-    <li><a href="${baseUrl}/partners">Partners</a></li>
-    <li><a href="${baseUrl}/blog">Blog</a></li>
-    <li><a href="${baseUrl}/contact">Contact</a></li>
-  </ul>
-</nav>
-```
+| Test | Expected Result |
+|------|-----------------|
+| Fresh visit (no consent) | Banner shows, no GA/GTM/Clarity in Network tab |
+| Click "Accept All" | Banner hides, GA/GTM/Clarity load, consent cookie set |
+| Click "Reject Non-Essential" | Banner hides, only necessary cookie set, no tracking |
+| Open preferences from footer | Modal opens in 1 click |
+| Change consent in modal | Cookie updated, tracking cookies cleared if revoked |
+| Reload page after consent | Banner stays hidden, scripts load per consent |
+| Change `CONSENT_VERSION` | Banner re-appears on next visit |
 
 ---
 
-## Files to Modify Summary
+## Edge Cases Handled
 
-| File | Changes | Priority |
-|------|---------|----------|
-| `src/components/HeroSection.tsx` | Change `<h3>` to `<h2>` line 92, add image dimensions | P0 |
-| `src/components/TrustReasonsSection.tsx` | Change `<h4>` to `<h2>`, `<h5>` to `<h3>` | P0 |
-| `src/components/InsidersSection.tsx` | Change `<h3>` to `<h2>`, add lazy loading + dimensions | P0/P1 |
-| `src/components/Footer.tsx` | Fix 4 framework URLs | P0 |
-| `supabase/functions/prerender-marketing/index.ts` | Enhance homepage content, add CS locale, add nav | P0/P1 |
-| `src/components/FeatureSection.tsx` | Add lazy loading to TÜV certificate image | P1 |
-| `src/components/Navbar.tsx` | Add width/height to logo images | P1 |
-
----
-
-## Validation Checklist (Post-Deploy)
-
-### Immediate Tests
-```bash
-# Fetch raw HTML as Googlebot
-curl -A "Googlebot" https://quantifier.ai/en/ | grep -E "<h1>|<h2>|<h3>"
-
-# Check for H1
-curl -A "Googlebot" https://quantifier.ai/en/ | grep -c "<h1>"  # Should be 1
-
-# Check for H2s
-curl -A "Googlebot" https://quantifier.ai/en/ | grep -c "<h2>"  # Should be 5+
-
-# Check internal links
-curl -A "Googlebot" https://quantifier.ai/en/ | grep -E "href=.*/(product|frameworks|plans|contact)"
-```
-
-### Google Search Console
-1. URL Inspection on `https://quantifier.ai/en/`
-2. Verify "Rendered HTML" shows H1, H2s, link text
-3. Check Coverage report for any new issues
-
-### Rich Results Test
-- Test homepage for Organization, WebSite schemas
-- Test framework pages for FAQPage schema
-
-### Core Web Vitals
-- Run Lighthouse on homepage before/after
-- Check CLS specifically for image dimension changes
-
----
-
-## Technical Notes
-
-### Why Not Full SSR/SSG?
-The current stack (Vite + React) is a SPA. Migrating to Next.js or Astro would be a major refactor. The prerender-for-bots approach is a valid alternative that:
-- Serves optimized static HTML to crawlers
-- Maintains the React SPA experience for users
-- Is already implemented and working
-
-The focus here is **enhancing the prerender quality**, not changing the architecture.
-
-### Heading Hierarchy Rationale
-```
-<h1> End-to-end GRC. In one AI-native platform. (Hero - 1 per page)
-  <h2> We support key compliance standards (Hero sub-section)
-  <h2> Comprehensive AI-Powered Compliance Suite (Features)
-    <h3> AI Compliance Officer (Feature cards)
-    <h3> Document Management
-    ...
-  <h2> Why Teams Trust Us with Compliance (Trust)
-    <h3> Peace of Mind, Powered by Automation (Trust cards)
-    ...
-  <h2> AI-Powered Compliance in Action (Platform screenshots)
-  <h2> Compliance, powered by insiders (Partners)
-  <h2> Tailored for Every Role (Roles)
-    <h3> For Leadership & Executive
-    ...
-  <h2> Start Your AI-Powered Compliance Journey Today (CTA)
-    <h3> For Enterprise
-    ...
-```
+1. **Bot/Crawler visits**: Banner shows but crawlers typically don't interact; no tracking loads
+2. **JavaScript disabled**: No tracking loads (compliant by default)
+3. **Cookie blocked by browser**: Consent state persists in memory for session; re-prompts next visit
+4. **Version change**: If `CONSENT_VERSION` changes, `needsConsent()` returns true, banner re-appears
 
