@@ -295,7 +295,8 @@
       "allRightsReserved": "All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
+      "cookies": "Cookie Policy",
+      "cookieSettings": "Cookie Settings"
     },
     "contact": {
       "usaPhone": "USA: (+1) 415-799-8206",
@@ -4762,5 +4763,40 @@
       "bookDemo": "Book a Demo",
       "seePricing": "View Pricing"
     }
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "We value your privacy",
+      "description": "We use cookies to enhance your browsing experience, provide essential functionality, and analyze site traffic. You can customize your preferences or accept/reject non-essential cookies.",
+      "acceptAll": "Accept All",
+      "rejectNonEssential": "Reject Non-Essential",
+      "managePreferences": "Manage Preferences"
+    },
+    "modal": {
+      "title": "Cookie Preferences",
+      "description": "Manage your cookie preferences. You can enable or disable different types of cookies below.",
+      "saveChoices": "Save Choices",
+      "acceptAll": "Accept All",
+      "rejectAll": "Reject Non-Essential"
+    },
+    "categories": {
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "Required for the website to function properly. Cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors interact with our website. Includes Google Analytics and Microsoft Clarity."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "Used to deliver personalized advertisements and measure advertising campaign performance."
+      },
+      "preferences": {
+        "title": "Preference Cookies",
+        "description": "Remember your settings like language and region preferences."
+      }
+    }
   }
+}
 }

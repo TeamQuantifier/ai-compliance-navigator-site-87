@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,9 +6,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { AuthProvider } from "./contexts/AuthContext";
+import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { RedirectToPreferredLocale } from "./components/RedirectToPreferredLocale";
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
+import { CookieConsentBanner } from "./components/cookies/CookieConsentBanner";
+import { CookiePreferencesModal } from "./components/cookies/CookiePreferencesModal";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -79,24 +81,25 @@ const App = () => (
         <BrowserRouter>
           <AuthProvider>
             <LanguageProvider>
-              <Toaster />
-              <Sonner />
-              <div className="min-h-screen flex flex-col">
-                <Navbar />
-                <main className="flex-grow pt-16">
-                  <Routes>
-                  {/* Redirect root to preferred locale */}
-                  <Route path="/" element={<RedirectToPreferredLocale />} />
-                  
-                  {/* Locale-based routes */}
-                  <Route path="/:locale" element={<Index />} />
-              
-                  {/* Product routes */}
-                  <Route path="/:locale/product" element={<Features />} />
-                  <Route path="/:locale/product/overview" element={<ProductOverview />} />
-                  <Route path="/:locale/product/features" element={<Features />} />
-                  <Route path="/:locale/product/ai-compliance-officer" element={<Features />} />
-                  <Route path="/:locale/product/task-data-management" element={<Features />} />
+              <CookieConsentProvider>
+                <Toaster />
+                <Sonner />
+                <div className="min-h-screen flex flex-col">
+                  <Navbar />
+                  <main className="flex-grow pt-16">
+                    <Routes>
+                    {/* Redirect root to preferred locale */}
+                    <Route path="/" element={<RedirectToPreferredLocale />} />
+                    
+                    {/* Locale-based routes */}
+                    <Route path="/:locale" element={<Index />} />
+                
+                    {/* Product routes */}
+                    <Route path="/:locale/product" element={<Features />} />
+                    <Route path="/:locale/product/overview" element={<ProductOverview />} />
+                    <Route path="/:locale/product/features" element={<Features />} />
+                    <Route path="/:locale/product/ai-compliance-officer" element={<Features />} />
+                    <Route path="/:locale/product/task-data-management" element={<Features />} />
                   <Route path="/:locale/product/documents-management" element={<Features />} />
                   <Route path="/:locale/product/value-chain" element={<Features />} />
                   <Route path="/:locale/product/risk-assessment" element={<Features />} />
@@ -188,13 +191,16 @@ const App = () => (
                     <Route path="settings" element={<div className="p-6"><h1 className="text-3xl font-bold">Settings (Coming Soon)</h1></div>} />
                   </Route>
                   
-                  {/* Catch-all route */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          </LanguageProvider>
+                    {/* Catch-all route */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <Footer />
+              </div>
+              <CookieConsentBanner />
+              <CookiePreferencesModal />
+              </CookieConsentProvider>
+            </LanguageProvider>
           </AuthProvider>
         </BrowserRouter>
       </TooltipProvider>
