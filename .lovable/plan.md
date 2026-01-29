@@ -1,505 +1,200 @@
 
 
-# GDPR/ePrivacy-Compliant Cookie Consent System Implementation Plan
+# Plan: Napraw wyświetlanie strony (tłumaczenia, logo, cookie consent)
 
-## Executive Summary
+## Zidentyfikowane problemy
 
-This plan implements a fully GDPR/ePrivacy-compliant cookie consent system for quantifier.ai. The key requirement is **blocking all non-essential tracking scripts until explicit consent is obtained**. Currently, Google Tag Manager, Google Analytics, and Microsoft Clarity load immediately in `index.html` - this violates GDPR/ePrivacy regulations.
+### 1. Tłumaczenia pokazują klucze zamiast tekstu
+**Przyczyna**: Aplikacja renderuje się zanim pliki tłumaczeń zostaną załadowane. W konfiguracji i18n ustawiono `useSuspense: false`, co oznacza że komponenty renderują się natychmiast, nie czekając na załadowanie tłumaczeń.
 
----
+### 2. Logo jest zamazane/dziwnie wyświetlane
+**Przyczyna**: Konflikt między atrybutami `width`/`height` a klasami CSS. Obecnie logo ma `width="200" height="48"` ale CSS `h-12` może powodować problemy z proporcjami.
 
-## Current State Analysis
-
-### Problem: Scripts Load Before Consent
-
-```html
-<!-- index.html - CURRENT (NON-COMPLIANT) -->
-<head>
-  <!-- GTM loads immediately - VIOLATION -->
-  <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-TF3F89BP');</script>
-  
-  <!-- GA4 loads immediately - VIOLATION -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN6YD4Z1D5"></script>
-  
-  <!-- Clarity loads immediately - VIOLATION -->
-  <script type="text/javascript">(function(c,l,a,r,i,t,y){...})(window, document, "clarity", "script", "v4vvg5pveg");</script>
-</head>
-```
-
-### Compliance Checklist (from user request)
-| Requirement | Current | After Implementation |
-|-------------|---------|---------------------|
-| No GA/GTM/Clarity before consent | NO | YES |
-| "Reject non-essential" on first layer | N/A | YES |
-| Consent = positive action (not scroll) | N/A | YES |
-| Change mind from footer in 2 clicks | N/A | YES |
+### 3. Cookie consent jest za skomplikowane
+**Wymaganie użytkownika**: Prosty popup z jednym przyciskiem "Accept" zamiast pełnej implementacji GDPR z wieloma przyciskami.
 
 ---
 
-## Architecture Overview
+## Rozwiązania
 
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           index.html                                     │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  REMOVE: GTM, GA4, Clarity inline scripts                       │    │
-│  │  KEEP: preconnect/dns-prefetch (no tracking, just performance)  │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        React App (App.tsx)                               │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  <CookieConsentProvider>                                         │    │
-│  │    ├── Manages consent state                                     │    │
-│  │    ├── Loads scripts ONLY after consent                          │    │
-│  │    └── Provides context to components                            │    │
-│  │                                                                   │    │
-│  │  <CookieConsentBanner />  (first layer)                          │    │
-│  │    ├── Accept All / Reject Non-Essential / Manage Preferences    │    │
-│  │    └── Links to Privacy & Cookie Policy                          │    │
-│  │                                                                   │    │
-│  │  <CookiePreferencesModal /> (second layer)                       │    │
-│  │    ├── Category toggles (Necessary locked, others default OFF)   │    │
-│  │    └── Save / Accept All / Reject All buttons                    │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                     Consent Manager (lib/consent.ts)                     │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  Storage: Cookie "qa_consent" (6 months, JSON)                   │    │
-│  │  API:                                                            │    │
-│  │    - getConsent(): ConsentState                                  │    │
-│  │    - setConsent(categories): void                                │    │
-│  │    - hasConsent(category): boolean                               │    │
-│  │    - onConsentChange(callback): unsubscribe                      │    │
-│  │    - revokeConsent(category): void (+ cookie cleanup)            │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+### Faza 1: Napraw ładowanie tłumaczeń (PRIORYTET KRYTYCZNY)
 
----
+**Plik: `src/contexts/LanguageContext.tsx`**
 
-## Implementation Plan
-
-### Phase 1: Consent Manager Utility
-
-**File: `src/lib/consent.ts`**
-
-Core consent management with cookie storage:
-
-```typescript
-// Consent state interface
-interface ConsentCategories {
-  necessary: boolean;  // Always true, cannot be changed
-  analytics: boolean;  // GA4, Clarity
-  marketing: boolean;  // GTM (marketing tags)
-  preferences: boolean; // Future: language, theme preferences
-}
-
-interface ConsentState {
-  version: string;      // "2026-01-28" - re-prompt on change
-  timestamp: string;    // ISO date of consent
-  categories: ConsentCategories;
-}
-
-// Constants
-const CONSENT_COOKIE_NAME = 'qa_consent';
-const CONSENT_VERSION = '2026-01-28';
-const CONSENT_EXPIRY_DAYS = 180; // 6 months
-
-// Core functions
-export function getConsent(): ConsentState | null;
-export function setConsent(categories: Partial<ConsentCategories>): void;
-export function hasConsent(category: keyof ConsentCategories): boolean;
-export function needsConsent(): boolean; // true if no consent or version mismatch
-export function onConsentChange(callback: (state: ConsentState) => void): () => void;
-export function clearNonEssentialCookies(): void; // Best-effort cleanup
-```
-
-**Cookie cleanup on revocation:**
-- `_ga`, `_ga_*` (Google Analytics)
-- `_clck`, `_clsk` (Microsoft Clarity)
-
----
-
-### Phase 2: Script Loader
-
-**File: `src/lib/script-loader.ts`**
-
-Loads tracking scripts only after consent:
-
-```typescript
-// Script configurations
-const ANALYTICS_SCRIPTS = [
-  {
-    id: 'ga4',
-    src: 'https://www.googletagmanager.com/gtag/js?id=G-PN6YD4Z1D5',
-    init: () => {
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function() { dataLayer.push(arguments); };
-      gtag('js', new Date());
-      gtag('config', 'G-PN6YD4Z1D5');
-    }
-  },
-  {
-    id: 'clarity',
-    init: () => {
-      (function(c,l,a,r,i,t,y){...})(window, document, "clarity", "script", "v4vvg5pveg");
-    }
-  }
-];
-
-const MARKETING_SCRIPTS = [
-  {
-    id: 'gtm',
-    init: () => {
-      (function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-TF3F89BP');
-    }
-  }
-];
-
-// Load scripts based on consent
-export function loadConsentedScripts(categories: ConsentCategories): void;
-```
-
----
-
-### Phase 3: Cookie Consent Context
-
-**File: `src/contexts/CookieConsentContext.tsx`**
-
-React context for consent state:
-
-```typescript
-interface CookieConsentContextType {
-  consent: ConsentState | null;
-  showBanner: boolean;
-  showModal: boolean;
-  acceptAll: () => void;
-  rejectNonEssential: () => void;
-  savePreferences: (categories: Partial<ConsentCategories>) => void;
-  openPreferences: () => void;
-  closePreferences: () => void;
-}
-
-export const CookieConsentProvider: React.FC<{children: ReactNode}>;
-export const useCookieConsent: () => CookieConsentContextType;
-```
-
----
-
-### Phase 4: Cookie Consent Banner (First Layer)
-
-**File: `src/components/cookies/CookieConsentBanner.tsx`**
-
-UI requirements:
-- Fixed position at bottom of viewport
-- Same visual weight for all buttons (no dark patterns)
-- Links to Privacy Policy and Cookie Policy
-- Respects current locale
-
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│  🍪 We value your privacy                                               │
-│                                                                          │
-│  We use cookies to enhance your browsing experience, provide essential  │
-│  functionality, and analyze site traffic. You can customize your        │
-│  preferences or accept/reject non-essential cookies.                    │
-│                                                                          │
-│  [Privacy Policy] [Cookie Policy]                                       │
-│                                                                          │
-│  ┌──────────────┐  ┌─────────────────────┐  ┌───────────────────────┐   │
-│  │  Accept All  │  │ Reject Non-Essential│  │ Manage Preferences    │   │
-│  └──────────────┘  └─────────────────────┘  └───────────────────────┘   │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-**Accessibility:**
-- `role="dialog"` with `aria-labelledby`
-- Focus trap when banner is visible
-- Keyboard navigation (Tab, Enter, Escape)
-
----
-
-### Phase 5: Cookie Preferences Modal (Second Layer)
-
-**File: `src/components/cookies/CookiePreferencesModal.tsx`**
-
-Uses existing `Dialog` component from shadcn/ui:
-
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│  Cookie Preferences                                            [X]      │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  Necessary Cookies                                    [■■■■■■]  │    │
-│  │  Required for the website to function properly.      (locked)   │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                                                          │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  Analytics Cookies                                    [      ]  │    │
-│  │  Help us understand how visitors interact with our    (off)     │    │
-│  │  website. Includes Google Analytics and Clarity.                │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                                                          │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  Marketing Cookies                                    [      ]  │    │
-│  │  Used to deliver personalized ads and measure        (off)      │    │
-│  │  advertising campaign performance.                              │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                                                          │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  Preference Cookies                                   [      ]  │    │
-│  │  Remember your settings like language and region.    (off)      │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                                                          │
-├─────────────────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌─────────────────────┐  ┌───────────────────────┐   │
-│  │ Save Choices │  │ Reject Non-Essential│  │      Accept All       │   │
-│  └──────────────┘  └─────────────────────┘  └───────────────────────┘   │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-**Accessibility:**
-- Focus trap using Radix Dialog
-- ESC closes modal
-- All toggles keyboard accessible
-- `aria-describedby` for each category
-
----
-
-### Phase 6: Update index.html
-
-**File: `index.html`**
-
-Remove all tracking scripts, keep only performance hints:
-
-```html
-<head>
-  <!-- REMOVED: GTM, GA4, Clarity scripts -->
-  
-  <!-- KEEP: DNS Prefetch & Preconnect (no tracking, just performance) -->
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-  <link rel="dns-prefetch" href="https://zcrnfrijqasbrjrxconi.supabase.co">
-  <link rel="dns-prefetch" href="https://www.clarity.ms">
-  
-  <!-- ... rest of head ... -->
-</head>
-
-<body>
-  <!-- REMOVED: GTM noscript iframe -->
-  <div id="root"></div>
-  <!-- ... -->
-</body>
-```
-
----
-
-### Phase 7: Update App.tsx
-
-Wrap app with consent provider:
+Dodać mechanizm oczekiwania na załadowanie tłumaczeń przed renderowaniem treści:
 
 ```tsx
-import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
-import { CookieConsentBanner } from "@/components/cookies/CookieConsentBanner";
-import { CookiePreferencesModal } from "@/components/cookies/CookiePreferencesModal";
+// Dodać state dla gotowości tłumaczeń
+const [isReady, setIsReady] = useState(false);
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
-      <TooltipProvider>
-        <BrowserRouter>
-          <AuthProvider>
-            <LanguageProvider>
-              <CookieConsentProvider>  {/* NEW */}
-                <Toaster />
-                <Sonner />
-                <div className="min-h-screen flex flex-col">
-                  <Navbar />
-                  <main className="flex-grow pt-16">
-                    <Routes>...</Routes>
-                  </main>
-                  <Footer />
-                </div>
-                <CookieConsentBanner />  {/* NEW */}
-                <CookiePreferencesModal />  {/* NEW */}
-              </CookieConsentProvider>
-            </LanguageProvider>
-          </AuthProvider>
-        </BrowserRouter>
-      </TooltipProvider>
-    </HelmetProvider>
-  </QueryClientProvider>
-);
+// W useEffect sprawdzić czy tłumaczenia są załadowane
+useEffect(() => {
+  const checkReady = () => {
+    if (i18n.isInitialized && i18n.hasLoadedNamespace('translation')) {
+      setIsReady(true);
+    }
+  };
+  
+  checkReady();
+  i18n.on('loaded', checkReady);
+  
+  return () => {
+    i18n.off('loaded', checkReady);
+  };
+}, [i18n]);
+
+// Eksportować isReady w kontekście
 ```
 
----
+**Plik: `src/App.tsx`**
 
-### Phase 8: Update Footer.tsx
-
-Add "Cookie Settings" link:
+Dodać loading state który czeka na gotowość tłumaczeń:
 
 ```tsx
-// In the legal links section (around line 196-206)
-<div className="flex flex-wrap gap-4 text-sm">
-  <Link to={`/${currentLocale}/legal/privacy`} className="...">
-    {t('footer.legal.privacy')}
-  </Link>
-  <Link to={`/${currentLocale}/legal/terms`} className="...">
-    {t('footer.legal.terms')}
-  </Link>
-  <Link to={`/${currentLocale}/legal/cookies`} className="...">
-    {t('footer.legal.cookies')}
-  </Link>
-  {/* NEW: Cookie Settings button */}
-  <button 
-    onClick={() => openCookiePreferences()}
-    className="text-muted-foreground hover:text-primary transition-colors"
-  >
-    {t('footer.legal.cookieSettings')}
-  </button>
-</div>
+// Wewnątrz LanguageProvider dodać wrapper który pokazuje loading
+// dopóki tłumaczenia się nie załadują
+
+// Opcja 1: Proste rozwiązanie - pokazać pusty div podczas ładowania
+{isLoading ? (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full" />
+  </div>
+) : (
+  // reszta aplikacji
+)}
 ```
 
 ---
 
-### Phase 9: Add Translations
+### Faza 2: Napraw wyświetlanie logo
 
-**Files: `public/locales/{en,pl,cs}/translation.json`**
+**Plik: `src/components/Navbar.tsx`**
 
-Add new translation keys under `cookieConsent`:
+Zmienić atrybuty logo aby były spójne:
+
+```tsx
+{/* Full logotype on desktop - PRZED */}
+<img 
+  src="/logo-quantifier.png" 
+  alt="Quantifier.ai"
+  width="200"
+  height="48"
+  className="h-12 hidden sm:block" 
+/>
+
+{/* Full logotype on desktop - PO */}
+<img 
+  src="/logo-quantifier.png" 
+  alt="Quantifier.ai"
+  className="h-10 w-auto hidden sm:block" 
+/>
+
+{/* Sygnet only on mobile - PRZED */}
+<img 
+  src="/logo-sygnet.png" 
+  alt="Quantifier.ai"
+  width="48"
+  height="48"
+  className="h-12 w-12 sm:hidden" 
+/>
+
+{/* Sygnet only on mobile - PO */}
+<img 
+  src="/logo-sygnet.png" 
+  alt="Quantifier.ai"
+  className="h-10 w-10 sm:hidden" 
+/>
+```
+
+Usunąć explicit `width`/`height` atrybuty i polegać na CSS `w-auto` dla zachowania proporcji.
+
+---
+
+### Faza 3: Uprość Cookie Consent do prostego "Accept"
+
+**Plik: `src/components/cookies/CookieConsentBanner.tsx`**
+
+Zmienić na prosty banner z jednym przyciskiem:
+
+```tsx
+export function CookieConsentBanner() {
+  const { showBanner, acceptAll } = useCookieConsent();
+  const { t, currentLocale } = useLanguage();
+
+  if (!showBanner) return null;
+
+  return (
+    <div
+      role="dialog"
+      aria-labelledby="cookie-banner-title"
+      className="fixed bottom-0 left-0 right-0 z-[100] bg-background border-t border-border shadow-lg animate-in slide-in-from-bottom duration-300"
+    >
+      <div className="container mx-auto px-4 py-4 max-w-4xl">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground text-center sm:text-left">
+            {t('cookieConsent.banner.simpleDescription')}
+            {' '}
+            <Link
+              to={`/${currentLocale}/legal/privacy`}
+              className="text-primary hover:underline"
+            >
+              {t('footer.legal.privacy')}
+            </Link>
+          </p>
+          <Button onClick={acceptAll} size="sm">
+            {t('cookieConsent.banner.accept')}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+**Usunąć plik: `src/components/cookies/CookiePreferencesModal.tsx`**
+(Nie potrzebny przy uproszczonej wersji)
+
+**Plik: `src/App.tsx`**
+
+Usunąć import i użycie `CookiePreferencesModal`.
+
+**Plik: `src/components/Footer.tsx`**
+
+Usunąć przycisk "Cookie Settings" z footera.
+
+**Pliki tłumaczeń**: Dodać nowe klucze:
 
 ```json
-{
-  "cookieConsent": {
-    "banner": {
-      "title": "We value your privacy",
-      "description": "We use cookies to enhance your browsing experience, provide essential functionality, and analyze site traffic. You can customize your preferences or accept/reject non-essential cookies.",
-      "acceptAll": "Accept All",
-      "rejectNonEssential": "Reject Non-Essential",
-      "managePreferences": "Manage Preferences"
-    },
-    "modal": {
-      "title": "Cookie Preferences",
-      "description": "Manage your cookie preferences. You can enable or disable different types of cookies below.",
-      "saveChoices": "Save Choices",
-      "acceptAll": "Accept All",
-      "rejectAll": "Reject Non-Essential"
-    },
-    "categories": {
-      "necessary": {
-        "title": "Necessary Cookies",
-        "description": "Required for the website to function properly. Cannot be disabled."
-      },
-      "analytics": {
-        "title": "Analytics Cookies",
-        "description": "Help us understand how visitors interact with our website. Includes Google Analytics and Microsoft Clarity."
-      },
-      "marketing": {
-        "title": "Marketing Cookies",
-        "description": "Used to deliver personalized advertisements and measure advertising campaign performance."
-      },
-      "preferences": {
-        "title": "Preference Cookies",
-        "description": "Remember your settings like language and region preferences."
-      }
-    }
-  },
-  "footer": {
-    "legal": {
-      "cookieSettings": "Cookie Settings"
-    }
+"cookieConsent": {
+  "banner": {
+    "simpleDescription": "We use cookies to enhance your browsing experience.",
+    "accept": "Accept"
   }
 }
 ```
 
 ---
 
-## Files to Create/Modify
+## Podsumowanie zmian w plikach
 
-| File | Action | Description |
-|------|--------|-------------|
-| `src/lib/consent.ts` | CREATE | Consent manager utility |
-| `src/lib/script-loader.ts` | CREATE | Script loading logic |
-| `src/contexts/CookieConsentContext.tsx` | CREATE | React context for consent |
-| `src/components/cookies/CookieConsentBanner.tsx` | CREATE | First layer banner |
-| `src/components/cookies/CookiePreferencesModal.tsx` | CREATE | Second layer modal |
-| `index.html` | MODIFY | Remove tracking scripts |
-| `src/App.tsx` | MODIFY | Add consent provider |
-| `src/components/Footer.tsx` | MODIFY | Add cookie settings link |
-| `public/locales/en/translation.json` | MODIFY | Add EN translations |
-| `public/locales/pl/translation.json` | MODIFY | Add PL translations |
-| `public/locales/cs/translation.json` | MODIFY | Add CS translations |
-
----
-
-## Technical Details
-
-### Cookie Storage Format
-
-```json
-{
-  "version": "2026-01-28",
-  "timestamp": "2026-01-28T14:30:00.000Z",
-  "categories": {
-    "necessary": true,
-    "analytics": false,
-    "marketing": false,
-    "preferences": false
-  }
-}
-```
-
-### Cookie Attributes
-- Name: `qa_consent`
-- Path: `/`
-- SameSite: `Lax`
-- Secure: `true` (in production)
-- Max-Age: `15552000` (180 days = 6 months)
-
-### Script Loading Order
-1. User clicks "Accept All" or enables specific categories
-2. Consent is saved to cookie
-3. `onConsentChange` callback fires
-4. `loadConsentedScripts()` checks each category
-5. Scripts are dynamically injected into `<head>`
-
-### Consent Revocation Flow
-1. User opens preferences modal
-2. Disables a category (e.g., analytics)
-3. Clicks "Save Choices"
-4. `setConsent()` updates cookie
-5. `clearNonEssentialCookies()` removes known tracking cookies
-6. Scripts already loaded cannot be "unloaded", but no new data is sent
+| Plik | Zmiana |
+|------|--------|
+| `src/contexts/LanguageContext.tsx` | Dodać `isReady` state i event listener na załadowanie tłumaczeń |
+| `src/App.tsx` | Dodać loading spinner gdy tłumaczenia się ładują, usunąć `CookiePreferencesModal` |
+| `src/components/Navbar.tsx` | Poprawić atrybuty logo (usunąć width/height, użyć w-auto) |
+| `src/components/cookies/CookieConsentBanner.tsx` | Uprościć do jednego przycisku "Accept" |
+| `src/components/cookies/CookiePreferencesModal.tsx` | USUNĄĆ |
+| `src/components/Footer.tsx` | Usunąć przycisk "Cookie Settings" |
+| `src/contexts/CookieConsentContext.tsx` | Usunąć `showModal`, `openPreferences`, `closePreferences` |
+| `public/locales/en/translation.json` | Dodać `cookieConsent.banner.simpleDescription` i `accept` |
+| `public/locales/pl/translation.json` | Dodać polskie tłumaczenia |
+| `public/locales/cs/translation.json` | Dodać czeskie tłumaczenia |
 
 ---
 
-## Validation Checklist
+## Oczekiwany rezultat
 
-After implementation, verify:
-
-| Test | Expected Result |
-|------|-----------------|
-| Fresh visit (no consent) | Banner shows, no GA/GTM/Clarity in Network tab |
-| Click "Accept All" | Banner hides, GA/GTM/Clarity load, consent cookie set |
-| Click "Reject Non-Essential" | Banner hides, only necessary cookie set, no tracking |
-| Open preferences from footer | Modal opens in 1 click |
-| Change consent in modal | Cookie updated, tracking cookies cleared if revoked |
-| Reload page after consent | Banner stays hidden, scripts load per consent |
-| Change `CONSENT_VERSION` | Banner re-appears on next visit |
-
----
-
-## Edge Cases Handled
-
-1. **Bot/Crawler visits**: Banner shows but crawlers typically don't interact; no tracking loads
-2. **JavaScript disabled**: No tracking loads (compliant by default)
-3. **Cookie blocked by browser**: Consent state persists in memory for session; re-prompts next visit
-4. **Version change**: If `CONSENT_VERSION` changes, `needsConsent()` returns true, banner re-appears
+1. **Tłumaczenia**: Strona pokaże krótki loading spinner zanim załadują się tłumaczenia, potem wyświetli poprawny tekst
+2. **Logo**: Wyraźne logo bez rozmycia, zachowujące proporcje
+3. **Cookie consent**: Prosty pasek na dole strony z jednym przyciskiem "Accept"
 
