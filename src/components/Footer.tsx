@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, MapPin, Settings } from 'lucide-react';
+import { Linkedin, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -7,14 +7,12 @@ import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCookieConsent } from '@/contexts/CookieConsentContext';
 
 const Footer = () => {
   const { t, currentLocale } = useLanguage();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const { openPreferences } = useCookieConsent();
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,9 +60,7 @@ const Footer = () => {
               <img 
                 src="/logo-quantifier.png" 
                 alt="Quantifier.ai" 
-                width="180"
-                height="44"
-                className="h-11" 
+                className="h-10 w-auto" 
               />
             </Link>
             
@@ -205,13 +201,6 @@ const Footer = () => {
             <Link to={`/${currentLocale}/legal/cookies`} className="text-muted-foreground hover:text-primary transition-colors">
               {t('footer.legal.cookies')}
             </Link>
-            <button
-              onClick={openPreferences}
-              className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
-            >
-              <Settings className="h-3 w-3" />
-              {t('footer.legal.cookieSettings')}
-            </button>
           </div>
         </div>
       </div>

@@ -3904,36 +3904,8 @@
   },
   "cookieConsent": {
     "banner": {
-      "title": "Ceníme si vašeho soukromí",
-      "description": "Používáme cookies pro zlepšení vašeho zážitku z prohlížení, zajištění základní funkcionality a analýzu návštěvnosti. Můžete si přizpůsobit své preference nebo přijmout/odmítnout nepodstatné cookies.",
-      "acceptAll": "Přijmout vše",
-      "rejectNonEssential": "Odmítnout nepodstatné",
-      "managePreferences": "Spravovat preference"
-    },
-    "modal": {
-      "title": "Preference cookies",
-      "description": "Spravujte své preference cookies. Níže můžete povolit nebo zakázat různé typy cookies.",
-      "saveChoices": "Uložit volby",
-      "acceptAll": "Přijmout vše",
-      "rejectAll": "Odmítnout nepodstatné"
-    },
-    "categories": {
-      "necessary": {
-        "title": "Nezbytné cookies",
-        "description": "Vyžadované pro správné fungování webu. Nelze je zakázat."
-      },
-      "analytics": {
-        "title": "Analytické cookies",
-        "description": "Pomáhají nám pochopit, jak návštěvníci interagují s naším webem. Zahrnují Google Analytics a Microsoft Clarity."
-      },
-      "marketing": {
-        "title": "Marketingové cookies",
-        "description": "Používané pro zobrazování personalizovaných reklam a měření výkonu reklamních kampaní."
-      },
-      "preferences": {
-        "title": "Preferenční cookies",
-        "description": "Pamatují si vaše nastavení jako jazyk a regionální preference."
-      }
+      "simpleDescription": "Používáme cookies pro zlepšení vašeho zážitku z prohlížení.",
+      "accept": "Přijmout"
     }
   }
 }
