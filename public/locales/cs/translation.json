@@ -2558,20 +2558,25 @@
       "title": "Proč záleží na ISO 27001",
       "subtitle": "Certifikace informační bezpečnosti již není volitelná—je to byznys imperativ",
       "cards": {
-        "breachCost": {
-          "title": "Průměrné náklady na únik",
-          "stat": "$4.45M",
-          "description": "Průměrné náklady na únik dat v roce 2023. ISO 27001 pomáhá předcházet nákladným bezpečnostním incidentům."
+        "penalties": {
+          "title": "Pokuty za porušení dat",
+          "stat": "3-10 mil.+ Kč",
+          "description": "Pokuty za porušení dat podle GDPR a dalších předpisů mohou být vysoké."
         },
-        "clientRequirement": {
-          "title": "Požadavky klientů",
-          "stat": "80%+",
-          "description": "Enterprise klienti nyní vyžadují ISO 27001 certifikaci před podpisem smluv s dodavateli."
+        "downtime": {
+          "title": "Výpadky provozu",
+          "stat": "",
+          "description": "Bezpečnostní incidenty mohou paralyzovat podnikové operace na dny nebo týdny."
+        },
+        "reputation": {
+          "title": "Ztráta reputace a klientů",
+          "stat": "",
+          "description": "Porušení dat vede ke ztrátě důvěry zákazníků a obchodních partnerů."
         },
         "timeline": {
-          "title": "Typická časová osa",
-          "stat": "6-12 měs.",
-          "description": "Průměrný čas k dosažení certifikace bez automatizace—Quantifier to výrazně zkracuje."
+          "title": "Typický harmonogram",
+          "stat": "12 měs.",
+          "description": "Průměrná doba k dosažení certifikace bez automatizace—Quantifier to výrazně zkracuje."
         }
       }
     },
