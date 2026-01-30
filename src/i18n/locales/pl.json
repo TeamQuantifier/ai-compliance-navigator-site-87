@@ -2530,19 +2530,24 @@
       "title": "Dlaczego ISO 27001 ma znaczenie",
       "subtitle": "Certyfikacja bezpieczeństwa informacji nie jest już opcjonalna — to imperatyw biznesowy",
       "cards": {
-        "breachCost": {
-          "title": "Średni koszt naruszenia",
-          "stat": "4,45M $",
-          "description": "Średni koszt naruszenia danych w 2023 r. ISO 27001 pomaga zapobiegać kosztownym incydentom bezpieczeństwa."
+        "penalties": {
+          "title": "Kary związane z naruszeniem danych",
+          "stat": "3-10 mln+ PLN",
+          "description": "Wysokość kar za naruszenie danych osobowych zgodnie z RODO i innymi regulacjami."
         },
-        "clientRequirement": {
-          "title": "Wymagania klientów",
-          "stat": "80%+",
-          "description": "Klienci korporacyjni wymagają teraz certyfikacji ISO 27001 przed podpisaniem umów z dostawcami."
+        "downtime": {
+          "title": "Przestoje w działalności",
+          "stat": "Dni lub tygodnie",
+          "description": "Incydenty bezpieczeństwa mogą sparaliżować operacje firmy na dni lub tygodnie."
+        },
+        "reputation": {
+          "title": "Utrata reputacji i klientów",
+          "stat": "Trudna do odbudowania",
+          "description": "Naruszenia danych prowadzą do utraty zaufania klientów i partnerów biznesowych."
         },
         "timeline": {
           "title": "Typowy harmonogram",
-          "stat": "6-12 mies.",
+          "stat": "12 mies.",
           "description": "Średni czas uzyskania certyfikacji bez automatyzacji — Quantifier znacząco to skraca."
         }
       }
