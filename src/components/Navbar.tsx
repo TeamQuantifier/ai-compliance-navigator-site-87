@@ -178,17 +178,13 @@ export const Navbar = () => {
             <img 
               src="/logo-quantifier.png" 
               alt="Quantifier.ai"
-              width="200"
-              height="48"
-              className="h-12 hidden sm:block" 
+              className="h-10 w-auto hidden sm:block" 
             />
             {/* Sygnet only on mobile */}
             <img 
               src="/logo-sygnet.png" 
               alt="Quantifier.ai"
-              width="48"
-              height="48"
-              className="h-12 w-12 sm:hidden" 
+              className="h-10 w-10 sm:hidden" 
             />
           </Link>
         </div>

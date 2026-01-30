@@ -295,7 +295,8 @@
       "allRightsReserved": "All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
+      "cookies": "Cookie Policy",
+      "cookieSettings": "Cookie Settings"
     },
     "contact": {
       "usaPhone": "USA: (+1) 415-799-8206",
@@ -2886,19 +2887,24 @@
       "title": "Why ISO 27001 Matters",
       "subtitle": "Information security certification is no longer optional—it's a business imperative",
       "cards": {
-        "breachCost": {
-          "title": "Average Breach Cost",
-          "stat": "$4.45M",
-          "description": "The average cost of a data breach in 2023. ISO 27001 helps prevent costly security incidents."
+        "penalties": {
+          "title": "Penalties for Data Breaches",
+          "stat": "€3-10M+",
+          "description": "Fines for data breaches under GDPR and other regulations can be severe."
         },
-        "clientRequirement": {
-          "title": "Client Requirements",
-          "stat": "80%+",
-          "description": "Enterprise clients now require ISO 27001 certification before signing contracts with vendors."
+        "downtime": {
+          "title": "Business Downtime",
+          "stat": "",
+          "description": "Security incidents can paralyze business operations for days or weeks."
+        },
+        "reputation": {
+          "title": "Reputation & Client Loss",
+          "stat": "",
+          "description": "Data breaches lead to loss of trust from customers and business partners."
         },
         "timeline": {
           "title": "Typical Timeline",
-          "stat": "6-12 mo",
+          "stat": "12 mo",
           "description": "Average time to achieve certification without automation—Quantifier cuts this significantly."
         }
       }
@@ -4761,6 +4767,12 @@
       "description": "Join leading organizations that trust Quantifier to automate their California privacy compliance and protect consumer data.",
       "bookDemo": "Book a Demo",
       "seePricing": "View Pricing"
+    }
+  },
+  "cookieConsent": {
+    "banner": {
+      "simpleDescription": "We use cookies to enhance your browsing experience.",
+      "accept": "Accept"
     }
   }
 }

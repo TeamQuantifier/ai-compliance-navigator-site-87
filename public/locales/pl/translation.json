@@ -294,7 +294,8 @@
       "allRightsReserved": "Wszelkie prawa zastrzeżone.",
       "privacy": "Polityka prywatności",
       "terms": "Regulamin",
-      "cookies": "Polityka cookies"
+      "cookies": "Polityka cookies",
+      "cookieSettings": "Ustawienia cookies"
     },
     "contact": {
       "usaPhone": "USA: (+1) 415-799-8206",
@@ -2768,19 +2769,24 @@
       "title": "Dlaczego ISO 27001 ma znaczenie",
       "subtitle": "Certyfikacja bezpieczeństwa informacji nie jest już opcjonalna — to imperatyw biznesowy",
       "cards": {
-        "breachCost": {
-          "title": "Średni koszt naruszenia",
-          "stat": "4,45M $",
-          "description": "Średni koszt naruszenia danych w 2023 r. ISO 27001 pomaga zapobiegać kosztownym incydentom bezpieczeństwa."
+        "penalties": {
+          "title": "Kary związane z naruszeniem danych",
+          "stat": "3-10 mln+ PLN",
+          "description": "Wysokość kar za naruszenie danych osobowych zgodnie z RODO i innymi regulacjami."
         },
-        "clientRequirement": {
-          "title": "Wymagania klientów",
-          "stat": "80%+",
-          "description": "Klienci korporacyjni wymagają teraz certyfikacji ISO 27001 przed podpisaniem umów z dostawcami."
+        "downtime": {
+          "title": "Przestoje w działalności",
+          "stat": "",
+          "description": "Incydenty bezpieczeństwa mogą sparaliżować operacje firmy na dni lub tygodnie."
+        },
+        "reputation": {
+          "title": "Utrata reputacji i klientów",
+          "stat": "",
+          "description": "Naruszenia danych prowadzą do utraty zaufania klientów i partnerów biznesowych."
         },
         "timeline": {
           "title": "Typowy harmonogram",
-          "stat": "6-12 mies.",
+          "stat": "12 mies.",
           "description": "Średni czas uzyskania certyfikacji bez automatyzacji — Quantifier znacząco to skraca."
         }
       }
@@ -4585,6 +4591,12 @@
       "description": "Dołącz do wiodących organizacji, które powierzają Quantifier automatyzację zgodności z przepisami prywatności Kalifornii i ochronę danych konsumentów.",
       "bookDemo": "Umów demo",
       "seePricing": "Zobacz cennik"
+    }
+  },
+  "cookieConsent": {
+    "banner": {
+      "simpleDescription": "Używamy plików cookie, aby ulepszyć Twoje wrażenia z przeglądania.",
+      "accept": "Akceptuję"
     }
   }
 }

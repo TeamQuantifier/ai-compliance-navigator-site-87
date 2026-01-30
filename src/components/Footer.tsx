@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -60,9 +60,7 @@ const Footer = () => {
               <img 
                 src="/logo-quantifier.png" 
                 alt="Quantifier.ai" 
-                width="180"
-                height="44"
-                className="h-11" 
+                className="h-10 w-auto" 
               />
             </Link>
             
