@@ -103,7 +103,8 @@ const InsidersSection = () => {
     {
       id: 19,
       src: "/lovable-uploads/adamed-logo.png",
-      alt: "Adamed"
+      alt: "Adamed",
+      scale: 1.25
     },
     {
       id: 20,
@@ -113,17 +114,20 @@ const InsidersSection = () => {
     {
       id: 21,
       src: "/lovable-uploads/cloudferro-logo.png",
-      alt: "CloudFerro"
+      alt: "CloudFerro",
+      scale: 1.25
     },
     {
       id: 22,
       src: "/lovable-uploads/gobarto-logo.png",
-      alt: "Gobarto"
+      alt: "Gobarto",
+      scale: 1.25
     },
     {
       id: 23,
       src: "/lovable-uploads/hilding-anders-logo.png",
-      alt: "Hilding Anders"
+      alt: "Hilding Anders",
+      scale: 1.25
     },
     {
       id: 24,
@@ -133,7 +137,8 @@ const InsidersSection = () => {
     {
       id: 25,
       src: "/lovable-uploads/marc-kolor-logo.png",
-      alt: "Marc Kolor"
+      alt: "Marc Kolor",
+      scale: 1.25
     },
     {
       id: 26,
@@ -186,6 +191,7 @@ const InsidersSection = () => {
                       loading="lazy"
                       width="160"
                       height="80"
+                      style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
                       className="max-h-20 max-w-full mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
                     />
                   </div>
