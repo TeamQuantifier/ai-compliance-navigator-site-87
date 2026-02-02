@@ -2877,11 +2877,11 @@
       "metrics": {
         "coverage": {
           "value": "100%",
-          "label": "Pokrycie kontroli"
+          "label": "pokrycia normy"
         },
         "controls": {
           "value": "93",
-          "label": "Kontrole Załącznika A"
+          "label": "wdrożone Kontrole (Annex A)"
         },
         "monitoring": {
           "value": "24/7",
