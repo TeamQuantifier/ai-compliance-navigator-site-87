@@ -3742,24 +3742,24 @@
         "title": "Cybersecurity Compliance Frameworks",
         "description": "Master cybersecurity compliance with SOC 2, NIS II, and NIST frameworks. AI-powered automation for security controls, risk assessment, and continuous monitoring.",
         "nisII": {
-          "title": "NIS II Compliance - EU Cybersecurity Directive",
-          "description": "Achieve NIS II compliance with Quantifier.ai. AI-powered gap analysis, implementation timeline, and continuous monitoring for EU cybersecurity requirements."
+          "title": "NIS2 Compliance Automation | EU Directive Ready",
+          "description": "Prepare for NIS2 directive with AI-powered compliance. Risk assessment, incident reporting, supply chain security automated."
         },
         "nist": {
           "title": "NIST Cybersecurity Framework Compliance",
           "description": "Implement NIST CSF with Quantifier.ai. Identify, Protect, Detect, Respond, Recover - all automated with AI-powered compliance management."
         },
         "soc": {
-          "title": "SOC 1 & SOC 2 Compliance Platform",
-          "description": "Streamline SOC 1 and SOC 2 audits with Quantifier.ai. Automated evidence collection, control monitoring, and audit-ready reporting."
+          "title": "SOC 2 Automation | Faster Audit Prep",
+          "description": "Automate SOC 2 Type I and Type II compliance. Continuous monitoring, automated evidence collection, audit-ready reports."
         }
       },
       "informationSecurity": {
         "title": "Information Security Frameworks",
         "description": "ISO 27001, ISO 9001, and DORA compliance automation. Build robust information security management systems with AI-powered workflows.",
         "iso27001": {
-          "title": "ISO 27001 Compliance - ISMS Certification",
-          "description": "Achieve ISO 27001 certification with Quantifier.ai. AI-powered ISMS implementation, risk assessment, and audit preparation for information security."
+          "title": "ISO 27001 Automation | Reduce Certification Time by 80%",
+          "description": "Automate ISO 27001 compliance with AI. Gap analysis, evidence collection, audit preparation - all in one platform."
         },
         "iso9001": {
           "title": "ISO 9001 Quality Management System",

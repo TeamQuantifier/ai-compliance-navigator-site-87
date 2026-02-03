@@ -3566,24 +3566,24 @@
         "title": "Standardy Cyberbezpieczeństwa",
         "description": "Opanuj zgodność z SOC 2, NIS II i NIST. Automatyzacja oparta na AI dla kontroli bezpieczeństwa, oceny ryzyka i ciągłego monitoringu.",
         "nisII": {
-          "title": "Zgodność z NIS II - Dyrektywa UE o Cyberbezpieczeństwie",
-          "description": "Osiągnij zgodność z NIS II dzięki Quantifier.ai. Analiza luk oparta na AI, harmonogram wdrożenia i ciągły monitoring wymagań UE."
+          "title": "Automatyzacja NIS2 | Gotowość na Dyrektywę UE",
+          "description": "Przygotuj się na dyrektywę NIS2 z compliance opartym na AI. Ocena ryzyka, raportowanie incydentów, bezpieczeństwo łańcucha dostaw zautomatyzowane."
         },
         "nist": {
           "title": "Zgodność z NIST Cybersecurity Framework",
           "description": "Wdróż NIST CSF z Quantifier.ai. Identyfikuj, Chroń, Wykrywaj, Reaguj, Odzyskuj - wszystko zautomatyzowane z AI."
         },
         "soc": {
-          "title": "Platforma Zgodności SOC 1 i SOC 2",
-          "description": "Usprawnij audyty SOC 1 i SOC 2 z Quantifier.ai. Automatyczne zbieranie dowodów, monitoring kontroli i raporty gotowe na audyt."
+          "title": "Automatyzacja SOC 2 | Szybsze Przygotowanie do Audytu",
+          "description": "Automatyzuj zgodność SOC 2 Type I i Type II. Ciągły monitoring, automatyczne zbieranie dowodów, raporty gotowe do audytu."
         }
       },
       "informationSecurity": {
         "title": "Standardy Bezpieczeństwa Informacji",
         "description": "Automatyzacja zgodności ISO 27001, ISO 9001 i DORA. Buduj solidne systemy zarządzania bezpieczeństwem informacji z workflow opartymi na AI.",
         "iso27001": {
-          "title": "Zgodność ISO 27001 - Certyfikacja ISMS",
-          "description": "Uzyskaj certyfikat ISO 27001 z Quantifier.ai. Wdrożenie ISMS oparte na AI, ocena ryzyka i przygotowanie do audytu."
+          "title": "Automatyzacja ISO 27001 | Skróć Czas Certyfikacji o 80%",
+          "description": "Automatyzuj zgodność ISO 27001 z AI. Analiza luk, zbieranie dowodów, przygotowanie do audytu - wszystko w jednej platformie."
         },
         "iso9001": {
           "title": "System Zarządzania Jakością ISO 9001",
