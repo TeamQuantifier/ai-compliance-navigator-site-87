@@ -2903,8 +2903,46 @@
     }
   },
   "seo": {
+    "index": {
+      "title": "Platforma pro Automatizaci Compliance | ISO 27001, SOC 2, NIS2",
+      "description": "Automatizujte compliance s AI. Zkraťte přípravu na audity ISO 27001, SOC 2 a NIS2 o 80%. Kontinuální monitoring a sběr důkazů."
+    },
+    "blog": {
+      "title": "Blog o Compliance a Bezpečnosti | Průvodci ISO 27001, SOC 2, NIS2",
+      "description": "Expertní průvodci automatizací compliance. Zjistěte více o ISO 27001, SOC 2, NIS2, GDPR a jak AI zjednodušuje přípravu na audit."
+    },
+    "product": {
+      "title": "Funkce | AI-Powered Automatizace Compliance",
+      "description": "Automatizovaný sběr důkazů, kontinuální monitoring, reporty připravené na audit. Podívejte se na všechny funkce compliance platformy Quantifier.ai."
+    },
+    "plans": {
+      "title": "Ceník | Automatizace Compliance Quantifier.ai",
+      "description": "Flexibilní ceny pro automatizaci compliance s AI. Začněte zdarma, škálujte jak rostete. Standardy ISO 27001, SOC 2, NIS2 zahrnuty."
+    },
+    "contact": {
+      "title": "Kontakt Quantifier.ai | Získejte Demo AI Compliance Platformy",
+      "description": "Kontaktujte náš tým pro demo. Podívejte se, jak Quantifier.ai automatizuje compliance ISO 27001, SOC 2, NIS2 s AI-powered sběrem důkazů."
+    },
     "frameworks": {
+      "cybersecurity": {
+        "title": "Standardy Kybernetické Bezpečnosti",
+        "description": "Zvládněte compliance se SOC 2, NIS II a NIST. AI-powered automatizace pro bezpečnostní kontroly, hodnocení rizik a kontinuální monitoring.",
+        "nisII": {
+          "title": "Automatizace NIS2 | Připravenost na EU Směrnici",
+          "description": "Připravte se na směrnici NIS2 s AI-powered compliance. Hodnocení rizik, hlášení incidentů, bezpečnost dodavatelského řetězce automatizovaně."
+        },
+        "soc": {
+          "title": "Automatizace SOC 2 | Rychlejší Příprava na Audit",
+          "description": "Automatizujte compliance SOC 2 Type I a Type II. Kontinuální monitoring, automatizovaný sběr důkazů, reporty připravené na audit."
+        }
+      },
       "informationSecurity": {
+        "title": "Standardy Informační Bezpečnosti",
+        "description": "Automatizace compliance ISO 27001, ISO 9001 a DORA. Budujte robustní systémy řízení informační bezpečnosti s AI-powered workflow.",
+        "iso27001": {
+          "title": "Automatizace ISO 27001 | Zkraťte Čas Certifikace o 80%",
+          "description": "Automatizujte compliance ISO 27001 s AI. Gap analýza, sběr důkazů, příprava na audit - vše v jedné platformě."
+        },
         "iso9001": {
           "title": "Systém managementu kvality ISO 9001",
           "description": "Implementujte ISO 9001 QMS s Quantifier.ai. Automatizované řízení kvality, dokumentace procesů a sledování neustálého zlepšování."

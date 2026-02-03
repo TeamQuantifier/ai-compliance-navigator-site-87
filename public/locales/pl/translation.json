@@ -3504,12 +3504,16 @@
   },
   "seo": {
     "index": {
-      "title": "AI-Native Platforma GRC do Automatyzacji Compliance",
-      "description": "Quantifier.ai to AI-native platforma GRC, która automatyzuje procesy zgodności i zarządza standardami regulacyjnymi jak SOC 2, ISO 27001, RODO i więcej. Uprość compliance z naszym AI Compliance Officer."
+      "title": "Platforma Automatyzacji Compliance | ISO 27001, SOC 2, NIS2",
+      "description": "Automatyzuj compliance z AI. Skróć przygotowanie do audytów ISO 27001, SOC 2 i NIS2 o 80%. Ciągły monitoring i zbieranie dowodów."
+    },
+    "blog": {
+      "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
+      "description": "Eksperckie przewodniki po automatyzacji compliance. Dowiedz się o ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu."
     },
     "product": {
-      "title": "Funkcje Produktu",
-      "description": "Poznaj funkcje platformy compliance opartej na AI od Quantifier.ai: AI Compliance Officer, Zarządzanie Dokumentami, Ocena Ryzyka, Dashboardy Analityczne i integracje API.",
+      "title": "Funkcje | Automatyzacja Compliance z AI",
+      "description": "Automatyczne zbieranie dowodów, ciągły monitoring, raporty gotowe do audytu. Zobacz wszystkie funkcje platformy compliance Quantifier.ai.",
       "overview": {
         "title": "Przegląd Produktu - Platforma GRC oparta na AI",
         "description": "Kompleksowy przegląd platformy GRC opartej na AI od Quantifier.ai. Poznaj wszystkie funkcje automatyzacji compliance, zarządzania ryzykiem i standardów regulacyjnych."
@@ -3544,12 +3548,12 @@
       }
     },
     "plans": {
-      "title": "Plany Cenowe",
-      "description": "Wybierz odpowiedni plan Quantifier.ai dla swojej organizacji. Skalowalne rozwiązania compliance od Starter do Enterprise z pełną automatyzacją GRC."
+      "title": "Cennik | Automatyzacja Compliance Quantifier.ai",
+      "description": "Elastyczne ceny dla automatyzacji compliance z AI. Zacznij bezpłatnie, skaluj wraz z rozwojem. Standardy ISO 27001, SOC 2, NIS2 w zestawie."
     },
     "contact": {
-      "title": "Kontakt",
-      "description": "Skontaktuj się z zespołem Quantifier.ai. Umów demo, zadaj pytania lub omów swoje potrzeby compliance z naszymi ekspertami w San Francisco lub Warszawie."
+      "title": "Kontakt Quantifier.ai | Umów Demo Platformy AI Compliance",
+      "description": "Skontaktuj się z naszym zespołem po demo. Zobacz jak Quantifier.ai automatyzuje compliance ISO 27001, SOC 2, NIS2 dzięki zbieraniu dowodów z AI."
     },
     "partners": {
       "title": "Sieć Partnerów",
@@ -3566,24 +3570,24 @@
         "title": "Standardy Cyberbezpieczeństwa",
         "description": "Opanuj zgodność z SOC 2, NIS II i NIST. Automatyzacja oparta na AI dla kontroli bezpieczeństwa, oceny ryzyka i ciągłego monitoringu.",
         "nisII": {
-          "title": "Zgodność z NIS II - Dyrektywa UE o Cyberbezpieczeństwie",
-          "description": "Osiągnij zgodność z NIS II dzięki Quantifier.ai. Analiza luk oparta na AI, harmonogram wdrożenia i ciągły monitoring wymagań UE."
+          "title": "Automatyzacja NIS2 | Gotowość na Dyrektywę UE",
+          "description": "Przygotuj się na dyrektywę NIS2 z compliance opartym na AI. Ocena ryzyka, raportowanie incydentów, bezpieczeństwo łańcucha dostaw zautomatyzowane."
         },
         "nist": {
           "title": "Zgodność z NIST Cybersecurity Framework",
           "description": "Wdróż NIST CSF z Quantifier.ai. Identyfikuj, Chroń, Wykrywaj, Reaguj, Odzyskuj - wszystko zautomatyzowane z AI."
         },
         "soc": {
-          "title": "Platforma Zgodności SOC 1 i SOC 2",
-          "description": "Usprawnij audyty SOC 1 i SOC 2 z Quantifier.ai. Automatyczne zbieranie dowodów, monitoring kontroli i raporty gotowe na audyt."
+          "title": "Automatyzacja SOC 2 | Szybsze Przygotowanie do Audytu",
+          "description": "Automatyzuj zgodność SOC 2 Type I i Type II. Ciągły monitoring, automatyczne zbieranie dowodów, raporty gotowe do audytu."
         }
       },
       "informationSecurity": {
         "title": "Standardy Bezpieczeństwa Informacji",
         "description": "Automatyzacja zgodności ISO 27001, ISO 9001 i DORA. Buduj solidne systemy zarządzania bezpieczeństwem informacji z workflow opartymi na AI.",
         "iso27001": {
-          "title": "Zgodność ISO 27001 - Certyfikacja ISMS",
-          "description": "Uzyskaj certyfikat ISO 27001 z Quantifier.ai. Wdrożenie ISMS oparte na AI, ocena ryzyka i przygotowanie do audytu."
+          "title": "Automatyzacja ISO 27001 | Skróć Czas Certyfikacji o 80%",
+          "description": "Automatyzuj zgodność ISO 27001 z AI. Analiza luk, zbieranie dowodów, przygotowanie do audytu - wszystko w jednej platformie."
         },
         "iso9001": {
           "title": "System Zarządzania Jakością ISO 9001",

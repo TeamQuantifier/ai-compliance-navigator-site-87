@@ -1,78 +1,116 @@
 
-# Plan: Zmiana copy w header na stronie NIS2
+# Plan: Aktualizacja SEO meta tagów dla stron blogowych
 
-## Cel
-Zmienić subtitle w sekcji hero na stronie `/frameworks/nis-ii` na nowy tekst dostarczony przez użytkownika.
+## Podsumowanie analizy
+
+### Strona z listą blogów (`BlogList.tsx`)
+- Obecny stan: używa `t('blog.title')` i `t('blog.subtitle')` - ogólne klucze
+- Potrzeba: zaktualizować do nowych kluczy SEO z dedykowanymi tekstami
+
+### Artykuły blogowe (`BlogPost.tsx`)  
+- **Już w pełni zaimplementowane!** Komponent `SEOHead` zawiera:
+  - Dynamiczny tytuł: `{title} | Quantifier.ai` (linia 101)
+  - Dynamiczny opis z excerpt/meta_desc (linia 102)
+  - `og:type="article"` (linia 220)
+  - `og:image` z featured image (linia 222)
+  - Canonical URL (linia 210)
+  - Schema.org BlogPosting z author, datePublished, dateModified (linie 126-164)
 
 ---
 
-## Lokalizacja zmian
+## Zakres zmian
 
-**Klucz tłumaczenia**: `nisIIPage.hero.subtitle`
+### 1. Aktualizacja `src/pages/blog/BlogList.tsx`
 
-**Komponent**: `src/pages/frameworks/cybersecurity/NisII.tsx` (linia 43)
-```tsx
-<p className="text-xl md:text-2xl opacity-90 mb-8 text-white/80">
-  {t('nisIIPage.hero.subtitle')}
-</p>
+Zmiana linii 41-42 z:
+```jsx
+<title>{t('blog.title')} | Quantifier.ai</title>
+<meta name="description" content={t('blog.subtitle')} />
 ```
 
-Komponent nie wymaga zmian — wystarczy zaktualizować pliki tłumaczeń.
+Na:
+```jsx
+<title>{t('seo.blog.title')} | Quantifier.ai</title>
+<meta name="description" content={t('seo.blog.description')} />
+```
+
+Analogiczna zmiana dla OG tags (linie 56-57).
+
+### 2. Aktualizacja plików tłumaczeń
+
+#### `public/locales/en/translation.json`
+```json
+"seo": {
+  "blog": {
+    "title": "Compliance & Security Blog | ISO 27001, SOC 2, NIS2 Guides",
+    "description": "Expert guides on compliance automation. Learn about ISO 27001, SOC 2, NIS2, GDPR and how AI simplifies audit preparation."
+  }
+}
+```
+
+#### `public/locales/pl/translation.json`
+```json
+"seo": {
+  "blog": {
+    "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
+    "description": "Eksperckie przewodniki po automatyzacji compliance. Dowiedz się o ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu."
+  }
+}
+```
+
+#### `public/locales/cs/translation.json`
+```json
+"seo": {
+  "blog": {
+    "title": "Blog o Compliance a Bezpečnosti | Průvodci ISO 27001, SOC 2, NIS2",
+    "description": "Expertní průvodci automatizací compliance. Zjistěte více o ISO 27001, SOC 2, NIS2, GDPR a jak AI zjednodušuje přípravu na audit."
+  }
+}
+```
+
+---
+
+## Szczegóły techniczne
+
+### Dlaczego artykuły blogowe już działają poprawnie?
+
+Komponent `SEOHead` (używany w `BlogPost.tsx`) automatycznie:
+
+1. **Tytuł dynamiczny**: `metaTitle || {title} | Quantifier.ai`
+2. **Opis z excerpt**: `metaDesc || excerpt || description` (obcięty do długości ustalonej w CMS)
+3. **OG:type**: zawsze `article` dla postów (linia 220)
+4. **OG:image**: `ogImageUrl || featuredImageUrl` (linia 222)
+5. **Canonical**: `https://quantifier.ai/{lang}/blog/{slug}` (linia 210)
+6. **Schema.org BlogPosting**:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "...",
+  "description": "...",
+  "image": "...",
+  "datePublished": "...",
+  "dateModified": "...",
+  "author": { "@type": "Organization", "name": "Quantifier.ai" },
+  "publisher": { "@type": "Organization", "name": "Quantifier.ai" }
+}
+```
 
 ---
 
 ## Pliki do modyfikacji
 
-### 1. `public/locales/pl/translation.json` (linia 2110)
-
-**Aktualna wartość:**
-```json
-"subtitle": "Poruszaj się po wymogach cyberbezpieczeństwa UE z pewnością w tygodnie, nie miesiące"
-```
-
-**Nowa wartość:**
-```json
-"subtitle": "Zgodność z NIS2 — szybciej, taniej i bez chaosu."
-```
-
-### 2. `public/locales/en/translation.json` (linia 2286)
-
-**Aktualna wartość:**
-```json
-"subtitle": "Navigate EU cybersecurity requirements with confidence in weeks, not months"
-```
-
-**Propozycja tłumaczenia:**
-```json
-"subtitle": "NIS2 Compliance — faster, cheaper, and without chaos."
-```
-
-### 3. `public/locales/cs/translation.json` (linia 2013)
-
-**Aktualna wartość:**
-```json
-"subtitle": "Zvládněte požadavky EU kybernetické bezpečnosti s jistotou za týdny, ne měsíce"
-```
-
-**Propozycja tłumaczenia:**
-```json
-"subtitle": "NIS2 Compliance — rychleji, levněji a bez chaosu."
-```
+| Plik | Rodzaj zmiany |
+|------|---------------|
+| `src/pages/blog/BlogList.tsx` | Zmiana kluczy tłumaczeń na `seo.blog.*` |
+| `public/locales/en/translation.json` | Nowe teksty SEO dla bloga |
+| `public/locales/pl/translation.json` | Polskie tłumaczenia |
+| `public/locales/cs/translation.json` | Czeskie tłumaczenia |
 
 ---
 
-## Podsumowanie zmian
+## Uwagi
 
-| Plik | Klucz | Nowa wartość |
-|------|-------|--------------|
-| `public/locales/pl/translation.json` | `nisIIPage.hero.subtitle` | Zgodność z NIS2 — szybciej, taniej i bez chaosu. |
-| `public/locales/en/translation.json` | `nisIIPage.hero.subtitle` | NIS2 Compliance — faster, cheaper, and without chaos. |
-| `public/locales/cs/translation.json` | `nisIIPage.hero.subtitle` | NIS2 Compliance — rychleji, levněji a bez chaosu. |
-
----
-
-## Oczekiwany rezultat
-
-Po implementacji sekcja hero na stronie NIS2 będzie wyświetlać nowy subtitle:
-
-**PL:** "Zgodność z NIS2 — szybciej, taniej i bez chaosu."
+- Artykuły blogowe (`BlogPost.tsx`) **nie wymagają zmian** - `SEOHead` już obsługuje wszystkie wymagane funkcje
+- Tylko strona z listą blogów wymaga aktualizacji kluczy
+- Schema.org, og:type=article, datePublished/dateModified - wszystko już działa
