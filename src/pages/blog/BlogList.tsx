@@ -38,8 +38,8 @@ const BlogList = () => {
   return (
     <>
       <Helmet>
-        <title>{t('blog.title')} | Quantifier.ai</title>
-        <meta name="description" content={t('blog.subtitle')} />
+        <title>{t('seo.blog.title')} | Quantifier.ai</title>
+        <meta name="description" content={t('seo.blog.description')} />
         
         {/* Robots - explicit index/follow */}
         <meta name="robots" content="index, follow" />
