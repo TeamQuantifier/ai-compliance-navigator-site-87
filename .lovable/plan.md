@@ -1,122 +1,116 @@
 
-# Plan: Aktualizacja meta tagów SEO dla kluczowych stron
+# Plan: Aktualizacja SEO meta tagów dla stron blogowych
 
-## Podsumowanie
+## Podsumowanie analizy
 
-Projekt już ma pełną implementację SEO z:
-- `react-helmet-async` (zainstalowane)
-- Komponent `PageTemplate` renderujący wszystkie wymagane tagi (title, description, og:title, og:description, canonical, twitter cards)
-- Klucze tłumaczeń SEO w plikach `translation.json`
+### Strona z listą blogów (`BlogList.tsx`)
+- Obecny stan: używa `t('blog.title')` i `t('blog.subtitle')` - ogólne klucze
+- Potrzeba: zaktualizować do nowych kluczy SEO z dedykowanymi tekstami
 
-Zadanie polega na **aktualizacji treści** w plikach tłumaczeń dla podanych stron.
-
----
-
-## Strony do aktualizacji
-
-| Strona | Route | Klucz tłumaczenia |
-|--------|-------|-------------------|
-| Homepage | `/en` | `seo.index.*` |
-| Contact | `/en/contact` | `seo.contact.*` |
-| Pricing | `/en/plans` | `seo.plans.*` |
-| Features | `/en/product` | `seo.product.*` |
-| ISO 27001 | `/en/frameworks/iso-27001` | `seo.frameworks.informationSecurity.iso27001.*` |
-| SOC 2 | `/en/frameworks/soc` | `seo.frameworks.cybersecurity.soc.*` |
-| NIS2 | `/en/frameworks/nis-ii` | `seo.frameworks.cybersecurity.nisII.*` |
+### Artykuły blogowe (`BlogPost.tsx`)  
+- **Już w pełni zaimplementowane!** Komponent `SEOHead` zawiera:
+  - Dynamiczny tytuł: `{title} | Quantifier.ai` (linia 101)
+  - Dynamiczny opis z excerpt/meta_desc (linia 102)
+  - `og:type="article"` (linia 220)
+  - `og:image` z featured image (linia 222)
+  - Canonical URL (linia 210)
+  - Schema.org BlogPosting z author, datePublished, dateModified (linie 126-164)
 
 ---
 
-## Zmiany w plikach tłumaczeń
+## Zakres zmian
 
-### 1. `public/locales/en/translation.json`
+### 1. Aktualizacja `src/pages/blog/BlogList.tsx`
 
+Zmiana linii 41-42 z:
+```jsx
+<title>{t('blog.title')} | Quantifier.ai</title>
+<meta name="description" content={t('blog.subtitle')} />
+```
+
+Na:
+```jsx
+<title>{t('seo.blog.title')} | Quantifier.ai</title>
+<meta name="description" content={t('seo.blog.description')} />
+```
+
+Analogiczna zmiana dla OG tags (linie 56-57).
+
+### 2. Aktualizacja plików tłumaczeń
+
+#### `public/locales/en/translation.json`
 ```json
 "seo": {
-  "index": {
-    "title": "Compliance Automation Platform | ISO 27001, SOC 2, NIS2",
-    "description": "Automate compliance with AI. Reduce ISO 27001, SOC 2, and NIS2 audit preparation by 80%. Continuous monitoring and evidence collection."
-  },
-  "contact": {
-    "title": "Contact Quantifier.ai | Get a Demo of AI Compliance Platform",
-    "description": "Contact our team for a demo. See how Quantifier.ai automates ISO 27001, SOC 2, NIS2 compliance with AI-powered evidence collection."
-  },
-  "plans": {
-    "title": "Pricing | Quantifier.ai Compliance Automation",
-    "description": "Flexible pricing for AI-powered compliance automation. Start free, scale as you grow. ISO 27001, SOC 2, NIS2 frameworks included."
-  },
-  "product": {
-    "title": "Features | AI-Powered Compliance Automation",
-    "description": "Automated evidence collection, continuous monitoring, audit-ready reports. See all features of Quantifier.ai compliance platform."
-  },
-  "frameworks": {
-    "informationSecurity": {
-      "iso27001": {
-        "title": "ISO 27001 Automation | Reduce Certification Time by 80%",
-        "description": "Automate ISO 27001 compliance with AI. Gap analysis, evidence collection, audit preparation - all in one platform."
-      }
-    },
-    "cybersecurity": {
-      "soc": {
-        "title": "SOC 2 Automation | Faster Audit Prep",
-        "description": "Automate SOC 2 Type I and Type II compliance. Continuous monitoring, automated evidence collection, audit-ready reports."
-      },
-      "nisII": {
-        "title": "NIS2 Compliance Automation | EU Directive Ready",
-        "description": "Prepare for NIS2 directive with AI-powered compliance. Risk assessment, incident reporting, supply chain security automated."
-      }
-    }
+  "blog": {
+    "title": "Compliance & Security Blog | ISO 27001, SOC 2, NIS2 Guides",
+    "description": "Expert guides on compliance automation. Learn about ISO 27001, SOC 2, NIS2, GDPR and how AI simplifies audit preparation."
   }
 }
 ```
 
-### 2. `public/locales/pl/translation.json`
+#### `public/locales/pl/translation.json`
+```json
+"seo": {
+  "blog": {
+    "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
+    "description": "Eksperckie przewodniki po automatyzacji compliance. Dowiedz się o ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu."
+  }
+}
+```
 
-Odpowiednie polskie tłumaczenia dla tych samych kluczy.
-
-### 3. `public/locales/cs/translation.json`
-
-Odpowiednie czeskie tłumaczenia dla tych samych kluczy.
+#### `public/locales/cs/translation.json`
+```json
+"seo": {
+  "blog": {
+    "title": "Blog o Compliance a Bezpečnosti | Průvodci ISO 27001, SOC 2, NIS2",
+    "description": "Expertní průvodci automatizací compliance. Zjistěte více o ISO 27001, SOC 2, NIS2, GDPR a jak AI zjednodušuje přípravu na audit."
+  }
+}
+```
 
 ---
 
 ## Szczegóły techniczne
 
-### Obecna implementacja (bez zmian)
+### Dlaczego artykuły blogowe już działają poprawnie?
 
-**PageTemplate** już renderuje wszystkie wymagane tagi:
-- `<title>` - z sufixem `| Quantifier.ai`
-- `<meta name="description">`
-- `<meta property="og:title">`
-- `<meta property="og:description">`
-- `<link rel="canonical">`
-- `<meta name="twitter:card">`
-- `<meta name="twitter:title">`
-- `<meta name="twitter:description">`
-- `<link rel="alternate" hreflang="...">`
+Komponent `SEOHead` (używany w `BlogPost.tsx`) automatycznie:
 
-### Strony używające PageTemplate
-
-Wszystkie wymienione strony już używają PageTemplate z kluczami `t('seo.*.title')` i `t('seo.*.description')`:
-- `Index.tsx` - własna implementacja Helmet (bardziej rozbudowana)
-- `Contact.tsx` - używa PageTemplate
-- `Plans.tsx` - używa PageTemplate  
-- `Features.tsx` - używa PageTemplate
-- `Iso27001.tsx` - używa PageTemplate
-- `Soc.tsx` - używa PageTemplate
-- `NisII.tsx` - używa PageTemplate
+1. **Tytuł dynamiczny**: `metaTitle || {title} | Quantifier.ai`
+2. **Opis z excerpt**: `metaDesc || excerpt || description` (obcięty do długości ustalonej w CMS)
+3. **OG:type**: zawsze `article` dla postów (linia 220)
+4. **OG:image**: `ogImageUrl || featuredImageUrl` (linia 222)
+5. **Canonical**: `https://quantifier.ai/{lang}/blog/{slug}` (linia 210)
+6. **Schema.org BlogPosting**:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "...",
+  "description": "...",
+  "image": "...",
+  "datePublished": "...",
+  "dateModified": "...",
+  "author": { "@type": "Organization", "name": "Quantifier.ai" },
+  "publisher": { "@type": "Organization", "name": "Quantifier.ai" }
+}
+```
 
 ---
 
-## Zakres prac
+## Pliki do modyfikacji
 
-1. Aktualizacja kluczy SEO w `public/locales/en/translation.json`
-2. Aktualizacja kluczy SEO w `public/locales/pl/translation.json` (polskie odpowiedniki)
-3. Aktualizacja kluczy SEO w `public/locales/cs/translation.json` (czeskie odpowiedniki)
+| Plik | Rodzaj zmiany |
+|------|---------------|
+| `src/pages/blog/BlogList.tsx` | Zmiana kluczy tłumaczeń na `seo.blog.*` |
+| `public/locales/en/translation.json` | Nowe teksty SEO dla bloga |
+| `public/locales/pl/translation.json` | Polskie tłumaczenia |
+| `public/locales/cs/translation.json` | Czeskie tłumaczenia |
 
 ---
 
 ## Uwagi
 
-- Żadne zmiany w komponentach React nie są wymagane
-- Infrastruktura SEO jest już kompletna
-- Wystarczy zaktualizować wartości tekstowe w plikach tłumaczeń
+- Artykuły blogowe (`BlogPost.tsx`) **nie wymagają zmian** - `SEOHead` już obsługuje wszystkie wymagane funkcje
+- Tylko strona z listą blogów wymaga aktualizacji kluczy
+- Schema.org, og:type=article, datePublished/dateModified - wszystko już działa
