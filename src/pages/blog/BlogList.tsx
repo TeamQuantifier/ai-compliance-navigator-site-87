@@ -53,8 +53,8 @@ const BlogList = () => {
         <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/blog" />
         
         {/* Open Graph */}
-        <meta property="og:title" content={`${t('blog.title')} | Quantifier.ai`} />
-        <meta property="og:description" content={t('blog.subtitle')} />
+        <meta property="og:title" content={`${t('seo.blog.title')} | Quantifier.ai`} />
+        <meta property="og:description" content={t('seo.blog.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : currentLocale === 'cs' ? 'cs_CZ' : 'en_US'} />
