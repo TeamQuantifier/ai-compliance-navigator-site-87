@@ -3680,12 +3680,12 @@
   },
   "seo": {
     "index": {
-      "title": "AI-Native GRC Platform for Compliance Automation",
-      "description": "Quantifier.ai is an AI-native GRC platform that automates compliance processes, manages regulatory frameworks like SOC 2, ISO 27001, GDPR, and more. Simplify compliance with our AI Compliance Officer."
+      "title": "Compliance Automation Platform | ISO 27001, SOC 2, NIS2",
+      "description": "Automate compliance with AI. Reduce ISO 27001, SOC 2, and NIS2 audit preparation by 80%. Continuous monitoring and evidence collection."
     },
     "product": {
-      "title": "Product Features",
-      "description": "Discover Quantifier.ai's AI-powered compliance platform features: AI Compliance Officer, Document Management, Risk Assessment, Analytics Dashboards, and seamless API integrations.",
+      "title": "Features | AI-Powered Compliance Automation",
+      "description": "Automated evidence collection, continuous monitoring, audit-ready reports. See all features of Quantifier.ai compliance platform.",
       "overview": {
         "title": "Product Overview - AI-Powered GRC Platform",
         "description": "Complete overview of Quantifier.ai's AI-powered GRC platform. Explore all features for compliance automation, risk management, and regulatory frameworks."
@@ -3720,12 +3720,12 @@
       }
     },
     "plans": {
-      "title": "Pricing Plans",
-      "description": "Choose the right Quantifier.ai plan for your organization. Scalable compliance solutions from Starter to Enterprise, with full GRC automation capabilities."
+      "title": "Pricing | Quantifier.ai Compliance Automation",
+      "description": "Flexible pricing for AI-powered compliance automation. Start free, scale as you grow. ISO 27001, SOC 2, NIS2 frameworks included."
     },
     "contact": {
-      "title": "Contact Us",
-      "description": "Get in touch with Quantifier.ai team. Request a demo, ask questions, or discuss your compliance needs with our experts in San Francisco or Warsaw."
+      "title": "Contact Quantifier.ai | Get a Demo of AI Compliance Platform",
+      "description": "Contact our team for a demo. See how Quantifier.ai automates ISO 27001, SOC 2, NIS2 compliance with AI-powered evidence collection."
     },
     "partners": {
       "title": "Partner Network",
@@ -3742,24 +3742,24 @@
         "title": "Cybersecurity Compliance Frameworks",
         "description": "Master cybersecurity compliance with SOC 2, NIS II, and NIST frameworks. AI-powered automation for security controls, risk assessment, and continuous monitoring.",
         "nisII": {
-          "title": "NIS II Compliance - EU Cybersecurity Directive",
-          "description": "Achieve NIS II compliance with Quantifier.ai. AI-powered gap analysis, implementation timeline, and continuous monitoring for EU cybersecurity requirements."
+          "title": "NIS2 Compliance Automation | EU Directive Ready",
+          "description": "Prepare for NIS2 directive with AI-powered compliance. Risk assessment, incident reporting, supply chain security automated."
         },
         "nist": {
           "title": "NIST Cybersecurity Framework Compliance",
           "description": "Implement NIST CSF with Quantifier.ai. Identify, Protect, Detect, Respond, Recover - all automated with AI-powered compliance management."
         },
         "soc": {
-          "title": "SOC 1 & SOC 2 Compliance Platform",
-          "description": "Streamline SOC 1 and SOC 2 audits with Quantifier.ai. Automated evidence collection, control monitoring, and audit-ready reporting."
+          "title": "SOC 2 Automation | Faster Audit Prep",
+          "description": "Automate SOC 2 Type I and Type II compliance. Continuous monitoring, automated evidence collection, audit-ready reports."
         }
       },
       "informationSecurity": {
         "title": "Information Security Frameworks",
         "description": "ISO 27001, ISO 9001, and DORA compliance automation. Build robust information security management systems with AI-powered workflows.",
         "iso27001": {
-          "title": "ISO 27001 Compliance - ISMS Certification",
-          "description": "Achieve ISO 27001 certification with Quantifier.ai. AI-powered ISMS implementation, risk assessment, and audit preparation for information security."
+          "title": "ISO 27001 Automation | Reduce Certification Time by 80%",
+          "description": "Automate ISO 27001 compliance with AI. Gap analysis, evidence collection, audit preparation - all in one platform."
         },
         "iso9001": {
           "title": "ISO 9001 Quality Management System",
