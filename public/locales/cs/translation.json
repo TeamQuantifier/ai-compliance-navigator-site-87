@@ -2010,7 +2010,7 @@
     "hero": {
       "badge": "Směrnice NIS 2",
       "title": "NIS2 Compliance jednoduše",
-      "subtitle": "Zvládněte požadavky EU kybernetické bezpečnosti s jistotou za týdny, ne měsíce",
+      "subtitle": "NIS2 Compliance — rychleji, levněji a bez chaosu.",
       "formTitle": "Zjistěte, jak vám Quantifier může pomoci",
       "nameLabel": "Jméno",
       "namePlaceholder": "Zadejte své jméno",
@@ -2652,6 +2652,54 @@
         "certificationReadiness": {
           "title": "Připravenost na certifikaci",
           "description": "Dashboard gap analýzy ukazující přesně, co je potřeba pro úspěšnou certifikaci"
+        }
+      }
+    },
+    "stepByStep": {
+      "title": "ISO 27001 krok za krokem s Quantifier",
+      "description": "Quantifier automatizuje celou cestu k certifikaci ISO 27001 od onboardingu po kontinuální údržbu ISMS.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Onboarding organizace",
+          "description": "Konfigurujeme vaše ISMS prostředí během hodin, ne týdnů. Importujeme organizační strukturu, role, procesy, aktiva a dodavatele.",
+          "items": ["mapování rozsahu certifikace", "definice rolí a odpovědností", "konfigurace ISO 27001 frameworku", "baseline compliance"]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Analýza mezer",
+          "description": "AI porovnává váš současný stav s požadavky ISO 27001 a Přílohy A.",
+          "items": ["automatická identifikace mezer", "scoring zralosti ISMS", "priority akcí", "roadmapa implementace"]
+        },
+        "riskAssessment": {
+          "number": "3",
+          "title": "Hodnocení rizik",
+          "description": "Budujeme registr rizik v souladu s ISO 27001.",
+          "items": ["identifikace aktiv a hrozeb", "AI-powered scoring rizik", "plány ošetření rizik", "průběžné aktualizace registru"]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Politiky a dokumentace",
+          "description": "Generujeme a udržujeme kompletní ISMS dokumentaci.",
+          "items": ["připravené šablony politik", "automatická kontrola verzí", "workflow schvalování", "cykly přezkoumání dokumentů"]
+        },
+        "controls": {
+          "number": "5",
+          "title": "Implementace kontrol",
+          "description": "Mapujeme a operacionalizujeme všechny kontroly ISO 27001.",
+          "items": ["přiřazení vlastníků kontrol", "implementační úkoly", "sběr důkazů", "monitoring realizace"]
+        },
+        "certification": {
+          "number": "6",
+          "title": "Připravenost na certifikaci",
+          "description": "Automatizujeme audity",
+          "items": ["plán auditu", "export dokumentace", "checklisty compliance", "sběr důkazů", "nápravná opatření", "podpora týmu Quantifier"]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Kontinuální údržba ISMS",
+          "description": "Po certifikaci AI agenti udržují váš ISMS 24/7.",
+          "items": ["monitoring kontrol", "aktualizace rizik", "cykly přezkoumání", "příprava na dozorové audity"]
         }
       }
     },

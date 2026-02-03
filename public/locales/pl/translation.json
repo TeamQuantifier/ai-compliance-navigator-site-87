@@ -2107,7 +2107,7 @@
     "hero": {
       "badge": "Dyrektywa NIS 2",
       "title": "Zgodność NIS2 uproszczona",
-      "subtitle": "Poruszaj się po wymogach cyberbezpieczeństwa UE z pewnością w tygodnie, nie miesiące",
+      "subtitle": "Zgodność z NIS2 — szybciej, taniej i bez chaosu.",
       "formTitle": "Sprawdź jak Quantifier może Ci pomóc",
       "nameLabel": "Imię i nazwisko",
       "namePlaceholder": "Wpisz swoje imię i nazwisko",
@@ -2866,6 +2866,54 @@
         }
       }
     },
+    "stepByStep": {
+      "title": "ISO 27001 krok po kroku z Quantifier",
+      "description": "Quantifier automatyzuje pełną ścieżkę do certyfikacji ISO 27001 od onboardingu po ciągłe utrzymanie ISMS.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Onboarding organizacji",
+          "description": "Konfigurujemy Twoje środowisko ISMS w kilka godzin, nie tygodni. Importujemy strukturę organizacyjną, role, procesy, aktywa i dostawców.",
+          "items": ["mapowanie zakresu certyfikacji", "definicja ról i odpowiedzialności", "konfiguracja frameworku ISO 27001", "baseline zgodności"]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Analiza luk",
+          "description": "AI porównuje Twój obecny stan z wymaganiami ISO 27001 i Załącznika A.",
+          "items": ["automatyczna identyfikacja braków", "scoring dojrzałości ISMS", "priorytety działań", "roadmapa wdrożenia"]
+        },
+        "riskAssessment": {
+          "number": "3",
+          "title": "Ocena ryzyka",
+          "description": "Budujemy rejestr ryzyk zgodny z ISO 27001.",
+          "items": ["identyfikacja aktywów i zagrożeń", "scoring ryzyka oparty na AI", "plany postępowania z ryzykiem", "ciągłe aktualizacje rejestru"]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Polityki i dokumentacja",
+          "description": "Generujemy i utrzymujemy kompletną dokumentację ISMS.",
+          "items": ["gotowe szablony polityk", "automatyczna kontrola wersji", "workflow zatwierdzeń", "cykle przeglądu dokumentów"]
+        },
+        "controls": {
+          "number": "5",
+          "title": "Wdrożenie kontroli",
+          "description": "Mapujemy i operacjonalizujemy wszystkie kontrole ISO 27001.",
+          "items": ["przypisanie właścicieli kontroli", "zadania wdrożeniowe", "zbieranie dowodów", "monitoring realizacji"]
+        },
+        "certification": {
+          "number": "6",
+          "title": "Gotowość certyfikacyjna",
+          "description": "Automatyzujemy audyty",
+          "items": ["plan audytu", "eksport dokumentacji", "checklisty zgodności", "zbieranie dowodów", "działania korygujące", "wsparcie zespołu Quantifier"]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Ciągłe utrzymanie ISMS",
+          "description": "Po certyfikacji agenci AI utrzymują Twój ISMS 24/7.",
+          "items": ["monitoring kontroli", "aktualizacje ryzyk", "cykle przeglądu", "przygotowanie do audytów nadzorczych"]
+        }
+      }
+    },
     "aiModule": {
       "title": "Moduł ISMS oparty na AI",
       "description": "Nasze AI ciągle monitoruje Twój poziom bezpieczeństwa, identyfikuje luki i rekomenduje usprawnienia — zapewniając gotowość audytową 24/7.",
@@ -2877,11 +2925,11 @@
       "metrics": {
         "coverage": {
           "value": "100%",
-          "label": "Pokrycie kontroli"
+          "label": "pokrycia normy"
         },
         "controls": {
           "value": "93",
-          "label": "Kontrole Załącznika A"
+          "label": "wdrożone Kontrole (Annex A)"
         },
         "monitoring": {
           "value": "24/7",

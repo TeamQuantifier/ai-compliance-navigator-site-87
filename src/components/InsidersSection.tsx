@@ -99,6 +99,56 @@ const InsidersSection = () => {
       id: 18,
       src: "/lovable-uploads/unicell-logo.png",
       alt: "Unicell International"
+    },
+    {
+      id: 19,
+      src: "/lovable-uploads/adamed-logo.png",
+      alt: "Adamed",
+      scale: 1.25
+    },
+    {
+      id: 20,
+      src: "/lovable-uploads/bidfood-farutex-logo.png",
+      alt: "Bidfood Farutex"
+    },
+    {
+      id: 21,
+      src: "/lovable-uploads/cloudferro-logo.png",
+      alt: "CloudFerro",
+      scale: 1.25
+    },
+    {
+      id: 22,
+      src: "/lovable-uploads/gobarto-logo.png",
+      alt: "Gobarto",
+      scale: 1.25
+    },
+    {
+      id: 23,
+      src: "/lovable-uploads/hilding-anders-logo.png",
+      alt: "Hilding Anders",
+      scale: 1.25
+    },
+    {
+      id: 24,
+      src: "/lovable-uploads/kazar-logo.png",
+      alt: "Kazar"
+    },
+    {
+      id: 25,
+      src: "/lovable-uploads/marc-kolor-logo.png",
+      alt: "Marc Kolor",
+      scale: 1.25
+    },
+    {
+      id: 26,
+      src: "/lovable-uploads/oex-logo.png",
+      alt: "OEX"
+    },
+    {
+      id: 27,
+      src: "/lovable-uploads/baltic-logo.png",
+      alt: "Grupa Przemysłowa Baltic"
     }
   ];
 
@@ -141,6 +191,7 @@ const InsidersSection = () => {
                       loading="lazy"
                       width="160"
                       height="80"
+                      style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
                       className="max-h-20 max-w-full mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
                     />
                   </div>

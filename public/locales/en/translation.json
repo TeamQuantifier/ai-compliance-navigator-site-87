@@ -2283,7 +2283,7 @@
     "hero": {
       "badge": "NIS 2 Directive",
       "title": "NIS2 Compliance Made Simple",
-      "subtitle": "Navigate EU cybersecurity requirements with confidence in weeks, not months",
+      "subtitle": "NIS2 Compliance — faster, cheaper, and without chaos.",
       "formTitle": "Check how Quantifier can help you",
       "nameLabel": "Name",
       "namePlaceholder": "Enter your name",
@@ -2981,6 +2981,54 @@
         "certificationReadiness": {
           "title": "Certification Readiness",
           "description": "Gap analysis dashboard showing exactly what's needed for successful certification"
+        }
+      }
+    },
+    "stepByStep": {
+      "title": "ISO 27001 Step by Step with Quantifier",
+      "description": "Quantifier automates the full path to ISO 27001 certification from onboarding to continuous ISMS maintenance.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Organization Onboarding",
+          "description": "We configure your ISMS environment in hours, not weeks. We import organizational structure, roles, processes, assets, and suppliers.",
+          "items": ["certification scope mapping", "roles and responsibilities definition", "ISO 27001 framework configuration", "compliance baseline"]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Gap Analysis",
+          "description": "AI compares your current state with ISO 27001 and Annex A requirements.",
+          "items": ["automatic gap identification", "ISMS maturity scoring", "action priorities", "implementation roadmap"]
+        },
+        "riskAssessment": {
+          "number": "3",
+          "title": "Risk Assessment",
+          "description": "We build a risk register compliant with ISO 27001.",
+          "items": ["asset and threat identification", "AI-powered risk scoring", "risk treatment plans", "continuous register updates"]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Policies and Documentation",
+          "description": "We generate and maintain complete ISMS documentation.",
+          "items": ["ready-made policy templates", "automatic version control", "approval workflows", "document review cycles"]
+        },
+        "controls": {
+          "number": "5",
+          "title": "Control Implementation",
+          "description": "We map and operationalize all ISO 27001 controls.",
+          "items": ["control owner assignment", "implementation tasks", "evidence collection", "implementation monitoring"]
+        },
+        "certification": {
+          "number": "6",
+          "title": "Certification Readiness",
+          "description": "We automate audits",
+          "items": ["audit plan", "documentation export", "compliance checklists", "evidence collection", "corrective actions", "Quantifier team support"]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Continuous ISMS Maintenance",
+          "description": "After certification, AI agents maintain your ISMS 24/7.",
+          "items": ["control monitoring", "risk updates", "review cycles", "surveillance audit preparation"]
         }
       }
     },
