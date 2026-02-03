@@ -571,10 +571,10 @@ const Gdpr = () => {
                 <Card className="bg-white/10 border-white/20">
                   <CardContent className="pt-6">
                     <Activity className="h-8 w-8 text-brand-purple mb-3" />
-                    <h3 className="font-semibold mb-2">
+                    <h3 className="font-semibold mb-2 text-white">
                       {t("gdprPage.continuousCompliance.features.monitoring.title")}
                     </h3>
-                    <p className="text-sm opacity-80">
+                    <p className="text-sm text-white/80">
                       {t("gdprPage.continuousCompliance.features.monitoring.description")}
                     </p>
                   </CardContent>
@@ -582,10 +582,10 @@ const Gdpr = () => {
                 <Card className="bg-white/10 border-white/20">
                   <CardContent className="pt-6">
                     <CheckCircle className="h-8 w-8 text-brand-mint mb-3" />
-                    <h3 className="font-semibold mb-2">
+                    <h3 className="font-semibold mb-2 text-white">
                       {t("gdprPage.continuousCompliance.features.consentTracking.title")}
                     </h3>
-                    <p className="text-sm opacity-80">
+                    <p className="text-sm text-white/80">
                       {t("gdprPage.continuousCompliance.features.consentTracking.description")}
                     </p>
                   </CardContent>
@@ -593,10 +593,10 @@ const Gdpr = () => {
                 <Card className="bg-white/10 border-white/20">
                   <CardContent className="pt-6">
                     <Users className="h-8 w-8 text-brand-blue mb-3" />
-                    <h3 className="font-semibold mb-2">
+                    <h3 className="font-semibold mb-2 text-white">
                       {t("gdprPage.continuousCompliance.features.dsarProcessing.title")}
                     </h3>
-                    <p className="text-sm opacity-80">
+                    <p className="text-sm text-white/80">
                       {t("gdprPage.continuousCompliance.features.dsarProcessing.description")}
                     </p>
                   </CardContent>
@@ -604,10 +604,10 @@ const Gdpr = () => {
                 <Card className="bg-white/10 border-white/20">
                   <CardContent className="pt-6">
                     <Bell className="h-8 w-8 text-red-400 mb-3" />
-                    <h3 className="font-semibold mb-2">
+                    <h3 className="font-semibold mb-2 text-white">
                       {t("gdprPage.continuousCompliance.features.breachNotification.title")}
                     </h3>
-                    <p className="text-sm opacity-80">
+                    <p className="text-sm text-white/80">
                       {t("gdprPage.continuousCompliance.features.breachNotification.description")}
                     </p>
                   </CardContent>
