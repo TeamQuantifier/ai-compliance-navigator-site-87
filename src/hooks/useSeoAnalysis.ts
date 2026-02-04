@@ -124,8 +124,9 @@ function analyzeBodyRich(bodyRich: any, baseUrl: string = ''): BodyAnalysis {
 function checkKeywordInText(text: string, keyword: string): boolean {
   if (!keyword) return false;
   const normalizedText = text.toLowerCase();
-  const normalizedKeyword = keyword.toLowerCase();
-  return normalizedText.includes(normalizedKeyword);
+  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+  // All words from keyword must be present in text
+  return keywordWords.every(word => normalizedText.includes(word));
 }
 
 export function useSeoAnalysis(
@@ -189,8 +190,8 @@ export function useSeoAnalysis(
       data.focusKeyword || ''
     );
 
-    // Keyword in title
-    const keywordInTitle = hasKeyword && checkKeywordInText(data.title || '', data.focusKeyword!);
+    // Keyword in title - check against meta title (SEO title), not internal title
+    const keywordInTitle = hasKeyword && checkKeywordInText(seoTitle, data.focusKeyword!);
     addResult(
       ON_PAGE_RULES.find(r => r.id === 'keyword-in-title')!,
       keywordInTitle || !hasKeyword,
@@ -199,7 +200,7 @@ export function useSeoAnalysis(
         : hasKeyword 
           ? 'Keyword nie występuje w tytule' 
           : 'Ustaw najpierw focus keyword',
-      data.title
+      seoTitle
     );
 
     // Keyword in intro (first 100 words)

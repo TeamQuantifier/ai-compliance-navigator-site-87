@@ -163,7 +163,8 @@ export function analyzeSeoContent(
         break;
 
       case 'keyword-in-title':
-        isPassed = !keyword || seoTitle.toLowerCase().includes(keyword.toLowerCase());
+        const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+        isPassed = !keyword || keywordWords.every(word => seoTitle.toLowerCase().includes(word));
         message = isPassed ? 'Keyword found in title' : 'Add focus keyword to SEO title';
         break;
 
