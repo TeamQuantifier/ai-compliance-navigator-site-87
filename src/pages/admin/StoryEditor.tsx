@@ -472,7 +472,8 @@ const StoryEditor = () => {
         {/* Rich Text Editor */}
         <div>
           <Label>Treść ({LANGUAGE_CONFIG[activeLanguage].label})</Label>
-          <RichTextEditor
+        <RichTextEditor
+            key={activeLanguage}
             content={currentVersion.body_rich}
             onChange={(content) => updateVersion(activeLanguage, { body_rich: content })}
             placeholder="Napisz treść success story..."
