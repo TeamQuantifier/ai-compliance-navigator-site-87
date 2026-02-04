@@ -1,116 +1,103 @@
 
-# Plan: Aktualizacja SEO meta tagów dla stron blogowych
 
-## Podsumowanie analizy
+# Plan: Naprawa grupowania artykułów i dodanie czeskich wersji
 
-### Strona z listą blogów (`BlogList.tsx`)
-- Obecny stan: używa `t('blog.title')` i `t('blog.subtitle')` - ogólne klucze
-- Potrzeba: zaktualizować do nowych kluczy SEO z dedykowanymi tekstami
+## Podsumowanie problemu
 
-### Artykuły blogowe (`BlogPost.tsx`)  
-- **Już w pełni zaimplementowane!** Komponent `SEOHead` zawiera:
-  - Dynamiczny tytuł: `{title} | Quantifier.ai` (linia 101)
-  - Dynamiczny opis z excerpt/meta_desc (linia 102)
-  - `og:type="article"` (linia 220)
-  - `og:image` z featured image (linia 222)
-  - Canonical URL (linia 210)
-  - Schema.org BlogPosting z author, datePublished, dateModified (linie 126-164)
+### Sitemap ✅ Działa poprawnie
+Sitemap jest dynamiczny - edge function `sitemap/index.ts` pobiera z bazy wszystkie opublikowane posty i generuje XML w czasie rzeczywistym. Cache 1h/24h oznacza że zmiany pojawiają się automatycznie.
+
+**Nie trzeba nic zmieniać!** Gdy dodasz/edytujesz artykuł ze statusem `published`, pojawi się w sitemap automatycznie.
+
+### CMS - Brakujące wersje czeskie ❌
+Artykuły mają **różne `group_id` dla PL i EN** zamiast jednego wspólnego. CMS ładuje wszystkie wersje językowe po `group_id`, więc gdy PL ma inny group_id niż EN, system nie łączy ich jako jeden artykuł.
+
+| Artykuł | PL group_id | EN group_id | Połączone? |
+|---------|------------|-------------|------------|
+| Continuous Compliance | fedaa412... | 14a6120f... | ❌ Różne |
+| EcoVadis | aa0ab5bc... | 03263f56... | ❌ Różne |
+| Cyberatak ransomware | cba0c0eb... | cf105d41... | ❌ Różne |
+| AI Agent | 3f82d40e... | 7441db9f... | ❌ Różne |
 
 ---
 
-## Zakres zmian
+## Rozwiązanie
 
-### 1. Aktualizacja `src/pages/blog/BlogList.tsx`
+### Krok 1: Zgrupowanie artykułów pod jednym group_id
 
-Zmiana linii 41-42 z:
-```jsx
-<title>{t('blog.title')} | Quantifier.ai</title>
-<meta name="description" content={t('blog.subtitle')} />
-```
+Dla każdej pary PL/EN artykułów:
+- Wybieram jeden `group_id` jako główny (EN)
+- Aktualizuję PL post aby miał ten sam `group_id`
+- Tworzę pustą wersję CS z tym samym `group_id`
 
-Na:
-```jsx
-<title>{t('seo.blog.title')} | Quantifier.ai</title>
-<meta name="description" content={t('seo.blog.description')} />
-```
+### Krok 2: Aktualizacja tabeli alternates
 
-Analogiczna zmiana dla OG tags (linie 56-57).
-
-### 2. Aktualizacja plików tłumaczeń
-
-#### `public/locales/en/translation.json`
-```json
-"seo": {
-  "blog": {
-    "title": "Compliance & Security Blog | ISO 27001, SOC 2, NIS2 Guides",
-    "description": "Expert guides on compliance automation. Learn about ISO 27001, SOC 2, NIS2, GDPR and how AI simplifies audit preparation."
-  }
-}
-```
-
-#### `public/locales/pl/translation.json`
-```json
-"seo": {
-  "blog": {
-    "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
-    "description": "Eksperckie przewodniki po automatyzacji compliance. Dowiedz się o ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu."
-  }
-}
-```
-
-#### `public/locales/cs/translation.json`
-```json
-"seo": {
-  "blog": {
-    "title": "Blog o Compliance a Bezpečnosti | Průvodci ISO 27001, SOC 2, NIS2",
-    "description": "Expertní průvodci automatizací compliance. Zjistěte více o ISO 27001, SOC 2, NIS2, GDPR a jak AI zjednodušuje přípravu na audit."
-  }
-}
-```
+Po zgrupowaniu, tabela `alternates` musi zawierać poprawne powiązania hreflang między wszystkimi wersjami językowymi.
 
 ---
 
 ## Szczegóły techniczne
 
-### Dlaczego artykuły blogowe już działają poprawnie?
+### SQL do naprawy danych
 
-Komponent `SEOHead` (używany w `BlogPost.tsx`) automatycznie:
+```sql
+-- Artykuł 1: Continuous Compliance
+-- PL: fedaa412-5ed9-469c-a75c-1b4d436d93e5 / id: 62e81936...
+-- EN: 14a6120f-30ae-47bc-bfdd-8aa98020bfa4 / id: 632d8856...
+-- CS: 14a6120f-30ae-47bc-bfdd-8aa98020bfa4 / id: d442b907... (już ok!)
 
-1. **Tytuł dynamiczny**: `metaTitle || {title} | Quantifier.ai`
-2. **Opis z excerpt**: `metaDesc || excerpt || description` (obcięty do długości ustalonej w CMS)
-3. **OG:type**: zawsze `article` dla postów (linia 220)
-4. **OG:image**: `ogImageUrl || featuredImageUrl` (linia 222)
-5. **Canonical**: `https://quantifier.ai/{lang}/blog/{slug}` (linia 210)
-6. **Schema.org BlogPosting**:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "...",
-  "description": "...",
-  "image": "...",
-  "datePublished": "...",
-  "dateModified": "...",
-  "author": { "@type": "Organization", "name": "Quantifier.ai" },
-  "publisher": { "@type": "Organization", "name": "Quantifier.ai" }
-}
+UPDATE posts 
+SET group_id = '14a6120f-30ae-47bc-bfdd-8aa98020bfa4'
+WHERE id = '62e81936-3615-42cd-b003-0538da49ffa2';
+
+-- Artykuł 2: EcoVadis
+-- Użyjemy EN group_id: 03263f56-229b-4e14-b103-83accfe8bcf0
+UPDATE posts 
+SET group_id = '03263f56-229b-4e14-b103-83accfe8bcf0'
+WHERE id = 'f78cf4bc-525b-4803-bdba-e40cef6b7468';
+
+-- Artykuł 3: Cyberatak ransomware  
+-- Użyjemy EN group_id: cf105d41-fee5-45af-8d41-c511c2c126eb
+UPDATE posts 
+SET group_id = 'cf105d41-fee5-45af-8d41-c511c2c126eb'
+WHERE id = 'f233fe7e-b990-4b79-9a5d-60b7d9db3da7';
+
+-- Artykuł 4: AI Agent
+-- Użyjemy EN group_id: 7441db9f-b1c5-4302-a814-fc569a8a879d
+UPDATE posts 
+SET group_id = '7441db9f-b1c5-4302-a814-fc569a8a879d'
+WHERE id = '92f3e67c-ab6b-43f2-8b35-b1f0a4c99e99';
 ```
+
+### Dodanie pustych czeskich wersji
+
+Po zgrupowaniu, użytkownik będzie mógł dodać czeskie wersje bezpośrednio w CMS:
+1. Otworzyć artykuł do edycji
+2. Kliknąć tab "Čeština" 
+3. Skopiować treść z PL lub EN
+4. Przetłumaczyć i zapisać
+
+Alternatywnie mogę wstawić puste wersje CS od razu w SQL.
+
+### Aktualizacja alternates
+
+Po zapisaniu w CMS, hook `useMultiLangPost` automatycznie aktualizuje tabelę `alternates` (linie 328-377).
 
 ---
 
 ## Pliki do modyfikacji
 
-| Plik | Rodzaj zmiany |
-|------|---------------|
-| `src/pages/blog/BlogList.tsx` | Zmiana kluczy tłumaczeń na `seo.blog.*` |
-| `public/locales/en/translation.json` | Nowe teksty SEO dla bloga |
-| `public/locales/pl/translation.json` | Polskie tłumaczenia |
-| `public/locales/cs/translation.json` | Czeskie tłumaczenia |
+| Zmiana | Typ |
+|--------|-----|
+| Aktualizacja `group_id` w tabeli `posts` | SQL (insert tool) |
+| Usunięcie starych wpisów z `alternates` | SQL (insert tool) |
+| Usunięcie nieużywanych `article_groups` | SQL (insert tool) |
 
 ---
 
-## Uwagi
+## Po naprawie
 
-- Artykuły blogowe (`BlogPost.tsx`) **nie wymagają zmian** - `SEOHead` już obsługuje wszystkie wymagane funkcje
-- Tylko strona z listą blogów wymaga aktualizacji kluczy
-- Schema.org, og:type=article, datePublished/dateModified - wszystko już działa
+1. **CMS**: Wszystkie 4 artykuły będą pokazywać 3 zakładki językowe (PL, EN, CS)
+2. **Hreflang**: Zapisanie artykułu automatycznie zaktualizuje `alternates`
+3. **Sitemap**: Bez zmian - już działa dynamicznie
+
