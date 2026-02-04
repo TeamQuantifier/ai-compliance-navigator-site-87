@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- STRONA GŁÓWNA -->
   <url>
     <loc>https://quantifier.ai/</loc>
     <priority>1.0</priority>
@@ -17,50 +16,34 @@
     <loc>https://quantifier.ai/cs</loc>
     <priority>1.0</priority>
   </url>
-
-  <!-- PRODUCT -->
   <url>
     <loc>https://quantifier.ai/product</loc>
     <priority>0.8</priority>
   </url>
-
-  <!-- PLANS -->
   <url>
     <loc>https://quantifier.ai/plans</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- FRAMEWORKS -->
   <url>
     <loc>https://quantifier.ai/frameworks</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- CONTACT -->
   <url>
     <loc>https://quantifier.ai/contact</loc>
     <priority>0.6</priority>
   </url>
-
-  <!-- SUCCESS STORIES -->
   <url>
     <loc>https://quantifier.ai/success-stories</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- PARTNERS -->
   <url>
     <loc>https://quantifier.ai/partners</loc>
     <priority>0.6</priority>
   </url>
-
-  <!-- BY ROLES -->
   <url>
     <loc>https://quantifier.ai/by-roles</loc>
     <priority>0.6</priority>
   </url>
-
-  <!-- BLOG - STRONA GŁÓWNA -->
   <url>
     <loc>https://quantifier.ai/en/blog</loc>
     <priority>0.8</priority>
@@ -73,8 +56,6 @@
     <loc>https://quantifier.ai/cs/blog</loc>
     <priority>0.8</priority>
   </url>
-
-  <!-- BLOG - ARTYKUŁY ANGIELSKIE -->
   <url>
     <loc>https://quantifier.ai/en/blog/continuous-compliance-from-reaction-to-proaction</loc>
     <priority>0.7</priority>
@@ -91,8 +72,6 @@
     <loc>https://quantifier.ai/en/blog/ai-agents-in-quantifier</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- BLOG - ARTYKUŁY POLSKIE -->
   <url>
     <loc>https://quantifier.ai/pl/blog/ciagla-zgodnosc-od-reakcji-do-proakcji</loc>
     <priority>0.7</priority>
@@ -109,41 +88,8 @@
     <loc>https://quantifier.ai/pl/blog/blog-cyberatak-ransomware-firma-produkcyjna</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- BLOG - ARTYKUŁY CZESKIE -->
   <url>
     <loc>https://quantifier.ai/cs/blog/pro-je-continuous-compliance</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
-```
-
----
-
-## PROMPT DO LOVABLE - Hreflang (ważne dla SEO!)
-
-Hreflang mówi Google która wersja strony jest dla jakiego języka. Wklej do Lovable:
-```
-Add hreflang tags to all pages for multilingual SEO.
-
-Each page should have in <head>:
-- <link rel="alternate" hreflang="en" href="https://quantifier.ai/en/..." />
-- <link rel="alternate" hreflang="pl" href="https://quantifier.ai/pl/..." />
-- <link rel="alternate" hreflang="cs" href="https://quantifier.ai/cs/..." />
-- <link rel="alternate" hreflang="x-default" href="https://quantifier.ai/en/..." />
-
-For blog articles, link to translated versions:
-- EN: /en/blog/continuous-compliance-from-reaction-to-proaction
-- PL: /pl/blog/ciagla-zgodnosc-od-reakcji-do-proakcji
-
-- EN: /en/blog/ecovadis-in-practice
-- PL: /pl/blog/ecovadis-w-praktyce-ocena-esg
-
-- EN: /en/blog/case-study-cyberattack-ransomware-manufacturing-company
-- PL: /pl/blog/blog-cyberatak-ransomware-firma-produkcyjna
-
-- EN: /en/blog/ai-agents-in-quantifier
-- PL: /pl/blog/ai-agent-w-quantifier-jak-agenci-autonomiczni-dowodza-zgodnosci
-
-- EN: /en/blog/continuous-compliance-from-reaction-to-proaction
-- CS: /cs/blog/pro-je-continuous-compliance
