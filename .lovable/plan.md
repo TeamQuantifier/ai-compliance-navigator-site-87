@@ -1,73 +1,128 @@
 
-# Plan: Naprawa wyświetlania treści w edytorze przy przełączaniu języków
+# Plan: Ulepszenie geo-targetingu SEO + Naprawa Case Study
 
-## Zdiagnozowany problem
+## Część 1: Naprawa grupowania Case Study (priorytet)
 
-Komponent `RichTextEditor.tsx` używa flagi `isInitialized`, która jest ustawiana raz przy pierwszym załadowaniu treści. Po przełączeniu zakładki językowej:
-- Parent (`PostEditor`) przekazuje nową wartość `body_rich` dla wybranego języka
-- Ale edytor ignoruje zmianę, bo `isInitialized === true`
-- W efekcie zawsze widać treść pierwszego załadowanego języka (polskiego)
+Synchronizacja `group_id` dla 3 par artykułów:
 
-```typescript
-// Linia 75-92 - problem: content jest aktualizowany tylko raz
-useEffect(() => {
-  if (editor && !isInitialized) {  // ← to blokuje aktualizacje!
-    // ... setContent tylko przy pierwszym ładowaniu
-  }
-}, [content, editor, isInitialized]);
+| Case Study | Wersja PL | → Przypisanie do EN group_id |
+|------------|-----------|------------------------------|
+| OMIDA Group | `240f83b9...` | `386cc542-bf1f-47e4-a9dc-734920a83354` |
+| System DOT | `b74d21b8...` | `bbf31e49-3a01-4dcc-9958-0029dc08e087` |
+| Raben Group | `59471d65...` | `0b4dd7dc-32ab-4faf-9794-db7387d127b6` |
+
+Plus wyczyszczenie tabeli alternates dla stories i naprawa StoryEditor.tsx (key prop).
+
+---
+
+## Część 2: Ulepszenie hreflang dla geo-targetingu
+
+### Obecny stan (tylko język):
+```html
+<link rel="alternate" hreflang="en" href="..." />
+<link rel="alternate" hreflang="pl" href="..." />
+<link rel="alternate" hreflang="cs" href="..." />
 ```
 
-## Rozwiązanie
-
-Najczystszym rozwiązaniem jest dodanie prop `key` do komponentu `RichTextEditor` w `PostEditor.tsx`. Zmiana `key` wymusi pełne odmontowanie i ponowne zamontowanie edytora z nową treścią.
-
-### Zmiana w PostEditor.tsx (linia 568)
-
-**Przed:**
-```tsx
-<RichTextEditor
-  content={currentVersion.body_rich}
-  onChange={(content) => updateVersion(activeLanguage, { body_rich: content })}
-  placeholder="Zacznij pisać treść artykułu..."
-/>
+### Po zmianie (język + region):
+```html
+<link rel="alternate" hreflang="en" href="..." />
+<link rel="alternate" hreflang="pl-PL" href="..." />
+<link rel="alternate" hreflang="cs-CZ" href="..." />
+<link rel="alternate" hreflang="x-default" href="..." />
 ```
 
-**Po:**
-```tsx
-<RichTextEditor
-  key={activeLanguage}  // ← wymusza remount przy zmianie języka
-  content={currentVersion.body_rich}
-  onChange={(content) => updateVersion(activeLanguage, { body_rich: content })}
-  placeholder="Zacznij pisać treść artykułu..."
-/>
-```
+**Korzyści:**
+- EN pozostaje globalny (dla wszystkich anglojęzycznych rynków)
+- PL-PL = priorytet w wynikach Google dla użytkowników w Polsce
+- CS-CZ = priorytet w wynikach Google dla użytkowników w Czechach
 
-## Dlaczego to działa
-
-W React, zmiana prop `key` powoduje:
-1. Całkowite odmontowanie starej instancji komponentu
-2. Zamontowanie nowej instancji z aktualnym `content`
-3. `isInitialized` startuje od `false` dla każdego języka
+---
 
 ## Szczegóły techniczne
 
-| Plik | Zmiana |
-|------|--------|
-| `src/pages/admin/PostEditor.tsx` | Dodanie `key={activeLanguage}` do RichTextEditor (linia 568) |
+### Zmiany w bazie danych:
+```sql
+-- Synchronizacja group_id dla Case Studies
+UPDATE stories SET group_id = '386cc542-bf1f-47e4-a9dc-734920a83354' 
+  WHERE id = '240f83b9-e92d-4d77-b2d8-401709553855';
+UPDATE stories SET group_id = 'bbf31e49-3a01-4dcc-9958-0029dc08e087' 
+  WHERE id = 'b74d21b8-9683-4672-9645-65ee164c3856';
+UPDATE stories SET group_id = '0b4dd7dc-32ab-4faf-9794-db7387d127b6' 
+  WHERE id = '59471d65-03f7-41b0-8ada-95476dd99afb';
 
-### Jedna linia kodu do zmiany:
-```diff
-- <RichTextEditor
-+ <RichTextEditor
-+   key={activeLanguage}
-    content={currentVersion.body_rich}
+-- Reset alternates dla stories
+DELETE FROM alternates WHERE content_type = 'story';
 ```
 
-## Efekt końcowy
+### Zmiany w kodzie:
 
-Po naprawie:
-- Zakładka **Polski** → treść polska
-- Zakładka **English** → treść angielska
-- Zakładka **Čeština** → treść czeska
+**1. Konfiguracja i18n (`src/i18n/config.ts`):**
+```typescript
+// Mapowanie język → region dla hreflang
+export const LOCALE_HREFLANG_MAP: Record<Locale, string> = {
+  en: 'en',        // globalny angielski
+  pl: 'pl-PL',     // Polska
+  cs: 'cs-CZ',     // Czechy
+};
+```
 
-Każde przełączenie zakładki załaduje poprawną treść z bazy danych.
+**2. SEOHead.tsx (linie 117-120, 211-215):**
+```typescript
+// Zmiana z:
+const ogLocale = lang === 'pl' ? 'pl_PL' : lang === 'cs' ? 'cs_CZ' : 'en_US';
+
+// Użycie LOCALE_HREFLANG_MAP dla hreflang tags:
+<link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[lang]} href={canonicalUrl} />
+```
+
+**3. PageTemplate.tsx (linie 104-107):**
+```typescript
+// Zmiana generowania hreflang z użyciem regionów:
+{hreflangUrls.map(({ locale, url }) => (
+  <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale]} href={url} />
+))}
+```
+
+**4. Sitemap Edge Function (`supabase/functions/sitemap/index.ts`):**
+```typescript
+// Aktualizacja mapowania:
+const localeHreflang: Record<string, string> = {
+  en: 'en',
+  pl: 'pl-PL', 
+  cs: 'cs-CZ',
+};
+
+// Użycie w generateHreflangLinks
+```
+
+**5. StoryEditor.tsx (linia 475):**
+```diff
+<RichTextEditor
++ key={activeLanguage}
+  content={currentVersion.body_rich}
+```
+
+---
+
+## Wpływ na SEO
+
+| Element | Przed | Po |
+|---------|-------|-----|
+| PL w Google.pl | Średni priorytet | Wysoki priorytet |
+| CS w Google.cz | Średni priorytet | Wysoki priorytet |
+| EN globalnie | Bez zmian | Bez zmian |
+| Sitemap | Bez regionów | Z regionami |
+| OG locale | Już poprawne | Bez zmian |
+
+---
+
+## Pliki do modyfikacji
+
+1. `src/i18n/config.ts` - dodanie LOCALE_HREFLANG_MAP
+2. `src/components/seo/SEOHead.tsx` - użycie mapowania dla hreflang
+3. `src/components/PageTemplate.tsx` - użycie mapowania dla hreflang
+4. `supabase/functions/sitemap/index.ts` - aktualizacja hreflang w sitemap
+5. `src/pages/admin/StoryEditor.tsx` - dodanie key={activeLanguage}
+
+Plus 3 UPDATE + 1 DELETE w bazie danych.
