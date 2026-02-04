@@ -1,176 +1,131 @@
 
+# Plan: Utworzenie czeskich wersji 3 artykułów blogowych
 
-# Plan: Naprawa zapisu SEO Toolkit + przycisk "Zatwierdź zmiany"
+## Podsumowanie
 
-## Zidentyfikowany problem
+Utworzenie profesjonalnych czeskich tłumaczeń dla 3 artykułów, które obecnie istnieją tylko w wersjach polskiej i angielskiej:
 
-### Przyczyna główna
-Zmiany SEO (focus keyword, OG tags, etc.) są aktualizowane w stanie React, ale użytkownik musi kliknąć główny przycisk "Zapisz wszystkie wersje" aby je utrwalić w bazie. Brak wizualnej informacji o niezapisanych zmianach powoduje, że użytkownik zamyka panel SEO bez zapisania.
+| Artykuł | Group ID | Status PL/EN | Status CS |
+|---------|----------|--------------|-----------|
+| EcoVadis w praktyce | 03263f56-229b-4e14-b103-83accfe8bcf0 | Opublikowane | Do utworzenia |
+| AI Agenci w Quantifier | 7441db9f-b1c5-4302-a814-fc569a8a879d | Opublikowane | Do utworzenia |
+| Cyberatak ransomware | cf105d41-fee5-45af-8d41-c511c2c126eb | Opublikowane | Do utworzenia |
 
-### Przepływ danych (obecny)
+---
+
+## Szczegoly implementacji
+
+### Artykul 1: EcoVadis v praxi
+
+**Tytul CZ:** EcoVadis v praxi: jak hodnoceni ESG ovlivnuje spoluprace s klienty a pozici dodavatele
+
+**Slug:** ecovadis-v-praxi-hodnoceni-esg
+
+**Meta title:** EcoVadis v praxi
+
+**Meta desc:** Hodnoceni EcoVadis ESG pomaha dodavatelum prokazat udrzitelnost. Zjistete, jak vysledky ovlivnuji obchodni vztahy.
+
+**Focus keyword:** EcoVadis hodnoceni ESG
+
+**Body (TipTap JSON):**
 ```text
-Panel SEO → onUpdateSeoFields() → updateVersion() → React State
-                                                        ↓
-                                     (wymaga ręcznego kliknięcia)
-                                                        ↓
-                        "Zapisz wszystkie wersje" → saveAllVersions() → Baza danych
+Stale vice firem se setkava s pozadavkem svych zakazniku projit hodnocenim v systemu EcoVadis. Pro mnoho dodavatelu je to stale novy pozadavek spojeny s ESG, udrzitelnosti a rostoucim tlakem na transparentnost v celem hodnotovem retezci. Vyvstavaji otazky: co presne je rating EcoVadis, co skutecne meri a jak silne muze ovlivnit spolupraci s klicovymi obchodnimi partnery?
+
+EcoVadis je globalne uznavanou platformou, ktera strukturovanym zpusobem hodnoti firmy ve ctyrech oblastech: zivotni prostredi, lidska prava a prava pracovniku, etika a udrzitelne nakupovani. Vysledna scorecard a medaile se staly praktickym nastrojem pro mnoho organizaci k porovnavani dodavatelu a rizeni rizik spojenych s ESG. Pokud vase spolecnost stoji pred prvnim hodnocenim nebo chcete lepe vyuzit stavajici rating v diskuzich s klienty, tento material vam pomuze pochopit, jak EcoVadis funguje, jak se na nej pripravit a jak vysledek premenite v konkurencni vyhodu.
+
+Ctete dale na envirly.com.
 ```
 
 ---
 
-## Rozwiązanie
+### Artykul 2: AI Agenti v Quantifier
 
-Dodać w panelu SEO:
-1. **Przycisk "Zatwierdź zmiany SEO"** który zapisuje cały artykuł do bazy
-2. **Wskaźnik niezapisanych zmian** (badge "Niezapisane")
-3. **Automatyczne zamknięcie panelu** po zapisaniu z komunikatem sukcesu
+**Tytul CZ:** AI Agenti v Quantifier: jak autonomni agenti zajistuji shodu rychleji nez tradicni nastroje
 
-### Przepływ danych (nowy)
-```text
-Panel SEO → zmiany → wskaźnik "Niezapisane"
-                ↓
-        [Zatwierdź zmiany SEO]
-                ↓
-        saveAllVersions() → Baza → Toast "Zapisano" → Zamknij panel
-```
+**Slug:** ai-agenti-v-quantifier
 
----
+**Meta title:** AI Agenti v Quantifier: kompletni uvod do autonomnich agentu
 
-## Szczegóły techniczne
+**Meta desc:** AI Agenti v Quantifier monitoruji predpisy, prideluji ukoly, detekuji mezery v datech a generuji reporty s audit trail.
 
-### 1. SeoSidePanel - dodanie przycisku zapisu
+**Focus keyword:** AI agenti shoda
 
-Modyfikacja: `src/components/admin/SeoSidePanel.tsx`
+**Excerpt:** AI Agenti v Quantifier monitoruji predpisy, prideluji ukoly, detekuji mezery v datech a generuji reporty s uplnym audit trail. Prozkoumejte architekturu, pripadove studie a osvedcene postupy.
 
-```typescript
-interface SeoSidePanelProps {
-  // ... istniejące props
-  onSave?: () => Promise<void>;  // NOWE
-  isSaving?: boolean;            // NOWE
-  hasUnsavedChanges?: boolean;   // NOWE
-}
-
-// W SheetHeader dodać:
-<div className="flex items-center gap-2">
-  {hasUnsavedChanges && (
-    <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600">
-      Niezapisane
-    </Badge>
-  )}
-  <Button 
-    size="sm" 
-    onClick={onSave} 
-    disabled={isSaving}
-  >
-    {isSaving ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
-    Zatwierdź zmiany
-  </Button>
-</div>
-```
-
-### 2. PostEditor - przekazanie funkcji zapisu
-
-Modyfikacja: `src/pages/admin/PostEditor.tsx`
-
-```typescript
-// Dodać callback do zapisania i zamknięcia panelu
-const handleSeoSave = async () => {
-  await handleSave();
-  setSeoOpen(false);
-};
-
-// W SeoSidePanel:
-<SeoSidePanel
-  // ... istniejące props
-  onSave={handleSeoSave}
-  isSaving={isSaving}
-  hasUnsavedChanges={/* logika wykrywania zmian */}
-/>
-```
-
-### 3. Wykrywanie niezapisanych zmian
-
-Opcja 1 (prosta): Zawsze pokazuj przycisk "Zatwierdź zmiany" - użytkownik sam decyduje kiedy zapisać.
-
-Opcja 2 (zaawansowana): Porównanie stanu z oryginalnym załadowanym z bazy.
-
-Rekomenduję Opcję 1 dla prostoty - przycisk zawsze widoczny, zawsze aktywny.
+**Struktura body (zachovana z anglicke verze):**
+- Uvod o AI agentech
+- Co je AI Agent v Quantifier?
+- Leon jako digitalni compliance officer
+- Jak funguje v praxi
+- Vrstvy operace AI Agenta (interakcni, analyticka, operacni, reportovaci)
+- Architektura: od dat k rozhodnutim
+- Co Leon dela v praxi (bodovy seznam)
+- Shruti a vyhled do budoucna
 
 ---
 
-## Dodatkowe uzupełnienie SEO w bazie
+### Artykul 3: Kyberutok ransomware
 
-Automatycznie uzupełnię brakujące pola SEO dla 8 opublikowanych artykułów:
+**Tytul CZ:** Kyberutok ransomware na polskou vyrobni spolecnost - pripadova studie
 
-```sql
--- 1. OG Title z meta_title/title
-UPDATE posts SET og_title = COALESCE(NULLIF(meta_title, ''), title)
-WHERE status = 'published' AND (og_title IS NULL OR og_title = '');
+**Slug:** pripadova-studie-kyberutok-ransomware
 
--- 2. OG Description z meta_desc/excerpt
-UPDATE posts SET og_description = COALESCE(NULLIF(meta_desc, ''), LEFT(excerpt, 200))
-WHERE status = 'published' AND (og_description IS NULL OR og_description = '');
+**Meta title:** Kyberutok ransomware na polskou vyrobni spolecnost
 
--- 3. OG Image z featured_image
-UPDATE posts SET og_image_url = featured_image_url
-WHERE status = 'published' AND (og_image_url IS NULL OR og_image_url = '') 
-  AND featured_image_url IS NOT NULL;
+**Meta desc:** Kyberutok ransomware zasahl polskou vyrobni spolecnost. Prectete si casovou osu, dopady, plan obnovy a kontrolni seznam.
 
--- 4. Twitter Title z og_title
-UPDATE posts SET twitter_title = og_title
-WHERE status = 'published' AND (twitter_title IS NULL OR twitter_title = '');
+**Focus keyword:** kyberutok ransomware pripadova studie
 
--- 5. Twitter Image z og_image
-UPDATE posts SET twitter_image_url = og_image_url
-WHERE status = 'published' AND (twitter_image_url IS NULL OR twitter_image_url = '');
+**Excerpt:** Kyberutok ransomware zasahl polskou vyrobni spolecnost. Prectete si casovou osu, obchodni dopady, plan obnovy a prakticky kontrolni seznam bezpecnosti.
 
--- 6. Featured Image ALT z title
-UPDATE posts SET featured_image_alt = title
-WHERE status = 'published' AND (featured_image_alt IS NULL OR featured_image_alt = '') 
-  AND featured_image_url IS NOT NULL;
-
--- 7. Focus Keywords (indywidualnie dla każdego artykułu)
-UPDATE posts SET focus_keyword = 'AI agents compliance' WHERE id = '3c4a13ed-c075-48f0-ab67-1395d32734f7';
-UPDATE posts SET focus_keyword = 'AI agenci zgodność' WHERE id = '92f3e67c-ab6b-43f2-8b35-b1f0a4c99e99';
-UPDATE posts SET focus_keyword = 'continuous compliance' WHERE id IN ('632d8856-2db7-46ab-8f30-f6a9872fe7b8', 'd442b907-628e-4eff-abfc-596c96da9a47');
-UPDATE posts SET focus_keyword = 'ransomware attack case study' WHERE id = 'bc8c2a54-fc7e-4c68-9664-fa1095d99082';
-UPDATE posts SET focus_keyword = 'cyberatak ransomware' WHERE id = 'f233fe7e-b990-4b79-9a5d-60b7d9db3da7';
-UPDATE posts SET focus_keyword = 'EcoVadis ESG assessment' WHERE id = '3efd756e-b8c3-401a-8590-0cb25ba045cd';
-UPDATE posts SET focus_keyword = 'EcoVadis ocena ESG' WHERE id = 'f78cf4bc-525b-4803-bdba-e40cef6b7468';
-
--- 8. Uzupełnienie meta_desc dla artykułów z pustą/za krótką
-UPDATE posts SET meta_desc = 'Continuous Compliance mění přístup organizací ke shodě. AI agenti v Quantifier.ai posilují stabilitu a snižují rizika v oblasti compliance.'
-WHERE id = 'd442b907-628e-4eff-abfc-596c96da9a47' AND (meta_desc IS NULL OR LENGTH(meta_desc) < 120);
-
-UPDATE posts SET meta_desc = 'EcoVadis ESG assessment helps suppliers prove sustainability credentials to enterprise customers. Learn how ratings impact business relationships.'
-WHERE id = '3efd756e-b8c3-401a-8590-0cb25ba045cd' AND (meta_desc IS NULL OR LENGTH(meta_desc) < 120);
-
-UPDATE posts SET meta_desc = 'Ocena EcoVadis ESG pomaga dostawcom udowodnić zrównoważony rozwój. Dowiedz się, jak wyniki wpływają na relacje biznesowe i współpracę z klientami.'
-WHERE id = 'f78cf4bc-525b-4803-bdba-e40cef6b7468' AND (meta_desc IS NULL OR LENGTH(meta_desc) < 120);
-```
+**Struktura body (zachovana z anglicke verze):**
+- H1: Kyberutok ransomware na polskou vyrobni spolecnost
+- Pozadi incidentu a pocatecni pristup
+- Rozsah skod a pozadavek na vykupne (USD 900,000)
+- Oznameni a pravni povinnosti (CERT, CSIRT, UODO)
+- Obchodni a provozni dopady
+- Plan reakce a obnovy (6 kroku)
+- Jak snizit riziko: prakticky kontrolni seznam
+  - Technicka opatreni
+  - Organizacni postupy
+  - Skoleni a povedomí
+- Quantifier.ai: pruebezna shoda a automatizace
+- Shruti a klicove poznatky
 
 ---
 
-## Pliki do modyfikacji
+## Technicka implementace
 
-| Plik | Zmiana |
-|------|--------|
-| `src/components/admin/SeoSidePanel.tsx` | Dodać props: onSave, isSaving + przycisk "Zatwierdź zmiany" |
-| `src/pages/admin/PostEditor.tsx` | Przekazać handleSeoSave do SeoSidePanel |
-| `src/pages/admin/StoryEditor.tsx` | Analogiczna zmiana dla edytora Case Study |
+1. **INSERT do tabulky `posts`** - 3 nove zaznamy s:
+   - `lang: 'cs'`
+   - `group_id` - shodne s existujicimi verzemi PL/EN
+   - `status: 'published'`
+   - `published_at` - aktualni datum
+   - `body_rich` - TipTap JSON s ceskym obsahem
+   - Vsechny SEO pole vyplnene
 
-Plus operacje SQL na tabeli `posts` dla uzupełnienia brakujących pól SEO.
+2. **UPDATE tabulky `alternates`** - pridani vztahu mezi CS verzemi a existujicimi PL/EN verzemi pro hreflang tagy
 
 ---
 
-## Efekt końcowy
+## Poznamky k prekladu
 
-1. Panel SEO ma przycisk "Zatwierdź zmiany SEO" w nagłówku
-2. Po kliknięciu zapisuje artykuł do bazy i zamyka panel
-3. Wszystkie opublikowane artykuły będą miały uzupełnione:
-   - Focus keywords
-   - OG tags (title, description, image)
-   - Twitter tags
-   - Featured image ALT
-   - Meta descriptions (gdzie brakujące)
+- Preklad z anglicke verze (presnejsi terminologie)
+- Zachovani struktury nadpisu a odstavcu
+- Ceska compliance terminologie:
+  - compliance = shoda / compliance
+  - audit trail = audit trail / auditni stopa
+  - ransomware = ransomware (bez prekladu)
+  - stakeholders = zainteresovane strany
+- Odkazy na externi zdroje zachovany (CERT, CSIRT, UODO)
+- Obrazky z anglicke verze pouzity bez zmeny (uz jsou v storage)
 
+---
+
+## Ocekavany vysledek
+
+Po implementaci:
+- 3 nove ceske clanky na /cs/blog/[slug]
+- Funkcni hreflang tagy pro SEO
+- Konzistentni SEO skore (~85-92)
+- Clanky zobrazeny v czeskem blogu
