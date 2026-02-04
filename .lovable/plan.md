@@ -1,128 +1,176 @@
 
-# Plan: Ulepszenie geo-targetingu SEO + Naprawa Case Study
 
-## Część 1: Naprawa grupowania Case Study (priorytet)
+# Plan: Naprawa zapisu SEO Toolkit + przycisk "Zatwierdź zmiany"
 
-Synchronizacja `group_id` dla 3 par artykułów:
+## Zidentyfikowany problem
 
-| Case Study | Wersja PL | → Przypisanie do EN group_id |
-|------------|-----------|------------------------------|
-| OMIDA Group | `240f83b9...` | `386cc542-bf1f-47e4-a9dc-734920a83354` |
-| System DOT | `b74d21b8...` | `bbf31e49-3a01-4dcc-9958-0029dc08e087` |
-| Raben Group | `59471d65...` | `0b4dd7dc-32ab-4faf-9794-db7387d127b6` |
+### Przyczyna główna
+Zmiany SEO (focus keyword, OG tags, etc.) są aktualizowane w stanie React, ale użytkownik musi kliknąć główny przycisk "Zapisz wszystkie wersje" aby je utrwalić w bazie. Brak wizualnej informacji o niezapisanych zmianach powoduje, że użytkownik zamyka panel SEO bez zapisania.
 
-Plus wyczyszczenie tabeli alternates dla stories i naprawa StoryEditor.tsx (key prop).
+### Przepływ danych (obecny)
+```text
+Panel SEO → onUpdateSeoFields() → updateVersion() → React State
+                                                        ↓
+                                     (wymaga ręcznego kliknięcia)
+                                                        ↓
+                        "Zapisz wszystkie wersje" → saveAllVersions() → Baza danych
+```
 
 ---
 
-## Część 2: Ulepszenie hreflang dla geo-targetingu
+## Rozwiązanie
 
-### Obecny stan (tylko język):
-```html
-<link rel="alternate" hreflang="en" href="..." />
-<link rel="alternate" hreflang="pl" href="..." />
-<link rel="alternate" hreflang="cs" href="..." />
+Dodać w panelu SEO:
+1. **Przycisk "Zatwierdź zmiany SEO"** który zapisuje cały artykuł do bazy
+2. **Wskaźnik niezapisanych zmian** (badge "Niezapisane")
+3. **Automatyczne zamknięcie panelu** po zapisaniu z komunikatem sukcesu
+
+### Przepływ danych (nowy)
+```text
+Panel SEO → zmiany → wskaźnik "Niezapisane"
+                ↓
+        [Zatwierdź zmiany SEO]
+                ↓
+        saveAllVersions() → Baza → Toast "Zapisano" → Zamknij panel
 ```
-
-### Po zmianie (język + region):
-```html
-<link rel="alternate" hreflang="en" href="..." />
-<link rel="alternate" hreflang="pl-PL" href="..." />
-<link rel="alternate" hreflang="cs-CZ" href="..." />
-<link rel="alternate" hreflang="x-default" href="..." />
-```
-
-**Korzyści:**
-- EN pozostaje globalny (dla wszystkich anglojęzycznych rynków)
-- PL-PL = priorytet w wynikach Google dla użytkowników w Polsce
-- CS-CZ = priorytet w wynikach Google dla użytkowników w Czechach
 
 ---
 
 ## Szczegóły techniczne
 
-### Zmiany w bazie danych:
-```sql
--- Synchronizacja group_id dla Case Studies
-UPDATE stories SET group_id = '386cc542-bf1f-47e4-a9dc-734920a83354' 
-  WHERE id = '240f83b9-e92d-4d77-b2d8-401709553855';
-UPDATE stories SET group_id = 'bbf31e49-3a01-4dcc-9958-0029dc08e087' 
-  WHERE id = 'b74d21b8-9683-4672-9645-65ee164c3856';
-UPDATE stories SET group_id = '0b4dd7dc-32ab-4faf-9794-db7387d127b6' 
-  WHERE id = '59471d65-03f7-41b0-8ada-95476dd99afb';
+### 1. SeoSidePanel - dodanie przycisku zapisu
 
--- Reset alternates dla stories
-DELETE FROM alternates WHERE content_type = 'story';
+Modyfikacja: `src/components/admin/SeoSidePanel.tsx`
+
+```typescript
+interface SeoSidePanelProps {
+  // ... istniejące props
+  onSave?: () => Promise<void>;  // NOWE
+  isSaving?: boolean;            // NOWE
+  hasUnsavedChanges?: boolean;   // NOWE
+}
+
+// W SheetHeader dodać:
+<div className="flex items-center gap-2">
+  {hasUnsavedChanges && (
+    <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600">
+      Niezapisane
+    </Badge>
+  )}
+  <Button 
+    size="sm" 
+    onClick={onSave} 
+    disabled={isSaving}
+  >
+    {isSaving ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
+    Zatwierdź zmiany
+  </Button>
+</div>
 ```
 
-### Zmiany w kodzie:
+### 2. PostEditor - przekazanie funkcji zapisu
 
-**1. Konfiguracja i18n (`src/i18n/config.ts`):**
+Modyfikacja: `src/pages/admin/PostEditor.tsx`
+
 ```typescript
-// Mapowanie język → region dla hreflang
-export const LOCALE_HREFLANG_MAP: Record<Locale, string> = {
-  en: 'en',        // globalny angielski
-  pl: 'pl-PL',     // Polska
-  cs: 'cs-CZ',     // Czechy
-};
-```
-
-**2. SEOHead.tsx (linie 117-120, 211-215):**
-```typescript
-// Zmiana z:
-const ogLocale = lang === 'pl' ? 'pl_PL' : lang === 'cs' ? 'cs_CZ' : 'en_US';
-
-// Użycie LOCALE_HREFLANG_MAP dla hreflang tags:
-<link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[lang]} href={canonicalUrl} />
-```
-
-**3. PageTemplate.tsx (linie 104-107):**
-```typescript
-// Zmiana generowania hreflang z użyciem regionów:
-{hreflangUrls.map(({ locale, url }) => (
-  <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale]} href={url} />
-))}
-```
-
-**4. Sitemap Edge Function (`supabase/functions/sitemap/index.ts`):**
-```typescript
-// Aktualizacja mapowania:
-const localeHreflang: Record<string, string> = {
-  en: 'en',
-  pl: 'pl-PL', 
-  cs: 'cs-CZ',
+// Dodać callback do zapisania i zamknięcia panelu
+const handleSeoSave = async () => {
+  await handleSave();
+  setSeoOpen(false);
 };
 
-// Użycie w generateHreflangLinks
+// W SeoSidePanel:
+<SeoSidePanel
+  // ... istniejące props
+  onSave={handleSeoSave}
+  isSaving={isSaving}
+  hasUnsavedChanges={/* logika wykrywania zmian */}
+/>
 ```
 
-**5. StoryEditor.tsx (linia 475):**
-```diff
-<RichTextEditor
-+ key={activeLanguage}
-  content={currentVersion.body_rich}
-```
+### 3. Wykrywanie niezapisanych zmian
+
+Opcja 1 (prosta): Zawsze pokazuj przycisk "Zatwierdź zmiany" - użytkownik sam decyduje kiedy zapisać.
+
+Opcja 2 (zaawansowana): Porównanie stanu z oryginalnym załadowanym z bazy.
+
+Rekomenduję Opcję 1 dla prostoty - przycisk zawsze widoczny, zawsze aktywny.
 
 ---
 
-## Wpływ na SEO
+## Dodatkowe uzupełnienie SEO w bazie
 
-| Element | Przed | Po |
-|---------|-------|-----|
-| PL w Google.pl | Średni priorytet | Wysoki priorytet |
-| CS w Google.cz | Średni priorytet | Wysoki priorytet |
-| EN globalnie | Bez zmian | Bez zmian |
-| Sitemap | Bez regionów | Z regionami |
-| OG locale | Już poprawne | Bez zmian |
+Automatycznie uzupełnię brakujące pola SEO dla 8 opublikowanych artykułów:
+
+```sql
+-- 1. OG Title z meta_title/title
+UPDATE posts SET og_title = COALESCE(NULLIF(meta_title, ''), title)
+WHERE status = 'published' AND (og_title IS NULL OR og_title = '');
+
+-- 2. OG Description z meta_desc/excerpt
+UPDATE posts SET og_description = COALESCE(NULLIF(meta_desc, ''), LEFT(excerpt, 200))
+WHERE status = 'published' AND (og_description IS NULL OR og_description = '');
+
+-- 3. OG Image z featured_image
+UPDATE posts SET og_image_url = featured_image_url
+WHERE status = 'published' AND (og_image_url IS NULL OR og_image_url = '') 
+  AND featured_image_url IS NOT NULL;
+
+-- 4. Twitter Title z og_title
+UPDATE posts SET twitter_title = og_title
+WHERE status = 'published' AND (twitter_title IS NULL OR twitter_title = '');
+
+-- 5. Twitter Image z og_image
+UPDATE posts SET twitter_image_url = og_image_url
+WHERE status = 'published' AND (twitter_image_url IS NULL OR twitter_image_url = '');
+
+-- 6. Featured Image ALT z title
+UPDATE posts SET featured_image_alt = title
+WHERE status = 'published' AND (featured_image_alt IS NULL OR featured_image_alt = '') 
+  AND featured_image_url IS NOT NULL;
+
+-- 7. Focus Keywords (indywidualnie dla każdego artykułu)
+UPDATE posts SET focus_keyword = 'AI agents compliance' WHERE id = '3c4a13ed-c075-48f0-ab67-1395d32734f7';
+UPDATE posts SET focus_keyword = 'AI agenci zgodność' WHERE id = '92f3e67c-ab6b-43f2-8b35-b1f0a4c99e99';
+UPDATE posts SET focus_keyword = 'continuous compliance' WHERE id IN ('632d8856-2db7-46ab-8f30-f6a9872fe7b8', 'd442b907-628e-4eff-abfc-596c96da9a47');
+UPDATE posts SET focus_keyword = 'ransomware attack case study' WHERE id = 'bc8c2a54-fc7e-4c68-9664-fa1095d99082';
+UPDATE posts SET focus_keyword = 'cyberatak ransomware' WHERE id = 'f233fe7e-b990-4b79-9a5d-60b7d9db3da7';
+UPDATE posts SET focus_keyword = 'EcoVadis ESG assessment' WHERE id = '3efd756e-b8c3-401a-8590-0cb25ba045cd';
+UPDATE posts SET focus_keyword = 'EcoVadis ocena ESG' WHERE id = 'f78cf4bc-525b-4803-bdba-e40cef6b7468';
+
+-- 8. Uzupełnienie meta_desc dla artykułów z pustą/za krótką
+UPDATE posts SET meta_desc = 'Continuous Compliance mění přístup organizací ke shodě. AI agenti v Quantifier.ai posilují stabilitu a snižují rizika v oblasti compliance.'
+WHERE id = 'd442b907-628e-4eff-abfc-596c96da9a47' AND (meta_desc IS NULL OR LENGTH(meta_desc) < 120);
+
+UPDATE posts SET meta_desc = 'EcoVadis ESG assessment helps suppliers prove sustainability credentials to enterprise customers. Learn how ratings impact business relationships.'
+WHERE id = '3efd756e-b8c3-401a-8590-0cb25ba045cd' AND (meta_desc IS NULL OR LENGTH(meta_desc) < 120);
+
+UPDATE posts SET meta_desc = 'Ocena EcoVadis ESG pomaga dostawcom udowodnić zrównoważony rozwój. Dowiedz się, jak wyniki wpływają na relacje biznesowe i współpracę z klientami.'
+WHERE id = 'f78cf4bc-525b-4803-bdba-e40cef6b7468' AND (meta_desc IS NULL OR LENGTH(meta_desc) < 120);
+```
 
 ---
 
 ## Pliki do modyfikacji
 
-1. `src/i18n/config.ts` - dodanie LOCALE_HREFLANG_MAP
-2. `src/components/seo/SEOHead.tsx` - użycie mapowania dla hreflang
-3. `src/components/PageTemplate.tsx` - użycie mapowania dla hreflang
-4. `supabase/functions/sitemap/index.ts` - aktualizacja hreflang w sitemap
-5. `src/pages/admin/StoryEditor.tsx` - dodanie key={activeLanguage}
+| Plik | Zmiana |
+|------|--------|
+| `src/components/admin/SeoSidePanel.tsx` | Dodać props: onSave, isSaving + przycisk "Zatwierdź zmiany" |
+| `src/pages/admin/PostEditor.tsx` | Przekazać handleSeoSave do SeoSidePanel |
+| `src/pages/admin/StoryEditor.tsx` | Analogiczna zmiana dla edytora Case Study |
 
-Plus 3 UPDATE + 1 DELETE w bazie danych.
+Plus operacje SQL na tabeli `posts` dla uzupełnienia brakujących pól SEO.
+
+---
+
+## Efekt końcowy
+
+1. Panel SEO ma przycisk "Zatwierdź zmiany SEO" w nagłówku
+2. Po kliknięciu zapisuje artykuł do bazy i zamyka panel
+3. Wszystkie opublikowane artykuły będą miały uzupełnione:
+   - Focus keywords
+   - OG tags (title, description, image)
+   - Twitter tags
+   - Featured image ALT
+   - Meta descriptions (gdzie brakujące)
+
