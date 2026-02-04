@@ -565,7 +565,8 @@ const PostEditor = () => {
         {/* Rich Text Editor */}
         <div>
           <Label>Treść artykułu ({LANGUAGE_CONFIG[activeLanguage].label})</Label>
-          <RichTextEditor
+        <RichTextEditor
+            key={activeLanguage}
             content={currentVersion.body_rich}
             onChange={(content) => updateVersion(activeLanguage, { body_rich: content })}
             placeholder="Zacznij pisać treść artykułu..."
