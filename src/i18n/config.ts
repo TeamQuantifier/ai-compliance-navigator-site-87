@@ -7,6 +7,13 @@ export const SUPPORTED_LOCALES = ['en', 'pl', 'cs'] as const;
 export type Locale = typeof SUPPORTED_LOCALES[number];
 export const LOCALE_REGEX = SUPPORTED_LOCALES.join('|'); // 'en|pl|cs'
 
+// Mapowanie język → region dla hreflang (geo-targeting SEO)
+export const LOCALE_HREFLANG_MAP: Record<Locale, string> = {
+  en: 'en',        // globalny angielski
+  pl: 'pl-PL',     // Polska
+  cs: 'cs-CZ',     // Czechy
+};
+
 i18n
   .use(HttpBackend)
   .use(initReactI18next)

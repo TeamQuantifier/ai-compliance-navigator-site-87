@@ -56,12 +56,20 @@ const staticPages = [
 
 const locales = ['en', 'pl', 'cs'];
 
-// Helper to generate hreflang links for all locales
+// Mapowanie język → region dla hreflang (geo-targeting SEO)
+const localeHreflangMap: Record<string, string> = {
+  en: 'en',        // globalny angielski
+  pl: 'pl-PL',     // Polska
+  cs: 'cs-CZ',     // Czechy
+};
+
+// Helper to generate hreflang links for all locales with geo-targeting
 const generateHreflangLinks = (path: string, currentLocale: string): string => {
   return locales
     .map(locale => {
       const href = `${BASE_URL}/${locale}${path}`;
-      return `<xhtml:link rel="alternate" hreflang="${locale}" href="${href}" />`;
+      const hreflang = localeHreflangMap[locale] || locale;
+      return `<xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`;
     })
     .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${path}" />`;
 };
