@@ -190,8 +190,8 @@ export function useSeoAnalysis(
       data.focusKeyword || ''
     );
 
-    // Keyword in title
-    const keywordInTitle = hasKeyword && checkKeywordInText(data.title || '', data.focusKeyword!);
+    // Keyword in title - check against meta title (SEO title), not internal title
+    const keywordInTitle = hasKeyword && checkKeywordInText(seoTitle, data.focusKeyword!);
     addResult(
       ON_PAGE_RULES.find(r => r.id === 'keyword-in-title')!,
       keywordInTitle || !hasKeyword,
@@ -200,7 +200,7 @@ export function useSeoAnalysis(
         : hasKeyword 
           ? 'Keyword nie występuje w tytule' 
           : 'Ustaw najpierw focus keyword',
-      data.title
+      seoTitle
     );
 
     // Keyword in intro (first 100 words)
