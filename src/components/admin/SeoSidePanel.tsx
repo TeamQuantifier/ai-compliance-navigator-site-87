@@ -7,11 +7,13 @@ import {
 } from '@/components/ui/sheet';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { SeoToolkitPanel, SeoFieldsData } from '@/components/seo/SeoToolkitPanel';
 import { useSeoAnalysis, ContentData } from '@/hooks/useSeoAnalysis';
 import { useSeoSettings } from '@/hooks/useSeoSettings';
 import { getScoreColor, getScoreBgColor, getScoreStatus } from '@/lib/seo-rules';
 import { cn } from '@/lib/utils';
+import { Loader2, Save } from 'lucide-react';
 
 interface SeoSidePanelProps {
   open: boolean;
@@ -31,6 +33,9 @@ interface SeoSidePanelProps {
   seoFields: SeoFieldsData;
   onUpdateSeoFields: (fields: Partial<SeoFieldsData>) => void;
   existingTitles?: string[];
+  // Save functionality
+  onSave?: () => Promise<void>;
+  isSaving?: boolean;
 }
 
 export function SeoSidePanel({
@@ -49,6 +54,8 @@ export function SeoSidePanel({
   seoFields,
   onUpdateSeoFields,
   existingTitles,
+  onSave,
+  isSaving = false,
 }: SeoSidePanelProps) {
   const { settings } = useSeoSettings();
 
@@ -92,6 +99,12 @@ export function SeoSidePanel({
 
   const scoreStatus = getScoreStatus(analysis.score);
 
+  const handleSaveAndClose = async () => {
+    if (onSave) {
+      await onSave();
+    }
+  };
+
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent 
@@ -101,16 +114,32 @@ export function SeoSidePanel({
         <SheetHeader className="px-6 py-4 border-b flex-shrink-0">
           <div className="flex items-center justify-between">
             <SheetTitle>SEO Toolkit</SheetTitle>
-            <Badge 
-              variant="outline"
-              className={cn(
-                "text-sm px-3 py-1",
-                getScoreBgColor(scoreStatus),
-                getScoreColor(scoreStatus)
+            <div className="flex items-center gap-2">
+              <Badge 
+                variant="outline"
+                className={cn(
+                  "text-sm px-3 py-1",
+                  getScoreBgColor(scoreStatus),
+                  getScoreColor(scoreStatus)
+                )}
+              >
+                {analysis.score}/{analysis.maxScore}
+              </Badge>
+              {onSave && (
+                <Button 
+                  size="sm" 
+                  onClick={handleSaveAndClose}
+                  disabled={isSaving}
+                >
+                  {isSaving ? (
+                    <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  ) : (
+                    <Save className="h-4 w-4 mr-2" />
+                  )}
+                  Zatwierdź zmiany
+                </Button>
               )}
-            >
-              {analysis.score}/{analysis.maxScore}
-            </Badge>
+            </div>
           </div>
         </SheetHeader>
         

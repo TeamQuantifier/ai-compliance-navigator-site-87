@@ -651,6 +651,8 @@ const PostEditor = () => {
         contentType="post"
         seoFields={seoFields}
         onUpdateSeoFields={handleUpdateSeoFields}
+        onSave={handleSeoSave}
+        isSaving={isSaving}
       />
     </div>
   );

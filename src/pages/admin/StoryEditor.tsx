@@ -557,6 +557,8 @@ const StoryEditor = () => {
         contentType="story"
         seoFields={seoFields}
         onUpdateSeoFields={handleUpdateSeoFields}
+        onSave={handleSeoSave}
+        isSaving={isSaving}
       />
     </div>
   );
