@@ -124,8 +124,9 @@ function analyzeBodyRich(bodyRich: any, baseUrl: string = ''): BodyAnalysis {
 function checkKeywordInText(text: string, keyword: string): boolean {
   if (!keyword) return false;
   const normalizedText = text.toLowerCase();
-  const normalizedKeyword = keyword.toLowerCase();
-  return normalizedText.includes(normalizedKeyword);
+  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+  // All words from keyword must be present in text
+  return keywordWords.every(word => normalizedText.includes(word));
 }
 
 export function useSeoAnalysis(
