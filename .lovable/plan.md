@@ -1,131 +1,151 @@
 
-# Plan: Utworzenie czeskich wersji 3 artykułów blogowych
 
-## Podsumowanie
+# Plan: Uzupełnienie Focus Keyword w SEO Title dla wszystkich artykułów
 
-Utworzenie profesjonalnych czeskich tłumaczeń dla 3 artykułów, które obecnie istnieją tylko w wersjach polskiej i angielskiej:
+## Podsumowanie analizy
 
-| Artykuł | Group ID | Status PL/EN | Status CS |
-|---------|----------|--------------|-----------|
-| EcoVadis w praktyce | 03263f56-229b-4e14-b103-83accfe8bcf0 | Opublikowane | Do utworzenia |
-| AI Agenci w Quantifier | 7441db9f-b1c5-4302-a814-fc569a8a879d | Opublikowane | Do utworzenia |
-| Cyberatak ransomware | cf105d41-fee5-45af-8d41-c511c2c126eb | Opublikowane | Do utworzenia |
+### Artykuły (posts) - 12 sztuk z ustawionym focus keyword
+
+| Język | Artykuł | Focus Keyword | Meta Title | Status |
+|-------|---------|---------------|------------|--------|
+| CS | AI Agenti v Quantifier | `AI agenti shoda` | AI Agenti v Quantifier: kompletní úvod do autonomních agentů | Brak keyword |
+| CS | EcoVadis v praxi | `EcoVadis hodnocení ESG` | EcoVadis v praxi: hodnocení ESG pro dodavatele | Częściowo OK |
+| CS | Kyberútok ransomware | `kyberútok ransomware případová studie` | Kyberútok ransomware na polskou výrobní společnost | Częściowo OK |
+| CS | Continuous Compliance | `continuous compliance` | Od reakce k proaktivitě: proč je Continuous Compliance | OK |
+| EN | AI Agents in Quantifier | `AI agents compliance` | AI Agents in Quantifier: a complete introduction to autonomo | Brak "compliance" |
+| EN | Ransomware case study | `ransomware attack case study` | Cyberattack ransomware on a Polish manufacturing company | Brak "case study" |
+| EN | EcoVadis in practice | `EcoVadis ESG assessment` | EcoVadis in practice | Brak "assessment" |
+| EN | Continuous Compliance | `continuous compliance` | From Reaction to Proaction: Continuous Compliance | OK |
+| PL | AI Agent w Quantifier | `AI agenci zgodność` | AI Agents w Quantifier: kompletne wprowadzenie do agentów au | Brak "zgodność" |
+| PL | Cyberatak ransomware | `cyberatak ransomware` | Cyberatak ransomware na polską firmę produkcyjną | OK |
+| PL | EcoVadis w praktyce | `EcoVadis ocena ESG` | EcoVadis w praktyce | Brak "ocena" |
+| PL | Continuous Compliance | `continuous compliance` | Od reakcji do proakcji ciągła zgodność continuous compliance | OK |
+
+### Stories (success stories) - 15 sztuk
+
+Wszystkie stories **nie mają ustawionego focus keyword**. Należy:
+1. Ustalić odpowiednie focus keywords dla każdej story
+2. Upewnić się, że keyword jest w meta_title
 
 ---
 
-## Szczegoly implementacji
+## Plan naprawczy dla POSTS (8 artykułów do poprawy)
 
-### Artykul 1: EcoVadis v praxi
+### 1. AI Agenti v Quantifier (CS)
+- **Focus keyword:** `AI agenti shoda`
+- **Aktualny meta_title:** AI Agenti v Quantifier: kompletní úvod do autonomních agentů
+- **Nowy meta_title:** `AI Agenti v Quantifier: jak agenti zajišťují shodu | Quantifier.ai`
+  - Dodano "agenti" i "shodu" (forma odmieniona od "shoda")
 
-**Tytul CZ:** EcoVadis v praxi: jak hodnoceni ESG ovlivnuje spoluprace s klienty a pozici dodavatele
+### 2. EcoVadis v praxi (CS)
+- **Focus keyword:** `EcoVadis hodnocení ESG`
+- **Aktualny meta_title:** EcoVadis v praxi: hodnocení ESG pro dodavatele
+- **Status:** Zawiera już "hodnocení ESG" - OK, ale sprawdzenie case-sensitivity
 
-**Slug:** ecovadis-v-praxi-hodnoceni-esg
+### 3. Kyberútok ransomware (CS)
+- **Focus keyword:** `kyberútok ransomware případová studie`
+- **Aktualny meta_title:** Kyberútok ransomware na polskou výrobní společnost
+- **Nowy meta_title:** `Kyberútok ransomware: případová studie polské výrobní společnosti`
 
-**Meta title:** EcoVadis v praxi
+### 4. AI Agents in Quantifier (EN)
+- **Focus keyword:** `AI agents compliance`
+- **Aktualny meta_title:** AI Agents in Quantifier: a complete introduction to autonomo (ucięty)
+- **Nowy meta_title:** `AI Agents for Compliance Automation | Quantifier.ai`
 
-**Meta desc:** Hodnoceni EcoVadis ESG pomaha dodavatelum prokazat udrzitelnost. Zjistete, jak vysledky ovlivnuji obchodni vztahy.
+### 5. Ransomware case study (EN)
+- **Focus keyword:** `ransomware attack case study`
+- **Aktualny meta_title:** Cyberattack ransomware on a Polish manufacturing company
+- **Nowy meta_title:** `Ransomware Attack Case Study: Polish Manufacturing Company`
 
-**Focus keyword:** EcoVadis hodnoceni ESG
+### 6. EcoVadis in practice (EN)
+- **Focus keyword:** `EcoVadis ESG assessment`
+- **Aktualny meta_title:** EcoVadis in practice
+- **Nowy meta_title:** `EcoVadis ESG Assessment in Practice | Supplier Guide`
 
-**Body (TipTap JSON):**
-```text
-Stale vice firem se setkava s pozadavkem svych zakazniku projit hodnocenim v systemu EcoVadis. Pro mnoho dodavatelu je to stale novy pozadavek spojeny s ESG, udrzitelnosti a rostoucim tlakem na transparentnost v celem hodnotovem retezci. Vyvstavaji otazky: co presne je rating EcoVadis, co skutecne meri a jak silne muze ovlivnit spolupraci s klicovymi obchodnimi partnery?
+### 7. AI Agent w Quantifier (PL)
+- **Focus keyword:** `AI agenci zgodność`
+- **Aktualny meta_title:** AI Agents w Quantifier: kompletne wprowadzenie do agentów au (ucięty)
+- **Nowy meta_title:** `AI Agenci dla zgodności: jak automatyzują compliance | Quantifier.ai`
 
-EcoVadis je globalne uznavanou platformou, ktera strukturovanym zpusobem hodnoti firmy ve ctyrech oblastech: zivotni prostredi, lidska prava a prava pracovniku, etika a udrzitelne nakupovani. Vysledna scorecard a medaile se staly praktickym nastrojem pro mnoho organizaci k porovnavani dodavatelu a rizeni rizik spojenych s ESG. Pokud vase spolecnost stoji pred prvnim hodnocenim nebo chcete lepe vyuzit stavajici rating v diskuzich s klienty, tento material vam pomuze pochopit, jak EcoVadis funguje, jak se na nej pripravit a jak vysledek premenite v konkurencni vyhodu.
+### 8. EcoVadis w praktyce (PL)
+- **Focus keyword:** `EcoVadis ocena ESG`
+- **Aktualny meta_title:** EcoVadis w praktyce
+- **Nowy meta_title:** `EcoVadis: Ocena ESG w praktyce | Przewodnik dla dostawców`
 
-Ctete dale na envirly.com.
+---
+
+## Plan dla STORIES (15 success stories)
+
+Dla każdej story ustalimy focus keyword i zaktualizujemy meta_title:
+
+### Biofarm (3 wersje)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| CS | ESG strategie Biofarm | Biofarm: ESG strategie založená na datech |
+| EN | ESG strategy case study | Biofarm ESG Strategy Case Study | Quantifier.ai |
+| PL | ESG case study Biofarm | Biofarm: ESG Case Study - od danych do strategii |
+
+### Bidfood (2 wersje)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| EN | sustainable food production case study | Bidfood: Sustainable Food Production Case Study |
+| PL | zrównoważona produkcja żywności | Bidfood: Case Study zrównoważonej produkcji żywności |
+
+### Seris Konsalnet (2 wersje)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| EN | sustainability security industry | Seris Konsalnet: Sustainability in Security Industry |
+| PL | zrównoważony rozwój branża security | Seris Konsalnet: Zrównoważony rozwój w branży security |
+
+### Tatuum (2 wersje)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| EN | sustainable fashion case study | Tatuum: Sustainable Fashion Case Study |
+| PL | zrównoważona moda case study | Tatuum: Case Study zrównoważonej mody |
+
+### OMIDA Group (2 wersje)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| EN | logistics sustainability case study | OMIDA Group: Logistics Sustainability Case Study |
+| PL | logistyka zrównoważony rozwój | OMIDA Group: Case Study zrównoważonej logistyki |
+
+### System DOT (2 wersje)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| EN | sustainable cleaning products | System DOT: Sustainable Cleaning Products Distribution |
+| PL | środki czystości zrównoważony rozwój | System DOT: Zrównoważona dystrybucja środków czystości |
+
+### Raben Group (1 wersja)
+| Język | Proponowany Focus Keyword | Proponowany Meta Title |
+|-------|---------------------------|------------------------|
+| EN | TSL industry sustainability | Raben Group: TSL Industry Sustainability Leader |
+| PL | Grupa Raben TSL zrównoważony rozwój | Grupa Raben: Lider zrównoważonego rozwoju w branży TSL |
+
+---
+
+## Implementacja techniczna
+
+Wykonam 2 operacje UPDATE w bazie danych:
+
+### 1. UPDATE dla tabeli `posts` (8 rekordów)
+```sql
+UPDATE posts SET meta_title = '...' WHERE id = '...';
+```
+
+### 2. UPDATE dla tabeli `stories` (15 rekordów)
+```sql
+UPDATE stories 
+SET focus_keyword = '...', meta_title = '...' 
+WHERE id = '...';
 ```
 
 ---
 
-### Artykul 2: AI Agenti v Quantifier
+## Oczekiwany rezultat
 
-**Tytul CZ:** AI Agenti v Quantifier: jak autonomni agenti zajistuji shodu rychleji nez tradicni nastroje
+Po implementacji:
+- 100% artykułów z focus keyword będzie miało go w meta_title
+- Wszystkie success stories będą miały ustawione focus keywords
+- SEO score powinien wzrosnąć dla wszystkich poprawionych treści
+- Wynik w SEO Audit pokaże spełnienie wymogu "Keyword in title"
 
-**Slug:** ai-agenti-v-quantifier
-
-**Meta title:** AI Agenti v Quantifier: kompletni uvod do autonomnich agentu
-
-**Meta desc:** AI Agenti v Quantifier monitoruji predpisy, prideluji ukoly, detekuji mezery v datech a generuji reporty s audit trail.
-
-**Focus keyword:** AI agenti shoda
-
-**Excerpt:** AI Agenti v Quantifier monitoruji predpisy, prideluji ukoly, detekuji mezery v datech a generuji reporty s uplnym audit trail. Prozkoumejte architekturu, pripadove studie a osvedcene postupy.
-
-**Struktura body (zachovana z anglicke verze):**
-- Uvod o AI agentech
-- Co je AI Agent v Quantifier?
-- Leon jako digitalni compliance officer
-- Jak funguje v praxi
-- Vrstvy operace AI Agenta (interakcni, analyticka, operacni, reportovaci)
-- Architektura: od dat k rozhodnutim
-- Co Leon dela v praxi (bodovy seznam)
-- Shruti a vyhled do budoucna
-
----
-
-### Artykul 3: Kyberutok ransomware
-
-**Tytul CZ:** Kyberutok ransomware na polskou vyrobni spolecnost - pripadova studie
-
-**Slug:** pripadova-studie-kyberutok-ransomware
-
-**Meta title:** Kyberutok ransomware na polskou vyrobni spolecnost
-
-**Meta desc:** Kyberutok ransomware zasahl polskou vyrobni spolecnost. Prectete si casovou osu, dopady, plan obnovy a kontrolni seznam.
-
-**Focus keyword:** kyberutok ransomware pripadova studie
-
-**Excerpt:** Kyberutok ransomware zasahl polskou vyrobni spolecnost. Prectete si casovou osu, obchodni dopady, plan obnovy a prakticky kontrolni seznam bezpecnosti.
-
-**Struktura body (zachovana z anglicke verze):**
-- H1: Kyberutok ransomware na polskou vyrobni spolecnost
-- Pozadi incidentu a pocatecni pristup
-- Rozsah skod a pozadavek na vykupne (USD 900,000)
-- Oznameni a pravni povinnosti (CERT, CSIRT, UODO)
-- Obchodni a provozni dopady
-- Plan reakce a obnovy (6 kroku)
-- Jak snizit riziko: prakticky kontrolni seznam
-  - Technicka opatreni
-  - Organizacni postupy
-  - Skoleni a povedomí
-- Quantifier.ai: pruebezna shoda a automatizace
-- Shruti a klicove poznatky
-
----
-
-## Technicka implementace
-
-1. **INSERT do tabulky `posts`** - 3 nove zaznamy s:
-   - `lang: 'cs'`
-   - `group_id` - shodne s existujicimi verzemi PL/EN
-   - `status: 'published'`
-   - `published_at` - aktualni datum
-   - `body_rich` - TipTap JSON s ceskym obsahem
-   - Vsechny SEO pole vyplnene
-
-2. **UPDATE tabulky `alternates`** - pridani vztahu mezi CS verzemi a existujicimi PL/EN verzemi pro hreflang tagy
-
----
-
-## Poznamky k prekladu
-
-- Preklad z anglicke verze (presnejsi terminologie)
-- Zachovani struktury nadpisu a odstavcu
-- Ceska compliance terminologie:
-  - compliance = shoda / compliance
-  - audit trail = audit trail / auditni stopa
-  - ransomware = ransomware (bez prekladu)
-  - stakeholders = zainteresovane strany
-- Odkazy na externi zdroje zachovany (CERT, CSIRT, UODO)
-- Obrazky z anglicke verze pouzity bez zmeny (uz jsou v storage)
-
----
-
-## Ocekavany vysledek
-
-Po implementaci:
-- 3 nove ceske clanky na /cs/blog/[slug]
-- Funkcni hreflang tagy pro SEO
-- Konzistentni SEO skore (~85-92)
-- Clanky zobrazeny v czeskem blogu
