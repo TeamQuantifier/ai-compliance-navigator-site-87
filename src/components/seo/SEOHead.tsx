@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
 
 export interface SEOHeadProps {
   // Content data
