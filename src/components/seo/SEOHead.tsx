@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
 
 export interface SEOHeadProps {
   // Content data
@@ -206,11 +207,11 @@ export const SEOHead = ({
       {/* Robots */}
       <meta name="robots" content={robotsContent} />
       
-      {/* Canonical & hreflang */}
+      {/* Canonical & hreflang with geo-targeting */}
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" hrefLang={lang} href={canonicalUrl} />
+      <link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[lang as Locale] || lang} href={canonicalUrl} />
       {alternateUrl && (
-        <link rel="alternate" hrefLang={alternatePost!.lang} href={alternateUrl} />
+        <link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[alternatePost!.lang as Locale] || alternatePost!.lang} href={alternateUrl} />
       )}
       <link rel="alternate" hrefLang="x-default" href={defaultLangUrl} />
       

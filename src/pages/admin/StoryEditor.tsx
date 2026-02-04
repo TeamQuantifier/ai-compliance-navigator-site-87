@@ -224,6 +224,12 @@ const StoryEditor = () => {
     }
   };
 
+  // Handler for SEO panel save - saves and closes panel
+  const handleSeoSave = async () => {
+    await handleSave();
+    setSeoOpen(false);
+  };
+
   if (isLoading) {
     return (
       <div className="p-6 max-w-5xl mx-auto flex items-center justify-center min-h-[400px]">
@@ -472,7 +478,8 @@ const StoryEditor = () => {
         {/* Rich Text Editor */}
         <div>
           <Label>Treść ({LANGUAGE_CONFIG[activeLanguage].label})</Label>
-          <RichTextEditor
+        <RichTextEditor
+            key={activeLanguage}
             content={currentVersion.body_rich}
             onChange={(content) => updateVersion(activeLanguage, { body_rich: content })}
             placeholder="Napisz treść success story..."
@@ -550,6 +557,8 @@ const StoryEditor = () => {
         contentType="story"
         seoFields={seoFields}
         onUpdateSeoFields={handleUpdateSeoFields}
+        onSave={handleSeoSave}
+        isSaving={isSaving}
       />
     </div>
   );

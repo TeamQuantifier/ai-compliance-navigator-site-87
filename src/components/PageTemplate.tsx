@@ -2,7 +2,7 @@ import { ReactNode, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { SUPPORTED_LOCALES } from '@/i18n/config';
+import { SUPPORTED_LOCALES, LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
 
 interface PageTemplateProps {
   title: string;
@@ -100,9 +100,9 @@ const PageTemplate = ({
         {/* Canonical */}
         <link rel="canonical" href={canonicalUrl} />
         
-        {/* hreflang for all supported locales */}
+        {/* hreflang for all supported locales with geo-targeting */}
         {hreflangUrls.map(({ locale, url }) => (
-          <link key={locale} rel="alternate" hrefLang={locale} href={url} />
+          <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]} href={url} />
         ))}
         <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
         

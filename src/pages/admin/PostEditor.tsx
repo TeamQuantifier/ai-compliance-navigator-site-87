@@ -292,6 +292,12 @@ const PostEditor = () => {
     }
   };
 
+  // Handler for SEO panel save - saves and closes panel
+  const handleSeoSave = async () => {
+    await handleSave();
+    setSeoOpen(false);
+  };
+
   if (isLoading) {
     return (
       <div className="p-6 max-w-5xl mx-auto flex items-center justify-center min-h-[400px]">
@@ -565,7 +571,8 @@ const PostEditor = () => {
         {/* Rich Text Editor */}
         <div>
           <Label>Treść artykułu ({LANGUAGE_CONFIG[activeLanguage].label})</Label>
-          <RichTextEditor
+        <RichTextEditor
+            key={activeLanguage}
             content={currentVersion.body_rich}
             onChange={(content) => updateVersion(activeLanguage, { body_rich: content })}
             placeholder="Zacznij pisać treść artykułu..."
@@ -644,6 +651,8 @@ const PostEditor = () => {
         contentType="post"
         seoFields={seoFields}
         onUpdateSeoFields={handleUpdateSeoFields}
+        onSave={handleSeoSave}
+        isSaving={isSaving}
       />
     </div>
   );

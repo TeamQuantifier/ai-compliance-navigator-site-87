@@ -1,116 +1,121 @@
 
-# Plan: Aktualizacja SEO meta tagów dla stron blogowych
+# Plan: Poprawa logiki walidacji "Keyword in title"
 
-## Podsumowanie analizy
+## Problem
 
-### Strona z listą blogów (`BlogList.tsx`)
-- Obecny stan: używa `t('blog.title')` i `t('blog.subtitle')` - ogólne klucze
-- Potrzeba: zaktualizować do nowych kluczy SEO z dedykowanymi tekstami
+Walidacja "Keyword in title" nie działa poprawnie dla wielowyrazowych focus keywords:
 
-### Artykuły blogowe (`BlogPost.tsx`)  
-- **Już w pełni zaimplementowane!** Komponent `SEOHead` zawiera:
-  - Dynamiczny tytuł: `{title} | Quantifier.ai` (linia 101)
-  - Dynamiczny opis z excerpt/meta_desc (linia 102)
-  - `og:type="article"` (linia 220)
-  - `og:image` z featured image (linia 222)
-  - Canonical URL (linia 210)
-  - Schema.org BlogPosting z author, datePublished, dateModified (linie 126-164)
+| Focus Keyword | Meta Title | Status |
+|---------------|------------|--------|
+| `AI agenti shoda` | `AI Agenti: jak zajišťují shodu` | MISSING |
+| `AI agents compliance` | `AI Agents for Compliance` | MISSING |
+| `EcoVadis ocena ESG` | `EcoVadis: Ocena ESG w praktyce` | MISSING |
 
----
+Obecna logika wymaga **dokładnego dopasowania całej frazy jako ciągłego podciągu**, co nie działa gdy:
+- Słowa są oddzielone znakami interpunkcyjnymi (`:`)
+- Są dodatkowe słowa pomiędzy (`for`, `dla`, `jak`)
+- Słowa są odmienione (shoda/shodu, zgodność/zgodności)
 
-## Zakres zmian
+## Proponowane rozwiązanie
 
-### 1. Aktualizacja `src/pages/blog/BlogList.tsx`
+Zmiana algorytmu walidacji na sprawdzanie czy **wszystkie słowa** z focus keyword występują w tytule (niezależnie od kolejności i znaków interpunkcyjnych).
 
-Zmiana linii 41-42 z:
-```jsx
-<title>{t('blog.title')} | Quantifier.ai</title>
-<meta name="description" content={t('blog.subtitle')} />
-```
+### Nowa logika
 
-Na:
-```jsx
-<title>{t('seo.blog.title')} | Quantifier.ai</title>
-<meta name="description" content={t('seo.blog.description')} />
-```
-
-Analogiczna zmiana dla OG tags (linie 56-57).
-
-### 2. Aktualizacja plików tłumaczeń
-
-#### `public/locales/en/translation.json`
-```json
-"seo": {
-  "blog": {
-    "title": "Compliance & Security Blog | ISO 27001, SOC 2, NIS2 Guides",
-    "description": "Expert guides on compliance automation. Learn about ISO 27001, SOC 2, NIS2, GDPR and how AI simplifies audit preparation."
-  }
+```typescript
+function checkKeywordInTitle(title: string, keyword: string): boolean {
+  if (!keyword) return true;
+  
+  const normalizedTitle = title.toLowerCase();
+  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+  
+  // Wszystkie słowa z keyword muszą występować w tytule
+  return keywordWords.every(word => normalizedTitle.includes(word));
 }
 ```
 
-#### `public/locales/pl/translation.json`
-```json
-"seo": {
-  "blog": {
-    "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
-    "description": "Eksperckie przewodniki po automatyzacji compliance. Dowiedz się o ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu."
-  }
-}
-```
+Przykłady po zmianie:
+- `AI agenti shoda` vs `AI Agenti: jak zajišťují shodu` - sprawdzi czy "ai", "agenti", "shoda" występują - czeskie odmiany to nadal problem
+- `AI agents compliance` vs `AI Agents for Compliance` - OK (wszystkie słowa obecne)
+- `EcoVadis ocena ESG` vs `EcoVadis: Ocena ESG w praktyce` - OK
 
-#### `public/locales/cs/translation.json`
-```json
-"seo": {
-  "blog": {
-    "title": "Blog o Compliance a Bezpečnosti | Průvodci ISO 27001, SOC 2, NIS2",
-    "description": "Expertní průvodci automatizací compliance. Zjistěte více o ISO 27001, SOC 2, NIS2, GDPR a jak AI zjednodušuje přípravu na audit."
-  }
-}
-```
+### Alternatywa: Uprościć focus keywords
 
----
+Można też uprościć focus keywords, aby były dokładnym matchem:
 
-## Szczegóły techniczne
+| Obecny Focus Keyword | Nowy Focus Keyword |
+|---------------------|-------------------|
+| `AI agenti shoda` | `AI Agenti` |
+| `kyberútok ransomware případová studie` | `Kyberútok ransomware` |
+| `AI agents compliance` | `AI Agents` |
+| `AI agenci zgodność` | `AI Agenci` |
+| `EcoVadis ocena ESG` | `Ocena ESG` |
 
-### Dlaczego artykuły blogowe już działają poprawnie?
+## Rekomendacja
 
-Komponent `SEOHead` (używany w `BlogPost.tsx`) automatycznie:
+**Podejście hybrydowe:**
 
-1. **Tytuł dynamiczny**: `metaTitle || {title} | Quantifier.ai`
-2. **Opis z excerpt**: `metaDesc || excerpt || description` (obcięty do długości ustalonej w CMS)
-3. **OG:type**: zawsze `article` dla postów (linia 220)
-4. **OG:image**: `ogImageUrl || featuredImageUrl` (linia 222)
-5. **Canonical**: `https://quantifier.ai/{lang}/blog/{slug}` (linia 210)
-6. **Schema.org BlogPosting**:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "...",
-  "description": "...",
-  "image": "...",
-  "datePublished": "...",
-  "dateModified": "...",
-  "author": { "@type": "Organization", "name": "Quantifier.ai" },
-  "publisher": { "@type": "Organization", "name": "Quantifier.ai" }
-}
-```
-
----
+1. **Zmiana kodu analizatora** - sprawdzanie wszystkich słów (bardziej elastyczne)
+2. **Uproszczenie keywords** w bazie danych - dla przypadków z odmianami (czeskie)
 
 ## Pliki do modyfikacji
 
-| Plik | Rodzaj zmiany |
-|------|---------------|
-| `src/pages/blog/BlogList.tsx` | Zmiana kluczy tłumaczeń na `seo.blog.*` |
-| `public/locales/en/translation.json` | Nowe teksty SEO dla bloga |
-| `public/locales/pl/translation.json` | Polskie tłumaczenia |
-| `public/locales/cs/translation.json` | Czeskie tłumaczenia |
+### 1. `src/lib/seo-analyzer.ts` (linia 165-167)
 
----
+```typescript
+// Przed
+case 'keyword-in-title':
+  isPassed = !keyword || seoTitle.toLowerCase().includes(keyword.toLowerCase());
+  message = isPassed ? 'Keyword found in title' : 'Add focus keyword to SEO title';
+  break;
 
-## Uwagi
+// Po
+case 'keyword-in-title':
+  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+  isPassed = !keyword || keywordWords.every(word => seoTitle.toLowerCase().includes(word));
+  message = isPassed ? 'Keyword found in title' : 'Add focus keyword to SEO title';
+  break;
+```
 
-- Artykuły blogowe (`BlogPost.tsx`) **nie wymagają zmian** - `SEOHead` już obsługuje wszystkie wymagane funkcje
-- Tylko strona z listą blogów wymaga aktualizacji kluczy
-- Schema.org, og:type=article, datePublished/dateModified - wszystko już działa
+### 2. `src/hooks/useSeoAnalysis.ts` (funkcja checkKeywordInText + linia 193)
+
+```typescript
+// Poprawka na linii 193 - sprawdzać meta_title zamiast title
+const keywordInTitle = hasKeyword && checkKeywordInText(
+  data.metaTitle || data.title || '', 
+  data.focusKeyword!
+);
+
+// Zmiana funkcji checkKeywordInText
+function checkKeywordInText(text: string, keyword: string): boolean {
+  if (!keyword) return false;
+  const normalizedText = text.toLowerCase();
+  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+  return keywordWords.every(word => normalizedText.includes(word));
+}
+```
+
+### 3. Aktualizacja focus keywords w bazie (opcjonalnie)
+
+Dla przypadków z odmianami czeskimi, gdzie nawet słowa pojedyncze nie matchują (shoda vs shodu):
+
+```sql
+-- Uproszczone keywords dla czeskich artykułów
+UPDATE posts SET focus_keyword = 'AI Agenti shodu' WHERE id = 'f90578e0-...';
+-- lub jeszcze prostsze
+UPDATE posts SET focus_keyword = 'AI Agenti' WHERE id = 'f90578e0-...';
+```
+
+## Oczekiwany rezultat
+
+Po wdrożeniu:
+- Większość artykułów powinna mieć "Keyword in title" na zielono
+- Logika będzie bardziej elastyczna i zgodna z praktykami SEO
+- Przypadki z odmianami językowymi mogą wymagać dodatkowej poprawki keywords
+
+## Uwagi techniczne
+
+- Zmiana jest wstecznie kompatybilna - dokładne dopasowanie frazy nadal przejdzie walidację
+- Sprawdzanie wszystkich słów jest standardem w narzędziach SEO (Yoast, RankMath)
+- Dla języków z odmianą, pełne rozwiązanie wymagałoby stemmingu, ale to nadmiarowe
+
