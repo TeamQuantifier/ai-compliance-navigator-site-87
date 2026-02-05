@@ -4826,5 +4826,12 @@
       "simpleDescription": "We use cookies to enhance your browsing experience.",
       "accept": "Accept"
     }
+  },
+  "bookPromo": {
+    "badge": "New publication",
+    "title": "Check out our publication",
+    "description": "This book presents a practical step-by-step approach to analysis, enriched with case studies based on hundreds of ESG projects completed by the Envirly by Quantifier team.",
+    "cta": "See the book",
+    "sectionTitle": "Our latest publication"
   }
 }
