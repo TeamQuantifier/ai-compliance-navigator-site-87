@@ -53,7 +53,9 @@ export function BookPromoPopup() {
             </div>
             
             <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-              {t('bookPromo.title')}
+              {currentLocale === 'pl' 
+                ? 'Zapraszamy do zapoznania się z naszą publikacją wydaną przez oficynę C.H. Beck.' 
+                : 'Check out our publication released by the C.H. Beck publishing house.'}
             </h2>
             
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
