@@ -11,6 +11,7 @@ import { RedirectToPreferredLocale } from "./components/RedirectToPreferredLocal
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
 import { CookieConsentBanner } from "./components/cookies/CookieConsentBanner";
+import { BookPromoPopup } from "./components/BookPromoPopup";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
