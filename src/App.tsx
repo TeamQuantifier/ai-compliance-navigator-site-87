@@ -198,6 +198,7 @@ const AppContent = () => {
         <Footer />
       </div>
       <CookieConsentBanner />
+      <BookPromoPopup />
     </>
   );
 };
