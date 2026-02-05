@@ -29,17 +29,8 @@ export function BookPromoSection() {
   return (
     <div className="bg-gradient-to-r from-slate-50 to-compliance-50 rounded-xl p-6 md:p-8 mb-8 shadow-sm border border-slate-100">
       <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-        {/* Book Image - no shadow/border */}
-        <div className="shrink-0">
-          <img 
-            src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
-            alt="Analiza podwójnej istotności - książka"
-            className="w-40 md:w-56 transform hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        
-        {/* Content */}
-        <div className="text-center md:text-left">
+        {/* Content - left side on desktop */}
+        <div className="text-center md:text-left flex-1">
           <div className="flex items-center justify-center md:justify-start gap-2 text-primary mb-3">
             <Book className="h-5 w-5" />
             <span className="text-sm font-medium uppercase tracking-wide">
@@ -60,6 +51,15 @@ export function BookPromoSection() {
               {cta}
             </Button>
           </a>
+        </div>
+
+        {/* Book Image - right side on desktop, top on mobile */}
+        <div className="shrink-0 order-first md:order-last">
+          <img 
+            src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
+            alt="Analiza podwójnej istotności - książka"
+            className="w-48 md:w-64 object-contain transform hover:scale-105 transition-transform duration-300"
+          />
         </div>
       </div>
     </div>
