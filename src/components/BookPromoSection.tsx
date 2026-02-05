@@ -14,7 +14,7 @@ export function BookPromoSection() {
   
   const sectionTitle = t('bookPromo.sectionTitle') !== 'bookPromo.sectionTitle' 
     ? t('bookPromo.sectionTitle') 
-    : currentLocale === 'pl' ? 'Nasza najnowsza publikacja' : 'Our latest publication';
+    : currentLocale === 'pl' ? 'Zapraszamy do zapoznania się z naszą publikacją wydaną przez oficynę C.H. Beck.' : 'Check out our publication released by the C.H. Beck publishing house.';
   
   const description = t('bookPromo.description') !== 'bookPromo.description' 
     ? t('bookPromo.description') 
