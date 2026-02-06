@@ -1,121 +1,56 @@
 
-# Plan: Poprawa logiki walidacji "Keyword in title"
+# Plan: Zamiana układu sekcji książki
 
-## Problem
+## Cel
+Zamiana kolejności elementów w sekcji promocyjnej książki:
+- **Lewa strona**: Tekst (badge, tytuł, opis, przycisk)
+- **Prawa strona**: Grafika książki
 
-Walidacja "Keyword in title" nie działa poprawnie dla wielowyrazowych focus keywords:
+Dodatkowo poprawa jakości wyświetlania obrazka.
 
-| Focus Keyword | Meta Title | Status |
-|---------------|------------|--------|
-| `AI agenti shoda` | `AI Agenti: jak zajišťují shodu` | MISSING |
-| `AI agents compliance` | `AI Agents for Compliance` | MISSING |
-| `EcoVadis ocena ESG` | `EcoVadis: Ocena ESG w praktyce` | MISSING |
+## Zmiany w pliku `src/components/BookPromoSection.tsx`
 
-Obecna logika wymaga **dokładnego dopasowania całej frazy jako ciągłego podciągu**, co nie działa gdy:
-- Słowa są oddzielone znakami interpunkcyjnymi (`:`)
-- Są dodatkowe słowa pomiędzy (`for`, `dla`, `jak`)
-- Słowa są odmienione (shoda/shodu, zgodność/zgodności)
+### 1. Zamiana kolejności elementów
+Aktualnie w `flex-row` najpierw jest obrazek, potem tekst. Zmienię kolejność bloków w kodzie - najpierw Content, potem Book Image.
 
-## Proponowane rozwiązanie
+### 2. Wyrównanie tekstu
+- Na desktop: tekst wyrównany do lewej (`md:text-left`)
+- Na mobile: tekst wycentrowany, obrazek pod tekstem
 
-Zmiana algorytmu walidacji na sprawdzanie czy **wszystkie słowa** z focus keyword występują w tytule (niezależnie od kolejności i znaków interpunkcyjnych).
+### 3. Poprawa jakości obrazka
+- Zwiększenie rozmiaru obrazka dla lepszej jakości: `w-48 md:w-64` (z obecnego `w-40 md:w-56`)
+- Dodanie `object-contain` dla zachowania proporcji
+- Opcjonalnie: dodanie efektu cienia dla głębi wizualnej
 
-### Nowa logika
+## Kod po zmianach
 
-```typescript
-function checkKeywordInTitle(title: string, keyword: string): boolean {
-  if (!keyword) return true;
+```tsx
+<div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+  {/* Content - teraz pierwszy (lewa strona) */}
+  <div className="text-center md:text-left flex-1">
+    {/* badge, tytuł, opis, przycisk - bez zmian */}
+  </div>
   
-  const normalizedTitle = title.toLowerCase();
-  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
-  
-  // Wszystkie słowa z keyword muszą występować w tytule
-  return keywordWords.every(word => normalizedTitle.includes(word));
-}
+  {/* Book Image - teraz drugi (prawa strona) */}
+  <div className="shrink-0 order-first md:order-last">
+    <img 
+      src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
+      alt="Analiza podwójnej istotności - książka"
+      className="w-48 md:w-64 object-contain transform hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+</div>
 ```
 
-Przykłady po zmianie:
-- `AI agenti shoda` vs `AI Agenti: jak zajišťují shodu` - sprawdzi czy "ai", "agenti", "shoda" występują - czeskie odmiany to nadal problem
-- `AI agents compliance` vs `AI Agents for Compliance` - OK (wszystkie słowa obecne)
-- `EcoVadis ocena ESG` vs `EcoVadis: Ocena ESG w praktyce` - OK
+## Szczegóły techniczne
 
-### Alternatywa: Uprościć focus keywords
+| Element | Przed | Po |
+|---------|-------|-----|
+| Kolejność desktop | Obrazek → Tekst | Tekst → Obrazek |
+| Kolejność mobile | Obrazek (góra) → Tekst (dół) | Tekst (góra) → Obrazek (dół) |
+| Rozmiar obrazka | `w-40 md:w-56` | `w-48 md:w-64` |
+| Dodatkowe klasy | - | `object-contain`, `order-first md:order-last` |
 
-Można też uprościć focus keywords, aby były dokładnym matchem:
-
-| Obecny Focus Keyword | Nowy Focus Keyword |
-|---------------------|-------------------|
-| `AI agenti shoda` | `AI Agenti` |
-| `kyberútok ransomware případová studie` | `Kyberútok ransomware` |
-| `AI agents compliance` | `AI Agents` |
-| `AI agenci zgodność` | `AI Agenci` |
-| `EcoVadis ocena ESG` | `Ocena ESG` |
-
-## Rekomendacja
-
-**Podejście hybrydowe:**
-
-1. **Zmiana kodu analizatora** - sprawdzanie wszystkich słów (bardziej elastyczne)
-2. **Uproszczenie keywords** w bazie danych - dla przypadków z odmianami (czeskie)
-
-## Pliki do modyfikacji
-
-### 1. `src/lib/seo-analyzer.ts` (linia 165-167)
-
-```typescript
-// Przed
-case 'keyword-in-title':
-  isPassed = !keyword || seoTitle.toLowerCase().includes(keyword.toLowerCase());
-  message = isPassed ? 'Keyword found in title' : 'Add focus keyword to SEO title';
-  break;
-
-// Po
-case 'keyword-in-title':
-  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
-  isPassed = !keyword || keywordWords.every(word => seoTitle.toLowerCase().includes(word));
-  message = isPassed ? 'Keyword found in title' : 'Add focus keyword to SEO title';
-  break;
-```
-
-### 2. `src/hooks/useSeoAnalysis.ts` (funkcja checkKeywordInText + linia 193)
-
-```typescript
-// Poprawka na linii 193 - sprawdzać meta_title zamiast title
-const keywordInTitle = hasKeyword && checkKeywordInText(
-  data.metaTitle || data.title || '', 
-  data.focusKeyword!
-);
-
-// Zmiana funkcji checkKeywordInText
-function checkKeywordInText(text: string, keyword: string): boolean {
-  if (!keyword) return false;
-  const normalizedText = text.toLowerCase();
-  const keywordWords = keyword.toLowerCase().split(/\s+/).filter(w => w.length > 0);
-  return keywordWords.every(word => normalizedText.includes(word));
-}
-```
-
-### 3. Aktualizacja focus keywords w bazie (opcjonalnie)
-
-Dla przypadków z odmianami czeskimi, gdzie nawet słowa pojedyncze nie matchują (shoda vs shodu):
-
-```sql
--- Uproszczone keywords dla czeskich artykułów
-UPDATE posts SET focus_keyword = 'AI Agenti shodu' WHERE id = 'f90578e0-...';
--- lub jeszcze prostsze
-UPDATE posts SET focus_keyword = 'AI Agenti' WHERE id = 'f90578e0-...';
-```
-
-## Oczekiwany rezultat
-
-Po wdrożeniu:
-- Większość artykułów powinna mieć "Keyword in title" na zielono
-- Logika będzie bardziej elastyczna i zgodna z praktykami SEO
-- Przypadki z odmianami językowymi mogą wymagać dodatkowej poprawki keywords
-
-## Uwagi techniczne
-
-- Zmiana jest wstecznie kompatybilna - dokładne dopasowanie frazy nadal przejdzie walidację
-- Sprawdzanie wszystkich słów jest standardem w narzędziach SEO (Yoast, RankMath)
-- Dla języków z odmianą, pełne rozwiązanie wymagałoby stemmingu, ale to nadmiarowe
-
+Użycie `order-first md:order-last` na obrazku sprawi, że:
+- Na mobile: obrazek będzie na górze (naturalny flow dla lepszego UX mobilnego)
+- Na desktop: obrazek będzie po prawej stronie (zgodnie z życzeniem)

@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Calendar, ArrowRight, Trophy } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
+import { BookPromoSection } from '@/components/BookPromoSection';
 
 const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
@@ -59,6 +60,9 @@ const SuccessStories = () => {
             </p>
           </div>
         </div>
+
+        {/* Book Promo Section */}
+        <BookPromoSection />
 
         <div className="max-w-7xl mx-auto">
           {/* Loading state */}

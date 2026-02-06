@@ -3998,5 +3998,12 @@
       "simpleDescription": "Používáme cookies pro zlepšení vašeho zážitku z prohlížení.",
       "accept": "Přijmout"
     }
+  },
+  "bookPromo": {
+    "badge": "Nová publikace",
+    "title": "Podívejte se na naši publikaci",
+    "description": "Kniha ukazuje praktický přístup k analýze krok za krokem, obohacený o případové studie založené na stovkách ESG projektů realizovaných týmem Envirly by Quantifier.",
+    "cta": "Zobrazit knihu",
+    "sectionTitle": "Naše nejnovější publikace"
   }
 }
