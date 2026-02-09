@@ -1,56 +1,34 @@
+# Naprawa indeksowania Google Search Console - ZREALIZOWANY
 
-# Plan: Zamiana układu sekcji książki
+Status: WSZYSTKIE ETAPY UKONCZONE
 
-## Cel
-Zamiana kolejności elementów w sekcji promocyjnej książki:
-- **Lewa strona**: Tekst (badge, tytuł, opis, przycisk)
-- **Prawa strona**: Grafika książki
+## Etap 1: Czyszczenie i naprawa podstaw
+- Usuniecie zduplikowanych meta tagow z index.html (linie 51-77)
+- Usuniecie /frameworks/nist z sitemap.xml (strona nie istnieje w routerze)
+- Naprawa wewnetrznych linkow w prerender-marketing
 
-Dodatkowo poprawa jakości wyświetlania obrazka.
+## Etap 2: Rozszerzenie rewrite i prerendering nowych stron
+- Dodanie 14+ nowych stron do prerender-marketing z trescia EN/PL/CS
+- Dodanie 12 regul rewrite w vercel.json dla podstron produktu i rol
+- Naprawa niespojnosci URL (product/compliance-officer -> product/ai-compliance-officer)
 
-## Zmiany w pliku `src/components/BookPromoSection.tsx`
+## Etap 3: Ujednolicenie hreflang i tlumaczenia CS
+- Ujednolicenie kodow hreflang (en, pl-PL, cs-CZ) we wszystkich funkcjach
+- Obsluga CS w prerender-post i prerender-story (group_id)
+- Dodanie czeskich tlumaczen do 10 oryginalnych stron w prerender-marketing
+- Dodanie meta robots "index, follow" do wszystkich prerendowanych stron
 
-### 1. Zamiana kolejności elementów
-Aktualnie w `flex-row` najpierw jest obrazek, potem tekst. Zmienię kolejność bloków w kodzie - najpierw Content, potem Book Image.
+## Edytowane pliki
+- index.html
+- vercel.json
+- supabase/functions/prerender-marketing/index.ts
+- supabase/functions/prerender-post/index.ts
+- supabase/functions/prerender-story/index.ts
+- supabase/functions/sitemap/index.ts
+- public/sitemap.xml
 
-### 2. Wyrównanie tekstu
-- Na desktop: tekst wyrównany do lewej (`md:text-left`)
-- Na mobile: tekst wycentrowany, obrazek pod tekstem
-
-### 3. Poprawa jakości obrazka
-- Zwiększenie rozmiaru obrazka dla lepszej jakości: `w-48 md:w-64` (z obecnego `w-40 md:w-56`)
-- Dodanie `object-contain` dla zachowania proporcji
-- Opcjonalnie: dodanie efektu cienia dla głębi wizualnej
-
-## Kod po zmianach
-
-```tsx
-<div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-  {/* Content - teraz pierwszy (lewa strona) */}
-  <div className="text-center md:text-left flex-1">
-    {/* badge, tytuł, opis, przycisk - bez zmian */}
-  </div>
-  
-  {/* Book Image - teraz drugi (prawa strona) */}
-  <div className="shrink-0 order-first md:order-last">
-    <img 
-      src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
-      alt="Analiza podwójnej istotności - książka"
-      className="w-48 md:w-64 object-contain transform hover:scale-105 transition-transform duration-300"
-    />
-  </div>
-</div>
-```
-
-## Szczegóły techniczne
-
-| Element | Przed | Po |
-|---------|-------|-----|
-| Kolejność desktop | Obrazek → Tekst | Tekst → Obrazek |
-| Kolejność mobile | Obrazek (góra) → Tekst (dół) | Tekst (góra) → Obrazek (dół) |
-| Rozmiar obrazka | `w-40 md:w-56` | `w-48 md:w-64` |
-| Dodatkowe klasy | - | `object-contain`, `order-first md:order-last` |
-
-Użycie `order-first md:order-last` na obrazku sprawi, że:
-- Na mobile: obrazek będzie na górze (naturalny flow dla lepszego UX mobilnego)
-- Na desktop: obrazek będzie po prawej stronie (zgodnie z życzeniem)
+## Kolejne kroki (rekomendacje)
+- Monitorowac Google Search Console przez 2-4 tygodnie po wdrozeniu
+- Sprawdzic czy strony "wykryte, niezindeksowane" zaczynaja byc indeksowane
+- Rozwazyc dodanie structured data (JSON-LD) do prerendowanych stron
+- Opcjonalnie: dodac czeskie tlumaczenia do sitemap.xml

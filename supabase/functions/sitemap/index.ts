@@ -39,7 +39,6 @@ const staticPages = [
   { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
   { path: '/frameworks/dora', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
-  { path: '/frameworks/nist', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
   { path: '/frameworks/iso-9001', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
   { path: '/frameworks/hipaa', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
   { path: '/frameworks/ccpa', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },

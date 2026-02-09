@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/contact.html",
+      "destination": "/en/contact",
+      "permanent": true
+    },
+    {
       "source": "/:locale(en|pl|cs)/soc2-automation",
       "destination": "/:locale/frameworks/soc",
       "permanent": true
@@ -83,156 +88,202 @@
     },
     {
       "source": "/:locale(en|pl|cs)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=index"
     },
     {
       "source": "/:locale(en|pl|cs)/frameworks/soc",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=soc2-automation"
     },
     {
       "source": "/:locale(en|pl|cs)/frameworks/iso-27001",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=iso27001"
     },
     {
       "source": "/:locale(en|pl|cs)/frameworks/gdpr",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=gdpr-compliance"
     },
     {
       "source": "/:locale(en|pl|cs)/frameworks/nis-ii",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=nis2"
     },
     {
+      "source": "/:locale(en|pl|cs)/frameworks/dora",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=dora"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/iso-9001",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=iso-9001"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/hipaa",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=hipaa"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/ccpa",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=ccpa"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/esg",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=esg"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/environmental",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=environmental"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/governance",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=governance"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/frameworks/product-level",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-level"
+    },
+    {
       "source": "/:locale(en|pl|cs)/grc-platform",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=grc-platform"
     },
     {
+      "source": "/:locale(en|pl|cs)/product",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-features"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/overview",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-overview"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/ai-compliance-officer",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=compliance-officer"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/task-data-management",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=task-data-management"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/documents-management",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=documents-management"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/value-chain",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=value-chain"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/risk-assessment",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=risk-assessment"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/analytics-dashboards",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=analytics-dashboards"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/api-integrations",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=api-integrations"
+    },
+    {
       "source": "/:locale(en|pl|cs)/product/features",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-features"
     },
     {
       "source": "/:locale(en|pl|cs)/plans",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=plans"
     },
     {
       "source": "/:locale(en|pl|cs)/about",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=about"
     },
     {
       "source": "/:locale(en|pl|cs)/contact",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=contact"
     },
     {
       "source": "/:locale(en|pl|cs)/partners",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=partners"
     },
     {
       "source": "/:locale(en|pl|cs)/frameworks",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=frameworks"
     },
     {
+      "source": "/:locale(en|pl|cs)/by-roles/managers",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-managers"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/contributors",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-contributors"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/auditor",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-auditor"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/blog",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=blog"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/success-stories",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=success-stories"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/legal/privacy",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=legal-privacy"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/legal/terms",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=legal-terms"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/legal/cookies",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=legal-cookies"
+    },
+    {
       "source": "/:locale(en|pl|cs)/success-stories/:slug",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-story?locale=:locale&slug=:slug"
     },
     {
       "source": "/:locale(en|pl|cs)/blog/:slug",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*"
-        }
-      ],
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-post?locale=:locale&slug=:slug"
     },
     {
