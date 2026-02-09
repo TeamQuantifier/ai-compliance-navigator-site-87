@@ -990,6 +990,55 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Funkce produktu – Automatizace shody poháněná AI | Quantifier',
+        description: 'Prozkoumejte funkce Quantifier: AI compliance officer, hodnocení rizik, správa dokumentů, analytické dashboardy a 100+ integrací.',
+        h1: 'Funkce produktu',
+        subtitle: 'Vše, co potřebujete pro automatizaci shody a řízení rizik v jedné platformě.',
+        sections: [
+          {
+            h2: 'AI Compliance Officer',
+            content: [
+              'Okamžité odpovědi na otázky ohledně shody',
+              'Politiky a postupy generované AI',
+              'Automatizovaná analýza mezer a doporučení',
+              'Rozhraní v přirozeném jazyce pro dotazy na shodu'
+            ]
+          },
+          {
+            h2: 'Hodnocení rizik',
+            content: [
+              'Automatizovaná identifikace a bodování rizik',
+              'Doporučení pro ošetření s AI poznatky',
+              'Registr rizik se sledováním a reportingem',
+              'Kontinuální monitoring rizik'
+            ]
+          },
+          {
+            h2: 'Správa dokumentů',
+            content: [
+              'Centralizované úložiště politik a důkazů',
+              'Kontrola verzí a schvalovací workflow',
+              'Automatický sběr důkazů',
+              'Dokumentace připravená pro audit'
+            ]
+          },
+          {
+            h2: 'Analytické dashboardy',
+            content: [
+              'Stav shody v reálném čase',
+              'Teplotní mapy rizik a trendy',
+              'Sledování pokroku standardů',
+              'Výkonné reporty pro vedení'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Hodnocení rizik', href: '/product/risk-assessment' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'plans': {
