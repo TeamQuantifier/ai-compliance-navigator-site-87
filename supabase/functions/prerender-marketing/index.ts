@@ -446,6 +446,54 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Szczegóły ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Software pro shodu s ISO 27001 – Vybudujte ISMS s AI | Quantifier',
+        description: 'Implementujte ISO 27001 rychleji pomocí ISMS softwaru poháněného AI. Automatizovaná analýza mezer, hodnocení rizik a mapování kontrol Annex A.',
+        h1: 'Software pro shodu s ISO 27001',
+        subtitle: 'Vybudujte svůj systém řízení bezpečnosti informací (ISMS) s AI. Od analýzy mezer po certifikaci za týdny.',
+        sections: [
+          {
+            h2: 'Proč je certifikace ISO 27001 důležitá',
+            content: [
+              'Prokazuje závazek k bezpečnosti informací klientům a partnerům',
+              'Vyžadována pro enterprise prodej a státní zakázky',
+              'Snižuje riziko úniků dat a bezpečnostních incidentů',
+              'Zajišťuje shodu s regulatorními požadavky'
+            ]
+          },
+          {
+            h2: 'Výzvy implementace ISO 27001',
+            content: [
+              'Složitý standard s 93 kontrolami Annex A',
+              'Vyžaduje rozsáhlou dokumentaci a politiky',
+              'Ruční hodnocení rizik je časově náročné',
+              'Obtížné udržování kontinuální shody'
+            ]
+          },
+          {
+            h2: 'Implementace ISMS poháněná AI',
+            content: [
+              'Automatizovaná analýza mezer proti požadavkům ISO 27001',
+              'Politiky a postupy generované AI',
+              'Inteligentní hodnocení rizik s doporučeními pro ošetření',
+              'Mapování kontrol Annex A a sběr důkazů',
+              'Kontinuální monitoring shody a upozornění'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je ISO 27001?', answer: 'ISO 27001 je mezinárodní standard pro systémy řízení bezpečnosti informací (ISMS). Poskytuje rámec pro správu a ochranu citlivých informací.' },
+          { question: 'Jak Quantifier pomáhá s certifikací ISO 27001?', answer: 'Quantifier automatizuje analýzu mezer, generuje potřebnou dokumentaci, provádí hodnocení rizik a zajišťuje kontinuální monitoring pro dosažení a udržení certifikace.' },
+          { question: 'Jaký je časový rámec pro certifikaci ISO 27001?', answer: 'S Quantifier většina organizací dosáhne certifikace ISO 27001 do 8–12 týdnů, oproti 6–12 měsícům u ručních procesů.' },
+          { question: 'Mohu spravovat ISO 27001 a SOC 2 společně?', answer: 'Ano, Quantifier podporuje shodu s více standardy s křížovým mapováním mezi ISO 27001 a SOC 2, čímž eliminuje duplicitní práci.' }
+        ],
+        internalLinks: [
+          { text: 'Podrobnosti ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2 automatizace', href: '/frameworks/soc' },
+          { text: 'GRC platforma', href: '/grc-platform' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'gdpr-compliance': {
