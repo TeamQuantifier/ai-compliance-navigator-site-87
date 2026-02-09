@@ -1337,6 +1337,37 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Kontakt', href: '/contact' },
           { text: 'O Quantifier', href: '/about' }
         ]
+      },
+      cs: {
+        title: 'Partnerství s Quantifier – Rozvíjejte svůj byznys | Quantifier',
+        description: 'Připojte se k partnerskému programu Quantifier. Pomozte svým klientům dosáhnout shody rychleji a zároveň rozvíjejte svůj byznys.',
+        h1: 'Partnerství s Quantifier',
+        subtitle: 'Připojte se k našemu partnerskému programu a pomozte organizacím dosáhnout shody rychleji.',
+        sections: [
+          {
+            h2: 'Výhody partnerství',
+            content: [
+              'Sdílení příjmů a provize za doporučení',
+              'Školení a certifikace partnerů',
+              'Příležitosti pro společný marketing',
+              'Dedikovaná partnerská podpora',
+              'Přednostní přístup k novým funkcím'
+            ]
+          },
+          {
+            h2: 'Typy partnerů',
+            content: [
+              'Konzultační partneři – Konzultanti a poradci v oblasti shody',
+              'Technologičtí partneři – Integrace s Quantifier',
+              'Prodejní partneři – Prodávejte Quantifier svým klientům',
+              'Doporučující partneři – Získejte provize za doporučení'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Kontaktujte nás', href: '/contact' },
+          { text: 'O Quantifier', href: '/about' }
+        ]
       }
     },
     'frameworks': {
