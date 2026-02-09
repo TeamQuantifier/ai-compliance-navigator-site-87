@@ -313,6 +313,53 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Szczegóły SOC', href: '/frameworks/soc' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Platforma pro automatizaci SOC 2 – Dosáhněte shody 10× rychleji | Quantifier',
+        description: 'Automatizujte shodu se SOC 2 pomocí Quantifier.ai. Sběr důkazů poháněný AI, kontinuální monitoring a reporty připravené pro audit.',
+        h1: 'Platforma pro automatizaci SOC 2',
+        subtitle: 'Dosáhněte shody se SOC 2 10× rychleji díky automatizaci poháněné AI. Kontinuální monitoring, sběr důkazů a reporty připravené pro audit.',
+        sections: [
+          {
+            h2: 'Problém ruční shody se SOC 2',
+            content: [
+              'Ruční sběr důkazů zabere měsíce práce inženýrů',
+              'Sledování v tabulkách vede k mezerám a přehlédnutým kontrolám',
+              'Roční audity vyžadují spěšné shromažďování dokumentace'
+            ]
+          },
+          {
+            h2: 'Jak Quantifier automatizuje SOC 2',
+            content: [
+              'Sběr důkazů poháněný AI ze 100+ integrací',
+              'Automatické mapování kontrol na kritéria Trust Services',
+              'Kontinuální monitoring s upozorněními v reálném čase',
+              'Reporty připravené pro audit generované automaticky'
+            ]
+          },
+          {
+            h2: 'Pokrytí kritérií Trust Services SOC 2',
+            content: [
+              'Bezpečnost – Ochrana proti neoprávněnému přístupu',
+              'Dostupnost – Dostupnost systému pro provoz',
+              'Integrita zpracování – Kompletní a přesné zpracování',
+              'Důvěrnost – Ochrana důvěrných informací',
+              'Soukromí – Sběr a použití osobních údajů'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je automatizace SOC 2?', answer: 'Automatizace SOC 2 využívá software ke kontinuálnímu sběru důkazů, monitorování kontrol a udržování shody s kritérii Trust Services SOC 2.' },
+          { question: 'Jak dlouho trvá získání certifikace SOC 2 s Quantifier?', answer: 'Většina organizací dosáhne certifikace SOC 2 Type I do 4–6 týdnů s Quantifier, oproti 3–6 měsícům u ručních procesů.' },
+          { question: 'Jaká kritéria Trust Services Quantifier pokrývá?', answer: 'Quantifier pokrývá všech pět kritérií: Bezpečnost, Dostupnost, Integrita zpracování, Důvěrnost a Soukromí.' },
+          { question: 'Integrujete se s našimi stávajícími nástroji?', answer: 'Ano, Quantifier se integruje se 100+ nástroji včetně AWS, Azure, GCP, GitHub, Jira, Slack, Okta a dalšími.' }
+        ],
+        internalLinks: [
+          { text: 'Podrobnosti SOC', href: '/frameworks/soc' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'GRC platforma', href: '/grc-platform' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'iso27001': {
@@ -398,6 +445,54 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Szczegóły ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'Cennik', href: '/plans' }
+        ]
+      },
+      cs: {
+        title: 'Software pro shodu s ISO 27001 – Vybudujte ISMS s AI | Quantifier',
+        description: 'Implementujte ISO 27001 rychleji pomocí ISMS softwaru poháněného AI. Automatizovaná analýza mezer, hodnocení rizik a mapování kontrol Annex A.',
+        h1: 'Software pro shodu s ISO 27001',
+        subtitle: 'Vybudujte svůj systém řízení bezpečnosti informací (ISMS) s AI. Od analýzy mezer po certifikaci za týdny.',
+        sections: [
+          {
+            h2: 'Proč je certifikace ISO 27001 důležitá',
+            content: [
+              'Prokazuje závazek k bezpečnosti informací klientům a partnerům',
+              'Vyžadována pro enterprise prodej a státní zakázky',
+              'Snižuje riziko úniků dat a bezpečnostních incidentů',
+              'Zajišťuje shodu s regulatorními požadavky'
+            ]
+          },
+          {
+            h2: 'Výzvy implementace ISO 27001',
+            content: [
+              'Složitý standard s 93 kontrolami Annex A',
+              'Vyžaduje rozsáhlou dokumentaci a politiky',
+              'Ruční hodnocení rizik je časově náročné',
+              'Obtížné udržování kontinuální shody'
+            ]
+          },
+          {
+            h2: 'Implementace ISMS poháněná AI',
+            content: [
+              'Automatizovaná analýza mezer proti požadavkům ISO 27001',
+              'Politiky a postupy generované AI',
+              'Inteligentní hodnocení rizik s doporučeními pro ošetření',
+              'Mapování kontrol Annex A a sběr důkazů',
+              'Kontinuální monitoring shody a upozornění'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je ISO 27001?', answer: 'ISO 27001 je mezinárodní standard pro systémy řízení bezpečnosti informací (ISMS). Poskytuje rámec pro správu a ochranu citlivých informací.' },
+          { question: 'Jak Quantifier pomáhá s certifikací ISO 27001?', answer: 'Quantifier automatizuje analýzu mezer, generuje potřebnou dokumentaci, provádí hodnocení rizik a zajišťuje kontinuální monitoring pro dosažení a udržení certifikace.' },
+          { question: 'Jaký je časový rámec pro certifikaci ISO 27001?', answer: 'S Quantifier většina organizací dosáhne certifikace ISO 27001 do 8–12 týdnů, oproti 6–12 měsícům u ručních procesů.' },
+          { question: 'Mohu spravovat ISO 27001 a SOC 2 společně?', answer: 'Ano, Quantifier podporuje shodu s více standardy s křížovým mapováním mezi ISO 27001 a SOC 2, čímž eliminuje duplicitní práci.' }
+        ],
+        internalLinks: [
+          { text: 'Podrobnosti ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2 automatizace', href: '/frameworks/soc' },
+          { text: 'GRC platforma', href: '/grc-platform' },
+          { text: 'Ceník', href: '/plans' }
         ]
       }
     },
@@ -486,6 +581,54 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Wszystkie Standardy', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Software pro shodu s GDPR – Automatizace ochrany osobních údajů | Quantifier',
+        description: 'Zjednodušte shodu s GDPR pomocí automatizovaného mapování dat, zpracování žádostí DSAR a posouzení vlivu na soukromí. Chraňte osobní údaje.',
+        h1: 'Software pro shodu s GDPR',
+        subtitle: 'Automatizujte správu ochrany osobních údajů a shodu s GDPR. Od mapování dat po zpracování DSAR v jedné platformě.',
+        sections: [
+          {
+            h2: 'Přehled požadavků GDPR',
+            content: [
+              'Zákonný základ pro zpracování osobních údajů',
+              'Práva subjektů údajů (přístup, výmaz, přenositelnost)',
+              'Ochrana údajů již od návrhu a ve výchozím nastavení',
+              'Oznámení o narušení bezpečnosti dat do 72 hodin',
+              'Shoda s přeshraničním přenosem dat'
+            ]
+          },
+          {
+            h2: 'Časté výzvy shody s GDPR',
+            content: [
+              'Sledování osobních údajů napříč více systémy',
+              'Ruční správa žádostí subjektů údajů (DSAR)',
+              'Provádění posouzení vlivu na ochranu soukromí',
+              'Vedení záznamů o činnostech zpracování'
+            ]
+          },
+          {
+            h2: 'Kompletní řešení správy GDPR',
+            content: [
+              'Automatizované zjišťování a mapování dat',
+              'Automatizace workflow pro DSAR a sledování',
+              'Šablony pro posouzení vlivu na soukromí',
+              'Správa souhlasů a dokumentace'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je shoda s GDPR?', answer: 'Shoda s GDPR znamená dodržování předpisů EU pro ochranu osobních údajů rezidentů EU, včetně zákonného zpracování, práv subjektů údajů a oznamování narušení.' },
+          { question: 'Jak Quantifier pomáhá s GDPR?', answer: 'Quantifier automatizuje mapování dat, zpracování DSAR, posouzení vlivu na soukromí a poskytuje kontinuální monitoring pro udržení shody s GDPR.' },
+          { question: 'Lze automatizovat zpracování DSAR?', answer: 'Ano, Quantifier poskytuje automatizované workflow pro všechny typy žádostí subjektů údajů včetně přístupu, výmazu, přenositelnosti a opravy.' },
+          { question: 'Podporujete i další předpisy o ochraně soukromí?', answer: 'Ano, Quantifier podporuje CCPA, LGPD, POPIA a další předpisy s křížovým mapováním pro snížení duplicitního úsilí.' }
+        ],
+        internalLinks: [
+          { text: 'Všechny standardy', href: '/frameworks' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'NIS2', href: '/frameworks/nis-ii' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'nis2': {
@@ -572,6 +715,63 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Wszystkie Standardy', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
+        ]
+      },
+      cs: {
+        title: 'Platforma pro shodu s NIS2 – Požadavky kybernetické bezpečnosti EU | Quantifier',
+        description: 'Připravte se na shodu se směrnicí NIS2 s automatizovaným řízením rizik, hlášením incidentů a bezpečností dodavatelského řetězce. Vyhněte se pokutám.',
+        h1: 'Platforma pro shodu s NIS2',
+        subtitle: 'Splňte požadavky kybernetické bezpečnosti EU s automatizovanou shodou NIS2. Řízení rizik, hlášení incidentů a bezpečnost dodavatelského řetězce.',
+        sections: [
+          {
+            h2: 'Porozumění směrnici NIS2',
+            content: [
+              'NIS2 je aktualizovaná směrnice EU o bezpečnosti sítí a informací',
+              'Rozšiřuje působnost na více sektorů a subjektů',
+              'Zavádí přísnější bezpečnostní požadavky a sankce',
+              'Vyžaduje hlášení incidentů do 24–72 hodin',
+              'Vyžaduje řízení rizik dodavatelského řetězce'
+            ]
+          },
+          {
+            h2: 'Kdo musí splňovat NIS2',
+            content: [
+              'Základní subjekty: Energetika, doprava, bankovnictví, zdravotnictví, vodní hospodářství',
+              'Důležité subjekty: Poštovní služby, odpadové hospodářství, chemie, potravinářství',
+              'Poskytovatelé digitálních služeb: Cloud, datová centra, CDN, sociální sítě',
+              'Subjekty veřejné správy'
+            ]
+          },
+          {
+            h2: 'Implementace NIS2 s Quantifier',
+            content: [
+              'Hodnocení a řízení kybernetických rizik',
+              'Workflow pro zpracování a hlášení incidentů',
+              'Kontinuita podnikání a krizové řízení',
+              'Posouzení bezpečnosti dodavatelského řetězce'
+            ]
+          },
+          {
+            h2: 'Reakce na incidenty a hlášení',
+            content: [
+              'Včasné varování do 24 hodin od významného incidentu',
+              'Oznámení o incidentu do 72 hodin',
+              'Závěrečná zpráva do jednoho měsíce',
+              'Automatizovaná klasifikace a směrování incidentů'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je směrnice NIS2?', answer: 'NIS2 je aktualizovaná směrnice EU o bezpečnosti sítí a informačních systémů, která nahrazuje NIS1 přísnějšími požadavky a širším rozsahem.' },
+          { question: 'Které organizace musí splňovat NIS2?', answer: 'Základní a důležité subjekty v sektorech jako energetika, doprava, zdravotnictví, bankovnictví, digitální infrastruktura a mnohé další.' },
+          { question: 'Jaké jsou sankce za nesplnění NIS2?', answer: 'Pokuty mohou dosáhnout až 10 milionů EUR nebo 2 % celosvětového ročního obratu pro základní subjekty a 7 milionů EUR nebo 1,4 % pro důležité subjekty.' },
+          { question: 'Jak Quantifier pomáhá s NIS2?', answer: 'Quantifier poskytuje automatizované hodnocení rizik, workflow pro hlášení incidentů, monitoring bezpečnosti dodavatelského řetězce a kontinuální sledování shody.' }
+        ],
+        internalLinks: [
+          { text: 'Všechny standardy', href: '/frameworks' },
+          { text: 'DORA', href: '/frameworks/dora' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'Ceník', href: '/plans' }
         ]
       }
     },
@@ -662,6 +862,65 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Wszystkie Frameworki', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'AI-nativní GRC platforma – Jednotné řízení, rizika a shoda | Quantifier',
+        description: 'Moderní GRC platforma s automatizací AI. Spravujte governance, rizika a shodu napříč více standardy. Nahraďte tabulky inteligentními workflow.',
+        h1: 'AI-nativní GRC platforma',
+        subtitle: 'Jednotná správa governance, rizik a shody. Nahraďte tabulky inteligentní automatizací.',
+        sections: [
+          {
+            h2: 'Co je GRC platforma?',
+            content: [
+              'Governance: Definování politik, kontrol a organizační struktury',
+              'Řízení rizik: Identifikace, hodnocení a mitigace rizik',
+              'Shoda: Plnění regulatorních a oborových požadavků',
+              'Integrovaný přístup: Odstranění sil mezi týmy',
+              'Kontinuální monitoring: Přehled o stavu GRC v reálném čase'
+            ]
+          },
+          {
+            h2: 'Proč tradiční GRC nástroje nestačí',
+            content: [
+              'Ruční zadávání dat a sběr důkazů',
+              'Izolované systémy, které spolu nekomunikují',
+              'Jednorázová posouzení místo kontinuálního monitoringu',
+              'Složité implementace trvající 12–18 měsíců'
+            ]
+          },
+          {
+            h2: 'Rozdíl Quantifier: AI-nativní GRC',
+            content: [
+              'Automatizace poháněná AI snižuje ruční práci o 80 %',
+              'Jednotná platforma pro všechny standardy a rámce',
+              'Nasazení za týdny, ne za měsíce nebo roky',
+              'Kontinuální shoda s monitoringem v reálném čase',
+              'Vestavěné integrace se 100+ nástroji'
+            ]
+          },
+          {
+            h2: 'Shoda s více standardy',
+            content: [
+              'ISO 27001 – Řízení bezpečnosti informací',
+              'SOC 2 – Kritéria Trust Services',
+              'GDPR – Nařízení o ochraně osobních údajů',
+              'NIS2 – Směrnice EU o kybernetické bezpečnosti',
+              'DORA – Digitální provozní odolnost'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je GRC?', answer: 'GRC znamená Governance, Risk a Compliance. Jde o integrovaný přístup ke správě organizačního řízení, řízení rizik a regulatorní shody.' },
+          { question: 'Proč potřebuji GRC platformu?', answer: 'GRC platforma poskytuje centralizovaný přehled, automatizuje manuální procesy, snižuje náklady na shodu a zajišťuje konzistentní řízení rizik.' },
+          { question: 'Které standardy Quantifier podporuje?', answer: 'Quantifier podporuje ISO 27001, SOC 2, GDPR, NIS2, DORA, NIST, PCI DSS, ISO 9001 a mnoho dalších s křížovým mapováním.' },
+          { question: 'Jak se Quantifier liší od Vanta nebo Drata?', answer: 'Quantifier je AI-nativní od základu, podporuje více standardů včetně ESG a environmentální shody a nabízí hlubší automatizační schopnosti.' }
+        ],
+        internalLinks: [
+          { text: 'Všechny standardy', href: '/frameworks' },
+          { text: 'SOC 2 automatizace', href: '/frameworks/soc' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'product-features': {
@@ -731,6 +990,55 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Funkce produktu – Automatizace shody poháněná AI | Quantifier',
+        description: 'Prozkoumejte funkce Quantifier: AI compliance officer, hodnocení rizik, správa dokumentů, analytické dashboardy a 100+ integrací.',
+        h1: 'Funkce produktu',
+        subtitle: 'Vše, co potřebujete pro automatizaci shody a řízení rizik v jedné platformě.',
+        sections: [
+          {
+            h2: 'AI Compliance Officer',
+            content: [
+              'Okamžité odpovědi na otázky ohledně shody',
+              'Politiky a postupy generované AI',
+              'Automatizovaná analýza mezer a doporučení',
+              'Rozhraní v přirozeném jazyce pro dotazy na shodu'
+            ]
+          },
+          {
+            h2: 'Hodnocení rizik',
+            content: [
+              'Automatizovaná identifikace a bodování rizik',
+              'Doporučení pro ošetření s AI poznatky',
+              'Registr rizik se sledováním a reportingem',
+              'Kontinuální monitoring rizik'
+            ]
+          },
+          {
+            h2: 'Správa dokumentů',
+            content: [
+              'Centralizované úložiště politik a důkazů',
+              'Kontrola verzí a schvalovací workflow',
+              'Automatický sběr důkazů',
+              'Dokumentace připravená pro audit'
+            ]
+          },
+          {
+            h2: 'Analytické dashboardy',
+            content: [
+              'Stav shody v reálném čase',
+              'Teplotní mapy rizik a trendy',
+              'Sledování pokroku standardů',
+              'Výkonné reporty pro vedení'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Hodnocení rizik', href: '/product/risk-assessment' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'plans': {
@@ -790,6 +1098,43 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Kontakt', href: '/contact' },
           { text: 'Funkcje Produktu', href: '/product/features' }
         ]
+      },
+      cs: {
+        title: 'Ceník – Flexibilní řešení shody | Quantifier',
+        description: 'Vyberte si správný plán pro vaše potřeby shody. Od startupů po velké podniky, flexibilní ceník bez skrytých poplatků.',
+        h1: 'Ceník',
+        subtitle: 'Vyberte si plán, který odpovídá vašim potřebám shody. Všechny plány zahrnují naši AI platformu.',
+        sections: [
+          {
+            h2: 'Možnosti plánů',
+            content: [
+              'Starter – Pro malé týmy začínající se shodou',
+              'Professional – Pro rostoucí společnosti s více standardy',
+              'Enterprise – Pro velké organizace s pokročilými potřebami',
+              'Všechny plány zahrnují neomezený počet uživatelů a standardů'
+            ]
+          },
+          {
+            h2: 'Co je zahrnuto',
+            content: [
+              'AI Compliance Officer pro okamžité poradenství',
+              'Automatizovaný sběr důkazů',
+              'Hodnocení a řízení rizik',
+              'Analytické dashboardy a reporting',
+              'Dedikovaný customer success manažer'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Nabízíte bezplatnou zkušební verzi?', answer: 'Ano, nabízíme 14denní zkušební verzi s plným přístupem ke všem funkcím. Není vyžadována kreditní karta.' },
+          { question: 'Mohu později změnit plán?', answer: 'Ano, svůj plán můžete kdykoli upgradovat nebo downgradovat. Změny se projeví v dalším zúčtovacím období.' },
+          { question: 'Účtuje se poplatek za nastavení?', answer: 'Ne, za nastavení se neúčtují žádné poplatky. Quantifier můžete začít používat ihned po registraci.' }
+        ],
+        internalLinks: [
+          { text: 'Kontaktujte obchod', href: '/contact' },
+          { text: 'Funkce produktu', href: '/product/features' },
+          { text: 'SOC 2 automatizace', href: '/frameworks/soc' }
+        ]
       }
     },
     'about': {
@@ -842,6 +1187,37 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Kontakt', href: '/contact' },
           { text: 'Produkt', href: '/product/features' }
         ]
+      },
+      cs: {
+        title: 'O Quantifier – Naše mise zjednodušit shodu | Quantifier',
+        description: 'Poznejte misi Quantifier učinit shodu dostupnou pro každou organizaci. Seznamte se s naším týmem a příběhem.',
+        h1: 'O Quantifier',
+        subtitle: 'Naší misí je učinit shodu jednoduchou, automatizovanou a dostupnou pro každou organizaci.',
+        sections: [
+          {
+            h2: 'Naše mise',
+            content: [
+              'Shoda by neměla být zátěží brzdící inovace',
+              'Každá organizace si zaslouží přístup k bezpečnostním postupům enterprise úrovně',
+              'AI dokáže eliminovat rutinní práci spojenou se shodou',
+              'Budujeme budoucnost GRC'
+            ]
+          },
+          {
+            h2: 'Náš příběh',
+            content: [
+              'Založena odborníky na shodu a bezpečnost',
+              'Vznikla z frustrace z klasických GRC nástrojů',
+              'AI-nativní přístup od prvního dne',
+              'Sloužíme stovkám organizací po celém světě'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Kontaktujte nás', href: '/contact' },
+          { text: 'Kariéra', href: '/contact' },
+          { text: 'Produkt', href: '/product/features' }
+        ]
       }
     },
     'contact': {
@@ -885,6 +1261,28 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Cennik', href: '/plans' },
           { text: 'O nas', href: '/about' }
+        ]
+      },
+      cs: {
+        title: 'Kontakt Quantifier – Ozvěte se nám | Quantifier',
+        description: 'Kontaktujte Quantifier pro demo, informace o ceníku nebo zjistěte, jak vám můžeme pomoci s potřebami shody.',
+        h1: 'Kontaktujte nás',
+        subtitle: 'Ozvěte se našemu týmu. Rádi se s vámi pobavíme o tom, jak vám Quantifier může pomoci.',
+        sections: [
+          {
+            h2: 'Ozvěte se',
+            content: [
+              'Naplánujte si personalizované demo',
+              'Získejte informace o ceníku',
+              'Zeptejte se na naši platformu',
+              'Zjistěte více o partnerských příležitostech'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Ceník', href: '/plans' },
+          { text: 'Funkce produktu', href: '/product/features' },
+          { text: 'O nás', href: '/about' }
         ]
       }
     },
@@ -937,6 +1335,37 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         ],
         internalLinks: [
           { text: 'Kontakt', href: '/contact' },
+          { text: 'O Quantifier', href: '/about' }
+        ]
+      },
+      cs: {
+        title: 'Partnerství s Quantifier – Rozvíjejte svůj byznys | Quantifier',
+        description: 'Připojte se k partnerskému programu Quantifier. Pomozte svým klientům dosáhnout shody rychleji a zároveň rozvíjejte svůj byznys.',
+        h1: 'Partnerství s Quantifier',
+        subtitle: 'Připojte se k našemu partnerskému programu a pomozte organizacím dosáhnout shody rychleji.',
+        sections: [
+          {
+            h2: 'Výhody partnerství',
+            content: [
+              'Sdílení příjmů a provize za doporučení',
+              'Školení a certifikace partnerů',
+              'Příležitosti pro společný marketing',
+              'Dedikovaná partnerská podpora',
+              'Přednostní přístup k novým funkcím'
+            ]
+          },
+          {
+            h2: 'Typy partnerů',
+            content: [
+              'Konzultační partneři – Konzultanti a poradci v oblasti shody',
+              'Technologičtí partneři – Integrace s Quantifier',
+              'Prodejní partneři – Prodávejte Quantifier svým klientům',
+              'Doporučující partneři – Získejte provize za doporučení'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Kontaktujte nás', href: '/contact' },
           { text: 'O Quantifier', href: '/about' }
         ]
       }
