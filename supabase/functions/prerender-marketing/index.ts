@@ -7,6 +7,54 @@ const corsHeaders = {
 
 const BASE_URL = 'https://quantifier.ai';
 
+// Hreflang map for regional targeting
+const localeHreflangMap: Record<string, string> = {
+  en: 'en',
+  pl: 'pl-PL',
+  cs: 'cs-CZ',
+};
+
+// Map page slugs to actual URL paths for correct canonical URLs
+const pageUrlMap: Record<string, string> = {
+  'index': '',
+  'soc2-automation': 'frameworks/soc',
+  'iso27001': 'frameworks/iso-27001',
+  'gdpr-compliance': 'frameworks/gdpr',
+  'nis2': 'frameworks/nis-ii',
+  'grc-platform': 'grc-platform',
+  'product-features': 'product/features',
+  'plans': 'plans',
+  'about': 'about',
+  'contact': 'contact',
+  'partners': 'partners',
+  'frameworks': 'frameworks',
+  'dora': 'frameworks/dora',
+  'iso-9001': 'frameworks/iso-9001',
+  'hipaa': 'frameworks/hipaa',
+  'ccpa': 'frameworks/ccpa',
+  'esg': 'frameworks/esg',
+  'environmental': 'frameworks/environmental',
+  'governance': 'frameworks/governance',
+  'product-level': 'frameworks/product-level',
+  'product-overview': 'product/overview',
+  'compliance-officer': 'product/compliance-officer',
+  'task-data-management': 'product/task-data-management',
+  'analytics-dashboards': 'product/analytics-dashboards',
+  'documents-management': 'product/documents-management',
+  'api-integrations': 'product/api-integrations',
+  'value-chain': 'product/value-chain',
+  'risk-assessment': 'product/risk-assessment',
+  'by-roles': 'by-roles',
+  'by-roles-managers': 'by-roles/managers',
+  'by-roles-contributors': 'by-roles/contributors',
+  'by-roles-auditor': 'by-roles/auditor',
+  'blog': 'blog',
+  'success-stories': 'success-stories',
+  'legal-privacy': 'legal/privacy',
+  'legal-terms': 'legal/terms',
+  'legal-cookies': 'legal/cookies',
+};
+
 interface FAQ {
   question: string;
   answer: string;
