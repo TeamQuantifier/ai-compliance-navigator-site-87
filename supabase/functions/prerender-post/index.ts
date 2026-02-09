@@ -9,6 +9,25 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
+// Hreflang map for regional targeting
+const localeHreflangMap: Record<string, string> = {
+  en: 'en',
+  pl: 'pl-PL',
+  cs: 'cs-CZ',
+};
+
+const localeToOg: Record<string, string> = {
+  en: 'en_US',
+  pl: 'pl_PL',
+  cs: 'cs_CZ',
+};
+
+const localeToDateLocale: Record<string, string> = {
+  en: 'en-US',
+  pl: 'pl-PL',
+  cs: 'cs-CZ',
+};
+
 // Convert TipTap JSON to HTML
 function richTextToHtml(content: any): string {
   if (!content || !content.content) return '';
@@ -62,7 +81,6 @@ function richTextToHtml(content: any): string {
 }
 
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -97,30 +115,95 @@ serve(async (req) => {
       return new Response('Post not found', { status: 404, headers: corsHeaders });
     }
 
-    // Fetch alternate language version for hreflang
-    const alternateLocale = locale === 'en' ? 'pl' : 'en';
-    const { data: alternate } = await supabase
-      .from('alternates')
-      .select('alternate_id')
-      .eq('primary_id', post.id)
-      .eq('content_type', 'post')
-      .single();
+    // Fetch all alternate language versions via group_id
+    const alternateVersions: { locale: string; slug: string }[] = [];
 
-    let alternateSlug = slug;
-    if (alternate) {
-      const { data: altPost } = await supabase
+    if (post.group_id) {
+      const { data: groupPosts } = await supabase
         .from('posts')
-        .select('slug')
-        .eq('id', alternate.alternate_id)
-        .single();
-      if (altPost) {
-        alternateSlug = altPost.slug;
+        .select('slug, lang')
+        .eq('group_id', post.group_id)
+        .eq('status', 'published')
+        .neq('id', post.id);
+      
+      if (groupPosts) {
+        for (const gp of groupPosts) {
+          alternateVersions.push({ locale: gp.lang, slug: gp.slug });
+        }
+      }
+    } else {
+      // Fallback: check alternates table
+      const { data: alternates } = await supabase
+        .from('alternates')
+        .select('alternate_id, alternate_lang')
+        .eq('primary_id', post.id)
+        .eq('content_type', 'post');
+
+      if (alternates) {
+        for (const alt of alternates) {
+          const { data: altPost } = await supabase
+            .from('posts')
+            .select('slug')
+            .eq('id', alt.alternate_id)
+            .single();
+          if (altPost) {
+            alternateVersions.push({ locale: alt.alternate_lang, slug: altPost.slug });
+          }
+        }
+      }
+
+      // Also check reverse direction
+      const { data: reverseAlternates } = await supabase
+        .from('alternates')
+        .select('primary_id, primary_lang')
+        .eq('alternate_id', post.id)
+        .eq('content_type', 'post');
+
+      if (reverseAlternates) {
+        for (const alt of reverseAlternates) {
+          const { data: altPost } = await supabase
+            .from('posts')
+            .select('slug')
+            .eq('id', alt.primary_id)
+            .single();
+          if (altPost) {
+            alternateVersions.push({ locale: alt.primary_lang, slug: altPost.slug });
+          }
+        }
       }
     }
 
     const canonicalUrl = `https://quantifier.ai/${locale}/blog/${post.slug}`;
-    const alternateUrl = `https://quantifier.ai/${alternateLocale}/blog/${alternateSlug}`;
     const imageUrl = post.og_image_url || post.featured_image_url || 'https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png';
+
+    // Generate hreflang tags
+    const hreflangTags: string[] = [];
+    
+    // Self-referencing hreflang
+    const selfHreflang = localeHreflangMap[locale] || locale;
+    hreflangTags.push(`<link rel="alternate" hreflang="${selfHreflang}" href="${canonicalUrl}">`);
+    
+    // Alternate versions
+    for (const alt of alternateVersions) {
+      const hreflang = localeHreflangMap[alt.locale] || alt.locale;
+      hreflangTags.push(`<link rel="alternate" hreflang="${hreflang}" href="https://quantifier.ai/${alt.locale}/blog/${alt.slug}">`);
+    }
+    
+    // x-default (English version)
+    const enVersion = locale === 'en' 
+      ? canonicalUrl 
+      : alternateVersions.find(a => a.locale === 'en')
+        ? `https://quantifier.ai/en/blog/${alternateVersions.find(a => a.locale === 'en')!.slug}`
+        : canonicalUrl;
+    hreflangTags.push(`<link rel="alternate" hreflang="x-default" href="${enVersion}">`);
+
+    // OG locale alternates
+    const currentOgLocale = localeToOg[locale] || 'en_US';
+    const ogAlternateLocales = alternateVersions
+      .map(alt => localeToOg[alt.locale])
+      .filter(Boolean)
+      .map(ogLocale => `<meta property="og:locale:alternate" content="${ogLocale}">`)
+      .join('\n  ');
 
     // Convert rich text to HTML
     const bodyHtml = richTextToHtml(post.body_rich);
@@ -144,32 +227,30 @@ serve(async (req) => {
         "name": "Quantifier.ai",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://quantifier.ai/lovable-uploads/unicell-logo.png"
+          "url": "https://quantifier.ai/logo-quantifier.png"
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": canonicalUrl
       },
-      "inLanguage": locale === 'pl' ? 'pl-PL' : 'en-US',
+      "inLanguage": localeToDateLocale[locale] || 'en-US',
       "keywords": post.tags?.join(', ') || '',
       "articleSection": post.category?.name || 'Blog'
     };
 
-    // Build full HTML response
     const html = `<!DOCTYPE html>
 <html lang="${locale}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
   <title>${post.meta_title || post.title} | Quantifier.ai Blog</title>
   <meta name="description" content="${post.meta_desc || post.excerpt || ''}">
   
   <!-- Canonical and hreflang -->
   <link rel="canonical" href="${canonicalUrl}">
-  <link rel="alternate" hreflang="en" href="${locale === 'en' ? canonicalUrl : alternateUrl}">
-  <link rel="alternate" hreflang="pl" href="${locale === 'pl' ? canonicalUrl : alternateUrl}">
-  <link rel="alternate" hreflang="x-default" href="${locale === 'en' ? canonicalUrl : alternateUrl}">
+  ${hreflangTags.join('\n  ')}
   
   <!-- Open Graph -->
   <meta property="og:title" content="${post.meta_title || post.title}">
@@ -177,8 +258,8 @@ serve(async (req) => {
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="${imageUrl}">
-  <meta property="og:locale" content="${locale === 'pl' ? 'pl_PL' : 'en_US'}">
-  <meta property="og:locale:alternate" content="${locale === 'pl' ? 'en_US' : 'pl_PL'}">
+  <meta property="og:locale" content="${currentOgLocale}">
+  ${ogAlternateLocales}
   <meta property="og:site_name" content="Quantifier.ai">
   
   <!-- Twitter Cards -->
@@ -213,7 +294,7 @@ serve(async (req) => {
       <h1>${post.title}</h1>
       <div class="meta">
         <time datetime="${post.published_at || post.created_at}">
-          ${new Date(post.published_at || post.created_at).toLocaleDateString(locale === 'pl' ? 'pl-PL' : 'en-US', {
+          ${new Date(post.published_at || post.created_at).toLocaleDateString(localeToDateLocale[locale] || 'en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -222,7 +303,7 @@ serve(async (req) => {
       </div>
     </header>
     
-    ${imageUrl ? `<img src="${imageUrl}" alt="${post.title}" />` : ''}
+    ${imageUrl ? `<img src="${imageUrl}" alt="${post.featured_image_alt || post.title}" />` : ''}
     
     ${post.excerpt ? `<div class="excerpt"><p>${post.excerpt}</p></div>` : ''}
     
