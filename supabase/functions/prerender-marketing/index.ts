@@ -1010,8 +1010,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
               'NIS II - Dyrektywa UE o cyberbezpieczeństwie',
               'ISO 27001 - System Zarządzania Bezpieczeństwem Informacji',
               'SOC 2 - Kontrole organizacji usługowych',
-              'GDPR/RODO - Rozporządzenie o ochronie danych osobowych',
-              'NIST - Framework cyberbezpieczeństwa'
+              'GDPR/RODO - Rozporządzenie o ochronie danych osobowych'
             ]
           },
           {
