@@ -862,6 +862,65 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Wszystkie Frameworki', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'AI-nativní GRC platforma – Jednotné řízení, rizika a shoda | Quantifier',
+        description: 'Moderní GRC platforma s automatizací AI. Spravujte governance, rizika a shodu napříč více standardy. Nahraďte tabulky inteligentními workflow.',
+        h1: 'AI-nativní GRC platforma',
+        subtitle: 'Jednotná správa governance, rizik a shody. Nahraďte tabulky inteligentní automatizací.',
+        sections: [
+          {
+            h2: 'Co je GRC platforma?',
+            content: [
+              'Governance: Definování politik, kontrol a organizační struktury',
+              'Řízení rizik: Identifikace, hodnocení a mitigace rizik',
+              'Shoda: Plnění regulatorních a oborových požadavků',
+              'Integrovaný přístup: Odstranění sil mezi týmy',
+              'Kontinuální monitoring: Přehled o stavu GRC v reálném čase'
+            ]
+          },
+          {
+            h2: 'Proč tradiční GRC nástroje nestačí',
+            content: [
+              'Ruční zadávání dat a sběr důkazů',
+              'Izolované systémy, které spolu nekomunikují',
+              'Jednorázová posouzení místo kontinuálního monitoringu',
+              'Složité implementace trvající 12–18 měsíců'
+            ]
+          },
+          {
+            h2: 'Rozdíl Quantifier: AI-nativní GRC',
+            content: [
+              'Automatizace poháněná AI snižuje ruční práci o 80 %',
+              'Jednotná platforma pro všechny standardy a rámce',
+              'Nasazení za týdny, ne za měsíce nebo roky',
+              'Kontinuální shoda s monitoringem v reálném čase',
+              'Vestavěné integrace se 100+ nástroji'
+            ]
+          },
+          {
+            h2: 'Shoda s více standardy',
+            content: [
+              'ISO 27001 – Řízení bezpečnosti informací',
+              'SOC 2 – Kritéria Trust Services',
+              'GDPR – Nařízení o ochraně osobních údajů',
+              'NIS2 – Směrnice EU o kybernetické bezpečnosti',
+              'DORA – Digitální provozní odolnost'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je GRC?', answer: 'GRC znamená Governance, Risk a Compliance. Jde o integrovaný přístup ke správě organizačního řízení, řízení rizik a regulatorní shody.' },
+          { question: 'Proč potřebuji GRC platformu?', answer: 'GRC platforma poskytuje centralizovaný přehled, automatizuje manuální procesy, snižuje náklady na shodu a zajišťuje konzistentní řízení rizik.' },
+          { question: 'Které standardy Quantifier podporuje?', answer: 'Quantifier podporuje ISO 27001, SOC 2, GDPR, NIS2, DORA, NIST, PCI DSS, ISO 9001 a mnoho dalších s křížovým mapováním.' },
+          { question: 'Jak se Quantifier liší od Vanta nebo Drata?', answer: 'Quantifier je AI-nativní od základu, podporuje více standardů včetně ESG a environmentální shody a nabízí hlubší automatizační schopnosti.' }
+        ],
+        internalLinks: [
+          { text: 'Všechny standardy', href: '/frameworks' },
+          { text: 'SOC 2 automatizace', href: '/frameworks/soc' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'product-features': {
