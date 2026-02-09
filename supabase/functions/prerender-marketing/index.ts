@@ -954,8 +954,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
               'NIS II - EU Cybersecurity Directive for essential and important entities',
               'ISO 27001 - Information Security Management System standard',
               'SOC 2 - Service Organization Controls for trust and security',
-              'GDPR - General Data Protection Regulation for EU data privacy',
-              'NIST - National Institute of Standards and Technology Cybersecurity Framework'
+              'GDPR - General Data Protection Regulation for EU data privacy'
             ]
           },
           {
