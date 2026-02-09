@@ -635,8 +635,8 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         ],
         internalLinks: [
           { text: 'All Frameworks', href: '/frameworks' },
-          { text: 'SOC 2 Automation', href: '/soc2-automation' },
-          { text: 'ISO 27001', href: '/iso27001' },
+          { text: 'SOC 2 Automation', href: '/frameworks/soc' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'Pricing', href: '/plans' }
         ]
       },
