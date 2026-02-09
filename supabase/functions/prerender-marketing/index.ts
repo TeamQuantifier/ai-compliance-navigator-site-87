@@ -581,6 +581,54 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Wszystkie Standardy', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Software pro shodu s GDPR – Automatizace ochrany osobních údajů | Quantifier',
+        description: 'Zjednodušte shodu s GDPR pomocí automatizovaného mapování dat, zpracování žádostí DSAR a posouzení vlivu na soukromí. Chraňte osobní údaje.',
+        h1: 'Software pro shodu s GDPR',
+        subtitle: 'Automatizujte správu ochrany osobních údajů a shodu s GDPR. Od mapování dat po zpracování DSAR v jedné platformě.',
+        sections: [
+          {
+            h2: 'Přehled požadavků GDPR',
+            content: [
+              'Zákonný základ pro zpracování osobních údajů',
+              'Práva subjektů údajů (přístup, výmaz, přenositelnost)',
+              'Ochrana údajů již od návrhu a ve výchozím nastavení',
+              'Oznámení o narušení bezpečnosti dat do 72 hodin',
+              'Shoda s přeshraničním přenosem dat'
+            ]
+          },
+          {
+            h2: 'Časté výzvy shody s GDPR',
+            content: [
+              'Sledování osobních údajů napříč více systémy',
+              'Ruční správa žádostí subjektů údajů (DSAR)',
+              'Provádění posouzení vlivu na ochranu soukromí',
+              'Vedení záznamů o činnostech zpracování'
+            ]
+          },
+          {
+            h2: 'Kompletní řešení správy GDPR',
+            content: [
+              'Automatizované zjišťování a mapování dat',
+              'Automatizace workflow pro DSAR a sledování',
+              'Šablony pro posouzení vlivu na soukromí',
+              'Správa souhlasů a dokumentace'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je shoda s GDPR?', answer: 'Shoda s GDPR znamená dodržování předpisů EU pro ochranu osobních údajů rezidentů EU, včetně zákonného zpracování, práv subjektů údajů a oznamování narušení.' },
+          { question: 'Jak Quantifier pomáhá s GDPR?', answer: 'Quantifier automatizuje mapování dat, zpracování DSAR, posouzení vlivu na soukromí a poskytuje kontinuální monitoring pro udržení shody s GDPR.' },
+          { question: 'Lze automatizovat zpracování DSAR?', answer: 'Ano, Quantifier poskytuje automatizované workflow pro všechny typy žádostí subjektů údajů včetně přístupu, výmazu, přenositelnosti a opravy.' },
+          { question: 'Podporujete i další předpisy o ochraně soukromí?', answer: 'Ano, Quantifier podporuje CCPA, LGPD, POPIA a další předpisy s křížovým mapováním pro snížení duplicitního úsilí.' }
+        ],
+        internalLinks: [
+          { text: 'Všechny standardy', href: '/frameworks' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'NIS2', href: '/frameworks/nis-ii' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'nis2': {
