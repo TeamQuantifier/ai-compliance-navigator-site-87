@@ -1098,6 +1098,43 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Kontakt', href: '/contact' },
           { text: 'Funkcje Produktu', href: '/product/features' }
         ]
+      },
+      cs: {
+        title: 'Ceník – Flexibilní řešení shody | Quantifier',
+        description: 'Vyberte si správný plán pro vaše potřeby shody. Od startupů po velké podniky, flexibilní ceník bez skrytých poplatků.',
+        h1: 'Ceník',
+        subtitle: 'Vyberte si plán, který odpovídá vašim potřebám shody. Všechny plány zahrnují naši AI platformu.',
+        sections: [
+          {
+            h2: 'Možnosti plánů',
+            content: [
+              'Starter – Pro malé týmy začínající se shodou',
+              'Professional – Pro rostoucí společnosti s více standardy',
+              'Enterprise – Pro velké organizace s pokročilými potřebami',
+              'Všechny plány zahrnují neomezený počet uživatelů a standardů'
+            ]
+          },
+          {
+            h2: 'Co je zahrnuto',
+            content: [
+              'AI Compliance Officer pro okamžité poradenství',
+              'Automatizovaný sběr důkazů',
+              'Hodnocení a řízení rizik',
+              'Analytické dashboardy a reporting',
+              'Dedikovaný customer success manažer'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Nabízíte bezplatnou zkušební verzi?', answer: 'Ano, nabízíme 14denní zkušební verzi s plným přístupem ke všem funkcím. Není vyžadována kreditní karta.' },
+          { question: 'Mohu později změnit plán?', answer: 'Ano, svůj plán můžete kdykoli upgradovat nebo downgradovat. Změny se projeví v dalším zúčtovacím období.' },
+          { question: 'Účtuje se poplatek za nastavení?', answer: 'Ne, za nastavení se neúčtují žádné poplatky. Quantifier můžete začít používat ihned po registraci.' }
+        ],
+        internalLinks: [
+          { text: 'Kontaktujte obchod', href: '/contact' },
+          { text: 'Funkce produktu', href: '/product/features' },
+          { text: 'SOC 2 automatizace', href: '/frameworks/soc' }
+        ]
       }
     },
     'about': {
