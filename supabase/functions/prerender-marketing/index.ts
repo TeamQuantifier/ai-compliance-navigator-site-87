@@ -1187,6 +1187,37 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Kontakt', href: '/contact' },
           { text: 'Produkt', href: '/product/features' }
         ]
+      },
+      cs: {
+        title: 'O Quantifier – Naše mise zjednodušit shodu | Quantifier',
+        description: 'Poznejte misi Quantifier učinit shodu dostupnou pro každou organizaci. Seznamte se s naším týmem a příběhem.',
+        h1: 'O Quantifier',
+        subtitle: 'Naší misí je učinit shodu jednoduchou, automatizovanou a dostupnou pro každou organizaci.',
+        sections: [
+          {
+            h2: 'Naše mise',
+            content: [
+              'Shoda by neměla být zátěží brzdící inovace',
+              'Každá organizace si zaslouží přístup k bezpečnostním postupům enterprise úrovně',
+              'AI dokáže eliminovat rutinní práci spojenou se shodou',
+              'Budujeme budoucnost GRC'
+            ]
+          },
+          {
+            h2: 'Náš příběh',
+            content: [
+              'Založena odborníky na shodu a bezpečnost',
+              'Vznikla z frustrace z klasických GRC nástrojů',
+              'AI-nativní přístup od prvního dne',
+              'Sloužíme stovkám organizací po celém světě'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Kontaktujte nás', href: '/contact' },
+          { text: 'Kariéra', href: '/contact' },
+          { text: 'Produkt', href: '/product/features' }
+        ]
       }
     },
     'contact': {
