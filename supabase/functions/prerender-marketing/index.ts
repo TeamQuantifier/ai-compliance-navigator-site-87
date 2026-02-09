@@ -313,6 +313,53 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Szczegóły SOC', href: '/frameworks/soc' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Platforma pro automatizaci SOC 2 – Dosáhněte shody 10× rychleji | Quantifier',
+        description: 'Automatizujte shodu se SOC 2 pomocí Quantifier.ai. Sběr důkazů poháněný AI, kontinuální monitoring a reporty připravené pro audit.',
+        h1: 'Platforma pro automatizaci SOC 2',
+        subtitle: 'Dosáhněte shody se SOC 2 10× rychleji díky automatizaci poháněné AI. Kontinuální monitoring, sběr důkazů a reporty připravené pro audit.',
+        sections: [
+          {
+            h2: 'Problém ruční shody se SOC 2',
+            content: [
+              'Ruční sběr důkazů zabere měsíce práce inženýrů',
+              'Sledování v tabulkách vede k mezerám a přehlédnutým kontrolám',
+              'Roční audity vyžadují spěšné shromažďování dokumentace'
+            ]
+          },
+          {
+            h2: 'Jak Quantifier automatizuje SOC 2',
+            content: [
+              'Sběr důkazů poháněný AI ze 100+ integrací',
+              'Automatické mapování kontrol na kritéria Trust Services',
+              'Kontinuální monitoring s upozorněními v reálném čase',
+              'Reporty připravené pro audit generované automaticky'
+            ]
+          },
+          {
+            h2: 'Pokrytí kritérií Trust Services SOC 2',
+            content: [
+              'Bezpečnost – Ochrana proti neoprávněnému přístupu',
+              'Dostupnost – Dostupnost systému pro provoz',
+              'Integrita zpracování – Kompletní a přesné zpracování',
+              'Důvěrnost – Ochrana důvěrných informací',
+              'Soukromí – Sběr a použití osobních údajů'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je automatizace SOC 2?', answer: 'Automatizace SOC 2 využívá software ke kontinuálnímu sběru důkazů, monitorování kontrol a udržování shody s kritérii Trust Services SOC 2.' },
+          { question: 'Jak dlouho trvá získání certifikace SOC 2 s Quantifier?', answer: 'Většina organizací dosáhne certifikace SOC 2 Type I do 4–6 týdnů s Quantifier, oproti 3–6 měsícům u ručních procesů.' },
+          { question: 'Jaká kritéria Trust Services Quantifier pokrývá?', answer: 'Quantifier pokrývá všech pět kritérií: Bezpečnost, Dostupnost, Integrita zpracování, Důvěrnost a Soukromí.' },
+          { question: 'Integrujete se s našimi stávajícími nástroji?', answer: 'Ano, Quantifier se integruje se 100+ nástroji včetně AWS, Azure, GCP, GitHub, Jira, Slack, Okta a dalšími.' }
+        ],
+        internalLinks: [
+          { text: 'Podrobnosti SOC', href: '/frameworks/soc' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'GRC platforma', href: '/grc-platform' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'iso27001': {
