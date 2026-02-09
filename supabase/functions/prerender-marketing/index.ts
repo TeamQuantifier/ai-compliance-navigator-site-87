@@ -458,9 +458,9 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'Do you support other privacy regulations?', answer: 'Yes, Quantifier supports CCPA, LGPD, POPIA, and other privacy regulations with cross-mapping to reduce duplicate compliance effort.' }
         ],
         internalLinks: [
-          { text: 'Data Security Framework', href: '/frameworks/data-security' },
-          { text: 'ISO 27001 Compliance', href: '/iso27001' },
-          { text: 'NIS2 Compliance', href: '/nis2' },
+          { text: 'All Frameworks', href: '/frameworks' },
+          { text: 'ISO 27001 Compliance', href: '/frameworks/iso-27001' },
+          { text: 'NIS2 Compliance', href: '/frameworks/nis-ii' },
           { text: 'Pricing', href: '/plans' }
         ]
       },
