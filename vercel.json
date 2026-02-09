@@ -157,6 +157,51 @@
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=grc-platform"
     },
     {
+      "source": "/:locale(en|pl|cs)/product",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-features"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/overview",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-overview"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/ai-compliance-officer",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=compliance-officer"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/task-data-management",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=task-data-management"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/documents-management",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=documents-management"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/value-chain",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=value-chain"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/risk-assessment",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=risk-assessment"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/analytics-dashboards",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=analytics-dashboards"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/product/api-integrations",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=api-integrations"
+    },
+    {
       "source": "/:locale(en|pl|cs)/product/features",
       "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=product-features"
@@ -185,6 +230,21 @@
       "source": "/:locale(en|pl|cs)/frameworks",
       "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=frameworks"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/managers",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-managers"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/contributors",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-contributors"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/auditor",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-auditor"
     },
     {
       "source": "/:locale(en|pl|cs)/by-roles",
