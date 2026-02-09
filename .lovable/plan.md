@@ -1,96 +1,86 @@
 
 
-# Plan: Dodanie brakujacych regul rewrite i danych PageData dla podstron produktu i rol
+# Plan: Dodanie brakujacych tlumaczen czeskich (CS) do 10 oryginalnych stron w prerender-marketing
 
 ## Zakres zmian
 
-Obecnie w `vercel.json` brakuje regul rewrite z detekcja bota dla 12 podstron, a w `prerender-marketing` brakuje danych tresci (PageData) dla 11 stron. Dodatkowo istnieje niespojnosc w URL strony AI Compliance Officer.
+Dokladnie 10 stron w `prerender-marketing` posiada jedynie wersje EN i PL, bez czeskiej (CS). Gdy Googlebot odwiedza te strony z prefiksem `/cs/`, otrzymuje angielski fallback, co powoduje niespojnosc z czeskimi znacznikami hreflang i prowadzi do problemow z indeksowaniem.
 
----
+## Strony wymagajace tlumaczen CS
 
-## 1. Naprawa niespojnosci URL
+| # | Klucz strony | Linie w pliku | Opis |
+|---|---|---|---|
+| 1 | `soc2-automation` | 224-316 | Automatyzacja SOC 2 - zbieranie dowodow, ciagly monitoring |
+| 2 | `iso27001` | 318-402 | ISO 27001 ISMS - analiza luk, ocena ryzyka, kontrole Annex A |
+| 3 | `gdpr-compliance` | 404-489 | GDPR/RODO - mapowanie danych, DSAR, oceny wplywu na prywatnosc |
+| 4 | `nis2` | 491-576 | NIS2 - zarzadzanie ryzykiem cybernetycznym, raportowanie incydentow |
+| 5 | `grc-platform` | 578-665 | Platforma GRC - governance, ryzyko, zgodnosc, wiele frameworkow |
+| 6 | `product-features` | 667-734 | Funkcje produktu - AI officer, ryzyko, dokumenty, analityka |
+| 7 | `plans` | 736-793 | Cennik - plany Starter, Professional, Enterprise |
+| 8 | `about` | 795-845 | O nas - misja firmy, historia, zespol |
+| 9 | `contact` | 847-889 | Kontakt - demo, informacje o cenach, partnerstwo |
+| 10 | `partners` | 891-942 | Partnerzy - program partnerski, korzysc, typy wspolpracy |
 
-Router (`App.tsx`) uzywa sciezki `/product/ai-compliance-officer`, ale `pageUrlMap` w prerender-marketing mapuje na `/product/compliance-officer`. Trzeba ujednolicic `pageUrlMap` do `product/ai-compliance-officer`.
+## Struktura kazdego tlumaczenia CS
 
----
+Kazda strona otrzyma:
+- `title` - czeski tytul SEO z marka Quantifier
+- `description` - czeski meta opis 150-160 znakow
+- `h1` - glowny naglowek po czesku
+- `subtitle` - podtytul (gdzie istnieje w wersji EN)
+- `sections` - sekcje z naglowkami H2 i punktami przetlumaczonymi na czeski
+- `faqs` - tlumaczenie istniejacych FAQ (dla stron ktore je posiadaja: SOC2, ISO27001, GDPR, NIS2, GRC, Plans)
+- `internalLinks` - linki wewnetrzne z czeskimi etykietami
 
-## 2. Nowe reguly rewrite w vercel.json
+## Przykladowa tresc CS dla wybranych stron
 
-Dodanie 12 regul rewrite z detekcja bota User-Agent:
+### SOC 2
+- title: "Platforma pro automatizaci SOC 2 - Dosahte shody 10x rychleji | Quantifier"
+- h1: "Platforma pro automatizaci SOC 2"
+- Sekcje: Problemy rucni shody, Jak Quantifier automatizuje SOC 2, Kriteria dusteryhodnosti
 
-| Sciezka URL | Parametr page |
-|---|---|
-| `/product` | `product-features` (ta sama strona co features) |
-| `/product/overview` | `product-overview` |
-| `/product/ai-compliance-officer` | `compliance-officer` |
-| `/product/task-data-management` | `task-data-management` |
-| `/product/documents-management` | `documents-management` |
-| `/product/value-chain` | `value-chain` |
-| `/product/risk-assessment` | `risk-assessment` |
-| `/product/analytics-dashboards` | `analytics-dashboards` |
-| `/product/api-integrations` | `api-integrations` |
-| `/by-roles/managers` | `by-roles-managers` |
-| `/by-roles/contributors` | `by-roles-contributors` |
-| `/by-roles/auditor` | `by-roles-auditor` |
+### ISO 27001
+- title: "Software pro shodu s ISO 27001 - Vybudujte ISMS s AI | Quantifier"
+- h1: "Software pro shodu s ISO 27001"
+- Sekcje: Proc je certifikace dulezita, Vyzvy implementace, ISMS s AI
 
-Reguly musza byc umieszczone **przed** regula catch-all `/(.*) -> /index.html` oraz przed ogolniejszymi rewritami (np. `/product/features`, `/by-roles`).
+### GDPR
+- title: "Software pro shodu s GDPR - Automatizace ochrany dat | Quantifier"
+- h1: "Software pro shodu s GDPR"
+- Sekcje: Prehled pozadavku GDPR, Sprava prav subjektu udaju
 
----
+### NIS2
+- title: "Platforma pro shodu s NIS2 - Pozadavky kyberneticke bezpecnosti EU | Quantifier"
+- h1: "Platforma pro shodu s NIS2"
+- Sekcje: Porozumeni smernici NIS2, Kdo musi splnovat NIS2, Hlasen incidentu
 
-## 3. Nowe dane PageData w prerender-marketing
+## Plik do edycji
 
-Dodanie danych tresci w trzech jezykach (EN, PL, CS) dla 11 nowych stron:
+**supabase/functions/prerender-marketing/index.ts** - dodanie bloku `cs: { ... }` do kazdej z 10 stron.
 
-### Podstrony produktu (8 stron):
-- **product-overview** - Przeglad platformy, kluczowe mozliwosci
-- **compliance-officer** - AI Compliance Officer, autonomiczny agent
-- **task-data-management** - Zarzadzanie zadaniami i danymi
-- **analytics-dashboards** - Pulpity analityczne i raportowanie
-- **documents-management** - Zarzadzanie dokumentami i polityki
-- **api-integrations** - Integracje API i laczenie systemow
-- **value-chain** - Lancuch wartosci i zarzadzanie dostawcami
-- **risk-assessment** - Ocena ryzyka i analiza zagrozen
+Kazdy blok CS bedzie wstawiany bezposrednio po istniejacym bloku `pl: { ... }` w danej stronie.
 
-### Podstrony rol (3 strony):
-- **by-roles-managers** - Rozwiazania dla zarzadu i leadership
-- **by-roles-contributors** - Narzedzia dla zespolow operacyjnych
-- **by-roles-auditor** - Funkcje dla audytorow wewnetrznych i zewnetrznych
+## Terminologia czeska
 
-Kazda strona bedzie zawierac:
-- `title` - SEO title z nazwą strony i marką
-- `description` - meta description 150-160 znakow
-- `h1` - glowny naglowek strony
-- `sections` - 2-3 sekcje z naglowkami H2 i punktami
-- `internalLinks` - 2-4 linki do powiazanych stron
-
----
-
-## 4. Poprawka pageUrlMap
-
-Zmiana wpisu w `pageUrlMap`:
-
-```text
-Przed: 'compliance-officer': 'product/compliance-officer'
-Po:    'compliance-officer': 'product/ai-compliance-officer'
-```
-
----
-
-## Pliki do edycji
-
-1. **vercel.json** - dodanie 12 nowych regul rewrite
-2. **supabase/functions/prerender-marketing/index.ts** - poprawka pageUrlMap + dodanie 11 nowych wpisow PageData (EN/PL/CS)
-
----
-
-## Kolejnosc w vercel.json
-
-Reguly rewrite sa ewaluowane od gory do dolu. Nowe reguly musza byc dodane **przed** istniejacymi ogolnymi rewritami `/by-roles` i `/product/features`, poniewaz bardziej specyficzne sciezki (np. `/product/overview`) musza byc dopasowane wczesniej niz ogolniejsze wzorce.
-
----
+Uzyta zostanie spojna terminologia stosowana juz w istniejacych tlumaczeniach CS:
+- compliance -> shoda
+- framework -> standard / ramec
+- risk assessment -> hodnoceni rizik
+- evidence -> dukazy
+- audit trail -> auditni stopa
+- dashboard -> dashboard (zachowane)
+- governance -> rizeni / governance
+- pricing -> cenik
+- contact -> kontakt
 
 ## Szacowany rozmiar zmian
 
-- vercel.json: ~60 nowych linii (12 regul x ~5 linii)
-- prerender-marketing: ~400 nowych linii (11 stron x ~35 linii per strona w 3 jezykach)
+Kazda strona CS wymaga okolo 15-30 linii kodu (w zaleznosci od liczby sekcji i FAQ). Laczna zmiana to okolo 200-250 nowych linii w jednym pliku.
+
+## Wplyw na SEO
+
+Po wdrozeniu:
+- Googlebot odwiedzajacy `/cs/frameworks/soc`, `/cs/grc-platform`, `/cs/plans` itd. otrzyma pelna tresc po czesku
+- Tagi hreflang beda spoisie wskazywac na czeskojezyzcna tresc
+- 54 stron "wykryte, niezindeksowane" w Google Search Console powinno zaczac byc indeksowanych
 
