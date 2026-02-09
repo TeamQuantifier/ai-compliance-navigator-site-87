@@ -1,32 +1,59 @@
 
 
-# Plan: Aktualizacja plan.md - oznaczenie ukonczonego zadania
+# Aktualizacja plan.md - oznaczenie wszystkich zadan jako ZREALIZOWANE
 
-## Zakres zmian
+## Co jest teraz
 
-Plik `.lovable/plan.md` zawiera obecnie stary plan dotyczacy dodania czeskich tlumaczen do prerender-marketing. Zadanie to zostalo juz w pelni zrealizowane - wszystkie 10 stron otrzymalo pelne tlumaczenia CS, funkcja zostala wdrozona i zweryfikowana.
+Plik `.lovable/plan.md` zawiera stary "meta-plan" opisujacy CO nalezy zrobic z plikiem plan.md. Nie zostal jeszcze zaktualizowany wlasciwa trescia.
 
-## Co zrobic
+## Co trzeba zrobic
 
-Zaktualizowac tresc `plan.md` tak, aby:
+Zastapic cala zawartosc pliku `.lovable/plan.md` nowym dokumentem podsumowujacym wszystkie zrealizowane prace SEO.
 
-1. **Dodac status ukonczonego zadania** - oznaczenie calego planu jako ZREALIZOWANY
-2. **Dodac podsumowanie zrealizowanych zmian SEO** - pelny obraz wszystkich trzech etapow napraw indeksowania Google Search Console:
-   - Etap 1: Czyszczenie index.html, usuwanie /frameworks/nist z sitemap, naprawa linkow
-   - Etap 2: Rozszerzenie vercel.json o brakujace rewrite, dodanie 14+ nowych stron do prerender-marketing, dodanie regul dla podstron produktu i rol
-   - Etap 3: Ujednolicenie hreflang, obsluga CS w prerender-post/story, dodanie czeskich tlumaczen do 10 oryginalnych stron
-3. **Wylistowac co zostalo zrobione** - konkretne pliki i zakresy zmian
-4. **Wskazac ewentualne przyszle zadania** - np. monitorowanie GSC po wdrozeniu
+## Nowa zawartosc pliku
+
+```
+# Naprawa indeksowania Google Search Console - ZREALIZOWANY
+
+Status: WSZYSTKIE ETAPY UKONCZONE
+
+## Etap 1: Czyszczenie i naprawa podstaw
+- Usuniecie zduplikowanych meta tagow z index.html (linie 51-77)
+- Usuniecie /frameworks/nist z sitemap.xml (strona nie istnieje w routerze)
+- Naprawa wewnetrznych linkow w prerender-marketing
+
+## Etap 2: Rozszerzenie rewrite i prerendering nowych stron
+- Dodanie 14+ nowych stron do prerender-marketing z trescia EN/PL/CS
+- Dodanie 12 regul rewrite w vercel.json dla podstron produktu i rol
+- Naprawa niespojnosci URL (product/compliance-officer -> product/ai-compliance-officer)
+
+## Etap 3: Ujednolicenie hreflang i tlumaczenia CS
+- Ujednolicenie kodow hreflang (en, pl-PL, cs-CZ) we wszystkich funkcjach
+- Obsluga CS w prerender-post i prerender-story (group_id)
+- Dodanie czeskich tlumaczen do 10 oryginalnych stron w prerender-marketing
+- Dodanie meta robots "index, follow" do wszystkich prerendowanych stron
+
+## Edytowane pliki
+- index.html
+- vercel.json
+- supabase/functions/prerender-marketing/index.ts
+- supabase/functions/prerender-post/index.ts
+- supabase/functions/prerender-story/index.ts
+- supabase/functions/sitemap/index.ts
+- public/sitemap.xml
+
+## Kolejne kroki (rekomendacje)
+- Monitorowac Google Search Console przez 2-4 tygodnie po wdrozeniu
+- Sprawdzic czy strony "wykryte, niezindeksowane" zaczynaja byc indeksowane
+- Rozwazyc dodanie structured data (JSON-LD) do prerendowanych stron
+- Opcjonalnie: dodac czeskie tlumaczenia do sitemap.xml
+```
 
 ## Plik do edycji
 
-- `.lovable/plan.md` - zastapienie obecnej tresci zaktualizowanym planem ze statusem "ZREALIZOWANY"
+- `.lovable/plan.md` - nadpisanie calej zawartosci nowym podsumowaniem
 
-## Nowa zawartosc plan.md
+## Rozmiar zmiany
 
-Plik bedzie zawieral:
-- Naglowek z oznaczeniem statusu: ZREALIZOWANY
-- Podsumowanie 3 etapow napraw SEO
-- Liste edytowanych plikow (index.html, vercel.json, prerender-marketing, prerender-post, prerender-story, sitemap)
-- Sekcje "Kolejne kroki" z rekomendacjami dotyczacymi monitoringu GSC
+Jedna edycja, ~30 linii nowej tresci zastepujacej 32 linie starej.
 
