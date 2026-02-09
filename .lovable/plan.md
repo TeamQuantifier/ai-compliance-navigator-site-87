@@ -1,18 +1,3 @@
-
-
-# Aktualizacja plan.md - oznaczenie wszystkich zadan jako ZREALIZOWANE
-
-## Co jest teraz
-
-Plik `.lovable/plan.md` zawiera stary "meta-plan" opisujacy CO nalezy zrobic z plikiem plan.md. Nie zostal jeszcze zaktualizowany wlasciwa trescia.
-
-## Co trzeba zrobic
-
-Zastapic cala zawartosc pliku `.lovable/plan.md` nowym dokumentem podsumowujacym wszystkie zrealizowane prace SEO.
-
-## Nowa zawartosc pliku
-
-```
 # Naprawa indeksowania Google Search Console - ZREALIZOWANY
 
 Status: WSZYSTKIE ETAPY UKONCZONE
@@ -47,13 +32,3 @@ Status: WSZYSTKIE ETAPY UKONCZONE
 - Sprawdzic czy strony "wykryte, niezindeksowane" zaczynaja byc indeksowane
 - Rozwazyc dodanie structured data (JSON-LD) do prerendowanych stron
 - Opcjonalnie: dodac czeskie tlumaczenia do sitemap.xml
-```
-
-## Plik do edycji
-
-- `.lovable/plan.md` - nadpisanie calej zawartosci nowym podsumowaniem
-
-## Rozmiar zmiany
-
-Jedna edycja, ~30 linii nowej tresci zastepujacej 32 linie starej.
-
