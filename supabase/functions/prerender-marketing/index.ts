@@ -768,7 +768,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Contact Sales', href: '/contact' },
           { text: 'Product Features', href: '/product/features' },
-          { text: 'SOC 2 Automation', href: '/soc2-automation' }
+          { text: 'SOC 2 Automation', href: '/frameworks/soc' }
         ]
       },
       pl: {
