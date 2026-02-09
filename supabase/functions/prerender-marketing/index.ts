@@ -396,7 +396,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'Czym jest ISO 27001?', answer: 'ISO 27001 to międzynarodowy standard dla systemów zarządzania bezpieczeństwem informacji (ISMS).' }
         ],
         internalLinks: [
-          { text: 'Szczegóły ISO 27001', href: '/frameworks/information-security/iso27001' },
+          { text: 'Szczegóły ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'Cennik', href: '/plans' }
         ]
       }
