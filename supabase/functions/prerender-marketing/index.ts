@@ -277,8 +277,8 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'How much does SOC 2 automation cost?', answer: 'Quantifier offers flexible pricing based on company size and needs. Contact us for a customized quote and see how much you can save compared to manual compliance.' }
         ],
         internalLinks: [
-          { text: 'SOC Framework Details', href: '/frameworks/cybersecurity/soc' },
-          { text: 'ISO 27001 Compliance', href: '/iso27001' },
+          { text: 'SOC Framework Details', href: '/frameworks/soc' },
+          { text: 'ISO 27001 Compliance', href: '/frameworks/iso-27001' },
           { text: 'GRC Platform Overview', href: '/grc-platform' },
           { text: 'Pricing Plans', href: '/plans' }
         ]
