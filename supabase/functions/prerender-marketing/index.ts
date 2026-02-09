@@ -310,7 +310,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'Czym jest automatyzacja SOC 2?', answer: 'Automatyzacja SOC 2 wykorzystuje oprogramowanie do ciągłego zbierania dowodów, monitorowania kontroli i utrzymywania zgodności z kryteriami Trust Services SOC 2.' }
         ],
         internalLinks: [
-          { text: 'Szczegóły SOC', href: '/frameworks/cybersecurity/soc' },
+          { text: 'Szczegóły SOC', href: '/frameworks/soc' },
           { text: 'Cennik', href: '/plans' }
         ]
       }
