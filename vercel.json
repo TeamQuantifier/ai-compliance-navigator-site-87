@@ -232,6 +232,21 @@
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=frameworks"
     },
     {
+      "source": "/:locale(en|pl|cs)/by-roles/managers",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-managers"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/contributors",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-contributors"
+    },
+    {
+      "source": "/:locale(en|pl|cs)/by-roles/auditor",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
+      "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles-auditor"
+    },
+    {
       "source": "/:locale(en|pl|cs)/by-roles",
       "has": [{ "type": "header", "key": "user-agent", "value": ".*(bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Discordbot|Telegrambot|Googlebot|Bingbot|Slackbot|Pinterest|Embedly|Quora|OutBrain|vkShare).*" }],
       "destination": "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/prerender-marketing?locale=:locale&page=by-roles"

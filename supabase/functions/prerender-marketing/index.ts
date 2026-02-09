@@ -37,7 +37,7 @@ const pageUrlMap: Record<string, string> = {
   'governance': 'frameworks/governance',
   'product-level': 'frameworks/product-level',
   'product-overview': 'product/overview',
-  'compliance-officer': 'product/compliance-officer',
+  'compliance-officer': 'product/ai-compliance-officer',
   'task-data-management': 'product/task-data-management',
   'analytics-dashboards': 'product/analytics-dashboards',
   'documents-management': 'product/documents-management',
