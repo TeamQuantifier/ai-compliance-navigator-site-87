@@ -1262,6 +1262,28 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Cennik', href: '/plans' },
           { text: 'O nas', href: '/about' }
         ]
+      },
+      cs: {
+        title: 'Kontakt Quantifier – Ozvěte se nám | Quantifier',
+        description: 'Kontaktujte Quantifier pro demo, informace o ceníku nebo zjistěte, jak vám můžeme pomoci s potřebami shody.',
+        h1: 'Kontaktujte nás',
+        subtitle: 'Ozvěte se našemu týmu. Rádi se s vámi pobavíme o tom, jak vám Quantifier může pomoci.',
+        sections: [
+          {
+            h2: 'Ozvěte se',
+            content: [
+              'Naplánujte si personalizované demo',
+              'Získejte informace o ceníku',
+              'Zeptejte se na naši platformu',
+              'Zjistěte více o partnerských příležitostech'
+            ]
+          }
+        ],
+        internalLinks: [
+          { text: 'Ceník', href: '/plans' },
+          { text: 'Funkce produktu', href: '/product/features' },
+          { text: 'O nás', href: '/about' }
+        ]
       }
     },
     'partners': {
