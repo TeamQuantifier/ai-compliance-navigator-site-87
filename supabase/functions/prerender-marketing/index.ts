@@ -1017,8 +1017,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
             h2: 'Cyberbezpieczeństwo',
             content: [
               'NIS II - Dyrektywa o bezpieczeństwie sieci i informacji',
-              'SOC 1 i SOC 2 - Kontrole organizacji usługowych',
-              'NIST - Framework cyberbezpieczeństwa'
+              'SOC 1 i SOC 2 - Kontrole organizacji usługowych'
             ]
           },
           {
