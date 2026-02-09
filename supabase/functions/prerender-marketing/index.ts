@@ -716,6 +716,63 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Wszystkie Standardy', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
+      },
+      cs: {
+        title: 'Platforma pro shodu s NIS2 – Požadavky kybernetické bezpečnosti EU | Quantifier',
+        description: 'Připravte se na shodu se směrnicí NIS2 s automatizovaným řízením rizik, hlášením incidentů a bezpečností dodavatelského řetězce. Vyhněte se pokutám.',
+        h1: 'Platforma pro shodu s NIS2',
+        subtitle: 'Splňte požadavky kybernetické bezpečnosti EU s automatizovanou shodou NIS2. Řízení rizik, hlášení incidentů a bezpečnost dodavatelského řetězce.',
+        sections: [
+          {
+            h2: 'Porozumění směrnici NIS2',
+            content: [
+              'NIS2 je aktualizovaná směrnice EU o bezpečnosti sítí a informací',
+              'Rozšiřuje působnost na více sektorů a subjektů',
+              'Zavádí přísnější bezpečnostní požadavky a sankce',
+              'Vyžaduje hlášení incidentů do 24–72 hodin',
+              'Vyžaduje řízení rizik dodavatelského řetězce'
+            ]
+          },
+          {
+            h2: 'Kdo musí splňovat NIS2',
+            content: [
+              'Základní subjekty: Energetika, doprava, bankovnictví, zdravotnictví, vodní hospodářství',
+              'Důležité subjekty: Poštovní služby, odpadové hospodářství, chemie, potravinářství',
+              'Poskytovatelé digitálních služeb: Cloud, datová centra, CDN, sociální sítě',
+              'Subjekty veřejné správy'
+            ]
+          },
+          {
+            h2: 'Implementace NIS2 s Quantifier',
+            content: [
+              'Hodnocení a řízení kybernetických rizik',
+              'Workflow pro zpracování a hlášení incidentů',
+              'Kontinuita podnikání a krizové řízení',
+              'Posouzení bezpečnosti dodavatelského řetězce'
+            ]
+          },
+          {
+            h2: 'Reakce na incidenty a hlášení',
+            content: [
+              'Včasné varování do 24 hodin od významného incidentu',
+              'Oznámení o incidentu do 72 hodin',
+              'Závěrečná zpráva do jednoho měsíce',
+              'Automatizovaná klasifikace a směrování incidentů'
+            ]
+          }
+        ],
+        faqs: [
+          { question: 'Co je směrnice NIS2?', answer: 'NIS2 je aktualizovaná směrnice EU o bezpečnosti sítí a informačních systémů, která nahrazuje NIS1 přísnějšími požadavky a širším rozsahem.' },
+          { question: 'Které organizace musí splňovat NIS2?', answer: 'Základní a důležité subjekty v sektorech jako energetika, doprava, zdravotnictví, bankovnictví, digitální infrastruktura a mnohé další.' },
+          { question: 'Jaké jsou sankce za nesplnění NIS2?', answer: 'Pokuty mohou dosáhnout až 10 milionů EUR nebo 2 % celosvětového ročního obratu pro základní subjekty a 7 milionů EUR nebo 1,4 % pro důležité subjekty.' },
+          { question: 'Jak Quantifier pomáhá s NIS2?', answer: 'Quantifier poskytuje automatizované hodnocení rizik, workflow pro hlášení incidentů, monitoring bezpečnosti dodavatelského řetězce a kontinuální sledování shody.' }
+        ],
+        internalLinks: [
+          { text: 'Všechny standardy', href: '/frameworks' },
+          { text: 'DORA', href: '/frameworks/dora' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'Ceník', href: '/plans' }
+        ]
       }
     },
     'grc-platform': {
