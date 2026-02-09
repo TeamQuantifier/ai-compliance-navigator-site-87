@@ -1044,6 +1044,355 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'DORA', href: '/frameworks/dora' },
           { text: 'Platforma GRC', href: '/grc-platform' }
         ]
+      },
+      cs: {
+        title: 'Standardy shody - ISO 27001, SOC 2, NIS II, GDPR a další | Quantifier',
+        description: 'Komplexní podpora klíčových regulačních standardů: NIS II, ISO 27001, SOC 2, GDPR a další. Automatizace, monitoring a reporting v jedné platformě.',
+        h1: 'Standardy shody',
+        subtitle: 'Komplexní podpora klíčových regulačních standardů. Automatizace, monitoring a reporting v jedné platformě.',
+        sections: [
+          { h2: 'Nejpopulárnější standardy', content: ['NIS II - Směrnice EU o kybernetické bezpečnosti', 'ISO 27001 - Systém řízení bezpečnosti informací', 'SOC 2 - Kontroly servisních organizací', 'GDPR - Obecné nařízení o ochraně osobních údajů'] },
+          { h2: 'Kybernetická bezpečnost', content: ['NIS II - Směrnice o bezpečnosti sítí a informací', 'SOC 1 a SOC 2 - Kontroly servisních organizací'] },
+          { h2: 'Ochrana dat', content: ['GDPR - Obecné nařízení o ochraně osobních údajů', 'HIPAA - Zákon o přenositelnosti zdravotního pojištění', 'CCPA - Kalifornský zákon o ochraně soukromí spotřebitelů'] }
+        ],
+        internalLinks: [
+          { text: 'NIS II', href: '/frameworks/nis-ii' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2', href: '/frameworks/soc' },
+          { text: 'GDPR', href: '/frameworks/gdpr' },
+          { text: 'DORA', href: '/frameworks/dora' },
+          { text: 'GRC Platforma', href: '/grc-platform' }
+        ]
+      }
+    },
+    'dora': {
+      en: {
+        title: 'DORA Compliance Platform - Digital Operational Resilience | Quantifier',
+        description: 'Automate DORA compliance for financial entities. ICT risk management, incident reporting, and resilience testing in one platform.',
+        h1: 'DORA Compliance Platform',
+        sections: [
+          { h2: 'What is DORA?', content: ['Digital Operational Resilience Act for EU financial sector', 'ICT risk management framework', 'Incident reporting requirements', 'Third-party risk management'] },
+          { h2: 'How Quantifier Helps', content: ['Automated ICT risk assessments', 'Incident classification and reporting', 'Digital resilience testing', 'Third-party monitoring'] }
+        ],
+        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-ii' }, { text: 'ISO 27001', href: '/frameworks/iso-27001' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Platforma Zgodności DORA - Cyfrowa Odporność Operacyjna | Quantifier',
+        description: 'Automatyzuj zgodność z DORA dla podmiotów finansowych. Zarządzanie ryzykiem ICT, raportowanie incydentów i testy odporności.',
+        h1: 'Platforma Zgodności DORA',
+        sections: [
+          { h2: 'Czym jest DORA?', content: ['Akt o cyfrowej odporności operacyjnej dla sektora finansowego UE', 'Framework zarządzania ryzykiem ICT', 'Wymogi raportowania incydentów'] },
+          { h2: 'Jak Quantifier pomaga', content: ['Automatyczne oceny ryzyka ICT', 'Klasyfikacja i raportowanie incydentów', 'Testowanie cyfrowej odporności'] }
+        ],
+        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-ii' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Platforma pro shodu s DORA - Digitální operační odolnost | Quantifier',
+        description: 'Automatizujte shodu s DORA pro finanční subjekty. Řízení ICT rizik, hlášení incidentů a testování odolnosti.',
+        h1: 'Platforma pro shodu s DORA',
+        sections: [
+          { h2: 'Co je DORA?', content: ['Akt o digitální operační odolnosti pro finanční sektor EU', 'Rámec řízení ICT rizik', 'Požadavky na hlášení incidentů'] }
+        ],
+        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-ii' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'iso-9001': {
+      en: {
+        title: 'ISO 9001 Quality Management System | Quantifier',
+        description: 'Implement ISO 9001 QMS with AI automation. Streamline quality processes, document control, and continuous improvement.',
+        h1: 'ISO 9001 Quality Management',
+        sections: [{ h2: 'Quality Management with AI', content: ['Automated document control', 'Process monitoring and improvement', 'Internal audit management', 'Non-conformance tracking'] }],
+        internalLinks: [{ text: 'ISO 27001', href: '/frameworks/iso-27001' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'ISO 9001 System Zarządzania Jakością | Quantifier',
+        description: 'Wdróż ISO 9001 z automatyzacją AI. Usprawnij procesy jakościowe i kontrolę dokumentów.',
+        h1: 'ISO 9001 Zarządzanie Jakością',
+        sections: [{ h2: 'Zarządzanie jakością z AI', content: ['Automatyczna kontrola dokumentów', 'Monitorowanie i doskonalenie procesów', 'Zarządzanie audytami wewnętrznymi'] }],
+        internalLinks: [{ text: 'ISO 27001', href: '/frameworks/iso-27001' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'ISO 9001 Systém řízení kvality | Quantifier',
+        description: 'Implementujte ISO 9001 s automatizací AI. Zefektivněte procesy kvality a kontrolu dokumentů.',
+        h1: 'ISO 9001 Řízení kvality',
+        sections: [{ h2: 'Řízení kvality s AI', content: ['Automatická kontrola dokumentů', 'Monitorování a zlepšování procesů'] }],
+        internalLinks: [{ text: 'ISO 27001', href: '/frameworks/iso-27001' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'hipaa': {
+      en: {
+        title: 'HIPAA Compliance Software - Healthcare Data Protection | Quantifier',
+        description: 'Automate HIPAA compliance with AI. Protect PHI, manage risk assessments, and maintain audit readiness for healthcare organizations.',
+        h1: 'HIPAA Compliance Software',
+        sections: [{ h2: 'HIPAA Requirements', content: ['Privacy Rule compliance', 'Security Rule implementation', 'Breach notification procedures', 'Business Associate Agreement management'] }],
+        internalLinks: [{ text: 'GDPR', href: '/frameworks/gdpr' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Oprogramowanie do Zgodności HIPAA - Ochrona Danych Medycznych | Quantifier',
+        description: 'Automatyzuj zgodność z HIPAA. Chroń dane medyczne i zarządzaj ocenami ryzyka dla organizacji opieki zdrowotnej.',
+        h1: 'Oprogramowanie do Zgodności HIPAA',
+        sections: [{ h2: 'Wymagania HIPAA', content: ['Zgodność z Privacy Rule', 'Wdrożenie Security Rule', 'Procedury powiadomień o naruszeniach'] }],
+        internalLinks: [{ text: 'GDPR', href: '/frameworks/gdpr' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Software pro shodu s HIPAA - Ochrana zdravotních dat | Quantifier',
+        description: 'Automatizujte shodu s HIPAA. Chraňte zdravotní data a řiďte hodnocení rizik.',
+        h1: 'Software pro shodu s HIPAA',
+        sections: [{ h2: 'Požadavky HIPAA', content: ['Shoda s pravidlem ochrany soukromí', 'Implementace bezpečnostního pravidla'] }],
+        internalLinks: [{ text: 'GDPR', href: '/frameworks/gdpr' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'ccpa': {
+      en: {
+        title: 'CCPA Compliance Software - California Privacy Protection | Quantifier',
+        description: 'Automate CCPA compliance. Manage consumer rights requests, data mapping, and privacy notices for California residents.',
+        h1: 'CCPA Compliance Software',
+        sections: [{ h2: 'CCPA Requirements', content: ['Consumer right to know', 'Right to delete personal information', 'Right to opt-out of sale', 'Non-discrimination requirements'] }],
+        internalLinks: [{ text: 'GDPR', href: '/frameworks/gdpr' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Oprogramowanie do Zgodności CCPA - Ochrona Prywatności Kalifornii | Quantifier',
+        description: 'Automatyzuj zgodność z CCPA. Zarządzaj żądaniami konsumentów i mapowaniem danych.',
+        h1: 'Oprogramowanie do Zgodności CCPA',
+        sections: [{ h2: 'Wymagania CCPA', content: ['Prawo konsumenta do informacji', 'Prawo do usunięcia danych osobowych', 'Prawo do rezygnacji ze sprzedaży danych'] }],
+        internalLinks: [{ text: 'GDPR', href: '/frameworks/gdpr' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Software pro shodu s CCPA - Ochrana soukromí v Kalifornii | Quantifier',
+        description: 'Automatizujte shodu s CCPA. Spravujte žádosti spotřebitelů a mapování dat.',
+        h1: 'Software pro shodu s CCPA',
+        sections: [{ h2: 'Požadavky CCPA', content: ['Právo spotřebitele na informace', 'Právo na smazání osobních údajů'] }],
+        internalLinks: [{ text: 'GDPR', href: '/frameworks/gdpr' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'esg': {
+      en: {
+        title: 'ESG Reporting Platform - CSRD, GRI, CBAM Compliance | Quantifier',
+        description: 'Comprehensive ESG reporting with AI. Automate CSRD compliance, GRI standards, and CBAM reporting in one platform.',
+        h1: 'ESG Reporting Platform',
+        sections: [{ h2: 'ESG Frameworks', content: ['CSRD - Corporate Sustainability Reporting Directive', 'GRI - Global Reporting Initiative', 'CBAM - Carbon Border Adjustment Mechanism', 'Double materiality analysis'] }],
+        internalLinks: [{ text: 'Environmental', href: '/frameworks/environmental' }, { text: 'Frameworks', href: '/frameworks' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Platforma Raportowania ESG - Zgodność z CSRD, GRI, CBAM | Quantifier',
+        description: 'Kompleksowe raportowanie ESG z AI. Automatyzuj zgodność z CSRD, standardami GRI i raportowaniem CBAM.',
+        h1: 'Platforma Raportowania ESG',
+        sections: [{ h2: 'Frameworki ESG', content: ['CSRD - Dyrektywa o sprawozdawczości zrównoważonego rozwoju', 'GRI - Global Reporting Initiative', 'CBAM - Mechanizm dostosowywania cen na granicach', 'Analiza podwójnej istotności'] }],
+        internalLinks: [{ text: 'Środowisko', href: '/frameworks/environmental' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Platforma pro ESG reporting - Shoda s CSRD, GRI, CBAM | Quantifier',
+        description: 'Komplexní ESG reporting s AI. Automatizujte shodu s CSRD, standardy GRI a reportingem CBAM.',
+        h1: 'Platforma pro ESG reporting',
+        sections: [{ h2: 'ESG rámce', content: ['CSRD - Směrnice o podávání zpráv o udržitelnosti', 'GRI - Globální iniciativa pro reporting', 'CBAM - Mechanismus uhlíkového vyrovnání na hranicích'] }],
+        internalLinks: [{ text: 'Životní prostředí', href: '/frameworks/environmental' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'environmental': {
+      en: {
+        title: 'Environmental Management - ISO 14001, LCA, Carbon Footprint | Quantifier',
+        description: 'Manage environmental compliance with AI. ISO 14001, Life Cycle Assessment, Carbon Footprint tracking and decarbonisation planning.',
+        h1: 'Environmental Management',
+        sections: [{ h2: 'Environmental Standards', content: ['ISO 14001 - Environmental Management System', 'LCA - Life Cycle Assessment', 'Carbon Footprint & GHG Protocol', 'Decarbonisation planning'] }],
+        internalLinks: [{ text: 'ESG', href: '/frameworks/esg' }, { text: 'Frameworks', href: '/frameworks' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Zarządzanie Środowiskowe - ISO 14001, LCA, Ślad Węglowy | Quantifier',
+        description: 'Zarządzaj zgodnością środowiskową z AI. ISO 14001, ocena cyklu życia, ślad węglowy i planowanie dekarbonizacji.',
+        h1: 'Zarządzanie Środowiskowe',
+        sections: [{ h2: 'Standardy Środowiskowe', content: ['ISO 14001 - System Zarządzania Środowiskowego', 'LCA - Ocena Cyklu Życia', 'Ślad Węglowy i Protokół GHG', 'Planowanie dekarbonizacji'] }],
+        internalLinks: [{ text: 'ESG', href: '/frameworks/esg' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Environmentální management - ISO 14001, LCA, Uhlíková stopa | Quantifier',
+        description: 'Řiďte environmentální shodu s AI. ISO 14001, hodnocení životního cyklu, sledování uhlíkové stopy.',
+        h1: 'Environmentální management',
+        sections: [{ h2: 'Environmentální standardy', content: ['ISO 14001 - Systém environmentálního managementu', 'LCA - Hodnocení životního cyklu', 'Uhlíková stopa a GHG protokol'] }],
+        internalLinks: [{ text: 'ESG', href: '/frameworks/esg' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'governance': {
+      en: {
+        title: 'Corporate Governance Solutions - Policies & Whistleblowing | Quantifier',
+        description: 'Manage corporate governance with AI. Policy management, whistleblowing channels, and legal compliance in one platform.',
+        h1: 'Corporate Governance Solutions',
+        sections: [{ h2: 'Governance Features', content: ['Policy lifecycle management', 'Whistleblowing channel', 'Legal compliance tracking', 'Board reporting and oversight'] }],
+        internalLinks: [{ text: 'Frameworks', href: '/frameworks' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Rozwiązania Ładu Korporacyjnego - Polityki i Whistleblowing | Quantifier',
+        description: 'Zarządzaj ładem korporacyjnym z AI. Zarządzanie politykami, kanały sygnalistów i zgodność prawna.',
+        h1: 'Rozwiązania Ładu Korporacyjnego',
+        sections: [{ h2: 'Funkcje Governance', content: ['Zarządzanie cyklem życia polityk', 'Kanał sygnalistów', 'Śledzenie zgodności prawnej'] }],
+        internalLinks: [{ text: 'Standardy', href: '/frameworks' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Řešení korporátního řízení - Politiky a Whistleblowing | Quantifier',
+        description: 'Spravujte korporátní řízení s AI. Řízení politik, kanály pro oznamování a právní shoda.',
+        h1: 'Řešení korporátního řízení',
+        sections: [{ h2: 'Funkce Governance', content: ['Řízení životního cyklu politik', 'Kanál pro oznamovatele', 'Sledování právní shody'] }],
+        internalLinks: [{ text: 'Standardy', href: '/frameworks' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'product-level': {
+      en: {
+        title: 'Product Level Analysis - Digital Product Passport | Quantifier',
+        description: 'Digital Product Passport and product-level sustainability analysis. Track environmental impact across your product lifecycle.',
+        h1: 'Product Level Analysis',
+        sections: [{ h2: 'Digital Product Passport', content: ['Product lifecycle tracking', 'Environmental impact assessment', 'Supply chain transparency', 'Regulatory compliance for product sustainability'] }],
+        internalLinks: [{ text: 'ESG', href: '/frameworks/esg' }, { text: 'Environmental', href: '/frameworks/environmental' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Analiza Poziomu Produktu - Cyfrowy Paszport Produktu | Quantifier',
+        description: 'Cyfrowy paszport produktu i analiza zrównoważonego rozwoju na poziomie produktu.',
+        h1: 'Analiza Poziomu Produktu',
+        sections: [{ h2: 'Cyfrowy Paszport Produktu', content: ['Śledzenie cyklu życia produktu', 'Ocena wpływu na środowisko', 'Przejrzystość łańcucha dostaw'] }],
+        internalLinks: [{ text: 'ESG', href: '/frameworks/esg' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Analýza na úrovni produktu - Digitální pas produktu | Quantifier',
+        description: 'Digitální pas produktu a analýza udržitelnosti na úrovni produktu.',
+        h1: 'Analýza na úrovni produktu',
+        sections: [{ h2: 'Digitální pas produktu', content: ['Sledování životního cyklu produktu', 'Hodnocení environmentálního dopadu', 'Transparentnost dodavatelského řetězce'] }],
+        internalLinks: [{ text: 'ESG', href: '/frameworks/esg' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'by-roles': {
+      en: {
+        title: 'Compliance Solutions by Role - Managers, Contributors, Auditors | Quantifier',
+        description: 'Tailored compliance tools for every role. Dashboards for managers, task interfaces for contributors, and audit trails for auditors.',
+        h1: 'Solutions by Role',
+        sections: [{ h2: 'Tailored for Every Role', content: ['Managers - Executive dashboards and oversight', 'Contributors - Streamlined data entry and task management', 'Auditors - Comprehensive audit trails and verification'] }],
+        internalLinks: [{ text: 'Product Features', href: '/product/features' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Rozwiązania Zgodności wg Roli - Menedżerowie, Współpracownicy, Audytorzy | Quantifier',
+        description: 'Narzędzia zgodności dostosowane do każdej roli. Dashboardy dla menedżerów, interfejsy zadań dla współpracowników.',
+        h1: 'Rozwiązania według Roli',
+        sections: [{ h2: 'Dostosowane do każdej roli', content: ['Menedżerowie - Dashboardy wykonawcze i nadzór', 'Współpracownicy - Uproszczone wprowadzanie danych i zarządzanie zadaniami', 'Audytorzy - Kompletne ścieżki audytu i weryfikacja'] }],
+        internalLinks: [{ text: 'Funkcje produktu', href: '/product/features' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Řešení shody podle role - Manažeři, Přispěvatelé, Auditoři | Quantifier',
+        description: 'Nástroje shody přizpůsobené každé roli. Dashboardy pro manažery, rozhraní úkolů pro přispěvatele.',
+        h1: 'Řešení podle role',
+        sections: [{ h2: 'Přizpůsobeno každé roli', content: ['Manažeři - Výkonné dashboardy a dohled', 'Přispěvatelé - Zjednodušené zadávání dat', 'Auditoři - Kompletní auditní stopy'] }],
+        internalLinks: [{ text: 'Funkce produktu', href: '/product/features' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'blog': {
+      en: {
+        title: 'Compliance & Security Blog | ISO 27001, SOC 2, NIS2 Guides | Quantifier',
+        description: 'Expert guides on compliance automation. Learn about ISO 27001, SOC 2, NIS2, GDPR and how AI simplifies audit preparation.',
+        h1: 'Compliance & Security Blog',
+        sections: [{ h2: 'Latest Articles', content: ['Expert insights on compliance automation', 'Framework implementation guides', 'Industry best practices', 'AI and GRC trends'] }],
+        internalLinks: [{ text: 'Frameworks', href: '/frameworks' }, { text: 'Product', href: '/product/features' }, { text: 'Plans', href: '/plans' }]
+      },
+      pl: {
+        title: 'Blog o Zgodności i Bezpieczeństwie | ISO 27001, SOC 2, NIS2 | Quantifier',
+        description: 'Eksperckie przewodniki po automatyzacji zgodności. ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu.',
+        h1: 'Blog o Zgodności i Bezpieczeństwie',
+        sections: [{ h2: 'Najnowsze Artykuły', content: ['Eksperckie analizy automatyzacji zgodności', 'Przewodniki wdrażania standardów', 'Najlepsze praktyki branżowe'] }],
+        internalLinks: [{ text: 'Standardy', href: '/frameworks' }, { text: 'Cennik', href: '/plans' }]
+      },
+      cs: {
+        title: 'Blog o shodě a bezpečnosti | ISO 27001, SOC 2, NIS2 | Quantifier',
+        description: 'Odborné průvodce automatizací shody. ISO 27001, SOC 2, NIS2, GDPR a jak AI zjednodušuje přípravu na audit.',
+        h1: 'Blog o shodě a bezpečnosti',
+        sections: [{ h2: 'Nejnovější články', content: ['Odborné analýzy automatizace shody', 'Průvodce implementací standardů'] }],
+        internalLinks: [{ text: 'Standardy', href: '/frameworks' }, { text: 'Ceník', href: '/plans' }]
+      }
+    },
+    'success-stories': {
+      en: {
+        title: 'Customer Success Stories - Compliance Case Studies | Quantifier',
+        description: 'See how organizations achieve compliance faster with Quantifier. Real case studies with measurable results.',
+        h1: 'Customer Success Stories',
+        sections: [{ h2: 'Real Results', content: ['80% reduction in compliance effort', '10x faster certification', '100% audit success rate', 'Trusted by 250+ companies'] }],
+        internalLinks: [{ text: 'Plans', href: '/plans' }, { text: 'Contact', href: '/contact' }]
+      },
+      pl: {
+        title: 'Historie Sukcesu Klientów - Studia Przypadków | Quantifier',
+        description: 'Zobacz jak organizacje osiągają zgodność szybciej z Quantifier. Prawdziwe studia przypadków z mierzalnymi wynikami.',
+        h1: 'Historie Sukcesu Klientów',
+        sections: [{ h2: 'Realne Wyniki', content: ['80% redukcja nakładu pracy na zgodność', '10x szybsza certyfikacja', '100% skuteczność audytów'] }],
+        internalLinks: [{ text: 'Cennik', href: '/plans' }, { text: 'Kontakt', href: '/contact' }]
+      },
+      cs: {
+        title: 'Příběhy úspěchu zákazníků - Případové studie | Quantifier',
+        description: 'Podívejte se, jak organizace dosahují shody rychleji s Quantifier. Skutečné případové studie.',
+        h1: 'Příběhy úspěchu zákazníků',
+        sections: [{ h2: 'Skutečné výsledky', content: ['80% snížení úsilí o shodu', '10x rychlejší certifikace'] }],
+        internalLinks: [{ text: 'Ceník', href: '/plans' }, { text: 'Kontakt', href: '/contact' }]
+      }
+    },
+    'legal-privacy': {
+      en: {
+        title: 'Privacy Policy | Quantifier.ai',
+        description: 'Quantifier.ai Privacy Policy. Learn how we collect, use, and protect your personal data.',
+        h1: 'Privacy Policy',
+        sections: [{ h2: 'Data Protection', content: ['How we collect and process personal data', 'Your rights under GDPR', 'Data retention policies', 'Contact our Data Protection Officer'] }],
+        internalLinks: [{ text: 'Terms of Service', href: '/legal/terms' }, { text: 'Cookies Policy', href: '/legal/cookies' }]
+      },
+      pl: {
+        title: 'Polityka Prywatności | Quantifier.ai',
+        description: 'Polityka prywatności Quantifier.ai. Dowiedz się jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe.',
+        h1: 'Polityka Prywatności',
+        sections: [{ h2: 'Ochrona Danych', content: ['Jak zbieramy i przetwarzamy dane osobowe', 'Twoje prawa na mocy RODO', 'Polityka przechowywania danych'] }],
+        internalLinks: [{ text: 'Regulamin', href: '/legal/terms' }, { text: 'Polityka Cookies', href: '/legal/cookies' }]
+      },
+      cs: {
+        title: 'Zásady ochrany osobních údajů | Quantifier.ai',
+        description: 'Zásady ochrany osobních údajů Quantifier.ai. Zjistěte, jak shromažďujeme a chráníme vaše osobní údaje.',
+        h1: 'Zásady ochrany osobních údajů',
+        sections: [{ h2: 'Ochrana dat', content: ['Jak shromažďujeme a zpracováváme osobní údaje', 'Vaše práva podle GDPR'] }],
+        internalLinks: [{ text: 'Podmínky služby', href: '/legal/terms' }, { text: 'Zásady cookies', href: '/legal/cookies' }]
+      }
+    },
+    'legal-terms': {
+      en: {
+        title: 'Terms of Service | Quantifier.ai',
+        description: 'Quantifier.ai Terms of Service. Read our terms and conditions for using the platform.',
+        h1: 'Terms of Service',
+        sections: [{ h2: 'Terms and Conditions', content: ['Acceptance of terms', 'Service description', 'User responsibilities', 'Limitation of liability'] }],
+        internalLinks: [{ text: 'Privacy Policy', href: '/legal/privacy' }, { text: 'Cookies Policy', href: '/legal/cookies' }]
+      },
+      pl: {
+        title: 'Regulamin | Quantifier.ai',
+        description: 'Regulamin Quantifier.ai. Przeczytaj warunki korzystania z platformy.',
+        h1: 'Regulamin',
+        sections: [{ h2: 'Warunki Korzystania', content: ['Akceptacja regulaminu', 'Opis usługi', 'Obowiązki użytkownika', 'Ograniczenie odpowiedzialności'] }],
+        internalLinks: [{ text: 'Polityka Prywatności', href: '/legal/privacy' }, { text: 'Polityka Cookies', href: '/legal/cookies' }]
+      },
+      cs: {
+        title: 'Podmínky služby | Quantifier.ai',
+        description: 'Podmínky služby Quantifier.ai. Přečtěte si podmínky používání platformy.',
+        h1: 'Podmínky služby',
+        sections: [{ h2: 'Podmínky používání', content: ['Přijetí podmínek', 'Popis služby', 'Odpovědnosti uživatele'] }],
+        internalLinks: [{ text: 'Zásady ochrany soukromí', href: '/legal/privacy' }, { text: 'Zásady cookies', href: '/legal/cookies' }]
+      }
+    },
+    'legal-cookies': {
+      en: {
+        title: 'Cookies Policy | Quantifier.ai',
+        description: 'Quantifier.ai Cookies Policy. Learn about cookies we use and how to manage your preferences.',
+        h1: 'Cookies Policy',
+        sections: [{ h2: 'Cookie Usage', content: ['Essential cookies for site functionality', 'Analytics cookies for improving our service', 'Marketing cookies and your consent', 'How to manage cookie preferences'] }],
+        internalLinks: [{ text: 'Privacy Policy', href: '/legal/privacy' }, { text: 'Terms of Service', href: '/legal/terms' }]
+      },
+      pl: {
+        title: 'Polityka Cookies | Quantifier.ai',
+        description: 'Polityka cookies Quantifier.ai. Dowiedz się o plikach cookie i jak zarządzać swoimi preferencjami.',
+        h1: 'Polityka Cookies',
+        sections: [{ h2: 'Wykorzystanie Cookies', content: ['Niezbędne pliki cookie', 'Analityczne pliki cookie', 'Marketingowe pliki cookie', 'Zarządzanie preferencjami'] }],
+        internalLinks: [{ text: 'Polityka Prywatności', href: '/legal/privacy' }, { text: 'Regulamin', href: '/legal/terms' }]
+      },
+      cs: {
+        title: 'Zásady cookies | Quantifier.ai',
+        description: 'Zásady cookies Quantifier.ai. Zjistěte o cookies a jak spravovat své preference.',
+        h1: 'Zásady cookies',
+        sections: [{ h2: 'Používání cookies', content: ['Nezbytné cookies', 'Analytické cookies', 'Správa preferencí'] }],
+        internalLinks: [{ text: 'Zásady ochrany soukromí', href: '/legal/privacy' }, { text: 'Podmínky služby', href: '/legal/terms' }]
       }
     }
   };
