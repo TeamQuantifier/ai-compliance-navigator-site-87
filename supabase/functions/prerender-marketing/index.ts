@@ -961,8 +961,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
             h2: 'Cybersecurity Standards',
             content: [
               'NIS II - Network and Information Security Directive',
-              'SOC 1 & SOC 2 - Trust Services Criteria',
-              'NIST - Cybersecurity Framework'
+              'SOC 1 & SOC 2 - Trust Services Criteria'
             ]
           },
           {
