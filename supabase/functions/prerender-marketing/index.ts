@@ -570,7 +570,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'Czym jest dyrektywa NIS2?', answer: 'NIS2 to zaktualizowana dyrektywa UE dotycząca bezpieczeństwa systemów sieciowych i informacyjnych.' }
         ],
         internalLinks: [
-          { text: 'Frameworki Cyberbezpieczeństwa', href: '/frameworks/cybersecurity' },
+          { text: 'Wszystkie Standardy', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
       }
