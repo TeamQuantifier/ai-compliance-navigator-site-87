@@ -483,7 +483,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'Czym jest zgodność z GDPR?', answer: 'Zgodność z GDPR oznacza przestrzeganie przepisów UE dotyczących ochrony danych osobowych mieszkańców UE.' }
         ],
         internalLinks: [
-          { text: 'Bezpieczeństwo Danych', href: '/frameworks/data-security' },
+          { text: 'Wszystkie Standardy', href: '/frameworks' },
           { text: 'Cennik', href: '/plans' }
         ]
       }
