@@ -1394,6 +1394,562 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         sections: [{ h2: 'Používání cookies', content: ['Nezbytné cookies', 'Analytické cookies', 'Správa preferencí'] }],
         internalLinks: [{ text: 'Zásady ochrany soukromí', href: '/legal/privacy' }, { text: 'Podmínky služby', href: '/legal/terms' }]
       }
+    },
+    'product-overview': {
+      en: {
+        title: 'Platform Overview - AI-Powered GRC Software | Quantifier',
+        description: 'Discover Quantifier\'s AI-native GRC platform. Unified compliance, risk management and governance in one solution. Automate workflows and reduce manual effort.',
+        h1: 'Platform Overview',
+        subtitle: 'One AI-native platform for all your governance, risk and compliance needs.',
+        sections: [
+          { h2: 'Unified GRC Platform', content: ['Single pane of glass for compliance, risk and governance', 'Cross-framework mapping eliminates duplicate work', 'AI-driven insights and recommendations', 'Real-time compliance status across all standards'] },
+          { h2: 'Key Capabilities', content: ['Automated evidence collection from 100+ integrations', 'Intelligent task assignment and tracking', 'Document management with version control', 'Risk assessment with heat maps and scoring', 'Analytics dashboards with executive reporting'] },
+          { h2: 'Built for Scale', content: ['From startup to enterprise - scales with your needs', 'Multi-framework support: ISO 27001, SOC 2, GDPR, NIS2 and more', 'Role-based access for teams of any size'] }
+        ],
+        internalLinks: [
+          { text: 'Product Features', href: '/product/features' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Pricing Plans', href: '/plans' },
+          { text: 'Contact Us', href: '/contact' }
+        ]
+      },
+      pl: {
+        title: 'Przegląd Platformy - Oprogramowanie GRC oparte na AI | Quantifier',
+        description: 'Poznaj platformę GRC Quantifier opartą na AI. Zunifikowane zarządzanie zgodnością, ryzykiem i governance w jednym rozwiązaniu.',
+        h1: 'Przegląd Platformy',
+        subtitle: 'Jedna platforma AI do zarządzania zgodnością, ryzykiem i governance.',
+        sections: [
+          { h2: 'Zunifikowana Platforma GRC', content: ['Jeden widok na zgodność, ryzyko i governance', 'Mapowanie między standardami eliminuje podwójną pracę', 'Wnioski i rekomendacje napędzane przez AI', 'Status zgodności w czasie rzeczywistym'] },
+          { h2: 'Kluczowe Możliwości', content: ['Automatyczne zbieranie dowodów z ponad 100 integracji', 'Inteligentne przydzielanie i śledzenie zadań', 'Zarządzanie dokumentami z kontrolą wersji', 'Ocena ryzyka z mapami ciepła i scoringiem'] },
+          { h2: 'Zbudowana dla Skali', content: ['Od startupu po korporację - skaluje się z potrzebami', 'Obsługa wielu standardów: ISO 27001, SOC 2, GDPR, NIS2', 'Dostęp oparty na rolach dla zespołów każdej wielkości'] }
+        ],
+        internalLinks: [
+          { text: 'Funkcje Produktu', href: '/product/features' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Cennik', href: '/plans' },
+          { text: 'Kontakt', href: '/contact' }
+        ]
+      },
+      cs: {
+        title: 'Přehled Platformy - GRC software poháněný AI | Quantifier',
+        description: 'Objevte GRC platformu Quantifier poháněnou AI. Správa shody, rizik a governance v jednom řešení. Automatizujte procesy.',
+        h1: 'Přehled Platformy',
+        subtitle: 'Jedna AI platforma pro veškerou správu shody, rizik a governance.',
+        sections: [
+          { h2: 'Sjednocená GRC Platforma', content: ['Jeden pohled na shodu, rizika a governance', 'Mapování mezi standardy eliminuje duplicitní práci', 'AI doporučení a poznatky', 'Stav shody v reálném čase'] },
+          { h2: 'Klíčové Schopnosti', content: ['Automatizovaný sběr důkazů ze 100+ integrací', 'Inteligentní přidělování a sledování úkolů', 'Správa dokumentů s kontrolou verzí'] },
+          { h2: 'Navrženo pro Růst', content: ['Od startupu po enterprise - škáluje se s vašimi potřebami', 'Podpora více standardů: ISO 27001, SOC 2, GDPR, NIS2'] }
+        ],
+        internalLinks: [
+          { text: 'Funkce Produktu', href: '/product/features' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Ceník', href: '/plans' }
+        ]
+      }
+    },
+    'compliance-officer': {
+      en: {
+        title: 'AI Compliance Officer - Autonomous Compliance Agent | Quantifier',
+        description: 'Meet your AI Compliance Officer. An autonomous agent that monitors regulations, manages tasks, collects evidence and ensures continuous compliance automatically.',
+        h1: 'AI Compliance Officer',
+        subtitle: 'Your autonomous compliance agent that works 24/7 to keep your organization compliant.',
+        sections: [
+          { h2: 'What is the AI Compliance Officer?', content: ['Autonomous AI agent that manages your entire compliance program', 'Monitors regulatory changes and adapts your controls automatically', 'Assigns tasks, collects evidence and follows up with team members', 'Provides real-time compliance status and risk alerts'] },
+          { h2: 'How It Works', content: ['Connects to your existing tools and systems via API', 'Continuously maps controls to regulatory requirements', 'Automatically generates policies, procedures and documentation', 'Identifies gaps and recommends remediation steps'] },
+          { h2: 'Key Benefits', content: ['Reduce compliance workload by up to 80%', 'Eliminate manual follow-ups and chasing employees', 'Achieve certifications 10x faster', 'Maintain continuous compliance between audits'] }
+        ],
+        internalLinks: [
+          { text: 'Platform Overview', href: '/product/overview' },
+          { text: 'Task & Data Management', href: '/product/task-data-management' },
+          { text: 'Risk Assessment', href: '/product/risk-assessment' },
+          { text: 'Contact Us', href: '/contact' }
+        ]
+      },
+      pl: {
+        title: 'AI Compliance Officer - Autonomiczny Agent Zgodności | Quantifier',
+        description: 'Poznaj AI Compliance Officer. Autonomiczny agent monitorujący regulacje, zarządzający zadaniami i zapewniający ciągłą zgodność automatycznie.',
+        h1: 'AI Compliance Officer',
+        subtitle: 'Twój autonomiczny agent zgodności pracujący 24/7.',
+        sections: [
+          { h2: 'Czym jest AI Compliance Officer?', content: ['Autonomiczny agent AI zarządzający całym programem zgodności', 'Monitoruje zmiany regulacyjne i automatycznie dostosowuje kontrole', 'Przydziela zadania, zbiera dowody i kontaktuje się z zespołem', 'Zapewnia status zgodności w czasie rzeczywistym'] },
+          { h2: 'Jak Działa', content: ['Łączy się z istniejącymi narzędziami przez API', 'Ciągle mapuje kontrole do wymagań regulacyjnych', 'Automatycznie generuje polityki i dokumentację', 'Identyfikuje luki i rekomenduje naprawy'] },
+          { h2: 'Kluczowe Korzyści', content: ['Redukcja nakładu pracy nad zgodnością o 80%', 'Eliminacja ręcznego śledzenia i poganiania pracowników', 'Certyfikacja 10x szybciej', 'Ciągła zgodność między audytami'] }
+        ],
+        internalLinks: [
+          { text: 'Przegląd Platformy', href: '/product/overview' },
+          { text: 'Zarządzanie Zadaniami', href: '/product/task-data-management' },
+          { text: 'Ocena Ryzyka', href: '/product/risk-assessment' },
+          { text: 'Kontakt', href: '/contact' }
+        ]
+      },
+      cs: {
+        title: 'AI Compliance Officer - Autonomní Agent Shody | Quantifier',
+        description: 'Seznamte se s AI Compliance Officer. Autonomní agent monitorující regulace, spravující úkoly a zajišťující průběžnou shodu automaticky.',
+        h1: 'AI Compliance Officer',
+        subtitle: 'Váš autonomní agent shody pracující 24/7.',
+        sections: [
+          { h2: 'Co je AI Compliance Officer?', content: ['Autonomní AI agent spravující celý program shody', 'Monitoruje regulační změny a automaticky přizpůsobuje kontroly', 'Přiděluje úkoly, sbírá důkazy a komunikuje s týmem'] },
+          { h2: 'Jak Funguje', content: ['Připojuje se k existujícím nástrojům přes API', 'Průběžně mapuje kontroly na regulační požadavky', 'Automaticky generuje politiky a dokumentaci'] },
+          { h2: 'Klíčové Výhody', content: ['Snížení pracnosti shody až o 80%', 'Certifikace 10x rychleji', 'Průběžná shoda mezi audity'] }
+        ],
+        internalLinks: [
+          { text: 'Přehled Platformy', href: '/product/overview' },
+          { text: 'Správa Úkolů', href: '/product/task-data-management' },
+          { text: 'Hodnocení Rizik', href: '/product/risk-assessment' }
+        ]
+      }
+    },
+    'task-data-management': {
+      en: {
+        title: 'Task & Data Management - Compliance Workflow Automation | Quantifier',
+        description: 'Streamline compliance with intelligent task assignment, automated data collection and centralized evidence management. Keep your team aligned and audit-ready.',
+        h1: 'Task & Data Management',
+        subtitle: 'Intelligent task assignment and automated data collection for seamless compliance.',
+        sections: [
+          { h2: 'Smart Task Management', content: ['AI-powered task assignment based on roles and expertise', 'Automated reminders and follow-ups', 'Progress tracking with deadline management', 'Cross-framework task deduplication'] },
+          { h2: 'Automated Data Collection', content: ['Connect 100+ data sources for automatic evidence gathering', 'Structured data intake forms for manual inputs', 'Version-controlled evidence repository', 'Automated validation and quality checks'] },
+          { h2: 'Team Collaboration', content: ['Role-based workflows for managers, contributors and auditors', 'Comments and approval chains', 'Real-time status visibility across teams'] }
+        ],
+        internalLinks: [
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Documents Management', href: '/product/documents-management' },
+          { text: 'Analytics Dashboards', href: '/product/analytics-dashboards' },
+          { text: 'Product Features', href: '/product/features' }
+        ]
+      },
+      pl: {
+        title: 'Zarządzanie Zadaniami i Danymi - Automatyzacja Compliance | Quantifier',
+        description: 'Usprawnij zgodność dzięki inteligentnemu przydzielaniu zadań, automatycznemu zbieraniu danych i scentralizowanemu zarządzaniu dowodami.',
+        h1: 'Zarządzanie Zadaniami i Danymi',
+        subtitle: 'Inteligentne przydzielanie zadań i automatyczne zbieranie danych.',
+        sections: [
+          { h2: 'Inteligentne Zarządzanie Zadaniami', content: ['Przydzielanie zadań przez AI na podstawie ról i kompetencji', 'Automatyczne przypomnienia i follow-upy', 'Śledzenie postępów z zarządzaniem terminami', 'Deduplikacja zadań między standardami'] },
+          { h2: 'Automatyczne Zbieranie Danych', content: ['Ponad 100 źródeł danych do automatycznego zbierania dowodów', 'Formularze do wprowadzania danych ręcznych', 'Repozytorium dowodów z kontrolą wersji'] },
+          { h2: 'Współpraca Zespołowa', content: ['Przepływy pracy oparte na rolach', 'Komentarze i łańcuchy zatwierdzania', 'Widoczność statusu w czasie rzeczywistym'] }
+        ],
+        internalLinks: [
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Zarządzanie Dokumentami', href: '/product/documents-management' },
+          { text: 'Pulpity Analityczne', href: '/product/analytics-dashboards' }
+        ]
+      },
+      cs: {
+        title: 'Správa Úkolů a Dat - Automatizace Compliance | Quantifier',
+        description: 'Zefektivněte shodu díky inteligentnímu přidělování úkolů, automatickému sběru dat a centralizované správě důkazů.',
+        h1: 'Správa Úkolů a Dat',
+        subtitle: 'Inteligentní přidělování úkolů a automatizovaný sběr dat.',
+        sections: [
+          { h2: 'Chytrá Správa Úkolů', content: ['AI přidělování úkolů na základě rolí a odbornosti', 'Automatická upomínka a sledování', 'Sledování pokroku se správou termínů'] },
+          { h2: 'Automatizovaný Sběr Dat', content: ['100+ zdrojů dat pro automatický sběr důkazů', 'Strukturované formuláře pro manuální vstupy', 'Repozitář důkazů s kontrolou verzí'] }
+        ],
+        internalLinks: [
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Správa Dokumentů', href: '/product/documents-management' },
+          { text: 'Analytické Dashboardy', href: '/product/analytics-dashboards' }
+        ]
+      }
+    },
+    'analytics-dashboards': {
+      en: {
+        title: 'Analytics Dashboards - Compliance Reporting & Insights | Quantifier',
+        description: 'Real-time compliance dashboards with executive reporting, risk heat maps and trend analysis. Make data-driven decisions with AI-powered analytics.',
+        h1: 'Analytics Dashboards',
+        subtitle: 'Real-time visibility into your compliance posture with AI-powered analytics.',
+        sections: [
+          { h2: 'Executive Dashboards', content: ['Bird\'s-eye view of compliance across all frameworks', 'Risk heat maps with drill-down capabilities', 'Trend analysis and progress tracking', 'Automated executive reports and board presentations'] },
+          { h2: 'Operational Analytics', content: ['Task completion rates and team performance', 'Evidence collection progress by framework', 'Gap analysis with prioritized recommendations', 'Audit readiness scoring'] },
+          { h2: 'Custom Reporting', content: ['Build custom reports with drag-and-drop builder', 'Schedule automated report delivery', 'Export to PDF, Excel and presentation formats'] }
+        ],
+        internalLinks: [
+          { text: 'Platform Overview', href: '/product/overview' },
+          { text: 'Risk Assessment', href: '/product/risk-assessment' },
+          { text: 'Product Features', href: '/product/features' },
+          { text: 'For Managers', href: '/by-roles/managers' }
+        ]
+      },
+      pl: {
+        title: 'Pulpity Analityczne - Raportowanie Compliance | Quantifier',
+        description: 'Pulpity zgodności w czasie rzeczywistym z raportowaniem dla zarządu, mapami ryzyka i analizą trendów. Podejmuj decyzje oparte na danych.',
+        h1: 'Pulpity Analityczne',
+        subtitle: 'Widoczność statusu zgodności w czasie rzeczywistym z analityką AI.',
+        sections: [
+          { h2: 'Pulpity dla Zarządu', content: ['Widok z lotu ptaka na zgodność we wszystkich standardach', 'Mapy ciepła ryzyka z możliwością drążenia', 'Analiza trendów i śledzenie postępów', 'Automatyczne raporty dla zarządu'] },
+          { h2: 'Analityka Operacyjna', content: ['Wskaźniki realizacji zadań i wydajności zespołu', 'Postęp zbierania dowodów według standardu', 'Analiza luk z priorytetyzowanymi rekomendacjami'] },
+          { h2: 'Raportowanie Niestandardowe', content: ['Budowanie raportów metodą drag-and-drop', 'Harmonogram automatycznej wysyłki raportów', 'Eksport do PDF, Excel i prezentacji'] }
+        ],
+        internalLinks: [
+          { text: 'Przegląd Platformy', href: '/product/overview' },
+          { text: 'Ocena Ryzyka', href: '/product/risk-assessment' },
+          { text: 'Dla Zarządu', href: '/by-roles/managers' }
+        ]
+      },
+      cs: {
+        title: 'Analytické Dashboardy - Reporting Shody | Quantifier',
+        description: 'Dashboardy shody v reálném čase s reporty pro vedení, teplotní mapy rizik a analýza trendů. Rozhodujte se na základě dat.',
+        h1: 'Analytické Dashboardy',
+        subtitle: 'Viditelnost stavu shody v reálném čase s AI analytikou.',
+        sections: [
+          { h2: 'Dashboardy pro Vedení', content: ['Pohled z výšky na shodu napříč všemi standardy', 'Teplotní mapy rizik s možností detailu', 'Analýza trendů a sledování pokroku'] },
+          { h2: 'Operační Analytika', content: ['Míra dokončení úkolů a výkonnost týmu', 'Pokrok sběru důkazů podle standardu', 'Analýza mezer s prioritizovanými doporučeními'] }
+        ],
+        internalLinks: [
+          { text: 'Přehled Platformy', href: '/product/overview' },
+          { text: 'Hodnocení Rizik', href: '/product/risk-assessment' },
+          { text: 'Pro Manažery', href: '/by-roles/managers' }
+        ]
+      }
+    },
+    'documents-management': {
+      en: {
+        title: 'Documents Management - Policy & Procedure Automation | Quantifier',
+        description: 'Centralized document management for compliance policies, procedures and evidence. Automated version control, approval workflows and audit trails.',
+        h1: 'Documents Management',
+        subtitle: 'Centralized policy and procedure management with automated version control.',
+        sections: [
+          { h2: 'Policy Management', content: ['AI-generated policy templates aligned to frameworks', 'Automated version control with full audit trail', 'Approval workflows with digital signatures', 'Policy acknowledgment tracking for employees'] },
+          { h2: 'Evidence Repository', content: ['Centralized storage for all compliance evidence', 'Automated tagging and categorization', 'Cross-framework evidence reuse', 'Secure access controls and encryption'] },
+          { h2: 'Audit Preparation', content: ['One-click audit packages for external auditors', 'Complete document history and change logs', 'Gap analysis against document requirements'] }
+        ],
+        internalLinks: [
+          { text: 'Task & Data Management', href: '/product/task-data-management' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'For Auditors', href: '/by-roles/auditor' },
+          { text: 'Product Features', href: '/product/features' }
+        ]
+      },
+      pl: {
+        title: 'Zarządzanie Dokumentami - Automatyzacja Polityk | Quantifier',
+        description: 'Scentralizowane zarządzanie dokumentami compliance: polityki, procedury i dowody. Automatyczna kontrola wersji i ścieżki audytowe.',
+        h1: 'Zarządzanie Dokumentami',
+        subtitle: 'Scentralizowane zarządzanie politykami i procedurami z automatyczną kontrolą wersji.',
+        sections: [
+          { h2: 'Zarządzanie Politykami', content: ['Szablony polityk generowane przez AI zgodne ze standardami', 'Automatyczna kontrola wersji z pełną ścieżką audytu', 'Przepływy zatwierdzania z podpisami cyfrowymi', 'Śledzenie potwierdzania polityk przez pracowników'] },
+          { h2: 'Repozytorium Dowodów', content: ['Scentralizowane przechowywanie dowodów zgodności', 'Automatyczne tagowanie i kategoryzacja', 'Ponowne wykorzystanie dowodów między standardami'] },
+          { h2: 'Przygotowanie do Audytu', content: ['Pakiety audytowe jednym kliknięciem', 'Pełna historia dokumentów i logi zmian'] }
+        ],
+        internalLinks: [
+          { text: 'Zarządzanie Zadaniami', href: '/product/task-data-management' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Dla Audytorów', href: '/by-roles/auditor' }
+        ]
+      },
+      cs: {
+        title: 'Správa Dokumentů - Automatizace Politik | Quantifier',
+        description: 'Centralizovaná správa dokumentů pro compliance politiky, procedury a důkazy. Automatická kontrola verzí a auditní stopy.',
+        h1: 'Správa Dokumentů',
+        subtitle: 'Centralizovaná správa politik a procedur s automatickou kontrolou verzí.',
+        sections: [
+          { h2: 'Správa Politik', content: ['AI šablony politik sladěné se standardy', 'Automatická kontrola verzí s úplnou auditní stopou', 'Schvalovací procesy s digitálními podpisy'] },
+          { h2: 'Repozitář Důkazů', content: ['Centralizované úložiště důkazů shody', 'Automatické značkování a kategorizace', 'Opětovné použití důkazů napříč standardy'] }
+        ],
+        internalLinks: [
+          { text: 'Správa Úkolů', href: '/product/task-data-management' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'Pro Auditory', href: '/by-roles/auditor' }
+        ]
+      }
+    },
+    'api-integrations': {
+      en: {
+        title: 'API Integrations - Connect Your Compliance Stack | Quantifier',
+        description: 'Connect Quantifier with 100+ tools and systems. REST API, webhooks and native integrations with AWS, Azure, GitHub, Jira, Slack and more.',
+        h1: 'API Integrations',
+        subtitle: 'Connect your entire tech stack for automated compliance data collection.',
+        sections: [
+          { h2: 'Native Integrations', content: ['Cloud providers: AWS, Azure, Google Cloud', 'Development: GitHub, GitLab, Bitbucket, Jira', 'Communication: Slack, Microsoft Teams', 'Identity: Okta, Azure AD, Google Workspace', 'HR: BambooHR, Workday'] },
+          { h2: 'REST API & Webhooks', content: ['Full REST API for custom integrations', 'Webhook support for real-time data sync', 'Comprehensive API documentation', 'SDKs for popular programming languages'] },
+          { h2: 'Data Security', content: ['OAuth 2.0 and API key authentication', 'End-to-end encryption for all data transfers', 'Granular permission controls per integration', 'Audit logs for all API activity'] }
+        ],
+        internalLinks: [
+          { text: 'Platform Overview', href: '/product/overview' },
+          { text: 'Task & Data Management', href: '/product/task-data-management' },
+          { text: 'Product Features', href: '/product/features' },
+          { text: 'Contact Us', href: '/contact' }
+        ]
+      },
+      pl: {
+        title: 'Integracje API - Połącz Swój Stack Compliance | Quantifier',
+        description: 'Połącz Quantifier z ponad 100 narzędziami. REST API, webhooki i natywne integracje z AWS, Azure, GitHub, Jira, Slack i więcej.',
+        h1: 'Integracje API',
+        subtitle: 'Połącz cały swój stack technologiczny do automatycznego zbierania danych compliance.',
+        sections: [
+          { h2: 'Natywne Integracje', content: ['Chmura: AWS, Azure, Google Cloud', 'Rozwój: GitHub, GitLab, Bitbucket, Jira', 'Komunikacja: Slack, Microsoft Teams', 'Tożsamość: Okta, Azure AD, Google Workspace'] },
+          { h2: 'REST API i Webhooki', content: ['Pełne REST API do niestandardowych integracji', 'Obsługa webhooków do synchronizacji w czasie rzeczywistym', 'Kompleksowa dokumentacja API'] },
+          { h2: 'Bezpieczeństwo Danych', content: ['Uwierzytelnianie OAuth 2.0 i klucze API', 'Szyfrowanie end-to-end', 'Granularna kontrola uprawnień'] }
+        ],
+        internalLinks: [
+          { text: 'Przegląd Platformy', href: '/product/overview' },
+          { text: 'Zarządzanie Zadaniami', href: '/product/task-data-management' },
+          { text: 'Funkcje Produktu', href: '/product/features' }
+        ]
+      },
+      cs: {
+        title: 'API Integrace - Propojte Svůj Compliance Stack | Quantifier',
+        description: 'Propojte Quantifier se 100+ nástroji. REST API, webhooky a nativní integrace s AWS, Azure, GitHub, Jira, Slack a dalšími.',
+        h1: 'API Integrace',
+        subtitle: 'Propojte celý svůj technologický stack pro automatizovaný sběr dat.',
+        sections: [
+          { h2: 'Nativní Integrace', content: ['Cloud: AWS, Azure, Google Cloud', 'Vývoj: GitHub, GitLab, Bitbucket, Jira', 'Komunikace: Slack, Microsoft Teams'] },
+          { h2: 'REST API a Webhooky', content: ['Kompletní REST API pro vlastní integrace', 'Podpora webhooků pro synchronizaci v reálném čase', 'Komplexní API dokumentace'] }
+        ],
+        internalLinks: [
+          { text: 'Přehled Platformy', href: '/product/overview' },
+          { text: 'Správa Úkolů', href: '/product/task-data-management' },
+          { text: 'Funkce Produktu', href: '/product/features' }
+        ]
+      }
+    },
+    'value-chain': {
+      en: {
+        title: 'Value Chain Management - Supply Chain Compliance | Quantifier',
+        description: 'Manage supplier compliance and value chain risks. Automated vendor assessments, due diligence workflows and supply chain monitoring for CSRD, ESG and more.',
+        h1: 'Value Chain Management',
+        subtitle: 'End-to-end supply chain compliance and vendor risk management.',
+        sections: [
+          { h2: 'Supplier Compliance', content: ['Automated vendor questionnaires and assessments', 'Risk scoring and tiering for suppliers', 'Continuous monitoring of supplier compliance status', 'Due diligence workflows with evidence collection'] },
+          { h2: 'Value Chain Mapping', content: ['Visual mapping of your entire value chain', 'Identify and track Scope 3 emissions across suppliers', 'Supply chain risk heat maps', 'Regulatory requirement mapping to suppliers'] },
+          { h2: 'Reporting & Disclosure', content: ['CSRD-ready supply chain disclosures', 'ESG reporting for value chain activities', 'Automated data aggregation from suppliers'] }
+        ],
+        internalLinks: [
+          { text: 'ESG Reporting', href: '/frameworks/esg' },
+          { text: 'Environmental Compliance', href: '/frameworks/environmental' },
+          { text: 'Risk Assessment', href: '/product/risk-assessment' },
+          { text: 'Platform Overview', href: '/product/overview' }
+        ]
+      },
+      pl: {
+        title: 'Zarządzanie Łańcuchem Wartości - Compliance Dostawców | Quantifier',
+        description: 'Zarządzaj zgodnością dostawców i ryzykiem łańcucha wartości. Automatyczne oceny dostawców i monitorowanie dla CSRD, ESG i więcej.',
+        h1: 'Zarządzanie Łańcuchem Wartości',
+        subtitle: 'Kompleksowe zarządzanie zgodnością łańcucha dostaw i ryzykiem dostawców.',
+        sections: [
+          { h2: 'Zgodność Dostawców', content: ['Automatyczne ankiety i oceny dostawców', 'Scoring ryzyka i kategoryzacja dostawców', 'Ciągłe monitorowanie statusu zgodności dostawców', 'Przepływy due diligence ze zbieraniem dowodów'] },
+          { h2: 'Mapowanie Łańcucha Wartości', content: ['Wizualne mapowanie całego łańcucha wartości', 'Identyfikacja i śledzenie emisji Scope 3', 'Mapy ciepła ryzyka w łańcuchu dostaw'] },
+          { h2: 'Raportowanie i Ujawnienia', content: ['Ujawnienia łańcucha dostaw zgodne z CSRD', 'Raportowanie ESG dla działań w łańcuchu wartości'] }
+        ],
+        internalLinks: [
+          { text: 'Raportowanie ESG', href: '/frameworks/esg' },
+          { text: 'Zgodność Środowiskowa', href: '/frameworks/environmental' },
+          { text: 'Ocena Ryzyka', href: '/product/risk-assessment' }
+        ]
+      },
+      cs: {
+        title: 'Správa Hodnotového Řetězce - Compliance Dodavatelů | Quantifier',
+        description: 'Spravujte shodu dodavatelů a rizika hodnotového řetězce. Automatizované hodnocení dodavatelů a monitorování pro CSRD, ESG a další.',
+        h1: 'Správa Hodnotového Řetězce',
+        subtitle: 'Komplexní správa shody dodavatelského řetězce a rizik dodavatelů.',
+        sections: [
+          { h2: 'Shoda Dodavatelů', content: ['Automatizované dotazníky a hodnocení dodavatelů', 'Skórování rizik a kategorizace dodavatelů', 'Průběžné monitorování stavu shody dodavatelů'] },
+          { h2: 'Mapování Hodnotového Řetězce', content: ['Vizuální mapování celého hodnotového řetězce', 'Identifikace a sledování emisí Scope 3', 'Teplotní mapy rizik dodavatelského řetězce'] }
+        ],
+        internalLinks: [
+          { text: 'ESG Reporting', href: '/frameworks/esg' },
+          { text: 'Environmentální Shoda', href: '/frameworks/environmental' },
+          { text: 'Hodnocení Rizik', href: '/product/risk-assessment' }
+        ]
+      }
+    },
+    'risk-assessment': {
+      en: {
+        title: 'Risk Assessment - AI-Powered Risk Analysis | Quantifier',
+        description: 'Identify, assess and mitigate compliance risks with AI-powered risk assessment. Heat maps, scoring matrices and automated treatment plans.',
+        h1: 'Risk Assessment',
+        subtitle: 'AI-powered risk identification, assessment and mitigation for comprehensive compliance.',
+        sections: [
+          { h2: 'Risk Identification', content: ['AI-driven risk discovery across your organization', 'Automated threat and vulnerability scanning', 'Regulatory risk mapping for all supported frameworks', 'Third-party and supply chain risk detection'] },
+          { h2: 'Risk Analysis & Scoring', content: ['Quantitative and qualitative risk scoring', 'Risk heat maps with impact and likelihood matrices', 'Inherent vs residual risk comparison', 'Historical trend analysis and benchmarking'] },
+          { h2: 'Risk Treatment', content: ['AI-recommended treatment plans', 'Risk acceptance, mitigation, transfer or avoidance workflows', 'Control effectiveness monitoring', 'Automated risk register with real-time updates'] }
+        ],
+        internalLinks: [
+          { text: 'Analytics Dashboards', href: '/product/analytics-dashboards' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
+          { text: 'Platform Overview', href: '/product/overview' }
+        ]
+      },
+      pl: {
+        title: 'Ocena Ryzyka - Analiza Ryzyka oparta na AI | Quantifier',
+        description: 'Identyfikuj, oceniaj i mityguj ryzyka compliance z AI. Mapy ciepła, macierze scoringowe i automatyczne plany postępowania z ryzykiem.',
+        h1: 'Ocena Ryzyka',
+        subtitle: 'Identyfikacja, ocena i mitygacja ryzyka napędzana przez AI.',
+        sections: [
+          { h2: 'Identyfikacja Ryzyka', content: ['Odkrywanie ryzyk przez AI w całej organizacji', 'Automatyczne skanowanie zagrożeń i podatności', 'Mapowanie ryzyk regulacyjnych dla wszystkich standardów', 'Wykrywanie ryzyk dostawców i łańcucha dostaw'] },
+          { h2: 'Analiza i Scoring Ryzyka', content: ['Ilościowy i jakościowy scoring ryzyka', 'Mapy ciepła z macierzami wpływu i prawdopodobieństwa', 'Porównanie ryzyka inherentnego vs rezydualnego'] },
+          { h2: 'Postępowanie z Ryzykiem', content: ['Plany postępowania rekomendowane przez AI', 'Przepływy akceptacji, mitygacji, transferu lub unikania ryzyka', 'Monitorowanie skuteczności kontroli'] }
+        ],
+        internalLinks: [
+          { text: 'Pulpity Analityczne', href: '/product/analytics-dashboards' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' }
+        ]
+      },
+      cs: {
+        title: 'Hodnocení Rizik - Analýza Rizik poháněná AI | Quantifier',
+        description: 'Identifikujte, hodnoťte a zmírňujte compliance rizika s AI. Teplotní mapy, skórovací matice a automatizované plány ošetření.',
+        h1: 'Hodnocení Rizik',
+        subtitle: 'AI identifikace, hodnocení a zmírňování rizik pro komplexní shodu.',
+        sections: [
+          { h2: 'Identifikace Rizik', content: ['AI detekce rizik napříč organizací', 'Automatizované skenování hrozeb a zranitelností', 'Mapování regulačních rizik pro všechny standardy'] },
+          { h2: 'Analýza a Skórování Rizik', content: ['Kvantitativní a kvalitativní skórování rizik', 'Teplotní mapy s maticemi dopadu a pravděpodobnosti', 'Srovnání inherentního vs reziduálního rizika'] },
+          { h2: 'Ošetření Rizik', content: ['AI doporučené plány ošetření', 'Monitorování účinnosti kontrol', 'Automatizovaný registr rizik s aktualizacemi v reálném čase'] }
+        ],
+        internalLinks: [
+          { text: 'Analytické Dashboardy', href: '/product/analytics-dashboards' },
+          { text: 'AI Compliance Officer', href: '/product/ai-compliance-officer' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' }
+        ]
+      }
+    },
+    'by-roles-managers': {
+      en: {
+        title: 'For Managers & Leadership - Executive Compliance Tools | Quantifier',
+        description: 'Compliance management tools for CFOs, CISOs and executives. Real-time dashboards, board-ready reports and strategic risk oversight in one platform.',
+        h1: 'For Managers & Leadership',
+        subtitle: 'Strategic compliance oversight for executives, CFOs, CISOs and department heads.',
+        sections: [
+          { h2: 'Executive Visibility', content: ['Real-time compliance dashboards across all frameworks', 'Board-ready reports generated automatically', 'Risk heat maps with strategic recommendations', 'Budget and resource allocation insights'] },
+          { h2: 'Strategic Oversight', content: ['Cross-framework compliance status at a glance', 'Audit readiness scoring with trend analysis', 'Regulatory change impact assessment', 'Team performance and workload metrics'] },
+          { h2: 'Decision Support', content: ['AI-powered risk prioritization', 'Cost-benefit analysis for compliance investments', 'Benchmark against industry standards'] }
+        ],
+        internalLinks: [
+          { text: 'For Contributors', href: '/by-roles/contributors' },
+          { text: 'For Auditors', href: '/by-roles/auditor' },
+          { text: 'Analytics Dashboards', href: '/product/analytics-dashboards' },
+          { text: 'Platform Overview', href: '/product/overview' }
+        ]
+      },
+      pl: {
+        title: 'Dla Zarządu i Liderów - Narzędzia Compliance dla Kadry | Quantifier',
+        description: 'Narzędzia compliance dla CFO, CISO i zarządu. Dashboardy w czasie rzeczywistym, raporty dla zarządu i strategiczny nadzór nad ryzykiem.',
+        h1: 'Dla Zarządu i Liderów',
+        subtitle: 'Strategiczny nadzór nad zgodnością dla zarządu, CFO, CISO i dyrektorów.',
+        sections: [
+          { h2: 'Widoczność dla Zarządu', content: ['Dashboardy zgodności w czasie rzeczywistym', 'Automatycznie generowane raporty dla rady nadzorczej', 'Mapy ciepła ryzyka ze strategicznymi rekomendacjami', 'Wgląd w budżet i alokację zasobów'] },
+          { h2: 'Nadzór Strategiczny', content: ['Status zgodności między standardami na jeden rzut oka', 'Scoring gotowości do audytu z analizą trendów', 'Ocena wpływu zmian regulacyjnych'] },
+          { h2: 'Wsparcie Decyzji', content: ['Priorytetyzacja ryzyk przez AI', 'Analiza kosztów i korzyści inwestycji w compliance', 'Benchmarking względem standardów branżowych'] }
+        ],
+        internalLinks: [
+          { text: 'Dla Zespołów', href: '/by-roles/contributors' },
+          { text: 'Dla Audytorów', href: '/by-roles/auditor' },
+          { text: 'Pulpity Analityczne', href: '/product/analytics-dashboards' }
+        ]
+      },
+      cs: {
+        title: 'Pro Manažery a Vedení - Compliance Nástroje pro Vedení | Quantifier',
+        description: 'Nástroje compliance pro CFO, CISO a vedení. Dashboardy v reálném čase, reporty pro představenstvo a strategický dohled nad riziky.',
+        h1: 'Pro Manažery a Vedení',
+        subtitle: 'Strategický dohled nad shodou pro vedení, CFO, CISO a ředitele.',
+        sections: [
+          { h2: 'Viditelnost pro Vedení', content: ['Dashboardy shody v reálném čase', 'Automaticky generované reporty pro představenstvo', 'Teplotní mapy rizik se strategickými doporučeními'] },
+          { h2: 'Strategický Dohled', content: ['Stav shody napříč standardy na první pohled', 'Skóre připravenosti na audit s analýzou trendů', 'Posouzení dopadu regulačních změn'] }
+        ],
+        internalLinks: [
+          { text: 'Pro Přispěvatele', href: '/by-roles/contributors' },
+          { text: 'Pro Auditory', href: '/by-roles/auditor' },
+          { text: 'Analytické Dashboardy', href: '/product/analytics-dashboards' }
+        ]
+      }
+    },
+    'by-roles-contributors': {
+      en: {
+        title: 'For Contributors & Teams - Operational Compliance Tools | Quantifier',
+        description: 'Streamlined compliance tools for operational teams. Intuitive task management, guided data collection and simple evidence submission workflows.',
+        h1: 'For Contributors & Operational Teams',
+        subtitle: 'Simple, intuitive tools that make compliance tasks effortless for your teams.',
+        sections: [
+          { h2: 'Simplified Task Management', content: ['Clear task assignments with step-by-step guidance', 'Automated reminders so nothing falls through the cracks', 'Intuitive interface - no compliance expertise needed', 'Mobile-friendly for on-the-go task completion'] },
+          { h2: 'Guided Data Collection', content: ['Pre-built forms tailored to each framework requirement', 'Smart validation to ensure data quality', 'Drag-and-drop evidence upload', 'Progress tracking with completion indicators'] },
+          { h2: 'Team Collaboration', content: ['Comments and questions on tasks', 'Seamless handoffs between team members', 'Real-time status updates for managers'] }
+        ],
+        internalLinks: [
+          { text: 'For Managers', href: '/by-roles/managers' },
+          { text: 'For Auditors', href: '/by-roles/auditor' },
+          { text: 'Task & Data Management', href: '/product/task-data-management' },
+          { text: 'Platform Overview', href: '/product/overview' }
+        ]
+      },
+      pl: {
+        title: 'Dla Zespołów Operacyjnych - Narzędzia Compliance | Quantifier',
+        description: 'Uproszczone narzędzia compliance dla zespołów operacyjnych. Intuicyjne zarządzanie zadaniami, zbieranie danych i przesyłanie dowodów.',
+        h1: 'Dla Zespołów Operacyjnych',
+        subtitle: 'Proste, intuicyjne narzędzia, które ułatwiają zadania compliance.',
+        sections: [
+          { h2: 'Uproszczone Zarządzanie Zadaniami', content: ['Jasne przydzielanie zadań z instrukcjami krok po kroku', 'Automatyczne przypomnienia', 'Intuicyjny interfejs - nie wymaga ekspertyzy compliance', 'Przyjazny dla urządzeń mobilnych'] },
+          { h2: 'Przewodnikowe Zbieranie Danych', content: ['Gotowe formularze dostosowane do wymagań standardów', 'Inteligentna walidacja zapewniająca jakość danych', 'Przesyłanie dowodów drag-and-drop'] },
+          { h2: 'Współpraca Zespołowa', content: ['Komentarze i pytania przy zadaniach', 'Płynne przekazywanie między członkami zespołu', 'Aktualizacje statusu w czasie rzeczywistym'] }
+        ],
+        internalLinks: [
+          { text: 'Dla Zarządu', href: '/by-roles/managers' },
+          { text: 'Dla Audytorów', href: '/by-roles/auditor' },
+          { text: 'Zarządzanie Zadaniami', href: '/product/task-data-management' }
+        ]
+      },
+      cs: {
+        title: 'Pro Přispěvatele a Týmy - Operační Compliance Nástroje | Quantifier',
+        description: 'Zjednodušené compliance nástroje pro operační týmy. Intuitivní správa úkolů, řízený sběr dat a jednoduché odesílání důkazů.',
+        h1: 'Pro Přispěvatele a Operační Týmy',
+        subtitle: 'Jednoduché, intuitivní nástroje pro snadné plnění compliance úkolů.',
+        sections: [
+          { h2: 'Zjednodušená Správa Úkolů', content: ['Jasné přidělení úkolů s pokyny krok za krokem', 'Automatická upomínka', 'Intuitivní rozhraní - nevyžaduje odbornost v compliance'] },
+          { h2: 'Řízený Sběr Dat', content: ['Předpřipravené formuláře přizpůsobené požadavkům standardů', 'Chytrá validace zajišťující kvalitu dat', 'Nahrávání důkazů drag-and-drop'] }
+        ],
+        internalLinks: [
+          { text: 'Pro Manažery', href: '/by-roles/managers' },
+          { text: 'Pro Auditory', href: '/by-roles/auditor' },
+          { text: 'Správa Úkolů', href: '/product/task-data-management' }
+        ]
+      }
+    },
+    'by-roles-auditor': {
+      en: {
+        title: 'For Auditors - Audit Tools & Evidence Access | Quantifier',
+        description: 'Powerful audit tools for internal and external auditors. Complete evidence access, audit trails, control testing and compliance verification in one platform.',
+        h1: 'For Internal & External Auditors',
+        subtitle: 'Complete audit toolkit with evidence access, control testing and verification.',
+        sections: [
+          { h2: 'Evidence Access', content: ['Read-only access to all compliance evidence', 'Organized evidence packages by framework and control', 'Complete audit trail for every document and action', 'Secure, time-limited access for external auditors'] },
+          { h2: 'Control Testing', content: ['Structured control testing workflows', 'Sample selection and testing documentation', 'Exception tracking and remediation verification', 'Cross-reference controls across multiple frameworks'] },
+          { h2: 'Audit Reporting', content: ['Customizable audit report templates', 'Finding classification and risk rating', 'Remediation tracking with timeline views', 'Historical audit comparison and trend analysis'] }
+        ],
+        internalLinks: [
+          { text: 'For Managers', href: '/by-roles/managers' },
+          { text: 'For Contributors', href: '/by-roles/contributors' },
+          { text: 'Documents Management', href: '/product/documents-management' },
+          { text: 'Platform Overview', href: '/product/overview' }
+        ]
+      },
+      pl: {
+        title: 'Dla Audytorów - Narzędzia Audytowe i Dostęp do Dowodów | Quantifier',
+        description: 'Zaawansowane narzędzia dla audytorów wewnętrznych i zewnętrznych. Dostęp do dowodów, ścieżki audytu i weryfikacja zgodności.',
+        h1: 'Dla Audytorów Wewnętrznych i Zewnętrznych',
+        subtitle: 'Kompletny zestaw narzędzi audytowych z dostępem do dowodów i weryfikacją.',
+        sections: [
+          { h2: 'Dostęp do Dowodów', content: ['Dostęp tylko do odczytu wszystkich dowodów zgodności', 'Uporządkowane pakiety dowodów według standardu i kontroli', 'Pełna ścieżka audytu dla każdego dokumentu i akcji', 'Bezpieczny, ograniczony czasowo dostęp dla audytorów zewnętrznych'] },
+          { h2: 'Testowanie Kontroli', content: ['Strukturalne przepływy testowania kontroli', 'Dobór próby i dokumentacja testów', 'Śledzenie wyjątków i weryfikacja napraw'] },
+          { h2: 'Raportowanie Audytu', content: ['Konfigurowalne szablony raportów audytowych', 'Klasyfikacja ustaleń i ocena ryzyka', 'Śledzenie napraw z widokiem osi czasu'] }
+        ],
+        internalLinks: [
+          { text: 'Dla Zarządu', href: '/by-roles/managers' },
+          { text: 'Dla Zespołów', href: '/by-roles/contributors' },
+          { text: 'Zarządzanie Dokumentami', href: '/product/documents-management' }
+        ]
+      },
+      cs: {
+        title: 'Pro Auditory - Auditní Nástroje a Přístup k Důkazům | Quantifier',
+        description: 'Výkonné auditní nástroje pro interní a externí auditory. Přístup k důkazům, auditní stopy a ověření shody v jedné platformě.',
+        h1: 'Pro Interní a Externí Auditory',
+        subtitle: 'Kompletní auditní sada nástrojů s přístupem k důkazům a ověřením.',
+        sections: [
+          { h2: 'Přístup k Důkazům', content: ['Přístup pouze pro čtení ke všem důkazům shody', 'Organizované balíčky důkazů podle standardu a kontroly', 'Kompletní auditní stopa pro každý dokument a akci'] },
+          { h2: 'Testování Kontrol', content: ['Strukturované pracovní postupy testování kontrol', 'Výběr vzorků a dokumentace testů', 'Sledování výjimek a ověření náprav'] },
+          { h2: 'Auditní Reporting', content: ['Přizpůsobitelné šablony auditních reportů', 'Klasifikace zjištění a hodnocení rizik', 'Sledování náprav s časovou osou'] }
+        ],
+        internalLinks: [
+          { text: 'Pro Manažery', href: '/by-roles/managers' },
+          { text: 'Pro Přispěvatele', href: '/by-roles/contributors' },
+          { text: 'Správa Dokumentů', href: '/product/documents-management' }
+        ]
+      }
     }
   };
 
