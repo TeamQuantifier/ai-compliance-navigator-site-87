@@ -994,7 +994,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'SOC 2', href: '/frameworks/soc' },
           { text: 'GDPR', href: '/frameworks/gdpr' },
-          { text: 'NIST', href: '/frameworks/nist' },
+          { text: 'DORA', href: '/frameworks/dora' },
           { text: 'GRC Platform', href: '/grc-platform' }
         ]
       },
