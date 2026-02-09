@@ -371,8 +371,8 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'Can I manage ISO 27001 and SOC 2 together?', answer: 'Yes, Quantifier supports multi-framework compliance with cross-mapping between ISO 27001 and SOC 2, reducing duplicate effort.' }
         ],
         internalLinks: [
-          { text: 'ISO 27001 Framework Details', href: '/frameworks/information-security/iso27001' },
-          { text: 'SOC 2 Automation', href: '/soc2-automation' },
+          { text: 'ISO 27001 Framework Details', href: '/frameworks/iso-27001' },
+          { text: 'SOC 2 Automation', href: '/frameworks/soc' },
           { text: 'GRC Platform', href: '/grc-platform' },
           { text: 'Pricing', href: '/plans' }
         ]
