@@ -545,9 +545,9 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { question: 'How long does NIS2 implementation take?', answer: 'With Quantifier, organizations can implement NIS2 requirements within 2-3 months, depending on current security maturity.' }
         ],
         internalLinks: [
-          { text: 'Cybersecurity Frameworks', href: '/frameworks/cybersecurity' },
-          { text: 'DORA Compliance', href: '/frameworks/information-security/dora' },
-          { text: 'ISO 27001', href: '/iso27001' },
+          { text: 'All Frameworks', href: '/frameworks' },
+          { text: 'DORA Compliance', href: '/frameworks/dora' },
+          { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'Pricing', href: '/plans' }
         ]
       },
