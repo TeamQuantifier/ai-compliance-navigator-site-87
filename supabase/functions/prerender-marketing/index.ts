@@ -1064,7 +1064,7 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
   
   // BreadcrumbList
   const breadcrumbItems = [
-    { name: locale === 'pl' ? 'Strona główna' : 'Home', url: baseUrl }
+    { name: locale === 'pl' ? 'Strona główna' : (locale === 'cs' ? 'Domů' : 'Home'), url: baseUrl }
   ];
   
   if (page !== 'index') {
