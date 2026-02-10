@@ -7,6 +7,12 @@ const corsHeaders = {
 
 const BASE_URL = 'https://quantifier.ai';
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 // Hreflang map for regional targeting
 const localeHreflangMap: Record<string, string> = {
   en: 'en',

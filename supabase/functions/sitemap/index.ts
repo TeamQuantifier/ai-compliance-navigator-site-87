@@ -6,6 +6,12 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const BASE_URL = 'https://quantifier.ai';
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 // Static pages for the sitemap - flattened framework structure with real lastmod dates
 const staticPages = [
   { path: '', changefreq: 'weekly', priority: '1.0', lastmod: '2026-01-26' },
