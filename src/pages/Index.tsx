@@ -18,6 +18,12 @@ const stripTrackingParams = (pathname: string): string => {
   return path;
 };
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 const Index = () => {
   const { t, currentLocale } = useLanguage();
   const location = useLocation();
