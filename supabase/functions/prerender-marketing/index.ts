@@ -2570,7 +2570,7 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   <meta name="description" content="${pageData.description}">
   <link rel="canonical" href="${pageUrl}">
   ${hreflangTags}
-  <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/${page === 'index' ? '' : urlPath}">
+  <link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en/${page === 'index' ? '' : urlPath}`)}">
   
   <!-- Open Graph -->
   <meta property="og:title" content="${pageData.title}">
