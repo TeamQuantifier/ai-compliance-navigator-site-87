@@ -17,9 +17,14 @@ const TRACKING_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
 
 // Strip tracking parameters from URL path
 const stripTrackingParams = (pathname: string): string => {
-  // Split path and query string
   const [path] = pathname.split('?');
   return path;
+};
+
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
 };
 
 // Helper to generate breadcrumb items from path
@@ -68,7 +73,7 @@ const PageTemplate = ({
   const baseUrl = 'https://quantifier.ai';
   // Strip locale prefix AND any tracking parameters
   const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
-  const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
+  const canonicalUrl = ensureTrailingSlash(`${baseUrl}/${currentLocale}${currentPath}`);
   
   const fullTitle = `${title} | Quantifier.ai`;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
@@ -77,7 +82,7 @@ const PageTemplate = ({
   const hreflangUrls = useMemo(() => {
     return SUPPORTED_LOCALES.map(locale => ({
       locale,
-      url: `${baseUrl}/${locale}${currentPath}`
+      url: ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)
     }));
   }, [currentPath]);
 
@@ -104,7 +109,7 @@ const PageTemplate = ({
         {hreflangUrls.map(({ locale, url }) => (
           <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]} href={url} />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
         
         {/* Open Graph */}
         <meta property="og:title" content={fullTitle} />

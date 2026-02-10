@@ -7,6 +7,12 @@ const corsHeaders = {
 
 const BASE_URL = 'https://quantifier.ai';
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 // Hreflang map for regional targeting
 const localeHreflangMap: Record<string, string> = {
   en: 'en',
@@ -2390,9 +2396,9 @@ const getPageContent = (locale: string, page: string): PageData | null => {
 
 // Generate JSON-LD schemas
 function generateSchemas(locale: string, page: string, pageData: PageData): string {
-  const baseUrl = `${BASE_URL}/${locale}`;
+  const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
   const urlPath = pageUrlMap[page] || page;
-  const pageUrl = page === 'index' ? baseUrl : `${baseUrl}/${urlPath}`;
+  const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   const schemas: object[] = [];
   
@@ -2478,14 +2484,14 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
 
 // Generate HTML content
 function generateHtml(locale: string, page: string, pageData: PageData): string {
-  const baseUrl = `${BASE_URL}/${locale}`;
+  const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
   const urlPath = pageUrlMap[page] || page;
-  const pageUrl = page === 'index' ? baseUrl : `${baseUrl}/${urlPath}`;
+  const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   // Generate all locale URLs for hreflang with regional codes
   const locales = ['en', 'pl', 'cs'];
   const hreflangTags = locales.map(l => {
-    const url = page === 'index' ? `${BASE_URL}/${l}` : `${BASE_URL}/${l}/${urlPath}`;
+    const url = page === 'index' ? ensureTrailingSlash(`${BASE_URL}/${l}`) : ensureTrailingSlash(`${BASE_URL}/${l}/${urlPath}`);
     const hreflang = localeHreflangMap[l] || l;
     return `<link rel="alternate" hreflang="${hreflang}" href="${url}">`;
   }).join('\n  ');
@@ -2564,7 +2570,7 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   <meta name="description" content="${pageData.description}">
   <link rel="canonical" href="${pageUrl}">
   ${hreflangTags}
-  <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/${page === 'index' ? '' : urlPath}">
+  <link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en/${page === 'index' ? '' : urlPath}`)}">
   
   <!-- Open Graph -->
   <meta property="og:title" content="${pageData.title}">

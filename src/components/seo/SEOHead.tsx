@@ -56,6 +56,12 @@ const DEFAULT_OG_IMAGE = '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.
 const BRAND_NAME = 'Quantifier.ai';
 const BRAND_LOGO = 'https://quantifier.ai/lovable-uploads/unicell-logo.png';
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 export const SEOHead = ({
   title,
   description,
@@ -90,13 +96,13 @@ export const SEOHead = ({
   clientName,
   alternatePost,
 }: SEOHeadProps) => {
-  // Build URLs
+  // Build URLs with trailing slash
   const basePath = contentType === 'post' ? 'blog' : 'success-stories';
-  const canonicalUrl = customCanonicalUrl || `${BASE_URL}/${lang}/${basePath}/${slug}`;
+  const canonicalUrl = customCanonicalUrl || ensureTrailingSlash(`${BASE_URL}/${lang}/${basePath}/${slug}`);
   const alternateUrl = alternatePost 
-    ? `${BASE_URL}/${alternatePost.lang}/${basePath}/${alternatePost.slug}`
+    ? ensureTrailingSlash(`${BASE_URL}/${alternatePost.lang}/${basePath}/${alternatePost.slug}`)
     : null;
-  const defaultLangUrl = `${BASE_URL}/en/${basePath}/${slug}`;
+  const defaultLangUrl = ensureTrailingSlash(`${BASE_URL}/en/${basePath}/${slug}`);
 
   // Fallback logic for meta fields
   const finalTitle = metaTitle || `${title} | ${BRAND_NAME}`;
