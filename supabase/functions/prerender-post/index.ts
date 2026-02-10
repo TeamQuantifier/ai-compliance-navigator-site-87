@@ -179,7 +179,7 @@ serve(async (req) => {
       }
     }
 
-    const canonicalUrl = `https://quantifier.ai/${locale}/blog/${post.slug}`;
+    const canonicalUrl = ensureTrailingSlash(`https://quantifier.ai/${locale}/blog/${post.slug}`);
     const imageUrl = post.og_image_url || post.featured_image_url || 'https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png';
 
     // Generate hreflang tags
