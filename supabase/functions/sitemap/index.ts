@@ -115,7 +115,7 @@ serve(async (req) => {
     // Static pages for each locale - use real lastmod from config
     for (const page of staticPages) {
       for (const locale of locales) {
-        const fullPath = `${BASE_URL}/${locale}${page.path}`;
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${locale}${page.path}`);
         const lastmod = page.lastmod || today;
         
         urlEntries += `
