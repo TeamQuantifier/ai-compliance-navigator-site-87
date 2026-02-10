@@ -132,7 +132,7 @@ serve(async (req) => {
     // Success Stories
     if (stories && stories.length > 0) {
       for (const story of stories) {
-        const fullPath = `${BASE_URL}/${story.lang}/success-stories/${story.slug}`;
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${story.lang}/success-stories/${story.slug}`);
         const storyPath = `/success-stories/${story.slug}`;
         
         const lastmod = story.updated_at?.split('T')[0] || story.published_at?.split('T')[0] || today;
