@@ -30,7 +30,7 @@ const Index = () => {
   
   const baseUrl = 'https://quantifier.ai';
   const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
-  const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
+  const canonicalUrl = ensureTrailingSlash(`${baseUrl}/${currentLocale}${currentPath}`);
   
   const title = t('seo.index.title');
   const description = t('seo.index.description');
