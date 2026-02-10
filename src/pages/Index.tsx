@@ -161,9 +161,9 @@ const Index = () => {
         
         {/* hreflang for all supported locales */}
         {SUPPORTED_LOCALES.map(locale => (
-          <link key={locale} rel="alternate" hrefLang={locale} href={`${baseUrl}/${locale}${currentPath}`} />
+          <link key={locale} rel="alternate" hrefLang={locale} href={ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)} />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
         
         {/* Open Graph */}
         <meta property="og:title" content={fullTitle} />

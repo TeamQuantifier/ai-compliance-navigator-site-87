@@ -109,7 +109,7 @@ const PageTemplate = ({
         {hreflangUrls.map(({ locale, url }) => (
           <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]} href={url} />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
         
         {/* Open Graph */}
         <meta property="og:title" content={fullTitle} />
