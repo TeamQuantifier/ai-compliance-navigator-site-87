@@ -188,7 +188,6 @@ serve(async (req) => {
     // Self-referencing hreflang
     const selfHreflang = localeHreflangMap[locale] || locale;
     hreflangTags.push(`<link rel="alternate" hreflang="${selfHreflang}" href="${canonicalUrl}">`);
-    
     // Alternate versions
     for (const alt of alternateVersions) {
       const hreflang = localeHreflangMap[alt.locale] || alt.locale;
