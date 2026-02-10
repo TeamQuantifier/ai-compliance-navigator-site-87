@@ -2484,14 +2484,14 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
 
 // Generate HTML content
 function generateHtml(locale: string, page: string, pageData: PageData): string {
-  const baseUrl = `${BASE_URL}/${locale}`;
+  const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
   const urlPath = pageUrlMap[page] || page;
-  const pageUrl = page === 'index' ? baseUrl : `${baseUrl}/${urlPath}`;
+  const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   // Generate all locale URLs for hreflang with regional codes
   const locales = ['en', 'pl', 'cs'];
   const hreflangTags = locales.map(l => {
-    const url = page === 'index' ? `${BASE_URL}/${l}` : `${BASE_URL}/${l}/${urlPath}`;
+    const url = page === 'index' ? ensureTrailingSlash(`${BASE_URL}/${l}`) : ensureTrailingSlash(`${BASE_URL}/${l}/${urlPath}`);
     const hreflang = localeHreflangMap[l] || l;
     return `<link rel="alternate" hreflang="${hreflang}" href="${url}">`;
   }).join('\n  ');
