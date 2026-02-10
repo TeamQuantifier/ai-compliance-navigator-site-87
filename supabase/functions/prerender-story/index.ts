@@ -6,6 +6,12 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
@@ -169,7 +175,7 @@ serve(async (req) => {
       }
     }
 
-    const canonicalUrl = `https://quantifier.ai/${locale}/success-stories/${story.slug}`;
+    const canonicalUrl = ensureTrailingSlash(`https://quantifier.ai/${locale}/success-stories/${story.slug}`);
     const imageUrl = story.og_image_url || story.featured_image_url || story.logo_url || 'https://quantifier.ai/logo-quantifier.png';
 
     // Generate hreflang tags
@@ -180,13 +186,13 @@ serve(async (req) => {
     
     for (const alt of alternateVersions) {
       const hreflang = localeHreflangMap[alt.locale] || alt.locale;
-      hreflangTags.push(`<link rel="alternate" hreflang="${hreflang}" href="https://quantifier.ai/${alt.locale}/success-stories/${alt.slug}">`);
+      hreflangTags.push(`<link rel="alternate" hreflang="${hreflang}" href="${ensureTrailingSlash(`https://quantifier.ai/${alt.locale}/success-stories/${alt.slug}`)}">`);
     }
     
     const enVersion = locale === 'en' 
       ? canonicalUrl 
       : alternateVersions.find(a => a.locale === 'en')
-        ? `https://quantifier.ai/en/success-stories/${alternateVersions.find(a => a.locale === 'en')!.slug}`
+        ? ensureTrailingSlash(`https://quantifier.ai/en/success-stories/${alternateVersions.find(a => a.locale === 'en')!.slug}`)
         : canonicalUrl;
     hreflangTags.push(`<link rel="alternate" hreflang="x-default" href="${enVersion}">`);
 

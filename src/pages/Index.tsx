@@ -18,13 +18,19 @@ const stripTrackingParams = (pathname: string): string => {
   return path;
 };
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 const Index = () => {
   const { t, currentLocale } = useLanguage();
   const location = useLocation();
   
   const baseUrl = 'https://quantifier.ai';
   const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
-  const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
+  const canonicalUrl = ensureTrailingSlash(`${baseUrl}/${currentLocale}${currentPath}`);
   
   const title = t('seo.index.title');
   const description = t('seo.index.description');
@@ -155,9 +161,9 @@ const Index = () => {
         
         {/* hreflang for all supported locales */}
         {SUPPORTED_LOCALES.map(locale => (
-          <link key={locale} rel="alternate" hrefLang={locale} href={`${baseUrl}/${locale}${currentPath}`} />
+          <link key={locale} rel="alternate" hrefLang={locale} href={ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)} />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en${currentPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
         
         {/* Open Graph */}
         <meta property="og:title" content={fullTitle} />

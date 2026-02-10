@@ -6,6 +6,12 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const BASE_URL = 'https://quantifier.ai';
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 // Static pages for the sitemap - flattened framework structure with real lastmod dates
 const staticPages = [
   { path: '', changefreq: 'weekly', priority: '1.0', lastmod: '2026-01-26' },
@@ -66,11 +72,11 @@ const localeHreflangMap: Record<string, string> = {
 const generateHreflangLinks = (path: string, currentLocale: string): string => {
   return locales
     .map(locale => {
-      const href = `${BASE_URL}/${locale}${path}`;
+      const href = ensureTrailingSlash(`${BASE_URL}/${locale}${path}`);
       const hreflang = localeHreflangMap[locale] || locale;
       return `<xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`;
     })
-    .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${path}" />`;
+    .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en${path}`)}" />`;
 };
 
 serve(async (req) => {
@@ -109,7 +115,7 @@ serve(async (req) => {
     // Static pages for each locale - use real lastmod from config
     for (const page of staticPages) {
       for (const locale of locales) {
-        const fullPath = `${BASE_URL}/${locale}${page.path}`;
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${locale}${page.path}`);
         const lastmod = page.lastmod || today;
         
         urlEntries += `
@@ -126,7 +132,7 @@ serve(async (req) => {
     // Success Stories
     if (stories && stories.length > 0) {
       for (const story of stories) {
-        const fullPath = `${BASE_URL}/${story.lang}/success-stories/${story.slug}`;
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${story.lang}/success-stories/${story.slug}`);
         const storyPath = `/success-stories/${story.slug}`;
         
         const lastmod = story.updated_at?.split('T')[0] || story.published_at?.split('T')[0] || today;
@@ -145,7 +151,7 @@ serve(async (req) => {
     // Blog Posts
     if (posts && posts.length > 0) {
       for (const post of posts) {
-        const fullPath = `${BASE_URL}/${post.lang}/blog/${post.slug}`;
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${post.lang}/blog/${post.slug}`);
         const postPath = `/blog/${post.slug}`;
         
         const lastmod = post.updated_at?.split('T')[0] || post.published_at?.split('T')[0] || today;
