@@ -151,7 +151,7 @@ serve(async (req) => {
     // Blog Posts
     if (posts && posts.length > 0) {
       for (const post of posts) {
-        const fullPath = `${BASE_URL}/${post.lang}/blog/${post.slug}`;
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${post.lang}/blog/${post.slug}`);
         const postPath = `/blog/${post.slug}`;
         
         const lastmod = post.updated_at?.split('T')[0] || post.published_at?.split('T')[0] || today;
