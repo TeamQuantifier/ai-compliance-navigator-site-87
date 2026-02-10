@@ -191,7 +191,7 @@ serve(async (req) => {
     // Alternate versions
     for (const alt of alternateVersions) {
       const hreflang = localeHreflangMap[alt.locale] || alt.locale;
-      hreflangTags.push(`<link rel="alternate" hreflang="${hreflang}" href="https://quantifier.ai/${alt.locale}/blog/${alt.slug}">`);
+      hreflangTags.push(`<link rel="alternate" hreflang="${hreflang}" href="${ensureTrailingSlash(`https://quantifier.ai/${alt.locale}/blog/${alt.slug}`)}">`);
     }
     
     // x-default (English version)
