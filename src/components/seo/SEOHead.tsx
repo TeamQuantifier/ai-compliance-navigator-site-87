@@ -56,6 +56,12 @@ const DEFAULT_OG_IMAGE = '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.
 const BRAND_NAME = 'Quantifier.ai';
 const BRAND_LOGO = 'https://quantifier.ai/lovable-uploads/unicell-logo.png';
 
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
+};
+
 export const SEOHead = ({
   title,
   description,
