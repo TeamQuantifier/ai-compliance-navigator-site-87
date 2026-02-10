@@ -198,7 +198,7 @@ serve(async (req) => {
     const enVersion = locale === 'en' 
       ? canonicalUrl 
       : alternateVersions.find(a => a.locale === 'en')
-        ? `https://quantifier.ai/en/blog/${alternateVersions.find(a => a.locale === 'en')!.slug}`
+        ? ensureTrailingSlash(`https://quantifier.ai/en/blog/${alternateVersions.find(a => a.locale === 'en')!.slug}`)
         : canonicalUrl;
     hreflangTags.push(`<link rel="alternate" hreflang="x-default" href="${enVersion}">`);
 
