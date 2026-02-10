@@ -2396,9 +2396,9 @@ const getPageContent = (locale: string, page: string): PageData | null => {
 
 // Generate JSON-LD schemas
 function generateSchemas(locale: string, page: string, pageData: PageData): string {
-  const baseUrl = `${BASE_URL}/${locale}`;
+  const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
   const urlPath = pageUrlMap[page] || page;
-  const pageUrl = page === 'index' ? baseUrl : `${baseUrl}/${urlPath}`;
+  const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   const schemas: object[] = [];
   
