@@ -72,11 +72,11 @@ const localeHreflangMap: Record<string, string> = {
 const generateHreflangLinks = (path: string, currentLocale: string): string => {
   return locales
     .map(locale => {
-      const href = `${BASE_URL}/${locale}${path}`;
+      const href = ensureTrailingSlash(`${BASE_URL}/${locale}${path}`);
       const hreflang = localeHreflangMap[locale] || locale;
       return `<xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`;
     })
-    .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${path}" />`;
+    .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en${path}`)}" />`;
 };
 
 serve(async (req) => {
