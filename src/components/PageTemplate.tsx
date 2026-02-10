@@ -17,9 +17,14 @@ const TRACKING_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
 
 // Strip tracking parameters from URL path
 const stripTrackingParams = (pathname: string): string => {
-  // Split path and query string
   const [path] = pathname.split('?');
   return path;
+};
+
+// Ensure URL ends with trailing slash
+const ensureTrailingSlash = (url: string): string => {
+  if (url.endsWith('/')) return url;
+  return url + '/';
 };
 
 // Helper to generate breadcrumb items from path
