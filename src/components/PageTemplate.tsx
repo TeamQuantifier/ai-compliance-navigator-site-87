@@ -73,7 +73,7 @@ const PageTemplate = ({
   const baseUrl = 'https://quantifier.ai';
   // Strip locale prefix AND any tracking parameters
   const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
-  const canonicalUrl = `${baseUrl}/${currentLocale}${currentPath}`;
+  const canonicalUrl = ensureTrailingSlash(`${baseUrl}/${currentLocale}${currentPath}`);
   
   const fullTitle = `${title} | Quantifier.ai`;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
@@ -82,7 +82,7 @@ const PageTemplate = ({
   const hreflangUrls = useMemo(() => {
     return SUPPORTED_LOCALES.map(locale => ({
       locale,
-      url: `${baseUrl}/${locale}${currentPath}`
+      url: ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)
     }));
   }, [currentPath]);
 
