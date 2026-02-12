@@ -1,60 +1,49 @@
 
 
-# Rozbudowa llms.txt o sekcje Blog i opisy frameworkow (ESG/CSRD)
+# Naprawa wykrywania linków wewnętrznych w SEO Audit
 
-## Co zostanie zmienione
+## Problem
 
-Plik `public/llms.txt` zostanie rozbudowany o:
+Analizator SEO nie wykrywa linków wewnętrznych w treści artykułów. Przyczyna: linki w edytorze TipTap są zapisywane z adresem `http://Quantifier.ai` (z wielką literą Q), a kod sprawdza `href.includes('quantifier.ai')` -- porównanie jest case-sensitive i nie znajduje dopasowania.
 
-### 1. Opisy frameworkow
+Dodatkowo istnieją **dwa osobne analizatory** z różnymi błędami:
 
-Kazdy framework w sekcji "Framework-Specific Pages" otrzyma krotki opis (1-2 zdania), np.:
+1. **`src/hooks/useSeoAnalysis.ts`** (panel boczny SEO w edytorze) -- sprawdza `quantifier.ai` ale case-sensitive, więc `Quantifier.ai` nie jest wykrywany
+2. **`src/lib/seo-analyzer.ts`** (strona SEO Audit) -- sprawdza starą domenę `compliancesumo` zamiast `quantifier.ai`
 
-- **ESG**: ESG reporting and CSRD compliance including ESRS standards, double materiality analysis, carbon footprint (Scope 1-3), and sustainability reporting
-- **NIS2**: Cybersecurity compliance for essential and important entities under the EU NIS2 Directive
-- **DORA**: Digital operational resilience for financial institutions
-- itd.
+## Rozwiązanie
 
-### 2. Nowa sekcja "Definitions"
+### Plik 1: `src/hooks/useSeoAnalysis.ts` (linia 97)
 
-Kluczowe pojecia i definicje, ktore pomoga LLM-om zrozumiec kontekst:
+Zmiana z:
+```typescript
+const isInternal = href.startsWith('/') || 
+  href.includes('quantifier.ai') || 
+  (baseUrl && href.includes(baseUrl));
+```
+Na:
+```typescript
+const hrefLower = href.toLowerCase();
+const isInternal = hrefLower.startsWith('/') || 
+  hrefLower.includes('quantifier.ai') || 
+  (baseUrl && hrefLower.includes(baseUrl.toLowerCase()));
+```
 
-- CSRD (Corporate Sustainability Reporting Directive)
-- ESRS (European Sustainability Reporting Standards)
-- Double Materiality Analysis
-- GRC (Governance, Risk, Compliance)
-- Carbon Footprint Scope 1, 2, 3
-- Continuous Compliance
+### Plik 2: `src/lib/seo-analyzer.ts` (linia 92)
 
-### 3. Nowa sekcja "Blog Articles"
+Zmiana z:
+```typescript
+if (href.startsWith('/') || href.includes('compliancesumo')) {
+```
+Na:
+```typescript
+const hrefLower = href.toLowerCase();
+if (hrefLower.startsWith('/') || hrefLower.includes('quantifier.ai')) {
+```
 
-Lista wszystkich opublikowanych artykulow z tytulami i linkami, pogrupowana po jezyku:
+## Zakres zmian
 
-**English:**
-- NIS2 Directive in Practice: https://quantifier.ai/en/blog/nis2-directive
-- Compliance Monitoring Guide: https://quantifier.ai/en/blog/compliance-monitoring
-- Continuous Compliance: https://quantifier.ai/en/blog/continuous-compliance-from-reaction-to-proaction
-- EcoVadis in Practice: https://quantifier.ai/en/blog/ecovadis-in-practice
-- AI Agents in Quantifier: https://quantifier.ai/en/blog/ai-agents-in-quantifier
-- Cyberattack Ransomware Case Study: https://quantifier.ai/en/blog/case-study-cyberattack-ransomware-manufacturing-company
-
-**Polish:**
-- Dyrektywa NIS2 w Praktyce: https://quantifier.ai/pl/blog/dyrektywa-nis2
-- Compliance Monitoring: https://quantifier.ai/pl/blog/compliance-monitoring
-- Ciagla Zgodnosc: https://quantifier.ai/pl/blog/ciagla-zgodnosc-od-reakcji-do-proakcji
-- EcoVadis w Praktyce: https://quantifier.ai/pl/blog/ecovadis-w-praktyce-ocena-esg
-- AI Agent w Quantifier: https://quantifier.ai/pl/blog/ai-agent-w-quantifier-jak-agenci-autonomiczni-dowodza-zgodnosci
-- Cyberatak Ransomware: https://quantifier.ai/pl/blog/blog-cyberatak-ransomware-firma-produkcyjna
-
-**Czech:**
-- EcoVadis v Praxi: https://quantifier.ai/cs/blog/ecovadis-v-praxi-hodnoceni-esg
-- AI Agenti v Quantifier: https://quantifier.ai/cs/blog/ai-agenti-v-quantifier
-- Continuous Compliance: https://quantifier.ai/cs/blog/pro-je-continuous-compliance
-- Ransomware Case Study: https://quantifier.ai/cs/blog/pripadova-studie-kyberutok-ransomware
-
-## Szczegoly techniczne
-
-- Edycja jednego pliku: `public/llms.txt`
-- Brak zmian w kodzie, bazie danych ani funkcjach edge
-- Plik jest statyczny -- przy dodawaniu nowych artykulow w przyszlosci trzeba bedzie recznie zaktualizowac ten plik (lub rozwazyc dynamiczne generowanie w przyszlosci, podobnie jak sitemap)
+- 2 pliki, po 2-3 linie w każdym
+- Brak zmian w bazie danych, edge functions ani UI
+- Naprawa dotyczy tylko logiki porównywania URL-i
 
