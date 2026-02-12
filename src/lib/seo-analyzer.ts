@@ -89,7 +89,8 @@ function analyzeBodyRich(bodyRich: Json | undefined, keyword: string | null): Bo
       n.marks.forEach(mark => {
         if (mark.type === 'link' && mark.attrs?.href) {
           const href = mark.attrs.href;
-          if (href.startsWith('/') || href.includes('compliancesumo')) {
+          const hrefLower = href.toLowerCase();
+          if (hrefLower.startsWith('/') || hrefLower.includes('quantifier.ai')) {
             result.internalLinkCount++;
           } else if (href.startsWith('http')) {
             result.externalLinkCount++;

@@ -93,10 +93,11 @@ function analyzeBodyRich(bodyRich: any, baseUrl: string = ''): BodyAnalysis {
       const href = linkMark?.attrs?.href || node.attrs?.href || '';
       
       if (href) {
-        // Check if internal or external
-        const isInternal = href.startsWith('/') || 
-          href.includes('quantifier.ai') || 
-          (baseUrl && href.includes(baseUrl));
+        // Check if internal or external (case-insensitive)
+        const hrefLower = href.toLowerCase();
+        const isInternal = hrefLower.startsWith('/') || 
+          hrefLower.includes('quantifier.ai') || 
+          (baseUrl && hrefLower.includes(baseUrl.toLowerCase()));
         
         if (isInternal) {
           result.internalLinks++;
