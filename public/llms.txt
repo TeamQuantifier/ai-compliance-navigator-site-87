@@ -93,6 +93,32 @@
 - Continuous Compliance: https://quantifier.ai/cs/blog/pro-je-continuous-compliance
 - Případová Studie — Kyberútok Ransomware: https://quantifier.ai/cs/blog/pripadova-studie-kyberutok-ransomware
 
+## Success Stories (Case Studies)
+
+### English
+
+- Bidfood — Sustainable Food Production: https://quantifier.ai/en/success-stories/case-study-bidfood
+- Seris Konsalnet — Sustainability in Security Industry: https://quantifier.ai/en/success-stories/case-study-seris-konsalnet
+- Biofarm — ESG That Starts with Data: https://quantifier.ai/en/success-stories/biofarm-esg
+- OMIDA Group — Logistics & Sustainability: https://quantifier.ai/en/success-stories/case-study-omidagroup
+- Tatuum — Sustainable Fashion: https://quantifier.ai/en/success-stories/case-study-tatuum
+- Raben Group — Supply Chain Sustainability: https://quantifier.ai/en/success-stories/case-study-raben-group
+- System DOT — Cleaning Product Distribution: https://quantifier.ai/en/success-stories/case-study-dot-system
+
+### Polish
+
+- Bidfood — Zrównoważona Produkcja Żywności: https://quantifier.ai/pl/success-stories/case-study-bidfood
+- OMIDA Group — Logistyka i Zrównoważony Rozwój: https://quantifier.ai/pl/success-stories/case-study-omida-group
+- Seris Konsalnet — Zrównoważony Rozwój w Branży Security: https://quantifier.ai/pl/success-stories/case-study-seris-konsalnet
+- Biofarm — ESG od Danych do Strategii: https://quantifier.ai/pl/success-stories/case-study-biofarm
+- Grupa Raben: https://quantifier.ai/pl/success-stories/case-study-grupa-raben
+- System DOT — Dystrybucja Środków Czystości: https://quantifier.ai/pl/success-stories/case-study-system-dot
+- Tatuum — Zrównoważona Moda: https://quantifier.ai/pl/success-stories/case-study-tatuum
+
+### Czech
+
+- Biofarm — ESG od Dat ke Strategii: https://quantifier.ai/cs/success-stories/biofarm-esg-kter-zan-u-dat-a-kon-strategi
+
 ## Target Users
 
 - Compliance Officers and GRC Teams
