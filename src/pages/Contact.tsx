@@ -139,48 +139,6 @@ const Contact = () => {
             {t('contact.cta')}
           </p>
           
-          <div className="space-y-6 mb-8">
-            <div className="flex items-start">
-              <Mail className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.emailUs')}</h3>
-                <p className="text-slate-600">contact@quantifier.ai</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <Phone className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.callUs')}</h3>
-                <p className="text-slate-600">
-                  {t('contact.usaPhone')}<br />
-                  {t('contact.europePhone')}
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <MapPin className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.visitOffices')}</h3>
-                <p className="text-slate-600">
-                  {t('contact.usaAddress')}<br />
-                  {t('contact.europeLabel')}<br />
-                  {t('contact.warsawAddress')}<br />
-                  {t('contact.lublinAddress')}
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex space-x-4">
-            <a href="https://www.linkedin.com/company/quantifier-ai/about/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-compliance-700 transition-colors">
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a href="mailto:contact@quantifier.ai" className="text-slate-500 hover:text-compliance-700 transition-colors">
-              <Mail className="h-6 w-6" />
-            </a>
-          </div>
         </div>
         
         <div>
@@ -273,6 +231,49 @@ const Contact = () => {
               </Button>
             </form>
           </Card>
+
+          <div className="mt-6 space-y-6">
+            <div className="flex items-start">
+              <Mail className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.emailUs')}</h3>
+                <p className="text-slate-600">contact@quantifier.ai</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <Phone className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.callUs')}</h3>
+                <p className="text-slate-600">
+                  {t('contact.usaPhone')}<br />
+                  {t('contact.europePhone')}
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <MapPin className="h-6 w-6 text-compliance-600 mt-1 mr-4 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-1">{t('contact.visitOffices')}</h3>
+                <p className="text-slate-600">
+                  {t('contact.usaAddress')}<br />
+                  {t('contact.europeLabel')}<br />
+                  {t('contact.warsawAddress')}<br />
+                  {t('contact.lublinAddress')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex space-x-4 mt-4">
+            <a href="https://www.linkedin.com/company/quantifier-ai/about/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-compliance-700 transition-colors">
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="mailto:contact@quantifier.ai" className="text-slate-500 hover:text-compliance-700 transition-colors">
+              <Mail className="h-6 w-6" />
+            </a>
+          </div>
         </div>
       </div>
 
