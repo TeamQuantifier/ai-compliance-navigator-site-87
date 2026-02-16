@@ -1,61 +1,74 @@
 
 
-# Naprawa błędów 5xx w Google Search Console
+# Naprawa duplikatow -- brak kanonicznej strony
 
 ## Diagnoza
 
-Wszystkie 3 edge functions do prerenderingu (`prerender-marketing`, `prerender-post`, `prerender-story`) zwracają **404 NOT_FOUND** -- nie sa wdrozone (deployed). Vercel poprawnie przekierowuje ruch botow do tych funkcji, ale one nie istnieja na serwerze.
+Strona jest hostowana na **Netlify**, ale przekierowania sa zdefiniowane w `vercel.json`, ktory Netlify **calkowicie ignoruje**. Plik `public/_redirects` zawiera jedynie:
 
-Wynik: Googlebot dostaje blad zamiast poprawnego HTML --> Google raportuje "Server error (5xx)" --> strony nie sa indeksowane.
-
-Dodatkowy problem: URL-e bez prefixu locale (np. `/plans`, `/legal/terms`) nie maja przekierowan.
-
-## Plan naprawy (krok po kroku)
-
-### Krok 1: Deploy edge functions
-Wdrozenie wszystkich 3 edge functions:
-- `prerender-marketing`
-- `prerender-post`
-- `prerender-story`
-- `sitemap` (juz dziala, ale warto upewnic sie ze wszystkie sa zsynchronizowane)
-
-### Krok 2: Weryfikacja po deploy
-Testowe wywolania kazdej funkcji, np.:
-- `prerender-marketing?locale=en&page=product-features`
-- `prerender-marketing?locale=pl&page=index`
-- `prerender-post?locale=en&slug=<slug-istniejacego-posta>`
-- `prerender-story?locale=en&slug=<slug-istniejacego-story>`
-
-### Krok 3: Dodanie przekierowan 301 dla URL-i bez locale
-Dodanie w `vercel.json` przekierowan dla sciezek raportowanych przez Google jako bledne:
-
-```json
-{ "source": "/plans", "destination": "/en/plans", "permanent": true },
-{ "source": "/legal/terms", "destination": "/en/legal/terms", "permanent": true },
-{ "source": "/legal/privacy", "destination": "/en/legal/privacy", "permanent": true },
-{ "source": "/legal/cookies", "destination": "/en/legal/cookies", "permanent": true }
+```
+/* /index.html 200
 ```
 
-Oraz ogolne reguly catch-all dla popularnych sciezek bez locale.
+To znaczy, ze KAZDY URL (np. `/blog`, `/success-stories`, `/frameworks`, `/contact.html`) dostaje odpowiedz 200 z SPA. React Router nie ma tras bez prefixu locale, wiec renderuje sie strona, ale **bez poprawnego tagu canonical**. Google widzi duplikat tresci.
 
-### Krok 4: Ponowne zgloszenie indeksacji w Google Search Console
-Po wdrozeniu zmian:
-1. Wejdz w Google Search Console
-2. Uzyj "URL Inspection" dla kazdego problematycznego URL-a
-3. Kliknij "Request Indexing"
-4. Poczekaj 2-7 dni na ponowne zaindeksowanie
+## Rozwiazanie
 
-## Zakres zmian technicznych
+### Krok 1: Dodanie przekierowan 301 w `public/_redirects`
+
+Przekierowania musza byc **PRZED** regula catch-all `/* /index.html 200`.
+
+Nowa zawartosc pliku `public/_redirects`:
+
+```
+# Redirects for URLs without locale prefix
+/success-stories  /en/success-stories/  301
+/success-stories/  /en/success-stories/  301
+/blog  /en/blog/  301
+/blog/  /en/blog/  301
+/frameworks  /en/frameworks/  301
+/frameworks/  /en/frameworks/  301
+/contact.html  /en/contact/  301
+/contact  /en/contact/  301
+/plans  /en/plans/  301
+/plans/  /en/plans/  301
+/about  /en/about/  301
+/about/  /en/about/  301
+/partners  /en/partners/  301
+/partners/  /en/partners/  301
+/legal/terms  /en/legal/terms/  301
+/legal/privacy  /en/legal/privacy/  301
+/legal/cookies  /en/legal/cookies/  301
+/product/*  /en/product/:splat  301
+/blog/*  /en/blog/:splat  301
+/success-stories/*  /en/success-stories/:splat  301
+/by-roles/*  /en/by-roles/:splat  301
+/frameworks/*  /en/frameworks/:splat  301
+
+# SPA fallback (must be last)
+/* /index.html 200
+```
+
+### Krok 2: Walidacja -- URL `platform.quantifier.ai/login`
+
+Ten URL jest na **innej subdomenie** (`platform.quantifier.ai`), wiec nie mozemy go kontrolowac z tej strony. W Google Search Console mozna go oznaczyc jako "not my property" lub zignorowac -- Google sam przestanie go raportowac jesli subdomena jest osobnym property.
+
+### Co NIE wymaga zmian
+
+- Tagi canonical na stronach z locale (`/en/blog/`, `/pl/frameworks/` itp.) -- sa poprawne w `PageTemplate` i `SEOHead`
+- Plik `vercel.json` -- mozna zostawic na wypadek migracji, nie szkodzi
+- Edge functions -- osobny problem, nie wplywa na canonical
+
+## Zakres zmian
 
 | Plik | Zmiana |
 |------|--------|
-| Edge functions (3 szt.) | Deploy (bez zmian w kodzie) |
-| `vercel.json` | Dodanie ~10 przekierowan 301 dla URL-i bez locale |
+| `public/_redirects` | Dodanie ~20 przekierowan 301 przed catch-all |
 
-## Wazne uwagi
+## Po wdrozeniu
 
-- Kod edge functions jest juz napisany i poprawny -- wymaga jedynie wdrozenia
-- Funkcja `prerender-marketing` ma ~2700 linii -- jest duza, ale powinna sie zmiescic w limitach czasowych edge function (samo generowanie HTML bez zewnetrznych zapytan)
-- Funkcje `prerender-post` i `prerender-story` odpytuja baze danych -- moga byc wolniejsze, ale to standardowe zapytania
-- Po naprawie Google powinien zaczac indeksowac strony w ciagu kilku dni
+1. Opublikuj zmiany na Netlify
+2. Sprawdz w przegladarce, ze `/blog` przekierowuje 301 na `/en/blog/`
+3. W Google Search Console uzyj "URL Inspection" na kazdym problematycznym URL i kliknij "Request Indexing"
+4. Google powinien zaakceptowac przekierowania w ciagu 3-7 dni
 
