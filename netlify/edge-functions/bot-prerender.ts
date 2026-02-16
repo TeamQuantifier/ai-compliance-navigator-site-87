@@ -47,6 +47,27 @@ const STATIC_ROUTES: Record<string, string> = {
   'legal/cookies': 'legal-cookies',
 };
 
+async function proxyToPrerender(url: string, ua: string): Promise<Response> {
+  const response = await fetch(url, {
+    headers: { 'User-Agent': ua },
+  });
+
+  if (!response.ok) {
+    return response;
+  }
+
+  const body = await response.text();
+
+  return new Response(body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'X-Robots-Tag': 'index, follow',
+    },
+  });
+}
+
 export default async function handler(request: Request) {
   const ua = request.headers.get('user-agent') || '';
 
@@ -72,27 +93,21 @@ export default async function handler(request: Request) {
   if (blogPostMatch) {
     const slug = blogPostMatch[1];
     const prerenderUrl = `${SUPABASE_FUNCTIONS_BASE}/prerender-post?locale=${locale}&slug=${encodeURIComponent(slug)}`;
-    return fetch(prerenderUrl, {
-      headers: { 'User-Agent': ua },
-    });
+    return proxyToPrerender(prerenderUrl, ua);
   }
 
   const storyMatch = rest.match(/^success-stories\/(.+)$/);
   if (storyMatch) {
     const slug = storyMatch[1];
     const prerenderUrl = `${SUPABASE_FUNCTIONS_BASE}/prerender-story?locale=${locale}&slug=${encodeURIComponent(slug)}`;
-    return fetch(prerenderUrl, {
-      headers: { 'User-Agent': ua },
-    });
+    return proxyToPrerender(prerenderUrl, ua);
   }
 
   // 2. Check static routes
   const pageSlug = STATIC_ROUTES[rest];
   if (pageSlug !== undefined) {
     const prerenderUrl = `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?locale=${locale}&page=${pageSlug}`;
-    return fetch(prerenderUrl, {
-      headers: { 'User-Agent': ua },
-    });
+    return proxyToPrerender(prerenderUrl, ua);
   }
 
   // No match — pass through to SPA
