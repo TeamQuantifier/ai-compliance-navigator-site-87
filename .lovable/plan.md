@@ -1,51 +1,105 @@
 
-
-# Aktualizacja przestarzalych dat NIS2 (2024 -> 2026)
+# Dynamiczna lista artykulow w prerenderze /blog i /success-stories
 
 ## Problem
 
-Na stronie NIS2 w kilku miejscach widnieje "Oct 2024 / Compliance Deadline" oraz FAQ z wzmianka o "October 17, 2024". Mamy 2026 rok — te informacje sa nieaktualne i psuja wrazenie swiezosci strony.
+Strony `/blog` i `/success-stories` w prerenderze pokazuja tylko ogolne bullet-pointy ("Expert insights on compliance automation" itp.) -- zero linkow do konkretnych artykulow. Boty widza pusta liste, co oznacza brak dystrybucji link equity i wolniejsze crawlowanie postow.
 
-## Znalezione wystapienia
+## Rozwiazanie
 
-| Plik | Miejsce | Obecna tresc |
-|------|---------|-------------|
-| `src/i18n/locales/en.json` (linia 3778) | Stats card | "Oct 2024" / "Compliance Deadline" |
-| `src/i18n/locales/en.json` (linia 3819) | FAQ | "had until October 17, 2024..." |
-| `src/i18n/locales/pl.json` (linia 3602) | Stats card | "Paz 2024" / "Termin zgodnosci" |
-| `src/i18n/locales/pl.json` (linia 3643) | FAQ | "do 17 pazdziernika 2024..." |
-| `public/locales/en/translation.json` (linia 4146) | FAQ | "had until October 17, 2024..." |
-| `public/locales/pl/translation.json` (linia 3970) | FAQ | "do 17 pazdziernika 2024..." |
+Zmodyfikowac `supabase/functions/prerender-marketing/index.ts` aby dla stron `blog` i `success-stories` pobierac z bazy opublikowane artykuly i renderowac je jako liste HTML z linkami. Projekt juz korzysta z Supabase (funkcje `prerender-post`, `prerender-story` robia dokladnie to samo -- lacza sie z baza po dane).
 
-Wersja czeska (cs) — brak problemow.
+## Zmiany w pliku `supabase/functions/prerender-marketing/index.ts`
 
-## Planowane zmiany
+### 1. Dodanie importu Supabase (poczatek pliku, linia ~2)
 
-### 1. Stats cards (src/i18n/locales/)
+```typescript
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+```
 
-**EN**: "Oct 2024" / "Compliance Deadline" zmieni sie na:
-- stat: **"2025-2026"**
-- title: **"Enforcement Underway"**
-- description: **"National NIS2 laws are now active across the EU — organizations must comply or face penalties."**
+### 2. Dodanie funkcji pobierajacych dane (przed `generateSchemas`)
 
-**PL**: "Paz 2024" / "Termin zgodnosci" zmieni sie na:
-- stat: **"2025-2026"**
-- title: **"Egzekwowanie trwa"**
-- description: **"Krajowe przepisy NIS2 sa juz aktywne w calej UE — organizacje musza byc zgodne lub groza im kary."**
+```typescript
+async function fetchPublishedPosts(locale: string) {
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  const { data } = await supabase
+    .from('posts')
+    .select('title, slug, excerpt, published_at, category:categories(name)')
+    .eq('status', 'published')
+    .eq('lang', locale)
+    .order('published_at', { ascending: false })
+    .limit(50);
+  return data || [];
+}
 
-### 2. FAQ (src/i18n/locales/)
+async function fetchPublishedStories(locale: string) {
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  const { data } = await supabase
+    .from('stories')
+    .select('title, slug, summary, client_name, industry, published_at')
+    .eq('status', 'published')
+    .eq('lang', locale)
+    .order('published_at', { ascending: false })
+    .limit(50);
+  return data || [];
+}
+```
 
-**EN**: Zmiana odpowiedzi na pytanie "What's the NIS2 compliance deadline?":
-- **"The NIS2 transposition deadline passed in October 2024. As of 2026, national enforcement is fully active across EU member states — organizations in scope must be compliant now or risk fines up to EUR10M or 2% of global turnover."**
+### 3. Modyfikacja `generateHtml` -- dodanie dynamicznej listy
 
-**PL**: Zmiana odpowiedzi na pytanie "Jaki jest termin zgodnosci z NIS2?":
-- **"Termin transpozycji NIS2 minal w pazdzierniku 2024. W 2026 roku egzekwowanie przepisow krajowych jest w pelni aktywne — organizacje objete zakresem musza byc zgodne lub groza im kary do 10 mln EUR lub 2% globalnego obrotu."**
+Funkcja `generateHtml` staje sie `async`. Dla stron `blog` i `success-stories` po statycznych sekcjach dodany zostanie dynamiczny HTML:
 
-### 3. FAQ (public/locales/)
+**Blog** -- lista artykulow jako `<article>` z `<a href>`:
+```html
+<section>
+  <h2>All Articles</h2>
+  <ul class="article-list">
+    <li><article>
+      <h3><a href="/en/blog/nis2-directive/">NIS2 Directive...</a></h3>
+      <time datetime="2026-02-11">February 11, 2026</time>
+      <p>Expert guide on NIS2...</p>
+    </article></li>
+    ...
+  </ul>
+</section>
+```
 
-Te same zmiany co wyzej — oba systemy tlumaczen musza byc spojne.
+**Success Stories** -- lista case studies z `<a href>`:
+```html
+<section>
+  <h2>All Case Studies</h2>
+  <ul class="article-list">
+    <li><article>
+      <h3><a href="/en/success-stories/adamed/">Adamed - Pharmaceutical</a></h3>
+      <p>How Adamed streamlined compliance...</p>
+    </article></li>
+    ...
+  </ul>
+</section>
+```
+
+### 4. Dodanie `CollectionPage` schema w `generateSchemas`
+
+Dla stron `blog` i `success-stories` dodany zostanie schema `CollectionPage` z lista artykulow jako `hasPart`, co wzmacnia structured data dla Google.
+
+### 5. Zmiana handlera `serve` na async
+
+Handler juz jest async, ale wywolanie `generateHtml` musi uzyc `await`:
+```typescript
+const html = await generateHtml(locale, page, pageData);
+```
+
+## Wplyw
+
+| Metryka | Przed | Po |
+|---------|-------|-----|
+| Linki do artykulow w HTML /blog | 0 | ~16 |
+| Linki do stories w HTML /success-stories | 0 | ~10 |
+| CollectionPage schema | Brak | Tak |
+| Link equity z listy do postow | Zero | Pelna |
 
 ## Podsumowanie
 
-6 edycji w 4 plikach. Zadnych zmian strukturalnych — tylko aktualizacja tresci.
-
+1 plik: `supabase/functions/prerender-marketing/index.ts`. Dodanie ~60 linii kodu (import, 2 funkcje fetch, renderowanie listy, schema). Wykorzystuje istniejaca infrastrukture Supabase -- te same zmienne srodowiskowe co `prerender-post`.
