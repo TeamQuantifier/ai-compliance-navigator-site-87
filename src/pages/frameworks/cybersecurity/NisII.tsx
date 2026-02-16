@@ -348,6 +348,227 @@ const NisII = () => {
           </div>
         </section>
 
+        {/* Step by Step Section */}
+        <section className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
+              {t("nisIIPage.stepByStep.title")}
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              {t("nisIIPage.stepByStep.description")}
+            </p>
+          </div>
+          <div className="relative">
+            {/* Vertical timeline line */}
+            <div className="absolute left-6 md:left-1/2 md:-ml-0.5 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-blue via-brand-purple to-brand-mint hidden md:block" />
+            
+            <div className="space-y-8 md:space-y-12">
+              {/* Step 1 - Onboarding */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right">
+                  <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.onboarding.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.onboarding.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.onboarding.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.onboarding.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-brand-blue mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12" />
+              </div>
+
+              {/* Step 2 - Gap Analysis */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12" />
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12">
+                  <Card className="border-brand-gray-light bg-white p-6 w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.gapAnalysis.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.gapAnalysis.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.gapAnalysis.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.gapAnalysis.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-brand-blue mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Step 3 - Risk Management */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right">
+                  <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.riskManagement.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.riskManagement.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.riskManagement.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.riskManagement.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-brand-purple mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12" />
+              </div>
+
+              {/* Step 4 - Policies */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12" />
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12">
+                  <Card className="border-brand-gray-light bg-white p-6 w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.policies.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.policies.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.policies.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.policies.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-brand-purple mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Step 5 - Security Measures */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right">
+                  <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-blue-dark text-white flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.securityMeasures.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.securityMeasures.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.securityMeasures.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.securityMeasures.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-brand-blue-dark mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue-dark border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12" />
+              </div>
+
+              {/* Step 6 - Incident Reporting */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12" />
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-mint border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12">
+                  <Card className="border-brand-gray-light bg-white p-6 w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-mint text-brand-blue-dark flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.incidentReporting.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.incidentReporting.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.incidentReporting.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.incidentReporting.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-green-600 mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Step 7 - Maintenance */}
+              <div className="relative flex flex-col md:flex-row md:items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right">
+                  <Card className="border-brand-gray-light bg-gradient-to-r from-brand-blue/5 to-brand-purple/5 p-6 inline-block text-left w-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white flex items-center justify-center font-bold text-lg">
+                        {t("nisIIPage.stepByStep.steps.maintenance.number")}
+                      </div>
+                      <h3 className="font-semibold text-lg text-brand-blue-dark">
+                        {t("nisIIPage.stepByStep.steps.maintenance.title")}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-3">
+                      {t("nisIIPage.stepByStep.steps.maintenance.description")}
+                    </p>
+                    <ul className="space-y-1">
+                      {getArrayTranslation("nisIIPage.stepByStep.steps.maintenance.items").map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-slate-500">
+                          <CheckCircle className="h-3 w-3 text-brand-purple mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple border-4 border-white shadow" />
+                <div className="md:w-1/2 md:pl-12" />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Results Section */}
         <section className="mb-20">
           <div className="text-center mb-12">

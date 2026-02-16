@@ -2292,6 +2292,90 @@
       "bookDemo": "Požádat o demo",
       "talkExpert": "Zobrazit ceny"
     },
+    "stepByStep": {
+      "title": "NIS2 krok za krokem s Quantifier",
+      "description": "Quantifier automatizuje celou cestu k souladu s NIS2, od onboardingu a analýzy mezer až po průběžné monitorování a připravenost na reportování.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Onboarding organizace a rozsahu",
+          "description": "Nastavíme prostředí pro soulad s NIS2 během hodin, ne týdnů. Namapujeme typ subjektu, kritické služby, systémy, role a dodavatele.",
+          "items": [
+            "Klasifikace: klíčový vs důležitý subjekt",
+            "Mapování sektoru a kritických služeb",
+            "Role, odpovědnosti a governance nastavení",
+            "Baseline souladu"
+          ]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Analýza mezer (Gap Analysis)",
+          "description": "AI porovná váš aktuální stav s požadavky NIS2 a převede povinnosti na konkrétní úkoly.",
+          "items": [
+            "Automatická identifikace mezer napříč oblastmi NIS2",
+            "Skóre vyspělosti a heatmapy",
+            "Prioritizovaný seznam nápravných kroků",
+            "Implementační roadmapa s vlastníky"
+          ]
+        },
+        "riskManagement": {
+          "number": "3",
+          "title": "Opatření řízení rizik",
+          "description": "Vytvoříme registr rizik a program ošetření rizik v souladu s požadavky NIS2 na řízení rizik.",
+          "items": [
+            "Identifikace aktiv, služeb a hrozeb",
+            "AI skórování rizik a prioritizace",
+            "Plány ošetření rizik a sledování reziduálního rizika",
+            "Průběžné aktualizace registru na základě monitoringu"
+          ]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Politiky, postupy a governance",
+          "description": "Generujeme a udržujeme politiky, postupy a manažerské důkazy požadované NIS2.",
+          "items": [
+            "Připravené šablony politik a postupů NIS2",
+            "Schvalování vedením a workflow odpovědnosti",
+            "Automatické verzování a auditní stopa",
+            "Plánované revize a průběžné aktualizace"
+          ]
+        },
+        "securityMeasures": {
+          "number": "5",
+          "title": "Implementace bezpečnostních opatření",
+          "description": "Zavedeme bezpečnostní opatření NIS2 napříč IT, security a provozem, s jasným vlastnictvím a důkazy.",
+          "items": [
+            "Přiřazení vlastníků a implementačních úkolů",
+            "Řízení zranitelností a sledování nápravy",
+            "Řízení přístupů, logování a hardening",
+            "Sběr důkazů a monitoring implementace"
+          ]
+        },
+        "incidentReporting": {
+          "number": "6",
+          "title": "Reportování incidentů a připravenost na dohled",
+          "description": "Automatizujeme procesy incidentů a reportování, abyste byli připraveni na požadavky dohledu i termíny.",
+          "items": [
+            "Workflow včasného varování do 24h",
+            "Workflow oznámení incidentu do 72h",
+            "Balíček finální zprávy do 1 měsíce",
+            "Sledování nápravných opatření a balíčky důkazů",
+            "Podpora týmu Quantifier"
+          ]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Průběžná údržba souladu s NIS2",
+          "description": "Po implementaci AI agenti udržují soulad s NIS2 24/7, aby se nic nerozpadlo v čase.",
+          "items": [
+            "Nepřetržité monitorování a alerting",
+            "Průběžné aktualizace rizik a přehodnocení dodavatelů",
+            "Cykly revizí, cvičení a tabletop testů",
+            "Vždy připravená dokumentace a reportování"
+          ]
+        }
+      }
+    },
     "definitions": {
       "title": "Klíčové pojmy NIS2",
       "items": {
