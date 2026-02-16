@@ -1,74 +1,70 @@
 
 
-# Naprawa duplikatow -- brak kanonicznej strony
+# Naprawa indeksowania -- przeniesienie prerenderingu na Netlify
 
 ## Diagnoza
 
-Strona jest hostowana na **Netlify**, ale przekierowania sa zdefiniowane w `vercel.json`, ktory Netlify **calkowicie ignoruje**. Plik `public/_redirects` zawiera jedynie:
+Wszystkie wymienione strony sa **poprawnie skonfigurowane** pod wzgledem SEO:
+- Trasy istnieja w React Router
+- Tagi canonical sa ustawiane poprawnie przez `PageTemplate`
+- Hreflang jest generowany dla en, pl-PL, cs-CZ
 
-```
-/* /index.html 200
-```
+**Problem**: Strona jest hostowana na **Netlify**, ale logika prerenderingu (przekierowanie botow do edge functions) jest w `vercel.json`, ktory Netlify calkowicie ignoruje. Googlebot dostaje pusty shell HTML bez tresci i musi renderowac JavaScript sam -- co jest wolne i zawodne.
 
-To znaczy, ze KAZDY URL (np. `/blog`, `/success-stories`, `/frameworks`, `/contact.html`) dostaje odpowiedz 200 z SPA. React Router nie ma tras bez prefixu locale, wiec renderuje sie strona, ale **bez poprawnego tagu canonical**. Google widzi duplikat tresci.
+## Status poszczegolnych URL-i
+
+| URL | Trasa | Canonical | Prerender (vercel.json) | Problem |
+|-----|-------|-----------|------------------------|---------|
+| `/cs/blog` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/cs/plans` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/pl` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/cs/frameworks/iso-27001` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/en/frameworks/iso-27001` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/pl/frameworks/iso-27001` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/cs/frameworks/governance` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/en/frameworks/governance` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/pl/frameworks/governance` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+| `/cs/product` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
 
 ## Rozwiazanie
 
-### Krok 1: Dodanie przekierowan 301 w `public/_redirects`
+Przeniesienie logiki wykrywania botow z `vercel.json` do Netlify Edge Functions (`netlify/edge-functions/`). Netlify Edge Functions pozwalaja na inspekcje naglowkow (user-agent) i dynamiczne przekierowanie botow do naszych istniejacych edge functions prerenderingu.
 
-Przekierowania musza byc **PRZED** regula catch-all `/* /index.html 200`.
+### Krok 1: Utworzenie Netlify Edge Function do wykrywania botow
 
-Nowa zawartosc pliku `public/_redirects`:
+Plik: `netlify/edge-functions/bot-prerender.ts`
 
-```
-# Redirects for URLs without locale prefix
-/success-stories  /en/success-stories/  301
-/success-stories/  /en/success-stories/  301
-/blog  /en/blog/  301
-/blog/  /en/blog/  301
-/frameworks  /en/frameworks/  301
-/frameworks/  /en/frameworks/  301
-/contact.html  /en/contact/  301
-/contact  /en/contact/  301
-/plans  /en/plans/  301
-/plans/  /en/plans/  301
-/about  /en/about/  301
-/about/  /en/about/  301
-/partners  /en/partners/  301
-/partners/  /en/partners/  301
-/legal/terms  /en/legal/terms/  301
-/legal/privacy  /en/legal/privacy/  301
-/legal/cookies  /en/legal/cookies/  301
-/product/*  /en/product/:splat  301
-/blog/*  /en/blog/:splat  301
-/success-stories/*  /en/success-stories/:splat  301
-/by-roles/*  /en/by-roles/:splat  301
-/frameworks/*  /en/frameworks/:splat  301
+Funkcja sprawdza `User-Agent` kazdego requestu. Jesli to bot (Googlebot, Bingbot itp.), przekierowuje request do odpowiedniej edge function prerenderingu na backencie. Jesli to zwykly uzytkownik -- przepuszcza request do SPA.
 
-# SPA fallback (must be last)
-/* /index.html 200
-```
+### Krok 2: Konfiguracja Netlify Edge Functions
 
-### Krok 2: Walidacja -- URL `platform.quantifier.ai/login`
+Plik: `netlify.toml`
 
-Ten URL jest na **innej subdomenie** (`platform.quantifier.ai`), wiec nie mozemy go kontrolowac z tej strony. W Google Search Console mozna go oznaczyc jako "not my property" lub zignorowac -- Google sam przestanie go raportowac jesli subdomena jest osobnym property.
+Mapowanie sciezek do edge function:
+- `/:locale/blog` --> bot-prerender
+- `/:locale/plans` --> bot-prerender
+- `/:locale/frameworks/*` --> bot-prerender
+- `/:locale/product/*` --> bot-prerender
+- `/:locale` --> bot-prerender
+- itd. dla wszystkich stron z prerenderingiem
 
-### Co NIE wymaga zmian
+### Krok 3: Przeniesienie przekierowan z `vercel.json` do `netlify.toml`
 
-- Tagi canonical na stronach z locale (`/en/blog/`, `/pl/frameworks/` itp.) -- sa poprawne w `PageTemplate` i `SEOHead`
-- Plik `vercel.json` -- mozna zostawic na wypadek migracji, nie szkodzi
-- Edge functions -- osobny problem, nie wplywa na canonical
+Redirects z `public/_redirects` zostana rowniez przeniesione do `netlify.toml` (bardziej niezawodne niz plik `_redirects`).
 
-## Zakres zmian
+## Zakres zmian technicznych
 
 | Plik | Zmiana |
 |------|--------|
-| `public/_redirects` | Dodanie ~20 przekierowan 301 przed catch-all |
+| `netlify/edge-functions/bot-prerender.ts` | Nowy -- logika wykrywania botow i proxy do prerender functions |
+| `netlify.toml` | Nowy -- konfiguracja edge functions + redirects |
+| `public/_redirects` | Bez zmian (backup, netlify.toml ma priorytet) |
+| `vercel.json` | Bez zmian (zostawiamy na wypadek migracji) |
 
-## Po wdrozeniu
+## Wazne uwagi
 
-1. Opublikuj zmiany na Netlify
-2. Sprawdz w przegladarce, ze `/blog` przekierowuje 301 na `/en/blog/`
-3. W Google Search Console uzyj "URL Inspection" na kazdym problematycznym URL i kliknij "Request Indexing"
-4. Google powinien zaakceptowac przekierowania w ciagu 3-7 dni
+- Edge functions prerenderingu (`prerender-marketing`, `prerender-post`, `prerender-story`) musza byc wdrozone (deployed) na backendzie -- to osobny krok
+- Netlify Edge Functions dzialaja na Deno runtime, wiec skladnia bedzie kompatybilna
+- Po wdrozeniu: Googlebot dostanie pelen HTML z trescia, meta tagami i canonical -- indeksowanie powinno nastapic w 3-7 dni
+- Nalezy zglosic ponowne indeksowanie w Google Search Console po publikacji
 
