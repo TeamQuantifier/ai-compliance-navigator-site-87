@@ -1,4 +1,6 @@
+import { Helmet } from 'react-helmet-async';
 import PageTemplate from '@/components/PageTemplate';
+import DefinitionsBlock from '@/components/seo/DefinitionsBlock';
 import { Shield, CheckCircle, ArrowRight, Users, FileText, Monitor, AlertTriangle, Building, Gavel, Clock, Briefcase, Scale, Lock, Eye, Database, Server, TrendingUp, CheckSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,11 +26,28 @@ const Soc = () => {
     return Array.isArray(result) ? result : [];
   };
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": t('seo.frameworks.cybersecurity.soc.description'),
+    "featureList": ["SOC 2 Type I/II Automation", "Trust Services Criteria Mapping", "Automated Evidence Collection", "Continuous Control Monitoring", "Audit-Ready Reports", "Gap Analysis"],
+    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
+  };
+
   return (
     <PageTemplate
       title={t('seo.frameworks.cybersecurity.soc.title')}
       description={t('seo.frameworks.cybersecurity.soc.description')}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+      </Helmet>
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <section className="mb-20">
@@ -548,6 +567,18 @@ const Soc = () => {
             </div>
           </div>
         </section>
+
+        {/* Key Definitions */}
+        <DefinitionsBlock
+          title="Key SOC 2 Terms & Definitions"
+          definitions={[
+            { term: "SOC 2 (System and Organization Controls 2)", definition: "An auditing framework developed by the AICPA that evaluates a service organization's controls related to security, availability, processing integrity, confidentiality, and privacy of customer data." },
+            { term: "Trust Services Criteria (TSC)", definition: "Five categories (Security, Availability, Processing Integrity, Confidentiality, Privacy) against which a service organization's controls are evaluated during a SOC 2 audit." },
+            { term: "Type I vs Type II Report", definition: "Type I assesses the design of controls at a specific point in time. Type II evaluates both the design and operating effectiveness of controls over a period of time (typically 3-12 months)." },
+            { term: "Continuous Monitoring", definition: "The ongoing process of automatically tracking control effectiveness and compliance status in real-time, enabling organizations to maintain SOC 2 readiness between audit periods." }
+          ]}
+          className="mb-20"
+        />
 
         {/* FAQ Section */}
         <FAQSection 

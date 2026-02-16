@@ -9,7 +9,8 @@ const GrcPlatform = () => {
   const { t } = useTranslation();
   const { locale = 'en' } = useParams<{ locale: string }>();
 
-  const pageUrl = `https://www.quantifier.ai/${locale}/grc-platform`;
+  const baseUrl = 'https://quantifier.ai';
+  const pageUrl = `${baseUrl}/${locale}/grc-platform/`;
   const seoTitle = t('seoLanding.grc.seo.title');
   const seoDescription = t('seoLanding.grc.seo.description');
 
@@ -58,22 +59,63 @@ const GrcPlatform = () => {
     'ESG',
   ];
 
+  // BreadcrumbList JSON-LD
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${baseUrl}/${locale}/` },
+      { "@type": "ListItem", "position": 2, "name": "GRC Platform", "item": pageUrl }
+    ]
+  };
+
+  // SoftwareApplication JSON-LD
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": baseUrl,
+    "description": seoDescription,
+    "offers": {
+      "@type": "Offer",
+      "url": `${baseUrl}/${locale}/plans`,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/OnlineOnly"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Quantifier.ai",
+      "url": baseUrl
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
-        <link rel="alternate" hrefLang="en" href="https://www.quantifier.ai/en/grc-platform" />
-        <link rel="alternate" hrefLang="pl" href="https://www.quantifier.ai/pl/grc-platform" />
-        <link rel="alternate" hrefLang="cs" href="https://www.quantifier.ai/cs/grc-platform" />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/grc-platform/`} />
+        <link rel="alternate" hrefLang="pl-PL" href={`${baseUrl}/pl/grc-platform/`} />
+        <link rel="alternate" hrefLang="cs-CZ" href={`${baseUrl}/cs/grc-platform/`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en/grc-platform/`} />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/og-image.png`} />
+        <meta property="og:site_name" content="Quantifier.ai" />
+        <meta property="og:locale" content={locale === 'pl' ? 'pl_PL' : locale === 'cs' ? 'cs_CZ' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={`${baseUrl}/og-image.png`} />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
       </Helmet>
 
       {/* Hero Section */}

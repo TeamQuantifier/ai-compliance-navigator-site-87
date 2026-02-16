@@ -2433,13 +2433,77 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
   
   const schemas: object[] = [];
   
+  // Breadcrumb name mapping for correct display names
+  const breadcrumbNameMap: Record<string, string> = {
+    'iso-27001': 'ISO 27001',
+    'iso-9001': 'ISO 9001',
+    'nis-ii': 'NIS2',
+    'soc': 'SOC 2',
+    'gdpr': 'GDPR',
+    'dora': 'DORA',
+    'hipaa': 'HIPAA',
+    'ccpa': 'CCPA',
+    'esg': 'ESG',
+    'grc-platform': 'GRC Platform',
+    'by-roles': locale === 'pl' ? 'Dla kogo' : 'By Role',
+    'ai-compliance-officer': 'AI Compliance Officer',
+    'features': locale === 'pl' ? 'Funkcje' : (locale === 'cs' ? 'Funkce' : 'Features'),
+    'frameworks': locale === 'pl' ? 'Standardy' : 'Frameworks',
+    'product': locale === 'pl' ? 'Produkt' : 'Product',
+    'overview': locale === 'pl' ? 'Przegląd' : 'Overview',
+    'managers': locale === 'pl' ? 'Menedżerowie' : 'Managers',
+    'contributors': locale === 'pl' ? 'Współpracownicy' : 'Contributors',
+    'auditor': locale === 'pl' ? 'Audytor' : 'Auditor',
+  };
+  
+  // Parent category mapping for 3-level breadcrumbs
+  const parentCategoryMap: Record<string, { segment: string; nameKey: string }> = {
+    'soc2-automation': { segment: 'frameworks', nameKey: 'frameworks' },
+    'iso27001': { segment: 'frameworks', nameKey: 'frameworks' },
+    'gdpr-compliance': { segment: 'frameworks', nameKey: 'frameworks' },
+    'nis2': { segment: 'frameworks', nameKey: 'frameworks' },
+    'dora': { segment: 'frameworks', nameKey: 'frameworks' },
+    'iso-9001': { segment: 'frameworks', nameKey: 'frameworks' },
+    'hipaa': { segment: 'frameworks', nameKey: 'frameworks' },
+    'ccpa': { segment: 'frameworks', nameKey: 'frameworks' },
+    'esg': { segment: 'frameworks', nameKey: 'frameworks' },
+    'environmental': { segment: 'frameworks', nameKey: 'frameworks' },
+    'governance': { segment: 'frameworks', nameKey: 'frameworks' },
+    'product-level': { segment: 'frameworks', nameKey: 'frameworks' },
+    'product-features': { segment: 'product', nameKey: 'product' },
+    'product-overview': { segment: 'product', nameKey: 'product' },
+    'compliance-officer': { segment: 'product', nameKey: 'product' },
+    'task-data-management': { segment: 'product', nameKey: 'product' },
+    'analytics-dashboards': { segment: 'product', nameKey: 'product' },
+    'documents-management': { segment: 'product', nameKey: 'product' },
+    'api-integrations': { segment: 'product', nameKey: 'product' },
+    'value-chain': { segment: 'product', nameKey: 'product' },
+    'risk-assessment': { segment: 'product', nameKey: 'product' },
+    'by-roles-managers': { segment: 'by-roles', nameKey: 'by-roles' },
+    'by-roles-contributors': { segment: 'by-roles', nameKey: 'by-roles' },
+    'by-roles-auditor': { segment: 'by-roles', nameKey: 'by-roles' },
+  };
+  
   // BreadcrumbList
-  const breadcrumbItems = [
-    { name: locale === 'pl' ? 'Strona główna' : (locale === 'cs' ? 'Domů' : 'Home'), url: baseUrl }
+  const homeName = locale === 'pl' ? 'Strona główna' : (locale === 'cs' ? 'Domů' : 'Home');
+  const breadcrumbItems: Array<{name: string; url: string}> = [
+    { name: homeName, url: baseUrl }
   ];
   
   if (page !== 'index') {
-    breadcrumbItems.push({ name: pageData.h1, url: pageUrl });
+    const parent = parentCategoryMap[page];
+    if (parent) {
+      const parentName = breadcrumbNameMap[parent.nameKey] || parent.segment.charAt(0).toUpperCase() + parent.segment.slice(1);
+      breadcrumbItems.push({ 
+        name: parentName, 
+        url: ensureTrailingSlash(`${BASE_URL}/${locale}/${parent.segment}`) 
+      });
+    }
+    
+    // Use the URL path's last segment for name lookup, fallback to h1
+    const lastSegment = urlPath.split('/').pop() || page;
+    const pageName = breadcrumbNameMap[lastSegment] || pageData.h1;
+    breadcrumbItems.push({ name: pageName, url: pageUrl });
   }
   
   schemas.push({
@@ -2453,28 +2517,27 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
     }))
   });
   
-  // SoftwareApplication for relevant pages
-  if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product-features'].includes(page)) {
+  // SoftwareApplication for relevant pages (including DORA, HIPAA, CCPA)
+  if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product-features', 'dora', 'hipaa', 'ccpa'].includes(page)) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
-      'name': 'Quantifier',
+      'name': 'Quantifier.ai',
       'applicationCategory': 'BusinessApplication',
-      'operatingSystem': 'Web',
+      'applicationSubCategory': 'Governance, Risk and Compliance (GRC)',
+      'operatingSystem': 'Web Browser',
       'description': pageData.description,
       'url': BASE_URL,
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': '4.9',
-        'ratingCount': '127',
-        'bestRating': '5',
-        'worstRating': '1'
-      },
       'offers': {
         '@type': 'Offer',
-        'price': '0',
+        'url': `${BASE_URL}/${locale}/plans`,
         'priceCurrency': 'USD',
-        'description': 'Free trial available'
+        'availability': 'https://schema.org/OnlineOnly'
+      },
+      'provider': {
+        '@type': 'Organization',
+        'name': 'Quantifier.ai',
+        'url': BASE_URL
       }
     });
   }
@@ -2512,18 +2575,61 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
     });
   }
 
-  // Organization for homepage
+  // Organization for homepage - full version matching SPA
   if (page === 'index') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      'name': 'Quantifier',
+      'name': 'Quantifier.ai',
       'url': BASE_URL,
-      'logo': `${BASE_URL}/og-image.png`,
+      'logo': `${BASE_URL}/lovable-uploads/b5ac5352-8089-4e7d-a1d4-6c879bd4f57e.png`,
+      'description': locale === 'pl' 
+        ? 'AI-Native Platforma GRC do Automatyzacji Compliance'
+        : locale === 'cs'
+        ? 'AI-Native GRC Platforma pro Automatizaci Compliance'
+        : 'AI-Native GRC Platform for Compliance Automation',
+      'foundingDate': '2020',
       'sameAs': [
-        'https://www.linkedin.com/company/quantifier-ai',
-        'https://twitter.com/quantifier_ai'
+        'https://www.linkedin.com/company/quantifier-ai'
+      ],
+      'address': [
+        {
+          '@type': 'PostalAddress',
+          'streetAddress': '447 Sutter St Ste 405 PMB 137',
+          'addressLocality': 'San Francisco',
+          'addressRegion': 'CA',
+          'postalCode': '94108',
+          'addressCountry': 'US'
+        },
+        {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Rondo Daszynskiego 1',
+          'addressLocality': 'Warsaw',
+          'addressCountry': 'PL'
+        }
+      ],
+      'contactPoint': [
+        {
+          '@type': 'ContactPoint',
+          'telephone': '+1-415-799-8206',
+          'contactType': 'sales',
+          'areaServed': 'US'
+        },
+        {
+          '@type': 'ContactPoint',
+          'telephone': '+48-698-759-206',
+          'contactType': 'sales',
+          'areaServed': 'EU'
+        }
       ]
+    });
+    
+    // WebSite schema for homepage
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'Quantifier.ai',
+      'url': BASE_URL
     });
   }
   

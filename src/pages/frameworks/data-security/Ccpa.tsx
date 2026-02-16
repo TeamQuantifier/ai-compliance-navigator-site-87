@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
+import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
 import {
   Shield,
   CheckCircle,
@@ -61,11 +63,28 @@ const Ccpa = () => {
   // Consumer rights
   const consumerRights = getArrayTranslation("ccpaPage.understanding.consumerRights.items");
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": t("ccpaPage.seo.description"),
+    "featureList": ["CCPA Compliance Automation", "Consumer Request Management", "Data Inventory", "Opt-Out Management", "Privacy Policy Compliance", "Vendor Management"],
+    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
+  };
+
   return (
     <PageTemplate
       title={t("ccpaPage.seo.title")}
       description={t("ccpaPage.seo.description")}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-16">
@@ -627,6 +646,17 @@ const Ccpa = () => {
             </div>
           </div>
         </section>
+        {/* Key Definitions */}
+        <DefinitionsBlock
+          title="Key CCPA Terms & Definitions"
+          definitions={[
+            { term: "CCPA (California Consumer Privacy Act)", definition: "A California state privacy law that gives California residents the right to know what personal information businesses collect, request its deletion, opt-out of its sale, and receive equal service regardless of privacy choices." },
+            { term: "Personal Information", definition: "Under CCPA, any information that identifies, relates to, describes, is reasonably capable of being associated with, or could be linked to a particular consumer or household — broader than many other privacy laws." },
+            { term: "Do Not Sell My Personal Information", definition: "A mandatory opt-out mechanism that businesses must provide, allowing consumers to prohibit the sale of their personal information to third parties. CPRA expanded this to include 'sharing' for cross-context behavioral advertising." },
+            { term: "CPRA (California Privacy Rights Act)", definition: "An amendment to CCPA that took effect January 2023, adding new rights (correction, limiting use of sensitive PI), creating the California Privacy Protection Agency (CPPA), and introducing data minimization requirements." }
+          ]}
+          className="mb-16"
+        />
 
         {/* FAQ Section */}
         <section className="mb-16">
@@ -636,7 +666,7 @@ const Ccpa = () => {
           question: item.question,
           answer: item.answer,
         }))}
-        pageUrl={`https://quantifier.io/${currentLocale}/frameworks/data-security/ccpa`}
+        pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/ccpa`}
       />
         </section>
 
