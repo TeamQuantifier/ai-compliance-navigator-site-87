@@ -1,49 +1,61 @@
 
 
-# Naprawa wykrywania linków wewnętrznych w SEO Audit
+# Naprawa błędów 5xx w Google Search Console
 
-## Problem
+## Diagnoza
 
-Analizator SEO nie wykrywa linków wewnętrznych w treści artykułów. Przyczyna: linki w edytorze TipTap są zapisywane z adresem `http://Quantifier.ai` (z wielką literą Q), a kod sprawdza `href.includes('quantifier.ai')` -- porównanie jest case-sensitive i nie znajduje dopasowania.
+Wszystkie 3 edge functions do prerenderingu (`prerender-marketing`, `prerender-post`, `prerender-story`) zwracają **404 NOT_FOUND** -- nie sa wdrozone (deployed). Vercel poprawnie przekierowuje ruch botow do tych funkcji, ale one nie istnieja na serwerze.
 
-Dodatkowo istnieją **dwa osobne analizatory** z różnymi błędami:
+Wynik: Googlebot dostaje blad zamiast poprawnego HTML --> Google raportuje "Server error (5xx)" --> strony nie sa indeksowane.
 
-1. **`src/hooks/useSeoAnalysis.ts`** (panel boczny SEO w edytorze) -- sprawdza `quantifier.ai` ale case-sensitive, więc `Quantifier.ai` nie jest wykrywany
-2. **`src/lib/seo-analyzer.ts`** (strona SEO Audit) -- sprawdza starą domenę `compliancesumo` zamiast `quantifier.ai`
+Dodatkowy problem: URL-e bez prefixu locale (np. `/plans`, `/legal/terms`) nie maja przekierowan.
 
-## Rozwiązanie
+## Plan naprawy (krok po kroku)
 
-### Plik 1: `src/hooks/useSeoAnalysis.ts` (linia 97)
+### Krok 1: Deploy edge functions
+Wdrozenie wszystkich 3 edge functions:
+- `prerender-marketing`
+- `prerender-post`
+- `prerender-story`
+- `sitemap` (juz dziala, ale warto upewnic sie ze wszystkie sa zsynchronizowane)
 
-Zmiana z:
-```typescript
-const isInternal = href.startsWith('/') || 
-  href.includes('quantifier.ai') || 
-  (baseUrl && href.includes(baseUrl));
-```
-Na:
-```typescript
-const hrefLower = href.toLowerCase();
-const isInternal = hrefLower.startsWith('/') || 
-  hrefLower.includes('quantifier.ai') || 
-  (baseUrl && hrefLower.includes(baseUrl.toLowerCase()));
-```
+### Krok 2: Weryfikacja po deploy
+Testowe wywolania kazdej funkcji, np.:
+- `prerender-marketing?locale=en&page=product-features`
+- `prerender-marketing?locale=pl&page=index`
+- `prerender-post?locale=en&slug=<slug-istniejacego-posta>`
+- `prerender-story?locale=en&slug=<slug-istniejacego-story>`
 
-### Plik 2: `src/lib/seo-analyzer.ts` (linia 92)
+### Krok 3: Dodanie przekierowan 301 dla URL-i bez locale
+Dodanie w `vercel.json` przekierowan dla sciezek raportowanych przez Google jako bledne:
 
-Zmiana z:
-```typescript
-if (href.startsWith('/') || href.includes('compliancesumo')) {
-```
-Na:
-```typescript
-const hrefLower = href.toLowerCase();
-if (hrefLower.startsWith('/') || hrefLower.includes('quantifier.ai')) {
+```json
+{ "source": "/plans", "destination": "/en/plans", "permanent": true },
+{ "source": "/legal/terms", "destination": "/en/legal/terms", "permanent": true },
+{ "source": "/legal/privacy", "destination": "/en/legal/privacy", "permanent": true },
+{ "source": "/legal/cookies", "destination": "/en/legal/cookies", "permanent": true }
 ```
 
-## Zakres zmian
+Oraz ogolne reguly catch-all dla popularnych sciezek bez locale.
 
-- 2 pliki, po 2-3 linie w każdym
-- Brak zmian w bazie danych, edge functions ani UI
-- Naprawa dotyczy tylko logiki porównywania URL-i
+### Krok 4: Ponowne zgloszenie indeksacji w Google Search Console
+Po wdrozeniu zmian:
+1. Wejdz w Google Search Console
+2. Uzyj "URL Inspection" dla kazdego problematycznego URL-a
+3. Kliknij "Request Indexing"
+4. Poczekaj 2-7 dni na ponowne zaindeksowanie
+
+## Zakres zmian technicznych
+
+| Plik | Zmiana |
+|------|--------|
+| Edge functions (3 szt.) | Deploy (bez zmian w kodzie) |
+| `vercel.json` | Dodanie ~10 przekierowan 301 dla URL-i bez locale |
+
+## Wazne uwagi
+
+- Kod edge functions jest juz napisany i poprawny -- wymaga jedynie wdrozenia
+- Funkcja `prerender-marketing` ma ~2700 linii -- jest duza, ale powinna sie zmiescic w limitach czasowych edge function (samo generowanie HTML bez zewnetrznych zapytan)
+- Funkcje `prerender-post` i `prerender-story` odpytuja baze danych -- moga byc wolniejsze, ale to standardowe zapytania
+- Po naprawie Google powinien zaczac indeksowac strony w ciagu kilku dni
 
