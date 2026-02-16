@@ -1,70 +1,71 @@
 
 
-# Naprawa indeksowania -- przeniesienie prerenderingu na Netlify
+# NIS2 Step by Step Section -- 3 wersje jezykowe
 
-## Diagnoza
+## Zakres
 
-Wszystkie wymienione strony sa **poprawnie skonfigurowane** pod wzgledem SEO:
-- Trasy istnieja w React Router
-- Tagi canonical sa ustawiane poprawnie przez `PageTemplate`
-- Hreflang jest generowany dla en, pl-PL, cs-CZ
+Dodanie sekcji "NIS2 Step by Step with Quantifier" na stronie NIS2, wzorowanej na identycznej sekcji ze strony ISO 27001. Sekcja zawiera 7 krokow w ukladzie timeline (desktop: naprzemiennie lewo/prawo, mobile: jedna kolumna).
 
-**Problem**: Strona jest hostowana na **Netlify**, ale logika prerenderingu (przekierowanie botow do edge functions) jest w `vercel.json`, ktory Netlify calkowicie ignoruje. Googlebot dostaje pusty shell HTML bez tresci i musi renderowac JavaScript sam -- co jest wolne i zawodne.
+## Zmiany w plikach
 
-## Status poszczegolnych URL-i
+### 1. `src/pages/frameworks/cybersecurity/NisII.tsx`
 
-| URL | Trasa | Canonical | Prerender (vercel.json) | Problem |
-|-----|-------|-----------|------------------------|---------|
-| `/cs/blog` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/cs/plans` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/pl` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/cs/frameworks/iso-27001` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/en/frameworks/iso-27001` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/pl/frameworks/iso-27001` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/cs/frameworks/governance` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/en/frameworks/governance` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/pl/frameworks/governance` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
-| `/cs/product` | Tak | Tak | Tak | Netlify ignoruje vercel.json |
+Dodanie sekcji step-by-step miedzy sekcja "AI Module" (linia ~349) a sekcja "Results" (linia ~351). Struktura JSX bedzie identyczna jak w ISO 27001 (linie 376-595 w `Iso27001.tsx`):
 
-## Rozwiazanie
+- Tytul + lead z `t('nisIIPage.stepByStep.title')` i `t('nisIIPage.stepByStep.description')`
+- 7 krokow w ukladzie timeline z naprzemiennym pozycjonowaniem (lewo/prawo)
+- Kazdy krok: numer, tytul, opis, lista bulletow (4-6 pozycji)
+- Kolory: brand-blue (kroki 1-2), brand-purple (kroki 3-4), brand-blue-dark (krok 5), brand-mint (krok 6), gradient (krok 7)
+- Klucze translacji: `nisIIPage.stepByStep.steps.{onboarding,gapAnalysis,riskManagement,policies,securityMeasures,incidentReporting,maintenance}`
 
-Przeniesienie logiki wykrywania botow z `vercel.json` do Netlify Edge Functions (`netlify/edge-functions/`). Netlify Edge Functions pozwalaja na inspekcje naglowkow (user-agent) i dynamiczne przekierowanie botow do naszych istniejacych edge functions prerenderingu.
+### 2. `public/locales/en/translation.json`
 
-### Krok 1: Utworzenie Netlify Edge Function do wykrywania botow
+Dodanie klucza `nisIIPage.stepByStep` z pelna struktura EN:
 
-Plik: `netlify/edge-functions/bot-prerender.ts`
+```json
+"stepByStep": {
+  "title": "NIS2 Step by Step with Quantifier",
+  "description": "Quantifier automates the full path to NIS2 compliance, from onboarding and gap analysis to continuous monitoring and regulatory reporting.",
+  "steps": {
+    "onboarding": {
+      "number": "1",
+      "title": "Organization & Scope Onboarding",
+      "description": "We configure your NIS2 compliance environment in hours, not weeks. We map your entity type, critical services, systems, roles, and suppliers.",
+      "items": [
+        "Essential vs important entity classification",
+        "Sector and critical service mapping",
+        "Roles, responsibilities, and governance setup",
+        "Compliance baseline"
+      ]
+    },
+    "gapAnalysis": { ... },
+    "riskManagement": { ... },
+    "policies": { ... },
+    "securityMeasures": { ... },
+    "incidentReporting": { ... },
+    "maintenance": { ... }
+  }
+}
+```
 
-Funkcja sprawdza `User-Agent` kazdego requestu. Jesli to bot (Googlebot, Bingbot itp.), przekierowuje request do odpowiedniej edge function prerenderingu na backencie. Jesli to zwykly uzytkownik -- przepuszcza request do SPA.
+Pelna tresc EN z promptu uzytkownika.
 
-### Krok 2: Konfiguracja Netlify Edge Functions
+### 3. `public/locales/pl/translation.json`
 
-Plik: `netlify.toml`
+Dodanie klucza `nisIIPage.stepByStep` z pelna struktura PL (tresc z promptu).
 
-Mapowanie sciezek do edge function:
-- `/:locale/blog` --> bot-prerender
-- `/:locale/plans` --> bot-prerender
-- `/:locale/frameworks/*` --> bot-prerender
-- `/:locale/product/*` --> bot-prerender
-- `/:locale` --> bot-prerender
-- itd. dla wszystkich stron z prerenderingiem
+### 4. `public/locales/cs/translation.json`
 
-### Krok 3: Przeniesienie przekierowan z `vercel.json` do `netlify.toml`
+Dodanie klucza `nisIIPage.stepByStep` z pelna struktura CS (tresc z promptu).
 
-Redirects z `public/_redirects` zostana rowniez przeniesione do `netlify.toml` (bardziej niezawodne niz plik `_redirects`).
+### 5. `src/i18n/locales/en.json` i `src/i18n/locales/pl.json`
 
-## Zakres zmian technicznych
+Synchronizacja kluczy `nisIIPage.stepByStep` (dual translation files sync).
 
-| Plik | Zmiana |
-|------|--------|
-| `netlify/edge-functions/bot-prerender.ts` | Nowy -- logika wykrywania botow i proxy do prerender functions |
-| `netlify.toml` | Nowy -- konfiguracja edge functions + redirects |
-| `public/_redirects` | Bez zmian (backup, netlify.toml ma priorytet) |
-| `vercel.json` | Bez zmian (zostawiamy na wypadek migracji) |
+## Szczegoly techniczne
 
-## Wazne uwagi
-
-- Edge functions prerenderingu (`prerender-marketing`, `prerender-post`, `prerender-story`) musza byc wdrozone (deployed) na backendzie -- to osobny krok
-- Netlify Edge Functions dzialaja na Deno runtime, wiec skladnia bedzie kompatybilna
-- Po wdrozeniu: Googlebot dostanie pelen HTML z trescia, meta tagami i canonical -- indeksowanie powinno nastapic w 3-7 dni
-- Nalezy zglosic ponowne indeksowanie w Google Search Console po publikacji
+- Sekcja uzywa identycznych komponentow jak ISO 27001: `Card`, `CheckCircle`, gradient timeline line
+- Klucz `incidentReporting` ma 5 bulletow (zamiast 4), analogicznie do ISO gdzie niektorek kroki maja wiecej pozycji
+- Nie uzywamy slow "certification" ani "ISMS" -- cala tresc jest o NIS2 compliance
+- `getArrayTranslation()` helper juz istnieje w NisII.tsx (linia 17)
 
