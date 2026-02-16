@@ -1,0 +1,280 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# --- Edge Functions: bot prerendering ---
+# Netlify Edge Functions intercept requests BEFORE they reach the origin.
+# The bot-prerender function checks User-Agent and proxies bots to
+# Supabase prerender functions. Regular users get the SPA.
+
+[[edge_functions]]
+  path = "/en"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/en/"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/pl"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/pl/"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/cs"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/cs/"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/en/*"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/pl/*"
+  function = "bot-prerender"
+
+[[edge_functions]]
+  path = "/cs/*"
+  function = "bot-prerender"
+
+# --- Redirects (301) for non-localized paths ---
+# These take priority over public/_redirects
+
+[[redirects]]
+  from = "/success-stories"
+  to = "/en/success-stories/"
+  status = 301
+
+[[redirects]]
+  from = "/success-stories/"
+  to = "/en/success-stories/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/en/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/"
+  to = "/en/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/frameworks"
+  to = "/en/frameworks/"
+  status = 301
+
+[[redirects]]
+  from = "/frameworks/"
+  to = "/en/frameworks/"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/en/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/en/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/plans"
+  to = "/en/plans/"
+  status = 301
+
+[[redirects]]
+  from = "/plans/"
+  to = "/en/plans/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/en/about/"
+  status = 301
+
+[[redirects]]
+  from = "/about/"
+  to = "/en/about/"
+  status = 301
+
+[[redirects]]
+  from = "/partners"
+  to = "/en/partners/"
+  status = 301
+
+[[redirects]]
+  from = "/partners/"
+  to = "/en/partners/"
+  status = 301
+
+[[redirects]]
+  from = "/legal/terms"
+  to = "/en/legal/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/legal/privacy"
+  to = "/en/legal/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/legal/cookies"
+  to = "/en/legal/cookies/"
+  status = 301
+
+[[redirects]]
+  from = "/product/*"
+  to = "/en/product/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/en/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/success-stories/*"
+  to = "/en/success-stories/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/by-roles/*"
+  to = "/en/by-roles/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/frameworks/*"
+  to = "/en/frameworks/:splat"
+  status = 301
+
+# Legacy URL redirects
+[[redirects]]
+  from = "/en/soc2-automation"
+  to = "/en/frameworks/soc/"
+  status = 301
+
+[[redirects]]
+  from = "/pl/soc2-automation"
+  to = "/pl/frameworks/soc/"
+  status = 301
+
+[[redirects]]
+  from = "/cs/soc2-automation"
+  to = "/cs/frameworks/soc/"
+  status = 301
+
+[[redirects]]
+  from = "/en/iso27001"
+  to = "/en/frameworks/iso-27001/"
+  status = 301
+
+[[redirects]]
+  from = "/pl/iso27001"
+  to = "/pl/frameworks/iso-27001/"
+  status = 301
+
+[[redirects]]
+  from = "/cs/iso27001"
+  to = "/cs/frameworks/iso-27001/"
+  status = 301
+
+[[redirects]]
+  from = "/en/gdpr-compliance"
+  to = "/en/frameworks/gdpr/"
+  status = 301
+
+[[redirects]]
+  from = "/pl/gdpr-compliance"
+  to = "/pl/frameworks/gdpr/"
+  status = 301
+
+[[redirects]]
+  from = "/cs/gdpr-compliance"
+  to = "/cs/frameworks/gdpr/"
+  status = 301
+
+[[redirects]]
+  from = "/en/nis2"
+  to = "/en/frameworks/nis-ii/"
+  status = 301
+
+[[redirects]]
+  from = "/pl/nis2"
+  to = "/pl/frameworks/nis-ii/"
+  status = 301
+
+[[redirects]]
+  from = "/cs/nis2"
+  to = "/cs/frameworks/nis-ii/"
+  status = 301
+
+# Old nested framework paths
+[[redirects]]
+  from = "/:locale/frameworks/cybersecurity"
+  to = "/:locale/frameworks/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/information-security"
+  to = "/:locale/frameworks/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/data-security"
+  to = "/:locale/frameworks/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/cybersecurity/soc"
+  to = "/:locale/frameworks/soc/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/cybersecurity/nis-ii"
+  to = "/:locale/frameworks/nis-ii/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/information-security/iso-27001"
+  to = "/:locale/frameworks/iso-27001/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/information-security/iso-9001"
+  to = "/:locale/frameworks/iso-9001/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/information-security/dora"
+  to = "/:locale/frameworks/dora/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/data-security/gdpr"
+  to = "/:locale/frameworks/gdpr/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/data-security/hipaa"
+  to = "/:locale/frameworks/hipaa/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/data-security/ccpa"
+  to = "/:locale/frameworks/ccpa/"
+  status = 301
+
+# SPA fallback — must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
