@@ -62,11 +62,12 @@ const BlogList = () => {
 
       <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
         {/* Compact Hero Section */}
-        <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
-          {/* Subtle decorative elements */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-innovation-300 rounded-full blur-2xl"></div>
+        <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
+          {/* Decorative elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-innovation-800 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-compliance-800 rounded-full blur-3xl opacity-30"></div>
+            <div className="absolute top-1/2 left-0 w-32 h-32 bg-slate-800 rounded-full blur-3xl opacity-20"></div>
           </div>
           
           <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -74,7 +75,7 @@ const BlogList = () => {
               <BookOpen className="h-7 w-7" />
               {t('blog.hero.title')}
             </h2>
-            <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto">
               {t('blog.hero.description')}
             </p>
           </div>

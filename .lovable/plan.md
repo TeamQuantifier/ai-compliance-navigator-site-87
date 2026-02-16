@@ -1,40 +1,25 @@
 
 
-# Naprawa bledu 5xx dla /en/legal/privacy w Google Search Console
+# Przeniesienie danych kontaktowych pod formularz
 
-## Przyczyna problemu
+## Co sie zmieni
 
-Funkcja backend `prerender-marketing` **nie jest wdrozona** (deployed). Kiedy Googlebot odwiedza `/en/legal/privacy`, Vercel przekierowuje zapytanie do tej funkcji, ale ona nie istnieje na serwerze -- stad blad 5xx.
+W pliku `src/pages/Contact.tsx`:
 
-Pozostale funkcje (`prerender-post`, `prerender-story`, `sitemap`) dzialaja poprawnie.
+1. **Wyciecie** bloku z danymi kontaktowymi (Email Us, Call Us, Visit Our Offices) z lewej kolumny (linie 142-174) oraz ikon social (linie 176-183)
+2. **Wklejenie** tego bloku w prawej kolumnie, pod Card z formularzem (po linii 275)
 
-## Problem dotyczy WSZYSTKICH stron marketingowych
+## Efekt koncowy
 
-Ten blad dotyczy nie tylko `/legal/privacy`, ale **kazdej strony** obslugiwanej przez `prerender-marketing`, w tym:
-- Strona glowna (`/en/`, `/pl/`, `/cs/`)
-- Wszystkie strony frameworkow (`/frameworks/*`)
-- Wszystkie strony produktowe (`/product/*`)
-- Strony prawne (`/legal/*`)
-- About, Contact, Plans, Partners, Blog listing, Success Stories, By-roles
-
-## Plan naprawy
-
-### Krok 1: Wdrozenie funkcji prerender-marketing
-
-Wdrozyc (deploy) funkcje `prerender-marketing` na serwer. Kod juz istnieje i jest kompletny -- wystarczy go wdrozyc.
-
-### Krok 2: Weryfikacja
-
-Po wdrozeniu przetestowac funkcje, wywolujac ja z parametrami:
-- `?locale=en&page=legal-privacy`
-- `?locale=pl&page=index`
-- `?locale=en&page=plans`
-
-Upewnic sie, ze zwraca poprawny HTML z kodem 200.
+- **Lewa kolumna**: heading + tekst opisowy + features list + summary + CTA (bez danych kontaktowych)
+- **Prawa kolumna**: formularz kontaktowy (Card) + dane kontaktowe (Email, Phone, Address) + ikony social
 
 ## Szczegoly techniczne
 
-Jedyna wymagana akcja to deploy edge function `prerender-marketing`. Nie sa potrzebne zadne zmiany w kodzie -- funkcja ma juz pelna obsluge stron prawnych (legal-privacy, legal-terms, legal-cookies) we wszystkich trzech jezykach (en, pl, cs).
+Plik: `src/pages/Contact.tsx`
 
-Po wdrozeniu Google powinien moc poprawnie zaindeksowac strone przy nastepnym skanowaniu.
+- Usuniecie linii 142-183 (blok `space-y-6 mb-8` z danymi kontaktowymi + `flex space-x-4` z ikonami social)
+- Dodanie tych samych elementow po zamknieciu `</Card>` (linia 275), wewnatrz prawej kolumny `<div>` (linia 186)
+- Drobna zmiana: `mb-8` na `mt-6` zeby odstep byl od gory (pod formularzem), nie od dolu
 
+Zadne zmiany w plikach tlumaczen -- klucze pozostaja te same.

@@ -7,6 +7,66 @@
       "permanent": true
     },
     {
+      "source": "/plans",
+      "destination": "/en/plans",
+      "permanent": true
+    },
+    {
+      "source": "/legal/terms",
+      "destination": "/en/legal/terms",
+      "permanent": true
+    },
+    {
+      "source": "/legal/privacy",
+      "destination": "/en/legal/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/legal/cookies",
+      "destination": "/en/legal/cookies",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/en/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/en/contact",
+      "permanent": true
+    },
+    {
+      "source": "/partners",
+      "destination": "/en/partners",
+      "permanent": true
+    },
+    {
+      "source": "/frameworks",
+      "destination": "/en/frameworks",
+      "permanent": true
+    },
+    {
+      "source": "/product/:path*",
+      "destination": "/en/product/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/en/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/success-stories/:path*",
+      "destination": "/en/success-stories/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/by-roles/:path*",
+      "destination": "/en/by-roles/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:locale(en|pl|cs)/soc2-automation",
       "destination": "/:locale/frameworks/soc",
       "permanent": true

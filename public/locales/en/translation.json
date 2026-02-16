@@ -2621,6 +2621,90 @@
       "bookDemo": "Request Demo",
       "talkExpert": "See Pricing"
     },
+    "stepByStep": {
+      "title": "NIS2 Step by Step with Quantifier",
+      "description": "Quantifier automates the full path to NIS2 compliance, from onboarding and gap analysis to continuous monitoring and regulatory reporting.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Organization & Scope Onboarding",
+          "description": "We configure your NIS2 compliance environment in hours, not weeks. We map your entity type, critical services, systems, roles, and suppliers.",
+          "items": [
+            "Essential vs important entity classification",
+            "Sector and critical service mapping",
+            "Roles, responsibilities, and governance setup",
+            "Compliance baseline"
+          ]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Gap Analysis",
+          "description": "AI compares your current state with NIS2 requirements and turns obligations into actionable tasks.",
+          "items": [
+            "Automatic gap identification across NIS2 domains",
+            "Maturity scoring and heatmaps",
+            "Prioritized remediation backlog",
+            "Implementation roadmap with owners"
+          ]
+        },
+        "riskManagement": {
+          "number": "3",
+          "title": "Risk Management Measures",
+          "description": "We build a NIS2-ready risk register and treatment program aligned with NIS2 risk management measures.",
+          "items": [
+            "Asset, service, and threat identification",
+            "AI-powered risk scoring and prioritization",
+            "Risk treatment plans and residual risk tracking",
+            "Continuous register updates from monitoring"
+          ]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Policies, Procedures & Governance",
+          "description": "We generate and maintain the policies, procedures, and management evidence required under NIS2.",
+          "items": [
+            "Ready-made NIS2 policy and procedure templates",
+            "Management approvals and accountability workflows",
+            "Automatic version control and audit trails",
+            "Scheduled reviews and continuous updates"
+          ]
+        },
+        "securityMeasures": {
+          "number": "5",
+          "title": "Security Measures Implementation",
+          "description": "We operationalize NIS2 security measures across IT, security, and operations, with clear ownership and evidence.",
+          "items": [
+            "Owner assignment and implementation tasks",
+            "Vulnerability management and remediation tracking",
+            "Access control, logging, and security hardening workflows",
+            "Evidence collection and implementation monitoring"
+          ]
+        },
+        "incidentReporting": {
+          "number": "6",
+          "title": "Incident Reporting & Supervisory Readiness",
+          "description": "We automate incident handling and reporting workflows, keeping you ready for supervisory requests and deadlines.",
+          "items": [
+            "24h early warning workflow",
+            "72h incident notification workflow",
+            "1-month final report package generation",
+            "Corrective actions tracking and evidence packages",
+            "Quantifier team support"
+          ]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Continuous NIS2 Maintenance",
+          "description": "After implementation, AI agents maintain your NIS2 compliance 24/7 so it never slips.",
+          "items": [
+            "Continuous monitoring and alerting",
+            "Ongoing risk updates and vendor reassessments",
+            "Review cycles, drills, and tabletop exercises tracking",
+            "Always-ready reporting and documentation"
+          ]
+        }
+      }
+    },
     "definitions": {
       "title": "Key NIS2 Terms & Definitions",
       "items": {
