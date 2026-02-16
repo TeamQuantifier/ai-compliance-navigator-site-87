@@ -84,17 +84,12 @@ const Index = () => {
     ]
   };
 
-  // WebSite JSON-LD Schema
+  // WebSite JSON-LD Schema (without SearchAction - no /search page exists)
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Quantifier.ai",
-    "url": "https://quantifier.ai",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://quantifier.ai/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "url": "https://quantifier.ai"
   };
 
   // SoftwareApplication JSON-LD Schema

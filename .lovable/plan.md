@@ -1,36 +1,83 @@
 
+# Problem: Wszystkie strony nieindeksowalne przez blad Content-Type
 
-# Naprawienie redirectow 301 -- usuniecie public/_redirects
+## Diagnoza
 
-## Problem
+Testujac odpowiedz funkcji `prerender-marketing` dla `/cs/frameworks/gdpr/`, znalazlem **krytyczny blad** wplywajacy na **WSZYSTKIE strony** serwisu, nie tylko GDPR:
 
-Plik `public/_redirects` zawiera regule `/* /index.html 200`, ktora przechwytuje wszystkie requesty **przed** przetworzeniem regul z `netlify.toml`. W Netlify plik `_redirects` ma wyzszy priorytet niz `netlify.toml`, wiec redirecty 301 (np. `/blog` na `/en/blog/`) nigdy nie sa wykonywane.
+**Supabase nadpisuje naglowek `Content-Type` na `text/plain`**, mimo ze kod jawnie ustawia `text/html; charset=utf-8`.
+
+Funkcja `bot-prerender.ts` na Netlify robi `return fetch(prerenderUrl)` -- czyli zwraca odpowiedz z Supabase bezposrednio, lacznie z blednym `Content-Type: text/plain`.
+
+Googlebot otrzymuje wiec poprawny HTML, ale z naglowkiem mowiacym "to jest zwykly tekst". Google NIE parsuje tego jako strony HTML -- stad problem z indeksowaniem.
+
+## Dowod
+
+Kazde wywolanie prerender-marketing zwraca:
+```
+Content-Type: text/plain          <-- BUG (powinno byc text/html)
+Content-Security-Policy: default-src 'none'; sandbox
+```
+
+Dotyczy to rowniez `prerender-post` i `prerender-story`.
 
 ## Rozwiazanie
 
-Usunac plik `public/_redirects` calkowicie.
+Zmodyfikowac `netlify/edge-functions/bot-prerender.ts` tak, aby tworzyl nowy obiekt `Response` z prawidlowymi naglowkami zamiast zwracac surowa odpowiedz z Supabase.
 
-Wszystkie potrzebne reguly sa juz poprawnie zdefiniowane w `netlify.toml`:
-- Redirecty 301 dla sciezek bez locale (np. `/blog` na `/en/blog/`)
-- Redirecty 301 dla starych URL-i (np. `/en/iso27001` na `/en/frameworks/iso-27001/`)
-- SPA fallback `/* /index.html 200` (ostatnia regula)
+### Zmiana w pliku `netlify/edge-functions/bot-prerender.ts`
 
-## Zmiana
-
-| Plik | Akcja |
-|------|-------|
-| `public/_redirects` | Usuniecie pliku |
-
-## Weryfikacja po deploy
-
-```bash
-curl -I https://quantifier.ai/blog
-# Oczekiwany wynik: HTTP/2 301, location: /en/blog/
-
-curl -I https://quantifier.ai/sitemap.xml
-# Oczekiwany wynik: HTTP/2 200, content-type: application/xml
-
-curl -I https://quantifier.ai/robots.txt
-# Oczekiwany wynik: HTTP/2 200, content-type: text/plain
+Zamiast:
+```typescript
+return fetch(prerenderUrl, {
+  headers: { 'User-Agent': ua },
+});
 ```
 
+Nowa logika (wspolna funkcja proxy):
+```typescript
+async function proxyToPrerender(url: string, ua: string): Promise<Response> {
+  const response = await fetch(url, {
+    headers: { 'User-Agent': ua },
+  });
+
+  if (!response.ok) {
+    return response;
+  }
+
+  const body = await response.text();
+
+  return new Response(body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'X-Robots-Tag': 'index, follow',
+    },
+  });
+}
+```
+
+Ta zmiana:
+1. Nadpisuje `Content-Type` na `text/html; charset=utf-8`
+2. Usuwa restrykcyjne `Content-Security-Policy: sandbox`
+3. Dodaje `X-Robots-Tag: index, follow` jako dodatkowy sygnal
+4. Zachowuje `Cache-Control` dla wydajnosci
+
+Funkcja `proxyToPrerender` bedzie uzyta we wszystkich 3 miejscach (blog posts, stories, static pages).
+
+## Wplyw
+
+| Element | Przed | Po |
+|---------|-------|-----|
+| Content-Type dla botow | `text/plain` | `text/html; charset=utf-8` |
+| CSP header | `sandbox` (restrykcyjny) | Brak (bezpieczne dla prerenderowanych stron) |
+| Dotknięte strony | WSZYSTKIE (~40+ stron) | WSZYSTKIE (naprawione) |
+
+## Plik do edycji
+
+| Plik | Zmiana |
+|------|--------|
+| `netlify/edge-functions/bot-prerender.ts` | Dodanie funkcji `proxyToPrerender`, zamiana 3x `return fetch(...)` na `return proxyToPrerender(...)` |
+
+1 plik, ~15 linii nowego kodu. Naprawa dotyczy wszystkich stron serwisu.

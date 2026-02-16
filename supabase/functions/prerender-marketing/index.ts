@@ -1,5 +1,9 @@
-// Prerender marketing pages for SEO bots - deployed v2
+// Prerender marketing pages for SEO bots - deployed v3
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -2395,21 +2399,111 @@ const getPageContent = (locale: string, page: string): PageData | null => {
   return pageData[locale] || pageData['en'];
 };
 
+// Fetch published posts from database
+async function fetchPublishedPosts(locale: string) {
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  const { data } = await supabase
+    .from('posts')
+    .select('title, slug, excerpt, published_at, category:categories(name)')
+    .eq('status', 'published')
+    .eq('lang', locale)
+    .order('published_at', { ascending: false })
+    .limit(50);
+  return data || [];
+}
+
+// Fetch published stories from database
+async function fetchPublishedStories(locale: string) {
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  const { data } = await supabase
+    .from('stories')
+    .select('title, slug, summary, client_name, industry, published_at')
+    .eq('status', 'published')
+    .eq('lang', locale)
+    .order('published_at', { ascending: false })
+    .limit(50);
+  return data || [];
+}
+
 // Generate JSON-LD schemas
-function generateSchemas(locale: string, page: string, pageData: PageData): string {
+function generateSchemas(locale: string, page: string, pageData: PageData, collectionItems?: Array<{url: string; name: string; description?: string}>): string {
   const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
   const urlPath = pageUrlMap[page] || page;
   const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   const schemas: object[] = [];
   
+  // Breadcrumb name mapping for correct display names
+  const breadcrumbNameMap: Record<string, string> = {
+    'iso-27001': 'ISO 27001',
+    'iso-9001': 'ISO 9001',
+    'nis-ii': 'NIS2',
+    'soc': 'SOC 2',
+    'gdpr': 'GDPR',
+    'dora': 'DORA',
+    'hipaa': 'HIPAA',
+    'ccpa': 'CCPA',
+    'esg': 'ESG',
+    'grc-platform': 'GRC Platform',
+    'by-roles': locale === 'pl' ? 'Dla kogo' : 'By Role',
+    'ai-compliance-officer': 'AI Compliance Officer',
+    'features': locale === 'pl' ? 'Funkcje' : (locale === 'cs' ? 'Funkce' : 'Features'),
+    'frameworks': locale === 'pl' ? 'Standardy' : 'Frameworks',
+    'product': locale === 'pl' ? 'Produkt' : 'Product',
+    'overview': locale === 'pl' ? 'Przegląd' : 'Overview',
+    'managers': locale === 'pl' ? 'Menedżerowie' : 'Managers',
+    'contributors': locale === 'pl' ? 'Współpracownicy' : 'Contributors',
+    'auditor': locale === 'pl' ? 'Audytor' : 'Auditor',
+  };
+  
+  // Parent category mapping for 3-level breadcrumbs
+  const parentCategoryMap: Record<string, { segment: string; nameKey: string }> = {
+    'soc2-automation': { segment: 'frameworks', nameKey: 'frameworks' },
+    'iso27001': { segment: 'frameworks', nameKey: 'frameworks' },
+    'gdpr-compliance': { segment: 'frameworks', nameKey: 'frameworks' },
+    'nis2': { segment: 'frameworks', nameKey: 'frameworks' },
+    'dora': { segment: 'frameworks', nameKey: 'frameworks' },
+    'iso-9001': { segment: 'frameworks', nameKey: 'frameworks' },
+    'hipaa': { segment: 'frameworks', nameKey: 'frameworks' },
+    'ccpa': { segment: 'frameworks', nameKey: 'frameworks' },
+    'esg': { segment: 'frameworks', nameKey: 'frameworks' },
+    'environmental': { segment: 'frameworks', nameKey: 'frameworks' },
+    'governance': { segment: 'frameworks', nameKey: 'frameworks' },
+    'product-level': { segment: 'frameworks', nameKey: 'frameworks' },
+    'product-features': { segment: 'product', nameKey: 'product' },
+    'product-overview': { segment: 'product', nameKey: 'product' },
+    'compliance-officer': { segment: 'product', nameKey: 'product' },
+    'task-data-management': { segment: 'product', nameKey: 'product' },
+    'analytics-dashboards': { segment: 'product', nameKey: 'product' },
+    'documents-management': { segment: 'product', nameKey: 'product' },
+    'api-integrations': { segment: 'product', nameKey: 'product' },
+    'value-chain': { segment: 'product', nameKey: 'product' },
+    'risk-assessment': { segment: 'product', nameKey: 'product' },
+    'by-roles-managers': { segment: 'by-roles', nameKey: 'by-roles' },
+    'by-roles-contributors': { segment: 'by-roles', nameKey: 'by-roles' },
+    'by-roles-auditor': { segment: 'by-roles', nameKey: 'by-roles' },
+  };
+  
   // BreadcrumbList
-  const breadcrumbItems = [
-    { name: locale === 'pl' ? 'Strona główna' : (locale === 'cs' ? 'Domů' : 'Home'), url: baseUrl }
+  const homeName = locale === 'pl' ? 'Strona główna' : (locale === 'cs' ? 'Domů' : 'Home');
+  const breadcrumbItems: Array<{name: string; url: string}> = [
+    { name: homeName, url: baseUrl }
   ];
   
   if (page !== 'index') {
-    breadcrumbItems.push({ name: pageData.h1, url: pageUrl });
+    const parent = parentCategoryMap[page];
+    if (parent) {
+      const parentName = breadcrumbNameMap[parent.nameKey] || parent.segment.charAt(0).toUpperCase() + parent.segment.slice(1);
+      breadcrumbItems.push({ 
+        name: parentName, 
+        url: ensureTrailingSlash(`${BASE_URL}/${locale}/${parent.segment}`) 
+      });
+    }
+    
+    // Use the URL path's last segment for name lookup, fallback to h1
+    const lastSegment = urlPath.split('/').pop() || page;
+    const pageName = breadcrumbNameMap[lastSegment] || pageData.h1;
+    breadcrumbItems.push({ name: pageName, url: pageUrl });
   }
   
   schemas.push({
@@ -2423,28 +2517,27 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
     }))
   });
   
-  // SoftwareApplication for relevant pages
-  if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product-features'].includes(page)) {
+  // SoftwareApplication for relevant pages (including DORA, HIPAA, CCPA)
+  if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product-features', 'dora', 'hipaa', 'ccpa'].includes(page)) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
-      'name': 'Quantifier',
+      'name': 'Quantifier.ai',
       'applicationCategory': 'BusinessApplication',
-      'operatingSystem': 'Web',
+      'applicationSubCategory': 'Governance, Risk and Compliance (GRC)',
+      'operatingSystem': 'Web Browser',
       'description': pageData.description,
       'url': BASE_URL,
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': '4.9',
-        'ratingCount': '127',
-        'bestRating': '5',
-        'worstRating': '1'
-      },
       'offers': {
         '@type': 'Offer',
-        'price': '0',
+        'url': `${BASE_URL}/${locale}/plans`,
         'priceCurrency': 'USD',
-        'description': 'Free trial available'
+        'availability': 'https://schema.org/OnlineOnly'
+      },
+      'provider': {
+        '@type': 'Organization',
+        'name': 'Quantifier.ai',
+        'url': BASE_URL
       }
     });
   }
@@ -2465,18 +2558,78 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
     });
   }
   
-  // Organization for homepage
+  // CollectionPage for blog and success-stories
+  if ((page === 'blog' || page === 'success-stories') && collectionItems && collectionItems.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      'name': pageData.h1,
+      'description': pageData.description,
+      'url': pageUrl,
+      'hasPart': collectionItems.map(item => ({
+        '@type': page === 'blog' ? 'BlogPosting' : 'Article',
+        'headline': item.name,
+        'url': item.url,
+        ...(item.description ? { 'description': item.description } : {})
+      }))
+    });
+  }
+
+  // Organization for homepage - full version matching SPA
   if (page === 'index') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      'name': 'Quantifier',
+      'name': 'Quantifier.ai',
       'url': BASE_URL,
-      'logo': `${BASE_URL}/og-image.png`,
+      'logo': `${BASE_URL}/lovable-uploads/b5ac5352-8089-4e7d-a1d4-6c879bd4f57e.png`,
+      'description': locale === 'pl' 
+        ? 'AI-Native Platforma GRC do Automatyzacji Compliance'
+        : locale === 'cs'
+        ? 'AI-Native GRC Platforma pro Automatizaci Compliance'
+        : 'AI-Native GRC Platform for Compliance Automation',
+      'foundingDate': '2020',
       'sameAs': [
-        'https://www.linkedin.com/company/quantifier-ai',
-        'https://twitter.com/quantifier_ai'
+        'https://www.linkedin.com/company/quantifier-ai'
+      ],
+      'address': [
+        {
+          '@type': 'PostalAddress',
+          'streetAddress': '447 Sutter St Ste 405 PMB 137',
+          'addressLocality': 'San Francisco',
+          'addressRegion': 'CA',
+          'postalCode': '94108',
+          'addressCountry': 'US'
+        },
+        {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Rondo Daszynskiego 1',
+          'addressLocality': 'Warsaw',
+          'addressCountry': 'PL'
+        }
+      ],
+      'contactPoint': [
+        {
+          '@type': 'ContactPoint',
+          'telephone': '+1-415-799-8206',
+          'contactType': 'sales',
+          'areaServed': 'US'
+        },
+        {
+          '@type': 'ContactPoint',
+          'telephone': '+48-698-759-206',
+          'contactType': 'sales',
+          'areaServed': 'EU'
+        }
       ]
+    });
+    
+    // WebSite schema for homepage
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'Quantifier.ai',
+      'url': BASE_URL
     });
   }
   
@@ -2484,7 +2637,7 @@ function generateSchemas(locale: string, page: string, pageData: PageData): stri
 }
 
 // Generate HTML content
-function generateHtml(locale: string, page: string, pageData: PageData): string {
+async function generateHtml(locale: string, page: string, pageData: PageData): Promise<string> {
   const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
   const urlPath = pageUrlMap[page] || page;
   const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
@@ -2497,7 +2650,65 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
     return `<link rel="alternate" hreflang="${hreflang}" href="${url}">`;
   }).join('\n  ');
   
-  const schemas = generateSchemas(locale, page, pageData);
+  // Fetch dynamic content for blog and success-stories
+  let dynamicListHtml = '';
+  let collectionItems: Array<{url: string; name: string; description?: string}> = [];
+
+  if (page === 'blog') {
+    const posts = await fetchPublishedPosts(locale);
+    if (posts.length > 0) {
+      const allArticlesTitle = locale === 'pl' ? 'Wszystkie artykuły' : (locale === 'cs' ? 'Všechny články' : 'All Articles');
+      collectionItems = posts.map((p: Record<string, unknown>) => ({
+        url: ensureTrailingSlash(`${BASE_URL}/${locale}/blog/${p.slug}`),
+        name: p.title as string,
+        description: (p.excerpt as string) || undefined,
+      }));
+      dynamicListHtml = `
+    <section>
+      <h2>${allArticlesTitle}</h2>
+      <ul class="article-list">
+        ${posts.map((p: Record<string, unknown>) => {
+          const cat = p.category as Record<string, string> | null;
+          const catName = cat?.name || '';
+          const dateStr = (p.published_at as string) || '';
+          const dateFmt = dateStr ? new Date(dateStr).toLocaleDateString(locale === 'pl' ? 'pl-PL' : (locale === 'cs' ? 'cs-CZ' : 'en-US'), { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+          return `<li><article>
+          <h3><a href="${ensureTrailingSlash(`${BASE_URL}/${locale}/blog/${p.slug}`)}">${p.title}</a></h3>
+          ${dateStr ? `<time datetime="${dateStr}">${dateFmt}</time>` : ''}
+          ${catName ? `<span class="category">${catName}</span>` : ''}
+          ${p.excerpt ? `<p>${p.excerpt}</p>` : ''}
+        </article></li>`;
+        }).join('\n        ')}
+      </ul>
+    </section>`;
+    }
+  } else if (page === 'success-stories') {
+    const stories = await fetchPublishedStories(locale);
+    if (stories.length > 0) {
+      const allStoriesTitle = locale === 'pl' ? 'Wszystkie historie sukcesu' : (locale === 'cs' ? 'Všechny příběhy úspěchu' : 'All Case Studies');
+      collectionItems = stories.map((s: Record<string, unknown>) => ({
+        url: ensureTrailingSlash(`${BASE_URL}/${locale}/success-stories/${s.slug}`),
+        name: s.title as string,
+        description: (s.summary as string) || undefined,
+      }));
+      dynamicListHtml = `
+    <section>
+      <h2>${allStoriesTitle}</h2>
+      <ul class="article-list">
+        ${stories.map((s: Record<string, unknown>) => {
+          const subtitle = [s.client_name, s.industry].filter(Boolean).join(' — ');
+          return `<li><article>
+          <h3><a href="${ensureTrailingSlash(`${BASE_URL}/${locale}/success-stories/${s.slug}`)}">${s.title}</a></h3>
+          ${subtitle ? `<p><strong>${subtitle}</strong></p>` : ''}
+          ${s.summary ? `<p>${s.summary}</p>` : ''}
+        </article></li>`;
+        }).join('\n        ')}
+      </ul>
+    </section>`;
+    }
+  }
+
+  const schemas = generateSchemas(locale, page, pageData, collectionItems);
   
   // Generate main navigation HTML
   const navLabels = {
@@ -2605,6 +2816,11 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
     nav[aria-label="Main navigation"] li a { background: #f1f5f9; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block; }
     .subtitle { font-size: 1.25rem; color: #64748b; margin-bottom: 2rem; }
     section { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
+    .article-list { list-style: none; padding: 0; }
+    .article-list li { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #f1f5f9; }
+    .article-list article h3 { margin-bottom: 0.25rem; }
+    .article-list time { font-size: 0.875rem; color: #94a3b8; margin-right: 0.5rem; }
+    .article-list .category { font-size: 0.75rem; background: #e0f2f1; color: #00796b; padding: 2px 8px; border-radius: 4px; }
     .faq-section { background: #f8fafc; padding: 1.5rem; border-radius: 8px; }
     .faq-item { margin-bottom: 1.5rem; }
     .internal-links { margin-top: 2rem; }
@@ -2633,6 +2849,7 @@ function generateHtml(locale: string, page: string, pageData: PageData): string 
   
   <main>
     ${sectionsHtml}
+    ${dynamicListHtml}
     ${faqHtml}
     
     <section class="cta-section">
@@ -2678,7 +2895,7 @@ serve(async (req: Request) => {
     }
     
     // Generate HTML
-    const html = generateHtml(locale, page, pageData);
+    const html = await generateHtml(locale, page, pageData);
     
     return new Response(html, {
       headers: {

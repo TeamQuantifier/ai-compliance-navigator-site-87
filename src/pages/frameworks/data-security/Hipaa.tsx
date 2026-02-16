@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
+import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
 import {
   Shield,
   CheckCircle,
@@ -60,11 +62,28 @@ const Hipaa = () => {
   // HIPAA rules
   const hipaaRules = getArrayTranslation("hipaaPage.understanding.keyRules.items");
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": t("hipaaPage.seo.description"),
+    "featureList": ["HIPAA Compliance Automation", "PHI Protection", "Access Controls", "Audit Trails", "Breach Detection", "Training Management"],
+    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
+  };
+
   return (
     <PageTemplate
       title={t("hipaaPage.seo.title")}
       description={t("hipaaPage.seo.description")}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-16">
@@ -627,6 +646,18 @@ const Hipaa = () => {
           </div>
         </section>
 
+        {/* Key Definitions */}
+        <DefinitionsBlock
+          title="Key HIPAA Terms & Definitions"
+          definitions={[
+            { term: "HIPAA (Health Insurance Portability and Accountability Act)", definition: "A US federal law that establishes national standards for protecting sensitive patient health information (PHI) from being disclosed without the patient's consent or knowledge." },
+            { term: "Protected Health Information (PHI)", definition: "Any individually identifiable health information held or transmitted by a covered entity or business associate, including demographic data, medical records, insurance information, and any data that can identify a patient." },
+            { term: "Business Associate Agreement (BAA)", definition: "A legally required contract between a HIPAA covered entity and a business associate that establishes permitted uses and disclosures of PHI, required safeguards, and breach notification procedures." },
+            { term: "Security Rule", definition: "The HIPAA Security Rule establishes administrative, physical, and technical safeguards that covered entities must implement to ensure the confidentiality, integrity, and availability of electronic PHI (ePHI)." }
+          ]}
+          className="mb-16"
+        />
+
         {/* FAQ Section */}
         <section className="mb-16">
       <FAQSection
@@ -635,7 +666,7 @@ const Hipaa = () => {
           question: item.question,
           answer: item.answer,
         }))}
-        pageUrl={`https://quantifier.io/${currentLocale}/frameworks/data-security/hipaa`}
+        pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/hipaa`}
       />
         </section>
 

@@ -15,6 +15,58 @@ interface PageTemplateProps {
 // Tracking parameters to strip from canonical URLs
 const TRACKING_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'ref', 'source'];
 
+// Mapping of URL segments to proper display names for breadcrumbs
+const SEGMENT_NAME_MAP: Record<string, string> = {
+  'iso-27001': 'ISO 27001',
+  'iso-9001': 'ISO 9001',
+  'nis-ii': 'NIS2',
+  'soc': 'SOC 2',
+  'gdpr': 'GDPR',
+  'dora': 'DORA',
+  'hipaa': 'HIPAA',
+  'ccpa': 'CCPA',
+  'esg': 'ESG',
+  'grc-platform': 'GRC Platform',
+  'by-roles': 'By Role',
+  'ai-compliance-officer': 'AI Compliance Officer',
+  'task-data-management': 'Task & Data Management',
+  'documents-management': 'Documents Management',
+  'analytics-dashboards': 'Analytics Dashboards',
+  'api-integrations': 'API Integrations',
+  'value-chain': 'Value Chain',
+  'risk-assessment': 'Risk Assessment',
+  'product-level': 'Product Level',
+  'success-stories': 'Success Stories',
+};
+
+// Parent category mapping for 3-level breadcrumbs
+const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
+  'iso-27001': { segment: 'frameworks', name: 'Frameworks' },
+  'iso-9001': { segment: 'frameworks', name: 'Frameworks' },
+  'nis-ii': { segment: 'frameworks', name: 'Frameworks' },
+  'soc': { segment: 'frameworks', name: 'Frameworks' },
+  'gdpr': { segment: 'frameworks', name: 'Frameworks' },
+  'dora': { segment: 'frameworks', name: 'Frameworks' },
+  'hipaa': { segment: 'frameworks', name: 'Frameworks' },
+  'ccpa': { segment: 'frameworks', name: 'Frameworks' },
+  'esg': { segment: 'frameworks', name: 'Frameworks' },
+  'environmental': { segment: 'frameworks', name: 'Frameworks' },
+  'governance': { segment: 'frameworks', name: 'Frameworks' },
+  'product-level': { segment: 'frameworks', name: 'Frameworks' },
+  'features': { segment: 'product', name: 'Product' },
+  'ai-compliance-officer': { segment: 'product', name: 'Product' },
+  'task-data-management': { segment: 'product', name: 'Product' },
+  'documents-management': { segment: 'product', name: 'Product' },
+  'analytics-dashboards': { segment: 'product', name: 'Product' },
+  'api-integrations': { segment: 'product', name: 'Product' },
+  'value-chain': { segment: 'product', name: 'Product' },
+  'risk-assessment': { segment: 'product', name: 'Product' },
+  'overview': { segment: 'product', name: 'Product' },
+  'managers': { segment: 'by-roles', name: 'By Role' },
+  'contributors': { segment: 'by-roles', name: 'By Role' },
+  'auditor': { segment: 'by-roles', name: 'By Role' },
+};
+
 // Strip tracking parameters from URL path
 const stripTrackingParams = (pathname: string): string => {
   const [path] = pathname.split('?');
@@ -31,6 +83,10 @@ const ensureTrailingSlash = (url: string): string => {
 const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
   const cleanPath = stripTrackingParams(pathname);
   const pathSegments = cleanPath.split('/').filter(Boolean);
+  // Remove locale segment
+  const localeSegment = pathSegments[0];
+  const contentSegments = pathSegments.slice(1);
+  
   const breadcrumbs = [
     {
       "@type": "ListItem",
@@ -40,22 +96,46 @@ const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
     }
   ];
 
+  if (contentSegments.length === 0) return breadcrumbs;
+
+  // Get the last segment to check for parent category
+  const lastSegment = contentSegments[contentSegments.length - 1];
+  const parent = SEGMENT_PARENT_MAP[lastSegment];
+  
+  // If the path already contains the parent (e.g., /frameworks/iso-27001), use actual path
+  // If not (e.g., flattened URL), insert parent breadcrumb
   let currentPath = baseUrl;
-  pathSegments.forEach((segment, index) => {
-    // Skip locale segment for display name but include in path
+  let position = 2;
+
+  for (let i = 0; i < contentSegments.length; i++) {
+    const segment = contentSegments[i];
     currentPath += `/${segment}`;
-    const displayName = segment
+    
+    // Check if this is the last segment and it has a parent that isn't already in the path
+    if (i === contentSegments.length - 1 && parent && !contentSegments.includes(parent.segment)) {
+      // Insert parent breadcrumb before this one
+      breadcrumbs.push({
+        "@type": "ListItem",
+        "position": position,
+        "name": parent.name,
+        "item": `${baseUrl}/${parent.segment}`
+      });
+      position++;
+    }
+
+    const displayName = SEGMENT_NAME_MAP[segment] || segment
       .split('-')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
     
     breadcrumbs.push({
       "@type": "ListItem",
-      "position": index + 2,
+      "position": position,
       "name": displayName,
       "item": currentPath
     });
-  });
+    position++;
+  }
 
   return breadcrumbs;
 };

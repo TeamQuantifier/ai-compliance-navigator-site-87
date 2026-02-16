@@ -1,5 +1,7 @@
+import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageTemplate from "@/components/PageTemplate";
+import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -47,11 +49,28 @@ const Dora = () => {
 
   const faqItems = getObjectArrayTranslation("doraPage.faq.items");
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": t("doraPage.meta.description"),
+    "featureList": ["DORA Compliance Automation", "ICT Risk Management", "Incident Response", "Digital Resilience Testing", "Third-Party Risk Management", "Audit Readiness"],
+    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
+  };
+
   return (
     <PageTemplate
       title={t("doraPage.meta.title")}
       description={t("doraPage.meta.description")}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+      </Helmet>
       <div className="container mx-auto px-4 py-8 md:py-16">
         {/* Hero Section */}
         <section className="mb-20">
@@ -637,6 +656,17 @@ const Dora = () => {
             </div>
           </div>
         </section>
+        {/* Key Definitions */}
+        <DefinitionsBlock
+          title="Key DORA Terms & Definitions"
+          definitions={[
+            { term: "DORA (Digital Operational Resilience Act)", definition: "An EU regulation that establishes a comprehensive framework for digital operational resilience in the financial sector, requiring financial entities to manage ICT risks, report incidents, test resilience, and oversee third-party ICT providers." },
+            { term: "ICT Risk Management", definition: "The systematic identification, assessment, and mitigation of risks related to Information and Communication Technology systems, networks, and data that financial entities rely on for their operations." },
+            { term: "Threat-Led Penetration Testing (TLPT)", definition: "Advanced security testing methodology mandated by DORA that simulates real-world cyber attacks based on current threat intelligence to assess the resilience of critical ICT systems in financial entities." },
+            { term: "ICT Third-Party Risk", definition: "Risks arising from financial entities' dependence on external ICT service providers, including cloud providers, software vendors, and data analytics providers. DORA requires contractual provisions and ongoing oversight." }
+          ]}
+          className="mb-20"
+        />
 
         {/* FAQ Section */}
         <section className="mb-20">

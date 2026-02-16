@@ -4102,7 +4102,7 @@
         "items": [
           { "stat": "18", "title": "Sectors Covered", "description": "Essential and important entities across healthcare, energy, transport, and more." },
           { "stat": "€10M+", "title": "Potential Fines", "description": "Up to 2% of global turnover for essential entities." },
-          { "stat": "Oct 2024", "title": "Compliance Deadline", "description": "Member states must transpose NIS2 into national law." }
+          { "stat": "2025–2026", "title": "Enforcement Underway", "description": "EU member states are enforcing NIS2 national laws — organizations must comply now or face penalties." }
         ]
       },
       "sectors": {
@@ -4143,7 +4143,7 @@
           { "question": "Which organizations must comply with NIS2?", "answer": "NIS2 applies to essential entities (energy, healthcare, transport) and important entities (digital services, manufacturing) meeting size thresholds." },
           { "question": "What are the NIS2 penalties for non-compliance?", "answer": "Essential entities face fines up to €10M or 2% of global turnover. Important entities face fines up to €7M or 1.4% of turnover." },
           { "question": "How does Quantifier help with NIS2?", "answer": "Quantifier provides risk assessment tools, incident reporting workflows, policy templates, and continuous monitoring aligned with NIS2 requirements." },
-          { "question": "What's the NIS2 compliance deadline?", "answer": "EU member states had until October 17, 2024 to transpose NIS2 into national law. Organizations should be compliant now." },
+          { "question": "What's the NIS2 compliance deadline?", "answer": "EU member states had until October 17, 2024 to transpose NIS2 into national law. As of 2026, most countries have enacted national legislation and enforcement is active — organizations in scope must be fully compliant now or risk fines up to €10M or 2% of global turnover." },
           { "question": "How long does NIS2 implementation take?", "answer": "With Quantifier, most organizations can achieve NIS2 compliance within 3-6 months depending on their current security maturity." }
         ]
       },

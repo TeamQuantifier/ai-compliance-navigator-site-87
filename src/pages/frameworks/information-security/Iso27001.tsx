@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
+import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
 import {
   Shield,
   CheckCircle,
@@ -49,11 +51,29 @@ const Iso27001 = () => {
     "iso27001Page.faq.items"
   );
 
+  // SoftwareApplication JSON-LD
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": t("seo.frameworks.informationSecurity.iso27001.description"),
+    "featureList": ["ISO 27001 ISMS Automation", "Risk Assessment & Treatment", "Statement of Applicability", "Policy & Document Management", "Internal Audit Management", "Certification Readiness"],
+    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
+  };
+
   return (
     <PageTemplate
       title={t("seo.frameworks.informationSecurity.iso27001.title")}
       description={t("seo.frameworks.informationSecurity.iso27001.description")}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-16">
@@ -816,6 +836,18 @@ const Iso27001 = () => {
             </div>
           </div>
         </section>
+
+        {/* Key Definitions */}
+        <DefinitionsBlock
+          title={t("iso27001Page.definitions.title", { defaultValue: "Key ISO 27001 Terms & Definitions" })}
+          definitions={[
+            { term: "ISMS (Information Security Management System)", definition: "A systematic approach to managing sensitive company information so that it remains secure. It includes people, processes, and IT/technology systems by applying a risk management process." },
+            { term: "Statement of Applicability (SoA)", definition: "A document that lists all controls from ISO 27001 Annex A (93 controls in the 2022 version) and states which are applicable and which are not, with justification for exclusions." },
+            { term: "Risk Treatment Plan", definition: "A structured plan that outlines how identified information security risks will be addressed — whether through mitigation, transfer, acceptance, or avoidance — including timelines, responsible parties, and expected outcomes." },
+            { term: "Annex A Controls", definition: "A set of 93 reference controls organized into 4 themes (Organizational, People, Physical, Technological) that organizations can select based on their risk assessment results." }
+          ]}
+          className="mb-20"
+        />
 
         {/* FAQ Section */}
         <section className="mb-20">
