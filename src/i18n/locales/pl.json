@@ -3599,7 +3599,7 @@
         "items": [
           { "stat": "18", "title": "Objętych sektorów", "description": "Podmioty kluczowe i ważne w sektorach ochrony zdrowia, energii, transportu i innych." },
           { "stat": "10 mln €+", "title": "Potencjalne kary", "description": "Do 2% globalnego obrotu dla podmiotów kluczowych." },
-          { "stat": "Paź 2024", "title": "Termin zgodności", "description": "Państwa członkowskie musiały transponować NIS2 do prawa krajowego." }
+          { "stat": "2025–2026", "title": "Egzekwowanie trwa", "description": "Krajowe przepisy NIS2 są już aktywne w całej UE — organizacje muszą być zgodne lub grożą im kary." }
         ]
       },
       "sectors": {
@@ -3640,7 +3640,7 @@
           { "question": "Które organizacje muszą przestrzegać NIS2?", "answer": "NIS2 dotyczy podmiotów kluczowych (energia, ochrona zdrowia, transport) i podmiotów ważnych (usługi cyfrowe, produkcja) spełniających progi wielkościowe." },
           { "question": "Jakie są kary NIS2 za brak zgodności?", "answer": "Podmioty kluczowe są narażone na kary do 10 mln € lub 2% globalnego obrotu. Podmioty ważne na kary do 7 mln € lub 1,4% obrotu." },
           { "question": "Jak Quantifier pomaga z NIS2?", "answer": "Quantifier zapewnia narzędzia do oceny ryzyka, workflow raportowania incydentów, szablony polityk i ciągły monitoring zgodny z wymaganiami NIS2." },
-          { "question": "Jaki jest termin zgodności z NIS2?", "answer": "Państwa członkowskie UE miały czas do 17 października 2024 na transpozycję NIS2 do prawa krajowego. Organizacje powinny już być zgodne." },
+          { "question": "Jaki jest termin zgodności z NIS2?", "answer": "Termin transpozycji NIS2 minął w październiku 2024. W 2026 roku egzekwowanie przepisów krajowych jest w pełni aktywne — organizacje objęte zakresem muszą być zgodne lub ryzykują kary do 10 mln € lub 2% globalnego obrotu." },
           { "question": "Jak długo trwa wdrożenie NIS2?", "answer": "Z Quantifier większość organizacji może osiągnąć zgodność z NIS2 w ciągu 3-6 miesięcy, w zależności od obecnego poziomu dojrzałości bezpieczeństwa." }
         ]
       },
