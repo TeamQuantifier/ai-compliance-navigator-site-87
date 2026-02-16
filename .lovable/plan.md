@@ -1,25 +1,36 @@
 
 
-# Przeniesienie danych kontaktowych pod formularz
+# Naprawienie redirectow 301 -- usuniecie public/_redirects
 
-## Co sie zmieni
+## Problem
 
-W pliku `src/pages/Contact.tsx`:
+Plik `public/_redirects` zawiera regule `/* /index.html 200`, ktora przechwytuje wszystkie requesty **przed** przetworzeniem regul z `netlify.toml`. W Netlify plik `_redirects` ma wyzszy priorytet niz `netlify.toml`, wiec redirecty 301 (np. `/blog` na `/en/blog/`) nigdy nie sa wykonywane.
 
-1. **Wyciecie** bloku z danymi kontaktowymi (Email Us, Call Us, Visit Our Offices) z lewej kolumny (linie 142-174) oraz ikon social (linie 176-183)
-2. **Wklejenie** tego bloku w prawej kolumnie, pod Card z formularzem (po linii 275)
+## Rozwiazanie
 
-## Efekt koncowy
+Usunac plik `public/_redirects` calkowicie.
 
-- **Lewa kolumna**: heading + tekst opisowy + features list + summary + CTA (bez danych kontaktowych)
-- **Prawa kolumna**: formularz kontaktowy (Card) + dane kontaktowe (Email, Phone, Address) + ikony social
+Wszystkie potrzebne reguly sa juz poprawnie zdefiniowane w `netlify.toml`:
+- Redirecty 301 dla sciezek bez locale (np. `/blog` na `/en/blog/`)
+- Redirecty 301 dla starych URL-i (np. `/en/iso27001` na `/en/frameworks/iso-27001/`)
+- SPA fallback `/* /index.html 200` (ostatnia regula)
 
-## Szczegoly techniczne
+## Zmiana
 
-Plik: `src/pages/Contact.tsx`
+| Plik | Akcja |
+|------|-------|
+| `public/_redirects` | Usuniecie pliku |
 
-- Usuniecie linii 142-183 (blok `space-y-6 mb-8` z danymi kontaktowymi + `flex space-x-4` z ikonami social)
-- Dodanie tych samych elementow po zamknieciu `</Card>` (linia 275), wewnatrz prawej kolumny `<div>` (linia 186)
-- Drobna zmiana: `mb-8` na `mt-6` zeby odstep byl od gory (pod formularzem), nie od dolu
+## Weryfikacja po deploy
 
-Zadne zmiany w plikach tlumaczen -- klucze pozostaja te same.
+```bash
+curl -I https://quantifier.ai/blog
+# Oczekiwany wynik: HTTP/2 301, location: /en/blog/
+
+curl -I https://quantifier.ai/sitemap.xml
+# Oczekiwany wynik: HTTP/2 200, content-type: application/xml
+
+curl -I https://quantifier.ai/robots.txt
+# Oczekiwany wynik: HTTP/2 200, content-type: text/plain
+```
+
