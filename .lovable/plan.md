@@ -1,105 +1,172 @@
 
-# Dynamiczna lista artykulow w prerenderze /blog i /success-stories
 
-## Problem
+# Audyt Schema JSON-LD -- wszystkie strony
 
-Strony `/blog` i `/success-stories` w prerenderze pokazuja tylko ogolne bullet-pointy ("Expert insights on compliance automation" itp.) -- zero linkow do konkretnych artykulow. Boty widza pusta liste, co oznacza brak dystrybucji link equity i wolniejsze crawlowanie postow.
+## Podsumowanie stanu
 
-## Rozwiazanie
+Przeanalizowalem schematy JSON-LD na dwoch poziomach: **client-side (SPA)** i **prerender (boty)**. Ponizej pelna mapa problemow.
 
-Zmodyfikowac `supabase/functions/prerender-marketing/index.ts` aby dla stron `blog` i `success-stories` pobierac z bazy opublikowane artykuly i renderowac je jako liste HTML z linkami. Projekt juz korzysta z Supabase (funkcje `prerender-post`, `prerender-story` robia dokladnie to samo -- lacza sie z baza po dane).
+---
 
-## Zmiany w pliku `supabase/functions/prerender-marketing/index.ts`
+## 1. Niespojnosci miedzy SPA a prerenderem
 
-### 1. Dodanie importu Supabase (poczatek pliku, linia ~2)
+| Element | Client-side (SPA) | Prerender (boty) | Problem |
+|---------|-------------------|-------------------|---------|
+| Organization (homepage) | Pelny: adresy, kontakty, foundingDate | Uproszczony: tylko name, url, logo, sameAs | Bot widzi ubozsza wersje |
+| Organization.name | "Quantifier.ai" | "Quantifier" | Niespojnosc nazwy marki |
+| Organization.logo | `/lovable-uploads/b5ac5352-...png` | `/og-image.png` | Rozne loga |
+| WebSite schema (homepage) | Tak (z SearchAction) | Brak | Bot nie dostaje WebSite schema |
+| SoftwareApplication | Pelny: featureList, provider, subCategory | Uproszczony: brak featureList, subCategory | Bot widzi ubozsza wersje |
+| SoftwareApplication (framework pages) | Brak (tylko na Index + Features) | Tak (soc2, iso27001, gdpr, nis2, grc, features) | SPA nie ma tego schema na framework pages |
 
-```typescript
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
-const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+## 2. BreadcrumbList -- bledne nazwy
+
+**PageTemplate.tsx** generuje nazwy z URL segmentow przez auto-capitalize:
+- `iso-27001` -> "Iso 27001" (powinno: "ISO 27001")
+- `nis-ii` -> "Nis Ii" (powinno: "NIS2")
+- `soc` -> "Soc" (powinno: "SOC 2")
+- `gdpr` -> "Gdpr" (powinno: "GDPR")
+- `by-roles` -> "By Roles" (powinno: "By Role")
+- `success-stories` -> "Success Stories" (OK)
+
+**Prerender** ma tylko 2-poziomy (Home > Page) -- brak posredniego poziomu (np. Home > Frameworks > ISO 27001).
+
+## 3. Strony bez zadnego dedykowanego schema (poza BreadcrumbList z PageTemplate)
+
+Te strony maja TYLKO automatyczny BreadcrumbList -- zero dodatkowych schematow:
+
+| Strona | Brakujace schematy | Rekomendacja |
+|--------|-------------------|--------------|
+| **About** | Organization (z pelnym opisem firmy) | Dodac |
+| **Contact** | LocalBusiness / ContactPage | Dodac |
+| **Plans** | Product (z ofertami/cenami) | Dodac |
+| **Partners** | Brak | Niski priorytet |
+| **ByRoles, Managers, Contributors, Auditor** | Brak | Niski priorytet |
+| **Frameworks** (listing) | Brak | Niski priorytet |
+| **Environmental, Esg, Governance, ProductLevel** | Brak FAQ/Definitions | Sredni priorytet |
+| **ProductOverview, ComplianceOfficer, TaskDataManagement, DocumentsManagement, ValueChain, RiskAssessment, AnalyticsDashboards, ApiIntegrations** | Brak SoftwareApplication | Sredni -- produkt powinien miec schema |
+| **Iso9001** | Brak FAQ | Niski priorytet |
+
+## 4. GrcPlatform -- brak PageTemplate, recznie zarzadzane meta
+
+Strona `/grc-platform` NIE uzywa PageTemplate -- ma wlasny `<Helmet>` z recznymi meta tagami. Problemy:
+- Brak trailing slash w canonical (`https://www.quantifier.ai/en/grc-platform` zamiast z `/`)
+- Uzywa `www.quantifier.ai` zamiast `quantifier.ai` (niespojnosc z reszta)
+- Brak JSON-LD schema w client-side (FAQSection dodaje FAQPage, ale brak BreadcrumbList, SoftwareApplication)
+- Brak `og:image`, `og:site_name`
+
+## 5. WebSite schema z fikcyjnym SearchAction
+
+Homepage ma `WebSite` schema z `SearchAction` wskazujacym na `https://quantifier.ai/search?q=...` -- ta strona **nie istnieje**. Google moze to potraktowac jako misleading structured data.
+
+## 6. SoftwareApplication -- AggregateRating
+
+Prerender dodaje `AggregateRating` (4.9/5, 127 reviews) do SoftwareApplication na 7 stronach. Client-side NIE ma tego ratingu nigdzie. Jesli te oceny nie sa poparte prawdziwymi recenzjami, Google moze nalozyc kare za fake reviews.
+
+---
+
+## Planowane zmiany (priorytetyzowane)
+
+### Priorytet WYSOKI
+
+#### 1. Poprawka BreadcrumbList w PageTemplate (slownik nazw)
+
+Plik: `src/components/PageTemplate.tsx`
+
+Dodanie mapowania segmentow URL na poprawne nazwy:
+```
+'iso-27001' -> 'ISO 27001'
+'nis-ii' -> 'NIS2'
+'soc' -> 'SOC 2'
+'gdpr' -> 'GDPR'
+'dora' -> 'DORA'
+'hipaa' -> 'HIPAA'
+'ccpa' -> 'CCPA'
+'iso-9001' -> 'ISO 9001'
+'esg' -> 'ESG'
+'grc-platform' -> 'GRC Platform'
+'by-roles' -> 'By Role'
+'ai-compliance-officer' -> 'AI Compliance Officer'
 ```
 
-### 2. Dodanie funkcji pobierajacych dane (przed `generateSchemas`)
+#### 2. Poprawka BreadcrumbList w prerenderze (3 poziomy dla podstron)
 
-```typescript
-async function fetchPublishedPosts(locale: string) {
-  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-  const { data } = await supabase
-    .from('posts')
-    .select('title, slug, excerpt, published_at, category:categories(name)')
-    .eq('status', 'published')
-    .eq('lang', locale)
-    .order('published_at', { ascending: false })
-    .limit(50);
-  return data || [];
-}
+Plik: `supabase/functions/prerender-marketing/index.ts`
 
-async function fetchPublishedStories(locale: string) {
-  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-  const { data } = await supabase
-    .from('stories')
-    .select('title, slug, summary, client_name, industry, published_at')
-    .eq('status', 'published')
-    .eq('lang', locale)
-    .order('published_at', { ascending: false })
-    .limit(50);
-  return data || [];
-}
+Dodanie posredniego poziomu breadcrumbs dla stron frameworkow:
+```
+Home > Frameworks > ISO 27001
+Home > Product > Features
+Home > By Role > Managers
 ```
 
-### 3. Modyfikacja `generateHtml` -- dodanie dynamicznej listy
+#### 3. Naprawienie GrcPlatform -- canonical i domena
 
-Funkcja `generateHtml` staje sie `async`. Dla stron `blog` i `success-stories` po statycznych sekcjach dodany zostanie dynamiczny HTML:
+Plik: `src/pages/seo-landing/GrcPlatform.tsx`
 
-**Blog** -- lista artykulow jako `<article>` z `<a href>`:
-```html
-<section>
-  <h2>All Articles</h2>
-  <ul class="article-list">
-    <li><article>
-      <h3><a href="/en/blog/nis2-directive/">NIS2 Directive...</a></h3>
-      <time datetime="2026-02-11">February 11, 2026</time>
-      <p>Expert guide on NIS2...</p>
-    </article></li>
-    ...
-  </ul>
-</section>
-```
+- Zmiana `www.quantifier.ai` na `quantifier.ai`
+- Dodanie trailing slash
+- Dodanie brakujacych og:image, og:site_name
+- Opcjonalnie: migracja na PageTemplate
 
-**Success Stories** -- lista case studies z `<a href>`:
-```html
-<section>
-  <h2>All Case Studies</h2>
-  <ul class="article-list">
-    <li><article>
-      <h3><a href="/en/success-stories/adamed/">Adamed - Pharmaceutical</a></h3>
-      <p>How Adamed streamlined compliance...</p>
-    </article></li>
-    ...
-  </ul>
-</section>
-```
+#### 4. Usuniecie/poprawka WebSite SearchAction
 
-### 4. Dodanie `CollectionPage` schema w `generateSchemas`
+Plik: `src/pages/Index.tsx`
 
-Dla stron `blog` i `success-stories` dodany zostanie schema `CollectionPage` z lista artykulow jako `hasPart`, co wzmacnia structured data dla Google.
+Usuniecie `potentialAction.SearchAction` z WebSite schema (strona /search nie istnieje) lub zamiana na prawidlowy URL.
 
-### 5. Zmiana handlera `serve` na async
+### Priorytet SREDNI
 
-Handler juz jest async, ale wywolanie `generateHtml` musi uzyc `await`:
-```typescript
-const html = await generateHtml(locale, page, pageData);
-```
+#### 5. Ujednolicenie Organization schema miedzy SPA a prerenderem
 
-## Wplyw
+Plik: `supabase/functions/prerender-marketing/index.ts`
 
-| Metryka | Przed | Po |
-|---------|-------|-----|
-| Linki do artykulow w HTML /blog | 0 | ~16 |
-| Linki do stories w HTML /success-stories | 0 | ~10 |
-| CollectionPage schema | Brak | Tak |
-| Link equity z listy do postow | Zero | Pelna |
+Dodanie do Organization w prerenderze: adresow, contactPoint, foundingDate -- identycznie jak w Index.tsx. Ujednolicenie nazwy na "Quantifier.ai".
 
-## Podsumowanie
+#### 6. Dodanie WebSite schema do prerenderingu homepage
 
-1 plik: `supabase/functions/prerender-marketing/index.ts`. Dodanie ~60 linii kodu (import, 2 funkcje fetch, renderowanie listy, schema). Wykorzystuje istniejaca infrastrukture Supabase -- te same zmienne srodowiskowe co `prerender-post`.
+Plik: `supabase/functions/prerender-marketing/index.ts`
+
+#### 7. Dodanie SoftwareApplication do framework pages w SPA
+
+Pliki: `Iso27001.tsx`, `Soc.tsx`, `Gdpr.tsx`, `NisII.tsx`, `Dora.tsx`, `Hipaa.tsx`, `Ccpa.tsx`
+
+Dodanie `<Helmet>` z SoftwareApplication JSON-LD (identyczny jak w prerenderze), aby zapewnic spojnosc.
+
+#### 8. Dodanie DefinitionsBlock do stron ktore go nie maja
+
+Pliki: `Iso27001.tsx`, `Soc.tsx`, `Gdpr.tsx`, `Dora.tsx`, `Hipaa.tsx`, `Ccpa.tsx` + odpowiednie pliki tlumaczen
+
+NIS2 juz ma DefinitionsBlock -- pozostale frameworki powinny tez.
+
+### Priorytet NISKI
+
+#### 9. Weryfikacja AggregateRating
+
+Jesli oceny 4.9/127 nie sa oparte na prawdziwych recenzjach (np. G2, Capterra), nalezy je usunac lub podlinkowac zrodlo.
+
+#### 10. Dodanie ContactPage schema do strony Contact
+
+Plik: `src/pages/Contact.tsx`
+
+---
+
+## Podsumowanie plikow do edycji
+
+| Plik | Zmiany |
+|------|--------|
+| `src/components/PageTemplate.tsx` | Slownik nazw breadcrumb |
+| `supabase/functions/prerender-marketing/index.ts` | 3-poziomowe breadcrumbs, Organization, WebSite schema |
+| `src/pages/seo-landing/GrcPlatform.tsx` | Canonical, domena, brakujace meta |
+| `src/pages/Index.tsx` | Usuniecie SearchAction |
+| `src/pages/frameworks/information-security/Iso27001.tsx` | SoftwareApplication + DefinitionsBlock |
+| `src/pages/frameworks/cybersecurity/Soc.tsx` | SoftwareApplication + DefinitionsBlock |
+| `src/pages/frameworks/data-security/Gdpr.tsx` | SoftwareApplication + DefinitionsBlock |
+| `src/pages/frameworks/information-security/Dora.tsx` | SoftwareApplication + DefinitionsBlock |
+| `src/pages/frameworks/data-security/Hipaa.tsx` | SoftwareApplication + DefinitionsBlock |
+| `src/pages/frameworks/data-security/Ccpa.tsx` | SoftwareApplication + DefinitionsBlock |
+| `src/i18n/locales/en.json` | Definicje dla 6 frameworkow |
+| `src/i18n/locales/pl.json` | Definicje dla 6 frameworkow |
+
+~14 plikow, wiekszosc to powtarzalne dodanie SoftwareApplication schema i DefinitionsBlock.
+
