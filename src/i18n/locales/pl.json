@@ -2226,6 +2226,54 @@
       "description": "Dołącz do wiodących europejskich organizacji, które powierzają Quantifier swoją ścieżkę NIS2. Osiągnij zgodność szybciej dzięki automatyzacji opartej na AI.",
       "bookDemo": "Zamów demo",
       "talkExpert": "Zobacz cennik"
+    },
+    "stepByStep": {
+      "title": "NIS2 krok po kroku z Quantifier",
+      "description": "Quantifier automatyzuje pełną drogę do zgodności z NIS2, od onboardingu i analizy luk po ciągły monitoring i gotowość raportową.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Onboarding organizacji i zakresu",
+          "description": "Konfigurujemy środowisko zgodności z NIS2 w godziny, nie tygodnie. Mapujemy typ podmiotu, krytyczne usługi, systemy, role i dostawców.",
+          "items": ["Kwalifikacja: podmiot kluczowy vs ważny", "Mapowanie sektora i usług krytycznych", "Role, odpowiedzialności i ład organizacyjny", "Baseline zgodności"]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Analiza luk (Gap Analysis)",
+          "description": "AI porównuje stan obecny z wymaganiami NIS2 i zamienia obowiązki w konkretne zadania wdrożeniowe.",
+          "items": ["Automatyczna identyfikacja luk w obszarach NIS2", "Scoring dojrzałości i heatmapy", "Priorytetyzacja działań naprawczych", "Roadmapa wdrożenia z właścicielami"]
+        },
+        "riskManagement": {
+          "number": "3",
+          "title": "Środki zarządzania ryzykiem",
+          "description": "Budujemy rejestr ryzyk i program postępowania zgodny z wymogami NIS2 dotyczącymi zarządzania ryzykiem.",
+          "items": ["Identyfikacja aktywów, usług i zagrożeń", "Scoring ryzyka i priorytetyzacja wspierana przez AI", "Plany traktowania ryzyka i tracking ryzyka rezydualnego", "Ciągłe aktualizacje rejestru na podstawie monitoringu"]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Polityki, procedury i governance",
+          "description": "Generujemy i utrzymujemy polityki, procedury oraz dowody zarządcze wymagane przez NIS2.",
+          "items": ["Gotowe szablony polityk i procedur NIS2", "Akceptacje zarządcze i workflow odpowiedzialności", "Automatyczna kontrola wersji i ślady audytowe", "Cykliczne przeglądy i aktualizacje"]
+        },
+        "securityMeasures": {
+          "number": "5",
+          "title": "Wdrożenie środków bezpieczeństwa",
+          "description": "Operacjonalizujemy środki NIS2 w IT, security i operacjach, z jasnym właścicielstwem i dowodami.",
+          "items": ["Przypisanie właścicieli i zadań wdrożeniowych", "Zarządzanie podatnościami i tracking remediacji", "Kontrola dostępu, logowanie i hardening", "Zbieranie dowodów i monitoring wdrożenia"]
+        },
+        "incidentReporting": {
+          "number": "6",
+          "title": "Incydenty i gotowość nadzorcza",
+          "description": "Automatyzujemy obsługę incydentów i raportowanie, żebyś był gotowy na terminy i zapytania organów.",
+          "items": ["Workflow wczesnego ostrzeżenia do 24h", "Workflow zgłoszenia incydentu do 72h", "Pakiet raportu końcowego do 1 miesiąca", "Działania korygujące i paczki dowodowe", "Wsparcie zespołu Quantifier"]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Ciągłe utrzymanie zgodności NIS2",
+          "description": "Po wdrożeniu agenci AI utrzymują zgodność z NIS2 24/7, żeby nic nie rozjechało się po kwartale.",
+          "items": ["Ciągły monitoring i alerting", "Bieżące aktualizacje ryzyk i oceny dostawców", "Cykle przeglądów, ćwiczeń i testów gotowości", "Zawsze gotowa dokumentacja i raportowanie"]
+        }
+      }
     }
   },
   "socPage": {
