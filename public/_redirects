@@ -1,30 +1,4 @@
-# Redirects for URLs without locale prefix
-/success-stories  /en/success-stories/  301
-/success-stories/  /en/success-stories/  301
-/blog  /en/blog/  301
-/blog/  /en/blog/  301
-/frameworks  /en/frameworks/  301
-/frameworks/  /en/frameworks/  301
-/contact.html  /en/contact/  301
-/contact  /en/contact/  301
-/plans  /en/plans/  301
-/plans/  /en/plans/  301
-/about  /en/about/  301
-/about/  /en/about/  301
-/partners  /en/partners/  301
-/partners/  /en/partners/  301
-/legal/terms  /en/legal/terms/  301
-/legal/privacy  /en/legal/privacy/  301
-/legal/cookies  /en/legal/cookies/  301
-/product/*  /en/product/:splat  301
-/blog/*  /en/blog/:splat  301
-/success-stories/*  /en/success-stories/:splat  301
-/by-roles/*  /en/by-roles/:splat  301
-/frameworks/*  /en/frameworks/:splat  301
-
-# Static files
 /sitemap.xml   /sitemap.xml   200
 /robots.txt    /robots.txt    200
-
-# SPA fallback (must be last)
+/*             /index.html    200
 /* /index.html 200
