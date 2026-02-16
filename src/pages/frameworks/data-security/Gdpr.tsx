@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
+import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
 import {
   Shield,
   CheckCircle,
@@ -58,11 +60,28 @@ const Gdpr = () => {
   // Data subject rights
   const dataSubjectRights = getArrayTranslation("gdprPage.understanding.dataSubjectRights.items");
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quantifier.ai",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
+    "operatingSystem": "Web Browser",
+    "url": "https://quantifier.ai",
+    "description": t("gdprPage.seo.description"),
+    "featureList": ["GDPR Compliance Automation", "Data Mapping & Inventory", "Consent Management", "DSAR Automation", "DPIA Templates", "Breach Management"],
+    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
+  };
+
   return (
     <PageTemplate
       title={t("gdprPage.seo.title")}
       description={t("gdprPage.seo.description")}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-16">
@@ -616,6 +635,18 @@ const Gdpr = () => {
             </div>
           </div>
         </section>
+
+        {/* Key Definitions */}
+        <DefinitionsBlock
+          title="Key GDPR Terms & Definitions"
+          definitions={[
+            { term: "GDPR (General Data Protection Regulation)", definition: "The European Union's comprehensive data protection law that governs how personal data of EU residents is collected, processed, stored, and transferred. It applies to any organization worldwide that processes data of EU residents." },
+            { term: "Data Controller", definition: "The entity that determines the purposes and means of processing personal data. Controllers bear primary responsibility for GDPR compliance and must implement appropriate technical and organizational measures." },
+            { term: "Data Processing Agreement (DPA)", definition: "A legally binding contract between a data controller and data processor that governs the processing of personal data, including security measures, sub-processing, and data subject rights handling." },
+            { term: "Data Protection Impact Assessment (DPIA)", definition: "A mandatory assessment for high-risk processing activities that evaluates the necessity, proportionality, and risks of data processing, along with measures to mitigate those risks." }
+          ]}
+          className="mb-16"
+        />
 
         {/* FAQ Section */}
         <section className="mb-16">
