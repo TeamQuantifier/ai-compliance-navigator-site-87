@@ -1,36 +1,25 @@
 
 
-# Zmiana banerów na ciemny styl Hero
+# Przeniesienie danych kontaktowych pod formularz
 
-## Zakres
+## Co sie zmieni
 
-Zamiana gradientowego banera (niebieski/fioletowy) na ciemny styl identyczny z sekcja Hero na stronie glownej -- na 3 stronach: **By Roles**, **Success Stories**, **Blog**.
+W pliku `src/pages/Contact.tsx`:
 
-## Obecny styl (do zamiany)
+1. **Wyciecie** bloku z danymi kontaktowymi (Email Us, Call Us, Visit Our Offices) z lewej kolumny (linie 142-174) oraz ikon social (linie 176-183)
+2. **Wklejenie** tego bloku w prawej kolumnie, pod Card z formularzem (po linii 275)
 
-```
-bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple
-```
+## Efekt koncowy
 
-Dekoracje: biale kola z `opacity-10`
+- **Lewa kolumna**: heading + tekst opisowy + features list + summary + CTA (bez danych kontaktowych)
+- **Prawa kolumna**: formularz kontaktowy (Card) + dane kontaktowe (Email, Phone, Address) + ikony social
 
-## Nowy styl (z Hero)
+## Szczegoly techniczne
 
-```
-bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950
-```
+Plik: `src/pages/Contact.tsx`
 
-Dekoracje: kolorowe kola jak w Hero (`innovation-800`, `compliance-800`, `slate-800`) z `blur-3xl` i `opacity-20-30`
+- Usuniecie linii 142-183 (blok `space-y-6 mb-8` z danymi kontaktowymi + `flex space-x-4` z ikonami social)
+- Dodanie tych samych elementow po zamknieciu `</Card>` (linia 275), wewnatrz prawej kolumny `<div>` (linia 186)
+- Drobna zmiana: `mb-8` na `mt-6` zeby odstep byl od gory (pod formularzem), nie od dolu
 
-Tekst: `text-white` (tytuly), `text-slate-300` (opisy) -- zgodnie ze stylem Hero
-
-## Zmiany w plikach
-
-| Plik | Zmiana |
-|------|--------|
-| `src/pages/roles/ByRoles.tsx` (linia 38) | Zamiana klasy tla i dekoracji |
-| `src/pages/SuccessStories.tsx` (linia 42) | Zamiana klasy tla i dekoracji |
-| `src/pages/blog/BlogList.tsx` (linia 64) | Zamiana klasy tla i dekoracji |
-
-Kazda zmiana to podmiana ~12 linii (div z banerem + dekoracje + tekst) na nowy ciemny styl.
-
+Zadne zmiany w plikach tlumaczen -- klucze pozostaja te same.
