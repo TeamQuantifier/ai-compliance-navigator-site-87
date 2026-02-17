@@ -1,120 +1,148 @@
 
+# Audyt SEO i plan napraw -- strony /cs/ i /pl/
 
-# Audyt llms.txt -- stan obecny i rekomendacje
+## Znalezione problemy
 
-## Co jest dobrze
+### PROBLEM 1: Brak trailing slash w canonical i hreflang (KRYTYCZNY)
 
-Plik jest solidna baza -- ma poprawna strukture Markdown, sekcje z definicjami, disambiguacje, linki do wszystkich stron frameworkow, artykulow i case studies. Jest kompletny jezeli chodzi o zakres treści.
+Wiele stron ustawia URL-e **bez trailing slash**, co powoduje niezgodnosc z sitemap (ktory ma trailing slash). Google traktuje to jako konflikt i moze odmowic indeksowania.
 
-robots.txt poprawnie wpuszcza crawlery AI (GPTBot, ClaudeBot, PerplexityBot, anthropic-ai, Google-Extended).
+**Dotkniete pliki:**
 
-## Co wymaga poprawek
+| Plik | Problem |
+|------|---------|
+| `src/pages/blog/BlogList.tsx` (linia 26) | `canonicalUrl` bez trailing slash |
+| `src/pages/blog/BlogList.tsx` (linie 50-53) | hreflang bez trailing slash |
+| `src/pages/SuccessStories.tsx` (linia 17) | `canonicalUrl` bez trailing slash |
+| `src/pages/SuccessStories.tsx` (linie 31-34) | hreflang bez trailing slash |
+| `src/pages/Index.tsx` (linia 159) | hreflang uzywa `hrefLang={locale}` zamiast geo-targetingu (`pl-PL`, `cs-CZ`) |
 
-### 1. Brak pliku `llms-full.txt` (WYSOKI priorytet)
-
-Standard llmstxt.org rozroznia dwa pliki:
-- **llms.txt** -- zwiezly index/nawigacja (pod 10KB), lista linkow
-- **llms-full.txt** -- pelna tresc w jednym pliku (moze byc 50-500KB), zawiera opisy stron inline
-
-Wiele firm (Anthropic, Stripe, Vercel) uzywa obu. Dane pokazuja ze llms-full.txt jest czesciej pobierany przez LLM-y bo daje im pelny kontekst w jednym zapytaniu. Obecnie macie TYLKO llms.txt.
-
-**Akcja**: Stworzyc `public/llms-full.txt` z rozszerzonymi opisami kazdego frameworka, produktu i artykulu.
-
-### 2. Brak trailing slashy w linkach
-
-Wszystkie linki w llms.txt sa bez trailing slash:
+Przyklad bledu w BlogList:
 ```
-https://quantifier.ai/en/blog/nis2-directive
+// TERAZ (bledne):
+<link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/blog" />
+
+// POWINNO BYC:
+<link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/blog/" />
 ```
-Powinny byc:
+
+### PROBLEM 2: Brak geo-targetingu w hreflang (Index.tsx)
+
+Strona glowna (`Index.tsx`, linia 159) uzywa prostych kodow jezykowych (`en`, `pl`, `cs`) zamiast regionowych (`en`, `pl-PL`, `cs-CZ`). To jest niespojne z sitemap i z PageTemplate, ktore uzywaja `LOCALE_HREFLANG_MAP`.
+
+### PROBLEM 3: Podwojne tagi Helmet (BlogList, SuccessStories, BlogPost)
+
+Strony `BlogList.tsx`, `SuccessStories.tsx` i `BlogPost.tsx` uzywaja **jednoczesnie** wlasnego `<Helmet>` ORAZ `<PageTemplate>` (ktory ma swoj wlasny `<Helmet>`). To powoduje **duplikacje tagow meta** -- dwa `<title>`, dwa `<meta description>`, dwa zestawy hreflang. React Helmet laczy je, ale ostatni wygrywa, co moze prowadzic do niespodziewanych wynikow.
+
+Przyklad w BlogList.tsx:
+- Linia 41: `<Helmet>` z wlasnym title, description, canonical, hreflang
+- Linia 63: `<PageTemplate title={...} description={...}>` -- ktory ROWNIEZ renderuje Helmet z title, canonical, hreflang
+
+### PROBLEM 4: index.html zawiera statyczny title i meta description
+
+Plik `index.html` (linie 18-24) ma hardkodowany `<title>` i `<meta description>` w jezyku angielskim. Dla SPA to jest OK jako fallback, ale moze powodowac konflikty z React Helmet na stronach /pl/ i /cs/, zwlaszcza jesli Helmet nie zdazy zaladowac przed crawlerem.
+
+Ten problem jest juz czesciowo rozwiazany przez prerendering (boty dostaja HTML z Edge Functions), ale warto wiedziec ze istnieje.
+
+### PROBLEM 5: SEOHead -- defaultLangUrl uzywa biezacego slug zamiast angielskiego
+
+W `SEOHead.tsx` (linia 105):
+```typescript
+const defaultLangUrl = ensureTrailingSlash(`${BASE_URL}/en/${basePath}/${slug}`);
 ```
-https://quantifier.ai/en/blog/nis2-directive/
-```
-Cala strona uzywa trailing slashy (canonical URL-e w SEOHead dodaja `/`). Niespojnosc moze powodowac ze LLM poda uzytkownikowi link bez slasha, co wymusi redirect.
+Dla czeskiego posta o slug `pro-je-continuous-compliance`, x-default bedzie wskazywac na `/en/blog/pro-je-continuous-compliance/` -- ktory nie istnieje. Powinien wskazywac na angielski slug (z alternatePost) lub nie byc renderowany jesli nie ma angielskiej wersji.
 
-### 3. Sekcja "By Role" -- 3 linki do tego samego URL
+### PROBLEM 6: SEOHead -- hreflang tylko dla 1 alternatywnej wersji
 
-```
-- For Managers: https://quantifier.ai/en/by-roles
-- For Contributors: https://quantifier.ai/en/by-roles
-- For Auditors: https://quantifier.ai/en/by-roles
-```
-Wszystkie wskazuja na ten sam URL. LLM nie rozrozni tych stron. Powinny wskazywac na unikalne URL-e (`/by-roles/managers`, `/by-roles/contributors`, `/by-roles/auditors`) lub byc zredukowane do jednego linku.
+`SEOHead.tsx` renderuje hreflang tylko dla biezacej wersji + 1 alternatywnej (z `alternatePost`). Jesli post istnieje w 3 jezykach (EN, PL, CS), hreflang bedzie niepelny -- np. czeski post zobaczy tylko EN jako alternatywe, ale nie PL. Google wymaga symetrycznych hreflang.
 
-### 4. Brak sekcji "Pricing" / wartosci biznesowej
+### PROBLEM 7: StoryDetail -- brak alternatePost
 
-LLM-y czesto dostaja pytania typu "ile kosztuje Quantifier?" lub "czy jest darmowy trial?". Brak jakiejkolwiek informacji o modelu cenowym lub ofercie demo.
-
-### 5. Brak sekcji FAQ / typowych pytan
-
-Standard rekomenduje sekcje z czesto zadawanymi pytaniami -- to bezposrednio wplywa na to jak LLM odpowiada na pytania uzytkownikow o produkt.
-
-### 6. Brak opisu integracji i technologii
-
-LLM-y dostaja pytania typu "czy Quantifier integruje sie z AWS / Azure / Jira?". Brak listy integracji.
-
-### 7. Brak wskazania llms-full.txt w robots.txt
-
-Robots.txt wspomina tylko llms.txt, nie llms-full.txt.
-
-### 8. Brak linku do strony `/grc-platform`
-
-Strona GRC Platform SEO landing nie jest wymieniona w llms.txt.
-
-### 9. Brak linku do DORA w Key Links
-
-DORA jest w sekcji Framework-Specific Pages, ale brakuje go w Product Features -- analogicznie inne frameworki tez nie maja dedykowanych linkow do stron produktowych.
-
-### 10. Artykuly -- brak krotkich opisow
-
-Artykuly sa wymienione tylko z tytulami. LLM-y lepiej wykorzystaja krotki opis (1 zdanie) przy kazdym artykule, zeby wiedziec czego dotyczy.
+W `StoryDetail.tsx` (linia 101): `alternatePost={null}` jest hardkodowane. Stories nigdy nie maja hreflang w kliencie (SPA), wiec dla uzytkownikow bez prerenderingu (np. social media crawlery ktore nie sa na liscie botow) brakuje informacji o wersjach jezykowych.
 
 ---
 
-## Planowane zmiany
+## Plan napraw
 
-### Plik 1: `public/llms.txt` (aktualizacja)
+### Zmiana 1: BlogList.tsx -- usunac podwojny Helmet, naprawic trailing slash i hreflang
 
-Zmiany:
-- Dodanie trailing slashy do WSZYSTKICH linkow
-- Naprawienie sekcji "By Role" (jeden link lub unikalne URL-e)
-- Dodanie sekcji "Integrations" (lista glownych integracji: AWS, Azure, Jira, Slack, itp.)
-- Dodanie sekcji "Frequently Asked Questions" (5-7 pytan typu "What is Quantifier?", "How much does it cost?", "Is there a free trial?", "What frameworks are supported?")
-- Dodanie linku do GRC Platform
-- Dodanie krotkich opisow przy artykulach
-- Dodanie linku do llms-full.txt na gorze pliku (standard rekomenduje)
-- Dodanie sekcji "Pricing & Plans" z ogolnym opisem modelu
+- Usunac wlasny blok `<Helmet>` (linie 40-61)
+- Wszystkie meta tagi sa juz obslugiwane przez `<PageTemplate>`
+- PageTemplate automatycznie dodaje trailing slash i poprawne hreflang z geo-targetingiem
 
-### Plik 2: `public/llms-full.txt` (NOWY)
+### Zmiana 2: SuccessStories.tsx -- usunac podwojny Helmet, naprawic trailing slash i hreflang
 
-Rozszerzony plik z pelnym kontekstem:
-- Wszystko co w llms.txt
-- Pelne opisy kazdego frameworka (2-3 akapity zamiast 1 linii)
-- Pelne opisy kazdej funkcji produktu
-- Pelne opisy kazdego artykulu i case study (abstrakt/excerpt)
-- Sekcja "How It Works" (opis flow uzytkowania platformy)
-- Sekcja "Competitive Advantages" (co wyroznia Quantifier)
-- Rozszerzone FAQ (15-20 pytan)
-- Sekcja "Use Cases" (typowe scenariusze uzycia)
+- Usunac wlasny blok `<Helmet>` (linie 21-42)
+- Analogicznie jak BlogList -- PageTemplate obsluzy wszystko
 
-Szacowany rozmiar: ~30-50KB (w normie dla llms-full.txt)
+### Zmiana 3: Index.tsx -- naprawic hreflang na geo-targeting
 
-### Plik 3: `public/robots.txt` (aktualizacja)
+- Linia 159: zamienic `hrefLang={locale}` na `hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]}`
+- Importowac `LOCALE_HREFLANG_MAP` i `Locale` (juz importowane -- `SUPPORTED_LOCALES` jest, ale trzeba dodac `LOCALE_HREFLANG_MAP` i `Locale`)
 
-Dodanie linii:
-```
-# See /llms-full.txt for detailed AI-readable content
-```
+### Zmiana 4: SEOHead.tsx -- naprawic x-default i rozszerzyc hreflang
+
+- Naprawic `defaultLangUrl` (linia 105): jesli istnieje alternatePost w jezyku EN, uzyc jego slug. W przeciwnym razie NIE renderowac x-default (lub uzyc biezacego URL jako x-default)
+- Problem z 1 alternatywa vs 3 jezyki: to wymaga zmiany interfejsu -- SEOHead powinien przyjmowac tablice `alternates` zamiast pojedynczego `alternatePost`. Zmiana w BlogPost i StoryDetail tez bedzie potrzebna.
+
+### Zmiana 5: SEOHead.tsx -- przyjmowac tablice alternates zamiast pojedynczego alternatePost
+
+- Zmienic prop `alternatePost` na `alternates?: Array<{ lang: string; slug: string }>` 
+- Renderowac hreflang dla kazdej alternatywnej wersji
+- x-default wskazuje na wersje EN (jesli istnieje) lub biezacy URL
+
+### Zmiana 6: BlogPost.tsx -- przekazac pelna tablice alternates
+
+- Hook `useAlternatePost` zwraca tylko 1 alternatywe. Trzeba go rozszerzyc lub stworzyc nowy hook `useAlternates` ktory pobiera WSZYSTKIE wersje jezykowe z bazy (przez group_id)
+- Przekazac tablice do SEOHead
+
+### Zmiana 7: StoryDetail.tsx -- dodac obsluge alternates
+
+- Analogicznie do BlogPost -- pobrac alternatywne wersje stories i przekazac do SEOHead
 
 ---
 
-## Podsumowanie
+## Podsumowanie zmian
 
-| Plik | Akcja | Wplyw |
-|------|-------|-------|
-| `public/llms.txt` | Aktualizacja: trailing slashe, FAQ, integracje, opisy artykulow, link do llms-full.txt | Lepsze odpowiedzi LLM-ow na pytania o produkt |
-| `public/llms-full.txt` | NOWY: rozszerzony kontekst dla LLM-ow | LLM-y dostana pelny kontekst w 1 zapytaniu |
-| `public/robots.txt` | Dodanie referencji do llms-full.txt | Crawlery AI znajda rozszerzony plik |
+| Plik | Zmiana | Wplyw |
+|------|--------|-------|
+| `src/pages/blog/BlogList.tsx` | Usunac duplikat Helmet | Eliminacja podwojnych meta tagow, poprawne trailing slash |
+| `src/pages/SuccessStories.tsx` | Usunac duplikat Helmet | j.w. |
+| `src/pages/Index.tsx` | Naprawic hreflang geo-targeting | Spojnosc z sitemap (pl-PL, cs-CZ) |
+| `src/components/seo/SEOHead.tsx` | Zmienic alternatePost na alternates[], naprawic x-default | Pelne symetryczne hreflang dla 3 jezykow |
+| `src/pages/blog/BlogPost.tsx` | Przekazac tablice alternates | Poprawne hreflang dla postow |
+| `src/pages/blog/StoryDetail.tsx` | Dodac pobieranie i przekazywanie alternates | Poprawne hreflang dla stories |
+| `src/hooks/useBlog.ts` | Dodac hook useAlternates (pobiera wszystkie wersje jezykowe) | Dane dla hreflang |
 
-3 pliki, laczny naklad ~200 linii nowego contentu.
+7 plikow, ~80 linii zmian. Wszystkie zmiany dotycza wylacznie SEO i nie wplywaja na wyglad strony.
 
+### Sekcja techniczna -- hook useAlternates
+
+```typescript
+// Nowy hook w useBlog.ts
+export const useAlternates = (groupId: string | null | undefined, currentLang: string) => {
+  return useQuery({
+    queryKey: ['alternates', groupId],
+    queryFn: async () => {
+      if (!groupId) return [];
+      // Probujemy posts, potem stories
+      const { data: posts } = await supabase
+        .from('posts')
+        .select('lang, slug')
+        .eq('group_id', groupId)
+        .eq('status', 'published')
+        .neq('lang', currentLang);
+      if (posts && posts.length > 0) return posts;
+      
+      const { data: stories } = await supabase
+        .from('stories')
+        .select('lang, slug')
+        .eq('group_id', groupId)
+        .eq('status', 'published')
+        .neq('lang', currentLang);
+      return stories || [];
+    },
+    enabled: !!groupId,
+  });
+};
+```
