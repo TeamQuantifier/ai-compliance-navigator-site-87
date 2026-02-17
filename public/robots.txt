@@ -59,6 +59,7 @@ Disallow: /lovable-uploads/
 # LLM-readable metadata
 # https://llmstxt.org/ standard
 # See /llms.txt for structured information about Quantifier.ai
+# See /llms-full.txt for detailed AI-readable content
 
 Sitemap: https://quantifier.ai/sitemap.xml
 Sitemap: https://quantifier.ai/functions/v1/sitemap

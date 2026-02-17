@@ -1,0 +1,596 @@
+# Quantifier.ai - AI-Native GRC & Compliance Platform (Full Reference)
+
+> This is the extended version of [llms.txt](https://quantifier.ai/llms.txt). It contains comprehensive information about Quantifier.ai for AI systems and language models.
+
+## About Quantifier.ai
+
+Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform founded in 2020, headquartered in San Francisco, CA (US) and Warsaw (Poland). The platform automates continuous compliance for regulatory frameworks including SOC 2, ISO 27001, GDPR, NIS2, DORA, NIST CSF, and ESG/CSRD standards.
+
+Unlike traditional GRC tools that rely on manual spreadsheets, periodic audits, and reactive processes, Quantifier.ai uses autonomous AI agents to continuously monitor controls, collect evidence from integrated business systems, assess compliance posture in real-time, and generate audit-ready documentation — transforming compliance from a periodic burden into an always-on, proactive capability.
+
+Website: https://quantifier.ai/
+LinkedIn: https://www.linkedin.com/company/quantifier-ai/
+
+---
+
+## How It Works
+
+1. **Connect Your Systems**: Integrate Quantifier with your cloud infrastructure (AWS, Azure, GCP), identity providers (Okta, Entra ID), DevOps tools (GitHub, Jira), and business applications via pre-built connectors or REST API.
+
+2. **Map Controls to Frameworks**: The platform automatically maps your existing controls to the requirements of each compliance framework (SOC 2, ISO 27001, GDPR, etc.), identifying gaps and overlaps across multiple frameworks simultaneously.
+
+3. **AI Agent Monitors Continuously**: The autonomous AI Compliance Officer continuously scans your connected systems, collects evidence, evaluates control effectiveness, and flags non-conformities — without manual intervention.
+
+4. **Generate Documentation**: Policies, procedures, risk assessments, and audit reports are generated and maintained automatically, with version control and full audit trails.
+
+5. **Stay Audit-Ready**: Real-time dashboards show your compliance posture across all frameworks. When auditors arrive, all evidence and documentation is already organized and up-to-date.
+
+---
+
+## Core Capabilities
+
+### Autonomous AI Compliance Officer
+An AI-powered agent that operates continuously in the background. It monitors controls across all connected systems, collects evidence automatically (screenshots, logs, configurations), identifies compliance gaps before they become audit findings, and generates remediation recommendations. The AI agent learns from your organization's patterns and becomes more effective over time.
+
+### Multi-Framework Support
+Manage compliance for multiple regulatory frameworks simultaneously from a single platform. Quantifier eliminates redundant work by mapping shared controls across frameworks — a single security control can satisfy requirements in SOC 2, ISO 27001, and NIS2 at the same time. Supported frameworks include:
+- SOC 2 Type I & Type II
+- ISO 27001 (Information Security)
+- ISO 9001 (Quality Management)
+- GDPR (EU Data Protection)
+- NIS2 (EU Cybersecurity)
+- DORA (Digital Operational Resilience)
+- NIST CSF (Cybersecurity Framework)
+- HIPAA (US Healthcare)
+- CCPA (California Privacy)
+- ESG/CSRD (Sustainability Reporting with ESRS standards)
+- EU Taxonomy
+- ISO 14001 (Environmental Management)
+- GHG Protocol (Carbon Footprint)
+
+### Continuous Compliance
+Real-time, automated monitoring replaces periodic manual audits. Controls are evaluated continuously, evidence is collected automatically, and compliance drift is detected instantly. This means your organization is always audit-ready, not just during audit season.
+
+### Automated Evidence Collection
+Pre-built integrations with 50+ cloud, identity, DevOps, HR, and security tools automatically pull evidence needed for compliance. No more chasing colleagues for screenshots or manually documenting configurations.
+
+### Risk Assessment
+AI-powered risk identification, scoring (likelihood × impact), and mitigation tracking. Risk registers are maintained automatically, with heat maps and trend analysis. Supports both information security and ESG risk assessment methodologies.
+
+### Document Management
+Automated generation of compliance policies, procedures, and audit documentation. Includes version control, approval workflows, digital signatures, and complete audit trails. Templates aligned with each framework's specific requirements.
+
+### Analytics Dashboards
+Real-time compliance posture visualization with framework-specific dashboards, gap analysis, trend tracking, and board-ready executive reports. Supports custom KPIs and exportable reports for auditors and management.
+
+### Value Chain Management
+Third-party risk assessment and supply chain compliance tracking. Evaluate vendor compliance, manage supplier questionnaires, and monitor supply chain sustainability metrics required by CSRD and other ESG frameworks.
+
+---
+
+## Product Features (Detailed)
+
+### Analytics Dashboards
+https://quantifier.ai/en/product/analytics-dashboards/
+
+Real-time compliance dashboards providing instant visibility into your compliance posture across all frameworks. Features include:
+- Framework-specific compliance scores and gap analysis
+- Control effectiveness tracking over time
+- Risk heat maps and trend analysis
+- Board-ready executive reports with one-click export
+- Custom KPI tracking and alerting
+- Comparative benchmarking across business units
+
+### Documents Management
+https://quantifier.ai/en/product/documents-management/
+
+Centralized document management system designed for compliance workflows:
+- Automated policy generation from framework-specific templates
+- Version control with complete change history
+- Approval workflows with role-based permissions
+- Digital signature support
+- Automatic expiry tracking and renewal reminders
+- Full audit trail for every document action
+
+### API Integrations
+https://quantifier.ai/en/product/api-integrations/
+
+50+ pre-built integrations for automated evidence collection:
+- Cloud: AWS, Microsoft Azure, Google Cloud Platform
+- Identity: Okta, Microsoft Entra ID, Google Workspace
+- DevOps: GitHub, GitLab, Bitbucket, Jira, Azure DevOps
+- Communication: Slack, Microsoft Teams
+- HR: BambooHR, Workday
+- Security: CrowdStrike, SentinelOne, Datadog, Splunk
+- Custom: REST API and webhook support for any system
+
+### AI Compliance Officer
+https://quantifier.ai/en/product/compliance-officer/
+
+The autonomous AI agent at the heart of the platform:
+- Continuously monitors all connected systems for compliance
+- Automatically collects and organizes evidence
+- Identifies compliance gaps and generates remediation plans
+- Drafts policies and procedures aligned with framework requirements
+- Provides natural-language Q&A about your compliance status
+- Learns from your organization's specific context and patterns
+
+### Task & Data Management
+https://quantifier.ai/en/product/task-data-management/
+
+Compliance workflow management with:
+- Task assignment and tracking across teams
+- Deadline management with automated reminders
+- Data collection workflows for ESG metrics and compliance evidence
+- Role-based access control (managers, contributors, auditors)
+- Progress tracking and bottleneck identification
+- Integration with existing project management tools
+
+### Value Chain
+https://quantifier.ai/en/product/value-chain/
+
+Supply chain and third-party compliance management:
+- Vendor risk assessment and scoring
+- Supplier compliance questionnaire management
+- Supply chain sustainability metrics (Scope 3 emissions, social impact)
+- Third-party incident tracking
+- CSRD value chain reporting requirements
+- Automated supplier follow-up and escalation
+
+### Risk Assessment
+https://quantifier.ai/en/product/risk-assessment/
+
+Comprehensive risk management module:
+- AI-powered risk identification from connected systems
+- Risk scoring (likelihood × impact matrix)
+- Risk register with mitigation tracking
+- Risk heat maps and trend analysis
+- Framework-specific risk assessment templates
+- Risk appetite definition and monitoring
+
+---
+
+## Compliance Frameworks (Detailed)
+
+### NIS2 Directive
+https://quantifier.ai/en/frameworks/nis-ii/
+
+The EU NIS2 Directive (Directive 2022/2555) expands cybersecurity requirements to essential and important entities across 18 sectors. Quantifier.ai helps organizations comply with:
+- **Risk Management (Art. 21)**: Implement and maintain appropriate technical and organizational measures including risk analysis, incident handling, business continuity, supply chain security, and cybersecurity training
+- **Incident Reporting (Art. 23)**: Meet the 24-hour early warning, 72-hour incident notification, and 1-month final report requirements to national CSIRTs
+- **Supply Chain Security**: Assess and manage cybersecurity risks from suppliers and service providers
+- **Governance**: Ensure management body oversight of cybersecurity measures with appropriate training
+- **Penalties**: Non-compliance can result in fines up to €10M or 2% of global turnover for essential entities
+
+### ISO 27001
+https://quantifier.ai/en/frameworks/iso-27001/
+
+ISO/IEC 27001 is the international standard for information security management systems (ISMS). Quantifier.ai supports the complete certification lifecycle:
+- **Risk Assessment**: Systematic identification and evaluation of information security risks aligned with ISO 27001 Clause 6.1.2
+- **Statement of Applicability (SoA)**: Automated generation and maintenance of the SoA covering all 93 Annex A controls
+- **Control Implementation**: Guidance and evidence collection for each control objective
+- **Internal Audits**: Automated audit planning, evidence collection, and non-conformity tracking
+- **Continuous Improvement**: PDCA cycle support with metrics and trend analysis
+- **Transition to ISO 27001:2022**: Support for migrating from the 2013 to 2022 version
+
+### SOC 2
+https://quantifier.ai/en/frameworks/soc/
+
+SOC 2 (Service Organization Control 2) assesses controls relevant to security, availability, processing integrity, confidentiality, and privacy. Quantifier.ai automates:
+- **Type I Assessment**: Point-in-time evaluation of control design
+- **Type II Audit**: Continuous evidence collection over the audit period (typically 3-12 months)
+- **Trust Service Criteria**: Automated mapping of controls to all five TSC categories
+- **Evidence Collection**: Continuous automated evidence gathering from integrated systems
+- **Auditor Collaboration**: Organized evidence packages and read-only auditor access
+
+### GDPR
+https://quantifier.ai/en/frameworks/gdpr/
+
+The EU General Data Protection Regulation (2016/679) governs personal data protection. Quantifier.ai helps with:
+- **Data Processing Registers (ROPA)**: Maintain records of processing activities as required by Article 30
+- **Data Protection Impact Assessments (DPIAs)**: Structured DPIA workflows for high-risk processing
+- **Data Subject Rights Management**: Track and respond to access, deletion, portability, and rectification requests
+- **Consent Management**: Document lawful bases for processing and consent records
+- **Breach Notification**: 72-hour breach notification workflows aligned with Article 33
+- **Cross-Border Transfers**: Document adequacy decisions, SCCs, and BCRs
+
+### DORA
+https://quantifier.ai/en/frameworks/dora/
+
+The Digital Operational Resilience Act (EU 2022/2554) applies to financial entities. Quantifier.ai supports:
+- **ICT Risk Management**: Comprehensive ICT risk management framework aligned with DORA Chapter II
+- **Incident Reporting**: Major ICT incident classification and reporting to competent authorities
+- **Digital Resilience Testing**: Planning and tracking of TLPT (threat-led penetration testing) and scenario-based testing
+- **Third-Party Risk**: ICT third-party service provider risk management and concentration risk monitoring
+- **Information Sharing**: Structured cyber threat intelligence sharing arrangements
+
+### ESG / CSRD
+https://quantifier.ai/en/frameworks/esg/
+
+ESG reporting and CSRD (Corporate Sustainability Reporting Directive) compliance:
+- **ESRS Standards**: Full support for all European Sustainability Reporting Standards — Environmental (E1-E5), Social (S1-S4), and Governance (G1)
+- **Double Materiality Analysis**: Guided process for assessing both impact materiality and financial materiality across all sustainability topics
+- **Carbon Footprint Calculation**: GHG Protocol-aligned calculation of Scope 1 (direct emissions), Scope 2 (energy), and Scope 3 (value chain) emissions
+- **EU Taxonomy Alignment**: Assessment of economic activities against the six environmental objectives
+- **Sustainability Reporting**: Automated generation of CSRD-compliant sustainability statements
+- **Data Collection**: Structured workflows for collecting ESG metrics from across the organization and supply chain
+
+### ISO 9001
+https://quantifier.ai/en/frameworks/iso-9001/
+
+ISO 9001 is the international standard for quality management systems (QMS):
+- Process-based approach to quality management
+- Customer satisfaction monitoring and improvement
+- Risk-based thinking integration
+- Internal audit management
+- Continual improvement tracking (PDCA cycle)
+- Document control and records management
+
+### HIPAA
+https://quantifier.ai/en/frameworks/hipaa/
+
+US healthcare data protection compliance:
+- Privacy Rule compliance for protected health information (PHI)
+- Security Rule requirements for electronic PHI (ePHI)
+- Breach Notification Rule workflows
+- Business Associate Agreement (BAA) management
+- Risk analysis and risk management aligned with NIST SP 800-66
+
+### CCPA
+https://quantifier.ai/en/frameworks/ccpa/
+
+California Consumer Privacy Act compliance:
+- Consumer data rights management (right to know, delete, opt-out)
+- Data sale tracking and opt-out mechanisms
+- Privacy notice management
+- Service provider agreement tracking
+- Data mapping and inventory
+
+### Environmental Frameworks
+https://quantifier.ai/en/frameworks/environmental/
+
+- **ISO 14001**: Environmental management system certification with environmental aspect identification, legal compliance tracking, and continual improvement
+- **Carbon Footprint (GHG Protocol)**: Scope 1, 2, 3 emissions calculation, reporting, and reduction target tracking
+- **LCA (Life Cycle Assessment)**: Product-level environmental impact analysis across the full lifecycle
+- **Decarbonisation**: Science-based target setting, pathway planning, and progress monitoring
+
+### Governance Frameworks
+https://quantifier.ai/en/frameworks/governance/
+
+- **Whistleblowing**: EU Whistleblower Directive compliance with secure reporting channels, investigation workflows, and retaliation protection
+- **Legal Policies Management**: Corporate policy lifecycle management including approval, distribution, acknowledgment, and review tracking
+
+### Product Level Compliance
+https://quantifier.ai/en/frameworks/product-level/
+
+- **Digital Product Passport (DPP)**: Product-level sustainability data collection and reporting
+- **Product LCA**: Lifecycle assessment at the individual product level for eco-design compliance
+
+---
+
+## Integrations
+
+Quantifier.ai integrates with 50+ cloud, identity, DevOps, HR, and security tools for automated evidence collection and continuous monitoring:
+
+### Cloud Providers
+- Amazon Web Services (AWS) — EC2, S3, IAM, CloudTrail, GuardDuty, Config
+- Microsoft Azure — Azure AD, Key Vault, Security Center, Monitor
+- Google Cloud Platform (GCP) — IAM, Cloud Audit Logs, Security Command Center
+
+### Identity & Access Management
+- Microsoft Entra ID (Azure AD) — User management, conditional access policies, sign-in logs
+- Okta — SSO, MFA, lifecycle management, system logs
+- Google Workspace — User management, security settings, audit logs
+
+### DevOps & Code
+- GitHub — Repository access controls, branch protection, vulnerability scanning
+- GitLab — CI/CD pipeline security, code review policies
+- Bitbucket — Repository management, access controls
+- Jira — Task tracking, compliance workflow management
+- Azure DevOps — Pipeline security, work item tracking
+
+### Communication
+- Slack — Compliance notifications, alerting, chatbot integration
+- Microsoft Teams — Notifications, workflow triggers
+
+### HR & Business
+- BambooHR — Employee onboarding/offboarding, training records
+- Workday — HR compliance, workforce data
+
+### Security & Monitoring
+- CrowdStrike — Endpoint protection status, threat detection
+- SentinelOne — Endpoint security posture
+- Datadog — Infrastructure monitoring, security monitoring
+- Splunk — SIEM data, security event correlation
+
+### Custom
+- REST API — Connect any system via standardized REST APIs
+- Webhooks — Event-driven integrations for real-time data flow
+
+---
+
+## Pricing & Plans
+
+Quantifier.ai offers three tiers designed for different organization sizes and compliance maturity levels:
+
+### Starter
+For small teams beginning their compliance journey:
+- Core compliance features
+- Single framework support
+- Basic reporting and dashboards
+- Email support
+
+### Growth (Most Popular)
+For growing organizations managing multiple frameworks:
+- AI Compliance Officer agent
+- Multi-framework support with cross-mapping
+- Advanced analytics and custom dashboards
+- API integrations
+- Priority support
+
+### Enterprise
+For large organizations with complex compliance needs:
+- Unlimited frameworks
+- Custom integrations and dedicated API support
+- SSO (SAML/OIDC) and advanced RBAC
+- Dedicated customer success manager
+- SLA guarantees
+- On-premise deployment options available
+
+**Pricing**: All plans are quote-based. Contact sales for a personalized demo and pricing: https://quantifier.ai/en/contact/
+
+---
+
+## Competitive Advantages
+
+1. **AI-Native Architecture**: Built from the ground up with AI at the core, not bolted on as an afterthought. The autonomous AI Compliance Officer operates continuously without manual triggering.
+
+2. **Multi-Framework Efficiency**: Manage 10+ frameworks simultaneously with automatic control cross-mapping — one evidence item can satisfy requirements across SOC 2, ISO 27001, NIS2, and more.
+
+3. **Continuous vs. Periodic**: Real-time compliance monitoring replaces the traditional cycle of annual audits and panic-driven remediation.
+
+4. **Speed to Compliance**: Organizations typically achieve audit-readiness 3-5x faster compared to manual GRC processes.
+
+5. **European Expertise**: Deep understanding of EU-specific regulations (NIS2, DORA, CSRD/ESRS, GDPR, EU Taxonomy) with headquarters in both the US and EU.
+
+6. **ESG + Security in One Platform**: Unique combination of cybersecurity compliance (SOC 2, ISO 27001, NIS2) and sustainability reporting (CSRD, GHG Protocol) in a single platform.
+
+---
+
+## Use Cases
+
+### 1. SOC 2 Type II Certification for SaaS Companies
+A SaaS company needs SOC 2 Type II certification to win enterprise deals. Quantifier automates evidence collection from AWS, GitHub, and Okta over the 6-month audit period, reducing the compliance team's manual work by 80%.
+
+### 2. NIS2 Compliance for Critical Infrastructure
+An energy company must comply with NIS2 by October 2024. Quantifier maps existing security controls to NIS2 requirements, identifies gaps, automates incident reporting workflows, and provides continuous monitoring of supply chain security.
+
+### 3. CSRD Sustainability Reporting
+A mid-size manufacturer subject to CSRD needs to produce its first sustainability report using ESRS standards. Quantifier guides the double materiality analysis, automates ESG data collection from across the organization, calculates Scope 1-3 emissions, and generates the required disclosures.
+
+### 4. Multi-Framework Compliance for Financial Services
+A fintech company needs SOC 2, ISO 27001, DORA, and GDPR compliance simultaneously. Quantifier's cross-mapping eliminates redundant work — a single access control policy satisfies requirements across all four frameworks.
+
+### 5. Audit Preparation and Management
+An organization facing multiple audits per year uses Quantifier to maintain continuous audit-readiness. Evidence is always current, documentation is always up-to-date, and auditors get self-service access to organized evidence packages.
+
+---
+
+## Blog Articles (with Abstracts)
+
+### English
+
+#### NIS2 Directive in Practice
+https://quantifier.ai/en/blog/nis2-directive/
+A comprehensive guide to implementing the EU NIS2 Directive requirements. Covers the expanded scope of the directive, the distinction between essential and important entities, specific risk management obligations under Article 21, incident reporting timelines (24h/72h/1month), supply chain security requirements, and practical steps organizations should take to achieve compliance.
+
+#### Compliance Monitoring Guide
+https://quantifier.ai/en/blog/compliance-monitoring/
+How to build an effective compliance monitoring system for your organization. Covers defining monitoring objectives and KPIs, selecting the right tools and automation level, establishing alerting thresholds and escalation procedures, dashboard design for different stakeholders (management, compliance team, auditors), and measuring the ROI of compliance monitoring investments.
+
+#### Continuous Compliance — From Reaction to Proaction
+https://quantifier.ai/en/blog/continuous-compliance-from-reaction-to-proaction/
+Explores the paradigm shift from traditional periodic compliance audits to continuous, AI-driven compliance monitoring. Discusses the limitations of point-in-time assessments, the concept of "compliance drift" between audits, how autonomous AI agents enable real-time control monitoring, and the business benefits of always-on compliance posture.
+
+#### EcoVadis in Practice
+https://quantifier.ai/en/blog/ecovadis-in-practice/
+Practical strategies for improving your organization's EcoVadis ESG rating. Covers the EcoVadis assessment methodology across four themes (Environment, Labor & Human Rights, Ethics, Sustainable Procurement), how to structure data collection for maximum score improvement, common pitfalls in EcoVadis submissions, and how to leverage existing compliance data for better ratings.
+
+#### AI Agents in Quantifier
+https://quantifier.ai/en/blog/ai-agents-in-quantifier/
+Deep dive into how autonomous AI agents work within the Quantifier platform. Explains the architecture of the AI Compliance Officer, how agents collect evidence from integrated systems, the decision-making process for identifying compliance gaps, how agents generate documentation and remediation plans, and the difference between AI assistants (reactive) and AI agents (proactive).
+
+#### Cyberattack Ransomware Case Study
+https://quantifier.ai/en/blog/case-study-cyberattack-ransomware-manufacturing-company/
+Real-world case study analyzing a ransomware attack on a manufacturing company. Examines the attack timeline, how gaps in cybersecurity controls enabled the breach, the financial and operational impact, and specific lessons for NIS2 compliance including incident response preparedness, backup strategies, and supply chain security.
+
+### Polish
+
+#### Dyrektywa NIS2 w Praktyce
+https://quantifier.ai/pl/blog/dyrektywa-nis2/
+Praktyczny przewodnik wdrażania wymagań dyrektywy NIS2 — zakres podmiotowy, obowiązki zarządzania ryzykiem, terminy raportowania incydentów i bezpieczeństwo łańcucha dostaw.
+
+#### Compliance Monitoring
+https://quantifier.ai/pl/blog/compliance-monitoring/
+Jak zbudować skuteczny system monitoringu zgodności regulacyjnej — KPI, dashboardy, automatyzacja alertów i raportowanie dla zarządu.
+
+#### Ciągła Zgodność — Od Reakcji do Proakcji
+https://quantifier.ai/pl/blog/ciagla-zgodnosc-od-reakcji-do-proakcji/
+Dlaczego organizacje powinny przejść z okresowych audytów na ciągły, wspierany przez AI monitoring zgodności regulacyjnej.
+
+#### EcoVadis w Praktyce
+https://quantifier.ai/pl/blog/ecovadis-w-praktyce-ocena-esg/
+Jak poprawić ocenę ESG w EcoVadis — metodologia oceny, zbieranie danych i typowe błędy w zgłoszeniach.
+
+#### AI Agent w Quantifier
+https://quantifier.ai/pl/blog/ai-agent-w-quantifier-jak-agenci-autonomiczni-dowodza-zgodnosci/
+Jak autonomiczni agenci AI automatyzują zbieranie dowodów, analizę luk i dokumentację compliance w platformie Quantifier.
+
+#### Cyberatak Ransomware — Firma Produkcyjna
+https://quantifier.ai/pl/blog/blog-cyberatak-ransomware-firma-produkcyjna/
+Studium przypadku ataku ransomware na firmę produkcyjną — analiza incydentu, skutki finansowe i wnioski dla zgodności z NIS2.
+
+### Czech
+
+#### EcoVadis v Praxi
+https://quantifier.ai/cs/blog/ecovadis-v-praxi-hodnoceni-esg/
+Jak zlepšit hodnocení ESG prostřednictvím EcoVadis — metodologie hodnocení, sběr dat a časté chyby.
+
+#### AI Agenti v Quantifier
+https://quantifier.ai/cs/blog/ai-agenti-v-quantifier/
+Jak autonomní AI agenti automatizují sběr důkazů, analýzu mezer a dokumentaci compliance v platformě Quantifier.
+
+#### Continuous Compliance
+https://quantifier.ai/cs/blog/pro-je-continuous-compliance/
+Proč by organizace měly přejít z periodických auditů na kontinuální, AI-řízený monitoring shody.
+
+#### Případová Studie — Kyberútok Ransomware
+https://quantifier.ai/cs/blog/pripadova-studie-kyberutok-ransomware/
+Případová studie kyberútoku ransomware na výrobní společnost — analýza incidentu a poučení pro NIS2.
+
+---
+
+## Success Stories (Case Studies with Abstracts)
+
+### Bidfood — Sustainable Food Production
+https://quantifier.ai/en/success-stories/case-study-bidfood/
+One of Europe's largest food distributors implemented Quantifier.ai for comprehensive ESG reporting. The platform automated data collection across multiple production facilities, streamlined CSRD-compliant sustainability reporting, and enabled tracking of Scope 1-3 emissions across the food supply chain.
+
+### Seris Konsalnet — Sustainability in Security Industry
+https://quantifier.ai/en/success-stories/case-study-seris-konsalnet/
+A leading security services company used Quantifier.ai to implement its first CSRD-compliant sustainability report. The platform helped map material ESG topics specific to the security industry, automate data collection from distributed field operations, and establish governance structures for ongoing sustainability management.
+
+### Biofarm — ESG That Starts with Data
+https://quantifier.ai/en/success-stories/biofarm-esg/
+A pharmaceutical company implemented data-driven ESG strategy using Quantifier.ai. The platform enabled structured data collection for environmental metrics (energy, water, waste), social metrics (employee wellbeing, training), and governance practices, transforming scattered data into actionable insights and CSRD-ready reports.
+
+### OMIDA Group — Logistics & Sustainability
+https://quantifier.ai/en/success-stories/case-study-omidagroup/
+A logistics group adopted Quantifier.ai for sustainability reporting across its transportation and warehousing operations. Key focus areas included Scope 1-3 emissions from fleet operations, energy consumption in warehouses, and employee safety metrics.
+
+### Tatuum — Sustainable Fashion
+https://quantifier.ai/en/success-stories/case-study-tatuum/
+A fashion retailer implemented ESG reporting using Quantifier.ai, addressing sustainability challenges specific to the fashion industry including supply chain transparency, material sourcing, and circular economy initiatives.
+
+### Raben Group — Supply Chain Sustainability
+https://quantifier.ai/en/success-stories/case-study-raben-group/
+An international logistics operator with operations across Europe used Quantifier.ai for cross-border sustainability reporting, supply chain emissions tracking, and vendor compliance management across multiple jurisdictions.
+
+### System DOT — Cleaning Product Distribution
+https://quantifier.ai/en/success-stories/case-study-dot-system/
+A cleaning products distributor implemented sustainability reporting with Quantifier.ai, focusing on product environmental impact, distribution logistics emissions, and supply chain sustainability metrics.
+
+---
+
+## Frequently Asked Questions
+
+### General
+
+**What is Quantifier.ai?**
+Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform that automates continuous compliance for regulatory frameworks using autonomous AI agents. It replaces manual spreadsheets and periodic audits with always-on, real-time compliance monitoring and automated evidence collection.
+
+**Who is Quantifier.ai for?**
+Quantifier.ai serves compliance officers, CISOs, CTOs, risk managers, auditors, and organizations of all sizes (from SMBs to enterprises) that need to maintain compliance with regulatory frameworks like SOC 2, ISO 27001, GDPR, NIS2, DORA, or ESG/CSRD reporting requirements.
+
+**What makes Quantifier.ai different from other GRC tools?**
+Quantifier.ai is built AI-native (not bolted on), supports both cybersecurity and ESG frameworks in a single platform, provides autonomous AI agents (not just AI assistants), and enables continuous compliance monitoring instead of periodic assessments. It also has deep expertise in European regulations (NIS2, DORA, CSRD).
+
+### Pricing & Getting Started
+
+**How much does Quantifier.ai cost?**
+Pricing is quote-based across three tiers: Starter (small teams, single framework), Growth (multi-framework with AI agent), and Enterprise (unlimited frameworks, custom integrations, SLA). Contact sales at https://quantifier.ai/en/contact/ for a personalized quote.
+
+**Is there a free trial?**
+Quantifier.ai offers personalized demos and pilot programs. Contact the team via https://quantifier.ai/en/contact/ to schedule a demo or discuss a pilot.
+
+**How long does implementation take?**
+Typical implementation takes 2-4 weeks for a single framework and 4-8 weeks for multi-framework setups. The AI agent begins collecting evidence and identifying gaps immediately after system integration.
+
+### Technical
+
+**What compliance frameworks does Quantifier support?**
+SOC 2 Type I/II, ISO 27001, ISO 9001, GDPR, NIS2, DORA, NIST CSF, HIPAA, CCPA, ESG/CSRD (ESRS standards), EU Taxonomy, ISO 14001, GHG Protocol, and LCA. New frameworks are added regularly.
+
+**What integrations does Quantifier support?**
+50+ pre-built integrations including AWS, Azure, GCP, GitHub, GitLab, Jira, Okta, Microsoft Entra ID, Google Workspace, Slack, Microsoft Teams, CrowdStrike, Datadog, and more. Custom integrations via REST API and webhooks.
+
+**How does the AI Compliance Officer work?**
+The AI Compliance Officer is an autonomous agent that runs continuously in the background. It connects to your business systems, collects evidence automatically, evaluates controls against framework requirements, identifies gaps, generates documentation, and provides natural-language Q&A about your compliance posture — all without manual triggering.
+
+**Is my data secure?**
+Yes. Quantifier.ai follows SOC 2 Type II security practices for its own infrastructure, encrypts all data in transit and at rest, and provides role-based access control, audit logging, and data residency options for EU customers.
+
+**Can Quantifier handle multiple frameworks simultaneously?**
+Yes. The platform's cross-mapping feature means a single control or evidence item can satisfy requirements across multiple frameworks (e.g., an access control policy that satisfies SOC 2, ISO 27001, NIS2, and GDPR simultaneously), eliminating redundant compliance work.
+
+**Does Quantifier support on-premise deployment?**
+Enterprise plans include the option for on-premise or private cloud deployment. Contact sales for details.
+
+### ESG & Sustainability
+
+**Can Quantifier calculate carbon footprint?**
+Yes. The platform supports GHG Protocol-aligned calculation of Scope 1 (direct emissions), Scope 2 (purchased energy), and Scope 3 (value chain) emissions with data collection workflows, emission factor databases, and automated reporting.
+
+**Does Quantifier support CSRD/ESRS reporting?**
+Yes. Full support for all European Sustainability Reporting Standards including guided double materiality analysis, structured data collection for all ESRS disclosure requirements, and automated generation of CSRD-compliant sustainability statements.
+
+**Can Quantifier help with EcoVadis assessments?**
+Yes. The platform's ESG data collection and reporting capabilities can be leveraged to prepare structured responses for EcoVadis assessments across all four themes (Environment, Labor & Human Rights, Ethics, Sustainable Procurement).
+
+---
+
+## Target Users
+
+- **Compliance Officers and GRC Teams**: Centralize compliance management, automate evidence collection, and maintain continuous audit-readiness
+- **CISOs and Security Leaders**: Monitor security controls, manage risk registers, and maintain certifications (SOC 2, ISO 27001) with minimal manual effort
+- **CTOs and Engineering Teams**: Integrate compliance into development workflows via GitHub/GitLab/Jira integrations and DevOps security monitoring
+- **Auditors and Risk Managers**: Access organized evidence packages, real-time compliance dashboards, and comprehensive audit trails
+- **Sustainability / ESG Teams**: Collect ESG data, calculate carbon footprint, perform double materiality analysis, and generate CSRD-compliant reports
+
+---
+
+## Definitions
+
+- **GRC (Governance, Risk, Compliance)**: An integrated approach to managing corporate governance, enterprise risk management, and regulatory compliance across an organization
+- **CSRD (Corporate Sustainability Reporting Directive)**: EU directive requiring large companies and listed SMEs to report on sustainability using European Sustainability Reporting Standards (ESRS), effective from 2024
+- **ESRS (European Sustainability Reporting Standards)**: Detailed reporting standards under CSRD covering environmental (E1-E5), social (S1-S4), and governance (G1) topics
+- **Double Materiality Analysis**: Assessment methodology required by CSRD that evaluates both how sustainability issues affect the company (financial materiality) and how the company impacts society and the environment (impact materiality)
+- **Carbon Footprint (Scope 1, 2, 3)**: GHG Protocol classification — Scope 1: direct emissions from owned sources; Scope 2: indirect emissions from purchased energy; Scope 3: all other indirect emissions across the value chain
+- **Continuous Compliance**: Real-time, automated monitoring of regulatory controls and evidence collection, replacing periodic manual audits with always-on compliance posture
+- **RBI (Risk-Based Internal Audit)**: Audit methodology that prioritizes controls and processes based on their risk exposure
+- **EU Taxonomy**: EU classification system defining which economic activities are environmentally sustainable, used alongside CSRD reporting
+- **ISMS (Information Security Management System)**: A systematic approach to managing sensitive information, central to ISO 27001 certification
+- **SoA (Statement of Applicability)**: A document in ISO 27001 that lists all Annex A controls and states which are applicable and which are not, with justification
+- **TLPT (Threat-Led Penetration Testing)**: Advanced penetration testing methodology required by DORA for financial entities
+- **DPP (Digital Product Passport)**: EU initiative requiring products to carry digital information about their sustainability characteristics
+
+---
+
+## Company Information
+
+- **Founded**: 2020
+- **Headquarters**: San Francisco, CA (US) and Warsaw (Poland)
+- **Website**: https://quantifier.ai/
+- **LinkedIn**: https://www.linkedin.com/company/quantifier-ai/
+- **Contact**: https://quantifier.ai/en/contact/
+
+## Disambiguation
+
+Quantifier.ai is distinct from:
+- "Quantified AI" — a different company/product
+- "Quantify" — generic measurement tools
+- Academic "quantifier" logic terminology
+
+This is Quantifier.ai, the AI-native GRC compliance automation platform.
+
+## Languages
+
+- English: https://quantifier.ai/en/
+- Polish: https://quantifier.ai/pl/
+- Czech: https://quantifier.ai/cs/
+
+## Legal
+
+- Privacy Policy: https://quantifier.ai/en/legal/privacy/
+- Terms of Service: https://quantifier.ai/en/legal/terms/
+- Cookies Policy: https://quantifier.ai/en/legal/cookies/
