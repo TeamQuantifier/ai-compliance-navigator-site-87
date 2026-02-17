@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { SUPPORTED_LOCALES } from "@/i18n/config";
+import { SUPPORTED_LOCALES, LOCALE_HREFLANG_MAP, type Locale } from "@/i18n/config";
 
 // Strip tracking parameters from URL path
 const stripTrackingParams = (pathname: string): string => {
@@ -156,7 +156,7 @@ const Index = () => {
         
         {/* hreflang for all supported locales */}
         {SUPPORTED_LOCALES.map(locale => (
-          <link key={locale} rel="alternate" hrefLang={locale} href={ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)} />
+          <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale] || locale} href={ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)} />
         ))}
         <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
         

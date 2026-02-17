@@ -259,3 +259,25 @@ export const useAlternatePost = (postId: string) => {
     },
   });
 };
+
+// Fetch ALL alternate language versions for a content item via group_id
+export const useAlternates = (groupId: string | null | undefined, currentLang: string, contentType: 'post' | 'story') => {
+  return useQuery({
+    queryKey: ['alternates', groupId, currentLang, contentType],
+    queryFn: async () => {
+      if (!groupId) return [];
+      
+      const table = contentType === 'post' ? 'posts' : 'stories';
+      const { data, error } = await supabase
+        .from(table)
+        .select('lang, slug')
+        .eq('group_id', groupId)
+        .eq('status', 'published')
+        .neq('lang', currentLang);
+      
+      if (error) throw error;
+      return (data || []) as Array<{ lang: string; slug: string }>;
+    },
+    enabled: !!groupId,
+  });
+};
