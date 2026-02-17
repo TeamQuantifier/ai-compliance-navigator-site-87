@@ -108,7 +108,7 @@ const BlogPost = () => {
         alternates={alternates || null}
       />
 
-      <PageTemplate title="" description="">
+      <PageTemplate title="" description="" noSeo>
         <article className="max-w-4xl mx-auto">
           {/* Back button */}
           <Link to={`/${currentLocale}/blog`}>

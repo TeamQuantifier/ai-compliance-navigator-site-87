@@ -102,7 +102,7 @@ const StoryDetail = () => {
         alternates={alternates || null}
       />
 
-      <PageTemplate title="" description="">
+      <PageTemplate title="" description="" noSeo>
         <article className="max-w-4xl mx-auto">
           {/* Back button */}
           <div className="mb-8">
