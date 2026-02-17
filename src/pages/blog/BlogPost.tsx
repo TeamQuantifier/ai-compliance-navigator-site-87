@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { usePost, useAlternatePost } from '@/hooks/useBlog';
+import { usePost, useAlternates } from '@/hooks/useBlog';
 import { calculateReadingTime } from '@/lib/reading-time';
 import RichTextRenderer from '@/components/blog/RichTextRenderer';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -17,7 +17,7 @@ const BlogPost = () => {
   const { currentLocale, t } = useLanguage();
   
   const { data: post, isLoading, error } = usePost(slug || '', currentLocale);
-  const { data: alternatePost } = useAlternatePost(post?.id || '');
+  const { data: alternates } = useAlternates(post?.group_id, currentLocale, 'post');
 
   const handleShare = () => {
     if (navigator.share) {
@@ -105,7 +105,7 @@ const BlogPost = () => {
         breadcrumbsEnabled={post.breadcrumbs_enabled}
         tags={post.tags}
         category={post.category?.name}
-        alternatePost={alternatePost ? { lang: alternatePost.lang, slug: alternatePost.slug } : null}
+        alternates={alternates || null}
       />
 
       <PageTemplate title="" description="">

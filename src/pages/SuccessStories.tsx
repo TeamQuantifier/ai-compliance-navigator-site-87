@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useStories } from '@/hooks/useBlog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,33 +13,7 @@ const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
   const { data: stories, isLoading } = useStories(currentLocale);
   
-  const canonicalUrl = `https://quantifier.ai/${currentLocale}/success-stories`;
-
   return (
-    <>
-      <Helmet>
-        <title>{t('successStories.title')} | Quantifier.ai</title>
-        <meta name="description" content={t('successStories.subtitle')} />
-        
-        {/* Robots - explicit index/follow */}
-        <meta name="robots" content="index, follow" />
-        
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* hreflang tags - all supported locales */}
-        <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/success-stories" />
-        <link rel="alternate" hrefLang="pl" href="https://quantifier.ai/pl/success-stories" />
-        <link rel="alternate" hrefLang="cs" href="https://quantifier.ai/cs/success-stories" />
-        <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/success-stories" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={`${t('successStories.title')} | Quantifier.ai`} />
-        <meta property="og:description" content={t('successStories.subtitle')} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : currentLocale === 'cs' ? 'cs_CZ' : 'en_US'} />
-      </Helmet>
-
       <PageTemplate title={t('successStories.title')} description={t('successStories.subtitle')}>
         {/* Compact Hero Section */}
         <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
@@ -143,7 +116,6 @@ const SuccessStories = () => {
           )}
         </div>
       </PageTemplate>
-    </>
   );
 };
 
