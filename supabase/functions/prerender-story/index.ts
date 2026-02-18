@@ -351,6 +351,8 @@ serve(async (req) => {
         ...corsHeaders,
         'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+        'X-Robots-Tag': 'index, follow',
+        'Content-Security-Policy': "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'",
       },
     });
   } catch (error) {
