@@ -202,19 +202,21 @@ const MainRoutes = () => (
 
 // App content that requires translations
 const AppContent = () => {
-  const isFormularz = typeof window !== 'undefined' && window.location.pathname === '/formularz';
+  const isNis2Check = typeof window !== 'undefined' && /\/(pl|en|cs)\/nis2-check/.test(window.location.pathname);
   return (
     <>
       <Toaster />
       <Sonner />
       <Routes>
-        {/* Standalone page — no Navbar/Footer */}
-        <Route path="/formularz" element={<FormularzPage />} />
+        {/* NIS2 Check — standalone, no Navbar/Footer, multilang */}
+        <Route path="/:locale/nis2-check" element={<FormularzPage />} />
+        {/* Legacy redirect */}
+        <Route path="/formularz" element={<Navigate to="/pl/nis2-check" replace />} />
         {/* All other routes */}
         <Route path="/*" element={<MainRoutes />} />
       </Routes>
       <CookieConsentBanner />
-      {!isFormularz && <BookPromoPopup />}
+      {!isNis2Check && <BookPromoPopup />}
     </>
   );
 };
