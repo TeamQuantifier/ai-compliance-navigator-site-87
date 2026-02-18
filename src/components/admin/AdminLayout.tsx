@@ -10,7 +10,8 @@ import {
   LogOut,
   Menu,
   X,
-  Search
+  Search,
+  ClipboardList
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -19,6 +20,7 @@ const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/admin/dashboard' },
   { icon: FileText, label: 'Posts', path: '/admin/posts' },
   { icon: Award, label: 'Case Study', path: '/admin/stories' },
+  { icon: ClipboardList, label: 'Quiz NIS2', path: '/admin/quiz-submissions' },
   { icon: Search, label: 'SEO Audit', path: '/admin/seo-audit' },
   { icon: Settings, label: 'SEO Settings', path: '/admin/seo-settings' },
   { icon: FolderOpen, label: 'Categories', path: '/admin/categories' },
