@@ -10,8 +10,7 @@ import {
   Q2_QUESTION, Q2_OPTIONS,
   Q3_QUESTION, NACE_SECTORS,
   Q4_QUESTION, Q4_OPTIONS,
-  calculateTotalScore,
-  getResultKey,
+  classifyNIS2,
   RESULT_BADGE_COLORS,
   RESULT_LABELS,
   type ResultKey,
@@ -119,9 +118,9 @@ export default function FormularzPage() {
     setSubmitError(null);
 
     try {
-      // 1. Oblicz wynik client-side
-      const score = calculateTotalScore(data.q1, data.q2, data.q3, data.q4);
-      const resultKey = getResultKey(score);
+      // 1. Klasyfikacja client-side (logika warunkowa)
+      const resultKey = classifyNIS2(data.q1, data.q2, data.q3, data.q4);
+      const score = 0; // nieużywane — zachowane dla interfejsu ResultData
 
       // 2. Pobierz tekst wyniku z bazy
       const { data: template, error: tplError } = await supabase

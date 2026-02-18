@@ -132,10 +132,10 @@ export default function QuizSubmissions() {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">Wszystkie wyniki</SelectItem>
-            <SelectItem value="CRITICAL">🔴 Krytyczne</SelectItem>
-            <SelectItem value="HIGH">🟠 Wysokie</SelectItem>
-            <SelectItem value="MEDIUM">🟡 Umiarkowane</SelectItem>
-            <SelectItem value="LOW">🟢 Niskie</SelectItem>
+            <SelectItem value="RED">🔴 Wysokie prawdopodobieństwo NIS2</SelectItem>
+            <SelectItem value="ORANGE">🟠 Prawdopodobny obowiązek NIS2</SelectItem>
+            <SelectItem value="YELLOW">🟡 Wymogi łańcucha dostaw</SelectItem>
+            <SelectItem value="GREEN">🟢 Niskie ryzyko</SelectItem>
           </SelectContent>
         </Select>
         <Button
