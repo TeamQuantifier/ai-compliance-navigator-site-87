@@ -50,6 +50,7 @@ const staticPages = [
   { path: '/legal/privacy', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
+  { path: '/nis2-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-18' },
 ];
 
 const locales = ['en', 'pl', 'cs'];
