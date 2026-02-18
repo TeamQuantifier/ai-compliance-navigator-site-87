@@ -234,7 +234,7 @@ export default function FormularzPage() {
               <p className="text-gray-700 leading-relaxed">{result.body}</p>
               <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://quantifier.io"
+                  href={`/${lang}/frameworks`}
                   className="flex-1 text-center px-6 py-3 bg-[#1a2e54] text-white font-semibold rounded-xl hover:bg-[#243d6e] transition-colors"
                 >
                   {CTA_LINK_LABEL[lang]}
