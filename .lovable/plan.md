@@ -1,211 +1,130 @@
 
-# Quiz NIS2: "Czy Twoja firma powinna pilnie zająć się cybersecurity?"
+# Refaktor logiki klasyfikacji NIS2 — nowe zasady oparte na warunkach
 
-## Architektura — gdzie co trafia
+## Analiza obecnego stanu
 
-Strona `/formularz` (bez prefixu locale — niezależna od języka, czysta, bez głównego Navbar/Footer aplikacji). Route dodany w `App.tsx` poza blokiem locale-based, jako osobna trasa z własnym layoutem.
+Obecna logika w `quizConfig.ts` używa prostego systemu punktowego (suma punktów → próg → wynik). Nowe wymagania zastępują go **logiką warunkową** opartą na zestawie reguł "przynajmniej N z kryteriów", gdzie każde pytanie ma konkretną semantykę (nie wagę punktową).
 
-**Schemat flow:**
-1. Użytkownik wchodzi na `/formularz`
-2. Wypełnia email + 4 pytania (multiselect checkboxy)
-3. Klika "Sprawdź wynik"
-4. Logika client-side oblicza wynik → pobiera tekst z `result_templates` → wstawia rekord do `submissions`
-5. Na tej samej stronie pojawia się wynik (inline, bez przeładowania)
-6. Admin loguje się do `/admin` → menu "Quiz" → tabela zgłoszeń z filtrowaniem i eksportem CSV
+## Nowe klucze wyników i ich kolory
 
----
+| Klucz | Kolor | Znaczenie |
+|-------|-------|-----------|
+| `RED` | 🔴 Czerwony | Wysokie prawdopodobieństwo obowiązku NIS2 (bezpośredni) |
+| `ORANGE` | 🟠 Pomarańczowy | Prawdopodobny obowiązek NIS2 (do weryfikacji) |
+| `YELLOW` | 🟡 Żółty | Wymogi cyberbezpieczeństwa via łańcuch dostaw (ISO 27001) |
+| `GREEN` | 🟢 Zielony | Niskie ryzyko regulacyjne |
 
-## Baza danych — 2 tabele + RLS
+## Logika klasyfikacji (kolejność priorytetów)
 
-### Tabela `submissions`
+Reguły sprawdzane **od góry**, pierwsza pasująca wygrywa:
+
+### 🔴 RED — "Wysokie prawdopodobieństwo obowiązku NIS2"
+**Wymagane WSZYSTKIE 3 warunki:**
+1. Q1 = `50_249` lub `250plus` (≥ 50 pracowników)
+2. Q2 = `10_50m` lub `50mplus` (≥ 10 mln EUR obrotu)
+3. Sektor Q3 sklasyfikowany jako `HIGH` w nowym mapowaniu (dawne "CRITICAL_SECTORS" — Załącznik I NIS2)
+
+### 🟠 ORANGE — "Prawdopodobny obowiązek NIS2 (do weryfikacji)"
+**Wymagane "przynajmniej 2 z 3" warunków:**
+1. Q1 = `50_249` lub `250plus`
+2. Q2 = `10_50m` lub `50mplus`
+3. Sektor Q3 = `HIGH` **lub** `MEDIUM` (Załącznik I lub II NIS2)
+
+Czyli: `ORANGE` to firma, która spełnia tylko 2 z powyższych 3, lub spełnia wszystkie 3 ale ma sektor `MEDIUM` (nie `HIGH`).
+
+### 🟡 YELLOW — "Wymogi ISO 27001 via supply chain"
+**Wystarczy JEDEN z warunków:**
+1. Sektor Q3 sklasyfikowany jako `SUPPLY_CHAIN` (sektor, który jest częstym dostawcą dla podmiotów NIS2)
+2. Q4 zawiera przynajmniej jedną opcję z listy "supply chain" (banki, energetyka, duże korpo, admin publiczna, spółki notowane, IT, żywność, farmacja, transport, woda)
+
+### 🟢 GREEN — "Niskie ryzyko regulacyjne"
+Żaden z powyższych warunków nie jest spełniony (fallback).
+
+## Nowe mapowanie sektorów Q3
+
+Zamiast 3 → 2 → 1 → 0 punktów, sektory dostaną etykiety:
+
+```typescript
+type SectorRisk = 'HIGH' | 'MEDIUM' | 'SUPPLY_CHAIN' | 'LOW';
+```
+
+| Etykieta | Sektory NACE | Uzasadnienie |
+|----------|-------------|--------------|
+| `HIGH` | D35, H49–H52, K64, K65, Q86, E36–E38, J61–J63, O84, U99 | Załącznik I NIS2 (podmioty kluczowe) |
+| `MEDIUM` | C21, C24, C25–C30, G46, M72, K66, C20, C10, E39 | Załącznik II NIS2 (podmioty ważne) |
+| `SUPPLY_CHAIN` | C11–C19, C22–C23, C31–C33, F41–F43, G45–G47, H53, I55–I56, J58–J60, L68, M69–M74, N77–N82, P85, Q87–Q88 | Sektory typowo będące w supply chain podmiotów NIS2 |
+| `LOW` | A01–A03, B05–B09, R90–R93, S94–S96, T97–T98 | Brak powiązania z NIS2 |
+
+## Mapowanie Q4 — "supply chain" vs "low"
+
+```typescript
+// Supply chain options (ŻÓŁTY trigger)
+const Q4_SUPPLY_CHAIN = new Set([
+  'banks', 'energy', 'large_corps', 'public_admin',
+  'listed', 'it', 'food', 'pharma', 'transport', 'water'
+]);
+
+// Low-risk options (brak wpływu na wynik)
+// 'sme', 'b2c'
+```
+
+## Algorytm klasyfikacji (pseudokod)
+
+```typescript
+function classifyNIS2(q1, q2, q3, q4): ResultKey {
+  const largeFirm = q1 === '50_249' || q1 === '250plus';
+  const highRevenue = q2 === '10_50m' || q2 === '50mplus';
+  const sectorRisk = getSectorRisk(q3); // 'HIGH' | 'MEDIUM' | 'SUPPLY_CHAIN' | 'LOW'
+  const hasSupplyChainClients = q4.some(v => Q4_SUPPLY_CHAIN.has(v));
+
+  // 🔴 RED: wszystkie 3 warunki
+  if (largeFirm && highRevenue && sectorRisk === 'HIGH') return 'RED';
+
+  // 🟠 ORANGE: przynajmniej 2 z 3 warunków (sektor HIGH lub MEDIUM)
+  const isNIS2Sector = sectorRisk === 'HIGH' || sectorRisk === 'MEDIUM';
+  const conditions = [largeFirm, highRevenue, isNIS2Sector];
+  const metCount = conditions.filter(Boolean).length;
+  if (metCount >= 2) return 'ORANGE';
+
+  // 🟡 YELLOW: supply chain via sektor lub klientów
+  if (sectorRisk === 'SUPPLY_CHAIN' || hasSupplyChainClients) return 'YELLOW';
+
+  // 🟢 GREEN: nic nie pasuje
+  return 'GREEN';
+}
+```
+
+## Zmiany w bazie danych (result_templates)
+
+Nowe klucze wyników zastępują stare (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW` → `RED`, `ORANGE`, `YELLOW`, `GREEN`). Konieczna jest aktualizacja danych w tabeli `result_templates` przez migrację SQL.
+
 ```sql
-CREATE TABLE public.submissions (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  created_at timestamptz DEFAULT now(),
-  email text NOT NULL,
-  q1 text[] DEFAULT '{}',
-  q2 text[] DEFAULT '{}',
-  q3 text[] DEFAULT '{}',
-  q4 text[] DEFAULT '{}',
-  result_key text,
-  result_text text
-);
+-- Usuń stare wpisy
+DELETE FROM public.result_templates WHERE result_key IN ('CRITICAL','HIGH','MEDIUM','LOW');
 
-ALTER TABLE public.submissions ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Anon can insert submissions"
-  ON public.submissions FOR INSERT TO anon WITH CHECK (true);
-
-CREATE POLICY "Admins can select submissions"
-  ON public.submissions FOR SELECT USING (is_admin(auth.uid()));
+-- Wstaw nowe
+INSERT INTO public.result_templates (result_key, title, body) VALUES
+  ('RED', 'Wysokie prawdopodobieństwo obowiązku NIS2', '[Opis...]'),
+  ('ORANGE', 'Prawdopodobny obowiązek NIS2 (do weryfikacji)', '[Opis...]'),
+  ('YELLOW', 'Wysokie prawdopodobieństwo wymogów cyberbezpieczeństwa (łańcuch dostaw)', '[Opis...]'),
+  ('GREEN', 'Niskie ryzyko regulacyjne (na dziś)', '[Opis...]');
 ```
 
-Uwaga: quiz ma 4 pytania (pracownicy, obrót, sektor, klienci) — brak pytania 5 z oryginalnej specyfikacji. Tabela ma q1..q4.
+## Pliki do modyfikacji
 
-### Tabela `result_templates`
-```sql
-CREATE TABLE public.result_templates (
-  result_key text PRIMARY KEY,
-  title text NOT NULL,
-  body text NOT NULL
-);
+| Plik | Zakres zmian |
+|------|-------------|
+| `src/config/quizConfig.ts` | Zastąpienie systemu punktowego logiką warunkową, nowe typy, nowy `getSectorRisk()`, nowa `classifyNIS2()`, nowe kolory/etykiety dla 4 kluczy |
+| `src/pages/formularz/FormularzPage.tsx` | Import zaktualizowanych typów (tylko zmiana `ResultKey`), brak zmian w UI |
+| `src/pages/admin/QuizSubmissions.tsx` | Aktualizacja `RESULT_BADGE_COLORS` i `RESULT_LABELS` dla nowych kluczy |
+| Migracja SQL | UPDATE `result_templates`: zastąpienie 4 wpisów nowymi kluczami RED/ORANGE/YELLOW/GREEN |
 
-ALTER TABLE public.result_templates ENABLE ROW LEVEL SECURITY;
+## Kwestia walidacji Q4
 
-CREATE POLICY "Public can read result_templates"
-  ON public.result_templates FOR SELECT TO anon, authenticated USING (true);
+Obecna walidacja wymaga `min(1)` zaznaczenia w Q4. Przy nowej logice `GREEN` może być wynikiem nawet gdy zaznaczono `sme` lub `b2c` — to OK, te odpowiedzi są poprawne. Walidacja pozostaje bez zmian (wymagamy odpowiedzi).
 
-CREATE POLICY "Admins can manage result_templates"
-  ON public.result_templates FOR ALL
-  USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-```
+## Ważna uwaga o kolejności reguł
 
-Klucze wyników (na podstawie logiki NIS2): `CRITICAL`, `HIGH`, `MEDIUM`, `LOW` — bardziej sensowne niż A/B/C/D dla tego quizu. Admin edytuje treść przez SQL lub przyszły panel.
+`RED` jest sprawdzany PRZED `ORANGE`, `ORANGE` przed `YELLOW` — firma, która spełnia wszystkie 3 warunki RED (duża + wysokie obroty + sektor HIGH), **nie dostanie** ORANGE, tylko RED. Jeśli spełnia tylko 2 z 3 warunków, dostanie ORANGE.
 
-Seed danych do `result_templates` (placeholdery do edycji):
-- `CRITICAL`: "Pilne działanie wymagane", "Twoja firma spełnia kryteria dużego/średniego podmiotu objętego NIS2..."
-- `HIGH`: "Wysokie prawdopodobieństwo NIS2", "..."
-- `MEDIUM`: "Sprawdź łańcuch dostaw", "..."
-- `LOW`: "Prawdopodobnie poza zakresem NIS2", "..."
-
----
-
-## Logika punktacji
-
-Quiz ocenia **prawdopodobieństwo objęcia NIS2** na podstawie 4 kryteriów:
-
-**Q1 — Pracownicy:**
-- `poniżej 10` → 0 pkt
-- `10–49` → 1 pkt
-- `50–249` → 2 pkt (średnie przedsiębiorstwo)
-- `250+` → 3 pkt (duże przedsiębiorstwo)
-
-**Q2 — Obrót:**
-- `poniżej 2 mln` → 0 pkt
-- `2–10 mln` → 1 pkt
-- `10–50 mln` → 2 pkt
-- `50 mln+` → 3 pkt
-
-**Q3 — Sektor NACE:**
-- Sektory kluczowe (energia, transport, banki, ochrona zdrowia, woda, infrastruktura cyfrowa): +3 pkt
-- Sektory ważne (np. J61 Telekomunikacja, J62 IT, C21 Farmaceutyki, C24 Metale, K64 Finanse): +2 pkt
-- Pozostałe sektory: +1 pkt
-- Sektor `A` (rolnicto/ryby) lub `T/U` (gospodarstwa domowe): +0 pkt
-
-**Q4 — Klienci (multiselect, każdy zaznaczony = +1):**
-- Banki i instytucje finansowe → +2
-- Energetyka → +2
-- Duże korporacje → +1
-- Administracja publiczna → +2
-- Spółki notowane → +1
-- Firmy IT → +1
-- Firmy produkujące żywność → +1
-- Branża chemiczna i farmaceutyczna → +1
-- Transport → +1
-- Gospodarka wodna → +2
-- Małe i średnie przedsiębiorstwa → 0
-- Klienci indywidualni B2C → 0
-
-**Progi wynikowe (łączna suma):**
-- ≥ 8 pkt → `CRITICAL`
-- 5–7 pkt → `HIGH`
-- 2–4 pkt → `MEDIUM`
-- 0–1 pkt → `LOW`
-
-Logika punktacji będzie w pliku konfiguracyjnym `src/config/quizConfig.ts` — łatwa do edycji bez modyfikowania UI.
-
----
-
-## Pytanie Q3: select NACE — specjalne UI
-
-Pytanie 3 (sektor) to lista 80+ kodów NACE z opisami. **Nie checkboxy** — to select (dropdown z wyszukiwarką) lub lista z opcją wyszukiwania, bo zbyt dużo opcji.
-
-Implementacja: komponent `<select>` z wbudowanym filtrowaniem (input + lista filtrowana) — użytkownik wpisuje nazwę lub kod NACE, lista się filtruje. Wybór jest jednokrotny (radio logic).
-
----
-
-## Nowe pliki
-
-### `src/config/quizConfig.ts`
-Centralna konfiguracja pytań i logiki punktowania — edytowalna bez modyfikowania UI.
-
-### `src/pages/formularz/FormularzPage.tsx`
-Główny komponent strony `/formularz`:
-- Własny prosty layout (bez Navbar/Footer serwisu)
-- Logo + nagłówek
-- Formularz z walidacją zod + react-hook-form
-- Stany: `filling` → `submitting` → `result`
-- Po submit inline wynik (bez przeładowania)
-
-### `src/pages/admin/QuizSubmissions.tsx`
-Panel admina:
-- Tabela: data, email, q1, q2, q3 (sektor NACE), q4 (lista klientów), result_key
-- Wyszukiwarka po emailu
-- Filtr po result_key (CRITICAL/HIGH/MEDIUM/LOW)
-- Sortowanie po dacie
-- Eksport CSV (Blob API, client-side)
-
----
-
-## Modyfikacje istniejących plików
-
-### `src/App.tsx`
-Dodanie route `/formularz` **poza** blokiem locale-based (nie `/:locale/formularz`):
-```tsx
-// Tuż przed catch-all "/*"
-import FormularzPage from './pages/formularz/FormularzPage';
-// ...
-<Route path="/formularz" element={<FormularzPage />} />
-```
-
-I route admina:
-```tsx
-<Route path="quiz-submissions" element={<QuizSubmissions />} />
-```
-
-### `src/components/admin/AdminLayout.tsx`
-Dodanie pozycji "Quiz" do menu sidebaru:
-```tsx
-{ icon: ClipboardList, label: 'Quiz', path: '/admin/quiz-submissions' },
-```
-
----
-
-## UX formularza
-
-1. **Email** — input z walidacją (required, format email)
-2. **Q1** — 4 przyciski radio (poniżej 10, 10–49, 50–249, 250+)
-3. **Q2** — 4 przyciski radio (obrót)
-4. **Q3** — Searchable select z kodami NACE + opisem działu
-5. **Q4** — 12 checkboxów z etykietami (multiselect)
-6. **Zgoda RODO** — checkbox: "Wyrażam zgodę na przetwarzanie mojego adresu email w celu otrzymania wyniku. Polityka prywatności."
-7. **Przycisk** — "Sprawdź, czy dotyczy Cię NIS2"
-8. **Loading state** — spinner podczas submit
-9. **Wynik** — inline (scroll do górny), karta z tytułem + opisem + badge poziomu
-
----
-
-## Podsumowanie ścieżek
-
-| Strona | Ścieżka | Dostęp |
-|---|---|---|
-| Formularz publiczny | `/formularz` | Wszyscy |
-| Panel admina — quiz | `/admin/quiz-submissions` | Tylko zalogowany admin |
-
-## Jak edytować pytania i wyniki
-
-- **Treści pytań i opcje** → `src/config/quizConfig.ts` — plik z tablicą pytań, można zmienić tekst, dodać opcje
-- **Logika punktowania** → `src/config/quizConfig.ts` — funkcja `scoreAnswer(questionId, answer)` z mapą punktów
-- **Progi wynikowe** → `src/config/quizConfig.ts` — obiekt `SCORE_THRESHOLDS`
-- **Tytuł i treść wyników** → tabela `result_templates` w bazie (edytowalna przez panel admina lub SQL)
-
-## Pliki do stworzenia/modyfikacji
-
-| Plik | Akcja |
-|---|---|
-| Migracja SQL | Tworzy `submissions`, `result_templates`, RLS, seed danych |
-| `src/config/quizConfig.ts` | Nowy — konfiguracja pytań i punktacji |
-| `src/pages/formularz/FormularzPage.tsx` | Nowy — cały formularz + wynik inline |
-| `src/pages/admin/QuizSubmissions.tsx` | Nowy — panel admina z tabelą i CSV |
-| `src/App.tsx` | Modyfikacja — dodanie route `/formularz` i `/admin/quiz-submissions` |
-| `src/components/admin/AdminLayout.tsx` | Modyfikacja — dodanie "Quiz" do menu sidebaru |
+Firma z sektorem `SUPPLY_CHAIN` i jednocześnie dużym rozmiarem, ale małym obrotem: spełnia tylko 1 z 3 warunków NIS2 → nie dostaje ORANGE (potrzeba 2), dostaje YELLOW (ma `SUPPLY_CHAIN` sektor).
