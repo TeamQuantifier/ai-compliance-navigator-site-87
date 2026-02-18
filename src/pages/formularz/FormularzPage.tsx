@@ -3,6 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { supabase } from '@/integrations/supabase/client';
+import { newsletterClient } from '@/lib/newsletter-client';
 import {
   QUIZ_TITLE,
   QUIZ_SUBTITLE,
@@ -32,7 +33,6 @@ interface ResultData {
   title: string;
   body: string;
   resultKey: ResultKey;
-  score: number;
 }
 
 // ─── Searchable NACE select ────────────────────────────────────
@@ -120,7 +120,6 @@ export default function FormularzPage() {
     try {
       // 1. Klasyfikacja client-side (logika warunkowa)
       const resultKey = classifyNIS2(data.q1, data.q2, data.q3, data.q4);
-      const score = 0; // nieużywane — zachowane dla interfejsu ResultData
 
       // 2. Pobierz tekst wyniku z bazy
       const { data: template, error: tplError } = await supabase
@@ -148,7 +147,19 @@ export default function FormularzPage() {
 
       if (insertError) throw new Error('Nie udało się zapisać zgłoszenia. Spróbuj ponownie.');
 
-      setResult({ title: template.title, body: template.body, resultKey, score });
+      // 4. Wyślij email przez API marketingowe (błąd nie blokuje wyniku)
+      try {
+        await newsletterClient.subscribe(data.email.trim().toLowerCase(), 'pl', {
+          source: 'nis2-quiz',
+          origin: window.location.href,
+          tags: ['nis2-quiz', `result-${resultKey.toLowerCase()}`],
+          customer_message: resultKey,
+        });
+      } catch (emailErr) {
+        console.warn('Newsletter subscribe failed (non-blocking):', emailErr);
+      }
+
+      setResult({ title: template.title, body: template.body, resultKey });
       setPhase('result');
 
       setTimeout(() => {
@@ -185,16 +196,12 @@ export default function FormularzPage() {
         {phase === 'result' && result && (
           <div ref={resultRef} className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-              <div className="flex items-start justify-between flex-wrap gap-4 mb-6">
+              <div className="flex items-start flex-wrap gap-4 mb-6">
                 <div>
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border ${RESULT_BADGE_COLORS[result.resultKey]}`}>
                     Poziom ryzyka: {RESULT_LABELS[result.resultKey]}
                   </span>
                   <h2 className="mt-3 text-xl font-bold text-[#1a2e54]">{result.title}</h2>
-                </div>
-                <div className="text-right">
-                  <div className="text-4xl font-black text-[#1a2e54]">{result.score}</div>
-                  <div className="text-xs text-gray-400 font-medium">punktów</div>
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed">{result.body}</p>
