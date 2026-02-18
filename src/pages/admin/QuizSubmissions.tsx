@@ -3,9 +3,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { NACE_SECTORS, Q1_OPTIONS, Q2_OPTIONS, Q4_OPTIONS, RESULT_BADGE_COLORS, RESULT_LABELS, type ResultKey } from '@/config/quizConfig';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download, Search, RefreshCw } from 'lucide-react';
+import { Download, Search, RefreshCw, Users, TrendingUp, Calendar } from 'lucide-react';
 
 interface Submission {
   id: string;
@@ -24,6 +23,19 @@ const Q1_MAP = Object.fromEntries(Q1_OPTIONS.map(o => [o.value, o.label]));
 const Q2_MAP = Object.fromEntries(Q2_OPTIONS.map(o => [o.value, o.label]));
 const Q4_MAP = Object.fromEntries(Q4_OPTIONS.map(o => [o.value, o.label]));
 
+const RESULT_KEYS: ResultKey[] = ['RED', 'ORANGE', 'YELLOW', 'GREEN'];
+
+const RESULT_BG: Record<ResultKey, string> = {
+  RED:    'bg-red-50 border-red-200',
+  ORANGE: 'bg-orange-50 border-orange-200',
+  YELLOW: 'bg-yellow-50 border-yellow-200',
+  GREEN:  'bg-green-50 border-green-200',
+};
+
+const RESULT_EMOJI: Record<ResultKey, string> = {
+  RED: '🔴', ORANGE: '🟠', YELLOW: '🟡', GREEN: '🟢',
+};
+
 function formatArray(arr: string[] | null, map?: Record<string, string>): string {
   if (!arr || arr.length === 0) return '—';
   return arr.map(v => map ? (map[v] ?? v) : v).join(', ');
@@ -33,6 +45,83 @@ function formatDate(iso: string) {
   return new Date(iso).toLocaleString('pl-PL', { dateStyle: 'short', timeStyle: 'short' });
 }
 
+// ─── Stats panel ────────────────────────────────────────────────
+function StatsPanel({ rows }: { rows: Submission[] }) {
+  const total = rows.length;
+
+  const countByResult = useMemo(() => {
+    const c: Record<string, number> = {};
+    rows.forEach(r => { if (r.result_key) c[r.result_key] = (c[r.result_key] ?? 0) + 1; });
+    return c;
+  }, [rows]);
+
+  const last7 = useMemo(() => {
+    const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    return rows.filter(r => r.created_at && new Date(r.created_at).getTime() > cutoff).length;
+  }, [rows]);
+
+  const topNace = useMemo(() => {
+    const c: Record<string, number> = {};
+    rows.forEach(r => { (r.q3 ?? []).forEach(code => { c[code] = (c[code] ?? 0) + 1; }); });
+    const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0];
+    return top ? (NACE_MAP[top[0]] ?? top[0]) : '—';
+  }, [rows]);
+
+  if (total === 0) return null;
+
+  return (
+    <div className="space-y-4">
+      {/* 4 karty wyników */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {RESULT_KEYS.map(key => {
+          const count = countByResult[key] ?? 0;
+          const pct = total > 0 ? ((count / total) * 100).toFixed(1) : '0.0';
+          return (
+            <div key={key} className={`rounded-xl border p-4 ${RESULT_BG[key]}`}>
+              <div className="text-2xl mb-1">{RESULT_EMOJI[key]}</div>
+              <div className="text-2xl font-black leading-none">{count}</div>
+              <div className="text-xs font-semibold text-gray-600 mt-0.5">{RESULT_LABELS[key]}</div>
+              <div className="text-xs text-gray-400 mt-1">{pct}% całości</div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Ogólne podsumowanie */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="rounded-xl border bg-card p-4 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <Users className="h-4 w-4 text-primary" />
+          </div>
+          <div>
+            <div className="text-xl font-bold">{total}</div>
+            <div className="text-xs text-muted-foreground">łącznie zgłoszeń</div>
+          </div>
+        </div>
+        <div className="rounded-xl border bg-card p-4 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <Calendar className="h-4 w-4 text-primary" />
+          </div>
+          <div>
+            <div className="text-xl font-bold">{last7}</div>
+            <div className="text-xs text-muted-foreground">ostatnie 7 dni</div>
+          </div>
+        </div>
+        <div className="rounded-xl border bg-card p-4 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <TrendingUp className="h-4 w-4 text-primary" />
+          </div>
+          <div>
+            <div className="text-sm font-bold leading-tight">{topNace}</div>
+            <div className="text-xs text-muted-foreground">najczęstszy sektor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Główna strona ───────────────────────────────────────────────
 export default function QuizSubmissions() {
   const [rows, setRows] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
@@ -114,6 +203,9 @@ export default function QuizSubmissions() {
           </Button>
         </div>
       </div>
+
+      {/* Statystyki zbiorcze */}
+      {!loading && <StatsPanel rows={rows} />}
 
       {/* Filtry */}
       <div className="flex flex-wrap gap-3">
