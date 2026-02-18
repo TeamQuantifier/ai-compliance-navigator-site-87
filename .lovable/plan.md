@@ -1,156 +1,137 @@
 
-# Diagnoza i Plan Naprawy: Niezindeksowane Strony Google Search Console
+# Dodanie strony `/nis2-check` do indeksowania SEO i sitemapy
 
-## Diagnoza — Znalezione Problemy
+## Zakres zmian
 
-Po analizie kodu i testach bezpośrednich wywołań funkcji prerenderujących zidentyfikowałem **4 oddzielne przyczyny** problemu z indeksowaniem.
+Strona `/:locale/nis2-check` istnieje jako działająca trasa React, ale jest **całkowicie niewidoczna dla Google** z dwóch powodów:
+1. Brak jej w sitemapie (ani w statycznym `public/sitemap.xml`, ani w dynamicznej funkcji Edge `sitemap/index.ts`)
+2. Brak prerenderingu dla botów — `bot-prerender.ts` nie ma jej w `STATIC_ROUTES`, więc Googlebot dostaje pustą aplikację React zamiast HTML
 
----
-
-### Problem 1 (KRYTYCZNY): `Content-Security-Policy: default-src 'none'; sandbox`
-
-**Supabase Gateway automatycznie dodaje ten nagłówek do wszystkich odpowiedzi funkcji Edge.**
-
-Googlebot, gdy widzi `CSP: sandbox`, traktuje stronę jak iframe sandbox — nie może wykonać żadnych zewnętrznych zasobów i interpretuje to jako sygnał "nie indeksuj". Funkcja `bot-prerender.ts` poprawnie nadpisuje `Content-Type` na `text/html`, ale **nie usuwa** tego nagłówka CSP.
-
-Dowód z testów: każde wywołanie `/prerender-post`, `/prerender-marketing` zwraca:
-```
-Content-Security-Policy: default-src 'none'; sandbox
-```
-
-**Naprawa:** W `bot-prerender.ts`, w funkcji `proxyToPrerender`, przy budowaniu odpowiedzi ustawić `Content-Security-Policy: default-src 'self'` (lub całkowicie go pominąć), a nie przepuszczać wartości z Supabase.
+Wymagane zmiany w **4 plikach**:
 
 ---
 
-### Problem 2 (KRYTYCZNY): Brakujące warianty językowe artykułów blogowych
+## Plik 1: `netlify/edge-functions/bot-prerender.ts`
 
-Artykuły **angielskie** wymienione w GSC:
-- `/en/blog/ai-agents-in-quantifier`
-- `/en/blog/case-study-cyberattack-ransomware-manufacturing-company`
-
-...istnieją w bazie jako `published`, ale ich polskie/czeskie wersje **nie mają angielskiego wariantu lub brakuje `group_id`** — co powoduje błędy hreflang. Googlebot nie widzi spójnej sieci hreflang i może odrzucać te URL-e jako "alternate page with proper canonical tag."
-
-**Naprawa:** Weryfikacja i naprawienie `group_id` w bazie dla tych artykułów (ręcznie przez panel admina lub SQL), żeby hreflang wskazywały prawidłowo.
-
----
-
-### Problem 3 (POWAŻNY): `bot-prerender.ts` nie usuwa nagłówka `Content-Security-Policy` z odpowiedzi Supabase
-
-Aktualny kod w `proxyToPrerender`:
+Dodanie wpisu `'nis2-check': 'nis2-check'` do słownika `STATIC_ROUTES`:
 
 ```typescript
-return new Response(body, {
-  status: 200,
-  headers: {
-    'Content-Type': 'text/html; charset=utf-8',
-    'Cache-Control': 'public, max-age=3600, s-maxage=86400',
-    'X-Robots-Tag': 'index, follow',
+const STATIC_ROUTES: Record<string, string> = {
+  // ... istniejące wpisy ...
+  'nis2-check': 'nis2-check',   // <-- NOWE
+};
+```
+
+Dzięki temu Googlebot odwiedzający `/pl/nis2-check`, `/en/nis2-check`, `/cs/nis2-check` zostanie przekierowany do funkcji prerenderującej zamiast dostawać pustą stronę SPA.
+
+---
+
+## Plik 2: `supabase/functions/prerender-marketing/index.ts`
+
+**Dodanie 3 elementów:**
+
+### 2a. Wpis w `pageUrlMap`
+```typescript
+const pageUrlMap: Record<string, string> = {
+  // ... istniejące ...
+  'nis2-check': 'nis2-check',
+};
+```
+
+### 2b. Treść strony w `getPageContent()` dla 3 języków
+
+Dla każdego języka (en, pl, cs) — obiekt `PageData` z:
+- `title`: meta title (~60 znaków, z focus keyword "NIS2")
+- `description`: meta description (~160 znaków)
+- `h1`: nagłówek strony
+- `subtitle`: podtytuł
+- `sections`: 2-3 sekcje SEO (co to NIS2, kogo dotyczy, jak sprawdzić)
+- `faqs`: 3 pytania FAQ w JSON-LD
+- `internalLinks`: linki do powiązanych stron (`/frameworks/nis-ii`, `/contact`)
+
+Przykład dla EN:
+```typescript
+'nis2-check': {
+  en: {
+    title: 'NIS2 Compliance Checker — Does NIS2 Apply to You? | Quantifier',
+    description: 'Answer 4 questions and instantly find out if the NIS2 Directive applies to your company. Free NIS2 compliance check by Quantifier.',
+    h1: 'Does your company urgently need to address cybersecurity?',
+    subtitle: 'Answer 4 questions and find out whether the NIS2 Directive applies to your company.',
+    sections: [
+      { h2: 'What is NIS2?', content: [...] },
+      { h2: 'Who does NIS2 apply to?', content: [...] },
+    ],
+    faqs: [
+      { question: 'What is the NIS2 Directive?', answer: '...' },
+      { question: 'Which companies must comply with NIS2?', answer: '...' },
+      { question: 'What are the penalties for non-compliance with NIS2?', answer: '...' },
+    ],
+    internalLinks: [
+      { text: 'NIS2 Compliance Platform', href: '/en/frameworks/nis-ii' },
+      { text: 'Contact us', href: '/en/contact' },
+    ],
   },
-});
-```
-
-Tworzy **nowy** obiekt `Response` z **własnymi** nagłówkami — to oznacza, że nagłówki z Supabase (w tym `Content-Security-Policy: sandbox`) **nie są propagowane**. Ale Cloudflare/Netlify może dodawać własne nagłówki. Trzeba to zweryfikować i jawnie zablokować.
-
----
-
-### Problem 4 (POWAŻNY): Brakujące route `/:locale/about` i `/:locale/contact` w liście stron z GSC
-
-Strona `/pl` (homepage) pojawia się w GSC jako niezindeksowana. Sprawdzając `prerender-marketing` dla `page=index` — dostarcza poprawny HTML. Problem leży gdzie indziej: **SPA zwraca stronę React zamiast prerenderowanej wersji dla botów**, bo Netlify Edge Function może nie działać poprawnie na deployed site.
-
----
-
-## Plan Działań
-
-### Zmiana 1: `netlify/edge-functions/bot-prerender.ts` — Naprawa nagłówków
-
-Aktualizacja funkcji `proxyToPrerender` aby:
-1. Jawnie ustawić `Content-Security-Policy: default-src 'self' https: data: 'unsafe-inline'` (zezwala na normalne zasoby, usuwa `sandbox`)
-2. Dodać `X-Content-Type-Options: nosniff` 
-3. Usunąć wszelkie pozostałości nagłówków Supabase które mogłyby przejść przez proxy
-
-```typescript
-async function proxyToPrerender(url: string, ua: string): Promise<Response> {
-  const response = await fetch(url, {
-    headers: { 'User-Agent': ua },
-  });
-
-  if (!response.ok) {
-    return response;
-  }
-
-  const body = await response.text();
-
-  return new Response(body, {
-    status: 200,
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
-      'X-Robots-Tag': 'index, follow',
-      // Jawnie nadpisujemy CSP — usuwamy sandbox który blokuje Google
-      'Content-Security-Policy': "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'",
-      'X-Content-Type-Options': 'nosniff',
-    },
-  });
+  pl: { ... },
+  cs: { ... },
 }
 ```
 
-### Zmiana 2: `prerender-post/index.ts` i `prerender-marketing/index.ts` — Dodanie nagłówka w funkcjach Edge
+### 2c. Hreflang — trzy wersje językowe
 
-W każdym `return new Response(html, {...})` dodać jawny nagłówek CSP który nadpisze wartość ustawioną przez Supabase Gateway, zanim dotrze do bot-prerender:
+Funkcja generująca HTML dla tej strony musi emitować poprawne tagi `hreflang` wskazujące na wszystkie 3 wersje językowe (EN, PL-PL, CS-CZ) — tak jak pozostałe strony statyczne.
 
-```typescript
-'Content-Security-Policy': "default-src 'self' https: data: 'unsafe-inline'",
-```
+---
 
-### Zmiana 3: `prerender-marketing/index.ts` — Dodanie strony `/pl` (index)
+## Plik 3: `supabase/functions/sitemap/index.ts`
 
-Strona `https://quantifier.ai/pl` pojawia się w GSC. Weryfikacja: `bot-prerender.ts` dla ścieżki `/:locale` (bez reszty path) routuje do `pageSlug = STATIC_ROUTES['']` = `'index'` — to działa. Ale trzeba sprawdzić czy Netlify Edge Function jest skonfigurowana dla `/pl` i `/pl/` — w `netlify.toml` są zdefiniowane, więc to OK.
-
-### Zmiana 4: Naprawa `group_id` dla artykułów EN bez powiązań
-
-SQL do uruchomienia w bazie — weryfikacja i naprawienie powiązań językowych:
-
-```sql
--- Sprawdzenie artykułów bez group_id lub ze złymi powiązaniami
-SELECT id, slug, lang, group_id, title 
-FROM posts 
-WHERE status = 'published' 
-AND slug IN (
-  'ai-agents-in-quantifier',
-  'case-study-cyberattack-ransomware-manufacturing-company'
-)
-ORDER BY lang;
-```
-
-Jeżeli `group_id` jest NULL lub nie zgadza się między wersjami językowymi — zostanie naprawione migrację SQL.
-
-### Zmiana 5: Jawne dodanie `X-Robots-Tag` w funkcjach Edge Supabase
-
-Zarówno `prerender-post/index.ts` jak i `prerender-story/index.ts` nie wysyłają `X-Robots-Tag` nagłówka. Dodanie go zapewni podwójne zabezpieczenie:
+Dodanie strony do listy `staticPages`:
 
 ```typescript
-'X-Robots-Tag': 'index, follow',
+const staticPages = [
+  // ... istniejące wpisy ...
+  { path: '/nis2-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-18' },
+];
+```
+
+Dynamiczna sitemapa automatycznie wygeneruje wpisy dla wszystkich 3 locale (`/en/nis2-check/`, `/pl/nis2-check/`, `/cs/nis2-check/`) wraz z tagami `hreflang`.
+
+---
+
+## Plik 4: `public/sitemap.xml` (statyczny fallback)
+
+Dodanie wpisów dla 3 wersji językowych do statycznego pliku sitemapy (używanego jako fallback gdy funkcja Edge nie jest dostępna):
+
+```xml
+<url>
+  <loc>https://quantifier.ai/en/nis2-check</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://quantifier.ai/pl/nis2-check</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://quantifier.ai/cs/nis2-check</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
 ```
 
 ---
 
-## Podsumowanie priorytetów
+## Deployment
 
-| # | Problem | Plik do zmiany | Priorytet |
-|---|---------|---------------|-----------|
-| 1 | CSP: sandbox blokuje Google | `bot-prerender.ts` | 🔴 KRYTYCZNY |
-| 2 | CSP: sandbox w Edge Functions | `prerender-post/index.ts`, `prerender-story/index.ts`, `prerender-marketing/index.ts` | 🔴 KRYTYCZNY |
-| 3 | Brakujące `group_id` dla EN artykułów | SQL migration | 🟠 POWAŻNY |
-| 4 | Brak `X-Robots-Tag` w funkcjach | `prerender-post/index.ts`, `prerender-story/index.ts` | 🟡 WAŻNY |
+Po zapisaniu zmian funkcje Edge (`prerender-marketing`, `sitemap`) zostaną automatycznie wdrożone. Netlify Edge Function (`bot-prerender.ts`) zostanie zaktualizowana przy najbliższym deploy.
 
 ---
 
-## Pliki do modyfikacji
+## Podsumowanie
 
-| Plik | Zakres |
-|------|--------|
-| `netlify/edge-functions/bot-prerender.ts` | Nadpisanie CSP w `proxyToPrerender` |
-| `supabase/functions/prerender-post/index.ts` | Dodanie CSP + X-Robots-Tag w Response |
-| `supabase/functions/prerender-story/index.ts` | Dodanie CSP + X-Robots-Tag w Response |
-| `supabase/functions/prerender-marketing/index.ts` | Dodanie CSP w Response (linia ~2900) |
-| SQL Migration | Naprawa `group_id` dla EN artykułów blogowych |
+| Plik | Zmiana | Efekt |
+|------|--------|-------|
+| `bot-prerender.ts` | +1 wpis w STATIC_ROUTES | Googlebot dostaje HTML zamiast pustego SPA |
+| `prerender-marketing/index.ts` | +pageUrlMap, +pageData (3 języki), +hreflang | Prerenderowany HTML z meta tagami i FAQ JSON-LD |
+| `sitemap/index.ts` | +1 wpis w staticPages | Dynamiczna sitemapa generuje 3 URL-e z hreflang |
+| `public/sitemap.xml` | +3 wpisy URL | Statyczny fallback sitemapy |
