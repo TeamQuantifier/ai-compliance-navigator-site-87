@@ -297,16 +297,19 @@ export type Database = {
       result_templates: {
         Row: {
           body: string
+          lang: string
           result_key: string
           title: string
         }
         Insert: {
           body: string
+          lang?: string
           result_key: string
           title: string
         }
         Update: {
           body?: string
+          lang?: string
           result_key?: string
           title?: string
         }
