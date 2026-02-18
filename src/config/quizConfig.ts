@@ -1,6 +1,6 @@
 // ============================================================
 // KONFIGURACJA QUIZU NIS2
-// Edytuj tutaj treści pytań, opcje i logikę punktacji.
+// Edytuj tutaj treści pytań, opcje i logikę klasyfikacji.
 // Nie musisz modyfikować komponentów UI.
 // ============================================================
 
@@ -143,118 +143,116 @@ export const Q4_OPTIONS = [
   { value: 'b2c', label: 'Klienci indywidualni (B2C)' },
 ] as const;
 
-// ------------------------------------------------------------
-// LOGIKA PUNKTACJI
-// ------------------------------------------------------------
+// ============================================================
+// LOGIKA KLASYFIKACJI NIS2
+// Reguły warunkowe — kolejność priorytetów (pierwsza pasuje)
+// ============================================================
 
-export function scoreQ1(value: string): number {
-  const map: Record<string, number> = {
-    lt10: 0,
-    '10_49': 1,
-    '50_249': 2,
-    '250plus': 3,
-  };
-  return map[value] ?? 0;
-}
+export type ResultKey = 'RED' | 'ORANGE' | 'YELLOW' | 'GREEN';
 
-export function scoreQ2(value: string): number {
-  const map: Record<string, number> = {
-    lt2m: 0,
-    '2_10m': 1,
-    '10_50m': 2,
-    '50mplus': 3,
-  };
-  return map[value] ?? 0;
-}
+// --- Mapowanie ryzyka sektora NACE ---
+type SectorRisk = 'HIGH' | 'MEDIUM' | 'SUPPLY_CHAIN' | 'LOW';
 
-// Sektory kluczowe NIS2 (Załącznik I) → +3 pkt
-const CRITICAL_SECTORS = new Set([
-  'D35', // Energia
-  'H49', 'H50', 'H51', 'H52', // Transport
-  'K64', 'K65', // Bankowość, infrastruktura rynków finansowych
-  'Q86', // Ochrona zdrowia
-  'E36', 'E37', 'E38', // Woda pitna, ścieki
-  'J61', 'J62', 'J63', // Infrastruktura cyfrowa / IT
-  'O84', // Administracja publiczna
-  'U99', // Przestrzeń kosmiczna / organizacje międzynarodowe
+// Załącznik I NIS2 — podmioty kluczowe
+const HIGH_SECTORS = new Set([
+  'D35',                         // Energia
+  'H49', 'H50', 'H51', 'H52',  // Transport
+  'K64', 'K65',                  // Bankowość i ubezpieczenia
+  'Q86',                         // Ochrona zdrowia
+  'E36', 'E37', 'E38',          // Woda pitna, ścieki, odpady
+  'J61', 'J62', 'J63',          // Infrastruktura cyfrowa / IT
+  'O84',                         // Administracja publiczna
+  'U99',                         // Organizacje międzynarodowe
 ]);
 
-// Sektory ważne NIS2 (Załącznik II) → +2 pkt
-const IMPORTANT_SECTORS = new Set([
-  'C21', // Farmaceutyki
-  'C24', // Metale
+// Załącznik II NIS2 — podmioty ważne
+const MEDIUM_SECTORS = new Set([
+  'C21',                                     // Farmaceutyki
+  'C24',                                     // Metale
   'C25', 'C26', 'C27', 'C28', 'C29', 'C30', // Produkcja kluczowa
-  'G46', // Handel hurtowy
-  'M72', // Badania naukowe
-  'K66', // Usługi finansowe wspomagające
-  'C20', // Chemikalia
-  'C10', // Żywność
-  'E39', // Gospodarka odpadami / rekultywacja
+  'G46',                                     // Handel hurtowy
+  'M72',                                     // Badania naukowe
+  'K66',                                     // Usługi finansowe wspomagające
+  'C20',                                     // Chemikalia
+  'C10',                                     // Produkcja żywności
+  'E39',                                     // Rekultywacja
 ]);
 
-// Sektory wyłączone (zerowe prawdopodobieństwo NIS2)
-const ZERO_SECTORS = new Set(['A01', 'A02', 'A03', 'T97', 'T98']);
+// Sektory typowo w łańcuchu dostaw podmiotów NIS2
+const SUPPLY_CHAIN_SECTORS = new Set([
+  'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', // Przemysł lekki
+  'C22', 'C23',                                                     // Guma, plastik, ceramika
+  'C31', 'C32', 'C33',                                             // Meble, pozostała prod., naprawa
+  'F41', 'F42', 'F43',                                             // Budownictwo
+  'G45', 'G47',                                                    // Handel detaliczny i poj.
+  'H53',                                                           // Poczta i kurierzy
+  'I55', 'I56',                                                    // Zakwaterowanie, gastronomia
+  'J58', 'J59', 'J60',                                             // Wydawnictwa, film, nadawanie
+  'L68',                                                           // Nieruchomości
+  'M69', 'M70', 'M71', 'M73', 'M74',                              // Usługi profesjonalne
+  'N77', 'N78', 'N79', 'N80', 'N81', 'N82',                       // Usługi wsparcia biznesu
+  'P85',                                                           // Edukacja
+  'Q87', 'Q88',                                                    // Opieka społeczna
+]);
 
-export function scoreQ3(naceCode: string): number {
-  if (!naceCode) return 0;
-  if (ZERO_SECTORS.has(naceCode)) return 0;
-  if (CRITICAL_SECTORS.has(naceCode)) return 3;
-  if (IMPORTANT_SECTORS.has(naceCode)) return 2;
-  return 1;
-}
-
-export function scoreQ4(values: string[]): number {
-  const pointMap: Record<string, number> = {
-    banks: 2,
-    energy: 2,
-    large_corps: 1,
-    public_admin: 2,
-    listed: 1,
-    it: 1,
-    food: 1,
-    pharma: 1,
-    transport: 1,
-    water: 2,
-    sme: 0,
-    b2c: 0,
-  };
-  return values.reduce((sum, v) => sum + (pointMap[v] ?? 0), 0);
-}
-
-export function calculateTotalScore(q1: string, q2: string, q3: string, q4: string[]): number {
-  return scoreQ1(q1) + scoreQ2(q2) + scoreQ3(q3) + scoreQ4(q4);
-}
-
-// ------------------------------------------------------------
-// PROGI WYNIKOWE
-// Zmień te wartości, żeby zmienić klasyfikację
-// ------------------------------------------------------------
-export const SCORE_THRESHOLDS = {
-  CRITICAL: 8,  // >= 8 pkt
-  HIGH: 5,      // 5–7 pkt
-  MEDIUM: 2,    // 2–4 pkt
-  // LOW: 0–1 pkt (domyślnie)
-} as const;
-
-export type ResultKey = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
-
-export function getResultKey(score: number): ResultKey {
-  if (score >= SCORE_THRESHOLDS.CRITICAL) return 'CRITICAL';
-  if (score >= SCORE_THRESHOLDS.HIGH) return 'HIGH';
-  if (score >= SCORE_THRESHOLDS.MEDIUM) return 'MEDIUM';
+export function getSectorRisk(naceCode: string): SectorRisk {
+  if (!naceCode) return 'LOW';
+  if (HIGH_SECTORS.has(naceCode)) return 'HIGH';
+  if (MEDIUM_SECTORS.has(naceCode)) return 'MEDIUM';
+  if (SUPPLY_CHAIN_SECTORS.has(naceCode)) return 'SUPPLY_CHAIN';
   return 'LOW';
 }
 
+// Opcje Q4 będące triggerem "łańcuch dostaw" → YELLOW
+const Q4_SUPPLY_CHAIN = new Set([
+  'banks', 'energy', 'large_corps', 'public_admin',
+  'listed', 'it', 'food', 'pharma', 'transport', 'water',
+]);
+
+// --- Główna funkcja klasyfikacji ---
+export function classifyNIS2(q1: string, q2: string, q3: string, q4: string[]): ResultKey {
+  const largeFirm = q1 === '50_249' || q1 === '250plus';
+  const highRevenue = q2 === '10_50m' || q2 === '50mplus';
+  const sectorRisk = getSectorRisk(q3);
+  const hasSupplyChainClients = q4.some(v => Q4_SUPPLY_CHAIN.has(v));
+
+  // 🔴 RED: wszystkie 3 warunki (≥50 prac. + ≥10m EUR + sektor HIGH)
+  if (largeFirm && highRevenue && sectorRisk === 'HIGH') return 'RED';
+
+  // 🟠 ORANGE: przynajmniej 2 z 3 warunków (sektor HIGH lub MEDIUM)
+  const isNIS2Sector = sectorRisk === 'HIGH' || sectorRisk === 'MEDIUM';
+  const metCount = [largeFirm, highRevenue, isNIS2Sector].filter(Boolean).length;
+  if (metCount >= 2) return 'ORANGE';
+
+  // 🟡 YELLOW: sektor SUPPLY_CHAIN lub klienci z łańcucha dostaw
+  if (sectorRisk === 'SUPPLY_CHAIN' || hasSupplyChainClients) return 'YELLOW';
+
+  // 🟢 GREEN: żaden warunek nie pasuje
+  return 'GREEN';
+}
+
+// Alias dla wstecznej kompatybilności z FormularzPage (onSubmit przekazuje q1,q2,q3,q4)
+export function calculateTotalScore(_q1: string, _q2: string, _q3: string, _q4: string[]): number {
+  return 0; // nie używane — zastąpione przez classifyNIS2
+}
+export function getResultKey(_score: number): ResultKey {
+  return 'GREEN'; // nie używane — zastąpione przez classifyNIS2
+}
+
+// ============================================================
+// WYNIKI — kolory i etykiety
+// ============================================================
+
 export const RESULT_BADGE_COLORS: Record<ResultKey, string> = {
-  CRITICAL: 'bg-red-100 text-red-800 border-red-200',
-  HIGH: 'bg-orange-100 text-orange-800 border-orange-200',
-  MEDIUM: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-  LOW: 'bg-green-100 text-green-800 border-green-200',
+  RED:    'bg-red-100 text-red-800 border-red-200',
+  ORANGE: 'bg-orange-100 text-orange-800 border-orange-200',
+  YELLOW: 'bg-yellow-100 text-yellow-800 border-yellow-200',
+  GREEN:  'bg-green-100 text-green-800 border-green-200',
 };
 
 export const RESULT_LABELS: Record<ResultKey, string> = {
-  CRITICAL: 'Krytyczne',
-  HIGH: 'Wysokie',
-  MEDIUM: 'Umiarkowane',
-  LOW: 'Niskie',
+  RED:    'Wysokie prawdopodobieństwo NIS2',
+  ORANGE: 'Prawdopodobny obowiązek NIS2',
+  YELLOW: 'Wymogi łańcucha dostaw (ISO 27001)',
+  GREEN:  'Niskie ryzyko regulacyjne',
 };
