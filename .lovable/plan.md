@@ -1,76 +1,100 @@
 
-# Dwa błędy do naprawienia w formularzu NIS2
+# Plan zmian: usunięcie punktów, wysyłka emaila przez API, statystyki zbiorcze w adminie
 
-## Błąd 1: RLS blokuje INSERT dla zalogowanych użytkowników
+## Co zostanie zrobione (3 niezależne zmiany)
 
-**Problem:** Polityka `Anon can insert submissions` jest ograniczona do roli `anon`. Gdy ktoś jest zalogowany do panelu admina i jednocześnie otworzy `/formularz`, żądanie idzie z rolą `authenticated` — i RLS go blokuje. Brakuje polityki INSERT dla `authenticated`.
+---
 
-Z request headers widać: `"role":"authenticated"` w JWT, a RLS policy dotyczy tylko `anon`.
+## 1. Usunięcie liczby punktów z widoku wyniku
 
-**Naprawa:** Dodanie polityki INSERT dla roli `authenticated` (lub rozszerzenie istniejącej na obie role):
+W `FormularzPage.tsx` w sekcji wynikowej (linia 195–198) jest blok:
+```tsx
+<div className="text-right">
+  <div className="text-4xl font-black text-[#1a2e54]">{result.score}</div>
+  <div className="text-xs text-gray-400 font-medium">punktów</div>
+</div>
+```
+Ten blok zostanie **usunięty**. Interfejs `ResultData` straci pole `score`, a `onSubmit` nie będzie już przekazywać tej wartości.
 
-```sql
-CREATE POLICY "Authenticated can insert submissions"
-  ON public.submissions
-  FOR INSERT
-  TO authenticated
-  WITH CHECK (true);
+---
+
+## 2. Wysyłka emaila przez API marketing.quantifier.ai
+
+Aktualnie po wypełnieniu formularza email jest zapisywany tylko do bazy — nie jest wysyłany żaden email do uczestnika.
+
+Wzorując się na istniejącym `newsletterClient` (który używa `https://marketing.quantifier.ai`), po zapisaniu do bazy zostanie wywołane `newsletterClient.subscribe(...)` z dodatkowymi polami:
+
+```typescript
+await newsletterClient.subscribe(data.email.trim().toLowerCase(), 'pl', {
+  source: 'nis2-quiz',
+  origin: window.location.href,
+  tags: ['nis2-quiz', `result-${resultKey.toLowerCase()}`],
+  customer_message: resultKey, // wynik quizu jako dodatkowy kontekst
+});
 ```
 
-## Błąd 2: NACE dropdown nie zachowuje wyboru D35
+To wystarczy, żeby:
+- Subskrybent trafił do bazy marketingowej z tagiem `result-RED` / `result-ORANGE` itp.
+- Automacja po stronie marketing.quantifier.ai mogła wysłać odpowiedni email z wynikiem.
 
-**Problem:** Z request body widać `"q3":["A03"]` (Rybołówstwo), chociaż D35 był widoczny jako wybrany w UI. Drugi klik na dropdown button po wybraniu D35 resetował wartość (lub wybór nie był zarejestrowany przez `onChange` kontrolera React Hook Form).
+Błąd wysyłki emaila **nie blokuje** zapisania zgłoszenia — jest przechwytywany oddzielnie i logowany (`console.warn`), żeby nie tracić danych.
 
-**Przyczyna:** W `NaceSelect` komponent po kliknięciu opcji wywołuje `onChange(s.code)` i `setOpen(false)`, ale następnie browser wywołuje ponownie click na `button.w-full` (bo jest w tej samej pozycji co kliknięty li) — co ponownie otwiera dropdown. Otwierający klik na dropdown button nie resetuje wartości, ale problem może być w kolejności eventów.
+---
 
-**Naprawa:** W `NaceSelect` po wyborze opcji dodać `event.stopPropagation()` przy zamknięciu, lub zmienić logikę dropdown button na `onMouseDown` zamiast `onClick` z `event.preventDefault()`, żeby drugi klik nie re-toggle'ował.
+## 3. Statystyki zbiorcze w panelu admina (nowa sekcja w QuizSubmissions)
+
+Dane są już w bazie (`submissions`), więc **nie potrzebujemy ani MailerLite API, ani Google Forms** — wszystko liczymy po stronie klienta ze zwróconych wierszy.
+
+Na górze strony `/admin/quiz-submissions`, powyżej tabeli, zostanie dodany panel z 4 kartami statystyk:
+
+```
+┌─────────────────┬─────────────────┬─────────────────┬─────────────────┐
+│  🔴 RED         │  🟠 ORANGE      │  🟡 YELLOW      │  🟢 GREEN       │
+│  12 zgłoszeń   │  34 zgłoszeń   │  28 zgłoszeń   │  15 zgłoszeń   │
+│  13.5% całości  │  38.2% całości  │  31.5% całości  │  16.8% całości  │
+└─────────────────┴─────────────────┴─────────────────┴─────────────────┘
+```
+
+Plus jedno podsumowanie ogólne: łączna liczba, liczba z ostatnich 7 dni, i najczęstszy sektor NACE.
+
+Statystyki obliczane są z `rows` (wszystkich rekordów, nie filtrowanych) — by zawsze pokazywały globalny obraz.
+
+---
 
 ## Pliki do modyfikacji
 
-| Plik | Zmiana |
-|------|--------|
-| `supabase/migrations/TIMESTAMP_fix_submissions_rls.sql` | Dodanie polityki INSERT dla roli `authenticated` |
-| `src/pages/formularz/FormularzPage.tsx` | Naprawa `NaceSelect` — zapobieganie re-toggle dropdown po wyborze |
+| Plik | Zakres zmiany |
+|------|---------------|
+| `src/pages/formularz/FormularzPage.tsx` | Usuń blok punktów z widoku wyniku, usuń `score` z interfejsu `ResultData`, dodaj wywołanie `newsletterClient.subscribe(...)` po zapisaniu do bazy |
+| `src/pages/admin/QuizSubmissions.tsx` | Dodaj sekcję statystyk zbiorczych (4 kolorowe karty + podsumowanie ogólne) powyżej filtrów |
 
-## Szczegóły techniczne
+---
 
-### Migracja SQL
+## Decyzja: gdzie trzymać dane
 
-```sql
--- Dodaj politykę INSERT dla authenticated (zalogowani użytkownicy też mogą wypełniać quiz)
-CREATE POLICY "Authenticated can insert submissions"
-  ON public.submissions
-  FOR INSERT
-  TO authenticated
-  WITH CHECK (true);
+Dane quizu pozostają **wyłącznie w bazie** (tabela `submissions`). To optymalne rozwiązanie bo:
+- Panel admina ma już pełny podgląd z filtrowaniem i eksportem CSV
+- Nie trzeba synchronizować danych z MailerLite czy Google Forms
+- Statystyki są zawsze aktualne (obliczane live z bazy)
+- Tagging w systemie mailingowym (`result-RED` itp.) pozwala na segmentację w MailerLite bez duplikowania bazy
+
+---
+
+## Przepływ po zmianach
+
+```text
+Użytkownik wypełnia formularz
+        ↓
+classifyNIS2() → result_key (RED/ORANGE/YELLOW/GREEN)
+        ↓
+INSERT → submissions (baza danych)
+        ↓
+newsletterClient.subscribe() → marketing.quantifier.ai
+  z tagiem result-red / result-orange / result-yellow / result-green
+        ↓
+Wynik pokazany użytkownikowi (bez liczby punktów)
+        ↓
+Admin widzi w /admin/quiz-submissions:
+  - statystyki zbiorcze (4 karty)
+  - tabelę z wszystkimi zgłoszeniami
 ```
-
-### Naprawa NaceSelect — button onMouseDown
-
-Zmiana w `NaceSelect` buttona dropdown:
-```tsx
-// PRZED:
-onClick={() => setOpen(o => !o)}
-
-// PO: używamy onMouseDown + preventDefault żeby klik na btn podczas zamykania nie re-otwierał
-onMouseDown={(e) => {
-  e.preventDefault();
-  setOpen(o => !o);
-}}
-```
-
-Alternatywnie: po wyborze opcji, dodać `e.stopPropagation()`:
-```tsx
-onClick={() => { 
-  onChange(s.code); 
-  setOpen(false); 
-  setSearch(''); 
-}}
-// + na dropdown container: onClick={(e) => e.stopPropagation()}
-```
-
-### Kolejność testowania po naprawie
-
-1. Otwórz `/formularz` (bez logowania) → wypełnij D35 + 250+ + 50mln+ → wynik powinien być 🔴 RED
-2. Otwórz `/formularz` (będąc zalogowanym jako admin) → wypełnij → wynik powinien być 🔴 RED (dotychczas blokowane)
-3. Sprawdź `/admin/quiz-submissions` → wpis powinien pojawić się z `result_key = RED`
