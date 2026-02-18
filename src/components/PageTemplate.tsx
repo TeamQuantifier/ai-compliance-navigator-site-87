@@ -10,6 +10,7 @@ interface PageTemplateProps {
   children: ReactNode;
   ogImage?: string;
   noIndex?: boolean;
+  noSeo?: boolean;
 }
 
 // Tracking parameters to strip from canonical URLs
@@ -145,7 +146,8 @@ const PageTemplate = ({
   description,
   children,
   ogImage = '/og-image.png',
-  noIndex = false
+  noIndex = false,
+  noSeo = false
 }: PageTemplateProps) => {
   const { currentLocale } = useLanguage();
   const location = useLocation();
@@ -175,45 +177,47 @@ const PageTemplate = ({
 
   return (
     <>
-      <Helmet>
-        <title>{fullTitle}</title>
-        <meta name="description" content={description} />
-        
-        {/* Robots - explicit index/follow */}
-        <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
-        
-        {/* Canonical */}
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* hreflang for all supported locales with geo-targeting */}
-        {hreflangUrls.map(({ locale, url }) => (
-          <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]} href={url} />
-        ))}
-        <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={fullTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={ogImageUrl} />
-        <meta property="og:site_name" content="Quantifier.ai" />
-        <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : currentLocale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
-        {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
-          <meta key={locale} property="og:locale:alternate" content={locale === 'en' ? 'en_US' : locale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
-        ))}
-        
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={fullTitle} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImageUrl} />
-        
-        {/* BreadcrumbList JSON-LD */}
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-      </Helmet>
+      {!noSeo && (
+        <Helmet>
+          <title>{fullTitle}</title>
+          <meta name="description" content={description} />
+          
+          {/* Robots - explicit index/follow */}
+          <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+          
+          {/* Canonical */}
+          <link rel="canonical" href={canonicalUrl} />
+          
+          {/* hreflang for all supported locales with geo-targeting */}
+          {hreflangUrls.map(({ locale, url }) => (
+            <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]} href={url} />
+          ))}
+          <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content={fullTitle} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content={ogImageUrl} />
+          <meta property="og:site_name" content="Quantifier.ai" />
+          <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : currentLocale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
+          {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
+            <meta key={locale} property="og:locale:alternate" content={locale === 'en' ? 'en_US' : locale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
+          ))}
+          
+          {/* Twitter Cards */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={fullTitle} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={ogImageUrl} />
+          
+          {/* BreadcrumbList JSON-LD */}
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        </Helmet>
+      )}
       
       <div className="min-h-screen">
         <div className="container mx-auto px-4 py-[20px]">

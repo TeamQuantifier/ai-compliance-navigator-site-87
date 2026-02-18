@@ -25,79 +25,6 @@ const Frameworks = () => {
   }[] = [
     // Row 1
     {
-      categoryKey: "esg",
-      title: { pl: "ESG", en: "ESG", cs: "ESG" },
-      description: { 
-        pl: "Raportowanie niefinansowe i zrównoważony rozwój", 
-        en: "Non-financial reporting and sustainability", 
-        cs: "Nefinanční reporting a udržitelnost" 
-      },
-      icon: Scale,
-      frameworks: [
-        { 
-          name: { pl: "Raportowanie niefinansowe (CSRD, VSME, ESRS, GRI)", en: "Non-financial reporting (CSRD, VSME, ESRS, GRI)", cs: "Nefinanční reporting (CSRD, VSME, ESRS, GRI)" }, 
-          href: `/${currentLocale}/frameworks/esg` 
-        },
-        { 
-          name: { pl: "Ślad węglowy organizacji GHG", en: "Organization GHG Carbon Footprint", cs: "Uhlíková stopa organizace GHG" }, 
-          href: `/${currentLocale}/frameworks/environmental` 
-        },
-        { 
-          name: { pl: "Cło węglowe na granicy CBAM", en: "Carbon Border Adjustment CBAM", cs: "Uhlíkové clo na hranicích CBAM" }, 
-          href: `/${currentLocale}/frameworks/esg` 
-        }
-      ]
-    },
-    {
-      categoryKey: "productAnalysis",
-      title: { pl: "Analizy produktowe", en: "Product Analysis", cs: "Produktové analýzy" },
-      description: { 
-        pl: "Analiza cyklu życia i paszporty produktowe", 
-        en: "Lifecycle analysis and product passports", 
-        cs: "Analýza životního cyklu a produktové pasy" 
-      },
-      icon: Package,
-      frameworks: [
-        { 
-          name: { pl: "Ślad środowiskowy produktu LCA", en: "Product Environmental Footprint LCA", cs: "Environmentální stopa produktu LCA" }, 
-          href: `/${currentLocale}/frameworks/product-level` 
-        },
-        { 
-          name: { pl: "Paszporty produktowe DPP", en: "Digital Product Passports DPP", cs: "Digitální produktové pasy DPP" }, 
-          href: `/${currentLocale}/frameworks/product-level` 
-        },
-        { 
-          name: { pl: "Deklaracje produktowe EPD", en: "Environmental Product Declarations EPD", cs: "Environmentální prohlášení o produktu EPD" }, 
-          href: `/${currentLocale}/frameworks/product-level` 
-        }
-      ]
-    },
-    {
-      categoryKey: "governance",
-      title: { pl: "Governance", en: "Governance", cs: "Governance" },
-      description: { 
-        pl: "Ład korporacyjny i zgodność prawna", 
-        en: "Corporate governance and legal compliance", 
-        cs: "Firemní správa a právní soulad" 
-      },
-      icon: Scale,
-      frameworks: [
-        { 
-          name: { pl: "Ład korporacyjny", en: "Corporate Governance", cs: "Firemní správa" }, 
-          href: `/${currentLocale}/frameworks/governance` 
-        },
-        { 
-          name: { pl: "RODO", en: "GDPR", cs: "GDPR" }, 
-          href: `/${currentLocale}/frameworks/gdpr` 
-        },
-        { 
-          name: { pl: "Sygnaliści", en: "Whistleblowing", cs: "Whistleblowing" }, 
-          href: `/${currentLocale}/frameworks/governance` 
-        }
-      ]
-    },
-    // Row 2
-    {
       categoryKey: "cybersecurity",
       title: { pl: "Cyberbezpieczeństwo", en: "Cybersecurity", cs: "Kybernetická bezpečnost" },
       description: { 
@@ -126,6 +53,55 @@ const Frameworks = () => {
       ]
     },
     {
+      categoryKey: "governance",
+      title: { pl: "Governance", en: "Governance", cs: "Governance" },
+      description: { 
+        pl: "Ład korporacyjny i zgodność prawna", 
+        en: "Corporate governance and legal compliance", 
+        cs: "Firemní správa a právní soulad" 
+      },
+      icon: Scale,
+      frameworks: [
+        { 
+          name: { pl: "Ład korporacyjny", en: "Corporate Governance", cs: "Firemní správa" }, 
+          href: `/${currentLocale}/frameworks/governance` 
+        },
+        { 
+          name: { pl: "RODO", en: "GDPR", cs: "GDPR" }, 
+          href: `/${currentLocale}/frameworks/gdpr` 
+        },
+        { 
+          name: { pl: "Sygnaliści", en: "Whistleblowing", cs: "Whistleblowing" }, 
+          href: `/${currentLocale}/frameworks/governance` 
+        }
+      ]
+    },
+    // Row 2
+    {
+      categoryKey: "productAnalysis",
+      title: { pl: "Analizy produktowe", en: "Product Analysis", cs: "Produktové analýzy" },
+      description: { 
+        pl: "Analiza cyklu życia i paszporty produktowe", 
+        en: "Lifecycle analysis and product passports", 
+        cs: "Analýza životního cyklu a produktové pasy" 
+      },
+      icon: Package,
+      frameworks: [
+        { 
+          name: { pl: "Ślad środowiskowy produktu LCA", en: "Product Environmental Footprint LCA", cs: "Environmentální stopa produktu LCA" }, 
+          href: `/${currentLocale}/frameworks/product-level` 
+        },
+        { 
+          name: { pl: "Paszporty produktowe DPP", en: "Digital Product Passports DPP", cs: "Digitální produktové pasy DPP" }, 
+          href: `/${currentLocale}/frameworks/product-level` 
+        },
+        { 
+          name: { pl: "Deklaracje produktowe EPD", en: "Environmental Product Declarations EPD", cs: "Environmentální prohlášení o produktu EPD" }, 
+          href: `/${currentLocale}/frameworks/product-level` 
+        }
+      ]
+    },
+    {
       categoryKey: "dataSecurity",
       title: { pl: "Ochrona Danych", en: "Data Protection", cs: "Ochrana dat" },
       description: { 
@@ -138,6 +114,30 @@ const Frameworks = () => {
         { name: { pl: "GDPR / RODO", en: "GDPR / RODO", cs: "GDPR / RODO" }, href: `/${currentLocale}/frameworks/gdpr` },
         { name: { pl: "HIPAA", en: "HIPAA", cs: "HIPAA" }, href: `/${currentLocale}/frameworks/hipaa` },
         { name: { pl: "CCPA", en: "CCPA", cs: "CCPA" }, href: `/${currentLocale}/frameworks/ccpa` }
+      ]
+    },
+    {
+      categoryKey: "esg",
+      title: { pl: "ESG", en: "ESG", cs: "ESG" },
+      description: { 
+        pl: "Raportowanie niefinansowe i zrównoważony rozwój", 
+        en: "Non-financial reporting and sustainability", 
+        cs: "Nefinanční reporting a udržitelnost" 
+      },
+      icon: Scale,
+      frameworks: [
+        { 
+          name: { pl: "Raportowanie niefinansowe (CSRD, VSME, ESRS, GRI)", en: "Non-financial reporting (CSRD, VSME, ESRS, GRI)", cs: "Nefinanční reporting (CSRD, VSME, ESRS, GRI)" }, 
+          href: `/${currentLocale}/frameworks/esg` 
+        },
+        { 
+          name: { pl: "Ślad węglowy organizacji GHG", en: "Organization GHG Carbon Footprint", cs: "Uhlíková stopa organizace GHG" }, 
+          href: `/${currentLocale}/frameworks/environmental` 
+        },
+        { 
+          name: { pl: "Cło węglowe na granicy CBAM", en: "Carbon Border Adjustment CBAM", cs: "Uhlíkové clo na hranicích CBAM" }, 
+          href: `/${currentLocale}/frameworks/esg` 
+        }
       ]
     }
   ];

@@ -294,6 +294,27 @@ export type Database = {
         }
         Relationships: []
       }
+      result_templates: {
+        Row: {
+          body: string
+          lang: string
+          result_key: string
+          title: string
+        }
+        Insert: {
+          body: string
+          lang?: string
+          result_key: string
+          title: string
+        }
+        Update: {
+          body?: string
+          lang?: string
+          result_key?: string
+          title?: string
+        }
+        Relationships: []
+      }
       settings: {
         Row: {
           id: string
@@ -449,6 +470,42 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      submissions: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+          q1: string[] | null
+          q2: string[] | null
+          q3: string[] | null
+          q4: string[] | null
+          result_key: string | null
+          result_text: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+          q1?: string[] | null
+          q2?: string[] | null
+          q3?: string[] | null
+          q4?: string[] | null
+          result_key?: string | null
+          result_text?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
+          q1?: string[] | null
+          q2?: string[] | null
+          q3?: string[] | null
+          q4?: string[] | null
+          result_key?: string | null
+          result_text?: string | null
+        }
+        Relationships: []
       }
       topics: {
         Row: {

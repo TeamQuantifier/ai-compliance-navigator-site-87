@@ -71,6 +71,10 @@ import StoriesList from "./pages/admin/StoriesList";
 import StoryEditor from "./pages/admin/StoryEditor";
 import SeoAudit from "./pages/admin/SeoAudit";
 import SeoSettings from "./pages/admin/SeoSettings";
+import QuizSubmissions from "./pages/admin/QuizSubmissions";
+
+// Standalone pages
+import FormularzPage from "./pages/formularz/FormularzPage";
 
 const queryClient = new QueryClient();
 
@@ -81,124 +85,139 @@ const LoadingSpinner = () => (
   </div>
 );
 
+// Main app routes with Navbar/Footer
+const MainRoutes = () => (
+  <div className="min-h-screen flex flex-col">
+    <Navbar />
+    <main className="flex-grow pt-16">
+      <Routes>
+        {/* Redirect root to preferred locale */}
+        <Route path="/" element={<RedirectToPreferredLocale />} />
+        
+        {/* Locale-based routes */}
+        <Route path="/:locale" element={<Index />} />
+    
+        {/* Product routes */}
+        <Route path="/:locale/product" element={<Features />} />
+        <Route path="/:locale/product/overview" element={<ProductOverview />} />
+        <Route path="/:locale/product/features" element={<Features />} />
+        <Route path="/:locale/product/ai-compliance-officer" element={<Features />} />
+        <Route path="/:locale/product/task-data-management" element={<Features />} />
+        <Route path="/:locale/product/documents-management" element={<Features />} />
+        <Route path="/:locale/product/value-chain" element={<Features />} />
+        <Route path="/:locale/product/risk-assessment" element={<Features />} />
+        <Route path="/:locale/product/analytics-dashboards" element={<Features />} />
+        <Route path="/:locale/product/api-integrations" element={<Features />} />
+    
+        {/* By Roles routes */}
+        <Route path="/:locale/by-roles" element={<ByRoles />} />
+        <Route path="/:locale/by-roles/managers" element={<ByRoles />} />
+        <Route path="/:locale/by-roles/contributors" element={<ByRoles />} />
+        <Route path="/:locale/by-roles/auditor" element={<ByRoles />} />
+    
+        {/* Frameworks main page */}
+        <Route path="/:locale/frameworks" element={<Frameworks />} />
+        
+        {/* Flattened framework routes */}
+        <Route path="/:locale/frameworks/soc" element={<Soc />} />
+        <Route path="/:locale/frameworks/nis-ii" element={<NisII />} />
+        <Route path="/:locale/frameworks/iso-27001" element={<Iso27001 />} />
+        <Route path="/:locale/frameworks/iso-9001" element={<Iso9001 />} />
+        <Route path="/:locale/frameworks/dora" element={<Dora />} />
+        <Route path="/:locale/frameworks/gdpr" element={<Gdpr />} />
+        <Route path="/:locale/frameworks/hipaa" element={<Hipaa />} />
+        <Route path="/:locale/frameworks/ccpa" element={<Ccpa />} />
+        
+        {/* Category pages */}
+        <Route path="/:locale/frameworks/esg" element={<Esg />} />
+        <Route path="/:locale/frameworks/environmental" element={<Environmental />} />
+        <Route path="/:locale/frameworks/governance" element={<Governance />} />
+        <Route path="/:locale/frameworks/product-level" element={<ProductLevel />} />
+        
+        {/* Redirects from old nested URLs */}
+        <Route path="/:locale/frameworks/cybersecurity" element={<Navigate to="../frameworks" replace />} />
+        <Route path="/:locale/frameworks/information-security" element={<Navigate to="../frameworks" replace />} />
+        <Route path="/:locale/frameworks/data-security" element={<Navigate to="../frameworks" replace />} />
+        <Route path="/:locale/frameworks/cybersecurity/soc" element={<Navigate to="../../soc" replace />} />
+        <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-ii" replace />} />
+        <Route path="/:locale/frameworks/information-security/iso-27001" element={<Navigate to="../../iso-27001" replace />} />
+        <Route path="/:locale/frameworks/information-security/iso-9001" element={<Navigate to="../../iso-9001" replace />} />
+        <Route path="/:locale/frameworks/information-security/dora" element={<Navigate to="../../dora" replace />} />
+        <Route path="/:locale/frameworks/data-security/gdpr" element={<Navigate to="../../gdpr" replace />} />
+        <Route path="/:locale/frameworks/data-security/hipaa" element={<Navigate to="../../hipaa" replace />} />
+        <Route path="/:locale/frameworks/data-security/ccpa" element={<Navigate to="../../ccpa" replace />} />
+    
+        {/* SEO Landing Pages */}
+        <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/soc" replace />} />
+        <Route path="/:locale/iso27001" element={<Navigate to="frameworks/iso-27001" replace />} />
+        <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
+        <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
+        <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
+
+        {/* Blog routes */}
+        <Route path="/:locale/blog" element={<BlogList />} />
+        <Route path="/:locale/blog/:slug" element={<BlogPost />} />
+        
+        {/* Other main routes */}
+        <Route path="/:locale/plans" element={<Plans />} />
+        <Route path="/:locale/partners" element={<Partners />} />
+        <Route path="/:locale/success-stories" element={<SuccessStories />} />
+        <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
+        <Route path="/:locale/contact" element={<Contact />} />
+        
+        {/* Legal routes */}
+        <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
+        <Route path="/:locale/legal/terms" element={<TermsOfService />} />
+        <Route path="/:locale/legal/cookies" element={<CookiesPolicy />} />
+        
+        {/* Admin routes */}
+        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <AdminLayout />
+          </ProtectedRoute>
+        }>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="posts" element={<PostsList />} />
+          <Route path="posts/new" element={<PostEditor />} />
+          <Route path="posts/:id" element={<PostEditor />} />
+          <Route path="stories" element={<StoriesList />} />
+          <Route path="stories/:id" element={<StoryEditor />} />
+          <Route path="seo-audit" element={<SeoAudit />} />
+          <Route path="seo-settings" element={<SeoSettings />} />
+          <Route path="quiz-submissions" element={<QuizSubmissions />} />
+          <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
+          <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
+          <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />
+          <Route path="settings" element={<div className="p-6"><h1 className="text-3xl font-bold">Settings (Coming Soon)</h1></div>} />
+        </Route>
+        
+        {/* Catch-all route */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </main>
+    <Footer />
+  </div>
+);
+
 // App content that requires translations
 const AppContent = () => {
+  const isNis2Check = typeof window !== 'undefined' && /\/(pl|en|cs)\/nis2-check/.test(window.location.pathname);
   return (
     <>
       <Toaster />
       <Sonner />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow pt-16">
-          <Routes>
-            {/* Redirect root to preferred locale */}
-            <Route path="/" element={<RedirectToPreferredLocale />} />
-            
-            {/* Locale-based routes */}
-            <Route path="/:locale" element={<Index />} />
-        
-            {/* Product routes */}
-            <Route path="/:locale/product" element={<Features />} />
-            <Route path="/:locale/product/overview" element={<ProductOverview />} />
-            <Route path="/:locale/product/features" element={<Features />} />
-            <Route path="/:locale/product/ai-compliance-officer" element={<Features />} />
-            <Route path="/:locale/product/task-data-management" element={<Features />} />
-            <Route path="/:locale/product/documents-management" element={<Features />} />
-            <Route path="/:locale/product/value-chain" element={<Features />} />
-            <Route path="/:locale/product/risk-assessment" element={<Features />} />
-            <Route path="/:locale/product/analytics-dashboards" element={<Features />} />
-            <Route path="/:locale/product/api-integrations" element={<Features />} />
-        
-            {/* By Roles routes */}
-            <Route path="/:locale/by-roles" element={<ByRoles />} />
-            <Route path="/:locale/by-roles/managers" element={<ByRoles />} />
-            <Route path="/:locale/by-roles/contributors" element={<ByRoles />} />
-            <Route path="/:locale/by-roles/auditor" element={<ByRoles />} />
-        
-            {/* Frameworks main page */}
-            <Route path="/:locale/frameworks" element={<Frameworks />} />
-            
-            {/* Flattened framework routes */}
-            <Route path="/:locale/frameworks/soc" element={<Soc />} />
-            <Route path="/:locale/frameworks/nis-ii" element={<NisII />} />
-            <Route path="/:locale/frameworks/iso-27001" element={<Iso27001 />} />
-            <Route path="/:locale/frameworks/iso-9001" element={<Iso9001 />} />
-            <Route path="/:locale/frameworks/dora" element={<Dora />} />
-            <Route path="/:locale/frameworks/gdpr" element={<Gdpr />} />
-            <Route path="/:locale/frameworks/hipaa" element={<Hipaa />} />
-            <Route path="/:locale/frameworks/ccpa" element={<Ccpa />} />
-            
-            {/* Category pages */}
-            <Route path="/:locale/frameworks/esg" element={<Esg />} />
-            <Route path="/:locale/frameworks/environmental" element={<Environmental />} />
-            <Route path="/:locale/frameworks/governance" element={<Governance />} />
-            <Route path="/:locale/frameworks/product-level" element={<ProductLevel />} />
-            
-            {/* Redirects from old nested URLs */}
-            <Route path="/:locale/frameworks/cybersecurity" element={<Navigate to="../frameworks" replace />} />
-            <Route path="/:locale/frameworks/information-security" element={<Navigate to="../frameworks" replace />} />
-            <Route path="/:locale/frameworks/data-security" element={<Navigate to="../frameworks" replace />} />
-            <Route path="/:locale/frameworks/cybersecurity/soc" element={<Navigate to="../../soc" replace />} />
-            <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-ii" replace />} />
-            <Route path="/:locale/frameworks/information-security/iso-27001" element={<Navigate to="../../iso-27001" replace />} />
-            <Route path="/:locale/frameworks/information-security/iso-9001" element={<Navigate to="../../iso-9001" replace />} />
-            <Route path="/:locale/frameworks/information-security/dora" element={<Navigate to="../../dora" replace />} />
-            <Route path="/:locale/frameworks/data-security/gdpr" element={<Navigate to="../../gdpr" replace />} />
-            <Route path="/:locale/frameworks/data-security/hipaa" element={<Navigate to="../../hipaa" replace />} />
-            <Route path="/:locale/frameworks/data-security/ccpa" element={<Navigate to="../../ccpa" replace />} />
-        
-            {/* SEO Landing Pages */}
-            <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/soc" replace />} />
-            <Route path="/:locale/iso27001" element={<Navigate to="frameworks/iso-27001" replace />} />
-            <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
-            <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
-            <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
-
-            {/* Blog routes */}
-            <Route path="/:locale/blog" element={<BlogList />} />
-            <Route path="/:locale/blog/:slug" element={<BlogPost />} />
-            
-            {/* Other main routes */}
-            <Route path="/:locale/plans" element={<Plans />} />
-            <Route path="/:locale/partners" element={<Partners />} />
-            <Route path="/:locale/success-stories" element={<SuccessStories />} />
-            <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
-            <Route path="/:locale/contact" element={<Contact />} />
-            
-            {/* Legal routes */}
-            <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
-            <Route path="/:locale/legal/terms" element={<TermsOfService />} />
-            <Route path="/:locale/legal/cookies" element={<CookiesPolicy />} />
-            
-            {/* Admin routes */}
-            <Route path="/admin/login" element={<Login />} />
-            <Route path="/admin" element={
-              <ProtectedRoute>
-                <AdminLayout />
-              </ProtectedRoute>
-            }>
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="posts" element={<PostsList />} />
-              <Route path="posts/new" element={<PostEditor />} />
-              <Route path="posts/:id" element={<PostEditor />} />
-              <Route path="stories" element={<StoriesList />} />
-              <Route path="stories/:id" element={<StoryEditor />} />
-              <Route path="seo-audit" element={<SeoAudit />} />
-              <Route path="seo-settings" element={<SeoSettings />} />
-              <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
-              <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
-              <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />
-              <Route path="settings" element={<div className="p-6"><h1 className="text-3xl font-bold">Settings (Coming Soon)</h1></div>} />
-            </Route>
-            
-            {/* Catch-all route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Routes>
+        {/* NIS2 Check — standalone, no Navbar/Footer, multilang */}
+        <Route path="/:locale/nis2-check" element={<FormularzPage />} />
+        {/* Legacy redirects */}
+        <Route path="/formularz" element={<Navigate to="/pl/nis2-check" replace />} />
+        <Route path="/nis2-check" element={<Navigate to="/pl/nis2-check" replace />} />
+        {/* All other routes */}
+        <Route path="/*" element={<MainRoutes />} />
+      </Routes>
       <CookieConsentBanner />
-      <BookPromoPopup />
+      {!isNis2Check && <BookPromoPopup />}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useStory } from '@/hooks/useBlog';
+import { useStory, useAlternates } from '@/hooks/useBlog';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -22,6 +22,7 @@ const StoryDetail = () => {
   const { currentLocale, t } = useLanguage();
   
   const { data: story, isLoading, error } = useStory(slug || '', currentLocale);
+  const { data: alternates } = useAlternates(story?.group_id, currentLocale, 'story');
   
   if (!slug) {
     return null;
@@ -98,10 +99,10 @@ const StoryDetail = () => {
         tags={story.tags}
         industry={story.industry}
         clientName={story.client_name}
-        alternatePost={null}
+        alternates={alternates || null}
       />
 
-      <PageTemplate title="" description="">
+      <PageTemplate title="" description="" noSeo>
         <article className="max-w-4xl mx-auto">
           {/* Back button */}
           <div className="mb-8">

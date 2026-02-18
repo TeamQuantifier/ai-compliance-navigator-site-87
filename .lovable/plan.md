@@ -1,83 +1,137 @@
 
-# Problem: Wszystkie strony nieindeksowalne przez blad Content-Type
+# Dodanie strony `/nis2-check` do indeksowania SEO i sitemapy
 
-## Diagnoza
+## Zakres zmian
 
-Testujac odpowiedz funkcji `prerender-marketing` dla `/cs/frameworks/gdpr/`, znalazlem **krytyczny blad** wplywajacy na **WSZYSTKIE strony** serwisu, nie tylko GDPR:
+Strona `/:locale/nis2-check` istnieje jako działająca trasa React, ale jest **całkowicie niewidoczna dla Google** z dwóch powodów:
+1. Brak jej w sitemapie (ani w statycznym `public/sitemap.xml`, ani w dynamicznej funkcji Edge `sitemap/index.ts`)
+2. Brak prerenderingu dla botów — `bot-prerender.ts` nie ma jej w `STATIC_ROUTES`, więc Googlebot dostaje pustą aplikację React zamiast HTML
 
-**Supabase nadpisuje naglowek `Content-Type` na `text/plain`**, mimo ze kod jawnie ustawia `text/html; charset=utf-8`.
+Wymagane zmiany w **4 plikach**:
 
-Funkcja `bot-prerender.ts` na Netlify robi `return fetch(prerenderUrl)` -- czyli zwraca odpowiedz z Supabase bezposrednio, lacznie z blednym `Content-Type: text/plain`.
+---
 
-Googlebot otrzymuje wiec poprawny HTML, ale z naglowkiem mowiacym "to jest zwykly tekst". Google NIE parsuje tego jako strony HTML -- stad problem z indeksowaniem.
+## Plik 1: `netlify/edge-functions/bot-prerender.ts`
 
-## Dowod
+Dodanie wpisu `'nis2-check': 'nis2-check'` do słownika `STATIC_ROUTES`:
 
-Kazde wywolanie prerender-marketing zwraca:
-```
-Content-Type: text/plain          <-- BUG (powinno byc text/html)
-Content-Security-Policy: default-src 'none'; sandbox
-```
-
-Dotyczy to rowniez `prerender-post` i `prerender-story`.
-
-## Rozwiazanie
-
-Zmodyfikowac `netlify/edge-functions/bot-prerender.ts` tak, aby tworzyl nowy obiekt `Response` z prawidlowymi naglowkami zamiast zwracac surowa odpowiedz z Supabase.
-
-### Zmiana w pliku `netlify/edge-functions/bot-prerender.ts`
-
-Zamiast:
 ```typescript
-return fetch(prerenderUrl, {
-  headers: { 'User-Agent': ua },
-});
+const STATIC_ROUTES: Record<string, string> = {
+  // ... istniejące wpisy ...
+  'nis2-check': 'nis2-check',   // <-- NOWE
+};
 ```
 
-Nowa logika (wspolna funkcja proxy):
+Dzięki temu Googlebot odwiedzający `/pl/nis2-check`, `/en/nis2-check`, `/cs/nis2-check` zostanie przekierowany do funkcji prerenderującej zamiast dostawać pustą stronę SPA.
+
+---
+
+## Plik 2: `supabase/functions/prerender-marketing/index.ts`
+
+**Dodanie 3 elementów:**
+
+### 2a. Wpis w `pageUrlMap`
 ```typescript
-async function proxyToPrerender(url: string, ua: string): Promise<Response> {
-  const response = await fetch(url, {
-    headers: { 'User-Agent': ua },
-  });
+const pageUrlMap: Record<string, string> = {
+  // ... istniejące ...
+  'nis2-check': 'nis2-check',
+};
+```
 
-  if (!response.ok) {
-    return response;
-  }
+### 2b. Treść strony w `getPageContent()` dla 3 języków
 
-  const body = await response.text();
+Dla każdego języka (en, pl, cs) — obiekt `PageData` z:
+- `title`: meta title (~60 znaków, z focus keyword "NIS2")
+- `description`: meta description (~160 znaków)
+- `h1`: nagłówek strony
+- `subtitle`: podtytuł
+- `sections`: 2-3 sekcje SEO (co to NIS2, kogo dotyczy, jak sprawdzić)
+- `faqs`: 3 pytania FAQ w JSON-LD
+- `internalLinks`: linki do powiązanych stron (`/frameworks/nis-ii`, `/contact`)
 
-  return new Response(body, {
-    status: 200,
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
-      'X-Robots-Tag': 'index, follow',
-    },
-  });
+Przykład dla EN:
+```typescript
+'nis2-check': {
+  en: {
+    title: 'NIS2 Compliance Checker — Does NIS2 Apply to You? | Quantifier',
+    description: 'Answer 4 questions and instantly find out if the NIS2 Directive applies to your company. Free NIS2 compliance check by Quantifier.',
+    h1: 'Does your company urgently need to address cybersecurity?',
+    subtitle: 'Answer 4 questions and find out whether the NIS2 Directive applies to your company.',
+    sections: [
+      { h2: 'What is NIS2?', content: [...] },
+      { h2: 'Who does NIS2 apply to?', content: [...] },
+    ],
+    faqs: [
+      { question: 'What is the NIS2 Directive?', answer: '...' },
+      { question: 'Which companies must comply with NIS2?', answer: '...' },
+      { question: 'What are the penalties for non-compliance with NIS2?', answer: '...' },
+    ],
+    internalLinks: [
+      { text: 'NIS2 Compliance Platform', href: '/en/frameworks/nis-ii' },
+      { text: 'Contact us', href: '/en/contact' },
+    ],
+  },
+  pl: { ... },
+  cs: { ... },
 }
 ```
 
-Ta zmiana:
-1. Nadpisuje `Content-Type` na `text/html; charset=utf-8`
-2. Usuwa restrykcyjne `Content-Security-Policy: sandbox`
-3. Dodaje `X-Robots-Tag: index, follow` jako dodatkowy sygnal
-4. Zachowuje `Cache-Control` dla wydajnosci
+### 2c. Hreflang — trzy wersje językowe
 
-Funkcja `proxyToPrerender` bedzie uzyta we wszystkich 3 miejscach (blog posts, stories, static pages).
+Funkcja generująca HTML dla tej strony musi emitować poprawne tagi `hreflang` wskazujące na wszystkie 3 wersje językowe (EN, PL-PL, CS-CZ) — tak jak pozostałe strony statyczne.
 
-## Wplyw
+---
 
-| Element | Przed | Po |
-|---------|-------|-----|
-| Content-Type dla botow | `text/plain` | `text/html; charset=utf-8` |
-| CSP header | `sandbox` (restrykcyjny) | Brak (bezpieczne dla prerenderowanych stron) |
-| Dotknięte strony | WSZYSTKIE (~40+ stron) | WSZYSTKIE (naprawione) |
+## Plik 3: `supabase/functions/sitemap/index.ts`
 
-## Plik do edycji
+Dodanie strony do listy `staticPages`:
 
-| Plik | Zmiana |
-|------|--------|
-| `netlify/edge-functions/bot-prerender.ts` | Dodanie funkcji `proxyToPrerender`, zamiana 3x `return fetch(...)` na `return proxyToPrerender(...)` |
+```typescript
+const staticPages = [
+  // ... istniejące wpisy ...
+  { path: '/nis2-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-18' },
+];
+```
 
-1 plik, ~15 linii nowego kodu. Naprawa dotyczy wszystkich stron serwisu.
+Dynamiczna sitemapa automatycznie wygeneruje wpisy dla wszystkich 3 locale (`/en/nis2-check/`, `/pl/nis2-check/`, `/cs/nis2-check/`) wraz z tagami `hreflang`.
+
+---
+
+## Plik 4: `public/sitemap.xml` (statyczny fallback)
+
+Dodanie wpisów dla 3 wersji językowych do statycznego pliku sitemapy (używanego jako fallback gdy funkcja Edge nie jest dostępna):
+
+```xml
+<url>
+  <loc>https://quantifier.ai/en/nis2-check</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://quantifier.ai/pl/nis2-check</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://quantifier.ai/cs/nis2-check</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+---
+
+## Deployment
+
+Po zapisaniu zmian funkcje Edge (`prerender-marketing`, `sitemap`) zostaną automatycznie wdrożone. Netlify Edge Function (`bot-prerender.ts`) zostanie zaktualizowana przy najbliższym deploy.
+
+---
+
+## Podsumowanie
+
+| Plik | Zmiana | Efekt |
+|------|--------|-------|
+| `bot-prerender.ts` | +1 wpis w STATIC_ROUTES | Googlebot dostaje HTML zamiast pustego SPA |
+| `prerender-marketing/index.ts` | +pageUrlMap, +pageData (3 języki), +hreflang | Prerenderowany HTML z meta tagami i FAQ JSON-LD |
+| `sitemap/index.ts` | +1 wpis w staticPages | Dynamiczna sitemapa generuje 3 URL-e z hreflang |
+| `public/sitemap.xml` | +3 wpisy URL | Statyczny fallback sitemapy |

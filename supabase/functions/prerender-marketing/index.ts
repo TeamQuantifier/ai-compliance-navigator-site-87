@@ -64,6 +64,7 @@ const pageUrlMap: Record<string, string> = {
   'legal-privacy': 'legal/privacy',
   'legal-terms': 'legal/terms',
   'legal-cookies': 'legal/cookies',
+  'nis2-check': 'nis2-check',
 };
 
 interface FAQ {
@@ -2390,6 +2391,173 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Správa Dokumentů', href: '/product/documents-management' }
         ]
       }
+    },
+    'nis2-check': {
+      en: {
+        title: 'NIS2 Compliance Check — Does NIS2 Apply to You? | Quantifier',
+        description: 'Answer 4 questions and find out instantly if the NIS2 Directive applies to your company. Free NIS2 compliance check by Quantifier.',
+        h1: 'Does your company need to comply with NIS2?',
+        subtitle: 'Answer 4 quick questions and find out whether the NIS2 Directive applies to your organization.',
+        sections: [
+          {
+            h2: 'What is the NIS2 Directive?',
+            content: [
+              'NIS2 (Network and Information Security Directive 2) is an EU cybersecurity regulation that came into force in January 2023.',
+              'It replaces the original NIS Directive and significantly expands the scope of companies required to meet cybersecurity standards.',
+              'Member states were required to transpose NIS2 into national law by October 2024.',
+              'Non-compliance can result in fines of up to €10 million or 2% of global annual turnover.'
+            ]
+          },
+          {
+            h2: 'Which companies does NIS2 apply to?',
+            content: [
+              'NIS2 applies to medium and large companies (50+ employees or €10M+ revenue) in 18 critical sectors.',
+              'Essential entities: energy, transport, banking, health, water, digital infrastructure, public administration, space.',
+              'Important entities: postal services, waste management, chemicals, food, manufacturing, digital providers, research.',
+              'Even if your company is small, NIS2 may apply if you are a critical supplier to essential entities.'
+            ]
+          },
+          {
+            h2: 'Key NIS2 Requirements',
+            content: [
+              'Risk management: implement cybersecurity risk assessment and treatment processes.',
+              'Incident reporting: notify authorities within 24 hours of significant cybersecurity incidents.',
+              'Supply chain security: assess and manage cybersecurity risks across your supply chain.',
+              'Business continuity: maintain backup systems and disaster recovery plans.',
+              'Governance: executive management is personally liable for NIS2 compliance.'
+            ]
+          }
+        ],
+        faqs: [
+          {
+            question: 'How do I know if NIS2 applies to my company?',
+            answer: 'NIS2 applies if your company operates in one of 18 critical sectors AND meets the size threshold (50+ employees or €10M+ annual revenue). Use our free NIS2 check tool above to find out in 2 minutes.'
+          },
+          {
+            question: 'What are the penalties for NIS2 non-compliance?',
+            answer: 'For essential entities: up to €10 million or 2% of global annual turnover (whichever is higher). For important entities: up to €7 million or 1.4% of global annual turnover. Senior management can also be held personally liable.'
+          },
+          {
+            question: 'What is the NIS2 compliance deadline?',
+            answer: 'The EU NIS2 Directive required national transposition by October 17, 2024. Companies in scope should be actively working on compliance now. Non-compliant organizations are already at risk of regulatory action.'
+          }
+        ],
+        internalLinks: [
+          { text: 'NIS2 Compliance Platform', href: '/frameworks/nis-ii' },
+          { text: 'GRC Platform Overview', href: '/grc-platform' },
+          { text: 'Schedule a Demo', href: '/contact' }
+        ]
+      },
+      pl: {
+        title: 'Sprawdź czy NIS2 dotyczy Twojej firmy | Quantifier',
+        description: 'Odpowiedz na 4 pytania i dowiedz się, czy dyrektywa NIS2 dotyczy Twojej organizacji. Bezpłatny test NIS2 od Quantifier.',
+        h1: 'Czy Twoja firma musi wdrożyć NIS2?',
+        subtitle: 'Odpowiedz na 4 pytania i sprawdź, czy dyrektywa NIS2 dotyczy Twojej organizacji.',
+        sections: [
+          {
+            h2: 'Czym jest dyrektywa NIS2?',
+            content: [
+              'NIS2 (Dyrektywa w sprawie bezpieczeństwa sieci i informacji 2) to unijne rozporządzenie dotyczące cyberbezpieczeństwa, które weszło w życie w styczniu 2023 r.',
+              'Zastępuje pierwotną dyrektywę NIS i znacznie rozszerza zakres podmiotów zobowiązanych do spełnienia wymagań cyberbezpieczeństwa.',
+              'Państwa członkowskie były zobowiązane do implementacji NIS2 do prawa krajowego do października 2024 r.',
+              'Za nieprzestrzeganie grożą kary do 10 mln euro lub 2% globalnego rocznego obrotu.'
+            ]
+          },
+          {
+            h2: 'Których firm dotyczy NIS2?',
+            content: [
+              'NIS2 dotyczy średnich i dużych firm (50+ pracowników lub obrót 10M€+) w 18 sektorach kluczowych.',
+              'Podmioty kluczowe: energetyka, transport, bankowość, zdrowie, woda, infrastruktura cyfrowa, administracja publiczna, przestrzeń kosmiczna.',
+              'Podmioty ważne: usługi pocztowe, gospodarka odpadami, chemia, żywność, produkcja, usługi cyfrowe, badania.',
+              'Nawet jeśli Twoja firma jest mała, NIS2 może dotyczyć Cię jako krytycznego dostawcy podmiotów kluczowych.'
+            ]
+          },
+          {
+            h2: 'Kluczowe wymagania NIS2',
+            content: [
+              'Zarządzanie ryzykiem: wdrożenie procesów oceny i leczenia ryzyka cyberbezpieczeństwa.',
+              'Raportowanie incydentów: powiadomienie organów w ciągu 24 godzin od znaczących incydentów.',
+              'Bezpieczeństwo łańcucha dostaw: ocena i zarządzanie ryzykiem cyberbezpieczeństwa dostawców.',
+              'Ciągłość działania: utrzymanie systemów kopii zapasowych i planów odtwarzania po awarii.',
+              'Governance: kierownictwo wyższego szczebla ponosi osobistą odpowiedzialność za zgodność z NIS2.'
+            ]
+          }
+        ],
+        faqs: [
+          {
+            question: 'Jak sprawdzić, czy NIS2 dotyczy mojej firmy?',
+            answer: 'NIS2 dotyczy firm działających w jednym z 18 sektorów kluczowych I spełniających próg wielkości (50+ pracowników lub obrót 10M€+). Skorzystaj z naszego bezpłatnego narzędzia NIS2 powyżej, aby dowiedzieć się w 2 minuty.'
+          },
+          {
+            question: 'Jakie są kary za nieprzestrzeganie NIS2?',
+            answer: 'Dla podmiotów kluczowych: do 10 mln euro lub 2% globalnego rocznego obrotu (w zależności od tego, która kwota jest wyższa). Dla podmiotów ważnych: do 7 mln euro lub 1,4% globalnego obrotu. Członkowie zarządu mogą być pociągnięci do osobistej odpowiedzialności.'
+          },
+          {
+            question: 'Jaki jest termin wdrożenia NIS2?',
+            answer: 'Dyrektywa NIS2 wymagała implementacji do prawa krajowego do 17 października 2024 r. Firmy objęte zakresem powinny aktywnie pracować nad zgodnością. Organizacje niespełniające wymagań są już narażone na działania regulacyjne.'
+          }
+        ],
+        internalLinks: [
+          { text: 'Platforma zgodności z NIS2', href: '/frameworks/nis-ii' },
+          { text: 'Platforma GRC', href: '/grc-platform' },
+          { text: 'Umów demo', href: '/contact' }
+        ]
+      },
+      cs: {
+        title: 'Zkontrolujte zda se NIS2 vztahuje na vaši firmu | Quantifier',
+        description: 'Odpovězte na 4 otázky a zjistěte, zda se směrnice NIS2 vztahuje na vaši organizaci. Bezplatná kontrola NIS2 od Quantifier.',
+        h1: 'Musí vaše firma splňovat NIS2?',
+        subtitle: 'Odpovězte na 4 otázky a zjistěte, zda se směrnice NIS2 vztahuje na vaši organizaci.',
+        sections: [
+          {
+            h2: 'Co je směrnice NIS2?',
+            content: [
+              'NIS2 (Směrnice o bezpečnosti sítí a informačních systémů 2) je unijní nařízení o kybernetické bezpečnosti, které vstoupilo v platnost v lednu 2023.',
+              'Nahrazuje původní směrnici NIS a výrazně rozšiřuje okruh subjektů povinných splňovat standardy kybernetické bezpečnosti.',
+              'Členské státy byly povinny transponovat NIS2 do národního práva do října 2024.',
+              'Za nedodržení hrozí pokuty až 10 milionů eur nebo 2 % celosvětového ročního obratu.'
+            ]
+          },
+          {
+            h2: 'Na které firmy se NIS2 vztahuje?',
+            content: [
+              'NIS2 se vztahuje na střední a velké firmy (50+ zaměstnanců nebo obrat 10M€+) v 18 klíčových sektorech.',
+              'Základní subjekty: energetika, doprava, bankovnictví, zdravotnictví, voda, digitální infrastruktura, veřejná správa, vesmír.',
+              'Důležité subjekty: poštovní služby, odpadové hospodářství, chemikálie, potraviny, výroba, digitální poskytovatelé, výzkum.',
+              'I malá firma může podléhat NIS2 jako kritický dodavatel základních subjektů.'
+            ]
+          },
+          {
+            h2: 'Klíčové požadavky NIS2',
+            content: [
+              'Řízení rizik: implementace procesů hodnocení a ošetření rizik kybernetické bezpečnosti.',
+              'Hlášení incidentů: oznámení orgánům do 24 hodin od závažných bezpečnostních incidentů.',
+              'Bezpečnost dodavatelského řetězce: hodnocení a řízení kybernetických rizik dodavatelů.',
+              'Kontinuita podnikání: udržování záložních systémů a plánů obnovy po havárii.',
+              'Governance: vedení společnosti nese osobní odpovědnost za soulad s NIS2.'
+            ]
+          }
+        ],
+        faqs: [
+          {
+            question: 'Jak zjistím, zda se NIS2 vztahuje na mou firmu?',
+            answer: 'NIS2 se vztahuje na firmy působící v jednom z 18 klíčových sektorů A splňující prahovou hodnotu velikosti (50+ zaměstnanců nebo obrat 10M€+). Využijte náš bezplatný nástroj NIS2 výše a zjistěte to za 2 minuty.'
+          },
+          {
+            question: 'Jaké jsou sankce za nedodržení NIS2?',
+            answer: 'Pro základní subjekty: až 10 milionů eur nebo 2 % celosvětového ročního obratu (podle toho, která částka je vyšší). Pro důležité subjekty: až 7 milionů eur nebo 1,4 % celosvětového obratu. Členové vedení mohou být osobně odpovědni.'
+          },
+          {
+            question: 'Jaký je termín pro implementaci NIS2?',
+            answer: 'Směrnice EU NIS2 vyžadovala národní transpozici do 17. října 2024. Firmy v rozsahu by měly aktivně pracovat na souladu. Nesoulad s NIS2 již nyní znamená riziko regulačních opatření.'
+          }
+        ],
+        internalLinks: [
+          { text: 'Platforma pro shodu s NIS2', href: '/frameworks/nis-ii' },
+          { text: 'GRC Platforma', href: '/grc-platform' },
+          { text: 'Naplánovat demo', href: '/contact' }
+        ]
+      }
     }
   };
 
@@ -2902,6 +3070,8 @@ serve(async (req: Request) => {
         ...corsHeaders,
         'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+        'X-Robots-Tag': 'index, follow',
+        'Content-Security-Policy': "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'",
       },
     });
   } catch (error) {

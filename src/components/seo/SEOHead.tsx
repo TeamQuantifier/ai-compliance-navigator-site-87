@@ -47,8 +47,8 @@ export interface SEOHeadProps {
   industry?: string | null;
   clientName?: string | null;
   
-  // Alternate language post (for hreflang)
-  alternatePost?: { lang: string; slug: string } | null;
+  // Alternate language versions (for hreflang)
+  alternates?: Array<{ lang: string; slug: string }> | null;
 }
 
 const BASE_URL = 'https://quantifier.ai';
@@ -94,15 +94,26 @@ export const SEOHead = ({
   category,
   industry,
   clientName,
-  alternatePost,
+  alternates,
 }: SEOHeadProps) => {
   // Build URLs with trailing slash
   const basePath = contentType === 'post' ? 'blog' : 'success-stories';
   const canonicalUrl = customCanonicalUrl || ensureTrailingSlash(`${BASE_URL}/${lang}/${basePath}/${slug}`);
-  const alternateUrl = alternatePost 
-    ? ensureTrailingSlash(`${BASE_URL}/${alternatePost.lang}/${basePath}/${alternatePost.slug}`)
-    : null;
-  const defaultLangUrl = ensureTrailingSlash(`${BASE_URL}/en/${basePath}/${slug}`);
+  
+  // Build alternates URLs with proper hreflang
+  const alternateLinks = (alternates || []).map(alt => ({
+    lang: alt.lang,
+    hreflang: LOCALE_HREFLANG_MAP[alt.lang as Locale] || alt.lang,
+    url: ensureTrailingSlash(`${BASE_URL}/${alt.lang}/${basePath}/${alt.slug}`),
+  }));
+  
+  // x-default: use EN alternate if exists, otherwise current URL
+  const enAlternate = alternateLinks.find(a => a.lang === 'en');
+  const defaultLangUrl = lang === 'en' 
+    ? canonicalUrl 
+    : enAlternate 
+      ? enAlternate.url 
+      : canonicalUrl;
 
   // Fallback logic for meta fields
   const finalTitle = metaTitle || `${title} | ${BRAND_NAME}`;
@@ -123,7 +134,6 @@ export const SEOHead = ({
   
   // Locale formatting
   const ogLocale = lang === 'pl' ? 'pl_PL' : lang === 'cs' ? 'cs_CZ' : 'en_US';
-  const altLocale = alternatePost?.lang === 'pl' ? 'pl_PL' : alternatePost?.lang === 'cs' ? 'cs_CZ' : 'en_US';
   const inLanguage = lang === 'pl' ? 'pl-PL' : lang === 'cs' ? 'cs-CZ' : 'en-US';
 
   // Determine schema type
@@ -216,9 +226,9 @@ export const SEOHead = ({
       {/* Canonical & hreflang with geo-targeting */}
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[lang as Locale] || lang} href={canonicalUrl} />
-      {alternateUrl && (
-        <link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[alternatePost!.lang as Locale] || alternatePost!.lang} href={alternateUrl} />
-      )}
+      {alternateLinks.map(alt => (
+        <link key={alt.lang} rel="alternate" hrefLang={alt.hreflang} href={alt.url} />
+      ))}
       <link rel="alternate" hrefLang="x-default" href={defaultLangUrl} />
       
       {/* Open Graph */}
@@ -229,9 +239,10 @@ export const SEOHead = ({
       <meta property="og:image" content={finalOgImage} />
       <meta property="og:site_name" content={BRAND_NAME} />
       <meta property="og:locale" content={ogLocale} />
-      {alternatePost && (
-        <meta property="og:locale:alternate" content={altLocale} />
-      )}
+      {alternateLinks.map(alt => {
+        const altOgLocale = alt.lang === 'pl' ? 'pl_PL' : alt.lang === 'cs' ? 'cs_CZ' : 'en_US';
+        return <meta key={alt.lang} property="og:locale:alternate" content={altOgLocale} />;
+      })}
       
       {/* Twitter Cards */}
       <meta name="twitter:card" content={twitterCardType || 'summary_large_image'} />

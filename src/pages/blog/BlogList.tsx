@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePosts, useCategories } from '@/hooks/useBlog';
 import { calculateReadingTime } from '@/lib/reading-time';
@@ -22,7 +21,6 @@ const BlogList = () => {
   );
   const { data: categories, isLoading: categoriesLoading } = useCategories(currentLocale);
   
-  const canonicalUrl = `https://quantifier.ai/${currentLocale}/blog`;
 
   if (postsError) {
     return (
@@ -36,30 +34,6 @@ const BlogList = () => {
   }
 
   return (
-    <>
-      <Helmet>
-        <title>{t('seo.blog.title')} | Quantifier.ai</title>
-        <meta name="description" content={t('seo.blog.description')} />
-        
-        {/* Robots - explicit index/follow */}
-        <meta name="robots" content="index, follow" />
-        
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* hreflang tags - all supported locales */}
-        <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/blog" />
-        <link rel="alternate" hrefLang="pl" href="https://quantifier.ai/pl/blog" />
-        <link rel="alternate" hrefLang="cs" href="https://quantifier.ai/cs/blog" />
-        <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/blog" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={`${t('seo.blog.title')} | Quantifier.ai`} />
-        <meta property="og:description" content={t('seo.blog.description')} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:locale" content={currentLocale === 'pl' ? 'pl_PL' : currentLocale === 'cs' ? 'cs_CZ' : 'en_US'} />
-      </Helmet>
-
       <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
         {/* Compact Hero Section */}
         <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
@@ -197,7 +171,6 @@ const BlogList = () => {
           )}
         </div>
       </PageTemplate>
-    </>
   );
 };
 

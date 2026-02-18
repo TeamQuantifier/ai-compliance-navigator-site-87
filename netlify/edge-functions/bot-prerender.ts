@@ -45,6 +45,7 @@ const STATIC_ROUTES: Record<string, string> = {
   'legal/privacy': 'legal-privacy',
   'legal/terms': 'legal-terms',
   'legal/cookies': 'legal-cookies',
+  'nis2-check': 'nis2-check',
 };
 
 async function proxyToPrerender(url: string, ua: string): Promise<Response> {
@@ -64,6 +65,9 @@ async function proxyToPrerender(url: string, ua: string): Promise<Response> {
       'Content-Type': 'text/html; charset=utf-8',
       'Cache-Control': 'public, max-age=3600, s-maxage=86400',
       'X-Robots-Tag': 'index, follow',
+      // Explicitly override Supabase CSP which adds 'sandbox' — that blocks Googlebot indexing
+      'Content-Security-Policy': "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'",
+      'X-Content-Type-Options': 'nosniff',
     },
   });
 }
