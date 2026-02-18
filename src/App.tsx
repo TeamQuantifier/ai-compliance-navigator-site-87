@@ -210,8 +210,9 @@ const AppContent = () => {
       <Routes>
         {/* NIS2 Check — standalone, no Navbar/Footer, multilang */}
         <Route path="/:locale/nis2-check" element={<FormularzPage />} />
-        {/* Legacy redirect */}
+        {/* Legacy redirects */}
         <Route path="/formularz" element={<Navigate to="/pl/nis2-check" replace />} />
+        <Route path="/nis2-check" element={<Navigate to="/pl/nis2-check" replace />} />
         {/* All other routes */}
         <Route path="/*" element={<MainRoutes />} />
       </Routes>
