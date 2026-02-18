@@ -51,7 +51,7 @@ function NaceSelect({ value, onChange, error }: { value: string; onChange: (v: s
     <div className="relative">
       <button
         type="button"
-        onClick={() => setOpen(o => !o)}
+        onMouseDown={(e) => { e.preventDefault(); setOpen(o => !o); }}
         className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 text-left transition-colors ${
           error ? 'border-red-400' : open ? 'border-[#1a2e54]' : 'border-gray-200 hover:border-gray-300'
         } bg-white`}
