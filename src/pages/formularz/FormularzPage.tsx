@@ -310,7 +310,27 @@ export default function FormularzPage() {
                   <h2 className="mt-3 text-xl font-bold text-[#6d38a8]">{result.title}</h2>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed">{result.body}</p>
+              {(() => {
+                const parsed = parseResultBody(result.body, lang);
+                return (
+                  <>
+                    <div className="mb-6">
+                      <h3 className="text-xs font-bold uppercase tracking-wide text-gray-400 mb-3">
+                        {SECTION1_HEADERS[lang]}
+                      </h3>
+                      <BodySection text={parsed.section1} />
+                    </div>
+                    {parsed.section2 && (
+                      <div className="mt-6 pt-6 border-t border-[#e0e2e9] bg-[#6d38a8]/5 rounded-xl p-5">
+                        <h3 className="text-xs font-bold uppercase tracking-wide text-[#6d38a8] mb-3">
+                          {parsed.section2Header}
+                        </h3>
+                        <BodySection text={parsed.section2} />
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
               <div className="mt-8 pt-6 border-t border-[#e0e2e9] flex flex-col sm:flex-row gap-3">
                 <a
                   href={`/${lang}/frameworks`}
