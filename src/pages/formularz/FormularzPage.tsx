@@ -525,6 +525,7 @@ export default function FormularzPage() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
