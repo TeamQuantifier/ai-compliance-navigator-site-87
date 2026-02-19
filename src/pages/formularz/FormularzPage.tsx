@@ -327,14 +327,9 @@ export default function FormularzPage() {
         <meta name="twitter:description" content={SEO_META_DESC[lang]} />
       </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-[#d4f1ed]/30 via-white to-[#e0e2e9]/20">
-      {/* Header */}
-      <header className="bg-white border-b border-[#e0e2e9] shadow-sm">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-3">
-          <img src="/logo-quantifier.png" alt="Quantifier" className="h-8 object-contain" />
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-10">
+      <main className="max-w-3xl mx-auto px-4 py-10 pt-28">
         {/* Title */}
         <div className="mb-8 text-center">
           <span className="inline-block mb-3 px-3 py-1 text-xs font-semibold bg-[#6d38a8] text-white rounded-full tracking-wide uppercase">

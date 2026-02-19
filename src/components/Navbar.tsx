@@ -214,12 +214,19 @@ export const Navbar = () => {
         
         <div className="flex items-center gap-2">
           <LanguageSwitch />
+          <Link
+            to={`/${currentLocale}${cybersecHref}`}
+            className="hidden md:inline-flex items-center px-3 py-2 text-sm font-semibold bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
+            onClick={handleLinkClick}
+          >
+            {t('menu.cybersecCheck')}
+          </Link>
           <div className="hidden md:flex">
             <Button variant="outline" size="sm" onClick={handleLoginClick}>
               {t('nav.login')}
             </Button>
           </div>
-          <MobileMenu items={menuItems} />
+          <MobileMenu items={menuItems} cybersecHref={cybersecHref} />
         </div>
       </div>
     </header>
