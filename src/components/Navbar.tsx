@@ -165,7 +165,7 @@ export const Navbar = () => {
   const CYBERSEC_HREF: Record<string, string> = {
     pl: '/sprawdz-cyberbezpieczenstwo',
     en: '/cybersecurity-check',
-    cs: '/cybersecurity-check',
+    cs: '/zkontrolujte-kybernetickou-bezpecnost',
   };
   const cybersecHref = CYBERSEC_HREF[currentLocale] ?? '/cybersecurity-check';
 
