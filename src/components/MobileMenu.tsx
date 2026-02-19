@@ -121,6 +121,17 @@ export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: Mob
               </div>
             ))}
             
+            {/* Cybersec-Check CTA in mobile menu */}
+            <div className="px-4 pt-2">
+              <Link
+                to={`/${currentLocale}${cybersecHref}`}
+                className="flex items-center justify-center w-full px-3 py-2 text-sm font-semibold bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
+                onClick={handleLinkClick}
+              >
+                {t('menu.cybersecCheck')}
+              </Link>
+            </div>
+
             {/* Login button in mobile menu */}
             <div className="px-4 pt-4 border-t border-gray-200">
               <Button 
