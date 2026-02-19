@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logosGrid from '@/assets/logos-grid.png';
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
