@@ -26,9 +26,10 @@ interface MenuItem {
 
 interface MobileMenuProps {
   items: MenuItem[];
+  cybersecHref?: string;
 }
 
-export const MobileMenu = ({ items }: MobileMenuProps) => {
+export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { currentLocale, t } = useLanguage();
@@ -120,6 +121,17 @@ export const MobileMenu = ({ items }: MobileMenuProps) => {
               </div>
             ))}
             
+            {/* Cybersec-Check CTA in mobile menu */}
+            <div className="px-4 pt-2">
+              <Link
+                to={`/${currentLocale}${cybersecHref}`}
+                className="flex items-center justify-center w-full px-3 py-2 text-sm font-semibold bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
+                onClick={handleLinkClick}
+              >
+                {t('menu.cybersecCheck')}
+              </Link>
+            </div>
+
             {/* Login button in mobile menu */}
             <div className="px-4 pt-4 border-t border-gray-200">
               <Button 
