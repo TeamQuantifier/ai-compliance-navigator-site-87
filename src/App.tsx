@@ -202,22 +202,23 @@ const MainRoutes = () => (
 
 // App content that requires translations
 const AppContent = () => {
-  const isNis2Check = typeof window !== 'undefined' && /\/(pl|en|cs)\/nis2-check/.test(window.location.pathname);
+  const isCyberCheck = typeof window !== 'undefined' && /\/(en|cs)\/(cybersecurity-check)|\/pl\/(sprawdz-cyberbezpieczenstwo)/.test(window.location.pathname);
   return (
     <>
       <Toaster />
       <Sonner />
       <Routes>
-        {/* NIS2 Check — standalone, no Navbar/Footer, multilang */}
-        <Route path="/:locale/nis2-check" element={<FormularzPage />} />
-        {/* Legacy redirects */}
-        <Route path="/formularz" element={<Navigate to="/pl/nis2-check" replace />} />
-        <Route path="/nis2-check" element={<Navigate to="/pl/nis2-check" replace />} />
+        {/* Cybersecurity Check — standalone, no Navbar/Footer, multilang */}
+        <Route path="/pl/sprawdz-cyberbezpieczenstwo" element={<FormularzPage />} />
+        <Route path="/:locale/cybersecurity-check" element={<FormularzPage />} />
+        {/* Legacy redirects from old /formularz */}
+        <Route path="/formularz" element={<Navigate to="/pl/sprawdz-cyberbezpieczenstwo" replace />} />
+        <Route path="/nis2-check" element={<Navigate to="/en/cybersecurity-check" replace />} />
         {/* All other routes */}
         <Route path="/*" element={<MainRoutes />} />
       </Routes>
       <CookieConsentBanner />
-      {!isNis2Check && <BookPromoPopup />}
+      {!isCyberCheck && <BookPromoPopup />}
     </>
   );
 };

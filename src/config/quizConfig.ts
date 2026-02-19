@@ -6,9 +6,15 @@ export type QuizLang = 'pl' | 'en' | 'cs';
 
 // ─── Titles & Subtitles ────────────────────────────────────────
 export const QUIZ_TITLE: Record<QuizLang, string> = {
-  pl: 'Czy Twoja firma powinna pilnie zająć się cybersecurity?',
+  pl: 'Czy Twoja firma powinna pilnie zająć się cyberbezpieczeństwem?',
   en: 'Does your company urgently need to address cybersecurity?',
   cs: 'Potřebuje vaše společnost naléhavě řešit kybernetickou bezpečnost?',
+};
+
+export const QUIZ_INTRO: Record<QuizLang, string> = {
+  pl: 'W świecie napięć geopolitycznych i rosnącej liczby cyberataków cyberbezpieczeństwo stało się warunkiem przetrwania biznesu, a nie jedynie kwestią techniczną. Naruszenie bezpieczeństwa oznacza dziś realne ryzyko strat finansowych, utraty reputacji i odpowiedzialności zarządu. Kluczowe znaczenie mają Dyrektywa NIS2 oraz ISO 27001, które wyznaczają ramy zarządzania ryzykiem i ochrony informacji. To, czy regulacje dotyczą Cię bezpośrednio, zależy od wielkości firmy, sektora i relacji w łańcuchu dostaw.',
+  en: "In a world of geopolitical tensions and a growing number of cyberattacks, cybersecurity has become a condition for business survival — not merely a technical issue. A security breach today means real risk: financial losses, reputational damage, and board-level liability. The NIS2 Directive and ISO 27001 play a key role in defining risk management and information protection frameworks. Whether regulations apply to you directly depends on your company's size, sector, and supply chain relationships.",
+  cs: 'Ve světě geopolitických napětí a rostoucího počtu kyberútoků se kybernetická bezpečnost stala podmínkou přežití podniku, nikoli jen technickou záležitostí. Narušení bezpečnosti dnes znamená reálné riziko finančních ztrát, poškození reputace a odpovědnosti představenstva. Klíčový význam mají Směrnice NIS2 a ISO 27001, které stanovují rámce řízení rizik a ochrany informací. Zda se na vás předpisy vztahují přímo, závisí na velikosti společnosti, odvětví a vztazích v dodavatelském řetězci.',
 };
 
 export const QUIZ_SUBTITLE: Record<QuizLang, string> = {
@@ -47,9 +53,9 @@ export const Q2_OPTIONS = [
 
 // ─── Q3 — NACE sector ──────────────────────────────────────────
 export const Q3_QUESTION: Record<QuizLang, string> = {
-  pl: 'W jakim sektorze działa firma?',
-  en: 'In which sector does the company operate?',
-  cs: 'V jakém odvětví společnost působí?',
+  pl: 'W jakim sektorze działa firma? (po kodach NACE, wskaż najbardziej pasujące)',
+  en: 'In which sector does the company operate? (by NACE code, select the closest match)',
+  cs: 'V jakém odvětví společnost působí? (dle kódů NACE, vyberte nejbližší shodu)',
 };
 
 export const Q3_PLACEHOLDER: Record<QuizLang, string> = {

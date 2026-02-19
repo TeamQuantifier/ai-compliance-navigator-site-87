@@ -162,6 +162,13 @@ export const Navbar = () => {
     window.location.href = 'https://platform.quantifier.ai';
   };
 
+  const CYBERSEC_HREF: Record<string, string> = {
+    pl: '/sprawdz-cyberbezpieczenstwo',
+    en: '/cybersecurity-check',
+    cs: '/cybersecurity-check',
+  };
+  const cybersecHref = CYBERSEC_HREF[currentLocale] ?? '/cybersecurity-check';
+
   return (
     <header
       className={cn(
@@ -202,6 +209,15 @@ export const Navbar = () => {
                 </Link>
               </NavigationMenuItem>
             ))}
+            <NavigationMenuItem>
+              <Link
+                to={`/${currentLocale}${cybersecHref}`}
+                className="inline-flex items-center px-3 py-2 h-9 text-sm font-semibold bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
+                onClick={handleLinkClick}
+              >
+                {t('menu.cybersecCheck')}
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
         
@@ -212,7 +228,7 @@ export const Navbar = () => {
               {t('nav.login')}
             </Button>
           </div>
-          <MobileMenu items={menuItems} />
+          <MobileMenu items={menuItems} cybersecHref={cybersecHref} />
         </div>
       </div>
     </header>

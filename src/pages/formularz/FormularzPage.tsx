@@ -1,12 +1,14 @@
 import { useState, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useParams } from 'react-router-dom';
+import { Navbar } from '@/components/Navbar';
 import { supabase } from '@/integrations/supabase/client';
 import { newsletterClient } from '@/lib/newsletter-client';
 import {
-  QUIZ_TITLE, QUIZ_SUBTITLE,
+  QUIZ_TITLE, QUIZ_SUBTITLE, QUIZ_INTRO,
   Q1_QUESTION, Q1_OPTIONS,
   Q2_QUESTION, Q2_OPTIONS,
   Q3_QUESTION, Q3_PLACEHOLDER, Q3_SEARCH_PLACEHOLDER, NACE_SECTORS,
@@ -21,6 +23,37 @@ import {
 } from '@/config/quizConfig';
 
 const SUPPORTED_LANGS: QuizLang[] = ['pl', 'en', 'cs'];
+
+// ─── SEO constants ─────────────────────────────────────────────
+const SEO_META_TITLE: Record<QuizLang, string> = {
+  pl: 'Sprawdź cyberbezpieczeństwo firmy — NIS2 i ISO 27001 | Quantifier',
+  en: 'Cybersecurity Check — Does Your Company Need to Act? | Quantifier',
+  cs: 'Zkontrolujte kybernetickou bezpečnost firmy — NIS2 a ISO 27001 | Quantifier',
+};
+
+const SEO_META_DESC: Record<QuizLang, string> = {
+  pl: 'Odpowiedz na 4 pytania i dowiedz się, czy NIS2 lub ISO 27001 dotyczy Twojej organizacji. Bezpłatny test cyberbezpieczeństwa od Quantifier.',
+  en: 'Answer 4 questions and find out if the NIS2 Directive or ISO 27001 applies to your company. Free cybersecurity compliance check by Quantifier.',
+  cs: 'Odpovězte na 4 otázky a zjistěte, zda se směrnice NIS2 nebo ISO 27001 vztahuje na vaši organizaci. Bezplatná kontrola od Quantifier.',
+};
+
+const SEO_OG_TITLE: Record<QuizLang, string> = {
+  pl: 'Sprawdź cyberbezpieczeństwo Twojej firmy | Quantifier',
+  en: 'Cybersecurity Check for Your Company | Quantifier',
+  cs: 'Zkontrolujte kybernetickou bezpečnost vaší firmy | Quantifier',
+};
+
+const CANONICAL_URLS: Record<QuizLang, string> = {
+  pl: 'https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/',
+  en: 'https://quantifier.ai/en/cybersecurity-check/',
+  cs: 'https://quantifier.ai/cs/cybersecurity-check/',
+};
+
+const OG_LOCALE: Record<QuizLang, string> = {
+  pl: 'pl_PL',
+  en: 'en_US',
+  cs: 'cs_CZ',
+};
 
 function useLang(): QuizLang {
   const { locale } = useParams<{ locale?: string }>();
@@ -123,6 +156,80 @@ function NaceSelect({
   );
 }
 
+// ─── Result body parsing ──────────────────────────────────────
+const SECTION2_HEADERS: Record<QuizLang, string> = {
+  pl: 'Jak Quantifier może pomóc',
+  en: 'How Quantifier can help',
+  cs: 'Jak může Quantifier pomoci',
+};
+
+const SECTION1_HEADERS: Record<QuizLang, string> = {
+  pl: 'Co to oznacza',
+  en: 'What this means',
+  cs: 'Co to znamená',
+};
+
+function parseResultBody(body: string, lang: QuizLang) {
+  const divider = SECTION2_HEADERS[lang];
+  const idx = body.indexOf(divider);
+  if (idx === -1) return { section1: body, section2: '', section2Header: divider };
+  const section1 = body.slice(0, idx).trim();
+  const section2 = body.slice(idx + divider.length).trim();
+  return { section1, section2, section2Header: divider };
+}
+
+// Detects lines that are sub-headers: short, no bullet, not a regular sentence
+function isSubHeader(line: string) {
+  return line.length > 0 && line.length <= 40 && !line.startsWith('•') && !/[.,:;]$/.test(line);
+}
+
+function BodySection({ text }: { text: string }) {
+  if (!text) return null;
+  const lines = text.split('\n');
+  const elements: React.ReactNode[] = [];
+  let bullets: string[] = [];
+
+  const flushBullets = (key: string) => {
+    if (bullets.length > 0) {
+      elements.push(
+        <ul key={key} className="mt-2 mb-3 space-y-1.5">
+          {bullets.map((b, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm text-gray-700 leading-relaxed">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#6d38a8] flex-shrink-0" />
+              <span>{b.replace(/^•\s*/, '')}</span>
+            </li>
+          ))}
+        </ul>
+      );
+      bullets = [];
+    }
+  };
+
+  lines.forEach((raw, i) => {
+    const line = raw.trim();
+    if (!line) return;
+    if (line.startsWith('•')) {
+      bullets.push(line);
+    } else {
+      flushBullets(`ul-${i}`);
+      if (isSubHeader(line)) {
+        elements.push(
+          <h4 key={`h-${i}`} className="mt-4 mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">
+            {line}
+          </h4>
+        );
+      } else {
+        elements.push(
+          <p key={`p-${i}`} className="text-sm text-gray-700 leading-relaxed mb-2">{line}</p>
+        );
+      }
+    }
+  });
+  flushBullets('ul-end');
+
+  return <div>{elements}</div>;
+}
+
 // ─── Main page ─────────────────────────────────────────────────
 export default function FormularzPage() {
   const lang = useLang();
@@ -179,7 +286,7 @@ export default function FormularzPage() {
         await newsletterClient.subscribe(data.email.trim().toLowerCase(), lang, {
           source: 'nis2-quiz',
           origin: window.location.href,
-          tags: ['nis2-quiz', `result-${resultKey.toLowerCase()}`],
+          tags: ['cybersecurity-check', `result-${resultKey.toLowerCase()}`],
           customer_message: resultKey,
         });
       } catch (emailErr) {
@@ -199,24 +306,44 @@ export default function FormularzPage() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>{SEO_META_TITLE[lang]}</title>
+        <meta name="description" content={SEO_META_DESC[lang]} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={CANONICAL_URLS[lang]} />
+        <link rel="alternate" hrefLang="pl-PL" href="https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/" />
+        <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/cybersecurity-check/" />
+        <link rel="alternate" hrefLang="cs-CZ" href="https://quantifier.ai/cs/cybersecurity-check/" />
+        <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/cybersecurity-check/" />
+        <meta property="og:title" content={SEO_OG_TITLE[lang]} />
+        <meta property="og:description" content={SEO_META_DESC[lang]} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={CANONICAL_URLS[lang]} />
+        <meta property="og:image" content="https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png" />
+        <meta property="og:locale" content={OG_LOCALE[lang]} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={SEO_OG_TITLE[lang]} />
+        <meta name="twitter:description" content={SEO_META_DESC[lang]} />
+      </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-[#d4f1ed]/30 via-white to-[#e0e2e9]/20">
-      {/* Header */}
-      <header className="bg-white border-b border-[#e0e2e9] shadow-sm">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-3">
-          <img src="/logo-quantifier.png" alt="Quantifier" className="h-8 object-contain" />
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-10">
+      <main className="max-w-3xl mx-auto px-4 py-10 pt-28">
         {/* Title */}
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center">
           <span className="inline-block mb-3 px-3 py-1 text-xs font-semibold bg-[#6d38a8] text-white rounded-full tracking-wide uppercase">
-            NIS2 Check
+            Cybersecurity Check
           </span>
           <h1 className="text-2xl md:text-3xl font-bold text-[#6d38a8] leading-tight mb-3">
             {QUIZ_TITLE[lang]}
           </h1>
           <p className="text-gray-500 text-sm md:text-base">{QUIZ_SUBTITLE[lang]}</p>
+        </div>
+
+        {/* Intro paragraph */}
+        <div className="mb-8 bg-white rounded-2xl border border-[#e0e2e9] p-6 text-sm text-gray-600 leading-relaxed">
+          {QUIZ_INTRO[lang]}
         </div>
 
         {/* Result (shown after submit) */}
@@ -231,7 +358,27 @@ export default function FormularzPage() {
                   <h2 className="mt-3 text-xl font-bold text-[#6d38a8]">{result.title}</h2>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed">{result.body}</p>
+              {(() => {
+                const parsed = parseResultBody(result.body, lang);
+                return (
+                  <>
+                    <div className="mb-6">
+                      <h3 className="text-xs font-bold uppercase tracking-wide text-gray-400 mb-3">
+                        {SECTION1_HEADERS[lang]}
+                      </h3>
+                      <BodySection text={parsed.section1} />
+                    </div>
+                    {parsed.section2 && (
+                      <div className="mt-6 pt-6 border-t border-[#e0e2e9] bg-[#6d38a8]/5 rounded-xl p-5">
+                        <h3 className="text-xs font-bold uppercase tracking-wide text-[#6d38a8] mb-3">
+                          {parsed.section2Header}
+                        </h3>
+                        <BodySection text={parsed.section2} />
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
               <div className="mt-8 pt-6 border-t border-[#e0e2e9] flex flex-col sm:flex-row gap-3">
                 <a
                   href={`/${lang}/frameworks`}
@@ -374,6 +521,7 @@ export default function FormularzPage() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 

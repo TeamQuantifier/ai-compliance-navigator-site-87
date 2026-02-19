@@ -351,17 +351,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/nis2-check</loc>
+    <loc>https://quantifier.ai/en/cybersecurity-check</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/nis2-check</loc>
+    <loc>https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/nis2-check</loc>
+    <loc>https://quantifier.ai/cs/cybersecurity-check</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

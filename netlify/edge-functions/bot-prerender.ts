@@ -45,7 +45,8 @@ const STATIC_ROUTES: Record<string, string> = {
   'legal/privacy': 'legal-privacy',
   'legal/terms': 'legal-terms',
   'legal/cookies': 'legal-cookies',
-  'nis2-check': 'nis2-check',
+  'cybersecurity-check': 'cybersecurity-check',
+  'sprawdz-cyberbezpieczenstwo': 'cybersecurity-check',
 };
 
 async function proxyToPrerender(url: string, ua: string): Promise<Response> {

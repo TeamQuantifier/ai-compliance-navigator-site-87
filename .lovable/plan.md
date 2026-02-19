@@ -1,137 +1,132 @@
 
-# Dodanie strony `/nis2-check` do indeksowania SEO i sitemapy
+# Navbar na /cybersecurity-check + CTA button w menu głównym
 
-## Zakres zmian
+## Stan obecny
 
-Strona `/:locale/nis2-check` istnieje jako działająca trasa React, ale jest **całkowicie niewidoczna dla Google** z dwóch powodów:
-1. Brak jej w sitemapie (ani w statycznym `public/sitemap.xml`, ani w dynamicznej funkcji Edge `sitemap/index.ts`)
-2. Brak prerenderingu dla botów — `bot-prerender.ts` nie ma jej w `STATIC_ROUTES`, więc Googlebot dostaje pustą aplikację React zamiast HTML
+1. **FormularzPage ma własny custom header** (linie 329-334) — prosty pasek z logo bez linku, bez menu nawigacyjnego, bez przycisku Login. Strona jest odizolowana od reszty serwisu.
 
-Wymagane zmiany w **4 plikach**:
+2. **Navbar.tsx nie zawiera linku do `/cybersecurity-check`** — użytkownik musi wpisać URL ręcznie lub kliknąć link z zewnątrz.
 
----
-
-## Plik 1: `netlify/edge-functions/bot-prerender.ts`
-
-Dodanie wpisu `'nis2-check': 'nis2-check'` do słownika `STATIC_ROUTES`:
-
-```typescript
-const STATIC_ROUTES: Record<string, string> = {
-  // ... istniejące wpisy ...
-  'nis2-check': 'nis2-check',   // <-- NOWE
-};
-```
-
-Dzięki temu Googlebot odwiedzający `/pl/nis2-check`, `/en/nis2-check`, `/cs/nis2-check` zostanie przekierowany do funkcji prerenderującej zamiast dostawać pustą stronę SPA.
+3. **Brak klucza `menu.cybersecCheck` w plikach translacji** (`public/locales/pl/translation.json`, `/en/...`, `/cs/...`) — trzeba go dodać.
 
 ---
 
-## Plik 2: `supabase/functions/prerender-marketing/index.ts`
+## Co zostanie zmienione
 
-**Dodanie 3 elementów:**
+### Plik 1: `src/pages/formularz/FormularzPage.tsx`
 
-### 2a. Wpis w `pageUrlMap`
-```typescript
-const pageUrlMap: Record<string, string> = {
-  // ... istniejące ...
-  'nis2-check': 'nis2-check',
-};
+**Zastąpienie custom headera standardowym `<Navbar />`**
+
+Obecny custom header (linie 329–334):
+```tsx
+<header className="bg-white border-b border-[#e0e2e9] shadow-sm">
+  <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-3">
+    <img src="/logo-quantifier.png" alt="Quantifier" className="h-8 object-contain" />
+  </div>
+</header>
 ```
 
-### 2b. Treść strony w `getPageContent()` dla 3 języków
+Zostanie zastąpiony przez `<Navbar />` (komponent już istnieje w projekcie). Navbar ma:
+- link do strony głównej pod kliknięciem logo (już zaimplementowany)
+- pełne menu desktop + mobile
+- przycisk Login
+- LanguageSwitch
 
-Dla każdego języka (en, pl, cs) — obiekt `PageData` z:
-- `title`: meta title (~60 znaków, z focus keyword "NIS2")
-- `description`: meta description (~160 znaków)
-- `h1`: nagłówek strony
-- `subtitle`: podtytuł
-- `sections`: 2-3 sekcje SEO (co to NIS2, kogo dotyczy, jak sprawdzić)
-- `faqs`: 3 pytania FAQ w JSON-LD
-- `internalLinks`: linki do powiązanych stron (`/frameworks/nis-ii`, `/contact`)
+Ponieważ Navbar ma `fixed top-0`, trzeba dodać `pt-16` lub `pt-20` do `<main>` żeby treść nie chowała się pod paskiem.
 
-Przykład dla EN:
-```typescript
-'nis2-check': {
-  en: {
-    title: 'NIS2 Compliance Checker — Does NIS2 Apply to You? | Quantifier',
-    description: 'Answer 4 questions and instantly find out if the NIS2 Directive applies to your company. Free NIS2 compliance check by Quantifier.',
-    h1: 'Does your company urgently need to address cybersecurity?',
-    subtitle: 'Answer 4 questions and find out whether the NIS2 Directive applies to your company.',
-    sections: [
-      { h2: 'What is NIS2?', content: [...] },
-      { h2: 'Who does NIS2 apply to?', content: [...] },
-    ],
-    faqs: [
-      { question: 'What is the NIS2 Directive?', answer: '...' },
-      { question: 'Which companies must comply with NIS2?', answer: '...' },
-      { question: 'What are the penalties for non-compliance with NIS2?', answer: '...' },
-    ],
-    internalLinks: [
-      { text: 'NIS2 Compliance Platform', href: '/en/frameworks/nis-ii' },
-      { text: 'Contact us', href: '/en/contact' },
-    ],
-  },
-  pl: { ... },
-  cs: { ... },
+**Import Navbar do FormularzPage:**
+```tsx
+import { Navbar } from '@/components/Navbar';
+```
+
+---
+
+### Plik 2: `src/components/Navbar.tsx`
+
+**Dodanie fioletowego przycisku CTA "Cybersec-Check" w prawej części paska**
+
+W sekcji `<div className="flex items-center gap-2">` (linia ~167), obok przycisku Login, dodamy nowy `<Link>` jako `<Button>` z klasami fioletowymi:
+
+```tsx
+<Link
+  to={`/${currentLocale}${cybersecHref}`}
+  className="hidden md:inline-flex items-center px-3 py-2 text-sm font-semibold 
+             bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
+>
+  {t('menu.cybersecCheck')}
+</Link>
+```
+
+Href jest lokalowy:
+- PL → `/pl/sprawdz-cyberbezpieczenstwo`
+- EN → `/en/cybersecurity-check`
+- CS → `/cs/cybersecurity-check`
+
+Można to obsłużyć przez mapę stałych w Navbar lub przez klucz tłumaczenia `menu.cybersecHref` albo przez prostą logikę warunkową:
+
+```tsx
+const CYBERSEC_HREF: Record<string, string> = {
+  pl: '/sprawdz-cyberbezpieczenstwo',
+  en: '/cybersecurity-check',
+  cs: '/cybersecurity-check',
+};
+const cybersecHref = CYBERSEC_HREF[currentLocale] ?? '/cybersecurity-check';
+```
+
+W **MobileMenu** (linia ~122, przed blokiem Login) dodamy analogiczny link wewnątrz panelu mobilnego.
+
+---
+
+### Pliki 3–5: Translation JSON (PL, EN, CS)
+
+Dodanie klucza `menu.cybersecCheck` we wszystkich 3 plikach:
+
+**`public/locales/pl/translation.json`:**
+```json
+"menu": {
+  ...
+  "cybersecCheck": "Cybersec-Check"
 }
 ```
 
-### 2c. Hreflang — trzy wersje językowe
-
-Funkcja generująca HTML dla tej strony musi emitować poprawne tagi `hreflang` wskazujące na wszystkie 3 wersje językowe (EN, PL-PL, CS-CZ) — tak jak pozostałe strony statyczne.
-
----
-
-## Plik 3: `supabase/functions/sitemap/index.ts`
-
-Dodanie strony do listy `staticPages`:
-
-```typescript
-const staticPages = [
-  // ... istniejące wpisy ...
-  { path: '/nis2-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-18' },
-];
+**`public/locales/en/translation.json`:**
+```json
+"menu": {
+  ...
+  "cybersecCheck": "Cybersec-Check"
+}
 ```
 
-Dynamiczna sitemapa automatycznie wygeneruje wpisy dla wszystkich 3 locale (`/en/nis2-check/`, `/pl/nis2-check/`, `/cs/nis2-check/`) wraz z tagami `hreflang`.
-
----
-
-## Plik 4: `public/sitemap.xml` (statyczny fallback)
-
-Dodanie wpisów dla 3 wersji językowych do statycznego pliku sitemapy (używanego jako fallback gdy funkcja Edge nie jest dostępna):
-
-```xml
-<url>
-  <loc>https://quantifier.ai/en/nis2-check</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://quantifier.ai/pl/nis2-check</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://quantifier.ai/cs/nis2-check</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+**`public/locales/cs/translation.json`:**
+```json
+"menu": {
+  ...
+  "cybersecCheck": "Cybersec-Check"
+}
 ```
 
----
-
-## Deployment
-
-Po zapisaniu zmian funkcje Edge (`prerender-marketing`, `sitemap`) zostaną automatycznie wdrożone. Netlify Edge Function (`bot-prerender.ts`) zostanie zaktualizowana przy najbliższym deploy.
+Nazwa „Cybersec-Check" jest taka sama we wszystkich 3 językach (brand name — nie wymaga tłumaczenia).
 
 ---
 
-## Podsumowanie
+## SEO — wpływ zmian
 
-| Plik | Zmiana | Efekt |
-|------|--------|-------|
-| `bot-prerender.ts` | +1 wpis w STATIC_ROUTES | Googlebot dostaje HTML zamiast pustego SPA |
-| `prerender-marketing/index.ts` | +pageUrlMap, +pageData (3 języki), +hreflang | Prerenderowany HTML z meta tagami i FAQ JSON-LD |
-| `sitemap/index.ts` | +1 wpis w staticPages | Dynamiczna sitemapa generuje 3 URL-e z hreflang |
-| `public/sitemap.xml` | +3 wpisy URL | Statyczny fallback sitemapy |
+Dodanie `<Navbar />` do `FormularzPage` nie wpłynie negatywnie na SEO:
+- `<Helmet>` z `<title>`, `<meta description>`, `canonical`, `hreflang` i Open Graph pozostaje bez zmian (linie 309–327).
+- Navbar renderuje się jako część DOM po stronie klienta — crawlery widzą prerendered HTML z edge function.
+- Logotyp w Navbar to `<Link to="/${currentLocale}">` — poprawna wewnętrzna nawigacja.
+
+---
+
+## Podsumowanie zmian
+
+| Plik | Co się zmienia |
+|---|---|
+| `src/pages/formularz/FormularzPage.tsx` | Zamiana custom headera na `<Navbar />`, dodanie `pt-20` do `<main>` |
+| `src/components/Navbar.tsx` | Dodanie fioletowego CTA przycisku Cybersec-Check + stała `CYBERSEC_HREF` |
+| `src/components/MobileMenu.tsx` | Dodanie linku Cybersec-Check w panelu mobilnym |
+| `public/locales/pl/translation.json` | Nowy klucz `menu.cybersecCheck` |
+| `public/locales/en/translation.json` | Nowy klucz `menu.cybersecCheck` |
+| `public/locales/cs/translation.json` | Nowy klucz `menu.cybersecCheck` |
+
+Brak zmian w: bazie danych, edge functions, `netlify.toml`, `App.tsx`, `SEOHead`.

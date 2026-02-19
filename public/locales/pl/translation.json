@@ -84,7 +84,8 @@
     "successStories": "Historie sukcesu",
     "blog": "Blog",
     "about": "O nas",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "cybersecCheck": "Cybersec-Check"
   },
   "hero": {
     "title": "End-to-end GRC.",

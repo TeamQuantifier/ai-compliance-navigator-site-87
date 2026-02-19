@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logosGrid from '@/assets/logos-grid.png';
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -135,10 +136,15 @@ const Contact = () => {
           <p className="text-slate-600 mb-3">
             {t('contact.summary')}
           </p>
-          <p className="text-slate-700 font-medium mb-8">
+          <p className="text-slate-700 font-medium mb-6">
             {t('contact.cta')}
           </p>
-          
+
+          <img
+            src={logosGrid}
+            alt="Klienci Quantifier – logotypy"
+            className="w-full object-contain"
+          />
         </div>
         
         <div>
