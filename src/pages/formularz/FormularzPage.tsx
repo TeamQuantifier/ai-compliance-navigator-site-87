@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -21,6 +22,37 @@ import {
 } from '@/config/quizConfig';
 
 const SUPPORTED_LANGS: QuizLang[] = ['pl', 'en', 'cs'];
+
+// ─── SEO constants ─────────────────────────────────────────────
+const SEO_META_TITLE: Record<QuizLang, string> = {
+  pl: 'Sprawdź cyberbezpieczeństwo firmy — NIS2 i ISO 27001 | Quantifier',
+  en: 'Cybersecurity Check — Does Your Company Need to Act? | Quantifier',
+  cs: 'Zkontrolujte kybernetickou bezpečnost firmy — NIS2 a ISO 27001 | Quantifier',
+};
+
+const SEO_META_DESC: Record<QuizLang, string> = {
+  pl: 'Odpowiedz na 4 pytania i dowiedz się, czy NIS2 lub ISO 27001 dotyczy Twojej organizacji. Bezpłatny test cyberbezpieczeństwa od Quantifier.',
+  en: 'Answer 4 questions and find out if the NIS2 Directive or ISO 27001 applies to your company. Free cybersecurity compliance check by Quantifier.',
+  cs: 'Odpovězte na 4 otázky a zjistěte, zda se směrnice NIS2 nebo ISO 27001 vztahuje na vaši organizaci. Bezplatná kontrola od Quantifier.',
+};
+
+const SEO_OG_TITLE: Record<QuizLang, string> = {
+  pl: 'Sprawdź cyberbezpieczeństwo Twojej firmy | Quantifier',
+  en: 'Cybersecurity Check for Your Company | Quantifier',
+  cs: 'Zkontrolujte kybernetickou bezpečnost vaší firmy | Quantifier',
+};
+
+const CANONICAL_URLS: Record<QuizLang, string> = {
+  pl: 'https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/',
+  en: 'https://quantifier.ai/en/cybersecurity-check/',
+  cs: 'https://quantifier.ai/cs/cybersecurity-check/',
+};
+
+const OG_LOCALE: Record<QuizLang, string> = {
+  pl: 'pl_PL',
+  en: 'en_US',
+  cs: 'cs_CZ',
+};
 
 function useLang(): QuizLang {
   const { locale } = useParams<{ locale?: string }>();
@@ -253,7 +285,7 @@ export default function FormularzPage() {
         await newsletterClient.subscribe(data.email.trim().toLowerCase(), lang, {
           source: 'nis2-quiz',
           origin: window.location.href,
-          tags: ['nis2-quiz', `result-${resultKey.toLowerCase()}`],
+          tags: ['cybersecurity-check', `result-${resultKey.toLowerCase()}`],
           customer_message: resultKey,
         });
       } catch (emailErr) {
@@ -273,6 +305,26 @@ export default function FormularzPage() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>{SEO_META_TITLE[lang]}</title>
+        <meta name="description" content={SEO_META_DESC[lang]} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={CANONICAL_URLS[lang]} />
+        <link rel="alternate" hrefLang="pl-PL" href="https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/" />
+        <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/cybersecurity-check/" />
+        <link rel="alternate" hrefLang="cs-CZ" href="https://quantifier.ai/cs/cybersecurity-check/" />
+        <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/cybersecurity-check/" />
+        <meta property="og:title" content={SEO_OG_TITLE[lang]} />
+        <meta property="og:description" content={SEO_META_DESC[lang]} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={CANONICAL_URLS[lang]} />
+        <meta property="og:image" content="https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png" />
+        <meta property="og:locale" content={OG_LOCALE[lang]} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={SEO_OG_TITLE[lang]} />
+        <meta name="twitter:description" content={SEO_META_DESC[lang]} />
+      </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-[#d4f1ed]/30 via-white to-[#e0e2e9]/20">
       {/* Header */}
       <header className="bg-white border-b border-[#e0e2e9] shadow-sm">
@@ -473,6 +525,7 @@ export default function FormularzPage() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 

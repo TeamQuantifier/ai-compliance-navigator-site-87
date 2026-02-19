@@ -211,11 +211,6 @@ const AppContent = () => {
         {/* Cybersecurity Check — standalone, no Navbar/Footer, multilang */}
         <Route path="/pl/sprawdz-cyberbezpieczenstwo" element={<FormularzPage />} />
         <Route path="/:locale/cybersecurity-check" element={<FormularzPage />} />
-        {/* Legacy redirects from old nis2-check URLs */}
-        <Route path="/pl/nis2-check" element={<Navigate to="/pl/sprawdz-cyberbezpieczenstwo" replace />} />
-        <Route path="/en/nis2-check" element={<Navigate to="/en/cybersecurity-check" replace />} />
-        <Route path="/cs/nis2-check" element={<Navigate to="/cs/cybersecurity-check" replace />} />
-        <Route path="/:locale/nis2-check" element={<Navigate to="/en/cybersecurity-check" replace />} />
         {/* Legacy redirects from old /formularz */}
         <Route path="/formularz" element={<Navigate to="/pl/sprawdz-cyberbezpieczenstwo" replace />} />
         <Route path="/nis2-check" element={<Navigate to="/en/cybersecurity-check" replace />} />
