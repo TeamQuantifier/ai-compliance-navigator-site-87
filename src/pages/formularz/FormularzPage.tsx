@@ -305,6 +305,26 @@ export default function FormularzPage() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>{SEO_META_TITLE[lang]}</title>
+        <meta name="description" content={SEO_META_DESC[lang]} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={CANONICAL_URLS[lang]} />
+        <link rel="alternate" hrefLang="pl-PL" href="https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/" />
+        <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/cybersecurity-check/" />
+        <link rel="alternate" hrefLang="cs-CZ" href="https://quantifier.ai/cs/cybersecurity-check/" />
+        <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/cybersecurity-check/" />
+        <meta property="og:title" content={SEO_OG_TITLE[lang]} />
+        <meta property="og:description" content={SEO_META_DESC[lang]} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={CANONICAL_URLS[lang]} />
+        <meta property="og:image" content="https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png" />
+        <meta property="og:locale" content={OG_LOCALE[lang]} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={SEO_OG_TITLE[lang]} />
+        <meta name="twitter:description" content={SEO_META_DESC[lang]} />
+      </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-[#d4f1ed]/30 via-white to-[#e0e2e9]/20">
       {/* Header */}
       <header className="bg-white border-b border-[#e0e2e9] shadow-sm">
