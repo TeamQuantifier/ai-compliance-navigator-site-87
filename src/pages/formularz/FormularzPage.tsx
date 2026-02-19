@@ -376,6 +376,17 @@ export default function FormularzPage() {
                           {parsed.section2Header}
                         </h3>
                         <BodySection text={parsed.section2} />
+                        <div className="mt-4">
+                          <a
+                            href={`/${lang}/blog`}
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-[#6d38a8] hover:text-[#5a2e8e] underline underline-offset-2 transition-colors"
+                          >
+                            {NIS2_BLOG_LABEL[lang]}
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </a>
+                        </div>
                       </div>
                     )}
                   </>
