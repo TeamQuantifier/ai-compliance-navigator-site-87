@@ -162,6 +162,13 @@ export const Navbar = () => {
     window.location.href = 'https://platform.quantifier.ai';
   };
 
+  const CYBERSEC_HREF: Record<string, string> = {
+    pl: '/sprawdz-cyberbezpieczenstwo',
+    en: '/cybersecurity-check',
+    cs: '/cybersecurity-check',
+  };
+  const cybersecHref = CYBERSEC_HREF[currentLocale] ?? '/cybersecurity-check';
+
   return (
     <header
       className={cn(

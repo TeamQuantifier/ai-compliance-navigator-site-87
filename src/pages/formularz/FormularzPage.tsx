@@ -4,6 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useParams } from 'react-router-dom';
+import { Navbar } from '@/components/Navbar';
 import { supabase } from '@/integrations/supabase/client';
 import { newsletterClient } from '@/lib/newsletter-client';
 import {
