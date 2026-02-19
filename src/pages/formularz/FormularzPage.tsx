@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { newsletterClient } from '@/lib/newsletter-client';
 import {
-  QUIZ_TITLE, QUIZ_SUBTITLE,
+  QUIZ_TITLE, QUIZ_SUBTITLE, QUIZ_INTRO,
   Q1_QUESTION, Q1_OPTIONS,
   Q2_QUESTION, Q2_OPTIONS,
   Q3_QUESTION, Q3_PLACEHOLDER, Q3_SEARCH_PLACEHOLDER, NACE_SECTORS,
@@ -209,14 +209,19 @@ export default function FormularzPage() {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         {/* Title */}
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center">
           <span className="inline-block mb-3 px-3 py-1 text-xs font-semibold bg-[#6d38a8] text-white rounded-full tracking-wide uppercase">
-            NIS2 Check
+            Cybersecurity Check
           </span>
           <h1 className="text-2xl md:text-3xl font-bold text-[#6d38a8] leading-tight mb-3">
             {QUIZ_TITLE[lang]}
           </h1>
           <p className="text-gray-500 text-sm md:text-base">{QUIZ_SUBTITLE[lang]}</p>
+        </div>
+
+        {/* Intro paragraph */}
+        <div className="mb-8 bg-white rounded-2xl border border-[#e0e2e9] p-6 text-sm text-gray-600 leading-relaxed">
+          {QUIZ_INTRO[lang]}
         </div>
 
         {/* Result (shown after submit) */}

@@ -66,6 +66,22 @@
   to = "/en/blog/"
   status = 301
 
+# Redirects for old /nis2-check URLs
+[[redirects]]
+  from = "/en/nis2-check"
+  to = "/en/cybersecurity-check/"
+  status = 301
+
+[[redirects]]
+  from = "/pl/nis2-check"
+  to = "/pl/sprawdz-cyberbezpieczenstwo/"
+  status = 301
+
+[[redirects]]
+  from = "/cs/nis2-check"
+  to = "/cs/cybersecurity-check/"
+  status = 301
+
 [[redirects]]
   from = "/frameworks"
   to = "/en/frameworks/"
