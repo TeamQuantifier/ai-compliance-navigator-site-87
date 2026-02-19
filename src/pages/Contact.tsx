@@ -143,7 +143,7 @@ const Contact = () => {
           <img
             src={logosGrid}
             alt="Klienci Quantifier – logotypy"
-            className="w-full max-w-lg object-contain"
+            className="w-full object-contain"
           />
         </div>
         
