@@ -123,6 +123,80 @@ function NaceSelect({
   );
 }
 
+// ─── Result body parsing ──────────────────────────────────────
+const SECTION2_HEADERS: Record<QuizLang, string> = {
+  pl: 'Jak Quantifier może pomóc',
+  en: 'How Quantifier can help',
+  cs: 'Jak může Quantifier pomoci',
+};
+
+const SECTION1_HEADERS: Record<QuizLang, string> = {
+  pl: 'Co to oznacza',
+  en: 'What this means',
+  cs: 'Co to znamená',
+};
+
+function parseResultBody(body: string, lang: QuizLang) {
+  const divider = SECTION2_HEADERS[lang];
+  const idx = body.indexOf(divider);
+  if (idx === -1) return { section1: body, section2: '', section2Header: divider };
+  const section1 = body.slice(0, idx).trim();
+  const section2 = body.slice(idx + divider.length).trim();
+  return { section1, section2, section2Header: divider };
+}
+
+// Detects lines that are sub-headers: short, no bullet, not a regular sentence
+function isSubHeader(line: string) {
+  return line.length > 0 && line.length <= 40 && !line.startsWith('•') && !/[.,:;]$/.test(line);
+}
+
+function BodySection({ text }: { text: string }) {
+  if (!text) return null;
+  const lines = text.split('\n');
+  const elements: React.ReactNode[] = [];
+  let bullets: string[] = [];
+
+  const flushBullets = (key: string) => {
+    if (bullets.length > 0) {
+      elements.push(
+        <ul key={key} className="mt-2 mb-3 space-y-1.5">
+          {bullets.map((b, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm text-gray-700 leading-relaxed">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#6d38a8] flex-shrink-0" />
+              <span>{b.replace(/^•\s*/, '')}</span>
+            </li>
+          ))}
+        </ul>
+      );
+      bullets = [];
+    }
+  };
+
+  lines.forEach((raw, i) => {
+    const line = raw.trim();
+    if (!line) return;
+    if (line.startsWith('•')) {
+      bullets.push(line);
+    } else {
+      flushBullets(`ul-${i}`);
+      if (isSubHeader(line)) {
+        elements.push(
+          <h4 key={`h-${i}`} className="mt-4 mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">
+            {line}
+          </h4>
+        );
+      } else {
+        elements.push(
+          <p key={`p-${i}`} className="text-sm text-gray-700 leading-relaxed mb-2">{line}</p>
+        );
+      }
+    }
+  });
+  flushBullets('ul-end');
+
+  return <div>{elements}</div>;
+}
+
 // ─── Main page ─────────────────────────────────────────────────
 export default function FormularzPage() {
   const lang = useLang();
