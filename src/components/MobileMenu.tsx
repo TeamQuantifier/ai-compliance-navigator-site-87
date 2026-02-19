@@ -26,9 +26,10 @@ interface MenuItem {
 
 interface MobileMenuProps {
   items: MenuItem[];
+  cybersecHref?: string;
 }
 
-export const MobileMenu = ({ items }: MobileMenuProps) => {
+export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { currentLocale, t } = useLanguage();
