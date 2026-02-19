@@ -342,8 +342,10 @@ export default function FormularzPage() {
         </div>
 
         {/* Intro paragraph */}
-        <div className="mb-8 bg-white rounded-2xl border border-[#e0e2e9] p-6 text-sm text-gray-600 leading-relaxed">
-          {QUIZ_INTRO[lang]}
+        <div className="mb-8 bg-white rounded-2xl border border-[#e0e2e9] p-6 text-sm text-gray-600 leading-relaxed space-y-3">
+          {QUIZ_INTRO[lang].split('\n\n').map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
         </div>
 
         {/* Result (shown after submit) */}
