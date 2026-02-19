@@ -239,6 +239,11 @@ export const RETRY_LABEL: Record<QuizLang, string> = {
   en: 'Try again',
   cs: 'Vyplnit znovu',
 };
+export const NIS2_BLOG_LABEL: Record<QuizLang, string> = {
+  pl: 'Dowiedz się czym jest NIS2',
+  en: 'Learn what NIS2 is',
+  cs: 'Zjistěte, co je NIS2',
+};
 
 // ─── Validation messages ───────────────────────────────────────
 export const VALIDATION: Record<QuizLang, { email: string; required: string; q4: string; gdpr: string }> = {
