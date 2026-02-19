@@ -1,16 +1,13 @@
 
-# SEO dla /cybersecurity-check + usunięcie /nis2-check
+# Navbar na /cybersecurity-check + CTA button w menu głównym
 
 ## Stan obecny
 
-### Problem 1 — Brak tagów SEO w `FormularzPage.tsx`
-Strona `/pl/sprawdz-cyberbezpieczenstwo`, `/en/cybersecurity-check` i `/cs/cybersecurity-check` **nie mają żadnych meta tagów** (brak `<Helmet>` / `<title>` / `<meta name="description">`). Użytkownicy odwiedzający stronę bezpośrednio widzą pusty tytuł. Treść SEO istnieje tylko w prerender-bocie dla crawlerów.
+1. **FormularzPage ma własny custom header** (linie 329-334) — prosty pasek z logo bez linku, bez menu nawigacyjnego, bez przycisku Login. Strona jest odizolowana od reszty serwisu.
 
-### Problem 2 — Stare ścieżki /nis2-check w `App.tsx`
-W `App.tsx` są 4 trasy React Router dla `/nis2-check`, które przekierowują do nowych URL-i. Są zbędne — 301-ki obsługuje już `netlify.toml` na poziomie infrastruktury. Utrzymywanie ich w SPA to techniczny dług.
+2. **Navbar.tsx nie zawiera linku do `/cybersecurity-check`** — użytkownik musi wpisać URL ręcznie lub kliknąć link z zewnątrz.
 
-### Problem 3 — newsletter tag `nis2-quiz` w `FormularzPage.tsx`
-Na linii 256 w `FormularzPage.tsx` tagi newsletterowe zawierają `'nis2-quiz'` — powinny być zaktualizowane do `'cybersecurity-check'`.
+3. **Brak klucza `menu.cybersecCheck` w plikach translacji** (`public/locales/pl/translation.json`, `/en/...`, `/cs/...`) — trzeba go dodać.
 
 ---
 
@@ -18,100 +15,118 @@ Na linii 256 w `FormularzPage.tsx` tagi newsletterowe zawierają `'nis2-quiz'` �
 
 ### Plik 1: `src/pages/formularz/FormularzPage.tsx`
 
-**Dodanie `<Helmet>` z pełnymi tagami SEO**
+**Zastąpienie custom headera standardowym `<Navbar />`**
 
-Zaimportujemy `Helmet` z `react-helmet-async` i dodamy blok meta przed `<div className="min-h-screen...">`:
-
+Obecny custom header (linie 329–334):
 ```tsx
-<Helmet>
-  <title>{SEO_META_TITLE[lang]}</title>
-  <meta name="description" content={SEO_META_DESC[lang]} />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href={canonicalUrl} />
-  
-  {/* hreflang — geo-targeting */}
-  <link rel="alternate" hrefLang="pl-PL" href="https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/" />
-  <link rel="alternate" hrefLang="en" href="https://quantifier.ai/en/cybersecurity-check/" />
-  <link rel="alternate" hrefLang="cs-CZ" href="https://quantifier.ai/cs/cybersecurity-check/" />
-  <link rel="alternate" hrefLang="x-default" href="https://quantifier.ai/en/cybersecurity-check/" />
-
-  {/* Open Graph */}
-  <meta property="og:title" content={SEO_OG_TITLE[lang]} />
-  <meta property="og:description" content={SEO_META_DESC[lang]} />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalUrl} />
-  <meta property="og:image" content="https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png" />
-  <meta property="og:locale" content={ogLocale} />
-  
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={SEO_OG_TITLE[lang]} />
-  <meta name="twitter:description" content={SEO_META_DESC[lang]} />
-</Helmet>
+<header className="bg-white border-b border-[#e0e2e9] shadow-sm">
+  <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-3">
+    <img src="/logo-quantifier.png" alt="Quantifier" className="h-8 object-contain" />
+  </div>
+</header>
 ```
 
-**Dodanie stałych SEO** (nad funkcją `FormularzPage`):
+Zostanie zastąpiony przez `<Navbar />` (komponent już istnieje w projekcie). Navbar ma:
+- link do strony głównej pod kliknięciem logo (już zaimplementowany)
+- pełne menu desktop + mobile
+- przycisk Login
+- LanguageSwitch
 
-```ts
-const SEO_META_TITLE: Record<QuizLang, string> = {
-  pl: 'Sprawdź cyberbezpieczeństwo firmy — NIS2 i ISO 27001 | Quantifier',
-  en: 'Cybersecurity Check — Does Your Company Need to Act? | Quantifier',
-  cs: 'Zkontrolujte kybernetickou bezpečnost firmy — NIS2 a ISO 27001 | Quantifier',
-};
+Ponieważ Navbar ma `fixed top-0`, trzeba dodać `pt-16` lub `pt-20` do `<main>` żeby treść nie chowała się pod paskiem.
 
-const SEO_META_DESC: Record<QuizLang, string> = {
-  pl: 'Odpowiedz na 4 pytania i dowiedz się, czy NIS2 lub ISO 27001 dotyczy Twojej organizacji. Bezpłatny test cyberbezpieczeństwa od Quantifier.',
-  en: 'Answer 4 questions and find out if the NIS2 Directive or ISO 27001 applies to your company. Free cybersecurity compliance check by Quantifier.',
-  cs: 'Odpovězte na 4 otázky a zjistěte, zda se směrnice NIS2 nebo ISO 27001 vztahuje na vaši organizaci. Bezplatná kontrola od Quantifier.',
-};
-
-const SEO_OG_TITLE: Record<QuizLang, string> = {
-  pl: 'Sprawdź cyberbezpieczeństwo Twojej firmy | Quantifier',
-  en: 'Cybersecurity Check for Your Company | Quantifier',
-  cs: 'Zkontrolujte kybernetickou bezpečnost vaší firmy | Quantifier',
-};
-
-const CANONICAL_URLS: Record<QuizLang, string> = {
-  pl: 'https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/',
-  en: 'https://quantifier.ai/en/cybersecurity-check/',
-  cs: 'https://quantifier.ai/cs/cybersecurity-check/',
-};
-```
-
-**Aktualizacja tagu newsletterowego** (linia 256):
-```ts
-// PRZED:
-tags: ['nis2-quiz', `result-${resultKey.toLowerCase()}`],
-customer_message: resultKey,
-
-// PO:
-tags: ['cybersecurity-check', `result-${resultKey.toLowerCase()}`],
-customer_message: resultKey,
+**Import Navbar do FormularzPage:**
+```tsx
+import { Navbar } from '@/components/Navbar';
 ```
 
 ---
 
-### Plik 2: `src/App.tsx`
+### Plik 2: `src/components/Navbar.tsx`
 
-**Usunięcie 4 redundantnych tras `/nis2-check`** — są to linie 215–218:
+**Dodanie fioletowego przycisku CTA "Cybersec-Check" w prawej części paska**
+
+W sekcji `<div className="flex items-center gap-2">` (linia ~167), obok przycisku Login, dodamy nowy `<Link>` jako `<Button>` z klasami fioletowymi:
 
 ```tsx
-{/* Legacy redirects from old nis2-check URLs */}
-<Route path="/pl/nis2-check" element={<Navigate to="/pl/sprawdz-cyberbezpieczenstwo" replace />} />
-<Route path="/en/nis2-check" element={<Navigate to="/en/cybersecurity-check" replace />} />
-<Route path="/cs/nis2-check" element={<Navigate to="/cs/cybersecurity-check" replace />} />
-<Route path="/:locale/nis2-check" element={<Navigate to="/en/cybersecurity-check" replace />} />
+<Link
+  to={`/${currentLocale}${cybersecHref}`}
+  className="hidden md:inline-flex items-center px-3 py-2 text-sm font-semibold 
+             bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
+>
+  {t('menu.cybersecCheck')}
+</Link>
 ```
 
-Te przekierowania obsługuje już `netlify.toml` (linie 69–83) jako prawdziwe 301-ki HTTP. Redundantne trasy React Router były tylko SPA-level fallback — niepotrzebne.
+Href jest lokalowy:
+- PL → `/pl/sprawdz-cyberbezpieczenstwo`
+- EN → `/en/cybersecurity-check`
+- CS → `/cs/cybersecurity-check`
+
+Można to obsłużyć przez mapę stałych w Navbar lub przez klucz tłumaczenia `menu.cybersecHref` albo przez prostą logikę warunkową:
+
+```tsx
+const CYBERSEC_HREF: Record<string, string> = {
+  pl: '/sprawdz-cyberbezpieczenstwo',
+  en: '/cybersecurity-check',
+  cs: '/cybersecurity-check',
+};
+const cybersecHref = CYBERSEC_HREF[currentLocale] ?? '/cybersecurity-check';
+```
+
+W **MobileMenu** (linia ~122, przed blokiem Login) dodamy analogiczny link wewnątrz panelu mobilnego.
 
 ---
 
-## Pliki zmieniane
+### Pliki 3–5: Translation JSON (PL, EN, CS)
+
+Dodanie klucza `menu.cybersecCheck` we wszystkich 3 plikach:
+
+**`public/locales/pl/translation.json`:**
+```json
+"menu": {
+  ...
+  "cybersecCheck": "Cybersec-Check"
+}
+```
+
+**`public/locales/en/translation.json`:**
+```json
+"menu": {
+  ...
+  "cybersecCheck": "Cybersec-Check"
+}
+```
+
+**`public/locales/cs/translation.json`:**
+```json
+"menu": {
+  ...
+  "cybersecCheck": "Cybersec-Check"
+}
+```
+
+Nazwa „Cybersec-Check" jest taka sama we wszystkich 3 językach (brand name — nie wymaga tłumaczenia).
+
+---
+
+## SEO — wpływ zmian
+
+Dodanie `<Navbar />` do `FormularzPage` nie wpłynie negatywnie na SEO:
+- `<Helmet>` z `<title>`, `<meta description>`, `canonical`, `hreflang` i Open Graph pozostaje bez zmian (linie 309–327).
+- Navbar renderuje się jako część DOM po stronie klienta — crawlery widzą prerendered HTML z edge function.
+- Logotyp w Navbar to `<Link to="/${currentLocale}">` — poprawna wewnętrzna nawigacja.
+
+---
+
+## Podsumowanie zmian
 
 | Plik | Co się zmienia |
 |---|---|
-| `src/pages/formularz/FormularzPage.tsx` | Dodanie `<Helmet>` z pełnymi meta tagami, stałe SEO, poprawka tagu newsletter |
-| `src/App.tsx` | Usunięcie 4 tras `/nis2-check` |
+| `src/pages/formularz/FormularzPage.tsx` | Zamiana custom headera na `<Navbar />`, dodanie `pt-20` do `<main>` |
+| `src/components/Navbar.tsx` | Dodanie fioletowego CTA przycisku Cybersec-Check + stała `CYBERSEC_HREF` |
+| `src/components/MobileMenu.tsx` | Dodanie linku Cybersec-Check w panelu mobilnym |
+| `public/locales/pl/translation.json` | Nowy klucz `menu.cybersecCheck` |
+| `public/locales/en/translation.json` | Nowy klucz `menu.cybersecCheck` |
+| `public/locales/cs/translation.json` | Nowy klucz `menu.cybersecCheck` |
 
-Brak zmian w: `netlify.toml`, `prerender-marketing/index.ts`, bazie danych.
+Brak zmian w: bazie danych, edge functions, `netlify.toml`, `App.tsx`, `SEOHead`.
