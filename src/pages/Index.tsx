@@ -165,7 +165,7 @@ const Index = () => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/og-image.png`} />
+        <meta property="og:image" content={`${baseUrl}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png`} />
         <meta property="og:site_name" content="Quantifier.ai" />
         <meta property="og:locale" content={getOgLocale(currentLocale)} />
         {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
@@ -176,7 +176,7 @@ const Index = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${baseUrl}/og-image.png`} />
+        <meta name="twitter:image" content={`${baseUrl}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png`} />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">

@@ -12,9 +12,9 @@ export const QUIZ_TITLE: Record<QuizLang, string> = {
 };
 
 export const QUIZ_INTRO: Record<QuizLang, string> = {
-  pl: 'W świecie napięć geopolitycznych i rosnącej liczby cyberataków cyberbezpieczeństwo stało się warunkiem przetrwania biznesu, a nie jedynie kwestią techniczną. Naruszenie bezpieczeństwa oznacza dziś realne ryzyko strat finansowych, utraty reputacji i odpowiedzialności zarządu. Kluczowe znaczenie mają Dyrektywa NIS2 oraz ISO 27001, które wyznaczają ramy zarządzania ryzykiem i ochrony informacji. To, czy regulacje dotyczą Cię bezpośrednio, zależy od wielkości firmy, sektora i relacji w łańcuchu dostaw.',
-  en: "In a world of geopolitical tensions and a growing number of cyberattacks, cybersecurity has become a condition for business survival — not merely a technical issue. A security breach today means real risk: financial losses, reputational damage, and board-level liability. The NIS2 Directive and ISO 27001 play a key role in defining risk management and information protection frameworks. Whether regulations apply to you directly depends on your company's size, sector, and supply chain relationships.",
-  cs: 'Ve světě geopolitických napětí a rostoucího počtu kyberútoků se kybernetická bezpečnost stala podmínkou přežití podniku, nikoli jen technickou záležitostí. Narušení bezpečnosti dnes znamená reálné riziko finančních ztrát, poškození reputace a odpovědnosti představenstva. Klíčový význam mají Směrnice NIS2 a ISO 27001, které stanovují rámce řízení rizik a ochrany informací. Zda se na vás předpisy vztahují přímo, závisí na velikosti společnosti, odvětví a vztazích v dodavatelském řetězci.',
+  pl: 'W świecie napięć geopolitycznych i rosnącej liczby cyberataków cyberbezpieczeństwo stało się warunkiem przetrwania biznesu, a nie jedynie kwestią techniczną.\n\nNaruszenie bezpieczeństwa oznacza dziś realne ryzyko strat finansowych, utraty reputacji oraz odpowiedzialności po stronie zarządu. Kluczowe znaczenie mają Dyrektywa NIS2 i norma ISO/IEC 27001, które wyznaczają ramy zarządzania ryzykiem oraz ochrony informacji.\n\nTo, czy regulacje dotyczą Cię bezpośrednio, zależy od wielkości firmy, branży oraz roli w łańcuchu dostaw.',
+  en: 'In a world of geopolitical tensions and a growing number of cyberattacks, cybersecurity has become a prerequisite for business resilience, not merely a technical concern.\n\nA security breach now carries real risks: financial losses, reputational damage, and executive accountability. Two key reference points are the NIS2 Directive and the ISO/IEC 27001 standard, which define the framework for risk management and information security.\n\nWhether these requirements apply to you directly depends on your company\'s size, industry, and position within the supply chain.',
+  cs: 'Ve světě geopolitických napětí a rostoucího počtu kyberútoků se kybernetická bezpečnost stala podmínkou přežití podniku, nikoli jen technickou záležitostí.\n\nNarušení bezpečnosti dnes znamená reálné riziko finančních ztrát, poškození reputace a odpovědnosti představenstva. Klíčový význam mají Směrnice NIS2 a norma ISO/IEC 27001, které stanovují rámce řízení rizik a ochrany informací.\n\nZda se na vás předpisy vztahují přímo, závisí na velikosti společnosti, odvětví a vztazích v dodavatelském řetězci.',
 };
 
 export const QUIZ_SUBTITLE: Record<QuizLang, string> = {
@@ -238,6 +238,11 @@ export const RETRY_LABEL: Record<QuizLang, string> = {
   pl: 'Wypełnij ponownie',
   en: 'Try again',
   cs: 'Vyplnit znovu',
+};
+export const NIS2_BLOG_LABEL: Record<QuizLang, string> = {
+  pl: 'Dowiedz się czym jest NIS2',
+  en: 'Learn what NIS2 is',
+  cs: 'Zjistěte, co je NIS2',
 };
 
 // ─── Validation messages ───────────────────────────────────────

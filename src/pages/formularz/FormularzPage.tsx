@@ -15,7 +15,7 @@ import {
   Q4_QUESTION, Q4_HINT, Q4_OPTIONS,
   EMAIL_LABEL, EMAIL_PLACEHOLDER, EMAIL_PRIVACY_NOTE, PRIVACY_LINK_LABEL,
   GDPR_CONSENT, SUBMIT_LABEL, SUBMITTING_LABEL,
-  RESULT_RISK_LABEL, CTA_LINK_LABEL, RETRY_LABEL,
+  RESULT_RISK_LABEL, CTA_LINK_LABEL, RETRY_LABEL, NIS2_BLOG_LABEL,
   VALIDATION, ERROR_FETCH_TEMPLATE, ERROR_INSERT, ERROR_GENERIC,
   NO_RESULTS_LABEL,
   classifyNIS2, RESULT_BADGE_COLORS, RESULT_LABELS,
@@ -342,8 +342,10 @@ export default function FormularzPage() {
         </div>
 
         {/* Intro paragraph */}
-        <div className="mb-8 bg-white rounded-2xl border border-[#e0e2e9] p-6 text-sm text-gray-600 leading-relaxed">
-          {QUIZ_INTRO[lang]}
+        <div className="mb-8 bg-white rounded-2xl border border-[#e0e2e9] p-6 text-sm text-gray-600 leading-relaxed space-y-3">
+          {QUIZ_INTRO[lang].split('\n\n').map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
         </div>
 
         {/* Result (shown after submit) */}
@@ -374,6 +376,17 @@ export default function FormularzPage() {
                           {parsed.section2Header}
                         </h3>
                         <BodySection text={parsed.section2} />
+                        <div className="mt-4">
+                          <a
+                            href={`/${lang}/blog`}
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-[#6d38a8] hover:text-[#5a2e8e] underline underline-offset-2 transition-colors"
+                          >
+                            {NIS2_BLOG_LABEL[lang]}
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </a>
+                        </div>
                       </div>
                     )}
                   </>
