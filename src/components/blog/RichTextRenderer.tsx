@@ -1,5 +1,6 @@
 import type { JSONContent } from '@tiptap/react';
 import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 interface RichTextRendererProps {
   content: JSONContent;
