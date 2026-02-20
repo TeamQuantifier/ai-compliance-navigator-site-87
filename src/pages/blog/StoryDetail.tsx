@@ -157,8 +157,11 @@ const StoryDetail = () => {
             <div className="aspect-video overflow-hidden rounded-xl mb-8 bg-slate-100">
               <img 
                 src={story.featured_image_url || story.og_image_url || story.logo_url || ''} 
-                alt={story.title}
+                alt={story.featured_image_alt || story.title}
                 className="w-full h-full object-cover"
+                width={1200}
+                height={675}
+                loading="lazy"
               />
             </div>
           )}

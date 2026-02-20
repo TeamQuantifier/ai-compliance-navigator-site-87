@@ -60,7 +60,10 @@ const Footer = () => {
               <img 
                 src="/logo-quantifier.png" 
                 alt="Quantifier.ai" 
-                className="h-10 w-auto" 
+                className="h-10 w-auto"
+                width={180}
+                height={40}
+                loading="lazy"
               />
             </Link>
             

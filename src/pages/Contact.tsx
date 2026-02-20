@@ -144,6 +144,9 @@ const Contact = () => {
             src={logosGrid}
             alt="Klienci Quantifier – logotypy"
             className="w-full object-contain"
+            width={600}
+            height={400}
+            loading="lazy"
           />
         </div>
         

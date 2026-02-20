@@ -143,7 +143,7 @@ const BlogPost = () => {
             <div className="flex items-center gap-4 text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                <span>
+                <time dateTime={post.published_at || post.created_at}>
                   {post.published_at 
                     ? new Date(post.published_at).toLocaleDateString(currentLocale, {
                         year: 'numeric',
@@ -156,7 +156,7 @@ const BlogPost = () => {
                         day: 'numeric'
                       })
                   }
-                </span>
+                </time>
               </div>
               
               <Separator orientation="vertical" className="h-4" />
