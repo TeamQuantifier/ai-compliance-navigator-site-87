@@ -72,6 +72,9 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
               alt={imageAlt}
               className="rounded-lg h-auto shadow-md"
               style={imageStyle}
+              loading="lazy"
+              width={imageWidth || 800}
+              height={imageWidth ? Math.round(imageWidth * 0.56) : 450}
             />
             {imageAlt && (
               <figcaption className="text-sm text-muted-foreground mt-2 text-center italic">
