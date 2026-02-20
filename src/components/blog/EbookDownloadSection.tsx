@@ -119,6 +119,9 @@ const EbookDownloadSection = () => {
               src="/lovable-uploads/compliance-calendar-2026-new.png" 
               alt="Compliance Kalendarz 2026"
               className="max-w-xs md:max-w-sm h-auto drop-shadow-xl"
+              width={384}
+              height={540}
+              loading="lazy"
             />
           </div>
         </div>

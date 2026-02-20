@@ -119,8 +119,11 @@ const BlogList = () => {
                       <div className="aspect-video overflow-hidden">
                         <img 
                           src={post.featured_image_url || imageUrl} 
-                          alt={post.title}
+                          alt={post.featured_image_alt || post.title}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                          width={800}
+                          height={450}
+                          loading="lazy"
                         />
                       </div>
                     </Link>

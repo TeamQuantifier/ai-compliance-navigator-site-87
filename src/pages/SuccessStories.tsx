@@ -68,8 +68,11 @@ const SuccessStories = () => {
                     <div className="aspect-video overflow-hidden bg-slate-100">
                       <img 
                         src={story.featured_image_url || story.og_image_url || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop'} 
-                        alt={story.title}
+                        alt={story.featured_image_alt || story.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        width={800}
+                        height={450}
+                        loading="lazy"
                       />
                     </div>
                   </Link>

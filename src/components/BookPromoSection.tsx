@@ -59,6 +59,9 @@ export function BookPromoSection() {
             src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
             alt="Analiza podwójnej istotności - książka"
             className="w-48 md:w-64 object-contain transform hover:scale-105 transition-transform duration-300"
+            width={256}
+            height={360}
+            loading="lazy"
           />
         </div>
       </div>

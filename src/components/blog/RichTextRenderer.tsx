@@ -1,5 +1,6 @@
 import type { JSONContent } from '@tiptap/react';
 import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 interface RichTextRendererProps {
   content: JSONContent;
@@ -72,6 +73,9 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
               alt={imageAlt}
               className="rounded-lg h-auto shadow-md"
               style={imageStyle}
+              loading="lazy"
+              width={imageWidth || 800}
+              height={imageWidth ? Math.round(imageWidth * 0.56) : 450}
             />
             {imageAlt && (
               <figcaption className="text-sm text-muted-foreground mt-2 text-center italic">
@@ -112,16 +116,32 @@ const RichTextRenderer = ({ content, className = '' }: RichTextRendererProps) =>
                 textContent = <u className="underline">{textContent}</u>;
                 break;
               case 'link':
-                textContent = (
-                  <a
-                    href={mark.attrs?.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary underline hover:text-primary/80 transition-colors"
-                  >
-                    {textContent}
-                  </a>
-                );
+                const href = mark.attrs?.href || '';
+                const isInternal = href.startsWith('/') || href.includes('quantifier.ai');
+                if (isInternal) {
+                  const internalPath = href.includes('quantifier.ai')
+                    ? new URL(href).pathname
+                    : href;
+                  textContent = (
+                    <Link
+                      to={internalPath}
+                      className="text-primary underline hover:text-primary/80 transition-colors"
+                    >
+                      {textContent}
+                    </Link>
+                  );
+                } else {
+                  textContent = (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline hover:text-primary/80 transition-colors"
+                    >
+                      {textContent}
+                    </a>
+                  );
+                }
                 break;
               case 'code':
                 textContent = (
