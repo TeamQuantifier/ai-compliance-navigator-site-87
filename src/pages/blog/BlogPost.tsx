@@ -124,6 +124,9 @@ const BlogPost = () => {
               src={post.featured_image_url} 
               alt={post.featured_image_alt || post.title}
               className="w-full aspect-video object-cover rounded-lg mb-8"
+              width={1200}
+              height={675}
+              loading="lazy"
             />
           )}
 
