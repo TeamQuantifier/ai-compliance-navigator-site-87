@@ -7,42 +7,6 @@
 # The bot-prerender function checks User-Agent and proxies bots to
 # Supabase prerender functions. Regular users get the SPA.
 
-[[edge_functions]]
-  path = "/en"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/en/"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/pl"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/pl/"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/cs"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/cs/"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/en/*"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/pl/*"
-  function = "bot-prerender"
-
-[[edge_functions]]
-  path = "/cs/*"
-  function = "bot-prerender"
-
 # --- Redirects (301) for non-localized paths ---
 # These take priority over public/_redirects
 
