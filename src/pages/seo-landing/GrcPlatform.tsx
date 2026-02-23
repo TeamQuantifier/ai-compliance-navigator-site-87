@@ -113,7 +113,7 @@ const GrcPlatform = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
-        <meta name="twitter:image" content={`${baseUrl}/lovable-uploads/platform-screenshot.png`} />
+        <meta name="twitter:image" content={`${baseUrl}/og-homepage.png`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
       </Helmet>

@@ -176,7 +176,7 @@ const Index = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${baseUrl}/lovable-uploads/platform-screenshot.png`} />
+        <meta name="twitter:image" content={`${baseUrl}/og-homepage.png`} />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">

@@ -24,7 +24,7 @@ const DEFAULT_SETTINGS: SeoSettings = {
   brandUrl: 'https://quantifier.ai',
   defaultTitleTemplate: '{title} | {brand}',
   defaultMetaTemplate: '{excerpt}',
-  defaultOgImage: '/lovable-uploads/platform-screenshot.png',
+  defaultOgImage: '/og-homepage.png',
   minWordsBlog: 600,
   minWordsStory: 800,
   titleMin: 45,

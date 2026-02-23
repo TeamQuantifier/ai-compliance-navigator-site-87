@@ -69,7 +69,7 @@ serve(async (req: Request) => {
       if (gp) for (const g of gp) alternateVersions.push({ locale: g.lang, slug: g.slug });
     }
     const canonicalUrl = ensureTrailingSlash('https://quantifier.ai/' + locale + '/blog/' + post.slug);
-    const imageUrl = post.og_image_url || post.featured_image_url || 'https://quantifier.ai/lovable-uploads/platform-screenshot.png';
+    const imageUrl = post.og_image_url || post.featured_image_url || 'https://quantifier.ai/og-homepage.png';
     const title = post.meta_title || post.title;
     const description = post.meta_desc || post.excerpt || '';
     const selfHl = localeHreflangMap[locale] || locale;
