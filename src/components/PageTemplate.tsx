@@ -145,7 +145,7 @@ const PageTemplate = ({
   title,
   description,
   children,
-  ogImage = '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png',
+  ogImage = '/lovable-uploads/platform-screenshot.png',
   noIndex = false,
   noSeo = false
 }: PageTemplateProps) => {
