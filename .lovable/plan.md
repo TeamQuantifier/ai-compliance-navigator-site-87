@@ -1,97 +1,50 @@
 
-# Naprawa bledu 5xx dla /pl/blog w Google Search Console
 
-## Przyczyna problemu
+# Naprawa obrazu OG — logo Compensa zamiast Quantifier
 
-Funkcje Edge `prerender-marketing`, `prerender-post` i `prerender-story` **nie sa wdrozone** na projekcie Supabase (zcrnfrijqasbrjrxconi). Proba ich wywolania zwraca blad 404 ("Requested function was not found").
+## Problem
 
-Funkcja `sitemap` dziala poprawnie -- prawdopodobnie zostala wdrozona wczesniej inna metoda.
+Plik `154104eb-8338-4e4f-884c-2343169fc09b.png` to **logo klienta Compensa Vienna Insurance Group**, ale jest uzywany jako domyslny obraz Open Graph na calej stronie. Dlatego przy udostepnianiu linku na LinkedIn (i innych platformach) wyswietla sie logo Compensa zamiast Quantifier.
 
-Mechanizm bledu:
-1. Googlebot odwiedza `/pl/blog`
-2. Netlify Edge Function (`bot-prerender.ts`) wykrywa bota i proxuje do `prerender-marketing?locale=pl&page=blog`
-3. Funkcja nie istnieje na Supabase -- zwraca 404
-4. Google raportuje to jako blad serwera 5xx
-
-Proba wdrozenia przez narzedzie deploy zakonczyla sie komunikatem "success", ale funkcje nadal nie sa dostepne. Dotyczy to nawet malej funkcji `prerender-post` (95 linii), wiec problem **nie jest zwiazany z rozmiarem** funkcji `prerender-marketing` (3088 linii).
+Dodatkowo w schematach JSON-LD:
+- `BRAND_LOGO` wskazuje na `unicell-logo.png` (logo klienta Unicell)
+- Logo organizacji w `Index.tsx` wskazuje na `b5ac5352...png` (logo klienta 4F)
 
 ## Plan naprawy
 
-### Krok 1 -- Wymuszenie ponownego wdrozenia przez modyfikacje kodu
+### Krok 1 — Nowy obraz OG
 
-Dodac drobna zmiane w kazdej z 3 funkcji (np. zaktualizowac komentarz wersji), a nastepnie ponownie wdrozyc. To wymusi nowy build i deployment.
+Uzyc `platform-screenshot.png` (screenshot platformy Quantifier) jako domyslny obraz OG. To profesjonalny obraz pokazujacy produkt, idealny do social sharing.
 
-Pliki do zmodyfikowania:
-- `supabase/functions/prerender-marketing/index.ts` -- zmiana komentarza z "v3" na "v4"
-- `supabase/functions/prerender-post/index.ts` -- zmiana komentarza z "v2" na "v3"
-- `supabase/functions/prerender-story/index.ts` -- zmiana komentarza wersji
+Alternatywnie mozna uzyc `logo-quantifier.png`, ale screenshoty platformy lepiej wypadaja jako thumbnailing na LinkedIn (wiecej szczegolow, lepsze CTR).
 
-### Krok 2 -- Weryfikacja po deploymencie
+### Krok 2 — Zamiana we wszystkich plikach (11 plikow)
 
-Po wdrozeniu wywolac kazda funkcje bezposrednio:
-- `GET /prerender-marketing?locale=pl&page=blog`
-- `GET /prerender-post?locale=pl&slug=dyrektywa-nis2`
-- `GET /prerender-story?locale=pl&slug=case-study-tatuum`
+Zamienic `154104eb-8338-4e4f-884c-2343169fc09b.png` na `platform-screenshot.png` w:
 
-Sprawdzic czy zwracaja status 200 z poprawnym HTML.
+| Plik | Linia | Co sie zmienia |
+|---|---|---|
+| `src/components/seo/SEOHead.tsx` | 55 | `DEFAULT_OG_IMAGE` |
+| `src/components/seo/SEOHead.tsx` | 57 | `BRAND_LOGO` -> `logo-quantifier.png` |
+| `src/components/PageTemplate.tsx` | 148 | domyslny `ogImage` |
+| `src/pages/Index.tsx` | 45, 168, 179 | logo organizacji + og:image + twitter:image |
+| `src/pages/seo-landing/GrcPlatform.tsx` | 110, 116 | og:image + twitter:image |
+| `src/pages/blog/BlogList.tsx` | 114 | fallback image dla postow bez og_image |
+| `src/pages/formularz/FormularzPage.tsx` | 323 | og:image |
+| `src/hooks/useSeoSettings.ts` | 27 | `defaultOgImage` |
+| `netlify/edge-functions/bot-prerender.ts` | 127 | og:image w fallback HTML |
+| `supabase/functions/prerender-marketing/index.ts` | 2965, 2972 | og:image + twitter:image |
+| `supabase/functions/prerender-post/index.ts` | 72 | fallback image |
 
-### Krok 3 -- Jesli deploy nadal nie dziala: fallback w Netlify Edge Function
+### Krok 3 — Naprawa BRAND_LOGO w JSON-LD
 
-Jesli po kroku 1 funkcje nadal nie sa dostepne, dodac fallback w `netlify/edge-functions/bot-prerender.ts`: jesli Supabase zwroci 404 lub 5xx, zamiast propagowac blad do Googlebota, zwrocic **minimalna strone HTML** ze statusem 200, zawierajaca:
-- Poprawny `<title>`, `<meta description>`, canonical, hreflang
-- Podstawowa tresc (tytul strony, link do SPA)
-- `<meta name="robots" content="index, follow">`
+Zmienic `BRAND_LOGO` w `SEOHead.tsx` z `unicell-logo.png` na `logo-quantifier.png`.
+Zmienic logo organizacji w `Index.tsx` z `b5ac5352...png` na `logo-quantifier.png`.
 
-To zapobiegnie raportowaniu 5xx w Google Search Console nawet gdy funkcje Supabase sa niedostepne.
+### Po wdrozeniu
 
-Modyfikacja w `netlify/edge-functions/bot-prerender.ts`:
+Po publikacji zmian nalezy:
+1. Odczekac 24h na propagacje cache
+2. Uzyc LinkedIn Post Inspector (https://www.linkedin.com/post-inspector/) aby wymusic odswiezenie cache
+3. Uzyc Facebook Sharing Debugger (https://developers.facebook.com/tools/debug/) dla glownych URLi
 
-```text
-// Obecny kod:
-async function proxyToPrerender(url, ua) {
-  const response = await fetch(url, { headers: { 'User-Agent': ua } });
-  if (!response.ok) { return response; }  // <-- propaguje blad!
-  ...
-}
-
-// Po zmianie:
-async function proxyToPrerender(url, ua, fallbackTitle, fallbackUrl) {
-  try {
-    const response = await fetch(url, { headers: { 'User-Agent': ua } });
-    if (response.ok) {
-      // zwroc poprawny HTML
-    }
-  } catch (e) {}
-  // Fallback: zwroc minimalna strone z 200 zamiast 5xx
-  return new Response(minimalHtml(fallbackTitle, fallbackUrl), {
-    status: 200,
-    headers: { 'Content-Type': 'text/html', 'X-Robots-Tag': 'index, follow' }
-  });
-}
-```
-
-### Krok 4 -- Naprawa OG image w prerender-marketing
-
-Plik `prerender-marketing/index.ts` (linia 2965, 2972) nadal odwoluje sie do `/og-image.png`, ktory nie istnieje. Zmienic na istniejacy obraz:
-
-```text
-// Linia 2965 i 2972 -- zmienic:
-${BASE_URL}/og-image.png
-// na:
-${BASE_URL}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png
-```
-
-## Podsumowanie zmian
-
-| Plik | Co sie zmienia |
-|---|---|
-| `supabase/functions/prerender-marketing/index.ts` | Bump wersji + naprawa og-image URL |
-| `supabase/functions/prerender-post/index.ts` | Bump wersji |
-| `supabase/functions/prerender-story/index.ts` | Bump wersji |
-| `netlify/edge-functions/bot-prerender.ts` | Fallback HTML przy bledach Supabase |
-
-## Wplyw na SEO
-
-- Blad 5xx dla `/pl/blog` i wszystkich innych stron bot-prerenderowanych zostanie naprawiony
-- Googlebot zawsze otrzyma poprawna odpowiedz HTML (200) z meta tagami
-- Social sharing bedzie dzialac z poprawnym obrazem OG
