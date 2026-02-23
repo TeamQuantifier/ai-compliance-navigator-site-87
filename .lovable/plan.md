@@ -1,30 +1,38 @@
 
 
-# Use uploaded homepage screenshot as default OG image
+# Usunięcie custom bot-prerender na rzecz Netlify Prerender Extension
 
-## What changes
+## Problem
 
-Copy the uploaded homepage screenshot to `public/og-homepage.png` and replace all references to `platform-screenshot.png` used as the default OG image across the codebase.
+Custom edge function `bot-prerender.ts` przechwytuje WSZYSTKIE requesty botów (Googlebot, Bingbot itd.) i proxuje je do Supabase. Netlify Prerender Extension jest zainstalowany, ale nigdy nie dostaje ruchu — custom function dziala pierwsza i "kradnie" requesty.
 
-## Files to update
+Gdy Supabase zawodzi (timeout, 5xx), bot dostaje okrojony fallback HTML (~10 linii tekstu) ktory Google traktuje jako thin content i odrzuca indeksowanie.
 
-The image needs to be in `public/` (not `src/assets/`) because it's referenced in meta tags and edge functions via direct URL.
+```text
+Obecny flow (zepsuty):
+Googlebot --> bot-prerender.ts (edge function) --> Supabase proxy --> fallback HTML
+                                                   ^^ zawodne
 
-| File | Change |
+Docelowy flow:
+Googlebot --> Netlify Prerender Extension --> Headless Chromium --> pelna strona SPA
+                                              ^^ niezawodne, renderuje dokladnie to co widzi uzytkownik
+```
+
+## Zmiany
+
+| Plik | Zmiana |
 |---|---|
-| **New file**: `public/og-homepage.png` | Copy from user upload |
-| `src/components/seo/SEOHead.tsx` | `DEFAULT_OG_IMAGE` -> `/og-homepage.png` |
-| `src/components/PageTemplate.tsx` | Default `ogImage` prop -> `/og-homepage.png` |
-| `src/hooks/useSeoSettings.ts` | `defaultOgImage` -> `/og-homepage.png` |
-| `src/pages/Index.tsx` | og:image and twitter:image URLs |
-| `src/pages/seo-landing/GrcPlatform.tsx` | og:image and twitter:image URLs |
-| `src/pages/blog/BlogList.tsx` | Fallback image |
-| `src/pages/formularz/FormularzPage.tsx` | og:image |
-| `netlify/edge-functions/bot-prerender.ts` | Fallback og:image |
-| `supabase/functions/prerender-marketing/index.ts` | og:image and twitter:image |
-| `supabase/functions/prerender-post/index.ts` | Fallback image |
+| `netlify/edge-functions/bot-prerender.ts` | Usunac caly plik |
+| `netlify.toml` (linie 10-44) | Usunac wszystkie bloki `[[edge_functions]]` |
 
-All references change from `/lovable-uploads/platform-screenshot.png` to `/og-homepage.png`.
+Redirecty 301 i SPA fallback w `netlify.toml` pozostaja bez zmian.
 
-After publishing, use LinkedIn Post Inspector and Facebook Sharing Debugger to force cache refresh.
+Supabase prerender functions (prerender-marketing, prerender-post, prerender-story) mozna zachowac — bez edge function nikt ich nie wywoluje, wiec nie koliduja. Mozna je usunac pozniej.
+
+## Po wdrozeniu
+
+1. Zrobic redeploy na Netlify
+2. Sprawdzic w Netlify dashboard (Extensions > Prerender > logs) czy requesty botow sa teraz obslugiwane przez extension
+3. W Google Search Console uzyc URL Inspection na kilku problematycznych URLach i poprosic o ponowne indeksowanie
+4. Odczekac 2-3 dni na wyniki
 
