@@ -42,7 +42,7 @@ const Index = () => {
     "@type": "Organization",
     "name": "Quantifier.ai",
     "url": "https://quantifier.ai",
-    "logo": "https://quantifier.ai/lovable-uploads/b5ac5352-8089-4e7d-a1d4-6c879bd4f57e.png",
+    "logo": "https://quantifier.ai/logo-quantifier.png",
     "description": currentLocale === 'en' 
       ? "AI-Native GRC Platform for Compliance Automation" 
       : currentLocale === 'pl'
