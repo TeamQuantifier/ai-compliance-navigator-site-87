@@ -2962,7 +2962,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
   <meta property="og:url" content="${pageUrl}">
   <meta property="og:site_name" content="Quantifier">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="${BASE_URL}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png">
+  <meta property="og:image" content="${BASE_URL}/lovable-uploads/platform-screenshot.png">
   <meta property="og:locale" content="${ogLocale}">
   
   <!-- Twitter Card -->
