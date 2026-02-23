@@ -320,7 +320,7 @@ export default function FormularzPage() {
         <meta property="og:description" content={SEO_META_DESC[lang]} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URLS[lang]} />
-        <meta property="og:image" content="https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png" />
+        <meta property="og:image" content="https://quantifier.ai/og-homepage.png" />
         <meta property="og:locale" content={OG_LOCALE[lang]} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={SEO_OG_TITLE[lang]} />

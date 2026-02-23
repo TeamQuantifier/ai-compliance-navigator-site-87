@@ -1,4 +1,4 @@
-// Prerender story for SEO bots - deployed v2
+// Prerender story for SEO bots - deployed v3
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
@@ -177,7 +177,7 @@ serve(async (req) => {
     }
 
     const canonicalUrl = ensureTrailingSlash(`https://quantifier.ai/${locale}/success-stories/${story.slug}`);
-    const imageUrl = story.og_image_url || story.featured_image_url || story.logo_url || 'https://quantifier.ai/logo-quantifier.png';
+    const imageUrl = story.og_image_url || story.featured_image_url || 'https://quantifier.ai/og-homepage.png';
 
     // Generate hreflang tags
     const hreflangTags: string[] = [];

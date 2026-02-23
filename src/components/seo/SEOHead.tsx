@@ -52,9 +52,9 @@ export interface SEOHeadProps {
 }
 
 const BASE_URL = 'https://quantifier.ai';
-const DEFAULT_OG_IMAGE = '/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png';
+const DEFAULT_OG_IMAGE = '/og-homepage.png';
 const BRAND_NAME = 'Quantifier.ai';
-const BRAND_LOGO = 'https://quantifier.ai/lovable-uploads/unicell-logo.png';
+const BRAND_LOGO = 'https://quantifier.ai/logo-quantifier.png';
 
 // Ensure URL ends with trailing slash
 const ensureTrailingSlash = (url: string): string => {

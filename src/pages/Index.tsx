@@ -42,7 +42,7 @@ const Index = () => {
     "@type": "Organization",
     "name": "Quantifier.ai",
     "url": "https://quantifier.ai",
-    "logo": "https://quantifier.ai/lovable-uploads/b5ac5352-8089-4e7d-a1d4-6c879bd4f57e.png",
+    "logo": "https://quantifier.ai/logo-quantifier.png",
     "description": currentLocale === 'en' 
       ? "AI-Native GRC Platform for Compliance Automation" 
       : currentLocale === 'pl'
@@ -165,7 +165,7 @@ const Index = () => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png`} />
+        <meta property="og:image" content={`${baseUrl}/og-homepage.png`} />
         <meta property="og:site_name" content="Quantifier.ai" />
         <meta property="og:locale" content={getOgLocale(currentLocale)} />
         {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
@@ -176,7 +176,7 @@ const Index = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${baseUrl}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png`} />
+        <meta name="twitter:image" content={`${baseUrl}/og-homepage.png`} />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
