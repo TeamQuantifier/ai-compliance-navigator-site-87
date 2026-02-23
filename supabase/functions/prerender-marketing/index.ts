@@ -2969,7 +2969,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${pageData.title}">
   <meta name="twitter:description" content="${pageData.description}">
-  <meta name="twitter:image" content="${BASE_URL}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png">
+  <meta name="twitter:image" content="${BASE_URL}/lovable-uploads/platform-screenshot.png">
   
   ${schemas}
   

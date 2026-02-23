@@ -124,7 +124,7 @@ function buildFallbackHtml(locale: string, rest: string, canonicalUrl: string): 
   <meta property="og:description" content="${description}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://quantifier.ai/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png">
+  <meta property="og:image" content="https://quantifier.ai/lovable-uploads/platform-screenshot.png">
   <meta property="og:site_name" content="Quantifier.ai">
   <style>body{font-family:system-ui,sans-serif;max-width:800px;margin:0 auto;padding:2rem;text-align:center}h1{font-size:2rem;margin-bottom:1rem}p{color:#666}</style>
 </head>
