@@ -165,7 +165,7 @@ const Index = () => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/lovable-uploads/154104eb-8338-4e4f-884c-2343169fc09b.png`} />
+        <meta property="og:image" content={`${baseUrl}/lovable-uploads/platform-screenshot.png`} />
         <meta property="og:site_name" content="Quantifier.ai" />
         <meta property="og:locale" content={getOgLocale(currentLocale)} />
         {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
