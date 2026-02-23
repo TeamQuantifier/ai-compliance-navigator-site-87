@@ -111,7 +111,7 @@ const BlogList = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {posts.map((post) => {
                 const readingTime = calculateReadingTime(post.body_rich as any);
-                const imageUrl = post.og_image_url || '/lovable-uploads/platform-screenshot.png';
+                const imageUrl = post.og_image_url || '/og-homepage.png';
                 
                 return (
                   <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">

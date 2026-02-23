@@ -107,13 +107,13 @@ const GrcPlatform = () => {
         <meta property="og:description" content={seoDescription} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/lovable-uploads/platform-screenshot.png`} />
+        <meta property="og:image" content={`${baseUrl}/og-homepage.png`} />
         <meta property="og:site_name" content="Quantifier.ai" />
         <meta property="og:locale" content={locale === 'pl' ? 'pl_PL' : locale === 'cs' ? 'cs_CZ' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
-        <meta name="twitter:image" content={`${baseUrl}/lovable-uploads/platform-screenshot.png`} />
+        <meta name="twitter:image" content={`${baseUrl}/og-homepage.png`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
       </Helmet>
