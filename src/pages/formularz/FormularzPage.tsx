@@ -405,19 +405,27 @@ export default function FormularzPage() {
                 );
               })()}
               <div className="mt-8 pt-6 border-t border-[#e0e2e9] flex flex-col sm:flex-row gap-3">
-                <a
-                  href={`/${lang}/frameworks`}
-                  className="flex-1 text-center px-6 py-3 bg-[#6d38a8] text-white font-semibold rounded-xl hover:bg-[#5a2e8e] transition-colors"
-                >
-                  {CTA_LINK_LABEL[lang]}
-                </a>
-                <button
-                  onClick={() => { setPhase('filling'); setResult(null); }}
-                  className="flex-1 text-center px-6 py-3 bg-[#e0e2e9] text-gray-700 font-semibold rounded-xl hover:bg-[#d0d2d9] transition-colors"
-                >
-                  {RETRY_LABEL[lang]}
-                </button>
-              </div>
+                 <a
+                   href={`/${lang}/contact`}
+                   className="flex-1 text-center px-6 py-3 bg-[#6d38a8] text-white font-semibold rounded-xl hover:bg-[#5a2e8e] transition-colors"
+                 >
+                   {CTA_LINK_LABEL[lang]}
+                 </a>
+                 <a
+                   href={`/${lang}/product`}
+                   className="flex-1 text-center px-6 py-3 bg-[#e0e2e9] text-gray-700 font-semibold rounded-xl hover:bg-[#d0d2d9] transition-colors"
+                 >
+                   {CTA_SECONDARY_LABEL[lang]}
+                 </a>
+               </div>
+               <div className="mt-3 text-center">
+                 <button
+                   onClick={() => { setPhase('filling'); setResult(null); }}
+                   className="text-sm text-gray-400 hover:text-[#6d38a8] underline underline-offset-2 transition-colors"
+                 >
+                   {RETRY_LABEL[lang]}
+                 </button>
+               </div>
             </div>
           </div>
         )}
