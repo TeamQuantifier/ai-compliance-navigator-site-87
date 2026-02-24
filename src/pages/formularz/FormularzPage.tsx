@@ -378,9 +378,9 @@ export default function FormularzPage() {
                            className="w-full rounded-xl shadow-md border border-gray-200 mb-5"
                            loading="lazy"
                          />
-                         <h3 className="text-xs font-bold uppercase tracking-wide text-[#6d38a8] mb-3">
+                         <h2 className="text-2xl md:text-3xl font-bold text-[#6d38a8] mb-4">
                            {parsed.section2Header}
-                         </h3>
+                         </h2>
                          <BodySection text={parsed.section2} />
                          <div className="mt-4">
                            <a
