@@ -92,7 +92,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
     return (
       <div className={`bg-card border border-border rounded-2xl p-6 md:p-8 ${className}`}>
         <div className="text-center space-y-4">
-          <CheckCircle className="h-12 w-12 text-green-500 mx-auto" />
+          <CheckCircle className="h-12 w-12 text-primary mx-auto" />
           <h3 className="text-xl font-bold text-foreground">Gotowe! Jesteś na liście.</h3>
           <p className="text-muted-foreground text-sm">Potwierdzenie i szczegóły wyślemy na Twój e-mail.</p>
           <div className="space-y-2 pt-4">
