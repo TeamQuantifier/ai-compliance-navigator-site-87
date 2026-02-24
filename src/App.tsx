@@ -76,6 +76,10 @@ import QuizSubmissions from "./pages/admin/QuizSubmissions";
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
 
+// Events pages
+import EventsHub from "./pages/events/EventsHub";
+import EventDetail from "./pages/events/EventDetail";
+
 const queryClient = new QueryClient();
 
 // Loading spinner component
