@@ -158,6 +158,10 @@ const MainRoutes = () => (
         <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
 
+        {/* Events routes */}
+        <Route path="/:locale/events" element={<EventsHub />} />
+        <Route path="/:locale/events/:slug" element={<EventDetail />} />
+
         {/* Blog routes */}
         <Route path="/:locale/blog" element={<BlogList />} />
         <Route path="/:locale/blog/:slug" element={<BlogPost />} />
