@@ -27,9 +27,9 @@ const HeroSection = () => {
               </h1>
               
               {/* GRC Explanation - smaller subtitle */}
-              <p className="text-xl text-slate-400 mb-8">
+              <h2 className="text-xl text-slate-400 mb-8">
                 {t('hero.grcExplanation')}
-              </p>
+              </h2>
               
               {/* Bullet points - left aligned */}
               <ul className="space-y-3 mb-8">
