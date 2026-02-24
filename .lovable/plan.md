@@ -1,38 +1,45 @@
 
 
-# Usunięcie custom bot-prerender na rzecz Netlify Prerender Extension
+# Zmiany na stronie wynikow Cybersecurity Check
 
-## Problem
+## 1. Zmiana przyciskow CTA
 
-Custom edge function `bot-prerender.ts` przechwytuje WSZYSTKIE requesty botów (Googlebot, Bingbot itd.) i proxuje je do Supabase. Netlify Prerender Extension jest zainstalowany, ale nigdy nie dostaje ruchu — custom function dziala pierwsza i "kradnie" requesty.
+Obecny uklad:
+- Fioletowy: "Dowiedz się więcej o Quantifier" -> `/frameworks`
+- Szary: "Wypełnij ponownie" (reset)
 
-Gdy Supabase zawodzi (timeout, 5xx), bot dostaje okrojony fallback HTML (~10 linii tekstu) ktory Google traktuje jako thin content i odrzuca indeksowanie.
+Nowy uklad:
+- **Fioletowy**: "Umów demo" / "Book a demo" / "Domluvit demo" -> `/{lang}/contact`
+- **Szary**: "Dowiedz się więcej o Quantifier" / "Learn more about Quantifier" / "Zjistěte více o Quantifier" -> `/{lang}/product`
+- Przycisk "Wypełnij ponownie" pozostaje jako trzeci element (lub link tekstowy pod spodem)
 
-```text
-Obecny flow (zepsuty):
-Googlebot --> bot-prerender.ts (edge function) --> Supabase proxy --> fallback HTML
-                                                   ^^ zawodne
+### Zmiany w `src/config/quizConfig.ts`
 
-Docelowy flow:
-Googlebot --> Netlify Prerender Extension --> Headless Chromium --> pelna strona SPA
-                                              ^^ niezawodne, renderuje dokladnie to co widzi uzytkownik
-```
+Zmiana etykiet:
+- `CTA_LINK_LABEL` -> zmiana na "Umów demo" / "Book a demo" / "Domluvit demo"
+- Dodanie nowego eksportu `CTA_SECONDARY_LABEL` z wartosciami "Dowiedz się więcej o Quantifier" / "Learn more about Quantifier" / "Zjistěte více o Quantifier"
 
-## Zmiany
+### Zmiany w `src/pages/formularz/FormularzPage.tsx`
+
+- Fioletowy przycisk: link do `/{lang}/contact` z nowa etykieta
+- Szary przycisk: link do `/{lang}/product` z etykieta "Dowiedz się więcej o Quantifier"
+- Przycisk "Wypełnij ponownie" -> przeniesiony jako link tekstowy pod przyciskami
+
+## 2. Screenshot platformy obok sekcji "Jak Quantifier moze pomoc"
+
+W sekcji drugiej wyniku (bg-[#6d38a8]/5) dodanie obrazka `platform-screenshot.png` obok tekstu. Uklad zmieni sie na dwukolumnowy (tekst po lewej, screenshot po prawej) na desktopie, a na mobile screenshot bedzie pod tekstem.
+
+Uzyty zostanie istniejacy obraz `/lovable-uploads/platform-screenshot.png` lub `/lovable-uploads/envirly-dashboard.png`.
+
+### Zmiany w `src/pages/formularz/FormularzPage.tsx`
+
+- W sekcji `parsed.section2` dodanie layoutu `flex` z obrazkiem po prawej stronie
+- Obraz z zaokraglonymi rogami i lekkim cieniem
+
+## Podsumowanie zmian w plikach
 
 | Plik | Zmiana |
 |---|---|
-| `netlify/edge-functions/bot-prerender.ts` | Usunac caly plik |
-| `netlify.toml` (linie 10-44) | Usunac wszystkie bloki `[[edge_functions]]` |
-
-Redirecty 301 i SPA fallback w `netlify.toml` pozostaja bez zmian.
-
-Supabase prerender functions (prerender-marketing, prerender-post, prerender-story) mozna zachowac — bez edge function nikt ich nie wywoluje, wiec nie koliduja. Mozna je usunac pozniej.
-
-## Po wdrozeniu
-
-1. Zrobic redeploy na Netlify
-2. Sprawdzic w Netlify dashboard (Extensions > Prerender > logs) czy requesty botow sa teraz obslugiwane przez extension
-3. W Google Search Console uzyc URL Inspection na kilku problematycznych URLach i poprosic o ponowne indeksowanie
-4. Odczekac 2-3 dni na wyniki
+| `src/config/quizConfig.ts` | Zmiana `CTA_LINK_LABEL` na "Umów demo", dodanie `CTA_SECONDARY_LABEL` |
+| `src/pages/formularz/FormularzPage.tsx` | Nowe linki CTA, dodanie screenshota platformy w sekcji 2 |
 
