@@ -38,6 +38,8 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'risk-assessment': 'Risk Assessment',
   'product-level': 'Product Level',
   'success-stories': 'Success Stories',
+  'events': 'Events',
+  'nis2-w-polsce': 'NIS2 w Polsce',
 };
 
 // Parent category mapping for 3-level breadcrumbs
