@@ -371,24 +371,36 @@ export default function FormularzPage() {
                       <BodySection text={parsed.section1} />
                     </div>
                     {parsed.section2 && (
-                      <div className="mt-6 pt-6 border-t border-[#e0e2e9] bg-[#6d38a8]/5 rounded-xl p-5">
-                        <h3 className="text-xs font-bold uppercase tracking-wide text-[#6d38a8] mb-3">
-                          {parsed.section2Header}
-                        </h3>
-                        <BodySection text={parsed.section2} />
-                        <div className="mt-4">
-                          <a
-                            href={`/${lang}/blog`}
-                            className="inline-flex items-center gap-2 text-sm font-semibold text-[#6d38a8] hover:text-[#5a2e8e] underline underline-offset-2 transition-colors"
-                          >
-                            {NIS2_BLOG_LABEL[lang]}
-                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    )}
+                       <div className="mt-6 pt-6 border-t border-[#e0e2e9] bg-[#6d38a8]/5 rounded-xl p-5">
+                         <div className="flex flex-col md:flex-row gap-6">
+                           <div className="flex-1">
+                             <h3 className="text-xs font-bold uppercase tracking-wide text-[#6d38a8] mb-3">
+                               {parsed.section2Header}
+                             </h3>
+                             <BodySection text={parsed.section2} />
+                             <div className="mt-4">
+                               <a
+                                 href={`/${lang}/blog`}
+                                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#6d38a8] hover:text-[#5a2e8e] underline underline-offset-2 transition-colors"
+                               >
+                                 {NIS2_BLOG_LABEL[lang]}
+                                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                 </svg>
+                               </a>
+                             </div>
+                           </div>
+                           <div className="md:w-[45%] flex-shrink-0">
+                             <img
+                               src="/lovable-uploads/platform-screenshot-result.png"
+                               alt="Quantifier platform screenshot"
+                               className="w-full rounded-xl shadow-md border border-gray-200"
+                               loading="lazy"
+                             />
+                           </div>
+                         </div>
+                       </div>
+                     )}
                   </>
                 );
               })()}
