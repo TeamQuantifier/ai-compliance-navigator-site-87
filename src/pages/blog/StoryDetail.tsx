@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useStory, useAlternates } from '@/hooks/useBlog';
+import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -23,6 +24,7 @@ const StoryDetail = () => {
   
   const { data: story, isLoading, error } = useStory(slug || '', currentLocale);
   const { data: alternates } = useAlternates(story?.group_id, currentLocale, 'story');
+  usePrerenderReady(!isLoading);
   
   if (!slug) {
     return null;
