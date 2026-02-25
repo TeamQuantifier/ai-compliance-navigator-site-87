@@ -66,7 +66,7 @@ export const events: EventData[] = [
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz NIS2 Sprint Kit po rejestracji',
     trustLine: 'W pakiecie: checklista ryzyk, szablon oceny, matryca priorytetów.',
-    imageUrl: '{image_url_1}',
+    imageUrl: '/lovable-uploads/webinar-nis2-mapa-ryzyka.png',
     imageAlt: 'Webinar NIS2 mapa ryzyka — identyfikacja obowiązków i zagrożeń cyberbezpieczeństwa w organizacji',
     outcomes: [
       'Zrozumiesz, kto podlega NIS2/KSC i jakie ma obowiązki',
@@ -144,7 +144,7 @@ export const events: EventData[] = [
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz szablon ról i procesów po rejestracji',
     trustLine: 'W pakiecie: matryca RACI, szablon procesów, checklista ról.',
-    imageUrl: '/lovable-uploads/event-nis2-role-i-procesy.png',
+    imageUrl: '/lovable-uploads/webinar-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
     outcomes: [
       'Zdefiniujesz kluczowe role w systemie NIS2/ISO 27001',
@@ -222,7 +222,7 @@ export const events: EventData[] = [
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz Evidence Pack po rejestracji',
     trustLine: 'W pakiecie: struktura dowodów, szablony dokumentów, checklista audytowa.',
-    imageUrl: '{image_url_3}',
+    imageUrl: '/lovable-uploads/webinar-nis2-audit-ready.png',
     imageAlt: 'Webinar NIS2 audit-ready — przygotowanie dokumentów i dowodów zgodności do audytu cyberbezpieczeństwa',
     outcomes: [
       'Poznasz wymagania dokumentacyjne NIS2/KSC',
@@ -300,7 +300,7 @@ export const events: EventData[] = [
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz Audit Survival Kit po rejestracji',
     trustLine: 'W pakiecie: symulacja audytu, checklista kontrolna, plan naprawczy.',
-    imageUrl: '{image_url_4}',
+    imageUrl: '/lovable-uploads/webinar-nis2-kontrola-audyt.png',
     imageAlt: 'Webinar kontrola NIS2 — jak przejść audyt cyberbezpieczeństwa od przygotowania po raport końcowy',
     outcomes: [
       'Poznasz przebieg kontroli/audytu NIS2 krok po kroku',
