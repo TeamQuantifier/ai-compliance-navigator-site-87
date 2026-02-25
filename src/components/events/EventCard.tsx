@@ -13,9 +13,9 @@ const EventCard = ({ event }: Props) => {
   const { currentLocale } = useLanguage();
 
   return (
-    <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-row h-full">
-      {/* Compact square image */}
-      <Link to={`/${currentLocale}/events/${event.slug}`} className="flex-shrink-0 w-32 sm:w-40 md:w-44">
+    <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+      {/* Image top */}
+      <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-video overflow-hidden">
         <img
           src={event.imageUrl}
           alt={event.imageAlt}
@@ -24,23 +24,28 @@ const EventCard = ({ event }: Props) => {
         />
       </Link>
 
-      <div className="p-4 md:p-5 flex flex-col flex-1 min-w-0">
+      <div className="p-4 flex flex-col flex-1">
+        {/* Date — prominent */}
+        <div className="flex items-center gap-3 mb-2">
+          <span className="flex items-center gap-1.5 text-sm font-semibold text-primary">
+            <Calendar className="h-4 w-4" /> {event.dateDisplay}
+          </span>
+          <span className="flex items-center gap-1 text-xs text-muted-foreground">
+            <MapPin className="h-3 w-3" /> {event.location}
+          </span>
+        </div>
+
         <div className="flex flex-wrap gap-1.5 mb-2">
           {event.tags.map(tag => (
             <Badge key={tag} variant="secondary" className="text-[10px] px-2 py-0">{tag}</Badge>
           ))}
         </div>
 
-        <h2 className="text-base md:text-lg font-bold text-foreground mb-1 leading-tight">
+        <h2 className="text-base font-bold text-foreground mb-2 leading-tight">
           <Link to={`/${currentLocale}/events/${event.slug}`} className="hover:text-primary transition-colors">
             {event.title}
           </Link>
         </h2>
-
-        <div className="flex flex-wrap gap-2 text-xs text-muted-foreground mb-2">
-          <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {event.dateDisplay}</span>
-          <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {event.location}</span>
-        </div>
 
         <ul className="space-y-1 mb-3 flex-1">
           {event.outcomes.slice(0, 2).map((o, i) => (
