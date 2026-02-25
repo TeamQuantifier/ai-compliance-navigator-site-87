@@ -20,18 +20,31 @@ const EventsHub = () => {
         <span className="text-foreground font-medium">Events</span>
       </nav>
 
-      <header className="mb-12">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-          Webinary i wydarzenia
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl">
-          Praktyczne sesje online o compliance, cyberbezpieczeństwie i zarządzaniu ryzykiem.
-          Prowadzone przez ekspertów — z materiałami do pobrania.
-        </p>
-      </header>
+      {/* Cycle intro hero */}
+      <section className="mb-10 rounded-xl overflow-hidden border border-border bg-card">
+        <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
+          <div className="flex-1">
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">Bezpłatny cykl webinarów</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
+              Cyberbezpieczeństwo w praktyce
+            </h1>
+            <p className="text-muted-foreground text-sm md:text-base max-w-lg">
+              Zapraszamy na serię 4 praktycznych webinarów o NIS2, KSC i ISO 27001. Dowiedz się, jak zbudować mapę ryzyka, zdefiniować role i procesy, przygotować dowody zgodności i przejść audyt — krok po kroku, z materiałami do pobrania.
+            </p>
+          </div>
+          <div className="flex-shrink-0 w-full md:w-[340px] lg:w-[420px]">
+            <img
+              src="/lovable-uploads/webinar-cycle-banner.png"
+              alt="Cykl webinarów Quantifier — Cyberbezpieczeństwo NIS2 i ISO 27001, czterech prelegentów"
+              className="w-full h-auto rounded-lg"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Event grid */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
         {events.map(event => (
           <EventCard key={event.slug} event={event} />
         ))}

@@ -144,7 +144,7 @@ export const events: EventData[] = [
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz szablon ról i procesów po rejestracji',
     trustLine: 'W pakiecie: matryca RACI, szablon procesów, checklista ról.',
-    imageUrl: '{image_url_2}',
+    imageUrl: '/lovable-uploads/event-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
     outcomes: [
       'Zdefiniujesz kluczowe role w systemie NIS2/ISO 27001',
