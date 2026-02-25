@@ -1,4 +1,4 @@
-import { ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -154,6 +154,13 @@ const PageTemplate = ({
 }: PageTemplateProps) => {
   const { currentLocale } = useLanguage();
   const location = useLocation();
+
+  // Signal Netlify Prerender that static pages are ready
+  useEffect(() => {
+    if (!noSeo) {
+      (window as any).prerenderReady = true;
+    }
+  }, [noSeo]);
   
   const baseUrl = 'https://quantifier.ai';
   // Strip locale prefix AND any tracking parameters
