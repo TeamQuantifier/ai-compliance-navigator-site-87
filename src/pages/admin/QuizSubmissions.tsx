@@ -4,7 +4,9 @@ import { NACE_SECTORS, Q1_OPTIONS, Q2_OPTIONS, Q4_OPTIONS, RESULT_BADGE_COLORS, 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download, Search, RefreshCw, Users, TrendingUp, Calendar } from 'lucide-react';
+import { Download, Search, RefreshCw, Users, TrendingUp, Calendar, Trash2 } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { toast } from 'sonner';
 
 interface Submission {
   id: string;
@@ -129,6 +131,8 @@ export default function QuizSubmissions() {
   const [emailFilter, setEmailFilter] = useState('');
   const [resultFilter, setResultFilter] = useState<string>('all');
   const [sortAsc, setSortAsc] = useState(false);
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [deleting, setDeleting] = useState(false);
 
   const fetchData = async () => {
     setLoading(true);
@@ -183,6 +187,38 @@ export default function QuizSubmissions() {
     URL.revokeObjectURL(url);
   };
 
+  const deleteSelected = async () => {
+    if (selected.size === 0) return;
+    const ids = Array.from(selected);
+    if (!confirm(`Czy na pewno chcesz usunąć ${ids.length} zgłoszeń?`)) return;
+    setDeleting(true);
+    const { error: err } = await supabase.from('submissions').delete().in('id', ids);
+    if (err) {
+      toast.error('Błąd usuwania: ' + err.message);
+    } else {
+      toast.success(`Usunięto ${ids.length} zgłoszeń`);
+      setSelected(new Set());
+      fetchData();
+    }
+    setDeleting(false);
+  };
+
+  const toggleSelect = (id: string) => {
+    setSelected(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
+  const toggleAll = () => {
+    if (selected.size === filtered.length) {
+      setSelected(new Set());
+    } else {
+      setSelected(new Set(filtered.map(r => r.id)));
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
@@ -201,6 +237,12 @@ export default function QuizSubmissions() {
             <Download className="h-4 w-4 mr-2" />
             Eksport CSV
           </Button>
+          {selected.size > 0 && (
+            <Button size="sm" variant="destructive" onClick={deleteSelected} disabled={deleting}>
+              <Trash2 className="h-4 w-4 mr-2" />
+              Usuń ({selected.size})
+            </Button>
+          )}
         </div>
       </div>
 
@@ -261,6 +303,9 @@ export default function QuizSubmissions() {
           <table className="w-full text-sm">
             <thead className="bg-muted/50 border-b">
               <tr>
+                <th className="px-3 py-3">
+                  <Checkbox checked={selected.size === filtered.length && filtered.length > 0} onCheckedChange={toggleAll} />
+                </th>
                 <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Data</th>
                 <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Email</th>
                 <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Q1 Pracownicy</th>
@@ -272,7 +317,10 @@ export default function QuizSubmissions() {
             </thead>
             <tbody className="divide-y">
               {filtered.map(row => (
-                <tr key={row.id} className="hover:bg-muted/30 transition-colors">
+                <tr key={row.id} className={`hover:bg-muted/30 transition-colors ${selected.has(row.id) ? 'bg-primary/5' : ''}`}>
+                  <td className="px-3 py-3">
+                    <Checkbox checked={selected.has(row.id)} onCheckedChange={() => toggleSelect(row.id)} />
+                  </td>
                   <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{formatDate(row.created_at)}</td>
                   <td className="px-4 py-3 font-medium">{row.email}</td>
                   <td className="px-4 py-3 text-muted-foreground">{formatArray(row.q1, Q1_MAP)}</td>
