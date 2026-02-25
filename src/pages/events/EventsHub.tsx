@@ -21,33 +21,26 @@ const EventsHub = () => {
       </nav>
 
       {/* Cycle intro hero */}
-      <section className="mb-10 rounded-xl overflow-hidden border border-border bg-card">
+      <section className="mb-12 rounded-xl overflow-hidden border border-border bg-card">
         <img
           src="/lovable-uploads/webinar-cycle-banner.png"
           alt="Cykl webinarów Quantifier — Cyberbezpieczeństwo NIS2 i ISO 27001, czterech prelegentów"
           className="w-full h-auto"
           loading="eager"
         />
-        <div className="p-6 md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">Bezpłatny cykl webinarów</p>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
+        <div className="p-6 md:p-10 text-center">
+          <p className="text-sm md:text-base font-semibold uppercase tracking-wider text-primary mb-3">Bezpłatny cykl webinarów</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
             Cyberbezpieczeństwo w praktyce
           </h1>
-          <p className="text-muted-foreground text-sm md:text-base max-w-2xl">
+          <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
             Zapraszamy na serię 4 praktycznych webinarów o NIS2, KSC i ISO 27001. Dowiedz się, jak zbudować mapę ryzyka, zdefiniować role i procesy, przygotować dowody zgodności i przejść audyt — krok po kroku, z materiałami do pobrania.
           </p>
         </div>
       </section>
 
-      {/* Event grid */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
-        {events.map(event => (
-          <EventCard key={event.slug} event={event} />
-        ))}
-      </section>
-
-      {/* SEO content section */}
-      <section className="border-t border-border pt-12 mb-8">
+      {/* SEO content section — above event grid */}
+      <section className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
           Webinary o NIS2/KSC i cyberbezpieczeństwie
         </h2>
@@ -67,6 +60,13 @@ const EventsHub = () => {
             Zarejestruj się bezpłatnie i odbierz materiały Sprint Kit po webinarze.
           </p>
         </div>
+      </section>
+
+      {/* Event grid */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
+        {events.map(event => (
+          <EventCard key={event.slug} event={event} />
+        ))}
       </section>
 
       {/* Last updated */}
