@@ -1,14 +1,25 @@
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, MapPin } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import type { EventData } from '@/data/eventsData';
 
 interface Props {
   event: EventData;
-  onCtaClick: () => void;
 }
 
-const EventHero = ({ event, onCtaClick }: Props) => (
+const EventHero = ({ event }: Props) => (
   <section className="pb-8 md:pb-12">
+    {/* Cover image */}
+    <div className="mb-6 rounded-xl overflow-hidden">
+      <AspectRatio ratio={1}>
+        <img
+          src={event.imageUrl}
+          alt={event.imageAlt}
+          className="w-full h-full object-cover bg-muted"
+        />
+      </AspectRatio>
+    </div>
+
     <div className="flex flex-wrap gap-2 mb-4">
       {event.tags.map(tag => (
         <Badge key={tag} variant="secondary">{tag}</Badge>
@@ -24,14 +35,6 @@ const EventHero = ({ event, onCtaClick }: Props) => (
       <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" /> {event.dateDisplay}</span>
       <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" /> {event.duration}</span>
       <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {event.location}</span>
-    </div>
-
-    {/* Mobile CTA */}
-    <div className="md:hidden space-y-2 mb-6">
-      <button onClick={onCtaClick} className="w-full bg-primary text-primary-foreground rounded-lg py-3 font-semibold" data-cta="hero-mobile-cta">
-        {event.heroCtaLabel}
-      </button>
-      <p className="text-xs text-muted-foreground text-center">{event.heroSecondaryText}</p>
     </div>
 
     <p className="text-sm text-muted-foreground border-l-2 border-primary pl-4">{event.trustLine}</p>
