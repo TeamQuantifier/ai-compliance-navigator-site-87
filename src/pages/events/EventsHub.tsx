@@ -10,7 +10,7 @@ const EventsHub = () => {
 
   return (
     <PageTemplate
-      title="Webinary i wydarzenia"
+      title="Webinary i wydarzenia — NIS2, KSC, compliance"
       description="Bezpłatne webinary o NIS2, KSC, cyberbezpieczeństwie i compliance. Praktyczna wiedza, szablony i checklisty dla zarządu, compliance i IT."
     >
       {/* Breadcrumb */}
@@ -30,8 +30,8 @@ const EventsHub = () => {
         </p>
       </header>
 
-      {/* Event listing */}
-      <section className="mb-16">
+      {/* Event grid */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {events.map(event => (
           <EventCard key={event.slug} event={event} />
         ))}
@@ -42,18 +42,20 @@ const EventsHub = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
           Webinary o NIS2/KSC i cyberbezpieczeństwie
         </h2>
-        <div className="prose prose-slate max-w-3xl text-muted-foreground">
+        <div className="prose prose-slate max-w-3xl text-muted-foreground space-y-4">
           <p>
-            Dyrektywa NIS2 w Polsce (implementowana jako nowelizacja ustawy o Krajowym Systemie Cyberbezpieczeństwa — KSC)
-            nakłada nowe obowiązki na setki organizacji w sektorach kluczowych i ważnych. Nasze webinary pomagają zrozumieć
-            zakres regulacji, wymagania dotyczące zarządzania ryzykiem, incident response i raportowania incydentów
-            cyberbezpieczeństwa.
+            Dyrektywa NIS2 w Polsce, implementowana jako nowelizacja ustawy o Krajowym Systemie Cyberbezpieczeństwa (KSC),
+            nakłada nowe obowiązki na setki organizacji w sektorach kluczowych i ważnych. Zarządy firm odpowiadają
+            osobiście za wdrożenie wymagań dotyczących zarządzania ryzykiem, incident response i raportowania
+            incydentów cyberbezpieczeństwa. Nasze webinary pomagają zrozumieć zakres regulacji, przygotować
+            organizację do audytu i zbudować system zarządzania zgodnością.
           </p>
           <p>
-            Każdy webinar zawiera praktyczne materiały: checklisty compliance, szablony audytowe i plany wdrożeniowe.
-            Dowiedz się, jak przygotować organizację do audytu NIS2/KSC, wdrożyć odpowiednie kontrole bezpieczeństwa
-            i zbudować system zarządzania dowodami zgodności. Nasze sesje prowadzą eksperci z doświadczeniem
-            w implementacji NIS2, ISO 27001, DORA i SOC 2 w polskich organizacjach.
+            Każdy webinar zawiera praktyczne materiały: checklisty compliance, szablony audytowe, matrycę ryzyk
+            i plany wdrożeniowe. Dowiedz się, jak zbudować mapę ryzyka NIS2, zdefiniować role i procesy,
+            przygotować dowody zgodności (evidence pack) i przejść audyt od A do Z. Nasze sesje prowadzą
+            eksperci z doświadczeniem w implementacji NIS2, ISO 27001, DORA i SOC 2 w polskich organizacjach.
+            Zarejestruj się bezpłatnie i odbierz materiały Sprint Kit po webinarze.
           </p>
         </div>
       </section>

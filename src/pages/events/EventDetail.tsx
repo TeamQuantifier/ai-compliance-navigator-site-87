@@ -11,6 +11,7 @@ import EventBonusMaterials from '@/components/events/EventBonusMaterials';
 import EventBottomCTA from '@/components/events/EventBottomCTA';
 import EventRegistrationForm from '@/components/events/EventRegistrationForm';
 import { getEventBySlug } from '@/data/eventsData';
+import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { ChevronRight, CheckCircle } from 'lucide-react';
 import {
   Accordion,
@@ -28,6 +29,9 @@ const EventDetail = () => {
 
   const event = getEventBySlug(slug || '');
 
+  // Signal prerender readiness (static data, always ready)
+  usePrerenderReady(true);
+
   if (!event) return <Navigate to={`/${currentLocale}/events`} replace />;
 
   const scrollToForm = () => {
@@ -36,6 +40,8 @@ const EventDetail = () => {
 
   const canonicalUrl = `${BASE_URL}/${currentLocale}/events/${event.slug}/`;
   const ogImage = event.seo.ogImage || `${BASE_URL}/og-homepage.png`;
+
+  const ogLocale = currentLocale === 'en' ? 'en_US' : currentLocale === 'pl' ? 'pl_PL' : 'cs_CZ';
 
   // Event schema
   const eventSchema = {
@@ -47,22 +53,9 @@ const EventDetail = () => {
     endDate: new Date(new Date(event.date).getTime() + 45 * 60000).toISOString(),
     eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
     eventStatus: 'https://schema.org/EventScheduled',
-    location: {
-      '@type': 'VirtualLocation',
-      url: canonicalUrl,
-    },
-    organizer: {
-      '@type': 'Organization',
-      name: 'Quantifier.ai',
-      url: BASE_URL,
-    },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'PLN',
-      availability: 'https://schema.org/InStock',
-      url: canonicalUrl,
-    },
+    location: { '@type': 'VirtualLocation', url: canonicalUrl },
+    organizer: { '@type': 'Organization', name: 'Quantifier.ai', url: BASE_URL },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'PLN', availability: 'https://schema.org/InStock', url: canonicalUrl },
     image: ogImage,
     inLanguage: 'pl',
   };
@@ -90,11 +83,7 @@ const EventDetail = () => {
   };
 
   return (
-    <PageTemplate
-      title={event.seo.metaTitle}
-      description={event.seo.metaDescription}
-      noSeo
-    >
+    <PageTemplate title={event.seo.metaTitle} description={event.seo.metaDescription} noSeo>
       <Helmet>
         <title>{event.seo.metaTitle} | Quantifier.ai</title>
         <meta name="description" content={event.seo.metaDescription} />
@@ -107,7 +96,7 @@ const EventDetail = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content="Quantifier.ai" />
-        <meta property="og:locale" content="pl_PL" />
+        <meta property="og:locale" content={ogLocale} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={event.seo.metaTitle} />
@@ -125,17 +114,17 @@ const EventDetail = () => {
         <ChevronRight className="h-3 w-3" />
         <Link to={`/${currentLocale}/events`} className="hover:text-foreground">Events</Link>
         <ChevronRight className="h-3 w-3" />
-        <span className="text-foreground font-medium">NIS2 w Polsce</span>
+        <span className="text-foreground font-medium line-clamp-1">{event.title}</span>
       </nav>
 
       {/* Two-column layout */}
       <div className="lg:flex lg:gap-10">
         {/* Content column */}
-        <div className="lg:w-[60%]">
-          <EventHero event={event} onCtaClick={scrollToForm} />
+        <div className="lg:w-[55%]">
+          <EventHero event={event} />
 
           {/* Mobile form */}
-          <div className="md:hidden mb-8" ref={formRef}>
+          <div className="lg:hidden mb-8" ref={formRef}>
             <EventRegistrationForm event={event} />
           </div>
 
@@ -200,7 +189,7 @@ const EventDetail = () => {
           </div>
 
           {/* Mobile bottom form */}
-          <div className="md:hidden mb-8">
+          <div className="lg:hidden mb-8">
             <EventRegistrationForm event={event} />
           </div>
 
@@ -213,7 +202,7 @@ const EventDetail = () => {
         </div>
 
         {/* Sticky form column (desktop) */}
-        <div className="hidden lg:block lg:w-[40%]">
+        <div className="hidden lg:block lg:w-[45%]">
           <div className="sticky top-24 self-start" ref={formRef}>
             <EventRegistrationForm event={event} />
           </div>
