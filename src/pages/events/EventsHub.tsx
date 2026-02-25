@@ -22,24 +22,20 @@ const EventsHub = () => {
 
       {/* Cycle intro hero */}
       <section className="mb-10 rounded-xl overflow-hidden border border-border bg-card">
-        <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
-          <div className="flex-1">
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">Bezpłatny cykl webinarów</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
-              Cyberbezpieczeństwo w praktyce
-            </h1>
-            <p className="text-muted-foreground text-sm md:text-base max-w-lg">
-              Zapraszamy na serię 4 praktycznych webinarów o NIS2, KSC i ISO 27001. Dowiedz się, jak zbudować mapę ryzyka, zdefiniować role i procesy, przygotować dowody zgodności i przejść audyt — krok po kroku, z materiałami do pobrania.
-            </p>
-          </div>
-          <div className="flex-shrink-0 w-full md:w-[340px] lg:w-[420px]">
-            <img
-              src="/lovable-uploads/webinar-cycle-banner.png"
-              alt="Cykl webinarów Quantifier — Cyberbezpieczeństwo NIS2 i ISO 27001, czterech prelegentów"
-              className="w-full h-auto rounded-lg"
-              loading="eager"
-            />
-          </div>
+        <img
+          src="/lovable-uploads/webinar-cycle-banner.png"
+          alt="Cykl webinarów Quantifier — Cyberbezpieczeństwo NIS2 i ISO 27001, czterech prelegentów"
+          className="w-full h-auto"
+          loading="eager"
+        />
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">Bezpłatny cykl webinarów</p>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
+            Cyberbezpieczeństwo w praktyce
+          </h1>
+          <p className="text-muted-foreground text-sm md:text-base max-w-2xl">
+            Zapraszamy na serię 4 praktycznych webinarów o NIS2, KSC i ISO 27001. Dowiedz się, jak zbudować mapę ryzyka, zdefiniować role i procesy, przygotować dowody zgodności i przejść audyt — krok po kroku, z materiałami do pobrania.
+          </p>
         </div>
       </section>
 
