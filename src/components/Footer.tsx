@@ -133,8 +133,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/contact`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link to={`/${currentLocale}/contact`} className="text-muted-foreground hover:text-primary transition-colors">
                   {t('footer.company.contact')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${currentLocale}/legal/privacy`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.legal.privacy')}
                 </Link>
               </li>
             </ul>

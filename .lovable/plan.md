@@ -1,38 +1,16 @@
 
 
-# Usunięcie custom bot-prerender na rzecz Netlify Prerender Extension
+# Add Privacy link to Footer Company section
 
-## Problem
+## Change
 
-Custom edge function `bot-prerender.ts` przechwytuje WSZYSTKIE requesty botów (Googlebot, Bingbot itd.) i proxuje je do Supabase. Netlify Prerender Extension jest zainstalowany, ale nigdy nie dostaje ruchu — custom function dziala pierwsza i "kradnie" requesty.
+Add a "Privacy Policy" link at the bottom of the Company section in the Footer, using the existing translation key `footer.legal.privacy` and linking to `/{currentLocale}/legal/privacy`.
 
-Gdy Supabase zawodzi (timeout, 5xx), bot dostaje okrojony fallback HTML (~10 linii tekstu) ktory Google traktuje jako thin content i odrzuca indeksowanie.
+## File changes
 
-```text
-Obecny flow (zepsuty):
-Googlebot --> bot-prerender.ts (edge function) --> Supabase proxy --> fallback HTML
-                                                   ^^ zawodne
+### `src/components/Footer.tsx`
 
-Docelowy flow:
-Googlebot --> Netlify Prerender Extension --> Headless Chromium --> pelna strona SPA
-                                              ^^ niezawodne, renderuje dokladnie to co widzi uzytkownik
-```
+After the Contact link (line 138-139), add a new `<li>` with a Link to `/${currentLocale}/legal/privacy` using `t('footer.legal.privacy')` as the label. The translation key already exists in all three locales (PL, EN, CS) since it's used in the bottom legal bar.
 
-## Zmiany
-
-| Plik | Zmiana |
-|---|---|
-| `netlify/edge-functions/bot-prerender.ts` | Usunac caly plik |
-| `netlify.toml` (linie 10-44) | Usunac wszystkie bloki `[[edge_functions]]` |
-
-Redirecty 301 i SPA fallback w `netlify.toml` pozostaja bez zmian.
-
-Supabase prerender functions (prerender-marketing, prerender-post, prerender-story) mozna zachowac — bez edge function nikt ich nie wywoluje, wiec nie koliduja. Mozna je usunac pozniej.
-
-## Po wdrozeniu
-
-1. Zrobic redeploy na Netlify
-2. Sprawdzic w Netlify dashboard (Extensions > Prerender > logs) czy requesty botow sa teraz obslugiwane przez extension
-3. W Google Search Console uzyc URL Inspection na kilku problematycznych URLach i poprosic o ponowne indeksowanie
-4. Odczekac 2-3 dni na wyniki
+No translation file changes needed -- the key `footer.legal.privacy` is already defined in all locales.
 

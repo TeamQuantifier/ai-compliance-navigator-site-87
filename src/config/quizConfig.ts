@@ -230,6 +230,11 @@ export const RESULT_RISK_LABEL: Record<QuizLang, string> = {
   cs: 'Úroveň rizika:',
 };
 export const CTA_LINK_LABEL: Record<QuizLang, string> = {
+  pl: 'Umów demo',
+  en: 'Book a demo',
+  cs: 'Domluvit demo',
+};
+export const CTA_SECONDARY_LABEL: Record<QuizLang, string> = {
   pl: 'Dowiedz się więcej o Quantifier',
   en: 'Learn more about Quantifier',
   cs: 'Zjistěte více o Quantifier',

@@ -76,6 +76,10 @@ import QuizSubmissions from "./pages/admin/QuizSubmissions";
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
 
+// Events pages
+import EventsHub from "./pages/events/EventsHub";
+import EventDetail from "./pages/events/EventDetail";
+
 const queryClient = new QueryClient();
 
 // Loading spinner component
@@ -153,6 +157,10 @@ const MainRoutes = () => (
         <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
         <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
+
+        {/* Events routes */}
+        <Route path="/:locale/events" element={<EventsHub />} />
+        <Route path="/:locale/events/:slug" element={<EventDetail />} />
 
         {/* Blog routes */}
         <Route path="/:locale/blog" element={<BlogList />} />

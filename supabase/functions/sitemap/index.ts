@@ -51,6 +51,8 @@ const staticPages = [
   { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/cybersecurity-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-19' },
+  { path: '/events', changefreq: 'weekly', priority: '0.8', lastmod: '2026-02-24' },
+  { path: '/events/nis2-w-polsce', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-24' },
 ];
 
 const locales = ['en', 'pl', 'cs'];

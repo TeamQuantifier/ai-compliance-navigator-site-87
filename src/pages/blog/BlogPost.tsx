@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternates } from '@/hooks/useBlog';
+import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { calculateReadingTime } from '@/lib/reading-time';
 import RichTextRenderer from '@/components/blog/RichTextRenderer';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -18,6 +19,7 @@ const BlogPost = () => {
   
   const { data: post, isLoading, error } = usePost(slug || '', currentLocale);
   const { data: alternates } = useAlternates(post?.group_id, currentLocale, 'post');
+  usePrerenderReady(!isLoading);
 
   const handleShare = () => {
     if (navigator.share) {
