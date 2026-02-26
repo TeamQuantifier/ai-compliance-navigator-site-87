@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, ArrowRight, CheckCircle } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, CheckCircle, Globe, Settings, FileCheck, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { EventData } from '@/data/eventsData';
+import type { LucideIcon } from 'lucide-react';
+
+const iconMap: Record<string, LucideIcon> = {
+  Globe,
+  Settings,
+  FileCheck,
+  ShieldCheck,
+};
 
 interface Props {
   event: EventData;
@@ -11,17 +19,24 @@ interface Props {
 
 const EventCard = ({ event }: Props) => {
   const { currentLocale } = useLanguage();
+  const IconComponent = event.icon ? iconMap[event.icon] : null;
 
   return (
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
-      {/* Image top */}
+      {/* Icon or image top */}
       <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-video overflow-hidden">
-        <img
-          src={event.imageUrl}
-          alt={event.imageAlt}
-          className="w-full h-full object-cover bg-muted"
-          loading="lazy"
-        />
+        {IconComponent ? (
+          <div className="w-full h-full bg-primary/5 flex items-center justify-center">
+            <IconComponent className="h-16 w-16 text-primary" />
+          </div>
+        ) : (
+          <img
+            src={event.imageUrl}
+            alt={event.imageAlt}
+            className="w-full h-full object-cover bg-muted"
+            loading="lazy"
+          />
+        )}
       </Link>
 
       <div className="p-4 flex flex-col flex-1">

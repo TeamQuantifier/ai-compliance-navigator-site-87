@@ -39,6 +39,7 @@ export interface EventData {
   trustLine: string;
   imageUrl: string;
   imageAlt: string;
+  icon?: string;
   outcomes: string[];
   agenda: EventAgendaItem[];
   audience: EventAudienceCard[];
@@ -68,6 +69,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: checklista ryzyk, szablon oceny, matryca priorytetów.',
     imageUrl: '/lovable-uploads/webinar-nis2-mapa-ryzyka.png',
     imageAlt: 'Webinar NIS2 mapa ryzyka — identyfikacja obowiązków i zagrożeń cyberbezpieczeństwa w organizacji',
+    icon: 'Globe',
     outcomes: [
       'Jak zmienia się krajobraz ryzyka w Europie i Polsce?',
       'Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych i ważnych?',
@@ -145,6 +147,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: matryca RACI, szablon procesów, checklista ról.',
     imageUrl: '/lovable-uploads/webinar-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
+    icon: 'Settings',
     outcomes: [
       'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego?',
       'Jak przypisać odpowiedzialności i zbudować zespół cyberbezpieczeństwa?',
@@ -221,6 +224,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: struktura dowodów, szablony dokumentów, checklista audytowa.',
     imageUrl: '/lovable-uploads/webinar-nis2-audit-ready.png',
     imageAlt: 'Webinar NIS2 audit-ready — przygotowanie dokumentów i dowodów zgodności do audytu cyberbezpieczeństwa',
+    icon: 'FileCheck',
     outcomes: [
       'Jakie polityki, procedury i rejestry są wymagane?',
       'Jak jako podmiot w łańcuchu dostaw dostosować się do wymagań klientów w zakresie cyberbezpieczeństwa?',
@@ -297,6 +301,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: symulacja audytu, checklista kontrolna, plan naprawczy.',
     imageUrl: '/lovable-uploads/webinar-nis2-kontrola-audyt.png',
     imageAlt: 'Webinar kontrola NIS2 — jak przejść audyt cyberbezpieczeństwa od przygotowania po raport końcowy',
+    icon: 'ShieldCheck',
     outcomes: [
       'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa?',
       'Jak raportować incydenty w 24h/72h?',
