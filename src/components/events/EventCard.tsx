@@ -24,7 +24,7 @@ const EventCard = ({ event }: Props) => {
   return (
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
       {/* Icon or image top */}
-      <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-video overflow-hidden">
+      <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-[3/2] overflow-hidden">
       {IconComponent ? (
           <div className="w-full h-full bg-gradient-to-br from-[#6d38a8] to-[#387fef] flex items-center justify-center relative overflow-hidden">
             {/* Decorative rings */}
