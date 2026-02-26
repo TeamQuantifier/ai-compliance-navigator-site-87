@@ -69,11 +69,10 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-mapa-ryzyka.png',
     imageAlt: 'Webinar NIS2 mapa ryzyka — identyfikacja obowiązków i zagrożeń cyberbezpieczeństwa w organizacji',
     outcomes: [
-      'Zrozumiesz, kto podlega NIS2/KSC i jakie ma obowiązki',
-      'Otrzymasz gotową matrycę ryzyk z priorytetami',
-      'Nauczysz się identyfikować luki w zabezpieczeniach organizacji',
-      'Poznasz 5 najczęstszych błędów przy ocenie ryzyka NIS2',
-      'Pobierzesz szablon mapy ryzyka do natychmiastowego użycia',
+      'Jak zmienia się krajobraz ryzyka w Europie i Polsce?',
+      'Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych i ważnych?',
+      'Jakie obowiązki będą mieli dostawcy?',
+      'Jaka będzie odpowiedzialność zarządu w cyberbezpieczeństwie?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Kontekst NIS2/KSC', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
