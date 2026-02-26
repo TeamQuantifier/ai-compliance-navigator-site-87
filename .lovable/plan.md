@@ -1,41 +1,22 @@
 
 
-## Plan: 3-Row Infinite Scrolling Logo Marquee
+## Plan: Gradient icon cards for event webinars
 
-Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
+Replace the plain `bg-primary/5` icon area with a gradient background using brand colors (fiolet → mięta), add decorative geometric shapes (circles, dots), and style the icon in white for contrast. All done in pure Tailwind + inline SVG — no external assets needed.
 
-### Approach
+### Changes
 
-**Split logos into 3 groups** (9 logos each):
-- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
-- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
-- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+#### `src/components/events/EventCard.tsx`
 
-**CSS keyframes** added to `index.css`:
-- `scroll-left`: `translateX(0)` to `translateX(-50%)`
-- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+Replace the icon container (lines 28–31) with a gradient card design:
 
-Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+- Background: `bg-gradient-to-br from-[#6d38a8] to-[#387fef]` (brand violet → blue)
+- Decorative elements: 2-3 subtle CSS circles/rings using `absolute` positioned divs with `rounded-full`, `border`, `opacity-20` in mint (`#d4f1ed`)
+- Icon: render in `text-white` at `h-12 w-12`, centered
+- Reduce aspect ratio from `aspect-video` to `aspect-[3/2]` for a more compact card
+- Add a subtle step number (01–04) in the top-left corner using a small `text-white/40 font-bold text-4xl` overlay
 
-**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+#### `src/data/eventsData.ts`
 
-### File Changes
-
-**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
-
-**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
-
-### Technical Details
-
-Each row structure:
-```
-<div class="overflow-hidden">
-  <div class="flex animate-scroll-right" style="width: fit-content">
-    {rowLogos.map(logo)} {/* original */}
-    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
-  </div>
-</div>
-```
-
-Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
+Add `step: number` field to `EventData` interface (1–4) and assign to each event, so cards can display the step number.
 
