@@ -23,68 +23,75 @@ const EventCard = ({ event }: Props) => {
 
   return (
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
-      {/* Icon or image top */}
-      <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-[3/2] overflow-hidden">
-      {IconComponent ? (
-          <div className="w-full h-full bg-gradient-to-br from-[#6d38a8] to-[#387fef] flex items-center justify-center relative overflow-hidden">
-            {/* Decorative rings */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full border-2 border-[#d4f1ed] opacity-20" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full border border-[#d4f1ed] opacity-15" />
-            <div className="absolute top-1/2 right-4 w-8 h-8 rounded-full bg-[#d4f1ed] opacity-10" />
-            {/* Step number */}
-            {event.step && (
-              <span className="absolute top-3 left-4 text-4xl font-bold text-white/20 select-none leading-none">
-                {String(event.step).padStart(2, '0')}
-              </span>
-            )}
-            <IconComponent className="h-12 w-12 text-white relative z-10" />
-          </div>
+      <div className="flex flex-col flex-1">
+        {/* Compact gradient header with icon */}
+        {IconComponent ? (
+          <Link to={`/${currentLocale}/events/${event.slug}`} className="block">
+            <div className="bg-gradient-to-br from-[#6d38a8] to-[#387fef] px-4 py-3 flex items-center gap-3 relative overflow-hidden">
+              {/* Decorative rings */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full border border-[#d4f1ed] opacity-20" />
+              <div className="absolute bottom-0 right-12 w-6 h-6 rounded-full bg-[#d4f1ed] opacity-10" />
+              {/* Step + Icon */}
+              <div className="flex items-center gap-2.5 relative z-10">
+                {event.step && (
+                  <span className="text-2xl font-bold text-white/30 select-none leading-none">
+                    {String(event.step).padStart(2, '0')}
+                  </span>
+                )}
+                <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center">
+                  <IconComponent className="h-5 w-5 text-white" />
+                </div>
+              </div>
+              {/* Tags inline */}
+              <div className="flex flex-wrap gap-1.5 relative z-10">
+                {event.tags.map(tag => (
+                  <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-white/20 text-white font-medium">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </Link>
         ) : (
-          <img
-            src={event.imageUrl}
-            alt={event.imageAlt}
-            className="w-full h-full object-cover bg-muted"
-            loading="lazy"
-          />
+          <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-[3/1] overflow-hidden">
+            <img
+              src={event.imageUrl}
+              alt={event.imageAlt}
+              className="w-full h-full object-cover bg-muted"
+              loading="lazy"
+            />
+          </Link>
         )}
-      </Link>
 
-      <div className="p-4 flex flex-col flex-1">
-        {/* Date — prominent */}
-        <div className="flex items-center gap-3 mb-2">
-          <span className="flex items-center gap-1.5 text-sm font-semibold text-primary">
-            <Calendar className="h-4 w-4" /> {event.dateDisplay}
-          </span>
-          <span className="flex items-center gap-1 text-xs text-muted-foreground">
-            <MapPin className="h-3 w-3" /> {event.location}
-          </span>
+        <div className="p-4 flex flex-col flex-1">
+          {/* Date — prominent */}
+          <div className="flex items-center gap-3 mb-1.5">
+            <span className="flex items-center gap-1.5 text-sm font-semibold text-primary">
+              <Calendar className="h-4 w-4" /> {event.dateDisplay}
+            </span>
+            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+              <MapPin className="h-3 w-3" /> {event.location}
+            </span>
+          </div>
+
+          <h2 className="text-lg font-bold text-foreground mb-2 leading-snug">
+            <Link to={`/${currentLocale}/events/${event.slug}`} className="hover:text-primary transition-colors">
+              {event.title}
+            </Link>
+          </h2>
+
+          <ul className="space-y-1 mb-3 flex-1">
+            {event.outcomes.slice(0, 2).map((o, i) => (
+              <li key={i} className="flex items-start gap-1.5 text-xs text-foreground">
+                <CheckCircle className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" /> <span className="line-clamp-1">{o}</span>
+              </li>
+            ))}
+          </ul>
+
+          <Button asChild size="sm" className="w-fit" data-cta="event-card-cta">
+            <Link to={`/${currentLocale}/events/${event.slug}`}>
+              {event.heroCtaLabel} <ArrowRight className="h-3.5 w-3.5 ml-1" />
+            </Link>
+          </Button>
         </div>
-
-        <div className="flex flex-wrap gap-1.5 mb-2">
-          {event.tags.map(tag => (
-            <Badge key={tag} variant="secondary" className="text-[10px] px-2 py-0">{tag}</Badge>
-          ))}
-        </div>
-
-        <h2 className="text-base font-bold text-foreground mb-2 leading-tight">
-          <Link to={`/${currentLocale}/events/${event.slug}`} className="hover:text-primary transition-colors">
-            {event.title}
-          </Link>
-        </h2>
-
-        <ul className="space-y-1 mb-3 flex-1">
-          {event.outcomes.slice(0, 2).map((o, i) => (
-            <li key={i} className="flex items-start gap-1.5 text-xs text-foreground">
-              <CheckCircle className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" /> <span className="line-clamp-1">{o}</span>
-            </li>
-          ))}
-        </ul>
-
-        <Button asChild size="sm" className="w-fit" data-cta="event-card-cta">
-          <Link to={`/${currentLocale}/events/${event.slug}`}>
-            {event.heroCtaLabel} <ArrowRight className="h-3.5 w-3.5 ml-1" />
-          </Link>
-        </Button>
       </div>
     </article>
   );
