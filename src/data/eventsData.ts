@@ -147,6 +147,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: matryca RACI, szablon procesów, checklista ról.',
     imageUrl: '/lovable-uploads/webinar-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
+    icon: 'Settings',
     outcomes: [
       'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego?',
       'Jak przypisać odpowiedzialności i zbudować zespół cyberbezpieczeństwa?',
