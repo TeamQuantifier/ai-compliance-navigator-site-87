@@ -116,7 +116,7 @@ export const events: EventData[] = [
       },
     ],
     bonusMaterials: [
-      'Matryca ryzyk NIS2/KSC (Excel)',
+      'Matryca ryzyk NIS2 (Excel)',
       'Checklista obowiązków NIS2 dla zarządu',
       'Szablon oceny ryzyka dostawców',
       'Infografika: kto podlega NIS2 w Polsce',
