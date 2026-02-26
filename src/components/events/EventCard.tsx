@@ -25,13 +25,11 @@ const EventCard = ({ event }: Props) => {
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
       <div className="flex flex-col flex-1">
         {/* Compact gradient header with icon */}
-        {IconComponent ? (
+        {IconComponent && (
           <Link to={`/${currentLocale}/events/${event.slug}`} className="block">
             <div className="bg-gradient-to-br from-[#6d38a8] to-[#387fef] px-4 py-3 flex items-center gap-3 relative overflow-hidden">
-              {/* Decorative rings */}
               <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full border border-[#d4f1ed] opacity-20" />
               <div className="absolute bottom-0 right-12 w-6 h-6 rounded-full bg-[#d4f1ed] opacity-10" />
-              {/* Step + Icon */}
               <div className="flex items-center gap-2.5 relative z-10">
                 {event.step && (
                   <span className="text-2xl font-bold text-white/30 select-none leading-none">
@@ -42,22 +40,12 @@ const EventCard = ({ event }: Props) => {
                   <IconComponent className="h-5 w-5 text-white" />
                 </div>
               </div>
-              {/* Tags inline */}
               <div className="flex flex-wrap gap-1.5 relative z-10">
                 {event.tags.map(tag => (
                   <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-white/20 text-white font-medium">{tag}</span>
                 ))}
               </div>
             </div>
-          </Link>
-        ) : (
-          <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-[3/1] overflow-hidden">
-            <img
-              src={event.imageUrl}
-              alt={event.imageAlt}
-              className="w-full h-full object-cover bg-muted"
-              loading="lazy"
-            />
           </Link>
         )}
 
