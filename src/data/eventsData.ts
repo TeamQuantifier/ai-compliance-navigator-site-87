@@ -79,7 +79,7 @@ export const events: EventData[] = [
       'Jaka będzie odpowiedzialność zarządu w cyberbezpieczeństwie?',
     ],
     agenda: [
-      { time: '0–5 min', title: 'Kontekst NIS2/KSC', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
+      { time: '0–5 min', title: 'Kontekst NIS2', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
       { time: '5–15 min', title: 'Obowiązki krok po kroku', description: 'Przegląd wymagań regulacyjnych z praktycznymi przykładami' },
       { time: '15–28 min', title: 'Budowanie mapy ryzyka', description: 'Jak zidentyfikować, ocenić i priorytetyzować ryzyka' },
       { time: '28–35 min', title: 'Najczęstsze błędy', description: '5 pułapek i jak ich uniknąć' },
