@@ -71,6 +71,7 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-mapa-ryzyka.png',
     imageAlt: 'Webinar NIS2 mapa ryzyka — identyfikacja obowiązków i zagrożeń cyberbezpieczeństwa w organizacji',
     icon: 'Globe',
+    step: 1,
     outcomes: [
       'Jak zmienia się krajobraz ryzyka w Europie i Polsce?',
       'Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych i ważnych?',
