@@ -125,7 +125,7 @@ export const events: EventData[] = [
     faqs: [
       { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione wszystkim zarejestrowanym uczestnikom w ciągu 24 godzin po webinarze. Materiały bonusowe (Sprint Kit) są dostępne wyłącznie dla uczestników na żywo.' },
       { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział jest całkowicie bezpłatny. Wystarczy się zarejestrować, aby zarezerwować miejsce.' },
-      { question: 'Dla kogo jest ten webinar?', answer: 'Dla zarządów, menedżerów compliance/risk, CISO i zespołów IT w organizacjach, które mogą podlegać NIS2/KSC.' },
+      { question: 'Dla kogo jest ten webinar?', answer: 'Dla zarządów, menedżerów compliance/risk, CISO i zespołów IT w organizacjach, które mogą podlegać NIS2.' },
       { question: 'Jak otrzymam materiały?', answer: 'Sprint Kit zostanie wysłany na podany adres e-mail w ciągu 1 godziny po zakończeniu webinaru.' },
       { question: 'Czy mogę zaprosić zespół?', answer: 'Oczywiście! Zachęcamy do udziału zespołowego. Każda osoba powinna zarejestrować się indywidualnie.' },
     ],
