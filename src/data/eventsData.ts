@@ -221,7 +221,7 @@ export const events: EventData[] = [
     dateDisplay: '14 kwietnia 2026, godz. 10:00',
     duration: '45 minut',
     location: 'Online (na żywo)',
-    tags: ['Live', 'NIS2'],
+    tags: ['Live', 'NIS2 & ISO 27001'],
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz Evidence Pack po rejestracji',
     trustLine: 'W pakiecie: struktura dowodów, szablony dokumentów, checklista audytowa.',
