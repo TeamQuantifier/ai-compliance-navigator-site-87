@@ -146,11 +146,9 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
     outcomes: [
-      'Zdefiniujesz kluczowe role w systemie NIS2/ISO 27001',
-      'Otrzymasz gotową matrycę RACI do wdrożenia',
-      'Dowiesz się, jak zaprojektować procesy incident response',
-      'Poznasz wymagania dotyczące eskalacji i raportowania',
-      'Pobierzesz szablon procesów cyberbezpieczeństwa',
+      'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego?',
+      'Jak przypisać odpowiedzialności i zbudować zespół cyberbezpieczeństwa?',
+      'Jak uniknąć kosztownego chaosu operacyjnego?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Dlaczego role i procesy?', description: 'Najczęstsze problemy wdrożeniowe NIS2' },
