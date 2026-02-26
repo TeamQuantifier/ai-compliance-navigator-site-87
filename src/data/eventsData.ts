@@ -287,7 +287,7 @@ export const events: EventData[] = [
     ],
     seo: {
       metaTitle: 'NIS2 audit-ready: webinar — dokumenty i dowody',
-      metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności do audytu KSC. Evidence pack, audit trail, checklista audytowa.',
+      metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności do audytu. Evidence pack, audit trail, checklista audytowa.',
     },
     lastUpdated: '2026-02-25',
   },
