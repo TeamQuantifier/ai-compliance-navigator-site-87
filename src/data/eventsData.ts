@@ -150,6 +150,7 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
     icon: 'Settings',
+    step: 2,
     outcomes: [
       'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego?',
       'Jak przypisać odpowiedzialności i zbudować zespół cyberbezpieczeństwa?',
