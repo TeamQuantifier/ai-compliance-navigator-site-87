@@ -1,6 +1,5 @@
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, MapPin } from 'lucide-react';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 import type { EventData } from '@/data/eventsData';
 
 interface Props {
@@ -9,17 +8,6 @@ interface Props {
 
 const EventHero = ({ event }: Props) => (
   <section className="pb-8 md:pb-12">
-    {/* Cover image */}
-    <div className="mb-6 rounded-xl overflow-hidden">
-      <AspectRatio ratio={1}>
-        <img
-          src={event.imageUrl}
-          alt={event.imageAlt}
-          className="w-full h-full object-cover bg-muted"
-        />
-      </AspectRatio>
-    </div>
-
     <div className="flex flex-wrap gap-2 mb-4">
       {event.tags.map(tag => (
         <Badge key={tag} variant="secondary">{tag}</Badge>
