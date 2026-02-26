@@ -68,7 +68,7 @@ const EventsHub = () => {
       }),
       location: t('eventsHub.eventLocationLive'),
       heroCtaLabel: t('eventsHub.eventCtaLabel'),
-      tags: [t('eventsHub.eventTagLive'), 'NIS2/KSC'],
+      tags: [t('eventsHub.eventTagLive'), 'NIS2'],
       outcomes: highlight ? highlight.questions.map((qKey) => t(qKey)) : event.outcomes,
     };
   });
