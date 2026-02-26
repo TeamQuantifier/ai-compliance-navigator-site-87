@@ -68,7 +68,7 @@ const EventsHub = () => {
       }),
       location: t('eventsHub.eventLocationLive'),
       heroCtaLabel: t('eventsHub.eventCtaLabel'),
-      tags: [t('eventsHub.eventTagLive'), 'NIS2'],
+      tags: [t('eventsHub.eventTagLive'), 'NIS2 & ISO 27001'],
       outcomes: highlight ? highlight.questions.map((qKey) => t(qKey)) : event.outcomes,
     };
   });

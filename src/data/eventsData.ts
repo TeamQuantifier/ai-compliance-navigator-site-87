@@ -299,7 +299,7 @@ export const events: EventData[] = [
     dateDisplay: '28 kwietnia 2026, godz. 10:00',
     duration: '45 minut',
     location: 'Online (na żywo)',
-    tags: ['Live', 'NIS2'],
+    tags: ['Live', 'NIS2 & ISO 27001'],
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz Audit Survival Kit po rejestracji',
     trustLine: 'W pakiecie: symulacja audytu, checklista kontrolna, plan naprawczy.',
