@@ -228,6 +228,7 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-audit-ready.png',
     imageAlt: 'Webinar NIS2 audit-ready — przygotowanie dokumentów i dowodów zgodności do audytu cyberbezpieczeństwa',
     icon: 'FileCheck',
+    step: 3,
     outcomes: [
       'Jakie polityki, procedury i rejestry są wymagane?',
       'Jak jako podmiot w łańcuchu dostaw dostosować się do wymagań klientów w zakresie cyberbezpieczeństwa?',
