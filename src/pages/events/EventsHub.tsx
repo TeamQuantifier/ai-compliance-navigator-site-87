@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageTemplate from '@/components/PageTemplate';
 import EventCard from '@/components/events/EventCard';
+import FAQSection from '@/components/seo/FAQSection';
 import { events } from '@/data/eventsData';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Calendar } from 'lucide-react';
 
 const bannerMap: Record<string, string> = {
   pl: '/lovable-uploads/webinar-cycle-banner-pl.jpg',
@@ -19,17 +21,46 @@ const altMap: Record<string, string> = {
 
 const EventsHub = () => {
   const { currentLocale } = useLanguage();
+  const { t } = useTranslation();
+
+  const faqs = Array.from({ length: 10 }, (_, i) => ({
+    question: t(`eventsHub.faq${i + 1}q`),
+    answer: t(`eventsHub.faq${i + 1}a`),
+  }));
+
+  const webinarHighlights = [
+    {
+      titleKey: 'eventsHub.webinar1title',
+      dateKey: 'eventsHub.webinar1date',
+      questions: ['eventsHub.webinar1q1', 'eventsHub.webinar1q2', 'eventsHub.webinar1q3', 'eventsHub.webinar1q4'],
+    },
+    {
+      titleKey: 'eventsHub.webinar2title',
+      dateKey: 'eventsHub.webinar2date',
+      questions: ['eventsHub.webinar2q1', 'eventsHub.webinar2q2', 'eventsHub.webinar2q3'],
+    },
+    {
+      titleKey: 'eventsHub.webinar3title',
+      dateKey: 'eventsHub.webinar3date',
+      questions: ['eventsHub.webinar3q1', 'eventsHub.webinar3q2', 'eventsHub.webinar3q3'],
+    },
+    {
+      titleKey: 'eventsHub.webinar4title',
+      dateKey: 'eventsHub.webinar4date',
+      questions: ['eventsHub.webinar4q1', 'eventsHub.webinar4q2'],
+    },
+  ];
 
   return (
     <PageTemplate
-      title="Webinary i wydarzenia — NIS2, KSC, compliance"
-      description="Bezpłatne webinary o NIS2, KSC, cyberbezpieczeństwie i compliance. Praktyczna wiedza, szablony i checklisty dla zarządu, compliance i IT."
+      title={t('eventsHub.pageTitle')}
+      description={t('eventsHub.pageDescription')}
     >
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-muted-foreground mb-8">
-        <Link to={`/${currentLocale}`} className="hover:text-foreground">Home</Link>
+        <Link to={`/${currentLocale}`} className="hover:text-foreground">{t('eventsHub.breadcrumbHome')}</Link>
         <ChevronRight className="h-3 w-3" />
-        <span className="text-foreground font-medium">Events</span>
+        <span className="text-foreground font-medium">{t('eventsHub.breadcrumbEvents')}</span>
       </nav>
 
       {/* Cycle intro hero */}
@@ -41,49 +72,80 @@ const EventsHub = () => {
           loading="eager"
         />
         <div className="p-6 md:p-10 text-center">
-          <p className="text-sm md:text-base font-semibold uppercase tracking-wider text-primary mb-3">Bezpłatny cykl webinarów</p>
+          <p className="text-sm md:text-base font-semibold uppercase tracking-wider text-primary mb-3">
+            {t('eventsHub.cycleLabel')}
+          </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-            Cyberbezpieczeństwo w praktyce
+            {t('eventsHub.heroTitle')}
           </h1>
-          <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-            Zapraszamy na serię 4 praktycznych webinarów o NIS2, KSC i ISO 27001. Dowiedz się, jak zbudować mapę ryzyka, zdefiniować role i procesy, przygotować dowody zgodności i przejść audyt — krok po kroku, z materiałami do pobrania.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-medium">
+            {t('eventsHub.heroSubtitle')}
           </p>
         </div>
       </section>
 
-      {/* SEO content section — above event grid */}
+      {/* Intro content section */}
       <section className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          Webinary o NIS2/KSC i cyberbezpieczeństwie
+        <div className="prose prose-slate max-w-3xl text-muted-foreground space-y-5">
+          <p>{t('eventsHub.introP1')}</p>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li className="text-foreground font-medium">{t('eventsHub.bulletBoard')}</li>
+            <li className="text-foreground font-medium">{t('eventsHub.bulletOrg')}</li>
+            <li className="text-foreground font-medium">{t('eventsHub.bulletMarket')}</li>
+          </ul>
+
+          <p>{t('eventsHub.introP2')}</p>
+          <p>{t('eventsHub.introP3')}</p>
+          <p className="italic text-sm border-l-4 border-primary pl-4">{t('eventsHub.formatDescription')}</p>
+        </div>
+      </section>
+
+      {/* Webinar highlights — timeline */}
+      <section className="mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+          {t('eventsHub.cycleName')}
         </h2>
-        <div className="prose prose-slate max-w-3xl text-muted-foreground space-y-4">
-          <p>
-            Dyrektywa NIS2 w Polsce, implementowana jako nowelizacja ustawy o Krajowym Systemie Cyberbezpieczeństwa (KSC),
-            nakłada nowe obowiązki na setki organizacji w sektorach kluczowych i ważnych. Zarządy firm odpowiadają
-            osobiście za wdrożenie wymagań dotyczących zarządzania ryzykiem, incident response i raportowania
-            incydentów cyberbezpieczeństwa. Nasze webinary pomagają zrozumieć zakres regulacji, przygotować
-            organizację do audytu i zbudować system zarządzania zgodnością.
-          </p>
-          <p>
-            Każdy webinar zawiera praktyczne materiały: checklisty compliance, szablony audytowe, matrycę ryzyk
-            i plany wdrożeniowe. Dowiedz się, jak zbudować mapę ryzyka NIS2, zdefiniować role i procesy,
-            przygotować dowody zgodności (evidence pack) i przejść audyt od A do Z. Nasze sesje prowadzą
-            eksperci z doświadczeniem w implementacji NIS2, ISO 27001, DORA i SOC 2 w polskich organizacjach.
-            Zarejestruj się bezpłatnie i odbierz materiały Sprint Kit po webinarze.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {webinarHighlights.map((w, idx) => (
+            <div key={idx} className="rounded-lg border border-border bg-card p-5 space-y-3">
+              <div className="flex items-center gap-2 text-sm text-primary font-semibold">
+                <Calendar className="h-4 w-4" />
+                <span>{t(w.dateKey)}</span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground">{t(w.titleKey)}</h3>
+              <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                {w.questions.map((qKey) => (
+                  <li key={qKey}>{t(qKey)}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Event grid */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
         {events.map(event => (
           <EventCard key={event.slug} event={event} />
         ))}
       </section>
 
+      {/* Closing text */}
+      <section className="mb-16 max-w-3xl">
+        <p className="text-muted-foreground">{t('eventsHub.closingText')}</p>
+      </section>
+
+      {/* FAQ section with JSON-LD */}
+      <FAQSection
+        title={t('eventsHub.faqTitle')}
+        faqs={faqs}
+        pageUrl={`https://quantifier.ai/${currentLocale}/events/`}
+      />
+
       {/* Last updated */}
-      <p className="text-xs text-muted-foreground">
-        Ostatnia aktualizacja: {new Date().toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' })}
+      <p className="text-xs text-muted-foreground mt-8">
+        {t('eventsHub.lastUpdated')}: {new Date().toLocaleDateString(currentLocale === 'cs' ? 'cs-CZ' : currentLocale === 'pl' ? 'pl-PL' : 'en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
       </p>
     </PageTemplate>
   );

@@ -298,11 +298,8 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-kontrola-audyt.png',
     imageAlt: 'Webinar kontrola NIS2 — jak przejść audyt cyberbezpieczeństwa od przygotowania po raport końcowy',
     outcomes: [
-      'Poznasz przebieg kontroli/audytu NIS2 krok po kroku',
-      'Dowiesz się, jak przygotować organizację na dzień audytu',
-      'Otrzymasz checklistę kontrolną z 30+ punktami',
-      'Nauczysz się reagować na ustalenia audytora',
-      'Pobierzesz szablon planu naprawczego (remediation plan)',
+      'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa?',
+      'Jak raportować incydenty w 24h/72h?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Przebieg audytu NIS2', description: 'Co się dzieje przed, w trakcie i po kontroli' },
