@@ -69,6 +69,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: checklista ryzyk, szablon oceny, matryca priorytetów.',
     imageUrl: '/lovable-uploads/webinar-nis2-mapa-ryzyka.png',
     imageAlt: 'Webinar NIS2 mapa ryzyka — identyfikacja obowiązków i zagrożeń cyberbezpieczeństwa w organizacji',
+    icon: 'Globe',
     outcomes: [
       'Jak zmienia się krajobraz ryzyka w Europie i Polsce?',
       'Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych i ważnych?',
