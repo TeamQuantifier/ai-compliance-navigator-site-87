@@ -222,11 +222,9 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-audit-ready.png',
     imageAlt: 'Webinar NIS2 audit-ready — przygotowanie dokumentów i dowodów zgodności do audytu cyberbezpieczeństwa',
     outcomes: [
-      'Poznasz wymagania dokumentacyjne NIS2/KSC',
-      'Otrzymasz strukturę "evidence pack" gotową do audytu',
-      'Dowiesz się, jakie dowody zbierać i jak je organizować',
-      'Nauczysz się budować ścieżkę audytową (audit trail)',
-      'Pobierzesz checklistę dokumentów wymaganych przez audytora',
+      'Jakie polityki, procedury i rejestry są wymagane?',
+      'Jak jako podmiot w łańcuchu dostaw dostosować się do wymagań klientów w zakresie cyberbezpieczeństwa?',
+      'Jak zarządzać dowodami zgodności w sposób systemowy?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Wymagania dokumentacyjne NIS2', description: 'Co audytor sprawdza w pierwszej kolejności' },
