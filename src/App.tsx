@@ -72,6 +72,7 @@ import StoryEditor from "./pages/admin/StoryEditor";
 import SeoAudit from "./pages/admin/SeoAudit";
 import SeoSettings from "./pages/admin/SeoSettings";
 import QuizSubmissions from "./pages/admin/QuizSubmissions";
+import EventRegistrations from "./pages/admin/EventRegistrations";
 
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
