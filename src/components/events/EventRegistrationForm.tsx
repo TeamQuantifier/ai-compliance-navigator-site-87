@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { CalendarPlus, CheckCircle, ExternalLink, Loader2 } from 'lucide-react';
 import type { EventData } from '@/data/eventsData';
+import { supabase } from '@/integrations/supabase/client';
 
 const FREE_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'wp.pl', 'onet.pl', 'o2.pl', 'interia.pl'];
 

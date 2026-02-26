@@ -195,6 +195,7 @@ const MainRoutes = () => (
           <Route path="seo-audit" element={<SeoAudit />} />
           <Route path="seo-settings" element={<SeoSettings />} />
           <Route path="quiz-submissions" element={<QuizSubmissions />} />
+          <Route path="event-registrations" element={<EventRegistrations />} />
           <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
           <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
           <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />
