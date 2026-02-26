@@ -39,6 +39,7 @@ export interface EventData {
   trustLine: string;
   imageUrl: string;
   imageAlt: string;
+  icon?: string;
   outcomes: string[];
   agenda: EventAgendaItem[];
   audience: EventAudienceCard[];
