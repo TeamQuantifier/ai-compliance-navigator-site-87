@@ -56,8 +56,8 @@ export interface EventData {
 export const events: EventData[] = [
   {
     slug: 'nis2-mapa-ryzyka',
-    title: 'Nowa mapa ryzyka: NIS2 i realne obowiązki',
-    subtitle: 'Dowiedz się, jakie obowiązki nakłada NIS2/KSC na Twoją organizację i jak zbudować mapę ryzyka krok po kroku.',
+    title: 'Nowa rzeczywistość: geopolityka, rynek i konsekwencje regulacyjne',
+    subtitle: 'Jak zmienia się krajobraz ryzyka w Europie i Polsce? Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych, ważnych i ich dostawców?',
     date: '2026-03-10T10:00:00+01:00',
     dateDisplay: '10 marca 2026, godz. 10:00',
     duration: '45 minut',
@@ -69,11 +69,10 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-mapa-ryzyka.png',
     imageAlt: 'Webinar NIS2 mapa ryzyka — identyfikacja obowiązków i zagrożeń cyberbezpieczeństwa w organizacji',
     outcomes: [
-      'Zrozumiesz, kto podlega NIS2/KSC i jakie ma obowiązki',
-      'Otrzymasz gotową matrycę ryzyk z priorytetami',
-      'Nauczysz się identyfikować luki w zabezpieczeniach organizacji',
-      'Poznasz 5 najczęstszych błędów przy ocenie ryzyka NIS2',
-      'Pobierzesz szablon mapy ryzyka do natychmiastowego użycia',
+      'Jak zmienia się krajobraz ryzyka w Europie i Polsce?',
+      'Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych i ważnych?',
+      'Jakie obowiązki będą mieli dostawcy?',
+      'Jaka będzie odpowiedzialność zarządu w cyberbezpieczeństwie?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Kontekst NIS2/KSC', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
@@ -134,8 +133,8 @@ export const events: EventData[] = [
   },
   {
     slug: 'nis2-role-i-procesy',
-    title: 'System, który działa: role i procesy (NIS2/ISO)',
-    subtitle: 'Jak zdefiniować role, procesy i odpowiedzialności w systemie zarządzania cyberbezpieczeństwem zgodnym z NIS2 i ISO 27001.',
+    title: 'Wdrożenie, które działa: continuous compliance',
+    subtitle: 'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego? Jak przypisać odpowiedzialności i uniknąć chaosu operacyjnego?',
     date: '2026-03-24T10:00:00+01:00',
     dateDisplay: '24 marca 2026, godz. 10:00',
     duration: '45 minut',
@@ -147,11 +146,9 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-role-i-procesy.png',
     imageAlt: 'Webinar NIS2 role i procesy — budowa systemu zarządzania cyberbezpieczeństwem w organizacji',
     outcomes: [
-      'Zdefiniujesz kluczowe role w systemie NIS2/ISO 27001',
-      'Otrzymasz gotową matrycę RACI do wdrożenia',
-      'Dowiesz się, jak zaprojektować procesy incident response',
-      'Poznasz wymagania dotyczące eskalacji i raportowania',
-      'Pobierzesz szablon procesów cyberbezpieczeństwa',
+      'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego?',
+      'Jak przypisać odpowiedzialności i zbudować zespół cyberbezpieczeństwa?',
+      'Jak uniknąć kosztownego chaosu operacyjnego?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Dlaczego role i procesy?', description: 'Najczęstsze problemy wdrożeniowe NIS2' },
@@ -212,8 +209,8 @@ export const events: EventData[] = [
   },
   {
     slug: 'nis2-audit-ready',
-    title: 'Audit-ready: dokumenty i dowody zgodności (NIS2)',
-    subtitle: 'Jak przygotować dokumentację i dowody zgodności, które przejdą audyt NIS2/KSC bez zastrzeżeń.',
+    title: 'Dokumenty, dowody i wymagania rynkowe',
+    subtitle: 'Jakie polityki, procedury i rejestry są wymagane? Jak zarządzać dowodami zgodności i spełnić wymagania klientów w łańcuchu dostaw?',
     date: '2026-04-14T10:00:00+02:00',
     dateDisplay: '14 kwietnia 2026, godz. 10:00',
     duration: '45 minut',
@@ -225,11 +222,9 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-audit-ready.png',
     imageAlt: 'Webinar NIS2 audit-ready — przygotowanie dokumentów i dowodów zgodności do audytu cyberbezpieczeństwa',
     outcomes: [
-      'Poznasz wymagania dokumentacyjne NIS2/KSC',
-      'Otrzymasz strukturę "evidence pack" gotową do audytu',
-      'Dowiesz się, jakie dowody zbierać i jak je organizować',
-      'Nauczysz się budować ścieżkę audytową (audit trail)',
-      'Pobierzesz checklistę dokumentów wymaganych przez audytora',
+      'Jakie polityki, procedury i rejestry są wymagane?',
+      'Jak jako podmiot w łańcuchu dostaw dostosować się do wymagań klientów w zakresie cyberbezpieczeństwa?',
+      'Jak zarządzać dowodami zgodności w sposób systemowy?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Wymagania dokumentacyjne NIS2', description: 'Co audytor sprawdza w pierwszej kolejności' },
@@ -290,8 +285,8 @@ export const events: EventData[] = [
   },
   {
     slug: 'nis2-kontrola-audyt',
-    title: 'Kontrola NIS2: jak przejść audyt od A do Z',
-    subtitle: 'Kompletny przewodnik po audycie NIS2/KSC — od przygotowania po raport końcowy i plan naprawczy.',
+    title: 'Kontrola, raportowanie i weryfikacja',
+    subtitle: 'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa? Jak raportować incydenty w 24h/72h?',
     date: '2026-04-28T10:00:00+02:00',
     dateDisplay: '28 kwietnia 2026, godz. 10:00',
     duration: '45 minut',
@@ -303,11 +298,8 @@ export const events: EventData[] = [
     imageUrl: '/lovable-uploads/webinar-nis2-kontrola-audyt.png',
     imageAlt: 'Webinar kontrola NIS2 — jak przejść audyt cyberbezpieczeństwa od przygotowania po raport końcowy',
     outcomes: [
-      'Poznasz przebieg kontroli/audytu NIS2 krok po kroku',
-      'Dowiesz się, jak przygotować organizację na dzień audytu',
-      'Otrzymasz checklistę kontrolną z 30+ punktami',
-      'Nauczysz się reagować na ustalenia audytora',
-      'Pobierzesz szablon planu naprawczego (remediation plan)',
+      'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa?',
+      'Jak raportować incydenty w 24h/72h?',
     ],
     agenda: [
       { time: '0–5 min', title: 'Przebieg audytu NIS2', description: 'Co się dzieje przed, w trakcie i po kontroli' },
