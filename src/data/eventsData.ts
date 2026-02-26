@@ -143,7 +143,7 @@ export const events: EventData[] = [
     dateDisplay: '24 marca 2026, godz. 10:00',
     duration: '45 minut',
     location: 'Online (na żywo)',
-    tags: ['Live', 'NIS2'],
+    tags: ['Live', 'NIS2 & ISO 27001'],
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz szablon ról i procesów po rejestracji',
     trustLine: 'W pakiecie: matryca RACI, szablon procesów, checklista ról.',
