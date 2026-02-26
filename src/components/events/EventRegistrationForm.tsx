@@ -180,7 +180,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         </div>
 
         <div>
-          <Label className="mb-2 block">Czy Twoja organizacja może podlegać NIS2/KSC? *</Label>
+          <Label className="mb-2 block">Czy Twoja organizacja może podlegać NIS2? *</Label>
           <RadioGroup onValueChange={(v) => setValue('nis2Qualifier', v)} className="flex gap-4">
             <div className="flex items-center gap-2">
               <RadioGroupItem value="yes" id="nis2-yes" />
