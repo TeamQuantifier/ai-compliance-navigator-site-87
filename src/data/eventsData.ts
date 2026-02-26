@@ -40,6 +40,7 @@ export interface EventData {
   imageUrl: string;
   imageAlt: string;
   icon?: string;
+  step?: number;
   outcomes: string[];
   agenda: EventAgendaItem[];
   audience: EventAudienceCard[];
