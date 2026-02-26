@@ -58,13 +58,22 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
   const onSubmit = async (data: FormData) => {
     setSubmitState('loading');
     try {
-      const payload = { ...data, ...utmParams, eventSlug: event.slug, eventTitle: event.title };
-      const res = await fetch('https://example.com/webhook', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+      const { error } = await supabase.from('event_registrations').insert({
+        event_slug: event.slug,
+        event_title: event.title,
+        first_name: data.firstName,
+        work_email: data.workEmail,
+        company: data.company,
+        role: data.role,
+        company_size: data.companySize,
+        nis2_qualifier: data.nis2Qualifier,
+        utm_source: utmParams.utm_source || null,
+        utm_medium: utmParams.utm_medium || null,
+        utm_campaign: utmParams.utm_campaign || null,
+        utm_content: utmParams.utm_content || null,
+        utm_term: utmParams.utm_term || null,
       });
-      if (!res.ok) throw new Error('Submit failed');
+      if (error) throw error;
       setSubmitState('success');
     } catch {
       setSubmitState('error');
