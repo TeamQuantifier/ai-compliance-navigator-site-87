@@ -24,10 +24,20 @@ const EventCard = ({ event }: Props) => {
   return (
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
       {/* Icon or image top */}
-      <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-video overflow-hidden">
-        {IconComponent ? (
-          <div className="w-full h-full bg-primary/5 flex items-center justify-center">
-            <IconComponent className="h-16 w-16 text-primary" />
+      <Link to={`/${currentLocale}/events/${event.slug}`} className="block aspect-[3/2] overflow-hidden">
+      {IconComponent ? (
+          <div className="w-full h-full bg-gradient-to-br from-[#6d38a8] to-[#387fef] flex items-center justify-center relative overflow-hidden">
+            {/* Decorative rings */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full border-2 border-[#d4f1ed] opacity-20" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full border border-[#d4f1ed] opacity-15" />
+            <div className="absolute top-1/2 right-4 w-8 h-8 rounded-full bg-[#d4f1ed] opacity-10" />
+            {/* Step number */}
+            {event.step && (
+              <span className="absolute top-3 left-4 text-4xl font-bold text-white/20 select-none leading-none">
+                {String(event.step).padStart(2, '0')}
+              </span>
+            )}
+            <IconComponent className="h-12 w-12 text-white relative z-10" />
           </div>
         ) : (
           <img
