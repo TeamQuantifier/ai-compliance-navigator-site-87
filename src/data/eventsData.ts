@@ -301,6 +301,7 @@ export const events: EventData[] = [
     trustLine: 'W pakiecie: symulacja audytu, checklista kontrolna, plan naprawczy.',
     imageUrl: '/lovable-uploads/webinar-nis2-kontrola-audyt.png',
     imageAlt: 'Webinar kontrola NIS2 — jak przejść audyt cyberbezpieczeństwa od przygotowania po raport końcowy',
+    icon: 'ShieldCheck',
     outcomes: [
       'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa?',
       'Jak raportować incydenty w 24h/72h?',

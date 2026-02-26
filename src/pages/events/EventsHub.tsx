@@ -142,10 +142,6 @@ const EventsHub = () => {
         pageUrl={`https://quantifier.ai/${currentLocale}/events/`}
       />
 
-      {/* Last updated */}
-      <p className="text-xs text-muted-foreground mt-8">
-        {t('eventsHub.lastUpdated')}: {new Date().toLocaleDateString(currentLocale === 'cs' ? 'cs-CZ' : currentLocale === 'pl' ? 'pl-PL' : 'en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
-      </p>
     </PageTemplate>
   );
 };
