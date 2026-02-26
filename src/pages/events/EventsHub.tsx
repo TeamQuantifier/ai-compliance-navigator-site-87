@@ -148,7 +148,7 @@ const EventsHub = () => {
 
       {/* Event grid */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
-        {events.map(event => (
+        {localizedEvents.map(event => (
           <EventCard key={event.slug} event={event} />
         ))}
       </section>
