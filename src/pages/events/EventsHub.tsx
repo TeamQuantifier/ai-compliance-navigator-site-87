@@ -5,6 +5,18 @@ import EventCard from '@/components/events/EventCard';
 import { events } from '@/data/eventsData';
 import { ChevronRight } from 'lucide-react';
 
+const bannerMap: Record<string, string> = {
+  pl: '/lovable-uploads/webinar-cycle-banner-pl.jpg',
+  en: '/lovable-uploads/webinar-cycle-banner-en.jpg',
+  cs: '/lovable-uploads/webinar-cycle-banner-cs.jpg',
+};
+
+const altMap: Record<string, string> = {
+  pl: 'Cykl webinarów Quantifier — Cyberbezpieczeństwo NIS2 i ISO 27001',
+  en: 'Quantifier Webinar Series — NIS2 Cybersecurity & ISO 27001',
+  cs: 'Série webinářů Quantifier — Kybernetická bezpečnost NIS2 a ISO 27001',
+};
+
 const EventsHub = () => {
   const { currentLocale } = useLanguage();
 
