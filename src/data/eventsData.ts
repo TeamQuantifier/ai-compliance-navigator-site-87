@@ -133,8 +133,8 @@ export const events: EventData[] = [
   },
   {
     slug: 'nis2-role-i-procesy',
-    title: 'System, który działa: role i procesy (NIS2/ISO)',
-    subtitle: 'Jak zdefiniować role, procesy i odpowiedzialności w systemie zarządzania cyberbezpieczeństwem zgodnym z NIS2 i ISO 27001.',
+    title: 'Wdrożenie, które działa: continuous compliance',
+    subtitle: 'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego? Jak przypisać odpowiedzialności i uniknąć chaosu operacyjnego?',
     date: '2026-03-24T10:00:00+01:00',
     dateDisplay: '24 marca 2026, godz. 10:00',
     duration: '45 minut',
