@@ -72,6 +72,7 @@ import StoryEditor from "./pages/admin/StoryEditor";
 import SeoAudit from "./pages/admin/SeoAudit";
 import SeoSettings from "./pages/admin/SeoSettings";
 import QuizSubmissions from "./pages/admin/QuizSubmissions";
+import EventRegistrations from "./pages/admin/EventRegistrations";
 
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
@@ -194,6 +195,7 @@ const MainRoutes = () => (
           <Route path="seo-audit" element={<SeoAudit />} />
           <Route path="seo-settings" element={<SeoSettings />} />
           <Route path="quiz-submissions" element={<QuizSubmissions />} />
+          <Route path="event-registrations" element={<EventRegistrations />} />
           <Route path="categories" element={<div className="p-6"><h1 className="text-3xl font-bold">Categories (Coming Soon)</h1></div>} />
           <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
           <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />

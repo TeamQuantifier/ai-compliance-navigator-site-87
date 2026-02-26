@@ -128,6 +128,60 @@ export type Database = {
         }
         Relationships: []
       }
+      event_registrations: {
+        Row: {
+          company: string
+          company_size: string
+          created_at: string
+          event_slug: string
+          event_title: string | null
+          first_name: string
+          id: string
+          nis2_qualifier: string
+          role: string
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+          work_email: string
+        }
+        Insert: {
+          company: string
+          company_size: string
+          created_at?: string
+          event_slug: string
+          event_title?: string | null
+          first_name: string
+          id?: string
+          nis2_qualifier: string
+          role: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          work_email: string
+        }
+        Update: {
+          company?: string
+          company_size?: string
+          created_at?: string
+          event_slug?: string
+          event_title?: string | null
+          first_name?: string
+          id?: string
+          nis2_qualifier?: string
+          role?: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          work_email?: string
+        }
+        Relationships: []
+      }
       posts: {
         Row: {
           body_rich: Json
