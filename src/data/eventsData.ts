@@ -209,8 +209,8 @@ export const events: EventData[] = [
   },
   {
     slug: 'nis2-audit-ready',
-    title: 'Audit-ready: dokumenty i dowody zgodności (NIS2)',
-    subtitle: 'Jak przygotować dokumentację i dowody zgodności, które przejdą audyt NIS2/KSC bez zastrzeżeń.',
+    title: 'Dokumenty, dowody i wymagania rynkowe',
+    subtitle: 'Jakie polityki, procedury i rejestry są wymagane? Jak zarządzać dowodami zgodności i spełnić wymagania klientów w łańcuchu dostaw?',
     date: '2026-04-14T10:00:00+02:00',
     dateDisplay: '14 kwietnia 2026, godz. 10:00',
     duration: '45 minut',
