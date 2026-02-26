@@ -102,7 +102,7 @@ export const events: EventData[] = [
       {
         role: 'IT / CISO / Security',
         icon: 'Lock',
-        pains: ['Wymogi techniczne NIS2/KSC bez jasnych wytycznych', 'Brak ustrukturyzowanego procesu identyfikacji zagrożeń'],
+        pains: ['Wymogi techniczne NIS2 bez jasnych wytycznych', 'Brak ustrukturyzowanego procesu identyfikacji zagrożeń'],
         outcomes: ['Praktyczna checklista zabezpieczeń technicznych', 'Mapa luk do zamknięcia w pierwszej kolejności'],
       },
     ],
