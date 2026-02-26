@@ -123,29 +123,6 @@ const EventsHub = () => {
         </div>
       </section>
 
-      {/* Webinar highlights — timeline */}
-      <section className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-          {t('eventsHub.cycleName')}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {webinarHighlights.map((w, idx) => (
-            <div key={idx} className="rounded-lg border border-border bg-card p-5 space-y-3">
-              <div className="flex items-center gap-2 text-sm text-primary font-semibold">
-                <Calendar className="h-4 w-4" />
-                <span>{t(w.dateKey)}</span>
-              </div>
-              <h3 className="text-lg font-bold text-foreground">{t(w.titleKey)}</h3>
-              <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                {w.questions.map((qKey) => (
-                  <li key={qKey}>{t(qKey)}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Event grid */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
         {localizedEvents.map(event => (
