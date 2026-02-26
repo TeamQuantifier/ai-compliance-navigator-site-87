@@ -64,7 +64,7 @@ export const events: EventData[] = [
     dateDisplay: '10 marca 2026, godz. 10:00',
     duration: '45 minut',
     location: 'Online (na żywo)',
-    tags: ['Live', 'NIS2/KSC'],
+    tags: ['Live', 'NIS2'],
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Odbierz NIS2 Sprint Kit po rejestracji',
     trustLine: 'W pakiecie: checklista ryzyk, szablon oceny, matryca priorytetów.',
