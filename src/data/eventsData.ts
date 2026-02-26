@@ -56,8 +56,8 @@ export interface EventData {
 export const events: EventData[] = [
   {
     slug: 'nis2-mapa-ryzyka',
-    title: 'Nowa mapa ryzyka: NIS2 i realne obowiązki',
-    subtitle: 'Dowiedz się, jakie obowiązki nakłada NIS2/KSC na Twoją organizację i jak zbudować mapę ryzyka krok po kroku.',
+    title: 'Nowa rzeczywistość: geopolityka, rynek i konsekwencje regulacyjne',
+    subtitle: 'Jak zmienia się krajobraz ryzyka w Europie i Polsce? Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych, ważnych i ich dostawców?',
     date: '2026-03-10T10:00:00+01:00',
     dateDisplay: '10 marca 2026, godz. 10:00',
     duration: '45 minut',
