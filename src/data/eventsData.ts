@@ -285,8 +285,8 @@ export const events: EventData[] = [
   },
   {
     slug: 'nis2-kontrola-audyt',
-    title: 'Kontrola NIS2: jak przejść audyt od A do Z',
-    subtitle: 'Kompletny przewodnik po audycie NIS2/KSC — od przygotowania po raport końcowy i plan naprawczy.',
+    title: 'Kontrola, raportowanie i weryfikacja',
+    subtitle: 'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa? Jak raportować incydenty w 24h/72h?',
     date: '2026-04-28T10:00:00+02:00',
     dateDisplay: '28 kwietnia 2026, godz. 10:00',
     duration: '45 minut',
