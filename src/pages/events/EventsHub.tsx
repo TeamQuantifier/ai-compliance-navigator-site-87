@@ -35,8 +35,8 @@ const EventsHub = () => {
       {/* Cycle intro hero */}
       <section className="mb-12 rounded-xl overflow-hidden border border-border bg-card">
         <img
-          src="/lovable-uploads/webinar-cycle-banner.png"
-          alt="Cykl webinarów Quantifier — Cyberbezpieczeństwo NIS2 i ISO 27001, czterech prelegentów"
+          src={bannerMap[currentLocale] || bannerMap.en}
+          alt={altMap[currentLocale] || altMap.en}
           className="w-full h-auto"
           loading="eager"
         />
