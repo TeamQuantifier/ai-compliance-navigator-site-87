@@ -1,120 +1,41 @@
 
 
-## Plan: Internationalize all event detail pages (EN, PL, CS)
+## Plan: 3-Row Infinite Scrolling Logo Marquee
 
-### Problem
-All webinar detail page content is hardcoded in Polish in `eventsData.ts`. When visiting `/en/events/nis2-mapa-ryzyka`, everything displays in Polish because no translation mechanism is used.
+Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
 
-### Scope
-**6 files to edit, 3 translation files to extend with ~400 new keys each.**
+### Approach
 
----
+**Split logos into 3 groups** (9 logos each):
+- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
+- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
+- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
 
-### Architecture Decision
+**CSS keyframes** added to `index.css`:
+- `scroll-left`: `translateX(0)` to `translateX(-50%)`
+- `scroll-right`: `translateX(-50%)` to `translateX(0)`
 
-Use translation keys per webinar in the existing `public/locales/{lang}/translation.json` files under a new `eventDetail` namespace. Components will receive the current `t()` function and resolve content at render time.
+Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
 
-Key structure:
+**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+
+### File Changes
+
+**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+
+**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+
+### Technical Details
+
+Each row structure:
 ```
-eventDetail.outcomesTitle / agendaTitle / audienceTitle / faqTitle / ...
-eventDetail.crossLinkNis2 / crossLinkFrameworks / ...
-eventDetail.form.title / form.email / form.company / ...
-eventDetail.bottomCta.title / subtitle / button
-
-eventDetail.nis2MapaRyzyka.title / subtitle / trustLine / ...
-eventDetail.nis2MapaRyzyka.outcome1 / outcome2 / ...
-eventDetail.nis2MapaRyzyka.agenda1Title / agenda1Desc / ...
-eventDetail.nis2MapaRyzyka.audience1Role / audience1Pain1 / ...
-eventDetail.nis2MapaRyzyka.faq1q / faq1a / ...
-eventDetail.nis2MapaRyzyka.seoTitle / seoDesc
-
-(same for nis2RoleIProcesy, nis2AuditReady, nis2KontrolaAudyt)
-```
-
----
-
-### Step 1: Add translation keys to all 3 locale files
-
-**Files:** `public/locales/pl/translation.json`, `public/locales/en/translation.json`, `public/locales/cs/translation.json`
-
-Add `eventDetail` object with:
-- **Shared UI strings** (~25 keys): section headings, form labels, validation messages, button text, breadcrumb labels
-- **Per-webinar content** (~45 keys × 4 webinars = ~180 keys): title, subtitle, trustLine, dateDisplay, duration, location, heroCtaLabel, heroSecondaryText, outcomes, agenda items (time+title+desc), audience cards (role+pains+outcomes), FAQs (question+answer), SEO (metaTitle+metaDescription)
-
-PL file: use existing Polish content from `eventsData.ts`
-EN file: full English translations
-CS file: full Czech translations
-
-### Step 2: Create locale-aware event resolver
-
-**New file:** `src/hooks/useLocalizedEvent.ts`
-
-A hook that takes the event slug and returns the event data with all string fields resolved via `t()`:
-```typescript
-const useLocalizedEvent = (slug: string) => {
-  const { t } = useTranslation();
-  const baseEvent = getEventBySlug(slug);
-  if (!baseEvent) return null;
-  
-  const key = slugToKey(slug); // 'nis2-mapa-ryzyka' → 'nis2MapaRyzyka'
-  return {
-    ...baseEvent,
-    title: t(`eventDetail.${key}.title`),
-    subtitle: t(`eventDetail.${key}.subtitle`),
-    // ... all fields resolved via t()
-  };
-};
+<div class="overflow-hidden">
+  <div class="flex animate-scroll-right" style="width: fit-content">
+    {rowLogos.map(logo)} {/* original */}
+    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
+  </div>
+</div>
 ```
 
-### Step 3: Update EventDetail.tsx
-
-- Use `useLocalizedEvent(slug)` instead of `getEventBySlug(slug)`
-- Replace all hardcoded Polish UI strings with `t()` calls:
-  - "Co zyskasz?" → `t('eventDetail.outcomesTitle')`
-  - "Najczęściej zadawane pytania" → `t('eventDetail.faqTitle')`
-  - "Dowiedz się więcej o..." → `t('eventDetail.crossLinkText')`
-  - Breadcrumb "Home" / "Events" → `t('eventDetail.breadcrumbHome')` / `t('eventDetail.breadcrumbEvents')`
-
-### Step 4: Update EventAgenda.tsx
-
-- Replace "Agenda" heading with `t('eventDetail.agendaTitle')`
-- Agenda item content already comes from the localized event data
-
-### Step 5: Update EventAudienceCards.tsx
-
-- Replace "Dla kogo jest ten webinar?" → `t('eventDetail.audienceTitle')`
-- Replace "Wyzwania" → `t('eventDetail.challengesLabel')`
-- Replace "Efekty" → `t('eventDetail.outcomesLabel')`
-
-### Step 6: Update EventBottomCTA.tsx
-
-- Replace "Nie przegap — zarezerwuj miejsce" → `t('eventDetail.bottomCta.title')`
-- Replace "Bonusy dostępne..." → `t('eventDetail.bottomCta.subtitle')`
-- Replace "Zarezerwuj miejsce" button → `t('eventDetail.bottomCta.button')`
-
-### Step 7: Update EventRegistrationForm.tsx
-
-- Replace all Polish labels: "Zarezerwuj miejsce", "Imię", "Służbowy e-mail", "Firma", "Stanowisko", "Wielkość firmy", "Czy Twoja organizacja może podlegać NIS2?", radio options, consent text, success/error messages
-- Update validation error messages via `t()` in the zod schema (or use `t()` at display time)
-
-### Step 8: Fix webinar4 title in EN translation
-
-- Change `"webinar4title": "Audit, reporting and verification"` → `"Inspection, reporting and verification"` (NIS2 has inspections, not audits)
-
----
-
-### Summary of files changed
-
-| File | Change |
-|------|--------|
-| `public/locales/pl/translation.json` | +~200 keys (eventDetail namespace) |
-| `public/locales/en/translation.json` | +~200 keys (eventDetail namespace) |
-| `public/locales/cs/translation.json` | +~200 keys (eventDetail namespace) |
-| `src/hooks/useLocalizedEvent.ts` | NEW — locale-aware event data resolver |
-| `src/pages/events/EventDetail.tsx` | Use `useLocalizedEvent`, replace hardcoded Polish |
-| `src/components/events/EventAgenda.tsx` | Replace Polish heading with `t()` |
-| `src/components/events/EventAudienceCards.tsx` | Replace Polish headings with `t()` |
-| `src/components/events/EventBottomCTA.tsx` | Replace Polish text with `t()` |
-| `src/components/events/EventRegistrationForm.tsx` | Replace all Polish labels with `t()` |
-| `src/components/events/EventHero.tsx` | No change needed (already uses event data props) |
+Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
 

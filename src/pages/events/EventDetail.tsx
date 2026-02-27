@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageTemplate from '@/components/PageTemplate';
 import EventHero from '@/components/events/EventHero';
@@ -8,7 +9,7 @@ import EventAgenda from '@/components/events/EventAgenda';
 import EventAudienceCards from '@/components/events/EventAudienceCards';
 import EventBottomCTA from '@/components/events/EventBottomCTA';
 import EventRegistrationForm from '@/components/events/EventRegistrationForm';
-import { getEventBySlug } from '@/data/eventsData';
+import { useLocalizedEvent } from '@/hooks/useLocalizedEvent';
 import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { ChevronRight, CheckCircle, ShieldQuestion } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -36,9 +37,10 @@ const NIS2_CHECK_LABELS: Record<string, { question: string; cta: string }> = {
 const EventDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { currentLocale } = useLanguage();
+  const { t } = useTranslation();
   const formRef = useRef<HTMLDivElement>(null);
 
-  const event = getEventBySlug(slug || '');
+  const event = useLocalizedEvent(slug || '');
 
   usePrerenderReady(true);
 
@@ -65,15 +67,15 @@ const EventDetail = () => {
     organizer: { '@type': 'Organization', name: 'Quantifier.ai', url: BASE_URL },
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'PLN', availability: 'https://schema.org/InStock', url: canonicalUrl },
     image: ogImage,
-    inLanguage: 'pl',
+    inLanguage: currentLocale,
   };
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/${currentLocale}` },
-      { '@type': 'ListItem', position: 2, name: 'Events', item: `${BASE_URL}/${currentLocale}/events` },
+      { '@type': 'ListItem', position: 1, name: t('eventDetail.breadcrumbHome'), item: `${BASE_URL}/${currentLocale}` },
+      { '@type': 'ListItem', position: 2, name: t('eventDetail.breadcrumbEvents'), item: `${BASE_URL}/${currentLocale}/events` },
       { '@type': 'ListItem', position: 3, name: event.title },
     ],
   };
@@ -116,9 +118,9 @@ const EventDetail = () => {
 
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to={`/${currentLocale}`} className="hover:text-foreground">Home</Link>
+        <Link to={`/${currentLocale}`} className="hover:text-foreground">{t('eventDetail.breadcrumbHome')}</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/${currentLocale}/events`} className="hover:text-foreground">Events</Link>
+        <Link to={`/${currentLocale}/events`} className="hover:text-foreground">{t('eventDetail.breadcrumbEvents')}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground font-medium line-clamp-1">{event.title}</span>
       </nav>
@@ -136,7 +138,7 @@ const EventDetail = () => {
 
           {/* Outcomes */}
           <section className="py-10 md:py-14 border-t border-border">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Co zyskasz?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">{t('eventDetail.outcomesTitle')}</h2>
             <ul className="space-y-3">
               {event.outcomes.map((o, i) => (
                 <li key={i} className="flex items-start gap-3 text-foreground">
@@ -170,7 +172,7 @@ const EventDetail = () => {
 
           {/* FAQ */}
           <section className="py-10 md:py-14 border-t border-border">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Najczęściej zadawane pytania</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">{t('eventDetail.faqTitle')}</h2>
             <Accordion type="single" collapsible className="space-y-3">
               {event.faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-lg px-6">
@@ -188,13 +190,13 @@ const EventDetail = () => {
           {/* Cross-links */}
           <div className="border-t border-border py-8 text-sm text-muted-foreground">
             <p>
-              Dowiedz się więcej o{' '}
+              {t('eventDetail.crossLinkPrefix')}{' '}
               <Link to={`/${currentLocale}/frameworks/nis-ii`} className="text-primary underline hover:text-primary/80">
-                NIS2 i dyrektywie cyberbezpieczeństwa
+                {t('eventDetail.crossLinkNis2')}
               </Link>{' '}
-              lub sprawdź{' '}
+              {t('eventDetail.crossLinkMiddle')}{' '}
               <Link to={`/${currentLocale}/frameworks`} className="text-primary underline hover:text-primary/80">
-                inne standardy compliance
+                {t('eventDetail.crossLinkFrameworks')}
               </Link>.
             </p>
           </div>

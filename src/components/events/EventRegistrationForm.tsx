@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -15,19 +17,18 @@ import { supabase } from '@/integrations/supabase/client';
 const FREE_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'wp.pl', 'onet.pl', 'o2.pl', 'interia.pl'];
 
 const formSchema = z.object({
-  firstName: z.string().trim().min(1, 'Imię jest wymagane').max(100),
-  workEmail: z.string().trim().email('Podaj poprawny adres e-mail').max(255).refine(
+  firstName: z.string().trim().min(1).max(100),
+  workEmail: z.string().trim().email().max(255).refine(
     (email) => {
       const domain = email.split('@')[1]?.toLowerCase();
       return domain && !FREE_EMAIL_DOMAINS.includes(domain);
     },
-    'Podaj służbowy adres e-mail'
   ),
-  company: z.string().trim().min(1, 'Firma jest wymagana').max(200),
-  role: z.string().min(1, 'Wybierz stanowisko'),
-  companySize: z.string().min(1, 'Wybierz wielkość firmy'),
-  nis2Qualifier: z.string().min(1, 'Wybierz odpowiedź'),
-  consent: z.literal(true, { errorMap: () => ({ message: 'Zgoda jest wymagana' }) }),
+  company: z.string().trim().min(1).max(200),
+  role: z.string().min(1),
+  companySize: z.string().min(1),
+  nis2Qualifier: z.string().min(1),
+  consent: z.literal(true),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -38,6 +39,8 @@ interface Props {
 }
 
 const EventRegistrationForm = ({ event, className = '' }: Props) => {
+  const { t } = useTranslation();
+  const { currentLocale } = useLanguage();
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [submitState, setSubmitState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -51,7 +54,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
     setUtmParams(utms);
   }, []);
 
-  const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: { consent: undefined as unknown as true },
   });
@@ -103,10 +106,10 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
       <div className={`bg-card border border-border rounded-2xl p-6 md:p-8 ${className}`}>
         <div className="text-center space-y-4">
           <CheckCircle className="h-12 w-12 text-primary mx-auto" />
-          <h3 className="text-xl font-bold text-foreground">Gotowe! Jesteś na liście.</h3>
-          <p className="text-muted-foreground text-sm">Potwierdzenie i szczegóły wyślemy na Twój e-mail.</p>
+          <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
+          <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
           <div className="space-y-2 pt-4">
-            <p className="text-sm font-medium text-foreground">Dodaj do kalendarza:</p>
+            <p className="text-sm font-medium text-foreground">{t('eventDetail.form.addToCalendar')}</p>
             <div className="flex gap-2 justify-center">
               <Button variant="outline" size="sm" asChild>
                 <a href={googleCalUrl()} target="_blank" rel="noopener noreferrer">
@@ -120,8 +123,8 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
           </div>
           <div className="pt-4">
             <Button className="w-full" data-cta="gap-call" asChild>
-              <a href="/contact">
-                Umów 20-min NIS2 Gap Call <ExternalLink className="h-4 w-4 ml-1" />
+              <a href={`/${currentLocale}/contact`}>
+                {t('eventDetail.form.gapCallCta')} <ExternalLink className="h-4 w-4 ml-1" />
               </a>
             </Button>
           </div>
@@ -132,52 +135,52 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
 
   return (
     <div className={`bg-card border border-border rounded-2xl p-6 md:p-8 ${className}`} data-form-submit="event-registration" data-event-name={event.slug}>
-      <h3 className="text-lg font-bold text-foreground mb-1">Zarezerwuj miejsce</h3>
-      <p className="text-sm text-muted-foreground mb-6">Bezpłatny webinar · {event.dateDisplay}</p>
+      <h3 className="text-lg font-bold text-foreground mb-1">{t('eventDetail.form.title')}</h3>
+      <p className="text-sm text-muted-foreground mb-6">{t('eventDetail.form.subtitle')} · {event.dateDisplay}</p>
 
       {submitState === 'error' && (
         <div className="bg-destructive/10 text-destructive text-sm rounded-lg p-3 mb-4">
-          Coś poszło nie tak. Spróbuj ponownie.
+          {t('eventDetail.form.errorMsg')}
         </div>
       )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
-          <Label htmlFor="firstName">Imię *</Label>
+          <Label htmlFor="firstName">{t('eventDetail.form.firstName')} *</Label>
           <Input id="firstName" {...register('firstName')} className="mt-1" />
-          {errors.firstName && <p className="text-destructive text-xs mt-1">{errors.firstName.message}</p>}
+          {errors.firstName && <p className="text-destructive text-xs mt-1">{t('eventDetail.form.required')}</p>}
         </div>
 
         <div>
-          <Label htmlFor="workEmail">Służbowy e-mail *</Label>
+          <Label htmlFor="workEmail">{t('eventDetail.form.workEmail')} *</Label>
           <Input id="workEmail" type="email" {...register('workEmail')} className="mt-1" />
-          {errors.workEmail && <p className="text-destructive text-xs mt-1">{errors.workEmail.message}</p>}
+          {errors.workEmail && <p className="text-destructive text-xs mt-1">{t('eventDetail.form.required')}</p>}
         </div>
 
         <div>
-          <Label htmlFor="company">Firma *</Label>
+          <Label htmlFor="company">{t('eventDetail.form.company')} *</Label>
           <Input id="company" {...register('company')} className="mt-1" />
-          {errors.company && <p className="text-destructive text-xs mt-1">{errors.company.message}</p>}
+          {errors.company && <p className="text-destructive text-xs mt-1">{t('eventDetail.form.required')}</p>}
         </div>
 
         <div>
-          <Label>Stanowisko *</Label>
+          <Label>{t('eventDetail.form.role')} *</Label>
           <Select onValueChange={(v) => setValue('role', v)}>
-            <SelectTrigger className="mt-1"><SelectValue placeholder="Wybierz..." /></SelectTrigger>
+            <SelectTrigger className="mt-1"><SelectValue placeholder={t('eventDetail.form.placeholder')} /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="management">Management</SelectItem>
-              <SelectItem value="it-security">IT / Security</SelectItem>
-              <SelectItem value="compliance-risk">Compliance / Risk</SelectItem>
-              <SelectItem value="other">Inne</SelectItem>
+              <SelectItem value="management">{t('eventDetail.form.roleManagement')}</SelectItem>
+              <SelectItem value="it-security">{t('eventDetail.form.roleItSecurity')}</SelectItem>
+              <SelectItem value="compliance-risk">{t('eventDetail.form.roleComplianceRisk')}</SelectItem>
+              <SelectItem value="other">{t('eventDetail.form.roleOther')}</SelectItem>
             </SelectContent>
           </Select>
-          {errors.role && <p className="text-destructive text-xs mt-1">{errors.role.message}</p>}
+          {errors.role && <p className="text-destructive text-xs mt-1">{t('eventDetail.form.required')}</p>}
         </div>
 
         <div>
-          <Label>Wielkość firmy *</Label>
+          <Label>{t('eventDetail.form.companySize')} *</Label>
           <Select onValueChange={(v) => setValue('companySize', v)}>
-            <SelectTrigger className="mt-1"><SelectValue placeholder="Wybierz..." /></SelectTrigger>
+            <SelectTrigger className="mt-1"><SelectValue placeholder={t('eventDetail.form.placeholder')} /></SelectTrigger>
             <SelectContent>
               <SelectItem value="1-10">1–10</SelectItem>
               <SelectItem value="11-50">11–50</SelectItem>
@@ -186,26 +189,26 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
               <SelectItem value="1000+">1000+</SelectItem>
             </SelectContent>
           </Select>
-          {errors.companySize && <p className="text-destructive text-xs mt-1">{errors.companySize.message}</p>}
+          {errors.companySize && <p className="text-destructive text-xs mt-1">{t('eventDetail.form.required')}</p>}
         </div>
 
         <div>
-          <Label className="mb-2 block">Czy Twoja organizacja może podlegać NIS2? *</Label>
+          <Label className="mb-2 block">{t('eventDetail.form.nis2Question')} *</Label>
           <RadioGroup onValueChange={(v) => setValue('nis2Qualifier', v)} className="flex gap-4">
             <div className="flex items-center gap-2">
               <RadioGroupItem value="yes" id="nis2-yes" />
-              <Label htmlFor="nis2-yes" className="font-normal">Tak</Label>
+              <Label htmlFor="nis2-yes" className="font-normal">{t('eventDetail.form.nis2Yes')}</Label>
             </div>
             <div className="flex items-center gap-2">
               <RadioGroupItem value="no" id="nis2-no" />
-              <Label htmlFor="nis2-no" className="font-normal">Nie</Label>
+              <Label htmlFor="nis2-no" className="font-normal">{t('eventDetail.form.nis2No')}</Label>
             </div>
             <div className="flex items-center gap-2">
               <RadioGroupItem value="not-sure" id="nis2-unsure" />
-              <Label htmlFor="nis2-unsure" className="font-normal">Nie wiem</Label>
+              <Label htmlFor="nis2-unsure" className="font-normal">{t('eventDetail.form.nis2NotSure')}</Label>
             </div>
           </RadioGroup>
-          {errors.nis2Qualifier && <p className="text-destructive text-xs mt-1">{errors.nis2Qualifier.message}</p>}
+          {errors.nis2Qualifier && <p className="text-destructive text-xs mt-1">{t('eventDetail.form.required')}</p>}
         </div>
 
         <div className="flex items-start gap-2">
@@ -215,19 +218,18 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
             className="mt-1"
           />
           <Label htmlFor="consent" className="text-xs text-muted-foreground font-normal leading-relaxed">
-            Wyrażam zgodę na przetwarzanie danych osobowych w celu rejestracji na webinar i kontaktu marketingowego. Zapoznałem/am się z{' '}
-            <a href="/pl/legal/privacy" className="underline text-primary hover:text-primary/80">Polityką Prywatności</a>. *
+            {t('eventDetail.form.consentText')}{' '}
+            <a href={`/${currentLocale}/legal/privacy`} className="underline text-primary hover:text-primary/80">{t('eventDetail.form.privacyPolicy')}</a>. *
           </Label>
         </div>
-        {errors.consent && <p className="text-destructive text-xs">{errors.consent.message}</p>}
+        {errors.consent && <p className="text-destructive text-xs">{t('eventDetail.form.required')}</p>}
 
-        {/* Hidden UTM fields */}
         {Object.entries(utmParams).map(([key, val]) => (
           <input key={key} type="hidden" name={key} value={val} />
         ))}
 
         <Button type="submit" className="w-full" size="lg" disabled={submitState === 'loading'} data-cta="register-event">
-          {submitState === 'loading' ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Rejestracja...</> : 'Zarezerwuj miejsce'}
+          {submitState === 'loading' ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> {t('eventDetail.form.submitting')}</> : t('eventDetail.form.submit')}
         </Button>
       </form>
     </div>
