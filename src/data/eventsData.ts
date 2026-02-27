@@ -198,11 +198,11 @@ export const events: EventData[] = [
       'Jak zarządzać dowodami zgodności w sposób systemowy?',
     ],
     agenda: [
-      { time: '0–5 min', title: 'Wymagania dokumentacyjne NIS2', description: 'Co audytor sprawdza w pierwszej kolejności' },
-      { time: '5–12 min', title: 'Evidence pack: struktura', description: 'Jak zorganizować dowody zgodności w logiczną strukturę' },
-      { time: '12–20 min', title: 'Audit trail w praktyce', description: 'Budowanie ścieżki audytowej krok po kroku' },
-      { time: '20–25 min', title: 'Demo: Quantifier Evidence', description: 'Zarządzanie dowodami zgodności w platformie' },
-      { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+      { time: '0–8 min', title: 'Polityki, procedury, rejestry', description: 'Jakie dokumenty należy wdrożyć' },
+      { time: '8–16 min', title: 'Wymagania techniczne i kontrole', description: 'Jakie wymagania techniczne należy wdrożyć' },
+      { time: '16–25 min', title: 'Raportowanie incydentów do CSIRT', description: 'Jak raportować incydenty w ciągu 24/72 h' },
+      { time: '25–30 min', title: 'Podejście continuous compliance | Quantifier.ai', description: 'Zarządzanie dowodami zgodności w platformie' },
+      { time: '30+ min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
     ],
     audience: [
       {
