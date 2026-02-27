@@ -1,41 +1,41 @@
 
 
-## Plan: 3-Row Infinite Scrolling Logo Marquee
+## Analysis: Why pages are discovered but not indexed
 
-Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
+### Root cause
 
-### Approach
+I fetched one of your pages (`/cs/frameworks/iso-27001/`) and received **an empty SPA shell** — just `<div id="root"></div>` with no rendered content. This means Google's crawler is likely seeing the same thing: an empty page with no meaningful HTML to index.
 
-**Split logos into 3 groups** (9 logos each):
-- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
-- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
-- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+Your site relies on the **Netlify Prerender Extension** to serve rendered HTML to bots. If this extension is not active or misconfigured in your Netlify dashboard, Google sees only the blank shell from `index.html` (which has a generic hardcoded title "Quantifier.ai | AI-Native Compliance Platform for Organizations" — the same for every page).
 
-**CSS keyframes** added to `index.css`:
-- `scroll-left`: `translateX(0)` to `translateX(-50%)`
-- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+### What you need to check (outside this codebase)
 
-Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+1. **Netlify Dashboard → Prerender Extension**: Verify it is installed and enabled. It must be set to **"Wait for `window.prerenderReady`"** — your code already sets this flag via the `usePrerenderReady` hook and `PageTemplate`.
 
-**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+2. **Test with Google's URL Inspection tool**: In GSC, use "URL Inspection" → "Test Live URL" on any of these pages. Check the rendered HTML — if Google sees content (headings, text, meta tags), the problem is just crawl budget/timing and manual indexing requests will work. If it sees an empty page, prerendering is broken.
 
-### File Changes
+3. **Verify bot User-Agent rendering**: Use `curl` with Googlebot UA to test:
+   ```
+   curl -A "Googlebot" https://quantifier.ai/cs/frameworks/iso-27001/
+   ```
+   If you get the empty shell, prerendering is not intercepting bot requests.
 
-**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+### What's fine in the codebase
 
-**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+- All pages have correct routes in `App.tsx`
+- All pages are in the dynamic sitemap
+- `robots.txt` allows all paths
+- `PageTemplate` sets proper canonical, hreflang, meta robots (`index, follow`), and JSON-LD
+- `window.prerenderReady` signal is implemented correctly
+- The prerender Edge Function (`prerender-marketing`) has content for all these pages in all 3 languages
 
-### Technical Details
+### Recommendation
 
-Each row structure:
-```
-<div class="overflow-hidden">
-  <div class="flex animate-scroll-right" style="width: fit-content">
-    {rowLogos.map(logo)} {/* original */}
-    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
-  </div>
-</div>
-```
+**No code changes needed.** The issue is almost certainly that the Netlify Prerender Extension is either not installed or not configured to wait for `window.prerenderReady`. Once prerendering works:
 
-Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
+- Google will see full HTML with proper `<title>`, `<meta description>`, structured data
+- Pages should get indexed naturally within days
+- You can then use GSC "Request Indexing" to speed up the process
+
+If prerendering is already enabled and you confirm Google sees rendered content via "Test Live URL," then yes — simply requesting indexing manually for each URL should be sufficient. Google sometimes delays indexing low-authority or thin-content pages, and manual requests help.
 
