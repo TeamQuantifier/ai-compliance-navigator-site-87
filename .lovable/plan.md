@@ -1,29 +1,41 @@
 
 
-## Plan: Update event dates styling + fix agendas for webinar 1 & 2
+## Plan: 3-Row Infinite Scrolling Logo Marquee
 
-### 1. Make date more prominent on event detail pages
-**File:** `src/components/events/EventHero.tsx`
-- Increase the date font size from `text-sm` to `text-base md:text-lg`
-- Make it `font-semibold` and `text-foreground` instead of `text-muted-foreground`
-- Add a subtle background pill/badge style to make it stand out
+Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
 
-### 2. Update agenda for webinar 1 (`nis2-mapa-ryzyka`)
-**File:** `src/data/eventsData.ts` (lines 77-83)
-Replace current agenda with:
-- 0–5 min: Kontekst: cyberbezpieczeństwo, NIS2, ISO 27001 / Kogo dotyczy, co się zmieniło, dlaczego teraz
-- 5–12 min: Nowe obowiązki zarządu / Odpowiedzialność zarządu w kontekście nowej unijnej dyrektywy NIS2
-- 12–20 min: Główne wymagania regulacyjne / Raportowanie incydentów 24h/72h, rejestr ryzyk, szkolenia dla pracowników
-- 20–25 min: Wymagania wobec łańcucha dostaw / Audyt dostawców, nowe klauzule w umowach
-- 25–30 min: Podejście continuous compliance / Ciągłe monitorowanie ryzyk i zdarzeń w przedsiębiorstwie
-- 30+ min: Q&A / Pytania uczestników i podsumowanie
+### Approach
 
-### 3. Update agenda for webinar 2 (`nis2-role-i-procesy`)
-**File:** `src/data/eventsData.ts` (lines 138-144)
-Replace current agenda with:
-- 0–8 min: Kluczowe procesy i obowiązki / Czym trzeba się zająć, wdrażając NIS2
-- 8–16 min: Kluczowe role w cyberbezpieczeństwie, NIS2, ISO 27001 / Zarząd, CISO, IT, compliance, HR, dostawcy
-- 16–25 min: Matryca odpowiedzialności RACI / Jak zoperacjonalizować wdrożenie NIS2, ISO 27001 w spółce
-- 25–30 min: Podejście continuous compliance | Quantifier.ai / Nowoczesne wdrożenie regulacji i ciągłe monitorowanie ryzyk
-- 30+ min: Q&A / Pytania uczestników i podsumowanie
+**Split logos into 3 groups** (9 logos each):
+- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
+- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
+- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+
+**CSS keyframes** added to `index.css`:
+- `scroll-left`: `translateX(0)` to `translateX(-50%)`
+- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+
+Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+
+**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+
+### File Changes
+
+**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+
+**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+
+### Technical Details
+
+Each row structure:
+```
+<div class="overflow-hidden">
+  <div class="flex animate-scroll-right" style="width: fit-content">
+    {rowLogos.map(logo)} {/* original */}
+    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
+  </div>
+</div>
+```
+
+Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
 
