@@ -268,7 +268,7 @@ export const events: EventData[] = [
       {
         role: 'Zarząd (CEO/COO/CFO)',
         icon: 'Building2',
-        pains: ['Obawy o przebieg i wynik kontroli NIS2', 'Brak wiedzy o konsekwencjach negatywnego audytu', 'Brak planu naprawczego'],
+        pains: ['Obawy o przebieg i wynik kontroli NIS2', 'Brak wiedzy o konsekwencjach negatywnej kontroli', 'Brak planu naprawczego'],
         outcomes: ['Pewność siebie przed kontrolą', 'Gotowy plan reagowania na ustalenia'],
       },
       {
