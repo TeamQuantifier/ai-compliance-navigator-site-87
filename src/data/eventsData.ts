@@ -274,7 +274,7 @@ export const events: EventData[] = [
       {
         role: 'Compliance / Risk',
         icon: 'Shield',
-        pains: ['Brak doświadczenia z audytami NIS2', 'Niejasne oczekiwania audytora', 'Brak checklisty kontrolnej'],
+        pains: ['Brak doświadczenia z kontrolami NIS2', 'Niejasne oczekiwania kontrolującego', 'Brak checklisty kontrolnej'],
         outcomes: ['Kompletna checklista 30+ punktów', 'Szablon planu naprawczego'],
       },
       {
