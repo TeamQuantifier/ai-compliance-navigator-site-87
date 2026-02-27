@@ -29,7 +29,7 @@ export interface EventData {
   slug: string;
   title: string;
   subtitle: string;
-  date: string; // ISO date
+  date: string;
   dateDisplay: string;
   duration: string;
   location: string;
@@ -37,6 +37,8 @@ export interface EventData {
   heroCtaLabel: string;
   heroSecondaryText: string;
   trustLine: string;
+  icon?: string;
+  step?: number;
   outcomes: string[];
   agenda: EventAgendaItem[];
   audience: EventAudienceCard[];
@@ -53,100 +55,248 @@ export interface EventData {
 
 export const events: EventData[] = [
   {
-    slug: 'nis2-w-polsce',
-    title: 'NIS2 w Polsce: plan 30/60/90 dni na gotowość bez chaosu',
-    subtitle: 'Praktyczny webinar dla zarządu, compliance i IT: redukcja ryzyka, audit-ready dowody, jasne role i proces incydentów.',
+    slug: 'nis2-mapa-ryzyka',
+    title: 'Nowa rzeczywistość: geopolityka, rynek i konsekwencje regulacyjne',
+    subtitle: 'Jak zmienia się krajobraz ryzyka w Europie i Polsce? Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych, ważnych i ich dostawców?',
     date: '2026-03-10T10:00:00+01:00',
-    dateDisplay: '10 marca 2026',
-    duration: '45 minut',
+    dateDisplay: '10 marca 2026, godz. 10:00',
+    duration: '30 minut',
     location: 'Online (na żywo)',
-    tags: ['Live', 'NIS2/KSC'],
+    tags: ['Live', 'NIS2 & ISO 27001'],
     heroCtaLabel: 'Zarezerwuj miejsce',
-    heroSecondaryText: 'Odbierz NIS2 Sprint Kit po rejestracji',
-    trustLine: 'W pakiecie: checklista, szablony, struktura dowodów zgodności.',
+    heroSecondaryText: 'Bezpłatny webinar online',
+    trustLine: 'Dowiedz się, jakie obowiązki wynikają z NIS2 i jak przygotować organizację.',
+    icon: 'Globe',
+    step: 1,
     outcomes: [
-      'Plan działań 30/60/90 dni pod NIS2/KSC',
-      '7 krytycznych kontroli zwiększających bezpieczeństwo i gotowość audytową',
-      'Checklista incident response i raportowania',
-      'Szybka ocena ryzyka dostawców i minimalne wymagania',
-      '"Evidence pack": jak zbierać dowody zgodności (audit-ready)',
+      'Jak zmienia się krajobraz ryzyka w Europie i Polsce?',
+      'Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych i ważnych?',
+      'Jakie obowiązki będą mieli dostawcy?',
+      'Jaka będzie odpowiedzialność zarządu w cyberbezpieczeństwie?',
     ],
     agenda: [
-      { time: '0–6 min', title: 'Kontekst i zakres', description: 'Kogo dotyczy NIS2/KSC i co robić teraz' },
-      { time: '6–26 min', title: '7 krytycznych kontroli', description: 'Każda kontrola: co wdrożyć + jaki dowód zachować' },
-      { time: '26–34 min', title: 'Typowe błędy i case study', description: '"Chaos wdrożeniowy" — jak go uniknąć' },
-      { time: '34–40 min', title: 'Walkthrough platformy', description: 'Jak zarządzać dowodami i procesami w Quantifier' },
-      { time: '40–44 min', title: 'Q&A', description: 'Pytania uczestników' },
-      { time: '44–45 min', title: 'Next steps', description: 'Gap Call + Sprint Kit' },
+      { time: '0–5 min', title: 'Kontekst NIS2', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
+      { time: '5–12 min', title: 'Obowiązki krok po kroku', description: 'Przegląd wymagań regulacyjnych z praktycznymi przykładami' },
+      { time: '12–20 min', title: 'Budowanie mapy ryzyka', description: 'Jak zidentyfikować, ocenić i priorytetyzować ryzyka' },
+      { time: '20–25 min', title: 'Demo: Quantifier Risk Map', description: 'Walkthrough platformy — mapa ryzyka w praktyce' },
+      { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
     ],
     audience: [
       {
         role: 'Zarząd (CEO/COO/CFO)',
         icon: 'Building2',
-        pains: [
-          'Brak jasności co do odpowiedzialności zarządu za NIS2',
-          'Ryzyko kar finansowych i osobistej odpowiedzialności',
-          'Brak przejrzystości stanu compliance',
-        ],
-        outcomes: [
-          'Jasna mapa odpowiedzialności i ryzyk',
-          'Dashboard stanu zgodności dla zarządu',
-        ],
+        pains: ['Brak jasności co do odpowiedzialności zarządu za NIS2', 'Ryzyko kar finansowych i osobistej odpowiedzialności', 'Brak przejrzystości stanu compliance'],
+        outcomes: ['Jasna mapa odpowiedzialności i ryzyk', 'Dashboard stanu zgodności dla zarządu'],
       },
       {
         role: 'Compliance / Risk',
         icon: 'Shield',
-        pains: [
-          'Brak struktury dowodów i procesów audytowych',
-          'Trudność koordynacji wdrożenia między działami',
-          'Niejasne wymagania raportowania incydentów',
-        ],
-        outcomes: [
-          'Gotowy framework audit-ready z szablonami',
-          'Checklista incident response i raportowania',
-        ],
+        pains: ['Brak struktury do oceny ryzyk NIS2', 'Trudność priorytetyzacji działań', 'Niejasne wymagania regulacyjne'],
+        outcomes: ['Gotowa matryca ryzyk z priorytetami', 'Szablon oceny ryzyka do wdrożenia od zaraz'],
       },
       {
         role: 'IT / CISO / Security',
         icon: 'Lock',
-        pains: [
-          'Wymogi techniczne NIS2/KSC bez jasnych wytycznych',
-          'Brak ustrukturyzowanego procesu oceny ryzyka dostawców',
-        ],
-        outcomes: [
-          '7 krytycznych kontroli technicznych krok po kroku',
-          'Proces szybkiej oceny ryzyka łańcucha dostaw',
-        ],
+        pains: ['Wymogi techniczne NIS2 bez jasnych wytycznych', 'Brak ustrukturyzowanego procesu identyfikacji zagrożeń'],
+        outcomes: ['Praktyczna checklista zabezpieczeń technicznych', 'Mapa luk do zamknięcia w pierwszej kolejności'],
       },
     ],
-    speakers: [
-      {
-        name: 'Jan Kowalski',
-        title: 'Head of Compliance',
-        company: 'Quantifier.ai',
-        bio: 'Ekspert ds. compliance z ponad 10-letnim doświadczeniem w implementacji NIS2, ISO 27001 i DORA. Pomógł dziesiątkom organizacji w Polsce przejść audit NIS2.',
-        linkedInUrl: 'https://linkedin.com/in/',
-      },
-    ],
-    bonusMaterials: [
-      'Checklista 30/60/90 dni NIS2/KSC (PDF)',
-      'Szablon planu incident response',
-      'Szablon oceny ryzyka dostawców',
-      'Struktura "evidence pack" — dowody zgodności',
-      'Szablon ról i odpowiedzialności NIS2',
-    ],
+    speakers: [],
+    bonusMaterials: [],
     faqs: [
-      { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione wszystkim zarejestrowanym uczestnikom w ciągu 24 godzin po webinarze. Jednak materiały bonusowe (Sprint Kit) są dostępne wyłącznie dla uczestników na żywo.' },
-      { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział w webinarze jest całkowicie bezpłatny. Wystarczy się zarejestrować, aby zarezerwować miejsce.' },
-      { question: 'Dla kogo jest ten webinar?', answer: 'Webinar jest skierowany do zarządów, menedżerów compliance/risk, CISO i zespołów IT w organizacjach, które mogą podlegać dyrektywie NIS2 i polskiej ustawie o Krajowym Systemie Cyberbezpieczeństwa (KSC).' },
-      { question: 'Jak otrzymam materiały i Sprint Kit?', answer: 'Sprint Kit (checklista, szablony, struktury dowodów) zostanie wysłany na podany adres e-mail w ciągu 1 godziny po zakończeniu webinaru.' },
-      { question: 'Czy mogę zaprosić zespół?', answer: 'Oczywiście! Zachęcamy do udziału zespołowego. Każda osoba powinna zarejestrować się indywidualnie, aby otrzymać materiały na swój adres e-mail.' },
+      { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione wszystkim zarejestrowanym uczestnikom w ciągu 24 godzin po webinarze.' },
+      { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział jest całkowicie bezpłatny. Wystarczy się zarejestrować, aby zarezerwować miejsce.' },
+      { question: 'Dla kogo jest ten webinar?', answer: 'Dla zarządów, menedżerów compliance/risk, CISO i zespołów IT w organizacjach, które mogą podlegać NIS2.' },
+      { question: 'Nie wiesz, czy podlegasz pod NIS2?', answer: 'Wypełnij naszą krótką ankietę i sprawdź w 2 minuty, czy Twoja organizacja może podlegać pod NIS2. Przejdź do ankiety na stronie /sprawdz-cyberbezpieczenstwo.' },
+      { question: 'Czy mogę zaprosić zespół?', answer: 'Oczywiście! Zachęcamy do udziału zespołowego. Każda osoba powinna zarejestrować się indywidualnie.' },
     ],
     seo: {
-      metaTitle: 'NIS2 w Polsce: webinar — plan 30/60/90 dni',
-      metaDescription: 'Bezpłatny webinar NIS2/KSC: plan działań 30/60/90 dni, 7 kontroli, incident response, dowody zgodności. Dla zarządu, compliance i IT.',
+      metaTitle: 'NIS2 mapa ryzyka: webinar — obowiązki i zagrożenia',
+      metaDescription: 'Bezpłatny webinar NIS2: jak zbudować mapę ryzyka, zidentyfikować obowiązki i uniknąć najczęstszych błędów. Dla zarządu, compliance i IT.',
     },
-    lastUpdated: '2026-02-24',
+    lastUpdated: '2026-02-26',
+  },
+  {
+    slug: 'nis2-role-i-procesy',
+    title: 'Wdrożenie, które działa: continuous compliance',
+    subtitle: 'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego? Jak przypisać odpowiedzialności i uniknąć chaosu operacyjnego?',
+    date: '2026-03-24T10:00:00+01:00',
+    dateDisplay: '24 marca 2026, godz. 10:00',
+    duration: '30 minut',
+    location: 'Online (na żywo)',
+    tags: ['Live', 'NIS2 & ISO 27001'],
+    heroCtaLabel: 'Zarezerwuj miejsce',
+    heroSecondaryText: 'Bezpłatny webinar online',
+    trustLine: 'Dowiedz się, jak zdefiniować role i procesy w systemie cyberbezpieczeństwa.',
+    icon: 'Settings',
+    step: 2,
+    outcomes: [
+      'Jak zbudować system cyberbezpieczeństwa jako trwały element ładu korporacyjnego?',
+      'Jak przypisać odpowiedzialności i zbudować zespół cyberbezpieczeństwa?',
+      'Jak uniknąć kosztownego chaosu operacyjnego?',
+    ],
+    agenda: [
+      { time: '0–5 min', title: 'Dlaczego role i procesy?', description: 'Najczęstsze problemy wdrożeniowe NIS2' },
+      { time: '5–12 min', title: 'Kluczowe role NIS2/ISO', description: 'Kto za co odpowiada: zarząd, CISO, DPO, compliance' },
+      { time: '12–18 min', title: 'Matryca RACI', description: 'Jak zbudować i wdrożyć matrycę odpowiedzialności' },
+      { time: '18–24 min', title: 'Demo: Quantifier Workflows', description: 'Automatyzacja procesów compliance w platformie' },
+      { time: '24–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+    ],
+    audience: [
+      {
+        role: 'Zarząd (CEO/COO/CFO)',
+        icon: 'Building2',
+        pains: ['Niejasny podział odpowiedzialności za NIS2', 'Brak formalnych procesów eskalacji', 'Ryzyko osobistej odpowiedzialności'],
+        outcomes: ['Jasna struktura ról i odpowiedzialności', 'Formalny proces eskalacji incydentów'],
+      },
+      {
+        role: 'Compliance / Risk',
+        icon: 'Shield',
+        pains: ['Brak matrycy RACI dla NIS2', 'Trudność koordynacji między działami', 'Brak szablonów procesów'],
+        outcomes: ['Gotowa matryca RACI do wdrożenia', 'Szablony procesów incident response'],
+      },
+      {
+        role: 'IT / CISO / Security',
+        icon: 'Lock',
+        pains: ['Brak formalnych procedur reagowania na incydenty', 'Niejasne wymagania raportowania do CSIRT'],
+        outcomes: ['Proces incident response zgodny z NIS2', 'Checklista raportowania incydentów'],
+      },
+    ],
+    speakers: [],
+    bonusMaterials: [],
+    faqs: [
+      { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione zarejestrowanym uczestnikom w ciągu 24h.' },
+      { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział jest całkowicie bezpłatny.' },
+      { question: 'Czym różni się od webinaru o mapie ryzyka?', answer: 'Ten webinar koncentruje się na budowie systemu zarządzania — rolach, procesach i odpowiedzialnościach. Webinar o mapie ryzyka skupia się na identyfikacji i ocenie zagrożeń.' },
+      { question: 'Nie wiesz, czy podlegasz pod NIS2?', answer: 'Wypełnij naszą krótką ankietę i sprawdź w 2 minuty, czy Twoja organizacja może podlegać pod NIS2. Przejdź do ankiety na stronie /sprawdz-cyberbezpieczenstwo.' },
+      { question: 'Czy mogę zaprosić zespół?', answer: 'Tak! Każda osoba powinna zarejestrować się indywidualnie, aby otrzymać materiały.' },
+    ],
+    seo: {
+      metaTitle: 'NIS2 role i procesy: webinar — system zarządzania',
+      metaDescription: 'Bezpłatny webinar: jak zdefiniować role, procesy i matrycę RACI w systemie NIS2/ISO 27001. Dla compliance i IT.',
+    },
+    lastUpdated: '2026-02-26',
+  },
+  {
+    slug: 'nis2-audit-ready',
+    title: 'Dokumenty, dowody i wymagania rynkowe',
+    subtitle: 'Jakie polityki, procedury i rejestry są wymagane? Jak zarządzać dowodami zgodności i spełnić wymagania klientów w łańcuchu dostaw?',
+    date: '2026-04-14T10:00:00+02:00',
+    dateDisplay: '14 kwietnia 2026, godz. 10:00',
+    duration: '30 minut',
+    location: 'Online (na żywo)',
+    tags: ['Live', 'NIS2 & ISO 27001'],
+    heroCtaLabel: 'Zarezerwuj miejsce',
+    heroSecondaryText: 'Bezpłatny webinar online',
+    trustLine: 'Dowiedz się, jak przygotować dokumenty i dowody zgodności na audyt.',
+    icon: 'FileCheck',
+    step: 3,
+    outcomes: [
+      'Jakie polityki, procedury i rejestry są wymagane?',
+      'Jak jako podmiot w łańcuchu dostaw dostosować się do wymagań klientów w zakresie cyberbezpieczeństwa?',
+      'Jak zarządzać dowodami zgodności w sposób systemowy?',
+    ],
+    agenda: [
+      { time: '0–5 min', title: 'Wymagania dokumentacyjne NIS2', description: 'Co audytor sprawdza w pierwszej kolejności' },
+      { time: '5–12 min', title: 'Evidence pack: struktura', description: 'Jak zorganizować dowody zgodności w logiczną strukturę' },
+      { time: '12–20 min', title: 'Audit trail w praktyce', description: 'Budowanie ścieżki audytowej krok po kroku' },
+      { time: '20–25 min', title: 'Demo: Quantifier Evidence', description: 'Zarządzanie dowodami zgodności w platformie' },
+      { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+    ],
+    audience: [
+      {
+        role: 'Zarząd (CEO/COO/CFO)',
+        icon: 'Building2',
+        pains: ['Brak pewności, czy dokumentacja jest kompletna', 'Ryzyko negatywnego wyniku audytu', 'Brak widoczności stanu przygotowań'],
+        outcomes: ['Pewność co do kompletności dokumentacji', 'Dashboard gotowości audytowej'],
+      },
+      {
+        role: 'Compliance / Risk',
+        icon: 'Shield',
+        pains: ['Brak szablonów dokumentów NIS2', 'Trudność w zbieraniu dowodów z wielu działów', 'Niejasna struktura evidence pack'],
+        outcomes: ['Kompletny zestaw szablonów dokumentów', 'Gotowa struktura evidence pack'],
+      },
+      {
+        role: 'IT / CISO / Security',
+        icon: 'Lock',
+        pains: ['Brak jasnych wytycznych dotyczących dowodów technicznych', 'Trudność dokumentowania konfiguracji bezpieczeństwa'],
+        outcomes: ['Checklista dowodów technicznych', 'Szablon dokumentacji konfiguracji'],
+      },
+    ],
+    speakers: [],
+    bonusMaterials: [],
+    faqs: [
+      { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione zarejestrowanym uczestnikom w ciągu 24h.' },
+      { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział jest całkowicie bezpłatny.' },
+      { question: 'Czy muszę mieć wcześniejsze doświadczenie z audytami?', answer: 'Nie, webinar jest zaprojektowany zarówno dla osób przygotowujących się do pierwszego audytu, jak i dla doświadczonych praktyków.' },
+      { question: 'Nie wiesz, czy podlegasz pod NIS2?', answer: 'Wypełnij naszą krótką ankietę i sprawdź w 2 minuty, czy Twoja organizacja może podlegać pod NIS2. Przejdź do ankiety na stronie /sprawdz-cyberbezpieczenstwo.' },
+      { question: 'Czy mogę zaprosić zespół?', answer: 'Tak! Każda osoba powinna zarejestrować się indywidualnie.' },
+    ],
+    seo: {
+      metaTitle: 'NIS2 audit-ready: webinar — dokumenty i dowody',
+      metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności do audytu. Evidence pack, audit trail, checklista audytowa.',
+    },
+    lastUpdated: '2026-02-26',
+  },
+  {
+    slug: 'nis2-kontrola-audyt',
+    title: 'Kontrola, raportowanie i weryfikacja',
+    subtitle: 'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa? Jak raportować incydenty w 24h/72h?',
+    date: '2026-04-28T10:00:00+02:00',
+    dateDisplay: '28 kwietnia 2026, godz. 10:00',
+    duration: '30 minut',
+    location: 'Online (na żywo)',
+    tags: ['Live', 'NIS2 & ISO 27001'],
+    heroCtaLabel: 'Zarezerwuj miejsce',
+    heroSecondaryText: 'Bezpłatny webinar online',
+    trustLine: 'Dowiedz się, jak przygotować się na kontrolę i audyt NIS2.',
+    icon: 'ShieldCheck',
+    step: 4,
+    outcomes: [
+      'Jak wygląda praktyczna weryfikacja dojrzałości systemu cyberbezpieczeństwa?',
+      'Jak raportować incydenty w 24h/72h?',
+    ],
+    agenda: [
+      { time: '0–5 min', title: 'Przebieg audytu NIS2', description: 'Co się dzieje przed, w trakcie i po kontroli' },
+      { time: '5–12 min', title: 'Przygotowanie organizacji', description: 'Jak przygotować zespół i dokumentację na dzień audytu' },
+      { time: '12–20 min', title: 'Symulacja audytu', description: 'Interaktywny walkthrough: audytor pyta, Ty odpowiadasz' },
+      { time: '20–25 min', title: 'Demo: Quantifier Audit', description: 'Zarządzanie audytem i planem naprawczym w platformie' },
+      { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+    ],
+    audience: [
+      {
+        role: 'Zarząd (CEO/COO/CFO)',
+        icon: 'Building2',
+        pains: ['Obawy o przebieg i wynik kontroli NIS2', 'Brak wiedzy o konsekwencjach negatywnego audytu', 'Brak planu naprawczego'],
+        outcomes: ['Pewność siebie przed kontrolą', 'Gotowy plan reagowania na ustalenia'],
+      },
+      {
+        role: 'Compliance / Risk',
+        icon: 'Shield',
+        pains: ['Brak doświadczenia z audytami NIS2', 'Niejasne oczekiwania audytora', 'Brak checklisty kontrolnej'],
+        outcomes: ['Kompletna checklista 30+ punktów', 'Szablon planu naprawczego'],
+      },
+      {
+        role: 'IT / CISO / Security',
+        icon: 'Lock',
+        pains: ['Brak przygotowania na pytania techniczne audytora', 'Trudność demonstrowania skuteczności zabezpieczeń'],
+        outcomes: ['Lista pytań technicznych audytora z odpowiedziami', 'Sposób prezentacji dowodów technicznych'],
+      },
+    ],
+    speakers: [],
+    bonusMaterials: [],
+    faqs: [
+      { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione zarejestrowanym uczestnikom w ciągu 24h.' },
+      { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział jest całkowicie bezpłatny.' },
+      { question: 'Czy to jest kontynuacja poprzednich webinarów?', answer: 'Webinar jest samodzielny, ale stanowi logiczne zamknięcie serii. Możesz uczestniczyć bez udziału w poprzednich sesjach.' },
+      { question: 'Nie wiesz, czy podlegasz pod NIS2?', answer: 'Wypełnij naszą krótką ankietę i sprawdź w 2 minuty, czy Twoja organizacja może podlegać pod NIS2. Przejdź do ankiety na stronie /sprawdz-cyberbezpieczenstwo.' },
+      { question: 'Czy mogę zaprosić zespół?', answer: 'Tak! Każda osoba powinna zarejestrować się indywidualnie.' },
+    ],
+    seo: {
+      metaTitle: 'Kontrola NIS2: webinar — jak przejść audyt',
+      metaDescription: 'Bezpłatny webinar: jak przejść audyt NIS2 od A do Z. Symulacja kontroli, checklista 30+ punktów, plan naprawczy. Dla compliance i IT.',
+    },
+    lastUpdated: '2026-02-26',
   },
 ];
 

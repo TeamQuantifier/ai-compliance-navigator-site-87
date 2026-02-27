@@ -372,15 +372,15 @@ export default function FormularzPage() {
                     </div>
                     {parsed.section2 && (
                        <div className="mt-6 pt-6 border-t border-[#e0e2e9] bg-[#6d38a8]/5 rounded-xl p-5">
-                         <img
-                           src="/lovable-uploads/platform-screenshot-result.png"
-                           alt="Quantifier platform screenshot"
-                           className="w-full rounded-xl shadow-md border border-gray-200 mb-5"
-                           loading="lazy"
-                         />
-                         <h2 className="text-2xl md:text-3xl font-bold text-[#6d38a8] mb-4">
-                           {parsed.section2Header}
-                         </h2>
+                          <h2 className="text-2xl md:text-3xl font-bold text-[#6d38a8] mb-4">
+                            {parsed.section2Header}
+                          </h2>
+                          <img
+                            src="/lovable-uploads/platform-screenshot-result.png"
+                            alt="Quantifier platform screenshot"
+                            className="w-full rounded-xl shadow-md border border-gray-200 mb-5"
+                            loading="lazy"
+                          />
                          <BodySection text={parsed.section2} />
                          <div className="mt-4">
                            <a

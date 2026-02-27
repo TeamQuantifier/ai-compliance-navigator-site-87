@@ -1,0 +1,1 @@
+CREATE POLICY "Admins can delete submissions" ON public.submissions FOR DELETE USING (is_admin(auth.uid()));
