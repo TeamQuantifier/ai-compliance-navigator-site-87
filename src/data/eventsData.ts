@@ -229,7 +229,7 @@ export const events: EventData[] = [
     faqs: [
       { question: 'Czy będzie nagranie?', answer: 'Tak, nagranie zostanie udostępnione zarejestrowanym uczestnikom w ciągu 24h.' },
       { question: 'Czy webinar jest bezpłatny?', answer: 'Tak, udział jest całkowicie bezpłatny.' },
-      { question: 'Czy muszę mieć wcześniejsze doświadczenie z audytami?', answer: 'Nie, webinar jest zaprojektowany zarówno dla osób przygotowujących się do pierwszego audytu, jak i dla doświadczonych praktyków.' },
+      { question: 'Czy muszę mieć wcześniejsze doświadczenie z kontrolami?', answer: 'Nie, webinar jest zaprojektowany zarówno dla osób przygotowujących się do pierwszej kontroli, jak i dla doświadczonych praktyków.' },
       { question: 'Nie wiesz, czy podlegasz pod NIS2?', answer: 'Wypełnij naszą krótką ankietę i sprawdź w 2 minuty, czy Twoja organizacja może podlegać pod NIS2. Przejdź do ankiety na stronie /sprawdz-cyberbezpieczenstwo.' },
       { question: 'Czy mogę zaprosić zespół?', answer: 'Tak! Każda osoba powinna zarejestrować się indywidualnie.' },
     ],
