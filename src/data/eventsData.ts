@@ -234,8 +234,8 @@ export const events: EventData[] = [
       { question: 'Czy mogę zaprosić zespół?', answer: 'Tak! Każda osoba powinna zarejestrować się indywidualnie.' },
     ],
     seo: {
-      metaTitle: 'NIS2 audit-ready: webinar — dokumenty i dowody',
-      metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności do audytu. Evidence pack, audit trail, checklista audytowa.',
+      metaTitle: 'NIS2 kontrola: webinar — dokumenty i dowody',
+      metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności na kontrolę. Polityki, procedury, raportowanie incydentów.',
     },
     lastUpdated: '2026-02-26',
   },
