@@ -120,7 +120,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
           </div>
           <div className="pt-4">
             <Button className="w-full" data-cta="gap-call" asChild>
-              <a href="https://example.com/gap-call" target="_blank" rel="noopener noreferrer">
+              <a href="/contact">
                 Umów 20-min NIS2 Gap Call <ExternalLink className="h-4 w-4 ml-1" />
               </a>
             </Button>
