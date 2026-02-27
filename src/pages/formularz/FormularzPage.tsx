@@ -413,14 +413,26 @@ export default function FormularzPage() {
                    {CTA_SECONDARY_LABEL[lang]}
                  </a>
                </div>
-               <div className="mt-3 text-center">
-                 <button
-                   onClick={() => { setPhase('filling'); setResult(null); }}
-                   className="text-sm text-gray-400 hover:text-[#6d38a8] underline underline-offset-2 transition-colors"
-                 >
-                   {RETRY_LABEL[lang]}
-                 </button>
-               </div>
+                <div className="mt-6 pt-6 border-t border-[#e0e2e9] text-center">
+                  <p className="text-sm text-muted-foreground mb-3">{WEBINAR_CTA_LABEL[lang]}</p>
+                  <a
+                    href={`/${lang}/events`}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#6d38a8]/10 text-[#6d38a8] font-semibold rounded-xl hover:bg-[#6d38a8]/20 transition-colors"
+                  >
+                    {WEBINAR_CTA_BUTTON[lang]}
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+                <div className="mt-3 text-center">
+                  <button
+                    onClick={() => { setPhase('filling'); setResult(null); }}
+                    className="text-sm text-gray-400 hover:text-[#6d38a8] underline underline-offset-2 transition-colors"
+                  >
+                    {RETRY_LABEL[lang]}
+                  </button>
+                </div>
             </div>
           </div>
         )}
