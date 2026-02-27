@@ -75,11 +75,12 @@ export const events: EventData[] = [
       'Jaka będzie odpowiedzialność zarządu w cyberbezpieczeństwie?',
     ],
     agenda: [
-      { time: '0–5 min', title: 'Kontekst NIS2', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
-      { time: '5–12 min', title: 'Obowiązki krok po kroku', description: 'Przegląd wymagań regulacyjnych z praktycznymi przykładami' },
-      { time: '12–20 min', title: 'Budowanie mapy ryzyka', description: 'Jak zidentyfikować, ocenić i priorytetyzować ryzyka' },
-      { time: '20–25 min', title: 'Demo: Quantifier Risk Map', description: 'Walkthrough platformy — mapa ryzyka w praktyce' },
-      { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+      { time: '0–5 min', title: 'Kontekst: cyberbezpieczeństwo, NIS2, ISO 27001', description: 'Kogo dotyczy, co się zmieniło, dlaczego teraz' },
+      { time: '5–12 min', title: 'Nowe obowiązki zarządu', description: 'Odpowiedzialność zarządu w kontekście nowej unijnej dyrektywy NIS2' },
+      { time: '12–20 min', title: 'Główne wymagania regulacyjne', description: 'Raportowanie incydentów 24h/72h, rejestr ryzyk, szkolenia dla pracowników' },
+      { time: '20–25 min', title: 'Wymagania wobec łańcucha dostaw', description: 'Audyt dostawców, nowe klauzule w umowach' },
+      { time: '25–30 min', title: 'Podejście continuous compliance', description: 'Ciągłe monitorowanie ryzyk i zdarzeń w przedsiębiorstwie' },
+      { time: '30+ min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
     ],
     audience: [
       {
