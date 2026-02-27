@@ -258,11 +258,11 @@ export const events: EventData[] = [
       'Jak raportować incydenty w 24h/72h?',
     ],
     agenda: [
-      { time: '0–5 min', title: 'Przebieg kontroli NIS2', description: 'Co się dzieje przed, w trakcie i po kontroli' },
-      { time: '5–12 min', title: 'Przygotowanie organizacji', description: 'Jak przygotować zespół i dokumentację na dzień kontroli' },
-      { time: '12–20 min', title: 'Symulacja kontroli', description: 'Interaktywny walkthrough: kontrolujący pyta, Ty odpowiadasz' },
-      { time: '20–25 min', title: 'Demo: Quantifier Compliance', description: 'Zarządzanie kontrolą i planem naprawczym w platformie' },
-      { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+      { time: '0–5 min', title: 'Dokumenty i wymagania przy raportowaniu', description: 'Formalne przygotowanie przedsiębiorstwa na incydent' },
+      { time: '5–12 min', title: 'Przygotowanie na incydent', description: 'Plany naprawcze, testowanie, Business Impact Analysis' },
+      { time: '12–25 min', title: 'Raportowanie incydentów CSIRT', description: 'Jak raportować incydenty w 24/72h' },
+      { time: '25–30 min', title: 'Podejście continuous compliance | Quantifier.ai', description: 'Zarządzanie dowodami zgodności w platformie' },
+      { time: '30+ min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
     ],
     audience: [
       {
