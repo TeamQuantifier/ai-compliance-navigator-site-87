@@ -19,10 +19,12 @@ const EventHero = ({ event }: Props) => (
     </h1>
     <p className="text-lg text-muted-foreground mb-6 max-w-2xl">{event.subtitle}</p>
 
-    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
-      <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" /> {event.dateDisplay}</span>
-      <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" /> {event.duration}</span>
-      <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {event.location}</span>
+    <div className="flex flex-wrap gap-4 items-center mb-6">
+      <span className="flex items-center gap-2 text-base md:text-lg font-semibold text-foreground bg-primary/10 px-3 py-1.5 rounded-lg">
+        <Calendar className="h-5 w-5 text-primary" /> {event.dateDisplay}
+      </span>
+      <span className="flex items-center gap-1.5 text-sm text-muted-foreground"><Clock className="h-4 w-4" /> {event.duration}</span>
+      <span className="flex items-center gap-1.5 text-sm text-muted-foreground"><MapPin className="h-4 w-4" /> {event.location}</span>
     </div>
 
     <p className="text-sm text-muted-foreground border-l-2 border-primary pl-4">{event.trustLine}</p>

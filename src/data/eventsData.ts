@@ -137,11 +137,11 @@ export const events: EventData[] = [
       'Jak uniknąć kosztownego chaosu operacyjnego?',
     ],
     agenda: [
-      { time: '0–5 min', title: 'Dlaczego role i procesy?', description: 'Najczęstsze problemy wdrożeniowe NIS2' },
-      { time: '5–12 min', title: 'Kluczowe role NIS2/ISO', description: 'Kto za co odpowiada: zarząd, CISO, DPO, compliance' },
-      { time: '12–18 min', title: 'Matryca RACI', description: 'Jak zbudować i wdrożyć matrycę odpowiedzialności' },
-      { time: '18–24 min', title: 'Demo: Quantifier Workflows', description: 'Automatyzacja procesów compliance w platformie' },
-      { time: '24–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
+      { time: '0–8 min', title: 'Kluczowe procesy i obowiązki', description: 'Czym trzeba się zająć, wdrażając NIS2' },
+      { time: '8–16 min', title: 'Kluczowe role w cyberbezpieczeństwie, NIS2, ISO 27001', description: 'Zarząd, CISO, IT, compliance, HR, dostawcy' },
+      { time: '16–25 min', title: 'Matryca odpowiedzialności RACI', description: 'Jak zoperacjonalizować wdrożenie NIS2, ISO 27001 w spółce' },
+      { time: '25–30 min', title: 'Podejście continuous compliance | Quantifier.ai', description: 'Nowoczesne wdrożenie regulacji i ciągłe monitorowanie ryzyk' },
+      { time: '30+ min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
     ],
     audience: [
       {
