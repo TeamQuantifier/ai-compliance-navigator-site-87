@@ -280,8 +280,8 @@ export const events: EventData[] = [
       {
         role: 'IT / CISO / Security',
         icon: 'Lock',
-        pains: ['Brak przygotowania na pytania techniczne audytora', 'Trudność demonstrowania skuteczności zabezpieczeń'],
-        outcomes: ['Lista pytań technicznych audytora z odpowiedziami', 'Sposób prezentacji dowodów technicznych'],
+        pains: ['Brak przygotowania na pytania techniczne kontrolującego', 'Trudność demonstrowania skuteczności zabezpieczeń'],
+        outcomes: ['Lista pytań technicznych kontrolującego z odpowiedziami', 'Sposób prezentacji dowodów technicznych'],
       },
     ],
     speakers: [],
