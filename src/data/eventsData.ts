@@ -294,8 +294,8 @@ export const events: EventData[] = [
       { question: 'Czy mogę zaprosić zespół?', answer: 'Tak! Każda osoba powinna zarejestrować się indywidualnie.' },
     ],
     seo: {
-      metaTitle: 'Kontrola NIS2: webinar — jak przejść audyt',
-      metaDescription: 'Bezpłatny webinar: jak przejść audyt NIS2 od A do Z. Symulacja kontroli, checklista 30+ punktów, plan naprawczy. Dla compliance i IT.',
+      metaTitle: 'Kontrola NIS2: webinar — jak przejść kontrolę',
+      metaDescription: 'Bezpłatny webinar: jak przejść kontrolę NIS2 od A do Z. Symulacja kontroli, checklista 30+ punktów, plan naprawczy. Dla compliance i IT.',
     },
     lastUpdated: '2026-02-26',
   },
