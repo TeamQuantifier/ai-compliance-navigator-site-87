@@ -208,8 +208,8 @@ export const events: EventData[] = [
       {
         role: 'Zarząd (CEO/COO/CFO)',
         icon: 'Building2',
-        pains: ['Brak pewności, czy dokumentacja jest kompletna', 'Ryzyko negatywnego wyniku audytu', 'Brak widoczności stanu przygotowań'],
-        outcomes: ['Pewność co do kompletności dokumentacji', 'Dashboard gotowości audytowej'],
+        pains: ['Brak pewności, czy dokumentacja jest kompletna', 'Ryzyko negatywnego wyniku kontroli', 'Brak widoczności stanu przygotowań'],
+        outcomes: ['Pewność co do kompletności dokumentacji', 'Dashboard gotowości do kontroli'],
       },
       {
         role: 'Compliance / Risk',
