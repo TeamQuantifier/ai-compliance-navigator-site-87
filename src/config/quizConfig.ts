@@ -249,6 +249,16 @@ export const NIS2_BLOG_LABEL: Record<QuizLang, string> = {
   en: 'Learn what NIS2 is',
   cs: 'Zjistěte, co je NIS2',
 };
+export const WEBINAR_CTA_LABEL: Record<QuizLang, string> = {
+  pl: 'Chcesz dowiedzieć się więcej o NIS2? Zapisz się na webinar',
+  en: 'Want to learn more about NIS2? Sign up for a webinar',
+  cs: 'Chcete se dozvědět více o NIS2? Přihlaste se na webinář',
+};
+export const WEBINAR_CTA_BUTTON: Record<QuizLang, string> = {
+  pl: 'Zobacz webinary',
+  en: 'View webinars',
+  cs: 'Zobrazit webináře',
+};
 
 // ─── Validation messages ───────────────────────────────────────
 export const VALIDATION: Record<QuizLang, { email: string; required: string; q4: string; gdpr: string }> = {
