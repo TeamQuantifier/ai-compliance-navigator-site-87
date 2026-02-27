@@ -258,10 +258,10 @@ export const events: EventData[] = [
       'Jak raportować incydenty w 24h/72h?',
     ],
     agenda: [
-      { time: '0–5 min', title: 'Przebieg audytu NIS2', description: 'Co się dzieje przed, w trakcie i po kontroli' },
-      { time: '5–12 min', title: 'Przygotowanie organizacji', description: 'Jak przygotować zespół i dokumentację na dzień audytu' },
-      { time: '12–20 min', title: 'Symulacja audytu', description: 'Interaktywny walkthrough: audytor pyta, Ty odpowiadasz' },
-      { time: '20–25 min', title: 'Demo: Quantifier Audit', description: 'Zarządzanie audytem i planem naprawczym w platformie' },
+      { time: '0–5 min', title: 'Przebieg kontroli NIS2', description: 'Co się dzieje przed, w trakcie i po kontroli' },
+      { time: '5–12 min', title: 'Przygotowanie organizacji', description: 'Jak przygotować zespół i dokumentację na dzień kontroli' },
+      { time: '12–20 min', title: 'Symulacja kontroli', description: 'Interaktywny walkthrough: kontrolujący pyta, Ty odpowiadasz' },
+      { time: '20–25 min', title: 'Demo: Quantifier Compliance', description: 'Zarządzanie kontrolą i planem naprawczym w platformie' },
       { time: '25–30 min', title: 'Q&A', description: 'Pytania uczestników i podsumowanie' },
     ],
     audience: [
