@@ -107,8 +107,8 @@ const EventsHub = () => {
       </section>
 
       {/* Intro content section */}
-      <section className="mb-12">
-        <div className="prose prose-slate max-w-3xl text-muted-foreground space-y-5">
+      <section className="mb-12 grid md:grid-cols-2 gap-8 items-start">
+        <div className="prose prose-slate max-w-none text-muted-foreground space-y-5">
           <p>{t('eventsHub.introP1')}</p>
 
           <ul className="list-disc pl-5 space-y-2">
@@ -120,6 +120,14 @@ const EventsHub = () => {
           <p>{t('eventsHub.introP2')}</p>
           <p>{t('eventsHub.introP3')}</p>
           <p className="italic text-sm border-l-4 border-primary pl-4">{t('eventsHub.formatDescription')}</p>
+        </div>
+        <div className="flex items-start justify-center">
+          <img
+            src="/lovable-uploads/NIS2_Webinars_compliance_Quantifier.jpg"
+            alt="NIS2 Webinars Compliance — Quantifier"
+            className="rounded-lg shadow-md w-full h-auto"
+            loading="lazy"
+          />
         </div>
       </section>
 
