@@ -189,7 +189,7 @@ export const events: EventData[] = [
     tags: ['Live', 'NIS2 & ISO 27001'],
     heroCtaLabel: 'Zarezerwuj miejsce',
     heroSecondaryText: 'Bezpłatny webinar online',
-    trustLine: 'Dowiedz się, jak przygotować dokumenty i dowody zgodności na audyt.',
+    trustLine: 'Dowiedz się, jak przygotować dokumenty i dowody zgodności na kontrolę.',
     icon: 'FileCheck',
     step: 3,
     outcomes: [
