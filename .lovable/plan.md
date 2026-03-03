@@ -1,29 +1,41 @@
 
 
-## Plan: Korekta dat webinarów 3 i 4
+## Plan: 3-Row Infinite Scrolling Logo Marquee
 
-Webinary 1 i 2 mają poprawne daty (17.03 i 31.03). Trzeba poprawić webinary 3 i 4:
+Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
 
-| Webinar | Obecna data | Poprawna data |
-|---------|------------|---------------|
-| 3 — nis2-audit-ready | 21 kwietnia | **14 kwietnia** |
-| 4 — nis2-kontrola-audyt | 5 maja | **28 kwietnia** |
+### Approach
 
-### Zmiany w 4 plikach:
+**Split logos into 3 groups** (9 logos each):
+- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
+- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
+- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
 
-**`src/data/eventsData.ts`** — zmiana `date` i `dateDisplay`:
-- Webinar 3: `2026-04-21` → `2026-04-14`, dateDisplay → "14 kwietnia 2026"
-- Webinar 4: `2026-05-05` → `2026-04-28`, dateDisplay → "28 kwietnia 2026"
+**CSS keyframes** added to `index.css`:
+- `scroll-left`: `translateX(0)` to `translateX(-50%)`
+- `scroll-right`: `translateX(-50%)` to `translateX(0)`
 
-**`public/locales/pl/translation.json`**:
-- `webinar3date`: "📅 21.04 | 10:00" → "📅 14.04 | 10:00"
-- `webinar4date`: "📅 05.05 | 10:00" → "📅 28.04 | 10:00"
+Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
 
-**`public/locales/en/translation.json`**:
-- `webinar3date`: "📅 21 Apr | 10:00 CET" → "📅 14 Apr | 10:00 CET"
-- `webinar4date`: "📅 5 May | 10:00 CET" → "📅 28 Apr | 10:00 CET"
+**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
 
-**`public/locales/cs/translation.json`**:
-- `webinar3date`: "📅 21. 4. | 10:00" → "📅 14. 4. | 10:00"
-- `webinar4date`: "📅 5. 5. | 10:00" → "📅 28. 4. | 10:00"
+### File Changes
+
+**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+
+**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+
+### Technical Details
+
+Each row structure:
+```
+<div class="overflow-hidden">
+  <div class="flex animate-scroll-right" style="width: fit-content">
+    {rowLogos.map(logo)} {/* original */}
+    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
+  </div>
+</div>
+```
+
+Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
 
