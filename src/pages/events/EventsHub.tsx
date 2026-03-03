@@ -51,7 +51,7 @@ const EventsHub = () => {
     },
   ];
 
-  const localeTag = currentLocale === 'cs' ? 'cs-CZ' : currentLocale === 'pl' ? 'pl-PL' : 'en-GB';
+  
 
   const localizedEvents = events.map((event, idx) => {
     const highlight = webinarHighlights[idx];
