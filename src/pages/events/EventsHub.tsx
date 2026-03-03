@@ -59,13 +59,7 @@ const EventsHub = () => {
     return {
       ...event,
       title: highlight ? t(highlight.titleKey) : event.title,
-      dateDisplay: new Date(event.date).toLocaleString(localeTag, {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
+      dateDisplay: highlight ? t(highlight.dateKey) : event.dateDisplay,
       location: t('eventsHub.eventLocationLive'),
       heroCtaLabel: t('eventsHub.eventCtaLabel'),
       tags: [t('eventsHub.eventTagLive'), 'NIS2 & ISO 27001'],
