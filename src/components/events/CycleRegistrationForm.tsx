@@ -13,6 +13,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { CheckCircle, ExternalLink, Loader2, Zap } from 'lucide-react';
 import { events } from '@/data/eventsData';
 import { supabase } from '@/integrations/supabase/client';
+import { newsletterClient } from '@/lib/newsletter-client';
 
 const FREE_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'wp.pl', 'onet.pl', 'o2.pl', 'interia.pl'];
 
