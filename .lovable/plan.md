@@ -1,44 +1,41 @@
 
 
-## Plan: Formularz zapisu na cały cykl webinarów
+## Plan: 3-Row Infinite Scrolling Logo Marquee
 
-### Opis sekcji
+Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
 
-Pod siatką z kartami 4 webinarów (a przed "Closing text") pojawi się wyróżniona sekcja z formularzem "Zapisz się na cały cykl". Formularz pozwala jednym kliknięciem zarejestrować się na wszystkie 4 webinary naraz.
+### Approach
 
-### Wygląd sekcji
+**Split logos into 3 groups** (9 logos each):
+- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
+- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
+- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
 
-- Gradient border card (violet-to-blue, spójny z designem kart webinarów)
-- Nagłówek: "Zapisz się na cały cykl" + krótki opis korzyści
-- Formularz w układzie 2-kolumnowym (desktop), 1-kolumnowym (mobile)
-- Pola identyczne jak w istniejącym `EventRegistrationForm`: imię, email służbowy, firma, rola, wielkość firmy, NIS2 qualifier, zgoda RODO
-- Przycisk CTA: "Zapisz się na 4 webinary"
-- Po sukcesie: komunikat potwierdzający + dodaj do kalendarza (opcjonalnie)
+**CSS keyframes** added to `index.css`:
+- `scroll-left`: `translateX(0)` to `translateX(-50%)`
+- `scroll-right`: `translateX(-50%)` to `translateX(0)`
 
-### Implementacja
+Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
 
-**Nowy komponent: `src/components/events/CycleRegistrationForm.tsx`**
-- Reużywa ten sam schemat walidacji zod co `EventRegistrationForm`
-- Na submit: wstawia 4 rekordy do `event_registrations` (po jednym na każdy webinar) w jednym batchu
-- Każdy rekord ma odpowiedni `event_slug` i `event_title` (pobrane z tablicy `events`)
-- UTM params przechwytywane identycznie
-- Stan sukcesu z linkami do kalendarza dla całego cyklu
+**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
 
-**Modyfikacja: `src/pages/events/EventsHub.tsx`**
-- Import i renderowanie `CycleRegistrationForm` między siatką eventów a closing text
+### File Changes
 
-**Tłumaczenia: `public/locales/[pl/en/cs]/translation.json`**
-- Nowe klucze: `eventsHub.cycleFormTitle`, `cycleFormSubtitle`, `cycleFormSubmit`, `cycleFormSuccess` itd.
+**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
 
-### Baza danych
+**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
 
-Brak zmian w schemacie -- istniejąca tabela `event_registrations` z RLS (anon INSERT) jest wystarczająca. Formularz po prostu wstawi 4 rekordy zamiast 1.
+### Technical Details
 
-### Pliki do zmiany/utworzenia
+Each row structure:
+```
+<div class="overflow-hidden">
+  <div class="flex animate-scroll-right" style="width: fit-content">
+    {rowLogos.map(logo)} {/* original */}
+    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
+  </div>
+</div>
+```
 
-1. **Nowy** `src/components/events/CycleRegistrationForm.tsx` -- formularz z walidacją i batch insertem
-2. **Edycja** `src/pages/events/EventsHub.tsx` -- dodanie sekcji z formularzem
-3. **Edycja** `public/locales/pl/translation.json` -- polskie tłumaczenia
-4. **Edycja** `public/locales/en/translation.json` -- angielskie tłumaczenia
-5. **Edycja** `public/locales/cs/translation.json` -- czeskie tłumaczenia
+Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
 

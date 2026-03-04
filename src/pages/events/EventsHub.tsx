@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageTemplate from '@/components/PageTemplate';
 import EventCard from '@/components/events/EventCard';
+import CycleRegistrationForm from '@/components/events/CycleRegistrationForm';
 import FAQSection from '@/components/seo/FAQSection';
 import { events } from '@/data/eventsData';
 import { ChevronRight, Calendar } from 'lucide-react';
@@ -131,6 +132,9 @@ const EventsHub = () => {
           <EventCard key={event.slug} event={event} />
         ))}
       </section>
+
+      {/* Cycle registration form */}
+      <CycleRegistrationForm />
 
       {/* Closing text */}
       <section className="mb-16 max-w-3xl">
