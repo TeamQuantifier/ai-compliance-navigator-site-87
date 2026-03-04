@@ -133,6 +133,9 @@ const EventsHub = () => {
         ))}
       </section>
 
+      {/* Cycle registration form */}
+      <CycleRegistrationForm />
+
       {/* Closing text */}
       <section className="mb-16 max-w-3xl">
         <p className="text-muted-foreground">{t('eventsHub.closingText')}</p>
