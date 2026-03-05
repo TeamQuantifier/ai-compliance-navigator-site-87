@@ -204,10 +204,22 @@ export function clearNonEssentialCookies(): void {
   });
   
   // GTM/marketing related
-  const marketingCookies = ['_gcl_au', '_fbp', '_fbc'];
+  const marketingCookies = ['_gcl_au', '_fbp', '_fbc', 'li_sugr', 'lidc', 'bcookie', 'bscookie', 'UserMatchHistory', 'AnalyticsSyncHistory'];
   marketingCookies.forEach((name) => {
     deleteCookie(name);
     const domain = window.location.hostname.split('.').slice(-2).join('.');
     deleteCookie(name, `.${domain}`);
   });
+
+  // LinkedIn _li* pattern cookies
+  if (typeof document !== 'undefined') {
+    document.cookie.split(';').forEach((cookie) => {
+      const name = cookie.split('=')[0].trim();
+      if (name.startsWith('_li')) {
+        deleteCookie(name);
+        const domain = window.location.hostname.split('.').slice(-2).join('.');
+        deleteCookie(name, `.${domain}`);
+      }
+    });
+  }
 }

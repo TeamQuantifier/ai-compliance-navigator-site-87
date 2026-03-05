@@ -195,9 +195,10 @@ export async function loadConsentedScripts(categories: ConsentCategories): Promi
     initClarity();
   }
   
-  // Marketing: GTM
+  // Marketing: GTM + LinkedIn
   if (categories.marketing) {
     initGTM();
+    initLinkedIn();
   }
   
   await Promise.all(promises);
