@@ -103,7 +103,7 @@ const EventsHub = () => {
 
       {/* Intro content section */}
       <section className="mb-12 grid md:grid-cols-2 gap-8 items-start">
-        <div className="prose prose-slate max-w-none text-muted-foreground space-y-5">
+        <div className="prose prose-slate max-w-none text-muted-foreground space-y-5 text-center md:text-left">
           <p>{t('eventsHub.introP1')}</p>
 
           <ul className="list-disc pl-5 space-y-2">
