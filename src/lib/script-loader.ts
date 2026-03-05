@@ -19,12 +19,18 @@ const GTM_ID = 'GTM-TF3F89BP';
 // Microsoft Clarity configuration
 const CLARITY_ID = 'v4vvg5pveg';
 
+// LinkedIn Insight Tag configuration
+const LINKEDIN_PARTNER_ID = '9699417';
+
 // Declare global types
 declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
     clarity: (...args: unknown[]) => void;
+    lintrk: ((...args: unknown[]) => void) & { q: unknown[][] };
+    _linkedin_partner_id: string;
+    _linkedin_data_partner_ids: string[];
   }
 }
 
