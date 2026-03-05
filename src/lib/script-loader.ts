@@ -19,12 +19,18 @@ const GTM_ID = 'GTM-TF3F89BP';
 // Microsoft Clarity configuration
 const CLARITY_ID = 'v4vvg5pveg';
 
+// LinkedIn Insight Tag configuration
+const LINKEDIN_PARTNER_ID = '9699417';
+
 // Declare global types
 declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
     clarity: (...args: unknown[]) => void;
+    lintrk: ((...args: unknown[]) => void) & { q: unknown[][] };
+    _linkedin_partner_id: string;
+    _linkedin_data_partner_ids: string[];
   }
 }
 
@@ -135,6 +141,49 @@ function initGTM(): void {
 }
 
 /**
+ * Initialize LinkedIn Insight Tag
+ */
+function initLinkedIn(): void {
+  if (loadedScripts.has('linkedin')) return;
+
+  window._linkedin_partner_id = LINKEDIN_PARTNER_ID;
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(LINKEDIN_PARTNER_ID);
+
+  (function (l) {
+    if (!l) {
+      window.lintrk = function (...args: unknown[]) {
+        window.lintrk.q.push(args);
+      } as Window['lintrk'];
+      window.lintrk.q = [];
+    }
+    const s = document.getElementsByTagName('script')[0];
+    const b = document.createElement('script');
+    b.type = 'text/javascript';
+    b.async = true;
+    b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+    s.parentNode?.insertBefore(b, s);
+  })(window.lintrk);
+
+  // Add noscript pixel fallback
+  if (!document.getElementById('linkedin-noscript')) {
+    const noscript = document.createElement('noscript');
+    noscript.id = 'linkedin-noscript';
+    const img = document.createElement('img');
+    img.height = 1;
+    img.width = 1;
+    img.style.display = 'none';
+    img.alt = '';
+    img.src = `https://px.ads.linkedin.com/collect/?pid=${LINKEDIN_PARTNER_ID}&fmt=gif`;
+    noscript.appendChild(img);
+    document.body.appendChild(noscript);
+  }
+
+  loadedScripts.add('linkedin');
+  console.log('[Consent] LinkedIn Insight Tag loaded');
+}
+
+/**
  * Load scripts based on consent categories
  */
 export async function loadConsentedScripts(categories: ConsentCategories): Promise<void> {
@@ -146,9 +195,10 @@ export async function loadConsentedScripts(categories: ConsentCategories): Promi
     initClarity();
   }
   
-  // Marketing: GTM
+  // Marketing: GTM + LinkedIn
   if (categories.marketing) {
     initGTM();
+    initLinkedIn();
   }
   
   await Promise.all(promises);
