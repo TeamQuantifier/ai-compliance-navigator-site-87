@@ -4858,6 +4858,10 @@
       "gapCallCta": "Umów 20-min NIS2 Gap Call",
       "required": "To pole jest wymagane"
     },
+    "clickMeetingHosted": "Webinar odbędzie się na platformie ClickMeeting",
+    "clickMeetingRegistration": "Rejestracja ClickMeeting",
+    "clickMeetingRegisterNow": "Zarejestruj się na ClickMeeting",
+    "clickMeetingRegisterDesc": "Aby otrzymać link do webinaru, zarejestruj się również na platformie ClickMeeting.",
     "nis2MapaRyzyka": {
       "title": "Nowa rzeczywistość: geopolityka, rynek i konsekwencje regulacyjne",
       "subtitle": "Jak zmienia się krajobraz ryzyka w Europie i Polsce? Jakie obowiązki wynikają z NIS2 dla podmiotów kluczowych, ważnych i ich dostawców?",
