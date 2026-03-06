@@ -4204,12 +4204,10 @@
       "successDesc": "Potvrzení a podrobnosti vám zašleme e-mailem.",
       "addToCalendar": "Přidat do kalendáře:",
       "gapCallCta": "Rezervovat 20min NIS2 Gap Call",
-      "required": "Toto pole je povinné"
+      "required": "Toto pole je povinné",
+      "joinWebinar": "Připojit se k webináři",
+      "clickMeetingInfo": "Webinář se bude konat na platformě ClickMeeting. Odkaz na místnost byl odeslán na váš e-mail."
     },
-    "clickMeetingHosted": "Webinář se bude konat na platformě ClickMeeting",
-    "clickMeetingRegistration": "Registrace ClickMeeting",
-    "clickMeetingRegisterNow": "Zaregistrujte se na ClickMeeting",
-    "clickMeetingRegisterDesc": "Pro získání odkazu na webinář se prosím zaregistrujte také na platformě ClickMeeting.",
     "nis2MapaRyzyka": {
       "title": "Nová realita: geopolitika, trh a regulační důsledky",
       "subtitle": "Jak se mění krajina rizik v Evropě? Jaké povinnosti vyplývají z NIS2 pro klíčové a důležité subjekty a jejich dodavatele?",
