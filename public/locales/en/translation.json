@@ -5034,7 +5034,9 @@
       "gapCallCta": "Book a 20-min NIS2 Gap Call",
       "required": "This field is required",
       "joinWebinar": "Join the webinar",
-      "clickMeetingInfo": "The webinar will be hosted on the ClickMeeting platform. A meeting link has been sent to your email."
+      "clickMeetingInfo": "The webinar will be hosted on the ClickMeeting platform. A meeting link has been sent to your email.",
+      "clickMeetingPlatformInfo": "The webinar will be hosted on the ClickMeeting platform.",
+      "clickMeetingPlatformNote": "The webinar will be hosted on the ClickMeeting platform. After registration, you'll receive an email with the meeting link."
     },
     "nis2MapaRyzyka": {
       "title": "New reality: geopolitics, market and regulatory consequences",

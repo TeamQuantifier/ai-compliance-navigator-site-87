@@ -4206,7 +4206,9 @@
       "gapCallCta": "Rezervovat 20min NIS2 Gap Call",
       "required": "Toto pole je povinné",
       "joinWebinar": "Připojit se k webináři",
-      "clickMeetingInfo": "Webinář se bude konat na platformě ClickMeeting. Odkaz na místnost byl odeslán na váš e-mail."
+      "clickMeetingInfo": "Webinář se bude konat na platformě ClickMeeting. Odkaz na místnost byl odeslán na váš e-mail.",
+      "clickMeetingPlatformInfo": "Webinář se bude konat na platformě ClickMeeting.",
+      "clickMeetingPlatformNote": "Webinář se bude konat na platformě ClickMeeting. Po registraci obdržíte e-mail s odkazem na místnost."
     },
     "nis2MapaRyzyka": {
       "title": "Nová realita: geopolitika, trh a regulační důsledky",

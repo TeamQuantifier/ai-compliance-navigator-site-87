@@ -136,6 +136,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
           <CheckCircle className="h-12 w-12 text-primary mx-auto" />
           <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
           <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
+          <p className="text-muted-foreground text-xs">{t('eventDetail.form.clickMeetingPlatformInfo')}</p>
 
           {meetingUrl && (
             <div className="pt-2">
@@ -271,6 +272,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         <Button type="submit" className="w-full" size="lg" disabled={submitState === 'loading'} data-cta="register-event">
           {submitState === 'loading' ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> {t('eventDetail.form.submitting')}</> : t('eventDetail.form.submit')}
         </Button>
+        <p className="text-xs text-muted-foreground text-center">{t('eventDetail.form.clickMeetingPlatformNote')}</p>
       </form>
     </div>
   );
