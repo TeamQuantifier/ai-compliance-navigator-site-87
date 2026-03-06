@@ -136,6 +136,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
           <CheckCircle className="h-12 w-12 text-primary mx-auto" />
           <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
           <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
+          <p className="text-muted-foreground text-xs">{t('eventDetail.form.clickMeetingPlatformInfo')}</p>
 
           {meetingUrl && (
             <div className="pt-2">
