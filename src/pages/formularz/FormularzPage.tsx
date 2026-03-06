@@ -584,11 +584,7 @@ export default function FormularzPage() {
         )}
       </main>
 
-      <footer className="mt-16 border-t border-gray-100 bg-white">
-        <div className="max-w-3xl mx-auto px-4 py-6 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} Quantifier sp. z o.o.
-        </div>
-      </footer>
+      <Footer />
     </div>
     </>
   );
