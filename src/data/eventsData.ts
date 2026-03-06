@@ -178,6 +178,7 @@ export const events: EventData[] = [
       metaTitle: 'NIS2 role i procesy: webinar — system zarządzania',
       metaDescription: 'Bezpłatny webinar: jak zdefiniować role, procesy i matrycę RACI w systemie NIS2/ISO 27001. Dla compliance i IT.',
     },
+    clickMeetingEmbedId: '1726065199729489',
     lastUpdated: '2026-02-26',
   },
   {
