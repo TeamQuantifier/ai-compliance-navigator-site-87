@@ -301,7 +301,7 @@ export const events: EventData[] = [
       metaTitle: 'Kontrola NIS2: webinar — jak przejść kontrolę',
       metaDescription: 'Bezpłatny webinar: jak przejść kontrolę NIS2 od A do Z. Symulacja kontroli, checklista 30+ punktów, plan naprawczy. Dla compliance i IT.',
     },
-    clickMeetingEmbedId: '1726065199729517',
+    clickMeetingRoomId: 9729517,
     lastUpdated: '2026-02-26',
   },
 ];
