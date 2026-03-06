@@ -272,6 +272,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         <Button type="submit" className="w-full" size="lg" disabled={submitState === 'loading'} data-cta="register-event">
           {submitState === 'loading' ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> {t('eventDetail.form.submitting')}</> : t('eventDetail.form.submit')}
         </Button>
+        <p className="text-xs text-muted-foreground text-center">{t('eventDetail.form.clickMeetingPlatformNote')}</p>
       </form>
     </div>
   );
