@@ -4960,7 +4960,7 @@
     "webinar4q2": "How to report incidents within 24h/72h?",
     "cycleBadge": "Save time",
     "cycleFormTitle": "Register for the full cycle with one form",
-    "cycleFormSubtitle": "Fill in once — we'll register you for all 4 webinars. You'll receive confirmation and materials from each session.",
+    "cycleFormSubtitle": "Fill in once — you'll be registered for all 4 webinars. Webinars will be hosted on <a href='https://quantifier.clickmeeting.com/' target='_blank' class='underline text-primary hover:text-primary/80'>ClickMeeting</a>.",
     "cycleFormSubmit": "Register for 4 webinars",
     "cycleSuccessTitle": "Done! You're registered for the full cycle.",
     "cycleSuccessDesc": "Confirmation and details for each of the 4 webinars will be sent to your email.",
