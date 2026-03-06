@@ -455,7 +455,7 @@ export default function FormularzPage() {
                 </div>
                 <div className="mt-3 text-center">
                   <button
-                    onClick={() => { setPhase('filling'); setResult(null); }}
+                    onClick={() => { setPhase('filling'); setResult(null); navigate(BASE_PATHS[lang], { replace: true }); }}
                     className="text-sm text-gray-400 hover:text-[#6d38a8] underline underline-offset-2 transition-colors"
                   >
                     {RETRY_LABEL[lang]}
