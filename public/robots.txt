@@ -63,3 +63,6 @@ Disallow: /lovable-uploads/
 
 Sitemap: https://quantifier.ai/sitemap.xml
 Sitemap: https://quantifier.ai/functions/v1/sitemap
+
+# RSS Feed
+# https://quantifier.ai/functions/v1/rss-feed

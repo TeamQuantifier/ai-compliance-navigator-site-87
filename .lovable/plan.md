@@ -1,55 +1,41 @@
 
 
-## Analiza raportu SEO/GEO vs. rzeczywisty stan strony
+## Plan: 3-Row Infinite Scrolling Logo Marquee
 
-### Kluczowe odkrycie: raport jest w dużej mierze nieaktualny
+Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
 
-Raport ocenia stronę na 31/100, ale **większość krytycznych problemów została już rozwiązana** w kodzie. Audytor prawdopodobnie analizował surowy HTML source (bez prerenderingu), co dało fałszywie niskie wyniki.
+### Approach
 
-**Już zaimplementowane (raport się myli):**
-- robots.txt z regułami dla AI crawlerów (GPTBot, ClaudeBot, PerplexityBot)
-- Dynamiczny sitemap (edge function) + statyczny sitemap.xml
-- llms.txt + llms-full.txt (standard llmstxt.org)
-- Schema.org: Organization, WebSite, SoftwareApplication, BreadcrumbList, DefinedTermSet, FAQPage
-- hreflang (en, pl-PL, cs-CZ + x-default)
-- Canonical tags z trailing slash
-- OG + Twitter Card meta tags
-- Prerendering: Netlify Prerender Extension + 3 custom Edge Functions (marketing, blog, stories)
-- 301 redirecty z Envirly
+**Split logos into 3 groups** (9 logos each):
+- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
+- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
+- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
 
-### Co NAPRAWDĘ trzeba jeszcze zrobić (6 zmian w kodzie)
+**CSS keyframes** added to `index.css`:
+- `scroll-left`: `translateX(0)` to `translateX(-50%)`
+- `scroll-right`: `translateX(-50%)` to `translateX(0)`
 
-**1. Dodać `alternateName: "Envirly"` do Organization schema (Index.tsx)**
-Raport słusznie wskazuje na problem dual-brand. AI modele mogą traktować Envirly i Quantifier jako osobne byty. Dodanie `alternateName` + `sameAs` do Crunchbase/Envirly rozwiąże entity disambiguation.
+Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
 
-**2. Dodać LocalBusiness schema dla Google Moja Firma**
-Skoro założyłeś wizytówkę Google — potrzebny schema LocalBusiness z adresami (Warszawa, Lublin, SF) zsynchronizowany z danymi w GBP. To wzmocni local SEO i knowledge panel.
+**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
 
-**3. Dodać security headers w netlify.toml**
-Brak HSTS, CSP, X-Frame-Options. Dla platformy compliance to szczególnie ważne — Google i użytkownicy oceniają security headers. Prosty wpis w netlify.toml.
+### File Changes
 
-**4. Utworzyć RSS feed dla bloga (edge function)**
-Brak RSS = AI aggregatory i czytniki nie śledzą nowych treści. Edge function `rss-feed` generujący Atom/RSS z opublikowanych postów.
+**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
 
-**5. Poprawić statyczny sitemap.xml — dodać trailing slashes**
-Statyczny sitemap.xml w `public/` nie ma trailing slashes (np. `/en/product` zamiast `/en/product/`), co powoduje rozbieżność z canonical URLs i dynamicznym sitemap.
+**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
 
-**6. Dodać `sameAs` links do Organization schema**
-Brakuje linków do Crunchbase, Envirly.pl, LinkedIn co-founderów. To kluczowe dla entity recognition przez AI.
+### Technical Details
 
-### Czego NIE da się zrobić w kodzie (akcje zewnętrzne)
-- Rejestracja na G2/Capterra/Gartner — wymaga ręcznych zgłoszeń
-- Wpis w Wikidata — ręczne tworzenie
-- Budowa backlinków (PR, guest posts) — poza scope
-- Konfiguracja Netlify Prerender w dashboardzie — ręczna zmiana ustawienia "Wait for window.prerenderReady"
-- Aktualizacja Crunchbase z nowym brandem — ręczna
+Each row structure:
+```
+<div class="overflow-hidden">
+  <div class="flex animate-scroll-right" style="width: fit-content">
+    {rowLogos.map(logo)} {/* original */}
+    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
+  </div>
+</div>
+```
 
-### Podsumowanie priorytetów
-| Zmiana | Wpływ | Nakład |
-|--------|-------|--------|
-| alternateName + sameAs w Organization | Wysoki (entity) | Niski |
-| LocalBusiness schema | Wysoki (GBP sync) | Niski |
-| Security headers (netlify.toml) | Średni (trust) | Niski |
-| RSS feed (edge function) | Średni (AI discovery) | Średni |
-| Trailing slashes w statycznym sitemap | Niski (spójność) | Niski |
+Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
 

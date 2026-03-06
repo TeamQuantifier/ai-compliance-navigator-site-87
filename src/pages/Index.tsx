@@ -41,6 +41,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Quantifier.ai",
+    "alternateName": ["Envirly", "Quantifier"],
     "url": "https://quantifier.ai",
     "logo": "https://quantifier.ai/logo-quantifier.png",
     "description": currentLocale === 'en' 
@@ -50,7 +51,10 @@ const Index = () => {
       : "AI-Native GRC Platforma pro Automatizaci Compliance",
     "foundingDate": "2020",
     "sameAs": [
-      "https://www.linkedin.com/company/quantifier-ai"
+      "https://www.linkedin.com/company/quantifier-ai",
+      "https://www.linkedin.com/company/envirly",
+      "https://www.crunchbase.com/organization/envirly",
+      "https://envirly.pl"
     ],
     "address": [
       {
@@ -187,6 +191,59 @@ const Index = () => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(softwareApplicationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Quantifier.ai — Warsaw",
+              "image": "https://quantifier.ai/logo-quantifier.png",
+              "url": "https://quantifier.ai",
+              "telephone": "+48-698-759-206",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rondo Daszynskiego 1",
+                "addressLocality": "Warsaw",
+                "postalCode": "00-843",
+                "addressCountry": "PL"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.2297,
+                "longitude": 20.9866
+              },
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "Quantifier.ai"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Quantifier.ai — San Francisco",
+              "image": "https://quantifier.ai/logo-quantifier.png",
+              "url": "https://quantifier.ai",
+              "telephone": "+1-415-799-8206",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "447 Sutter St Ste 405 PMB 137",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "postalCode": "94108",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 37.7893,
+                "longitude": -122.4085
+              },
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "Quantifier.ai"
+              }
+            }
+          ])}
         </script>
       </Helmet>
 

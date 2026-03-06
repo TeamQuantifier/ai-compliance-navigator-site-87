@@ -6,362 +6,407 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en</loc>
+    <loc>https://quantifier.ai/en/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl</loc>
+    <loc>https://quantifier.ai/pl/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs</loc>
+    <loc>https://quantifier.ai/cs/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/product</loc>
+    <loc>https://quantifier.ai/en/product/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/product</loc>
+    <loc>https://quantifier.ai/pl/product/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/product</loc>
+    <loc>https://quantifier.ai/cs/product/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/plans</loc>
+    <loc>https://quantifier.ai/en/plans/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/plans</loc>
+    <loc>https://quantifier.ai/pl/plans/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/plans</loc>
+    <loc>https://quantifier.ai/cs/plans/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks</loc>
+    <loc>https://quantifier.ai/en/frameworks/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks</loc>
+    <loc>https://quantifier.ai/pl/frameworks/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks</loc>
+    <loc>https://quantifier.ai/cs/frameworks/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/nis-ii</loc>
+    <loc>https://quantifier.ai/en/frameworks/nis-ii/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/nis-ii</loc>
+    <loc>https://quantifier.ai/pl/frameworks/nis-ii/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/nis-ii</loc>
+    <loc>https://quantifier.ai/cs/frameworks/nis-ii/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/iso-27001</loc>
+    <loc>https://quantifier.ai/en/frameworks/iso-27001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/iso-27001</loc>
+    <loc>https://quantifier.ai/pl/frameworks/iso-27001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/iso-27001</loc>
+    <loc>https://quantifier.ai/cs/frameworks/iso-27001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/esg</loc>
+    <loc>https://quantifier.ai/en/frameworks/esg/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/esg</loc>
+    <loc>https://quantifier.ai/pl/frameworks/esg/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/esg</loc>
+    <loc>https://quantifier.ai/cs/frameworks/esg/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/gdpr</loc>
+    <loc>https://quantifier.ai/en/frameworks/gdpr/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/gdpr</loc>
+    <loc>https://quantifier.ai/pl/frameworks/gdpr/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/gdpr</loc>
+    <loc>https://quantifier.ai/cs/frameworks/gdpr/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/product-level</loc>
+    <loc>https://quantifier.ai/en/frameworks/product-level/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/product-level</loc>
+    <loc>https://quantifier.ai/pl/frameworks/product-level/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/product-level</loc>
+    <loc>https://quantifier.ai/cs/frameworks/product-level/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/iso-9001</loc>
+    <loc>https://quantifier.ai/en/frameworks/iso-9001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/iso-9001</loc>
+    <loc>https://quantifier.ai/pl/frameworks/iso-9001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/iso-9001</loc>
+    <loc>https://quantifier.ai/cs/frameworks/iso-9001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/governance</loc>
+    <loc>https://quantifier.ai/en/frameworks/governance/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/governance</loc>
+    <loc>https://quantifier.ai/pl/frameworks/governance/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/governance</loc>
+    <loc>https://quantifier.ai/cs/frameworks/governance/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/hipaa</loc>
+    <loc>https://quantifier.ai/en/frameworks/hipaa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/hipaa</loc>
+    <loc>https://quantifier.ai/pl/frameworks/hipaa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/hipaa</loc>
+    <loc>https://quantifier.ai/cs/frameworks/hipaa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/environmental</loc>
+    <loc>https://quantifier.ai/en/frameworks/environmental/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/environmental</loc>
+    <loc>https://quantifier.ai/pl/frameworks/environmental/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/environmental</loc>
+    <loc>https://quantifier.ai/cs/frameworks/environmental/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/soc</loc>
+    <loc>https://quantifier.ai/en/frameworks/soc/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/soc</loc>
+    <loc>https://quantifier.ai/pl/frameworks/soc/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/soc</loc>
+    <loc>https://quantifier.ai/cs/frameworks/soc/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/frameworks/ccpa</loc>
+    <loc>https://quantifier.ai/en/frameworks/ccpa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/frameworks/ccpa</loc>
+    <loc>https://quantifier.ai/pl/frameworks/ccpa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/frameworks/ccpa</loc>
+    <loc>https://quantifier.ai/cs/frameworks/ccpa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/contact</loc>
+    <loc>https://quantifier.ai/en/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/contact</loc>
+    <loc>https://quantifier.ai/pl/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/contact</loc>
+    <loc>https://quantifier.ai/cs/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/success-stories</loc>
+    <loc>https://quantifier.ai/en/success-stories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/success-stories</loc>
+    <loc>https://quantifier.ai/pl/success-stories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/success-stories</loc>
+    <loc>https://quantifier.ai/cs/success-stories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/partners</loc>
+    <loc>https://quantifier.ai/en/partners/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/partners</loc>
+    <loc>https://quantifier.ai/pl/partners/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/partners</loc>
+    <loc>https://quantifier.ai/cs/partners/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/by-roles</loc>
+    <loc>https://quantifier.ai/en/by-roles/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/by-roles</loc>
+    <loc>https://quantifier.ai/pl/by-roles/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/by-roles</loc>
+    <loc>https://quantifier.ai/cs/by-roles/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/blog</loc>
+    <loc>https://quantifier.ai/en/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/blog</loc>
+    <loc>https://quantifier.ai/pl/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/blog</loc>
+    <loc>https://quantifier.ai/cs/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/blog/continuous-compliance-from-reaction-to-proaction</loc>
+    <loc>https://quantifier.ai/en/blog/continuous-compliance-from-reaction-to-proaction/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/blog/ecovadis-in-practice</loc>
+    <loc>https://quantifier.ai/en/blog/ecovadis-in-practice/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/blog/case-study-cyberattack-ransomware-manufacturing-company</loc>
+    <loc>https://quantifier.ai/en/blog/case-study-cyberattack-ransomware-manufacturing-company/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/blog/ai-agents-in-quantifier</loc>
+    <loc>https://quantifier.ai/en/blog/ai-agents-in-quantifier/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/blog/ciagla-zgodnosc-od-reakcji-do-proakcji</loc>
+    <loc>https://quantifier.ai/pl/blog/ciagla-zgodnosc-od-reakcji-do-proakcji/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/blog/ecovadis-w-praktyce-ocena-esg</loc>
+    <loc>https://quantifier.ai/pl/blog/ecovadis-w-praktyce-ocena-esg/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/blog/ai-agent-w-quantifier-jak-agenci-autonomiczni-dowodza-zgodnosci</loc>
+    <loc>https://quantifier.ai/pl/blog/ai-agent-w-quantifier-jak-agenci-autonomiczni-dowodza-zgodnosci/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/blog/blog-cyberatak-ransomware-firma-produkcyjna</loc>
+    <loc>https://quantifier.ai/pl/blog/blog-cyberatak-ransomware-firma-produkcyjna/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/blog/pro-je-continuous-compliance</loc>
+    <loc>https://quantifier.ai/cs/blog/pro-je-continuous-compliance/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/en/cybersecurity-check</loc>
+    <loc>https://quantifier.ai/en/cybersecurity-check/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo</loc>
+    <loc>https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quantifier.ai/cs/cybersecurity-check</loc>
+    <loc>https://quantifier.ai/cs/cybersecurity-check/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/en/events/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/pl/events/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/en/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/pl/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/cs/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/en/grc-platform/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/en/frameworks/dora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/pl/frameworks/dora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quantifier.ai/cs/frameworks/dora/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
