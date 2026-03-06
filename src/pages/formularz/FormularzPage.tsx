@@ -232,12 +232,37 @@ function BodySection({ text }: { text: string }) {
 }
 
 // ─── Main page ─────────────────────────────────────────────────
+const THANK_YOU_PATHS: Record<QuizLang, string> = {
+  pl: '/pl/sprawdz-cyberbezpieczenstwo/dziekujemy',
+  en: '/en/cybersecurity-check/thank-you',
+  cs: '/cs/zkontrolujte-kybernetickou-bezpecnost/dekujeme',
+};
+
+const BASE_PATHS: Record<QuizLang, string> = {
+  pl: '/pl/sprawdz-cyberbezpieczenstwo',
+  en: '/en/cybersecurity-check',
+  cs: '/cs/zkontrolujte-kybernetickou-bezpecnost',
+};
+
+function isThankYouPath(pathname: string): boolean {
+  return Object.values(THANK_YOU_PATHS).some(p => pathname.replace(/\/$/, '') === p);
+}
+
 export default function FormularzPage() {
   const lang = useLang();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [phase, setPhase] = useState<'filling' | 'submitting' | 'result'>('filling');
   const [result, setResult] = useState<ResultData | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+
+  // If user lands on thank-you URL directly without result data, redirect to quiz root
+  useEffect(() => {
+    if (isThankYouPath(location.pathname) && !result) {
+      navigate(BASE_PATHS[lang], { replace: true });
+    }
+  }, []);
 
   const schema = makeSchema(lang);
 
