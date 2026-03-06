@@ -45,6 +45,7 @@ export interface EventData {
   speakers: EventSpeaker[];
   bonusMaterials: string[];
   faqs: EventFAQ[];
+  clickMeetingEmbedId?: string;
   seo: {
     metaTitle: string;
     metaDescription: string;
