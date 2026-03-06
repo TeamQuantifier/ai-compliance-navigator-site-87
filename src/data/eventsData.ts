@@ -240,7 +240,7 @@ export const events: EventData[] = [
       metaTitle: 'NIS2 kontrola: webinar — dokumenty i dowody',
       metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności na kontrolę. Polityki, procedury, raportowanie incydentów.',
     },
-    clickMeetingEmbedId: '1726065199729510',
+    clickMeetingRoomId: 9729510,
     lastUpdated: '2026-02-26',
   },
   {
