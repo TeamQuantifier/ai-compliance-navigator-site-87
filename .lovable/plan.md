@@ -1,41 +1,32 @@
 
 
-## Plan: 3-Row Infinite Scrolling Logo Marquee
+## Plan: Thank You page URL for LinkedIn conversion tracking
 
-Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
+### Problem
+LinkedIn Ads conversion tracking needs a unique URL to fire on — currently the quiz results are shown on the same URL (`/cybersecurity-check`) by toggling `phase` state. No URL change happens when results appear.
 
-### Approach
+### Solution
+Use `useNavigate` + `useSearchParams` (or hash) to update the URL to include `/thank-you` suffix when results are displayed. This way LinkedIn can track conversions on that specific URL pattern.
 
-**Split logos into 3 groups** (9 logos each):
-- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
-- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
-- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+### Changes
 
-**CSS keyframes** added to `index.css`:
-- `scroll-left`: `translateX(0)` to `translateX(-50%)`
-- `scroll-right`: `translateX(-50%)` to `translateX(0)`
-
-Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
-
-**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
-
-### File Changes
-
-**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
-
-**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
-
-### Technical Details
-
-Each row structure:
+**1. `src/App.tsx`** — Add new routes for the thank-you pages:
 ```
-<div class="overflow-hidden">
-  <div class="flex animate-scroll-right" style="width: fit-content">
-    {rowLogos.map(logo)} {/* original */}
-    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
-  </div>
-</div>
+/:locale/cybersecurity-check/thank-you → FormularzPage
+/pl/sprawdz-cyberbezpieczenstwo/dziekujemy → FormularzPage
+/cs/zkontrolujte-kybernetickou-bezpecnost/dekujeme → FormularzPage
 ```
 
-Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
+**2. `src/pages/formularz/FormularzPage.tsx`**:
+- Import `useNavigate` and `useLocation`
+- When `setPhase('result')` is called, also `navigate` to the localized thank-you path (replace, no history push back to form):
+  - PL: `/pl/sprawdz-cyberbezpieczenstwo/dziekujemy`
+  - EN: `/en/cybersecurity-check/thank-you`
+  - CS: `/cs/zkontrolujte-kybernetickou-bezpecnost/dekujeme`
+- On mount, check if URL contains the thank-you suffix — if yes but no result data, redirect back to the quiz root
+- When user clicks "retry" (back to filling), navigate back to the base quiz URL
+
+**3. `netlify.toml`** — Add SPA fallback rules for the new paths so they don't 404 on direct load (already covered by the catch-all `/*` → `/index.html` rule).
+
+This gives LinkedIn a distinct URL (`*/thank-you` or `*/dziekujemy`) to set as a conversion page, while preserving the single-page experience.
 
