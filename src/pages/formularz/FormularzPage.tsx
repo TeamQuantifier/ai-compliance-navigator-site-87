@@ -322,6 +322,9 @@ export default function FormularzPage() {
       setResult({ title: template.title, body: template.body, resultKey });
       setPhase('result');
 
+      // Navigate to thank-you URL for LinkedIn conversion tracking
+      navigate(THANK_YOU_PATHS[lang], { replace: true });
+
       setTimeout(() => {
         resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
