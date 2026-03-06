@@ -116,7 +116,7 @@ export const events: EventData[] = [
       metaTitle: 'NIS2 mapa ryzyka: webinar — obowiązki i zagrożenia',
       metaDescription: 'Bezpłatny webinar NIS2: jak zbudować mapę ryzyka, zidentyfikować obowiązki i uniknąć najczęstszych błędów. Dla zarządu, compliance i IT.',
     },
-    clickMeetingEmbedId: '1726065199726774',
+    clickMeetingRoomId: 9726774,
     lastUpdated: '2026-02-26',
   },
   {
