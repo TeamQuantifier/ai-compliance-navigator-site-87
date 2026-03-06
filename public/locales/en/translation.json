@@ -5032,12 +5032,10 @@
       "successDesc": "We'll send a confirmation and details to your email.",
       "addToCalendar": "Add to calendar:",
       "gapCallCta": "Book a 20-min NIS2 Gap Call",
-      "required": "This field is required"
+      "required": "This field is required",
+      "joinWebinar": "Join the webinar",
+      "clickMeetingInfo": "The webinar will be hosted on the ClickMeeting platform. A meeting link has been sent to your email."
     },
-    "clickMeetingHosted": "Webinar hosted on the ClickMeeting platform",
-    "clickMeetingRegistration": "ClickMeeting registration",
-    "clickMeetingRegisterNow": "Register on ClickMeeting",
-    "clickMeetingRegisterDesc": "To receive the webinar link, please also register on the ClickMeeting platform.",
     "nis2MapaRyzyka": {
       "title": "New reality: geopolitics, market and regulatory consequences",
       "subtitle": "How is the risk landscape changing in Europe? What obligations does NIS2 impose on essential, important entities and their suppliers?",

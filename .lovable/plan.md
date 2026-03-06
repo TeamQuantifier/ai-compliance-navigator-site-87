@@ -1,61 +1,41 @@
 
 
-## Plan: Bezpośrednia integracja z ClickMeeting API — rejestracja jednym formularzem
+## Plan: 3-Row Infinite Scrolling Logo Marquee
 
-### Problem
-Obecnie użytkownik musi wypełnić nasz formularz, a potem osobno rejestrować się przez embed ClickMeeting. To podwójna praca i słabe UX.
+Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
 
-### Rozwiązanie
-Użyć **ClickMeeting REST API** do automatycznej rejestracji uczestnika w momencie wysłania naszego formularza. Jedno kliknięcie = zapis do naszej bazy (Supabase) + rejestracja w ClickMeeting. Embed ClickMeeting zostaje usunięty.
+### Approach
 
-ClickMeeting API endpoint:
+**Split logos into 3 groups** (9 logos each):
+- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
+- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
+- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+
+**CSS keyframes** added to `index.css`:
+- `scroll-left`: `translateX(0)` to `translateX(-50%)`
+- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+
+Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+
+**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+
+### File Changes
+
+**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+
+**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+
+### Technical Details
+
+Each row structure:
 ```
-POST https://api.clickmeeting.com/v1/conferences/<room_id>/registration
-X-Api-Key: CLICKMEETING_API_KEY
-Body: { "registration": { "1": "Jan", "2": "-", "3": "jan@firma.com" } }
+<div class="overflow-hidden">
+  <div class="flex animate-scroll-right" style="width: fit-content">
+    {rowLogos.map(logo)} {/* original */}
+    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
+  </div>
+</div>
 ```
 
-### Co potrzebuję od Ciebie
-
-1. **Klucz API ClickMeeting** — znajdziesz go w panelu ClickMeeting: Ustawienia konta → Integracje → API. Poproszę Cię o podanie go jako secret.
-
-2. **Room ID** każdego webinaru — embed ID (np. `1726065199726774`) to nie to samo co `room_id` potrzebny do API. Room ID to liczba widoczna w panelu ClickMeeting (szczegóły eventu) lub można go pobrać z API `GET /v1/conferences/active`. Mogę zbudować edge function do pobrania listy konferencji, albo podasz mi room_id ręcznie.
-
-### Zmiany techniczne
-
-**1. Edge function `supabase/functions/clickmeeting-register/index.ts`**
-- Przyjmuje: `{ firstName, email, roomId }`
-- Wysyła POST do ClickMeeting API z kluczem API (secret)
-- Zwraca URL do webinaru (ClickMeeting zwraca `url` w odpowiedzi)
-- CORS headers dla frontend
-
-**2. `src/data/eventsData.ts`**
-- Zamiana `clickMeetingEmbedId` na `clickMeetingRoomId` (number/string)
-- Mapowanie 4 webinarów na ich room_id
-
-**3. `src/components/events/EventRegistrationForm.tsx`**
-- Po udanym insercie do Supabase, wywołanie edge function `clickmeeting-register`
-- Jeśli ClickMeeting zwróci URL — pokazanie go na ekranie sukcesu jako "Dołącz do webinaru"
-- Usunięcie embeda ClickMeeting z ekranu sukcesu
-
-**4. `src/components/events/ClickMeetingEmbed.tsx`**
-- Komponent do usunięcia (nie będzie już potrzebny)
-
-**5. Ekran sukcesu**
-- "Gotowe! Zostałeś zarejestrowany na webinar."
-- Link/przycisk "Dołącz do webinaru na ClickMeeting" (URL z API response)
-- Info: "Webinar odbędzie się na platformie ClickMeeting. Link do pokoju został wysłany na Twój e-mail."
-- Kalendarz (Google/Outlook) — jak teraz
-
-### Kolejność implementacji
-1. Dodanie secretu `CLICKMEETING_API_KEY`
-2. Edge function do rejestracji
-3. Pobranie room_id (przez edge function lub ręcznie)
-4. Aktualizacja formularza i danych eventów
-5. Usunięcie embeda
-
-### Pytanie do Ciebie
-Czy masz dostęp do panelu ClickMeeting, żeby:
-- Skopiować **API Key** (Ustawienia → API)?
-- Podać **room_id** 4 webinarów (albo pozwolić mi je pobrać automatycznie przez API)?
+Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
 

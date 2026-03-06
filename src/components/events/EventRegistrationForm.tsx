@@ -13,7 +13,6 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { CalendarPlus, CheckCircle, ExternalLink, Loader2 } from 'lucide-react';
 import type { EventData } from '@/data/eventsData';
 import { supabase } from '@/integrations/supabase/client';
-import ClickMeetingEmbed from './ClickMeetingEmbed';
 
 const FREE_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'wp.pl', 'onet.pl', 'o2.pl', 'interia.pl'];
 
@@ -44,6 +43,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
   const { currentLocale } = useLanguage();
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [submitState, setSubmitState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [meetingUrl, setMeetingUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -63,6 +63,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
   const onSubmit = async (data: FormData) => {
     setSubmitState('loading');
     try {
+      // 1. Save to our database
       const { error } = await supabase.from('event_registrations').insert({
         event_slug: event.slug,
         event_title: event.title,
@@ -79,6 +80,32 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         utm_term: utmParams.utm_term || null,
       });
       if (error) throw error;
+
+      // 2. Register in ClickMeeting (non-blocking — success even if CM fails)
+      if (event.clickMeetingRoomId) {
+        try {
+          const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+          const res = await fetch(
+            `https://${projectId}.supabase.co/functions/v1/clickmeeting-register`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                firstName: data.firstName,
+                email: data.workEmail,
+                roomId: event.clickMeetingRoomId,
+              }),
+            }
+          );
+          if (res.ok) {
+            const cmData = await res.json();
+            if (cmData?.url) setMeetingUrl(cmData.url);
+          }
+        } catch (cmErr) {
+          console.warn('ClickMeeting registration failed (non-blocking):', cmErr);
+        }
+      }
+
       setSubmitState('success');
     } catch {
       setSubmitState('error');
@@ -104,43 +131,44 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
 
   if (submitState === 'success') {
     return (
-      <div className={`space-y-6 ${className}`}>
-        <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-          <div className="text-center space-y-4">
-            <CheckCircle className="h-12 w-12 text-primary mx-auto" />
-            <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
-            <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
-            <div className="space-y-2 pt-4">
-              <p className="text-sm font-medium text-foreground">{t('eventDetail.form.addToCalendar')}</p>
-              <div className="flex gap-2 justify-center">
-                <Button variant="outline" size="sm" asChild>
-                  <a href={googleCalUrl()} target="_blank" rel="noopener noreferrer">
-                    <CalendarPlus className="h-4 w-4 mr-1" /> Google
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" onClick={downloadIcs}>
-                  <CalendarPlus className="h-4 w-4 mr-1" /> Outlook/iCal
-                </Button>
-              </div>
-            </div>
-            <div className="pt-4">
-              <Button className="w-full" data-cta="gap-call" asChild>
-                <a href={`/${currentLocale}/contact`}>
-                  {t('eventDetail.form.gapCallCta')} <ExternalLink className="h-4 w-4 ml-1" />
+      <div className={`bg-card border border-border rounded-2xl p-6 md:p-8 ${className}`}>
+        <div className="text-center space-y-4">
+          <CheckCircle className="h-12 w-12 text-primary mx-auto" />
+          <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
+          <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
+
+          {meetingUrl && (
+            <div className="pt-2">
+              <Button className="w-full" size="lg" asChild>
+                <a href={meetingUrl} target="_blank" rel="noopener noreferrer">
+                  {t('eventDetail.form.joinWebinar')} <ExternalLink className="h-4 w-4 ml-1" />
                 </a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-2">{t('eventDetail.form.clickMeetingInfo')}</p>
+            </div>
+          )}
+
+          <div className="space-y-2 pt-4">
+            <p className="text-sm font-medium text-foreground">{t('eventDetail.form.addToCalendar')}</p>
+            <div className="flex gap-2 justify-center">
+              <Button variant="outline" size="sm" asChild>
+                <a href={googleCalUrl()} target="_blank" rel="noopener noreferrer">
+                  <CalendarPlus className="h-4 w-4 mr-1" /> Google
+                </a>
+              </Button>
+              <Button variant="outline" size="sm" onClick={downloadIcs}>
+                <CalendarPlus className="h-4 w-4 mr-1" /> Outlook/iCal
               </Button>
             </div>
           </div>
-        </div>
-
-        {/* ClickMeeting embed shown after successful lead capture */}
-        {event.clickMeetingEmbedId && (
-          <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-            <h3 className="text-lg font-bold text-foreground mb-1">{t('eventDetail.clickMeetingRegisterNow')}</h3>
-            <p className="text-sm text-muted-foreground mb-4">{t('eventDetail.clickMeetingRegisterDesc')}</p>
-            <ClickMeetingEmbed embedId={event.clickMeetingEmbedId} title={event.title} />
+          <div className="pt-4">
+            <Button className="w-full" variant="outline" data-cta="gap-call" asChild>
+              <a href={`/${currentLocale}/contact`}>
+                {t('eventDetail.form.gapCallCta')} <ExternalLink className="h-4 w-4 ml-1" />
+              </a>
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     );
   }
