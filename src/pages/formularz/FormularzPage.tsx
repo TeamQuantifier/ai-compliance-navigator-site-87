@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
