@@ -13,6 +13,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { CalendarPlus, CheckCircle, ExternalLink, Loader2 } from 'lucide-react';
 import type { EventData } from '@/data/eventsData';
 import { supabase } from '@/integrations/supabase/client';
+import ClickMeetingEmbed from './ClickMeetingEmbed';
 
 const FREE_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'wp.pl', 'onet.pl', 'o2.pl', 'interia.pl'];
 
@@ -103,32 +104,43 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
 
   if (submitState === 'success') {
     return (
-      <div className={`bg-card border border-border rounded-2xl p-6 md:p-8 ${className}`}>
-        <div className="text-center space-y-4">
-          <CheckCircle className="h-12 w-12 text-primary mx-auto" />
-          <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
-          <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
-          <div className="space-y-2 pt-4">
-            <p className="text-sm font-medium text-foreground">{t('eventDetail.form.addToCalendar')}</p>
-            <div className="flex gap-2 justify-center">
-              <Button variant="outline" size="sm" asChild>
-                <a href={googleCalUrl()} target="_blank" rel="noopener noreferrer">
-                  <CalendarPlus className="h-4 w-4 mr-1" /> Google
+      <div className={`space-y-6 ${className}`}>
+        <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+          <div className="text-center space-y-4">
+            <CheckCircle className="h-12 w-12 text-primary mx-auto" />
+            <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
+            <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
+            <div className="space-y-2 pt-4">
+              <p className="text-sm font-medium text-foreground">{t('eventDetail.form.addToCalendar')}</p>
+              <div className="flex gap-2 justify-center">
+                <Button variant="outline" size="sm" asChild>
+                  <a href={googleCalUrl()} target="_blank" rel="noopener noreferrer">
+                    <CalendarPlus className="h-4 w-4 mr-1" /> Google
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" onClick={downloadIcs}>
+                  <CalendarPlus className="h-4 w-4 mr-1" /> Outlook/iCal
+                </Button>
+              </div>
+            </div>
+            <div className="pt-4">
+              <Button className="w-full" data-cta="gap-call" asChild>
+                <a href={`/${currentLocale}/contact`}>
+                  {t('eventDetail.form.gapCallCta')} <ExternalLink className="h-4 w-4 ml-1" />
                 </a>
-              </Button>
-              <Button variant="outline" size="sm" onClick={downloadIcs}>
-                <CalendarPlus className="h-4 w-4 mr-1" /> Outlook/iCal
               </Button>
             </div>
           </div>
-          <div className="pt-4">
-            <Button className="w-full" data-cta="gap-call" asChild>
-              <a href={`/${currentLocale}/contact`}>
-                {t('eventDetail.form.gapCallCta')} <ExternalLink className="h-4 w-4 ml-1" />
-              </a>
-            </Button>
-          </div>
         </div>
+
+        {/* ClickMeeting embed shown after successful lead capture */}
+        {event.clickMeetingEmbedId && (
+          <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+            <h3 className="text-lg font-bold text-foreground mb-1">{t('eventDetail.clickMeetingRegisterNow')}</h3>
+            <p className="text-sm text-muted-foreground mb-4">{t('eventDetail.clickMeetingRegisterDesc')}</p>
+            <ClickMeetingEmbed embedId={event.clickMeetingEmbedId} title={event.title} />
+          </div>
+        )}
       </div>
     );
   }
