@@ -41,6 +41,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Quantifier.ai",
+    "alternateName": ["Envirly", "Quantifier"],
     "url": "https://quantifier.ai",
     "logo": "https://quantifier.ai/logo-quantifier.png",
     "description": currentLocale === 'en' 
@@ -50,7 +51,10 @@ const Index = () => {
       : "AI-Native GRC Platforma pro Automatizaci Compliance",
     "foundingDate": "2020",
     "sameAs": [
-      "https://www.linkedin.com/company/quantifier-ai"
+      "https://www.linkedin.com/company/quantifier-ai",
+      "https://www.linkedin.com/company/envirly",
+      "https://www.crunchbase.com/organization/envirly",
+      "https://envirly.pl"
     ],
     "address": [
       {
