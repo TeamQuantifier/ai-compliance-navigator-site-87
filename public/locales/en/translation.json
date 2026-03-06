@@ -4960,7 +4960,7 @@
     "webinar4q2": "How to report incidents within 24h/72h?",
     "cycleBadge": "Save time",
     "cycleFormTitle": "Register for the full cycle with one form",
-    "cycleFormSubtitle": "Fill in once — we'll register you for all 4 webinars. You'll receive confirmation and materials from each session.",
+    "cycleFormSubtitle": "Fill in once — you'll be registered for all 4 webinars. Webinars will be hosted on <a href='https://quantifier.clickmeeting.com/' target='_blank' class='underline text-primary hover:text-primary/80'>ClickMeeting</a>.",
     "cycleFormSubmit": "Register for 4 webinars",
     "cycleSuccessTitle": "Done! You're registered for the full cycle.",
     "cycleSuccessDesc": "Confirmation and details for each of the 4 webinars will be sent to your email.",
@@ -5032,7 +5032,11 @@
       "successDesc": "We'll send a confirmation and details to your email.",
       "addToCalendar": "Add to calendar:",
       "gapCallCta": "Book a 20-min NIS2 Gap Call",
-      "required": "This field is required"
+      "required": "This field is required",
+      "joinWebinar": "Join the webinar",
+      "clickMeetingInfo": "The webinar will be hosted on the ClickMeeting platform. A meeting link has been sent to your email.",
+      "clickMeetingPlatformInfo": "The webinar will be hosted on the ClickMeeting platform.",
+      "clickMeetingPlatformNote": "The webinar will be hosted on the ClickMeeting platform. After registration, you'll receive an email with the meeting link."
     },
     "nis2MapaRyzyka": {
       "title": "New reality: geopolitics, market and regulatory consequences",

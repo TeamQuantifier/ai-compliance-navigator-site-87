@@ -124,9 +124,7 @@ const CycleRegistrationForm = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
             {t('eventsHub.cycleFormTitle')}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t('eventsHub.cycleFormSubtitle')}
-          </p>
+          <p className="text-muted-foreground max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: t('eventsHub.cycleFormSubtitle') }} />
         </div>
 
         {submitState === 'error' && (

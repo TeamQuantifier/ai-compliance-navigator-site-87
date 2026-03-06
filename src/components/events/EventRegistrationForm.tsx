@@ -43,6 +43,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
   const { currentLocale } = useLanguage();
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [submitState, setSubmitState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [meetingUrl, setMeetingUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -62,6 +63,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
   const onSubmit = async (data: FormData) => {
     setSubmitState('loading');
     try {
+      // 1. Save to our database
       const { error } = await supabase.from('event_registrations').insert({
         event_slug: event.slug,
         event_title: event.title,
@@ -78,6 +80,32 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         utm_term: utmParams.utm_term || null,
       });
       if (error) throw error;
+
+      // 2. Register in ClickMeeting (non-blocking — success even if CM fails)
+      if (event.clickMeetingRoomId) {
+        try {
+          const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+          const res = await fetch(
+            `https://${projectId}.supabase.co/functions/v1/clickmeeting-register`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                firstName: data.firstName,
+                email: data.workEmail,
+                roomId: event.clickMeetingRoomId,
+              }),
+            }
+          );
+          if (res.ok) {
+            const cmData = await res.json();
+            if (cmData?.url) setMeetingUrl(cmData.url);
+          }
+        } catch (cmErr) {
+          console.warn('ClickMeeting registration failed (non-blocking):', cmErr);
+        }
+      }
+
       setSubmitState('success');
     } catch {
       setSubmitState('error');
@@ -108,6 +136,19 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
           <CheckCircle className="h-12 w-12 text-primary mx-auto" />
           <h3 className="text-xl font-bold text-foreground">{t('eventDetail.form.successTitle')}</h3>
           <p className="text-muted-foreground text-sm">{t('eventDetail.form.successDesc')}</p>
+          <p className="text-muted-foreground text-xs">{t('eventDetail.form.clickMeetingPlatformInfo')}</p>
+
+          {meetingUrl && (
+            <div className="pt-2">
+              <Button className="w-full" size="lg" asChild>
+                <a href={meetingUrl} target="_blank" rel="noopener noreferrer">
+                  {t('eventDetail.form.joinWebinar')} <ExternalLink className="h-4 w-4 ml-1" />
+                </a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-2">{t('eventDetail.form.clickMeetingInfo')}</p>
+            </div>
+          )}
+
           <div className="space-y-2 pt-4">
             <p className="text-sm font-medium text-foreground">{t('eventDetail.form.addToCalendar')}</p>
             <div className="flex gap-2 justify-center">
@@ -122,7 +163,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
             </div>
           </div>
           <div className="pt-4">
-            <Button className="w-full" data-cta="gap-call" asChild>
+            <Button className="w-full" variant="outline" data-cta="gap-call" asChild>
               <a href={`/${currentLocale}/contact`}>
                 {t('eventDetail.form.gapCallCta')} <ExternalLink className="h-4 w-4 ml-1" />
               </a>
@@ -231,6 +272,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         <Button type="submit" className="w-full" size="lg" disabled={submitState === 'loading'} data-cta="register-event">
           {submitState === 'loading' ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> {t('eventDetail.form.submitting')}</> : t('eventDetail.form.submit')}
         </Button>
+        <p className="text-xs text-muted-foreground text-center">{t('eventDetail.form.clickMeetingPlatformNote')}</p>
       </form>
     </div>
   );

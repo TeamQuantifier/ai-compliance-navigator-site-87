@@ -4132,7 +4132,7 @@
     "webinar4q2": "Jak hlásit incidenty do 24h/72h?",
     "cycleBadge": "Ušetřete čas",
     "cycleFormTitle": "Zaregistrujte se na celý cyklus jedním formulářem",
-    "cycleFormSubtitle": "Vyplňte jednou — zaregistrujeme vás na všechny 4 webináře. Obdržíte potvrzení a materiály z každého setkání.",
+    "cycleFormSubtitle": "Vyplňte jednou — budete zaregistrováni na všechny 4 webináře. Webináře se budou konat na platformě <a href='https://quantifier.clickmeeting.com/' target='_blank' class='underline text-primary hover:text-primary/80'>ClickMeeting</a>.",
     "cycleFormSubmit": "Zaregistrovat se na 4 webináře",
     "cycleSuccessTitle": "Hotovo! Jste zaregistrováni na celý cyklus.",
     "cycleSuccessDesc": "Potvrzení a podrobnosti o každém ze 4 webinářů vám pošleme e-mailem.",
@@ -4204,7 +4204,11 @@
       "successDesc": "Potvrzení a podrobnosti vám zašleme e-mailem.",
       "addToCalendar": "Přidat do kalendáře:",
       "gapCallCta": "Rezervovat 20min NIS2 Gap Call",
-      "required": "Toto pole je povinné"
+      "required": "Toto pole je povinné",
+      "joinWebinar": "Připojit se k webináři",
+      "clickMeetingInfo": "Webinář se bude konat na platformě ClickMeeting. Odkaz na místnost byl odeslán na váš e-mail.",
+      "clickMeetingPlatformInfo": "Webinář se bude konat na platformě ClickMeeting.",
+      "clickMeetingPlatformNote": "Webinář se bude konat na platformě ClickMeeting. Po registraci obdržíte e-mail s odkazem na místnost."
     },
     "nis2MapaRyzyka": {
       "title": "Nová realita: geopolitika, trh a regulační důsledky",

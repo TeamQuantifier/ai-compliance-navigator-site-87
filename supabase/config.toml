@@ -11,3 +11,9 @@ verify_jwt = false
 
 [functions.prerender-marketing]
 verify_jwt = false
+
+[functions.clickmeeting-register]
+verify_jwt = false
+
+[functions.clickmeeting-list-conferences]
+verify_jwt = false

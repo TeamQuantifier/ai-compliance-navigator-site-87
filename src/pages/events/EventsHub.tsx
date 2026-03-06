@@ -137,8 +137,8 @@ const EventsHub = () => {
       <CycleRegistrationForm />
 
       {/* Closing text */}
-      <section className="mb-16 max-w-3xl">
-        <p className="text-muted-foreground">{t('eventsHub.closingText')}</p>
+      <section className="mb-16 max-w-3xl mx-auto text-center">
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{t('eventsHub.closingText')}</p>
       </section>
 
       {/* FAQ section with JSON-LD */}

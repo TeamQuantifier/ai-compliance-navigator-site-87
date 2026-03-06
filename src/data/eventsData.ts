@@ -45,6 +45,7 @@ export interface EventData {
   speakers: EventSpeaker[];
   bonusMaterials: string[];
   faqs: EventFAQ[];
+  clickMeetingRoomId?: number;
   seo: {
     metaTitle: string;
     metaDescription: string;
@@ -115,6 +116,7 @@ export const events: EventData[] = [
       metaTitle: 'NIS2 mapa ryzyka: webinar — obowiązki i zagrożenia',
       metaDescription: 'Bezpłatny webinar NIS2: jak zbudować mapę ryzyka, zidentyfikować obowiązki i uniknąć najczęstszych błędów. Dla zarządu, compliance i IT.',
     },
+    clickMeetingRoomId: 9726774,
     lastUpdated: '2026-02-26',
   },
   {
@@ -176,6 +178,7 @@ export const events: EventData[] = [
       metaTitle: 'NIS2 role i procesy: webinar — system zarządzania',
       metaDescription: 'Bezpłatny webinar: jak zdefiniować role, procesy i matrycę RACI w systemie NIS2/ISO 27001. Dla compliance i IT.',
     },
+    clickMeetingRoomId: 9729489,
     lastUpdated: '2026-02-26',
   },
   {
@@ -237,6 +240,7 @@ export const events: EventData[] = [
       metaTitle: 'NIS2 kontrola: webinar — dokumenty i dowody',
       metaDescription: 'Bezpłatny webinar NIS2: jak przygotować dokumenty i dowody zgodności na kontrolę. Polityki, procedury, raportowanie incydentów.',
     },
+    clickMeetingRoomId: 9729510,
     lastUpdated: '2026-02-26',
   },
   {
@@ -297,6 +301,7 @@ export const events: EventData[] = [
       metaTitle: 'Kontrola NIS2: webinar — jak przejść kontrolę',
       metaDescription: 'Bezpłatny webinar: jak przejść kontrolę NIS2 od A do Z. Symulacja kontroli, checklista 30+ punktów, plan naprawczy. Dla compliance i IT.',
     },
+    clickMeetingRoomId: 9729517,
     lastUpdated: '2026-02-26',
   },
 ];

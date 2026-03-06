@@ -1,9 +1,9 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { supabase } from '@/integrations/supabase/client';
 import { newsletterClient } from '@/lib/newsletter-client';
@@ -232,12 +232,37 @@ function BodySection({ text }: { text: string }) {
 }
 
 // ─── Main page ─────────────────────────────────────────────────
+const THANK_YOU_PATHS: Record<QuizLang, string> = {
+  pl: '/pl/sprawdz-cyberbezpieczenstwo/dziekujemy',
+  en: '/en/cybersecurity-check/thank-you',
+  cs: '/cs/zkontrolujte-kybernetickou-bezpecnost/dekujeme',
+};
+
+const BASE_PATHS: Record<QuizLang, string> = {
+  pl: '/pl/sprawdz-cyberbezpieczenstwo',
+  en: '/en/cybersecurity-check',
+  cs: '/cs/zkontrolujte-kybernetickou-bezpecnost',
+};
+
+function isThankYouPath(pathname: string): boolean {
+  return Object.values(THANK_YOU_PATHS).some(p => pathname.replace(/\/$/, '') === p);
+}
+
 export default function FormularzPage() {
   const lang = useLang();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [phase, setPhase] = useState<'filling' | 'submitting' | 'result'>('filling');
   const [result, setResult] = useState<ResultData | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+
+  // If user lands on thank-you URL directly without result data, redirect to quiz root
+  useEffect(() => {
+    if (isThankYouPath(location.pathname) && !result) {
+      navigate(BASE_PATHS[lang], { replace: true });
+    }
+  }, []);
 
   const schema = makeSchema(lang);
 
@@ -296,6 +321,9 @@ export default function FormularzPage() {
 
       setResult({ title: template.title, body: template.body, resultKey });
       setPhase('result');
+
+      // Navigate to thank-you URL for LinkedIn conversion tracking
+      navigate(THANK_YOU_PATHS[lang], { replace: true });
 
       setTimeout(() => {
         resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -427,7 +455,7 @@ export default function FormularzPage() {
                 </div>
                 <div className="mt-3 text-center">
                   <button
-                    onClick={() => { setPhase('filling'); setResult(null); }}
+                    onClick={() => { setPhase('filling'); setResult(null); navigate(BASE_PATHS[lang], { replace: true }); }}
                     className="text-sm text-gray-400 hover:text-[#6d38a8] underline underline-offset-2 transition-colors"
                   >
                     {RETRY_LABEL[lang]}

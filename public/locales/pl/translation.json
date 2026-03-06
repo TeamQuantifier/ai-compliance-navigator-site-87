@@ -4784,7 +4784,7 @@
     "webinar4q2": "Jak raportować incydenty w 24h/72h?",
     "cycleBadge": "Oszczędź czas",
     "cycleFormTitle": "Zapisz się na cały cykl jednym formularzem",
-    "cycleFormSubtitle": "Wypełnij raz — zarejestrujemy Cię na wszystkie 4 webinary. Otrzymasz potwierdzenie i materiały z każdego spotkania.",
+    "cycleFormSubtitle": "Wypełnij raz — zarejestrujesz się na wszystkie 4 webinary. Webinary odbędą się na platformie <a href='https://quantifier.clickmeeting.com/' target='_blank' class='underline text-primary hover:text-primary/80'>ClickMeeting</a>.",
     "cycleFormSubmit": "Zapisz się na 4 webinary",
     "cycleSuccessTitle": "Gotowe! Jesteś zapisany/a na cały cykl.",
     "cycleSuccessDesc": "Potwierdzenie i szczegóły każdego z 4 webinarów wyślemy na Twój e-mail.",
@@ -4856,7 +4856,11 @@
       "successDesc": "Potwierdzenie i szczegóły wyślemy na Twój e-mail.",
       "addToCalendar": "Dodaj do kalendarza:",
       "gapCallCta": "Umów 20-min NIS2 Gap Call",
-      "required": "To pole jest wymagane"
+      "required": "To pole jest wymagane",
+      "joinWebinar": "Dołącz do webinaru",
+      "clickMeetingInfo": "Webinar odbędzie się na platformie ClickMeeting. Link do pokoju został wysłany na Twój e-mail.",
+      "clickMeetingPlatformInfo": "Webinar odbędzie się na platformie ClickMeeting.",
+      "clickMeetingPlatformNote": "Webinar odbędzie się na platformie ClickMeeting. Po rejestracji otrzymasz e-mail z linkiem do pokoju."
     },
     "nis2MapaRyzyka": {
       "title": "Nowa rzeczywistość: geopolityka, rynek i konsekwencje regulacyjne",
