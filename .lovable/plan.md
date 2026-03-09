@@ -1,41 +1,42 @@
 
 
-## Plan: 3-Row Infinite Scrolling Logo Marquee
+## Diagnoza problemu indeksowania
 
-Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
+### Co działa poprawnie
+- **Sitemap Edge Function** — zwraca prawidłowy XML z `xmlns:xhtml`, `<xhtml:link>` hreflang i `<lastmod>` dla wszystkich stron. Zweryfikowane bezpośrednio.
+- **Proxy `/sitemap.xml`** — działa na produkcji, zwraca XML (nie HTML).
+- **`prerenderReady`** — ustawiane w `PageTemplate` i `BlogPost` — Netlify Prerender powinien czekać.
 
-### Approach
+### Znalezione problemy
 
-**Split logos into 3 groups** (9 logos each):
-- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
-- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
-- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+**1. Brak `<html lang>` per locale**
+`index.html` ma na sztywno `<html lang="en">`. Żadna strona nie ustawia `htmlAttributes` w Helmet. Gdy Netlify Prerender robi snapshot `/cs/frameworks/ccpa/`, snapshot ma `<html lang="en">`. Google widzi sprzeczność: hreflang mówi `cs-CZ`, ale HTML mówi `lang="en"`. To **sygnał** dla Google, że strona nie jest naprawdę czeska/polska → może zdecydować się nie indeksować wersji CZ/PL.
 
-**CSS keyframes** added to `index.css`:
-- `scroll-left`: `translateX(0)` to `translateX(-50%)`
-- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+**Fix**: Dodać `<html lang={currentLocale}>` przez Helmet w `PageTemplate`.
 
-Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+**2. Brak trailing slash enforcement w React Router**
+Sitemap podaje URL-e z trailing slash (`/en/frameworks/ccpa/`). Ale React Router obsługuje zarówno `/en/frameworks/ccpa` jak i `/en/frameworks/ccpa/` — Google może widzieć dwa różne URL-e. Canonical w Helmet ma trailing slash, ale jeśli Google crawluje wersję bez slash, to widzi redirect (albo nie) do wersji z slash.
 
-**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+**Fix**: Nie wymaga zmian — `canonicalUrl` w PageTemplate już wymusza trailing slash. To wystarczający sygnał.
 
-### File Changes
+**3. Resubmit sitemap w GSC**
+Jeśli wcześniej sitemap zwracał HTML (przez Netlify Prerender), GSC mógł zablokować cały sitemap jako "nieprawidłowy format". Po fixie proxy trzeba:
+- Usunąć starą mapę witryny w GSC
+- Dodać ją ponownie (`https://quantifier.ai/sitemap.xml`)
+- Poczekać na ponowne pobranie
 
-**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+### Plan zmian
 
-**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
-
-### Technical Details
-
-Each row structure:
+**1. `src/components/PageTemplate.tsx`** — Dodać `htmlAttributes` do Helmet:
+```tsx
+<Helmet htmlAttributes={{ lang: currentLocale }}>
 ```
-<div class="overflow-hidden">
-  <div class="flex animate-scroll-right" style="width: fit-content">
-    {rowLogos.map(logo)} {/* original */}
-    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
-  </div>
-</div>
-```
+To sprawi, że każda strona będzie miała prawidłowy `<html lang="pl">`, `<html lang="cs">` lub `<html lang="en">` — zarówno w SPA jak i w snapshocie prerendera.
 
-Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
+**2. `src/components/seo/SEOHead.tsx`** — Sprawdzić czy SEOHead (używany przez BlogPost) też ustawia `htmlAttributes`. Jeśli nie, dodać.
+
+**3. Ręczne akcje (po deployu)**:
+- W Google Search Console: usuń starą mapę witryny i dodaj ponownie `https://quantifier.ai/sitemap.xml`
+- Kliknij "Poproś o indeksowanie" dla kilku kluczowych stron (np. `/en/frameworks/iso-27001/`, `/pl/frameworks/gdpr/`)
+- Poczekaj 3-7 dni na ponowne przetworzenie
 
