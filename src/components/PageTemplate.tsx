@@ -194,7 +194,7 @@ const PageTemplate = ({
   return (
     <>
       {!noSeo && (
-        <Helmet>
+        <Helmet htmlAttributes={{ lang: currentLocale }}>
           <title>{fullTitle}</title>
           <meta name="description" content={description} />
           
