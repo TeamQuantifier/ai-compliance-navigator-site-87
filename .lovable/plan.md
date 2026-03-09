@@ -1,41 +1,62 @@
 
 
-## Plan: 3-Row Infinite Scrolling Logo Marquee
+## Analysis: Static SEO tags in index.html
 
-Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
+### Current Architecture
 
-### Approach
+The site has **two layers of bot handling**:
+1. **Netlify Prerender Extension** — serves fully rendered HTML snapshots to crawlers (Googlebot, Bingbot, etc.)
+2. **Vercel rewrites** — proxies bot requests to Supabase Edge Functions that return server-rendered HTML
+3. **React-helmet-async** — manages all meta tags dynamically after JS loads
 
-**Split logos into 3 groups** (9 logos each):
-- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
-- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
-- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+### Will this help SEO?
 
-**CSS keyframes** added to `index.css`:
-- `scroll-left`: `translateX(0)` to `translateX(-50%)`
-- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+**Short answer: Minimal benefit, with one significant risk.**
 
-Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+**Why it's mostly unnecessary:**
+- Googlebot executes JavaScript — it sees react-helmet-async output
+- Netlify Prerender Extension serves fully rendered HTML to all major crawlers — they never see raw index.html
+- The static tags are only visible in the ~0.5s before JS hydrates, which crawlers with prerendering never encounter
 
-**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+**The canonical tag is actively harmful:**
+- A static `<link rel="canonical" href="https://quantifier.ai/en/" />` in index.html means that if ANY crawler somehow bypasses prerendering and hits `/pl/` or `/cs/`, the canonical tells it "this page is actually `/en/`" — incorrectly canonicalizing Polish/Czech pages to English
+- React-helmet would override it after JS loads, but there's a race condition risk
+- Same problem applies to the static hreflang tags — they only reference homepage URLs, which is wrong for `/en/frameworks/iso-27001` etc.
 
-### File Changes
+**What IS beneficial:**
+- Updated `<title>` and `<meta description>` — harmless improvement as fallback, keyword-rich
+- `og:image`, `og:site_name`, `twitter:card` — good defaults for edge cases (some social media crawlers don't execute JS)
+- `<meta name="robots" content="index, follow">` — already handled by PageTemplate but a safe fallback
 
-**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+### Recommendation
 
-**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+Implement a **partial version** of this prompt:
+- Update static `<title>` and `<meta description>` — yes
+- Add OG/Twitter fallback tags (without URL-specific ones) — yes
+- Add `<meta name="robots">` — yes
+- **Skip** canonical and hreflang tags — these are locale-dependent and must remain dynamic only
+- **Skip** `og:url` — also locale-dependent
 
-### Technical Details
+### Technical changes
 
-Each row structure:
+**File: `index.html`** — update title, description, add safe static OG/Twitter fallbacks:
+
+```html
+<title>Quantifier.ai | AI Compliance Automation Platform</title>
+<meta name="description" content="Automate compliance for ISO 27001, SOC 2, NIS2, GDPR & ESG with AI-native platform. Trusted by 250+ companies including BNP Paribas. Request a demo." />
+
+<!-- Static fallback OG tags (overridden by react-helmet-async per page) -->
+<meta property="og:title" content="Quantifier.ai | AI Compliance Automation" />
+<meta property="og:description" content="Automate compliance for ISO 27001, SOC 2, NIS2, GDPR & ESG. Trusted by 250+ companies." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://quantifier.ai/og-homepage.png" />
+<meta property="og:site_name" content="Quantifier.ai" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="robots" content="index, follow" />
 ```
-<div class="overflow-hidden">
-  <div class="flex animate-scroll-right" style="width: fit-content">
-    {rowLogos.map(logo)} {/* original */}
-    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
-  </div>
-</div>
-```
 
-Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
+**NOT adding** (dangerous for multi-locale SPA):
+- `<link rel="canonical">` — must stay dynamic
+- `<link rel="alternate" hreflang>` — must stay dynamic
+- `<meta property="og:url">` — must stay dynamic
 
