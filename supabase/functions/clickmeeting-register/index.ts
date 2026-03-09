@@ -27,22 +27,22 @@ Deno.serve(async (req) => {
     }
 
     // ClickMeeting registration API
-    // Fields: 1 = first name, 2 = last name, 3 = email
+    // Uses form-urlencoded format as required by ClickMeeting API
+    // Fields: registration[1] = first name, registration[2] = last name, registration[3] = email
+    const formBody = new URLSearchParams();
+    formBody.append('registration[1]', firstName.trim());
+    formBody.append('registration[2]', '-');
+    formBody.append('registration[3]', email.trim());
+
     const cmResponse = await fetch(
       `https://api.clickmeeting.com/v1/conferences/${roomId}/registration`,
       {
         method: 'POST',
         headers: {
           'X-Api-Key': apiKey,
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          registration: {
-            '1': firstName,
-            '2': '-',
-            '3': email,
-          },
-        }),
+        body: formBody.toString(),
       }
     );
 
