@@ -77,6 +77,23 @@ const CycleRegistrationForm = () => {
       const { error } = await supabase.from('event_registrations').insert(rows);
       if (error) throw error;
 
+      // Register in ClickMeeting for all events (non-blocking)
+      const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+      const cmRegistrations = events
+        .filter(e => e.clickMeetingRoomId)
+        .map(e =>
+          fetch(`https://${projectId}.supabase.co/functions/v1/clickmeeting-register`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              firstName: data.firstName,
+              email: data.workEmail,
+              roomId: e.clickMeetingRoomId,
+            }),
+          }).catch(err => console.warn(`ClickMeeting registration failed for ${e.slug}:`, err))
+        );
+      Promise.allSettled(cmRegistrations);
+
       // Fire-and-forget: sync to marketing API
       newsletterClient.subscribe(data.workEmail, currentLocale, {
         source: 'webinar_cycle_registration',
