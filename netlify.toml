@@ -270,6 +270,13 @@
   to = "/:locale/frameworks/ccpa/"
   status = 301
 
+# Root redirect — must be before SPA fallback
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 301
+  force = true
+
 # SPA fallback — must be last
 [[redirects]]
   from = "/*"
