@@ -1,41 +1,59 @@
 
 
-## Plan: 3-Row Infinite Scrolling Logo Marquee
+## Plan: Aktualizacja meta tagów SEO na 7 stronach
 
-Replace the single Embla carousel with 3 CSS-animated marquee rows, each scrolling in alternating directions (right, left, right). This removes the dependency on Embla/Autoplay for this section and uses pure CSS animations for smoother, continuous movement.
+### Analiza wpływu na SEO
 
-### Approach
+Proponowane zmiany poprawią SEO w kilku wymiarach:
+- **Title tagi** stają się bardziej keyword-rich i lepiej dopasowane do search intent (np. "AI Compliance Platform" zamiast generycznego "Compliance Automation Platform")
+- **Descriptions** zawierają social proof ("250+ companies", "BNP Paribas") co zwiększa CTR w SERP
+- **Osobne OG title/description** na homepage — OG jest bardziej brandowy, a title bardziej keyword-focused. To standard best practice.
+- **Długości** mieszczą się w limitach (title <60 znaków, description <155 znaków)
 
-**Split logos into 3 groups** (9 logos each):
-- Row 1 (scroll right): logos 1-9 (UDS, NBS, Pracodawcy RP, Wosana, Zymetria, Real Management, NOMAX, RBE, Dr Irena Eris)
-- Row 2 (scroll left): logos 10-18 (MAMNT, BCC, LOCO Trans-Seed, Bank Polski, 4F, Compensa, BNP Paribas, Cash Director, Unicell)
-- Row 3 (scroll right): logos 19-27 (Adamed, Bidfood Farutex, CloudFerro, Gobarto, Hilding Anders, Kazar, Marc Kolor, OEX, Baltic)
+### Architektura zmian
 
-**CSS keyframes** added to `index.css`:
-- `scroll-left`: `translateX(0)` to `translateX(-50%)`
-- `scroll-right`: `translateX(-50%)` to `translateX(0)`
+Strony framework (ISO, SOC, NIS2, GDPR, ESG) używają `PageTemplate`, który automatycznie dodaje `| Quantifier.ai` do title. Więc w translacjach title NIE powinien zawierać brandu.
 
-Each row duplicates its logos (renders them twice) to create seamless infinite loop. The animation runs continuously at ~30s duration.
+Homepage (`Index.tsx`) samodzielnie buduje `fullTitle = title + " | Quantifier.ai"`. Trzeba dodać osobne klucze OG i zmienić kod aby je obsłużył.
 
-**Layout**: 3 rows stacked vertically with `gap-4`, each row is a horizontal flex with `overflow-hidden`, logos inside animate via `animation: scroll-left/right 30s linear infinite`.
+GDPR używa innego klucza (`gdprPage.seo.*`) niż reszta framework pages (`seo.frameworks.*`).
 
-### File Changes
+### Zmiany w plikach
 
-**`src/components/InsidersSection.tsx`** — Replace single `<Carousel>` block with 3 marquee `<div>` rows. Remove Embla imports. Keep all logo data, header, and CTA unchanged.
+**1. `src/pages/Index.tsx`** — dodać osobne OG title/description z translacji:
+- Zmienić `<meta property="og:title">` z `fullTitle` na `t('seo.index.ogTitle')` z fallbackiem
+- Zmienić `<meta property="og:description">` z `description` na `t('seo.index.ogDescription')` z fallbackiem
 
-**`src/index.css`** — Add two keyframes (`scroll-left`, `scroll-right`) for the marquee animation.
+**2. `public/locales/en/translation.json`** — zaktualizować klucze EN:
+- `seo.index.title` → "AI Compliance Platform | ISO 27001, SOC 2, NIS2 | Quantifier" (pełny, bo Index.tsx append pattern trzeba zmienić)
+- `seo.index.description` → nowy tekst z social proof
+- Dodać `seo.index.ogTitle` i `seo.index.ogDescription`
+- `seo.frameworks.informationSecurity.iso27001.title` → "ISO 27001 Compliance Automation"
+- `seo.frameworks.informationSecurity.iso27001.description` → nowy tekst
+- `seo.frameworks.cybersecurity.soc.title` → "SOC 2 Automation Platform | Type I & II"
+- `seo.frameworks.cybersecurity.soc.description` → nowy tekst
+- `seo.frameworks.cybersecurity.nisII.title` → "NIS2 Compliance Software | Directive Implementation"
+- `seo.frameworks.cybersecurity.nisII.description` → nowy tekst
+- `gdprPage.seo.title` → "GDPR Compliance Automation | Data Privacy | Quantifier" (uwaga: ten klucz zawiera brand bo Gdpr.tsx go wstawia do PageTemplate)
+- `gdprPage.seo.description` → nowy tekst
+- `seo.frameworks.esg.title` → "ESG Reporting & Compliance Platform | CSRD Ready"
+- `seo.frameworks.esg.description` → nowy tekst
 
-### Technical Details
+**3. `public/locales/pl/translation.json`** — odpowiedniki PL:
+- `seo.index.title` → "Platforma Compliance AI | ISO 27001, SOC 2, NIS2 | Quantifier"
+- `seo.index.description` → "Automatyzacja compliance dla ISO 27001, SOC 2, NIS2, RODO i ESG. Platforma AI-native zaufana przez 250+ firm. Umów demo."
+- Dodać `seo.index.ogTitle` → "Quantifier.ai — Platforma AI do automatyzacji compliance"
+- Dodać `seo.index.ogDescription` → "Zarządzaj zgodnością z wieloma standardami z jednej platformy. AI-powered tworzenie polityk, automatyzacja zadań, gotowość na audyt."
+- `seo.frameworks.informationSecurity.iso27001.title/description` → polskie odpowiedniki
+- `seo.frameworks.cybersecurity.soc.title/description` → polskie odpowiedniki
+- `seo.frameworks.cybersecurity.nisII.title/description` → polskie odpowiedniki
+- `gdprPage.seo.title/description` → polskie odpowiedniki (RODO)
+- `seo.frameworks.esg.title/description` → polskie odpowiedniki
 
-Each row structure:
-```
-<div class="overflow-hidden">
-  <div class="flex animate-scroll-right" style="width: fit-content">
-    {rowLogos.map(logo)} {/* original */}
-    {rowLogos.map(logo)} {/* duplicate for seamless loop */}
-  </div>
-</div>
-```
+**4. Modyfikacja `Index.tsx`** — homepage title nie powinien mieć `| Quantifier.ai` append (bo nowy title już zawiera `| Quantifier`). Zmiana: użyć `title` bezpośrednio jako `<title>` bez appendu, i dodać osobne OG fields.
 
-Row directions: Row 1 right, Row 2 left, Row 3 right. Pause on hover via `hover:animation-play-state: paused` utility.
+### Uwaga: PageTemplate i GDPR
+PageTemplate dodaje `| Quantifier.ai` do wszystkich tytułów. GDPR page (`Gdpr.tsx`) przekazuje `gdprPage.seo.title` do PageTemplate, więc końcowy title to `gdprPage.seo.title + " | Quantifier.ai"`. Obecna wartość to `"GDPR Compliance Software | Automated Data Protection | Quantifier"` → z appendem daje `"... | Quantifier | Quantifier.ai"`. Trzeba usunąć `| Quantifier` z translacji żeby nie było duplikacji brandu.
+
+Docelowo: `gdprPage.seo.title` = `"GDPR Compliance Automation | Data Privacy"` → PageTemplate doda `| Quantifier.ai` → wynik: `"GDPR Compliance Automation | Data Privacy | Quantifier.ai"`.
 
