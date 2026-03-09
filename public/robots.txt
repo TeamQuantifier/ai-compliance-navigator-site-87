@@ -62,7 +62,6 @@ Disallow: /lovable-uploads/
 # See /llms-full.txt for detailed AI-readable content
 
 Sitemap: https://quantifier.ai/sitemap.xml
-Sitemap: https://quantifier.ai/functions/v1/sitemap
 
 # RSS Feed
 # https://quantifier.ai/functions/v1/rss-feed
