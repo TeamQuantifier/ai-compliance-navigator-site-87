@@ -66,6 +66,13 @@
   to = "/en/frameworks/"
   status = 301
 
+# Proxy sitemap.xml to dynamic edge function (prevents prerender interception)
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/sitemap"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/contact.html"
   to = "/en/contact/"
