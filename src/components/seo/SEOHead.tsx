@@ -215,7 +215,7 @@ export const SEOHead = ({
   const breadcrumbSchema = buildBreadcrumbSchema();
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang }}>
       {/* Basic Meta */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />
