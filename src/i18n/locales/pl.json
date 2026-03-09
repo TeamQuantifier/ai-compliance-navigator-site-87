@@ -3265,8 +3265,10 @@
   },
   "seo": {
     "index": {
-      "title": "AI-Native Platforma GRC do Automatyzacji Compliance",
-      "description": "Quantifier.ai to AI-native platforma GRC, która automatyzuje procesy zgodności i zarządza standardami regulacyjnymi jak SOC 2, ISO 27001, RODO i więcej. Uprość compliance z naszym AI Compliance Officer."
+      "title": "Platforma Compliance AI | ISO 27001, SOC 2, NIS2",
+      "description": "Automatyzacja compliance dla ISO 27001, SOC 2, NIS2, RODO i ESG. Platforma AI-native zaufana przez 250+ firm. Umów demo.",
+      "ogTitle": "Quantifier.ai — Platforma AI do automatyzacji compliance",
+      "ogDescription": "Zarządzaj zgodnością z wieloma standardami z jednej platformy. AI-powered tworzenie polityk, automatyzacja zadań, gotowość na audyt."
     },
     "product": {
       "title": "Funkcje Produktu",
@@ -3327,24 +3329,24 @@
         "title": "Standardy Cyberbezpieczeństwa",
         "description": "Opanuj zgodność z SOC 2, NIS II i NIST. Automatyzacja oparta na AI dla kontroli bezpieczeństwa, oceny ryzyka i ciągłego monitoringu.",
         "nisII": {
-          "title": "Zgodność z NIS II - Dyrektywa UE o Cyberbezpieczeństwie",
-          "description": "Osiągnij zgodność z NIS II dzięki Quantifier.ai. Analiza luk oparta na AI, harmonogram wdrożenia i ciągły monitoring wymagań UE."
+          "title": "Oprogramowanie NIS2 | Wdrożenie Dyrektywy",
+          "description": "Spełnij wymagania NIS2 z automatycznym zarządzaniem compliance. Ocena ryzyka, raportowanie incydentów i bezpieczeństwo łańcucha dostaw w jednej platformie."
         },
         "nist": {
           "title": "Zgodność z NIST Cybersecurity Framework",
           "description": "Wdróż NIST CSF z Quantifier.ai. Identyfikuj, Chroń, Wykrywaj, Reaguj, Odzyskuj - wszystko zautomatyzowane z AI."
         },
         "soc": {
-          "title": "Platforma Zgodności SOC 1 i SOC 2",
-          "description": "Usprawnij audyty SOC 1 i SOC 2 z Quantifier.ai. Automatyczne zbieranie dowodów, monitoring kontroli i raporty gotowe na audyt."
+          "title": "Platforma SOC 2 | Type I & II",
+          "description": "Osiągnij zgodność SOC 2 szybciej dzięki AI. Zbieranie dowodów, zarządzanie politykami i ciągły monitoring. Zaufało nam 250+ organizacji."
         }
       },
       "informationSecurity": {
         "title": "Standardy Bezpieczeństwa Informacji",
         "description": "Automatyzacja zgodności ISO 27001, ISO 9001 i DORA. Buduj solidne systemy zarządzania bezpieczeństwem informacji z workflow opartymi na AI.",
         "iso27001": {
-          "title": "Zgodność ISO 27001 - Certyfikacja ISMS",
-          "description": "Uzyskaj certyfikat ISO 27001 z Quantifier.ai. Wdrożenie ISMS oparte na AI, ocena ryzyka i przygotowanie do audytu."
+          "title": "Automatyzacja ISO 27001",
+          "description": "Automatyzuj certyfikację ISO 27001 z AI. Zarządzanie politykami, ocena ryzyka, zbieranie dowodów i przygotowanie do audytu w jednej platformie."
         },
         "iso9001": {
           "title": "System Zarządzania Jakością ISO 9001",
@@ -3364,8 +3366,8 @@
         "description": "Zarządzanie ISO 14001, LCA, Śladem Węglowym i Dekarbonizacją. Śledź wpływ środowiskowy i spełniaj wymagania zrównoważoności."
       },
       "esg": {
-        "title": "Raportowanie ESG",
-        "description": "Automatyzacja raportowania CSRD, GRI i CBAM. Kompleksowe zbieranie, analiza i zarządzanie ujawnieniami danych ESG."
+        "title": "Platforma ESG | Raportowanie CSRD",
+        "description": "Usprawnij raportowanie ESG z analizą podwójnej istotności, śledzeniem GHG i raportami zgodnymi z CSRD. Zweryfikowane przez TÜV NORD."
       },
       "governance": {
         "title": "Governance i Zgodność Prawna",
@@ -3728,8 +3730,8 @@
   },
   "gdprPage": {
     "seo": {
-      "title": "Oprogramowanie do zgodności z RODO | Automatyczna ochrona danych | Quantifier",
-      "description": "Zautomatyzuj zgodność z RODO dzięki Quantifier. Zarządzaj zgodami, żądaniami DSAR, mapowaniem danych, powiadomieniami o naruszeniach i DPIA z automatyzacją opartą na AI."
+      "title": "Automatyzacja RODO | Ochrona Danych",
+      "description": "Automatyzuj zgodność z RODO dzięki platformie AI-native. Mapowanie danych, DPIA, zarządzanie zgodami i workflow powiadomień o naruszeniach."
     },
     "hero": {
       "badge": "Zgodność z RODO",

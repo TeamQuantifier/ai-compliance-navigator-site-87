@@ -35,6 +35,8 @@ const Index = () => {
   const title = t('seo.index.title');
   const description = t('seo.index.description');
   const fullTitle = `${title} | Quantifier.ai`;
+  const ogTitle = t('seo.index.ogTitle', { defaultValue: fullTitle });
+  const ogDescription = t('seo.index.ogDescription', { defaultValue: description });
 
   // Organization JSON-LD Schema
   const organizationSchema = {
@@ -165,8 +167,8 @@ const Index = () => {
         <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={fullTitle} />
-        <meta property="og:description" content={description} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${baseUrl}/og-homepage.png`} />
