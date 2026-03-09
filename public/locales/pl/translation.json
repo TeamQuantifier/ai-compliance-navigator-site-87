@@ -3589,8 +3589,10 @@
   },
   "seo": {
     "index": {
-      "title": "Platforma Automatyzacji Compliance | ISO 27001, SOC 2, NIS2",
-      "description": "Automatyzuj compliance z AI. Skróć przygotowanie do audytów ISO 27001, SOC 2 i NIS2 o 80%. Ciągły monitoring i zbieranie dowodów."
+      "title": "Platforma Compliance AI | ISO 27001, SOC 2, NIS2",
+      "description": "Automatyzacja compliance dla ISO 27001, SOC 2, NIS2, RODO i ESG. Platforma AI-native zaufana przez 250+ firm. Umów demo.",
+      "ogTitle": "Quantifier.ai — Platforma AI do automatyzacji compliance",
+      "ogDescription": "Zarządzaj zgodnością z wieloma standardami z jednej platformy. AI-powered tworzenie polityk, automatyzacja zadań, gotowość na audyt."
     },
     "blog": {
       "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
