@@ -35,6 +35,8 @@ const Index = () => {
   const title = t('seo.index.title');
   const description = t('seo.index.description');
   const fullTitle = `${title} | Quantifier.ai`;
+  const ogTitle = t('seo.index.ogTitle', { defaultValue: fullTitle });
+  const ogDescription = t('seo.index.ogDescription', { defaultValue: description });
 
   // Organization JSON-LD Schema
   const organizationSchema = {
