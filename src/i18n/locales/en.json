@@ -3521,8 +3521,8 @@
         "title": "Information Security Frameworks",
         "description": "ISO 27001, ISO 9001, and DORA compliance automation. Build robust information security management systems with AI-powered workflows.",
         "iso27001": {
-          "title": "ISO 27001 Compliance - ISMS Certification",
-          "description": "Achieve ISO 27001 certification with Quantifier.ai. AI-powered ISMS implementation, risk assessment, and audit preparation for information security."
+          "title": "ISO 27001 Compliance Automation",
+          "description": "Automate ISO 27001 certification with AI. Policy management, risk assessment, evidence collection & audit preparation in one platform."
         },
         "iso9001": {
           "title": "ISO 9001 Quality Management System",
