@@ -3513,8 +3513,8 @@
           "description": "Implement NIST CSF with Quantifier.ai. Identify, Protect, Detect, Respond, Recover - all automated with AI-powered compliance management."
         },
         "soc": {
-          "title": "SOC 1 & SOC 2 Compliance Platform",
-          "description": "Streamline SOC 1 and SOC 2 audits with Quantifier.ai. Automated evidence collection, control monitoring, and audit-ready reporting."
+          "title": "SOC 2 Automation Platform | Type I & II",
+          "description": "Achieve SOC 2 compliance faster with AI-driven evidence collection, policy management, and continuous monitoring. Trusted by 250+ organizations."
         }
       },
       "informationSecurity": {
