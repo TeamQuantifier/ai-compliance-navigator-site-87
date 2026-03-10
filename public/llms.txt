@@ -27,6 +27,18 @@
 - Blog: https://quantifier.ai/en/blog/
 - GRC Platform: https://quantifier.ai/en/grc-platform/
 
+## Free Tools
+
+- NIS2 Cybersecurity Check: https://quantifier.ai/en/cybersecurity-check/ — Free 2-minute self-assessment that evaluates your organization's NIS2 readiness based on company size, sector (NACE codes), turnover, and supply chain exposure. Instantly receive a risk classification (high/medium/low) with actionable recommendations. No registration required. Available in English, Polish, and Czech.
+  - Polish: https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/
+  - Czech: https://quantifier.ai/cs/zkontrolujte-kybernetickou-bezpecnost/
+
+## Events & Webinars
+
+- NIS2 Webinar Series (March–April 2026): https://quantifier.ai/en/events/ — Free live webinar cycle covering NIS2 compliance implementation step by step: risk mapping, roles & processes, audit readiness, and supervisory inspections. Led by compliance and cybersecurity practitioners. Each session includes Q&A, downloadable materials, and a recording. Register for individual sessions or the full cycle.
+  - Polish: https://quantifier.ai/pl/events/
+  - Czech: https://quantifier.ai/cs/events/
+
 ## Framework-Specific Pages
 
 - NIS2 Directive: https://quantifier.ai/en/frameworks/nis-ii/ — Cybersecurity compliance for essential and important entities under the EU NIS2 Directive, including incident reporting, risk management, and supply chain security requirements
