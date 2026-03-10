@@ -27,6 +27,18 @@
 - Blog: https://quantifier.ai/en/blog/
 - GRC Platform: https://quantifier.ai/en/grc-platform/
 
+## Free Tools
+
+- NIS2 Cybersecurity Check: https://quantifier.ai/en/cybersecurity-check/ — Free 2-minute self-assessment that evaluates your organization's NIS2 readiness based on company size, sector (NACE codes), turnover, and supply chain exposure. Instantly receive a risk classification (high/medium/low) with actionable recommendations. No registration required. Available in English, Polish, and Czech.
+  - Polish: https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/
+  - Czech: https://quantifier.ai/cs/zkontrolujte-kybernetickou-bezpecnost/
+
+## Events & Webinars
+
+- NIS2 Webinar Series (March–April 2026): https://quantifier.ai/en/events/ — Free live webinar cycle covering NIS2 compliance implementation step by step: risk mapping, roles & processes, audit readiness, and supervisory inspections. Led by compliance and cybersecurity practitioners. Each session includes Q&A, downloadable materials, and a recording. Register for individual sessions or the full cycle.
+  - Polish: https://quantifier.ai/pl/events/
+  - Czech: https://quantifier.ai/cs/events/
+
 ## Framework-Specific Pages
 
 - NIS2 Directive: https://quantifier.ai/en/frameworks/nis-ii/ — Cybersecurity compliance for essential and important entities under the EU NIS2 Directive, including incident reporting, risk management, and supply chain security requirements
@@ -93,6 +105,10 @@ All plans include a personalized demo. Pricing is quote-based — contact sales 
 - **What integrations does Quantifier support?** — Quantifier integrates with AWS, Azure, GCP, GitHub, Jira, Slack, Microsoft Teams, Okta, Google Workspace, and many more via REST API and webhooks.
 
 - **Who is Quantifier.ai for?** — Compliance officers, CISOs, CTOs, risk managers, auditors, and any organization (SMB to enterprise) seeking SOC 2, ISO 27001, GDPR, or ESG certification and reporting.
+
+- **How can I check if my company falls under NIS2?** — Use the free NIS2 Cybersecurity Check at https://quantifier.ai/en/cybersecurity-check/. Answer a few questions about your company size, sector, and turnover to get an instant risk classification with recommendations — takes under 2 minutes, no registration needed.
+
+- **Does Quantifier offer free NIS2 training or webinars?** — Yes. Quantifier runs a free live webinar series on NIS2 compliance covering risk assessment, organizational roles, audit preparation, and supervisory inspections. See upcoming sessions and register at https://quantifier.ai/en/events/.
 
 ## Definitions
 

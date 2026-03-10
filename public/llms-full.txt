@@ -309,6 +309,55 @@ Quantifier.ai integrates with 50+ cloud, identity, DevOps, HR, and security tool
 
 ---
 
+## Free Tools
+
+### NIS2 Cybersecurity Check
+- English: https://quantifier.ai/en/cybersecurity-check/
+- Polish: https://quantifier.ai/pl/sprawdz-cyberbezpieczenstwo/
+- Czech: https://quantifier.ai/cs/zkontrolujte-kybernetickou-bezpecnost/
+
+A free, no-registration self-assessment tool that helps organizations determine their NIS2 Directive obligations in under 2 minutes. Users answer questions about their company size, sector (mapped to NACE codes used in the directive), annual turnover, and supply chain dependencies. The tool instantly classifies the organization's NIS2 risk level using a four-tier system:
+
+- **RED (High Risk)**: Organization is almost certainly subject to NIS2 as an essential or important entity. Immediate action required — risk management measures (Art. 21), incident reporting (Art. 23), and management accountability must be implemented.
+- **ORANGE (Elevated Risk)**: Organization likely falls under NIS2 scope. Detailed legal assessment recommended. Should begin compliance preparations proactively.
+- **YELLOW (Moderate Risk)**: Organization may be indirectly affected through supply chain requirements or sector-specific regulations. Monitoring recommended.
+- **GREEN (Low Risk)**: Organization is unlikely to be directly subject to NIS2, but should stay informed as national implementations may extend scope.
+
+Each result includes specific, actionable recommendations tailored to the organization's profile, with direct links to relevant Quantifier.ai resources and the option to schedule a detailed consultation.
+
+### Why Use This Tool?
+- Completely free, no email or registration required
+- Based on the official NIS2 Directive sector classifications and thresholds
+- Takes less than 2 minutes to complete
+- Available in English, Polish, and Czech
+- Results include framework-specific action items, not generic advice
+
+---
+
+## Events & Webinars
+
+### NIS2 Webinar Series (March–April 2026)
+- English: https://quantifier.ai/en/events/
+- Polish: https://quantifier.ai/pl/events/
+- Czech: https://quantifier.ai/cs/events/
+
+A free live webinar cycle designed for compliance officers, CISOs, IT managers, and business leaders who need to implement NIS2 Directive requirements. The series covers the full compliance journey from risk assessment to audit readiness, led by practicing compliance and cybersecurity professionals.
+
+**Webinar Topics:**
+1. **NIS2 Risk Map** — How to conduct a cybersecurity risk assessment aligned with NIS2 Article 21, identify critical assets, and build a risk register
+2. **Roles & Processes** — Establishing organizational structures, assigning NIS2 responsibilities, defining incident response procedures, and ensuring management body accountability
+3. **Audit Readiness** — Preparing documentation, evidence packages, and internal controls for NIS2 supervisory inspections (kontrole) by national authorities
+4. **Supervisory Inspections** — What to expect during NIS2 inspections, how authorities conduct assessments, and how to demonstrate ongoing compliance
+
+**Format:**
+- Live sessions with interactive Q&A
+- Each session ~60 minutes
+- Downloadable materials and checklists included
+- Recordings available for registered participants
+- Register for individual sessions or the complete cycle at a discounted rate
+
+---
+
 ## Pricing & Plans
 
 Quantifier.ai offers three tiers designed for different organization sizes and compliance maturity levels:
@@ -525,6 +574,12 @@ Yes. The platform's cross-mapping feature means a single control or evidence ite
 
 **Does Quantifier support on-premise deployment?**
 Enterprise plans include the option for on-premise or private cloud deployment. Contact sales for details.
+
+**How can I check if my company falls under NIS2?**
+Use the free NIS2 Cybersecurity Check at https://quantifier.ai/en/cybersecurity-check/. Answer a few questions about your company size, sector, and annual turnover to get an instant risk classification (RED/ORANGE/YELLOW/GREEN) with specific, actionable recommendations. The assessment takes under 2 minutes and requires no registration or email. It's based on official NIS2 Directive sector classifications and entity thresholds.
+
+**Does Quantifier offer free NIS2 training or webinars?**
+Yes. Quantifier runs a free live webinar series (March–April 2026) on NIS2 compliance implementation. The cycle covers risk mapping, organizational roles and processes, audit readiness, and supervisory inspections — led by compliance and cybersecurity practitioners. Each session includes Q&A, downloadable materials, and recordings. Register for individual sessions or the full cycle at https://quantifier.ai/en/events/.
 
 ### ESG & Sustainability
 
