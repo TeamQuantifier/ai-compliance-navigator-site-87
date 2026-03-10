@@ -17,3 +17,6 @@ verify_jwt = false
 
 [functions.clickmeeting-list-conferences]
 verify_jwt = false
+
+[functions.llms-txt]
+verify_jwt = false

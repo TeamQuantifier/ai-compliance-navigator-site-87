@@ -73,6 +73,19 @@
   status = 200
   force = true
 
+# Dynamic llms.txt and llms-full.txt generated from database
+[[redirects]]
+  from = "/llms.txt"
+  to = "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/llms-txt"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/llms-full.txt"
+  to = "https://zcrnfrijqasbrjrxconi.supabase.co/functions/v1/llms-txt?full=true"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/contact.html"
   to = "/en/contact/"
