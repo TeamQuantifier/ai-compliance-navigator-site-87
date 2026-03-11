@@ -74,19 +74,24 @@ const Contact = () => {
 
     setLoading(true);
     try {
-      await newsletterClient.submitContact({
-        firstName: trimmedFirstName,
-        lastName: trimmedLastName,
-        email: trimmedEmail,
-        company: company.trim() || undefined,
-        message: trimmedMessage,
+      const { data, error } = await supabase.functions.invoke('contact-form', {
+        body: {
+          firstName: trimmedFirstName,
+          lastName: trimmedLastName,
+          email: trimmedEmail,
+          company: company.trim() || undefined,
+          message: trimmedMessage,
+          language: currentLocale,
+          sourceUrl: window.location.href,
+        },
       });
+
+      if (error) throw error;
 
       toast({
         title: t('contact.toast.messageSent'),
         description: t('contact.toast.messageSentDesc'),
       });
-
 
       setFirstName('');
       setLastName('');
