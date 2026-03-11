@@ -114,7 +114,7 @@ function NaceSelect({
         } bg-white`}
       >
         <span className={selected ? 'text-gray-900' : 'text-gray-400'}>
-          {selected ? selected.label : Q3_PLACEHOLDER[lang]}
+          {selected ? selected.label[lang] : Q3_PLACEHOLDER[lang]}
         </span>
         <svg className={`w-4 h-4 text-gray-400 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
