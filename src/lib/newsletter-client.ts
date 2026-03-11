@@ -64,9 +64,9 @@ export class NewsletterClient {
     company?: string;
     message: string;
   }) {
-    const pageUrl = (typeof window !== 'undefined' && window.location && window.location.href) || undefined;
+    const pageUrl = (typeof window !== 'undefined' && window.location?.href) || undefined;
 
-    return this._request('/contact', 'POST', {
+    return this._request('/subscribe', 'POST', {
       email: data.email,
       first_name: data.firstName,
       last_name: data.lastName,
@@ -74,6 +74,7 @@ export class NewsletterClient {
       customer_message: data.message,
       origin: pageUrl,
       source: pageUrl,
+      tags: ['contact_form'],
     });
   }
 

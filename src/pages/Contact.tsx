@@ -86,18 +86,6 @@ const Contact = () => {
         description: t('contact.toast.messageSentDesc'),
       });
 
-      // Also subscribe to newsletter
-      try {
-        await newsletterClient.subscribe(trimmedEmail, currentLocale, {
-          source: 'contact_form',
-          first_name: trimmedFirstName,
-          last_name: trimmedLastName,
-          company: company.trim() || undefined,
-          tags: ['contact_form', 'newsletter']
-        });
-      } catch (newsletterError) {
-        // Don't fail the contact form if newsletter subscription fails
-      }
 
       setFirstName('');
       setLastName('');
