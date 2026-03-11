@@ -9,11 +9,17 @@ export class NewsletterClient {
     this.apiUrl = apiUrl.replace(/\/$/, '');
   }
 
+  private cleanPayload(obj: Record<string, any>): Record<string, any> {
+    return Object.fromEntries(
+      Object.entries(obj).filter(([_, v]) => v !== undefined && v !== null && v !== '')
+    );
+  }
+
   private async _request(endpoint: string, method = 'GET', data: any = null) {
     const response = await fetch(`${this.apiUrl}${endpoint}`, {
       method,
       headers: { 'Content-Type': 'application/json' },
-      body: data ? JSON.stringify(data) : null
+      body: data ? JSON.stringify(this.cleanPayload(data)) : null
     });
 
     if (!response.ok) {
