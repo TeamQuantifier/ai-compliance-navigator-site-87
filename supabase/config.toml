@@ -20,3 +20,6 @@ verify_jwt = false
 
 [functions.llms-txt]
 verify_jwt = false
+
+[functions.translate-story]
+verify_jwt = false
