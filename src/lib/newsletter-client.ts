@@ -9,11 +9,17 @@ export class NewsletterClient {
     this.apiUrl = apiUrl.replace(/\/$/, '');
   }
 
+  private cleanPayload(obj: Record<string, any>): Record<string, any> {
+    return Object.fromEntries(
+      Object.entries(obj).filter(([_, v]) => v !== undefined && v !== null && v !== '')
+    );
+  }
+
   private async _request(endpoint: string, method = 'GET', data: any = null) {
     const response = await fetch(`${this.apiUrl}${endpoint}`, {
       method,
       headers: { 'Content-Type': 'application/json' },
-      body: data ? JSON.stringify(data) : null
+      body: data ? JSON.stringify(this.cleanPayload(data)) : null
     });
 
     if (!response.ok) {
@@ -64,16 +70,21 @@ export class NewsletterClient {
     company?: string;
     message: string;
   }) {
-    const pageUrl = (typeof window !== 'undefined' && window.location && window.location.href) || undefined;
+    const pageUrl = (typeof window !== 'undefined' && window.location?.href) || undefined;
 
-    return this._request('/contact', 'POST', {
+    const browserLang = (typeof navigator !== 'undefined' && (navigator.language || (navigator as any).userLanguage)) || 'en';
+    const lang = browserLang.split('-')[0];
+
+    return this._request('/subscribe', 'POST', {
       email: data.email,
+      language: lang,
       first_name: data.firstName,
       last_name: data.lastName,
       company: data.company,
       customer_message: data.message,
       origin: pageUrl,
       source: pageUrl,
+      tags: ['contact_form'],
     });
   }
 

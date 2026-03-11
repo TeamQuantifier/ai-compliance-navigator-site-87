@@ -9,6 +9,7 @@ import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -73,31 +74,24 @@ const Contact = () => {
 
     setLoading(true);
     try {
-      await newsletterClient.submitContact({
-        firstName: trimmedFirstName,
-        lastName: trimmedLastName,
-        email: trimmedEmail,
-        company: company.trim() || undefined,
-        message: trimmedMessage,
+      const { data, error } = await supabase.functions.invoke('contact-form', {
+        body: {
+          firstName: trimmedFirstName,
+          lastName: trimmedLastName,
+          email: trimmedEmail,
+          company: company.trim() || undefined,
+          message: trimmedMessage,
+          language: currentLocale,
+          sourceUrl: window.location.href,
+        },
       });
+
+      if (error) throw error;
 
       toast({
         title: t('contact.toast.messageSent'),
         description: t('contact.toast.messageSentDesc'),
       });
-
-      // Also subscribe to newsletter
-      try {
-        await newsletterClient.subscribe(trimmedEmail, currentLocale, {
-          source: 'contact_form',
-          first_name: trimmedFirstName,
-          last_name: trimmedLastName,
-          company: company.trim() || undefined,
-          tags: ['contact_form', 'newsletter']
-        });
-      } catch (newsletterError) {
-        // Don't fail the contact form if newsletter subscription fails
-      }
 
       setFirstName('');
       setLastName('');
