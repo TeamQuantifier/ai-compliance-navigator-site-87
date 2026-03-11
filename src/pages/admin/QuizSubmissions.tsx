@@ -332,7 +332,7 @@ export default function QuizSubmissions() {
                   <td className="px-4 py-3">
                     {row.result_key ? (
                       <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold border ${RESULT_BADGE_COLORS[row.result_key as ResultKey] ?? ''}`}>
-                        {RESULT_LABELS[row.result_key as ResultKey] ?? row.result_key}
+                        {RESULT_LABELS[row.result_key as ResultKey]?.pl ?? row.result_key}
                       </span>
                     ) : '—'}
                   </td>
