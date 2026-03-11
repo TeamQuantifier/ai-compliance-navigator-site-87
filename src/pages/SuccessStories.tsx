@@ -38,6 +38,7 @@ const SuccessStories = () => {
 
         {/* Book Promo Section */}
         <BookPromoSection />
+        {currentLocale === 'pl' && <PostgraduatePromoSection />}
 
         <div className="max-w-7xl mx-auto">
           {/* Loading state */}
