@@ -250,14 +250,17 @@ ${JSON.stringify(batch)}`;
     // 3. Generate slug
     const csSlug = slugify(meta.title || story.title);
 
+    // Helper to truncate strings to max length
+    const trunc = (s: string | null, max: number) => s ? s.substring(0, max) : s;
+
     // 4. Insert new CS story
     const newStory = {
       lang: target_lang,
-      title: meta.title || story.title,
-      slug: csSlug,
+      title: trunc(meta.title || story.title, 200),
+      slug: trunc(csSlug, 250),
       summary: meta.summary || story.summary,
       client_name: story.client_name,
-      industry: meta.industry || story.industry,
+      industry: trunc(meta.industry || story.industry, 100),
       country: story.country,
       body_rich: translatedBody,
       status: "published" as const,
@@ -265,14 +268,14 @@ ${JSON.stringify(batch)}`;
       group_id: story.group_id,
       logo_url: story.logo_url,
       featured_image_url: story.featured_image_url,
-      featured_image_alt: meta.featured_image_alt || story.featured_image_alt,
-      meta_title: meta.meta_title || story.meta_title,
-      meta_desc: meta.meta_desc || story.meta_desc,
+      featured_image_alt: trunc(meta.featured_image_alt || story.featured_image_alt, 255),
+      meta_title: trunc(meta.meta_title || story.meta_title, 60),
+      meta_desc: trunc(meta.meta_desc || story.meta_desc, 160),
       og_image_url: story.og_image_url,
-      og_title: meta.title,
-      og_description: meta.summary,
+      og_title: trunc(meta.title, 100),
+      og_description: trunc(meta.summary, 300),
       tags: meta.tags || story.tags,
-      focus_keyword: meta.focus_keyword || story.focus_keyword,
+      focus_keyword: trunc(meta.focus_keyword || story.focus_keyword, 100),
       results_kpis: story.results_kpis,
       robots_index: true,
       robots_follow: true,
