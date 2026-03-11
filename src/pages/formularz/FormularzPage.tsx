@@ -385,7 +385,7 @@ export default function FormularzPage() {
           <div className="flex items-start flex-wrap gap-4 mb-6">
                 <div>
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border ${RESULT_BADGE_COLORS[result.resultKey]}`}>
-                    {RESULT_RISK_LABEL[lang]} {RESULT_LABELS[result.resultKey]}
+                    {RESULT_RISK_LABEL[lang]} {RESULT_LABELS[result.resultKey][lang]}
                   </span>
                   <h2 className="mt-3 text-xl font-bold text-[#6d38a8]">{result.title}</h2>
                 </div>
