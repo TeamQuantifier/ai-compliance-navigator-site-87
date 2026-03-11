@@ -8,6 +8,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Calendar, ArrowRight, Trophy } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
 import { BookPromoSection } from '@/components/BookPromoSection';
+import { PostgraduatePromoSection } from '@/components/PostgraduatePromoSection';
 
 const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
