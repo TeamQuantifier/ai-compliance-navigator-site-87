@@ -1,19 +1,14 @@
 
 
-## Zmiany w PostgraduatePromoSection
 
-### 1. Tekst wyrównany do prawej
-- Zmienić `text-center md:text-left` → `text-center md:text-right`
-- Zmienić `justify-center md:justify-start` → `justify-center md:justify-end` (badge)
+## Plan: Dynamiczny llms.txt (zrealizowany)
 
-### 2. Większa grafika
-- Zmienić `w-64 md:w-80` → `w-72 md:w-96` (z 320px na 384px desktop)
+Pliki `llms.txt` i `llms-full.txt` są teraz generowane dynamicznie przez Edge Function `llms-txt`, analogicznie do sitemap i RSS feed. Nowe artykuły i case study pojawiają się automatycznie.
 
-### 3. Powiększenie po double-click
-- Dodać state `zoomed` + handler `onDoubleClick`
-- Po double-click: renderować overlay (fixed, z-50, backdrop ciemny) z pełnowymiarową grafiką
-- Klik na overlay zamyka powiększenie
-
-### Plik
-- **`src/components/PostgraduatePromoSection.tsx`** — jedyna zmiana
-
+### Architektura
+- Edge Function `supabase/functions/llms-txt/index.ts` pobiera `posts` i `stories` z bazy
+- `?full=true` → wersja llms-full.txt z rozszerzonymi opisami
+- Statyczne sekcje (produkt, frameworki, FAQ) hardcoded w funkcji
+- Cache: 1h client, 24h CDN
+- Routing: `/llms.txt` i `/llms-full.txt` → proxy w `netlify.toml`
+- Statyczne pliki `public/llms.txt` i `public/llms-full.txt` usunięte
