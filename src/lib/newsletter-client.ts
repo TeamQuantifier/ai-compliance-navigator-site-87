@@ -66,8 +66,12 @@ export class NewsletterClient {
   }) {
     const pageUrl = (typeof window !== 'undefined' && window.location?.href) || undefined;
 
+    const browserLang = (typeof navigator !== 'undefined' && (navigator.language || (navigator as any).userLanguage)) || 'en';
+    const lang = browserLang.split('-')[0];
+
     return this._request('/subscribe', 'POST', {
       email: data.email,
+      language: lang,
       first_name: data.firstName,
       last_name: data.lastName,
       company: data.company,
