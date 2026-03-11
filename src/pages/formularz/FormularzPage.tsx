@@ -60,6 +60,9 @@ const OG_LOCALE: Record<QuizLang, string> = {
 function useLang(): QuizLang {
   const { locale } = useParams<{ locale?: string }>();
   if (locale && SUPPORTED_LANGS.includes(locale as QuizLang)) return locale as QuizLang;
+  // Fallback: extract locale from pathname for routes without :locale param (e.g. /cs/zkontrolujte-...)
+  const pathMatch = window.location.pathname.match(/^\/(pl|en|cs)\//);
+  if (pathMatch && SUPPORTED_LANGS.includes(pathMatch[1] as QuizLang)) return pathMatch[1] as QuizLang;
   return 'pl';
 }
 
