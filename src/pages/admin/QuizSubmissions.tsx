@@ -20,7 +20,7 @@ interface Submission {
   result_text: string | null;
 }
 
-const NACE_MAP = Object.fromEntries(NACE_SECTORS.map(s => [s.code, s.label]));
+const NACE_MAP = Object.fromEntries(NACE_SECTORS.map(s => [s.code, s.label.pl]));
 const Q1_MAP = Object.fromEntries(Q1_OPTIONS.map(o => [o.value, o.label.pl]));
 const Q2_MAP = Object.fromEntries(Q2_OPTIONS.map(o => [o.value, o.label.pl]));
 const Q4_MAP = Object.fromEntries(Q4_OPTIONS.map(o => [o.value, o.label.pl]));
