@@ -146,7 +146,7 @@ function NaceSelect({
                     s.code === value ? 'bg-[#d4f1ed]/50 font-medium text-[#6d38a8]' : 'text-gray-700'
                   }`}
                 >
-                  {s.label}
+                  {s.label[lang]}
                 </button>
               </li>
             ))}
