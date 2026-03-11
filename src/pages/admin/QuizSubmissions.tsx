@@ -20,7 +20,7 @@ interface Submission {
   result_text: string | null;
 }
 
-const NACE_MAP = Object.fromEntries(NACE_SECTORS.map(s => [s.code, s.label]));
+const NACE_MAP = Object.fromEntries(NACE_SECTORS.map(s => [s.code, s.label.pl]));
 const Q1_MAP = Object.fromEntries(Q1_OPTIONS.map(o => [o.value, o.label.pl]));
 const Q2_MAP = Object.fromEntries(Q2_OPTIONS.map(o => [o.value, o.label.pl]));
 const Q4_MAP = Object.fromEntries(Q4_OPTIONS.map(o => [o.value, o.label.pl]));
@@ -82,7 +82,7 @@ function StatsPanel({ rows }: { rows: Submission[] }) {
             <div key={key} className={`rounded-xl border p-4 ${RESULT_BG[key]}`}>
               <div className="text-2xl mb-1">{RESULT_EMOJI[key]}</div>
               <div className="text-2xl font-black leading-none">{count}</div>
-              <div className="text-xs font-semibold text-gray-600 mt-0.5">{RESULT_LABELS[key]}</div>
+              <div className="text-xs font-semibold text-gray-600 mt-0.5">{RESULT_LABELS[key].pl}</div>
               <div className="text-xs text-gray-400 mt-1">{pct}% całości</div>
             </div>
           );
@@ -332,7 +332,7 @@ export default function QuizSubmissions() {
                   <td className="px-4 py-3">
                     {row.result_key ? (
                       <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold border ${RESULT_BADGE_COLORS[row.result_key as ResultKey] ?? ''}`}>
-                        {RESULT_LABELS[row.result_key as ResultKey] ?? row.result_key}
+                        {RESULT_LABELS[row.result_key as ResultKey]?.pl ?? row.result_key}
                       </span>
                     ) : '—'}
                   </td>
