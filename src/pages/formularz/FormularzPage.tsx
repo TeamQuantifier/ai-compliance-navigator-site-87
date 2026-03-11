@@ -98,7 +98,7 @@ function NaceSelect({
   const [open, setOpen] = useState(false);
 
   const filtered = NACE_SECTORS.filter(s =>
-    s.label.toLowerCase().includes(search.toLowerCase()) ||
+    s.label[lang].toLowerCase().includes(search.toLowerCase()) ||
     s.code.toLowerCase().includes(search.toLowerCase())
   );
 
