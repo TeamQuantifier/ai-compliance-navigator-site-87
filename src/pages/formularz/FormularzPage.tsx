@@ -98,7 +98,7 @@ function NaceSelect({
   const [open, setOpen] = useState(false);
 
   const filtered = NACE_SECTORS.filter(s =>
-    s.label.toLowerCase().includes(search.toLowerCase()) ||
+    s.label[lang].toLowerCase().includes(search.toLowerCase()) ||
     s.code.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -114,7 +114,7 @@ function NaceSelect({
         } bg-white`}
       >
         <span className={selected ? 'text-gray-900' : 'text-gray-400'}>
-          {selected ? selected.label : Q3_PLACEHOLDER[lang]}
+          {selected ? selected.label[lang] : Q3_PLACEHOLDER[lang]}
         </span>
         <svg className={`w-4 h-4 text-gray-400 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -146,7 +146,7 @@ function NaceSelect({
                     s.code === value ? 'bg-[#d4f1ed]/50 font-medium text-[#6d38a8]' : 'text-gray-700'
                   }`}
                 >
-                  {s.label}
+                  {s.label[lang]}
                 </button>
               </li>
             ))}
@@ -385,7 +385,7 @@ export default function FormularzPage() {
           <div className="flex items-start flex-wrap gap-4 mb-6">
                 <div>
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border ${RESULT_BADGE_COLORS[result.resultKey]}`}>
-                    {RESULT_RISK_LABEL[lang]} {RESULT_LABELS[result.resultKey]}
+                    {RESULT_RISK_LABEL[lang]} {RESULT_LABELS[result.resultKey][lang]}
                   </span>
                   <h2 className="mt-3 text-xl font-bold text-[#6d38a8]">{result.title}</h2>
                 </div>
