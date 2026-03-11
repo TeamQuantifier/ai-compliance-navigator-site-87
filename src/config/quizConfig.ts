@@ -361,9 +361,9 @@ export const RESULT_BADGE_COLORS: Record<ResultKey, string> = {
   GREEN:  'bg-green-100 text-green-800 border-green-200',
 };
 
-export const RESULT_LABELS: Record<ResultKey, string> = {
-  RED:    'Wysokie prawdopodobieństwo NIS2',
-  ORANGE: 'Prawdopodobny obowiązek NIS2',
-  YELLOW: 'Wymogi łańcucha dostaw (ISO 27001)',
-  GREEN:  'Niskie ryzyko regulacyjne',
+export const RESULT_LABELS: Record<ResultKey, Record<QuizLang, string>> = {
+  RED:    { pl: 'Wysokie prawdopodobieństwo NIS2', en: 'High Likelihood of NIS2 Obligation', cs: 'Vysoká pravděpodobnost povinnosti NIS2' },
+  ORANGE: { pl: 'Prawdopodobny obowiązek NIS2', en: 'Probable NIS2 Obligation', cs: 'Pravděpodobná povinnost NIS2' },
+  YELLOW: { pl: 'Wymogi łańcucha dostaw (ISO 27001)', en: 'Supply Chain Requirements (ISO 27001)', cs: 'Požadavky dodavatelského řetězce (ISO 27001)' },
+  GREEN:  { pl: 'Niskie ryzyko regulacyjne', en: 'Low Regulatory Risk', cs: 'Nízké regulační riziko' },
 };
