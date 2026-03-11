@@ -128,6 +128,42 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_submissions: {
+        Row: {
+          company: string | null
+          created_at: string | null
+          email: string
+          first_name: string
+          id: string
+          language: string | null
+          last_name: string
+          message: string
+          source_url: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string | null
+          email: string
+          first_name: string
+          id?: string
+          language?: string | null
+          last_name: string
+          message: string
+          source_url?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string | null
+          email?: string
+          first_name?: string
+          id?: string
+          language?: string | null
+          last_name?: string
+          message?: string
+          source_url?: string | null
+        }
+        Relationships: []
+      }
       event_registrations: {
         Row: {
           company: string
