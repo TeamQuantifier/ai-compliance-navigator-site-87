@@ -16,7 +16,7 @@ export function PostgraduatePromoSection() {
             <img
               src="/lovable-uploads/studia-podyplomowe-wroclaw.jpg"
               alt="Studia podyplomowe GRC z wykorzystaniem AI — Uniwersytet Ekonomiczny we Wrocławiu"
-              className="w-72 md:w-96 rounded-lg object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="w-80 md:w-[440px] rounded-lg object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
               width={384}
               height={540}
               loading="lazy"
