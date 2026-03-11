@@ -44,16 +44,43 @@ Deno.serve(async (req) => {
       })
     }
 
-    // Send notification email to contact@quantifier.ai
-    // Using fetch to Supabase's built-in email or a simple SMTP approach
-    // For now, we'll use the Resend-compatible approach via edge function
-    // Since no email domain is set up, we'll just store in DB for now
-    // and log the submission details
-    console.log('New contact form submission:', {
-      from: `${firstName} ${lastName} <${email}>`,
-      company,
-      message: message.substring(0, 100) + '...',
-    })
+    // Sync with marketing API (handles email notifications to contact@quantifier.ai)
+    try {
+      const browserLang = language || 'en';
+      const marketingPayload: Record<string, any> = {
+        email,
+        language: browserLang,
+        first_name: firstName,
+        last_name: lastName,
+        customer_message: message,
+        tags: ['contact_form'],
+      };
+      if (company) marketingPayload.company = company;
+      if (sourceUrl) {
+        marketingPayload.origin = sourceUrl;
+        marketingPayload.source = sourceUrl;
+      }
+
+      // Remove null/undefined/empty values
+      const cleanPayload = Object.fromEntries(
+        Object.entries(marketingPayload).filter(([_, v]) => v !== undefined && v !== null && v !== '')
+      );
+
+      const marketingRes = await fetch('https://marketing.quantifier.ai/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(cleanPayload),
+      });
+
+      if (!marketingRes.ok) {
+        console.error('Marketing API error:', marketingRes.status, await marketingRes.text());
+      } else {
+        console.log('Marketing API sync OK');
+      }
+    } catch (marketingErr) {
+      console.error('Marketing API sync failed:', marketingErr);
+      // Don't fail the whole request if marketing sync fails
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
