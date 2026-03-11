@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const RECRUITMENT_URL = 'https://www.podyplomowe.ue.wroc.pl/kierunki/grc-z-wykorzystaniem-ai-governance-risk-compliance-w-nowoczesnych-organizacjach,k541.html';
+const RECRUITMENT_URL = 'https://www.podyplomowe.ue.wroc.pl/studia.html?f[c][6]=1&f[c][5]=1&f[c][4]=1&f[a][23]=1&f[a][28]=1&f[a][24]=1&f[a][6]=1&f[a][13]=1&f[a][10]=1&f[a][25]=1&f[a][1]=1&f[a][11]=1&f[a][9]=1&f[m][blended]=1&f[m][online]=1';
 
 export function PostgraduatePromoSection() {
   const [zoomed, setZoomed] = useState(false);
@@ -16,7 +16,7 @@ export function PostgraduatePromoSection() {
             <img
               src="/lovable-uploads/studia-podyplomowe-wroclaw.jpg"
               alt="Studia podyplomowe GRC z wykorzystaniem AI — Uniwersytet Ekonomiczny we Wrocławiu"
-              className="w-72 md:w-96 rounded-lg object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="w-80 md:w-[440px] rounded-lg object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
               width={384}
               height={540}
               loading="lazy"
