@@ -23,3 +23,6 @@ verify_jwt = false
 
 [functions.translate-story]
 verify_jwt = false
+
+[functions.translate-post]
+verify_jwt = false
