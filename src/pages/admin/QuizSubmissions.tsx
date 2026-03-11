@@ -82,7 +82,7 @@ function StatsPanel({ rows }: { rows: Submission[] }) {
             <div key={key} className={`rounded-xl border p-4 ${RESULT_BG[key]}`}>
               <div className="text-2xl mb-1">{RESULT_EMOJI[key]}</div>
               <div className="text-2xl font-black leading-none">{count}</div>
-              <div className="text-xs font-semibold text-gray-600 mt-0.5">{RESULT_LABELS[key]}</div>
+              <div className="text-xs font-semibold text-gray-600 mt-0.5">{RESULT_LABELS[key].pl}</div>
               <div className="text-xs text-gray-400 mt-1">{pct}% całości</div>
             </div>
           );
