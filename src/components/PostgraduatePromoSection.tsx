@@ -59,8 +59,8 @@ export function PostgraduatePromoSection() {
           onClick={() => setZoomed(false)}
         >
           <img
-            src="/lovable-uploads/studia-podyplomowe-wroclaw.jpg"
-            alt="Studia podyplomowe GRC z wykorzystaniem AI — Uniwersytet Ekonomiczny we Wrocławiu"
+            src="/lovable-uploads/studia-podyplomowe-grc-wykladowcy.png"
+            alt="Wykładowcy studiów podyplomowych GRC z wykorzystaniem AI — Quantifier.ai i Uniwersytet Ekonomiczny we Wrocławiu"
             className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
           />
         </div>
