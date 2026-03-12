@@ -58,22 +58,20 @@ export function BookPromoPopup() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden">
+      <DialogContent className="max-w-4xl p-0 overflow-hidden">
         <div className="flex flex-col md:flex-row">
-          {/* Image */}
-          <div className="md:w-1/2 bg-gradient-to-br from-compliance-50 to-slate-50 p-4 flex items-center justify-center">
+          {/* Image - więcej przestrzeni dla horyzontalnej grafiki */}
+          <div className="md:w-3/5 bg-gradient-to-br from-compliance-50 to-slate-50 p-4 flex items-center justify-center">
             <img
               src={c.image}
               alt={c.alt}
-              className="w-full rounded-lg object-cover"
-              width={400}
-              height={225}
+              className="w-full h-auto rounded-lg object-cover shadow-sm"
               loading="lazy"
             />
           </div>
 
           {/* Content */}
-          <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
+          <div className="md:w-2/5 p-6 flex flex-col justify-center">
             <div className="flex items-center gap-2 text-primary mb-3">
               <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wide">
@@ -81,16 +79,16 @@ export function BookPromoPopup() {
               </span>
             </div>
 
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+            <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 leading-tight">
               {c.title}
             </h2>
 
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
               {c.description}
             </p>
 
             <a href={RECRUITMENT_URL} target="_blank" rel="noopener noreferrer" onClick={handleClose}>
-              <Button className="w-full md:w-auto" size="lg">
+              <Button className="w-full md:w-auto" size="default">
                 {c.cta}
               </Button>
             </a>
