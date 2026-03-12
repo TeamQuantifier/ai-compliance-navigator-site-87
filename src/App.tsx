@@ -46,6 +46,7 @@ import Partners from "./pages/Partners";
 import SuccessStories from "./pages/SuccessStories";
 
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 // Blog pages
 import BlogList from "./pages/blog/BlogList";
@@ -173,6 +174,7 @@ const MainRoutes = () => (
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />
+        <Route path="/:locale/about" element={<About />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
