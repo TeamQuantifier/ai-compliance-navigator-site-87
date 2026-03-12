@@ -1,14 +1,38 @@
 
 
+## Diagnosis: Why 175 Pages Are Not Indexed
 
-## Plan: Dynamiczny llms.txt (zrealizowany)
+### Critical Bug Found: `/about` Route Missing from Router
 
-Pliki `llms.txt` i `llms-full.txt` są teraz generowane dynamicznie przez Edge Function `llms-txt`, analogicznie do sitemap i RSS feed. Nowe artykuły i case study pojawiają się automatycznie.
+The page component `src/pages/About.tsx` exists (175 lines of rich content), but it is **never imported or registered** in `App.tsx`. This means:
 
-### Architektura
-- Edge Function `supabase/functions/llms-txt/index.ts` pobiera `posts` i `stories` z bazy
-- `?full=true` → wersja llms-full.txt z rozszerzonymi opisami
-- Statyczne sekcje (produkt, frameworki, FAQ) hardcoded w funkcji
-- Cache: 1h client, 24h CDN
-- Routing: `/llms.txt` i `/llms-full.txt` → proxy w `netlify.toml`
-- Statyczne pliki `public/llms.txt` i `public/llms-full.txt` usunięte
+- `/en/about/` → **404**
+- `/pl/about/` → **404**  
+- `/cs/about/` → **404**
+
+I verified this by fetching the live URLs — both `/en/about/` and `/cs/about/` return a rendered 404 page to Google's crawler. **Google will not index pages that return 404.**
+
+### Other Unindexed Pages — Likely Timing
+
+The remaining ~172 unindexed pages are most likely a timing issue. You said the sitemap was submitted yesterday — Google typically takes **3-14 days** to process new URLs. This is normal behavior, especially for a site that just expanded from fewer pages to 225.
+
+### Thin Content Risk
+
+Some pages like `ValueChain`, `Managers`, `Contributors`, `Auditor` contain only a single paragraph of text. Google may eventually flag these as "Crawled — currently not indexed" due to thin content. This is not blocking now but worth noting.
+
+---
+
+## Plan
+
+### 1. Fix the missing About route in App.tsx
+- Import `About` from `./pages/About`
+- Add route: `<Route path="/:locale/about" element={<About />} />`
+
+This is a one-line import + one-line route addition. Fixes 3 broken pages immediately.
+
+### 2. No other changes needed
+The sitemap, hreflang, canonical URLs, prerendering — all are correctly configured. The remaining unindexed pages should be picked up by Google within the next 1-2 weeks.
+
+### Post-fix recommendation
+After deploying, use Google Search Console's "URL Inspection" tool to request re-indexing of `/en/about/`, `/pl/about/`, and `/cs/about/` to speed up recovery.
+
