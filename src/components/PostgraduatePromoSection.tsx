@@ -14,11 +14,11 @@ export function PostgraduatePromoSection() {
           {/* Image - left side on desktop, top on mobile */}
           <div className="shrink-0">
             <img
-              src="/lovable-uploads/studia-podyplomowe-wroclaw.jpg"
-              alt="Studia podyplomowe GRC z wykorzystaniem AI — Uniwersytet Ekonomiczny we Wrocławiu"
-              className="w-80 md:w-[440px] rounded-lg object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-              width={384}
-              height={540}
+              src="/lovable-uploads/studia-podyplomowe-grc-wykladowcy.png"
+              alt="Wykładowcy studiów podyplomowych GRC z wykorzystaniem AI — Quantifier.ai i Uniwersytet Ekonomiczny we Wrocławiu"
+              className="w-full md:w-[600px] rounded-lg object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+              width={600}
+              height={338}
               loading="lazy"
               onDoubleClick={() => setZoomed(true)}
             />
@@ -59,8 +59,8 @@ export function PostgraduatePromoSection() {
           onClick={() => setZoomed(false)}
         >
           <img
-            src="/lovable-uploads/studia-podyplomowe-wroclaw.jpg"
-            alt="Studia podyplomowe GRC z wykorzystaniem AI — Uniwersytet Ekonomiczny we Wrocławiu"
+            src="/lovable-uploads/studia-podyplomowe-grc-wykladowcy.png"
+            alt="Wykładowcy studiów podyplomowych GRC z wykorzystaniem AI — Quantifier.ai i Uniwersytet Ekonomiczny we Wrocławiu"
             className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
           />
         </div>
