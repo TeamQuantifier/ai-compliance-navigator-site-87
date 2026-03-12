@@ -174,6 +174,7 @@ const MainRoutes = () => (
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />
+        <Route path="/:locale/about" element={<About />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
