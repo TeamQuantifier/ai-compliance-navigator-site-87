@@ -3,10 +3,10 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { GraduationCap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const STORAGE_KEY = 'postgraduate_promo_shown';
 const POPUP_DELAY_MS = 2000;
-const RECRUITMENT_URL = 'https://www.podyplomowe.ue.wroc.pl/studia.html?f[c][6]=1&f[c][5]=1&f[c][4]=1&f[a][23]=1&f[a][28]=1&f[a][24]=1&f[a][6]=1&f[a][13]=1&f[a][10]=1&f[a][25]=1&f[a][1]=1&f[a][11]=1&f[a][9]=1&f[m][blended]=1&f[m][online]=1';
 
 const CONTENT: Record<string, { badge: string; title: string; description: string; cta: string; image: string; alt: string }> = {
   pl: {
@@ -38,6 +38,7 @@ const CONTENT: Record<string, { badge: string; title: string; description: strin
 export function BookPromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const { currentLocale } = useLanguage();
+  const navigate = useNavigate();
   const c = CONTENT[currentLocale] || CONTENT.en;
 
   useEffect(() => {
@@ -56,11 +57,16 @@ export function BookPromoPopup() {
     sessionStorage.setItem(STORAGE_KEY, 'true');
   };
 
+  const handleCta = () => {
+    handleClose();
+    navigate(`/${currentLocale}/success-stories`);
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
       <DialogContent className="max-w-4xl p-0 overflow-hidden">
         <div className="flex flex-col md:flex-row">
-          {/* Image - więcej przestrzeni dla horyzontalnej grafiki */}
+          {/* Image */}
           <div className="md:w-3/5 bg-gradient-to-br from-compliance-50 to-slate-50 p-4 flex items-center justify-center">
             <img
               src={c.image}
@@ -87,11 +93,9 @@ export function BookPromoPopup() {
               {c.description}
             </p>
 
-            <a href={RECRUITMENT_URL} target="_blank" rel="noopener noreferrer" onClick={handleClose}>
-              <Button className="w-full md:w-auto" size="default">
-                {c.cta}
-              </Button>
-            </a>
+            <Button className="w-full md:w-auto" size="default" onClick={handleCta}>
+              {c.cta}
+            </Button>
           </div>
         </div>
       </DialogContent>
