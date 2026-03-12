@@ -46,6 +46,7 @@ import Partners from "./pages/Partners";
 import SuccessStories from "./pages/SuccessStories";
 
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 // Blog pages
 import BlogList from "./pages/blog/BlogList";
