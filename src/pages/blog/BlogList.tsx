@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePosts, useCategories } from '@/hooks/useBlog';
+import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { calculateReadingTime } from '@/lib/reading-time';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -20,7 +21,8 @@ const BlogList = () => {
     selectedCategory
   );
   const { data: categories, isLoading: categoriesLoading } = useCategories(currentLocale);
-  
+  usePrerenderReady(!postsLoading);
+
 
   if (postsError) {
     return (
@@ -34,7 +36,7 @@ const BlogList = () => {
   }
 
   return (
-      <PageTemplate title={t('blog.title')} description={t('blog.subtitle')}>
+      <PageTemplate title={t('blog.title')} description={t('blog.subtitle')} deferPrerender>
         {/* Compact Hero Section */}
         <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
           {/* Decorative elements */}

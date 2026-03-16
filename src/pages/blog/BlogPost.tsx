@@ -33,7 +33,7 @@ const BlogPost = () => {
 
   if (error) {
     return (
-      <PageTemplate title={t('blog.title')} description="">
+      <PageTemplate title={t('blog.title')} description="" noSeo>
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{t('blog.error')}</AlertDescription>
@@ -44,7 +44,7 @@ const BlogPost = () => {
 
   if (isLoading) {
     return (
-      <PageTemplate title={t('blog.loading')} description="">
+      <PageTemplate title={t('blog.loading')} description="" noSeo>
         <div className="max-w-4xl mx-auto">
           <Skeleton className="h-10 w-32 mb-8" />
           <Skeleton className="aspect-video w-full mb-8" />
@@ -60,7 +60,7 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <PageTemplate title={t('blog.notFound')} description="">
+      <PageTemplate title={t('blog.notFound')} description="" noSeo>
         <div className="max-w-4xl mx-auto text-center py-12">
           <h2 className="text-2xl font-bold mb-4">{t('blog.notFound')}</h2>
           <Link to={`/${currentLocale}/blog`}>
