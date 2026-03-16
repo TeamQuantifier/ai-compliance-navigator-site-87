@@ -49,16 +49,7 @@ const Partners = () => {
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
-          <div className="bg-gradient-to-r from-compliance-50 to-blue-50 p-8 rounded-xl mb-10 relative overflow-hidden">
-            {/* Diagonal ribbon badge */}
-            <div className="absolute -top-1 -right-1 w-32 h-32 overflow-hidden">
-              <div className="absolute top-0 right-0 w-[180%] h-[180%] bg-gradient-to-br from-compliance-600 to-compliance-700 transform rotate-45 translate-x-[30%] -translate-y-[50%] shadow-lg">
-                <span className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white font-semibold text-xs tracking-wider uppercase whitespace-nowrap">
-                  {t('partners.network.badge')}
-                </span>
-              </div>
-            </div>
-            
+          <div className="bg-gradient-to-r from-compliance-50 to-blue-50 p-8 rounded-xl mb-10">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-6">
               <Handshake className="w-5 h-5 mr-2" />
               <span className="font-medium">{t('partners.network.badge')}</span>
