@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePosts, useCategories } from '@/hooks/useBlog';
+import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { calculateReadingTime } from '@/lib/reading-time';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -20,7 +21,8 @@ const BlogList = () => {
     selectedCategory
   );
   const { data: categories, isLoading: categoriesLoading } = useCategories(currentLocale);
-  
+  usePrerenderReady(!postsLoading);
+
 
   if (postsError) {
     return (
