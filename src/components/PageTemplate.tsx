@@ -11,6 +11,9 @@ interface PageTemplateProps {
   ogImage?: string;
   noIndex?: boolean;
   noSeo?: boolean;
+  /** When true, PageTemplate will NOT set window.prerenderReady.
+   *  Use on pages that load async data and manage prerenderReady themselves. */
+  deferPrerender?: boolean;
 }
 
 // Tracking parameters to strip from canonical URLs
