@@ -60,7 +60,7 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <PageTemplate title={t('blog.notFound')} description="">
+      <PageTemplate title={t('blog.notFound')} description="" noSeo>
         <div className="max-w-4xl mx-auto text-center py-12">
           <h2 className="text-2xl font-bold mb-4">{t('blog.notFound')}</h2>
           <Link to={`/${currentLocale}/blog`}>

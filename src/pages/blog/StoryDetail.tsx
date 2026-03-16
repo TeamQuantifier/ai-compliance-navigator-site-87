@@ -50,7 +50,7 @@ const StoryDetail = () => {
 
   if (error || !story) {
     return (
-      <PageTemplate title={t('successStories.notFound')} description="">
+      <PageTemplate title={t('successStories.notFound')} description="" noSeo>
         <Alert variant="destructive" className="max-w-2xl mx-auto">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{t('successStories.error')}</AlertDescription>

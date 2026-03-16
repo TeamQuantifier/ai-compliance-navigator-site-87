@@ -159,17 +159,19 @@ const PageTemplate = ({
   children,
   ogImage = '/og-homepage.png',
   noIndex = false,
-  noSeo = false
+  noSeo = false,
+  deferPrerender = false
 }: PageTemplateProps) => {
   const { currentLocale } = useLanguage();
   const location = useLocation();
 
   // Signal Netlify Prerender that static pages are ready
+  // Skip when noSeo (page manages its own SEOHead) or deferPrerender (page has async data)
   useEffect(() => {
-    if (!noSeo) {
+    if (!noSeo && !deferPrerender) {
       (window as any).prerenderReady = true;
     }
-  }, [noSeo]);
+  }, [noSeo, deferPrerender]);
   
   const baseUrl = 'https://quantifier.ai';
   // Strip locale prefix AND any tracking parameters
