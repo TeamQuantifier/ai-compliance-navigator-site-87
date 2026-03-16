@@ -32,7 +32,7 @@ const StoryDetail = () => {
 
   if (isLoading) {
     return (
-      <PageTemplate title={t('successStories.loading')} description="">
+      <PageTemplate title={t('successStories.loading')} description="" noSeo>
         <div className="max-w-4xl mx-auto">
           <Skeleton className="h-8 w-32 mb-8" />
           <Skeleton className="h-12 w-3/4 mb-4" />
