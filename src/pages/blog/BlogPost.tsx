@@ -33,7 +33,7 @@ const BlogPost = () => {
 
   if (error) {
     return (
-      <PageTemplate title={t('blog.title')} description="">
+      <PageTemplate title={t('blog.title')} description="" noSeo>
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{t('blog.error')}</AlertDescription>
