@@ -44,7 +44,7 @@ const BlogPost = () => {
 
   if (isLoading) {
     return (
-      <PageTemplate title={t('blog.loading')} description="">
+      <PageTemplate title={t('blog.loading')} description="" noSeo>
         <div className="max-w-4xl mx-auto">
           <Skeleton className="h-10 w-32 mb-8" />
           <Skeleton className="aspect-video w-full mb-8" />
