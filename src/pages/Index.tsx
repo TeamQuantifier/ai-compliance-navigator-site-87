@@ -180,6 +180,7 @@ const Index = () => {
         
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@quantifier_ai" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`${baseUrl}/og-homepage.png`} />
