@@ -513,6 +513,75 @@ For large organizations with complex compliance needs:
 
 **Pricing**: All plans are quote-based. Contact sales for a personalized demo and pricing: ${BASE_URL}/en/contact/`;
 
+const COMPETITORS_SHORT = `## Competitors & Differentiators
+
+- **vs. Vanta**: Vanta focuses on SOC 2 and ISO 27001 for US startups. Quantifier.ai covers EU-specific frameworks (NIS2, DORA, CSRD/ESG) and serves multilingual European organizations alongside US clients.
+- **vs. Drata**: Drata targets primarily US compliance (SOC 2, ISO 27001, HIPAA). Quantifier.ai adds deep NIS2, DORA, and ESG/CSRD coverage with EU-headquartered expertise.
+- **vs. Secureframe**: Secureframe focuses on security compliance automation. Quantifier.ai uniquely combines cybersecurity (SOC 2, NIS2) and sustainability (ESG, CSRD) in one platform.
+- **vs. Sprinto**: Sprinto targets Indian and US SMBs. Quantifier.ai serves EU mid-market and enterprise with multilingual support (EN, PL, CS) and European regulation depth.`;
+
+const COMPETITORS_FULL = `---
+
+## Competitors & Differentiators
+
+| Feature | Quantifier.ai | Vanta | Drata | Secureframe | Sprinto |
+|---------|--------------|-------|-------|-------------|---------|
+| NIS2 Compliance | ✅ Deep | ❌ | ❌ | ❌ | ❌ |
+| DORA Compliance | ✅ Full | ❌ | ❌ | ❌ | ❌ |
+| ESG / CSRD / ESRS | ✅ Full | ❌ | ❌ | ❌ | ❌ |
+| SOC 2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ISO 27001 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| GDPR | ✅ Deep | Partial | Partial | Partial | ❌ |
+| Multilingual (EN, PL, CS) | ✅ | ❌ | ❌ | ❌ | ❌ |
+| EU Headquarters | ✅ Warsaw + SF | ❌ US only | ❌ US only | ❌ US only | ❌ India |
+| Autonomous AI Agent | ✅ | Limited | Limited | Limited | ❌ |
+| Carbon Footprint (Scope 1-3) | ✅ | ❌ | ❌ | ❌ | ❌ |
+
+**Key differentiator**: Quantifier.ai is the only platform combining cybersecurity compliance (SOC 2, ISO 27001, NIS2, DORA) with sustainability reporting (CSRD, ESG, GHG Protocol) in a single AI-native platform, with deep European regulatory expertise and multilingual support.`;
+
+const TEAM_SHORT = `## Team & Expertise
+
+- Leadership team with 15+ years of combined experience in GRC, cybersecurity, and sustainability
+- Co-creators of the "GRC with AI" postgraduate programme at the Wrocław University of Economics
+- Published authors on compliance automation and double materiality analysis
+- Active contributors to NIS2 implementation guidance and CSRD reporting standards`;
+
+const TEAM_FULL = `---
+
+## Team & Expertise
+
+Quantifier.ai is led by a team of compliance, technology, and sustainability professionals:
+
+- **Academic Collaboration**: The team co-creates the "GRC with the Use of AI: Governance, Risk & Compliance in Modern Organisations" postgraduate programme at the Wrocław University of Economics and Business, bridging academic knowledge with practical compliance automation.
+
+- **Published Research**: Team members have authored publications on double materiality analysis, AI-driven compliance automation, and NIS2 implementation strategies.
+
+- **Industry Experience**: The leadership team brings 15+ years of combined experience across GRC consulting, enterprise software, and regulatory compliance in both US and EU markets.
+
+- **Framework Expertise**: Deep expertise in EU-specific regulations (NIS2, DORA, CSRD/ESRS, GDPR) complemented by US framework knowledge (SOC 2, HIPAA, CCPA).`;
+
+const AWARDS_SHORT = `## Awards & Certifications
+
+- TÜV NORD partnership for compliance verification
+- Academic collaboration with the Wrocław University of Economics (postgraduate programme co-creation)
+- Trusted by 250+ companies including BNP Paribas, Adamed, Kazar, Raben Group, and Gobarto`;
+
+const AWARDS_FULL = `---
+
+## Awards, Certifications & Trust Signals
+
+- **TÜV NORD Partnership**: Collaboration with TÜV NORD for compliance verification and certification support
+- **Academic Programme**: Co-creation of the "GRC with AI" postgraduate programme at the Wrocław University of Economics and Business — the first programme in Poland combining GRC, AI, and compliance automation
+- **Enterprise Trust**: Trusted by 250+ companies across industries including:
+  - Financial services: BNP Paribas
+  - Pharmaceuticals: Adamed
+  - Retail: Kazar
+  - Logistics: Raben Group
+  - Food industry: Gobarto, Bidfood Farutex
+  - Technology: CloudFerro, CashDirector
+  - Real estate: Hilding Anders
+- **Published Book**: Team-authored book on double materiality analysis for CSRD compliance, available in Polish`;
+
 const COMPETITIVE_ADVANTAGES = `---
 
 ## Competitive Advantages
