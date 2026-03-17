@@ -118,6 +118,10 @@ const SuccessStories = () => {
             </div>
           )}
         </div>
+
+        {/* Promo sections moved below case studies for better content hierarchy */}
+        <BookPromoSection />
+        <PostgraduatePromoSection />
       </PageTemplate>
   );
 };
