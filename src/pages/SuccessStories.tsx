@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useStories } from '@/hooks/useBlog';
+import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -13,9 +14,10 @@ import { PostgraduatePromoSection } from '@/components/PostgraduatePromoSection'
 const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
   const { data: stories, isLoading } = useStories(currentLocale);
+  usePrerenderReady(!isLoading);
   
   return (
-      <PageTemplate title={t('successStories.title')} description={t('successStories.subtitle')}>
+      <PageTemplate title={t('successStories.title')} description={t('successStories.subtitle')} deferPrerender>
         {/* Compact Hero Section */}
         <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
           {/* Decorative elements */}

@@ -41,9 +41,9 @@ const Plans = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {planFeatures.map(plan => <Card key={plan.name} className={`p-6 border ${plan.highlighted ? 'border-primary shadow-lg relative' : 'border-slate-200 overflow-hidden'} h-full flex flex-col card-hover`}>
-            {plan.highlighted && <div className="absolute -top-1 -right-1 overflow-hidden w-24 h-24">
-                <div className="bg-primary text-white text-xs font-semibold px-8 py-1 transform rotate-45 translate-x-6 translate-y-4 shadow-md">
+        {planFeatures.map(plan => <Card key={plan.name} className={`p-6 border ${plan.highlighted ? 'border-primary shadow-lg ring-2 ring-primary/20 relative overflow-hidden' : 'border-slate-200'} h-full flex flex-col card-hover`}>
+            {plan.highlighted && <div className="absolute -top-0 -right-0 w-36 h-36 pointer-events-none">
+                <div className="absolute top-[18px] right-[-36px] w-[170px] bg-primary text-white text-xs font-bold py-1.5 text-center transform rotate-45 shadow-md tracking-wide uppercase">
                   {t('plans.popular')}
                 </div>
               </div>}

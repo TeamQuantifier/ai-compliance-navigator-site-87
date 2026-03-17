@@ -11,6 +11,9 @@ interface PageTemplateProps {
   ogImage?: string;
   noIndex?: boolean;
   noSeo?: boolean;
+  /** When true, PageTemplate will NOT set window.prerenderReady.
+   *  Use on pages that load async data and manage prerenderReady themselves. */
+  deferPrerender?: boolean;
 }
 
 // Tracking parameters to strip from canonical URLs
@@ -156,17 +159,19 @@ const PageTemplate = ({
   children,
   ogImage = '/og-homepage.png',
   noIndex = false,
-  noSeo = false
+  noSeo = false,
+  deferPrerender = false
 }: PageTemplateProps) => {
   const { currentLocale } = useLanguage();
   const location = useLocation();
 
   // Signal Netlify Prerender that static pages are ready
+  // Skip when noSeo (page manages its own SEOHead) or deferPrerender (page has async data)
   useEffect(() => {
-    if (!noSeo) {
+    if (!noSeo && !deferPrerender) {
       (window as any).prerenderReady = true;
     }
-  }, [noSeo]);
+  }, [noSeo, deferPrerender]);
   
   const baseUrl = 'https://quantifier.ai';
   // Strip locale prefix AND any tracking parameters

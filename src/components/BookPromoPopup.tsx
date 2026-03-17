@@ -1,23 +1,50 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Book } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const STORAGE_KEY = 'book_promo_shown';
+const STORAGE_KEY = 'postgraduate_promo_shown';
 const POPUP_DELAY_MS = 2000;
+
+const CONTENT: Record<string, { badge: string; title: string; description: string; cta: string; image: string; alt: string }> = {
+  pl: {
+    badge: 'Studia podyplomowe',
+    title: 'Współtworzymy kierunek na Uniwersytecie Ekonomicznym we Wrocławiu',
+    description: 'Zespół Quantifier współtworzy kierunek „GRC z wykorzystaniem AI" na studiach podyplomowych Uniwersytetu Ekonomicznego we Wrocławiu.',
+    cta: 'Dowiedz się więcej',
+    image: '/lovable-uploads/studia-podyplomowe-grc-wykladowcy.png',
+    alt: 'Wykładowcy studiów podyplomowych GRC z wykorzystaniem AI',
+  },
+  en: {
+    badge: 'Postgraduate programme',
+    title: 'We co-create a programme at the Wrocław University of Economics',
+    description: 'The Quantifier team co-creates the "GRC with the Use of AI" postgraduate programme at the Wrocław University of Economics.',
+    cta: 'Find out more',
+    image: '/lovable-uploads/studia-podyplomowe-grc-wykladowcy-en.jpg',
+    alt: 'Lecturers of the GRC with AI postgraduate programme',
+  },
+  cs: {
+    badge: 'Postgraduální studium',
+    title: 'Spoluvytváříme program na Ekonomické univerzitě ve Vratislavi',
+    description: 'Tým Quantifier spoluvytváří program „GRC s využitím AI" na postgraduálním studiu Ekonomické univerzity ve Vratislavi.',
+    cta: 'Zjistěte více',
+    image: '/lovable-uploads/studia-podyplomowe-grc-wykladowcy-cs.jpg',
+    alt: 'Vyučující postgraduálního programu GRC s využitím AI',
+  },
+};
 
 export function BookPromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const { currentLocale, t } = useLanguage();
+  const { currentLocale } = useLanguage();
+  const navigate = useNavigate();
+  const c = CONTENT[currentLocale] || CONTENT.en;
 
   useEffect(() => {
-    // Check if already shown in this session
     const hasBeenShown = sessionStorage.getItem(STORAGE_KEY) === 'true';
     if (hasBeenShown) return;
 
-    // Show after delay
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, POPUP_DELAY_MS);
@@ -30,46 +57,45 @@ export function BookPromoPopup() {
     sessionStorage.setItem(STORAGE_KEY, 'true');
   };
 
+  const handleCta = () => {
+    handleClose();
+    navigate(`/${currentLocale}/success-stories`);
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden">
+      <DialogContent className="max-w-4xl p-0 overflow-hidden">
         <div className="flex flex-col md:flex-row">
-          {/* Book Image */}
-          <div className="md:w-2/5 bg-gradient-to-br from-slate-100 to-compliance-50 p-6 flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
-              alt="Analiza podwójnej istotności - książka"
-              className="w-48 md:w-full max-w-[200px] shadow-xl rounded-lg transform hover:scale-105 transition-transform duration-300"
-              width={200}
-              height={280}
+          {/* Image */}
+          <div className="md:w-3/5 bg-gradient-to-br from-compliance-50 to-slate-50 p-4 flex items-center justify-center">
+            <img
+              src={c.image}
+              alt={c.alt}
+              className="w-full h-auto rounded-lg object-cover shadow-sm"
               loading="lazy"
             />
           </div>
-          
+
           {/* Content */}
-          <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+          <div className="md:w-2/5 p-6 flex flex-col justify-center">
             <div className="flex items-center gap-2 text-primary mb-3">
-              <Book className="h-5 w-5" />
+              <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wide">
-                {t('bookPromo.badge')}
+                {c.badge}
               </span>
             </div>
-            
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-              {currentLocale === 'pl' 
-                ? 'Zapraszamy do zapoznania się z naszą publikacją wydaną przez oficynę C.H. Beck.' 
-                : 'Check out our publication released by the C.H. Beck publishing house.'}
+
+            <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 leading-tight">
+              {c.title}
             </h2>
-            
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
-              {t('bookPromo.description')}
+
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+              {c.description}
             </p>
-            
-            <Link to={`/${currentLocale}/success-stories`} onClick={handleClose}>
-              <Button className="w-full md:w-auto" size="lg">
-                {t('bookPromo.cta')}
-              </Button>
-            </Link>
+
+            <Button className="w-full md:w-auto" size="default" onClick={handleCta}>
+              {c.cta}
+            </Button>
           </div>
         </div>
       </DialogContent>

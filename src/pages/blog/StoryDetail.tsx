@@ -32,7 +32,7 @@ const StoryDetail = () => {
 
   if (isLoading) {
     return (
-      <PageTemplate title={t('successStories.loading')} description="">
+      <PageTemplate title={t('successStories.loading')} description="" noSeo>
         <div className="max-w-4xl mx-auto">
           <Skeleton className="h-8 w-32 mb-8" />
           <Skeleton className="h-12 w-3/4 mb-4" />
@@ -50,7 +50,7 @@ const StoryDetail = () => {
 
   if (error || !story) {
     return (
-      <PageTemplate title={t('successStories.notFound')} description="">
+      <PageTemplate title={t('successStories.notFound')} description="" noSeo>
         <Alert variant="destructive" className="max-w-2xl mx-auto">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{t('successStories.error')}</AlertDescription>
