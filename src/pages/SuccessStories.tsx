@@ -38,10 +38,6 @@ const SuccessStories = () => {
           </div>
         </div>
 
-        {/* Book Promo Section */}
-        <BookPromoSection />
-        <PostgraduatePromoSection />
-
         <div className="max-w-7xl mx-auto">
           {/* Loading state */}
           {isLoading && (
@@ -122,6 +118,10 @@ const SuccessStories = () => {
             </div>
           )}
         </div>
+
+        {/* Promo sections moved below case studies for better content hierarchy */}
+        <BookPromoSection />
+        <PostgraduatePromoSection />
       </PageTemplate>
   );
 };

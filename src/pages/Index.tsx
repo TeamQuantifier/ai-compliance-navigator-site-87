@@ -180,6 +180,7 @@ const Index = () => {
         
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@quantifier_ai" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`${baseUrl}/og-homepage.png`} />
@@ -193,6 +194,28 @@ const Index = () => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(softwareApplicationSchema)}
+        </script>
+        {/* Review / Testimonial schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "SoftwareApplication",
+              "name": "Quantifier.ai",
+              "url": "https://quantifier.ai"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Raben Group"
+            },
+            "reviewBody": "Quantifier.ai helped us reduce compliance overhead by 60% while maintaining audit-readiness across multiple frameworks.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            }
+          })}
         </script>
         <script type="application/ld+json">
           {JSON.stringify([
