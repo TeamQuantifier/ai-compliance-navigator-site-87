@@ -265,7 +265,11 @@
       "partners": "Partnerzy",
       "successStories": "Historie sukcesu",
       "blog": "Blog",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "events": "Wydarzenia"
+    },
+    "resources": {
+      "title": "Zasoby"
     },
     "contactUs": {
       "title": "Kontakt"
