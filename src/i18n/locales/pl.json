@@ -502,7 +502,26 @@
       "title": "Gotowy, aby przekształcić swój compliance?",
       "description": "Dołącz do setek organizacji, które już uprościły swoje procesy compliance dzięki Quantifier.",
       "button": "Zaplanuj demo"
-    }
+    },
+    "history": {
+      "title": "Nasza historia",
+      "founded": "Założenie Envirly — platformy do zarządzania śladem węglowym i raportowania ESG.",
+      "expansion": "Ekspansja na rynki Europy Środkowej i pozyskanie pierwszych 100 klientów.",
+      "rebrand": "Rebranding na Quantifier.ai — poszerzenie oferty o GRC, cyberbezpieczeństwo i compliance.",
+      "ai": "Wdrożenie AI Compliance Officer — agenta AI automatyzującego procesy zgodności.",
+      "global": "Ekspansja globalna — biura w Warszawie, Lublinie i San Francisco, 250+ organizacji."
+    },
+    "team": {
+      "title": "Zespół kierowniczy",
+      "subtitle": "Łączymy ekspertyzę w compliance, prawie i technologii, aby budować przyszłość zarządzania zgodnością."
+    },
+    "awards": {
+      "title": "Nagrody i certyfikaty",
+      "tuv": { "title": "Partnerstwo TÜV NORD", "desc": "Współpraca z TÜV NORD w zakresie certyfikacji i audytów bezpieczeństwa." },
+      "academic": { "title": "Współpraca akademicka", "desc": "Studia podyplomowe GRC we współpracy z Uniwersytetem Ekonomicznym we Wrocławiu." },
+      "media": { "title": "Uznanie mediów", "desc": "Wielokrotnie nagradzani za innowacyjność i wpływ na branżę compliance." }
+    },
+    "locations": { "title": "Nasze biura" }
   },
   "product": {
     "features": {
