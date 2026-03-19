@@ -118,8 +118,27 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">{t('footer.company.title')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link to={`/${currentLocale}/about`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.company.about')}
+                </Link>
+              </li>
+              <li>
                 <Link to={`/${currentLocale}/partners`} className="text-muted-foreground hover:text-primary transition-colors">
                   {t('footer.company.partners')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${currentLocale}/contact`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.company.contact')}
+                </Link>
+              </li>
+            </ul>
+            
+            <h4 className="font-semibold text-foreground mb-4 mt-6">{t('footer.resources.title')}</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to={`/${currentLocale}/blog`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.company.blog')}
                 </Link>
               </li>
               <li>
@@ -128,23 +147,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/blog`} className="text-muted-foreground hover:text-primary transition-colors">
-                  {t('footer.company.blog')}
-                </Link>
-              </li>
-              <li>
-              <Link to={`/${currentLocale}/contact`} className="text-muted-foreground hover:text-primary transition-colors">
-                  {t('footer.company.contact')}
-                </Link>
-              </li>
-              <li>
                 <Link to={`/${currentLocale}/events`} className="text-muted-foreground hover:text-primary transition-colors">
                   {t('footer.company.events', 'Events')}
-                </Link>
-              </li>
-              <li>
-                <Link to={`/${currentLocale}/legal/privacy`} className="text-muted-foreground hover:text-primary transition-colors">
-                  {t('footer.legal.privacy')}
                 </Link>
               </li>
             </ul>

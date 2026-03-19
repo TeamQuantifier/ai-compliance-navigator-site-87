@@ -81,7 +81,9 @@
     "successStories": "Success Stories",
     "blog": "Blog",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "knowledge": "Resources",
+    "events": "Webinars & Events"
   },
   "hero": {
     "title": "Platform and advisory",
@@ -264,7 +266,11 @@
       "partners": "Partners",
       "successStories": "Success Stories",
       "blog": "Blog",
-      "contact": "Contact"
+      "contact": "Contact",
+      "events": "Events"
+    },
+    "resources": {
+      "title": "Resources"
     },
     "contactUs": {
       "title": "Contact Us"
@@ -498,7 +504,26 @@
       "title": "Ready to transform your compliance approach?",
       "description": "Join the 250+ organizations already benefiting from Quantifier's autonomous compliance platform.",
       "button": "Request a Demo"
-    }
+    },
+    "history": {
+      "title": "Our Journey",
+      "founded": "Founded Envirly — a platform for carbon footprint management and ESG reporting.",
+      "expansion": "Expansion across Central Europe, reaching the first 100 clients.",
+      "rebrand": "Rebranded to Quantifier.ai — broadening the offering to GRC, cybersecurity, and compliance.",
+      "ai": "Launched AI Compliance Officer — an AI agent automating compliance processes.",
+      "global": "Global expansion — offices in Warsaw, Lublin, and San Francisco, 250+ organizations."
+    },
+    "team": {
+      "title": "Leadership Team",
+      "subtitle": "We combine expertise in compliance, law, and technology to build the future of compliance management."
+    },
+    "awards": {
+      "title": "Awards & Certifications",
+      "tuv": { "title": "TÜV NORD Partnership", "desc": "Collaboration with TÜV NORD for security certification and auditing." },
+      "academic": { "title": "Academic Collaboration", "desc": "Postgraduate GRC studies in partnership with the Wrocław University of Economics." },
+      "media": { "title": "Media Recognition", "desc": "Multiple awards for innovation and impact in the compliance industry." }
+    },
+    "locations": { "title": "Our Offices" }
   },
   "product": {
     "overview": {

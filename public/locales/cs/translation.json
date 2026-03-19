@@ -82,6 +82,8 @@
     "blog": "Blog",
     "about": "O nás",
     "contact": "Kontakt",
+    "knowledge": "Znalosti",
+    "events": "Webináře a události",
     "cybersecCheck": "Kybernetická kontrola"
   },
   "hero": {
@@ -268,7 +270,11 @@
       "partners": "Partneři",
       "successStories": "Příběhy úspěchu",
       "blog": "Blog",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "events": "Události"
+    },
+    "resources": {
+      "title": "Zdroje"
     },
     "contactUs": {
       "title": "Kontaktujte nás"
@@ -604,6 +610,36 @@
       "title": "Jste připraveni transformovat svůj přístup ke compliance?",
       "description": "Připojte se k 250+ organizacím, které již využívají výhod autonomní compliance platformy Quantifier.",
       "button": "Požádat o demo"
+    },
+    "history": {
+      "title": "Naše cesta",
+      "founded": "Založení Envirly — platformy pro řízení uhlíkové stopy a ESG reporting.",
+      "expansion": "Expanze do střední Evropy, dosažení prvních 100 klientů.",
+      "rebrand": "Rebrand na Quantifier.ai — rozšíření nabídky o GRC, kybernetickou bezpečnost a compliance.",
+      "ai": "Spuštění AI Compliance Officer — AI agenta automatizujícího compliance procesy.",
+      "global": "Globální expanze — kanceláře ve Varšavě, Lublinu a San Franciscu, 250+ organizací."
+    },
+    "team": {
+      "title": "Vedení společnosti",
+      "subtitle": "Kombinujeme expertízu v compliance, právu a technologiích, abychom vybudovali budoucnost správy compliance."
+    },
+    "awards": {
+      "title": "Ocenění a certifikace",
+      "tuv": {
+        "title": "Partnerství TÜV NORD",
+        "desc": "Spolupráce s TÜV NORD v oblasti certifikace a bezpečnostního auditu."
+      },
+      "academic": {
+        "title": "Akademická spolupráce",
+        "desc": "Postgraduální studium GRC ve spolupráci s Ekonomickou univerzitou ve Vratislavi."
+      },
+      "media": {
+        "title": "Mediální uznání",
+        "desc": "Mnohonásobné ocenění za inovace a dopad v odvětví compliance."
+      }
+    },
+    "locations": {
+      "title": "Naše kanceláře"
     }
   },
   "product": {
