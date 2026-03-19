@@ -81,7 +81,9 @@
     "successStories": "Success Stories",
     "blog": "Blog",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "knowledge": "Resources",
+    "events": "Webinars & Events"
   },
   "hero": {
     "title": "Platform and advisory",
