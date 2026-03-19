@@ -270,7 +270,11 @@
       "partners": "Partneři",
       "successStories": "Příběhy úspěchu",
       "blog": "Blog",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "events": "Události"
+    },
+    "resources": {
+      "title": "Zdroje"
     },
     "contactUs": {
       "title": "Kontaktujte nás"

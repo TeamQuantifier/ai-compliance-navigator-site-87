@@ -273,7 +273,11 @@
       "partners": "Partners",
       "successStories": "Success Stories",
       "blog": "Blog",
-      "contact": "Contact"
+      "contact": "Contact",
+      "events": "Events"
+    },
+    "resources": {
+      "title": "Resources"
     },
     "contactUs": {
       "title": "Contact Us"
