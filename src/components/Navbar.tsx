@@ -49,7 +49,6 @@ export const Navbar = () => {
       title: t('menu.frameworks.title'),
       href: '/frameworks',
       items: [
-        // Popular frameworks - direct links (flattened)
         {
           title: t('menu.frameworks.popular.title'),
           href: '/frameworks',
@@ -61,7 +60,6 @@ export const Navbar = () => {
             { title: 'NIST', href: '/frameworks/nist' },
           ],
         },
-        // Other standards by category
         {
           title: t('menu.frameworks.dataSecurity.title'),
           href: '/frameworks',
@@ -123,12 +121,17 @@ export const Navbar = () => {
       href: '/partners',
     },
     {
-      title: t('menu.successStories'),
-      href: '/success-stories',
+      title: t('menu.knowledge'),
+      href: '/blog',
+      items: [
+        { title: t('menu.blog'), href: '/blog' },
+        { title: t('menu.successStories'), href: '/success-stories' },
+        { title: t('menu.events'), href: '/events' },
+      ],
     },
     {
-      title: t('menu.blog'),
-      href: '/blog',
+      title: t('menu.about'),
+      href: '/about',
     },
     {
       title: t('menu.contact'),

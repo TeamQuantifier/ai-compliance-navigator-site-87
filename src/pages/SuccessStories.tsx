@@ -8,8 +8,6 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Calendar, ArrowRight, Trophy } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
-import { BookPromoSection } from '@/components/BookPromoSection';
-import { PostgraduatePromoSection } from '@/components/PostgraduatePromoSection';
 
 const SuccessStories = () => {
   const { currentLocale, t } = useLanguage();
@@ -20,7 +18,6 @@ const SuccessStories = () => {
       <PageTemplate title={t('successStories.title')} description={t('successStories.subtitle')} deferPrerender>
         {/* Compact Hero Section */}
         <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
-          {/* Decorative elements */}
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-64 h-64 bg-innovation-800 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-compliance-800 rounded-full blur-3xl opacity-30"></div>
@@ -39,7 +36,6 @@ const SuccessStories = () => {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          {/* Loading state */}
           {isLoading && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[1, 2, 3].map((i) => (
@@ -59,7 +55,6 @@ const SuccessStories = () => {
             </div>
           )}
 
-          {/* Stories grid */}
           {!isLoading && stories && stories.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {stories.map((story) => (
@@ -110,7 +105,6 @@ const SuccessStories = () => {
             </div>
           )}
 
-          {/* Empty state */}
           {!isLoading && (!stories || stories.length === 0) && (
             <div className="text-center py-12">
               <Trophy className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
@@ -118,10 +112,6 @@ const SuccessStories = () => {
             </div>
           )}
         </div>
-
-        {/* Promo sections moved below case studies for better content hierarchy */}
-        <BookPromoSection />
-        <PostgraduatePromoSection />
       </PageTemplate>
   );
 };
