@@ -1,3 +1,4 @@
+import logosGrid from '@/assets/logos-grid.png';
 import PageTemplate from '@/components/PageTemplate';
 import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -106,6 +107,17 @@ const Partners = () => {
                   <p className="text-slate-600">{benefit.description}</p>
                 </div>
               </Card>)}
+          </div>
+
+          <div className="mt-12">
+            <img
+              src={logosGrid}
+              alt="Partnerzy Quantifier.ai – logotypy"
+              className="w-full object-contain"
+              width={700}
+              height={500}
+              loading="lazy"
+            />
           </div>
         </section>
         
