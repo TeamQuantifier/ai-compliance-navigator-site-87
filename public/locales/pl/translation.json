@@ -644,34 +644,28 @@
   },
   "about": {
     "title": "O nas",
-    "description": "Poznaj zespół rewolucjonizujący zarządzanie compliance dzięki AI",
-    "heading": "Transformujemy compliance poprzez AI",
-    "subtitle": "Quantifier został założony w 2019 roku przez zespół ekspertów compliance i innowatorów technologicznych, aby rozwiązać jeden z największych wyzwań współczesnych organizacji: złożoność zarządzania wieloma standardami compliance.",
-    "intro1": "Quantifier na nowo definiuje sposób, w jaki organizacje zarządzają zgodnością regulacyjną — oferując działającą bez przerwy, natywnie opartą na AI platformę, która nieprzerwanie monitoruje, egzekwuje i zapewnia zgodność z przepisami takimi jak SOC, ISO czy RODO. Działając jako wirtualny compliance officer, Quantifier automatyzuje gromadzenie danych, zarządzanie zadaniami i nadzór, gwarantując ciągłą gotowość do audytu i pewność w dynamicznie zmieniającym się krajobrazie regulacyjnym.",
-    "intro2": "W ciągu ostatnich trzech lat wspieraliśmy ponad 250 organizacji w Europie, USA i Ameryce Łacińskiej — od globalnych liderów branżowych w sektorze produkcyjnym, farmaceutycznym i usług profesjonalnych po dynamicznie rozwijające się startupy. Nasza sieć obejmuje ponad 50 partnerów, w tym główne banki, firmy konsultingowe oraz organizacje pozarządowe.",
-    "intro3": "Jesteśmy dumni z uznania, jakie otrzymujemy od wiodących mediów, oraz z licznych nagród za innowacyjność i wpływ na branżę.",
-    "intro4": "Nasz zespół tworzą jedni z najlepszych inżynierów, prawników i doradców — wielu z nich posiada lub zdobywa stopnie doktorskie — połączeni misją budowania infrastruktury AI, która napędza przyszłość globalnej zgodności regulacyjnej.",
+    "description": "Poznaj zespół Quantifier.ai – rozwijamy platformę AI do zarządzania wieloma standardami compliance.",
+    "heading": "Quantifier.ai – platforma AI do zarządzania compliance",
+    "subtitle": "Quantifier.ai został oficjalnie założony w 2025 roku. Rozwijamy platformę AI do zarządzania wieloma standardami compliance.",
+    "intro1": "Quantifier.ai to platforma AI, która pomaga organizacjom zarządzać wieloma standardami compliance jednocześnie. Działamy jako wirtualny compliance officer – automatyzujemy zbieranie danych, zarządzanie zadaniami i nadzór, zapewniając ciągłą gotowość do audytu.",
+    "intro2": "Wspieramy organizacje w Europie i na świecie – od globalnych liderów branżowych po dynamicznie rozwijające się startupy. Nasz zespół łączy wiedzę z zakresu compliance, prawa i technologii.",
     "highlights": {
-      "title": "Nasza historia w liczbach",
-      "organizations": "Organizacji",
-      "organizationsDesc": "Ufających naszej platformie",
+      "title": "O nas w skrócie",
+      "organizations": "250+ klientów",
+      "organizationsDesc": "Obsłużonych w wielu branżach",
       "globalReach": "Zasięg globalny",
       "globalReachDesc": "Działalność w 15+ krajach",
-      "partners": "Partnerów",
-      "partnersDesc": "Certyfikowanych konsultantów",
+      "partners": "30+ aktywnych firm",
+      "partnersDesc": "Na platformie Quantifier.ai",
       "awardWinning": "Nagrodzony",
       "awardWinningDesc": "Uznany przez branżowych liderów",
       "expertTeam": "Zespół ekspertów",
-      "expertTeamDesc": "Compliance i technologia"
+      "expertTeamDesc": "Compliance, prawo i technologia"
     },
     "impact": {
       "title": "Nasz wpływ",
-      "organizations": "250+",
-      "organizationsLabel": "Organizacji",
-      "years": "5+",
-      "yearsLabel": "Lat działalności",
-      "partners": "50+",
-      "partnersLabel": "Globalnych partnerów"
+      "clients": "Ponad 250 obsłużonych klientów",
+      "activeFirms": "Ponad 30 aktywnych firm na platformie Quantifier.ai"
     },
     "mission": {
       "title": "Nasza misja",
@@ -691,17 +685,9 @@
       "description": "Dołącz do setek organizacji, które już uprościły swoje procesy compliance dzięki Quantifier.",
       "button": "Zaplanuj demo"
     },
-    "history": {
-      "title": "Nasza historia",
-      "founded": "Założenie Envirly — platformy do zarządzania śladem węglowym i raportowania ESG.",
-      "expansion": "Ekspansja na rynki Europy Środkowej i pozyskanie pierwszych 100 klientów.",
-      "rebrand": "Rebranding na Quantifier.ai — poszerzenie oferty o GRC, cyberbezpieczeństwo i compliance.",
-      "ai": "Wdrożenie AI Compliance Officer — agenta AI automatyzującego procesy zgodności.",
-      "global": "Ekspansja globalna — biura w Warszawie, Lublinie i San Francisco, 250+ organizacji."
-    },
     "team": {
-      "title": "Zespół kierowniczy",
-      "subtitle": "Łączymy ekspertyzę w compliance, prawie i technologii, aby budować przyszłość zarządzania zgodnością."
+      "title": "Zespół",
+      "subtitle": "Łączymy wiedzę z zakresu compliance, prawa i technologii, aby budować przyszłość zarządzania zgodnością."
     },
     "awards": {
       "title": "Nagrody i certyfikaty",
@@ -719,8 +705,12 @@
       }
     },
     "locations": {
-      "title": "Nasze biura"
-    }
+      "title": "Nasze biuro",
+      "warsaw": "Warszawa, Polska",
+      "lublin": "Lublin, Polska"
+    },
+    "conferences": "Konferencje",
+    "conferencesAlt": "Zespół Quantifier.ai na konferencji"
   },
   "product": {
     "features": {
@@ -970,37 +960,63 @@
       "cybersecurity": {
         "title": "Cyberbezpieczeństwo",
         "description": "Standardy ochrony zasobów cyfrowych i systemów przed zagrożeniami cybernetycznymi.",
-        "items": ["SOC I i SOC II", "NIS II", "NIST"]
+        "items": [
+          "SOC I i SOC II",
+          "NIS II",
+          "NIST"
+        ]
       },
       "informationSecurity": {
         "title": "Bezpieczeństwo Informacji",
         "description": "Standardy zabezpieczania zasobów informacyjnych i zachowania poufności.",
-        "items": ["ISO 27001", "ISO 9001"]
+        "items": [
+          "ISO 27001",
+          "ISO 9001"
+        ]
       },
       "dataSecurity": {
         "title": "Ochrona Danych",
         "description": "Regulacje dotyczące ochrony danych osobowych i wrażliwych.",
-        "items": ["GDPR", "HIPPA", "CCPA"]
+        "items": [
+          "GDPR",
+          "HIPPA",
+          "CCPA"
+        ]
       },
       "esg": {
         "title": "ESG",
         "description": "Standardy raportowania środowiskowego, społecznego i zarządczego.",
-        "items": ["Raportowanie CSDR", "Raportowanie GRI", "Raportowanie CBAM"]
+        "items": [
+          "Raportowanie CSDR",
+          "Raportowanie GRI",
+          "Raportowanie CBAM"
+        ]
       },
       "environmental": {
         "title": "Środowiskowe",
         "description": "Standardy zarządzania środowiskowego i zrównoważonego rozwoju.",
-        "items": ["ISO 14001", "LCA", "Ślad węglowy, GHG", "Dekarbonizacja"]
+        "items": [
+          "ISO 14001",
+          "LCA",
+          "Ślad węglowy, GHG",
+          "Dekarbonizacja"
+        ]
       },
       "governance": {
         "title": "Zarządzanie",
         "description": "Wytyczne dotyczące ładu korporacyjnego i etyki organizacyjnej.",
-        "items": ["Polityki prawne", "Zgłaszanie nieprawidłowości"]
+        "items": [
+          "Polityki prawne",
+          "Zgłaszanie nieprawidłowości"
+        ]
       },
       "productLevel": {
         "title": "Poziom Produktu",
         "description": "Standardy specyficzne dla compliance produktów i ich cyklu życia.",
-        "items": ["DPP", "Analiza LCA"]
+        "items": [
+          "DPP",
+          "Analiza LCA"
+        ]
       }
     },
     "labels": {
@@ -2995,43 +3011,80 @@
           "number": "1",
           "title": "Onboarding organizacji",
           "description": "Konfigurujemy Twoje środowisko ISMS w kilka godzin, nie tygodni. Importujemy strukturę organizacyjną, role, procesy, aktywa i dostawców.",
-          "items": ["mapowanie zakresu certyfikacji", "definicja ról i odpowiedzialności", "konfiguracja frameworku ISO 27001", "baseline zgodności"]
+          "items": [
+            "mapowanie zakresu certyfikacji",
+            "definicja ról i odpowiedzialności",
+            "konfiguracja frameworku ISO 27001",
+            "baseline zgodności"
+          ]
         },
         "gapAnalysis": {
           "number": "2",
           "title": "Analiza luk",
           "description": "AI porównuje Twój obecny stan z wymaganiami ISO 27001 i Załącznika A.",
-          "items": ["automatyczna identyfikacja braków", "scoring dojrzałości ISMS", "priorytety działań", "roadmapa wdrożenia"]
+          "items": [
+            "automatyczna identyfikacja braków",
+            "scoring dojrzałości ISMS",
+            "priorytety działań",
+            "roadmapa wdrożenia"
+          ]
         },
         "riskAssessment": {
           "number": "3",
           "title": "Ocena ryzyka",
           "description": "Budujemy rejestr ryzyk zgodny z ISO 27001.",
-          "items": ["identyfikacja aktywów i zagrożeń", "scoring ryzyka oparty na AI", "plany postępowania z ryzykiem", "ciągłe aktualizacje rejestru"]
+          "items": [
+            "identyfikacja aktywów i zagrożeń",
+            "scoring ryzyka oparty na AI",
+            "plany postępowania z ryzykiem",
+            "ciągłe aktualizacje rejestru"
+          ]
         },
         "policies": {
           "number": "4",
           "title": "Polityki i dokumentacja",
           "description": "Generujemy i utrzymujemy kompletną dokumentację ISMS.",
-          "items": ["gotowe szablony polityk", "automatyczna kontrola wersji", "workflow zatwierdzeń", "cykle przeglądu dokumentów"]
+          "items": [
+            "gotowe szablony polityk",
+            "automatyczna kontrola wersji",
+            "workflow zatwierdzeń",
+            "cykle przeglądu dokumentów"
+          ]
         },
         "controls": {
           "number": "5",
           "title": "Wdrożenie kontroli",
           "description": "Mapujemy i operacjonalizujemy wszystkie kontrole ISO 27001.",
-          "items": ["przypisanie właścicieli kontroli", "zadania wdrożeniowe", "zbieranie dowodów", "monitoring realizacji"]
+          "items": [
+            "przypisanie właścicieli kontroli",
+            "zadania wdrożeniowe",
+            "zbieranie dowodów",
+            "monitoring realizacji"
+          ]
         },
         "certification": {
           "number": "6",
           "title": "Gotowość certyfikacyjna",
           "description": "Automatyzujemy audyty",
-          "items": ["plan audytu", "eksport dokumentacji", "checklisty zgodności", "zbieranie dowodów", "działania korygujące", "wsparcie zespołu Quantifier"]
+          "items": [
+            "plan audytu",
+            "eksport dokumentacji",
+            "checklisty zgodności",
+            "zbieranie dowodów",
+            "działania korygujące",
+            "wsparcie zespołu Quantifier"
+          ]
         },
         "maintenance": {
           "number": "7",
           "title": "Ciągłe utrzymanie ISMS",
           "description": "Po certyfikacji agenci AI utrzymują Twój ISMS 24/7.",
-          "items": ["monitoring kontroli", "aktualizacje ryzyk", "cykle przeglądu", "przygotowanie do audytów nadzorczych"]
+          "items": [
+            "monitoring kontroli",
+            "aktualizacje ryzyk",
+            "cykle przeglądu",
+            "przygotowanie do audytów nadzorczych"
+          ]
         }
       }
     },
@@ -3631,8 +3684,8 @@
       "ogDescription": "Zarządzaj zgodnością z wieloma standardami z jednej platformy. AI-powered tworzenie polityk, automatyzacja zadań, gotowość na audyt."
     },
     "blog": {
-      "title": "Blog o Compliance i Bezpieczeństwie | Przewodniki ISO 27001, SOC 2, NIS2",
-      "description": "Eksperckie przewodniki po automatyzacji compliance. Dowiedz się o ISO 27001, SOC 2, NIS2, GDPR i jak AI upraszcza przygotowanie do audytu."
+      "title": "Blog i Insights",
+      "description": "Najnowsze artykuły, poradniki i informacje o compliance, GRC, cyberbezpieczeństwie i standardach regulacyjnych od zespołu Quantifier.ai."
     },
     "product": {
       "title": "Funkcje | Automatyzacja Compliance z AI",
@@ -3749,10 +3802,6 @@
     "successStories": {
       "title": "Historie Sukcesu Klientów",
       "description": "Odkryj, jak organizacje osiągają doskonałość compliance z Quantifier.ai. Prawdziwe studia przypadków i udowodnione wyniki naszych klientów."
-    },
-    "blog": {
-      "title": "Blog i Insights",
-      "description": "Najnowsze artykuły, poradniki i informacje o compliance, GRC, cyberbezpieczeństwie i standardach regulacyjnych od zespołu Quantifier.ai."
     }
   },
   "seoLanding": {
@@ -3777,9 +3826,21 @@
         "title": "Problem z ręczną zgodnością SOC 2",
         "subtitle": "Tradycyjne podejścia są wolne, drogie i podatne na błędy.",
         "items": [
-          { "stat": "6-12", "title": "Miesięcy ręcznej pracy", "description": "Tradycyjne przygotowanie do SOC 2 zajmuje miesiące zbierania dowodów i dokumentacji." },
-          { "stat": "50 tys.+", "title": "Koszty konsultantów", "description": "Większość firm wydaje dziesiątki tysięcy na zewnętrznych konsultantów." },
-          { "stat": "80%", "title": "Czasu na dowody", "description": "Zespoły compliance spędzają większość czasu na ręcznym zbieraniu dowodów." }
+          {
+            "stat": "6-12",
+            "title": "Miesięcy ręcznej pracy",
+            "description": "Tradycyjne przygotowanie do SOC 2 zajmuje miesiące zbierania dowodów i dokumentacji."
+          },
+          {
+            "stat": "50 tys.+",
+            "title": "Koszty konsultantów",
+            "description": "Większość firm wydaje dziesiątki tysięcy na zewnętrznych konsultantów."
+          },
+          {
+            "stat": "80%",
+            "title": "Czasu na dowody",
+            "description": "Zespoły compliance spędzają większość czasu na ręcznym zbieraniu dowodów."
+          }
         ]
       },
       "solution": {
@@ -3787,10 +3848,22 @@
         "subtitle": "Nasza platforma natywna dla AI przejmuje ciężką pracę, abyś mógł skupić się na biznesie."
       },
       "features": {
-        "automated": { "title": "Automatyczne zbieranie dowodów", "description": "Połącz swoje narzędzia i automatycznie zbieraj dowody dla wszystkich kryteriów Trust Services." },
-        "continuous": { "title": "Ciągły monitoring", "description": "Monitorowanie stanu zgodności w czasie rzeczywistym z natychmiastowymi alertami." },
-        "evidence": { "title": "Raporty gotowe do audytu", "description": "Generuj kompleksowe raporty, które pokochają Twoi audytorzy." },
-        "ai": { "title": "AI Compliance Officer", "description": "Uzyskaj inteligentne wskazówki i automatyczne sugestie naprawcze." }
+        "automated": {
+          "title": "Automatyczne zbieranie dowodów",
+          "description": "Połącz swoje narzędzia i automatycznie zbieraj dowody dla wszystkich kryteriów Trust Services."
+        },
+        "continuous": {
+          "title": "Ciągły monitoring",
+          "description": "Monitorowanie stanu zgodności w czasie rzeczywistym z natychmiastowymi alertami."
+        },
+        "evidence": {
+          "title": "Raporty gotowe do audytu",
+          "description": "Generuj kompleksowe raporty, które pokochają Twoi audytorzy."
+        },
+        "ai": {
+          "title": "AI Compliance Officer",
+          "description": "Uzyskaj inteligentne wskazówki i automatyczne sugestie naprawcze."
+        }
       },
       "criteria": {
         "title": "Pełne pokrycie kryteriów Trust Services",
@@ -3799,20 +3872,47 @@
       "results": {
         "title": "Wyniki osiągane przez naszych klientów",
         "items": [
-          { "stat": "10x", "label": "Szybsza certyfikacja" },
-          { "stat": "80%", "label": "Mniej pracy ręcznej" },
-          { "stat": "100%", "label": "Wskaźnik sukcesu audytu" }
+          {
+            "stat": "10x",
+            "label": "Szybsza certyfikacja"
+          },
+          {
+            "stat": "80%",
+            "label": "Mniej pracy ręcznej"
+          },
+          {
+            "stat": "100%",
+            "label": "Wskaźnik sukcesu audytu"
+          }
         ]
       },
       "faq": {
         "title": "Często zadawane pytania",
         "items": [
-          { "question": "Czym jest automatyzacja SOC 2?", "answer": "Automatyzacja SOC 2 wykorzystuje oprogramowanie do ciągłego zbierania dowodów, monitorowania kontroli i utrzymywania zgodności z wymaganiami SOC 2, redukując pracę ręczną nawet o 80%." },
-          { "question": "Jak długo trwa uzyskanie certyfikatu SOC 2 z Quantifier?", "answer": "Większość klientów uzyskuje certyfikat SOC 2 Type I w ciągu 4-6 tygodni, a Type II w ciągu 3-6 miesięcy, w porównaniu do 6-12 miesięcy przy tradycyjnym podejściu." },
-          { "question": "Jakie kryteria Trust Services obejmuje Quantifier?", "answer": "Quantifier obejmuje wszystkie pięć kryteriów Trust Services: Bezpieczeństwo, Dostępność, Integralność przetwarzania, Poufność i Prywatność." },
-          { "question": "Czy integrujecie się z naszymi istniejącymi narzędziami?", "answer": "Tak, Quantifier integruje się z ponad 100 narzędziami, w tym AWS, Azure, GCP, Okta, GitHub, Jira i wieloma innymi." },
-          { "question": "Ile kosztuje automatyzacja SOC 2?", "answer": "Ceny różnią się w zależności od wielkości i złożoności firmy. Skontaktuj się z nami po spersonalizowaną wycenę. Większość klientów oszczędza 50-70% w porównaniu do tradycyjnych podejść konsultingowych." },
-          { "question": "Czy Quantifier pomoże zarówno z SOC 2 Type I, jak i Type II?", "answer": "Tak, Quantifier wspiera zarówno audyty Type I (punkt w czasie), jak i Type II (ciągły monitoring) z ciągłym zbieraniem dowodów." }
+          {
+            "question": "Czym jest automatyzacja SOC 2?",
+            "answer": "Automatyzacja SOC 2 wykorzystuje oprogramowanie do ciągłego zbierania dowodów, monitorowania kontroli i utrzymywania zgodności z wymaganiami SOC 2, redukując pracę ręczną nawet o 80%."
+          },
+          {
+            "question": "Jak długo trwa uzyskanie certyfikatu SOC 2 z Quantifier?",
+            "answer": "Większość klientów uzyskuje certyfikat SOC 2 Type I w ciągu 4-6 tygodni, a Type II w ciągu 3-6 miesięcy, w porównaniu do 6-12 miesięcy przy tradycyjnym podejściu."
+          },
+          {
+            "question": "Jakie kryteria Trust Services obejmuje Quantifier?",
+            "answer": "Quantifier obejmuje wszystkie pięć kryteriów Trust Services: Bezpieczeństwo, Dostępność, Integralność przetwarzania, Poufność i Prywatność."
+          },
+          {
+            "question": "Czy integrujecie się z naszymi istniejącymi narzędziami?",
+            "answer": "Tak, Quantifier integruje się z ponad 100 narzędziami, w tym AWS, Azure, GCP, Okta, GitHub, Jira i wieloma innymi."
+          },
+          {
+            "question": "Ile kosztuje automatyzacja SOC 2?",
+            "answer": "Ceny różnią się w zależności od wielkości i złożoności firmy. Skontaktuj się z nami po spersonalizowaną wycenę. Większość klientów oszczędza 50-70% w porównaniu do tradycyjnych podejść konsultingowych."
+          },
+          {
+            "question": "Czy Quantifier pomoże zarówno z SOC 2 Type I, jak i Type II?",
+            "answer": "Tak, Quantifier wspiera zarówno audyty Type I (punkt w czasie), jak i Type II (ciągły monitoring) z ciągłym zbieraniem dowodów."
+          }
         ]
       },
       "cta": {
@@ -3833,18 +3933,39 @@
         "title": "Dlaczego certyfikat ISO 27001 ma znaczenie",
         "subtitle": "ISO 27001 to złoty standard zarządzania bezpieczeństwem informacji.",
         "items": [
-          { "title": "Globalne uznanie", "description": "ISO 27001 jest uznawane na całym świecie jako dowód solidnych praktyk bezpieczeństwa." },
-          { "title": "Zaufanie klientów", "description": "Pokaż swoje zaangażowanie w ochronę danych klientów." },
-          { "title": "Przewaga konkurencyjna", "description": "Wygrywaj więcej kontraktów spełniając wymagania bezpieczeństwa przedsiębiorstw." }
+          {
+            "title": "Globalne uznanie",
+            "description": "ISO 27001 jest uznawane na całym świecie jako dowód solidnych praktyk bezpieczeństwa."
+          },
+          {
+            "title": "Zaufanie klientów",
+            "description": "Pokaż swoje zaangażowanie w ochronę danych klientów."
+          },
+          {
+            "title": "Przewaga konkurencyjna",
+            "description": "Wygrywaj więcej kontraktów spełniając wymagania bezpieczeństwa przedsiębiorstw."
+          }
         ]
       },
       "challenges": {
         "title": "Wyzwania wdrożenia ISO 27001",
         "items": [
-          { "title": "Złożone wymagania", "description": "ISO 27001 ma 93 kontrole w 4 kategoriach wymagających szczegółowej dokumentacji." },
-          { "title": "Zasobochłonność", "description": "Tradycyjne wdrożenie wymaga dedykowanych zespołów i drogich konsultantów." },
-          { "title": "Ciągłe utrzymanie", "description": "Utrzymanie certyfikacji wymaga ciągłego monitoringu i aktualizacji." },
-          { "title": "Obciążenie dokumentacją", "description": "Tworzenie i utrzymywanie setek polityk i procedur." }
+          {
+            "title": "Złożone wymagania",
+            "description": "ISO 27001 ma 93 kontrole w 4 kategoriach wymagających szczegółowej dokumentacji."
+          },
+          {
+            "title": "Zasobochłonność",
+            "description": "Tradycyjne wdrożenie wymaga dedykowanych zespołów i drogich konsultantów."
+          },
+          {
+            "title": "Ciągłe utrzymanie",
+            "description": "Utrzymanie certyfikacji wymaga ciągłego monitoringu i aktualizacji."
+          },
+          {
+            "title": "Obciążenie dokumentacją",
+            "description": "Tworzenie i utrzymywanie setek polityk i procedur."
+          }
         ]
       },
       "solution": {
@@ -3852,10 +3973,22 @@
         "subtitle": "Quantifier automatyzuje najbardziej czasochłonne aspekty ISO 27001."
       },
       "features": {
-        "isms": { "title": "Framework ISMS", "description": "Gotowe szablony i workflow zgodne z ISO 27001:2022." },
-        "policies": { "title": "Generowanie polityk", "description": "Polityki generowane przez AI dostosowane do Twojej organizacji." },
-        "risk": { "title": "Ocena ryzyka", "description": "Automatyczna identyfikacja ryzyk i planowanie działań naprawczych." },
-        "training": { "title": "Szkolenia świadomości", "description": "Wbudowane programy świadomości bezpieczeństwa dla pracowników." }
+        "isms": {
+          "title": "Framework ISMS",
+          "description": "Gotowe szablony i workflow zgodne z ISO 27001:2022."
+        },
+        "policies": {
+          "title": "Generowanie polityk",
+          "description": "Polityki generowane przez AI dostosowane do Twojej organizacji."
+        },
+        "risk": {
+          "title": "Ocena ryzyka",
+          "description": "Automatyczna identyfikacja ryzyk i planowanie działań naprawczych."
+        },
+        "training": {
+          "title": "Szkolenia świadomości",
+          "description": "Wbudowane programy świadomości bezpieczeństwa dla pracowników."
+        }
       },
       "annexA": {
         "title": "Pełne pokrycie kontroli Załącznika A",
@@ -3864,20 +3997,47 @@
       "results": {
         "title": "Od analizy luk do certyfikacji",
         "items": [
-          { "stat": "60%", "label": "Szybsze wdrożenie" },
-          { "stat": "70%", "label": "Mniej czasu na dokumentację" },
-          { "stat": "93", "label": "Pokryte kontrole" }
+          {
+            "stat": "60%",
+            "label": "Szybsze wdrożenie"
+          },
+          {
+            "stat": "70%",
+            "label": "Mniej czasu na dokumentację"
+          },
+          {
+            "stat": "93",
+            "label": "Pokryte kontrole"
+          }
         ]
       },
       "faq": {
         "title": "Często zadawane pytania",
         "items": [
-          { "question": "Czym jest ISO 27001?", "answer": "ISO 27001 to międzynarodowy standard systemów zarządzania bezpieczeństwem informacji (ISMS). Zapewnia ramy bezpiecznego zarządzania wrażliwymi informacjami firmy i klientów." },
-          { "question": "Jak Quantifier pomaga w certyfikacji ISO 27001?", "answer": "Quantifier zapewnia gotowe szablony ISMS, automatyczne generowanie polityk, narzędzia do oceny ryzyka i ciągły monitoring, aby usprawnić drogę do certyfikacji." },
-          { "question": "Jaki jest czas realizacji certyfikacji ISO 27001?", "answer": "Z Quantifier większość organizacji uzyskuje certyfikat w ciągu 3-6 miesięcy, w porównaniu do 12-18 miesięcy przy tradycyjnym podejściu." },
-          { "question": "Czy potrzebuję konsultantów do ISO 27001?", "answer": "Quantifier zmniejsza potrzebę zewnętrznych konsultantów, zapewniając wbudowaną ekspertyzę i wskazówki, choć niektóre organizacje decydują się na konsultantów do wsparcia audytu." },
-          { "question": "Jak działa ciągła zgodność?", "answer": "Quantifier ciągle monitoruje Twoje kontrole, śledzi dowody i powiadamia o wszelkich lukach, zapewniając utrzymanie zgodności między audytami." },
-          { "question": "Czy mogę zarządzać ISO 27001 i SOC 2 razem?", "answer": "Tak, Quantifier wspiera wiele frameworków z mapowaniem kontroli, więc dowody zebrane dla jednego frameworka mogą być wykorzystane dla innych." }
+          {
+            "question": "Czym jest ISO 27001?",
+            "answer": "ISO 27001 to międzynarodowy standard systemów zarządzania bezpieczeństwem informacji (ISMS). Zapewnia ramy bezpiecznego zarządzania wrażliwymi informacjami firmy i klientów."
+          },
+          {
+            "question": "Jak Quantifier pomaga w certyfikacji ISO 27001?",
+            "answer": "Quantifier zapewnia gotowe szablony ISMS, automatyczne generowanie polityk, narzędzia do oceny ryzyka i ciągły monitoring, aby usprawnić drogę do certyfikacji."
+          },
+          {
+            "question": "Jaki jest czas realizacji certyfikacji ISO 27001?",
+            "answer": "Z Quantifier większość organizacji uzyskuje certyfikat w ciągu 3-6 miesięcy, w porównaniu do 12-18 miesięcy przy tradycyjnym podejściu."
+          },
+          {
+            "question": "Czy potrzebuję konsultantów do ISO 27001?",
+            "answer": "Quantifier zmniejsza potrzebę zewnętrznych konsultantów, zapewniając wbudowaną ekspertyzę i wskazówki, choć niektóre organizacje decydują się na konsultantów do wsparcia audytu."
+          },
+          {
+            "question": "Jak działa ciągła zgodność?",
+            "answer": "Quantifier ciągle monitoruje Twoje kontrole, śledzi dowody i powiadamia o wszelkich lukach, zapewniając utrzymanie zgodności między audytami."
+          },
+          {
+            "question": "Czy mogę zarządzać ISO 27001 i SOC 2 razem?",
+            "answer": "Tak, Quantifier wspiera wiele frameworków z mapowaniem kontroli, więc dowody zebrane dla jednego frameworka mogą być wykorzystane dla innych."
+          }
         ]
       },
       "cta": {
@@ -3898,18 +4058,42 @@
         "title": "Przegląd wymagań RODO",
         "subtitle": "RODO wymaga od organizacji ochrony danych osobowych obywateli UE.",
         "items": [
-          { "stat": "20 mln €", "title": "Maksymalne kary", "description": "Lub 4% rocznego globalnego obrotu za poważne naruszenia." },
-          { "stat": "72h", "title": "Powiadomienie o naruszeniu", "description": "Limit czasu na zgłoszenie naruszeń danych organom." },
-          { "stat": "30 dni", "title": "Odpowiedź DSAR", "description": "Maksymalny czas na odpowiedź na żądania osób, których dane dotyczą." }
+          {
+            "stat": "20 mln €",
+            "title": "Maksymalne kary",
+            "description": "Lub 4% rocznego globalnego obrotu za poważne naruszenia."
+          },
+          {
+            "stat": "72h",
+            "title": "Powiadomienie o naruszeniu",
+            "description": "Limit czasu na zgłoszenie naruszeń danych organom."
+          },
+          {
+            "stat": "30 dni",
+            "title": "Odpowiedź DSAR",
+            "description": "Maksymalny czas na odpowiedź na żądania osób, których dane dotyczą."
+          }
         ]
       },
       "challenges": {
         "title": "Typowe wyzwania zgodności z RODO",
         "items": [
-          { "title": "Złożoność mapowania danych", "description": "Śledzenie danych osobowych w systemach i u podmiotów trzecich." },
-          { "title": "Wolumen DSAR", "description": "Efektywne zarządzanie rosnącą liczbą żądań dostępu do danych." },
-          { "title": "Transfery transgraniczne", "description": "Zapewnienie zgodnego z prawem transferu danych poza UE." },
-          { "title": "Zarządzanie zgodami", "description": "Śledzenie i zarządzanie zgodami w różnych punktach kontaktu." }
+          {
+            "title": "Złożoność mapowania danych",
+            "description": "Śledzenie danych osobowych w systemach i u podmiotów trzecich."
+          },
+          {
+            "title": "Wolumen DSAR",
+            "description": "Efektywne zarządzanie rosnącą liczbą żądań dostępu do danych."
+          },
+          {
+            "title": "Transfery transgraniczne",
+            "description": "Zapewnienie zgodnego z prawem transferu danych poza UE."
+          },
+          {
+            "title": "Zarządzanie zgodami",
+            "description": "Śledzenie i zarządzanie zgodami w różnych punktach kontaktu."
+          }
         ]
       },
       "solution": {
@@ -3917,10 +4101,22 @@
         "subtitle": "Quantifier zapewnia pełną automatyzację zgodności z RODO."
       },
       "features": {
-        "ropa": { "title": "Zarządzanie ROPA", "description": "Automatyczne rejestry czynności przetwarzania z mapowaniem danych." },
-        "dsar": { "title": "Automatyzacja DSAR", "description": "Usprawnienie żądań osób, których dane dotyczą, z automatycznymi workflow." },
-        "dpia": { "title": "Narzędzia DPIA", "description": "Efektywne przeprowadzanie ocen wpływu na ochronę danych." },
-        "transfers": { "title": "Mechanizmy transferu", "description": "Zarządzanie SCC, BCR i decyzjami o adekwatności." }
+        "ropa": {
+          "title": "Zarządzanie ROPA",
+          "description": "Automatyczne rejestry czynności przetwarzania z mapowaniem danych."
+        },
+        "dsar": {
+          "title": "Automatyzacja DSAR",
+          "description": "Usprawnienie żądań osób, których dane dotyczą, z automatycznymi workflow."
+        },
+        "dpia": {
+          "title": "Narzędzia DPIA",
+          "description": "Efektywne przeprowadzanie ocen wpływu na ochronę danych."
+        },
+        "transfers": {
+          "title": "Mechanizmy transferu",
+          "description": "Zarządzanie SCC, BCR i decyzjami o adekwatności."
+        }
       },
       "rights": {
         "title": "Automatyzacja praw osób, których dane dotyczą",
@@ -3929,20 +4125,47 @@
       "results": {
         "title": "Potwierdzone wyniki",
         "items": [
-          { "stat": "90%", "label": "Szybsza odpowiedź DSAR" },
-          { "stat": "100%", "label": "Pokrycie praw" },
-          { "stat": "Zero", "label": "Kar za niezgodność" }
+          {
+            "stat": "90%",
+            "label": "Szybsza odpowiedź DSAR"
+          },
+          {
+            "stat": "100%",
+            "label": "Pokrycie praw"
+          },
+          {
+            "stat": "Zero",
+            "label": "Kar za niezgodność"
+          }
         ]
       },
       "faq": {
         "title": "Często zadawane pytania",
         "items": [
-          { "question": "Czym jest zgodność z RODO?", "answer": "Zgodność z RODO oznacza spełnienie wymagań Ogólnego rozporządzenia o ochronie danych UE, które reguluje sposób, w jaki organizacje zbierają, przetwarzają i chronią dane osobowe mieszkańców UE." },
-          { "question": "Jak Quantifier pomaga w RODO?", "answer": "Quantifier zapewnia automatyczne zarządzanie ROPA, workflow DSAR, śledzenie zgód, narzędzia do powiadamiania o naruszeniach i szablony DPIA dla kompleksowej zgodności z RODO." },
-          { "question": "Czy można zautomatyzować obsługę DSAR?", "answer": "Tak, Quantifier automatyzuje cały proces DSAR od przyjęcia do realizacji, w tym weryfikację tożsamości, zbieranie danych i generowanie odpowiedzi." },
-          { "question": "Jak obsługujecie transgraniczne transfery danych?", "answer": "Quantifier pomaga zarządzać ocenami wpływu transferu, standardowymi klauzulami umownymi i śledzi decyzje o adekwatności dla międzynarodowych transferów danych." },
-          { "question": "A co z zarządzaniem zgodami na pliki cookie?", "answer": "Quantifier integruje się z platformami do zarządzania zgodami na pliki cookie i pomaga śledzić status zgód w całej organizacji." },
-          { "question": "Czy wspieracie inne przepisy o prywatności?", "answer": "Tak, Quantifier wspiera CCPA, HIPAA i inne frameworki prywatności z ujednoliconym zarządzaniem zgodnością." }
+          {
+            "question": "Czym jest zgodność z RODO?",
+            "answer": "Zgodność z RODO oznacza spełnienie wymagań Ogólnego rozporządzenia o ochronie danych UE, które reguluje sposób, w jaki organizacje zbierają, przetwarzają i chronią dane osobowe mieszkańców UE."
+          },
+          {
+            "question": "Jak Quantifier pomaga w RODO?",
+            "answer": "Quantifier zapewnia automatyczne zarządzanie ROPA, workflow DSAR, śledzenie zgód, narzędzia do powiadamiania o naruszeniach i szablony DPIA dla kompleksowej zgodności z RODO."
+          },
+          {
+            "question": "Czy można zautomatyzować obsługę DSAR?",
+            "answer": "Tak, Quantifier automatyzuje cały proces DSAR od przyjęcia do realizacji, w tym weryfikację tożsamości, zbieranie danych i generowanie odpowiedzi."
+          },
+          {
+            "question": "Jak obsługujecie transgraniczne transfery danych?",
+            "answer": "Quantifier pomaga zarządzać ocenami wpływu transferu, standardowymi klauzulami umownymi i śledzi decyzje o adekwatności dla międzynarodowych transferów danych."
+          },
+          {
+            "question": "A co z zarządzaniem zgodami na pliki cookie?",
+            "answer": "Quantifier integruje się z platformami do zarządzania zgodami na pliki cookie i pomaga śledzić status zgód w całej organizacji."
+          },
+          {
+            "question": "Czy wspieracie inne przepisy o prywatności?",
+            "answer": "Tak, Quantifier wspiera CCPA, HIPAA i inne frameworki prywatności z ujednoliconym zarządzaniem zgodnością."
+          }
         ]
       },
       "cta": {
@@ -3963,9 +4186,21 @@
         "title": "Zrozumienie Dyrektywy NIS2",
         "subtitle": "NIS2 rozszerza wymagania cyberbezpieczeństwa UE na więcej sektorów.",
         "items": [
-          { "stat": "18", "title": "Objętych sektorów", "description": "Podmioty kluczowe i ważne w sektorach ochrony zdrowia, energii, transportu i innych." },
-          { "stat": "10 mln €+", "title": "Potencjalne kary", "description": "Do 2% globalnego obrotu dla podmiotów kluczowych." },
-          { "stat": "2025–2026", "title": "Egzekwowanie trwa", "description": "Państwa UE egzekwują krajowe przepisy NIS2 — organizacje muszą być zgodne teraz lub grożą im kary." }
+          {
+            "stat": "18",
+            "title": "Objętych sektorów",
+            "description": "Podmioty kluczowe i ważne w sektorach ochrony zdrowia, energii, transportu i innych."
+          },
+          {
+            "stat": "10 mln €+",
+            "title": "Potencjalne kary",
+            "description": "Do 2% globalnego obrotu dla podmiotów kluczowych."
+          },
+          {
+            "stat": "2025–2026",
+            "title": "Egzekwowanie trwa",
+            "description": "Państwa UE egzekwują krajowe przepisy NIS2 — organizacje muszą być zgodne teraz lub grożą im kary."
+          }
         ]
       },
       "sectors": {
@@ -3977,37 +4212,88 @@
         "subtitle": "Quantifier prowadzi Cię przez każde wymaganie NIS2."
       },
       "features": {
-        "risk": { "title": "Zarządzanie ryzykiem", "description": "Kompleksowa ocena ryzyka cybernetycznego i plany działań naprawczych." },
-        "incident": { "title": "Reagowanie na incydenty", "description": "Automatyczne wykrywanie incydentów, reagowanie i workflow raportowania." },
-        "policies": { "title": "Polityki bezpieczeństwa", "description": "Gotowe szablony polityk zgodne z wymaganiami NIS2." },
-        "monitoring": { "title": "Ciągły monitoring", "description": "Monitorowanie stanu bezpieczeństwa w czasie rzeczywistym i alerty." }
+        "risk": {
+          "title": "Zarządzanie ryzykiem",
+          "description": "Kompleksowa ocena ryzyka cybernetycznego i plany działań naprawczych."
+        },
+        "incident": {
+          "title": "Reagowanie na incydenty",
+          "description": "Automatyczne wykrywanie incydentów, reagowanie i workflow raportowania."
+        },
+        "policies": {
+          "title": "Polityki bezpieczeństwa",
+          "description": "Gotowe szablony polityk zgodne z wymaganiami NIS2."
+        },
+        "monitoring": {
+          "title": "Ciągły monitoring",
+          "description": "Monitorowanie stanu bezpieczeństwa w czasie rzeczywistym i alerty."
+        }
       },
       "incident": {
         "title": "Reagowanie na incydenty i raportowanie",
         "subtitle": "Spełnij rygorystyczne wymagania NIS2 dotyczące powiadamiania o incydentach.",
         "steps": [
-          { "time": "24h", "title": "Wczesne ostrzeżenie", "description": "Wstępne powiadomienie organów w ciągu 24 godzin." },
-          { "time": "72h", "title": "Zgłoszenie incydentu", "description": "Szczegółowe powiadomienie o incydencie w ciągu 72 godzin." },
-          { "time": "1 mies.", "title": "Raport końcowy", "description": "Kompleksowy raport końcowy w ciągu jednego miesiąca." }
+          {
+            "time": "24h",
+            "title": "Wczesne ostrzeżenie",
+            "description": "Wstępne powiadomienie organów w ciągu 24 godzin."
+          },
+          {
+            "time": "72h",
+            "title": "Zgłoszenie incydentu",
+            "description": "Szczegółowe powiadomienie o incydencie w ciągu 72 godzin."
+          },
+          {
+            "time": "1 mies.",
+            "title": "Raport końcowy",
+            "description": "Kompleksowy raport końcowy w ciągu jednego miesiąca."
+          }
         ]
       },
       "results": {
         "title": "Osiągnij gotowość NIS2",
         "items": [
-          { "stat": "100%", "label": "Pokrycie wymagań" },
-          { "stat": "50%", "label": "Szybsze wdrożenie" },
-          { "stat": "24/7", "label": "Monitoring" }
+          {
+            "stat": "100%",
+            "label": "Pokrycie wymagań"
+          },
+          {
+            "stat": "50%",
+            "label": "Szybsze wdrożenie"
+          },
+          {
+            "stat": "24/7",
+            "label": "Monitoring"
+          }
         ]
       },
       "faq": {
         "title": "Często zadawane pytania",
         "items": [
-          { "question": "Czym jest Dyrektywa NIS2?", "answer": "NIS2 to zaktualizowana Dyrektywa UE o bezpieczeństwie sieci i informacji, rozszerzająca wymagania cyberbezpieczeństwa na więcej sektorów i wprowadzająca surowsze kary." },
-          { "question": "Które organizacje muszą przestrzegać NIS2?", "answer": "NIS2 dotyczy podmiotów kluczowych (energia, ochrona zdrowia, transport) i podmiotów ważnych (usługi cyfrowe, produkcja) spełniających progi wielkościowe." },
-          { "question": "Jakie są kary NIS2 za brak zgodności?", "answer": "Podmioty kluczowe są narażone na kary do 10 mln € lub 2% globalnego obrotu. Podmioty ważne na kary do 7 mln € lub 1,4% obrotu." },
-          { "question": "Jak Quantifier pomaga z NIS2?", "answer": "Quantifier zapewnia narzędzia do oceny ryzyka, workflow raportowania incydentów, szablony polityk i ciągły monitoring zgodny z wymaganiami NIS2." },
-          { "question": "Jaki jest termin zgodności z NIS2?", "answer": "Państwa członkowskie UE miały czas do 17 października 2024 na transpozycję NIS2 do prawa krajowego. W 2026 roku większość krajów uchwaliła przepisy krajowe i egzekwowanie jest aktywne — organizacje objęte zakresem muszą być w pełni zgodne lub ryzykują kary do 10 mln € lub 2% globalnego obrotu." },
-          { "question": "Jak długo trwa wdrożenie NIS2?", "answer": "Z Quantifier większość organizacji może osiągnąć zgodność z NIS2 w ciągu 3-6 miesięcy, w zależności od obecnego poziomu dojrzałości bezpieczeństwa." }
+          {
+            "question": "Czym jest Dyrektywa NIS2?",
+            "answer": "NIS2 to zaktualizowana Dyrektywa UE o bezpieczeństwie sieci i informacji, rozszerzająca wymagania cyberbezpieczeństwa na więcej sektorów i wprowadzająca surowsze kary."
+          },
+          {
+            "question": "Które organizacje muszą przestrzegać NIS2?",
+            "answer": "NIS2 dotyczy podmiotów kluczowych (energia, ochrona zdrowia, transport) i podmiotów ważnych (usługi cyfrowe, produkcja) spełniających progi wielkościowe."
+          },
+          {
+            "question": "Jakie są kary NIS2 za brak zgodności?",
+            "answer": "Podmioty kluczowe są narażone na kary do 10 mln € lub 2% globalnego obrotu. Podmioty ważne na kary do 7 mln € lub 1,4% obrotu."
+          },
+          {
+            "question": "Jak Quantifier pomaga z NIS2?",
+            "answer": "Quantifier zapewnia narzędzia do oceny ryzyka, workflow raportowania incydentów, szablony polityk i ciągły monitoring zgodny z wymaganiami NIS2."
+          },
+          {
+            "question": "Jaki jest termin zgodności z NIS2?",
+            "answer": "Państwa członkowskie UE miały czas do 17 października 2024 na transpozycję NIS2 do prawa krajowego. W 2026 roku większość krajów uchwaliła przepisy krajowe i egzekwowanie jest aktywne — organizacje objęte zakresem muszą być w pełni zgodne lub ryzykują kary do 10 mln € lub 2% globalnego obrotu."
+          },
+          {
+            "question": "Jak długo trwa wdrożenie NIS2?",
+            "answer": "Z Quantifier większość organizacji może osiągnąć zgodność z NIS2 w ciągu 3-6 miesięcy, w zależności od obecnego poziomu dojrzałości bezpieczeństwa."
+          }
         ]
       },
       "cta": {
@@ -4028,18 +4314,42 @@
         "title": "Czym jest platforma GRC?",
         "subtitle": "GRC integruje governance, zarządzanie ryzykiem i zgodność w ujednolicone podejście.",
         "pillars": [
-          { "letter": "G", "title": "Governance", "description": "Strategiczne dostosowanie, polityki i nadzór nad celami organizacyjnymi." },
-          { "letter": "R", "title": "Risk", "description": "Identyfikacja, ocena i mitygacja ryzyk w całej organizacji." },
-          { "letter": "C", "title": "Compliance", "description": "Przestrzeganie przepisów prawa, regulacji i wewnętrznych polityk." }
+          {
+            "letter": "G",
+            "title": "Governance",
+            "description": "Strategiczne dostosowanie, polityki i nadzór nad celami organizacyjnymi."
+          },
+          {
+            "letter": "R",
+            "title": "Risk",
+            "description": "Identyfikacja, ocena i mitygacja ryzyk w całej organizacji."
+          },
+          {
+            "letter": "C",
+            "title": "Compliance",
+            "description": "Przestrzeganie przepisów prawa, regulacji i wewnętrznych polityk."
+          }
         ]
       },
       "problems": {
         "title": "Dlaczego tradycyjne narzędzia GRC zawodzą",
         "items": [
-          { "title": "Silosowe systemy", "description": "Wiele narzędzi, które nie komunikują się ze sobą, tworząc luki w danych i redundancję." },
-          { "title": "Procesy ręczne", "description": "Duże poleganie na arkuszach kalkulacyjnych i ręcznym zbieraniu danych." },
-          { "title": "Audyty punktowe", "description": "Zgodność sprawdzana okresowo, a nie ciągle monitorowana." },
-          { "title": "Ograniczona skalowalność", "description": "Trudność w dodawaniu nowych frameworków lub skalowaniu między podmiotami." }
+          {
+            "title": "Silosowe systemy",
+            "description": "Wiele narzędzi, które nie komunikują się ze sobą, tworząc luki w danych i redundancję."
+          },
+          {
+            "title": "Procesy ręczne",
+            "description": "Duże poleganie na arkuszach kalkulacyjnych i ręcznym zbieraniu danych."
+          },
+          {
+            "title": "Audyty punktowe",
+            "description": "Zgodność sprawdzana okresowo, a nie ciągle monitorowana."
+          },
+          {
+            "title": "Ograniczona skalowalność",
+            "description": "Trudność w dodawaniu nowych frameworków lub skalowaniu między podmiotami."
+          }
         ]
       },
       "solution": {
@@ -4047,10 +4357,22 @@
         "subtitle": "Zbudowane od podstaw z agentami AI do autonomicznej zgodności."
       },
       "features": {
-        "unified": { "title": "Ujednolicona platforma", "description": "Zarządzaj wszystkimi frameworkami, ryzykami i kontrolami z jednego interfejsu." },
-        "ai": { "title": "AI Compliance Officer", "description": "Autonomiczni agenci, którzy monitorują, zbierają dowody i sugerują działania." },
-        "analytics": { "title": "Analityka w czasie rzeczywistym", "description": "Żywe dashboardy pokazujące stan zgodności we wszystkich frameworkach." },
-        "automation": { "title": "Automatyzacja workflow", "description": "Automatyczne zadania, przypomnienia i zbieranie dowodów." }
+        "unified": {
+          "title": "Ujednolicona platforma",
+          "description": "Zarządzaj wszystkimi frameworkami, ryzykami i kontrolami z jednego interfejsu."
+        },
+        "ai": {
+          "title": "AI Compliance Officer",
+          "description": "Autonomiczni agenci, którzy monitorują, zbierają dowody i sugerują działania."
+        },
+        "analytics": {
+          "title": "Analityka w czasie rzeczywistym",
+          "description": "Żywe dashboardy pokazujące stan zgodności we wszystkich frameworkach."
+        },
+        "automation": {
+          "title": "Automatyzacja workflow",
+          "description": "Automatyczne zadania, przypomnienia i zbieranie dowodów."
+        }
       },
       "frameworks": {
         "title": "Zgodność z wieloma frameworkami",
@@ -4062,29 +4384,72 @@
         "feature": "Funkcja",
         "traditional": "Tradycyjne GRC",
         "rows": [
-          { "feature": "Czas wdrożenia", "traditional": "6-12 miesięcy", "quantifier": "Dni do tygodni" },
-          { "feature": "Zbieranie dowodów", "traditional": "Ręczne", "quantifier": "Automatyczne" },
-          { "feature": "Monitoring", "traditional": "Okresowy", "quantifier": "Ciągły" },
-          { "feature": "Wsparcie AI", "traditional": "Brak", "quantifier": "Wbudowani agenci AI" }
+          {
+            "feature": "Czas wdrożenia",
+            "traditional": "6-12 miesięcy",
+            "quantifier": "Dni do tygodni"
+          },
+          {
+            "feature": "Zbieranie dowodów",
+            "traditional": "Ręczne",
+            "quantifier": "Automatyczne"
+          },
+          {
+            "feature": "Monitoring",
+            "traditional": "Okresowy",
+            "quantifier": "Ciągły"
+          },
+          {
+            "feature": "Wsparcie AI",
+            "traditional": "Brak",
+            "quantifier": "Wbudowani agenci AI"
+          }
         ]
       },
       "results": {
         "title": "Przekształć swoje operacje GRC",
         "items": [
-          { "stat": "10x", "label": "Szybsze wdrożenie" },
-          { "stat": "80%", "label": "Mniej pracy ręcznej" },
-          { "stat": "360°", "label": "Widoczność ryzyka" }
+          {
+            "stat": "10x",
+            "label": "Szybsze wdrożenie"
+          },
+          {
+            "stat": "80%",
+            "label": "Mniej pracy ręcznej"
+          },
+          {
+            "stat": "360°",
+            "label": "Widoczność ryzyka"
+          }
         ]
       },
       "faq": {
         "title": "Często zadawane pytania",
         "items": [
-          { "question": "Czym jest GRC?", "answer": "GRC oznacza Governance, Risk i Compliance. To zintegrowane podejście do dostosowania IT do celów biznesowych, zarządzania ryzykami i spełniania wymagań regulacyjnych." },
-          { "question": "Dlaczego potrzebuję platformy GRC?", "answer": "Platforma GRC centralizuje zarządzanie zgodnością, redukuje pracę ręczną, zapewnia widoczność w czasie rzeczywistym i skaluje się wraz z rosnącymi wymaganiami regulacyjnymi." },
-          { "question": "Jakie frameworki wspiera Quantifier?", "answer": "Quantifier wspiera SOC 2, ISO 27001, RODO, NIS2, HIPAA, NIST, ISO 14001, frameworki raportowania ESG i wiele innych." },
-          { "question": "Czym różni się Quantifier od Vanta czy Drata?", "answer": "Quantifier jest natywny dla AI z autonomicznymi agentami zgodności, wspiera szersze frameworki włącznie z ESG i środowiskowymi, i oferuje głębszą personalizację dla potrzeb enterprise." },
-          { "question": "Czy mogę zarządzać wieloma programami zgodności?", "answer": "Tak, Quantifier umożliwia zarządzanie wieloma frameworkami z mapowaniem kontroli, więc dowody zebrane dla jednego frameworka stosują się do nakładających się kontroli w innych." },
-          { "question": "Jakie integracje są dostępne?", "answer": "Quantifier integruje się z ponad 100 narzędziami, w tym dostawcami chmury (AWS, Azure, GCP), dostawcami tożsamości, systemami ticketingowymi i narzędziami komunikacyjnymi." }
+          {
+            "question": "Czym jest GRC?",
+            "answer": "GRC oznacza Governance, Risk i Compliance. To zintegrowane podejście do dostosowania IT do celów biznesowych, zarządzania ryzykami i spełniania wymagań regulacyjnych."
+          },
+          {
+            "question": "Dlaczego potrzebuję platformy GRC?",
+            "answer": "Platforma GRC centralizuje zarządzanie zgodnością, redukuje pracę ręczną, zapewnia widoczność w czasie rzeczywistym i skaluje się wraz z rosnącymi wymaganiami regulacyjnymi."
+          },
+          {
+            "question": "Jakie frameworki wspiera Quantifier?",
+            "answer": "Quantifier wspiera SOC 2, ISO 27001, RODO, NIS2, HIPAA, NIST, ISO 14001, frameworki raportowania ESG i wiele innych."
+          },
+          {
+            "question": "Czym różni się Quantifier od Vanta czy Drata?",
+            "answer": "Quantifier jest natywny dla AI z autonomicznymi agentami zgodności, wspiera szersze frameworki włącznie z ESG i środowiskowymi, i oferuje głębszą personalizację dla potrzeb enterprise."
+          },
+          {
+            "question": "Czy mogę zarządzać wieloma programami zgodności?",
+            "answer": "Tak, Quantifier umożliwia zarządzanie wieloma frameworkami z mapowaniem kontroli, więc dowody zebrane dla jednego frameworka stosują się do nakładających się kontroli w innych."
+          },
+          {
+            "question": "Jakie integracje są dostępne?",
+            "answer": "Quantifier integruje się z ponad 100 narzędziami, w tym dostawcami chmury (AWS, Azure, GCP), dostawcami tożsamości, systemami ticketingowymi i narzędziami komunikacyjnymi."
+          }
         ]
       },
       "cta": {
