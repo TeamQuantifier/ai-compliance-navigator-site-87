@@ -1,5 +1,5 @@
 import PageTemplate from '@/components/PageTemplate';
-import { Building2, Award, Users, BarChart4, Globe, GraduationCap, MapPin, Linkedin, Clock, BookOpen } from 'lucide-react';
+import { Building2, Award, Users, BarChart4, Globe, GraduationCap, MapPin, Linkedin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,66 +8,51 @@ import { Helmet } from 'react-helmet-async';
 import { BookPromoSection } from '@/components/BookPromoSection';
 import { PostgraduatePromoSection } from '@/components/PostgraduatePromoSection';
 
-// Team data — easy to update with real photos/bios later
 const teamMembers = [
   {
-    name: 'Tomasz Gondek',
+    name: 'Mateusz Masiak',
     role: { pl: 'CEO & Co-founder', en: 'CEO & Co-founder', cs: 'CEO & Co-founder' },
     bio: {
-      pl: 'Ekspert w dziedzinie GRC i compliance z wieloletnim doświadczeniem w budowaniu produktów technologicznych.',
-      en: 'GRC and compliance expert with extensive experience in building technology products.',
-      cs: 'Expert na GRC a compliance s rozsáhlými zkušenostmi s budováním technologických produktů.',
+      pl: 'Prezes i współzałożyciel Quantifier.ai.',
+      en: 'President and co-founder of Quantifier.ai.',
+      cs: 'Prezident a spoluzakladatel Quantifier.ai.',
     },
-    linkedin: 'https://www.linkedin.com/in/tomaszgondek/',
+    linkedin: 'https://www.linkedin.com/in/mmasiak/',
     avatar: null,
   },
   {
-    name: 'Maciej Zieliński',
-    role: { pl: 'CTO & Co-founder', en: 'CTO & Co-founder', cs: 'CTO & Co-founder' },
+    name: 'Weronika Czaplewska',
+    role: { pl: 'VP & Co-founder', en: 'VP & Co-founder', cs: 'VP & Co-founder' },
     bio: {
-      pl: 'Inżynier oprogramowania z doświadczeniem w AI i systemach enterprise.',
-      en: 'Software engineer with experience in AI and enterprise systems.',
-      cs: 'Softwarový inženýr se zkušenostmi s AI a enterprise systémy.',
+      pl: 'Współzałożycielka Quantifier.ai.',
+      en: 'Co-founder of Quantifier.ai.',
+      cs: 'Spoluzakladatelka Quantifier.ai.',
     },
-    linkedin: 'https://www.linkedin.com/in/maciejzielinski/',
+    linkedin: 'https://www.linkedin.com/in/weronika-czaplewska/',
     avatar: null,
   },
   {
-    name: 'Anna Kowalska',
-    role: { pl: 'Head of Compliance', en: 'Head of Compliance', cs: 'Head of Compliance' },
+    name: 'Paulina Klimiuk',
+    role: { pl: 'Head of Customer Success', en: 'Head of Customer Success', cs: 'Head of Customer Success' },
     bio: {
-      pl: 'Prawniczka i audytorka z certyfikacjami ISO 27001 Lead Auditor i CISA.',
-      en: 'Lawyer and auditor with ISO 27001 Lead Auditor and CISA certifications.',
-      cs: 'Právnička a auditorka s certifikacemi ISO 27001 Lead Auditor a CISA.',
+      pl: 'Odpowiedzialna za sukces klientów na platformie Quantifier.ai.',
+      en: 'Responsible for customer success on the Quantifier.ai platform.',
+      cs: 'Odpovědná za úspěch zákazníků na platformě Quantifier.ai.',
     },
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/paulina-klimiuk/',
     avatar: null,
   },
   {
-    name: 'Piotr Nowak',
-    role: { pl: 'Head of Product', en: 'Head of Product', cs: 'Head of Product' },
+    name: 'Enrika Gawłowska-Nabożny',
+    role: { pl: 'Project Manager', en: 'Project Manager', cs: 'Project Manager' },
     bio: {
-      pl: 'Product manager z doświadczeniem w SaaS i platformach regulacyjnych.',
-      en: 'Product manager with experience in SaaS and regulatory platforms.',
-      cs: 'Product manager se zkušenostmi se SaaS a regulatorními platformami.',
+      pl: 'Zarządza projektami i koordynuje wdrożenia w Quantifier.ai.',
+      en: 'Manages projects and coordinates implementations at Quantifier.ai.',
+      cs: 'Řídí projekty a koordinuje implementace v Quantifier.ai.',
     },
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/enrikagn/',
     avatar: null,
   },
-];
-
-const milestones = [
-  { year: '2019', key: 'founded' },
-  { year: '2021', key: 'expansion' },
-  { year: '2023', key: 'rebrand' },
-  { year: '2024', key: 'ai' },
-  { year: '2025', key: 'global' },
-];
-
-const locations = [
-  { city: 'Warsaw', country: { pl: 'Polska', en: 'Poland', cs: 'Polsko' }, type: 'HQ' },
-  { city: 'Lublin', country: { pl: 'Polska', en: 'Poland', cs: 'Polsko' }, type: 'R&D' },
-  { city: 'San Francisco', country: { pl: 'USA', en: 'USA', cs: 'USA' }, type: 'Sales' },
 ];
 
 const About = () => {
@@ -80,26 +65,27 @@ const About = () => {
     url: 'https://quantifier.ai',
     logo: 'https://quantifier.ai/logo-quantifier.png',
     description: t('about.description'),
-    foundingDate: '2019',
-    numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 30 },
+    foundingDate: '2025',
+    numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 10 },
     address: [
       {
         '@type': 'PostalAddress',
+        streetAddress: 'Rondo Daszyńskiego 1',
         addressLocality: 'Warsaw',
         addressCountry: 'PL',
       },
       {
         '@type': 'PostalAddress',
-        addressLocality: 'San Francisco',
-        addressRegion: 'CA',
-        addressCountry: 'US',
+        streetAddress: 'Głowackiego 3/5/1',
+        addressLocality: 'Lublin',
+        addressCountry: 'PL',
       },
     ],
     member: teamMembers.map((m) => ({
       '@type': 'Person',
       name: m.name,
       jobTitle: m.role[currentLocale as keyof typeof m.role] || m.role.en,
-      url: m.linkedin !== '#' ? m.linkedin : undefined,
+      url: m.linkedin,
       worksFor: { '@type': 'Organization', name: 'Quantifier.ai' },
     })),
     sameAs: ['https://www.linkedin.com/company/quantifier-ai/'],
@@ -137,8 +123,6 @@ const About = () => {
           <div className="md:col-span-2 space-y-6">
             <p className="text-lg text-muted-foreground">{t('about.intro1')}</p>
             <p className="text-lg text-muted-foreground">{t('about.intro2')}</p>
-            <p className="text-lg text-muted-foreground">{t('about.intro3')}</p>
-            <p className="text-lg text-muted-foreground">{t('about.intro4')}</p>
           </div>
 
           <div>
@@ -165,30 +149,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Timeline / History */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-center">{t('about.history.title')}</h2>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-border hidden md:block" />
-            <div className="space-y-8">
-              {milestones.map((m, i) => (
-                <div key={m.year} className={`flex flex-col md:flex-row items-center gap-4 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  <div className={`md:w-5/12 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className="bg-card border rounded-lg p-4 shadow-sm">
-                      <div className="text-sm font-semibold text-primary mb-1">{m.year}</div>
-                      <p className="text-muted-foreground text-sm">{t(`about.history.${m.key}`)}</p>
-                    </div>
-                  </div>
-                  <div className="hidden md:flex items-center justify-center w-2/12">
-                    <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow" />
-                  </div>
-                  <div className="md:w-5/12" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* Team Section */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-2 text-center">{t('about.team.title')}</h2>
@@ -210,16 +170,14 @@ const About = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   {member.bio[currentLocale as keyof typeof member.bio] || member.bio.en}
                 </p>
-                {member.linkedin !== '#' && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                  >
-                    <Linkedin className="h-4 w-4" /> LinkedIn
-                  </a>
-                )}
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                >
+                  <Linkedin className="h-4 w-4" /> LinkedIn
+                </a>
               </Card>
             ))}
           </div>
@@ -228,18 +186,14 @@ const About = () => {
         {/* Stats Section */}
         <div className="bg-muted rounded-xl p-8 mb-16">
           <h2 className="text-2xl font-bold mb-8 text-center">{t('about.impact.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-primary mb-2">250+</div>
-              <p className="text-muted-foreground">{t('about.impact.organizations')}</p>
+              <p className="text-muted-foreground">{t('about.impact.clients')}</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">5+</div>
-              <p className="text-muted-foreground">{t('about.impact.years')}</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">50+</div>
-              <p className="text-muted-foreground">{t('about.impact.partners')}</p>
+              <div className="text-4xl font-bold text-primary mb-2">30+</div>
+              <p className="text-muted-foreground">{t('about.impact.activeFirms')}</p>
             </div>
           </div>
         </div>
@@ -290,27 +244,30 @@ const About = () => {
           </div>
         </div>
 
-        {/* Locations */}
+        {/* Office */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-6 text-center">{t('about.locations.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {locations.map((loc) => (
-              <Card key={loc.city} className="p-6 text-center">
-                <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
-                <h3 className="font-semibold text-lg">{loc.city}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {loc.country[currentLocale as keyof typeof loc.country] || loc.country.en}
-                </p>
-                <span className="inline-block mt-2 text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
-                  {loc.type}
-                </span>
-              </Card>
-            ))}
+            <Card className="p-6 text-center">
+              <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-lg">Europa</h3>
+              <p className="text-sm text-muted-foreground">(+48) 698 759 206</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-lg">{t('about.locations.warsaw')}</h3>
+              <p className="text-sm text-muted-foreground">Rondo Daszyńskiego 1</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-lg">{t('about.locations.lublin')}</h3>
+              <p className="text-sm text-muted-foreground">Głowackiego 3/5/1</p>
+            </Card>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-compliance-700 to-innovation-600 rounded-xl p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-compliance-700 to-innovation-600 rounded-xl p-8 text-white text-center mb-16">
           <h2 className="text-2xl font-bold mb-4">{t('about.cta.title')}</h2>
           <p className="mb-6 max-w-2xl mx-auto">{t('about.cta.description')}</p>
           <Button
@@ -320,6 +277,19 @@ const About = () => {
           >
             <Link to={`/${currentLocale}/contact`}>{t('about.cta.button')}</Link>
           </Button>
+        </div>
+
+        {/* Team Photo - Conferences */}
+        <div className="mb-16 text-center">
+          <h2 className="text-2xl font-bold mb-6">{t('about.conferences')}</h2>
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="/images/quantifier-team.jpg"
+              alt={t('about.conferencesAlt')}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </PageTemplate>
