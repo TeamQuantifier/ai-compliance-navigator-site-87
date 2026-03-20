@@ -1,44 +1,57 @@
 
 
-## Plan: Dynamiczny llms.txt (zrealizowany)
+# Plan: Przebudowa strony About Us
 
-Pliki `llms.txt` i `llms-full.txt` są teraz generowane dynamicznie przez Edge Function `llms-txt`, analogicznie do sitemap i RSS feed. Nowe artykuły i case study pojawiają się automatycznie.
+## Zmiany w `src/pages/About.tsx`
 
-### Architektura
-- Edge Function `supabase/functions/llms-txt/index.ts` pobiera `posts` i `stories` z bazy
-- `?full=true` → wersja llms-full.txt z rozszerzonymi opisami
-- Statyczne sekcje (produkt, frameworki, FAQ) hardcoded w funkcji
-- Cache: 1h client, 24h CDN
-- Routing: `/llms.txt` i `/llms-full.txt` → proxy w `netlify.toml`
-- Statyczne pliki `public/llms.txt` i `public/llms-full.txt` usunięte
+### 1. Usunac cala sekcje Timeline/History (linie 168-190)
+Usunac `milestones` array i caly blok renderowania timeline.
 
-## Plan: Quick Wins SEO + Dodatkowe SEO techniczne (zrealizowany)
+### 2. Zmienic subtitle
+Nowa tresc: "Quantifier.ai zostal oficjalnie zalozony w 2025 roku. Rozwijamy platforme AI do zarzadzania wieloma standardami compliance."
 
-- Dodano `twitter:site`, `og:url`, `llms.txt` alternate link do `index.html`
-- Rozszerzono `<noscript>` o linki do kluczowych stron
-- Dodano Review JSON-LD schema na homepage
-- Rozbudowano llms-txt o sekcje Competitors, Team, Awards
+### 3. Zmienic nazwe sekcji highlights
+"Nasza historia w liczbach" → "O nas w skrocie" (PL), "About Us at a Glance" (EN), "O nas v kostce" (CS)
 
-## Plan: Nawigacja + About Us + Success Stories cleanup (zrealizowany)
+### 4. Zespol — usunac slowo "kierowniczy", zamienic dane
+Naglowek: "Zespol" (nie "Zespol kierowniczy"). Nowe osoby:
+- **Mateusz Masiak** — CEO, Co-founder, "Prezes i wspolzalozyciel Quantifier.ai", linkedin: mmasiak
+- **Weronika Czaplewska** — VP, Co-founder, "Wspolzalozycielka Quantifier.ai", linkedin: weronika-czaplewska
+- **Paulina Klimiuk** — Head of Customer Success, linkedin: paulina-klimiuk
+- **Enrika Gawlowska-Nabozny** — Project Manager, linkedin: enrikagn
 
-### Nawigacja
-- Blog, Success Stories, Events zgrupowane w mega menu "Wiedza" (EN: Resources, CS: Znalosti)
-- Link "O nas" przywrócony do nawigacji głównej
-- Footer podzielony na "Firma" (O nas, Partnerzy, Kontakt) i "Zasoby" (Blog, Success Stories, Events)
+### 5. Sekcja "Nasz wplyw" — nowe liczby
+- "250+" → "Ponad 250 klientow" (label: "Klientow obsluzone")
+- "30+" → "Ponad 30 aktywnych firm na platformie Quantifier.ai" (label: "Aktywnych firm")
+- Usunac trzecia kolumne (50+ partnerow) lub zamienic na cos sensownego
 
-### About Us — hub E-E-A-T
-- Kompletna przebudowa z sekcjami: Hero, Historia (timeline), Zespół (placeholdery), Liczby, Nagrody, Publikacje (BookPromo), Edukacja (PostgraduatePromo), Lokalizacje, CTA
-- Schema JSON-LD: Organization z Person entities + BreadcrumbList
-- Dane zespołu w tablicy w kodzie — łatwe do uzupełnienia po dostarczeniu materiałów
+### 6. Lokalizacje — "Nasze biuro", tylko Warszawa
+Naglowek: "Nasze biuro" (nie "Nasze biura"). Dane kontaktowe:
+- Europa: (+48) 698 759 206
+- Warszawa: Rondo Daszynskiego 1
+- Lublin: Glowackiego 3/5/1
 
-### Success Stories
-- Usunięto BookPromoSection i PostgraduatePromoSection (przeniesione do About)
-- Strona czysta: hero + grid case studies + empty state
+Usunac San Francisco.
 
-### Pliki zmienione
-- `src/components/Navbar.tsx` — nowa struktura menu
-- `src/components/Footer.tsx` — reorganizacja sekcji
-- `src/pages/About.tsx` — kompletna przebudowa
-- `src/pages/SuccessStories.tsx` — cleanup
-- `public/locales/{pl,en,cs}/translation.json` — nowe klucze
-- `src/i18n/locales/{pl,en}.json` — synchronizacja kluczy
+### 7. Dodac zdjecie zespolu na dole
+Skopiowac `user-uploads://quantifier_team.jpeg` do `public/images/quantifier-team.jpg`. Wyswietlic pod sekcja CTA (lub przed CTA) z podpisem "Konferencje".
+
+### 8. Zaktualizowac schema Organization
+- `foundingDate`: 2025
+- Usunac San Francisco z adresow
+- Zamienic `member[]` na nowe osoby
+
+---
+
+## Pliki do edycji
+
+| Plik | Zmiana |
+|------|--------|
+| `src/pages/About.tsx` | Kompletna przebudowa (timeline, team, stats, locations, zdjecie) |
+| `src/i18n/locales/pl.json` | Nowe tlumaczenia about.* |
+| `src/i18n/locales/en.json` | Nowe tlumaczenia about.* |
+| `public/locales/pl/translation.json` | Nowe tlumaczenia about.* |
+| `public/locales/en/translation.json` | Nowe tlumaczenia about.* |
+| `public/locales/cs/translation.json` | Nowe tlumaczenia about.* |
+| `public/images/quantifier-team.jpg` | Skopiowane zdjecie zespolu |
+
