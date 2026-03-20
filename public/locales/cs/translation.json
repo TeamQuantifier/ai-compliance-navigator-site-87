@@ -439,6 +439,9 @@
     "error": "Chyba při načítání obsahu",
     "notFound": "Příspěvek nenalezen",
     "relatedPosts": "Související příspěvky",
+    "sectionTitle": "Blog",
+    "successStoriesSection": "Příběhy úspěchů",
+    "viewAllStories": "Zobrazit vše",
     "ebookSection": {
       "title": "Compliance Kalendář 2026!",
       "subtitle": "Co přinese rok 2026 pro compliance?",

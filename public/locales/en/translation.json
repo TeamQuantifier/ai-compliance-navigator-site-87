@@ -442,6 +442,9 @@
     "error": "Error loading content",
     "notFound": "Post not found",
     "relatedPosts": "Related Posts",
+    "sectionTitle": "Blog",
+    "successStoriesSection": "Success Stories",
+    "viewAllStories": "View all",
     "ebookSection": {
       "title": "Compliance Calendar 2026!",
       "subtitle": "What will 2026 bring for compliance?",

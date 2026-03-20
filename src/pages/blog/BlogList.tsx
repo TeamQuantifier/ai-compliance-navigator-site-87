@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { usePosts, useCategories } from '@/hooks/useBlog';
+import { usePosts, useCategories, useStories } from '@/hooks/useBlog';
 import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { calculateReadingTime } from '@/lib/reading-time';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,9 +9,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Clock, Calendar, ArrowRight, AlertCircle, BookOpen } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, AlertCircle, BookOpen, Trophy } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
 import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
+
 const BlogList = () => {
   const { currentLocale, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -21,8 +22,8 @@ const BlogList = () => {
     selectedCategory
   );
   const { data: categories, isLoading: categoriesLoading } = useCategories(currentLocale);
+  const { data: stories, isLoading: storiesLoading } = useStories(currentLocale);
   usePrerenderReady(!postsLoading);
-
 
   if (postsError) {
     return (
@@ -39,7 +40,6 @@ const BlogList = () => {
       <PageTemplate title={t('blog.title')} description={t('blog.subtitle')} deferPrerender>
         {/* Compact Hero Section */}
         <div className="bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 py-6 md:py-8 px-6 rounded-xl mb-8 relative overflow-hidden shadow-lg">
-          {/* Decorative elements */}
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-64 h-64 bg-innovation-800 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-compliance-800 rounded-full blur-3xl opacity-30"></div>
@@ -61,6 +61,11 @@ const BlogList = () => {
         <EbookDownloadSection />
 
         <div className="max-w-7xl mx-auto">
+          {/* Blog Section Title */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
+            {t('blog.sectionTitle')}
+          </h2>
+
           {/* Category filter */}
           <div className="mb-8 flex gap-2 flex-wrap">
             {categoriesLoading ? (
@@ -174,6 +179,88 @@ const BlogList = () => {
               <p className="text-muted-foreground">{t('blog.notFound')}</p>
             </div>
           )}
+
+          {/* Success Stories Section */}
+          <div className="mt-16">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground flex items-center gap-3">
+                <Trophy className="h-7 w-7 text-primary" />
+                {t('blog.successStoriesSection')}
+              </h2>
+              <Link to={`/${currentLocale}/success-stories`}>
+                <Button variant="outline" className="group">
+                  {t('blog.viewAllStories')}
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+
+            {storiesLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3].map((i) => (
+                  <Card key={i} className="overflow-hidden">
+                    <Skeleton className="aspect-video" />
+                    <CardHeader>
+                      <Skeleton className="h-6 w-full mb-2" />
+                      <Skeleton className="h-4 w-full" />
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            ) : stories && stories.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {stories.slice(0, 6).map((story) => {
+                  const imageUrl = story.featured_image_url || story.og_image_url || '/og-homepage.png';
+                  
+                  return (
+                    <Card key={story.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                      <Link to={`/${currentLocale}/success-stories/${story.slug}`} className="block">
+                        <div className="aspect-video overflow-hidden">
+                          <img 
+                            src={imageUrl} 
+                            alt={story.featured_image_alt || story.title}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            width={800}
+                            height={450}
+                            loading="lazy"
+                          />
+                        </div>
+                      </Link>
+                      <CardHeader>
+                        <Link to={`/${currentLocale}/success-stories/${story.slug}`}>
+                          <CardTitle className="line-clamp-2 text-lg hover:text-primary transition-colors cursor-pointer">
+                            {story.title}
+                          </CardTitle>
+                        </Link>
+                        <CardDescription className="line-clamp-3">
+                          {story.summary || story.meta_desc}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                            <Calendar className="h-3 w-3" />
+                            <span>
+                              {story.published_at 
+                                ? new Date(story.published_at).toLocaleDateString(currentLocale)
+                                : new Date(story.created_at).toLocaleDateString(currentLocale)
+                              }
+                            </span>
+                          </div>
+                          <Link to={`/${currentLocale}/success-stories/${story.slug}`}>
+                            <Button variant="ghost" size="sm" className="group">
+                              {t('blog.readMore')}
+                              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </Link>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            ) : null}
+          </div>
         </div>
       </PageTemplate>
   );
