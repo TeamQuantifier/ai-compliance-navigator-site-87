@@ -1,3 +1,4 @@
+import logosGrid from '@/assets/logos-grid.png';
 import PageTemplate from '@/components/PageTemplate';
 import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
