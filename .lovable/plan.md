@@ -1,45 +1,35 @@
 
 
-# Plan: Przebudowa strony About Us
+# Plan: Dodanie sekcji "Historie sukcesu" na stronie /blog
 
-## Zmiany w `src/pages/About.tsx`
+## Opis
 
-### 1. Usunac cala sekcje Timeline/History (linie 168-190)
-Usunac `milestones` array i caly blok renderowania timeline.
+Na stronie `/blog` dodamy dwie wyraźne sekcje z nagłówkami H2:
+1. **"Blog"** — istniejący grid artykułów (bez zmian w logice)
+2. **"Historie sukcesu"** — nowa sekcja pod spodem, wyświetlająca stories z hooka `useStories`
 
-### 2. Zmienic subtitle
-Nowa tresc: "Quantifier.ai zostal oficjalnie zalozony w 2025 roku. Rozwijamy platforme AI do zarzadzania wieloma standardami compliance."
+Stories będą linkować do `/success-stories/{slug}` — te same dane co na dedykowanej stronie `/success-stories`, która pozostaje bez zmian.
 
-### 3. Zmienic nazwe sekcji highlights
-"Nasza historia w liczbach" → "O nas w skrocie" (PL), "About Us at a Glance" (EN), "O nas v kostce" (CS)
+**SEO**: Brak duplikacji treści — to linki do tych samych podstron, nie zduplikowany content. Canonical URL pozostaje na story detail page. Struktura jest analogiczna do sekcji "Polecane artykuły" na wielu blogach.
 
-### 4. Zespol — usunac slowo "kierowniczy", zamienic dane
-Naglowek: "Zespol" (nie "Zespol kierowniczy"). Nowe osoby:
-- **Mateusz Masiak** — CEO, Co-founder, "Prezes i wspolzalozyciel Quantifier.ai", linkedin: mmasiak
-- **Weronika Czaplewska** — VP, Co-founder, "Wspolzalozycielka Quantifier.ai", linkedin: weronika-czaplewska
-- **Paulina Klimiuk** — Head of Customer Success, linkedin: paulina-klimiuk
-- **Enrika Gawlowska-Nabozny** — Project Manager, linkedin: enrikagn
+---
 
-### 5. Sekcja "Nasz wplyw" — nowe liczby
-- "250+" → "Ponad 250 klientow" (label: "Klientow obsluzone")
-- "30+" → "Ponad 30 aktywnych firm na platformie Quantifier.ai" (label: "Aktywnych firm")
-- Usunac trzecia kolumne (50+ partnerow) lub zamienic na cos sensownego
+## Zmiany
 
-### 6. Lokalizacje — "Nasze biuro", tylko Warszawa
-Naglowek: "Nasze biuro" (nie "Nasze biura"). Dane kontaktowe:
-- Europa: (+48) 698 759 206
-- Warszawa: Rondo Daszynskiego 1
-- Lublin: Glowackiego 3/5/1
+### 1. `src/pages/blog/BlogList.tsx`
 
-Usunac San Francisco.
+- Import `useStories` z `@/hooks/useBlog`
+- Import ikony `Trophy` z lucide-react
+- Wywołać `useStories(currentLocale)` obok istniejącego `usePosts`
+- Dodać nagłówek H2 **"Blog"** nad istniejącym gridem artykułów
+- Pod gridem blogowym dodać nową sekcję z nagłówkiem H2 **"Historie sukcesu"** (EN: "Success Stories", CS: "Příběhy úspěchů")
+- Wyświetlić stories w gridzie 3-kolumnowym (karty z obrazkiem, tytułem, datą, przycisk "Czytaj więcej")
+- Linkować do `/${currentLocale}/success-stories/${story.slug}`
+- Dodać przycisk "Zobacz wszystkie" linkujący do `/${currentLocale}/success-stories`
 
-### 7. Dodac zdjecie zespolu na dole
-Skopiowac `user-uploads://quantifier_team.jpeg` do `public/images/quantifier-team.jpg`. Wyswietlic pod sekcja CTA (lub przed CTA) z podpisem "Konferencje".
+### 2. Tłumaczenia (`public/locales/*/translation.json`, `src/i18n/locales/*.json`)
 
-### 8. Zaktualizowac schema Organization
-- `foundingDate`: 2025
-- Usunac San Francisco z adresow
-- Zamienic `member[]` na nowe osoby
+- Dodać klucze: `blog.sectionTitle` ("Blog"), `blog.successStoriesSection` ("Historie sukcesu" / "Success Stories" / "Příběhy úspěchů"), `blog.viewAllStories` ("Zobacz wszystkie" / "View all" / "Zobrazit vše")
 
 ---
 
@@ -47,11 +37,12 @@ Skopiowac `user-uploads://quantifier_team.jpeg` do `public/images/quantifier-tea
 
 | Plik | Zmiana |
 |------|--------|
-| `src/pages/About.tsx` | Kompletna przebudowa (timeline, team, stats, locations, zdjecie) |
-| `src/i18n/locales/pl.json` | Nowe tlumaczenia about.* |
-| `src/i18n/locales/en.json` | Nowe tlumaczenia about.* |
-| `public/locales/pl/translation.json` | Nowe tlumaczenia about.* |
-| `public/locales/en/translation.json` | Nowe tlumaczenia about.* |
-| `public/locales/cs/translation.json` | Nowe tlumaczenia about.* |
-| `public/images/quantifier-team.jpg` | Skopiowane zdjecie zespolu |
+| `src/pages/blog/BlogList.tsx` | Dodanie sekcji stories + nagłówek "Blog" |
+| `public/locales/pl/translation.json` | Nowe klucze blog.* |
+| `public/locales/en/translation.json` | Nowe klucze blog.* |
+| `public/locales/cs/translation.json` | Nowe klucze blog.* |
+| `src/i18n/locales/pl.json` | Nowe klucze blog.* |
+| `src/i18n/locales/en.json` | Nowe klucze blog.* |
+
+Brak zmian w bazie danych. Strona `/success-stories` pozostaje bez zmian.
 
