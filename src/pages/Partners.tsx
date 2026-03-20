@@ -107,6 +107,17 @@ const Partners = () => {
                 </div>
               </Card>)}
           </div>
+
+          <div className="mt-12">
+            <img
+              src={logosGrid}
+              alt="Partnerzy Quantifier.ai – logotypy"
+              className="w-full object-contain"
+              width={700}
+              height={500}
+              loading="lazy"
+            />
+          </div>
         </section>
         
         <div className="mb-16">
