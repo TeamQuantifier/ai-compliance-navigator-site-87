@@ -156,11 +156,11 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
               <Card key={member.name} className="p-6 text-center hover:shadow-md transition-shadow">
-                <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
+                <div className="w-28 h-28 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center overflow-hidden">
                   {member.avatar ? (
-                    <img src={member.avatar} alt={member.name} className="w-20 h-20 rounded-full object-cover" />
+                    <img src={member.avatar} alt={member.name} className="w-28 h-28 rounded-full object-cover object-top" />
                   ) : (
-                    <Users className="h-8 w-8 text-muted-foreground" />
+                    <Users className="h-10 w-10 text-muted-foreground" />
                   )}
                 </div>
                 <h3 className="font-semibold">{member.name}</h3>
