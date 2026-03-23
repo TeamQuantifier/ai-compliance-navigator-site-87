@@ -174,6 +174,7 @@ const About = () => {
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => window.open(member.linkedin, '_blank', 'noopener,noreferrer')}
                   className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
                 >
                   <Linkedin className="h-4 w-4" /> LinkedIn
