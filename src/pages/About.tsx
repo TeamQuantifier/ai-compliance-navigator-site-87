@@ -35,9 +35,9 @@ const teamMembers = [
     name: 'Paulina Klimiuk',
     role: { pl: 'Head of Customer Success', en: 'Head of Customer Success', cs: 'Head of Customer Success' },
     bio: {
-      pl: 'Odpowiedzialna za sukces klientów na platformie Quantifier.ai.',
-      en: 'Responsible for customer success on the Quantifier.ai platform.',
-      cs: 'Odpovědná za úspěch zákazníků na platformě Quantifier.ai.',
+      pl: 'Odpowiada za zespół Customer Success i komunikację z klientem.',
+      en: 'Leads the Customer Success team and client communication.',
+      cs: 'Vede tým Customer Success a komunikaci s klienty.',
     },
     linkedin: 'https://www.linkedin.com/in/paulina-klimiuk/',
     avatar: null,
