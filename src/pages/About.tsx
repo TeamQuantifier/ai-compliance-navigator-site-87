@@ -282,13 +282,23 @@ const About = () => {
         {/* Team Photo - Conferences */}
         <div className="mb-16 text-center">
           <h2 className="text-2xl font-bold mb-6">{t('about.conferences')}</h2>
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/images/quantifier-team.jpg"
-              alt={t('about.conferencesAlt')}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="/images/quantifier-team.jpg"
+                alt={t('about.conferencesAlt')}
+                className="w-full h-72 md:h-80 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="/images/quantifier-team-conference.jpeg"
+                alt={t('about.conferencesAlt')}
+                className="w-full h-72 md:h-80 object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
