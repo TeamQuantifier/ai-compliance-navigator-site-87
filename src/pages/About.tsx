@@ -40,7 +40,7 @@ const teamMembers = [
       cs: 'Vede tým Customer Success a komunikaci s klienty.',
     },
     linkedin: 'https://linkedin.com/in/paulina-klimiuk/',
-    avatar: null,
+    avatar: '/images/team/Paulina.jpg',
   },
   {
     name: 'Enrika Gawłowska-Nabożny',
