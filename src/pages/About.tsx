@@ -17,7 +17,7 @@ const teamMembers = [
       en: 'President and co-founder of Quantifier.ai.',
       cs: 'Prezident a spoluzakladatel Quantifier.ai.',
     },
-    linkedin: 'https://linkedin.com/in/mmasiak/',
+    linkedin: 'https://www.linkedin.com/in/mmasiak/',
     avatar: '/images/team/Mateusz.jpg',
   },
   {
@@ -28,7 +28,7 @@ const teamMembers = [
       en: 'Co-founder of Quantifier.ai.',
       cs: 'Spoluzakladatelka Quantifier.ai.',
     },
-    linkedin: 'https://linkedin.com/in/weronika-czaplewska/',
+    linkedin: 'https://www.linkedin.com/in/weronika-czaplewska/',
     avatar: '/images/team/Weronika.jpg',
   },
   {
@@ -39,7 +39,7 @@ const teamMembers = [
       en: 'Leads the Customer Success team and client communication.',
       cs: 'Vede tým Customer Success a komunikaci s klienty.',
     },
-    linkedin: 'https://linkedin.com/in/paulina-klimiuk/',
+    linkedin: 'https://www.linkedin.com/in/paulina-klimiuk/',
     avatar: '/images/team/Paulina.jpg',
   },
   {
@@ -50,7 +50,7 @@ const teamMembers = [
       en: 'Manages projects and coordinates implementations at Quantifier.ai.',
       cs: 'Řídí projekty a koordinuje implementace v Quantifier.ai.',
     },
-    linkedin: 'https://linkedin.com/in/enrikagn/',
+    linkedin: 'https://www.linkedin.com/in/enrikagn/',
     avatar: '/images/team/Enrika.jpg',
   },
 ];
