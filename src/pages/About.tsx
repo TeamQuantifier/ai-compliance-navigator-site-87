@@ -18,7 +18,7 @@ const teamMembers = [
       cs: 'Prezident a spoluzakladatel Quantifier.ai.',
     },
     linkedin: 'https://linkedin.com/in/mmasiak/',
-    avatar: null,
+    avatar: '/images/team/Mateusz.jpg',
   },
   {
     name: 'Weronika Czaplewska',
@@ -29,7 +29,7 @@ const teamMembers = [
       cs: 'Spoluzakladatelka Quantifier.ai.',
     },
     linkedin: 'https://linkedin.com/in/weronika-czaplewska/',
-    avatar: null,
+    avatar: '/images/team/Weronika.jpg',
   },
   {
     name: 'Paulina Klimiuk',
@@ -40,7 +40,7 @@ const teamMembers = [
       cs: 'Vede tým Customer Success a komunikaci s klienty.',
     },
     linkedin: 'https://linkedin.com/in/paulina-klimiuk/',
-    avatar: null,
+    avatar: '/images/team/Paulina.jpg',
   },
   {
     name: 'Enrika Gawłowska-Nabożny',
@@ -51,7 +51,7 @@ const teamMembers = [
       cs: 'Řídí projekty a koordinuje implementace v Quantifier.ai.',
     },
     linkedin: 'https://linkedin.com/in/enrikagn/',
-    avatar: null,
+    avatar: '/images/team/Enrika.jpg',
   },
 ];
 
