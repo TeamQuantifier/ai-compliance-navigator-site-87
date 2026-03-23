@@ -17,7 +17,7 @@ const teamMembers = [
       en: 'President and co-founder of Quantifier.ai.',
       cs: 'Prezident a spoluzakladatel Quantifier.ai.',
     },
-    linkedin: 'https://linkedin.com/in/mmasiak/',
+    linkedin: 'https://www.linkedin.com/in/mmasiak/',
     avatar: '/images/team/Mateusz.jpg',
   },
   {
