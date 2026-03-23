@@ -28,7 +28,7 @@ const teamMembers = [
       en: 'Co-founder of Quantifier.ai.',
       cs: 'Spoluzakladatelka Quantifier.ai.',
     },
-    linkedin: 'https://linkedin.com/in/weronika-czaplewska/',
+    linkedin: 'https://www.linkedin.com/in/weronika-czaplewska/',
     avatar: '/images/team/Weronika.jpg',
   },
   {
