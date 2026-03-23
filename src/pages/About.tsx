@@ -50,7 +50,7 @@ const teamMembers = [
       en: 'Manages projects and coordinates implementations at Quantifier.ai.',
       cs: 'Řídí projekty a koordinuje implementace v Quantifier.ai.',
     },
-    linkedin: 'https://www.linkedin.com/in/enrikagn/',
+    linkedin: 'https://linkedin.com/in/enrikagn/',
     avatar: '/images/team/Enrika.jpg',
   },
 ];
