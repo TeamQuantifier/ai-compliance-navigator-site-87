@@ -18,7 +18,7 @@ const teamMembers = [
       cs: 'Prezident a spoluzakladatel Quantifier.ai.',
     },
     linkedin: 'https://linkedin.com/in/mmasiak/',
-    avatar: null,
+    avatar: '/images/team/Mateusz.jpg',
   },
   {
     name: 'Weronika Czaplewska',
