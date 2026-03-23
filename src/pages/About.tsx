@@ -39,7 +39,7 @@ const teamMembers = [
       en: 'Leads the Customer Success team and client communication.',
       cs: 'Vede tým Customer Success a komunikaci s klienty.',
     },
-    linkedin: 'https://linkedin.com/in/paulina-klimiuk/',
+    linkedin: 'https://www.linkedin.com/in/paulina-klimiuk/',
     avatar: '/images/team/Paulina.jpg',
   },
   {
