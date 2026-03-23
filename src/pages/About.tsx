@@ -29,7 +29,7 @@ const teamMembers = [
       cs: 'Spoluzakladatelka Quantifier.ai.',
     },
     linkedin: 'https://linkedin.com/in/weronika-czaplewska/',
-    avatar: null,
+    avatar: '/images/team/Weronika.jpg',
   },
   {
     name: 'Paulina Klimiuk',
