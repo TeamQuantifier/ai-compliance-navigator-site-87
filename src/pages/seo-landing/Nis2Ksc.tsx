@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import {
   Shield,
   ShieldAlert,
@@ -258,6 +261,78 @@ const ImplementationSteps = () => {
     </div>
   );
 };
+/* ───────────────────────── hero contact form ───────────────────────── */
+
+const HeroContactForm = ({ locale }: { locale: string }) => {
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!firstName.trim() || !email.trim()) return;
+
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke('contact-form', {
+        body: {
+          firstName: firstName.trim(),
+          lastName: '-',
+          email: email.trim(),
+          message: 'Sprawdź gotowość na NIS2 — formularz hero',
+          language: locale,
+          sourceUrl: window.location.href,
+        },
+      });
+      if (error) throw error;
+      toast.success('Dziękujemy! Odezwiemy się wkrótce.');
+      setFirstName('');
+      setEmail('');
+    } catch {
+      toast.error('Coś poszło nie tak. Spróbuj ponownie.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="mt-10 max-w-md">
+      <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
+      <p className="text-sm text-white/50 mb-4">
+        Napiszemy do Ciebie lub zadzwoń:{' '}
+        <a href="tel:+48222922636" className="text-primary hover:underline font-medium">+48 22 292 26 36</a>
+      </p>
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+        <Input
+          type="text"
+          placeholder="Imię"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          required
+          maxLength={50}
+          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+        />
+        <Input
+          type="email"
+          placeholder="Email służbowy"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          maxLength={100}
+          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+        />
+        <Button
+          type="submit"
+          disabled={loading}
+          className="bg-primary hover:bg-primary/90 text-base px-6 whitespace-nowrap"
+        >
+          {loading ? 'Wysyłam…' : 'Wyślij'}
+          {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
+        </Button>
+      </form>
+    </div>
+  );
+};
 
 
 /* ═══════════════════════════════════════════════════════════════════ */
@@ -304,8 +379,14 @@ const Nis2Ksc = () => {
               <FrameworkBadge label="GDPR" />
             </div>
 
+            {/* NIS2 signed banner */}
+            <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-8">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <span className="text-sm font-semibold text-emerald-300">Prezydent RP podpisał NIS2 — ustawa obowiązuje</span>
+            </div>
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
-              Prezydent RP podpisał NIS2.{' '}
+              Twoja organizacja musi spełnić NIS2.{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Zegar tyka.
               </span>
@@ -321,41 +402,7 @@ const Nis2Ksc = () => {
               w jednej platformie.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-base px-8"
-              >
-                <Link to={`/${currentLocale}/contact`}>
-                  Sprawdź gotowość na NIS2
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 text-base"
-              >
-                <a href="#solution">Zobacz platformę</a>
-              </Button>
-            </div>
-
-            {/* trust logos placeholder */}
-            <div className="mt-16 border-t border-white/10 pt-8">
-              <p className="text-xs uppercase tracking-widest text-white/30 mb-4">
-                Zaufali nam liderzy rynku
-              </p>
-              <div className="flex gap-8 items-center opacity-30">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="h-8 w-24 rounded bg-white/10"
-                  />
-                ))}
-              </div>
-            </div>
+            <HeroContactForm locale={currentLocale} />
           </div>
         </div>
       </section>
