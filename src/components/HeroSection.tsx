@@ -68,8 +68,11 @@ const HeroSection = () => {
             </div>
 
             {/* Platform mockup - right */}
-            <div className="hidden lg:block">
-              <HomePlatformMockup />
+            <div className="hidden lg:block relative">
+              <div className="absolute -inset-3 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/30"></div>
+              <div className="relative">
+                <HomePlatformMockup />
+              </div>
             </div>
           </div>
 
