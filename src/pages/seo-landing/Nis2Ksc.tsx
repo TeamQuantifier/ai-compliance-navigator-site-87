@@ -116,32 +116,149 @@ const FeatureCard = ({
   </div>
 );
 
-/* ───────────────────────── timeline step ───────────────────────── */
+/* ───────────────────────── animated implementation steps ───────────────────────── */
 
-const TimelineStep = ({
-  step,
-  title,
-  active,
-}: {
-  step: number;
-  title: string;
-  active?: boolean;
-}) => (
-  <div className="flex flex-col items-center text-center flex-1 min-w-[130px]">
-    <div
-      className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 transition-colors ${
-        active
-          ? 'bg-primary text-white'
-          : 'border border-white/20 text-white/50'
-      }`}
-    >
-      {step}
+const implementationSteps = [
+  {
+    icon: Upload,
+    step: '01',
+    title: 'Wgrywasz dokumenty',
+    desc: 'Importuj istniejące polityki, procedury i dokumentację. AI automatycznie rozpoznaje strukturę i mapuje treść do wymogów NIS2.',
+    details: ['Import polityk i procedur', 'Rozpoznawanie struktury dokumentów', 'Automatyczna klasyfikacja'],
+  },
+  {
+    icon: Cpu,
+    step: '02',
+    title: 'AI mapuje do NIS2',
+    desc: 'Sztuczna inteligencja analizuje dokumenty, identyfikuje luki w zgodności i generuje szczegółowy raport gap analysis.',
+    details: ['AI Gap Analysis', 'Identyfikacja luk', 'Raport zgodności z artykułami NIS2'],
+  },
+  {
+    icon: Rocket,
+    step: '03',
+    title: 'Platforma prowadzi wdrożenie',
+    desc: 'Krok po kroku przez governance, zarządzanie ryzykiem, incydenty i łańcuch dostaw — z dynamiczną roadmapą.',
+    details: ['Governance & Policies', 'Risk Management', 'Incident & Supply Chain'],
+  },
+  {
+    icon: Eye,
+    step: '04',
+    title: 'Monitorujesz zgodność',
+    desc: 'Ciągły monitoring, automatyczne alerty ryzyka i dashboard zarządu w czasie rzeczywistym.',
+    details: ['Continuous Monitoring', 'Alerty w czasie rzeczywistym', 'Dashboard zarządu'],
+  },
+];
+
+const ImplementationSteps = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
+  return (
+    <div>
+      {/* horizontal step selector */}
+      <div className="relative mb-10">
+        {/* connector line */}
+        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-white/10 hidden md:block" />
+        <div
+          className="absolute top-5 left-[10%] h-px bg-primary transition-all duration-700 ease-out hidden md:block"
+          style={{ width: `${(activeStep / 3) * 80}%` }}
+        />
+
+        <div className="flex justify-between relative">
+          {implementationSteps.map((s, i) => (
+            <button
+              key={s.step}
+              onClick={() => setActiveStep(i)}
+              className="flex flex-col items-center text-center flex-1 group cursor-pointer"
+            >
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 transition-all duration-500 ${
+                  i <= activeStep
+                    ? 'bg-primary text-white scale-110 shadow-lg shadow-primary/30'
+                    : 'border border-white/20 text-white/40 group-hover:border-white/40'
+                }`}
+              >
+                {i < activeStep ? (
+                  <CheckCircle2 className="h-5 w-5" />
+                ) : (
+                  s.step
+                )}
+              </div>
+              <span
+                className={`text-xs md:text-sm font-medium leading-tight transition-colors duration-300 ${
+                  i === activeStep ? 'text-white' : 'text-white/40'
+                }`}
+              >
+                {s.title}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* animated detail panel */}
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] min-h-[220px]">
+        {implementationSteps.map((s, i) => (
+          <div
+            key={s.step}
+            className={`transition-all duration-500 ease-out ${
+              i === activeStep
+                ? 'opacity-100 translate-y-0 relative'
+                : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
+            }`}
+          >
+            <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+              {/* icon */}
+              <div className="shrink-0">
+                <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20">
+                  <s.icon className="h-7 w-7 text-primary" />
+                </div>
+                <p className="text-xs font-mono text-primary mt-2 text-center">{s.step}</p>
+              </div>
+
+              {/* content */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+                <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-lg">{s.desc}</p>
+
+                <div className="flex flex-wrap gap-2">
+                  {s.details.map((d, j) => (
+                    <span
+                      key={d}
+                      className="inline-flex items-center gap-1.5 text-xs rounded-full border border-white/10 bg-white/5 px-3 py-1 text-white/60 transition-all duration-500"
+                      style={{ transitionDelay: `${j * 100}ms` }}
+                    >
+                      <CheckCircle2 className="h-3 w-3 text-primary" />
+                      {d}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* step indicator */}
+              <div className="hidden md:flex flex-col items-center gap-1 shrink-0">
+                <span className="text-4xl font-bold text-white/5">{s.step}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* step dots */}
+      <div className="flex justify-center gap-2 mt-6">
+        {implementationSteps.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActiveStep(i)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === activeStep ? 'w-8 bg-primary' : 'w-2 bg-white/20 hover:bg-white/30'
+            }`}
+          />
+        ))}
+      </div>
     </div>
-    <span className="text-xs md:text-sm font-medium text-white/80 leading-tight">
-      {title}
-    </span>
-  </div>
-);
+  );
+};
+
 
 /* ═══════════════════════════════════════════════════════════════════ */
 /*                         MAIN COMPONENT                            */
@@ -409,7 +526,7 @@ const Nis2Ksc = () => {
         </div>
       </Section>
 
-      {/* ────── IMPLEMENTATION ROADMAP ────── */}
+      {/* ────── 4 STEPS TO COMPLIANCE (merged roadmap + how it works) ────── */}
       <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -417,38 +534,14 @@ const Nis2Ksc = () => {
               Wdrożenie
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Dynamiczna roadmapa wdrożenia NIS2
+              4 kroki do zgodności z NIS2
             </h2>
             <p className="text-white/50 max-w-2xl mx-auto">
-              Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości
-              organizacji.
+              Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości organizacji.
             </p>
           </div>
 
-          {/* horizontal timeline */}
-          <div className="relative">
-            {/* connector line */}
-            <div className="absolute top-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent hidden md:block" />
-
-            <div className="flex flex-wrap md:flex-nowrap gap-6 md:gap-0 justify-between">
-              {[
-                'AI Gap Analysis',
-                'Governance & Policies',
-                'Risk Management',
-                'Incident Management',
-                'Supply Chain Security',
-                'Business Continuity',
-                'Continuous Monitoring',
-              ].map((title, i) => (
-                <TimelineStep
-                  key={title}
-                  step={i + 1}
-                  title={title}
-                  active={i === 0}
-                />
-              ))}
-            </div>
-          </div>
+          <ImplementationSteps />
         </div>
       </Section>
 
@@ -539,58 +632,6 @@ const Nis2Ksc = () => {
                 <span className="text-sm font-medium text-white/80">
                   {title}
                 </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* ────── HOW IT WORKS ────── */}
-      <Section dark={false}>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-widest text-primary mb-3">
-              Jak to działa
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              4 kroki do zgodności
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Upload,
-                step: '01',
-                title: 'Wgrywasz dokumenty',
-                desc: 'Importuj istniejące polityki i procedury.',
-              },
-              {
-                icon: Cpu,
-                step: '02',
-                title: 'AI mapuje do NIS2',
-                desc: 'Sztuczna inteligencja analizuje i mapuje luki.',
-              },
-              {
-                icon: Rocket,
-                step: '03',
-                title: 'Platforma prowadzi',
-                desc: 'Krok po kroku przez cały proces wdrożenia.',
-              },
-              {
-                icon: Eye,
-                step: '04',
-                title: 'Monitorujesz zgodność',
-                desc: 'Ciągły monitoring i alerty w czasie rzeczywistym.',
-              },
-            ].map(({ icon: Icon, step, title, desc }) => (
-              <div key={step} className="text-center">
-                <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-primary/10 mb-4">
-                  <Icon className="h-6 w-6 text-primary" />
-                </div>
-                <p className="text-xs font-mono text-primary mb-1">{step}</p>
-                <h3 className="text-base font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-white/50">{desc}</p>
               </div>
             ))}
           </div>
