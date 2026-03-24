@@ -472,7 +472,8 @@ const Nis2Ksc = () => {
       </section>
 
       {/* ────── PROBLEM ────── */}
-      <Section>
+      <section className="py-12 md:py-16 bg-slate-800 text-white">
+        <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Większość organizacji nie jest operacyjnie gotowa
@@ -507,7 +508,8 @@ const Nis2Ksc = () => {
             </p>
           </div>
         </div>
-      </Section>
+        </div>
+      </section>
 
       {/* ────── SOLUTION ────── */}
       <Section id="solution" dark={false}>
