@@ -370,39 +370,45 @@ const Nis2Ksc = () => {
         />
 
         <div className="container mx-auto px-4 relative z-10 py-28">
-          <div className="max-w-3xl">
-            {/* badges */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              <FrameworkBadge label="NIS2" />
-              <FrameworkBadge label="ISO 27001" />
-              <FrameworkBadge label="DORA" />
-              <FrameworkBadge label="GDPR" />
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left column – copy */}
+            <div>
+              {/* badges */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                <FrameworkBadge label="NIS2" />
+                <FrameworkBadge label="ISO 27001" />
+                <FrameworkBadge label="DORA" />
+                <FrameworkBadge label="GDPR" />
+              </div>
+
+              {/* NIS2 signed banner */}
+              <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-8">
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                <span className="text-sm font-semibold text-emerald-300">Prezydent RP podpisał NIS2 — ustawa obowiązuje</span>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
+                <span className="text-white">Twoja organizacja musi spełnić NIS2.</span>{' '}
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Zegar tyka.
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/70 mb-4 max-w-2xl leading-relaxed">
+                Quantifier to AI-native platforma, która przygotowuje organizację
+                do audytu i zapewnia ciągłą zgodność z NIS2.
+              </p>
+              <p className="text-base text-white/50 mb-10 max-w-2xl leading-relaxed lg:mb-0">
+                NIS2 wymaga operacyjnego zarządzania ryzykiem, incydentami,
+                governance i bezpieczeństwem dostawców. Quantifier łączy wszystko
+                w jednej platformie.
+              </p>
             </div>
 
-            {/* NIS2 signed banner */}
-            <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-8">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span className="text-sm font-semibold text-emerald-300">Prezydent RP podpisał NIS2 — ustawa obowiązuje</span>
+            {/* Right column – form */}
+            <div className="lg:pt-16">
+              <HeroContactForm locale={currentLocale} />
             </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
-              <span className="text-white">Twoja organizacja musi spełnić NIS2.</span>{' '}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Zegar tyka.
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-white/70 mb-4 max-w-2xl leading-relaxed">
-              Quantifier to AI-native platforma, która przygotowuje organizację
-              do audytu i zapewnia ciągłą zgodność z NIS2.
-            </p>
-            <p className="text-base text-white/50 mb-10 max-w-2xl leading-relaxed">
-              NIS2 wymaga operacyjnego zarządzania ryzykiem, incydentami,
-              governance i bezpieczeństwem dostawców. Quantifier łączy wszystko
-              w jednej platformie.
-            </p>
-
-            <HeroContactForm locale={currentLocale} />
           </div>
         </div>
       </section>
