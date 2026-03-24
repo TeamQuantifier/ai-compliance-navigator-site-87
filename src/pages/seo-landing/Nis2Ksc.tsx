@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import {
   Shield,
   ShieldAlert,
@@ -304,8 +307,14 @@ const Nis2Ksc = () => {
               <FrameworkBadge label="GDPR" />
             </div>
 
+            {/* NIS2 signed banner */}
+            <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-8">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <span className="text-sm font-semibold text-emerald-300">Prezydent RP podpisał NIS2 — ustawa obowiązuje</span>
+            </div>
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
-              Prezydent RP podpisał NIS2.{' '}
+              Twoja organizacja musi spełnić NIS2.{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Zegar tyka.
               </span>
@@ -321,41 +330,7 @@ const Nis2Ksc = () => {
               w jednej platformie.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-base px-8"
-              >
-                <Link to={`/${currentLocale}/contact`}>
-                  Sprawdź gotowość na NIS2
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 text-base"
-              >
-                <a href="#solution">Zobacz platformę</a>
-              </Button>
-            </div>
-
-            {/* trust logos placeholder */}
-            <div className="mt-16 border-t border-white/10 pt-8">
-              <p className="text-xs uppercase tracking-widest text-white/30 mb-4">
-                Zaufali nam liderzy rynku
-              </p>
-              <div className="flex gap-8 items-center opacity-30">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="h-8 w-24 rounded bg-white/10"
-                  />
-                ))}
-              </div>
-            </div>
+            <HeroContactForm locale={currentLocale} />
           </div>
         </div>
       </section>
