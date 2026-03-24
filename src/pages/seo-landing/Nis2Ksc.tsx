@@ -32,6 +32,7 @@ import {
   Eye,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Nis2PlatformMockups from '@/components/mockups/Nis2PlatformMockups';
 
 /* ───────────────────────── sticky CTA bar ───────────────────────── */
 
@@ -389,6 +390,9 @@ const Nis2Ksc = () => {
               desc="Ciągłe monitorowanie zgodności z automatycznymi alertami."
             />
           </div>
+
+          {/* Platform Mockups */}
+          <Nis2PlatformMockups />
 
           <div className="text-center mt-12">
             <Button
