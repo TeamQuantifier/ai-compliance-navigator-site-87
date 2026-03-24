@@ -541,43 +541,22 @@ const Nis2Ksc = () => {
 
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             {/* Left: Feature bullets */}
-            <div className="space-y-4">
-              <FeatureCard
-                icon={Brain}
-                title="AI mapowanie polityk"
-                desc="Automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI."
-              />
-              <FeatureCard
-                icon={BarChart3}
-                title="Rejestr ryzyk NIS2"
-                desc="Centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2."
-              />
-              <FeatureCard
-                icon={Activity}
-                title="Workflow incydentów"
-                desc="Zarządzanie incydentami z automatycznym raportowaniem 24h/72h."
-              />
-              <FeatureCard
-                icon={Link2}
-                title="Monitoring dostawców"
-                desc="Ocena i ciągły monitoring bezpieczeństwa łańcucha dostaw."
-              />
-              <FeatureCard
-                icon={FolderLock}
-                title="Evidence room"
-                desc="Centralne repozytorium dowodów i dokumentacji audytowej."
-              />
-              <FeatureCard
-                icon={LayoutDashboard}
-                title="Dashboard zarządu"
-                desc="Przejrzysty widok stanu zgodności dla C-level i zarządu."
-              />
-              <FeatureCard
-                icon={RefreshCcw}
-                title="Continuous compliance"
-                desc="Ciągłe monitorowanie zgodności z automatycznymi alertami."
-              />
-            </div>
+            <ul className="space-y-4">
+              {[
+                { icon: Brain, text: 'AI mapowanie polityk — automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI.' },
+                { icon: BarChart3, text: 'Rejestr ryzyk NIS2 — centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2.' },
+                { icon: Activity, text: 'Workflow incydentów — zarządzanie incydentami z automatycznym raportowaniem 24h/72h.' },
+                { icon: Link2, text: 'Monitoring dostawców — ocena i ciągły monitoring bezpieczeństwa łańcucha dostaw.' },
+                { icon: FolderLock, text: 'Evidence room — centralne repozytorium dowodów i dokumentacji audytowej.' },
+                { icon: LayoutDashboard, text: 'Dashboard zarządu — przejrzysty widok stanu zgodności dla C-level i zarządu.' },
+                { icon: RefreshCcw, text: 'Continuous compliance — ciągłe monitorowanie zgodności z automatycznymi alertami.' },
+              ].map(({ icon: Icon, text }, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                  <span className="text-sm leading-relaxed text-white/70">{text}</span>
+                </li>
+              ))}
+            </ul>
 
             {/* Right: Platform Mockup */}
             <div className="lg:sticky lg:top-24">
