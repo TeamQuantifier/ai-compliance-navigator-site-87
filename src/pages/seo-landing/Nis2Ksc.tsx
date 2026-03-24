@@ -703,36 +703,7 @@ const Nis2Ksc = () => {
               natychmiastowej uwagi.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-base px-8"
-              >
-                <Link to={`/${currentLocale}/contact`}>
-                  Umów NIS2 Assessment
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 text-base"
-              >
-                <Link to={`/${currentLocale}/contact`}>Zobacz demo</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 text-base"
-              >
-                <Link to={`/${currentLocale}/sprawdz-cyberbezpieczenstwo`}>
-                  Pobierz checklistę NIS2
-                </Link>
-              </Button>
-            </div>
+            <HeroContactForm locale={currentLocale} />
           </div>
         </div>
       </section>
