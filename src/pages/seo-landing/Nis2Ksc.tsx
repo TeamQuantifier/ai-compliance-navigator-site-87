@@ -261,6 +261,78 @@ const ImplementationSteps = () => {
     </div>
   );
 };
+/* ───────────────────────── hero contact form ───────────────────────── */
+
+const HeroContactForm = ({ locale }: { locale: string }) => {
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!firstName.trim() || !email.trim()) return;
+
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke('contact-form', {
+        body: {
+          firstName: firstName.trim(),
+          lastName: '-',
+          email: email.trim(),
+          message: 'Sprawdź gotowość na NIS2 — formularz hero',
+          language: locale,
+          sourceUrl: window.location.href,
+        },
+      });
+      if (error) throw error;
+      toast.success('Dziękujemy! Odezwiemy się wkrótce.');
+      setFirstName('');
+      setEmail('');
+    } catch {
+      toast.error('Coś poszło nie tak. Spróbuj ponownie.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="mt-10 max-w-md">
+      <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
+      <p className="text-sm text-white/50 mb-4">
+        Napiszemy do Ciebie lub zadzwoń:{' '}
+        <a href="tel:+48222922636" className="text-primary hover:underline font-medium">+48 22 292 26 36</a>
+      </p>
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+        <Input
+          type="text"
+          placeholder="Imię"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          required
+          maxLength={50}
+          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+        />
+        <Input
+          type="email"
+          placeholder="Email służbowy"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          maxLength={100}
+          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+        />
+        <Button
+          type="submit"
+          disabled={loading}
+          className="bg-primary hover:bg-primary/90 text-base px-6 whitespace-nowrap"
+        >
+          {loading ? 'Wysyłam…' : 'Wyślij'}
+          {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
+        </Button>
+      </form>
+    </div>
+  );
+};
 
 
 /* ═══════════════════════════════════════════════════════════════════ */
