@@ -539,9 +539,9 @@ const Nis2Ksc = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
             {/* Left: Feature bullets */}
-            <ul className="space-y-4">
+            <ul className="flex flex-col justify-between py-2">
               {[
                 { icon: Brain, text: 'AI mapowanie polityk — automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI.' },
                 { icon: BarChart3, text: 'Rejestr ryzyk NIS2 — centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2.' },
@@ -559,7 +559,7 @@ const Nis2Ksc = () => {
             </ul>
 
             {/* Right: Platform Mockup */}
-            <div className="lg:sticky lg:top-24">
+            <div>
               <Nis2PlatformMockups />
             </div>
           </div>
