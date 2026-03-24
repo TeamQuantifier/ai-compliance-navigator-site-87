@@ -392,7 +392,7 @@ const Nis2PlatformMockups = () => {
   };
 
   return (
-    <div className="mt-14 rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <div className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       {/* mockup chrome bar */}
       <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10 bg-white/[0.02]">
         <div className="flex gap-1.5 mr-3">
@@ -426,7 +426,7 @@ const Nis2PlatformMockups = () => {
       </div>
 
       {/* content */}
-      <div className="p-5 min-h-[380px]">
+      <div className="p-5 h-[480px] overflow-y-auto">
         {renderTab()}
       </div>
     </div>
