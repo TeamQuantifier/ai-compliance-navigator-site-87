@@ -158,7 +158,7 @@ const ImplementationSteps = () => {
   useEffect(() => {
     const id = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % implementationSteps.length);
-    }, 6000);
+    }, 2000);
     return () => clearInterval(id);
   }, []);
 
