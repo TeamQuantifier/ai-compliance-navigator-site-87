@@ -69,7 +69,6 @@ const HeroSection = () => {
           <div className="mb-16">
             <HomePlatformMockup />
           </div>
-          </div>
           
           {/* Framework icons - centered section */}
           <div className="text-center">
