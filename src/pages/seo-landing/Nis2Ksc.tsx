@@ -414,7 +414,8 @@ const Nis2Ksc = () => {
       </section>
 
       {/* ────── URGENCY ────── */}
-      <Section dark={false}>
+      <section className="py-12 md:py-16 bg-slate-800 text-white">
+        <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <div className="rounded-lg bg-red-500/10 p-2">
@@ -467,7 +468,8 @@ const Nis2Ksc = () => {
             </Button>
           </div>
         </div>
-      </Section>
+        </div>
+      </section>
 
       {/* ────── PROBLEM ────── */}
       <Section>
