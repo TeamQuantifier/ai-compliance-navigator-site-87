@@ -17,56 +17,64 @@ const HeroSection = () => {
       <div className="absolute top-40 left-20 w-72 h-72 bg-slate-800 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Text content - centered */}
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              {t('hero.title')}<br />
-              {t('hero.titleLine2')}
-            </h1>
-            
-            <h2 className="text-xl text-slate-400 mb-8">
-              {t('hero.grcExplanation')}
-            </h2>
-            
-            <ul className="space-y-3 mb-8 text-left max-w-lg mx-auto">
-              <li className="flex items-center text-lg text-slate-300">
-                <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
-                {t('hero.bullet1')}
-              </li>
-              <li className="flex items-center text-lg text-slate-300">
-                <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
-                {t('hero.bullet2')}
-              </li>
-              <li className="flex items-center text-lg text-slate-300">
-                <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
-                {t('hero.bullet3')}
-              </li>
-              <li className="flex items-center text-lg text-slate-300">
-                <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
-                {t('hero.bullet4')}
-              </li>
-              <li className="flex items-center text-lg text-slate-300">
-                <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
-                {t('hero.bullet5')}
-              </li>
-            </ul>
-            
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
-                <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
-                <Link to={`/${currentLocale}/product/features`}>
-                  {t('hero.exploreFeatures')}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+        <div className="max-w-7xl mx-auto">
+          {/* Two-column layout: text left, mockup right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+            {/* Text content - left */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
+                {t('hero.title')}<br />
+                {t('hero.titleLine2')}
+              </h1>
+              
+              <h2 className="text-lg xl:text-xl text-slate-400 mb-6">
+                {t('hero.grcExplanation')}
+              </h2>
+              
+              <ul className="space-y-2.5 mb-6 text-left">
+                <li className="flex items-center text-base text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet1')}
+                </li>
+                <li className="flex items-center text-base text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet2')}
+                </li>
+                <li className="flex items-center text-base text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet3')}
+                </li>
+                <li className="flex items-center text-base text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet4')}
+                </li>
+                <li className="flex items-center text-base text-slate-300">
+                  <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
+                  {t('hero.bullet5')}
+                </li>
+              </ul>
+              
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
+                  <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-slate-700 group bg-slate-100 text-slate-800">
+                  <Link to={`/${currentLocale}/product/features`}>
+                    {t('hero.exploreFeatures')}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Platform mockup - right */}
+            <div className="hidden lg:block">
+              <HomePlatformMockup />
             </div>
           </div>
 
-          {/* Platform mockup */}
-          <div className="mb-16">
+          {/* Mobile mockup - below on small screens */}
+          <div className="lg:hidden mb-12">
             <HomePlatformMockup />
           </div>
           
