@@ -379,7 +379,7 @@ const Nis2PlatformMockups = () => {
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(nextTab, 5000);
+    const id = setInterval(nextTab, 2000);
     return () => clearInterval(id);
   }, [paused, nextTab]);
   const renderTab = () => {
