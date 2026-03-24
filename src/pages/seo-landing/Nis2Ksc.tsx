@@ -296,7 +296,7 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
   };
 
   return (
-    <div className="mt-10 max-w-md">
+    <div className="mt-10 max-w-md mx-auto">
       <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
       <p className="text-sm text-white/50 mb-4">
         Napiszemy do Ciebie lub zadzwoń:{' '}
