@@ -300,7 +300,7 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
       <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
       <p className="text-sm text-white/50 mb-4">
         Napiszemy do Ciebie lub zadzwoń:{' '}
-        <a href="tel:+48222922636" className="text-primary hover:underline font-medium">+48 22 292 26 36</a>
+        <a href="tel:+48698759206" className="text-primary hover:underline font-medium">(+48) 698 759 206</a>
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
         <Input
@@ -386,7 +386,7 @@ const Nis2Ksc = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
-              Twoja organizacja musi spełnić NIS2.{' '}
+              <span className="text-white">Twoja organizacja musi spełnić NIS2.</span>{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Zegar tyka.
               </span>
