@@ -409,7 +409,7 @@ const Nis2Ksc = () => {
         </div>
       </Section>
 
-      {/* ────── IMPLEMENTATION ROADMAP ────── */}
+      {/* ────── 4 STEPS TO COMPLIANCE (merged roadmap + how it works) ────── */}
       <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -417,38 +417,14 @@ const Nis2Ksc = () => {
               Wdrożenie
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Dynamiczna roadmapa wdrożenia NIS2
+              4 kroki do zgodności z NIS2
             </h2>
             <p className="text-white/50 max-w-2xl mx-auto">
-              Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości
-              organizacji.
+              Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości organizacji.
             </p>
           </div>
 
-          {/* horizontal timeline */}
-          <div className="relative">
-            {/* connector line */}
-            <div className="absolute top-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent hidden md:block" />
-
-            <div className="flex flex-wrap md:flex-nowrap gap-6 md:gap-0 justify-between">
-              {[
-                'AI Gap Analysis',
-                'Governance & Policies',
-                'Risk Management',
-                'Incident Management',
-                'Supply Chain Security',
-                'Business Continuity',
-                'Continuous Monitoring',
-              ].map((title, i) => (
-                <TimelineStep
-                  key={title}
-                  step={i + 1}
-                  title={title}
-                  active={i === 0}
-                />
-              ))}
-            </div>
-          </div>
+          <ImplementationSteps />
         </div>
       </Section>
 
@@ -539,58 +515,6 @@ const Nis2Ksc = () => {
                 <span className="text-sm font-medium text-white/80">
                   {title}
                 </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* ────── HOW IT WORKS ────── */}
-      <Section dark={false}>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-widest text-primary mb-3">
-              Jak to działa
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              4 kroki do zgodności
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Upload,
-                step: '01',
-                title: 'Wgrywasz dokumenty',
-                desc: 'Importuj istniejące polityki i procedury.',
-              },
-              {
-                icon: Cpu,
-                step: '02',
-                title: 'AI mapuje do NIS2',
-                desc: 'Sztuczna inteligencja analizuje i mapuje luki.',
-              },
-              {
-                icon: Rocket,
-                step: '03',
-                title: 'Platforma prowadzi',
-                desc: 'Krok po kroku przez cały proces wdrożenia.',
-              },
-              {
-                icon: Eye,
-                step: '04',
-                title: 'Monitorujesz zgodność',
-                desc: 'Ciągły monitoring i alerty w czasie rzeczywistym.',
-              },
-            ].map(({ icon: Icon, step, title, desc }) => (
-              <div key={step} className="text-center">
-                <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-primary/10 mb-4">
-                  <Icon className="h-6 w-6 text-primary" />
-                </div>
-                <p className="text-xs font-mono text-primary mb-1">{step}</p>
-                <h3 className="text-base font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-white/50">{desc}</p>
               </div>
             ))}
           </div>
