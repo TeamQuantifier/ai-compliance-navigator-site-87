@@ -155,6 +155,13 @@ const implementationSteps = [
 const ImplementationSteps = () => {
   const [activeStep, setActiveStep] = useState(0);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % implementationSteps.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div>
       {/* horizontal step selector */}
@@ -296,7 +303,7 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
   };
 
   return (
-    <div className="mt-10 max-w-md mx-auto">
+    <div className="mt-10 max-w-md mx-auto rounded-xl border border-primary/30 bg-white/[0.04] p-5">
       <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
       <p className="text-sm text-white/50 mb-4">
         Napiszemy do Ciebie lub zadzwoń:{' '}
@@ -330,6 +337,11 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
           {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
         </Button>
       </form>
+      <p className="text-[10px] text-white/30 mt-3 leading-relaxed">
+        Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych zgodnie z naszą{' '}
+        <Link to={`/${locale}/privacy-policy`} className="underline hover:text-white/50">Polityką Prywatności</Link>.
+        Administratorem danych jest Quantifier sp.&nbsp;z&nbsp;o.o.
+      </p>
     </div>
   );
 };

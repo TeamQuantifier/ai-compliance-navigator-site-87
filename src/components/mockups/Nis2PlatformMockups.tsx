@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   Shield, FileText, AlertTriangle, Activity, Users, Search,
   ChevronDown, ChevronUp, Sparkles, BarChart3, Upload, Link2,
@@ -368,7 +368,20 @@ const TrainingMockup = () => (
 /* ═══════════════ MAIN COMPONENT ═══════════════ */
 const Nis2PlatformMockups = () => {
   const [activeTab, setActiveTab] = useState<TabId>('dashboard');
+  const [paused, setPaused] = useState(false);
 
+  const nextTab = useCallback(() => {
+    setActiveTab((prev) => {
+      const idx = tabs.findIndex((t) => t.id === prev);
+      return tabs[(idx + 1) % tabs.length].id;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(nextTab, 5000);
+    return () => clearInterval(id);
+  }, [paused, nextTab]);
   const renderTab = () => {
     switch (activeTab) {
       case 'dashboard': return <DashboardMockup />;
@@ -379,7 +392,7 @@ const Nis2PlatformMockups = () => {
   };
 
   return (
-    <div className="mt-14 rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
+    <div className="mt-14 rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       {/* mockup chrome bar */}
       <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10 bg-white/[0.02]">
         <div className="flex gap-1.5 mr-3">
