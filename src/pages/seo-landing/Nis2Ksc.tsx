@@ -84,7 +84,7 @@ const Section = ({
 }) => (
   <section
     id={id}
-    className={`py-20 md:py-28 ${dark ? 'bg-slate-950 text-white' : 'bg-slate-900 text-white'} ${className}`}
+    className={`py-12 md:py-16 ${dark ? 'bg-slate-950 text-white' : 'bg-slate-900 text-white'} ${className}`}
   >
     <div className="container mx-auto px-4">{children}</div>
   </section>
@@ -564,7 +564,7 @@ const Nis2Ksc = () => {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-base px-8"
             >
-              <Link to={`/${currentLocale}/contact`}>
+              <Link to={`/${currentLocale}/contact`} state={{ demo: true }}>
                 Zobacz jak działa
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -634,18 +634,6 @@ const Nis2Ksc = () => {
             </p>
           </div>
 
-          <div className="mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-base"
-            >
-              <Link to={`/${currentLocale}/contact`}>
-                Przygotuj się na audyt
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </Section>
 
@@ -703,7 +691,9 @@ const Nis2Ksc = () => {
               natychmiastowej uwagi.
             </p>
 
-            <HeroContactForm locale={currentLocale} />
+            <div className="flex justify-center">
+              <HeroContactForm locale={currentLocale} />
+            </div>
           </div>
         </div>
       </section>
