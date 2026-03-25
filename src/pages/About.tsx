@@ -119,13 +119,13 @@ const About = () => {
         </div>
 
         {/* Intro + Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="md:col-span-2 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16 items-center">
+          <div className="md:col-span-3 space-y-6">
             <p className="text-lg text-muted-foreground">{t('about.intro1')}</p>
             <p className="text-lg text-muted-foreground">{t('about.intro2')}</p>
           </div>
 
-          <div>
+          <div className="md:col-span-2">
             <Card className="p-6 bg-gradient-to-br from-muted/50 to-muted border shadow-sm">
               <h3 className="text-xl font-semibold mb-4">{t('about.highlights.title')}</h3>
               <ul className="space-y-4">
