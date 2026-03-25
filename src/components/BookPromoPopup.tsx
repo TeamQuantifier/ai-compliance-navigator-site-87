@@ -59,7 +59,7 @@ export function BookPromoPopup() {
 
   const handleCta = () => {
     handleClose();
-    navigate(`/${currentLocale}/success-stories`);
+    navigate(`/${currentLocale}/about`);
   };
 
   return (

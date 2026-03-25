@@ -246,6 +246,7 @@ export const SEOHead = ({
       
       {/* Twitter Cards */}
       <meta name="twitter:card" content={twitterCardType || 'summary_large_image'} />
+      <meta name="twitter:site" content="@quantifier_ai" />
       <meta name="twitter:title" content={finalTwitterTitle} />
       <meta name="twitter:description" content={finalTwitterDescription} />
       <meta name="twitter:image" content={finalTwitterImage} />

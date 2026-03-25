@@ -2,61 +2,59 @@ import { ArrowRight, Shield, Lock, Network, Leaf, FileCheck, Brain, Award, Check
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import HomePlatformMockup from '@/components/mockups/HomePlatformMockup';
 
 const HeroSection = () => {
   const { t, currentLocale } = useLanguage();
+
   return <div className="relative pt-20 pb-10 lg:pt-32 lg:pb-20 overflow-hidden">
-      {/* Background gradient - darkened further */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950 to-compliance-950 -z-10"></div>
       
-      {/* Decorative circles - increased opacity and size for more dramatic effect */}
+      {/* Decorative circles */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-innovation-800 rounded-full blur-3xl opacity-25 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-compliance-800 rounded-full blur-3xl opacity-30 -z-10"></div>
       <div className="absolute top-40 left-20 w-72 h-72 bg-slate-800 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left column - text content */}
-            <div className="text-left">
-              {/* H1 with two lines */}
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        <div className="max-w-7xl mx-auto">
+          {/* Two-column layout: text left, mockup right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+            {/* Text content - left */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
                 {t('hero.title')}<br />
                 {t('hero.titleLine2')}
               </h1>
               
-              {/* GRC Explanation - smaller subtitle */}
-              <h2 className="text-xl text-slate-400 mb-8">
+              <h2 className="text-lg xl:text-xl text-slate-400 mb-6">
                 {t('hero.grcExplanation')}
               </h2>
               
-              {/* Bullet points - left aligned */}
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-lg text-slate-300">
+              <ul className="space-y-2.5 mb-6 text-left">
+                <li className="flex items-center text-base text-slate-300">
                   <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                   {t('hero.bullet1')}
                 </li>
-                <li className="flex items-center text-lg text-slate-300">
+                <li className="flex items-center text-base text-slate-300">
                   <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                   {t('hero.bullet2')}
                 </li>
-                <li className="flex items-center text-lg text-slate-300">
+                <li className="flex items-center text-base text-slate-300">
                   <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                   {t('hero.bullet3')}
                 </li>
-                <li className="flex items-center text-lg text-slate-300">
+                <li className="flex items-center text-base text-slate-300">
                   <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                   {t('hero.bullet4')}
                 </li>
-                <li className="flex items-center text-lg text-slate-300">
+                <li className="flex items-center text-base text-slate-300">
                   <CheckCircle className="h-5 w-5 text-compliance-400 mr-3 flex-shrink-0" />
                   {t('hero.bullet5')}
                 </li>
               </ul>
               
-              {/* Call-to-action buttons - left aligned */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Button asChild className="bg-gradient-to-r from-compliance-700 to-innovation-700 hover:from-compliance-800 hover:to-innovation-800 text-white px-6 py-2.5 shadow-lg shadow-black/40" size="lg">
                   <Link to={`/${currentLocale}/contact`}>{t('hero.requestDemo')}</Link>
                 </Button>
@@ -68,28 +66,19 @@ const HeroSection = () => {
                 </Button>
               </div>
             </div>
-            
-            {/* Right column - overlapping platform screenshots */}
-            <div className="relative pb-[30%]">
-              {/* Screenshot 1 - on top (Multi-Framework Policy Hub) */}
-              <img 
-                src="/lovable-uploads/platform-screenshot.png" 
-                alt="Quantifier Platform - Multi-Framework Policy Hub"
-                width="800"
-                height="500"
-                className="relative z-10 rounded-xl shadow-2xl border border-slate-700/50 w-full"
-              />
-              
-              {/* Screenshot 2 - underneath with offset (GHG Compliance) */}
-              <img 
-                src="/lovable-uploads/ghg-compliance-screenshot.png" 
-                alt="Quantifier Platform - GHG Compliance and Reporting"
-                width="760"
-                height="475"
-                loading="lazy"
-                className="absolute top-[40%] left-[8%] z-0 rounded-xl shadow-xl border border-slate-700/50 w-[95%] opacity-85"
-              />
+
+            {/* Platform mockup - right */}
+            <div className="hidden lg:block relative">
+              <div className="absolute -inset-3 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/30"></div>
+              <div className="relative">
+                <HomePlatformMockup />
+              </div>
             </div>
+          </div>
+
+          {/* Mobile mockup - below on small screens */}
+          <div className="lg:hidden mb-12">
+            <HomePlatformMockup />
           </div>
           
           {/* Framework icons - centered section */}

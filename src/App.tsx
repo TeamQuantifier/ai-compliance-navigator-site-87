@@ -55,6 +55,7 @@ import StoryDetail from "./pages/blog/StoryDetail";
 
 // SEO Landing pages
 import GrcPlatform from "./pages/seo-landing/GrcPlatform";
+import Nis2Ksc from "./pages/seo-landing/Nis2Ksc";
 
 // Legal pages
 import CookiesPolicy from "./pages/legal/CookiesPolicy";
@@ -159,6 +160,7 @@ const MainRoutes = () => (
         <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
         <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
+        <Route path="/:locale/nis2-ksc" element={<Nis2Ksc />} />
 
         {/* Events routes */}
         <Route path="/:locale/events" element={<EventsHub />} />
