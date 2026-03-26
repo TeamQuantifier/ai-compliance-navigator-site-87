@@ -167,7 +167,7 @@ const ImplementationSteps = () => {
       {/* horizontal step selector */}
       <div className="relative mb-10">
         {/* connector line */}
-        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-white/10 hidden md:block" />
+        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-slate-200 hidden md:block" />
         <div
           className="absolute top-5 left-[10%] h-px bg-primary transition-all duration-700 ease-out hidden md:block"
           style={{ width: `${(activeStep / 3) * 80}%` }}
