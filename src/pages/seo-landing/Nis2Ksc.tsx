@@ -459,7 +459,7 @@ const Nis2Ksc = () => {
       <Nis2KscSeoHead locale={currentLocale} />
 
       {/* ────── HERO ────── */}
-      <section className="relative min-h-[70vh] flex items-center bg-slate-950 overflow-hidden">
+      <section className="relative bg-slate-950 overflow-hidden">
         {/* decorative orbs */}
         <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
         <div className="absolute bottom-10 right-0 h-[400px] w-[400px] rounded-full bg-secondary/10 blur-[100px]" />
@@ -475,12 +475,12 @@ const Nis2Ksc = () => {
           }}
         />
 
-        <div className="container mx-auto px-4 relative z-10 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="container mx-auto px-4 relative z-10 py-12 md:py-16 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left column – copy */}
             <div>
               {/* badges */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
                 <FrameworkBadge label="NIS2" />
                 <FrameworkBadge label="ISO 27001" />
                 <FrameworkBadge label="DORA" />
@@ -488,12 +488,12 @@ const Nis2Ksc = () => {
               </div>
 
               {/* NIS2 signed banner */}
-              <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-8">
+              <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-4 md:mb-6">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400" />
                 <span className="text-sm font-semibold text-emerald-300">Prezydent RP podpisał NIS2 — ustawa obowiązuje</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] mb-4 md:mb-6 tracking-tight">
                 <span className="text-white">Twoja organizacja musi spełnić NIS2.</span>{' '}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Zegar tyka.
@@ -504,7 +504,7 @@ const Nis2Ksc = () => {
                 Quantifier to AI-native platforma, która przygotowuje organizację
                 do audytu i zapewnia ciągłą zgodność z NIS2.
               </p>
-              <p className="text-base text-white/50 mb-10 max-w-2xl leading-relaxed lg:mb-0">
+              <p className="text-sm md:text-base text-white/50 mb-6 max-w-2xl leading-relaxed lg:mb-0">
                 NIS2 wymaga operacyjnego zarządzania ryzykiem, incydentami,
                 governance i bezpieczeństwem dostawców. Quantifier łączy wszystko
                 w jednej platformie.
@@ -512,7 +512,7 @@ const Nis2Ksc = () => {
             </div>
 
             {/* Right column – form */}
-            <div className="lg:pt-16">
+            <div className="lg:pt-4">
               <HeroContactForm locale={currentLocale} />
             </div>
           </div>
