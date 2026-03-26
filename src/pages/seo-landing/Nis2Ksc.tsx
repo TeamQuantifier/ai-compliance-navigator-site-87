@@ -304,9 +304,9 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
   };
 
   return (
-    <div className="mt-10 max-w-md mx-auto rounded-xl border border-primary/30 bg-white/[0.04] p-5">
+    <div className="mt-10 max-w-md mx-auto rounded-xl border border-white/20 bg-white/[0.08] backdrop-blur-sm p-5">
       <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
-      <p className="text-sm text-white/50 mb-4">
+      <p className="text-sm text-white/70 mb-4">
         Napiszemy do Ciebie lub zadzwoń:{' '}
         <a href="tel:+48698759206" className="text-primary hover:underline font-medium">(+48) 698 759 206</a>
       </p>
@@ -318,7 +318,7 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
           onChange={(e) => setFirstName(e.target.value)}
           required
           maxLength={50}
-          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+          className="bg-white/15 border-white/25 text-white placeholder:text-white/60 focus-visible:ring-primary"
         />
         <Input
           type="email"
@@ -327,7 +327,7 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
           onChange={(e) => setEmail(e.target.value)}
           required
           maxLength={100}
-          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+          className="bg-white/15 border-white/25 text-white placeholder:text-white/60 focus-visible:ring-primary"
         />
         <Button
           type="submit"
@@ -338,9 +338,9 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
           {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
         </Button>
       </form>
-      <p className="text-[10px] text-white/30 mt-3 leading-relaxed">
+      <p className="text-[10px] text-white/50 mt-3 leading-relaxed">
         Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych zgodnie z naszą{' '}
-        <Link to={`/${locale}/privacy-policy`} className="underline hover:text-white/50">Polityką Prywatności</Link>.
+        <Link to={`/${locale}/privacy-policy`} className="underline hover:text-white/70">Polityką Prywatności</Link>.
         Administratorem danych jest Quantifier sp.&nbsp;z&nbsp;o.o.
       </p>
     </div>
