@@ -79,6 +79,7 @@ const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
   'nis2-role-i-procesy': { segment: 'events', name: 'Events' },
   'nis2-audit-ready': { segment: 'events', name: 'Events' },
   'nis2-kontrola-audyt': { segment: 'events', name: 'Events' },
+  'nis2-ksc': { segment: 'frameworks', name: 'Frameworks' },
 };
 
 // Strip tracking parameters from URL path
