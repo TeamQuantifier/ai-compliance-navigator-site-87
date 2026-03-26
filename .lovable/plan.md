@@ -1,82 +1,57 @@
 
 
-## Analysis
+## Issues and Fixes
 
-**Current state of NIS2-KSC**: Every section uses dark backgrounds (`bg-slate-950`, `bg-slate-900`, `bg-slate-800`). All text is white/white-opacity.
+### 1. Hero — too much empty dark space
+The hero has `min-h-[90vh]` which creates excessive dark padding. Reduce to `min-h-[70vh]` and decrease vertical padding from `py-28` to `py-20`.
 
-**Rest of the site**: Dark hero → light body sections (`bg-white`, `bg-slate-50`) with dark text → dark CTA at the bottom. This is the standard pattern on Index, About, Frameworks, etc.
+### 2. Urgency section — gray text on dark background
+The Urgency section still uses `bg-slate-800 text-white` but the bullet text was changed to `text-slate-600` (dark gray on dark bg = unreadable). Fix: change entire section to light theme (`bg-slate-50`) with dark text throughout, matching the plan that was approved.
 
-**NIS2-KSC sections to restyle**:
+### 3. Mockup invisible elements in Solution section
+The `Nis2PlatformMockups` component uses dark internal styling (`bg-white/[0.02]`, `text-white/40`, `border-white/10`) which was designed for dark backgrounds. Now that it sits on a light `bg-slate-50` section, elements are invisible. Fix: wrap the mockup in a dark container (`bg-slate-900 rounded-2xl`) so its internal dark-themed UI remains visible with proper contrast.
 
-| Section | Current | Proposed |
-|---------|---------|----------|
-| Hero | `bg-slate-950` (dark) | Keep dark — matches site standard |
-| Urgency | `bg-slate-800` | Light — `bg-slate-50` with dark text |
-| Problem | `bg-slate-800` | Light — `bg-white` with dark text |
-| Solution (AI-native platforma) | `bg-slate-900` | Light — `bg-slate-50` with dark text |
-| 4 Steps | `bg-slate-950` | Light — `bg-white` with dark text |
-| Auditor | `bg-slate-900` | Light — `bg-slate-50` with dark text |
-| Continuous Compliance | `bg-slate-950` | Light — `bg-white` with dark text |
-| Final CTA | `bg-slate-950` | Keep dark — matches CtaSection pattern |
-| StickyCta (floating bar) | Dark | Keep dark — floating overlay |
+### 4. Comprehensive SEO optimization
+The page currently has only a basic `<Helmet>` with title and description. It needs full SEO treatment since it will replace `/nis2`:
 
-## Plan
+**File: `src/pages/seo-landing/Nis2Ksc.tsx`**
+- Replace basic `<Helmet>` with comprehensive SEO: canonical URL, hreflang, robots, OG tags, Twitter cards, JSON-LD schemas (SoftwareApplication, BreadcrumbList, FAQPage)
+- Add `window.prerenderReady = true` signal in useEffect
 
-### File: `src/pages/seo-landing/Nis2Ksc.tsx`
+**File: `supabase/functions/sitemap/index.ts`**
+- Add `/nis2-ksc` to static pages with `priority: 0.9`, `changefreq: 'weekly'`
 
-1. **Update `Section` wrapper** — change the two variants:
-   - `dark=true` → `bg-white text-foreground`
-   - `dark=false` → `bg-slate-50 text-foreground`
-   - (Hero and Final CTA are standalone sections, not using this wrapper)
+**File: `supabase/functions/llms-txt/index.ts`**
+- Add NIS2-KSC landing page reference in the static sections
 
-2. **Urgency section** (line ~429) — change from `bg-slate-800 text-white` to `bg-slate-50 text-foreground`. Update all text colors:
-   - Headings: `text-foreground` (dark)
-   - Body text: `text-slate-600` instead of `text-white/80`
-   - Red icon accents stay the same
-   - Button: adjust from red/dark to match light theme
+**File: `src/components/PageTemplate.tsx`**
+- Add `nis2-ksc` to `SEGMENT_NAME_MAP` and `SEGMENT_PARENT_MAP` for breadcrumb support
 
-3. **Problem section** (line ~487) — change from `bg-slate-800 text-white` to `bg-white text-foreground`. Update:
-   - Problem cards: `border-red-200 bg-red-50` instead of `border-red-500/20 bg-red-500/5`
-   - Text: `text-slate-700` instead of `text-white/70`
-   - Info box: `border-primary/20 bg-primary/5` stays, text becomes `text-slate-700`
+---
 
-4. **Solution section** (uses `Section dark={false}`) — will become `bg-slate-50`. Update:
-   - Bullet point text: `text-slate-600` instead of `text-white/70`
-   - Section header text: `text-foreground` + `text-slate-500`
+### Technical Details
 
-5. **4 Steps section** (uses `Section` default) — becomes `bg-white`. Update:
-   - Step indicators: dark-adapted colors (borders become `border-slate-200`, text `text-slate-400`)
-   - Detail panel: `border-slate-200 bg-slate-50` instead of `border-white/10 bg-white/[0.03]`
-   - All white text → dark equivalents
+**Hero (line 368):** Change `min-h-[90vh]` → `min-h-[70vh]`, `py-28` → `py-20`
 
-6. **Auditor section** (uses `Section dark={false}`) — becomes `bg-slate-50`. Update text colors to dark equivalents. Green accents remain.
+**Urgency (lines 429-484):** Change `bg-slate-800 text-white` → `bg-slate-50 text-foreground`. All bullet text stays `text-slate-600` (now readable on light bg). Button: `bg-red-500 hover:bg-red-600 text-white`.
 
-7. **Continuous Compliance section** (uses `Section`) — becomes `bg-white`. Update cards: `border-slate-200 bg-white` with hover `border-primary/30`.
+**Mockup wrapper (line 562-564):** Wrap `<Nis2PlatformMockups />` in `<div className="bg-slate-900 rounded-2xl">` so its dark-themed UI has proper contrast.
 
-8. **FeatureCard component** (line ~104) — update for light theme:
-   - Border: `border-slate-200` instead of `border-white/10`
-   - Background: `bg-white` instead of `bg-white/[0.03]`
-   - Text: `text-slate-600` instead of `text-white/60`
+**SEO in Nis2Ksc.tsx — replace Helmet block with:**
+- `<title>` with brand suffix
+- `<meta name="description">` optimized (under 160 chars)
+- `<meta name="robots" content="index, follow">`
+- Canonical: `https://quantifier.ai/{locale}/nis2-ksc/`
+- Hreflang for en, pl-PL, cs-CZ + x-default
+- OG tags (title, description, url, type, image, locale)
+- Twitter cards
+- JSON-LD: `SoftwareApplication` schema
+- JSON-LD: `BreadcrumbList` (Home > Frameworks > NIS2 KSC)
+- `window.prerenderReady = true` in useEffect
 
-9. **FrameworkBadge** (line ~96) — update for light context in non-hero areas, or leave as-is since it's only used in hero.
+**Sitemap:** Add `{ path: '/nis2-ksc', changefreq: 'weekly', priority: '0.9', lastmod: '2026-03-26' }`
 
-10. **ImplementationSteps** — the most complex update:
-    - Connector line: `bg-slate-200` instead of `bg-white/10`
-    - Step circles inactive: `border-slate-300 text-slate-400`
-    - Step titles: `text-foreground` / `text-slate-400`
-    - Detail panel: light card styling
-    - Detail tags: `border-slate-200 bg-slate-100 text-slate-600`
-    - Step number watermark: `text-slate-100` instead of `text-white/5`
+**llms-txt:** Add NIS2-KSC landing page entry in framework/landing pages section
 
-11. **Nis2PlatformMockups** — this component already has its own dark styling internally; it should keep its dark mockup appearance (it represents a product screenshot). No changes needed.
-
-### Alternating pattern
-Sections alternate `bg-white` and `bg-slate-50` to create visual separation, matching the rest of the site.
-
-### No changes to
-- Hero section (stays dark)
-- Final CTA section (stays dark — standard pattern)
-- StickyCta bar (stays dark — floating overlay)
-- HeroContactForm (used in dark hero and dark final CTA)
-- Nis2PlatformMockups component (product mockup keeps its own styling)
+**PageTemplate.tsx:** Add `'nis2-ksc': 'NIS2 KSC'` to `SEGMENT_NAME_MAP`
 
