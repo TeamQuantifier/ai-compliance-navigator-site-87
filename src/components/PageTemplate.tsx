@@ -46,6 +46,7 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'nis2-role-i-procesy': 'NIS2 — role i procesy',
   'nis2-audit-ready': 'NIS2 — audit-ready',
   'nis2-kontrola-audyt': 'NIS2 — kontrola i audyt',
+  'nis2-ksc': 'NIS2 KSC',
 };
 
 // Parent category mapping for 3-level breadcrumbs
@@ -78,6 +79,7 @@ const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
   'nis2-role-i-procesy': { segment: 'events', name: 'Events' },
   'nis2-audit-ready': { segment: 'events', name: 'Events' },
   'nis2-kontrola-audyt': { segment: 'events', name: 'Events' },
+  'nis2-ksc': { segment: 'frameworks', name: 'Frameworks' },
 };
 
 // Strip tracking parameters from URL path

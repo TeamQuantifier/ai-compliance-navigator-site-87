@@ -53,6 +53,7 @@ const staticPages = [
   { path: '/cybersecurity-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-19' },
   { path: '/events', changefreq: 'weekly', priority: '0.8', lastmod: '2026-02-24' },
   { path: '/events/nis2-w-polsce', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-24' },
+  { path: '/nis2-ksc', changefreq: 'weekly', priority: '0.9', lastmod: '2026-03-26' },
 ];
 
 const locales = ['en', 'pl', 'cs'];

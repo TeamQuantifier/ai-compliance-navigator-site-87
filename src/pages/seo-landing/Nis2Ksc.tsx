@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
+import { SUPPORTED_LOCALES, LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
 import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -351,21 +352,114 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
 /*                         MAIN COMPONENT                            */
 /* ═══════════════════════════════════════════════════════════════════ */
 
+/* ───────────────────────── SEO Head ───────────────────────── */
+
+const BASE_URL = 'https://quantifier.ai';
+const BRAND_NAME = 'Quantifier.ai';
+
+const ensureTrailingSlash = (url: string): string => url.endsWith('/') ? url : url + '/';
+
+const Nis2KscSeoHead = ({ locale }: { locale: string }) => {
+  const canonicalUrl = ensureTrailingSlash(`${BASE_URL}/${locale}/nis2-ksc`);
+  const ogLocale = locale === 'pl' ? 'pl_PL' : locale === 'cs' ? 'cs_CZ' : 'en_US';
+
+  const title = locale === 'pl'
+    ? 'NIS2 KSC – AI-native platforma zgodności | Quantifier.ai'
+    : locale === 'cs'
+    ? 'NIS2 ZKB – AI-native platforma shody | Quantifier.ai'
+    : 'NIS2 Compliance – AI-Native GRC Platform | Quantifier.ai';
+
+  const description = locale === 'pl'
+    ? 'Quantifier to AI-native platforma GRC, która przygotowuje organizację do audytu NIS2 i zapewnia ciągłą zgodność.'
+    : locale === 'cs'
+    ? 'Quantifier je AI-native GRC platforma, která připraví organizaci na audit NIS2 a zajistí průběžný soulad.'
+    : 'Quantifier is an AI-native GRC platform that prepares your organization for NIS2 audit and ensures continuous compliance.';
+
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: BRAND_NAME,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description,
+    url: canonicalUrl,
+    publisher: { '@type': 'Organization', name: BRAND_NAME, url: BASE_URL },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', availability: 'https://schema.org/OnlineOnly' },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Frameworks', item: `${BASE_URL}/${locale}/frameworks` },
+      { '@type': 'ListItem', position: 3, name: 'NIS2 KSC' },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Czym jest NIS2?',
+        acceptedAnswer: { '@type': 'Answer', text: 'NIS2 to dyrektywa UE rozszerzająca wymogi cyberbezpieczeństwa na podmioty kluczowe i ważne w 18 sektorach, obejmująca zarządzanie ryzykiem, raportowanie incydentów i bezpieczeństwo łańcucha dostaw.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Jakie kary grożą za brak zgodności z NIS2?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Kary za brak zgodności z NIS2 sięgają 10 mln EUR lub 2% rocznego przychodu globalnego dla podmiotów kluczowych.' },
+      },
+    ],
+  };
+
+  return (
+    <Helmet htmlAttributes={{ lang: locale }}>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={canonicalUrl} />
+      {SUPPORTED_LOCALES.map(l => (
+        <link key={l} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[l as Locale]} href={ensureTrailingSlash(`${BASE_URL}/${l}/nis2-ksc`)} />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${BASE_URL}/en/nis2-ksc`)} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={`${BASE_URL}/og-homepage.png`} />
+      <meta property="og:site_name" content={BRAND_NAME} />
+      <meta property="og:locale" content={ogLocale} />
+      {SUPPORTED_LOCALES.filter(l => l !== locale).map(l => (
+        <meta key={l} property="og:locale:alternate" content={l === 'en' ? 'en_US' : l === 'pl' ? 'pl_PL' : 'cs_CZ'} />
+      ))}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@quantifier_ai" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${BASE_URL}/og-homepage.png`} />
+      <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+    </Helmet>
+  );
+};
+
 const Nis2Ksc = () => {
   const { currentLocale } = useLanguage();
 
+  // Signal prerender readiness
+  useEffect(() => {
+    (window as any).prerenderReady = true;
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>NIS2 KSC – AI-native platforma zgodności | Quantifier</title>
-        <meta
-          name="description"
-          content="Quantifier to AI-native platforma GRC, która przygotowuje organizację do audytu NIS2 i zapewnia ciągłą zgodność. Sprawdź gotowość swojej organizacji."
-        />
-      </Helmet>
+      <Nis2KscSeoHead locale={currentLocale} />
 
       {/* ────── HERO ────── */}
-      <section className="relative min-h-[90vh] flex items-center bg-slate-950 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center bg-slate-950 overflow-hidden">
         {/* decorative orbs */}
         <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
         <div className="absolute bottom-10 right-0 h-[400px] w-[400px] rounded-full bg-secondary/10 blur-[100px]" />
@@ -381,7 +475,7 @@ const Nis2Ksc = () => {
           }}
         />
 
-        <div className="container mx-auto px-4 relative z-10 py-28">
+        <div className="container mx-auto px-4 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left column – copy */}
             <div>
@@ -426,7 +520,7 @@ const Nis2Ksc = () => {
       </section>
 
       {/* ────── URGENCY ────── */}
-      <section className="py-12 md:py-16 bg-slate-800 text-white">
+      <section className="py-12 md:py-16 bg-slate-50 text-foreground">
         <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
@@ -559,7 +653,7 @@ const Nis2Ksc = () => {
             </ul>
 
             {/* Right: Platform Mockup */}
-            <div>
+            <div className="bg-slate-900 rounded-2xl overflow-hidden">
               <Nis2PlatformMockups />
             </div>
           </div>
