@@ -84,7 +84,7 @@ const Section = ({
 }) => (
   <section
     id={id}
-    className={`py-12 md:py-16 ${dark ? 'bg-slate-950 text-white' : 'bg-slate-900 text-white'} ${className}`}
+    className={`py-12 md:py-16 ${dark ? 'bg-white text-foreground' : 'bg-slate-50 text-foreground'} ${className}`}
   >
     <div className="container mx-auto px-4">{children}</div>
   </section>
@@ -110,12 +110,12 @@ const FeatureCard = ({
   title: string;
   desc: string;
 }) => (
-  <div className="group relative rounded-xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-primary/40 hover:bg-white/[0.06]">
+  <div className="group relative rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/40 hover:shadow-md">
     <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-2.5">
       <Icon className="h-5 w-5 text-primary" />
     </div>
-    <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-    <p className="text-sm leading-relaxed text-white/60">{desc}</p>
+    <h3 className="mb-2 text-lg font-semibold text-foreground">{title}</h3>
+    <p className="text-sm leading-relaxed text-slate-600">{desc}</p>
   </div>
 );
 
@@ -167,7 +167,7 @@ const ImplementationSteps = () => {
       {/* horizontal step selector */}
       <div className="relative mb-10">
         {/* connector line */}
-        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-white/10 hidden md:block" />
+        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-slate-200 hidden md:block" />
         <div
           className="absolute top-5 left-[10%] h-px bg-primary transition-all duration-700 ease-out hidden md:block"
           style={{ width: `${(activeStep / 3) * 80}%` }}
@@ -184,7 +184,7 @@ const ImplementationSteps = () => {
                 className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 transition-all duration-500 ${
                   i <= activeStep
                     ? 'bg-primary text-white scale-110 shadow-lg shadow-primary/30'
-                    : 'border border-white/20 text-white/40 group-hover:border-white/40'
+                    : 'border border-slate-300 text-slate-400 group-hover:border-slate-400'
                 }`}
               >
                 {i < activeStep ? (
@@ -195,7 +195,7 @@ const ImplementationSteps = () => {
               </div>
               <span
                 className={`text-xs md:text-sm font-medium leading-tight transition-colors duration-300 ${
-                  i === activeStep ? 'text-white' : 'text-white/40'
+                  i === activeStep ? 'text-foreground' : 'text-slate-400'
                 }`}
               >
                 {s.title}
@@ -206,7 +206,7 @@ const ImplementationSteps = () => {
       </div>
 
       {/* animated detail panel */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] min-h-[220px]">
+      <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 min-h-[220px]">
         {implementationSteps.map((s, i) => (
           <div
             key={s.step}
@@ -227,14 +227,14 @@ const ImplementationSteps = () => {
 
               {/* content */}
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-lg">{s.desc}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-5 max-w-lg">{s.desc}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {s.details.map((d, j) => (
                     <span
                       key={d}
-                      className="inline-flex items-center gap-1.5 text-xs rounded-full border border-white/10 bg-white/5 px-3 py-1 text-white/60 transition-all duration-500"
+                      className="inline-flex items-center gap-1.5 text-xs rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-slate-600 transition-all duration-500"
                       style={{ transitionDelay: `${j * 100}ms` }}
                     >
                       <CheckCircle2 className="h-3 w-3 text-primary" />
@@ -246,7 +246,7 @@ const ImplementationSteps = () => {
 
               {/* step indicator */}
               <div className="hidden md:flex flex-col items-center gap-1 shrink-0">
-                <span className="text-4xl font-bold text-white/5">{s.step}</span>
+                <span className="text-4xl font-bold text-slate-100">{s.step}</span>
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@ const ImplementationSteps = () => {
             key={i}
             onClick={() => setActiveStep(i)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === activeStep ? 'w-8 bg-primary' : 'w-2 bg-white/20 hover:bg-white/30'
+              i === activeStep ? 'w-8 bg-primary' : 'w-2 bg-slate-200 hover:bg-slate-300'
             }`}
           />
         ))}
@@ -463,7 +463,7 @@ const Nis2Ksc = () => {
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-start gap-3">
                 <Icon className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
-                <span className="text-white/80 text-base">{text}</span>
+                <span className="text-slate-600 text-base">{text}</span>
               </div>
             ))}
           </div>
@@ -484,13 +484,13 @@ const Nis2Ksc = () => {
       </section>
 
       {/* ────── PROBLEM ────── */}
-      <section className="py-12 md:py-16 bg-slate-800 text-white">
+      <section className="py-12 md:py-16 bg-white text-foreground">
         <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Większość organizacji nie jest operacyjnie gotowa
           </h2>
-          <p className="text-white/50 mb-10 max-w-2xl">
+          <p className="text-slate-500 mb-10 max-w-2xl">
             Typowe podejście do compliance nie spełnia wymogów NIS2.
           </p>
 
@@ -505,16 +505,16 @@ const Nis2Ksc = () => {
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-3 rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-3"
+                className="flex items-center gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3"
               >
                 <XCircle className="h-4 w-4 text-red-400 shrink-0" />
-                <span className="text-sm text-white/70">{item}</span>
+                <span className="text-sm text-slate-700">{item}</span>
               </div>
             ))}
           </div>
 
           <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6">
-            <p className="text-base text-white/80 font-medium">
+            <p className="text-base text-slate-700 font-medium">
               NIS2 wymaga jednego operacyjnego systemu — nie zestawu
               rozproszonych dokumentów i arkuszy.
             </p>
@@ -533,7 +533,7 @@ const Nis2Ksc = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               AI-native platforma operacyjna dla NIS2
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-slate-500 max-w-2xl mx-auto">
               Wszystkie wymogi NIS2 w jednym systemie — od gap analysis po
               continuous compliance.
             </p>
@@ -553,7 +553,7 @@ const Nis2Ksc = () => {
               ].map(({ icon: Icon, text }, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <Icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-sm leading-relaxed text-white/70">{text}</span>
+                  <span className="text-sm leading-relaxed text-slate-600">{text}</span>
                 </li>
               ))}
             </ul>
@@ -589,7 +589,7 @@ const Nis2Ksc = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               4 kroki do zgodności z NIS2
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-slate-500 max-w-2xl mx-auto">
               Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości organizacji.
             </p>
           </div>
@@ -610,7 +610,7 @@ const Nis2Ksc = () => {
             </h2>
           </div>
 
-          <p className="text-white/60 mb-8 max-w-2xl">
+          <p className="text-slate-600 mb-8 max-w-2xl">
             Quantifier automatycznie przygotowuje kompletną dokumentację
             audytową:
           </p>
@@ -627,14 +627,14 @@ const Nis2Ksc = () => {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 py-2">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                <span className="text-white/80 text-sm">{item}</span>
+                <span className="text-slate-700 text-sm">{item}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
-            <p className="text-sm text-white/70">
-              <span className="font-semibold text-emerald-400">Highlight:</span>{' '}
+          <div className="mt-8 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
+            <p className="text-sm text-slate-700">
+              <span className="font-semibold text-emerald-600">Highlight:</span>{' '}
               Dokumentacja generowana bezpośrednio z platformy — zero ręcznego
               przygotowania.
             </p>
@@ -650,7 +650,7 @@ const Nis2Ksc = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               NIS2 wymaga ciągłej zgodności
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto">
+            <p className="text-slate-500 max-w-xl mx-auto">
               Jednorazowy audyt to za mało. NIS2 wymaga operacyjnego,
               ciągłego procesu.
             </p>
@@ -667,10 +667,10 @@ const Nis2Ksc = () => {
             ].map(({ icon: Icon, title }) => (
               <div
                 key={title}
-                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-primary/30"
+                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-primary/30 hover:shadow-sm"
               >
                 <Icon className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-sm font-medium text-white/80">
+                <span className="text-sm font-medium text-slate-700">
                   {title}
                 </span>
               </div>
