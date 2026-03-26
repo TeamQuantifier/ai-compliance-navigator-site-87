@@ -192,6 +192,7 @@ A free live webinar cycle designed for compliance officers, CISOs, IT managers, 
 const FRAMEWORKS_SHORT = `## Framework-Specific Pages
 
 - NIS2 Directive: ${BASE_URL}/en/frameworks/nis-ii/ — Cybersecurity compliance for essential and important entities under the EU NIS2 Directive, including incident reporting, risk management, and supply chain security requirements
+- NIS2 KSC Landing Page: ${BASE_URL}/en/nis2-ksc/ — Enterprise landing page for NIS2 compliance with AI-native GRC platform. Covers gap analysis, risk management, incident workflows, supply chain monitoring, and continuous compliance. Includes 4-step implementation roadmap and interactive platform mockups.
 - ISO 27001: ${BASE_URL}/en/frameworks/iso-27001/ — Information security management system (ISMS) certification, covering risk assessment, security controls, and continuous improvement
 - SOC 2: ${BASE_URL}/en/frameworks/soc/ — Service Organization Control Type I & II audits for trust service criteria: security, availability, processing integrity, confidentiality, and privacy
 - GDPR: ${BASE_URL}/en/frameworks/gdpr/ — EU General Data Protection Regulation compliance including data subject rights, consent management, DPIAs, and cross-border data transfers
