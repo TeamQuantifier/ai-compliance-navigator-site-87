@@ -31,7 +31,7 @@ const pageUrlMap: Record<string, string> = {
   'soc2-automation': 'frameworks/soc',
   'iso27001': 'frameworks/iso-27001',
   'gdpr-compliance': 'frameworks/gdpr',
-  'nis2': 'frameworks/nis-ii',
+  'nis2': 'frameworks/nis-2',
   'grc-platform': 'grc-platform',
   'product-features': 'product/features',
   'plans': 'plans',

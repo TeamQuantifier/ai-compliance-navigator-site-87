@@ -262,7 +262,7 @@
 
 [[redirects]]
   from = "/:locale/frameworks/cybersecurity/nis-ii"
-  to = "/:locale/frameworks/nis-ii/"
+  to = "/:locale/frameworks/nis-2/"
   status = 301
 
 [[redirects]]
