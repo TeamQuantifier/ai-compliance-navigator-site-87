@@ -53,7 +53,7 @@ export const Navbar = () => {
           title: t('menu.frameworks.popular.title'),
           href: '/frameworks',
           items: [
-            { title: 'NIS II', href: '/frameworks/nis-ii' },
+            { title: 'NIS 2', href: '/frameworks/nis-2' },
             { title: 'ISO 27001', href: '/frameworks/iso-27001' },
             { title: 'SOC 2', href: '/frameworks/soc' },
             { title: 'GDPR', href: '/frameworks/gdpr' },

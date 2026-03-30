@@ -35,7 +35,7 @@ const staticPages = [
   { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
   { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
   { path: '/frameworks', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-22' },
-  { path: '/frameworks/nis-ii', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-25' },
+  { path: '/frameworks/nis-2', changefreq: 'weekly', priority: '0.9', lastmod: '2026-03-30' },
   { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
@@ -53,6 +53,7 @@ const staticPages = [
   { path: '/cybersecurity-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-19' },
   { path: '/events', changefreq: 'weekly', priority: '0.8', lastmod: '2026-02-24' },
   { path: '/events/nis2-w-polsce', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-24' },
+  // nis2-ksc merged into /frameworks/nis-2
 ];
 
 const locales = ['en', 'pl', 'cs'];

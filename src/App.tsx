@@ -31,7 +31,7 @@ import ProductLevel from "./pages/frameworks/ProductLevel";
 
 // Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
-import NisII from "./pages/frameworks/cybersecurity/NisII";
+// NisII removed — replaced by Nis2Ksc
 
 import Iso27001 from "./pages/frameworks/information-security/Iso27001";
 import Iso9001 from "./pages/frameworks/information-security/Iso9001";
@@ -127,7 +127,7 @@ const MainRoutes = () => (
         
         {/* Flattened framework routes */}
         <Route path="/:locale/frameworks/soc" element={<Soc />} />
-        <Route path="/:locale/frameworks/nis-ii" element={<NisII />} />
+        <Route path="/:locale/frameworks/nis-2" element={<Nis2Ksc />} />
         <Route path="/:locale/frameworks/iso-27001" element={<Iso27001 />} />
         <Route path="/:locale/frameworks/iso-9001" element={<Iso9001 />} />
         <Route path="/:locale/frameworks/dora" element={<Dora />} />
@@ -146,7 +146,8 @@ const MainRoutes = () => (
         <Route path="/:locale/frameworks/information-security" element={<Navigate to="../frameworks" replace />} />
         <Route path="/:locale/frameworks/data-security" element={<Navigate to="../frameworks" replace />} />
         <Route path="/:locale/frameworks/cybersecurity/soc" element={<Navigate to="../../soc" replace />} />
-        <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-ii" replace />} />
+        <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-2" replace />} />
+        <Route path="/:locale/frameworks/nis-ii" element={<Navigate to="../nis-2" replace />} />
         <Route path="/:locale/frameworks/information-security/iso-27001" element={<Navigate to="../../iso-27001" replace />} />
         <Route path="/:locale/frameworks/information-security/iso-9001" element={<Navigate to="../../iso-9001" replace />} />
         <Route path="/:locale/frameworks/information-security/dora" element={<Navigate to="../../dora" replace />} />
@@ -158,9 +159,9 @@ const MainRoutes = () => (
         <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/soc" replace />} />
         <Route path="/:locale/iso27001" element={<Navigate to="frameworks/iso-27001" replace />} />
         <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
-        <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
+        <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-2" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
-        <Route path="/:locale/nis2-ksc" element={<Nis2Ksc />} />
+        <Route path="/:locale/nis2-ksc" element={<Navigate to="frameworks/nis-2" replace />} />
 
         {/* Events routes */}
         <Route path="/:locale/events" element={<EventsHub />} />

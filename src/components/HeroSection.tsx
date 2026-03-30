@@ -101,7 +101,7 @@ const HeroSection = () => {
                 <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">SOC 1/2</span>
               </Link>
               
-              <Link to={`/${currentLocale}/frameworks/nis-ii`} className="flex flex-col items-center group">
+              <Link to={`/${currentLocale}/frameworks/nis-2`} className="flex flex-col items-center group">
                 <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
                   <Network className="h-8 w-8 text-compliance-300" />
                 </div>

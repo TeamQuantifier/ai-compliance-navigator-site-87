@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
+import { SUPPORTED_LOCALES, LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
 import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -36,11 +37,13 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Nis2PlatformMockups from '@/components/mockups/Nis2PlatformMockups';
+import { useTranslation } from 'react-i18next';
 
 /* ───────────────────────── sticky CTA bar ───────────────────────── */
 
 const StickyCta = () => {
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 600);
@@ -54,14 +57,14 @@ const StickyCta = () => {
     <div className="fixed bottom-0 inset-x-0 z-50 bg-slate-950/95 backdrop-blur border-t border-white/10 py-3">
       <div className="container mx-auto px-4 flex items-center justify-between gap-4">
         <p className="text-white/80 text-sm hidden md:block">
-          NIS2 to już obowiązek prawny. Sprawdź gotowość swojej organizacji.
+          {t('nis2Ksc.stickyCta.text')}
         </p>
         <div className="flex gap-3 ml-auto">
           <Button asChild size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
-            <a href="#final-cta">Zobacz demo</a>
+            <a href="#final-cta">{t('nis2Ksc.stickyCta.demo')}</a>
           </Button>
           <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
-            <a href="#final-cta">Sprawdź gotowość na NIS2</a>
+            <a href="#final-cta">{t('nis2Ksc.stickyCta.cta')}</a>
           </Button>
         </div>
       </div>
@@ -84,7 +87,7 @@ const Section = ({
 }) => (
   <section
     id={id}
-    className={`py-12 md:py-16 ${dark ? 'bg-slate-950 text-white' : 'bg-slate-900 text-white'} ${className}`}
+    className={`py-12 md:py-16 ${dark ? 'bg-white text-foreground' : 'bg-slate-50 text-foreground'} ${className}`}
   >
     <div className="container mx-auto px-4">{children}</div>
   </section>
@@ -99,82 +102,42 @@ const FrameworkBadge = ({ label }: { label: string }) => (
   </span>
 );
 
-/* ───────────────────────── feature card ───────────────────────── */
-
-const FeatureCard = ({
-  icon: Icon,
-  title,
-  desc,
-}: {
-  icon: React.ElementType;
-  title: string;
-  desc: string;
-}) => (
-  <div className="group relative rounded-xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-primary/40 hover:bg-white/[0.06]">
-    <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-2.5">
-      <Icon className="h-5 w-5 text-primary" />
-    </div>
-    <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-    <p className="text-sm leading-relaxed text-white/60">{desc}</p>
-  </div>
-);
-
-/* ───────────────────────── animated implementation steps ───────────────────────── */
-
-const implementationSteps = [
-  {
-    icon: Upload,
-    step: '01',
-    title: 'Wgrywasz dokumenty',
-    desc: 'Importuj istniejące polityki, procedury i dokumentację. AI automatycznie rozpoznaje strukturę i mapuje treść do wymogów NIS2.',
-    details: ['Import polityk i procedur', 'Rozpoznawanie struktury dokumentów', 'Automatyczna klasyfikacja'],
-  },
-  {
-    icon: Cpu,
-    step: '02',
-    title: 'AI mapuje do NIS2',
-    desc: 'Sztuczna inteligencja analizuje dokumenty, identyfikuje luki w zgodności i generuje szczegółowy raport gap analysis.',
-    details: ['AI Gap Analysis', 'Identyfikacja luk', 'Raport zgodności z artykułami NIS2'],
-  },
-  {
-    icon: Rocket,
-    step: '03',
-    title: 'Platforma prowadzi wdrożenie',
-    desc: 'Krok po kroku przez governance, zarządzanie ryzykiem, incydenty i łańcuch dostaw — z dynamiczną roadmapą.',
-    details: ['Governance & Policies', 'Risk Management', 'Incident & Supply Chain'],
-  },
-  {
-    icon: Eye,
-    step: '04',
-    title: 'Monitorujesz zgodność',
-    desc: 'Ciągły monitoring, automatyczne alerty ryzyka i dashboard zarządu w czasie rzeczywistym.',
-    details: ['Continuous Monitoring', 'Alerty w czasie rzeczywistym', 'Dashboard zarządu'],
-  },
-];
+/* ───────────────────────── implementation steps ───────────────────────── */
 
 const ImplementationSteps = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const { t } = useTranslation();
+
+  const steps = useMemo(() => {
+    const icons = [Upload, Cpu, Rocket, Eye];
+    const stepNums = ['01', '02', '03', '04'];
+    return stepNums.map((step, i) => ({
+      icon: icons[i],
+      step,
+      title: t(`nis2Ksc.steps.items.${i}.title`),
+      desc: t(`nis2Ksc.steps.items.${i}.desc`),
+      details: [0, 1, 2].map(j => t(`nis2Ksc.steps.items.${i}.details.${j}`)),
+    }));
+  }, [t]);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % implementationSteps.length);
+      setActiveStep((prev) => (prev + 1) % steps.length);
     }, 2000);
     return () => clearInterval(id);
-  }, []);
+  }, [steps.length]);
 
   return (
     <div>
       {/* horizontal step selector */}
       <div className="relative mb-10">
-        {/* connector line */}
-        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-white/10 hidden md:block" />
+        <div className="absolute top-5 left-[10%] right-[10%] h-px bg-slate-200 hidden md:block" />
         <div
           className="absolute top-5 left-[10%] h-px bg-primary transition-all duration-700 ease-out hidden md:block"
           style={{ width: `${(activeStep / 3) * 80}%` }}
         />
-
         <div className="flex justify-between relative">
-          {implementationSteps.map((s, i) => (
+          {steps.map((s, i) => (
             <button
               key={s.step}
               onClick={() => setActiveStep(i)}
@@ -184,18 +147,14 @@ const ImplementationSteps = () => {
                 className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 transition-all duration-500 ${
                   i <= activeStep
                     ? 'bg-primary text-white scale-110 shadow-lg shadow-primary/30'
-                    : 'border border-white/20 text-white/40 group-hover:border-white/40'
+                    : 'border border-slate-300 text-slate-400 group-hover:border-slate-400'
                 }`}
               >
-                {i < activeStep ? (
-                  <CheckCircle2 className="h-5 w-5" />
-                ) : (
-                  s.step
-                )}
+                {i < activeStep ? <CheckCircle2 className="h-5 w-5" /> : s.step}
               </div>
               <span
                 className={`text-xs md:text-sm font-medium leading-tight transition-colors duration-300 ${
-                  i === activeStep ? 'text-white' : 'text-white/40'
+                  i === activeStep ? 'text-foreground' : 'text-slate-400'
                 }`}
               >
                 {s.title}
@@ -206,8 +165,8 @@ const ImplementationSteps = () => {
       </div>
 
       {/* animated detail panel */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] min-h-[220px]">
-        {implementationSteps.map((s, i) => (
+      <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 min-h-[220px]">
+        {steps.map((s, i) => (
           <div
             key={s.step}
             className={`transition-all duration-500 ease-out ${
@@ -217,24 +176,20 @@ const ImplementationSteps = () => {
             }`}
           >
             <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
-              {/* icon */}
               <div className="shrink-0">
                 <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20">
                   <s.icon className="h-7 w-7 text-primary" />
                 </div>
                 <p className="text-xs font-mono text-primary mt-2 text-center">{s.step}</p>
               </div>
-
-              {/* content */}
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-lg">{s.desc}</p>
-
+                <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-5 max-w-lg">{s.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {s.details.map((d, j) => (
                     <span
                       key={d}
-                      className="inline-flex items-center gap-1.5 text-xs rounded-full border border-white/10 bg-white/5 px-3 py-1 text-white/60 transition-all duration-500"
+                      className="inline-flex items-center gap-1.5 text-xs rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-slate-600 transition-all duration-500"
                       style={{ transitionDelay: `${j * 100}ms` }}
                     >
                       <CheckCircle2 className="h-3 w-3 text-primary" />
@@ -243,10 +198,8 @@ const ImplementationSteps = () => {
                   ))}
                 </div>
               </div>
-
-              {/* step indicator */}
               <div className="hidden md:flex flex-col items-center gap-1 shrink-0">
-                <span className="text-4xl font-bold text-white/5">{s.step}</span>
+                <span className="text-4xl font-bold text-slate-100">{s.step}</span>
               </div>
             </div>
           </div>
@@ -255,12 +208,12 @@ const ImplementationSteps = () => {
 
       {/* step dots */}
       <div className="flex justify-center gap-2 mt-6">
-        {implementationSteps.map((_, i) => (
+        {steps.map((_, i) => (
           <button
             key={i}
             onClick={() => setActiveStep(i)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === activeStep ? 'w-8 bg-primary' : 'w-2 bg-white/20 hover:bg-white/30'
+              i === activeStep ? 'w-8 bg-primary' : 'w-2 bg-slate-200 hover:bg-slate-300'
             }`}
           />
         ))}
@@ -268,12 +221,14 @@ const ImplementationSteps = () => {
     </div>
   );
 };
+
 /* ───────────────────────── hero contact form ───────────────────────── */
 
 const HeroContactForm = ({ locale }: { locale: string }) => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -286,92 +241,192 @@ const HeroContactForm = ({ locale }: { locale: string }) => {
           firstName: firstName.trim(),
           lastName: '-',
           email: email.trim(),
-          message: 'Sprawdź gotowość na NIS2 — formularz hero',
+          message: t('nis2Ksc.form.heroMessage'),
           language: locale,
           sourceUrl: window.location.href,
         },
       });
       if (error) throw error;
-      toast.success('Dziękujemy! Odezwiemy się wkrótce.');
+      toast.success(t('nis2Ksc.form.successToast'));
       setFirstName('');
       setEmail('');
     } catch {
-      toast.error('Coś poszło nie tak. Spróbuj ponownie.');
+      toast.error(t('nis2Ksc.form.errorToast'));
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="mt-10 max-w-md mx-auto rounded-xl border border-primary/30 bg-white/[0.04] p-5">
-      <h3 className="text-lg font-semibold text-white mb-1">Sprawdź gotowość na NIS2</h3>
-      <p className="text-sm text-white/50 mb-4">
-        Napiszemy do Ciebie lub zadzwoń:{' '}
+    <div className="mt-10 max-w-md mx-auto rounded-xl border border-white/20 bg-white/[0.08] backdrop-blur-sm p-5">
+      <h3 className="text-lg font-semibold text-white mb-1">{t('nis2Ksc.form.title')}</h3>
+      <p className="text-sm text-white/70 mb-4">
+        {t('nis2Ksc.form.subtitle')}{' '}
         <a href="tel:+48698759206" className="text-primary hover:underline font-medium">(+48) 698 759 206</a>
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
         <Input
           type="text"
-          placeholder="Imię"
+          placeholder={t('nis2Ksc.form.firstNamePlaceholder')}
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           required
           maxLength={50}
-          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+          className="bg-white/15 border-white/25 text-white placeholder:text-white/60 focus-visible:ring-primary"
         />
         <Input
           type="email"
-          placeholder="Email służbowy"
+          placeholder={t('nis2Ksc.form.emailPlaceholder')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
           maxLength={100}
-          className="bg-white/10 border-white/15 text-white placeholder:text-white/40 focus-visible:ring-primary"
+          className="bg-white/15 border-white/25 text-white placeholder:text-white/60 focus-visible:ring-primary"
         />
         <Button
           type="submit"
           disabled={loading}
           className="bg-primary hover:bg-primary/90 text-base px-6 whitespace-nowrap"
         >
-          {loading ? 'Wysyłam…' : 'Wyślij'}
+          {loading ? t('nis2Ksc.form.submitting') : t('nis2Ksc.form.submit')}
           {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
         </Button>
       </form>
-      <p className="text-[10px] text-white/30 mt-3 leading-relaxed">
-        Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych zgodnie z naszą{' '}
-        <Link to={`/${locale}/privacy-policy`} className="underline hover:text-white/50">Polityką Prywatności</Link>.
-        Administratorem danych jest Quantifier sp.&nbsp;z&nbsp;o.o.
+      <p className="text-[10px] text-white/50 mt-3 leading-relaxed">
+        {t('nis2Ksc.form.rodo')}{' '}
+        <Link to={`/${locale}/legal/privacy`} className="underline hover:text-white/70">{t('nis2Ksc.form.privacyPolicy')}</Link>.{' '}
+        {t('nis2Ksc.form.rodoSuffix')}
       </p>
     </div>
   );
 };
 
-
 /* ═══════════════════════════════════════════════════════════════════ */
 /*                         MAIN COMPONENT                            */
 /* ═══════════════════════════════════════════════════════════════════ */
 
+const BASE_URL = 'https://quantifier.ai';
+const BRAND_NAME = 'Quantifier.ai';
+
+const ensureTrailingSlash = (url: string): string => url.endsWith('/') ? url : url + '/';
+
+const Nis2KscSeoHead = ({ locale }: { locale: string }) => {
+  const { t } = useTranslation();
+  const canonicalUrl = ensureTrailingSlash(`${BASE_URL}/${locale}/frameworks/nis-2`);
+  const ogLocale = locale === 'pl' ? 'pl_PL' : locale === 'cs' ? 'cs_CZ' : 'en_US';
+
+  const title = locale === 'pl'
+    ? t('nis2Ksc.seo.titlePl')
+    : locale === 'cs'
+    ? t('nis2Ksc.seo.titleCs')
+    : t('nis2Ksc.seo.titleEn');
+
+  const description = locale === 'pl'
+    ? t('nis2Ksc.seo.descPl')
+    : locale === 'cs'
+    ? t('nis2Ksc.seo.descCs')
+    : t('nis2Ksc.seo.descEn');
+
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: BRAND_NAME,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description,
+    url: canonicalUrl,
+    publisher: { '@type': 'Organization', name: BRAND_NAME, url: BASE_URL },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', availability: 'https://schema.org/OnlineOnly' },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Frameworks', item: `${BASE_URL}/${locale}/frameworks` },
+      { '@type': 'ListItem', position: 3, name: 'NIS2' },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: t('nis2Ksc.seo.faq1q'),
+        acceptedAnswer: { '@type': 'Answer', text: t('nis2Ksc.seo.faq1a') },
+      },
+      {
+        '@type': 'Question',
+        name: t('nis2Ksc.seo.faq2q'),
+        acceptedAnswer: { '@type': 'Answer', text: t('nis2Ksc.seo.faq2a') },
+      },
+    ],
+  };
+
+  return (
+    <Helmet htmlAttributes={{ lang: locale }}>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={canonicalUrl} />
+      {SUPPORTED_LOCALES.map(l => (
+        <link key={l} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[l as Locale]} href={ensureTrailingSlash(`${BASE_URL}/${l}/frameworks/nis-2`)} />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${BASE_URL}/en/frameworks/nis-2`)} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={`${BASE_URL}/og-homepage.png`} />
+      <meta property="og:site_name" content={BRAND_NAME} />
+      <meta property="og:locale" content={ogLocale} />
+      {SUPPORTED_LOCALES.filter(l => l !== locale).map(l => (
+        <meta key={l} property="og:locale:alternate" content={l === 'en' ? 'en_US' : l === 'pl' ? 'pl_PL' : 'cs_CZ'} />
+      ))}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@quantifier_ai" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${BASE_URL}/og-homepage.png`} />
+      <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+    </Helmet>
+  );
+};
+
 const Nis2Ksc = () => {
   const { currentLocale } = useLanguage();
+  const { t } = useTranslation();
+
+  const urgencyIcons = [Users, Clock, Link2, ShieldAlert, FileWarning];
+  const solutionIcons = [Brain, BarChart3, Activity, Link2, FolderLock, LayoutDashboard, RefreshCcw];
+  const continuousIcons = [Eye, Search, RefreshCcw, Brain, LayoutDashboard, AlertTriangle];
+
+  // Signal prerender readiness
+  useEffect(() => {
+    (window as any).prerenderReady = true;
+  }, []);
+
+  // Cybersecurity check URL
+  const cyberCheckUrl = currentLocale === 'pl'
+    ? `/${currentLocale}/sprawdz-cyberbezpieczenstwo`
+    : currentLocale === 'cs'
+    ? `/${currentLocale}/zkontrolujte-kybernetickou-bezpecnost`
+    : `/${currentLocale}/cybersecurity-check`;
 
   return (
     <>
-      <Helmet>
-        <title>NIS2 KSC – AI-native platforma zgodności | Quantifier</title>
-        <meta
-          name="description"
-          content="Quantifier to AI-native platforma GRC, która przygotowuje organizację do audytu NIS2 i zapewnia ciągłą zgodność. Sprawdź gotowość swojej organizacji."
-        />
-      </Helmet>
+      <Nis2KscSeoHead locale={currentLocale} />
 
       {/* ────── HERO ────── */}
-      <section className="relative min-h-[90vh] flex items-center bg-slate-950 overflow-hidden">
-        {/* decorative orbs */}
+      <section className="relative bg-slate-950 overflow-hidden">
         <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
         <div className="absolute bottom-10 right-0 h-[400px] w-[400px] rounded-full bg-secondary/10 blur-[100px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-[160px]" />
-
-        {/* grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -381,44 +436,37 @@ const Nis2Ksc = () => {
           }}
         />
 
-        <div className="container mx-auto px-4 relative z-10 py-28">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left column – copy */}
+        <div className="container mx-auto px-4 relative z-10 py-12 md:py-16 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              {/* badges */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
                 <FrameworkBadge label="NIS2" />
                 <FrameworkBadge label="ISO 27001" />
                 <FrameworkBadge label="DORA" />
                 <FrameworkBadge label="GDPR" />
               </div>
 
-              {/* NIS2 signed banner */}
-              <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-8">
+              <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-400/15 border border-emerald-400/30 px-4 py-2 mb-4 md:mb-6">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span className="text-sm font-semibold text-emerald-300">Prezydent RP podpisał NIS2 — ustawa obowiązuje</span>
+                <span className="text-sm font-semibold text-emerald-300">{t('nis2Ksc.hero.bannerText')}</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
-                <span className="text-white">Twoja organizacja musi spełnić NIS2.</span>{' '}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] mb-4 md:mb-6 tracking-tight">
+                <span className="text-white">{t('nis2Ksc.hero.heading1')}</span>{' '}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Zegar tyka.
+                  {t('nis2Ksc.hero.heading2')}
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/70 mb-4 max-w-2xl leading-relaxed">
-                Quantifier to AI-native platforma, która przygotowuje organizację
-                do audytu i zapewnia ciągłą zgodność z NIS2.
+                {t('nis2Ksc.hero.subtext1')}
               </p>
-              <p className="text-base text-white/50 mb-10 max-w-2xl leading-relaxed lg:mb-0">
-                NIS2 wymaga operacyjnego zarządzania ryzykiem, incydentami,
-                governance i bezpieczeństwem dostawców. Quantifier łączy wszystko
-                w jednej platformie.
+              <p className="text-sm md:text-base text-white/50 mb-6 max-w-2xl leading-relaxed lg:mb-0">
+                {t('nis2Ksc.hero.subtext2')}
               </p>
             </div>
 
-            {/* Right column – form */}
-            <div className="lg:pt-16">
+            <div className="lg:pt-4">
               <HeroContactForm locale={currentLocale} />
             </div>
           </div>
@@ -426,179 +474,137 @@ const Nis2Ksc = () => {
       </section>
 
       {/* ────── URGENCY ────── */}
-      <section className="py-12 md:py-16 bg-slate-800 text-white">
+      <section className="py-12 md:py-16 bg-slate-50 text-foreground">
         <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="rounded-lg bg-red-500/10 p-2">
-              <AlertTriangle className="h-6 w-6 text-red-400" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              NIS2 to już obowiązek prawny
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-5 mt-10">
-            {[
-              {
-                icon: Users,
-                text: 'Osobista odpowiedzialność zarządu za cyberbezpieczeństwo',
-              },
-              {
-                icon: Clock,
-                text: 'Raportowanie incydentów w ciągu 24h / 72h',
-              },
-              {
-                icon: Link2,
-                text: 'Wymagania wobec dostawców i łańcucha dostaw',
-              },
-              {
-                icon: ShieldAlert,
-                text: 'Obowiązkowe zarządzanie ryzykiem ICT',
-              },
-              {
-                icon: FileWarning,
-                text: 'Kary do 10 mln EUR lub 2% rocznego przychodu',
-              },
-            ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-start gap-3">
-                <Icon className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
-                <span className="text-white/80 text-base">{text}</span>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="rounded-lg bg-red-500/10 p-2">
+                <AlertTriangle className="h-6 w-6 text-red-400" />
               </div>
-            ))}
-          </div>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                {t('nis2Ksc.urgency.heading')}
+              </h2>
+            </div>
 
-          <div className="mt-12">
-            <Button
-              asChild
-              className="bg-red-500/90 hover:bg-red-500 text-white"
-            >
-              <Link to={`/${currentLocale}/sprawdz-cyberbezpieczenstwo`}>
-                Sprawdź czy podlegasz NIS2
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-5 mt-10">
+              {urgencyIcons.map((Icon, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <Icon className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
+                  <span className="text-slate-600 text-base">{t(`nis2Ksc.urgency.items.${i}`)}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12">
+              <Button asChild className="bg-red-500/90 hover:bg-red-500 text-white">
+                <Link to={cyberCheckUrl}>
+                  {t('nis2Ksc.urgency.ctaText')}
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
-        </div>
         </div>
       </section>
 
       {/* ────── PROBLEM ────── */}
-      <section className="py-12 md:py-16 bg-slate-800 text-white">
+      <section className="py-12 md:py-16 bg-white text-foreground">
         <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Większość organizacji nie jest operacyjnie gotowa
-          </h2>
-          <p className="text-white/50 mb-10 max-w-2xl">
-            Typowe podejście do compliance nie spełnia wymogów NIS2.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              'Polityki w dokumentach Word',
-              'Ryzyka w arkuszach Excel',
-              'Incydenty w różnych systemach',
-              'Brak audit trail',
-              'Brak monitoringu dostawców',
-              'Brak continuous compliance',
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-3"
-              >
-                <XCircle className="h-4 w-4 text-red-400 shrink-0" />
-                <span className="text-sm text-white/70">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6">
-            <p className="text-base text-white/80 font-medium">
-              NIS2 wymaga jednego operacyjnego systemu — nie zestawu
-              rozproszonych dokumentów i arkuszy.
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t('nis2Ksc.problem.heading')}
+            </h2>
+            <p className="text-slate-500 mb-10 max-w-2xl">
+              {t('nis2Ksc.problem.subtitle')}
             </p>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[0, 1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3"
+                >
+                  <XCircle className="h-4 w-4 text-red-400 shrink-0" />
+                  <span className="text-sm text-slate-700">{t(`nis2Ksc.problem.items.${i}`)}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6">
+              <p className="text-base text-slate-700 font-medium">
+                {t('nis2Ksc.problem.callout')}
+              </p>
+            </div>
           </div>
-        </div>
         </div>
       </section>
 
       {/* ────── SOLUTION ────── */}
-      <Section id="solution" dark={false}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-widest text-primary mb-3">
-              Platforma
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              AI-native platforma operacyjna dla NIS2
-            </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Wszystkie wymogi NIS2 w jednym systemie — od gap analysis po
-              continuous compliance.
-            </p>
-          </div>
+      <section id="solution" className="py-12 md:py-16 bg-slate-950 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-14">
+              <p className="text-xs uppercase tracking-widest text-primary mb-3">
+                {t('nis2Ksc.solution.label')}
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                {t('nis2Ksc.solution.heading')}
+              </h2>
+              <p className="text-white/60 max-w-2xl mx-auto">
+                {t('nis2Ksc.solution.subtitle')}
+              </p>
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
-            {/* Left: Feature bullets */}
-            <ul className="flex flex-col justify-between py-2">
-              {[
-                { icon: Brain, text: 'AI mapowanie polityk — automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI.' },
-                { icon: BarChart3, text: 'Rejestr ryzyk NIS2 — centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2.' },
-                { icon: Activity, text: 'Workflow incydentów — zarządzanie incydentami z automatycznym raportowaniem 24h/72h.' },
-                { icon: Link2, text: 'Monitoring dostawców — ocena i ciągły monitoring bezpieczeństwa łańcucha dostaw.' },
-                { icon: FolderLock, text: 'Evidence room — centralne repozytorium dowodów i dokumentacji audytowej.' },
-                { icon: LayoutDashboard, text: 'Dashboard zarządu — przejrzysty widok stanu zgodności dla C-level i zarządu.' },
-                { icon: RefreshCcw, text: 'Continuous compliance — ciągłe monitorowanie zgodności z automatycznymi alertami.' },
-              ].map(({ icon: Icon, text }, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-sm leading-relaxed text-white/70">{text}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+              <ul className="flex flex-col justify-between py-2">
+                {solutionIcons.map((Icon, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-sm leading-relaxed text-white/70">{t(`nis2Ksc.solution.features.${i}`)}</span>
+                  </li>
+                ))}
+              </ul>
 
-            {/* Right: Platform Mockup */}
-            <div>
-              <Nis2PlatformMockups />
+              <div className="rounded-2xl overflow-hidden">
+                <Nis2PlatformMockups />
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-base px-8"
+              >
+                <Link to={`/${currentLocale}/contact`} state={{ demo: true }}>
+                  {t('nis2Ksc.solution.cta')}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
-
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-base px-8"
-            >
-              <Link to={`/${currentLocale}/contact`} state={{ demo: true }}>
-                Zobacz jak działa
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
-      </Section>
+      </section>
 
-      {/* ────── 4 STEPS TO COMPLIANCE (merged roadmap + how it works) ────── */}
+      {/* ────── 4 STEPS ────── */}
       <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-xs uppercase tracking-widest text-primary mb-3">
-              Wdrożenie
+              {t('nis2Ksc.steps.label')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              4 kroki do zgodności z NIS2
+              {t('nis2Ksc.steps.heading')}
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości organizacji.
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              {t('nis2Ksc.steps.subtitle')}
             </p>
           </div>
-
           <ImplementationSteps />
         </div>
       </Section>
 
-      {/* ────── AUDITOR SECTION ────── */}
+      {/* ────── AUDITOR ────── */}
       <Section dark={false}>
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
@@ -606,40 +612,29 @@ const Nis2Ksc = () => {
               <FileCheck className="h-6 w-6 text-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold">
-              Gdy wchodzi audytor — jesteś gotowy
+              {t('nis2Ksc.auditor.heading')}
             </h2>
           </div>
 
-          <p className="text-white/60 mb-8 max-w-2xl">
-            Quantifier automatycznie przygotowuje kompletną dokumentację
-            audytową:
+          <p className="text-slate-600 mb-8 max-w-2xl">
+            {t('nis2Ksc.auditor.subtitle')}
           </p>
 
           <div className="grid sm:grid-cols-2 gap-3">
-            {[
-              'Audit-ready polityki',
-              'Rejestr ryzyk',
-              'Log incydentów',
-              'Evidencje kontroli',
-              'Audit trail',
-              'Przypisanie odpowiedzialności',
-              'Mapowanie do artykułów NIS2',
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3 py-2">
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="flex items-center gap-3 py-2">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                <span className="text-white/80 text-sm">{item}</span>
+                <span className="text-slate-700 text-sm">{t(`nis2Ksc.auditor.items.${i}`)}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
-            <p className="text-sm text-white/70">
-              <span className="font-semibold text-emerald-400">Highlight:</span>{' '}
-              Dokumentacja generowana bezpośrednio z platformy — zero ręcznego
-              przygotowania.
+          <div className="mt-8 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
+            <p className="text-sm text-slate-700">
+              <span className="font-semibold text-emerald-600">{t('nis2Ksc.auditor.highlightLabel')}</span>{' '}
+              {t('nis2Ksc.auditor.highlight')}
             </p>
           </div>
-
         </div>
       </Section>
 
@@ -648,30 +643,22 @@ const Nis2Ksc = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              NIS2 wymaga ciągłej zgodności
+              {t('nis2Ksc.continuous.heading')}
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto">
-              Jednorazowy audyt to za mało. NIS2 wymaga operacyjnego,
-              ciągłego procesu.
+            <p className="text-slate-500 max-w-xl mx-auto">
+              {t('nis2Ksc.continuous.subtitle')}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              { icon: Eye, title: 'Ciągły monitoring' },
-              { icon: Search, title: 'Automatyczny gap analysis' },
-              { icon: RefreshCcw, title: 'Aktualizacje regulacyjne' },
-              { icon: Brain, title: 'AI rekomendacje' },
-              { icon: LayoutDashboard, title: 'Dashboard zarządu' },
-              { icon: AlertTriangle, title: 'Alerty ryzyka' },
-            ].map(({ icon: Icon, title }) => (
+            {continuousIcons.map((Icon, i) => (
               <div
-                key={title}
-                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-primary/30"
+                key={i}
+                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-primary/30 hover:shadow-sm"
               >
                 <Icon className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-sm font-medium text-white/80">
-                  {title}
+                <span className="text-sm font-medium text-slate-700">
+                  {t(`nis2Ksc.continuous.items.${i}`)}
                 </span>
               </div>
             ))}
@@ -690,11 +677,10 @@ const Nis2Ksc = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Sprawdź poziom gotowości na NIS2
+              {t('nis2Ksc.finalCta.heading')}
             </h2>
             <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-              Zacznij od bezpłatnej oceny dojrzałości i dowiedz się, co wymaga
-              natychmiastowej uwagi.
+              {t('nis2Ksc.finalCta.subtitle')}
             </p>
 
             <div className="flex justify-center">
