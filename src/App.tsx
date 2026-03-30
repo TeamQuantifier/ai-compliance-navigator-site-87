@@ -31,7 +31,7 @@ import ProductLevel from "./pages/frameworks/ProductLevel";
 
 // Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
-import NisII from "./pages/frameworks/cybersecurity/NisII";
+// NisII removed — replaced by Nis2Ksc
 
 import Iso27001 from "./pages/frameworks/information-security/Iso27001";
 import Iso9001 from "./pages/frameworks/information-security/Iso9001";
