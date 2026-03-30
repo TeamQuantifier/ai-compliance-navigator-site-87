@@ -146,7 +146,8 @@ const MainRoutes = () => (
         <Route path="/:locale/frameworks/information-security" element={<Navigate to="../frameworks" replace />} />
         <Route path="/:locale/frameworks/data-security" element={<Navigate to="../frameworks" replace />} />
         <Route path="/:locale/frameworks/cybersecurity/soc" element={<Navigate to="../../soc" replace />} />
-        <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-ii" replace />} />
+        <Route path="/:locale/frameworks/cybersecurity/nis-ii" element={<Navigate to="../../nis-2" replace />} />
+        <Route path="/:locale/frameworks/nis-ii" element={<Navigate to="../nis-2" replace />} />
         <Route path="/:locale/frameworks/information-security/iso-27001" element={<Navigate to="../../iso-27001" replace />} />
         <Route path="/:locale/frameworks/information-security/iso-9001" element={<Navigate to="../../iso-9001" replace />} />
         <Route path="/:locale/frameworks/information-security/dora" element={<Navigate to="../../dora" replace />} />
