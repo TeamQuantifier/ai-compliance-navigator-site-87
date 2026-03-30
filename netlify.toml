@@ -214,17 +214,29 @@
 
 [[redirects]]
   from = "/en/nis2"
-  to = "/en/frameworks/nis-ii/"
+  to = "/en/frameworks/nis-2/"
   status = 301
 
 [[redirects]]
   from = "/pl/nis2"
-  to = "/pl/frameworks/nis-ii/"
+  to = "/pl/frameworks/nis-2/"
   status = 301
 
 [[redirects]]
   from = "/cs/nis2"
-  to = "/cs/frameworks/nis-ii/"
+  to = "/cs/frameworks/nis-2/"
+  status = 301
+
+# NIS2-KSC to new canonical path
+[[redirects]]
+  from = "/:locale/nis2-ksc"
+  to = "/:locale/frameworks/nis-2/"
+  status = 301
+
+# Old nis-ii to nis-2
+[[redirects]]
+  from = "/:locale/frameworks/nis-ii"
+  to = "/:locale/frameworks/nis-2/"
   status = 301
 
 # Old nested framework paths
