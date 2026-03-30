@@ -4511,5 +4511,154 @@
       "seoTitle": "Kontrola NIS2: webinář — jak projít kontrolou",
       "seoDesc": "Bezplatný webinář: jak projít kontrolou NIS2 od A do Z. Simulace kontroly, checklist 30+ bodů, nápravný plán. Pro compliance a IT."
     }
+  },
+  "nis2Ksc": {
+    "stickyCta": {
+      "text": "NIS2 je nyní právní povinností. Zkontrolujte připravenost vaší organizace.",
+      "demo": "Zobrazit demo",
+      "cta": "Zkontrolovat připravenost na NIS2"
+    },
+    "hero": {
+      "bannerText": "Směrnice NIS2 je nyní v platnosti v celé EU",
+      "heading1": "Vaše organizace musí splnit NIS2.",
+      "heading2": "Hodiny tikají.",
+      "subtext1": "Quantifier je AI-native platforma, která připraví vaši organizaci na audit a zajistí průběžný soulad s NIS2.",
+      "subtext2": "NIS2 vyžaduje operativní řízení rizik, incidentů, governance a bezpečnost dodavatelského řetězce. Quantifier spojuje vše v jedné platformě."
+    },
+    "form": {
+      "title": "Zkontrolujte připravenost na NIS2",
+      "subtitle": "Ozveme se vám, nebo zavolejte:",
+      "firstNamePlaceholder": "Jméno",
+      "emailPlaceholder": "Pracovní e-mail",
+      "submit": "Odeslat",
+      "submitting": "Odesílám…",
+      "rodo": "Odesláním formuláře souhlasíte se zpracováním osobních údajů v souladu s naší",
+      "privacyPolicy": "Zásadami ochrany osobních údajů",
+      "rodoSuffix": "Správce údajů: Quantifier sp. z o.o.",
+      "successToast": "Děkujeme! Brzy se ozveme.",
+      "errorToast": "Něco se pokazilo. Zkuste to prosím znovu.",
+      "heroMessage": "Kontrola připravenosti na NIS2 — formulář hero"
+    },
+    "urgency": {
+      "heading": "NIS2 je nyní právní povinností",
+      "items": [
+        "Osobní odpovědnost vedení za kybernetickou bezpečnost",
+        "Hlášení incidentů do 24h / 72h",
+        "Požadavky na dodavatele a dodavatelský řetězec",
+        "Povinné řízení ICT rizik",
+        "Pokuty až 10 mil. EUR nebo 2 % ročního obratu"
+      ],
+      "ctaText": "Zjistěte, zda se na vás NIS2 vztahuje"
+    },
+    "problem": {
+      "heading": "Většina organizací není operativně připravena",
+      "subtitle": "Typický přístup ke compliance nesplňuje požadavky NIS2.",
+      "items": [
+        "Politiky v dokumentech Word",
+        "Rizika v tabulkách Excel",
+        "Incidenty v různých systémech",
+        "Chybí audit trail",
+        "Chybí monitoring dodavatelů",
+        "Chybí continuous compliance"
+      ],
+      "callout": "NIS2 vyžaduje jednotný operativní systém — ne sadu rozptýlených dokumentů a tabulek."
+    },
+    "solution": {
+      "label": "Platforma",
+      "heading": "AI-native operativní platforma pro NIS2",
+      "subtitle": "Všechny požadavky NIS2 v jednom systému — od gap analýzy po průběžný soulad.",
+      "features": [
+        "AI mapování politik — automatické mapování stávajících politik na požadavky NIS2 pomocí AI.",
+        "Registr rizik NIS2 — centrální registr rizik propojený s články směrnice NIS2.",
+        "Workflow incidentů — správa incidentů s automatickým hlášením 24h/72h.",
+        "Monitoring dodavatelů — hodnocení a průběžný monitoring bezpečnosti dodavatelského řetězce.",
+        "Evidence room — centrální úložiště auditních důkazů a dokumentace.",
+        "Dashboard vedení — přehledný pohled na stav souladu pro C-level a vedení.",
+        "Průběžný soulad — průběžné monitorování souladu s automatickými upozorněními."
+      ],
+      "cta": "Podívejte se, jak to funguje"
+    },
+    "steps": {
+      "label": "Implementace",
+      "heading": "4 kroky k souladu s NIS2",
+      "subtitle": "Roadmapa se dynamicky přizpůsobuje úrovni vyspělosti organizace.",
+      "items": [
+        {
+          "title": "Nahrajete dokumenty",
+          "desc": "Importujte stávající politiky, postupy a dokumentaci. AI automaticky rozpozná strukturu a namapuje obsah na požadavky NIS2.",
+          "details": [
+            "Import politik a postupů",
+            "Rozpoznání struktury dokumentů",
+            "Automatická klasifikace"
+          ]
+        },
+        {
+          "title": "AI mapuje na NIS2",
+          "desc": "Umělá inteligence analyzuje dokumenty, identifikuje mezery v souladu a generuje podrobnou gap analýzu.",
+          "details": [
+            "AI Gap Analysis",
+            "Identifikace mezer",
+            "Report souladu s články NIS2"
+          ]
+        },
+        {
+          "title": "Platforma vede implementaci",
+          "desc": "Krok za krokem přes governance, řízení rizik, incidenty a dodavatelský řetězec — s dynamickou roadmapou.",
+          "details": [
+            "Governance & Policies",
+            "Risk Management",
+            "Incident & Supply Chain"
+          ]
+        },
+        {
+          "title": "Monitorujete soulad",
+          "desc": "Průběžný monitoring, automatické upozornění na rizika a dashboard vedení v reálném čase.",
+          "details": [
+            "Continuous Monitoring",
+            "Upozornění v reálném čase",
+            "Dashboard vedení"
+          ]
+        }
+      ]
+    },
+    "auditor": {
+      "heading": "Když přijde auditor — jste připraveni",
+      "subtitle": "Quantifier automaticky připraví kompletní auditní dokumentaci:",
+      "items": [
+        "Audit-ready politiky",
+        "Registr rizik",
+        "Log incidentů",
+        "Evidence kontrol",
+        "Audit trail",
+        "Přiřazení odpovědností",
+        "Mapování na články NIS2"
+      ],
+      "highlight": "Dokumentace generována přímo z platformy — žádná ruční příprava.",
+      "highlightLabel": "Highlight:"
+    },
+    "continuous": {
+      "heading": "NIS2 vyžaduje průběžný soulad",
+      "subtitle": "Jednorázový audit nestačí. NIS2 vyžaduje operativní, průběžný proces.",
+      "items": [
+        "Průběžný monitoring",
+        "Automatická gap analýza",
+        "Regulatorní aktualizace",
+        "AI doporučení",
+        "Dashboard vedení",
+        "Upozornění na rizika"
+      ]
+    },
+    "finalCta": {
+      "heading": "Zkontrolujte úroveň připravenosti na NIS2",
+      "subtitle": "Začněte bezplatným hodnocením vyspělosti a zjistěte, co vyžaduje okamžitou pozornost."
+    },
+    "seo": {
+      "titleCs": "NIS2 ZKB – AI-native platforma shody | Quantifier.ai",
+      "descCs": "Quantifier je AI-native GRC platforma, která připraví organizaci na audit NIS2 a zajistí průběžný soulad.",
+      "faq1q": "Co je NIS2?",
+      "faq1a": "NIS2 je směrnice EU rozšiřující požadavky na kybernetickou bezpečnost na klíčové a důležité subjekty v 18 sektorech, pokrývající řízení rizik, hlášení incidentů a bezpečnost dodavatelského řetězce.",
+      "faq2q": "Jaké hrozí sankce za nesoulad s NIS2?",
+      "faq2a": "Sankce za nesoulad s NIS2 mohou dosáhnout 10 mil. EUR nebo 2 % globálního ročního obratu pro klíčové subjekty."
+    }
   }
 }

@@ -5499,5 +5499,154 @@
       "seoTitle": "Kontrola NIS2: webinar — jak przejść kontrolę",
       "seoDesc": "Bezpłatny webinar: jak przejść kontrolę NIS2 od A do Z. Symulacja kontroli, checklista 30+ punktów, plan naprawczy. Dla compliance i IT."
     }
+  },
+  "nis2Ksc": {
+    "stickyCta": {
+      "text": "NIS2 to już obowiązek prawny. Sprawdź gotowość swojej organizacji.",
+      "demo": "Zobacz demo",
+      "cta": "Sprawdź gotowość na NIS2"
+    },
+    "hero": {
+      "bannerText": "Prezydent RP podpisał NIS2 — ustawa obowiązuje",
+      "heading1": "Twoja organizacja musi spełnić NIS2.",
+      "heading2": "Zegar tyka.",
+      "subtext1": "Quantifier to AI-native platforma, która przygotowuje organizację do audytu i zapewnia ciągłą zgodność z NIS2.",
+      "subtext2": "NIS2 wymaga operacyjnego zarządzania ryzykiem, incydentami, governance i bezpieczeństwem dostawców. Quantifier łączy wszystko w jednej platformie."
+    },
+    "form": {
+      "title": "Sprawdź gotowość na NIS2",
+      "subtitle": "Napiszemy do Ciebie lub zadzwoń:",
+      "firstNamePlaceholder": "Imię",
+      "emailPlaceholder": "Email służbowy",
+      "submit": "Wyślij",
+      "submitting": "Wysyłam…",
+      "rodo": "Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych zgodnie z naszą",
+      "privacyPolicy": "Polityką Prywatności",
+      "rodoSuffix": "Administratorem danych jest Quantifier sp. z o.o.",
+      "successToast": "Dziękujemy! Odezwiemy się wkrótce.",
+      "errorToast": "Coś poszło nie tak. Spróbuj ponownie.",
+      "heroMessage": "Sprawdź gotowość na NIS2 — formularz hero"
+    },
+    "urgency": {
+      "heading": "NIS2 to już obowiązek prawny",
+      "items": [
+        "Osobista odpowiedzialność zarządu za cyberbezpieczeństwo",
+        "Raportowanie incydentów w ciągu 24h / 72h",
+        "Wymagania wobec dostawców i łańcucha dostaw",
+        "Obowiązkowe zarządzanie ryzykiem ICT",
+        "Kary do 10 mln EUR lub 2% rocznego przychodu"
+      ],
+      "ctaText": "Sprawdź czy podlegasz NIS2"
+    },
+    "problem": {
+      "heading": "Większość organizacji nie jest operacyjnie gotowa",
+      "subtitle": "Typowe podejście do compliance nie spełnia wymogów NIS2.",
+      "items": [
+        "Polityki w dokumentach Word",
+        "Ryzyka w arkuszach Excel",
+        "Incydenty w różnych systemach",
+        "Brak audit trail",
+        "Brak monitoringu dostawców",
+        "Brak continuous compliance"
+      ],
+      "callout": "NIS2 wymaga jednego operacyjnego systemu — nie zestawu rozproszonych dokumentów i arkuszy."
+    },
+    "solution": {
+      "label": "Platforma",
+      "heading": "AI-native platforma operacyjna dla NIS2",
+      "subtitle": "Wszystkie wymogi NIS2 w jednym systemie — od gap analysis po continuous compliance.",
+      "features": [
+        "AI mapowanie polityk — automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI.",
+        "Rejestr ryzyk NIS2 — centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2.",
+        "Workflow incydentów — zarządzanie incydentami z automatycznym raportowaniem 24h/72h.",
+        "Monitoring dostawców — ocena i ciągły monitoring bezpieczeństwa łańcucha dostaw.",
+        "Evidence room — centralne repozytorium dowodów i dokumentacji audytowej.",
+        "Dashboard zarządu — przejrzysty widok stanu zgodności dla C-level i zarządu.",
+        "Continuous compliance — ciągłe monitorowanie zgodności z automatycznymi alertami."
+      ],
+      "cta": "Zobacz jak działa"
+    },
+    "steps": {
+      "label": "Wdrożenie",
+      "heading": "4 kroki do zgodności z NIS2",
+      "subtitle": "Roadmapa dopasowuje się dynamicznie do poziomu dojrzałości organizacji.",
+      "items": [
+        {
+          "title": "Wgrywasz dokumenty",
+          "desc": "Importuj istniejące polityki, procedury i dokumentację. AI automatycznie rozpoznaje strukturę i mapuje treść do wymogów NIS2.",
+          "details": [
+            "Import polityk i procedur",
+            "Rozpoznawanie struktury dokumentów",
+            "Automatyczna klasyfikacja"
+          ]
+        },
+        {
+          "title": "AI mapuje do NIS2",
+          "desc": "Sztuczna inteligencja analizuje dokumenty, identyfikuje luki w zgodności i generuje szczegółowy raport gap analysis.",
+          "details": [
+            "AI Gap Analysis",
+            "Identyfikacja luk",
+            "Raport zgodności z artykułami NIS2"
+          ]
+        },
+        {
+          "title": "Platforma prowadzi wdrożenie",
+          "desc": "Krok po kroku przez governance, zarządzanie ryzykiem, incydenty i łańcuch dostaw — z dynamiczną roadmapą.",
+          "details": [
+            "Governance & Policies",
+            "Risk Management",
+            "Incident & Supply Chain"
+          ]
+        },
+        {
+          "title": "Monitorujesz zgodność",
+          "desc": "Ciągły monitoring, automatyczne alerty ryzyka i dashboard zarządu w czasie rzeczywistym.",
+          "details": [
+            "Continuous Monitoring",
+            "Alerty w czasie rzeczywistym",
+            "Dashboard zarządu"
+          ]
+        }
+      ]
+    },
+    "auditor": {
+      "heading": "Gdy wchodzi audytor — jesteś gotowy",
+      "subtitle": "Quantifier automatycznie przygotowuje kompletną dokumentację audytową:",
+      "items": [
+        "Audit-ready polityki",
+        "Rejestr ryzyk",
+        "Log incydentów",
+        "Evidencje kontroli",
+        "Audit trail",
+        "Przypisanie odpowiedzialności",
+        "Mapowanie do artykułów NIS2"
+      ],
+      "highlight": "Dokumentacja generowana bezpośrednio z platformy — zero ręcznego przygotowania.",
+      "highlightLabel": "Highlight:"
+    },
+    "continuous": {
+      "heading": "NIS2 wymaga ciągłej zgodności",
+      "subtitle": "Jednorazowy audyt to za mało. NIS2 wymaga operacyjnego, ciągłego procesu.",
+      "items": [
+        "Ciągły monitoring",
+        "Automatyczny gap analysis",
+        "Aktualizacje regulacyjne",
+        "AI rekomendacje",
+        "Dashboard zarządu",
+        "Alerty ryzyka"
+      ]
+    },
+    "finalCta": {
+      "heading": "Sprawdź poziom gotowości na NIS2",
+      "subtitle": "Zacznij od bezpłatnej oceny dojrzałości i dowiedz się, co wymaga natychmiastowej uwagi."
+    },
+    "seo": {
+      "titlePl": "NIS2 KSC – AI-native platforma zgodności | Quantifier.ai",
+      "descPl": "Quantifier to AI-native platforma GRC, która przygotowuje organizację do audytu NIS2 i zapewnia ciągłą zgodność.",
+      "faq1q": "Czym jest NIS2?",
+      "faq1a": "NIS2 to dyrektywa UE rozszerzająca wymogi cyberbezpieczeństwa na podmioty kluczowe i ważne w 18 sektorach, obejmująca zarządzanie ryzykiem, raportowanie incydentów i bezpieczeństwo łańcucha dostaw.",
+      "faq2q": "Jakie kary grożą za brak zgodności z NIS2?",
+      "faq2a": "Kary za brak zgodności z NIS2 sięgają 10 mln EUR lub 2% rocznego przychodu globalnego dla podmiotów kluczowych."
+    }
   }
 }
