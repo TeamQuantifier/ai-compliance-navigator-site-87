@@ -618,60 +618,62 @@ const Nis2Ksc = () => {
       </section>
 
       {/* ────── SOLUTION ────── */}
-      <Section id="solution" dark={false}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-widest text-primary mb-3">
-              Platforma
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              AI-native platforma operacyjna dla NIS2
-            </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Wszystkie wymogi NIS2 w jednym systemie — od gap analysis po
-              continuous compliance.
-            </p>
-          </div>
+      <section id="solution" className="py-12 md:py-16 bg-slate-950 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-14">
+              <p className="text-xs uppercase tracking-widest text-primary mb-3">
+                Platforma
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                AI-native platforma operacyjna dla NIS2
+              </h2>
+              <p className="text-white/60 max-w-2xl mx-auto">
+                Wszystkie wymogi NIS2 w jednym systemie — od gap analysis po
+                continuous compliance.
+              </p>
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
-            {/* Left: Feature bullets */}
-            <ul className="flex flex-col justify-between py-2">
-              {[
-                { icon: Brain, text: 'AI mapowanie polityk — automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI.' },
-                { icon: BarChart3, text: 'Rejestr ryzyk NIS2 — centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2.' },
-                { icon: Activity, text: 'Workflow incydentów — zarządzanie incydentami z automatycznym raportowaniem 24h/72h.' },
-                { icon: Link2, text: 'Monitoring dostawców — ocena i ciągły monitoring bezpieczeństwa łańcucha dostaw.' },
-                { icon: FolderLock, text: 'Evidence room — centralne repozytorium dowodów i dokumentacji audytowej.' },
-                { icon: LayoutDashboard, text: 'Dashboard zarządu — przejrzysty widok stanu zgodności dla C-level i zarządu.' },
-                { icon: RefreshCcw, text: 'Continuous compliance — ciągłe monitorowanie zgodności z automatycznymi alertami.' },
-              ].map(({ icon: Icon, text }, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-sm leading-relaxed text-slate-600">{text}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+              {/* Left: Feature bullets */}
+              <ul className="flex flex-col justify-between py-2">
+                {[
+                  { icon: Brain, text: 'AI mapowanie polityk — automatyczne mapowanie istniejących polityk do wymogów NIS2 z wykorzystaniem AI.' },
+                  { icon: BarChart3, text: 'Rejestr ryzyk NIS2 — centralny rejestr ryzyk powiązany z artykułami dyrektywy NIS2.' },
+                  { icon: Activity, text: 'Workflow incydentów — zarządzanie incydentami z automatycznym raportowaniem 24h/72h.' },
+                  { icon: Link2, text: 'Monitoring dostawców — ocena i ciągły monitoring bezpieczeństwa łańcucha dostaw.' },
+                  { icon: FolderLock, text: 'Evidence room — centralne repozytorium dowodów i dokumentacji audytowej.' },
+                  { icon: LayoutDashboard, text: 'Dashboard zarządu — przejrzysty widok stanu zgodności dla C-level i zarządu.' },
+                  { icon: RefreshCcw, text: 'Continuous compliance — ciągłe monitorowanie zgodności z automatycznymi alertami.' },
+                ].map(({ icon: Icon, text }, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-sm leading-relaxed text-white/70">{text}</span>
+                  </li>
+                ))}
+              </ul>
 
-            {/* Right: Platform Mockup */}
-            <div className="bg-slate-900 rounded-2xl overflow-hidden">
-              <Nis2PlatformMockups />
+              {/* Right: Platform Mockup */}
+              <div className="rounded-2xl overflow-hidden">
+                <Nis2PlatformMockups />
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-base px-8"
+              >
+                <Link to={`/${currentLocale}/contact`} state={{ demo: true }}>
+                  Zobacz jak działa
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
-
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-base px-8"
-            >
-              <Link to={`/${currentLocale}/contact`} state={{ demo: true }}>
-                Zobacz jak działa
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
-      </Section>
+      </section>
 
       {/* ────── 4 STEPS TO COMPLIANCE (merged roadmap + how it works) ────── */}
       <Section>
