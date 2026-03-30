@@ -24,6 +24,7 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'iso-27001': 'ISO 27001',
   'iso-9001': 'ISO 9001',
   'nis-ii': 'NIS2',
+  'nis-2': 'NIS2',
   'soc': 'SOC 2',
   'gdpr': 'GDPR',
   'dora': 'DORA',
