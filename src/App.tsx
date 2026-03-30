@@ -127,7 +127,7 @@ const MainRoutes = () => (
         
         {/* Flattened framework routes */}
         <Route path="/:locale/frameworks/soc" element={<Soc />} />
-        <Route path="/:locale/frameworks/nis-ii" element={<NisII />} />
+        <Route path="/:locale/frameworks/nis-2" element={<Nis2Ksc />} />
         <Route path="/:locale/frameworks/iso-27001" element={<Iso27001 />} />
         <Route path="/:locale/frameworks/iso-9001" element={<Iso9001 />} />
         <Route path="/:locale/frameworks/dora" element={<Dora />} />
