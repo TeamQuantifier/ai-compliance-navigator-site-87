@@ -35,7 +35,7 @@ const staticPages = [
   { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
   { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
   { path: '/frameworks', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-22' },
-  { path: '/frameworks/nis-ii', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-25' },
+  { path: '/frameworks/nis-2', changefreq: 'weekly', priority: '0.9', lastmod: '2026-03-30' },
   { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
