@@ -34,7 +34,7 @@ const Frameworks = () => {
       },
       icon: Network,
       frameworks: [
-        { name: { pl: "NIS II", en: "NIS II", cs: "NIS II" }, href: `/${currentLocale}/frameworks/nis-ii` },
+        { name: { pl: "NIS 2", en: "NIS 2", cs: "NIS 2" }, href: `/${currentLocale}/frameworks/nis-2` },
         { name: { pl: "SOC I & SOC II", en: "SOC I & SOC II", cs: "SOC I & SOC II" }, href: `/${currentLocale}/frameworks/soc` }
       ]
     },

@@ -159,9 +159,9 @@ const MainRoutes = () => (
         <Route path="/:locale/soc2-automation" element={<Navigate to="frameworks/soc" replace />} />
         <Route path="/:locale/iso27001" element={<Navigate to="frameworks/iso-27001" replace />} />
         <Route path="/:locale/gdpr-compliance" element={<Navigate to="frameworks/gdpr" replace />} />
-        <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-ii" replace />} />
+        <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-2" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
-        <Route path="/:locale/nis2-ksc" element={<Nis2Ksc />} />
+        <Route path="/:locale/nis2-ksc" element={<Navigate to="frameworks/nis-2" replace />} />
 
         {/* Events routes */}
         <Route path="/:locale/events" element={<EventsHub />} />

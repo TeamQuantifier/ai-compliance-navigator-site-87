@@ -55,6 +55,7 @@ const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
   'iso-27001': { segment: 'frameworks', name: 'Frameworks' },
   'iso-9001': { segment: 'frameworks', name: 'Frameworks' },
   'nis-ii': { segment: 'frameworks', name: 'Frameworks' },
+  'nis-2': { segment: 'frameworks', name: 'Frameworks' },
   'soc': { segment: 'frameworks', name: 'Frameworks' },
   'gdpr': { segment: 'frameworks', name: 'Frameworks' },
   'dora': { segment: 'frameworks', name: 'Frameworks' },

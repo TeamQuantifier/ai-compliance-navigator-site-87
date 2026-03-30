@@ -101,7 +101,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/frameworks/nis-ii`} className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to={`/${currentLocale}/frameworks/nis-2`} className="text-muted-foreground hover:text-primary transition-colors">
                   {t('footer.solutions.nis2')}
                 </Link>
               </li>
