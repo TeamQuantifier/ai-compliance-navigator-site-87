@@ -5678,5 +5678,154 @@
       "seoTitle": "NIS2 inspection: webinar — how to pass an inspection",
       "seoDesc": "Free webinar: how to pass a NIS2 inspection from A to Z. Inspection simulation, 30+ point checklist, remediation plan. For compliance and IT."
     }
+  },
+  "nis2Ksc": {
+    "stickyCta": {
+      "text": "NIS2 is now a legal obligation. Check your organisation's readiness.",
+      "demo": "See demo",
+      "cta": "Check NIS2 readiness"
+    },
+    "hero": {
+      "bannerText": "NIS2 directive is now in force across the EU",
+      "heading1": "Your organisation must comply with NIS2.",
+      "heading2": "The clock is ticking.",
+      "subtext1": "Quantifier is an AI-native platform that prepares your organisation for audit and ensures continuous NIS2 compliance.",
+      "subtext2": "NIS2 requires operational risk management, incident handling, governance and supply chain security. Quantifier brings everything together in one platform."
+    },
+    "form": {
+      "title": "Check your NIS2 readiness",
+      "subtitle": "We'll get in touch, or call us:",
+      "firstNamePlaceholder": "First name",
+      "emailPlaceholder": "Work email",
+      "submit": "Submit",
+      "submitting": "Sending…",
+      "rodo": "By submitting this form you consent to personal data processing in accordance with our",
+      "privacyPolicy": "Privacy Policy",
+      "rodoSuffix": "Data controller: Quantifier sp. z o.o.",
+      "successToast": "Thank you! We'll be in touch soon.",
+      "errorToast": "Something went wrong. Please try again.",
+      "heroMessage": "Check NIS2 readiness — hero form"
+    },
+    "urgency": {
+      "heading": "NIS2 is now a legal obligation",
+      "items": [
+        "Personal liability of management for cybersecurity",
+        "Incident reporting within 24h / 72h",
+        "Requirements for suppliers and the supply chain",
+        "Mandatory ICT risk management",
+        "Fines up to EUR 10M or 2% of annual revenue"
+      ],
+      "ctaText": "Check if NIS2 applies to you"
+    },
+    "problem": {
+      "heading": "Most organisations are not operationally ready",
+      "subtitle": "A typical approach to compliance does not meet NIS2 requirements.",
+      "items": [
+        "Policies in Word documents",
+        "Risks in Excel spreadsheets",
+        "Incidents across different systems",
+        "No audit trail",
+        "No supplier monitoring",
+        "No continuous compliance"
+      ],
+      "callout": "NIS2 requires a single operational system — not a set of scattered documents and spreadsheets."
+    },
+    "solution": {
+      "label": "Platform",
+      "heading": "AI-native operational platform for NIS2",
+      "subtitle": "All NIS2 requirements in one system — from gap analysis to continuous compliance.",
+      "features": [
+        "AI policy mapping — automatic mapping of existing policies to NIS2 requirements using AI.",
+        "NIS2 risk register — central risk register linked to NIS2 directive articles.",
+        "Incident workflows — incident management with automatic 24h/72h reporting.",
+        "Supplier monitoring — assessment and continuous monitoring of supply chain security.",
+        "Evidence room — central repository of audit evidence and documentation.",
+        "Board dashboard — clear compliance status view for C-level and the board.",
+        "Continuous compliance — ongoing compliance monitoring with automatic alerts."
+      ],
+      "cta": "See how it works"
+    },
+    "steps": {
+      "label": "Implementation",
+      "heading": "4 steps to NIS2 compliance",
+      "subtitle": "The roadmap dynamically adapts to your organisation's maturity level.",
+      "items": [
+        {
+          "title": "Upload documents",
+          "desc": "Import existing policies, procedures and documentation. AI automatically recognises the structure and maps content to NIS2 requirements.",
+          "details": [
+            "Policy & procedure import",
+            "Document structure recognition",
+            "Automatic classification"
+          ]
+        },
+        {
+          "title": "AI maps to NIS2",
+          "desc": "Artificial intelligence analyses documents, identifies compliance gaps and generates a detailed gap analysis report.",
+          "details": [
+            "AI Gap Analysis",
+            "Gap identification",
+            "NIS2 article compliance report"
+          ]
+        },
+        {
+          "title": "Platform guides implementation",
+          "desc": "Step by step through governance, risk management, incidents and supply chain — with a dynamic roadmap.",
+          "details": [
+            "Governance & Policies",
+            "Risk Management",
+            "Incident & Supply Chain"
+          ]
+        },
+        {
+          "title": "Monitor compliance",
+          "desc": "Continuous monitoring, automatic risk alerts and a real-time board dashboard.",
+          "details": [
+            "Continuous Monitoring",
+            "Real-time alerts",
+            "Board dashboard"
+          ]
+        }
+      ]
+    },
+    "auditor": {
+      "heading": "When the auditor walks in — you're ready",
+      "subtitle": "Quantifier automatically prepares complete audit documentation:",
+      "items": [
+        "Audit-ready policies",
+        "Risk register",
+        "Incident log",
+        "Control evidence",
+        "Audit trail",
+        "Responsibility assignment",
+        "NIS2 article mapping"
+      ],
+      "highlight": "Documentation generated directly from the platform — zero manual preparation.",
+      "highlightLabel": "Highlight:"
+    },
+    "continuous": {
+      "heading": "NIS2 requires continuous compliance",
+      "subtitle": "A one-off audit is not enough. NIS2 demands an operational, continuous process.",
+      "items": [
+        "Continuous monitoring",
+        "Automatic gap analysis",
+        "Regulatory updates",
+        "AI recommendations",
+        "Board dashboard",
+        "Risk alerts"
+      ]
+    },
+    "finalCta": {
+      "heading": "Check your NIS2 readiness level",
+      "subtitle": "Start with a free maturity assessment and find out what needs immediate attention."
+    },
+    "seo": {
+      "titleEn": "NIS2 Compliance – AI-Native GRC Platform | Quantifier.ai",
+      "descEn": "Quantifier is an AI-native GRC platform that prepares your organization for NIS2 audit and ensures continuous compliance.",
+      "faq1q": "What is NIS2?",
+      "faq1a": "NIS2 is an EU directive expanding cybersecurity requirements to essential and important entities across 18 sectors, covering risk management, incident reporting, and supply chain security.",
+      "faq2q": "What are the penalties for NIS2 non-compliance?",
+      "faq2a": "Penalties for NIS2 non-compliance can reach EUR 10M or 2% of global annual revenue for essential entities."
+    }
   }
 }

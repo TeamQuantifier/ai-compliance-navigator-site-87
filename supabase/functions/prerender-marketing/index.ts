@@ -31,7 +31,7 @@ const pageUrlMap: Record<string, string> = {
   'soc2-automation': 'frameworks/soc',
   'iso27001': 'frameworks/iso-27001',
   'gdpr-compliance': 'frameworks/gdpr',
-  'nis2': 'frameworks/nis-ii',
+  'nis2': 'frameworks/nis-2',
   'grc-platform': 'grc-platform',
   'product-features': 'product/features',
   'plans': 'plans',
@@ -156,7 +156,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Pricing Plans', href: '/plans' },
           { text: 'ISO 27001 Compliance', href: '/frameworks/iso-27001' },
           { text: 'SOC 2 Automation', href: '/frameworks/soc' },
-          { text: 'NIS 2 Directive', href: '/frameworks/nis-ii' },
+          { text: 'NIS 2 Directive', href: '/frameworks/nis-2' },
           { text: 'GDPR Compliance', href: '/frameworks/gdpr' }
         ]
       },
@@ -198,7 +198,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Cennik', href: '/plans' },
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'SOC 2', href: '/frameworks/soc' },
-          { text: 'NIS 2', href: '/frameworks/nis-ii' },
+          { text: 'NIS 2', href: '/frameworks/nis-2' },
           { text: 'GDPR', href: '/frameworks/gdpr' }
         ]
       },
@@ -230,7 +230,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { text: 'Ceník', href: '/plans' },
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'SOC 2', href: '/frameworks/soc' },
-          { text: 'NIS 2', href: '/frameworks/nis-ii' }
+          { text: 'NIS 2', href: '/frameworks/nis-2' }
         ]
       }
     },
@@ -568,7 +568,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'All Frameworks', href: '/frameworks' },
           { text: 'ISO 27001 Compliance', href: '/frameworks/iso-27001' },
-          { text: 'NIS2 Compliance', href: '/frameworks/nis-ii' },
+          { text: 'NIS2 Compliance', href: '/frameworks/nis-2' },
           { text: 'Pricing', href: '/plans' }
         ]
       },
@@ -639,7 +639,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         internalLinks: [
           { text: 'Všechny standardy', href: '/frameworks' },
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
-          { text: 'NIS2', href: '/frameworks/nis-ii' },
+          { text: 'NIS2', href: '/frameworks/nis-2' },
           { text: 'Ceník', href: '/plans' }
         ]
       }
@@ -1432,7 +1432,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           }
         ],
         internalLinks: [
-          { text: 'NIS II', href: '/frameworks/nis-ii' },
+          { text: 'NIS II', href: '/frameworks/nis-2' },
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'SOC 2', href: '/frameworks/soc' },
           { text: 'GDPR', href: '/frameworks/gdpr' },
@@ -1479,7 +1479,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           }
         ],
         internalLinks: [
-          { text: 'NIS II', href: '/frameworks/nis-ii' },
+          { text: 'NIS II', href: '/frameworks/nis-2' },
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'SOC 2', href: '/frameworks/soc' },
           { text: 'GDPR', href: '/frameworks/gdpr' },
@@ -1498,7 +1498,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { h2: 'Ochrana dat', content: ['GDPR - Obecné nařízení o ochraně osobních údajů', 'HIPAA - Zákon o přenositelnosti zdravotního pojištění', 'CCPA - Kalifornský zákon o ochraně soukromí spotřebitelů'] }
         ],
         internalLinks: [
-          { text: 'NIS II', href: '/frameworks/nis-ii' },
+          { text: 'NIS II', href: '/frameworks/nis-2' },
           { text: 'ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'SOC 2', href: '/frameworks/soc' },
           { text: 'GDPR', href: '/frameworks/gdpr' },
@@ -1516,7 +1516,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { h2: 'What is DORA?', content: ['Digital Operational Resilience Act for EU financial sector', 'ICT risk management framework', 'Incident reporting requirements', 'Third-party risk management'] },
           { h2: 'How Quantifier Helps', content: ['Automated ICT risk assessments', 'Incident classification and reporting', 'Digital resilience testing', 'Third-party monitoring'] }
         ],
-        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-ii' }, { text: 'ISO 27001', href: '/frameworks/iso-27001' }, { text: 'Plans', href: '/plans' }]
+        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-2' }, { text: 'ISO 27001', href: '/frameworks/iso-27001' }, { text: 'Plans', href: '/plans' }]
       },
       pl: {
         title: 'Platforma Zgodności DORA - Cyfrowa Odporność Operacyjna | Quantifier',
@@ -1526,7 +1526,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           { h2: 'Czym jest DORA?', content: ['Akt o cyfrowej odporności operacyjnej dla sektora finansowego UE', 'Framework zarządzania ryzykiem ICT', 'Wymogi raportowania incydentów'] },
           { h2: 'Jak Quantifier pomaga', content: ['Automatyczne oceny ryzyka ICT', 'Klasyfikacja i raportowanie incydentów', 'Testowanie cyfrowej odporności'] }
         ],
-        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-ii' }, { text: 'Cennik', href: '/plans' }]
+        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-2' }, { text: 'Cennik', href: '/plans' }]
       },
       cs: {
         title: 'Platforma pro shodu s DORA - Digitální operační odolnost | Quantifier',
@@ -1535,7 +1535,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         sections: [
           { h2: 'Co je DORA?', content: ['Akt o digitální operační odolnosti pro finanční sektor EU', 'Rámec řízení ICT rizik', 'Požadavky na hlášení incidentů'] }
         ],
-        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-ii' }, { text: 'Ceník', href: '/plans' }]
+        internalLinks: [{ text: 'NIS2', href: '/frameworks/nis-2' }, { text: 'Ceník', href: '/plans' }]
       }
     },
     'iso-9001': {
@@ -2444,7 +2444,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           }
         ],
         internalLinks: [
-          { text: 'NIS2 Compliance Platform', href: '/frameworks/nis-ii' },
+          { text: 'NIS2 Compliance Platform', href: '/frameworks/nis-2' },
           { text: 'ISO 27001 Automation', href: '/frameworks/iso-27001' },
           { text: 'GRC Platform Overview', href: '/grc-platform' },
           { text: 'Schedule a Demo', href: '/contact' }
@@ -2500,7 +2500,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           }
         ],
         internalLinks: [
-          { text: 'Platforma zgodności z NIS2', href: '/frameworks/nis-ii' },
+          { text: 'Platforma zgodności z NIS2', href: '/frameworks/nis-2' },
           { text: 'Automatyzacja ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'Platforma GRC', href: '/grc-platform' },
           { text: 'Umów demo', href: '/contact' }
@@ -2556,7 +2556,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
           }
         ],
         internalLinks: [
-          { text: 'Platforma pro shodu s NIS2', href: '/frameworks/nis-ii' },
+          { text: 'Platforma pro shodu s NIS2', href: '/frameworks/nis-2' },
           { text: 'Automatizace ISO 27001', href: '/frameworks/iso-27001' },
           { text: 'GRC Platforma', href: '/grc-platform' },
           { text: 'Naplánovat demo', href: '/contact' }

@@ -191,7 +191,7 @@ const EventDetail = () => {
           <div className="border-t border-border py-8 text-sm text-muted-foreground">
             <p>
               {t('eventDetail.crossLinkPrefix')}{' '}
-              <Link to={`/${currentLocale}/frameworks/nis-ii`} className="text-primary underline hover:text-primary/80">
+              <Link to={`/${currentLocale}/frameworks/nis-2`} className="text-primary underline hover:text-primary/80">
                 {t('eventDetail.crossLinkNis2')}
               </Link>{' '}
               {t('eventDetail.crossLinkMiddle')}{' '}
