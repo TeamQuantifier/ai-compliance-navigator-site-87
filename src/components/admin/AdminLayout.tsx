@@ -35,7 +35,7 @@ export function AdminLayout() {
   return (
     <div className="min-h-screen bg-background">
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-card border-b z-50 flex items-center justify-between px-4">
+      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-card border-b z-[60] flex items-center justify-between px-4">
         <h1 className="text-xl font-bold">Admin Panel</h1>
         <Button
           variant="ghost"
