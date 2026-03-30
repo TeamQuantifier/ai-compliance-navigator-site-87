@@ -76,6 +76,9 @@
         "lcaAnalysis": "LCA Analysis"
       }
     },
+    "popular": {
+      "title": "Popular"
+    },
     "plans": "Plans",
     "partners": "Partners",
     "successStories": "Success Stories",
@@ -83,7 +86,8 @@
     "about": "About Us",
     "contact": "Contact",
     "knowledge": "Resources",
-    "events": "Webinars & Events"
+    "events": "Webinars & Events",
+    "cybersecCheck": "Cybersec. Check"
   },
   "hero": {
     "title": "Platform and advisory",
@@ -145,15 +149,18 @@
     "title": "Tailored for Every Role",
     "subtitle": "Specialized interfaces for different roles in your organization.",
     "managers": {
-      "title": "For Managers",
+      "title": "For Leadership & Executive",
+      "subtitle": "(CFO, COO, CISO, Head of Risk)",
       "description": "Comprehensive dashboards to oversee compliance and inform decisions."
     },
     "contributors": {
-      "title": "For Contributors",
+      "title": "For Operational Teams",
+      "subtitle": "(Compliance, IT, Security, ESG)",
       "description": "Streamlined interfaces for data entry, tasks, and evidence collection."
     },
     "auditors": {
-      "title": "For Auditors",
+      "title": "For Internal & External Auditors",
+      "subtitle": "",
       "description": "Detailed audit trails and verification tools to validate compliance."
     },
     "learnMore": "Learn More"
@@ -295,7 +302,8 @@
       "allRightsReserved": "All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
+      "cookies": "Cookie Policy",
+      "cookieSettings": "Cookie Settings"
     },
     "contact": {
       "usaPhone": "USA: (+1) 415-799-8206",
@@ -313,8 +321,18 @@
   "contact": {
     "title": "Contact Us",
     "description": "Get in touch with our team to learn more about our AI-powered compliance solutions.",
-    "heading": "Contact us",
-    "intro": "Quantifier is redefining how companies approach compliance — with an always-on, autonomous AI platform that monitors, enforces, and drives regulatory actions across the enterprise.",
+    "heading": "Let's talk about next-generation compliance",
+    "intro": "Quantifier is an autonomous AI platform that monitors, enforces, and automates regulatory compliance 24/7 across your entire organization — from cybersecurity, sustainability, and AI Act to corporate governance and data protection.",
+    "offerIntro": "Instead of project chaos and manually filled spreadsheets, we offer:",
+    "features": [
+      "continuous compliance and procedure management",
+      "automatic regulation mapping (NIS2, AI Act, ISO 27001, CSRD, and more)",
+      "AI-driven risk scoring and change monitoring",
+      "central repository for policies, controls, and evidence",
+      "real-time audit readiness"
+    ],
+    "summary": "The platform automates most operational work, while our experts oversee model quality, regulatory logic, and mapping accuracy.",
+    "cta": "Contact us and see what compliance designed for the AI era looks like.",
     "emailUs": "Email Us",
     "callUs": "Call Us",
     "visitOffices": "Visit Our Offices",
@@ -435,13 +453,179 @@
       "emailPlaceholder": "Your email address",
       "downloadButton": "Download",
       "downloading": "Downloading...",
-      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the Privacy Policy. This site is protected by reCAPTCHA and Google. See:",
+      "consent": "I agree to the processing of my personal data by the Administrator – Quantifier Sp. z o.o. based in Warsaw, Rondo Daszyńskiego 1 and in Lublin, ul. Głowackiego 3/5/1 for informational and marketing purposes, as described in the",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
+      "and": "and",
+      "googleProtection": "This site is protected by reCAPTCHA and Google",
+      "googlePrivacy": "Privacy Policy",
+      "googleTerms": "Terms of Service",
       "consentRequired": "You must accept the consent to process data",
       "emailRequired": "Please enter a valid email address",
       "successTitle": "Thank you!",
-      "successDesc": "Your download will start shortly."
+      "successDesc": "Your download will start shortly.",
+      "nis2Dialog": {
+        "title": "Your calendar is downloading!",
+        "description": "Did you know that the NIS2 directive is one of the key cybersecurity regulations in 2026? Learn how to prepare your organisation for the upcoming requirements.",
+        "goToNis2": "Learn about NIS2",
+        "close": "Close"
+      },
+      "successDialog": {
+        "title": "Thank you for signing up!",
+        "description": "Your calendar is ready to download. Click the link below to get it.",
+        "downloadLink": "Download Compliance Calendar 2026",
+        "nis2Intro": "NIS2 is a key regulation for 2026. See how we can help you:",
+        "nis2Button": "Learn more about NIS2",
+        "close": "Close"
+      }
+    }
+  },
+  "legal": {
+    "cookies": {
+      "title": "Cookie Policy",
+      "metaDescription": "Learn about how Quantifier.ai uses cookies and tracking technologies on our website.",
+      "lastUpdated": "Last updated",
+      "whatAreCookies": {
+        "title": "What are cookies?",
+        "content": "Cookies are small text files that are stored on your device when you visit websites. They help websites remember information about your visit, making your next visit easier and more useful."
+      },
+      "cookiesWeUse": {
+        "title": "Cookies we use",
+        "googleAnalytics": "We use Google Analytics to understand how visitors interact with our website. This helps us improve user experience and measure the effectiveness of our content.",
+        "gaCookie": "Unique user identifier (expires after 2 years)",
+        "gaSessionCookie": "Session maintenance (expires after 2 years)"
+      },
+      "emailCollection": {
+        "title": "Email collection",
+        "content": "We collect email addresses only when users voluntarily submit them through our forms, such as newsletter subscriptions or resource downloads. This data is stored securely and used only for the purposes described at the time of collection. You can unsubscribe from our communications at any time."
+      },
+      "manageCookies": {
+        "title": "Managing cookies",
+        "content": "You can control and delete cookies through your browser settings. Please note that disabling cookies may affect the functionality of our website. Most browsers allow you to refuse cookies or delete them after they have been set."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "If you have any questions about our cookie policy, please contact us at: privacy@quantifier.ai"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "metaDescription": "Learn how Quantifier.ai collects, uses, and protects your personal data.",
+      "lastUpdated": "Last updated",
+      "admin": {
+        "title": "1. Data Controller",
+        "content": "The controller of your personal data is Quantifier (the Quantifier.ai service). The Controller's identification details and registered address are available on the Website in the Contact section.",
+        "contactEmail": "For data protection enquiries, please contact:"
+      },
+      "dataProcessed": {
+        "title": "2. Data We Process",
+        "intro": "Depending on how you use the Website, we may process:",
+        "formData": "data you provide through forms (e.g. your email address when subscribing to the newsletter, or data and message content when contacting us or requesting a demo);",
+        "technicalData": "technical and operational data related to your use of the Website (e.g. IP address, cookie identifiers, browser and device information, server logs)."
+      },
+      "purposes": {
+        "title": "3. Purposes and Legal Bases for Processing",
+        "newsletter": {
+          "title": "3.1 Newsletter and Email Marketing",
+          "content": "If you subscribe to our newsletter, we process your email address to send you the newsletter and commercial or marketing information about Quantifier (e.g. updates, offers, resources, events).",
+          "legalBasis": "Legal basis (GDPR): your consent (Article 6(1)(a) GDPR).",
+          "electronicComm": "E-Privacy requirements: marketing communications are sent only after obtaining your prior consent.",
+          "withdrawal": "You may withdraw your consent at any time by clicking the unsubscribe link in the email footer or by contacting us at contact@quantifier.ai. Withdrawal of consent does not affect the lawfulness of processing carried out prior to withdrawal."
+        },
+        "contact": {
+          "title": "3.2 Contact, Enquiries and Demo Requests",
+          "content": "When you contact us (e.g. request a demo), we process the data provided in your correspondence to handle the enquiry and communicate with you.",
+          "legalBasis": "Legal basis: taking steps at your request prior to entering into a contract, or performance of a contract (Article 6(1)(b) GDPR), where applicable, and the Controller's legitimate interest (Article 6(1)(f) GDPR) in handling enquiries and maintaining communication."
+        },
+        "security": {
+          "title": "3.3 Website Security and Operation",
+          "content": "We process technical data (e.g. logs, IP addresses) to ensure security, detect abuse, and maintain and improve the Website.",
+          "legalBasis": "Legal basis: the Controller's legitimate interest (Article 6(1)(f) GDPR)."
+        }
+      },
+      "recipients": {
+        "title": "4. Data Recipients",
+        "intro": "Your data may be shared with entities that support us in operating the Website and communications, including:",
+        "hosting": "hosting and IT infrastructure providers;",
+        "newsletter": "newsletter and communication tool providers;",
+        "analytics": "analytics and security tool providers (where used on the Website);",
+        "legal": "entities entitled to receive data under applicable law.",
+        "processors": "Data processors act on our behalf under data processing agreements and only to the extent necessary to deliver their services."
+      },
+      "googleServices": {
+        "title": "5. Google Services",
+        "content": "We may use Google services on the Website, including Google Analytics and Google reCAPTCHA. Use of these services is subject to Google's policies:",
+        "privacyLink": "Google Privacy Policy",
+        "termsLink": "Google Terms of Service",
+        "recaptchaNote": "Where reCAPTCHA is used, a notice about form protection by reCAPTCHA, together with the above links, may be displayed in the Website interface."
+      },
+      "internationalTransfer": {
+        "title": "6. Transfers Outside the EEA",
+        "content": "Due to our use of service providers (e.g. analytics or security tools), your data may be transferred outside the European Economic Area. In such cases, we apply the transfer mechanisms required by law (e.g. Standard Contractual Clauses) or other legal bases permitted under applicable regulations. For details on how Google processes data, please refer to the Google policies linked above."
+      },
+      "retention": {
+        "title": "7. Data Retention Periods",
+        "newsletter": "Newsletter: until you withdraw consent or successfully unsubscribe; thereafter, for the period necessary to demonstrate consent was given or withdrawn, and for the defence of legal claims.",
+        "contact": "Contact / demo: for the duration of handling the matter and correspondence, then for the limitation period for claims or until you successfully object—depending on the legal basis.",
+        "technical": "Technical data (logs): for the period necessary to ensure security and diagnostics, and in accordance with our internal retention schedules.",
+        "cookies": "Cookies: in accordance with cookie lifespans and your settings (see the Cookies section for details)."
+      },
+      "rights": {
+        "title": "8. Your Rights",
+        "intro": "You have the right to:",
+        "access": "access your data;",
+        "rectification": "rectify your data;",
+        "erasure": "erase your data;",
+        "restriction": "restrict processing;",
+        "portability": "data portability (where processing is based on consent or a contract and carried out by automated means);",
+        "objection": "object to processing based on legitimate interests;",
+        "withdrawConsent": "withdraw consent at any time (where processing is based on consent).",
+        "howToExercise": "To exercise your rights, please contact us:"
+      },
+      "complaint": {
+        "title": "9. Right to Lodge a Complaint",
+        "content": "If you believe we are processing your data unlawfully, you have the right to lodge a complaint with the relevant supervisory authority (in Poland: the President of the Personal Data Protection Office, UODO)."
+      },
+      "mandatory": {
+        "title": "10. Is Providing Data Mandatory?",
+        "newsletter": "Newsletter: providing your email address is voluntary but necessary to receive the newsletter.",
+        "contact": "Contact / demo: providing data is voluntary but may be necessary to respond to your enquiry or fulfil your request."
+      },
+      "automatedDecisions": {
+        "title": "11. Automated Decision-Making",
+        "content": "We do not make decisions about you based solely on automated processing, including profiling, that would produce legal effects concerning you or similarly significantly affect you."
+      },
+      "cookies": {
+        "title": "12. Cookies",
+        "content": "The Website uses cookies and similar technologies. Essential cookies are used to ensure the proper functioning and security of the Website. Analytical and functional cookies (where used) may be deployed based on your consent, which you may withdraw or modify at any time via the cookie settings available on the Website (if we provide a consent panel) or your browser settings.",
+        "manage": "You can manage cookies in your browser settings. Restricting cookies may affect the functionality of certain Website features."
+      },
+      "changes": {
+        "title": "13. Changes to this Privacy Policy",
+        "content": "We may update this Privacy Policy, particularly in the event of changes to the way the Website operates or to applicable laws. The current version is published on this page together with the date of the last update."
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "metaDescription": "Read the terms and conditions for using Quantifier.ai services.",
+      "intro": "Welcome to Quantifier.ai. By accessing and using our services, you agree to be bound by these Terms of Service. Please read them carefully before using our platform.",
+      "useOfService": {
+        "title": "Use of Service",
+        "content": "You agree to use our services only for lawful purposes and in accordance with these Terms. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account."
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "All content, features, and functionality of our services are owned by Quantifier.ai and are protected by international copyright, trademark, and other intellectual property laws."
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "Our website uses Google services. Use of these services is subject to Google's terms of service.",
+        "googleLink": "View Google Terms of Service"
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any questions about these Terms of Service, please contact us at: legal@quantifier.ai"
+      }
     }
   },
   "successStories": {
@@ -969,8 +1153,7 @@
         "description": "Standards for securing information assets and maintaining confidentiality.",
         "items": [
           "ISO 27001",
-          "ISO 9001",
-          "DORA"
+          "ISO 9001"
         ]
       },
       "dataSecurity": {
@@ -1020,7 +1203,15 @@
     },
     "labels": {
       "supportedFrameworks": "Supported Frameworks:",
-      "exploreButton": "Explore"
+      "exploreButton": "Explore",
+      "learnMore": "Learn more"
+    },
+    "popular": {
+      "title": "Most Popular Frameworks",
+      "description": "Direct access to the most sought-after compliance standards. Start your compliance journey with just one click."
+    },
+    "allFrameworks": {
+      "title": "All Frameworks by Category"
     },
     "cta": {
       "title": "Need Support for a Specific Framework?",
@@ -1041,9 +1232,9 @@
       "description": "We understand that different roles have different compliance needs. Our platform provides tailored experiences for managers, contributors, and auditors, ensuring everyone has the right tools for their specific responsibilities."
     },
     "tabs": {
-      "managers": "Managers",
-      "contributors": "Contributors",
-      "auditors": "Auditors"
+      "managers": "Leadership & Executive",
+      "contributors": "Operational Teams",
+      "auditors": "Internal & External Audit"
     },
     "managers": {
       "title": "Executive Control. Real-Time Insights. One Platform.",
@@ -1144,6 +1335,23 @@
       "outcome": {
         "title": "Outcome:",
         "description": "Faster, clearer audits with less friction. Auditors can focus on validation — not administration."
+      }
+    },
+    "aiSection": {
+      "title": "Autonomous AI Compliance Officer",
+      "subtitle": "AI Agent works 24/7, automating repetitive compliance tasks and supporting every role in the organization.",
+      "managers": {
+        "title": "For Leadership & Executives"
+      },
+      "contributors": {
+        "title": "For Operational Teams"
+      },
+      "auditors": {
+        "title": "For Auditors"
+      },
+      "outcome": {
+        "title": "The Result",
+        "description": "Less manual work, faster audits, and continuous compliance without additional team burden."
       }
     },
     "cta": {
@@ -1679,6 +1887,16 @@
     }
   },
   "esgPage": {
+    "envirly": {
+      "badge": "Envirly by Quantifier Module",
+      "title": "ESG Reporting: Consulting and Tools",
+      "features": {
+        "csrd": "ESG sustainability reporting in accordance with CSRD and ESRS",
+        "ghg": "Carbon footprint of organisations in scopes 1, 2 and 3 of the GHG Protocol",
+        "lca": "Environmental Life Cycle Assessment (LCA)"
+      },
+      "cta": "Go to Envirly"
+    },
     "title": "Simplify Your Sustainable & ESG Reporting",
     "description": "Automate CSDR, GRI, and CBAM Reporting with Ease. Quantifier is your partner in achieving transparent, accurate, and efficient ESG reporting. Whether you're meeting global sustainability standards or navigating complex regulatory landscapes, we've got you covered with full automation.",
     "tabs": {
@@ -2124,7 +2342,7 @@
     "hero": {
       "badge": "NIS 2 Directive",
       "title": "NIS2 Compliance Made Simple",
-      "subtitle": "Navigate EU cybersecurity requirements with confidence in weeks, not months",
+      "subtitle": "NIS2 Compliance — faster, cheaper, and without chaos.",
       "formTitle": "Check how Quantifier can help you",
       "nameLabel": "Name",
       "namePlaceholder": "Enter your name",
@@ -2545,6 +2763,27 @@
           ]
         }
       }
+    },
+    "definitions": {
+      "title": "Key NIS2 Terms & Definitions",
+      "items": {
+        "nis2Directive": {
+          "term": "NIS2 Directive",
+          "definition": "The NIS2 Directive (Network and Information Security Directive 2) is a European Union cybersecurity regulation that establishes minimum security requirements for network and information systems across essential and important sectors. It replaces the original NIS Directive and significantly expands its scope."
+        },
+        "essentialEntities": {
+          "term": "Essential Entities",
+          "definition": "Organizations in critical sectors (energy, transport, health, banking, digital infrastructure, public administration) with more than 250 employees or annual turnover exceeding EUR 50 million. Essential entities face stricter requirements, including 24-hour incident reporting and potential personal liability for management."
+        },
+        "importantEntities": {
+          "term": "Important Entities",
+          "definition": "Medium-sized organizations (50-250 employees) operating in sectors covered by NIS2 but not classified as essential. Important entities must comply with the same security requirements but face less stringent supervision and lower maximum penalties."
+        },
+        "incidentReporting": {
+          "term": "Incident Reporting",
+          "definition": "Under NIS2, significant cybersecurity incidents must be reported to national authorities within 24 hours of detection (early warning), followed by a detailed report within 72 hours and a final report within one month. Non-compliance can result in fines up to EUR 10 million or 2% of global turnover."
+        }
+      }
     }
   },
   "socPage": {
@@ -2798,12 +3037,12 @@
         },
         "downtime": {
           "title": "Business Downtime",
-          "stat": "Days or weeks",
+          "stat": "",
           "description": "Security incidents can paralyze business operations for days or weeks."
         },
         "reputation": {
           "title": "Reputation & Client Loss",
-          "stat": "Hard to rebuild",
+          "stat": "",
           "description": "Data breaches lead to loss of trust from customers and business partners."
         },
         "timeline": {
@@ -2885,6 +3124,91 @@
         "certificationReadiness": {
           "title": "Certification Readiness",
           "description": "Gap analysis dashboard showing exactly what's needed for successful certification"
+        }
+      }
+    },
+    "stepByStep": {
+      "title": "ISO 27001 Step by Step with Quantifier",
+      "description": "Quantifier automates the full path to ISO 27001 certification from onboarding to continuous ISMS maintenance.",
+      "steps": {
+        "onboarding": {
+          "number": "1",
+          "title": "Organization Onboarding",
+          "description": "We configure your ISMS environment in hours, not weeks. We import organizational structure, roles, processes, assets, and suppliers.",
+          "items": [
+            "certification scope mapping",
+            "roles and responsibilities definition",
+            "ISO 27001 framework configuration",
+            "compliance baseline"
+          ]
+        },
+        "gapAnalysis": {
+          "number": "2",
+          "title": "Gap Analysis",
+          "description": "AI compares your current state with ISO 27001 and Annex A requirements.",
+          "items": [
+            "automatic gap identification",
+            "ISMS maturity scoring",
+            "action priorities",
+            "implementation roadmap"
+          ]
+        },
+        "riskAssessment": {
+          "number": "3",
+          "title": "Risk Assessment",
+          "description": "We build a risk register compliant with ISO 27001.",
+          "items": [
+            "asset and threat identification",
+            "AI-powered risk scoring",
+            "risk treatment plans",
+            "continuous register updates"
+          ]
+        },
+        "policies": {
+          "number": "4",
+          "title": "Policies and Documentation",
+          "description": "We generate and maintain complete ISMS documentation.",
+          "items": [
+            "ready-made policy templates",
+            "automatic version control",
+            "approval workflows",
+            "document review cycles"
+          ]
+        },
+        "controls": {
+          "number": "5",
+          "title": "Control Implementation",
+          "description": "We map and operationalize all ISO 27001 controls.",
+          "items": [
+            "control owner assignment",
+            "implementation tasks",
+            "evidence collection",
+            "implementation monitoring"
+          ]
+        },
+        "certification": {
+          "number": "6",
+          "title": "Certification Readiness",
+          "description": "We automate audits",
+          "items": [
+            "audit plan",
+            "documentation export",
+            "compliance checklists",
+            "evidence collection",
+            "corrective actions",
+            "Quantifier team support"
+          ]
+        },
+        "maintenance": {
+          "number": "7",
+          "title": "Continuous ISMS Maintenance",
+          "description": "After certification, AI agents maintain your ISMS 24/7.",
+          "items": [
+            "control monitoring",
+            "risk updates",
+            "review cycles",
+            "surveillance audit preparation"
+          ]
         }
       }
     },
@@ -3541,9 +3865,13 @@
       "ogTitle": "Quantifier.ai — AI-Native Compliance Automation Platform",
       "ogDescription": "Manage multi-framework compliance from one platform. AI-powered policy creation, task automation, and audit readiness."
     },
+    "blog": {
+      "title": "Blog & Insights",
+      "description": "Latest articles, guides, and insights on compliance, GRC, cybersecurity, and regulatory frameworks from the Quantifier.ai team."
+    },
     "product": {
-      "title": "Product Features",
-      "description": "Discover Quantifier.ai's AI-powered compliance platform features: AI Compliance Officer, Document Management, Risk Assessment, Analytics Dashboards, and seamless API integrations.",
+      "title": "Features | AI-Powered Compliance Automation",
+      "description": "Automated evidence collection, continuous monitoring, audit-ready reports. See all features of Quantifier.ai compliance platform.",
       "overview": {
         "title": "Product Overview - AI-Powered GRC Platform",
         "description": "Complete overview of Quantifier.ai's AI-powered GRC platform. Explore all features for compliance automation, risk management, and regulatory frameworks."
@@ -3578,12 +3906,12 @@
       }
     },
     "plans": {
-      "title": "Pricing Plans",
-      "description": "Choose the right Quantifier.ai plan for your organization. Scalable compliance solutions from Starter to Enterprise, with full GRC automation capabilities."
+      "title": "Pricing | Quantifier.ai Compliance Automation",
+      "description": "Flexible pricing for AI-powered compliance automation. Start free, scale as you grow. ISO 27001, SOC 2, NIS2 frameworks included."
     },
     "contact": {
-      "title": "Contact Us",
-      "description": "Get in touch with Quantifier.ai team. Request a demo, ask questions, or discuss your compliance needs with our experts in San Francisco or Warsaw."
+      "title": "Contact Quantifier.ai | Get a Demo of AI Compliance Platform",
+      "description": "Contact our team for a demo. See how Quantifier.ai automates ISO 27001, SOC 2, NIS2 compliance with AI-powered evidence collection."
     },
     "partners": {
       "title": "Partner Network",
@@ -3656,10 +3984,6 @@
     "successStories": {
       "title": "Customer Success Stories",
       "description": "Discover how organizations achieve compliance excellence with Quantifier.ai. Real case studies and proven results from our clients."
-    },
-    "blog": {
-      "title": "Blog & Insights",
-      "description": "Latest articles, guides, and insights on compliance, GRC, cybersecurity, and regulatory frameworks from the Quantifier.ai team."
     }
   },
   "seoLanding": {
@@ -4057,7 +4381,7 @@
           {
             "stat": "2025–2026",
             "title": "Enforcement Underway",
-            "description": "National NIS2 laws are now active across the EU — organizations must comply or face penalties."
+            "description": "EU member states are enforcing NIS2 national laws — organizations must comply now or face penalties."
           }
         ]
       },
@@ -4146,7 +4470,7 @@
           },
           {
             "question": "What's the NIS2 compliance deadline?",
-            "answer": "The NIS2 transposition deadline passed in October 2024. As of 2026, national enforcement is fully active across EU member states — organizations in scope must be compliant now or risk fines up to €10M or 2% of global turnover."
+            "answer": "EU member states had until October 17, 2024 to transpose NIS2 into national law. As of 2026, most countries have enacted national legislation and enforcement is active — organizations in scope must be fully compliant now or risk fines up to €10M or 2% of global turnover."
           },
           {
             "question": "How long does NIS2 implementation take?",
@@ -4991,6 +5315,12 @@
       "seePricing": "View Pricing"
     }
   },
+  "cookieConsent": {
+    "banner": {
+      "simpleDescription": "We use cookies to enhance your browsing experience.",
+      "accept": "Accept"
+    }
+  },
   "bookPromo": {
     "badge": "New publication",
     "title": "Check out our publication",
@@ -5014,14 +5344,17 @@
     "introP3": "In response, we are launching a series of four expert online sessions designed for boards, CFOs, COOs, CIOs, CISOs and compliance & risk leaders.",
     "formatDescription": "Format: Each session delivers 30 minutes of focused executive-level knowledge followed by a live Q&A with experts implementing compliance and cybersecurity systems in complex organisations.",
     "cycleName": "Series: Cybersecurity in Practice — NIS2 & ISO 27001, Supply Chain",
+    "eventTagLive": "Live",
+    "eventLocationLive": "Online (live)",
+    "eventCtaLabel": "Reserve your seat",
     "webinar1title": "The new reality: geopolitics, the market and regulatory consequences",
-    "webinar1date": "10 Mar | 10:00 CET",
+    "webinar1date": "17 Mar | 10:00 CET",
     "webinar1q1": "How is the risk landscape changing in Europe?",
     "webinar1q2": "What obligations does NIS2 impose on essential and important entities?",
     "webinar1q3": "What obligations will suppliers have?",
     "webinar1q4": "What is the board's liability in cybersecurity?",
     "webinar2title": "Implementation that works: continuous compliance",
-    "webinar2date": "24 Mar | 10:00 CET",
+    "webinar2date": "31 Mar | 10:00 CET",
     "webinar2q1": "How to build a cybersecurity system that is a lasting part of corporate governance?",
     "webinar2q2": "How to assign responsibilities and build a cybersecurity team?",
     "webinar2q3": "How to avoid costly operational chaos?",
@@ -5034,6 +5367,12 @@
     "webinar4date": "28 Apr | 10:00 CET",
     "webinar4q1": "What does a practical cybersecurity maturity assessment look like?",
     "webinar4q2": "How to report incidents within 24h/72h?",
+    "cycleBadge": "Save time",
+    "cycleFormTitle": "Register for the full cycle with one form",
+    "cycleFormSubtitle": "Fill in once — you'll be registered for all 4 webinars. Webinars will be hosted on <a href='https://quantifier.clickmeeting.com/' target='_blank' class='underline text-primary hover:text-primary/80'>ClickMeeting</a>.",
+    "cycleFormSubmit": "Register for 4 webinars",
+    "cycleSuccessTitle": "Done! You're registered for the full cycle.",
+    "cycleSuccessDesc": "Confirmation and details for each of the 4 webinars will be sent to your email.",
     "closingText": "The four sessions have been designed as a coherent decision-making path for senior management. Each addresses key questions that boards and managers face today.",
     "faqTitle": "FAQ — Questions from Boards & Managers",
     "faq1q": "Does NIS2 apply to our organisation if we are not formally classified as an essential entity?",
@@ -5057,5 +5396,436 @@
     "faq10q": "Is this series suitable for organisations just starting their preparations?",
     "faq10a": "Yes. The sessions are designed to provide boards with a clear action roadmap regardless of their current level of readiness. Participants receive a decision-making framework that helps determine the next step.",
     "lastUpdated": "Last updated"
+  },
+  "eventDetail": {
+    "outcomesTitle": "What you'll gain",
+    "agendaTitle": "Agenda",
+    "audienceTitle": "Who is this webinar for?",
+    "faqTitle": "Frequently asked questions",
+    "challengesLabel": "Challenges",
+    "outcomesLabel": "Outcomes",
+    "breadcrumbHome": "Home",
+    "breadcrumbEvents": "Webinars",
+    "crossLinkPrefix": "Learn more about",
+    "crossLinkNis2": "NIS2 and the cybersecurity directive",
+    "crossLinkMiddle": "or explore",
+    "crossLinkFrameworks": "other compliance standards",
+    "bottomCta": {
+      "title": "Don't miss out — reserve your spot",
+      "subtitle": "Bonuses available for live participants.",
+      "button": "Reserve your spot"
+    },
+    "form": {
+      "title": "Reserve your spot",
+      "subtitle": "Free webinar",
+      "firstName": "First name",
+      "workEmail": "Work email",
+      "company": "Company",
+      "role": "Role",
+      "placeholder": "Select...",
+      "roleManagement": "Management",
+      "roleItSecurity": "IT / Security",
+      "roleComplianceRisk": "Compliance / Risk",
+      "roleOther": "Other",
+      "companySize": "Company size",
+      "nis2Question": "Does your organisation fall under NIS2?",
+      "nis2Yes": "Yes",
+      "nis2No": "No",
+      "nis2NotSure": "Not sure",
+      "consentText": "I consent to the processing of my personal data for webinar registration and marketing contact. I have read the",
+      "privacyPolicy": "Privacy Policy",
+      "submit": "Reserve your spot",
+      "submitting": "Registering...",
+      "errorMsg": "Something went wrong. Please try again.",
+      "successTitle": "Done! You're on the list.",
+      "successDesc": "We'll send a confirmation and details to your email.",
+      "addToCalendar": "Add to calendar:",
+      "gapCallCta": "Book a 20-min NIS2 Gap Call",
+      "required": "This field is required",
+      "joinWebinar": "Join the webinar",
+      "clickMeetingInfo": "The webinar will be hosted on the ClickMeeting platform. A meeting link has been sent to your email.",
+      "clickMeetingPlatformInfo": "The webinar will be hosted on the ClickMeeting platform.",
+      "clickMeetingPlatformNote": "The webinar will be hosted on the ClickMeeting platform. After registration, you'll receive an email with the meeting link."
+    },
+    "nis2MapaRyzyka": {
+      "title": "New reality: geopolitics, market and regulatory consequences",
+      "subtitle": "How is the risk landscape changing in Europe? What obligations does NIS2 impose on essential, important entities and their suppliers?",
+      "trustLine": "Learn what obligations arise from NIS2 and how to prepare your organisation.",
+      "dateDisplay": "17 March 2026, 10:00 AM CET",
+      "duration": "30 minutes",
+      "location": "Online (live)",
+      "heroCtaLabel": "Reserve your spot",
+      "heroSecondaryText": "Free online webinar",
+      "outcome1": "How is the risk landscape changing in Europe?",
+      "outcome2": "What obligations does NIS2 impose on essential and important entities?",
+      "outcome3": "What obligations will suppliers face?",
+      "outcome4": "What will be the board's responsibility in cybersecurity?",
+      "agenda1Time": "0–5 min",
+      "agenda1Title": "Context: cybersecurity, NIS2, ISO 27001",
+      "agenda1Desc": "Who is affected, what has changed, why now",
+      "agenda2Time": "5–12 min",
+      "agenda2Title": "New board obligations",
+      "agenda2Desc": "Board responsibility under the new EU NIS2 directive",
+      "agenda3Time": "12–20 min",
+      "agenda3Title": "Key regulatory requirements",
+      "agenda3Desc": "Incident reporting 24h/72h, risk register, employee training",
+      "agenda4Time": "20–25 min",
+      "agenda4Title": "Supply chain requirements",
+      "agenda4Desc": "Supplier audits, new contractual clauses",
+      "agenda5Time": "25–30 min",
+      "agenda5Title": "Continuous compliance approach",
+      "agenda5Desc": "Ongoing monitoring of risks and events in the organisation",
+      "agenda6Time": "30+ min",
+      "agenda6Title": "Q&A",
+      "agenda6Desc": "Participant questions and summary",
+      "audience1Role": "Board (CEO/COO/CFO)",
+      "audience1Pain1": "Unclear board responsibility for NIS2",
+      "audience1Pain2": "Risk of financial penalties and personal liability",
+      "audience1Pain3": "Lack of compliance status visibility",
+      "audience1Outcome1": "Clear map of responsibilities and risks",
+      "audience1Outcome2": "Compliance status dashboard for the board",
+      "audience2Role": "Compliance / Risk",
+      "audience2Pain1": "No framework for NIS2 risk assessment",
+      "audience2Pain2": "Difficulty prioritising actions",
+      "audience2Pain3": "Unclear regulatory requirements",
+      "audience2Outcome1": "Ready-made risk matrix with priorities",
+      "audience2Outcome2": "Risk assessment template for immediate implementation",
+      "audience3Role": "IT / CISO / Security",
+      "audience3Pain1": "NIS2 technical requirements without clear guidelines",
+      "audience3Pain2": "No structured threat identification process",
+      "audience3Outcome1": "Practical technical security checklist",
+      "audience3Outcome2": "Gap map to close first",
+      "faq1q": "Will there be a recording?",
+      "faq1a": "Yes, the recording will be shared with all registered participants within 24 hours after the webinar.",
+      "faq2q": "Is the webinar free?",
+      "faq2a": "Yes, participation is completely free. Just register to reserve your spot.",
+      "faq3q": "Who is this webinar for?",
+      "faq3a": "For boards, compliance/risk managers, CISOs and IT teams in organisations that may fall under NIS2.",
+      "faq4q": "Not sure if NIS2 applies to you?",
+      "faq4a": "Take our quick assessment and find out in 2 minutes whether your organisation may fall under NIS2.",
+      "faq5q": "Can I invite my team?",
+      "faq5a": "Of course! We encourage team participation. Each person should register individually.",
+      "seoTitle": "NIS2 risk map: webinar — obligations and threats",
+      "seoDesc": "Free NIS2 webinar: how to build a risk map, identify obligations and avoid the most common mistakes. For boards, compliance and IT."
+    },
+    "nis2RoleIProcesy": {
+      "title": "Implementation that works: continuous compliance",
+      "subtitle": "How to build a cybersecurity management system as a permanent part of corporate governance? How to assign responsibilities and avoid operational chaos?",
+      "trustLine": "Learn how to define roles and processes in your cybersecurity management system.",
+      "dateDisplay": "31 March 2026, 10:00 AM CET",
+      "duration": "30 minutes",
+      "location": "Online (live)",
+      "heroCtaLabel": "Reserve your spot",
+      "heroSecondaryText": "Free online webinar",
+      "outcome1": "How to build a cybersecurity system as a permanent part of corporate governance?",
+      "outcome2": "How to assign responsibilities and build a cybersecurity team?",
+      "outcome3": "How to avoid costly operational chaos?",
+      "agenda1Time": "0–8 min",
+      "agenda1Title": "Key processes and obligations",
+      "agenda1Desc": "What needs to be addressed when implementing NIS2",
+      "agenda2Time": "8–16 min",
+      "agenda2Title": "Key roles in cybersecurity, NIS2, ISO 27001",
+      "agenda2Desc": "Board, CISO, IT, compliance, HR, suppliers",
+      "agenda3Time": "16–25 min",
+      "agenda3Title": "RACI responsibility matrix",
+      "agenda3Desc": "How to operationalise NIS2/ISO 27001 implementation in a company",
+      "agenda4Time": "25–30 min",
+      "agenda4Title": "Continuous compliance approach | Quantifier.ai",
+      "agenda4Desc": "Modern regulation implementation and continuous risk monitoring",
+      "agenda5Time": "30+ min",
+      "agenda5Title": "Q&A",
+      "agenda5Desc": "Participant questions and summary",
+      "audience1Role": "Board (CEO/COO/CFO)",
+      "audience1Pain1": "Unclear division of NIS2 responsibilities",
+      "audience1Pain2": "No formal escalation processes",
+      "audience1Pain3": "Risk of personal liability",
+      "audience1Outcome1": "Clear structure of roles and responsibilities",
+      "audience1Outcome2": "Formal incident escalation process",
+      "audience2Role": "Compliance / Risk",
+      "audience2Pain1": "No RACI matrix for NIS2",
+      "audience2Pain2": "Difficulty coordinating between departments",
+      "audience2Pain3": "No process templates",
+      "audience2Outcome1": "Ready-to-implement RACI matrix",
+      "audience2Outcome2": "Incident response process templates",
+      "audience3Role": "IT / CISO / Security",
+      "audience3Pain1": "No formal incident response procedures",
+      "audience3Pain2": "Unclear CSIRT reporting requirements",
+      "audience3Outcome1": "NIS2-compliant incident response process",
+      "audience3Outcome2": "Incident reporting checklist",
+      "faq1q": "Will there be a recording?",
+      "faq1a": "Yes, the recording will be shared with registered participants within 24 hours.",
+      "faq2q": "Is the webinar free?",
+      "faq2a": "Yes, participation is completely free.",
+      "faq3q": "How is it different from the risk map webinar?",
+      "faq3a": "This webinar focuses on building the management system — roles, processes and responsibilities. The risk map webinar focuses on identifying and assessing threats.",
+      "faq4q": "Not sure if NIS2 applies to you?",
+      "faq4a": "Take our quick assessment and find out in 2 minutes whether your organisation may fall under NIS2.",
+      "faq5q": "Can I invite my team?",
+      "faq5a": "Yes! Each person should register individually to receive materials.",
+      "seoTitle": "NIS2 roles and processes: webinar — management system",
+      "seoDesc": "Free webinar: how to define roles, processes and RACI matrix in NIS2/ISO 27001 system. For compliance and IT."
+    },
+    "nis2AuditReady": {
+      "title": "Documents, evidence and market requirements",
+      "subtitle": "What policies, procedures and registers are required? How to manage compliance evidence and meet client requirements in the supply chain?",
+      "trustLine": "Learn how to prepare documents and compliance evidence for inspection.",
+      "dateDisplay": "14 April 2026, 10:00 AM CEST",
+      "duration": "30 minutes",
+      "location": "Online (live)",
+      "heroCtaLabel": "Reserve your spot",
+      "heroSecondaryText": "Free online webinar",
+      "outcome1": "What policies, procedures and registers are required?",
+      "outcome2": "How to adapt to client cybersecurity requirements as a supply chain entity?",
+      "outcome3": "How to manage compliance evidence systematically?",
+      "agenda1Time": "0–8 min",
+      "agenda1Title": "Policies, procedures, registers",
+      "agenda1Desc": "What documents need to be implemented",
+      "agenda2Time": "8–16 min",
+      "agenda2Title": "Technical requirements and controls",
+      "agenda2Desc": "What technical requirements need to be implemented",
+      "agenda3Time": "16–25 min",
+      "agenda3Title": "CSIRT incident reporting",
+      "agenda3Desc": "How to report incidents within 24/72 hours",
+      "agenda4Time": "25–30 min",
+      "agenda4Title": "Continuous compliance approach | Quantifier.ai",
+      "agenda4Desc": "Managing compliance evidence in the platform",
+      "agenda5Time": "30+ min",
+      "agenda5Title": "Q&A",
+      "agenda5Desc": "Participant questions and summary",
+      "audience1Role": "Board (CEO/COO/CFO)",
+      "audience1Pain1": "Uncertainty whether documentation is complete",
+      "audience1Pain2": "Risk of negative inspection outcome",
+      "audience1Pain3": "No visibility into preparation status",
+      "audience1Outcome1": "Confidence in documentation completeness",
+      "audience1Outcome2": "Inspection readiness dashboard",
+      "audience2Role": "Compliance / Risk",
+      "audience2Pain1": "No NIS2 document templates",
+      "audience2Pain2": "Difficulty collecting evidence from multiple departments",
+      "audience2Pain3": "Unclear evidence pack structure",
+      "audience2Outcome1": "Complete set of document templates",
+      "audience2Outcome2": "Ready-made evidence pack structure",
+      "audience3Role": "IT / CISO / Security",
+      "audience3Pain1": "No clear guidelines for technical evidence",
+      "audience3Pain2": "Difficulty documenting security configurations",
+      "audience3Outcome1": "Technical evidence checklist",
+      "audience3Outcome2": "Configuration documentation template",
+      "faq1q": "Will there be a recording?",
+      "faq1a": "Yes, the recording will be shared with registered participants within 24 hours.",
+      "faq2q": "Is the webinar free?",
+      "faq2a": "Yes, participation is completely free.",
+      "faq3q": "Do I need prior experience with inspections?",
+      "faq3a": "No, the webinar is designed for both first-timers and experienced practitioners.",
+      "faq4q": "Not sure if NIS2 applies to you?",
+      "faq4a": "Take our quick assessment and find out in 2 minutes whether your organisation may fall under NIS2.",
+      "faq5q": "Can I invite my team?",
+      "faq5a": "Yes! Each person should register individually.",
+      "seoTitle": "NIS2 inspection: webinar — documents and evidence",
+      "seoDesc": "Free NIS2 webinar: how to prepare documents and compliance evidence for inspection. Policies, procedures, incident reporting."
+    },
+    "nis2KontrolaAudyt": {
+      "title": "Inspection, reporting and verification",
+      "subtitle": "What does a practical verification of cybersecurity system maturity look like? How to report incidents within 24h/72h?",
+      "trustLine": "Learn how to prepare for a NIS2 inspection.",
+      "dateDisplay": "28 April 2026, 10:00 AM CEST",
+      "duration": "30 minutes",
+      "location": "Online (live)",
+      "heroCtaLabel": "Reserve your spot",
+      "heroSecondaryText": "Free online webinar",
+      "outcome1": "What does a practical verification of cybersecurity system maturity look like?",
+      "outcome2": "How to report incidents within 24h/72h?",
+      "agenda1Time": "0–5 min",
+      "agenda1Title": "Reporting documents and requirements",
+      "agenda1Desc": "Formal preparation for incidents",
+      "agenda2Time": "5–12 min",
+      "agenda2Title": "Incident preparedness",
+      "agenda2Desc": "Remediation plans, testing, Business Impact Analysis",
+      "agenda3Time": "12–25 min",
+      "agenda3Title": "CSIRT incident reporting",
+      "agenda3Desc": "How to report incidents within 24/72 hours",
+      "agenda4Time": "25–30 min",
+      "agenda4Title": "Continuous compliance approach | Quantifier.ai",
+      "agenda4Desc": "Managing compliance evidence in the platform",
+      "agenda5Time": "30+ min",
+      "agenda5Title": "Q&A",
+      "agenda5Desc": "Participant questions and summary",
+      "audience1Role": "Board (CEO/COO/CFO)",
+      "audience1Pain1": "Concerns about NIS2 inspection process and outcome",
+      "audience1Pain2": "No knowledge of consequences of negative inspection",
+      "audience1Pain3": "No remediation plan",
+      "audience1Outcome1": "Confidence before inspection",
+      "audience1Outcome2": "Ready remediation plan for findings",
+      "audience2Role": "Compliance / Risk",
+      "audience2Pain1": "No experience with NIS2 inspections",
+      "audience2Pain2": "Unclear inspector expectations",
+      "audience2Pain3": "No inspection checklist",
+      "audience2Outcome1": "Complete 30+ point checklist",
+      "audience2Outcome2": "Remediation plan template",
+      "audience3Role": "IT / CISO / Security",
+      "audience3Pain1": "Not prepared for inspector's technical questions",
+      "audience3Pain2": "Difficulty demonstrating security effectiveness",
+      "audience3Outcome1": "List of inspector's technical questions with answers",
+      "audience3Outcome2": "How to present technical evidence",
+      "faq1q": "Will there be a recording?",
+      "faq1a": "Yes, the recording will be shared with registered participants within 24 hours.",
+      "faq2q": "Is the webinar free?",
+      "faq2a": "Yes, participation is completely free.",
+      "faq3q": "Is this a continuation of previous webinars?",
+      "faq3a": "The webinar is standalone but serves as a logical conclusion to the series. You can participate without attending previous sessions.",
+      "faq4q": "Not sure if NIS2 applies to you?",
+      "faq4a": "Take our quick assessment and find out in 2 minutes whether your organisation may fall under NIS2.",
+      "faq5q": "Can I invite my team?",
+      "faq5a": "Yes! Each person should register individually.",
+      "seoTitle": "NIS2 inspection: webinar — how to pass an inspection",
+      "seoDesc": "Free webinar: how to pass a NIS2 inspection from A to Z. Inspection simulation, 30+ point checklist, remediation plan. For compliance and IT."
+    }
+  },
+  "nis2Ksc": {
+    "stickyCta": {
+      "text": "NIS2 is now a legal obligation. Check your organisation's readiness.",
+      "demo": "See demo",
+      "cta": "Check NIS2 readiness"
+    },
+    "hero": {
+      "bannerText": "NIS2 directive is now in force across the EU",
+      "heading1": "Your organisation must comply with NIS2.",
+      "heading2": "The clock is ticking.",
+      "subtext1": "Quantifier is an AI-native platform that prepares your organisation for audit and ensures continuous NIS2 compliance.",
+      "subtext2": "NIS2 requires operational risk management, incident handling, governance and supply chain security. Quantifier brings everything together in one platform."
+    },
+    "form": {
+      "title": "Check your NIS2 readiness",
+      "subtitle": "We'll get in touch, or call us:",
+      "firstNamePlaceholder": "First name",
+      "emailPlaceholder": "Work email",
+      "submit": "Submit",
+      "submitting": "Sending…",
+      "rodo": "By submitting this form you consent to personal data processing in accordance with our",
+      "privacyPolicy": "Privacy Policy",
+      "rodoSuffix": "Data controller: Quantifier sp. z o.o.",
+      "successToast": "Thank you! We'll be in touch soon.",
+      "errorToast": "Something went wrong. Please try again.",
+      "heroMessage": "Check NIS2 readiness — hero form"
+    },
+    "urgency": {
+      "heading": "NIS2 is now a legal obligation",
+      "items": [
+        "Personal liability of management for cybersecurity",
+        "Incident reporting within 24h / 72h",
+        "Requirements for suppliers and the supply chain",
+        "Mandatory ICT risk management",
+        "Fines up to EUR 10M or 2% of annual revenue"
+      ],
+      "ctaText": "Check if NIS2 applies to you"
+    },
+    "problem": {
+      "heading": "Most organisations are not operationally ready",
+      "subtitle": "A typical approach to compliance does not meet NIS2 requirements.",
+      "items": [
+        "Policies in Word documents",
+        "Risks in Excel spreadsheets",
+        "Incidents across different systems",
+        "No audit trail",
+        "No supplier monitoring",
+        "No continuous compliance"
+      ],
+      "callout": "NIS2 requires a single operational system — not a set of scattered documents and spreadsheets."
+    },
+    "solution": {
+      "label": "Platform",
+      "heading": "AI-native operational platform for NIS2",
+      "subtitle": "All NIS2 requirements in one system — from gap analysis to continuous compliance.",
+      "features": [
+        "AI policy mapping — automatic mapping of existing policies to NIS2 requirements using AI.",
+        "NIS2 risk register — central risk register linked to NIS2 directive articles.",
+        "Incident workflows — incident management with automatic 24h/72h reporting.",
+        "Supplier monitoring — assessment and continuous monitoring of supply chain security.",
+        "Evidence room — central repository of audit evidence and documentation.",
+        "Board dashboard — clear compliance status view for C-level and the board.",
+        "Continuous compliance — ongoing compliance monitoring with automatic alerts."
+      ],
+      "cta": "See how it works"
+    },
+    "steps": {
+      "label": "Implementation",
+      "heading": "4 steps to NIS2 compliance",
+      "subtitle": "The roadmap dynamically adapts to your organisation's maturity level.",
+      "items": [
+        {
+          "title": "Upload documents",
+          "desc": "Import existing policies, procedures and documentation. AI automatically recognises the structure and maps content to NIS2 requirements.",
+          "details": [
+            "Policy & procedure import",
+            "Document structure recognition",
+            "Automatic classification"
+          ]
+        },
+        {
+          "title": "AI maps to NIS2",
+          "desc": "Artificial intelligence analyses documents, identifies compliance gaps and generates a detailed gap analysis report.",
+          "details": [
+            "AI Gap Analysis",
+            "Gap identification",
+            "NIS2 article compliance report"
+          ]
+        },
+        {
+          "title": "Platform guides implementation",
+          "desc": "Step by step through governance, risk management, incidents and supply chain — with a dynamic roadmap.",
+          "details": [
+            "Governance & Policies",
+            "Risk Management",
+            "Incident & Supply Chain"
+          ]
+        },
+        {
+          "title": "Monitor compliance",
+          "desc": "Continuous monitoring, automatic risk alerts and a real-time board dashboard.",
+          "details": [
+            "Continuous Monitoring",
+            "Real-time alerts",
+            "Board dashboard"
+          ]
+        }
+      ]
+    },
+    "auditor": {
+      "heading": "When the auditor walks in — you're ready",
+      "subtitle": "Quantifier automatically prepares complete audit documentation:",
+      "items": [
+        "Audit-ready policies",
+        "Risk register",
+        "Incident log",
+        "Control evidence",
+        "Audit trail",
+        "Responsibility assignment",
+        "NIS2 article mapping"
+      ],
+      "highlight": "Documentation generated directly from the platform — zero manual preparation.",
+      "highlightLabel": "Highlight:"
+    },
+    "continuous": {
+      "heading": "NIS2 requires continuous compliance",
+      "subtitle": "A one-off audit is not enough. NIS2 demands an operational, continuous process.",
+      "items": [
+        "Continuous monitoring",
+        "Automatic gap analysis",
+        "Regulatory updates",
+        "AI recommendations",
+        "Board dashboard",
+        "Risk alerts"
+      ]
+    },
+    "finalCta": {
+      "heading": "Check your NIS2 readiness level",
+      "subtitle": "Start with a free maturity assessment and find out what needs immediate attention."
+    },
+    "seo": {
+      "titleEn": "NIS2 Compliance – AI-Native GRC Platform | Quantifier.ai",
+      "descEn": "Quantifier is an AI-native GRC platform that prepares your organization for NIS2 audit and ensures continuous compliance.",
+      "faq1q": "What is NIS2?",
+      "faq1a": "NIS2 is an EU directive expanding cybersecurity requirements to essential and important entities across 18 sectors, covering risk management, incident reporting, and supply chain security.",
+      "faq2q": "What are the penalties for NIS2 non-compliance?",
+      "faq2a": "Penalties for NIS2 non-compliance can reach EUR 10M or 2% of global annual revenue for essential entities."
+    }
   }
 }
