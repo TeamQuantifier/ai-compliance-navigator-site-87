@@ -11,7 +11,7 @@ interface ScriptConfig {
 const loadedScripts = new Set<string>();
 
 // Google Analytics 4 configuration
-const GA4_ID = 'G-PN6YD4Z1D5';
+const GA4_ID = 'G-H6H8QRZF1R';
 
 // Google Tag Manager configuration
 const GTM_ID = 'GTM-5LLXS7KR';
