@@ -4,12 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import { SUPPORTED_LOCALES, Locale, LOCALE_REGEX } from '@/i18n/config';
 import i18n from '@/i18n/config';
 
+interface ContentAlternate {
+  lang: string;
+  slug: string;
+}
+
 interface LanguageContextType {
   currentLocale: Locale;
   changeLanguage: (locale: Locale) => void;
   t: (key: string, options?: any) => any;
   isLoading: boolean;
   isReady: boolean;
+  setAlternates: (alternates: ContentAlternate[], contentType: 'post' | 'story') => void;
+  clearAlternates: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -28,6 +35,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [currentLocale, setCurrentLocale] = useState<Locale>(getLocaleFromPath());
   const [isLoading, setIsLoading] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [contentAlternates, setContentAlternates] = useState<{ alternates: ContentAlternate[]; contentType: 'post' | 'story' } | null>(null);
 
   // Check if translations are ready
   useEffect(() => {
@@ -74,6 +82,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, [currentLocale]);
 
+  const setAlternates = (alternates: ContentAlternate[], contentType: 'post' | 'story') => {
+    setContentAlternates({ alternates, contentType });
+  };
+
+  const clearAlternates = () => {
+    setContentAlternates(null);
+  };
+
   const changeLanguage = async (newLocale: Locale) => {
     localStorage.setItem('preferred-language', newLocale);
     setCurrentLocale(newLocale);
@@ -83,8 +99,24 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     
     const currentPath = window.location.pathname;
     const pathWithoutLocale = currentPath.replace(localeRegex, '');
-    const newPath = `/${newLocale}${pathWithoutLocale ? '/' + pathWithoutLocale : ''}`;
+
+    // Check if we're on a content detail page with alternates registered
+    if (contentAlternates) {
+      const { alternates, contentType } = contentAlternates;
+      const target = alternates.find(a => a.lang === newLocale);
+      const basePath = contentType === 'post' ? 'blog' : 'success-stories';
+      
+      if (target) {
+        navigate(`/${newLocale}/${basePath}/${target.slug}`);
+        return;
+      } else {
+        // No translation — fall back to list page
+        navigate(`/${newLocale}/${basePath}`);
+        return;
+      }
+    }
     
+    const newPath = `/${newLocale}${pathWithoutLocale ? '/' + pathWithoutLocale : ''}`;
     navigate(newPath);
   };
 
@@ -94,7 +126,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       changeLanguage,
       t,
       isLoading,
-      isReady
+      isReady,
+      setAlternates,
+      clearAlternates,
     }}>
       {children}
     </LanguageContext.Provider>

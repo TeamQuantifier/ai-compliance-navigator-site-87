@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternates } from '@/hooks/useBlog';
 import { usePrerenderReady } from '@/hooks/usePrerenderReady';
@@ -15,11 +16,18 @@ import PageTemplate from '@/components/PageTemplate';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { currentLocale, t } = useLanguage();
-  
+  const { currentLocale, t, setAlternates, clearAlternates } = useLanguage();
+
   const { data: post, isLoading, error } = usePost(slug || '', currentLocale);
   const { data: alternates } = useAlternates(post?.group_id, currentLocale, 'post');
   usePrerenderReady(!isLoading);
+
+  useEffect(() => {
+    if (alternates && alternates.length > 0) {
+      setAlternates(alternates, 'post');
+    }
+    return () => clearAlternates();
+  }, [alternates]);
 
   const handleShare = () => {
     if (navigator.share) {
