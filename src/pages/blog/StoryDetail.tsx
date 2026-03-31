@@ -21,9 +21,8 @@ interface KPI {
 
 const StoryDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { currentLocale, t } = useLanguage();
-  
-  const { setAlternates, clearAlternates } = useLanguage();
+  const { currentLocale, t, setAlternates, clearAlternates } = useLanguage();
+
   const { data: story, isLoading, error } = useStory(slug || '', currentLocale);
   const { data: alternates } = useAlternates(story?.group_id, currentLocale, 'story');
   usePrerenderReady(!isLoading);
