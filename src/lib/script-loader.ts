@@ -14,7 +14,7 @@ const loadedScripts = new Set<string>();
 const GA4_ID = 'G-PN6YD4Z1D5';
 
 // Google Tag Manager configuration
-const GTM_ID = 'GTM-TF3F89BP';
+const GTM_ID = 'GTM-5LLXS7KR';
 
 // Microsoft Clarity configuration
 const CLARITY_ID = 'v4vvg5pveg';

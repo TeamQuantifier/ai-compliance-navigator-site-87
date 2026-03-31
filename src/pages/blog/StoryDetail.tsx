@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useStory, useAlternates } from '@/hooks/useBlog';
 import { usePrerenderReady } from '@/hooks/usePrerenderReady';
@@ -20,11 +21,18 @@ interface KPI {
 
 const StoryDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { currentLocale, t } = useLanguage();
-  
+  const { currentLocale, t, setAlternates, clearAlternates } = useLanguage();
+
   const { data: story, isLoading, error } = useStory(slug || '', currentLocale);
   const { data: alternates } = useAlternates(story?.group_id, currentLocale, 'story');
   usePrerenderReady(!isLoading);
+
+  useEffect(() => {
+    if (alternates && alternates.length > 0) {
+      setAlternates(alternates, 'story');
+    }
+    return () => clearAlternates();
+  }, [alternates]);
   
   if (!slug) {
     return null;
