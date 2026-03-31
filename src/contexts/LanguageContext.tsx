@@ -4,12 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import { SUPPORTED_LOCALES, Locale, LOCALE_REGEX } from '@/i18n/config';
 import i18n from '@/i18n/config';
 
+interface ContentAlternate {
+  lang: string;
+  slug: string;
+}
+
 interface LanguageContextType {
   currentLocale: Locale;
   changeLanguage: (locale: Locale) => void;
   t: (key: string, options?: any) => any;
   isLoading: boolean;
   isReady: boolean;
+  setAlternates: (alternates: ContentAlternate[], contentType: 'post' | 'story') => void;
+  clearAlternates: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
