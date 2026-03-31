@@ -16,9 +16,8 @@ import PageTemplate from '@/components/PageTemplate';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { currentLocale, t } = useLanguage();
-  
-  const { setAlternates, clearAlternates } = useLanguage();
+  const { currentLocale, t, setAlternates, clearAlternates } = useLanguage();
+
   const { data: post, isLoading, error } = usePost(slug || '', currentLocale);
   const { data: alternates } = useAlternates(post?.group_id, currentLocale, 'post');
   usePrerenderReady(!isLoading);
