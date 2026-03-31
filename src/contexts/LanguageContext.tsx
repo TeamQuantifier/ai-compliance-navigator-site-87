@@ -126,7 +126,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       changeLanguage,
       t,
       isLoading,
-      isReady
+      isReady,
+      setAlternates,
+      clearAlternates,
     }}>
       {children}
     </LanguageContext.Provider>
