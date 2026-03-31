@@ -35,6 +35,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [currentLocale, setCurrentLocale] = useState<Locale>(getLocaleFromPath());
   const [isLoading, setIsLoading] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [contentAlternates, setContentAlternates] = useState<{ alternates: ContentAlternate[]; contentType: 'post' | 'story' } | null>(null);
 
   // Check if translations are ready
   useEffect(() => {
