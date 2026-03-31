@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternates } from '@/hooks/useBlog';
 import { usePrerenderReady } from '@/hooks/usePrerenderReady';
