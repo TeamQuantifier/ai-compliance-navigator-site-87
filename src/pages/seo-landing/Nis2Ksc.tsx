@@ -60,10 +60,10 @@ const StickyCta = () => {
           {t('nis2Ksc.stickyCta.text')}
         </p>
         <div className="flex gap-3 ml-auto">
-          <Button asChild size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+          <Button asChild size="sm" className="bg-white text-slate-900 hover:bg-white/90">
             <a href="#final-cta">{t('nis2Ksc.stickyCta.demo')}</a>
           </Button>
-          <Button asChild size="sm" className="bg-white text-slate-900 hover:bg-white/90">
+          <Button asChild size="sm" className="bg-primary text-white hover:bg-primary/90">
             <a href="#final-cta">{t('nis2Ksc.stickyCta.cta')}</a>
           </Button>
         </div>
