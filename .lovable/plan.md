@@ -1,45 +1,90 @@
 
 
-## Problem
+## SEO Audit & Fixes for quantifier.ai
 
-When switching language on a content detail page (e.g., `/pl/success-stories/case-study-biofarm`), `changeLanguage` simply replaces the locale prefix (`/pl/` → `/en/`) but keeps the same slug. Since content has different slugs per language (linked via `group_id`), the target URL doesn't exist and shows a 404.
+### Critical Issues Found
 
-The `alternates` data (containing `{ lang, slug }` pairs for all language versions) is **already fetched** in both `BlogPost.tsx` and `StoryDetail.tsx` via the `useAlternates` hook — it's just not connected to the language switcher.
+**Issue #1 — Massive duplicate content: Product pages (SEVERITY: HIGH)**
+Routes `/product`, `/product/features`, `/product/ai-compliance-officer`, `/product/task-data-management`, `/product/documents-management`, `/product/value-chain`, `/product/risk-assessment`, `/product/analytics-dashboards`, `/product/api-integrations` ALL render the **same `Features` component**. This creates 9 URLs × 3 locales = **27 near-identical pages** in the sitemap. Dedicated page components exist (`ComplianceOfficer.tsx`, `AnalyticsDashboards.tsx`, etc.) but are **not wired up** in `App.tsx`.
 
-## Solution
+**Issue #2 — Massive duplicate content: By-Roles pages (SEVERITY: HIGH)**
+Routes `/by-roles`, `/by-roles/managers`, `/by-roles/contributors`, `/by-roles/auditor` ALL render the same `ByRoles` component. 4 × 3 = **12 near-identical pages** in the sitemap.
 
-Add an "alternates registry" so content pages can tell the language switcher about their translated URLs.
+**Issue #3 — ProductOverview is orphaned/thin (SEVERITY: MEDIUM)**
+`/product/overview` renders a separate thin hub page (`ProductOverview.tsx`) that mostly links to sub-pages. It competes with `/product` and `/product/features` for the same intent.
 
-### 1. Extend `LanguageContext` with alternates registry
+**Issue #4 — Sitemap contains event page with only one slug (SEVERITY: LOW)**
+Only `/events/nis2-w-polsce` is hardcoded in the sitemap. Other events from `eventsData.ts` are missing. The events themselves use `slug` per locale from the data file, but the sitemap hardcodes one Polish slug across all 3 locales.
 
-Add state + methods to `LanguageContext`:
-- `setAlternates(alternates: Array<{ lang: string; slug: string }>, contentType: 'post' | 'story')` — pages call this when alternates load
-- `clearAlternates()` — pages call this on unmount
-- Update `changeLanguage`: before navigating, check if an alternate exists for the target locale. If so, build the correct URL (e.g., `/${newLocale}/blog/${alternateSlug}` or `/${newLocale}/success-stories/${alternateSlug}`). If not, fall back to the list page (`/${newLocale}/blog` or `/${newLocale}/success-stories`).
+**Issue #5 — `cybersecurity-check` in sitemap uses same path for PL/CS (SEVERITY: MEDIUM)**
+The sitemap lists `/pl/cybersecurity-check/` and `/cs/cybersecurity-check/` but the actual PL URL is `/pl/sprawdz-cyberbezpieczenstwo/` and CS is `/cs/zkontrolujte-kybernetickou-bezpecnost/`. The hreflang for these is also wrong.
 
-### 2. Register alternates in `BlogPost.tsx`
+**Issue #6 — `grc-platform` lacks PageTemplate wrapper and hreflang (SEVERITY: MEDIUM)**
+`GrcPlatform.tsx` uses a raw Helmet block instead of `PageTemplate`, so it may not have consistent hreflang across all locales.
 
-Add a `useEffect` that calls `setAlternates(alternates, 'post')` when `alternates` data loads, and `clearAlternates()` on unmount.
+---
 
-### 3. Register alternates in `StoryDetail.tsx`
+### Fix Plan
 
-Same pattern — call `setAlternates(alternates, 'story')` when data loads, cleanup on unmount.
+#### Phase 1: Wire up dedicated product pages (eliminate 27-page duplicate cluster)
 
-### 4. Fallback behavior
+**`App.tsx`**: Import and connect the dedicated product components that already exist:
+- `/product` → `Features` (keep as main product page)
+- `/product/overview` → `ProductOverview` (keep)
+- `/product/features` → **redirect to `/product`** (duplicate)
+- `/product/ai-compliance-officer` → `ComplianceOfficer`
+- `/product/task-data-management` → `TaskDataManagement`
+- `/product/documents-management` → `DocumentsManagement`
+- `/product/analytics-dashboards` → `AnalyticsDashboards`
+- `/product/api-integrations` → `ApiIntegrations`
+- `/product/value-chain` → `ValueChain`
+- `/product/risk-assessment` → `RiskAssessment`
 
-When switching language on a content page that has **no translation** for the target language:
-- Redirect to the list page (`/${locale}/blog` or `/${locale}/success-stories`) instead of showing a 404.
+Import the 7 dedicated components that exist but aren't used. Add redirect from `/product/features` → `/product`.
 
-### Technical Details
+#### Phase 2: Fix By-Roles duplicate cluster
 
-**`src/contexts/LanguageContext.tsx`**:
-- Add `contentAlternates` state (`Array<{ lang: string; slug: string }>` + `contentType`)
-- Add `setAlternates` and `clearAlternates` to context value
-- In `changeLanguage`: detect if on `/blog/` or `/success-stories/` detail route, check alternates, navigate to correct slug or fallback to list
+The `ByRoles` component uses tabs. Route `/by-roles/managers`, `/by-roles/contributors`, `/by-roles/auditor` should open with the correct tab active. The dedicated page components (`Managers.tsx`, `Contributors.tsx`, `Auditor.tsx`) exist.
 
-**`src/pages/blog/BlogPost.tsx`**: Add useEffect to register/clear alternates
+**`App.tsx`**: Wire up dedicated role pages:
+- `/by-roles` → `ByRoles` (keep as hub)
+- `/by-roles/managers` → `Managers`
+- `/by-roles/contributors` → `Contributors`
+- `/by-roles/auditor` → `Auditor`
 
-**`src/pages/blog/StoryDetail.tsx`**: Add useEffect to register/clear alternates
+#### Phase 3: Fix sitemap issues
 
-**No new dependencies or database changes needed.**
+**`supabase/functions/sitemap/index.ts`**:
+1. Remove `/product/features` (redirect target, not canonical)
+2. Fix `cybersecurity-check` — use locale-specific paths:
+   - EN: `/cybersecurity-check`
+   - PL: `/sprawdz-cyberbezpieczenstwo`
+   - CS: `/zkontrolujte-kybernetickou-bezpecnost`
+   (These need custom per-locale handling, not the generic all-locales loop)
+3. Fix `/events/nis2-w-polsce` — this Polish slug shouldn't be in EN/CS sitemap. Use localized slugs from eventsData or handle per-locale.
+4. Update `lastmod` dates to current date for modified pages.
+
+#### Phase 4: Netlify redirects
+
+**`netlify.toml`**: Add 301 redirect for `/product/features` → `/product/`.
+
+#### Phase 5: Minor SEO fixes
+
+1. **GrcPlatform.tsx**: Ensure proper hreflang tags for all 3 locales + x-default.
+2. **ProductOverview**: Consider if this thin page should be `noIndex` or merged with `/product`. Decision: keep but ensure unique title/description.
+
+---
+
+### Files to modify
+
+1. `src/App.tsx` — wire up dedicated product + role page imports, add redirect for `/product/features`
+2. `supabase/functions/sitemap/index.ts` — fix duplicate/wrong URLs, locale-specific paths for cybersecurity-check and events
+3. `netlify.toml` — add `/product/features` → `/product/` redirect
+4. `supabase/functions/llms-txt/index.ts` — no changes needed (already correct)
+
+### Impact
+
+- **Before**: ~142 unindexed pages, ~39 duplicate product/role pages in sitemap
+- **After**: Each product sub-page serves unique content, sitemap is clean, duplicate clusters eliminated
+- **Risk**: Users who bookmarked `/product/features` get 301'd to `/product` (acceptable)
 
