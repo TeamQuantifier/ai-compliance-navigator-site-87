@@ -2091,56 +2091,6 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         ]
       }
     },
-    'api-integrations': {
-      en: {
-        title: 'API Integrations - Connect Your Compliance Stack | Quantifier',
-        description: 'Connect Quantifier with 100+ tools and systems. REST API, webhooks and native integrations with AWS, Azure, GitHub, Jira, Slack and more.',
-        h1: 'API Integrations',
-        subtitle: 'Connect your entire tech stack for automated compliance data collection.',
-        sections: [
-          { h2: 'Native Integrations', content: ['Cloud providers: AWS, Azure, Google Cloud', 'Development: GitHub, GitLab, Bitbucket, Jira', 'Communication: Slack, Microsoft Teams', 'Identity: Okta, Azure AD, Google Workspace', 'HR: BambooHR, Workday'] },
-          { h2: 'REST API & Webhooks', content: ['Full REST API for custom integrations', 'Webhook support for real-time data sync', 'Comprehensive API documentation', 'SDKs for popular programming languages'] },
-          { h2: 'Data Security', content: ['OAuth 2.0 and API key authentication', 'End-to-end encryption for all data transfers', 'Granular permission controls per integration', 'Audit logs for all API activity'] }
-        ],
-        internalLinks: [
-          { text: 'Platform Overview', href: '/product/overview' },
-          { text: 'Task & Data Management', href: '/product/task-data-management' },
-          { text: 'Product Features', href: '/product/features' },
-          { text: 'Contact Us', href: '/contact' }
-        ]
-      },
-      pl: {
-        title: 'Integracje API - Połącz Swój Stack Compliance | Quantifier',
-        description: 'Połącz Quantifier z ponad 100 narzędziami. REST API, webhooki i natywne integracje z AWS, Azure, GitHub, Jira, Slack i więcej.',
-        h1: 'Integracje API',
-        subtitle: 'Połącz cały swój stack technologiczny do automatycznego zbierania danych compliance.',
-        sections: [
-          { h2: 'Natywne Integracje', content: ['Chmura: AWS, Azure, Google Cloud', 'Rozwój: GitHub, GitLab, Bitbucket, Jira', 'Komunikacja: Slack, Microsoft Teams', 'Tożsamość: Okta, Azure AD, Google Workspace'] },
-          { h2: 'REST API i Webhooki', content: ['Pełne REST API do niestandardowych integracji', 'Obsługa webhooków do synchronizacji w czasie rzeczywistym', 'Kompleksowa dokumentacja API'] },
-          { h2: 'Bezpieczeństwo Danych', content: ['Uwierzytelnianie OAuth 2.0 i klucze API', 'Szyfrowanie end-to-end', 'Granularna kontrola uprawnień'] }
-        ],
-        internalLinks: [
-          { text: 'Przegląd Platformy', href: '/product/overview' },
-          { text: 'Zarządzanie Zadaniami', href: '/product/task-data-management' },
-          { text: 'Funkcje Produktu', href: '/product/features' }
-        ]
-      },
-      cs: {
-        title: 'API Integrace - Propojte Svůj Compliance Stack | Quantifier',
-        description: 'Propojte Quantifier se 100+ nástroji. REST API, webhooky a nativní integrace s AWS, Azure, GitHub, Jira, Slack a dalšími.',
-        h1: 'API Integrace',
-        subtitle: 'Propojte celý svůj technologický stack pro automatizovaný sběr dat.',
-        sections: [
-          { h2: 'Nativní Integrace', content: ['Cloud: AWS, Azure, Google Cloud', 'Vývoj: GitHub, GitLab, Bitbucket, Jira', 'Komunikace: Slack, Microsoft Teams'] },
-          { h2: 'REST API a Webhooky', content: ['Kompletní REST API pro vlastní integrace', 'Podpora webhooků pro synchronizaci v reálném čase', 'Komplexní API dokumentace'] }
-        ],
-        internalLinks: [
-          { text: 'Přehled Platformy', href: '/product/overview' },
-          { text: 'Správa Úkolů', href: '/product/task-data-management' },
-          { text: 'Funkce Produktu', href: '/product/features' }
-        ]
-      }
-    },
     'value-chain': {
       en: {
         title: 'Value Chain Management - Supply Chain Compliance | Quantifier',
