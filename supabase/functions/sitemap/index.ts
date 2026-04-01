@@ -212,7 +212,35 @@ serve(async (req) => {
       }
     }
 
-    // Blog Posts - only hreflang to existing alternate versions
+    // Locale-specific pages (different URL path per language)
+    for (const page of localeSpecificPages) {
+      for (const locale of locales) {
+        const localePath = page.paths[locale] || page.paths['en'];
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${locale}${localePath}`);
+        const lastmod = page.lastmod || today;
+        
+        // Generate hreflang links pointing to correct locale-specific paths
+        const hreflangLinks = locales
+          .map(l => {
+            const lPath = page.paths[l] || page.paths['en'];
+            const href = ensureTrailingSlash(`${BASE_URL}/${l}${lPath}`);
+            const hreflang = localeHreflangMap[l] || l;
+            return `<xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`;
+          })
+          .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en${page.paths['en']}`)}" />`;
+        
+        urlEntries += `
+  <url>
+    <loc>${fullPath}</loc>
+    ${hreflangLinks}
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
+      }
+    }
+
+
     if (posts && posts.length > 0) {
       for (const post of posts) {
         const fullPath = ensureTrailingSlash(`${BASE_URL}/${post.lang}/blog/${post.slug}`);
