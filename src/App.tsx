@@ -67,6 +67,9 @@ import StoryDetail from "./pages/blog/StoryDetail";
 import GrcPlatform from "./pages/seo-landing/GrcPlatform";
 import Nis2Ksc from "./pages/seo-landing/Nis2Ksc";
 
+// Compare pages
+import ComparePage from "./pages/compare/ComparePage";
+
 // Legal pages
 import CookiesPolicy from "./pages/legal/CookiesPolicy";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
