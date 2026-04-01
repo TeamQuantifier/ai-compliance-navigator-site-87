@@ -43,11 +43,6 @@ const ProductOverview = () => {
       href: "/product/analytics-dashboards",
       description: t('product.overview.analytics.description')
     },
-    {
-      title: t('product.overview.apiIntegrations.title'),
-      href: "/product/api-integrations",
-      description: t('product.overview.apiIntegrations.description')
-    }
   ];
 
   return (

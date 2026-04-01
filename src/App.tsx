@@ -24,7 +24,7 @@ import DocumentsManagement from "./pages/product/DocumentsManagement";
 import ValueChain from "./pages/product/ValueChain";
 import RiskAssessment from "./pages/product/RiskAssessment";
 import AnalyticsDashboards from "./pages/product/AnalyticsDashboards";
-import ApiIntegrations from "./pages/product/ApiIntegrations";
+
 
 // By Roles
 import ByRoles from "./pages/roles/ByRoles";
@@ -127,7 +127,7 @@ const MainRoutes = () => (
         <Route path="/:locale/product/value-chain" element={<ValueChain />} />
         <Route path="/:locale/product/risk-assessment" element={<RiskAssessment />} />
         <Route path="/:locale/product/analytics-dashboards" element={<AnalyticsDashboards />} />
-        <Route path="/:locale/product/api-integrations" element={<ApiIntegrations />} />
+        
     
         {/* By Roles routes */}
         <Route path="/:locale/by-roles" element={<ByRoles />} />
