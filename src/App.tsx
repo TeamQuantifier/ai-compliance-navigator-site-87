@@ -18,9 +18,19 @@ import NotFound from "./pages/NotFound";
 // Product pages
 import ProductOverview from "./pages/product/ProductOverview";
 import Features from "./pages/product/Features";
+import ComplianceOfficer from "./pages/product/ComplianceOfficer";
+import TaskDataManagement from "./pages/product/TaskDataManagement";
+import DocumentsManagement from "./pages/product/DocumentsManagement";
+import ValueChain from "./pages/product/ValueChain";
+import RiskAssessment from "./pages/product/RiskAssessment";
+import AnalyticsDashboards from "./pages/product/AnalyticsDashboards";
+import ApiIntegrations from "./pages/product/ApiIntegrations";
 
 // By Roles
 import ByRoles from "./pages/roles/ByRoles";
+import Managers from "./pages/roles/Managers";
+import Contributors from "./pages/roles/Contributors";
+import Auditor from "./pages/roles/Auditor";
 
 // Frameworks
 import Frameworks from "./pages/frameworks/Frameworks";
