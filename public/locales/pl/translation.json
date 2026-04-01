@@ -875,7 +875,109 @@
         "explorePlans": "Zobacz plany"
       }
     },
-    "valueChain": {
+    "complianceOfficer": {
+      "title": "AI Compliance Officer",
+      "description": "Autonomiczny agent AI do zarządzania zgodnością, który ciągle monitoruje, analizuje i działa w ramach Twojego programu compliance.",
+      "hero": {
+        "title": "Twój AI Compliance Officer",
+        "subtitle": "Autonomiczny agent AI, który monitoruje Twoją zgodność 24/7, identyfikuje luki, tworzy polityki, przydziela zadania i prowadzi Twój zespół — w ramach ISO 27001, NIS2, DORA, RODO, SOC 2 i innych.",
+        "bookDemo": "Umów demo"
+      },
+      "howItWorks": {
+        "title": "Jak działa AI Compliance Officer",
+        "subtitle": "Cztery etapy — od nauki Twojego biznesu po autonomiczne działanie. Bez ręcznych checklist. Bez arkuszy.",
+        "steps": {
+          "learns": {
+            "title": "Uczy się Twojego biznesu",
+            "description": "AI analizuje Twoje polityki, kontrole, strukturę organizacyjną i historyczne dane compliance, aby zrozumieć Twoje unikalne środowisko."
+          },
+          "monitors": {
+            "title": "Monitoruje ciągle",
+            "description": "Śledzi status zgodności we wszystkich aktywnych standardach w czasie rzeczywistym, wykrywając luki, wygasające dokumenty i zmiany regulacyjne."
+          },
+          "acts": {
+            "title": "Działa autonomicznie",
+            "description": "Przydziela zadania członkom zespołu, tworzy zaktualizowane polityki, zbiera dowody i wysyła przypomnienia — bez czekania na ręczne polecenia."
+          },
+          "communicates": {
+            "title": "Raportuje i komunikuje",
+            "description": "Dostarcza dzienne podsumowania, alerty ryzyka i raporty postępu. Odpowiada na pytania compliance w języku naturalnym przez wbudowany chat."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Dashboard zgodności w czasie rzeczywistym",
+        "subtitle": "Zobacz swoją pozycję compliance na pierwszy rzut oka — postęp standardów, wnioski AI, wskaźniki ryzyka i oczekujące działania w jednym widoku."
+      },
+      "capabilities": {
+        "title": "Kluczowe możliwości",
+        "gapAnalysis": {
+          "title": "Automatyczna analiza luk",
+          "description": "AI skanuje Twoje kontrole względem wymagań standardów, identyfikuje luki i sugeruje kroki naprawcze z priorytetyzacją."
+        },
+        "continuousMonitoring": {
+          "title": "Ciągły monitoring zgodności",
+          "description": "Monitoring 24/7 ze szczegółowymi alertami, gdy kontrole odbiegają od normy, dokumenty wygasają lub nowe zmiany regulacyjne Cię dotyczą."
+        },
+        "evidenceCollection": {
+          "title": "Zbieranie dowodów przez AI",
+          "description": "Automatycznie zbiera, organizuje i waliduje dowody audytowe z podłączonych systemów — redukując pracę ręczną nawet o 80%."
+        },
+        "riskDetection": {
+          "title": "Proaktywne wykrywanie ryzyka",
+          "description": "Identyfikuje pojawiające się ryzyka compliance zanim staną się problemami. Analizuje wzorce w Twoich danych, aby przewidywać potencjalne niezgodności."
+        },
+        "taskDelegation": {
+          "title": "Inteligentne delegowanie zadań",
+          "description": "Przydziela zadania compliance odpowiednim osobom na podstawie roli, kompetencji i obciążenia pracą. Śledzi realizację i wysyła automatyczne przypomnienia."
+        },
+        "policyDrafting": {
+          "title": "Tworzenie polityk przez AI",
+          "description": "Generuje projekty polityk zgodne ze standardami, aktualizuje istniejące dokumenty po zmianach norm i automatycznie zarządza kontrolą wersji."
+        }
+      },
+      "frameworks": {
+        "title": "Obsługiwane standardy",
+        "subtitle": "AI Compliance Officer jest wstępnie przeszkolony na głównych standardach regulacyjnych i branżowych — i ciągle aktualizowany wraz z ich ewolucją.",
+        "items": {
+          "iso27001": { "name": "ISO 27001", "desc": "Zarządzanie bezpieczeństwem informacji" },
+          "nis2": { "name": "Dyrektywa NIS2", "desc": "Wymagania cyberbezpieczeństwa UE" },
+          "dora": { "name": "DORA", "desc": "Cyfrowa odporność operacyjna" },
+          "gdpr": { "name": "RODO", "desc": "Ochrona danych osobowych" },
+          "soc2": { "name": "SOC 2", "desc": "Kryteria usług zaufania" },
+          "esg": { "name": "ESG / CSRD", "desc": "Raportowanie zrównoważonego rozwoju" }
+        }
+      },
+      "faq": {
+        "title": "Najczęściej zadawane pytania",
+        "whatIsAiOfficer": {
+          "question": "Czym jest AI Compliance Officer?",
+          "answer": "AI Compliance Officer to autonomiczny agent AI, który ciągle monitoruje pozycję zgodności Twojej organizacji, identyfikuje luki, przydziela zadania naprawcze, tworzy polityki i zapewnia wskazówki w czasie rzeczywistym — funkcjonując jako niestrudzony wirtualny członek Twojego zespołu compliance."
+        },
+        "howDifferent": {
+          "question": "Czym to się różni od narzędzia z checklistami compliance?",
+          "answer": "W przeciwieństwie do statycznych narzędzi z listami kontrolnymi, agent AI Quantifier rozumie kontekst. Uczy się Twojego biznesu, śledzi zmiany w wielu standardach jednocześnie, podejmuje autonomiczne działania (jak przydzielanie zadań i tworzenie dokumentów) i dostosowuje rekomendacje do Twojej konkretnej pozycji compliance."
+        },
+        "whichFrameworks": {
+          "question": "Jakie standardy compliance obsługuje AI?",
+          "answer": "AI Compliance Officer obsługuje ISO 27001, NIS2, DORA, RODO, SOC 2, ISO 9001, ISO 14001, CSRD/ESG i więcej. Jest ciągle aktualizowany wraz z ewolucją standardów i może obsługiwać wiele standardów jednocześnie z możliwością cross-mappingu."
+        },
+        "dataPrivacy": {
+          "question": "Czy moje dane compliance są bezpieczne?",
+          "answer": "Tak. Quantifier jest hostowany na infrastrukturze EU, wszystkie dane są szyfrowane w spoczynku i podczas transmisji, a my stosujemy ścisłe praktyki izolacji danych. Twoje dane compliance nigdy nie są używane do trenowania modeli AI ani udostępniane stronom trzecim."
+        },
+        "setupTime": {
+          "question": "Ile czasu zajmuje wdrożenie?",
+          "answer": "Większość organizacji jest gotowa do pracy w ciągu 1-2 tygodni. AI zaczyna uczyć się kontekstu Twojej zgodności natychmiast po imporcie danych i dostarcza praktyczne wnioski w ciągu pierwszych kilku dni."
+        }
+      },
+      "cta": {
+        "title": "Gotowy zautomatyzować swój program compliance?",
+        "subtitle": "Dołącz do organizacji korzystających z AI Compliance Officer Quantifier, aby zredukować ręczną pracę compliance nawet o 80% przy jednoczesnym zwiększeniu pokrycia.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
+    },
       "title": "Łańcuch wartości",
       "description": "Mapuj i monitoruj zgodność w całym łańcuchu wartości Twojej organizacji.",
       "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj.",

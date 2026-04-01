@@ -841,30 +841,105 @@
     },
     "complianceOfficer": {
       "title": "AI Compliance Officer",
-      "description": "Váš virtuální compliance asistent, který nepřetržitě monitoruje a řídí váš compliance program.",
+      "description": "Váš autonomní AI agent pro správu compliance, který nepřetržitě monitoruje, analyzuje a jedná v rámci vašeho compliance programu.",
       "hero": {
-        "title": "Seznamte se s vaším novým AI Compliance Officer",
-        "subtitle": "Výkonná AI, která nepřetržitě monitoruje váš compliance program, automatizuje rutinní úkoly a poskytuje inteligentní doporučení.",
+        "title": "Váš AI Compliance Officer",
+        "subtitle": "Autonomní AI agent, který monitoruje vaši compliance pozici 24/7, identifikuje mezery, vytváří politiky, přiděluje úkoly a vede váš tým — napříč ISO 27001, NIS2, DORA, GDPR, SOC 2 a dalšími.",
         "bookDemo": "Objednat demo"
       },
       "howItWorks": {
-        "title": "Jak funguje náš AI Compliance Officer",
-        "subtitle": "AI Compliance Officer Quantifier kombinuje pokročilé jazykové modely, specializované compliance znalosti a autonomní schopnosti k transformaci způsobu, jakým spravujete compliance.",
-        "monitoring": {
-          "title": "Kontinuální monitorování",
-          "description": "Naše AI nikdy nespí, neustále analyzuje váš compliance stav, identifikuje rizika a detekuje potenciální mezery dříve, než se stanou problémy."
-        },
-        "expertise": {
-          "title": "Expertíza standardů",
-          "description": "Předtrénováno na ISO 14001, GHG Protocol, ISO 14064 a desítkách dalších environmentálních standardů a regulací s pravidelnými aktualizacemi."
-        },
-        "action": {
-          "title": "Autonomní akce",
-          "description": "Kromě upozorňování může naše AI jednat—přidělovat úkoly, vyžadovat informace, plánovat přezkumy a dokonce sestavovat dokumentaci."
+        "title": "Jak AI Compliance Officer funguje",
+        "subtitle": "Čtyři fáze — od učení se vašeho podnikání po autonomní akce. Žádné manuální checklisty. Žádné tabulky.",
+        "steps": {
+          "learns": {
+            "title": "Učí se váš byznys",
+            "description": "AI analyzuje vaše politiky, kontroly, organizační strukturu a historická compliance data, aby pochopila vaše unikátní prostředí."
+          },
+          "monitors": {
+            "title": "Kontinuálně monitoruje",
+            "description": "Sleduje stav compliance napříč všemi aktivními standardy v reálném čase, detekuje mezery, expirující dokumenty a regulační změny."
+          },
+          "acts": {
+            "title": "Jedná autonomně",
+            "description": "Přiděluje úkoly členům týmu, vytváří aktualizované politiky, sbírá důkazy a posílá připomínky — bez čekání na manuální vstup."
+          },
+          "communicates": {
+            "title": "Reportuje a komunikuje",
+            "description": "Dodává denní souhrny, rizikové alerty a reporty pokroku. Odpovídá na compliance otázky v přirozeném jazyce přes vestavěný chat."
+          }
         }
       },
-      "useCases": {
-        "title": "Případy použití environmentální compliance"
+      "dashboard": {
+        "title": "Compliance dashboard v reálném čase",
+        "subtitle": "Podívejte se na svou compliance pozici na první pohled — pokrok standardů, AI insights, rizikové indikátory a čekající akce v jednom zobrazení."
+      },
+      "capabilities": {
+        "title": "Klíčové schopnosti",
+        "gapAnalysis": {
+          "title": "Automatická gap analýza",
+          "description": "AI skenuje vaše současné kontroly oproti požadavkům standardů, identifikuje mezery a navrhuje nápravné kroky s prioritizací."
+        },
+        "continuousMonitoring": {
+          "title": "Kontinuální monitoring compliance",
+          "description": "Monitoring 24/7 s okamžitými alerty, když kontroly selhávají, dokumenty expirují nebo nové regulační změny vás ovlivňují."
+        },
+        "evidenceCollection": {
+          "title": "Sběr důkazů řízený AI",
+          "description": "Automaticky sbírá, organizuje a validuje auditní důkazy z propojených systémů — snižuje manuální práci až o 80%."
+        },
+        "riskDetection": {
+          "title": "Proaktivní detekce rizik",
+          "description": "Identifikuje vznikající compliance rizika dříve, než se stanou problémy. Analyzuje vzory ve vašich datech pro predikci potenciálních neshod."
+        },
+        "taskDelegation": {
+          "title": "Inteligentní delegování úkolů",
+          "description": "Přiděluje compliance úkoly správným členům týmu na základě role, odbornosti a vytížení. Sleduje dokončení a posílá automatické připomínky."
+        },
+        "policyDrafting": {
+          "title": "Tvorba politik pomocí AI",
+          "description": "Generuje návrhy politik v souladu se standardy, aktualizuje existující dokumenty při změnách norem a automaticky spravuje verzování."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrytí standardů",
+        "subtitle": "AI Compliance Officer je předtrénován na hlavních regulačních a průmyslových standardech — a průběžně aktualizován s jejich vývojem.",
+        "items": {
+          "iso27001": { "name": "ISO 27001", "desc": "Řízení bezpečnosti informací" },
+          "nis2": { "name": "Směrnice NIS2", "desc": "Požadavky kybernetické bezpečnosti EU" },
+          "dora": { "name": "DORA", "desc": "Digitální operační odolnost" },
+          "gdpr": { "name": "GDPR", "desc": "Ochrana osobních údajů" },
+          "soc2": { "name": "SOC 2", "desc": "Kritéria důvěryhodných služeb" },
+          "esg": { "name": "ESG / CSRD", "desc": "Reportování udržitelnosti" }
+        }
+      },
+      "faq": {
+        "title": "Často kladené otázky",
+        "whatIsAiOfficer": {
+          "question": "Co je AI Compliance Officer?",
+          "answer": "AI Compliance Officer je autonomní AI agent, který nepřetržitě monitoruje compliance pozici vaší organizace, identifikuje mezery, přiděluje nápravné úkoly, vytváří politiky a poskytuje poradenství v reálném čase — funguje jako neúnavný virtuální člen vašeho compliance týmu."
+        },
+        "howDifferent": {
+          "question": "Čím se liší od nástroje s compliance checklisty?",
+          "answer": "Na rozdíl od statických nástrojů s checklisty AI agent Quantifier rozumí kontextu. Učí se váš byznys, sleduje změny napříč více standardy současně, podniká autonomní akce (jako přidělování úkolů a tvorba dokumentů) a přizpůsobuje doporučení vaší konkrétní compliance pozici."
+        },
+        "whichFrameworks": {
+          "question": "Které compliance standardy AI podporuje?",
+          "answer": "AI Compliance Officer podporuje ISO 27001, NIS2, DORA, GDPR, SOC 2, ISO 9001, ISO 14001, CSRD/ESG a další. Je průběžně aktualizován s vývojem standardů a může zpracovávat více standardů současně s možností cross-mappingu."
+        },
+        "dataPrivacy": {
+          "question": "Jsou moje compliance data v bezpečí?",
+          "answer": "Ano. Quantifier je hostován na EU infrastruktuře, všechna data jsou šifrována v klidu i při přenosu a dodržujeme přísné praktiky izolace dat. Vaše compliance data nejsou nikdy používána k trénování AI modelů ani sdílena s třetími stranami."
+        },
+        "setupTime": {
+          "question": "Jak dlouho trvá nasazení?",
+          "answer": "Většina organizací je připravena k provozu během 1-2 týdnů. AI začne učit se kontext vaší compliance okamžitě po importu dat a poskytuje praktické insights během prvních několika dnů."
+        }
+      },
+      "cta": {
+        "title": "Připraveni automatizovat váš compliance program?",
+        "subtitle": "Připojte se k organizacím využívajícím AI Compliance Officer Quantifier ke snížení manuální compliance práce až o 80% při zlepšení pokrytí.",
+        "bookDemo": "Objednat demo",
+        "explorePlans": "Prozkoumat plány"
       }
     },
     "documentsManagement": {
