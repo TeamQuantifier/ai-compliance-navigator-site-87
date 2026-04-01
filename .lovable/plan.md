@@ -1,52 +1,89 @@
 
 
-## Refaktoryzacja EN wersji /frameworks/nis-2 na EU Baseline
+## Update Compare Pages — Factually Defensive Competitor Comparisons
 
-### Zakres
-Polska wersja strony pozostaje bez zmian. Wersja EN zostanie przeredagowana, aby jasno komunikować, że jest to strona EU-wide baseline (nie specyficzna dla jednego kraju). Wersja CS zostanie zaktualizowana analogicznie do EN (EU baseline + wzmianka o czeskiej implementacji).
+### Critical Bug Fix First
+Fix runtime error: `ApiIntegrations is not defined` in App.tsx. The file was already cleaned but the preview may have a stale reference. Will verify and fix if needed.
 
-### Zmiany w tłumaczeniach EN (`public/locales/en/translation.json` + `src/i18n/locales/en.json`)
+### Current Problems Identified
 
-Kluczowe zmiany w `nis2Ksc`:
+**Table data is factually wrong across all 3 pages:**
+- Vanta marked as `false` for NIS2, DORA, AI — Vanta publicly documents all three
+- Drata marked as `false` for NIS2, DORA — Drata publicly documents both
+- Sprinto marked as `false` for NIS2, DORA, TPRM, AI — Sprinto publicly documents all
+- Quantifier marked `true` for EU data hosting — not publicly confirmed on quantifier.ai
+- Differentiator copy claims competitors "don't cover" things they actually do
 
-1. **Hero**:
-   - `bannerText`: "NIS2 directive is now in force across the EU" → ok, zostaje
-   - `heading1`: "Your organisation must comply with NIS2." → **"EU organisations must comply with NIS2."**
-   - `subtext1`: dodanie "across the EU" i usunięcie sugestii jednego kraju
-   - `subtext2`: dodanie "Each EU member state implements NIS2 into national law — Quantifier supports compliance across jurisdictions."
+**Missing sections:** No FAQ, no "who is it for", no "when competitor is better", no disclaimer.
 
-2. **Urgency**: dodanie punktu "Each member state sets its own scope, deadlines and enforcement" 
+---
 
-3. **Problem**: bez zmian (uniwersalny)
+### Plan
 
-4. **Solution heading**: "AI-native operational platform for NIS2" → **"AI-native NIS2 compliance platform for EU organisations"**
+#### 1. Update `ComparePage.tsx` component
+- Change `featureKeys` array to new 10 rows matching the brief
+- Update `getIcon` to handle `"unconfirmed"` status → renders gray text "Not publicly confirmed"
+- Add new sections after differentiators:
+  - **Who this alternative is best for** (i18n-driven)
+  - **When Quantifier is the better fit** (i18n-driven)  
+  - **When the competitor may be the better fit** (i18n-driven)
+  - **Why EU-regulated teams may prefer Quantifier** (i18n-driven)
+  - **FAQ section** using existing `FAQSection` component
+  - **Disclaimer** microcopy below table + legend explanation
+- Fix CTA button styling (already done previously, verify)
 
-5. **Steps**: bez zmian (uniwersalne)
+#### 2. Update `compare.common.features` in all 3 locale files
+New feature labels (replacing old 10):
+1. Multi-framework compliance
+2. AI-driven / agentic compliance workflows  
+3. Continuous compliance monitoring
+4. Dedicated NIS2 support
+5. Dedicated DORA support
+6. Full ESG / CSRD reporting workflows
+7. Third-party / supply chain risk management
+8. Publicly documented EU data hosting
+9. Automated evidence collection
+10. AI-assisted risk assessment
 
-6. **Auditor heading**: "When the auditor walks in" → **"When the inspector arrives"** (NIS2 = kontrole, nie audyty — zgodnie z terminologią projektu)
+#### 3. Update comparison values per competitor
 
-7. **SEO meta**:
-   - `titleEn`: "NIS2 Compliance Software for EU Organisations | Quantifier.ai"
-   - `descEn`: "AI-native GRC platform for NIS2 compliance across the EU. Gap analysis, risk management, incident workflows and continuous compliance in one system."
-   - FAQ: dodanie pytania "Does NIS2 apply the same way in every EU country?" z odpowiedzią wyjaśniającą transpozycję
+**Vanta:** NIS2 → `true`, DORA → `true`, AI workflows → `true`, TPRM → `true`, evidence → `true`, risk → `true`, continuous → `true`, multi-framework → `true`, ESG/CSRD → `false`, EU hosting → `partial`
 
-8. **Final CTA**: bez zmian
+**Drata:** NIS2 → `true`, DORA → `true`, AI workflows → `true`, TPRM → `true`, evidence → `true`, risk → `true`, continuous → `true`, multi-framework → `true`, ESG/CSRD → `false`, EU hosting → `unconfirmed`
 
-### Zmiany w tłumaczeniach CS (`public/locales/cs/translation.json`)
+**Sprinto:** NIS2 → `true`, DORA → `true`, AI workflows → `true`, TPRM → `true`, evidence → `true`, risk → `true`, continuous → `true`, multi-framework → `true`, ESG/CSRD → `false`, EU hosting → `false`
 
-Analogicznie do EN ale z czeskim kontekstem:
-- Hero heading: "Vaše organizace musí splnit NIS2." → **"Organizace v EU musí splnit NIS2."**
-- Solution heading: dodanie "pro organizace v EU"
-- Auditor: "auditor" → "inspektor" (kontrole, nie audyty)
-- SEO title: "NIS2 Compliance Software pro organizace v EU | Quantifier.ai"
+**Quantifier:** All `true` except EU hosting → `unconfirmed` (not publicly confirmed on quantifier.ai)
 
-### Pliki do edycji
-1. `public/locales/en/translation.json` — sekcja `nis2Ksc` (~30 zmian tekstowych)
-2. `src/i18n/locales/en.json` — mirror tych samych kluczy `nis2Ksc`
-3. `public/locales/cs/translation.json` — sekcja `nis2Ksc` (~15 zmian tekstowych)
+#### 4. Rewrite differentiator copy
+Remove claims that competitors "don't have" features they publicly document. Focus on:
+- EU regulatory depth (NIS2 + DORA + GDPR + ESG in one environment)
+- ESG/CSRD workflows (clear differentiator)
+- Value chain / supplier collaboration depth
+- AI agent coordination approach
+- Multi-framework governance in single environment
 
-### Bez zmian
-- `public/locales/pl/translation.json` — PL zostaje jak jest
-- `src/pages/seo-landing/Nis2Ksc.tsx` — komponent bez zmian (używa kluczy i18n)
-- Routing, sitemap, llms-txt — bez zmian
+#### 5. Add new i18n sections per competitor (EN, PL, CS)
+- `bestFor` — who this alternative page is for
+- `whenQuantifier` — when Quantifier is the better fit
+- `whenCompetitor` — when the competitor may be the better fit  
+- `whyEu` — why EU teams may prefer Quantifier
+- `faq` — array of 5-6 Q&A items
+- `disclaimer` — comparison disclaimer text
+- `legendNote` — legend explanation text
+
+#### 6. SEO improvements
+- Improve `seo.title` and `seo.description` for each page (natural keyword usage)
+- Keep existing JSON-LD SoftwareApplication schema
+
+### Files to edit
+1. `src/pages/compare/ComparePage.tsx` — new sections, updated feature keys, disclaimer, FAQ integration
+2. `public/locales/en/translation.json` — full rewrite of `compare` namespace
+3. `public/locales/pl/translation.json` — full rewrite of `compare` namespace  
+4. `public/locales/cs/translation.json` — full rewrite of `compare` namespace
+5. `src/i18n/locales/en.json` — mirror compare keys if present
+6. `src/i18n/locales/pl.json` — mirror compare keys if present
+
+### Scope estimate
+~3 files of code changes + 3 large translation file updates. No database or routing changes needed.
 
