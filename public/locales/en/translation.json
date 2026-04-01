@@ -5902,7 +5902,7 @@
         },
         "riskAssessment": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         }
       },
       "differentiators": {
@@ -5960,7 +5960,7 @@
         },
         "aiComplianceOfficer": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "partial"
         },
         "continuousMonitoring": {
           "quantifier": "true",
@@ -5980,7 +5980,7 @@
         },
         "supplyChain": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         },
         "euHosting": {
           "quantifier": "true",
@@ -5992,7 +5992,7 @@
         },
         "riskAssessment": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         }
       },
       "differentiators": {
@@ -6000,8 +6000,8 @@
         "subheading": "Quantifier.ai goes beyond compliance automation with autonomous AI agents and EU-native regulatory support.",
         "items": [
           {
-            "title": "Autonomous AI Agent",
-            "desc": "AI Compliance Officer that works continuously — not just dashboards and integrations, but intelligent, autonomous compliance management."
+            "title": "Truly autonomous AI Agent",
+            "desc": "Drata has AI capabilities, but Quantifier's AI Compliance Officer operates autonomously — continuously monitoring, collecting evidence, and generating documentation without manual triggers."
           },
           {
             "title": "EU regulatory depth",
@@ -6046,7 +6046,7 @@
       "comparison": {
         "multiFramework": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         },
         "aiComplianceOfficer": {
           "quantifier": "true",
@@ -6082,7 +6082,7 @@
         },
         "riskAssessment": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         }
       },
       "differentiators": {

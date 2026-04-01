@@ -190,7 +190,7 @@ const ComparePage = () => {
                 {t('compare.common.requestDemo')}
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg">
               <Link to={`/${currentLocale}/frameworks`}>
                 {t('compare.common.seeFrameworks')}
                 <ArrowRight className="ml-2 h-5 w-5" />
