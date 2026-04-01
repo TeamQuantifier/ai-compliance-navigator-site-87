@@ -998,6 +998,94 @@
         "bookDemo": "Domluvit demo",
         "explorePlans": "Prozkoumat plány"
       }
+    },
+    "taskDataManagement": {
+      "hero": {
+        "title": "Hub úkolů a dat compliance",
+        "subtitle": "Jedno místo pro správu úkolů, aktiv, důkazů a compliance dat napříč frameworky.",
+        "bookDemo": "Domluvit demo"
+      },
+      "keyFeatures": {
+        "title": "Klíčové funkce",
+        "taskEngine": {
+          "title": "Úkolový engine",
+          "description": "Úkoly generované AI namapované na kontroly frameworků s termíny a vlastníky."
+        },
+        "dataHub": {
+          "title": "Centrální datový hub",
+          "description": "Aktiva, rizika, kontroly a důkazy propojené v jednom úložišti."
+        },
+        "collaboration": {
+          "title": "Týmová spolupráce",
+          "description": "Přiřazujte úkoly, sledujte pokrok a koordinujte compliance práci."
+        }
+      },
+      "detailedFeatures": {
+        "workflows": {
+          "title": "Automatizované workflow",
+          "description": "Zefektivněte compliance operace s inteligentní automatizací.",
+          "feature1": "Auto-generované úkoly z gap analýzy",
+          "feature2": "Harmonogramy opakujících se úkolů",
+          "feature3": "Eskalační pravidla pro zpožděné položky"
+        },
+        "tracking": {
+          "title": "Sledování pokroku",
+          "description": "Plná viditelnost realizace compliance programu.",
+          "feature1": "Kanban, seznam a kalendář dle frameworku",
+          "feature2": "Dashboardy dokončení s analýzou trendů",
+          "feature3": "Exportovatelné reporty pokroku"
+        }
+      },
+      "cta": {
+        "title": "Připraveni zefektivnit compliance operace?",
+        "subtitle": "Podívejte se, jak Hub úkolů udrží tým na správné cestě.",
+        "bookDemo": "Domluvit demo",
+        "explorePlans": "Prozkoumat plány"
+      }
+    },
+    "riskAssessment": {
+      "hero": {
+        "title": "Hodnocení a řízení rizik",
+        "subtitle": "Identifikujte, kvantifikujte a mitigujte rizika s AI analýzou a heat mapami.",
+        "bookDemo": "Domluvit demo"
+      },
+      "keyFeatures": {
+        "title": "Možnosti řízení rizik",
+        "identification": {
+          "title": "Identifikace rizik",
+          "description": "AI-asistované objevování rizik mapovaných na aktiva, hrozby a zranitelnosti."
+        },
+        "quantification": {
+          "title": "Kvantifikace rizik",
+          "description": "Pravděpodobnost × dopad s konfigurovatelnou škálou a prahy rizikového apetitu."
+        },
+        "mitigation": {
+          "title": "Mitigace rizik",
+          "description": "Plány ošetření propojené s kontrolami, úkoly a důkazy."
+        }
+      },
+      "detailedFeatures": {
+        "riskMatrix": {
+          "title": "Matice rizik a heat mapy",
+          "description": "Vizuální krajina rizik pro informované rozhodování.",
+          "feature1": "Interaktivní heat mapy s drill-down",
+          "feature2": "Porovnání reziduálního vs inherentního rizika",
+          "feature3": "Analýza trendů rizik v čase"
+        },
+        "treatmentPlans": {
+          "title": "Plány ošetření rizik",
+          "description": "Strukturovaný přístup k mitigaci a akceptaci.",
+          "feature1": "Akceptace, mitigace, transfer nebo vyhnutí se",
+          "feature2": "Propojené kontroly a implementační úkoly",
+          "feature3": "Harmonogramy periodického přehodnocení rizik"
+        }
+      },
+      "cta": {
+        "title": "Připraveni převzít kontrolu nad riziky?",
+        "subtitle": "Podívejte se, jak Quantifier strukturuje hodnocení rizik.",
+        "bookDemo": "Domluvit demo",
+        "explorePlans": "Prozkoumat plány"
+      }
     }
   },
   "partners": {

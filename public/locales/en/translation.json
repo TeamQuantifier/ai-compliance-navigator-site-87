@@ -1198,6 +1198,48 @@
         "analytics": "Analytics",
         "taskHub": "Task & Data Hub",
         "riskAssessment": "Risk Assessment"
+      },
+      "hero": {
+        "title": "Compliance Task & Data Hub",
+        "subtitle": "One place to manage tasks, assets, evidence and compliance data across all frameworks.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Key Capabilities",
+        "taskEngine": {
+          "title": "Task Engine",
+          "description": "AI-generated tasks mapped to framework controls with deadlines and ownership."
+        },
+        "dataHub": {
+          "title": "Centralised Data Hub",
+          "description": "Assets, risks, controls and evidence linked in one structured repository."
+        },
+        "collaboration": {
+          "title": "Team Collaboration",
+          "description": "Assign tasks, track progress and coordinate compliance work across departments."
+        }
+      },
+      "detailedFeatures": {
+        "workflows": {
+          "title": "Automated Workflows",
+          "description": "Streamline compliance operations with intelligent automation.",
+          "feature1": "Auto-generated tasks from gap analysis results",
+          "feature2": "Recurring task schedules for periodic reviews",
+          "feature3": "Escalation rules for overdue items"
+        },
+        "tracking": {
+          "title": "Progress Tracking",
+          "description": "Full visibility into compliance programme execution.",
+          "feature1": "Kanban, list and calendar views per framework",
+          "feature2": "Completion dashboards with trend analysis",
+          "feature3": "Export-ready progress reports for management"
+        }
+      },
+      "cta": {
+        "title": "Ready to Streamline Compliance Operations?",
+        "subtitle": "See how the Task & Data Hub keeps your team on track.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
       }
     },
     "riskAssessment": {
@@ -1209,6 +1251,48 @@
         "analytics": "Analytics",
         "taskHub": "Task & Data Hub",
         "riskAssessment": "Risk Assessment"
+      },
+      "hero": {
+        "title": "Risk Assessment & Management",
+        "subtitle": "Identify, quantify and mitigate risks across frameworks with AI-powered analysis and heat maps.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Risk Management Capabilities",
+        "identification": {
+          "title": "Risk Identification",
+          "description": "AI-assisted discovery of risks mapped to assets, threats and vulnerabilities."
+        },
+        "quantification": {
+          "title": "Risk Quantification",
+          "description": "Likelihood × impact scoring with customisable scales and risk appetite thresholds."
+        },
+        "mitigation": {
+          "title": "Risk Mitigation",
+          "description": "Treatment plans linked to controls, tasks and evidence for full traceability."
+        }
+      },
+      "detailedFeatures": {
+        "riskMatrix": {
+          "title": "Risk Matrix & Heat Maps",
+          "description": "Visual risk landscape for informed decision-making.",
+          "feature1": "Interactive heat maps with drill-down capabilities",
+          "feature2": "Residual vs inherent risk comparison views",
+          "feature3": "Risk trend analysis over time"
+        },
+        "treatmentPlans": {
+          "title": "Treatment Plans",
+          "description": "Structured approach to risk mitigation and acceptance.",
+          "feature1": "Accept, mitigate, transfer or avoid options per risk",
+          "feature2": "Linked controls and implementation tasks",
+          "feature3": "Periodic risk reassessment schedules"
+        }
+      },
+      "cta": {
+        "title": "Ready to Take Control of Your Risk Landscape?",
+        "subtitle": "See how Quantifier makes risk assessment structured and actionable.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
       }
     }
   },

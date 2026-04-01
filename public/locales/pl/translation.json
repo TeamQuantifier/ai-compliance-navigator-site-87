@@ -1025,12 +1025,96 @@
         "analytics": "Analityka",
         "taskHub": "Centrum zadań i danych",
         "riskAssessment": "Ocena ryzyka"
+      },
+      "hero": {
+        "title": "Hub zadań i danych compliance",
+        "subtitle": "Jedno miejsce do zarządzania zadaniami, aktywami, dowodami i danymi compliance we wszystkich frameworkach.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Kluczowe funkcje",
+        "taskEngine": {
+          "title": "Silnik zadań",
+          "description": "Zadania generowane przez AI, mapowane na kontrole frameworków z terminami i właścicielami."
+        },
+        "dataHub": {
+          "title": "Centralny hub danych",
+          "description": "Aktywa, ryzyka, kontrole i dowody połączone w jednym repozytorium."
+        },
+        "collaboration": {
+          "title": "Współpraca zespołowa",
+          "description": "Przydzielaj zadania, śledź postępy i koordynuj pracę compliance między działami."
+        }
+      },
+      "detailedFeatures": {
+        "workflows": {
+          "title": "Automatyczne workflow",
+          "description": "Usprawniaj operacje compliance z inteligentną automatyzacją.",
+          "feature1": "Auto-generowane zadania z wyników gap analysis",
+          "feature2": "Harmonogramy zadań cyklicznych",
+          "feature3": "Reguły eskalacji dla zaległych elementów"
+        },
+        "tracking": {
+          "title": "Śledzenie postępów",
+          "description": "Pełna widoczność realizacji programu compliance.",
+          "feature1": "Widoki Kanban, lista i kalendarz per framework",
+          "feature2": "Dashboardy ukończenia z analizą trendów",
+          "feature3": "Raporty postępów gotowe do eksportu"
+        }
+      },
+      "cta": {
+        "title": "Gotowy usprawnić operacje compliance?",
+        "subtitle": "Zobacz jak Hub zadań utrzymuje zespół na dobrej drodze.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
       }
     },
     "riskAssessment": {
       "title": "Ocena ryzyka",
       "description": "Identyfikuj, oceniaj i łagodź ryzyka compliance w Twojej organizacji.",
-      "placeholder": "Treść dla Oceny ryzyka zostanie dodana tutaj."
+      "placeholder": "Treść dla Oceny ryzyka zostanie dodana tutaj.",
+      "hero": {
+        "title": "Ocena i zarządzanie ryzykiem",
+        "subtitle": "Identyfikuj, kwantyfikuj i mityguj ryzyka z analizą AI i mapami ciepła.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Możliwości zarządzania ryzykiem",
+        "identification": {
+          "title": "Identyfikacja ryzyk",
+          "description": "Odkrywanie ryzyk wspomagane AI, mapowane na aktywa, zagrożenia i podatności."
+        },
+        "quantification": {
+          "title": "Kwantyfikacja ryzyk",
+          "description": "Scoring prawdopodobieństwo × wpływ z konfigurowalnymi skalami i progami apetytu na ryzyko."
+        },
+        "mitigation": {
+          "title": "Mitygacja ryzyk",
+          "description": "Plany postępowania powiązane z kontrolami, zadaniami i dowodami."
+        }
+      },
+      "detailedFeatures": {
+        "riskMatrix": {
+          "title": "Macierz ryzyk i mapy ciepła",
+          "description": "Wizualny krajobraz ryzyk do świadomego podejmowania decyzji.",
+          "feature1": "Interaktywne mapy ciepła z drill-down",
+          "feature2": "Porównanie ryzyka rezydualnego vs inherentnego",
+          "feature3": "Analiza trendów ryzyk w czasie"
+        },
+        "treatmentPlans": {
+          "title": "Plany postępowania z ryzykiem",
+          "description": "Ustrukturyzowane podejście do mitygacji i akceptacji ryzyk.",
+          "feature1": "Opcje akceptacji, mitygacji, transferu lub unikania",
+          "feature2": "Powiązane kontrole i zadania wdrożeniowe",
+          "feature3": "Harmonogramy okresowej ponownej oceny ryzyk"
+        }
+      },
+      "cta": {
+        "title": "Gotowy przejąć kontrolę nad krajobrazem ryzyk?",
+        "subtitle": "Zobacz jak Quantifier strukturyzuje i urzeczywistnia ocenę ryzyk.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     }
   },
   "partners": {
