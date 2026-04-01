@@ -330,7 +330,7 @@ const PRODUCT_FEATURES_SHORT = `## Product Features
 
 - Analytics Dashboards: ${BASE_URL}/en/product/analytics-dashboards/
 - Documents Management: ${BASE_URL}/en/product/documents-management/
-- API Integrations: ${BASE_URL}/en/product/api-integrations/
+
 - AI Compliance Officer: ${BASE_URL}/en/product/compliance-officer/
 - Task & Data Management: ${BASE_URL}/en/product/task-data-management/
 - Value Chain: ${BASE_URL}/en/product/value-chain/
