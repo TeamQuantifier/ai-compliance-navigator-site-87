@@ -4520,10 +4520,10 @@
     },
     "hero": {
       "bannerText": "Směrnice NIS2 je nyní v platnosti v celé EU",
-      "heading1": "Vaše organizace musí splnit NIS2.",
+      "heading1": "Organizace v EU musí splnit NIS2.",
       "heading2": "Hodiny tikají.",
-      "subtext1": "Quantifier je AI-native platforma, která připraví vaši organizaci na audit a zajistí průběžný soulad s NIS2.",
-      "subtext2": "NIS2 vyžaduje operativní řízení rizik, incidentů, governance a bezpečnost dodavatelského řetězce. Quantifier spojuje vše v jedné platformě."
+      "subtext1": "Quantifier je AI-native platforma, která připraví vaši organizaci na soulad s NIS2 v celé EU.",
+      "subtext2": "Každý členský stát EU implementuje NIS2 do národní legislativy — Quantifier podporuje soulad napříč jurisdikcemi."
     },
     "form": {
       "title": "Zkontrolujte připravenost na NIS2",
@@ -4546,7 +4546,8 @@
         "Hlášení incidentů do 24h / 72h",
         "Požadavky na dodavatele a dodavatelský řetězec",
         "Povinné řízení ICT rizik",
-        "Pokuty až 10 mil. EUR nebo 2 % ročního obratu"
+        "Pokuty až 10 mil. EUR nebo 2 % ročního obratu",
+        "Každý členský stát stanoví vlastní rozsah, termíny a vymáhání"
       ],
       "ctaText": "Zjistěte, zda se na vás NIS2 vztahuje"
     },
@@ -4565,8 +4566,8 @@
     },
     "solution": {
       "label": "Platforma",
-      "heading": "AI-native operativní platforma pro NIS2",
-      "subtitle": "Všechny požadavky NIS2 v jednom systému — od gap analýzy po průběžný soulad.",
+      "heading": "AI-native platforma pro soulad s NIS2 pro organizace v EU",
+      "subtitle": "Všechny požadavky NIS2 v jednom systému — od gap analýzy po průběžný soulad napříč jurisdikcemi EU.",
       "features": [
         "AI mapování politik — automatické mapování stávajících politik na požadavky NIS2 pomocí AI.",
         "Registr rizik NIS2 — centrální registr rizik propojený s články směrnice NIS2.",
@@ -4622,10 +4623,10 @@
       ]
     },
     "auditor": {
-      "heading": "Když přijde auditor — jste připraveni",
-      "subtitle": "Quantifier automaticky připraví kompletní auditní dokumentaci:",
+      "heading": "Když přijde inspektor — jste připraveni",
+      "subtitle": "Quantifier automaticky připraví kompletní dokumentaci pro kontrolu:",
       "items": [
-        "Audit-ready politiky",
+        "Politiky připravené na kontrolu",
         "Registr rizik",
         "Log incidentů",
         "Evidence kontrol",
@@ -4638,7 +4639,7 @@
     },
     "continuous": {
       "heading": "NIS2 vyžaduje průběžný soulad",
-      "subtitle": "Jednorázový audit nestačí. NIS2 vyžaduje operativní, průběžný proces.",
+      "subtitle": "Jednorázové hodnocení nestačí. NIS2 vyžaduje operativní, průběžný proces.",
       "items": [
         "Průběžný monitoring",
         "Automatická gap analýza",
@@ -4653,12 +4654,14 @@
       "subtitle": "Začněte bezplatným hodnocením vyspělosti a zjistěte, co vyžaduje okamžitou pozornost."
     },
     "seo": {
-      "titleCs": "NIS2 ZKB – AI-native platforma shody | Quantifier.ai",
-      "descCs": "Quantifier je AI-native GRC platforma, která připraví organizaci na audit NIS2 a zajistí průběžný soulad.",
+      "titleCs": "NIS2 Compliance Software pro organizace v EU | Quantifier.ai",
+      "descCs": "AI-native GRC platforma pro soulad s NIS2 v celé EU. Gap analýza, řízení rizik, workflow incidentů a průběžný soulad v jednom systému.",
       "faq1q": "Co je NIS2?",
       "faq1a": "NIS2 je směrnice EU rozšiřující požadavky na kybernetickou bezpečnost na klíčové a důležité subjekty v 18 sektorech, pokrývající řízení rizik, hlášení incidentů a bezpečnost dodavatelského řetězce.",
       "faq2q": "Jaké hrozí sankce za nesoulad s NIS2?",
-      "faq2a": "Sankce za nesoulad s NIS2 mohou dosáhnout 10 mil. EUR nebo 2 % globálního ročního obratu pro klíčové subjekty."
+      "faq2a": "Sankce za nesoulad s NIS2 mohou dosáhnout 10 mil. EUR nebo 2 % globálního ročního obratu pro klíčové subjekty.",
+      "faq3q": "Platí NIS2 stejně ve všech zemích EU?",
+      "faq3a": "Ne. NIS2 je směrnice EU, která stanoví základ, ale každý členský stát ji transponuje do národní legislativy. Rozsah, termíny a podrobnosti vymáhání se mohou lišit mezi zeměmi jako Česko, Polsko, Německo apod."
     }
   }
 }
