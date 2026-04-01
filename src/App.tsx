@@ -24,7 +24,7 @@ import DocumentsManagement from "./pages/product/DocumentsManagement";
 import ValueChain from "./pages/product/ValueChain";
 import RiskAssessment from "./pages/product/RiskAssessment";
 import AnalyticsDashboards from "./pages/product/AnalyticsDashboards";
-import ApiIntegrations from "./pages/product/ApiIntegrations";
+
 
 // By Roles
 import ByRoles from "./pages/roles/ByRoles";
