@@ -866,6 +866,138 @@
       "useCases": {
         "title": "Případy použití environmentální compliance"
       }
+    },
+    "documentsManagement": {
+      "hero": {
+        "title": "Dokumenty compliance pod kontrolou",
+        "subtitle": "Centrální úložiště politik, postupů a důkazů — s verzováním a kompletním audit trailem.",
+        "bookDemo": "Domluvit demo"
+      },
+      "keyFeatures": {
+        "title": "Klíčové funkce",
+        "centralRepo": {
+          "title": "Centrální úložiště",
+          "description": "Jedno místo pro všechny compliance dokumenty."
+        },
+        "versionControl": {
+          "title": "Verzování",
+          "description": "Kompletní historie revizí se schvalovacími workflow."
+        },
+        "accessControl": {
+          "title": "Řízení přístupu",
+          "description": "Oprávnění na základě rolí."
+        }
+      },
+      "detailedFeatures": {
+        "lifecycle": {
+          "title": "Životní cyklus dokumentu",
+          "description": "Spravujte dokumenty od návrhu po archivaci.",
+          "feature1": "Automatická upozornění na revize",
+          "feature2": "Schvalovací workflow s e-podpisy",
+          "feature3": "Vynucování archivačních politik"
+        },
+        "auditReady": {
+          "title": "Připravenost na audit",
+          "description": "Vždy připraveni na kontroly.",
+          "feature1": "Kompletní audit trail",
+          "feature2": "Exportovatelné balíčky důkazů",
+          "feature3": "Propojení dokumentů s kontrolami"
+        }
+      },
+      "cta": {
+        "title": "Připraveni centralizovat dokumenty?",
+        "subtitle": "Podívejte se, jak Quantifier udržuje dokumentaci audit-ready.",
+        "bookDemo": "Domluvit demo",
+        "explorePlans": "Prozkoumat plány"
+      }
+    },
+    "apiIntegrations": {
+      "hero": {
+        "title": "Integrace s vaším stackem",
+        "subtitle": "REST API, webhooky, SSO — propojte Quantifier s vašimi nástroji.",
+        "bookDemo": "Domluvit demo"
+      },
+      "keyFeatures": {
+        "title": "Integrační možnosti",
+        "restApi": {
+          "title": "REST API",
+          "description": "Programový přístup ke všem datům platformy."
+        },
+        "webhooks": {
+          "title": "Webhooky",
+          "description": "Oznámení v reálném čase o compliance událostech."
+        },
+        "sso": {
+          "title": "SSO / SAML",
+          "description": "Enterprise SSO s SAML 2.0 a SCIM."
+        }
+      },
+      "detailedFeatures": {
+        "dataSync": {
+          "title": "Synchronizace dat",
+          "description": "Udržujte data synchronizovaná.",
+          "feature1": "Obousměrná synchronizace s ITSM",
+          "feature2": "Automatický import aktiv z CMDB",
+          "feature3": "Sběr důkazů od cloudových poskytovatelů"
+        },
+        "ecosystem": {
+          "title": "Rostoucí ekosystém",
+          "description": "Připravené konektory a otevřené API.",
+          "feature1": "Konektory pro populární GRC nástroje",
+          "feature2": "No-code tvůrce integrací",
+          "feature3": "Vývojářská dokumentace a sandbox"
+        }
+      },
+      "cta": {
+        "title": "Připraveni propojit Quantifier?",
+        "subtitle": "Podívejte se, jak naše integrace zapadají do vašich procesů.",
+        "bookDemo": "Domluvit demo",
+        "explorePlans": "Prozkoumat plány"
+      }
+    },
+    "valueChain": {
+      "hero": {
+        "title": "Compliance dodavatelského řetězce",
+        "subtitle": "Mapujte dodavatele, hodnoťte rizika a sledujte ESG compliance.",
+        "bookDemo": "Domluvit demo"
+      },
+      "keyFeatures": {
+        "title": "Funkce hodnotového řetězce",
+        "supplierMapping": {
+          "title": "Mapování dodavatelů",
+          "description": "Vizualizujte dodavatelský řetězec."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Strukturované dotazníky pro posouzení dodavatelů."
+        },
+        "riskScoring": {
+          "title": "Hodnocení rizik",
+          "description": "Kvantifikované hodnocení rizik na dodavatele."
+        }
+      },
+      "detailedFeatures": {
+        "esgSupplyChain": {
+          "title": "ESG dodavatelského řetězce",
+          "description": "Monitorujte ESG výkonnost dodavatelů.",
+          "feature1": "Sledování uhlíkové stopy",
+          "feature2": "Monitoring lidských práv",
+          "feature3": "CSRD reporting"
+        },
+        "complianceTracking": {
+          "title": "Sledování compliance",
+          "description": "Zajistěte splnění požadavků.",
+          "feature1": "Alerty na vypršení certifikátů",
+          "feature2": "Nápravné akční plány",
+          "feature3": "Analýza trendů compliance"
+        }
+      },
+      "cta": {
+        "title": "Připraveni zmapovat hodnotový řetězec?",
+        "subtitle": "Podívejte se, jak Quantifier poskytne přehled.",
+        "bookDemo": "Domluvit demo",
+        "explorePlans": "Prozkoumat plány"
+      }
     }
   },
   "partners": {

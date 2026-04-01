@@ -878,17 +878,143 @@
     "valueChain": {
       "title": "Łańcuch wartości",
       "description": "Mapuj i monitoruj zgodność w całym łańcuchu wartości Twojej organizacji.",
-      "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj."
+      "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj.",
+      "hero": {
+        "title": "Compliance łańcucha dostaw",
+        "subtitle": "Mapuj dostawców, oceniaj ryzyka i śledź zgodność ESG.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Funkcje łańcucha wartości",
+        "supplierMapping": {
+          "title": "Mapowanie dostawców",
+          "description": "Wizualizuj łańcuch dostaw."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Ustrukturyzowane ankiety do oceny dostawców."
+        },
+        "riskScoring": {
+          "title": "Scoring ryzyka",
+          "description": "Skwantyfikowane oceny ryzyka per dostawca."
+        }
+      },
+      "detailedFeatures": {
+        "esgSupplyChain": {
+          "title": "ESG łańcucha dostaw",
+          "description": "Monitoruj wyniki ESG dostawców.",
+          "feature1": "Śledzenie śladu węglowego",
+          "feature2": "Monitoring praw człowieka",
+          "feature3": "Raportowanie CSRD"
+        },
+        "complianceTracking": {
+          "title": "Śledzenie zgodności",
+          "description": "Upewnij się że dostawcy spełniają wymagania.",
+          "feature1": "Alerty o wygasających certyfikatach",
+          "feature2": "Plany działań korygujących",
+          "feature3": "Analiza trendów zgodności"
+        }
+      },
+      "cta": {
+        "title": "Gotowy zmapować łańcuch wartości?",
+        "subtitle": "Zobacz jak Quantifier daje widoczność w łańcuchu dostaw.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "apiIntegrations": {
       "title": "Integracje API",
       "description": "Połącz naszą platformę z Twoimi istniejącymi narzędziami i systemami dla płynnej pracy.",
-      "placeholder": "Treść dla Integracji API zostanie dodana tutaj."
+      "placeholder": "Treść dla Integracji API zostanie dodana tutaj.",
+      "hero": {
+        "title": "Integracja z Twoim stackiem",
+        "subtitle": "REST API, webhooki, SSO — połącz Quantifier z narzędziami Twojego zespołu.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Możliwości integracji",
+        "restApi": {
+          "title": "REST API",
+          "description": "Programistyczny dostęp do danych platformy."
+        },
+        "webhooks": {
+          "title": "Webhooki",
+          "description": "Powiadomienia w czasie rzeczywistym."
+        },
+        "sso": {
+          "title": "SSO / SAML",
+          "description": "Enterprise SSO z SAML 2.0 i SCIM."
+        }
+      },
+      "detailedFeatures": {
+        "dataSync": {
+          "title": "Synchronizacja danych",
+          "description": "Utrzymuj dane w synchronizacji.",
+          "feature1": "Dwukierunkowa synchronizacja z ITSM",
+          "feature2": "Import aktywów z CMDB",
+          "feature3": "Zbieranie dowodów z chmury"
+        },
+        "ecosystem": {
+          "title": "Rosnący ekosystem",
+          "description": "Gotowe konektory i otwarte API.",
+          "feature1": "Konektory do narzędzi GRC",
+          "feature2": "No-code kreator integracji",
+          "feature3": "Dokumentacja developerska i sandbox"
+        }
+      },
+      "cta": {
+        "title": "Gotowy połączyć Quantifier?",
+        "subtitle": "Zobacz jak integracje pasują do Twoich procesów.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "documentsManagement": {
       "title": "Zarządzanie dokumentami",
       "description": "Scentralizuj i kontroluj całą dokumentację compliance w jednym bezpiecznym miejscu.",
-      "placeholder": "Treść dla Zarządzania dokumentami zostanie dodana tutaj."
+      "placeholder": "Treść dla Zarządzania dokumentami zostanie dodana tutaj.",
+      "hero": {
+        "title": "Dokumenty compliance pod kontrolą",
+        "subtitle": "Centralne repozytorium polityk, procedur i dowodów — z wersjonowaniem i audit trailem.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Kluczowe funkcje",
+        "centralRepo": {
+          "title": "Centralne repozytorium",
+          "description": "Jedno miejsce na wszystkie dokumenty compliance."
+        },
+        "versionControl": {
+          "title": "Wersjonowanie",
+          "description": "Pełna historia zmian z workflow zatwierdzania."
+        },
+        "accessControl": {
+          "title": "Kontrola dostępu",
+          "description": "Uprawnienia oparte na rolach."
+        }
+      },
+      "detailedFeatures": {
+        "lifecycle": {
+          "title": "Cykl życia dokumentu",
+          "description": "Zarządzaj dokumentami od szkicu po archiwizację.",
+          "feature1": "Automatyczne przypomnienia o przeglądach",
+          "feature2": "Workflow zatwierdzania z e-podpisami",
+          "feature3": "Egzekwowanie polityki retencji"
+        },
+        "auditReady": {
+          "title": "Gotowość na audyt",
+          "description": "Zawsze przygotowany na kontrole.",
+          "feature1": "Kompletny audit trail",
+          "feature2": "Eksportowalne pakiety dowodowe",
+          "feature3": "Powiązanie dokumentów z kontrolami"
+        }
+      },
+      "cta": {
+        "title": "Gotowy scentralizować dokumenty?",
+        "subtitle": "Zobacz jak Quantifier utrzymuje dokumentację audit-ready.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "taskDataManagement": {
       "title": "Zarządzanie zadaniami i danymi",
