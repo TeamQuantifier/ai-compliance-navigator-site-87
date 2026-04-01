@@ -1051,17 +1051,143 @@
     "valueChain": {
       "title": "Value Chain",
       "description": "Map and monitor compliance across your entire organizational value chain.",
-      "placeholder": "Coming soon"
+      "placeholder": "Coming soon",
+      "hero": {
+        "title": "Supply Chain Compliance Made Visible",
+        "subtitle": "Map suppliers, assess risks and track ESG compliance across your entire value chain.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Value Chain Capabilities",
+        "supplierMapping": {
+          "title": "Supplier Mapping",
+          "description": "Visualise your supply chain and identify critical dependencies and risk concentrations."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Structured questionnaires and automated scoring for supplier assessments."
+        },
+        "riskScoring": {
+          "title": "Risk Scoring",
+          "description": "Quantified risk ratings per supplier based on compliance, ESG and operational criteria."
+        }
+      },
+      "detailedFeatures": {
+        "esgSupplyChain": {
+          "title": "ESG Supply Chain",
+          "description": "Monitor environmental, social and governance performance across suppliers.",
+          "feature1": "Carbon footprint tracking per supplier tier",
+          "feature2": "Human rights and labour standards monitoring",
+          "feature3": "CSRD and taxonomy-aligned reporting"
+        },
+        "complianceTracking": {
+          "title": "Compliance Tracking",
+          "description": "Ensure all suppliers meet your regulatory and contractual requirements.",
+          "feature1": "Automated certificate expiry alerts",
+          "feature2": "Corrective action plans with deadlines",
+          "feature3": "Historical compliance trend analysis"
+        }
+      },
+      "cta": {
+        "title": "Ready to Map Your Value Chain Compliance?",
+        "subtitle": "See how Quantifier gives you visibility across your entire supply chain.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      }
     },
     "apiIntegrations": {
       "title": "API Integrations",
       "description": "Connect our platform with your existing tools and systems for seamless operation.",
-      "placeholder": "Coming soon"
+      "placeholder": "Coming soon",
+      "hero": {
+        "title": "Integrate with Your Existing Stack",
+        "subtitle": "REST API, webhooks, SSO — connect Quantifier to the tools your team already uses.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Integration Capabilities",
+        "restApi": {
+          "title": "REST API",
+          "description": "Programmatic access to all platform data — assets, risks, tasks, evidence."
+        },
+        "webhooks": {
+          "title": "Webhooks",
+          "description": "Real-time notifications for compliance events, task updates and threshold alerts."
+        },
+        "sso": {
+          "title": "SSO / SAML",
+          "description": "Enterprise single sign-on with SAML 2.0 and SCIM user provisioning."
+        }
+      },
+      "detailedFeatures": {
+        "dataSync": {
+          "title": "Data Synchronisation",
+          "description": "Keep compliance data in sync across your organisation.",
+          "feature1": "Bi-directional sync with ITSM and ticketing tools",
+          "feature2": "Automated asset inventory import from CMDB",
+          "feature3": "Evidence collection from cloud providers"
+        },
+        "ecosystem": {
+          "title": "Growing Ecosystem",
+          "description": "Pre-built connectors and an open API for custom integrations.",
+          "feature1": "Pre-built connectors for popular GRC tools",
+          "feature2": "Custom integration builder with no-code workflows",
+          "feature3": "Developer documentation and sandbox environment"
+        }
+      },
+      "cta": {
+        "title": "Ready to Connect Quantifier to Your Stack?",
+        "subtitle": "See how our API and integrations fit into your existing workflows.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      }
     },
     "documentsManagement": {
       "title": "Documents Management",
       "description": "Centralize and control all your compliance documentation in one secure place.",
-      "placeholder": "Coming soon"
+      "placeholder": "Coming soon",
+      "hero": {
+        "title": "Compliance Documents Under Control",
+        "subtitle": "Centralised repository for all policies, procedures and evidence — with version control and audit trail.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Key Capabilities",
+        "centralRepo": {
+          "title": "Central Repository",
+          "description": "One place for all compliance documents — policies, procedures, evidence, templates."
+        },
+        "versionControl": {
+          "title": "Version Control",
+          "description": "Full revision history with approval workflows and automatic versioning."
+        },
+        "accessControl": {
+          "title": "Access Control",
+          "description": "Role-based permissions ensure the right people see the right documents."
+        }
+      },
+      "detailedFeatures": {
+        "lifecycle": {
+          "title": "Document Lifecycle",
+          "description": "Manage documents from draft through approval to retirement.",
+          "feature1": "Automated review reminders and renewal schedules",
+          "feature2": "Approval workflows with electronic signatures",
+          "feature3": "Archive and retention policy enforcement"
+        },
+        "auditReady": {
+          "title": "Audit-Ready Evidence",
+          "description": "Always prepared for inspections and audits.",
+          "feature1": "Complete audit trail for every document change",
+          "feature2": "Export-ready evidence packages per framework",
+          "feature3": "Cross-reference documents to controls and risks"
+        }
+      },
+      "cta": {
+        "title": "Ready to Centralise Your Compliance Documents?",
+        "subtitle": "See how Quantifier keeps your documentation audit-ready at all times.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      }
     },
     "taskDataManagement": {
       "title": "Task and Data Management",
