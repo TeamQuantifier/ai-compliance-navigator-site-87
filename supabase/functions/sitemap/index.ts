@@ -50,10 +50,48 @@ const staticPages = [
   { path: '/legal/privacy', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
-  { path: '/cybersecurity-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-19' },
   { path: '/events', changefreq: 'weekly', priority: '0.8', lastmod: '2026-02-24' },
-  { path: '/events/nis2-w-polsce', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-24' },
   // nis2-ksc merged into /frameworks/nis-2
+  // cybersecurity-check and events with locale-specific slugs handled separately below
+];
+
+// Pages with locale-specific paths (different URL per language)
+const localeSpecificPages: Array<{
+  paths: Record<string, string>;
+  changefreq: string;
+  priority: string;
+  lastmod: string;
+}> = [
+  {
+    paths: {
+      en: '/cybersecurity-check',
+      pl: '/sprawdz-cyberbezpieczenstwo',
+      cs: '/zkontrolujte-kybernetickou-bezpecnost',
+    },
+    changefreq: 'monthly',
+    priority: '0.8',
+    lastmod: '2026-02-19',
+  },
+  {
+    paths: {
+      en: '/events/nis2-in-poland',
+      pl: '/events/nis2-w-polsce',
+      cs: '/events/nis2-w-polsce',
+    },
+    changefreq: 'weekly',
+    priority: '0.9',
+    lastmod: '2026-02-24',
+  },
+  {
+    paths: {
+      en: '/events/nis2-risk-map',
+      pl: '/events/nis2-mapa-ryzyka',
+      cs: '/events/nis2-mapa-ryzyka',
+    },
+    changefreq: 'weekly',
+    priority: '0.9',
+    lastmod: '2026-03-17',
+  },
 ];
 
 const locales = ['en', 'pl', 'cs'];
