@@ -52,7 +52,7 @@ const pageUrlMap: Record<string, string> = {
   'task-data-management': 'product/task-data-management',
   'analytics-dashboards': 'product/analytics-dashboards',
   'documents-management': 'product/documents-management',
-  'api-integrations': 'product/api-integrations',
+  
   'value-chain': 'product/value-chain',
   'risk-assessment': 'product/risk-assessment',
   'by-roles': 'by-roles',
