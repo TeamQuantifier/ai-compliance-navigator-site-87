@@ -176,6 +176,9 @@ const MainRoutes = () => (
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
         <Route path="/:locale/nis2-ksc" element={<Navigate to="frameworks/nis-2" replace />} />
 
+        {/* Compare pages */}
+        <Route path="/:locale/compare/:slug" element={<ComparePage />} />
+
         {/* Events routes */}
         <Route path="/:locale/events" element={<EventsHub />} />
         <Route path="/:locale/events/:slug" element={<EventDetail />} />
