@@ -5687,10 +5687,10 @@
     },
     "hero": {
       "bannerText": "NIS2 directive is now in force across the EU",
-      "heading1": "Your organisation must comply with NIS2.",
+      "heading1": "EU organisations must comply with NIS2.",
       "heading2": "The clock is ticking.",
-      "subtext1": "Quantifier is an AI-native platform that prepares your organisation for audit and ensures continuous NIS2 compliance.",
-      "subtext2": "NIS2 requires operational risk management, incident handling, governance and supply chain security. Quantifier brings everything together in one platform."
+      "subtext1": "Quantifier is an AI-native platform that prepares your organisation for NIS2 compliance across the EU.",
+      "subtext2": "Each EU member state implements NIS2 into national law — Quantifier supports compliance across jurisdictions."
     },
     "form": {
       "title": "Check your NIS2 readiness",
@@ -5713,7 +5713,8 @@
         "Incident reporting within 24h / 72h",
         "Requirements for suppliers and the supply chain",
         "Mandatory ICT risk management",
-        "Fines up to EUR 10M or 2% of annual revenue"
+        "Fines up to EUR 10M or 2% of annual revenue",
+        "Each member state sets its own scope, deadlines and enforcement"
       ],
       "ctaText": "Check if NIS2 applies to you"
     },
@@ -5732,8 +5733,8 @@
     },
     "solution": {
       "label": "Platform",
-      "heading": "AI-native operational platform for NIS2",
-      "subtitle": "All NIS2 requirements in one system — from gap analysis to continuous compliance.",
+      "heading": "AI-native NIS2 compliance platform for EU organisations",
+      "subtitle": "All NIS2 requirements in one system — from gap analysis to continuous compliance across EU jurisdictions.",
       "features": [
         "AI policy mapping — automatic mapping of existing policies to NIS2 requirements using AI.",
         "NIS2 risk register — central risk register linked to NIS2 directive articles.",
@@ -5789,10 +5790,10 @@
       ]
     },
     "auditor": {
-      "heading": "When the auditor walks in — you're ready",
-      "subtitle": "Quantifier automatically prepares complete audit documentation:",
+      "heading": "When the inspector arrives — you're ready",
+      "subtitle": "Quantifier automatically prepares complete inspection documentation:",
       "items": [
-        "Audit-ready policies",
+        "Inspection-ready policies",
         "Risk register",
         "Incident log",
         "Control evidence",
@@ -5805,7 +5806,7 @@
     },
     "continuous": {
       "heading": "NIS2 requires continuous compliance",
-      "subtitle": "A one-off audit is not enough. NIS2 demands an operational, continuous process.",
+      "subtitle": "A one-off assessment is not enough. NIS2 demands an operational, continuous process.",
       "items": [
         "Continuous monitoring",
         "Automatic gap analysis",
@@ -5820,12 +5821,14 @@
       "subtitle": "Start with a free maturity assessment and find out what needs immediate attention."
     },
     "seo": {
-      "titleEn": "NIS2 Compliance – AI-Native GRC Platform | Quantifier.ai",
-      "descEn": "Quantifier is an AI-native GRC platform that prepares your organization for NIS2 audit and ensures continuous compliance.",
+      "titleEn": "NIS2 Compliance Software for EU Organisations | Quantifier.ai",
+      "descEn": "AI-native GRC platform for NIS2 compliance across the EU. Gap analysis, risk management, incident workflows and continuous compliance in one system.",
       "faq1q": "What is NIS2?",
       "faq1a": "NIS2 is an EU directive expanding cybersecurity requirements to essential and important entities across 18 sectors, covering risk management, incident reporting, and supply chain security.",
       "faq2q": "What are the penalties for NIS2 non-compliance?",
-      "faq2a": "Penalties for NIS2 non-compliance can reach EUR 10M or 2% of global annual revenue for essential entities."
+      "faq2a": "Penalties for NIS2 non-compliance can reach EUR 10M or 2% of global annual revenue for essential entities.",
+      "faq3q": "Does NIS2 apply the same way in every EU country?",
+      "faq3a": "No. NIS2 is an EU directive that sets a baseline, but each member state transposes it into national law. Scope, deadlines, and enforcement details may differ between countries such as Poland, Czech Republic, Germany, etc."
     }
   }
 }
