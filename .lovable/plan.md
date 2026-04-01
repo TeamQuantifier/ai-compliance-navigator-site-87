@@ -1,90 +1,52 @@
 
 
-## SEO Audit & Fixes for quantifier.ai
+## Refaktoryzacja EN wersji /frameworks/nis-2 na EU Baseline
 
-### Critical Issues Found
+### Zakres
+Polska wersja strony pozostaje bez zmian. Wersja EN zostanie przeredagowana, aby jasno komunikować, że jest to strona EU-wide baseline (nie specyficzna dla jednego kraju). Wersja CS zostanie zaktualizowana analogicznie do EN (EU baseline + wzmianka o czeskiej implementacji).
 
-**Issue #1 — Massive duplicate content: Product pages (SEVERITY: HIGH)**
-Routes `/product`, `/product/features`, `/product/ai-compliance-officer`, `/product/task-data-management`, `/product/documents-management`, `/product/value-chain`, `/product/risk-assessment`, `/product/analytics-dashboards`, `/product/api-integrations` ALL render the **same `Features` component**. This creates 9 URLs × 3 locales = **27 near-identical pages** in the sitemap. Dedicated page components exist (`ComplianceOfficer.tsx`, `AnalyticsDashboards.tsx`, etc.) but are **not wired up** in `App.tsx`.
+### Zmiany w tłumaczeniach EN (`public/locales/en/translation.json` + `src/i18n/locales/en.json`)
 
-**Issue #2 — Massive duplicate content: By-Roles pages (SEVERITY: HIGH)**
-Routes `/by-roles`, `/by-roles/managers`, `/by-roles/contributors`, `/by-roles/auditor` ALL render the same `ByRoles` component. 4 × 3 = **12 near-identical pages** in the sitemap.
+Kluczowe zmiany w `nis2Ksc`:
 
-**Issue #3 — ProductOverview is orphaned/thin (SEVERITY: MEDIUM)**
-`/product/overview` renders a separate thin hub page (`ProductOverview.tsx`) that mostly links to sub-pages. It competes with `/product` and `/product/features` for the same intent.
+1. **Hero**:
+   - `bannerText`: "NIS2 directive is now in force across the EU" → ok, zostaje
+   - `heading1`: "Your organisation must comply with NIS2." → **"EU organisations must comply with NIS2."**
+   - `subtext1`: dodanie "across the EU" i usunięcie sugestii jednego kraju
+   - `subtext2`: dodanie "Each EU member state implements NIS2 into national law — Quantifier supports compliance across jurisdictions."
 
-**Issue #4 — Sitemap contains event page with only one slug (SEVERITY: LOW)**
-Only `/events/nis2-w-polsce` is hardcoded in the sitemap. Other events from `eventsData.ts` are missing. The events themselves use `slug` per locale from the data file, but the sitemap hardcodes one Polish slug across all 3 locales.
+2. **Urgency**: dodanie punktu "Each member state sets its own scope, deadlines and enforcement" 
 
-**Issue #5 — `cybersecurity-check` in sitemap uses same path for PL/CS (SEVERITY: MEDIUM)**
-The sitemap lists `/pl/cybersecurity-check/` and `/cs/cybersecurity-check/` but the actual PL URL is `/pl/sprawdz-cyberbezpieczenstwo/` and CS is `/cs/zkontrolujte-kybernetickou-bezpecnost/`. The hreflang for these is also wrong.
+3. **Problem**: bez zmian (uniwersalny)
 
-**Issue #6 — `grc-platform` lacks PageTemplate wrapper and hreflang (SEVERITY: MEDIUM)**
-`GrcPlatform.tsx` uses a raw Helmet block instead of `PageTemplate`, so it may not have consistent hreflang across all locales.
+4. **Solution heading**: "AI-native operational platform for NIS2" → **"AI-native NIS2 compliance platform for EU organisations"**
 
----
+5. **Steps**: bez zmian (uniwersalne)
 
-### Fix Plan
+6. **Auditor heading**: "When the auditor walks in" → **"When the inspector arrives"** (NIS2 = kontrole, nie audyty — zgodnie z terminologią projektu)
 
-#### Phase 1: Wire up dedicated product pages (eliminate 27-page duplicate cluster)
+7. **SEO meta**:
+   - `titleEn`: "NIS2 Compliance Software for EU Organisations | Quantifier.ai"
+   - `descEn`: "AI-native GRC platform for NIS2 compliance across the EU. Gap analysis, risk management, incident workflows and continuous compliance in one system."
+   - FAQ: dodanie pytania "Does NIS2 apply the same way in every EU country?" z odpowiedzią wyjaśniającą transpozycję
 
-**`App.tsx`**: Import and connect the dedicated product components that already exist:
-- `/product` → `Features` (keep as main product page)
-- `/product/overview` → `ProductOverview` (keep)
-- `/product/features` → **redirect to `/product`** (duplicate)
-- `/product/ai-compliance-officer` → `ComplianceOfficer`
-- `/product/task-data-management` → `TaskDataManagement`
-- `/product/documents-management` → `DocumentsManagement`
-- `/product/analytics-dashboards` → `AnalyticsDashboards`
-- `/product/api-integrations` → `ApiIntegrations`
-- `/product/value-chain` → `ValueChain`
-- `/product/risk-assessment` → `RiskAssessment`
+8. **Final CTA**: bez zmian
 
-Import the 7 dedicated components that exist but aren't used. Add redirect from `/product/features` → `/product`.
+### Zmiany w tłumaczeniach CS (`public/locales/cs/translation.json`)
 
-#### Phase 2: Fix By-Roles duplicate cluster
+Analogicznie do EN ale z czeskim kontekstem:
+- Hero heading: "Vaše organizace musí splnit NIS2." → **"Organizace v EU musí splnit NIS2."**
+- Solution heading: dodanie "pro organizace v EU"
+- Auditor: "auditor" → "inspektor" (kontrole, nie audyty)
+- SEO title: "NIS2 Compliance Software pro organizace v EU | Quantifier.ai"
 
-The `ByRoles` component uses tabs. Route `/by-roles/managers`, `/by-roles/contributors`, `/by-roles/auditor` should open with the correct tab active. The dedicated page components (`Managers.tsx`, `Contributors.tsx`, `Auditor.tsx`) exist.
+### Pliki do edycji
+1. `public/locales/en/translation.json` — sekcja `nis2Ksc` (~30 zmian tekstowych)
+2. `src/i18n/locales/en.json` — mirror tych samych kluczy `nis2Ksc`
+3. `public/locales/cs/translation.json` — sekcja `nis2Ksc` (~15 zmian tekstowych)
 
-**`App.tsx`**: Wire up dedicated role pages:
-- `/by-roles` → `ByRoles` (keep as hub)
-- `/by-roles/managers` → `Managers`
-- `/by-roles/contributors` → `Contributors`
-- `/by-roles/auditor` → `Auditor`
-
-#### Phase 3: Fix sitemap issues
-
-**`supabase/functions/sitemap/index.ts`**:
-1. Remove `/product/features` (redirect target, not canonical)
-2. Fix `cybersecurity-check` — use locale-specific paths:
-   - EN: `/cybersecurity-check`
-   - PL: `/sprawdz-cyberbezpieczenstwo`
-   - CS: `/zkontrolujte-kybernetickou-bezpecnost`
-   (These need custom per-locale handling, not the generic all-locales loop)
-3. Fix `/events/nis2-w-polsce` — this Polish slug shouldn't be in EN/CS sitemap. Use localized slugs from eventsData or handle per-locale.
-4. Update `lastmod` dates to current date for modified pages.
-
-#### Phase 4: Netlify redirects
-
-**`netlify.toml`**: Add 301 redirect for `/product/features` → `/product/`.
-
-#### Phase 5: Minor SEO fixes
-
-1. **GrcPlatform.tsx**: Ensure proper hreflang tags for all 3 locales + x-default.
-2. **ProductOverview**: Consider if this thin page should be `noIndex` or merged with `/product`. Decision: keep but ensure unique title/description.
-
----
-
-### Files to modify
-
-1. `src/App.tsx` — wire up dedicated product + role page imports, add redirect for `/product/features`
-2. `supabase/functions/sitemap/index.ts` — fix duplicate/wrong URLs, locale-specific paths for cybersecurity-check and events
-3. `netlify.toml` — add `/product/features` → `/product/` redirect
-4. `supabase/functions/llms-txt/index.ts` — no changes needed (already correct)
-
-### Impact
-
-- **Before**: ~142 unindexed pages, ~39 duplicate product/role pages in sitemap
-- **After**: Each product sub-page serves unique content, sitemap is clean, duplicate clusters eliminated
-- **Risk**: Users who bookmarked `/product/features` get 301'd to `/product` (acceptable)
+### Bez zmian
+- `public/locales/pl/translation.json` — PL zostaje jak jest
+- `src/pages/seo-landing/Nis2Ksc.tsx` — komponent bez zmian (używa kluczy i18n)
+- Routing, sitemap, llms-txt — bez zmian
 
