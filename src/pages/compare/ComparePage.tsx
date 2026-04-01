@@ -4,8 +4,9 @@ import { getComparePageBySlug } from '@/data/compareData';
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, X, Minus, ArrowRight, Shield, Zap, Globe, BarChart3, Bot, FileCheck } from 'lucide-react';
+import { Check, X, Minus, ArrowRight, Shield, Zap, Globe, BarChart3, Bot, FileCheck, HelpCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import FAQSection from '@/components/seo/FAQSection';
 
 const ComparePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -21,10 +22,9 @@ const ComparePage = () => {
   const title = t(`${ns}.seo.title`);
   const description = t(`${ns}.seo.description`);
 
-  // Feature comparison rows
   const featureKeys = [
     'multiFramework',
-    'aiComplianceOfficer',
+    'aiWorkflows',
     'continuousMonitoring',
     'nis2Support',
     'doraSupport',
@@ -36,13 +36,40 @@ const ComparePage = () => {
   ];
 
   const getIcon = (value: string) => {
-    if (value === 'true' || value === 'yes') return <Check className="h-5 w-5 text-green-600" />;
-    if (value === 'partial') return <Minus className="h-5 w-5 text-amber-500" />;
-    return <X className="h-5 w-5 text-red-400" />;
+    if (value === 'true' || value === 'yes') return <Check className="h-5 w-5 text-green-600 mx-auto" />;
+    if (value === 'partial') return <Minus className="h-5 w-5 text-amber-500 mx-auto" />;
+    if (value === 'unconfirmed') return <span className="text-xs text-muted-foreground">{t('compare.common.unconfirmed')}</span>;
+    return <X className="h-5 w-5 text-red-400 mx-auto" />;
   };
 
-  // Differentiators
   const differentiatorIcons = [Bot, Shield, Globe, BarChart3, FileCheck, Zap];
+
+  // Build FAQ data
+  const faqItems: { question: string; answer: string }[] = [];
+  for (let i = 0; i < 6; i++) {
+    const qKey = `${ns}.faq.items.${i}.question`;
+    const aKey = `${ns}.faq.items.${i}.answer`;
+    const q = t(qKey);
+    if (q === qKey) break;
+    faqItems.push({ question: q, answer: t(aKey) });
+  }
+
+  // Build list items for sections
+  const getListItems = (sectionKey: string): string[] => {
+    const items: string[] = [];
+    for (let i = 0; i < 8; i++) {
+      const key = `${ns}.${sectionKey}.items.${i}`;
+      const val = t(key);
+      if (val === key) break;
+      items.push(val);
+    }
+    return items;
+  };
+
+  const bestForItems = getListItems('bestFor');
+  const whenQuantifierItems = getListItems('whenQuantifier');
+  const whenCompetitorItems = getListItems('whenCompetitor');
+  const whyEuItems = getListItems('whyEu');
 
   return (
     <PageTemplate title={title} description={description}>
@@ -109,6 +136,15 @@ const ComparePage = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             {t(`${ns}.table.heading`)}
           </h2>
+
+          {/* Legend */}
+          <div className="flex flex-wrap gap-6 justify-center mb-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-green-600" /> {t('compare.common.legendYes')}</span>
+            <span className="flex items-center gap-1.5"><Minus className="h-4 w-4 text-amber-500" /> {t('compare.common.legendPartial')}</span>
+            <span className="flex items-center gap-1.5"><X className="h-4 w-4 text-red-400" /> {t('compare.common.legendNo')}</span>
+            <span className="flex items-center gap-1.5"><HelpCircle className="h-4 w-4 text-muted-foreground" /> {t('compare.common.unconfirmed')}</span>
+          </div>
+
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
@@ -141,6 +177,12 @@ const ComparePage = () => {
               </tbody>
             </table>
           </div>
+
+          {/* Disclaimer */}
+          <div className="mt-6 space-y-2 text-xs text-muted-foreground">
+            <p>{t(`${ns}.disclaimer`)}</p>
+            <p>{t('compare.common.legendNote')}</p>
+          </div>
         </div>
       </section>
 
@@ -159,7 +201,6 @@ const ComparePage = () => {
               const titleKey = `${ns}.differentiators.items.${i}.title`;
               const descKey = `${ns}.differentiators.items.${i}.desc`;
               const titleVal = t(titleKey);
-              // Skip if key returns itself (no translation)
               if (titleVal === titleKey) return null;
               return (
                 <div key={i} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
@@ -174,6 +215,94 @@ const ComparePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Who this alternative is best for */}
+      {bestForItems.length > 0 && (
+        <section className="pb-16 md:pb-24">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+              {t(`${ns}.bestFor.heading`)}
+            </h2>
+            <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+              {t(`${ns}.bestFor.subheading`)}
+            </p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {bestForItems.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 bg-card border border-border rounded-lg p-4">
+                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* When Quantifier is the better fit */}
+      {whenQuantifierItems.length > 0 && (
+        <section className="pb-16 md:pb-24 bg-primary/5 py-16 md:py-24 -mx-4 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+              {t(`${ns}.whenQuantifier.heading`)}
+            </h2>
+            <ul className="space-y-3 max-w-2xl mx-auto mt-8">
+              {whenQuantifierItems.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* When the competitor may be the better fit */}
+      {whenCompetitorItems.length > 0 && (
+        <section className="pb-16 md:pb-24">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+              {t(`${ns}.whenCompetitor.heading`)}
+            </h2>
+            <ul className="space-y-3 max-w-2xl mx-auto mt-8">
+              {whenCompetitorItems.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Why EU-regulated teams may prefer Quantifier */}
+      {whyEuItems.length > 0 && (
+        <section className="pb-16 md:pb-24 bg-muted/30 py-16 md:py-24 -mx-4 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+              {t(`${ns}.whyEu.heading`)}
+            </h2>
+            <ul className="space-y-3 max-w-2xl mx-auto mt-8">
+              {whyEuItems.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Shield className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {faqItems.length > 0 && (
+        <FAQSection
+          title={t(`${ns}.faq.heading`)}
+          faqs={faqItems}
+          pageUrl={`https://quantifier.ai/${currentLocale}/compare/${config.slug}/`}
+        />
+      )}
 
       {/* CTA */}
       <section className="pb-16 md:pb-24">
