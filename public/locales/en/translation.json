@@ -5830,5 +5830,295 @@
       "faq3q": "Does NIS2 apply the same way in every EU country?",
       "faq3a": "No. NIS2 is an EU directive that sets a baseline, but each member state transposes it into national law. Scope, deadlines, and enforcement details may differ between countries such as Poland, Czech Republic, Germany, etc."
     }
+  },
+  "compare": {
+    "common": {
+      "requestDemo": "Request a demo",
+      "viewPricing": "View pricing",
+      "seeFrameworks": "See all frameworks",
+      "feature": "Feature",
+      "features": {
+        "multiFramework": "Multi-framework compliance (SOC 2, ISO 27001, GDPR, NIS2, DORA)",
+        "aiComplianceOfficer": "AI Compliance Officer (autonomous agent)",
+        "continuousMonitoring": "Continuous compliance monitoring",
+        "nis2Support": "NIS2 Directive support",
+        "doraSupport": "DORA support",
+        "esgCsrd": "ESG / CSRD reporting",
+        "supplyChain": "Supply chain risk management",
+        "euHosting": "EU data hosting",
+        "evidenceCollection": "Automated evidence collection",
+        "riskAssessment": "AI-powered risk assessment"
+      }
+    },
+    "vantaAlternative": {
+      "seo": {
+        "title": "Vanta Alternative — AI-Native GRC Platform",
+        "description": "Looking for a Vanta alternative? Quantifier.ai offers AI-native compliance automation for SOC 2, ISO 27001, NIS2, DORA, and ESG — with EU data hosting and autonomous AI agents."
+      },
+      "hero": {
+        "badge": "Vanta Alternative",
+        "heading": "The AI-native alternative to Vanta",
+        "subheading": "Quantifier goes beyond SOC 2 automation. Get continuous compliance across SOC 2, ISO 27001, NIS2, DORA, GDPR, and ESG — powered by autonomous AI agents, not manual workflows."
+      },
+      "table": {
+        "heading": "Quantifier.ai vs Vanta — feature comparison"
+      },
+      "comparison": {
+        "multiFramework": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "aiComplianceOfficer": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "continuousMonitoring": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "nis2Support": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "doraSupport": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "esgCsrd": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "supplyChain": {
+          "quantifier": "true",
+          "competitor": "partial"
+        },
+        "euHosting": {
+          "quantifier": "true",
+          "competitor": "partial"
+        },
+        "evidenceCollection": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "riskAssessment": {
+          "quantifier": "true",
+          "competitor": "partial"
+        }
+      },
+      "differentiators": {
+        "heading": "Why teams switch from Vanta to Quantifier",
+        "subheading": "Quantifier.ai is built for organisations that need EU-native compliance across multiple regulatory frameworks.",
+        "items": [
+          {
+            "title": "Autonomous AI Agent",
+            "desc": "Our AI Compliance Officer continuously monitors controls, collects evidence, and identifies gaps — without manual intervention."
+          },
+          {
+            "title": "EU regulatory coverage",
+            "desc": "Native support for NIS2, DORA, GDPR, and ESG/CSRD — frameworks that Vanta doesn't cover."
+          },
+          {
+            "title": "EU data residency",
+            "desc": "Data hosted in the EU by default. No need to request special arrangements for GDPR compliance."
+          },
+          {
+            "title": "Supply chain compliance",
+            "desc": "Full third-party risk management and supply chain monitoring required by NIS2 and DORA."
+          },
+          {
+            "title": "Multi-framework efficiency",
+            "desc": "Map shared controls across SOC 2, ISO 27001, NIS2, and DORA — eliminate redundant compliance work."
+          },
+          {
+            "title": "ESG & sustainability",
+            "desc": "CSRD, ESRS, carbon footprint, and EU Taxonomy reporting in the same platform as your security compliance."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to switch from Vanta?",
+        "subheading": "See how Quantifier delivers AI-native compliance automation across all your regulatory frameworks."
+      }
+    },
+    "drataAlternative": {
+      "seo": {
+        "title": "Drata Alternative — AI-Native GRC Platform",
+        "description": "Looking for a Drata alternative? Quantifier.ai offers AI-native compliance automation for SOC 2, ISO 27001, NIS2, DORA, and ESG — with autonomous AI agents and EU hosting."
+      },
+      "hero": {
+        "badge": "Drata Alternative",
+        "heading": "The AI-native alternative to Drata",
+        "subheading": "Go beyond SOC 2 and ISO 27001 automation. Quantifier covers NIS2, DORA, GDPR, and ESG with autonomous AI agents — not just integrations and dashboards."
+      },
+      "table": {
+        "heading": "Quantifier.ai vs Drata — feature comparison"
+      },
+      "comparison": {
+        "multiFramework": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "aiComplianceOfficer": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "continuousMonitoring": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "nis2Support": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "doraSupport": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "esgCsrd": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "supplyChain": {
+          "quantifier": "true",
+          "competitor": "partial"
+        },
+        "euHosting": {
+          "quantifier": "true",
+          "competitor": "partial"
+        },
+        "evidenceCollection": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "riskAssessment": {
+          "quantifier": "true",
+          "competitor": "partial"
+        }
+      },
+      "differentiators": {
+        "heading": "Why teams switch from Drata to Quantifier",
+        "subheading": "Quantifier.ai goes beyond compliance automation with autonomous AI agents and EU-native regulatory support.",
+        "items": [
+          {
+            "title": "Autonomous AI Agent",
+            "desc": "AI Compliance Officer that works continuously — not just dashboards and integrations, but intelligent, autonomous compliance management."
+          },
+          {
+            "title": "EU regulatory depth",
+            "desc": "NIS2, DORA, GDPR, and ESG/CSRD built in. Not bolt-on frameworks, but first-class regulatory support."
+          },
+          {
+            "title": "EU data residency",
+            "desc": "Data hosted in the EU. Meet GDPR data residency requirements without special configuration."
+          },
+          {
+            "title": "Supply chain compliance",
+            "desc": "Vendor risk management and supply chain security monitoring for NIS2 and DORA requirements."
+          },
+          {
+            "title": "Cross-framework control mapping",
+            "desc": "One control satisfies SOC 2, ISO 27001, NIS2, and DORA simultaneously — no duplicated effort."
+          },
+          {
+            "title": "Sustainability reporting",
+            "desc": "CSRD, ESRS, carbon footprint, and EU Taxonomy — compliance and sustainability in one platform."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to switch from Drata?",
+        "subheading": "See how Quantifier delivers autonomous AI compliance across all your regulatory frameworks."
+      }
+    },
+    "sprintoAlternative": {
+      "seo": {
+        "title": "Sprinto Alternative — AI-Native GRC Platform",
+        "description": "Looking for a Sprinto alternative? Quantifier.ai offers AI-native compliance for SOC 2, ISO 27001, NIS2, DORA, and ESG — with autonomous AI agents and full EU regulatory support."
+      },
+      "hero": {
+        "badge": "Sprinto Alternative",
+        "heading": "The AI-native alternative to Sprinto",
+        "subheading": "Quantifier takes compliance beyond automation. Autonomous AI agents handle evidence collection, gap analysis, and risk management across SOC 2, ISO 27001, NIS2, DORA, and ESG."
+      },
+      "table": {
+        "heading": "Quantifier.ai vs Sprinto — feature comparison"
+      },
+      "comparison": {
+        "multiFramework": {
+          "quantifier": "true",
+          "competitor": "partial"
+        },
+        "aiComplianceOfficer": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "continuousMonitoring": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "nis2Support": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "doraSupport": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "esgCsrd": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "supplyChain": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "euHosting": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "evidenceCollection": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "riskAssessment": {
+          "quantifier": "true",
+          "competitor": "partial"
+        }
+      },
+      "differentiators": {
+        "heading": "Why teams choose Quantifier over Sprinto",
+        "subheading": "Enterprise-grade compliance with AI autonomy and full EU regulatory framework support.",
+        "items": [
+          {
+            "title": "Autonomous AI Agent",
+            "desc": "AI Compliance Officer that proactively identifies gaps, collects evidence, and generates documentation — not just task automation."
+          },
+          {
+            "title": "Full EU regulatory stack",
+            "desc": "NIS2, DORA, GDPR, and ESG/CSRD — complete European regulatory compliance in one platform."
+          },
+          {
+            "title": "EU-first infrastructure",
+            "desc": "Data hosted in the EU with full GDPR compliance by default."
+          },
+          {
+            "title": "Supply chain security",
+            "desc": "Third-party risk assessment and continuous supply chain monitoring for NIS2 and DORA."
+          },
+          {
+            "title": "Enterprise scalability",
+            "desc": "Built for mid-market and enterprise organisations managing compliance across multiple frameworks and jurisdictions."
+          },
+          {
+            "title": "ESG integration",
+            "desc": "Sustainability reporting alongside security compliance — CSRD, ESRS, and EU Taxonomy in the same platform."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to upgrade from Sprinto?",
+        "subheading": "See how Quantifier delivers AI-native compliance across all your regulatory and sustainability frameworks."
+      }
+    }
   }
 }

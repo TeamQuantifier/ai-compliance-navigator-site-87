@@ -51,6 +51,10 @@ const staticPages = [
   { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/events', changefreq: 'weekly', priority: '0.8', lastmod: '2026-02-24' },
+  // Compare pages
+  { path: '/compare/vanta-alternative', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-01' },
+  { path: '/compare/drata-alternative', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-01' },
+  { path: '/compare/sprinto-alternative', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-01' },
   // nis2-ksc merged into /frameworks/nis-2
   // cybersecurity-check and events with locale-specific slugs handled separately below
 ];

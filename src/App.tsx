@@ -67,6 +67,9 @@ import StoryDetail from "./pages/blog/StoryDetail";
 import GrcPlatform from "./pages/seo-landing/GrcPlatform";
 import Nis2Ksc from "./pages/seo-landing/Nis2Ksc";
 
+// Compare pages
+import ComparePage from "./pages/compare/ComparePage";
+
 // Legal pages
 import CookiesPolicy from "./pages/legal/CookiesPolicy";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
@@ -172,6 +175,9 @@ const MainRoutes = () => (
         <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-2" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
         <Route path="/:locale/nis2-ksc" element={<Navigate to="frameworks/nis-2" replace />} />
+
+        {/* Compare pages */}
+        <Route path="/:locale/compare/:slug" element={<ComparePage />} />
 
         {/* Events routes */}
         <Route path="/:locale/events" element={<EventsHub />} />

@@ -126,7 +126,10 @@ const KEY_LINKS = `## Key Links
 - Contact: ${BASE_URL}/en/contact/
 - Success Stories: ${BASE_URL}/en/success-stories/
 - Blog: ${BASE_URL}/en/blog/
-- GRC Platform: ${BASE_URL}/en/grc-platform/`;
+- GRC Platform: ${BASE_URL}/en/grc-platform/
+- Compare — Vanta Alternative: ${BASE_URL}/en/compare/vanta-alternative/
+- Compare — Drata Alternative: ${BASE_URL}/en/compare/drata-alternative/
+- Compare — Sprinto Alternative: ${BASE_URL}/en/compare/sprinto-alternative/`;
 
 const FREE_TOOLS_SHORT = `## Free Tools
 
