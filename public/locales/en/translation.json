@@ -919,83 +919,123 @@
     },
     "complianceOfficer": {
       "title": "AI Compliance Officer",
-      "description": "Your virtual compliance assistant that continuously monitors and guides your compliance program.",
+      "description": "Your autonomous AI compliance agent that continuously monitors, analyzes, and acts on your compliance program across all frameworks.",
       "hero": {
-        "title": "Meet Your New AI Compliance Officer",
-        "subtitle": "A powerful AI that continuously monitors your compliance program, automates routine tasks, and provides intelligent recommendations.",
+        "title": "Your AI-Powered Compliance Officer",
+        "subtitle": "An autonomous AI agent that monitors your compliance posture 24/7, identifies gaps, drafts policies, assigns tasks, and guides your team — across ISO 27001, NIS2, DORA, GDPR, SOC 2, and more.",
         "bookDemo": "Book a Demo"
       },
       "howItWorks": {
-        "title": "How Our AI Compliance Officer Works",
-        "subtitle": "Quantifier's AI Compliance Officer combines advanced language models, specialized compliance knowledge, and autonomous capabilities to transform how you manage compliance.",
-        "monitoring": {
-          "title": "Continuous Monitoring",
-          "description": "Our AI never sleeps, constantly analyzing your compliance status, identifying risks, and detecting potential gaps before they become issues."
-        },
-        "expertise": {
-          "title": "Framework Expertise",
-          "description": "Pre-trained on ISO 14001, GHG Protocol, ISO 14064, and dozens of other environmental standards and regulations with regular updates."
-        },
-        "action": {
-          "title": "Autonomous Action",
-          "description": "Beyond alerting, our AI can take action—assigning tasks, requesting information, scheduling reviews, and even drafting documentation."
-        }
-      },
-      "useCases": {
-        "title": "Environmental Compliance Use Cases",
-        "iso14001": {
-          "title": "ISO 14001 Management",
-          "features": {
-            "feature1": "Automated policy reviews and updates when standards change",
-            "feature2": "AI-driven internal audit preparation and evidence collection",
-            "feature3": "Continuous environmental objective tracking and reporting"
-          }
-        },
-        "carbonEmissions": {
-          "title": "Carbon Emissions Reporting",
-          "features": {
-            "feature1": "Automated data collection across Scope 1, 2 and 3 emissions",
-            "feature2": "Anomaly detection in emissions data with root cause analysis",
-            "feature3": "AI-generated reduction strategy recommendations"
-          }
-        },
-        "lca": {
-          "title": "Life Cycle Assessment",
-          "features": {
-            "feature1": "Guided data collection and validation for product LCAs",
-            "feature2": "Intelligent gap filling for missing environmental impact data",
-            "feature3": "Automated impact hotspot identification and optimization"
-          }
-        },
-        "decarbonisation": {
-          "title": "Decarbonisation Planning",
-          "features": {
-            "feature1": "Science-based target setting with automated progress tracking",
-            "feature2": "AI-recommended carbon reduction initiatives with ROI analysis",
-            "feature3": "Predictive modeling of future emissions based on business growth"
+        "title": "How the AI Compliance Officer Works",
+        "subtitle": "Four stages — from learning your business to autonomous action. No manual checklists. No spreadsheets.",
+        "steps": {
+          "learns": {
+            "title": "Learns Your Business",
+            "description": "The AI ingests your policies, controls, org structure, and historical compliance data to build a contextual understanding of your unique environment."
+          },
+          "monitors": {
+            "title": "Monitors Continuously",
+            "description": "Tracks compliance status across all active frameworks in real-time, detecting gaps, expiring documents, and regulatory changes as they happen."
+          },
+          "acts": {
+            "title": "Acts Autonomously",
+            "description": "Assigns tasks to team members, drafts updated policies, collects evidence, and sends follow-up reminders — without waiting for manual input."
+          },
+          "communicates": {
+            "title": "Reports & Communicates",
+            "description": "Delivers daily summaries, risk alerts, and progress reports. Answers compliance questions in natural language via built-in chat."
           }
         }
       },
-      "teamIntegration": {
-        "title": "How Our AI Works With Your Team",
-        "learns": {
-          "title": "Learns Your Business",
-          "description": "The AI studies your operations, processes, and previous compliance data to understand your unique environmental context."
+      "dashboard": {
+        "title": "Real-Time Compliance Dashboard",
+        "subtitle": "See your compliance posture at a glance — framework progress, AI insights, risk indicators, and pending actions in one unified view."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "gapAnalysis": {
+          "title": "Automated Gap Analysis",
+          "description": "The AI scans your current controls against framework requirements, identifies gaps, and suggests remediation steps with priority ranking."
         },
-        "monitors": {
-          "title": "Monitors & Analyzes",
-          "description": "Continuously monitors compliance status, environmental data, and regulatory changes, analyzing trends and patterns."
+        "continuousMonitoring": {
+          "title": "Continuous Compliance Monitoring",
+          "description": "24/7 monitoring of your compliance status with instant alerts when controls drift, documents expire, or new regulatory changes affect you."
         },
-        "communicates": {
-          "title": "Communicates & Acts",
-          "description": "Provides actionable insights, assigns tasks, sends alerts, and can even draft documentation for your approval."
+        "evidenceCollection": {
+          "title": "AI-Driven Evidence Collection",
+          "description": "Automatically collects, organizes, and validates audit evidence from your connected systems — reducing manual work by up to 80%."
+        },
+        "riskDetection": {
+          "title": "Proactive Risk Detection",
+          "description": "Identifies emerging compliance risks before they become issues. Analyzes patterns across your data to predict potential non-conformities."
+        },
+        "taskDelegation": {
+          "title": "Intelligent Task Delegation",
+          "description": "Assigns compliance tasks to the right team members based on role, expertise, and workload. Tracks completion and sends automated follow-ups."
+        },
+        "policyDrafting": {
+          "title": "AI Policy Drafting",
+          "description": "Generates framework-compliant policy drafts, updates existing documents when standards change, and maintains version control automatically."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "The AI Compliance Officer is pre-trained on major regulatory and industry frameworks — and continuously updated as standards evolve.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Information security management"
+          },
+          "nis2": {
+            "name": "NIS2 Directive",
+            "desc": "EU cybersecurity requirements"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Digital operational resilience"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection & privacy"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust service criteria"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability reporting"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsAiOfficer": {
+          "question": "What is an AI Compliance Officer?",
+          "answer": "An AI Compliance Officer is an autonomous AI agent that continuously monitors your organization's compliance posture, identifies gaps, assigns remediation tasks, drafts policies, and provides real-time guidance — functioning as a tireless virtual member of your compliance team."
+        },
+        "howDifferent": {
+          "question": "How is this different from a compliance checklist tool?",
+          "answer": "Unlike static checklist tools, Quantifier's AI agent understands context. It learns your business, tracks changes across multiple frameworks simultaneously, takes autonomous action (like assigning tasks and drafting documents), and adapts its recommendations based on your specific compliance posture."
+        },
+        "whichFrameworks": {
+          "question": "Which compliance frameworks does the AI support?",
+          "answer": "The AI Compliance Officer supports ISO 27001, NIS2, DORA, GDPR, SOC 2, ISO 9001, ISO 14001, CSRD/ESG, and more. It's continuously updated as standards evolve, and can handle multiple frameworks simultaneously with cross-mapping capabilities."
+        },
+        "dataPrivacy": {
+          "question": "Is my compliance data secure?",
+          "answer": "Yes. Quantifier is hosted on EU infrastructure, all data is encrypted at rest and in transit, and we follow strict data isolation practices. Your compliance data is never used to train AI models or shared with third parties."
+        },
+        "setupTime": {
+          "question": "How long does it take to set up?",
+          "answer": "Most organizations are up and running within 1-2 weeks. The AI begins learning your compliance context immediately upon data import, and starts providing actionable insights within the first few days."
         }
       },
       "cta": {
-        "title": "Ready to Transform Your Environmental Compliance?",
-        "subtitle": "Join organizations already using Quantifier's AI to make environmental compliance effortless and impactful.",
+        "title": "Ready to Automate Your Compliance Program?",
+        "subtitle": "Join organizations using Quantifier's AI Compliance Officer to reduce manual compliance work by up to 80% while improving coverage.",
         "bookDemo": "Book a Demo",
-        "exploreFeatures": "Explore AI Features"
+        "explorePlans": "Explore Plans"
       }
     },
     "analyticsDashboards": {
