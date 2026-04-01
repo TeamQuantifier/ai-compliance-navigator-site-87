@@ -37,7 +37,7 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'task-data-management': 'Task & Data Management',
   'documents-management': 'Documents Management',
   'analytics-dashboards': 'Analytics Dashboards',
-  'api-integrations': 'API Integrations',
+  
   'value-chain': 'Value Chain',
   'risk-assessment': 'Risk Assessment',
   'product-level': 'Product Level',
