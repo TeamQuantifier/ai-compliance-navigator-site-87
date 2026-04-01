@@ -4735,7 +4735,7 @@
         },
         "riskAssessment": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         }
       },
       "differentiators": {
@@ -4793,7 +4793,7 @@
         },
         "aiComplianceOfficer": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "partial"
         },
         "continuousMonitoring": {
           "quantifier": "true",
@@ -4813,7 +4813,7 @@
         },
         "supplyChain": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         },
         "euHosting": {
           "quantifier": "true",
@@ -4825,7 +4825,7 @@
         },
         "riskAssessment": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         }
       },
       "differentiators": {
@@ -4833,8 +4833,8 @@
         "subheading": "Quantifier.ai jde za hranice automatizace souladu s autonomnimi AI agenty a nativni podporou regulaci EU.",
         "items": [
           {
-            "title": "Autonomni AI agent",
-            "desc": "AI Compliance Officer pracuje nepretrzite — inteligentni, autonomni rizeni souladu."
+            "title": "Skutecne autonomni AI agent",
+            "desc": "Drata ma AI funkce, ale AI Compliance Officer od Quantifier pracuje autonomne — neustale monitoruje, sbira dukazy a generuje dokumentaci bez manualniho spousteni."
           },
           {
             "title": "Hloubka regulaci EU",
@@ -4879,7 +4879,7 @@
       "comparison": {
         "multiFramework": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         },
         "aiComplianceOfficer": {
           "quantifier": "true",
@@ -4915,7 +4915,7 @@
         },
         "riskAssessment": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         }
       },
       "differentiators": {
