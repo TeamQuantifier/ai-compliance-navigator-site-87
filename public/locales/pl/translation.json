@@ -5865,28 +5865,33 @@
       "viewPricing": "Zobacz cennik",
       "seeFrameworks": "Zobacz wszystkie frameworki",
       "feature": "Funkcja",
+      "unconfirmed": "Brak publicznego potwierdzenia",
+      "legendYes": "Publicznie udokumentowane",
+      "legendPartial": "Czesciowo udokumentowane / wezszy zakres",
+      "legendNo": "Niedostepne",
+      "legendNote": "Publicznie udokumentowane = potwierdzone na oficjalnych stronach produktu, frameworkow, trust center, help center lub polityki prywatnosci sprawdzonych podczas aktualizacji strony.",
       "features": {
-        "multiFramework": "Zgodnosc multi-framework (SOC 2, ISO 27001, GDPR, NIS2, DORA)",
-        "aiComplianceOfficer": "AI Compliance Officer (autonomiczny agent)",
+        "multiFramework": "Zgodnosc multi-framework",
+        "aiWorkflows": "Procesy zgodnosci z AI / agentami",
         "continuousMonitoring": "Ciagly monitoring zgodnosci",
-        "nis2Support": "Wsparcie dyrektywy NIS2",
-        "doraSupport": "Wsparcie DORA",
-        "esgCsrd": "Raportowanie ESG / CSRD",
-        "supplyChain": "Zarzadzanie ryzykiem lancucha dostaw",
-        "euHosting": "Hosting danych w UE",
+        "nis2Support": "Dedykowane wsparcie NIS2",
+        "doraSupport": "Dedykowane wsparcie DORA",
+        "esgCsrd": "Pelne procesy raportowania ESG / CSRD",
+        "supplyChain": "Zarzadzanie ryzykiem dostawcow / lancucha dostaw",
+        "euHosting": "Publicznie udokumentowany hosting danych w UE",
         "evidenceCollection": "Automatyczne zbieranie dowodow",
-        "riskAssessment": "Ocena ryzyka z AI"
+        "riskAssessment": "Ocena ryzyka wspomagana AI"
       }
     },
     "vantaAlternative": {
       "seo": {
-        "title": "Alternatywa dla Vanta — AI-Native platforma GRC",
-        "description": "Szukasz alternatywy dla Vanta? Quantifier.ai oferuje automatyzacje zgodnosci z AI dla SOC 2, ISO 27001, NIS2, DORA i ESG — z hostingiem w UE i autonomicznymi agentami AI."
+        "title": "Alternatywa dla Vanta dla zespolow compliance w UE | Quantifier.ai",
+        "description": "Porownaj Quantifier.ai z Vanta. Obie platformy oferuja multi-framework compliance i AI. Zobacz, gdzie Quantifier wygrywa dla organizacji regulowanych w UE potrzebujacych NIS2, DORA i ESG/CSRD."
       },
       "hero": {
         "badge": "Alternatywa dla Vanta",
-        "heading": "AI-native alternatywa dla Vanta",
-        "subheading": "Quantifier to wiecej niz automatyzacja SOC 2. Ciagla zgodnosc z SOC 2, ISO 27001, NIS2, DORA, GDPR i ESG — napedzana autonomicznymi agentami AI."
+        "heading": "Quantifier.ai vs Vanta: co lepsze dla compliance w UE?",
+        "subheading": "Obie platformy automatyzuja zgodnosc i oferuja AI. Quantifier wyroznia sie natywnym raportowaniem ESG/CSRD, gleboka wspolpraca w lancuchu wartosci i ujednoliconym srodowiskiem regulacyjnym UE."
       },
       "table": {
         "heading": "Quantifier.ai vs Vanta — porownanie funkcji"
@@ -5896,9 +5901,9 @@
           "quantifier": "true",
           "competitor": "true"
         },
-        "aiComplianceOfficer": {
+        "aiWorkflows": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "continuousMonitoring": {
           "quantifier": "true",
@@ -5906,11 +5911,11 @@
         },
         "nis2Support": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "doraSupport": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "esgCsrd": {
           "quantifier": "true",
@@ -5918,10 +5923,10 @@
         },
         "supplyChain": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         },
         "euHosting": {
-          "quantifier": "true",
+          "quantifier": "unconfirmed",
           "competitor": "partial"
         },
         "evidenceCollection": {
@@ -5934,49 +5939,114 @@
         }
       },
       "differentiators": {
-        "heading": "Dlaczego zespoly przechodza z Vanta na Quantifier",
-        "subheading": "Quantifier.ai jest stworzony dla organizacji potrzebujacych zgodnosci z regulacjami UE.",
+        "heading": "Gdzie Quantifier wyprzedza Vanta",
+        "subheading": "Obie platformy sa mocne w automatyzacji SOC 2 i ISO 27001. Quantifier dodaje glebie tam, gdzie organizacje regulowane w UE najbardziej tego potrzebuja.",
         "items": [
           {
-            "title": "Autonomiczny agent AI",
-            "desc": "AI Compliance Officer stale monitoruje kontrole, zbiera dowody i identyfikuje luki — bez recznej interwencji."
+            "title": "Pelne procesy raportowania ESG / CSRD",
+            "desc": "CSRD, ESRS, slad weglowy i raportowanie EU Taxonomy natywnie zintegrowane — niedostepne w Vanta."
           },
           {
-            "title": "Pokrycie regulacji UE",
-            "desc": "Natywne wsparcie NIS2, DORA, GDPR i ESG/CSRD — frameworki, ktorych Vanta nie obsluguje."
+            "title": "Wspolpraca w lancuchu wartosci",
+            "desc": "Gleboka analiza dostawcow, mapowanie ryzyka lancucha wartosci i wspolne procesy zgodnosci wymagane przez NIS2 i DORA."
           },
           {
-            "title": "Hosting danych w UE",
-            "desc": "Dane hostowane w UE domyslnie. Bez potrzeby specjalnych ustawien dla GDPR."
+            "title": "Ujednolicone srodowisko regulacyjne UE",
+            "desc": "NIS2, DORA, GDPR, ESG i frameworki bezpieczenstwa w jednej platformie governance."
           },
           {
-            "title": "Zgodnosc lancucha dostaw",
-            "desc": "Pelne zarzadzanie ryzykiem dostawcow wymagane przez NIS2 i DORA."
+            "title": "Koordynacja agentow AI",
+            "desc": "AI Compliance Officer koordynuje dzialania miedzy frameworkami, generujac dowody i dokumentacje autonomicznie."
           },
           {
-            "title": "Efektywnosc multi-framework",
-            "desc": "Mapuj wspolne kontrole miedzy SOC 2, ISO 27001, NIS2 i DORA — eliminuj powtarzajaca sie prace."
+            "title": "Governance multi-framework",
+            "desc": "Mapuj wspolne kontrole miedzy SOC 2, ISO 27001, NIS2, DORA i ESG jednoczesnie."
           },
           {
-            "title": "ESG i zrownowazonosc",
-            "desc": "CSRD, ESRS, slad weglowy i EU Taxonomy w tej samej platformie co zgodnosc bezpieczenstwa."
+            "title": "Glebia regulacji europejskich",
+            "desc": "Zbudowany specjalnie dla zgodnosci z dyrektywami UE, w tym krajowej implementacji NIS2 i wymogow DORA."
           }
         ]
       },
+      "bestFor": {
+        "heading": "Dla kogo jest ta strona porownawcza",
+        "subheading": "Ta strona jest dla zespolow compliance oceniajacych Vanta i rozpatrujacych alternatywy z glebszym wsparciem regulacji UE.",
+        "items": [
+          "Menedzerowie compliance oceniajacy platformy GRC dla organizacji regulowanych w UE",
+          "Zespoly potrzebujace NIS2, DORA i ESG/CSRD obok SOC 2 i ISO 27001",
+          "Organizacje szukajace ujednoliconego governance w bezpieczenstwie i zrownowazonym rozwoju",
+          "Firmy potrzebujace glebokiej zgodnosci lancucha dostaw i wartosci"
+        ]
+      },
+      "whenQuantifier": {
+        "heading": "Kiedy Quantifier jest lepszym wyborem",
+        "items": [
+          "Potrzebujesz raportowania ESG/CSRD obok zgodnosci bezpieczenstwa",
+          "Twoja organizacja podlega jednoczesnie NIS2, DORA i GDPR",
+          "Potrzebujesz glebokiej analizy dostawcow i wspolpracy w lancuchu wartosci",
+          "Chcesz jednej platformy do governance bezpieczenstwa, regulacji i zrownowazonego rozwoju",
+          "Wolisz agenta AI koordynujacego dzialania miedzy wieloma frameworkami UE"
+        ]
+      },
+      "whenCompetitor": {
+        "heading": "Kiedy Vanta moze byc lepszym wyborem",
+        "items": [
+          "Twoj compliance skupia sie glownie na SOC 2 i ISO 27001 bez potrzeb regulacyjnych UE",
+          "Potrzebujesz bardzo duzego ekosystemu gotowych integracji z narzedziami SaaS",
+          "Twoja organizacja ma siedzibe w USA z minimalnymi obowiazkami regulacyjnymi UE",
+          "Priorytetem jest uznany vendor z duza baza klientow"
+        ]
+      },
+      "whyEu": {
+        "heading": "Dlaczego zespoly regulowane w UE moga preferowac Quantifier",
+        "items": [
+          "Ujednolicone NIS2 + DORA + GDPR + ESG governance w jednym srodowisku",
+          "Natywne raportowanie CSRD/ESRS — niedostepne w Vanta",
+          "Procesy zgodnosci lancucha dostaw i wartosci zbudowane dla dyrektyw UE",
+          "Agent AI rozumiejacy kontekst regulacyjny UE i zaleznosci miedzy frameworkami",
+          "Zbudowany celowo dla organizacji podlegajacych wielu rezimom regulacyjnym UE"
+        ]
+      },
+      "faq": {
+        "heading": "Czesto zadawane pytania",
+        "items": [
+          {
+            "question": "Czy Quantifier.ai jest dobra alternatywa dla Vanta?",
+            "answer": "Tak, szczegolnie dla organizacji regulowanych w UE potrzebujacych NIS2, DORA, GDPR i ESG/CSRD obok SOC 2 i ISO 27001. Quantifier oferuje ujednolicone governance w frameworkach bezpieczenstwa i zrownowazonego rozwoju."
+          },
+          {
+            "question": "Czy Vanta wspiera NIS2 i DORA?",
+            "answer": "Tak, Vanta publicznie dokumentuje wsparcie NIS2 i DORA. Quantifier oferuje jednak glębsza integracje regulacji UE z procesami ESG/CSRD i wspolpraca w lancuchu wartosci, ktorych Vanta obecnie nie zapewnia."
+          },
+          {
+            "question": "Ktora platforma jest lepsza dla zespolow compliance w UE?",
+            "answer": "Quantifier jest zbudowany celowo dla srodowisk regulacyjnych UE. Laczy NIS2, DORA, GDPR i ESG/CSRD w jednej platformie governance z natywnymi procesami zgodnosci lancucha dostaw."
+          },
+          {
+            "question": "Czy Quantifier wspiera raportowanie ESG i CSRD?",
+            "answer": "Tak. Quantifier natywnie wspiera CSRD, ESRS, slad weglowy i raportowanie EU Taxonomy — wyrazny wyroznik wzgledem Vanta."
+          },
+          {
+            "question": "Jak oceniac procesy compliance oparte na AI?",
+            "answer": "Zwroc uwage na zakres i autonomie mozliwosci AI. Zarowno Vanta, jak i Quantifier oferuja procesy oparte na AI. AI Compliance Officer Quantifier koordynuje dzialania miedzy wieloma frameworkami UE."
+          }
+        ]
+      },
+      "disclaimer": "Porownanie oparte na publicznie dostepnych informacjach o produkcie z kwietnia 2025. Dostepnosc funkcji moze sie roznic w zaleznosci od planu, pakietu, regionu i zakresu wdrozenia.",
       "cta": {
-        "heading": "Gotowy na zmiane z Vanta?",
-        "subheading": "Zobacz jak Quantifier dostarcza AI-native automatyzacje zgodnosci we wszystkich Twoich ramach regulacyjnych."
+        "heading": "Gotowy zobaczyc Quantifier w akcji?",
+        "subheading": "Zobacz jak Quantifier dostarcza ujednolicona zgodnosc w ramach regulacyjnych i zrownowazonego rozwoju UE."
       }
     },
     "drataAlternative": {
       "seo": {
-        "title": "Alternatywa dla Drata — AI-Native platforma GRC",
-        "description": "Szukasz alternatywy dla Drata? Quantifier.ai oferuje AI-native automatyzacje zgodnosci dla SOC 2, ISO 27001, NIS2, DORA i ESG."
+        "title": "Alternatywa dla Drata dla zespolow compliance w UE | Quantifier.ai",
+        "description": "Porownaj Quantifier.ai z Drata. Obie platformy oferuja automatyzacje i AI. Zobacz, gdzie Quantifier sie wyroznia dla organizacji regulowanych w UE potrzebujacych ESG/CSRD."
       },
       "hero": {
         "badge": "Alternatywa dla Drata",
-        "heading": "AI-native alternatywa dla Drata",
-        "subheading": "Wyjdz poza automatyzacje SOC 2 i ISO 27001. Quantifier obsluguje NIS2, DORA, GDPR i ESG z autonomicznymi agentami AI."
+        "heading": "Quantifier.ai vs Drata: co lepiej pasuje do compliance w UE?",
+        "subheading": "Drata i Quantifier automatyzuja zgodnosc z mozliwosciami AI. Quantifier dodaje natywne raportowanie ESG/CSRD, gleboka wspolprace w lancuchu wartosci i ujednolicone governance."
       },
       "table": {
         "heading": "Quantifier.ai vs Drata — porownanie funkcji"
@@ -5986,9 +6056,9 @@
           "quantifier": "true",
           "competitor": "true"
         },
-        "aiComplianceOfficer": {
+        "aiWorkflows": {
           "quantifier": "true",
-          "competitor": "partial"
+          "competitor": "true"
         },
         "continuousMonitoring": {
           "quantifier": "true",
@@ -5996,11 +6066,11 @@
         },
         "nis2Support": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "doraSupport": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "esgCsrd": {
           "quantifier": "true",
@@ -6011,8 +6081,8 @@
           "competitor": "true"
         },
         "euHosting": {
-          "quantifier": "true",
-          "competitor": "partial"
+          "quantifier": "unconfirmed",
+          "competitor": "unconfirmed"
         },
         "evidenceCollection": {
           "quantifier": "true",
@@ -6024,49 +6094,113 @@
         }
       },
       "differentiators": {
-        "heading": "Dlaczego zespoly przechodza z Drata na Quantifier",
-        "subheading": "Quantifier.ai wykracza poza automatyzacje zgodnosci dzieki autonomicznym agentom AI i natywnemu wsparciu regulacji UE.",
+        "heading": "Gdzie Quantifier wyprzedza Drata",
+        "subheading": "Obie platformy pokrywaja SOC 2, ISO 27001, NIS2 i DORA. Quantifier dodaje ESG/CSRD i glebsze governance lancucha wartosci.",
         "items": [
           {
-            "title": "Prawdziwie autonomiczny agent AI",
-            "desc": "Drata ma funkcje AI, ale AI Compliance Officer Quantifier dziala autonomicznie — stale monitoruje, zbiera dowody i generuje dokumentacje bez recznych wyzwalaczy."
+            "title": "Pelne procesy raportowania ESG / CSRD",
+            "desc": "CSRD, ESRS, slad weglowy i EU Taxonomy — niedostepne w Drata."
           },
           {
-            "title": "Glebia regulacji UE",
-            "desc": "NIS2, DORA, GDPR i ESG/CSRD wbudowane natywnie."
+            "title": "Wspolpraca w lancuchu wartosci",
+            "desc": "Gleboka analiza dostawcow i wspolne procesy zgodnosci dla dyrektyw UE."
           },
           {
-            "title": "Hosting danych w UE",
-            "desc": "Dane hostowane w UE. Spelniaj wymogi rezydencji danych GDPR bez specjalnej konfiguracji."
+            "title": "Ujednolicona platforma governance",
+            "desc": "Bezpieczenstwo, regulacje i zrownowazonosc w jednym srodowisku."
           },
           {
-            "title": "Zgodnosc lancucha dostaw",
-            "desc": "Zarzadzanie ryzykiem dostawcow i monitoring bezpieczenstwa lancucha dostaw dla NIS2 i DORA."
+            "title": "Agent AI dla frameworkow UE",
+            "desc": "AI Compliance Officer koordynuje generowanie dowodow i dokumentacji miedzy frameworkami."
           },
           {
             "title": "Mapowanie kontroli cross-framework",
-            "desc": "Jedna kontrola spelnia SOC 2, ISO 27001, NIS2 i DORA jednoczesnie."
+            "desc": "Jedna kontrola spelnia SOC 2, ISO 27001, NIS2, DORA i ESG jednoczesnie."
           },
           {
-            "title": "Raportowanie zrownowazonosci",
-            "desc": "CSRD, ESRS, slad weglowy i EU Taxonomy — zgodnosc i zrownowazonosc w jednej platformie."
+            "title": "Glebia regulacji europejskich",
+            "desc": "Zbudowany dla zgodnosci z dyrektywami UE, w tym krajowej implementacji NIS2 i DORA."
           }
         ]
       },
+      "bestFor": {
+        "heading": "Dla kogo jest ta strona porownawcza",
+        "subheading": "Ta strona jest dla zespolow compliance oceniajacych Drata i szukajacych alternatyw z ESG/CSRD i lancuchem wartosci.",
+        "items": [
+          "Zespoly compliance oceniajace platformy GRC dla organizacji regulowanych w UE",
+          "Zespoly potrzebujace raportowania ESG/CSRD obok SOC 2, ISO 27001, NIS2 i DORA",
+          "Organizacje szukajace ujednoliconego governance bezpieczenstwa i zrownowazonosci",
+          "Firmy potrzebujace zgodnosci dostawcow i lancucha wartosci"
+        ]
+      },
+      "whenQuantifier": {
+        "heading": "Kiedy Quantifier jest lepszym wyborem",
+        "items": [
+          "Potrzebujesz raportowania ESG/CSRD obok zgodnosci bezpieczenstwa",
+          "Twoja organizacja podlega jednoczesnie NIS2, DORA i GDPR",
+          "Potrzebujesz glebokiej analizy dostawcow i wspolpracy w lancuchu wartosci",
+          "Chcesz governance bezpieczenstwa i zrownowazonosci w jednej platformie"
+        ]
+      },
+      "whenCompetitor": {
+        "heading": "Kiedy Drata moze byc lepszym wyborem",
+        "items": [
+          "Twoj compliance skupia sie na SOC 2 i ISO 27001 bez potrzeb ESG/CSRD",
+          "Potrzebujesz bardzo duzej biblioteki gotowych integracji z narzedziami cloud i SaaS",
+          "Twoja organizacja ma minimalne obowiazki raportowania zrownowazonosci w UE",
+          "Priorytetem jest platforma z ugruntowana baza klientow w USA"
+        ]
+      },
+      "whyEu": {
+        "heading": "Dlaczego zespoly regulowane w UE moga preferowac Quantifier",
+        "items": [
+          "Ujednolicone NIS2 + DORA + GDPR + ESG governance w jednym srodowisku",
+          "Natywne raportowanie CSRD/ESRS — niedostepne w Drata",
+          "Procesy zgodnosci lancucha dostaw dla dyrektyw UE",
+          "Agent AI koordynujacy miedzy frameworkami regulacyjnymi UE",
+          "Zbudowany celowo dla wielorezimowej zgodnosci UE"
+        ]
+      },
+      "faq": {
+        "heading": "Czesto zadawane pytania",
+        "items": [
+          {
+            "question": "Czy Quantifier.ai jest dobra alternatywa dla Drata?",
+            "answer": "Tak, szczegolnie dla organizacji regulowanych w UE potrzebujacych raportowania ESG/CSRD i governance lancucha wartosci."
+          },
+          {
+            "question": "Czy Drata wspiera NIS2 i DORA?",
+            "answer": "Tak, Drata publicznie dokumentuje wsparcie NIS2 i DORA. Quantifier wyroznia sie natywnymi procesami ESG/CSRD i glebsza wspolpraca w lancuchu wartosci."
+          },
+          {
+            "question": "Ktora platforma jest lepsza do raportowania ESG i CSRD?",
+            "answer": "Quantifier natywnie wspiera CSRD, ESRS, slad weglowy i EU Taxonomy. Drata obecnie nie oferuje pelnych procesow raportowania ESG/CSRD."
+          },
+          {
+            "question": "Czy Drata oferuje procesy compliance oparte na AI?",
+            "answer": "Tak, Drata dokumentuje mozliwosci AI-native i agentowe. AI Compliance Officer Quantifier koncentruje sie na koordynacji miedzy frameworkami UE."
+          },
+          {
+            "question": "Jak wypada porownanie zbierania dowodow?",
+            "answer": "Obie platformy oferuja automatyczne zbieranie dowodow. Quantifier rozszerza to o mapowanie dowodow cross-framework."
+          }
+        ]
+      },
+      "disclaimer": "Porownanie oparte na publicznie dostepnych informacjach o produkcie z kwietnia 2025. Dostepnosc funkcji moze sie roznic w zaleznosci od planu, pakietu, regionu i zakresu wdrozenia.",
       "cta": {
-        "heading": "Gotowy na zmiane z Drata?",
-        "subheading": "Zobacz jak Quantifier dostarcza autonomiczna zgodnosc AI we wszystkich ramach regulacyjnych."
+        "heading": "Gotowy zobaczyc Quantifier w akcji?",
+        "subheading": "Zobacz jak Quantifier dostarcza ujednolicona zgodnosc w ramach regulacyjnych i zrownowazonego rozwoju UE."
       }
     },
     "sprintoAlternative": {
       "seo": {
-        "title": "Alternatywa dla Sprinto — AI-Native platforma GRC",
-        "description": "Szukasz alternatywy dla Sprinto? Quantifier.ai oferuje AI-native zgodnosc dla SOC 2, ISO 27001, NIS2, DORA i ESG."
+        "title": "Alternatywa dla Sprinto dla zespolow compliance w UE | Quantifier.ai",
+        "description": "Porownaj Quantifier.ai ze Sprinto. Obie platformy automatyzuja zgodnosc z AI. Zobacz, gdzie Quantifier wygrywa dla organizacji UE potrzebujacych ESG/CSRD i hostingu w UE."
       },
       "hero": {
         "badge": "Alternatywa dla Sprinto",
-        "heading": "AI-native alternatywa dla Sprinto",
-        "subheading": "Quantifier wykracza poza automatyzacje. Autonomiczne agenty AI obsluguja zbieranie dowodow, gap analysis i zarzadzanie ryzykiem w SOC 2, ISO 27001, NIS2, DORA i ESG."
+        "heading": "Quantifier.ai vs Sprinto: co lepsze dla compliance w UE?",
+        "subheading": "Obie platformy automatyzuja zgodnosc i oferuja procesy oparte na AI. Quantifier dodaje natywne raportowanie ESG/CSRD, gleboka wspolprace w lancuchu wartosci i jest zbudowany dla organizacji podlegajacych regulacjom UE."
       },
       "table": {
         "heading": "Quantifier.ai vs Sprinto — porownanie funkcji"
@@ -6076,9 +6210,9 @@
           "quantifier": "true",
           "competitor": "true"
         },
-        "aiComplianceOfficer": {
+        "aiWorkflows": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "continuousMonitoring": {
           "quantifier": "true",
@@ -6086,11 +6220,11 @@
         },
         "nis2Support": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "doraSupport": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "esgCsrd": {
           "quantifier": "true",
@@ -6098,10 +6232,10 @@
         },
         "supplyChain": {
           "quantifier": "true",
-          "competitor": "false"
+          "competitor": "true"
         },
         "euHosting": {
-          "quantifier": "true",
+          "quantifier": "unconfirmed",
           "competitor": "false"
         },
         "evidenceCollection": {
@@ -6114,38 +6248,106 @@
         }
       },
       "differentiators": {
-        "heading": "Dlaczego zespoly wybieraja Quantifier zamiast Sprinto",
-        "subheading": "Zgodnosc klasy enterprise z autonomia AI i pelnym wsparciem regulacji UE.",
+        "heading": "Gdzie Quantifier wyprzedza Sprinto",
+        "subheading": "Obie platformy pokrywaja SOC 2 i ISO 27001 z AI. Quantifier dodaje ESG/CSRD, kwestie hostingu danych w UE i governance lancucha wartosci.",
         "items": [
           {
-            "title": "Autonomiczny agent AI",
-            "desc": "AI Compliance Officer proaktywnie identyfikuje luki, zbiera dowody i generuje dokumentacje."
+            "title": "Pelne procesy raportowania ESG / CSRD",
+            "desc": "CSRD, ESRS, slad weglowy i EU Taxonomy — niedostepne w Sprinto."
           },
           {
-            "title": "Pelny stos regulacji UE",
-            "desc": "NIS2, DORA, GDPR i ESG/CSRD — kompletna europejska zgodnosc regulacyjna."
+            "title": "Hosting danych w UE",
+            "desc": "Trust center Sprinto wskazuje hosting w USA (AWS us-west-1). Quantifier jest zbudowany z mysla o organizacjach regulowanych w UE."
           },
           {
-            "title": "Infrastruktura EU-first",
-            "desc": "Dane hostowane w UE z pelna zgodnoscia GDPR domyslnie."
+            "title": "Wspolpraca w lancuchu wartosci",
+            "desc": "Gleboka analiza dostawcow i wspolne procesy zgodnosci dla dyrektyw UE."
           },
           {
-            "title": "Bezpieczenstwo lancucha dostaw",
-            "desc": "Ocena ryzyka dostawcow i ciagly monitoring lancucha dostaw dla NIS2 i DORA."
+            "title": "Ujednolicona platforma governance UE",
+            "desc": "NIS2, DORA, GDPR, ESG i frameworki bezpieczenstwa w jednym srodowisku."
           },
           {
-            "title": "Skalowalnosc enterprise",
-            "desc": "Stworzona dla organizacji mid-market i enterprise zarzadzajacych zgodnoscia w wielu frameworkach."
+            "title": "Mapowanie kontroli cross-framework",
+            "desc": "Jedna kontrola spelnia SOC 2, ISO 27001, NIS2, DORA i ESG jednoczesnie."
           },
           {
-            "title": "Integracja ESG",
-            "desc": "Raportowanie zrownowazonosci obok zgodnosci bezpieczenstwa — CSRD, ESRS i EU Taxonomy."
+            "title": "Glebia regulacji europejskich",
+            "desc": "Zbudowany dla zgodnosci z dyrektywami UE z krajowa implementacja NIS2."
           }
         ]
       },
+      "bestFor": {
+        "heading": "Dla kogo jest ta strona porownawcza",
+        "subheading": "Ta strona jest dla zespolow compliance oceniajacych Sprinto i szukajacych alternatyw z hostingiem w UE, ESG/CSRD i lancuchem wartosci.",
+        "items": [
+          "Zespoly compliance oceniajace platformy GRC dla organizacji regulowanych w UE",
+          "Zespoly potrzebujace gwarancji hostingu danych w UE obok automatyzacji zgodnosci",
+          "Organizacje szukajace raportowania ESG/CSRD w platformie compliance",
+          "Firmy potrzebujace glebokiego governance lancucha dostaw i wartosci"
+        ]
+      },
+      "whenQuantifier": {
+        "heading": "Kiedy Quantifier jest lepszym wyborem",
+        "items": [
+          "Potrzebujesz raportowania ESG/CSRD obok zgodnosci bezpieczenstwa",
+          "Hosting danych w UE jest wazny dla Twojej organizacji",
+          "Potrzebujesz glebokiej analizy dostawcow i wspolpracy w lancuchu wartosci",
+          "Chcesz NIS2, DORA, GDPR i ESG w jednej platformie governance"
+        ]
+      },
+      "whenCompetitor": {
+        "heading": "Kiedy Sprinto moze byc lepszym wyborem",
+        "items": [
+          "Twoj compliance skupia sie na SOC 2 i ISO 27001 dla szybko rosnacego startupu",
+          "Hosting w USA jest akceptowalny dla Twojej organizacji",
+          "Nie potrzebujesz raportowania ESG/CSRD ani zrownowazonosci",
+          "Priorytetem jest szybkosc uzyskania certyfikatu SOC 2"
+        ]
+      },
+      "whyEu": {
+        "heading": "Dlaczego zespoly regulowane w UE moga preferowac Quantifier",
+        "items": [
+          "Ujednolicone NIS2 + DORA + GDPR + ESG governance w jednym srodowisku",
+          "Natywne raportowanie CSRD/ESRS — niedostepne w Sprinto",
+          "Hosting danych w UE — Sprinto uzywa infrastruktury w USA",
+          "Procesy zgodnosci lancucha dostaw dla dyrektyw UE",
+          "Zbudowany celowo dla wielorezimowej zgodnosci UE"
+        ]
+      },
+      "faq": {
+        "heading": "Czesto zadawane pytania",
+        "items": [
+          {
+            "question": "Czy Quantifier.ai jest dobra alternatywa dla Sprinto?",
+            "answer": "Tak, szczegolnie dla organizacji regulowanych w UE potrzebujacych raportowania ESG/CSRD, hostingu danych w UE i governance lancucha wartosci."
+          },
+          {
+            "question": "Czy Sprinto wspiera NIS2 i DORA?",
+            "answer": "Tak, Sprinto publicznie dokumentuje wsparcie NIS2 i DORA. Quantifier wyroznia sie natywnymi procesami ESG/CSRD i hostingiem w UE."
+          },
+          {
+            "question": "Gdzie Sprinto hostuje dane?",
+            "answer": "Trust center Sprinto wskazuje hosting na AWS us-west-1 (Kalifornia, USA). Organizacje z wymogami rezydencji danych w UE powinny to ocenic."
+          },
+          {
+            "question": "Czy Quantifier wspiera raportowanie ESG i CSRD?",
+            "answer": "Tak. Quantifier natywnie wspiera CSRD, ESRS, slad weglowy i EU Taxonomy — wyrazny wyroznik wzgledem Sprinto."
+          },
+          {
+            "question": "Ktora platforma jest lepsza dla szybko rosnacych startupow?",
+            "answer": "Sprinto dobrze pasuje do startupow skupionych na certyfikacji SOC 2. Quantifier jest lepszy dla organizacji potrzebujacych rowniez zgodnosci regulacyjnej UE i ESG/CSRD."
+          },
+          {
+            "question": "Jak porownac mozliwosci AI?",
+            "answer": "Obie platformy oferuja procesy compliance oparte na AI. AI Compliance Officer Quantifier koordynuje miedzy frameworkami regulacyjnymi UE."
+          }
+        ]
+      },
+      "disclaimer": "Porownanie oparte na publicznie dostepnych informacjach o produkcie z kwietnia 2025. Dostepnosc funkcji moze sie roznic w zaleznosci od planu, pakietu, regionu i zakresu wdrozenia.",
       "cta": {
-        "heading": "Gotowy na upgrade ze Sprinto?",
-        "subheading": "Zobacz jak Quantifier dostarcza AI-native zgodnosc we wszystkich Twoich ramach regulacyjnych i zrownowazonosci."
+        "heading": "Gotowy zobaczyc Quantifier w akcji?",
+        "subheading": "Zobacz jak Quantifier dostarcza ujednolicona zgodnosc w ramach regulacyjnych i zrownowazonego rozwoju UE."
       }
     }
   }
