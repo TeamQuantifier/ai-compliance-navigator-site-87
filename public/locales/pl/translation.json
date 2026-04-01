@@ -978,6 +978,7 @@
         "explorePlans": "Zobacz plany"
       }
     },
+    "valueChain": {
       "title": "Łańcuch wartości",
       "description": "Mapuj i monitoruj zgodność w całym łańcuchu wartości Twojej organizacji.",
       "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj.",
