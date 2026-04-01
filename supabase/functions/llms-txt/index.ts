@@ -362,17 +362,6 @@ Centralized document management system designed for compliance workflows:
 - Automatic expiry tracking and renewal reminders
 - Full audit trail for every document action
 
-### API Integrations
-${BASE_URL}/en/product/api-integrations/
-
-50+ pre-built integrations for automated evidence collection:
-- Cloud: AWS, Microsoft Azure, Google Cloud Platform
-- Identity: Okta, Microsoft Entra ID, Google Workspace
-- DevOps: GitHub, GitLab, Bitbucket, Jira, Azure DevOps
-- Communication: Slack, Microsoft Teams
-- HR: BambooHR, Workday
-- Security: CrowdStrike, SentinelOne, Datadog, Splunk
-- Custom: REST API and webhook support for any system
 
 ### AI Compliance Officer
 ${BASE_URL}/en/product/compliance-officer/

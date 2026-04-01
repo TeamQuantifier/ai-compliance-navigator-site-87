@@ -74,7 +74,7 @@ const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
   'task-data-management': { segment: 'product', name: 'Product' },
   'documents-management': { segment: 'product', name: 'Product' },
   'analytics-dashboards': { segment: 'product', name: 'Product' },
-  'api-integrations': { segment: 'product', name: 'Product' },
+  
   'value-chain': { segment: 'product', name: 'Product' },
   'risk-assessment': { segment: 'product', name: 'Product' },
   'overview': { segment: 'product', name: 'Product' },

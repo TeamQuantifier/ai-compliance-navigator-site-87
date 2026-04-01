@@ -2598,7 +2598,7 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
     'task-data-management': { segment: 'product', nameKey: 'product' },
     'analytics-dashboards': { segment: 'product', nameKey: 'product' },
     'documents-management': { segment: 'product', nameKey: 'product' },
-    'api-integrations': { segment: 'product', nameKey: 'product' },
+    
     'value-chain': { segment: 'product', nameKey: 'product' },
     'risk-assessment': { segment: 'product', nameKey: 'product' },
     'by-roles-managers': { segment: 'by-roles', nameKey: 'by-roles' },

@@ -25,7 +25,7 @@ const staticPages = [
   // /product/features removed — redirects to /product
   { path: '/product/analytics-dashboards', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   { path: '/product/documents-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/api-integrations', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
+  
   { path: '/product/ai-compliance-officer', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   { path: '/product/task-data-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   { path: '/product/value-chain', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
