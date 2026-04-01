@@ -878,17 +878,143 @@
     "valueChain": {
       "title": "Łańcuch wartości",
       "description": "Mapuj i monitoruj zgodność w całym łańcuchu wartości Twojej organizacji.",
-      "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj."
+      "placeholder": "Treść dla Łańcucha wartości zostanie dodana tutaj.",
+      "hero": {
+        "title": "Compliance łańcucha dostaw",
+        "subtitle": "Mapuj dostawców, oceniaj ryzyka i śledź zgodność ESG.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Funkcje łańcucha wartości",
+        "supplierMapping": {
+          "title": "Mapowanie dostawców",
+          "description": "Wizualizuj łańcuch dostaw."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Ustrukturyzowane ankiety do oceny dostawców."
+        },
+        "riskScoring": {
+          "title": "Scoring ryzyka",
+          "description": "Skwantyfikowane oceny ryzyka per dostawca."
+        }
+      },
+      "detailedFeatures": {
+        "esgSupplyChain": {
+          "title": "ESG łańcucha dostaw",
+          "description": "Monitoruj wyniki ESG dostawców.",
+          "feature1": "Śledzenie śladu węglowego",
+          "feature2": "Monitoring praw człowieka",
+          "feature3": "Raportowanie CSRD"
+        },
+        "complianceTracking": {
+          "title": "Śledzenie zgodności",
+          "description": "Upewnij się że dostawcy spełniają wymagania.",
+          "feature1": "Alerty o wygasających certyfikatach",
+          "feature2": "Plany działań korygujących",
+          "feature3": "Analiza trendów zgodności"
+        }
+      },
+      "cta": {
+        "title": "Gotowy zmapować łańcuch wartości?",
+        "subtitle": "Zobacz jak Quantifier daje widoczność w łańcuchu dostaw.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "apiIntegrations": {
       "title": "Integracje API",
       "description": "Połącz naszą platformę z Twoimi istniejącymi narzędziami i systemami dla płynnej pracy.",
-      "placeholder": "Treść dla Integracji API zostanie dodana tutaj."
+      "placeholder": "Treść dla Integracji API zostanie dodana tutaj.",
+      "hero": {
+        "title": "Integracja z Twoim stackiem",
+        "subtitle": "REST API, webhooki, SSO — połącz Quantifier z narzędziami Twojego zespołu.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Możliwości integracji",
+        "restApi": {
+          "title": "REST API",
+          "description": "Programistyczny dostęp do danych platformy."
+        },
+        "webhooks": {
+          "title": "Webhooki",
+          "description": "Powiadomienia w czasie rzeczywistym."
+        },
+        "sso": {
+          "title": "SSO / SAML",
+          "description": "Enterprise SSO z SAML 2.0 i SCIM."
+        }
+      },
+      "detailedFeatures": {
+        "dataSync": {
+          "title": "Synchronizacja danych",
+          "description": "Utrzymuj dane w synchronizacji.",
+          "feature1": "Dwukierunkowa synchronizacja z ITSM",
+          "feature2": "Import aktywów z CMDB",
+          "feature3": "Zbieranie dowodów z chmury"
+        },
+        "ecosystem": {
+          "title": "Rosnący ekosystem",
+          "description": "Gotowe konektory i otwarte API.",
+          "feature1": "Konektory do narzędzi GRC",
+          "feature2": "No-code kreator integracji",
+          "feature3": "Dokumentacja developerska i sandbox"
+        }
+      },
+      "cta": {
+        "title": "Gotowy połączyć Quantifier?",
+        "subtitle": "Zobacz jak integracje pasują do Twoich procesów.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "documentsManagement": {
       "title": "Zarządzanie dokumentami",
       "description": "Scentralizuj i kontroluj całą dokumentację compliance w jednym bezpiecznym miejscu.",
-      "placeholder": "Treść dla Zarządzania dokumentami zostanie dodana tutaj."
+      "placeholder": "Treść dla Zarządzania dokumentami zostanie dodana tutaj.",
+      "hero": {
+        "title": "Dokumenty compliance pod kontrolą",
+        "subtitle": "Centralne repozytorium polityk, procedur i dowodów — z wersjonowaniem i audit trailem.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Kluczowe funkcje",
+        "centralRepo": {
+          "title": "Centralne repozytorium",
+          "description": "Jedno miejsce na wszystkie dokumenty compliance."
+        },
+        "versionControl": {
+          "title": "Wersjonowanie",
+          "description": "Pełna historia zmian z workflow zatwierdzania."
+        },
+        "accessControl": {
+          "title": "Kontrola dostępu",
+          "description": "Uprawnienia oparte na rolach."
+        }
+      },
+      "detailedFeatures": {
+        "lifecycle": {
+          "title": "Cykl życia dokumentu",
+          "description": "Zarządzaj dokumentami od szkicu po archiwizację.",
+          "feature1": "Automatyczne przypomnienia o przeglądach",
+          "feature2": "Workflow zatwierdzania z e-podpisami",
+          "feature3": "Egzekwowanie polityki retencji"
+        },
+        "auditReady": {
+          "title": "Gotowość na audyt",
+          "description": "Zawsze przygotowany na kontrole.",
+          "feature1": "Kompletny audit trail",
+          "feature2": "Eksportowalne pakiety dowodowe",
+          "feature3": "Powiązanie dokumentów z kontrolami"
+        }
+      },
+      "cta": {
+        "title": "Gotowy scentralizować dokumenty?",
+        "subtitle": "Zobacz jak Quantifier utrzymuje dokumentację audit-ready.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "taskDataManagement": {
       "title": "Zarządzanie zadaniami i danymi",
@@ -899,12 +1025,96 @@
         "analytics": "Analityka",
         "taskHub": "Centrum zadań i danych",
         "riskAssessment": "Ocena ryzyka"
+      },
+      "hero": {
+        "title": "Hub zadań i danych compliance",
+        "subtitle": "Jedno miejsce do zarządzania zadaniami, aktywami, dowodami i danymi compliance we wszystkich frameworkach.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Kluczowe funkcje",
+        "taskEngine": {
+          "title": "Silnik zadań",
+          "description": "Zadania generowane przez AI, mapowane na kontrole frameworków z terminami i właścicielami."
+        },
+        "dataHub": {
+          "title": "Centralny hub danych",
+          "description": "Aktywa, ryzyka, kontrole i dowody połączone w jednym repozytorium."
+        },
+        "collaboration": {
+          "title": "Współpraca zespołowa",
+          "description": "Przydzielaj zadania, śledź postępy i koordynuj pracę compliance między działami."
+        }
+      },
+      "detailedFeatures": {
+        "workflows": {
+          "title": "Automatyczne workflow",
+          "description": "Usprawniaj operacje compliance z inteligentną automatyzacją.",
+          "feature1": "Auto-generowane zadania z wyników gap analysis",
+          "feature2": "Harmonogramy zadań cyklicznych",
+          "feature3": "Reguły eskalacji dla zaległych elementów"
+        },
+        "tracking": {
+          "title": "Śledzenie postępów",
+          "description": "Pełna widoczność realizacji programu compliance.",
+          "feature1": "Widoki Kanban, lista i kalendarz per framework",
+          "feature2": "Dashboardy ukończenia z analizą trendów",
+          "feature3": "Raporty postępów gotowe do eksportu"
+        }
+      },
+      "cta": {
+        "title": "Gotowy usprawnić operacje compliance?",
+        "subtitle": "Zobacz jak Hub zadań utrzymuje zespół na dobrej drodze.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
       }
     },
     "riskAssessment": {
       "title": "Ocena ryzyka",
       "description": "Identyfikuj, oceniaj i łagodź ryzyka compliance w Twojej organizacji.",
-      "placeholder": "Treść dla Oceny ryzyka zostanie dodana tutaj."
+      "placeholder": "Treść dla Oceny ryzyka zostanie dodana tutaj.",
+      "hero": {
+        "title": "Ocena i zarządzanie ryzykiem",
+        "subtitle": "Identyfikuj, kwantyfikuj i mityguj ryzyka z analizą AI i mapami ciepła.",
+        "bookDemo": "Umów demo"
+      },
+      "keyFeatures": {
+        "title": "Możliwości zarządzania ryzykiem",
+        "identification": {
+          "title": "Identyfikacja ryzyk",
+          "description": "Odkrywanie ryzyk wspomagane AI, mapowane na aktywa, zagrożenia i podatności."
+        },
+        "quantification": {
+          "title": "Kwantyfikacja ryzyk",
+          "description": "Scoring prawdopodobieństwo × wpływ z konfigurowalnymi skalami i progami apetytu na ryzyko."
+        },
+        "mitigation": {
+          "title": "Mitygacja ryzyk",
+          "description": "Plany postępowania powiązane z kontrolami, zadaniami i dowodami."
+        }
+      },
+      "detailedFeatures": {
+        "riskMatrix": {
+          "title": "Macierz ryzyk i mapy ciepła",
+          "description": "Wizualny krajobraz ryzyk do świadomego podejmowania decyzji.",
+          "feature1": "Interaktywne mapy ciepła z drill-down",
+          "feature2": "Porównanie ryzyka rezydualnego vs inherentnego",
+          "feature3": "Analiza trendów ryzyk w czasie"
+        },
+        "treatmentPlans": {
+          "title": "Plany postępowania z ryzykiem",
+          "description": "Ustrukturyzowane podejście do mitygacji i akceptacji ryzyk.",
+          "feature1": "Opcje akceptacji, mitygacji, transferu lub unikania",
+          "feature2": "Powiązane kontrole i zadania wdrożeniowe",
+          "feature3": "Harmonogramy okresowej ponownej oceny ryzyk"
+        }
+      },
+      "cta": {
+        "title": "Gotowy przejąć kontrolę nad krajobrazem ryzyk?",
+        "subtitle": "Zobacz jak Quantifier strukturyzuje i urzeczywistnia ocenę ryzyk.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
+      }
     }
   },
   "partners": {
