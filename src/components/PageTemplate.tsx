@@ -48,6 +48,10 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'nis2-audit-ready': 'NIS2 — audit-ready',
   'nis2-kontrola-audyt': 'NIS2 — kontrola i audyt',
   'nis2-ksc': 'NIS2 KSC',
+  'compare': 'Compare',
+  'vanta-alternative': 'Vanta Alternative',
+  'drata-alternative': 'Drata Alternative',
+  'sprinto-alternative': 'Sprinto Alternative',
 };
 
 // Parent category mapping for 3-level breadcrumbs
