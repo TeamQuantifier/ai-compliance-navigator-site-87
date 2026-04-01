@@ -22,7 +22,7 @@ const staticPages = [
   { path: '/grc-platform', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/product', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-15' },
   { path: '/product/overview', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
-  { path: '/product/features', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  // /product/features removed — redirects to /product
   { path: '/product/analytics-dashboards', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   { path: '/product/documents-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   { path: '/product/api-integrations', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
