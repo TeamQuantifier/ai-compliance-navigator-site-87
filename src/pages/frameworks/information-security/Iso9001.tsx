@@ -262,6 +262,15 @@ const Iso9001 = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="mb-16">
+          <FAQSection
+            title={t('iso9001Page.faq.title')}
+            faqs={getObjectArrayTranslation<{ question: string; answer: string }>('iso9001Page.faq.items')}
+            pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/information-security/iso-9001`}
+          />
+        </section>
+
         {/* CTA Section */}
         <section className="mb-8">
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
