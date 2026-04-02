@@ -222,6 +222,13 @@ const Environmental = () => {
             </Card>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title={t('environmentalPage.faq.title')}
+          faqs={(t('environmentalPage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/environmental`}
+        />
         
         {/* Call to Action */}
         <div className="mt-10 text-center">

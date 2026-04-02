@@ -381,6 +381,13 @@ const Esg = () => {
             </Card>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title={t('esgPage.faq.title')}
+          faqs={(t('esgPage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/esg`}
+        />
         
         {/* Call to Action */}
         <div className="mt-10 text-center mb-8">

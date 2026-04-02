@@ -219,6 +219,13 @@ const ProductLevel = () => {
             </Card>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title={t('productLevelPage.faq.title')}
+          faqs={(t('productLevelPage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/product-level`}
+        />
         
         {/* Call to Action */}
         <div className="mt-10 text-center">
