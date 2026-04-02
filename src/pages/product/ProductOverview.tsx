@@ -10,13 +10,13 @@ const ProductOverview = () => {
   const { t, currentLocale } = useLanguage();
   
   const features = [
-    { title: t('product.overview.mainFeatures.title'), href: "/product/features", description: t('product.overview.mainFeatures.description') },
-    { title: t('product.overview.aiOfficer.title'), href: "/product/ai-compliance-officer", description: t('product.overview.aiOfficer.description') },
-    { title: t('product.overview.taskManagement.title'), href: "/product/task-data-management", description: t('product.overview.taskManagement.description') },
-    { title: t('product.overview.documents.title'), href: "/product/documents-management", description: t('product.overview.documents.description') },
-    { title: t('product.overview.valueChain.title'), href: "/product/value-chain", description: t('product.overview.valueChain.description') },
-    { title: t('product.overview.riskAssessment.title'), href: "/product/risk-assessment", description: t('product.overview.riskAssessment.description') },
-    { title: t('product.overview.analytics.title'), href: "/product/analytics-dashboards", description: t('product.overview.analytics.description') },
+    { titleKey: 'product.overview.features.mainFeatures.title', href: "/product", descKey: 'product.overview.features.mainFeatures.description' },
+    { titleKey: 'product.overview.features.aiOfficer.title', href: "/product/ai-compliance-officer", descKey: 'product.overview.features.aiOfficer.description' },
+    { titleKey: 'product.overview.features.taskDataManagement.title', href: "/product/task-data-management", descKey: 'product.overview.features.taskDataManagement.description' },
+    { titleKey: 'product.overview.features.documents.title', href: "/product/documents-management", descKey: 'product.overview.features.documents.description' },
+    { titleKey: 'product.overview.features.valueChain.title', href: "/product/value-chain", descKey: 'product.overview.features.valueChain.description' },
+    { titleKey: 'product.overview.features.riskAssessment.title', href: "/product/risk-assessment", descKey: 'product.overview.features.riskAssessment.description' },
+    { titleKey: 'product.overview.features.analytics.title', href: "/product/analytics-dashboards", descKey: 'product.overview.features.analytics.description' },
   ];
 
   const stats = [
@@ -107,15 +107,15 @@ const ProductOverview = () => {
             {t('product.overview.featuresTitle')}
           </h2>
           <p className="text-lg text-slate-700">
-            {t('product.overview.featuresSubtitle')}
+            {t('product.overview.featuresDescription')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600 mb-4">{feature.description}</p>
+            <div key={feature.titleKey} className="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">{t(feature.titleKey)}</h3>
+              <p className="text-slate-600 mb-4">{t(feature.descKey)}</p>
               <Link to={`/${currentLocale}${feature.href}`} className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
                 {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
