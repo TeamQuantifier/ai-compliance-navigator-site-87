@@ -6,7 +6,7 @@ import AiAgentMockup from '@/components/mockups/AiAgentMockup';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const ComplianceOfficer = () => {
   const { t, currentLocale } = useLanguage();
