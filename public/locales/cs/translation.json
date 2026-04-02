@@ -6014,15 +6014,63 @@
       "heading": "Zkontrolujte úroveň připravenosti na NIS2",
       "subtitle": "Začněte bezplatným hodnocením vyspělosti a zjistěte, co vyžaduje okamžitou pozornost."
     },
+    "article21": {
+      "heading": "Článek 21 — Bezpečnostní opatření mapována na akce",
+      "subtitle": "Článek 21 NIS2 definuje 10 povinných kategorií opatření pro řízení kybernetických rizik.",
+      "rows": [
+        { "req": "Analýza rizik a bezpečnostní politiky", "action": "Formální hodnocení rizik, registr rizik, politiky schválené vedením", "evidence": "Zprávy o rizicích, dokumenty politik, zápisy vedení" },
+        { "req": "Řešení incidentů", "action": "Detekce, reakce, obnova; hlášení 24h/72h/30d", "evidence": "Plán reakce, oznámení CSIRT, log incidentů" },
+        { "req": "Kontinuita provozu", "action": "BCP, disaster recovery, krizové řízení", "evidence": "BCP dokumenty, výsledky DR testů, logy záloh" },
+        { "req": "Bezpečnost dodavatelského řetězce", "action": "Hodnocení rizik dodavatelů, bezpečnostní klauzule", "evidence": "Zprávy due diligence, smlouvy s dodavateli" },
+        { "req": "Akvizice a vývoj systémů", "action": "Bezpečný SDLC, řízení zranitelností", "evidence": "SDLC dokumentace, skeny zranitelností, záznamy o záplatách" },
+        { "req": "Hodnocení účinnosti", "action": "Politiky hodnocení účinnosti kybernetických opatření", "evidence": "Auditní zprávy, penetrační testy" },
+        { "req": "Kyberhygiena a školení", "action": "Bezpečnostní povědomí, školení pro všechny včetně vedení", "evidence": "Záznamy o školeních, simulace phishingu" },
+        { "req": "Kryptografie", "action": "Politiky šifrování, správa klíčů", "evidence": "Politika šifrování, postupy správy klíčů" },
+        { "req": "Bezpečnost lidských zdrojů a řízení přístupu", "action": "Matice přístupu, správa aktiv, životní cyklus uživatelů", "evidence": "Logy přístupu, záznamy o provisioningu" },
+        { "req": "Vícefaktorová autentizace", "action": "Nasazení MFA, zabezpečená nouzová komunikace", "evidence": "Záznamy MFA, inventář komunikačních nástrojů" }
+      ],
+      "colReq": "Požadavek článku 21",
+      "colAction": "Požadovaná akce",
+      "colEvidence": "Potřebné důkazy"
+    },
+    "whySoftware": {
+      "heading": "Proč použít software pro soulad s NIS2?",
+      "subtitle": "Ruční řízení souladu s NIS2 v tabulkách není škálovatelné. Zde je co změní platforma pro automatizaci compliance.",
+      "items": [
+        { "before": "Registr rizik v Excelu", "after": "Centrální registr rizik propojený s články NIS2 s AI scoringem" },
+        { "before": "Ruční sběr důkazů", "after": "Automatický sběr důkazů mapovaný napříč více frameworky" },
+        { "before": "Hlášení incidentů e-mailem", "after": "Strukturované workflow incidentů s automatickými oznámeními 24h/72h" },
+        { "before": "Hodnocení dodavatelů jednou ročně", "after": "Průběžný monitoring dodavatelů s real-time scoringem rizik" },
+        { "before": "Jednorázové kontroly souladu", "after": "Průběžný monitoring souladu s dashboardem pro vedení" },
+        { "before": "Rozptýlená dokumentace", "after": "Jediný zdroj pravdy s kontrolou verzí a audit trail" }
+      ],
+      "colBefore": "Bez softwaru",
+      "colAfter": "S Quantifier"
+    },
+    "relatedContent": {
+      "heading": "Zdroje k souladu s NIS2",
+      "subtitle": "Podrobné články pomáhající s přípravou na požadavky NIS2.",
+      "articles": [
+        { "title": "NIS2 Compliance Checklist 2026", "desc": "Požadavky článku 21 mapované na akce a důkazy", "slug": "nis2-compliance-checklist-2026" },
+        { "title": "NIS2 Directive — Complete Guide", "desc": "Vše co potřebujete vědět o směrnici NIS2", "slug": "nis2-directive" },
+        { "title": "NIS2 Requirements & Implementation", "desc": "Technický průvodce implementací pro compliance týmy", "slug": "nis2-directive-compliance-requirements-implementation-guide" }
+      ]
+    },
     "seo": {
       "titleCs": "NIS2 Compliance Software pro organizace v EU | Quantifier.ai",
       "descCs": "AI-native GRC platforma pro soulad s NIS2 v celé EU. Gap analýza, řízení rizik, workflow incidentů a průběžný soulad v jednom systému.",
       "faq1q": "Co je NIS2?",
-      "faq1a": "NIS2 je směrnice EU rozšiřující požadavky na kybernetickou bezpečnost na klíčové a důležité subjekty v 18 sektorech, pokrývající řízení rizik, hlášení incidentů a bezpečnost dodavatelského řetězce.",
+      "faq1a": "NIS2 (EU 2022/2555) je směrnice EU pro opatření zajišťující vysokou společnou úroveň kybernetické bezpečnosti. Rozšiřuje požadavky na klíčové a důležité subjekty v 18 sektorech.",
       "faq2q": "Jaké hrozí sankce za nesoulad s NIS2?",
-      "faq2a": "Sankce za nesoulad s NIS2 mohou dosáhnout 10 mil. EUR nebo 2 % globálního ročního obratu pro klíčové subjekty.",
+      "faq2a": "Pokuty do 10 mil. EUR nebo 2 % globálního ročního obratu pro klíčové subjekty a 7 mil. EUR nebo 1,4 % pro důležité subjekty. Vedení může být osobně odpovědné.",
       "faq3q": "Platí NIS2 stejně ve všech zemích EU?",
-      "faq3a": "Ne. NIS2 je směrnice EU, která stanoví základ, ale každý členský stát ji transponuje do národní legislativy. Rozsah, termíny a podrobnosti vymáhání se mohou lišit mezi zeměmi jako Česko, Polsko, Německo apod."
+      "faq3a": "Ne. NIS2 je směrnice EU, která stanoví základ, ale každý členský stát ji transponuje do národní legislativy. Rozsah, termíny a podrobnosti vymáhání se mohou lišit.",
+      "faq4q": "Jak dlouho trvá implementace NIS2?",
+      "faq4a": "Typická implementace trvá 6-18 měsíců v závislosti na vyspělosti. Se softwarem pro automatizaci compliance lze zkrátit na 3-6 měsíců.",
+      "faq5q": "Stačí ISO 27001 pro splnění NIS2?",
+      "faq5a": "ISO 27001 pokrývá mnoho požadavků NIS2, ale klíčové mezery zůstávají: termíny hlášení incidentů (24h/72h), povinnosti dodavatelského řetězce a odpovědnost vedení.",
+      "faq6q": "Co je článek 21 NIS2?",
+      "faq6a": "Článek 21 definuje 10 kategorií opatření pro řízení kybernetických rizik, které musí implementovat klíčové a důležité subjekty, včetně analýzy rizik, řešení incidentů, kontinuity provozu a kryptografie."
     }
   },
   "compare": {
