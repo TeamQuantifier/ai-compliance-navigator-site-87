@@ -1,65 +1,39 @@
+# SEO Content Clusters — 20-Page Map
 
+## Status: APPROVED & IN PROGRESS
 
-## Rozbudowa stron produktowych i rolowych — plan krok po kroku
+### Completed
+- ✅ Meta title updates: NIS2 framework (EN/PL), cybersecurity-check (EN/PL/CS)
+- ✅ P1 blog drafts created in CMS:
+  - EN: `nis2-compliance-checklist-2026`
+  - PL: `lista-kontrolna-nis2-2026`
+  - PL: `wdrozenie-nis2-ksc-przewodnik`
+  - EN: `iso-27001-vs-soc-2-comparison` (existed from prior batch)
+  - EN: `vanta-alternatives-europe-eu-compliance` (existed from prior batch)
 
-### Stan obecny
-Wszystkie strony produktowe mają identyczną strukturę: Hero + 3 karty Key Features + 2 bloki Detailed Features + CTA. Strony ról (Managers, Contributors, Auditor) to placeholder z jednym paragrafem. To powoduje duplicate content w oczach Google.
+### P1 remaining (30 days)
+1. UPDATE `/en/frameworks/nis-2/` — add product sections, Article 21 mapping
+2. UPDATE `/pl/frameworks/nis-2/` — add UKSC-specific section
 
-### Podejście
-Rozbudowujemy każdą stronę osobno, dodając unikalne sekcje z **mockupami UI platformy** (jak przesłany screenshot Business Continuity). Mockupy będą komponentami React imitującymi interfejs Quantifier — nie screenshotami.
+### P2 (60 days)
+3. NEW NIS2 Readiness Assessment Guide (EN+PL)
+4. NEW NIS2 Incident Reporting (EN+PL)
+5. UPDATE Continuous Compliance article — expand to 15+ min
+6. NEW Audit Evidence Automation (EN)
+7. UPDATE SOC 2 Complete Guide — add comparison + tools sections
+8. NEW SOC 2 Cost & Timeline (EN)
+9. UPDATE Compare pages — add internal links to new blog articles
 
-### Screenshoty potrzebne od Ciebie
+### P3 (90 days)
+10. NEW NIS2 vs ISO 27001 Mapping (EN)
+11. NEW NIS2 Board Accountability (EN+PL)
+12. NEW NIS2 Penalties & Enforcement (EN+PL)
+13. NEW Compliance Automation Evaluation Guide (EN)
+14. UPDATE Compliance Monitoring Guide — add "best tools" section
+15. NEW Alternatywy dla Vanta (PL)
 
-Potrzebuję screenshoty z platformy Quantifier dla każdej strony, żeby wiernie odwzorować UI w mockupach:
-
-| Strona | Czego potrzebuję |
-|--------|-----------------|
-| **AI Compliance Officer** | Widok agenta AI w akcji — chat/rekomendacje/alerty, panel z sugestiami compliance |
-| **Task & Data Management** | Widok listy zadań/kanban, hub danych, widok filtrów i statusów |
-| **Documents Management** | Repozytorium dokumentów, wersjonowanie, widok lifecycle dokumentu |
-| **Value Chain** | Mapa dostawców, scoring dostawców, widok due diligence |
-| **Risk Assessment** | Matryca ryzyk (heatmap), widok risk register, treatment plans |
-| **Analytics Dashboards** | Dashboard compliance z wykresami, KPI, widok raportów |
-| **Managers view** | Widok managera — overview, delegowanie, statusy zespołu |
-| **Contributors view** | Widok contributora — moje zadania, formularz, zbieranie danych |
-| **Auditor view** | Widok audytora — evidence, audit trail, eksport raportu |
-
-Screenshot Business Continuity (BIA) który przesłałeś jest świetnym przykładem — taki poziom detalu potrzebuję dla każdego modułu.
-
----
-
-### Struktura każdej rozbudowanej strony
-
-1. **Hero** z mockupem UI (zamiast generic gradient box)
-2. **"How it works"** — 3-4 kroki procesu z ikonami
-3. **Platform mockup section** — duży mockup React imitujący UI platformy (inspirowany przesłanym screenshotem)
-4. **Key capabilities** — 4-6 kart z unikalnymi feature'ami
-5. **Use cases / Framework coverage** — kiedy ta funkcja jest potrzebna (NIS2, ISO 27001, DORA, ESG)
-6. **FAQ** — 4-5 pytań SEO-friendly
-7. **CTA**
-
-### Kolejność pracy
-
-Zaczynam od **pierwszej strony** po otrzymaniu screenshotów. Proponuję kolejność:
-
-1. `/product/ai-compliance-officer` — najważniejsza strona, USP produktu
-2. `/product/task-data-management`
-3. `/product/risk-assessment`
-4. `/product/documents-management`
-5. `/product/value-chain`
-6. `/product/analytics-dashboards`
-7. `/roles/managers`, `/roles/contributors`, `/roles/auditor`
-
-### Pliki do edycji (per strona)
-- `src/pages/product/[Page].tsx` — nowa struktura
-- Nowy mockup component: `src/components/mockups/[Module]Mockup.tsx`
-- `public/locales/{en,pl,cs}/translation.json` — nowe klucze i18n
-- `src/i18n/locales/{en,pl}.json` — mirror
-
-### Bez screenshotów mogę zrobić
-- Strukturę stron, layout, sekcje
-- Generic mockupy oparte na wzorcu z przesłanego screenshota BIA (sidebar + content + cards + KPI)
-- Tekst i18n, FAQ, SEO meta
-
-Prześlij screenshoty z modułów, a dopasujemy mockupy. Możemy też zacząć od AI Compliance Officer z generycznym mockupem i iterować.
-
+### Product page expansion (completed previously)
+- ✅ All 6 product pages rebuilt with 7-section layout + mockups + FAQ JSON-LD
+- ✅ All 3 role pages rebuilt with unique content + FAQ JSON-LD
+- ✅ Compare pages updated (March 2026 data)
+- ✅ Framework pages have DefinitionsBlock + SoftwareApplication schema
