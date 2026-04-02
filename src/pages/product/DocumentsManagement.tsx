@@ -5,7 +5,7 @@ import { ArrowRight, FileText, FolderSearch, Lock, CheckCircle, GitBranch, Histo
 import DocumentRepositoryMockup from '@/components/mockups/DocumentRepositoryMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const DocumentsManagement = () => {
   const { t, currentLocale } = useLanguage();
