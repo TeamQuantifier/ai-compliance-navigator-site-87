@@ -4187,6 +4187,21 @@
       "description": "Dołącz do wiodących organizacji, które ufają Quantifier w automatyzacji zgodności SOC 2.",
       "bookDemo": "Umów demo",
       "seePricing": "Zobacz cennik"
+    },
+    "relatedContent": {
+      "title": "Powiązane zasoby",
+      "guide": {
+        "title": "Kompletny przewodnik SOC 2 (2026)",
+        "description": "Wszystko o SOC 2 Type 1 i Type 2 — wymagania, harmonogram i przygotowanie."
+      },
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 — porównanie",
+        "description": "Który framework wybrać? Porównanie zakresu, kosztów, harmonogramu i pokrywania się kontroli."
+      },
+      "cost": {
+        "title": "Koszty i harmonogram SOC 2",
+        "description": "Realistyczny podział kosztów audytora, platformy i nakładu wewnętrznego dla Type 1 i Type 2."
+      }
     }
   },
   "nistPage": {
@@ -4592,6 +4607,21 @@
       "description": "Pozwól naszej platformie opartej na AI przeprowadzić Cię przez cały proces certyfikacji.",
       "bookDemo": "Zamów demo",
       "explorePlans": "Zobacz plany"
+    },
+    "relatedContent": {
+      "title": "Powiązane zasoby",
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 — porównanie",
+        "description": "Który framework wybrać? Ramowy model decyzyjny oparty na rynku, zakresie i celach certyfikacji."
+      },
+      "evidence": {
+        "title": "Automatyzacja dowodów audytowych",
+        "description": "Jak wyeliminować ręczne zbieranie dowodów w ISO 27001, SOC 2, NIS2 i DORA."
+      },
+      "nis2mapping": {
+        "title": "NIS2 vs ISO 27001 — mapowanie",
+        "description": "Mapowanie kontroli NIS2 Artykuł 21 na ISO 27001 Annex A — co się pokrywa."
+      }
     }
   },
   "iso9001Page": {
@@ -7025,16 +7055,56 @@
       "heading": "Artykuł 21 — Środki bezpieczeństwa zmapowane na działania",
       "subtitle": "Artykuł 21 NIS2 definiuje 10 obowiązkowych kategorii środków zarządzania ryzykiem cyberbezpieczeństwa. Poniżej każdy wymóg z konkretnymi działaniami.",
       "rows": [
-        { "req": "Analiza ryzyka i polityki bezpieczeństwa", "action": "Formalna ocena ryzyka, rejestr ryzyk, polityki zatwierdzone przez zarząd", "evidence": "Raporty ryzyka, dokumenty polityk, protokoły zarządu" },
-        { "req": "Obsługa incydentów", "action": "Wykrywanie, reagowanie, odzyskiwanie; raportowanie 24h/72h/30d", "evidence": "Plan reagowania, powiadomienia CSIRT, dziennik incydentów" },
-        { "req": "Ciągłość działania", "action": "BCP, odzyskiwanie po awarii, zarządzanie kryzysowe", "evidence": "Dokumenty BCP, wyniki testów DR, logi backupów" },
-        { "req": "Bezpieczeństwo łańcucha dostaw", "action": "Oceny ryzyka dostawców, klauzule bezpieczeństwa w umowach", "evidence": "Raporty due diligence, umowy z dostawcami" },
-        { "req": "Nabywanie i rozwój systemów", "action": "Bezpieczny SDLC, obsługa podatności", "evidence": "Dokumentacja SDLC, skany podatności, rejestry łatek" },
-        { "req": "Ocena skuteczności", "action": "Polityki oceny skuteczności środków cyberbezpieczeństwa", "evidence": "Raporty audytowe, testy penetracyjne" },
-        { "req": "Cyberhigiena i szkolenia", "action": "Świadomość bezpieczeństwa, szkolenia dla wszystkich w tym zarządu", "evidence": "Rejestry szkoleń, symulacje phishingu" },
-        { "req": "Kryptografia", "action": "Polityki szyfrowania, zarządzanie kluczami", "evidence": "Polityka szyfrowania, procedury zarządzania kluczami" },
-        { "req": "Bezpieczeństwo kadr i kontrola dostępu", "action": "Macierz dostępu, zarządzanie aktywami, cykl życia użytkownika", "evidence": "Logi dostępu, rejestry provisioningu" },
-        { "req": "Uwierzytelnianie wieloskładnikowe", "action": "Wdrożenie MFA, zabezpieczona komunikacja awaryjna", "evidence": "Rejestry MFA, inwentarz narzędzi komunikacji" }
+        {
+          "req": "Analiza ryzyka i polityki bezpieczeństwa",
+          "action": "Formalna ocena ryzyka, rejestr ryzyk, polityki zatwierdzone przez zarząd",
+          "evidence": "Raporty ryzyka, dokumenty polityk, protokoły zarządu"
+        },
+        {
+          "req": "Obsługa incydentów",
+          "action": "Wykrywanie, reagowanie, odzyskiwanie; raportowanie 24h/72h/30d",
+          "evidence": "Plan reagowania, powiadomienia CSIRT, dziennik incydentów"
+        },
+        {
+          "req": "Ciągłość działania",
+          "action": "BCP, odzyskiwanie po awarii, zarządzanie kryzysowe",
+          "evidence": "Dokumenty BCP, wyniki testów DR, logi backupów"
+        },
+        {
+          "req": "Bezpieczeństwo łańcucha dostaw",
+          "action": "Oceny ryzyka dostawców, klauzule bezpieczeństwa w umowach",
+          "evidence": "Raporty due diligence, umowy z dostawcami"
+        },
+        {
+          "req": "Nabywanie i rozwój systemów",
+          "action": "Bezpieczny SDLC, obsługa podatności",
+          "evidence": "Dokumentacja SDLC, skany podatności, rejestry łatek"
+        },
+        {
+          "req": "Ocena skuteczności",
+          "action": "Polityki oceny skuteczności środków cyberbezpieczeństwa",
+          "evidence": "Raporty audytowe, testy penetracyjne"
+        },
+        {
+          "req": "Cyberhigiena i szkolenia",
+          "action": "Świadomość bezpieczeństwa, szkolenia dla wszystkich w tym zarządu",
+          "evidence": "Rejestry szkoleń, symulacje phishingu"
+        },
+        {
+          "req": "Kryptografia",
+          "action": "Polityki szyfrowania, zarządzanie kluczami",
+          "evidence": "Polityka szyfrowania, procedury zarządzania kluczami"
+        },
+        {
+          "req": "Bezpieczeństwo kadr i kontrola dostępu",
+          "action": "Macierz dostępu, zarządzanie aktywami, cykl życia użytkownika",
+          "evidence": "Logi dostępu, rejestry provisioningu"
+        },
+        {
+          "req": "Uwierzytelnianie wieloskładnikowe",
+          "action": "Wdrożenie MFA, zabezpieczona komunikacja awaryjna",
+          "evidence": "Rejestry MFA, inwentarz narzędzi komunikacji"
+        }
       ],
       "colReq": "Wymóg Artykułu 21",
       "colAction": "Wymagane działanie",
@@ -7044,12 +7114,30 @@
       "heading": "Dlaczego warto użyć oprogramowania do zgodności z NIS2?",
       "subtitle": "Ręczne zarządzanie zgodnością z NIS2 w arkuszach kalkulacyjnych nie jest skalowalne. Oto co zmienia platforma automatyzacji compliance.",
       "items": [
-        { "before": "Rejestr ryzyk w Excelu", "after": "Centralny rejestr ryzyk powiązany z artykułami NIS2 z AI scoring" },
-        { "before": "Ręczne zbieranie dowodów", "after": "Automatyczne zbieranie dowodów mapowane na wiele frameworków" },
-        { "before": "Raportowanie incydentów mailem", "after": "Strukturalne workflow incydentów z automatycznymi powiadomieniami 24h/72h" },
-        { "before": "Ocena dostawców raz w roku", "after": "Ciągłe monitorowanie dostawców z real-time scoring ryzyka" },
-        { "before": "Jednorazowe kontrole zgodności", "after": "Ciągłe monitorowanie zgodności z dashboardem dla zarządu" },
-        { "before": "Rozproszona dokumentacja", "after": "Jedno źródło prawdy z kontrolą wersji i audit trail" }
+        {
+          "before": "Rejestr ryzyk w Excelu",
+          "after": "Centralny rejestr ryzyk powiązany z artykułami NIS2 z AI scoring"
+        },
+        {
+          "before": "Ręczne zbieranie dowodów",
+          "after": "Automatyczne zbieranie dowodów mapowane na wiele frameworków"
+        },
+        {
+          "before": "Raportowanie incydentów mailem",
+          "after": "Strukturalne workflow incydentów z automatycznymi powiadomieniami 24h/72h"
+        },
+        {
+          "before": "Ocena dostawców raz w roku",
+          "after": "Ciągłe monitorowanie dostawców z real-time scoring ryzyka"
+        },
+        {
+          "before": "Jednorazowe kontrole zgodności",
+          "after": "Ciągłe monitorowanie zgodności z dashboardem dla zarządu"
+        },
+        {
+          "before": "Rozproszona dokumentacja",
+          "after": "Jedno źródło prawdy z kontrolą wersji i audit trail"
+        }
       ],
       "colBefore": "Bez oprogramowania",
       "colAfter": "Z Quantifier"
@@ -7058,9 +7146,21 @@
       "heading": "Materiały o zgodności z NIS2",
       "subtitle": "Pogłębione artykuły pomagające przygotować się na wymagania NIS2.",
       "articles": [
-        { "title": "Lista kontrolna NIS2 2026", "desc": "Wymagania Artykułu 21 zmapowane na działania i dowody", "slug": "lista-kontrolna-nis2-2026" },
-        { "title": "Wdrożenie NIS2/KSC w Polsce", "desc": "Przewodnik po nowelizacji UKSC z terminami i krokami", "slug": "wdrozenie-nis2-ksc-przewodnik" },
-        { "title": "Dyrektywa NIS2 — Przewodnik", "desc": "Wszystko co musisz wiedzieć o dyrektywie NIS2", "slug": "dyrektywa-nis2" }
+        {
+          "title": "Lista kontrolna NIS2 2026",
+          "desc": "Wymagania Artykułu 21 zmapowane na działania i dowody",
+          "slug": "lista-kontrolna-nis2-2026"
+        },
+        {
+          "title": "Wdrożenie NIS2/KSC w Polsce",
+          "desc": "Przewodnik po nowelizacji UKSC z terminami i krokami",
+          "slug": "wdrozenie-nis2-ksc-przewodnik"
+        },
+        {
+          "title": "Dyrektywa NIS2 — Przewodnik",
+          "desc": "Wszystko co musisz wiedzieć o dyrektywie NIS2",
+          "slug": "dyrektywa-nis2"
+        }
       ]
     },
     "seo": {

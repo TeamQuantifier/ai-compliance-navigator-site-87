@@ -3961,6 +3961,21 @@
       "description": "Připojte se k předním organizacím, které důvěřují Quantifier pro automatizaci SOC 2 compliance.",
       "bookDemo": "Objednat demo",
       "seePricing": "Zobrazit ceny"
+    },
+    "relatedContent": {
+      "title": "Související zdroje",
+      "guide": {
+        "title": "Kompletní průvodce SOC 2 (2026)",
+        "description": "Vše o SOC 2 Type 1 a Type 2 — požadavky, časový plán a příprava."
+      },
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 — srovnání",
+        "description": "Který rámec potřebujete? Srovnání rozsahu, nákladů, časového plánu a překryvu kontrol."
+      },
+      "cost": {
+        "title": "Náklady a časový plán SOC 2",
+        "description": "Realistický rozpočet poplatků auditora, platformy a interního úsilí pro Type 1 a Type 2."
+      }
     }
   },
   "iso27001Page": {
@@ -4274,6 +4289,21 @@
       "description": "Připojte se k předním organizacím, které důvěřují Quantifier pro automatizaci jejich informační bezpečnostní compliance.",
       "bookDemo": "Objednat demo",
       "seePricing": "Zobrazit ceny"
+    },
+    "relatedContent": {
+      "title": "Související zdroje",
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 — srovnání",
+        "description": "Který rámec potřebujete? Rozhodovací rámec na základě trhu, rozsahu a cílů certifikace."
+      },
+      "evidence": {
+        "title": "Automatizace auditních důkazů",
+        "description": "Jak eliminovat ruční sběr důkazů pro ISO 27001, SOC 2, NIS2 a DORA."
+      },
+      "nis2mapping": {
+        "title": "NIS2 vs ISO 27001 — mapování",
+        "description": "Mapování kontrol NIS2 Článek 21 na ISO 27001 Příloha A — co se překrývá."
+      }
     }
   },
   "iso9001Page": {
@@ -6018,16 +6048,56 @@
       "heading": "Článek 21 — Bezpečnostní opatření mapována na akce",
       "subtitle": "Článek 21 NIS2 definuje 10 povinných kategorií opatření pro řízení kybernetických rizik.",
       "rows": [
-        { "req": "Analýza rizik a bezpečnostní politiky", "action": "Formální hodnocení rizik, registr rizik, politiky schválené vedením", "evidence": "Zprávy o rizicích, dokumenty politik, zápisy vedení" },
-        { "req": "Řešení incidentů", "action": "Detekce, reakce, obnova; hlášení 24h/72h/30d", "evidence": "Plán reakce, oznámení CSIRT, log incidentů" },
-        { "req": "Kontinuita provozu", "action": "BCP, disaster recovery, krizové řízení", "evidence": "BCP dokumenty, výsledky DR testů, logy záloh" },
-        { "req": "Bezpečnost dodavatelského řetězce", "action": "Hodnocení rizik dodavatelů, bezpečnostní klauzule", "evidence": "Zprávy due diligence, smlouvy s dodavateli" },
-        { "req": "Akvizice a vývoj systémů", "action": "Bezpečný SDLC, řízení zranitelností", "evidence": "SDLC dokumentace, skeny zranitelností, záznamy o záplatách" },
-        { "req": "Hodnocení účinnosti", "action": "Politiky hodnocení účinnosti kybernetických opatření", "evidence": "Auditní zprávy, penetrační testy" },
-        { "req": "Kyberhygiena a školení", "action": "Bezpečnostní povědomí, školení pro všechny včetně vedení", "evidence": "Záznamy o školeních, simulace phishingu" },
-        { "req": "Kryptografie", "action": "Politiky šifrování, správa klíčů", "evidence": "Politika šifrování, postupy správy klíčů" },
-        { "req": "Bezpečnost lidských zdrojů a řízení přístupu", "action": "Matice přístupu, správa aktiv, životní cyklus uživatelů", "evidence": "Logy přístupu, záznamy o provisioningu" },
-        { "req": "Vícefaktorová autentizace", "action": "Nasazení MFA, zabezpečená nouzová komunikace", "evidence": "Záznamy MFA, inventář komunikačních nástrojů" }
+        {
+          "req": "Analýza rizik a bezpečnostní politiky",
+          "action": "Formální hodnocení rizik, registr rizik, politiky schválené vedením",
+          "evidence": "Zprávy o rizicích, dokumenty politik, zápisy vedení"
+        },
+        {
+          "req": "Řešení incidentů",
+          "action": "Detekce, reakce, obnova; hlášení 24h/72h/30d",
+          "evidence": "Plán reakce, oznámení CSIRT, log incidentů"
+        },
+        {
+          "req": "Kontinuita provozu",
+          "action": "BCP, disaster recovery, krizové řízení",
+          "evidence": "BCP dokumenty, výsledky DR testů, logy záloh"
+        },
+        {
+          "req": "Bezpečnost dodavatelského řetězce",
+          "action": "Hodnocení rizik dodavatelů, bezpečnostní klauzule",
+          "evidence": "Zprávy due diligence, smlouvy s dodavateli"
+        },
+        {
+          "req": "Akvizice a vývoj systémů",
+          "action": "Bezpečný SDLC, řízení zranitelností",
+          "evidence": "SDLC dokumentace, skeny zranitelností, záznamy o záplatách"
+        },
+        {
+          "req": "Hodnocení účinnosti",
+          "action": "Politiky hodnocení účinnosti kybernetických opatření",
+          "evidence": "Auditní zprávy, penetrační testy"
+        },
+        {
+          "req": "Kyberhygiena a školení",
+          "action": "Bezpečnostní povědomí, školení pro všechny včetně vedení",
+          "evidence": "Záznamy o školeních, simulace phishingu"
+        },
+        {
+          "req": "Kryptografie",
+          "action": "Politiky šifrování, správa klíčů",
+          "evidence": "Politika šifrování, postupy správy klíčů"
+        },
+        {
+          "req": "Bezpečnost lidských zdrojů a řízení přístupu",
+          "action": "Matice přístupu, správa aktiv, životní cyklus uživatelů",
+          "evidence": "Logy přístupu, záznamy o provisioningu"
+        },
+        {
+          "req": "Vícefaktorová autentizace",
+          "action": "Nasazení MFA, zabezpečená nouzová komunikace",
+          "evidence": "Záznamy MFA, inventář komunikačních nástrojů"
+        }
       ],
       "colReq": "Požadavek článku 21",
       "colAction": "Požadovaná akce",
@@ -6037,12 +6107,30 @@
       "heading": "Proč použít software pro soulad s NIS2?",
       "subtitle": "Ruční řízení souladu s NIS2 v tabulkách není škálovatelné. Zde je co změní platforma pro automatizaci compliance.",
       "items": [
-        { "before": "Registr rizik v Excelu", "after": "Centrální registr rizik propojený s články NIS2 s AI scoringem" },
-        { "before": "Ruční sběr důkazů", "after": "Automatický sběr důkazů mapovaný napříč více frameworky" },
-        { "before": "Hlášení incidentů e-mailem", "after": "Strukturované workflow incidentů s automatickými oznámeními 24h/72h" },
-        { "before": "Hodnocení dodavatelů jednou ročně", "after": "Průběžný monitoring dodavatelů s real-time scoringem rizik" },
-        { "before": "Jednorázové kontroly souladu", "after": "Průběžný monitoring souladu s dashboardem pro vedení" },
-        { "before": "Rozptýlená dokumentace", "after": "Jediný zdroj pravdy s kontrolou verzí a audit trail" }
+        {
+          "before": "Registr rizik v Excelu",
+          "after": "Centrální registr rizik propojený s články NIS2 s AI scoringem"
+        },
+        {
+          "before": "Ruční sběr důkazů",
+          "after": "Automatický sběr důkazů mapovaný napříč více frameworky"
+        },
+        {
+          "before": "Hlášení incidentů e-mailem",
+          "after": "Strukturované workflow incidentů s automatickými oznámeními 24h/72h"
+        },
+        {
+          "before": "Hodnocení dodavatelů jednou ročně",
+          "after": "Průběžný monitoring dodavatelů s real-time scoringem rizik"
+        },
+        {
+          "before": "Jednorázové kontroly souladu",
+          "after": "Průběžný monitoring souladu s dashboardem pro vedení"
+        },
+        {
+          "before": "Rozptýlená dokumentace",
+          "after": "Jediný zdroj pravdy s kontrolou verzí a audit trail"
+        }
       ],
       "colBefore": "Bez softwaru",
       "colAfter": "S Quantifier"
@@ -6051,9 +6139,21 @@
       "heading": "Zdroje k souladu s NIS2",
       "subtitle": "Podrobné články pomáhající s přípravou na požadavky NIS2.",
       "articles": [
-        { "title": "NIS2 Compliance Checklist 2026", "desc": "Požadavky článku 21 mapované na akce a důkazy", "slug": "nis2-compliance-checklist-2026" },
-        { "title": "NIS2 Directive — Complete Guide", "desc": "Vše co potřebujete vědět o směrnici NIS2", "slug": "nis2-directive" },
-        { "title": "NIS2 Requirements & Implementation", "desc": "Technický průvodce implementací pro compliance týmy", "slug": "nis2-directive-compliance-requirements-implementation-guide" }
+        {
+          "title": "NIS2 Compliance Checklist 2026",
+          "desc": "Požadavky článku 21 mapované na akce a důkazy",
+          "slug": "nis2-compliance-checklist-2026"
+        },
+        {
+          "title": "NIS2 Directive — Complete Guide",
+          "desc": "Vše co potřebujete vědět o směrnici NIS2",
+          "slug": "nis2-directive"
+        },
+        {
+          "title": "NIS2 Requirements & Implementation",
+          "desc": "Technický průvodce implementací pro compliance týmy",
+          "slug": "nis2-directive-compliance-requirements-implementation-guide"
+        }
       ]
     },
     "seo": {
