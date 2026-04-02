@@ -940,12 +940,30 @@
         "title": "Obsługiwane standardy",
         "subtitle": "AI Compliance Officer jest wstępnie przeszkolony na głównych standardach regulacyjnych i branżowych — i ciągle aktualizowany wraz z ich ewolucją.",
         "items": {
-          "iso27001": { "name": "ISO 27001", "desc": "Zarządzanie bezpieczeństwem informacji" },
-          "nis2": { "name": "Dyrektywa NIS2", "desc": "Wymagania cyberbezpieczeństwa UE" },
-          "dora": { "name": "DORA", "desc": "Cyfrowa odporność operacyjna" },
-          "gdpr": { "name": "RODO", "desc": "Ochrona danych osobowych" },
-          "soc2": { "name": "SOC 2", "desc": "Kryteria usług zaufania" },
-          "esg": { "name": "ESG / CSRD", "desc": "Raportowanie zrównoważonego rozwoju" }
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Zarządzanie bezpieczeństwem informacji"
+          },
+          "nis2": {
+            "name": "Dyrektywa NIS2",
+            "desc": "Wymagania cyberbezpieczeństwa UE"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Cyfrowa odporność operacyjna"
+          },
+          "gdpr": {
+            "name": "RODO",
+            "desc": "Ochrona danych osobowych"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Kryteria usług zaufania"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Raportowanie zrównoważonego rozwoju"
+          }
         }
       },
       "faq": {
@@ -1023,6 +1041,112 @@
         "subtitle": "Zobacz jak Quantifier daje Ci widoczność w całym łańcuchu dostaw.",
         "bookDemo": "Umów demo",
         "explorePlans": "Zobacz plany"
+      },
+      "howItWorks": {
+        "title": "Jak dziala zarzadzanie lancuchem wartosci",
+        "subtitle": "Cztery kroki do mapowania, oceny, scoringu i ciaglego monitorowania zgodnosci lancucha dostaw.",
+        "steps": {
+          "identify": {
+            "title": "Identyfikuj dostawcow",
+            "description": "Zmapuj lancuch dostaw i zidentyfikuj wszystkich dostawcow i uslugodawcow."
+          },
+          "assess": {
+            "title": "Ocena i due diligence",
+            "description": "Wysylaj kwestionariusze i zbieraj dowody zgodnosci od dostawcow."
+          },
+          "score": {
+            "title": "Scoring ryzyka",
+            "description": "Automatycznie oceniaj dostawcow na podstawie postawy compliance i czynnikow ryzyka."
+          },
+          "monitor": {
+            "title": "Ciagly monitoring",
+            "description": "Sledz status zgodnosci dostawcow i otrzymuj alerty o zmianach lub problemach."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Panel dostawcow",
+        "subtitle": "Kompleksowy widok calego lancucha dostaw z wynikami ryzyka, statusem zgodnosci i sledzeniem due diligence."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "supplierMapping": {
+          "title": "Mapowanie dostawcow",
+          "description": "Wizualizuj caly lancuch dostaw ze szczegolowymi profilami dostawcow i mapowaniem relacji."
+        },
+        "dueDiligence": {
+          "title": "Due diligence",
+          "description": "Automatyzuj oceny dostawcow za pomoca konfigurowalnych kwestionariuszy i zbierania dowodow."
+        },
+        "riskScoring": {
+          "title": "Scoring ryzyka",
+          "description": "Scoring ryzyka oparty na AI na podstawie odpowiedzi compliance, certyfikatow i danych zewnetrznych."
+        },
+        "esgSupplyChain": {
+          "title": "ESG lancucha dostaw",
+          "description": "Monitoruj wyniki ESG w calym lancuchu wartosci."
+        },
+        "complianceTracking": {
+          "title": "Sledzenie zgodnosci",
+          "description": "Sledz certyfikaty dostawcow, wyniki audytow i status zgodnosci w czasie rzeczywistym."
+        },
+        "continuousMonitoring": {
+          "title": "Ciagly monitoring",
+          "description": "Automatyczne alerty o zmianach ryzyka dostawcow, wygasajacych certyfikatach i lukach w zgodnosci."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Zarzadzaj wymaganiami zgodnosci lancucha dostaw we wszystkich glownych frameworkach.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Kontrole bezpieczenstwa dostawcow (A.15)"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cyberbezpieczenstwo lancucha dostaw (Art. 21)"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Zarzadzanie ryzykiem ICT stron trzecich"
+          },
+          "csrd": {
+            "name": "CSRD",
+            "desc": "Raportowanie zrownowazonego rozwoju lancucha wartosci"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Zarzadzanie podmiotami przetwarzajacymi dane"
+          },
+          "esg": {
+            "name": "ESG",
+            "desc": "Wyniki ESG lancucha dostaw"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsValueChain": {
+          "question": "Czym jest zarzadzanie lancuchem wartosci w GRC?",
+          "answer": "Zarzadzanie lancuchem wartosci w GRC obejmuje mapowanie, ocene i monitorowanie wszystkich dostawcow pod katem ryzyk compliance."
+        },
+        "howScoring": {
+          "question": "Jak dziala scoring ryzyka dostawcow?",
+          "answer": "Dostawcy sa oceniani na podstawie odpowiedzi na kwestionariusze, posiadanych certyfikatow, wynikow audytow i postawy compliance."
+        },
+        "whichFrameworks": {
+          "question": "Ktore frameworki wymagaja zarzadzania lancuchem dostaw?",
+          "answer": "NIS2 (Artykul 21), ISO 27001 (Aneks A.15), DORA (ryzyko ICT stron trzecich), CSRD (raportowanie lancucha wartosci) i GDPR."
+        },
+        "supplierOnboarding": {
+          "question": "Jak wdrozye nowych dostawcow?",
+          "answer": "Dodaj dostawcow do platformy, wyslij automatyczne kwestionariusze oceny, zbierz certyfikaty i dowody, i otrzymaj wynik ryzyka."
+        },
+        "continuousMonitoring": {
+          "question": "Co obejmuje ciagly monitoring?",
+          "answer": "Ciagly monitoring sledzi daty wygasniecia certyfikatow, zmiany statusu zgodnosci, harmonogramy ponownych ocen i zewnetrzne sygnaly ryzyka."
+        }
       }
     },
     "apiIntegrations": {
@@ -1117,6 +1241,112 @@
         "subtitle": "Zobacz jak Quantifier utrzymuje Twoją dokumentację w gotowości audytowej.",
         "bookDemo": "Umów demo",
         "explorePlans": "Zobacz plany"
+      },
+      "howItWorks": {
+        "title": "Jak dziala zarzadzanie dokumentami",
+        "subtitle": "Cztery kroki do organizacji, wersjonowania, zatwierdzania i audytowania dokumentacji compliance.",
+        "steps": {
+          "upload": {
+            "title": "Przeslij i organizuj",
+            "description": "Przesylaj dokumenty i organizuj je wedlug frameworku, dzialu lub wlasnych kategorii."
+          },
+          "version": {
+            "title": "Kontrola wersji",
+            "description": "Sledz kazda zmiane z automatycznym wersjonowaniem i historia zmian."
+          },
+          "approve": {
+            "title": "Przegladaj i zatwierdzaj",
+            "description": "Kieruj dokumenty przez workflow zatwierdzania z uprawnieniami opartymi na rolach."
+          },
+          "audit": {
+            "title": "Sciezka audytu",
+            "description": "Utrzymuj kompletna sciezke audytu wszystkich dzialan i dostepu do dokumentow."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Repozytorium dokumentow",
+        "subtitle": "Bezpieczne, centralne repozytorium, w ktorym kazdy dokument compliance jest wersjonowany, zatwierdzony i gotowy do audytu."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "centralRepo": {
+          "title": "Centralne repozytorium",
+          "description": "Przechowuj wszystkie dokumenty compliance w jednym bezpiecznym, przeszukiwalnym miejscu."
+        },
+        "versionControl": {
+          "title": "Kontrola wersji",
+          "description": "Automatyczne sledzenie wersji z pelna historia zmian i mozliwoscia przywracania."
+        },
+        "accessControl": {
+          "title": "Kontrola dostepu",
+          "description": "Uprawnienia oparte na rolach zapewniaja, ze tylko autoryzowani uzytkownicy moga przegladac lub edytowac dokumenty."
+        },
+        "lifecycle": {
+          "title": "Cykl zycia dokumentu",
+          "description": "Zarzadzaj dokumentami od szkicu przez przegad, zatwierdzenie, publikacje i wycofanie."
+        },
+        "auditReady": {
+          "title": "Gotowe do audytu",
+          "description": "Generuj paczki dokumentow dla audytorow z kompletnymi sciezkami dowodow i zapisami zatwierdzn."
+        },
+        "search": {
+          "title": "Inteligentne wyszukiwanie",
+          "description": "Znajdz dowolny dokument natychmiast dzieki wyszukiwaniu pelnotekstowemu i filtrom."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Zarzadzaj wymaganiami dokumentacyjnymi dla dowolnego frameworku compliance w jednym miejscu.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Polityki, SOA i procedury bezpieczenstwa"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Plany incydentow i dokumentacja bezpieczenstwa"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Polityki ICT i plany ciaglosci"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "DPA, informacje o prywatnosci i DPIA"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Polityki i dokumentacja kontroli"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Raporty zrownowazonego rozwoju i ujawnienia"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsDms": {
+          "question": "Czym jest zarzadzanie dokumentami compliance?",
+          "answer": "Zarzadzanie dokumentami compliance to systematyczna organizacja, wersjonowanie, zatwierdzanie i przechowywanie wszystkich dokumentow wymaganych do zgodnosci regulacyjnej."
+        },
+        "versionControl": {
+          "question": "Jak dziala kontrola wersji?",
+          "answer": "Kazda zmiana dokumentu jest automatycznie wersjonowana. Mozesz przegladac kompletna historie zmian, porownywac wersje i przywracac dowolna poprzednia wersje."
+        },
+        "whichFrameworks": {
+          "question": "Ktorymi dokumentami frameworkow moge zarzadzac?",
+          "answer": "Quantifier obsluguje zarzadzanie dokumentami dla ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG/CSRD i wielu innych."
+        },
+        "accessControl": {
+          "question": "Jak zarzadzane sa uprawnienia do dokumentow?",
+          "answer": "Dokumenty wykorzystuja kontrole dostepu oparta na rolach (RBAC). Mozesz ustawiac uprawnienia na poziomie folderu lub dokumentu."
+        },
+        "auditTrail": {
+          "question": "Czy jest kompletna sciezka audytu?",
+          "answer": "Tak. Kazda akcja - przegladanie, edycja, zatwierdzanie, pobieranie - jest rejestrowana z znacznikami czasu i tozsamoscia uzytkownika."
+        }
       }
     },
     "taskDataManagement": {
@@ -1170,6 +1400,112 @@
         "subtitle": "Zobacz jak Hub zadań utrzymuje zespół na dobrej drodze.",
         "bookDemo": "Umów demo",
         "explorePlans": "Zobacz plany"
+      },
+      "howItWorks": {
+        "title": "Jak dziala zarzadzanie zadaniami",
+        "subtitle": "Cztery proste kroki do usprawnienia sledzenia zadan compliance i zbierania danych w organizacji.",
+        "steps": {
+          "create": {
+            "title": "Tworzenie zadan",
+            "description": "Definiuj zadania compliance z wymagan frameworkow lub tworzwlasne."
+          },
+          "assign": {
+            "title": "Przydzielanie",
+            "description": "Przydzielaj zadania czlonkom zespolu z terminami i priorytetami."
+          },
+          "track": {
+            "title": "Sledzenie postepu",
+            "description": "Monitoruj realizacje zadan za pomoca tablic Kanban, list i filtrow statusow."
+          },
+          "report": {
+            "title": "Raportowanie",
+            "description": "Otrzymuj automatyczne powiadomienia i generuj raporty postepu compliance."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Centrum zadan compliance",
+        "subtitle": "Centralne miejsce pracy, w ktorym kazde zadanie, termin i zapytanie o dane sa widoczne i realizowalne."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "taskEngine": {
+          "title": "Silnik zadan",
+          "description": "Tworzenie, przydzielanie i sledzenie zadan compliance z automatycznymi workflow i zarzadzaniem terminami."
+        },
+        "dataHub": {
+          "title": "Hub zbierania danych",
+          "description": "Centralizuj zbieranie dowodow i danych z wielu departamentow i interesariuszy."
+        },
+        "collaboration": {
+          "title": "Wspolpraca zespolowa",
+          "description": "Umozliwiaj wspolprace miedzyzespolowa z komentarzami, wzmiankami i wspolnym widokiem zadan."
+        },
+        "workflows": {
+          "title": "Automatyczne workflow",
+          "description": "Konfiguruj lancuchy zatwierdzania, reguly eskalacji i harmonogramy powtarzajacych sie zadan."
+        },
+        "filters": {
+          "title": "Inteligentne filtry",
+          "description": "Filtruj zadania wedlug frameworku, statusu, przypisanej osoby, priorytetu lub wlasnych tagow."
+        },
+        "kanban": {
+          "title": "Widoki Kanban i lista",
+          "description": "Przelaczaj miedzy tablicami Kanban a widokiem listy, aby zarzadzac zadaniami po swojemu."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Zarzadzaj zadaniami i zbieraj dane dla dowolnego frameworku compliance w jednym miejscu.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Kontrole bezpieczenstwa informacji i dowody"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Srodki cyberbezpieczenstwa i zadania incydentow"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Zarzadzanie ryzykiem ICT i zadania odpornosci"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Dzialania ochrony danych i prywatnosci"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Dowody kryteriow uslug zaufania"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Zbieranie danych zrownowazonego rozwoju"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsTaskManagement": {
+          "question": "Czym jest zarzadzanie zadaniami compliance?",
+          "answer": "Zarzadzanie zadaniami compliance to proces tworzenia, przydzielania, sledzenia i raportowania zadan wymaganych do spelnienia wymagan regulacyjnych. Quantifier automatyzuje ten proces dla wielu frameworkow jednoczesnie."
+        },
+        "howAssign": {
+          "question": "Jak przydzielam zadania czlonkom zespolu?",
+          "answer": "Mozesz przydzielac zadania bezposrednio z tablicy lub widoku listy. Ustaw osoby odpowiedzialne, terminy, priorytety i dodaj kontekst z odpowiedniego wymagania frameworku."
+        },
+        "whichFrameworks": {
+          "question": "Ktore frameworki compliance sa obslugiwane?",
+          "answer": "Quantifier obsluguje ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG/CSRD i wiele innych. Zadania sa automatycznie mapowane do kontroli frameworkow."
+        },
+        "dataCollection": {
+          "question": "Jak dziala zbieranie danych?",
+          "answer": "Hub zbierania danych pozwala wysylac zapytania o dowody i informacje do dowolnego dzialu. Uczestnicy otrzymuja ustrukturyzowane formularze i moga przesylac dokumenty."
+        },
+        "automation": {
+          "question": "Czy moge zautomatyzowac powtarzajace sie zadania?",
+          "answer": "Tak. Skonfiguruj powtarzajace sie zadania dla okresowych przegladow, audytow i ocen. Quantifier automatycznie tworzy nowe instancje zadan."
+        }
       }
     },
     "riskAssessment": {
@@ -1217,6 +1553,220 @@
         "subtitle": "Zobacz jak Quantifier strukturyzuje i urzeczywistnia ocenę ryzyk.",
         "bookDemo": "Umów demo",
         "explorePlans": "Zobacz plany"
+      },
+      "howItWorks": {
+        "title": "Jak dziala ocena ryzyka",
+        "subtitle": "Cztery kroki do identyfikacji, oceny, leczenia i monitorowania ryzyk w krajobrazie compliance.",
+        "steps": {
+          "identify": {
+            "title": "Identyfikuj ryzyka",
+            "description": "Kataloguj ryzyka z bibliotek zagrozen, wymagan frameworkow i kontekstu organizacyjnego."
+          },
+          "assess": {
+            "title": "Ocen i scoruj",
+            "description": "Oceniaj ryzyka za pomoca macierzy wplyw-prawdopodobienstwo metodami jakosciowymi lub ilosciowymi."
+          },
+          "treat": {
+            "title": "Lecz i mityguj",
+            "description": "Definiuj plany leczenia: mitygacja, transfer, akceptacja lub unikanie kazdego ryzyka."
+          },
+          "monitor": {
+            "title": "Monitoruj i przegladaj",
+            "description": "Cigle sledz status ryzyk, poziomy ryzyka szczatkowego i skutecznosc leczenia."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Panel ryzyk",
+        "subtitle": "Kompleksowy rejestr ryzyk z heatmapami, planami leczenia i monitoringiem ryzyk w czasie rzeczywistym."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "identification": {
+          "title": "Identyfikacja ryzyk",
+          "description": "Systematyczna identyfikacja ryzyk z bibliotekami zagrozen, mapowaniem aktywow i ocena podatnosci."
+        },
+        "quantification": {
+          "title": "Kwantyfikacja ryzyk",
+          "description": "Scoruj ryzyka za pomoca konfigurowalnych macierzy wplyw-prawdopodobienstwo metodami jakosciowymi i ilosciowymi."
+        },
+        "mitigation": {
+          "title": "Mitygacja ryzyk",
+          "description": "Definiuj i sledz plany leczenia z wlascicielami, terminami i metrykami skutecznosci."
+        },
+        "riskMatrix": {
+          "title": "Heatmapa ryzyk",
+          "description": "Wizualna heatmapa ryzyk pokazujaca rozklad ryzyk wedlug wplywy i prawdopodobienstwa."
+        },
+        "treatmentPlans": {
+          "title": "Plany leczenia",
+          "description": "Ustrukturyzowane plany leczenia z elementami dzialania, osobami odpowiedzialnymi i sledzeniem postepu."
+        },
+        "reporting": {
+          "title": "Raportowanie ryzyk",
+          "description": "Generuj raporty ryzyk dla zarzadu, rad nadzorczych i audytorow w eksportowalnych formatach."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Metodologia oceny ryzyka zgodna ze wszystkimi glownymi frameworkami compliance i bezpieczenstwa.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Ocena ryzyka bezpieczenstwa informacji"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Srodki zarzadzania ryzykiem cyberbezpieczenstwa"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Ramy zarzadzania ryzykiem ICT"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Oceny skutkow dla ochrony danych"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Ocena ryzyka dla kryteriow zaufania"
+          },
+          "iso31000": {
+            "name": "ISO 31000",
+            "desc": "Standard zarzadzania ryzykiem przedsiebiorstwa"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsRiskAssessment": {
+          "question": "Czym jest ocena ryzyka compliance?",
+          "answer": "Ocena ryzyka compliance to systematyczny proces identyfikacji, analizy, oceny i leczenia ryzyk mogacych wplynac na zgodnosc regulacyjna organizacji."
+        },
+        "methodology": {
+          "question": "Jaka metodologie oceny ryzyka stosuje Quantifier?",
+          "answer": "Quantifier obsluguje zarowno jakosciowe (macierze wplyw-prawdopodobienstwo) jak i ilosciowe metody oceny ryzyka."
+        },
+        "whichFrameworks": {
+          "question": "Ktore frameworki wymagaja oceny ryzyka?",
+          "answer": "Praktycznie wszystkie frameworki compliance wymagaja oceny ryzyka: ISO 27001 (Klauzula 6.1), NIS2 (Artykul 21), DORA (Rozdzial II), GDPR (Artykul 35 DPIA), SOC 2 i ISO 31000."
+        },
+        "riskMatrix": {
+          "question": "Jak dziala heatmapa ryzyk?",
+          "answer": "Heatmapa ryzyk wizualizuje wszystkie zidentyfikowane ryzyka na macierzy wplyw-prawdopodobienstwo. Ryzyka sa oznaczone kolorami wedlug poziomu istotnosci."
+        },
+        "automation": {
+          "question": "Czy oceny ryzyka moga byc zautomatyzowane?",
+          "answer": "Tak. Quantifier automatyzuje okresowe ponowne oceny ryzyk, obliczenia ryzyka inherentnego/szczatkowego, aktualizacje scorow ryzyka i generowanie alertow."
+        }
+      }
+    },
+    "analyticsDashboards": {
+      "howItWorks": {
+        "title": "Jak dzialaja analityka i dashboardy",
+        "subtitle": "Cztery kroki od zbierania danych do praktycznych wnioskow compliance i raportowania dla zarzadu.",
+        "steps": {
+          "collect": {
+            "title": "Zbieraj dane",
+            "description": "Automatycznie agreguj dane compliance z zadan, ryzyk, dokumentow i frameworkow."
+          },
+          "visualize": {
+            "title": "Wizualizuj",
+            "description": "Wyswietlaj KPI, wykresy i metryki postepu w konfigurowalnych ukladach dashboardow."
+          },
+          "analyze": {
+            "title": "Analiza AI",
+            "description": "Otrzymuj wnioski oparte na AI, wykrywanie trendow i identyfikacje luk w zgodnosci."
+          },
+          "report": {
+            "title": "Generuj raporty",
+            "description": "Tworzraporty gotowe dla zarzadu i paczki audytowe jednym kliknieciem."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Dashboard analityczny",
+        "subtitle": "Metryki compliance w czasie rzeczywistym, wnioski AI i raportowanie dla zarzadu - wszystko w jednym konfigurowalnym dashboardzie."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "realTime": {
+          "title": "Analityka w czasie rzeczywistym",
+          "description": "Metryki compliance na zywo aktualizowane automatycznie w miarę realizacji zadan i zmian danych."
+        },
+        "aiInsights": {
+          "title": "Wnioski oparte na AI",
+          "description": "Uczenie maszynowe identyfikuje luki w zgodnosci, trendy ryzyk i mozliwosci optymalizacji."
+        },
+        "riskAssessment": {
+          "title": "Przeglad ryzyk",
+          "description": "Wizualny krajobraz ryzyk z heatmapami, wykresami trendow i sledzeniem ryzyka szczatkowego."
+        },
+        "reporting": {
+          "title": "Raportowanie dla zarzadu",
+          "description": "Generuj raporty gotowe dla zarzadu z wykresami, KPI i analiza trendow."
+        },
+        "automation": {
+          "title": "Automatyczne alerty",
+          "description": "Otrzymuj powiadomienia o przekroczeniu terminow compliance, progow ryzyka i spadkach KPI."
+        },
+        "trends": {
+          "title": "Analiza trendow",
+          "description": "Sledz postepy compliance w czasie z danymi historycznymi i mozliwosciami prognozowania."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Widoki dashboardow i analityka dla kazdego frameworku compliance, ktorym zarzadzasz.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Dashboard realizacji kontroli bezpieczenstwa"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Metryki gotowosci cyberbezpieczenstwa"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "KPI i trendy odpornosci ICT"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Sledzenie statusu zgodnosci z prywatnoscia"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Monitorowanie postepu kryteriow zaufania"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Metryki zrownowazonego rozwoju i raportowanie"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatAreDashboards": {
+          "question": "Co pokazuja dashboardy analityki compliance?",
+          "answer": "Dashboardy Quantifier wyswietlaja metryki compliance w czasie rzeczywistym, w tym wskazniki realizacji frameworkow, postep zadan, postawe ryzyka i sledzenie terminow."
+        },
+        "customization": {
+          "question": "Czy moge dostosowac dashboardy?",
+          "answer": "Tak. Mozesz skonfigurowac ktore KPI, wykresy i widgety pojawiaja sie na dashboardzie. Tworzwidoki specyficzne dla rol."
+        },
+        "whichFrameworks": {
+          "question": "Czy sa dashboardy specyficzne dla frameworkow?",
+          "answer": "Tak. Kazdy framework (ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG) ma dedykowany dashboard z odpowiednimi kontrolami i metrykami."
+        },
+        "aiInsights": {
+          "question": "Jak dzialaja wnioski AI?",
+          "answer": "AI analizuje dane compliance aby identyfikowac wzorce, przewidywac potencjalne luki i sugerowac dzialania optymalizacyjne."
+        },
+        "exportReports": {
+          "question": "Czy moge eksportowac raporty?",
+          "answer": "Tak. Generuj raporty PDF lub Excel jednym kliknieciem. Raporty zawieraja podsumowania, karty wynikow i szczegolowe dowody dla audytorow."
+        }
       }
     }
   },
