@@ -350,21 +350,15 @@ const Nis2KscSeoHead = ({ locale }: { locale: string }) => {
     ],
   };
 
+  const faqKeys = ['faq1', 'faq2', 'faq3', 'faq4', 'faq5', 'faq6'];
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: t('nis2Ksc.seo.faq1q'),
-        acceptedAnswer: { '@type': 'Answer', text: t('nis2Ksc.seo.faq1a') },
-      },
-      {
-        '@type': 'Question',
-        name: t('nis2Ksc.seo.faq2q'),
-        acceptedAnswer: { '@type': 'Answer', text: t('nis2Ksc.seo.faq2a') },
-      },
-    ],
+    mainEntity: faqKeys.map(k => ({
+      '@type': 'Question',
+      name: t(`nis2Ksc.seo.${k}q`),
+      acceptedAnswer: { '@type': 'Answer', text: t(`nis2Ksc.seo.${k}a`) },
+    })),
   };
 
   return (
