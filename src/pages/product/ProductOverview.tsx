@@ -113,9 +113,9 @@ const ProductOverview = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600 mb-4">{feature.description}</p>
+            <div key={feature.titleKey} className="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">{t(feature.titleKey)}</h3>
+              <p className="text-slate-600 mb-4">{t(feature.descKey)}</p>
               <Link to={`/${currentLocale}${feature.href}`} className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
                 {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
