@@ -8,6 +8,7 @@ import LegalPoliciesDashboard from '@/components/dashboards/governance/LegalPoli
 import WhistleblowingDashboard from '@/components/dashboards/governance/WhistleblowingDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Governance = () => {
   const [activeTab, setActiveTab] = useState("legal-policies");
