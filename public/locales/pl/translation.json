@@ -7202,7 +7202,8 @@
         "euHosting": "Publicznie udokumentowany hosting danych w UE",
         "evidenceCollection": "Automatyczne zbieranie dowodow",
         "riskAssessment": "Ocena ryzyka wspomagana AI"
-      }
+      },
+      "relatedReading": "Powiązane artykuły"
     },
     "vantaAlternative": {
       "seo": {

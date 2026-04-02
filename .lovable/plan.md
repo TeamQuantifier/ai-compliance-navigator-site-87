@@ -8,29 +8,32 @@
   - EN: `nis2-compliance-checklist-2026`
   - PL: `lista-kontrolna-nis2-2026`
   - PL: `wdrozenie-nis2-ksc-przewodnik`
-  - EN: `iso-27001-vs-soc-2-comparison` (existed from prior batch)
-  - EN: `vanta-alternatives-europe-eu-compliance` (existed from prior batch)
+  - EN: `iso-27001-vs-soc-2-comparison`
+  - EN: `vanta-alternatives-europe-eu-compliance`
+- ✅ UPDATE `/en/frameworks/nis-2/` — Article 21 mapping table, Why Software section, expanded FAQ
+- ✅ UPDATE `/pl/frameworks/nis-2/` — UKSC-specific sections added
+- ✅ P2 blog drafts created in CMS:
+  - EN: `nis2-readiness-assessment-guide`
+  - PL: `przewodnik-ocena-gotowosci-nis2`
+  - EN: `nis2-incident-reporting-requirements`
+  - PL: `nis2-raportowanie-incydentow`
+  - EN: `audit-evidence-collection-automation`
+  - EN: `soc-2-compliance-cost-timeline`
+- ✅ Framework pages (SOC, ISO 27001) — Related Content sections added
+- ✅ P3 blog drafts created in CMS:
+  - EN: `nis2-vs-iso-27001-mapping`
+  - EN: `nis2-board-accountability`
+  - PL: `odpowiedzialnosc-zarzadu-nis2`
+  - EN: `nis2-penalties-fines-enforcement`
+  - PL: `kary-nis2-ksc-sankcje`
+  - EN: `compliance-automation-evaluation-guide`
+  - PL: `alternatywy-dla-vanta-europa`
+- ✅ Compare pages — internal links to Vanta Alternatives blog added
 
-### P1 remaining (30 days)
-1. UPDATE `/en/frameworks/nis-2/` — add product sections, Article 21 mapping
-2. UPDATE `/pl/frameworks/nis-2/` — add UKSC-specific section
-
-### P2 (60 days)
-3. NEW NIS2 Readiness Assessment Guide (EN+PL)
-4. NEW NIS2 Incident Reporting (EN+PL)
-5. UPDATE Continuous Compliance article — expand to 15+ min
-6. NEW Audit Evidence Automation (EN)
-7. UPDATE SOC 2 Complete Guide — add comparison + tools sections
-8. NEW SOC 2 Cost & Timeline (EN)
-9. UPDATE Compare pages — add internal links to new blog articles
-
-### P3 (90 days)
-10. NEW NIS2 vs ISO 27001 Mapping (EN)
-11. NEW NIS2 Board Accountability (EN+PL)
-12. NEW NIS2 Penalties & Enforcement (EN+PL)
-13. NEW Compliance Automation Evaluation Guide (EN)
-14. UPDATE Compliance Monitoring Guide — add "best tools" section
-15. NEW Alternatywy dla Vanta (PL)
+### Remaining (content updates to existing articles)
+1. UPDATE Continuous Compliance article — expand to 15+ min
+2. UPDATE SOC 2 Complete Guide — add comparison + tools sections
+3. UPDATE Compliance Monitoring Guide — add "best tools" section
 
 ### Product page expansion (completed previously)
 - ✅ All 6 product pages rebuilt with 7-section layout + mockups + FAQ JSON-LD

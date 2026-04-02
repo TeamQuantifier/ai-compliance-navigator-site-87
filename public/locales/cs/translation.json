@@ -6195,7 +6195,8 @@
         "euHosting": "Verejne dokumentovany hosting dat v EU",
         "evidenceCollection": "Automaticky sber dukazu",
         "riskAssessment": "Hodnoceni rizik s podporou AI"
-      }
+      },
+      "relatedReading": "Související články"
     },
     "vantaAlternative": {
       "seo": {

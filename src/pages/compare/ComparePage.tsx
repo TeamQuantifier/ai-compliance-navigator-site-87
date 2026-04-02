@@ -304,6 +304,25 @@ const ComparePage = () => {
         />
       )}
 
+      {/* Related Reading */}
+      {config.slug === 'vanta-alternative' && (
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-6 text-foreground">{t('compare.common.relatedReading')}</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link to={`/${currentLocale}/blog/vanta-alternatives-europe-eu-compliance`} className="block p-5 rounded-lg border border-border hover:border-primary/50 transition-colors bg-card">
+                <h3 className="font-semibold text-foreground mb-2">{currentLocale === 'pl' ? 'Alternatywy dla Vanta w Europie' : 'Top Vanta Alternatives for EU Companies'}</h3>
+                <p className="text-sm text-muted-foreground">{currentLocale === 'pl' ? 'Porównanie 5 platform compliance pod kątem NIS2, DORA i hostingu EU.' : 'Compare 5 compliance platforms on NIS2, DORA support, EU data hosting.'}</p>
+              </Link>
+              <Link to={`/${currentLocale}/blog/iso-27001-vs-soc-2-comparison`} className="block p-5 rounded-lg border border-border hover:border-primary/50 transition-colors bg-card">
+                <h3 className="font-semibold text-foreground mb-2">{currentLocale === 'pl' ? 'ISO 27001 vs SOC 2: Porównanie' : 'ISO 27001 vs SOC 2: Which Do You Need?'}</h3>
+                <p className="text-sm text-muted-foreground">{currentLocale === 'pl' ? 'Zakres, koszty, timeline i pokrycie kontroli — kompleksowe porównanie.' : 'Scope, cost, timeline, control overlap — complete comparison.'}</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center">
