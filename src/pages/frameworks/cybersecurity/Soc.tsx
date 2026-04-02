@@ -580,6 +580,40 @@ const Soc = () => {
           className="mb-20"
         />
 
+        {/* Related Content */}
+        <section className="mb-20">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">{t('socPage.relatedContent.title')}</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to={`/${currentLocale}/blog/soc-2-a-complete-guide-in-2026`} className="group">
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <FileText className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('socPage.relatedContent.guide.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('socPage.relatedContent.guide.description')}</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to={`/${currentLocale}/blog/iso-27001-vs-soc-2-comparison`} className="group">
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <Scale className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('socPage.relatedContent.comparison.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('socPage.relatedContent.comparison.description')}</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to={`/${currentLocale}/blog/soc-2-compliance-cost-timeline`} className="group">
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <TrendingUp className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('socPage.relatedContent.cost.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('socPage.relatedContent.cost.description')}</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <FAQSection 
           title={t('socPage.faq.title')}
