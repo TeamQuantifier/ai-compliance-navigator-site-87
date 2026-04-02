@@ -107,7 +107,7 @@ const ProductOverview = () => {
             {t('product.overview.featuresTitle')}
           </h2>
           <p className="text-lg text-slate-700">
-            {t('product.overview.featuresSubtitle')}
+            {t('product.overview.featuresDescription')}
           </p>
         </div>
 
