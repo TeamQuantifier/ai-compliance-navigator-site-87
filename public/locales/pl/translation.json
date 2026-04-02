@@ -2118,6 +2118,17 @@
           "question": "Czy moge eksportowac raporty?",
           "answer": "Tak. Generuj raporty PDF lub Excel jednym kliknieciem. Raporty zawieraja podsumowania, karty wynikow i szczegolowe dowody dla audytorow."
         }
+      },
+      "hero": {
+        "title": "Analityka AI i Dashboardy",
+        "subtitle": "Podejmuj decyzje oparte na danych dzięki inteligentnej analityce i wizualizacjom w czasie rzeczywistym.",
+        "bookDemo": "Umów demo"
+      },
+      "cta": {
+        "title": "Gotowy na inteligentną analitykę compliance?",
+        "subtitle": "Zacznij podejmować decyzje oparte na danych dzięki dashboardom AI Quantifier.",
+        "bookDemo": "Umów demo",
+        "explorePlans": "Zobacz plany"
       }
     },
     "overview": {
