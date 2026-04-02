@@ -5,7 +5,7 @@ import { ArrowRight, ShieldAlert, Target, TrendingDown, BarChart3, AlertTriangle
 import RiskHeatmapMockup from '@/components/mockups/RiskHeatmapMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const RiskAssessment = () => {
   const { t, currentLocale } = useLanguage();
