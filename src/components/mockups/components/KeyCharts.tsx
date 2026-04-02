@@ -30,7 +30,7 @@ const KeyCharts = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
       {/* Compliance Trend Chart */}
       <div className="bg-white rounded-lg border border-slate-200 p-3">
         <div className="flex items-center gap-2 mb-2">

@@ -36,11 +36,11 @@ const AiComplianceDashboard = ({
         </div>
       </div>
 
-      <div className="p-4 space-y-4">
+      <div className="p-3 sm:p-4 space-y-3 sm:space-y-4">
         <QuickStatsBar />
         {variant === 'default' ? (
           <>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
               <KeyCharts />
               <ComplianceStatus />
             </div>
