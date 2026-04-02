@@ -5,7 +5,7 @@ import { ArrowRight, FileText, Upload, CheckSquare, Bell, ClipboardList, Message
 import ContributorDashboardMockup from '@/components/mockups/ContributorDashboardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Contributors = () => {
   const { t, currentLocale } = useLanguage();
