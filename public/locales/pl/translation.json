@@ -2122,23 +2122,23 @@
     },
     "overview": {
       "whyQuantifier": {
-        "title": "Dlaczego zespoly wybieraja Quantifier",
+        "title": "Dlaczego zespoły wybierają Quantifier",
         "items": {
           "aiNative": {
             "title": "Platforma AI-Native",
-            "desc": "Zbudowana od podstaw z AI — nie dolozona pozniej. AI Compliance Officer dziala autonomicznie."
+            "desc": "Zbudowana od podstaw z AI — nie dołożona później. AI Compliance Officer działa autonomicznie."
           },
           "multiFramework": {
-            "title": "Wiele Frameworkow",
-            "desc": "Zarzadzaj SOC 2, ISO 27001, GDPR, NIS2, DORA, ESG i innymi z jednego miejsca."
+            "title": "Wiele Frameworków",
+            "desc": "Zarządzaj SOC 2, ISO 27001, GDPR, NIS2, DORA, ESG i innymi z jednego miejsca."
           },
           "fastDeployment": {
-            "title": "Szybkie Wdrozenie",
-            "desc": "Od rejestracji do gotowosci audytowej w tygodniach, nie miesiacach."
+            "title": "Szybkie Wdrożenie",
+            "desc": "Od rejestracji do gotowości audytowej w tygodniach, nie miesiącach."
           },
           "rolesBuiltIn": {
-            "title": "Dostep Oparty na Rolach",
-            "desc": "Dedykowane widoki dla managerow, kontrybutow i audytorow."
+            "title": "Dostęp Oparty na Rolach",
+            "desc": "Dedykowane widoki dla managerów, kontrybutorów i audytorów."
           }
         }
       },
@@ -2146,7 +2146,7 @@
       "stats": {
         "frameworks": {
           "value": "15+",
-          "label": "Obslugiwanych frameworkow"
+          "label": "Obsługiwanych frameworków"
         },
         "controls": {
           "value": "2 500+",
@@ -2154,11 +2154,11 @@
         },
         "timeSaved": {
           "value": "70%",
-          "label": "Oszczednosci czasu vs reczne"
+          "label": "Oszczędności czasu vs ręczne"
         },
         "auditReady": {
           "value": "4 tygodnie",
-          "label": "Sredni czas do gotowosci audytowej"
+          "label": "Średni czas do gotowości audytowej"
         }
       }
     }
@@ -3100,27 +3100,27 @@
       "watchDemo": "Obejrzyj wideo demo"
     },
     "faq": {
-      "title": "FAQ — Zgodnosc ESG i Zrownowazonego Rozwoju",
+      "title": "FAQ — Zgodność ESG i Zrównoważonego Rozwoju",
       "items": [
         {
-          "question": "Jakie frameworki ESG obsluguje Quantifier?",
-          "answer": "Quantifier obejmuje CSRD/ESRS, standardy GRI i raportowanie CBAM. Platforma mapuje wymagania ujawnien, sledzi postep zbierania danych i generuje raporty gotowe do audytu."
+          "question": "Jakie frameworki ESG obsługuje Quantifier?",
+          "answer": "Quantifier obejmuje CSRD/ESRS, standardy GRI i raportowanie CBAM. Platforma mapuje wymagania ujawnień, śledzi postęp zbierania danych i generuje raporty gotowe do audytu."
         },
         {
-          "question": "Jak dziala integracja z Envirly?",
-          "answer": "Envirly — czesc ekosystemu Quantifier — specjalizuje sie w zgodnosci srodowiskowej: rachunkowosc GHG (Zakres 1-3), analiza LCA, obliczenia sladu weglowego i raportowanie CSRD."
+          "question": "Jak działa integracja z Envirly?",
+          "answer": "Envirly — część ekosystemu Quantifier — specjalizuje się w zgodności środowiskowej: rachunkowość GHG (Zakres 1-3), analiza LCA, obliczenia śladu węglowego i raportowanie CSRD."
         },
         {
-          "question": "Czy Quantifier obsluguje ocene podwojnej istotnosci?",
-          "answer": "Tak. Platforma prowadzi przez proces oceny podwojnej istotnosci wymagany przez CSRD, pomagajac zidentyfikowac istotne tematy z perspektywy wplywu i finansowej."
+          "question": "Czy Quantifier obsługuje ocenę podwójnej istotności?",
+          "answer": "Tak. Platforma prowadzi przez proces oceny podwójnej istotności wymagany przez CSRD, pomagając zidentyfikować istotne tematy z perspektywy wpływu i finansowej."
         },
         {
           "question": "Czy raportowanie CBAM jest zautomatyzowane?",
-          "answer": "Quantifier automatyzuje zbieranie danych CBAM od importerow, oblicza emisje wbudowane na kategorie produktow i generuje kwartalne raporty CBAM w wymaganym formacie."
+          "answer": "Quantifier automatyzuje zbieranie danych CBAM od importerów, oblicza emisje wbudowane na kategorie produktów i generuje kwartalne raporty CBAM w wymaganym formacie."
         },
         {
-          "question": "Jak zapewniacie jakosc danych ESG?",
-          "answer": "Platforma zawiera wbudowane reguly walidacji, sciezki audytu dla kazdego punktu danych i wykrywanie anomalii oparte na AI. Wszystkie obliczenia sa zgodne z uznanymi metodologiami."
+          "question": "Jak zapewniacie jakość danych ESG?",
+          "answer": "Platforma zawiera wbudowane reguły walidacji, ścieżki audytu dla każdego punktu danych i wykrywanie anomalii oparte na AI. Wszystkie obliczenia są zgodne z uznanymi metodologiami."
         }
       ]
     }
@@ -3253,27 +3253,27 @@
       "watchTour": "Obejrzyj krótką wycieczkę"
     },
     "faq": {
-      "title": "FAQ — Zgodnosc Srodowiskowa",
+      "title": "FAQ — Zgodność Środowiskowa",
       "items": [
         {
-          "question": "Jakie standardy srodowiskowe obsluguje Quantifier?",
-          "answer": "Quantifier obejmuje ISO 14001, analize cyklu zycia (LCA), obliczenia sladu weglowego (Zakres 1-3) i planowanie sciezki dekarbonizacji — wszystko w jednej platformie."
+          "question": "Jakie standardy środowiskowe obsługuje Quantifier?",
+          "answer": "Quantifier obejmuje ISO 14001, analizę cyklu życia (LCA), obliczenia śladu węglowego (Zakres 1-3) i planowanie ścieżki dekarbonizacji — wszystko w jednej platformie."
         },
         {
-          "question": "Czy moge obliczyc slad weglowy organizacji?",
-          "answer": "Tak. Modul sladu weglowego stosuje metodologie GHG Protocol, obejmujac Zakres 1 (emisje bezposrednie), Zakres 2 (energia) i Zakres 3 (lancuch wartosci)."
+          "question": "Czy mogę obliczyć ślad węglowy organizacji?",
+          "answer": "Tak. Moduł śladu węglowego stosuje metodologię GHG Protocol, obejmując Zakres 1 (emisje bezpośrednie), Zakres 2 (energia) i Zakres 3 (łańcuch wartości)."
         },
         {
-          "question": "Jak dziala zgodnosc z ISO 14001 w Quantifier?",
-          "answer": "Platforma mapuje wszystkie klauzule ISO 14001 na zadania, sledzi aspekty i wplywy srodowiskowe, zarzadza dokumentacja i przygotowuje do certyfikacji."
+          "question": "Jak działa zgodność z ISO 14001 w Quantifier?",
+          "answer": "Platforma mapuje wszystkie klauzule ISO 14001 na zadania, śledzi aspekty i wpływy środowiskowe, zarządza dokumentacją i przygotowuje do certyfikacji."
         },
         {
-          "question": "Czym jest analiza cyklu zycia (LCA)?",
-          "answer": "LCA ocenia wplyw srodowiskowy produktu w calym cyklu zycia. Jest coraz czesciej wymagana przez regulacje (CSRD, Taksonomia UE) i wartosciowa dla decyzji projektowych."
+          "question": "Czym jest analiza cyklu życia (LCA)?",
+          "answer": "LCA ocenia wpływ środowiskowy produktu w całym cyklu życia. Jest coraz częściej wymagana przez regulacje (CSRD, Taksonomia UE) i wartościowa dla decyzji projektowych."
         },
         {
-          "question": "Czy moge ustawic i sledzic cele dekarbonizacji?",
-          "answer": "Tak. Modul dekarbonizacji pomaga ustawic cele oparte na nauce (SBTi), tworzyc mapy drogowe redukcji, sledzic postep i raportowac o zobowiazaniach klimatycznych."
+          "question": "Czy mogę ustawić i śledzić cele dekarbonizacji?",
+          "answer": "Tak. Moduł dekarbonizacji pomaga ustawić cele oparte na nauce (SBTi), tworzyć mapy drogowe redukcji, śledzić postęp i raportować o zobowiązaniach klimatycznych."
         }
       ]
     }
@@ -3368,27 +3368,27 @@
       "watchTour": "Obejrzyj krótką wycieczkę"
     },
     "faq": {
-      "title": "FAQ — Governance i Zgodnosc",
+      "title": "FAQ — Governance i Zgodność",
       "items": [
         {
           "question": "Jakie obszary governance obejmuje Quantifier?",
-          "answer": "Quantifier adresuje dwa kluczowe obszary: Zarzadzanie Politykami Prawnymi (cykl zycia polityk, kontrola wersji) oraz Whistleblowing (zgodny z Dyrektywa UE 2019/1937 kanal zglaszania nieprawidlowosci)."
+          "answer": "Quantifier adresuje dwa kluczowe obszary: Zarządzanie Politykami Prawnymi (cykl życia polityk, kontrola wersji) oraz Whistleblowing (zgodny z Dyrektywą UE 2019/1937 kanał zgłaszania nieprawidłowości)."
         },
         {
-          "question": "Czy kanal whistleblowingowy jest zgodny z regulacjami UE?",
-          "answer": "Tak. Modul whistleblowingu spelnia wymagania Dyrektywy UE 2019/1937, wlaczajac anonimowe zglaszanie, zarzadzanie terminami spraw i obowiazkowe petla zwrotne."
+          "question": "Czy kanał whistleblowingowy jest zgodny z regulacjami UE?",
+          "answer": "Tak. Moduł whistleblowingu spełnia wymagania Dyrektywy UE 2019/1937, włączając anonimowe zgłaszanie, zarządzanie terminami spraw i obowiązkowe pętle zwrotne."
         },
         {
-          "question": "Jak dziala zarzadzanie politykami?",
-          "answer": "Quantifier automatyzuje pelny cykl zycia polityk: tworzenie (wspomagane AI), workflow przegladu i zatwierdzania, kontrole wersji, dystrybucje z potwierdzeniem przeczytania."
+          "question": "Jak działa zarządzanie politykami?",
+          "answer": "Quantifier automatyzuje pełny cykl życia polityk: tworzenie (wspomagane AI), workflow przeglądu i zatwierdzania, kontrolę wersji, dystrybucję z potwierdzeniem przeczytania."
         },
         {
-          "question": "Czy pracownicy moga zglaszac anonimowo?",
-          "answer": "Tak. Kanal whistleblowingowy wspiera w pelni anonimowe zgloszenia. Zglaszajacy moga komunikowac sie ze sledczymi przez bezpieczny, zanonimizowany watek wiadomosci."
+          "question": "Czy pracownicy mogą zgłaszać anonimowo?",
+          "answer": "Tak. Kanał whistleblowingowy wspiera w pełni anonimowe zgłoszenia. Zgłaszający mogą komunikować się ze śledczymi przez bezpieczny, zanonimizowany wątek wiadomości."
         },
         {
-          "question": "Jak integruje sie to z innymi frameworkami?",
-          "answer": "Polityki governance i procedury whistleblowingu sa krzyzowo powiazane z wymaganiami frameworkow (NIS2, DORA, ISO 27001). Aktualizacja polityki automatycznie odswieZa dowody zgodnosci."
+          "question": "Jak integruje się to z innymi frameworkami?",
+          "answer": "Polityki governance i procedury whistleblowingu są krzyżowo powiązane z wymaganiami frameworków (NIS2, DORA, ISO 27001). Aktualizacja polityki automatycznie odświeża dowody zgodności."
         }
       ]
     }
@@ -3488,27 +3488,27 @@
       "talkExpert": "Porozmawiaj z naszym ekspertem ds. compliance produktowego"
     },
     "faq": {
-      "title": "FAQ — Zgodnosc na Poziomie Produktu",
+      "title": "FAQ — Zgodność na Poziomie Produktu",
       "items": [
         {
           "question": "Czym jest Cyfrowy Paszport Produktu (DPP)?",
-          "answer": "DPP to cyfrowy zapis zawierajacy informacje o materialach produktu, produkcji, certyfikatach i postepowaniu na koncu zycia. Rozporzadzenie UE wymaga DPP dla okreslonych kategorii produktow od 2027."
+          "answer": "DPP to cyfrowy zapis zawierający informacje o materiałach produktu, produkcji, certyfikatach i postępowaniu na końcu życia. Rozporządzenie UE wymaga DPP dla określonych kategorii produktów od 2027."
         },
         {
-          "question": "Jak Quantifier pomaga w zgodnosci DPP?",
-          "answer": "Quantifier automatyzuje zbieranie danych w calym lancuchu dostaw, generuje standardowe DPP, zarzadza kodami QR i zapewnia zgodnosc danych z wymaganiami UE."
+          "question": "Jak Quantifier pomaga w zgodności DPP?",
+          "answer": "Quantifier automatyzuje zbieranie danych w całym łańcuchu dostaw, generuje standardowe DPP, zarządza kodami QR i zapewnia zgodność danych z wymaganiami UE."
         },
         {
-          "question": "Jaka jest roznica miedzy DPP a LCA?",
-          "answer": "DPP to wymagany regulacyjnie zapis danych produktu. LCA to metodologia analityczna mierzaca wplyw srodowiskowy. Quantifier obsluguje oba — dane LCA moga zasilac DPP."
+          "question": "Jaka jest różnica między DPP a LCA?",
+          "answer": "DPP to wymagany regulacyjnie zapis danych produktu. LCA to metodologia analityczna mierząca wpływ środowiskowy. Quantifier obsługuje oba — dane LCA mogą zasilać DPP."
         },
         {
-          "question": "Ktore branZe potrzebuja Cyfrowych Paszportow Produktu?",
-          "answer": "Poczawszy od baterii (2027), wymog DPP rozszerzy sie na tekstylia, materialy budowlane, elektronike i inne sektory w ramach Rozporzadzenia ESPR."
+          "question": "Które branże potrzebują Cyfrowych Paszportów Produktu?",
+          "answer": "Począwszy od baterii (2027), wymóg DPP rozszerzy się na tekstylia, materiały budowlane, elektronikę i inne sektory w ramach Rozporządzenia ESPR."
         },
         {
-          "question": "Czy moge zarzadzac zgodnoscia produktow w wielu regionach?",
-          "answer": "Tak. Quantifier wspiera wieloregionowe wymagania, sledzac ktore produkty potrzebuja DPP na jakich rynkach i dostosowujac dokumentacje do lokalnych wymagan."
+          "question": "Czy mogę zarządzać zgodnością produktów w wielu regionach?",
+          "answer": "Tak. Quantifier wspiera wieloregionowe wymagania, śledząc które produkty potrzebują DPP na jakich rynkach i dostosowując dokumentację do lokalnych wymagań."
         }
       ]
     }
@@ -4680,27 +4680,27 @@
       "explorePlans": "Zobacz plany"
     },
     "faq": {
-      "title": "FAQ — Zgodnosc z ISO 9001",
+      "title": "FAQ — Zgodność z ISO 9001",
       "items": [
         {
           "question": "Czym jest ISO 9001 i kto tego potrzebuje?",
-          "answer": "ISO 9001 to miedzynarodowy standard zarzadzania jakoscia (QMS). Kazda organizacja — niezaleznie od wielkosci czy branzy — ktora chce wykazac stala jakosc produktow i uslug, moze skorzystac z certyfikacji ISO 9001."
+          "answer": "ISO 9001 to międzynarodowy standard zarządzania jakością (QMS). Każda organizacja — niezależnie od wielkości czy branży — która chce wykazać stałą jakość produktów i usług, może skorzystać z certyfikacji ISO 9001."
         },
         {
-          "question": "Jak Quantifier pomaga w zgodnosci z ISO 9001?",
-          "answer": "Quantifier automatyzuje mapowanie klauzul, przydzielanie zadan, kontrole dokumentow i przygotowanie do audytu ISO 9001. AI Compliance Officer na biezaco monitoruje status QMS i sygnalizuje luki."
+          "question": "Jak Quantifier pomaga w zgodności z ISO 9001?",
+          "answer": "Quantifier automatyzuje mapowanie klauzul, przydzielanie zadań, kontrolę dokumentów i przygotowanie do audytu ISO 9001. AI Compliance Officer na bieżąco monitoruje status QMS i sygnalizuje luki."
         },
         {
           "question": "Ile czasu zajmuje certyfikacja ISO 9001 z Quantifier?",
-          "answer": "Czas zalezy od wielkosci i dojrzalosci organizacji, ale Quantifier typowo skraca czas przygotowania o 60-70% w porownaniu z podejsciem recznym. Wiekszosc organizacji jest gotowa do audytu w ciagu 3-6 miesiecy."
+          "answer": "Czas zależy od wielkości i dojrzałości organizacji, ale Quantifier typowo skraca czas przygotowania o 60-70% w porównaniu z podejściem ręcznym. Większość organizacji jest gotowa do audytu w ciągu 3-6 miesięcy."
         },
         {
-          "question": "Czy moge zarzadzac ISO 9001 wraz z innymi frameworkami?",
-          "answer": "Tak. Quantifier wspiera zgodnosc z wieloma frameworkami jednoczesnie. Kontrole wspolne miedzy ISO 9001 a innymi standardami (np. ISO 27001, ISO 14001) sa automatycznie mapowane."
+          "question": "Czy mogę zarządzać ISO 9001 wraz z innymi frameworkami?",
+          "answer": "Tak. Quantifier wspiera zgodność z wieloma frameworkami jednocześnie. Kontrole wspólne między ISO 9001 a innymi standardami (np. ISO 27001, ISO 14001) są automatycznie mapowane."
         },
         {
-          "question": "Co dzieje sie po certyfikacji?",
-          "answer": "Quantifier wspiera pelny cykl zycia — w tym audyty nadzorcze, sledzenie ciaglego doskonalenia (cykl PDCA) i recertyfikacje. Platforma utrzymuje dowody QMS aktualne miedzy audytami."
+          "question": "Co dzieje się po certyfikacji?",
+          "answer": "Quantifier wspiera pełny cykl życia — w tym audyty nadzorcze, śledzenie ciągłego doskonalenia (cykl PDCA) i recertyfikację. Platforma utrzymuje dowody QMS aktualne między audytami."
         }
       ]
     }
