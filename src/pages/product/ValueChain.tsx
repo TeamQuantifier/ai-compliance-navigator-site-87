@@ -1,12 +1,33 @@
 import PageTemplate from '@/components/PageTemplate';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Link2, Layers, BarChart3, CheckCircle, Globe, ClipboardCheck, TrendingUp } from 'lucide-react';
+import { ArrowRight, Link2, Layers, BarChart3, CheckCircle, Globe, ClipboardCheck, TrendingUp, Users, FileSearch } from 'lucide-react';
+import SupplierScoringMockup from '@/components/mockups/SupplierScoringMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const ValueChain = () => {
   const { t, currentLocale } = useLanguage();
+
+  const steps = [
+    { icon: Users, key: 'identify' },
+    { icon: FileSearch, key: 'assess' },
+    { icon: BarChart3, key: 'score' },
+    { icon: TrendingUp, key: 'monitor' },
+  ];
+
+  const capabilities = [
+    { icon: Link2, key: 'supplierMapping' },
+    { icon: Layers, key: 'dueDiligence' },
+    { icon: BarChart3, key: 'riskScoring' },
+    { icon: Globe, key: 'esgSupplyChain' },
+    { icon: ClipboardCheck, key: 'complianceTracking' },
+    { icon: TrendingUp, key: 'continuousMonitoring' },
+  ];
+
+  const frameworks = ['iso27001', 'nis2', 'dora', 'csrd', 'gdpr', 'esg'];
+  const faqKeys = ['whatIsValueChain', 'howScoring', 'whichFrameworks', 'supplierOnboarding', 'continuousMonitoring'];
 
   return (
     <PageTemplate
@@ -14,143 +35,133 @@ const ValueChain = () => {
       description={t('seo.product.valueChain.description')}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {t('product.valueChain.hero.title')}
-              </h2>
-              <p className="text-xl opacity-90 mb-6">
-                {t('product.valueChain.hero.subtitle')}
-              </p>
-              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
-                <Link to={`/${currentLocale}/contact`}>
-                  {t('product.valueChain.hero.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-            <div className="md:w-1/2">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
-                <div className="space-y-3">
-                  {[
-                    { step: '01', label: 'Supplier Assessment' },
-                    { step: '02', label: 'Risk Scoring' },
-                    { step: '03', label: 'Continuous Monitoring' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-white/10 rounded-lg p-3">
-                      <span className="text-xs font-bold bg-white/20 rounded-full h-8 w-8 flex items-center justify-center">{item.step}</span>
-                      <span className="text-sm font-medium">{item.label}</span>
-                      <CheckCircle className="h-4 w-4 ml-auto text-green-300" />
-                    </div>
-                  ))}
-                </div>
+        {/* 1. Hero */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="lg:w-1/2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  {t('product.valueChain.hero.title')}
+                </h2>
+                <p className="text-lg opacity-90 mb-6">
+                  {t('product.valueChain.hero.subtitle')}
+                </p>
+                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('product.valueChain.hero.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
+                <SupplierScoringMockup />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Key Features */}
+        {/* 2. How It Works */}
         <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-foreground">
-            {t('product.valueChain.keyFeatures.title')}
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
+            {t('product.valueChain.howItWorks.title')}
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <div className="flex items-start mb-4">
-                  <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <Link2 className="h-6 w-6 text-[#9b87f5]" />
+          <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+            {t('product.valueChain.howItWorks.subtitle')}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((step, i) => (
+              <div key={step.key} className="text-center">
+                <div className="relative mx-auto mb-4">
+                  <div className="h-14 w-14 rounded-full bg-[#9b87f5]/10 flex items-center justify-center mx-auto">
+                    <step.icon className="h-7 w-7 text-[#7E69AB]" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t('product.valueChain.keyFeatures.supplierMapping.title')}</h3>
-                    <p className="text-muted-foreground">{t('product.valueChain.keyFeatures.supplierMapping.description')}</p>
-                  </div>
+                  <span className="absolute -top-1 -right-1 h-6 w-6 rounded-full bg-[#9b87f5] text-white text-xs font-bold flex items-center justify-center">
+                    {i + 1}
+                  </span>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <div className="flex items-start mb-4">
-                  <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <Layers className="h-6 w-6 text-[#9b87f5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t('product.valueChain.keyFeatures.dueDiligence.title')}</h3>
-                    <p className="text-muted-foreground">{t('product.valueChain.keyFeatures.dueDiligence.description')}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <div className="flex items-start mb-4">
-                  <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <BarChart3 className="h-6 w-6 text-[#9b87f5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t('product.valueChain.keyFeatures.riskScoring.title')}</h3>
-                    <p className="text-muted-foreground">{t('product.valueChain.keyFeatures.riskScoring.description')}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                <h3 className="font-semibold mb-2">{t(`product.valueChain.howItWorks.steps.${step.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`product.valueChain.howItWorks.steps.${step.key}.description`)}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Detailed Features */}
+        {/* 3. Platform Mockup */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-slate-50 p-6 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
-                  <Globe className="h-5 w-5 text-[#9b87f5]" />
-                </div>
-                <h3 className="text-xl font-bold">{t('product.valueChain.detailedFeatures.esgSupplyChain.title')}</h3>
-              </div>
-              <p className="text-muted-foreground mb-5">
-                {t('product.valueChain.detailedFeatures.esgSupplyChain.description')}
-              </p>
-              <ul className="space-y-3">
-                {[1, 2, 3].map((i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-muted-foreground">{t(`product.valueChain.detailedFeatures.esgSupplyChain.feature${i}`)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
-                  <ClipboardCheck className="h-5 w-5 text-[#9b87f5]" />
-                </div>
-                <h3 className="text-xl font-bold">{t('product.valueChain.detailedFeatures.complianceTracking.title')}</h3>
-              </div>
-              <p className="text-muted-foreground mb-5">
-                {t('product.valueChain.detailedFeatures.complianceTracking.description')}
-              </p>
-              <ul className="space-y-3">
-                {[1, 2, 3].map((i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-muted-foreground">{t(`product.valueChain.detailedFeatures.complianceTracking.feature${i}`)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
+            {t('product.valueChain.dashboard.title')}
+          </h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+            {t('product.valueChain.dashboard.subtitle')}
+          </p>
+          <div className="max-w-4xl mx-auto">
+            <SupplierScoringMockup />
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* 4. Key Capabilities */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+            {t('product.valueChain.capabilities.title')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((cap) => (
+              <Card key={cap.key} className="border-[#9b87f5]/20 hover:shadow-md transition-all">
+                <CardContent className="pt-6">
+                  <div className="h-12 w-12 rounded-full bg-[#9b87f5]/10 flex items-center justify-center mb-4">
+                    <cap.icon className="h-6 w-6 text-[#7E69AB]" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{t(`product.valueChain.capabilities.${cap.key}.title`)}</h3>
+                  <p className="text-muted-foreground text-sm">{t(`product.valueChain.capabilities.${cap.key}.description`)}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. Framework Coverage */}
+        <section className="mb-16 bg-slate-50 rounded-xl p-8">
+          <h2 className="text-2xl font-bold mb-3 text-center">
+            {t('product.valueChain.frameworks.title')}
+          </h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+            {t('product.valueChain.frameworks.subtitle')}
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {frameworks.map((fw) => (
+              <div key={fw} className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-[#9b87f5]/40 transition-colors">
+                <h3 className="font-semibold text-sm mb-1">{t(`product.valueChain.frameworks.items.${fw}.name`)}</h3>
+                <p className="text-xs text-muted-foreground">{t(`product.valueChain.frameworks.items.${fw}.desc`)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 6. FAQ */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            {t('product.valueChain.faq.title')}
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqKeys.map((key) => (
+                <AccordionItem key={key} value={key}>
+                  <AccordionTrigger className="text-left">
+                    {t(`product.valueChain.faq.${key}.question`)}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    {t(`product.valueChain.faq.${key}.answer`)}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* 7. CTA */}
         <section className="mb-8">
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-4">
                 {t('product.valueChain.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
