@@ -28,15 +28,15 @@ const SUPPORTED_LANGS: QuizLang[] = ['pl', 'en', 'cs'];
 
 // ─── SEO constants ─────────────────────────────────────────────
 const SEO_META_TITLE: Record<QuizLang, string> = {
-  pl: 'Sprawdź cyberbezpieczeństwo firmy — NIS2 i ISO 27001 | Quantifier',
-  en: 'Cybersecurity Check — Does Your Company Need to Act? | Quantifier',
-  cs: 'Zkontrolujte kybernetickou bezpečnost firmy — NIS2 a ISO 27001 | Quantifier',
+  pl: 'NIS2 Readiness Check — Ocena Gotowości Firmy | Quantifier',
+  en: 'NIS2 Readiness Assessment — Free Self-Assessment Tool | Quantifier',
+  cs: 'NIS2 Readiness Check — Kontrola Připravenosti Firmy | Quantifier',
 };
 
 const SEO_META_DESC: Record<QuizLang, string> = {
-  pl: 'Odpowiedz na 4 pytania i dowiedz się, czy NIS2 lub ISO 27001 dotyczy Twojej organizacji. Bezpłatny test cyberbezpieczeństwa od Quantifier.',
-  en: 'Answer 4 questions and find out if the NIS2 Directive or ISO 27001 applies to your company. Free cybersecurity compliance check by Quantifier.',
-  cs: 'Odpovězte na 4 otázky a zjistěte, zda se směrnice NIS2 nebo ISO 27001 vztahuje na vaši organizaci. Bezplatná kontrola od Quantifier.',
+  pl: 'Bezpłatna ocena gotowości na NIS2 w 5 minut. Sprawdź, czy Twoja organizacja podlega dyrektywie NIS2 i jakie kroki podjąć. Quantifier.',
+  en: 'Free NIS2 readiness assessment in under 5 minutes. Check if your organisation falls under NIS2, identify compliance gaps, and get actionable next steps.',
+  cs: 'Bezplatné posouzení připravenosti na NIS2 za 5 minut. Zjistěte, zda vaše organizace spadá pod směrnici NIS2, a získejte další kroky.',
 };
 
 const SEO_OG_TITLE: Record<QuizLang, string> = {

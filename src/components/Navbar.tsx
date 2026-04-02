@@ -33,7 +33,7 @@ export const Navbar = () => {
         { title: t('menu.product.items.valueChain'), href: '/product/value-chain' },
         { title: t('menu.product.items.riskAssessment'), href: '/product/risk-assessment' },
         { title: t('menu.product.items.analytics'), href: '/product/analytics-dashboards' },
-        { title: t('menu.product.items.apiIntegrations'), href: '/product/api-integrations' },
+        
       ],
     },
     {

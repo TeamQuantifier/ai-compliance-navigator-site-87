@@ -12,32 +12,31 @@ const ensureTrailingSlash = (url: string): string => {
 };
 
 const staticPages = [
-  { path: '', changefreq: 'weekly', priority: '1.0', lastmod: '2026-02-17' },
+  { path: '', changefreq: 'weekly', priority: '1.0', lastmod: '2026-04-02' },
   { path: '/about', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
   { path: '/contact', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
   { path: '/partners', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-12' },
   { path: '/plans', changefreq: 'weekly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/success-stories', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-17' },
-  { path: '/blog', changefreq: 'daily', priority: '0.9', lastmod: '2026-02-17' },
+  { path: '/blog', changefreq: 'daily', priority: '0.9', lastmod: '2026-04-02' },
   { path: '/grc-platform', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
-  { path: '/product', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-15' },
-  { path: '/product/overview', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
-  { path: '/product/features', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
-  { path: '/product/analytics-dashboards', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/documents-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/api-integrations', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/ai-compliance-officer', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/task-data-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/value-chain', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/product/risk-assessment', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/by-roles', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-26' },
-  { path: '/by-roles/managers', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
-  { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
-  { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-20' },
+  { path: '/product', changefreq: 'monthly', priority: '0.9', lastmod: '2026-04-02' },
+  { path: '/product/overview', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-02' },
+  // /product/features removed — redirects to /product
+  { path: '/product/analytics-dashboards', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/product/documents-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/product/ai-compliance-officer', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-02' },
+  { path: '/product/task-data-management', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/product/value-chain', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/product/risk-assessment', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/by-roles', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-02' },
+  { path: '/by-roles/managers', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/by-roles/contributors', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
+  { path: '/by-roles/auditor', changefreq: 'monthly', priority: '0.7', lastmod: '2026-04-02' },
   { path: '/frameworks', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-22' },
-  { path: '/frameworks/nis-2', changefreq: 'weekly', priority: '0.9', lastmod: '2026-03-30' },
-  { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
-  { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-20' },
+  { path: '/frameworks/nis-2', changefreq: 'weekly', priority: '0.9', lastmod: '2026-04-02' },
+  { path: '/frameworks/iso-27001', changefreq: 'monthly', priority: '0.9', lastmod: '2026-04-02' },
+  { path: '/frameworks/soc', changefreq: 'monthly', priority: '0.9', lastmod: '2026-04-02' },
   { path: '/frameworks/gdpr', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
   { path: '/frameworks/dora', changefreq: 'monthly', priority: '0.9', lastmod: '2026-01-18' },
   { path: '/frameworks/iso-9001', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
@@ -50,10 +49,52 @@ const staticPages = [
   { path: '/legal/privacy', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
-  { path: '/cybersecurity-check', changefreq: 'monthly', priority: '0.8', lastmod: '2026-02-19' },
   { path: '/events', changefreq: 'weekly', priority: '0.8', lastmod: '2026-02-24' },
-  { path: '/events/nis2-w-polsce', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-24' },
+  // Compare pages
+  { path: '/compare/vanta-alternative', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-01' },
+  { path: '/compare/drata-alternative', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-01' },
+  { path: '/compare/sprinto-alternative', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-01' },
   // nis2-ksc merged into /frameworks/nis-2
+  // cybersecurity-check and events with locale-specific slugs handled separately below
+];
+
+// Pages with locale-specific paths (different URL per language)
+const localeSpecificPages: Array<{
+  paths: Record<string, string>;
+  changefreq: string;
+  priority: string;
+  lastmod: string;
+}> = [
+  {
+    paths: {
+      en: '/cybersecurity-check',
+      pl: '/sprawdz-cyberbezpieczenstwo',
+      cs: '/zkontrolujte-kybernetickou-bezpecnost',
+    },
+    changefreq: 'monthly',
+    priority: '0.8',
+    lastmod: '2026-02-19',
+  },
+  {
+    paths: {
+      en: '/events/nis2-in-poland',
+      pl: '/events/nis2-w-polsce',
+      cs: '/events/nis2-w-polsce',
+    },
+    changefreq: 'weekly',
+    priority: '0.9',
+    lastmod: '2026-02-24',
+  },
+  {
+    paths: {
+      en: '/events/nis2-risk-map',
+      pl: '/events/nis2-mapa-ryzyka',
+      cs: '/events/nis2-mapa-ryzyka',
+    },
+    changefreq: 'weekly',
+    priority: '0.9',
+    lastmod: '2026-03-17',
+  },
 ];
 
 const locales = ['en', 'pl', 'cs'];
@@ -174,7 +215,35 @@ serve(async (req) => {
       }
     }
 
-    // Blog Posts - only hreflang to existing alternate versions
+    // Locale-specific pages (different URL path per language)
+    for (const page of localeSpecificPages) {
+      for (const locale of locales) {
+        const localePath = page.paths[locale] || page.paths['en'];
+        const fullPath = ensureTrailingSlash(`${BASE_URL}/${locale}${localePath}`);
+        const lastmod = page.lastmod || today;
+        
+        // Generate hreflang links pointing to correct locale-specific paths
+        const hreflangLinks = locales
+          .map(l => {
+            const lPath = page.paths[l] || page.paths['en'];
+            const href = ensureTrailingSlash(`${BASE_URL}/${l}${lPath}`);
+            const hreflang = localeHreflangMap[l] || l;
+            return `<xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`;
+          })
+          .join('\n    ') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en${page.paths['en']}`)}" />`;
+        
+        urlEntries += `
+  <url>
+    <loc>${fullPath}</loc>
+    ${hreflangLinks}
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
+      }
+    }
+
+
     if (posts && posts.length > 0) {
       for (const post of posts) {
         const fullPath = ensureTrailingSlash(`${BASE_URL}/${post.lang}/blog/${post.slug}`);

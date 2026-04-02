@@ -10,6 +10,7 @@ import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const ProductLevel = () => {
   const [activeTab, setActiveTab] = useState("dpp");
@@ -218,6 +219,13 @@ const ProductLevel = () => {
             </Card>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title={t('productLevelPage.faq.title')}
+          faqs={(t('productLevelPage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/product-level`}
+        />
         
         {/* Call to Action */}
         <div className="mt-10 text-center">

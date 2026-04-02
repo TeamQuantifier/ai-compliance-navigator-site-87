@@ -37,7 +37,7 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'task-data-management': 'Task & Data Management',
   'documents-management': 'Documents Management',
   'analytics-dashboards': 'Analytics Dashboards',
-  'api-integrations': 'API Integrations',
+  
   'value-chain': 'Value Chain',
   'risk-assessment': 'Risk Assessment',
   'product-level': 'Product Level',
@@ -48,6 +48,10 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'nis2-audit-ready': 'NIS2 — audit-ready',
   'nis2-kontrola-audyt': 'NIS2 — kontrola i audyt',
   'nis2-ksc': 'NIS2 KSC',
+  'compare': 'Compare',
+  'vanta-alternative': 'Vanta Alternative',
+  'drata-alternative': 'Drata Alternative',
+  'sprinto-alternative': 'Sprinto Alternative',
 };
 
 // Parent category mapping for 3-level breadcrumbs
@@ -70,7 +74,7 @@ const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
   'task-data-management': { segment: 'product', name: 'Product' },
   'documents-management': { segment: 'product', name: 'Product' },
   'analytics-dashboards': { segment: 'product', name: 'Product' },
-  'api-integrations': { segment: 'product', name: 'Product' },
+  
   'value-chain': { segment: 'product', name: 'Product' },
   'risk-assessment': { segment: 'product', name: 'Product' },
   'overview': { segment: 'product', name: 'Product' },
@@ -82,6 +86,9 @@ const SEGMENT_PARENT_MAP: Record<string, { segment: string; name: string }> = {
   'nis2-audit-ready': { segment: 'events', name: 'Events' },
   'nis2-kontrola-audyt': { segment: 'events', name: 'Events' },
   'nis2-ksc': { segment: 'frameworks', name: 'Frameworks' },
+  'vanta-alternative': { segment: 'compare', name: 'Compare' },
+  'drata-alternative': { segment: 'compare', name: 'Compare' },
+  'sprinto-alternative': { segment: 'compare', name: 'Compare' },
 };
 
 // Strip tracking parameters from URL path

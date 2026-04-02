@@ -849,6 +849,40 @@ const Iso27001 = () => {
           className="mb-20"
         />
 
+        {/* Related Content */}
+        <section className="mb-20">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">{t('iso27001Page.relatedContent.title')}</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to={`/${currentLocale}/blog/iso-27001-vs-soc-2-comparison`} className="group">
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <Scale className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.comparison.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.comparison.description')}</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to={`/${currentLocale}/blog/audit-evidence-collection-automation`} className="group">
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <FileCheck className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.evidence.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.evidence.description')}</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to={`/${currentLocale}/blog/nis2-vs-iso-27001-mapping`} className="group">
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <Target className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.nis2mapping.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.nis2mapping.description')}</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="mb-20">
           <FAQSection

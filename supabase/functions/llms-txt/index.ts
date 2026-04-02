@@ -126,7 +126,10 @@ const KEY_LINKS = `## Key Links
 - Contact: ${BASE_URL}/en/contact/
 - Success Stories: ${BASE_URL}/en/success-stories/
 - Blog: ${BASE_URL}/en/blog/
-- GRC Platform: ${BASE_URL}/en/grc-platform/`;
+- GRC Platform: ${BASE_URL}/en/grc-platform/
+- Compare — Vanta Alternative: ${BASE_URL}/en/compare/vanta-alternative/
+- Compare — Drata Alternative: ${BASE_URL}/en/compare/drata-alternative/
+- Compare — Sprinto Alternative: ${BASE_URL}/en/compare/sprinto-alternative/`;
 
 const FREE_TOOLS_SHORT = `## Free Tools
 
@@ -327,7 +330,7 @@ const PRODUCT_FEATURES_SHORT = `## Product Features
 
 - Analytics Dashboards: ${BASE_URL}/en/product/analytics-dashboards/
 - Documents Management: ${BASE_URL}/en/product/documents-management/
-- API Integrations: ${BASE_URL}/en/product/api-integrations/
+
 - AI Compliance Officer: ${BASE_URL}/en/product/compliance-officer/
 - Task & Data Management: ${BASE_URL}/en/product/task-data-management/
 - Value Chain: ${BASE_URL}/en/product/value-chain/
@@ -359,17 +362,6 @@ Centralized document management system designed for compliance workflows:
 - Automatic expiry tracking and renewal reminders
 - Full audit trail for every document action
 
-### API Integrations
-${BASE_URL}/en/product/api-integrations/
-
-50+ pre-built integrations for automated evidence collection:
-- Cloud: AWS, Microsoft Azure, Google Cloud Platform
-- Identity: Okta, Microsoft Entra ID, Google Workspace
-- DevOps: GitHub, GitLab, Bitbucket, Jira, Azure DevOps
-- Communication: Slack, Microsoft Teams
-- HR: BambooHR, Workday
-- Security: CrowdStrike, SentinelOne, Datadog, Splunk
-- Custom: REST API and webhook support for any system
 
 ### AI Compliance Officer
 ${BASE_URL}/en/product/compliance-officer/

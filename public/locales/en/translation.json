@@ -151,17 +151,368 @@
     "managers": {
       "title": "For Leadership & Executive",
       "subtitle": "(CFO, COO, CISO, Head of Risk)",
-      "description": "Comprehensive dashboards to oversee compliance and inform decisions."
+      "description": "Comprehensive dashboards to oversee compliance and inform decisions.",
+      "hero": {
+        "title": "Compliance Management at a Glance",
+        "subtitle": "Get a bird-eye view of your team compliance progress, delegate tasks, and track deadlines — all from one dashboard.",
+        "bookDemo": "Book a Demo"
+      },
+      "howItWorks": {
+        "title": "How Manager View Works",
+        "subtitle": "Four steps to full visibility and control over your team compliance activities.",
+        "steps": {
+          "overview": {
+            "title": "Get Overview",
+            "description": "See real-time compliance progress across all teams and frameworks."
+          },
+          "delegate": {
+            "title": "Delegate Tasks",
+            "description": "Assign compliance tasks to team members with context and deadlines."
+          },
+          "track": {
+            "title": "Track Progress",
+            "description": "Monitor completion rates, identify bottlenecks, and manage escalations."
+          },
+          "report": {
+            "title": "Report to Board",
+            "description": "Generate executive reports with KPIs, trends, and compliance scorecards."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Manager Dashboard",
+        "subtitle": "Real-time team progress, task distribution, and compliance KPIs in one unified view."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "overview": {
+          "title": "Team Overview",
+          "description": "See compliance progress for every team, department, and framework at a glance."
+        },
+        "delegation": {
+          "title": "Task Delegation",
+          "description": "Assign and redistribute compliance tasks with full context from framework requirements."
+        },
+        "progress": {
+          "title": "Progress Tracking",
+          "description": "Track task completion rates, overdue items, and team performance metrics."
+        },
+        "kpis": {
+          "title": "Compliance KPIs",
+          "description": "Monitor key compliance indicators with trend analysis and benchmarking."
+        },
+        "riskView": {
+          "title": "Risk Overview",
+          "description": "View aggregated risk posture across teams with drill-down capabilities."
+        },
+        "deadlines": {
+          "title": "Deadline Management",
+          "description": "Track upcoming deadlines, audit dates, and certification renewals in one calendar."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage team compliance across all major frameworks from one dashboard.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Security controls team progress"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity readiness by team"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT resilience task tracking"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Privacy compliance delegation"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria team assignments"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability data collection"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsManagerView": {
+          "question": "What can managers see in Quantifier?",
+          "answer": "Managers get a bird-eye dashboard showing team compliance progress, task distribution, overdue items, risk posture, and KPI trends across all frameworks. No compliance expertise required."
+        },
+        "howDelegate": {
+          "question": "How do I delegate tasks to my team?",
+          "answer": "From the manager dashboard, you can assign tasks directly to team members, set deadlines and priorities, add context from framework requirements, and track completion in real-time."
+        },
+        "whichMetrics": {
+          "question": "What metrics and KPIs are available?",
+          "answer": "Key metrics include framework completion rates, task completion velocity, overdue task counts, team performance scores, risk posture trends, and upcoming deadline forecasts."
+        },
+        "teamVisibility": {
+          "question": "Can I see progress across multiple teams?",
+          "answer": "Yes. The manager view aggregates compliance data across all teams you manage. You can drill down into specific teams, departments, or individual contributors."
+        },
+        "reporting": {
+          "question": "Can I generate board-level reports?",
+          "answer": "Yes. Generate executive compliance reports with one click, including scorecards, trend charts, risk summaries, and detailed breakdowns by framework or team."
+        }
+      },
+      "cta": {
+        "title": "Streamline Your Team Compliance",
+        "subtitle": "Give your managers the visibility and tools they need to drive compliance across the organization.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "See Plans"
+      }
     },
     "contributors": {
       "title": "For Operational Teams",
       "subtitle": "(Compliance, IT, Security, ESG)",
-      "description": "Streamlined interfaces for data entry, tasks, and evidence collection."
+      "description": "Streamlined interfaces for data entry, tasks, and evidence collection.",
+      "hero": {
+        "title": "Simple Compliance Tasks for Everyone",
+        "subtitle": "No compliance expertise needed. Get clear tasks, fill in forms, upload evidence, and confirm completion — all guided step by step.",
+        "bookDemo": "Book a Demo"
+      },
+      "howItWorks": {
+        "title": "How Contributor View Works",
+        "subtitle": "Four simple steps — no compliance knowledge required.",
+        "steps": {
+          "notified": {
+            "title": "Get Notified",
+            "description": "Receive clear task notifications with context and deadlines via email or in-app."
+          },
+          "fill": {
+            "title": "Fill in Data",
+            "description": "Complete structured forms designed to be understandable without compliance background."
+          },
+          "upload": {
+            "title": "Upload Evidence",
+            "description": "Attach screenshots, documents, or files as evidence for compliance controls."
+          },
+          "confirm": {
+            "title": "Confirm & Done",
+            "description": "Confirm completion and your task is automatically tracked in the compliance system."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Task Dashboard",
+        "subtitle": "A simple, focused view of your assigned tasks with clear instructions and deadlines."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "myTasks": {
+          "title": "My Tasks View",
+          "description": "A personal dashboard showing only your assigned tasks with clear status and deadlines."
+        },
+        "forms": {
+          "title": "Guided Forms",
+          "description": "Structured forms with instructions, examples, and validation — no compliance expertise needed."
+        },
+        "evidenceUpload": {
+          "title": "Evidence Upload",
+          "description": "Drag-and-drop file upload for screenshots, documents, and other evidence artifacts."
+        },
+        "notifications": {
+          "title": "Smart Notifications",
+          "description": "Email and in-app reminders for upcoming deadlines and new task assignments."
+        },
+        "comments": {
+          "title": "Task Comments",
+          "description": "Ask questions and communicate with compliance managers directly within each task."
+        },
+        "confirmations": {
+          "title": "One-Click Confirm",
+          "description": "Simple confirmation actions for acknowledgments, training completion, and policy reviews."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Contribute to any compliance framework — the platform translates requirements into simple tasks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Security evidence and confirmations"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity data collection"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT resilience evidence"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Privacy data and confirmations"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria evidence upload"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability data input"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsContributor": {
+          "question": "What is a contributor in Quantifier?",
+          "answer": "A contributor is any team member who provides data, evidence, or confirmations for compliance tasks. You do not need compliance expertise — the platform guides you through each task with clear instructions."
+        },
+        "howGetTasks": {
+          "question": "How do I receive tasks?",
+          "answer": "You receive notifications via email and in the platform when a compliance manager assigns you a task. Each task includes clear instructions, deadlines, and context about what is needed."
+        },
+        "whatUpload": {
+          "question": "What kind of evidence can I upload?",
+          "answer": "You can upload any file type — screenshots, PDFs, spreadsheets, documents, or images. The platform tells you exactly what evidence is needed for each task."
+        },
+        "noCompliance": {
+          "question": "Do I need compliance knowledge?",
+          "answer": "No. Tasks are designed to be completed by anyone. Forms include guidance, examples, and validation. If you have questions, you can comment directly on the task."
+        },
+        "timeNeeded": {
+          "question": "How much time does it take?",
+          "answer": "Most contributor tasks take 5-15 minutes. The platform is designed to minimize the time non-compliance staff spend on compliance activities."
+        }
+      },
+      "cta": {
+        "title": "Make Compliance Easy for Everyone",
+        "subtitle": "Empower every team member to contribute to compliance without the complexity.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "See Plans"
+      }
     },
     "auditors": {
       "title": "For Internal & External Auditors",
       "subtitle": "",
-      "description": "Detailed audit trails and verification tools to validate compliance."
+      "description": "Detailed audit trails and verification tools to validate compliance.",
+      "hero": {
+        "title": "Audit-Ready Evidence at Your Fingertips",
+        "subtitle": "Access control mappings, review evidence, verify compliance status, and export complete audit packages — all in one workspace.",
+        "bookDemo": "Book a Demo"
+      },
+      "howItWorks": {
+        "title": "How Auditor View Works",
+        "subtitle": "Four steps from control selection to complete audit package export.",
+        "steps": {
+          "select": {
+            "title": "Select Framework",
+            "description": "Choose the framework and controls you want to audit from the control library."
+          },
+          "review": {
+            "title": "Review Evidence",
+            "description": "Access all evidence files, documents, and audit trails linked to each control."
+          },
+          "verify": {
+            "title": "Verify Compliance",
+            "description": "Mark controls as verified, pending, or identify gaps with structured findings."
+          },
+          "export": {
+            "title": "Export Package",
+            "description": "Download complete audit packages with evidence, trails, and compliance reports."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Audit Workspace",
+        "subtitle": "A dedicated workspace for auditors with control mappings, evidence review, and export capabilities."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "controlMapping": {
+          "title": "Control Mapping",
+          "description": "Complete control-to-evidence mapping for every framework with implementation status."
+        },
+        "evidenceReview": {
+          "title": "Evidence Review",
+          "description": "Review all evidence files linked to each control with timestamps and approval records."
+        },
+        "auditTrail": {
+          "title": "Audit Trail",
+          "description": "Immutable audit trail of all system activities, changes, and approvals."
+        },
+        "exportPackage": {
+          "title": "Export Packages",
+          "description": "Download structured audit packages with evidence bundles, reports, and compliance summaries."
+        },
+        "gapAnalysis": {
+          "title": "Gap Analysis",
+          "description": "Identify compliance gaps with structured findings, recommendations, and remediation tracking."
+        },
+        "readOnlyAccess": {
+          "title": "Read-Only Access",
+          "description": "Secure read-only access ensures auditors can review without modifying compliance data."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Audit evidence and control mappings for all major compliance frameworks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Annex A control evidence mapping"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Article 21 measures verification"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT risk management evidence"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection compliance evidence"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria control testing"
+          },
+          "iso31000": {
+            "name": "ISO 31000",
+            "desc": "Risk management audit trail"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsAuditorView": {
+          "question": "What can auditors access in Quantifier?",
+          "answer": "Auditors get a dedicated read-only workspace with control-to-evidence mappings, document repositories, audit trails, and export capabilities for all compliance frameworks."
+        },
+        "howAccess": {
+          "question": "How do auditors get access?",
+          "answer": "Administrators can create auditor accounts with read-only permissions. Auditors see only the controls, evidence, and trails relevant to their audit scope."
+        },
+        "evidenceExport": {
+          "question": "Can I export evidence packages?",
+          "answer": "Yes. Export structured audit packages including all evidence files, approval records, audit trails, and compliance reports in ZIP or PDF format."
+        },
+        "readOnly": {
+          "question": "Is auditor access read-only?",
+          "answer": "Yes. Auditor accounts have strict read-only permissions. They can view and export data but cannot modify any compliance records, evidence, or configurations."
+        },
+        "multiFramework": {
+          "question": "Can I audit multiple frameworks at once?",
+          "answer": "Yes. The auditor workspace supports multi-framework audits. You can review controls and evidence across ISO 27001, NIS2, DORA, GDPR, SOC 2, and more in one session."
+        }
+      },
+      "cta": {
+        "title": "Simplify Your Audit Process",
+        "subtitle": "Give auditors everything they need — organized evidence, complete trails, and exportable packages.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "See Plans"
+      }
     },
     "learnMore": "Learn More"
   },
@@ -757,7 +1108,47 @@
           "description": "Connect our platform with your existing tools and systems for seamless operation."
         }
       },
-      "learnMore": "Learn more"
+      "learnMore": "Learn more",
+      "whyQuantifier": {
+        "title": "Why Teams Choose Quantifier",
+        "items": {
+          "aiNative": {
+            "title": "AI-Native Platform",
+            "desc": "Built from the ground up with AI — not bolted on. The AI Compliance Officer works autonomously to keep you compliant."
+          },
+          "multiFramework": {
+            "title": "Multi-Framework Coverage",
+            "desc": "Manage SOC 2, ISO 27001, GDPR, NIS2, DORA, ESG, and more from a single workspace."
+          },
+          "fastDeployment": {
+            "title": "Fast Deployment",
+            "desc": "Go from signup to audit-ready in weeks, not months. Pre-built control libraries and automated evidence collection."
+          },
+          "rolesBuiltIn": {
+            "title": "Role-Based Access",
+            "desc": "Dedicated views for managers, contributors, and auditors — everyone sees exactly what they need."
+          }
+        }
+      },
+      "statsTitle": "Platform at a Glance",
+      "stats": {
+        "frameworks": {
+          "value": "15+",
+          "label": "Frameworks Supported"
+        },
+        "controls": {
+          "value": "2,500+",
+          "label": "Pre-Built Controls"
+        },
+        "timeSaved": {
+          "value": "70%",
+          "label": "Time Saved vs Manual"
+        },
+        "auditReady": {
+          "value": "4 weeks",
+          "label": "Average Time to Audit-Ready"
+        }
+      }
     },
     "features": {
       "title": "Built-in Intelligence, Embedded Compliance",
@@ -919,83 +1310,123 @@
     },
     "complianceOfficer": {
       "title": "AI Compliance Officer",
-      "description": "Your virtual compliance assistant that continuously monitors and guides your compliance program.",
+      "description": "Your autonomous AI compliance agent that continuously monitors, analyzes, and acts on your compliance program across all frameworks.",
       "hero": {
-        "title": "Meet Your New AI Compliance Officer",
-        "subtitle": "A powerful AI that continuously monitors your compliance program, automates routine tasks, and provides intelligent recommendations.",
+        "title": "Your AI-Powered Compliance Officer",
+        "subtitle": "An autonomous AI agent that monitors your compliance posture 24/7, identifies gaps, drafts policies, assigns tasks, and guides your team — across ISO 27001, NIS2, DORA, GDPR, SOC 2, and more.",
         "bookDemo": "Book a Demo"
       },
       "howItWorks": {
-        "title": "How Our AI Compliance Officer Works",
-        "subtitle": "Quantifier's AI Compliance Officer combines advanced language models, specialized compliance knowledge, and autonomous capabilities to transform how you manage compliance.",
-        "monitoring": {
-          "title": "Continuous Monitoring",
-          "description": "Our AI never sleeps, constantly analyzing your compliance status, identifying risks, and detecting potential gaps before they become issues."
-        },
-        "expertise": {
-          "title": "Framework Expertise",
-          "description": "Pre-trained on ISO 14001, GHG Protocol, ISO 14064, and dozens of other environmental standards and regulations with regular updates."
-        },
-        "action": {
-          "title": "Autonomous Action",
-          "description": "Beyond alerting, our AI can take action—assigning tasks, requesting information, scheduling reviews, and even drafting documentation."
-        }
-      },
-      "useCases": {
-        "title": "Environmental Compliance Use Cases",
-        "iso14001": {
-          "title": "ISO 14001 Management",
-          "features": {
-            "feature1": "Automated policy reviews and updates when standards change",
-            "feature2": "AI-driven internal audit preparation and evidence collection",
-            "feature3": "Continuous environmental objective tracking and reporting"
-          }
-        },
-        "carbonEmissions": {
-          "title": "Carbon Emissions Reporting",
-          "features": {
-            "feature1": "Automated data collection across Scope 1, 2 and 3 emissions",
-            "feature2": "Anomaly detection in emissions data with root cause analysis",
-            "feature3": "AI-generated reduction strategy recommendations"
-          }
-        },
-        "lca": {
-          "title": "Life Cycle Assessment",
-          "features": {
-            "feature1": "Guided data collection and validation for product LCAs",
-            "feature2": "Intelligent gap filling for missing environmental impact data",
-            "feature3": "Automated impact hotspot identification and optimization"
-          }
-        },
-        "decarbonisation": {
-          "title": "Decarbonisation Planning",
-          "features": {
-            "feature1": "Science-based target setting with automated progress tracking",
-            "feature2": "AI-recommended carbon reduction initiatives with ROI analysis",
-            "feature3": "Predictive modeling of future emissions based on business growth"
+        "title": "How the AI Compliance Officer Works",
+        "subtitle": "Four stages — from learning your business to autonomous action. No manual checklists. No spreadsheets.",
+        "steps": {
+          "learns": {
+            "title": "Learns Your Business",
+            "description": "The AI ingests your policies, controls, org structure, and historical compliance data to build a contextual understanding of your unique environment."
+          },
+          "monitors": {
+            "title": "Monitors Continuously",
+            "description": "Tracks compliance status across all active frameworks in real-time, detecting gaps, expiring documents, and regulatory changes as they happen."
+          },
+          "acts": {
+            "title": "Acts Autonomously",
+            "description": "Assigns tasks to team members, drafts updated policies, collects evidence, and sends follow-up reminders — without waiting for manual input."
+          },
+          "communicates": {
+            "title": "Reports & Communicates",
+            "description": "Delivers daily summaries, risk alerts, and progress reports. Answers compliance questions in natural language via built-in chat."
           }
         }
       },
-      "teamIntegration": {
-        "title": "How Our AI Works With Your Team",
-        "learns": {
-          "title": "Learns Your Business",
-          "description": "The AI studies your operations, processes, and previous compliance data to understand your unique environmental context."
+      "dashboard": {
+        "title": "Real-Time Compliance Dashboard",
+        "subtitle": "See your compliance posture at a glance — framework progress, AI insights, risk indicators, and pending actions in one unified view."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "gapAnalysis": {
+          "title": "Automated Gap Analysis",
+          "description": "The AI scans your current controls against framework requirements, identifies gaps, and suggests remediation steps with priority ranking."
         },
-        "monitors": {
-          "title": "Monitors & Analyzes",
-          "description": "Continuously monitors compliance status, environmental data, and regulatory changes, analyzing trends and patterns."
+        "continuousMonitoring": {
+          "title": "Continuous Compliance Monitoring",
+          "description": "24/7 monitoring of your compliance status with instant alerts when controls drift, documents expire, or new regulatory changes affect you."
         },
-        "communicates": {
-          "title": "Communicates & Acts",
-          "description": "Provides actionable insights, assigns tasks, sends alerts, and can even draft documentation for your approval."
+        "evidenceCollection": {
+          "title": "AI-Driven Evidence Collection",
+          "description": "Automatically collects, organizes, and validates audit evidence from your connected systems — reducing manual work by up to 80%."
+        },
+        "riskDetection": {
+          "title": "Proactive Risk Detection",
+          "description": "Identifies emerging compliance risks before they become issues. Analyzes patterns across your data to predict potential non-conformities."
+        },
+        "taskDelegation": {
+          "title": "Intelligent Task Delegation",
+          "description": "Assigns compliance tasks to the right team members based on role, expertise, and workload. Tracks completion and sends automated follow-ups."
+        },
+        "policyDrafting": {
+          "title": "AI Policy Drafting",
+          "description": "Generates framework-compliant policy drafts, updates existing documents when standards change, and maintains version control automatically."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "The AI Compliance Officer is pre-trained on major regulatory and industry frameworks — and continuously updated as standards evolve.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Information security management"
+          },
+          "nis2": {
+            "name": "NIS2 Directive",
+            "desc": "EU cybersecurity requirements"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Digital operational resilience"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection & privacy"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust service criteria"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability reporting"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsAiOfficer": {
+          "question": "What is an AI Compliance Officer?",
+          "answer": "An AI Compliance Officer is an autonomous AI agent that continuously monitors your organization's compliance posture, identifies gaps, assigns remediation tasks, drafts policies, and provides real-time guidance — functioning as a tireless virtual member of your compliance team."
+        },
+        "howDifferent": {
+          "question": "How is this different from a compliance checklist tool?",
+          "answer": "Unlike static checklist tools, Quantifier's AI agent understands context. It learns your business, tracks changes across multiple frameworks simultaneously, takes autonomous action (like assigning tasks and drafting documents), and adapts its recommendations based on your specific compliance posture."
+        },
+        "whichFrameworks": {
+          "question": "Which compliance frameworks does the AI support?",
+          "answer": "The AI Compliance Officer supports ISO 27001, NIS2, DORA, GDPR, SOC 2, ISO 9001, ISO 14001, CSRD/ESG, and more. It's continuously updated as standards evolve, and can handle multiple frameworks simultaneously with cross-mapping capabilities."
+        },
+        "dataPrivacy": {
+          "question": "Is my compliance data secure?",
+          "answer": "Yes. Quantifier is hosted on EU infrastructure, all data is encrypted at rest and in transit, and we follow strict data isolation practices. Your compliance data is never used to train AI models or shared with third parties."
+        },
+        "setupTime": {
+          "question": "How long does it take to set up?",
+          "answer": "Most organizations are up and running within 1-2 weeks. The AI begins learning your compliance context immediately upon data import, and starts providing actionable insights within the first few days."
         }
       },
       "cta": {
-        "title": "Ready to Transform Your Environmental Compliance?",
-        "subtitle": "Join organizations already using Quantifier's AI to make environmental compliance effortless and impactful.",
+        "title": "Ready to Automate Your Compliance Program?",
+        "subtitle": "Join organizations using Quantifier's AI Compliance Officer to reduce manual compliance work by up to 80% while improving coverage.",
         "bookDemo": "Book a Demo",
-        "exploreFeatures": "Explore AI Features"
+        "explorePlans": "Explore Plans"
       }
     },
     "analyticsDashboards": {
@@ -1046,22 +1477,466 @@
         "subtitle": "Join organizations that use Quantifier's AI analytics to transform compliance data into strategic insights.",
         "bookDemo": "Book a Demo",
         "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Analytics & Dashboards Work",
+        "subtitle": "Four steps from data collection to actionable compliance insights and executive reporting.",
+        "steps": {
+          "collect": {
+            "title": "Collect Data",
+            "description": "Automatically aggregate compliance data from tasks, risks, documents, and frameworks."
+          },
+          "visualize": {
+            "title": "Visualize",
+            "description": "Display KPIs, charts, and progress metrics in customizable dashboard layouts."
+          },
+          "analyze": {
+            "title": "AI Analysis",
+            "description": "Get AI-powered insights, trend detection, and compliance gap identification."
+          },
+          "report": {
+            "title": "Generate Reports",
+            "description": "Create board-ready reports and audit packages with one click."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Analytics Dashboard",
+        "subtitle": "Real-time compliance metrics, AI insights, and executive reporting — all in one customizable dashboard."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "realTime": {
+          "title": "Real-Time Analytics",
+          "description": "Live compliance metrics updated automatically as tasks complete and data changes."
+        },
+        "aiInsights": {
+          "title": "AI-Powered Insights",
+          "description": "Machine learning identifies compliance gaps, risk trends, and optimization opportunities."
+        },
+        "riskAssessment": {
+          "title": "Risk Overview",
+          "description": "Visual risk landscape with heatmaps, trend charts, and residual risk tracking."
+        },
+        "reporting": {
+          "title": "Executive Reporting",
+          "description": "Generate board-ready compliance reports with charts, KPIs, and trend analysis."
+        },
+        "automation": {
+          "title": "Automated Alerts",
+          "description": "Get notified of compliance deadline misses, risk threshold breaches, and KPI drops."
+        },
+        "trends": {
+          "title": "Trend Analysis",
+          "description": "Track compliance progress over time with historical data and forecasting capabilities."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Dashboard views and analytics for every compliance framework you manage.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Security controls completion dashboard"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity readiness metrics"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT resilience KPIs and trends"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Privacy compliance status tracking"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria progress monitoring"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability metrics and reporting"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatAreDashboards": {
+          "question": "What do compliance analytics dashboards show?",
+          "answer": "Quantifier dashboards display real-time compliance metrics including framework completion rates, task progress, risk posture, document status, and deadline tracking. All data is aggregated automatically from your compliance activities."
+        },
+        "customization": {
+          "question": "Can I customize the dashboards?",
+          "answer": "Yes. You can configure which KPIs, charts, and widgets appear on your dashboard. Create role-specific views for managers, auditors, and contributors with different data visibility levels."
+        },
+        "whichFrameworks": {
+          "question": "Are there framework-specific dashboards?",
+          "answer": "Yes. Each framework (ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG) has a dedicated dashboard with relevant controls, completion metrics, and compliance-specific KPIs."
+        },
+        "aiInsights": {
+          "question": "How do AI insights work?",
+          "answer": "AI analyzes your compliance data to identify patterns, predict potential gaps, and suggest optimization actions. It detects trends in task completion rates, risk scores, and deadline adherence to proactively flag issues."
+        },
+        "exportReports": {
+          "question": "Can I export reports for the board or auditors?",
+          "answer": "Yes. Generate PDF or Excel reports with one click. Reports include executive summaries, compliance scorecards, risk overviews, and detailed evidence for auditors. You can also schedule automated report delivery."
+        }
       }
     },
     "valueChain": {
       "title": "Value Chain",
       "description": "Map and monitor compliance across your entire organizational value chain.",
-      "placeholder": "Coming soon"
+      "placeholder": "Coming soon",
+      "hero": {
+        "title": "Supply Chain Compliance Made Visible",
+        "subtitle": "Map suppliers, assess risks and track ESG compliance across your entire value chain.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Value Chain Capabilities",
+        "supplierMapping": {
+          "title": "Supplier Mapping",
+          "description": "Visualise your supply chain and identify critical dependencies and risk concentrations."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Structured questionnaires and automated scoring for supplier assessments."
+        },
+        "riskScoring": {
+          "title": "Risk Scoring",
+          "description": "Quantified risk ratings per supplier based on compliance, ESG and operational criteria."
+        }
+      },
+      "detailedFeatures": {
+        "esgSupplyChain": {
+          "title": "ESG Supply Chain",
+          "description": "Monitor environmental, social and governance performance across suppliers.",
+          "feature1": "Carbon footprint tracking per supplier tier",
+          "feature2": "Human rights and labour standards monitoring",
+          "feature3": "CSRD and taxonomy-aligned reporting"
+        },
+        "complianceTracking": {
+          "title": "Compliance Tracking",
+          "description": "Ensure all suppliers meet your regulatory and contractual requirements.",
+          "feature1": "Automated certificate expiry alerts",
+          "feature2": "Corrective action plans with deadlines",
+          "feature3": "Historical compliance trend analysis"
+        }
+      },
+      "cta": {
+        "title": "Ready to Map Your Value Chain Compliance?",
+        "subtitle": "See how Quantifier gives you visibility across your entire supply chain.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Value Chain Management Works",
+        "subtitle": "Four steps to map, assess, score, and continuously monitor your supply chain compliance.",
+        "steps": {
+          "identify": {
+            "title": "Identify Suppliers",
+            "description": "Map your supply chain and identify all third-party vendors and service providers."
+          },
+          "assess": {
+            "title": "Assess & Due Diligence",
+            "description": "Send questionnaires and collect compliance evidence from suppliers."
+          },
+          "score": {
+            "title": "Risk Scoring",
+            "description": "Automatically score suppliers based on compliance posture and risk factors."
+          },
+          "monitor": {
+            "title": "Continuous Monitoring",
+            "description": "Track supplier compliance status and get alerts on changes or issues."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Supplier Dashboard",
+        "subtitle": "A comprehensive view of your entire supply chain with risk scores, compliance status, and due diligence tracking."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "supplierMapping": {
+          "title": "Supplier Mapping",
+          "description": "Visualize your entire supply chain with detailed vendor profiles and relationship mapping."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Automate supplier assessments with customizable questionnaires and evidence collection."
+        },
+        "riskScoring": {
+          "title": "Risk Scoring",
+          "description": "AI-powered risk scoring based on compliance responses, certifications, and external data."
+        },
+        "esgSupplyChain": {
+          "title": "ESG Supply Chain",
+          "description": "Monitor environmental, social, and governance performance across your value chain."
+        },
+        "complianceTracking": {
+          "title": "Compliance Tracking",
+          "description": "Track supplier certifications, audit results, and compliance status in real-time."
+        },
+        "continuousMonitoring": {
+          "title": "Continuous Monitoring",
+          "description": "Automated alerts for supplier risk changes, expiring certifications, and compliance gaps."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage supply chain compliance requirements across all major frameworks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Supplier security controls (A.15)"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Supply chain cybersecurity (Art. 21)"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT third-party risk management"
+          },
+          "csrd": {
+            "name": "CSRD",
+            "desc": "Value chain sustainability reporting"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data processor management"
+          },
+          "esg": {
+            "name": "ESG",
+            "desc": "Supply chain ESG performance"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsValueChain": {
+          "question": "What is value chain management in GRC?",
+          "answer": "Value chain management in GRC involves mapping, assessing, and monitoring all third-party suppliers and vendors for compliance risks. Quantifier automates supplier due diligence, risk scoring, and continuous monitoring across your entire supply chain."
+        },
+        "howScoring": {
+          "question": "How does supplier risk scoring work?",
+          "answer": "Suppliers are scored based on their questionnaire responses, certifications held, audit results, and compliance posture. The scoring algorithm weighs factors relevant to your specific framework requirements and risk appetite."
+        },
+        "whichFrameworks": {
+          "question": "Which frameworks require supply chain management?",
+          "answer": "NIS2 (Article 21), ISO 27001 (Annex A.15), DORA (ICT third-party risk), CSRD (value chain reporting), and GDPR (data processor management) all have supply chain compliance requirements that Quantifier addresses."
+        },
+        "supplierOnboarding": {
+          "question": "How do I onboard new suppliers?",
+          "answer": "Add suppliers to the platform, send automated assessment questionnaires, collect certifications and evidence, and receive a risk score. The entire onboarding process is tracked and documented for audit purposes."
+        },
+        "continuousMonitoring": {
+          "question": "What does continuous monitoring include?",
+          "answer": "Continuous monitoring tracks certification expiry dates, compliance status changes, periodic reassessment schedules, and external risk signals. You receive automated alerts when supplier risk profiles change."
+        }
+      }
     },
     "apiIntegrations": {
       "title": "API Integrations",
       "description": "Connect our platform with your existing tools and systems for seamless operation.",
-      "placeholder": "Coming soon"
+      "placeholder": "Coming soon",
+      "hero": {
+        "title": "Integrate with Your Existing Stack",
+        "subtitle": "REST API, webhooks, SSO — connect Quantifier to the tools your team already uses.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Integration Capabilities",
+        "restApi": {
+          "title": "REST API",
+          "description": "Programmatic access to all platform data — assets, risks, tasks, evidence."
+        },
+        "webhooks": {
+          "title": "Webhooks",
+          "description": "Real-time notifications for compliance events, task updates and threshold alerts."
+        },
+        "sso": {
+          "title": "SSO / SAML",
+          "description": "Enterprise single sign-on with SAML 2.0 and SCIM user provisioning."
+        }
+      },
+      "detailedFeatures": {
+        "dataSync": {
+          "title": "Data Synchronisation",
+          "description": "Keep compliance data in sync across your organisation.",
+          "feature1": "Bi-directional sync with ITSM and ticketing tools",
+          "feature2": "Automated asset inventory import from CMDB",
+          "feature3": "Evidence collection from cloud providers"
+        },
+        "ecosystem": {
+          "title": "Growing Ecosystem",
+          "description": "Pre-built connectors and an open API for custom integrations.",
+          "feature1": "Pre-built connectors for popular GRC tools",
+          "feature2": "Custom integration builder with no-code workflows",
+          "feature3": "Developer documentation and sandbox environment"
+        }
+      },
+      "cta": {
+        "title": "Ready to Connect Quantifier to Your Stack?",
+        "subtitle": "See how our API and integrations fit into your existing workflows.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      }
     },
     "documentsManagement": {
       "title": "Documents Management",
       "description": "Centralize and control all your compliance documentation in one secure place.",
-      "placeholder": "Coming soon"
+      "placeholder": "Coming soon",
+      "hero": {
+        "title": "Compliance Documents Under Control",
+        "subtitle": "Centralised repository for all policies, procedures and evidence — with version control and audit trail.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Key Capabilities",
+        "centralRepo": {
+          "title": "Central Repository",
+          "description": "One place for all compliance documents — policies, procedures, evidence, templates."
+        },
+        "versionControl": {
+          "title": "Version Control",
+          "description": "Full revision history with approval workflows and automatic versioning."
+        },
+        "accessControl": {
+          "title": "Access Control",
+          "description": "Role-based permissions ensure the right people see the right documents."
+        }
+      },
+      "detailedFeatures": {
+        "lifecycle": {
+          "title": "Document Lifecycle",
+          "description": "Manage documents from draft through approval to retirement.",
+          "feature1": "Automated review reminders and renewal schedules",
+          "feature2": "Approval workflows with electronic signatures",
+          "feature3": "Archive and retention policy enforcement"
+        },
+        "auditReady": {
+          "title": "Audit-Ready Evidence",
+          "description": "Always prepared for inspections and audits.",
+          "feature1": "Complete audit trail for every document change",
+          "feature2": "Export-ready evidence packages per framework",
+          "feature3": "Cross-reference documents to controls and risks"
+        }
+      },
+      "cta": {
+        "title": "Ready to Centralise Your Compliance Documents?",
+        "subtitle": "See how Quantifier keeps your documentation audit-ready at all times.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Document Management Works",
+        "subtitle": "Four steps to organize, version, approve, and audit your compliance documentation.",
+        "steps": {
+          "upload": {
+            "title": "Upload & Organize",
+            "description": "Upload documents and organize them by framework, department, or custom categories."
+          },
+          "version": {
+            "title": "Version Control",
+            "description": "Track every change with automatic versioning and change history."
+          },
+          "approve": {
+            "title": "Review & Approve",
+            "description": "Route documents through approval workflows with role-based permissions."
+          },
+          "audit": {
+            "title": "Audit Trail",
+            "description": "Maintain a complete audit trail of all document activities and access."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Document Repository",
+        "subtitle": "A secure, centralized repository where every compliance document is versioned, approved, and audit-ready."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "centralRepo": {
+          "title": "Central Repository",
+          "description": "Store all compliance documents in one secure, searchable location with folder structures."
+        },
+        "versionControl": {
+          "title": "Version Control",
+          "description": "Automatic version tracking with full change history and rollback capabilities."
+        },
+        "accessControl": {
+          "title": "Access Control",
+          "description": "Role-based permissions ensure only authorized users can view or edit sensitive documents."
+        },
+        "lifecycle": {
+          "title": "Document Lifecycle",
+          "description": "Manage documents from draft through review, approval, publication, and retirement."
+        },
+        "auditReady": {
+          "title": "Audit-Ready",
+          "description": "Generate document packages for auditors with complete evidence trails and approval records."
+        },
+        "search": {
+          "title": "Smart Search",
+          "description": "Find any document instantly with full-text search, filters, and framework-based navigation."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage documentation requirements for any compliance framework in one place.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Policies, SOA, and security procedures"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Incident plans and security documentation"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT policies and continuity plans"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "DPAs, privacy notices, and DPIAs"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Policies and control documentation"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability reports and disclosures"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsDms": {
+          "question": "What is compliance document management?",
+          "answer": "Compliance document management is the systematic organization, versioning, approval, and storage of all documents required for regulatory compliance. Quantifier provides a centralized repository designed specifically for GRC documentation needs."
+        },
+        "versionControl": {
+          "question": "How does version control work?",
+          "answer": "Every document change is automatically versioned. You can view the complete change history, compare versions side by side, and rollback to any previous version if needed. All changes are logged in the audit trail."
+        },
+        "whichFrameworks": {
+          "question": "Which framework documents can I manage?",
+          "answer": "Quantifier supports document management for ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG/CSRD, and more. Each framework comes with template structures and required document checklists."
+        },
+        "accessControl": {
+          "question": "How are document permissions managed?",
+          "answer": "Documents use role-based access control (RBAC). You can set permissions at folder or document level, restrict editing to specific roles, and ensure sensitive documents are only visible to authorized personnel."
+        },
+        "auditTrail": {
+          "question": "Is there a complete audit trail?",
+          "answer": "Yes. Every action — view, edit, approve, download, share — is logged with timestamps and user identity. This audit trail is immutable and can be exported for external auditors."
+        }
+      }
     },
     "taskDataManagement": {
       "title": "Task and Data Management",
@@ -1072,6 +1947,154 @@
         "analytics": "Analytics",
         "taskHub": "Task & Data Hub",
         "riskAssessment": "Risk Assessment"
+      },
+      "hero": {
+        "title": "Compliance Task & Data Hub",
+        "subtitle": "One place to manage tasks, assets, evidence and compliance data across all frameworks.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Key Capabilities",
+        "taskEngine": {
+          "title": "Task Engine",
+          "description": "AI-generated tasks mapped to framework controls with deadlines and ownership."
+        },
+        "dataHub": {
+          "title": "Centralised Data Hub",
+          "description": "Assets, risks, controls and evidence linked in one structured repository."
+        },
+        "collaboration": {
+          "title": "Team Collaboration",
+          "description": "Assign tasks, track progress and coordinate compliance work across departments."
+        }
+      },
+      "detailedFeatures": {
+        "workflows": {
+          "title": "Automated Workflows",
+          "description": "Streamline compliance operations with intelligent automation.",
+          "feature1": "Auto-generated tasks from gap analysis results",
+          "feature2": "Recurring task schedules for periodic reviews",
+          "feature3": "Escalation rules for overdue items"
+        },
+        "tracking": {
+          "title": "Progress Tracking",
+          "description": "Full visibility into compliance programme execution.",
+          "feature1": "Kanban, list and calendar views per framework",
+          "feature2": "Completion dashboards with trend analysis",
+          "feature3": "Export-ready progress reports for management"
+        }
+      },
+      "cta": {
+        "title": "Ready to Streamline Compliance Operations?",
+        "subtitle": "See how the Task & Data Hub keeps your team on track.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Task & Data Management Works",
+        "subtitle": "Four simple steps to streamline compliance task tracking and data collection across your organization.",
+        "steps": {
+          "create": {
+            "title": "Create Tasks",
+            "description": "Define compliance tasks from framework requirements or create custom ones."
+          },
+          "assign": {
+            "title": "Assign & Delegate",
+            "description": "Assign tasks to team members with deadlines and priority levels."
+          },
+          "track": {
+            "title": "Track Progress",
+            "description": "Monitor task completion with Kanban boards, lists, and status filters."
+          },
+          "report": {
+            "title": "Report & Notify",
+            "description": "Get automated notifications and generate compliance progress reports."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Compliance Task Hub",
+        "subtitle": "A centralized workspace where every compliance task, deadline, and data collection request is visible and actionable."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "taskEngine": {
+          "title": "Task Engine",
+          "description": "Create, assign, and track compliance tasks with automated workflows and deadline management."
+        },
+        "dataHub": {
+          "title": "Data Collection Hub",
+          "description": "Centralize evidence and data gathering from multiple departments and stakeholders."
+        },
+        "collaboration": {
+          "title": "Team Collaboration",
+          "description": "Enable cross-functional teamwork with comments, mentions, and shared task visibility."
+        },
+        "workflows": {
+          "title": "Automated Workflows",
+          "description": "Set up approval chains, escalation rules, and recurring task schedules."
+        },
+        "filters": {
+          "title": "Smart Filters",
+          "description": "Filter tasks by framework, status, assignee, priority, or custom tags."
+        },
+        "kanban": {
+          "title": "Kanban & List Views",
+          "description": "Switch between Kanban boards and list views to manage tasks your way."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage tasks and collect data for any compliance framework in a single workspace.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Information security controls and evidence"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity measures and incident tasks"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT risk management and resilience tasks"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection and privacy activities"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust services criteria evidence"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability data collection"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsTaskManagement": {
+          "question": "What is compliance task management?",
+          "answer": "Compliance task management is the process of creating, assigning, tracking, and reporting on tasks required to meet regulatory and framework requirements. Quantifier automates this process across multiple frameworks simultaneously."
+        },
+        "howAssign": {
+          "question": "How do I assign tasks to team members?",
+          "answer": "You can assign tasks directly from the task board or list view. Set assignees, deadlines, priorities, and add context from the relevant framework requirement. Team members receive notifications and can track their tasks in a personal dashboard."
+        },
+        "whichFrameworks": {
+          "question": "Which compliance frameworks are supported?",
+          "answer": "Quantifier supports ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG/CSRD, and many more. Tasks are automatically mapped to framework controls, so you never miss a requirement."
+        },
+        "dataCollection": {
+          "question": "How does data collection work?",
+          "answer": "The data collection hub allows you to request evidence and information from any department. Contributors receive structured forms and can upload documents, fill in data fields, and confirm completion — all tracked in one place."
+        },
+        "automation": {
+          "question": "Can I automate recurring tasks?",
+          "answer": "Yes. Set up recurring tasks for periodic reviews, audits, and assessments. Quantifier automatically creates new task instances, assigns them, and tracks completion against your compliance calendar."
+        }
       }
     },
     "riskAssessment": {
@@ -1083,6 +2106,154 @@
         "analytics": "Analytics",
         "taskHub": "Task & Data Hub",
         "riskAssessment": "Risk Assessment"
+      },
+      "hero": {
+        "title": "Risk Assessment & Management",
+        "subtitle": "Identify, quantify and mitigate risks across frameworks with AI-powered analysis and heat maps.",
+        "bookDemo": "Book a Demo"
+      },
+      "keyFeatures": {
+        "title": "Risk Management Capabilities",
+        "identification": {
+          "title": "Risk Identification",
+          "description": "AI-assisted discovery of risks mapped to assets, threats and vulnerabilities."
+        },
+        "quantification": {
+          "title": "Risk Quantification",
+          "description": "Likelihood × impact scoring with customisable scales and risk appetite thresholds."
+        },
+        "mitigation": {
+          "title": "Risk Mitigation",
+          "description": "Treatment plans linked to controls, tasks and evidence for full traceability."
+        }
+      },
+      "detailedFeatures": {
+        "riskMatrix": {
+          "title": "Risk Matrix & Heat Maps",
+          "description": "Visual risk landscape for informed decision-making.",
+          "feature1": "Interactive heat maps with drill-down capabilities",
+          "feature2": "Residual vs inherent risk comparison views",
+          "feature3": "Risk trend analysis over time"
+        },
+        "treatmentPlans": {
+          "title": "Treatment Plans",
+          "description": "Structured approach to risk mitigation and acceptance.",
+          "feature1": "Accept, mitigate, transfer or avoid options per risk",
+          "feature2": "Linked controls and implementation tasks",
+          "feature3": "Periodic risk reassessment schedules"
+        }
+      },
+      "cta": {
+        "title": "Ready to Take Control of Your Risk Landscape?",
+        "subtitle": "See how Quantifier makes risk assessment structured and actionable.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Risk Assessment Works",
+        "subtitle": "Four steps to identify, assess, treat, and monitor risks across your compliance landscape.",
+        "steps": {
+          "identify": {
+            "title": "Identify Risks",
+            "description": "Catalog risks from threat libraries, framework requirements, and organizational context."
+          },
+          "assess": {
+            "title": "Assess & Score",
+            "description": "Evaluate risks using impact-likelihood matrices with qualitative or quantitative methods."
+          },
+          "treat": {
+            "title": "Treat & Mitigate",
+            "description": "Define treatment plans: mitigate, transfer, accept, or avoid each identified risk."
+          },
+          "monitor": {
+            "title": "Monitor & Review",
+            "description": "Continuously track risk status, residual risk levels, and treatment effectiveness."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Risk Dashboard",
+        "subtitle": "A comprehensive risk register with heatmaps, treatment plans, and real-time risk monitoring."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "identification": {
+          "title": "Risk Identification",
+          "description": "Systematic risk identification with threat libraries, asset mapping, and vulnerability assessment."
+        },
+        "quantification": {
+          "title": "Risk Quantification",
+          "description": "Score risks using customizable impact-likelihood matrices with qualitative and quantitative methods."
+        },
+        "mitigation": {
+          "title": "Risk Mitigation",
+          "description": "Define and track treatment plans with owners, deadlines, and effectiveness metrics."
+        },
+        "riskMatrix": {
+          "title": "Risk Heatmap",
+          "description": "Visual risk heatmap showing risk distribution by impact and likelihood for quick prioritization."
+        },
+        "treatmentPlans": {
+          "title": "Treatment Plans",
+          "description": "Structured treatment plans with action items, responsible parties, and progress tracking."
+        },
+        "reporting": {
+          "title": "Risk Reporting",
+          "description": "Generate risk reports for management, boards, and auditors with exportable formats."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Risk assessment methodology aligned with all major compliance and security frameworks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Information security risk assessment"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity risk management measures"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT risk management framework"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection impact assessments"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Risk assessment for trust criteria"
+          },
+          "iso31000": {
+            "name": "ISO 31000",
+            "desc": "Enterprise risk management standard"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsRiskAssessment": {
+          "question": "What is compliance risk assessment?",
+          "answer": "Compliance risk assessment is the systematic process of identifying, analyzing, evaluating, and treating risks that could affect your organization regulatory compliance. Quantifier provides a structured methodology aligned with ISO 31000 and framework-specific requirements."
+        },
+        "methodology": {
+          "question": "What risk assessment methodology does Quantifier use?",
+          "answer": "Quantifier supports both qualitative (impact-likelihood matrices) and quantitative risk assessment methods. You can customize scoring scales, risk categories, and treatment options to match your organization risk appetite and framework requirements."
+        },
+        "whichFrameworks": {
+          "question": "Which frameworks require risk assessment?",
+          "answer": "Virtually all compliance frameworks require risk assessment: ISO 27001 (Clause 6.1), NIS2 (Article 21), DORA (Chapter II), GDPR (Article 35 DPIA), SOC 2, and ISO 31000. Quantifier maps risks to specific framework controls automatically."
+        },
+        "riskMatrix": {
+          "question": "How does the risk heatmap work?",
+          "answer": "The risk heatmap visualizes all identified risks on an impact-likelihood matrix. Risks are color-coded by severity level (critical, high, medium, low), making it easy to prioritize treatment efforts and communicate risk posture to stakeholders."
+        },
+        "automation": {
+          "question": "Can risk assessments be automated?",
+          "answer": "Yes. Quantifier automates periodic risk reassessments, inherent/residual risk calculation, risk score updates based on treatment progress, and alert generation when risk levels change. You can also set up automated risk reporting schedules."
+        }
       }
     }
   },
@@ -2021,6 +3192,31 @@
       "description": "Ready to automate your sustainability and ESG compliance? Quantifier makes it easy.",
       "bookConsultation": "Book a Consultation",
       "watchDemo": "Watch Demo Video"
+    },
+    "faq": {
+      "title": "FAQ — ESG & Sustainability Compliance",
+      "items": [
+        {
+          "question": "What ESG frameworks does Quantifier support?",
+          "answer": "Quantifier covers CSRD/ESRS, GRI Standards, and CBAM reporting. The platform maps disclosure requirements, tracks data collection progress, and generates audit-ready reports for each framework."
+        },
+        {
+          "question": "How does the Envirly integration work?",
+          "answer": "Envirly — part of the Quantifier ecosystem — specializes in environmental compliance: GHG accounting (Scope 1-3), LCA analysis, carbon footprint calculations, and CSRD reporting. Data flows seamlessly between both platforms."
+        },
+        {
+          "question": "Can Quantifier handle double materiality assessments?",
+          "answer": "Yes. The platform guides you through the double materiality assessment process required by CSRD, helping identify material topics from both impact and financial perspectives with stakeholder input tracking."
+        },
+        {
+          "question": "Is CBAM reporting automated?",
+          "answer": "Quantifier automates CBAM data collection from importers, calculates embedded emissions per product category, and generates quarterly CBAM reports in the format required by EU authorities."
+        },
+        {
+          "question": "How do you ensure ESG data quality?",
+          "answer": "The platform includes built-in validation rules, audit trails for every data point, and AI-powered anomaly detection. All calculations follow recognized methodologies (GHG Protocol, ISO 14064)."
+        }
+      ]
     }
   },
   "environmentalPage": {
@@ -2149,6 +3345,31 @@
       "title": "Ready to Make Environmental Compliance Effortless?",
       "bookDemo": "Book a Demo",
       "watchTour": "Watch a Quick Tour"
+    },
+    "faq": {
+      "title": "FAQ — Environmental Compliance",
+      "items": [
+        {
+          "question": "What environmental standards does Quantifier support?",
+          "answer": "Quantifier covers ISO 14001 (Environmental Management), Life Cycle Assessment (LCA), Carbon Footprint calculations (Scope 1-3), and Decarbonisation pathway planning — all within a single platform."
+        },
+        {
+          "question": "Can I calculate my organization carbon footprint?",
+          "answer": "Yes. The Carbon Footprint module follows the GHG Protocol methodology, covering Scope 1 (direct emissions), Scope 2 (energy), and Scope 3 (value chain). Data collection is automated with supplier integration."
+        },
+        {
+          "question": "How does ISO 14001 compliance work in Quantifier?",
+          "answer": "The platform maps all ISO 14001 clauses to actionable tasks, tracks environmental aspects and impacts, manages documentation, and prepares you for certification and surveillance audits."
+        },
+        {
+          "question": "What is Life Cycle Assessment and do I need it?",
+          "answer": "LCA evaluates the environmental impact of a product across its entire lifecycle. It is increasingly required by regulations (CSRD, EU Taxonomy) and valuable for product design decisions and green marketing claims."
+        },
+        {
+          "question": "Can I set and track decarbonisation targets?",
+          "answer": "Yes. The Decarbonisation module helps you set science-based targets (SBTi-aligned), create reduction roadmaps, track progress against baselines, and report on climate commitments."
+        }
+      ]
     }
   },
   "governancePage": {
@@ -2239,6 +3460,31 @@
       "title": "Take the Work Out of Governance",
       "bookDemo": "Book a Demo",
       "watchTour": "Watch a Quick Tour"
+    },
+    "faq": {
+      "title": "FAQ — Governance & Compliance",
+      "items": [
+        {
+          "question": "What governance areas does Quantifier cover?",
+          "answer": "Quantifier addresses two key governance domains: Legal Policies Management (policy lifecycle, version control, employee acknowledgments) and Whistleblowing (EU Directive 2019/1937 compliant reporting channels)."
+        },
+        {
+          "question": "Is the whistleblowing channel compliant with EU regulations?",
+          "answer": "Yes. The whistleblowing module meets requirements of EU Directive 2019/1937 and national implementations, including anonymous reporting, case management timelines, and mandatory feedback loops."
+        },
+        {
+          "question": "How does policy management work?",
+          "answer": "Quantifier automates the full policy lifecycle: drafting (AI-assisted), review and approval workflows, version control, employee distribution with read-receipt tracking, and periodic review reminders."
+        },
+        {
+          "question": "Can employees report anonymously?",
+          "answer": "Yes. The whistleblowing channel supports fully anonymous submissions. Reporters can communicate with investigators through a secure, anonymized message thread without revealing their identity."
+        },
+        {
+          "question": "How does this integrate with other compliance frameworks?",
+          "answer": "Governance policies and whistleblowing procedures are cross-referenced with framework requirements (NIS2, DORA, ISO 27001). When a policy is updated, related compliance evidence is automatically refreshed."
+        }
+      ]
     }
   },
   "productLevelPage": {
@@ -2334,6 +3580,31 @@
       "description": "Smarter compliance. Stronger transparency. Lower impact. Quantifier gives your products the intelligence they need to lead.",
       "bookDemo": "Book a Demo",
       "talkExpert": "Talk to Our Product Compliance Expert"
+    },
+    "faq": {
+      "title": "FAQ — Product-Level Compliance",
+      "items": [
+        {
+          "question": "What is a Digital Product Passport (DPP)?",
+          "answer": "A DPP is a digital record containing information about a product materials, manufacturing, certifications, and end-of-life handling. The EU Battery Regulation and Ecodesign Regulation require DPPs for certain product categories starting 2027."
+        },
+        {
+          "question": "How does Quantifier help with DPP compliance?",
+          "answer": "Quantifier automates data collection across your supply chain, generates standardized DPPs, manages QR code linking, and ensures your product data meets evolving EU requirements."
+        },
+        {
+          "question": "What is the difference between DPP and LCA?",
+          "answer": "DPP is a product-level data record required by regulation. LCA (Life Cycle Assessment) is an analytical methodology measuring environmental impact across a product lifecycle. Quantifier supports both — LCA data can feed directly into your DPP."
+        },
+        {
+          "question": "Which industries need Digital Product Passports?",
+          "answer": "Starting with batteries (2027), the DPP requirement will expand to textiles, construction materials, electronics, and other sectors under the EU Ecodesign for Sustainable Products Regulation (ESPR)."
+        },
+        {
+          "question": "Can I manage product compliance across multiple regions?",
+          "answer": "Yes. Quantifier supports multi-region compliance requirements, tracking which products need DPPs in which markets, and adapting documentation to local regulatory requirements."
+        }
+      ]
     }
   },
   "nisIIPage": {
@@ -3010,6 +4281,21 @@
       "description": "Join leading organizations that trust Quantifier for SOC 2 compliance automation.",
       "bookDemo": "Book a Demo",
       "seePricing": "See Pricing"
+    },
+    "relatedContent": {
+      "title": "Related Resources",
+      "guide": {
+        "title": "SOC 2 Complete Guide (2026)",
+        "description": "Everything you need to know about SOC 2 Type 1 and Type 2 — requirements, timeline, and preparation."
+      },
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 Comparison",
+        "description": "Which framework do you need? Side-by-side comparison of scope, cost, timeline, and control overlap."
+      },
+      "cost": {
+        "title": "SOC 2 Cost & Timeline",
+        "description": "Realistic breakdown of auditor fees, platform costs, and internal effort for Type 1 and Type 2."
+      }
     }
   },
   "iso27001Page": {
@@ -3357,6 +4643,21 @@
       "description": "Let our AI-powered platform guide you through the entire certification process.",
       "bookDemo": "Book a Demo",
       "explorePlans": "Explore Plans"
+    },
+    "relatedContent": {
+      "title": "Related Resources",
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 Comparison",
+        "description": "Which framework do you need? Decision framework based on market, scope, and certification goals."
+      },
+      "evidence": {
+        "title": "Audit Evidence Automation",
+        "description": "How to eliminate manual evidence collection across ISO 27001, SOC 2, NIS2, and DORA."
+      },
+      "nis2mapping": {
+        "title": "NIS2 vs ISO 27001 Mapping",
+        "description": "Control-by-control mapping of NIS2 Article 21 to ISO 27001 Annex A — see what overlaps."
+      }
     }
   },
   "iso9001Page": {
@@ -3443,6 +4744,31 @@
       "description": "Join organizations that trust Quantifier to automate their ISO 9001 compliance journey.",
       "bookDemo": "Book a Demo",
       "explorePlans": "Explore Plans"
+    },
+    "faq": {
+      "title": "FAQ — ISO 9001 Compliance",
+      "items": [
+        {
+          "question": "What is ISO 9001 and who needs it?",
+          "answer": "ISO 9001 is the international standard for quality management systems (QMS). Any organization — regardless of size or industry — that wants to demonstrate consistent quality in products and services can benefit from ISO 9001 certification."
+        },
+        {
+          "question": "How does Quantifier help with ISO 9001 compliance?",
+          "answer": "Quantifier automates clause mapping, task assignment, document control, and audit preparation for ISO 9001. The AI Compliance Officer continuously monitors your QMS status and flags gaps before auditors do."
+        },
+        {
+          "question": "How long does it take to get ISO 9001 certified with Quantifier?",
+          "answer": "Timelines vary by organization size and maturity, but Quantifier typically reduces the preparation time by 60-70% compared to manual approaches. Most organizations using our platform are audit-ready within 3-6 months."
+        },
+        {
+          "question": "Can I manage ISO 9001 alongside other frameworks?",
+          "answer": "Yes. Quantifier supports multi-framework compliance. Controls shared between ISO 9001 and other standards (like ISO 27001 or ISO 14001) are automatically mapped, eliminating duplicate work."
+        },
+        {
+          "question": "What happens after certification?",
+          "answer": "Quantifier supports the full lifecycle — including surveillance audits, continuous improvement tracking (PDCA cycle), and recertification. The platform keeps your QMS evidence current between audits."
+        }
+      ]
     }
   },
   "doraPage": {
@@ -5687,10 +7013,10 @@
     },
     "hero": {
       "bannerText": "NIS2 directive is now in force across the EU",
-      "heading1": "Your organisation must comply with NIS2.",
+      "heading1": "EU organisations must comply with NIS2.",
       "heading2": "The clock is ticking.",
-      "subtext1": "Quantifier is an AI-native platform that prepares your organisation for audit and ensures continuous NIS2 compliance.",
-      "subtext2": "NIS2 requires operational risk management, incident handling, governance and supply chain security. Quantifier brings everything together in one platform."
+      "subtext1": "Quantifier is an AI-native platform that prepares your organisation for NIS2 compliance across the EU.",
+      "subtext2": "Each EU member state implements NIS2 into national law — Quantifier supports compliance across jurisdictions."
     },
     "form": {
       "title": "Check your NIS2 readiness",
@@ -5713,7 +7039,8 @@
         "Incident reporting within 24h / 72h",
         "Requirements for suppliers and the supply chain",
         "Mandatory ICT risk management",
-        "Fines up to EUR 10M or 2% of annual revenue"
+        "Fines up to EUR 10M or 2% of annual revenue",
+        "Each member state sets its own scope, deadlines and enforcement"
       ],
       "ctaText": "Check if NIS2 applies to you"
     },
@@ -5732,8 +7059,8 @@
     },
     "solution": {
       "label": "Platform",
-      "heading": "AI-native operational platform for NIS2",
-      "subtitle": "All NIS2 requirements in one system — from gap analysis to continuous compliance.",
+      "heading": "AI-native NIS2 compliance platform for EU organisations",
+      "subtitle": "All NIS2 requirements in one system — from gap analysis to continuous compliance across EU jurisdictions.",
       "features": [
         "AI policy mapping — automatic mapping of existing policies to NIS2 requirements using AI.",
         "NIS2 risk register — central risk register linked to NIS2 directive articles.",
@@ -5789,10 +7116,10 @@
       ]
     },
     "auditor": {
-      "heading": "When the auditor walks in — you're ready",
-      "subtitle": "Quantifier automatically prepares complete audit documentation:",
+      "heading": "When the inspector arrives — you're ready",
+      "subtitle": "Quantifier automatically prepares complete inspection documentation:",
       "items": [
-        "Audit-ready policies",
+        "Inspection-ready policies",
         "Risk register",
         "Incident log",
         "Control evidence",
@@ -5805,7 +7132,7 @@
     },
     "continuous": {
       "heading": "NIS2 requires continuous compliance",
-      "subtitle": "A one-off audit is not enough. NIS2 demands an operational, continuous process.",
+      "subtitle": "A one-off assessment is not enough. NIS2 demands an operational, continuous process.",
       "items": [
         "Continuous monitoring",
         "Automatic gap analysis",
@@ -5819,13 +7146,626 @@
       "heading": "Check your NIS2 readiness level",
       "subtitle": "Start with a free maturity assessment and find out what needs immediate attention."
     },
+    "article21": {
+      "heading": "Article 21 — Security Measures Mapped to Actions",
+      "subtitle": "NIS2 Article 21 defines 10 mandatory cybersecurity risk-management measures. Here is each requirement mapped to concrete actions your organisation must take.",
+      "rows": [
+        {
+          "req": "Risk analysis & security policies",
+          "action": "Formal risk assessment, risk register, board-approved policies",
+          "evidence": "Risk reports, policy docs, board approvals"
+        },
+        {
+          "req": "Incident handling",
+          "action": "Detection, response, recovery procedures; 24h/72h/30d reporting",
+          "evidence": "Incident response plan, CSIRT notifications, incident log"
+        },
+        {
+          "req": "Business continuity",
+          "action": "BCP, disaster recovery, crisis management",
+          "evidence": "BCP docs, DR test results, backup logs"
+        },
+        {
+          "req": "Supply chain security",
+          "action": "Supplier risk assessments, contractual security clauses",
+          "evidence": "Due diligence reports, supplier contracts"
+        },
+        {
+          "req": "Systems acquisition & development",
+          "action": "Secure SDLC, vulnerability handling & disclosure",
+          "evidence": "SDLC docs, vulnerability scans, patch records"
+        },
+        {
+          "req": "Effectiveness assessment",
+          "action": "Policies to evaluate cybersecurity measure effectiveness",
+          "evidence": "Audit reports, penetration tests"
+        },
+        {
+          "req": "Cyber hygiene & training",
+          "action": "Security awareness, training for all staff including management",
+          "evidence": "Training records, phishing simulations"
+        },
+        {
+          "req": "Cryptography",
+          "action": "Encryption policies, key management",
+          "evidence": "Encryption policy, key management procedures"
+        },
+        {
+          "req": "HR security & access control",
+          "action": "Access control matrix, asset management, user lifecycle",
+          "evidence": "Access logs, provisioning records"
+        },
+        {
+          "req": "Multi-factor authentication",
+          "action": "MFA deployment, secured emergency communications",
+          "evidence": "MFA records, communication tool inventory"
+        }
+      ],
+      "colReq": "Article 21 Requirement",
+      "colAction": "Required Action",
+      "colEvidence": "Evidence Needed"
+    },
+    "whySoftware": {
+      "heading": "Why Use Software for NIS2 Compliance?",
+      "subtitle": "Manual compliance with NIS2 using spreadsheets and documents is not sustainable at scale. Here's what changes with a compliance automation platform.",
+      "items": [
+        {
+          "before": "Risk register in Excel",
+          "after": "Centralised risk register linked to NIS2 articles with AI scoring"
+        },
+        {
+          "before": "Manual evidence collection",
+          "after": "Automated evidence collection mapped across multiple frameworks"
+        },
+        {
+          "before": "Incident reporting via email",
+          "after": "Structured incident workflows with automatic 24h/72h notifications"
+        },
+        {
+          "before": "Supplier assessment once a year",
+          "after": "Continuous supplier monitoring with real-time risk scoring"
+        },
+        {
+          "before": "Point-in-time compliance checks",
+          "after": "Continuous compliance monitoring with board dashboard"
+        },
+        {
+          "before": "Siloed documentation",
+          "after": "Single source of truth with version control and audit trail"
+        }
+      ],
+      "colBefore": "Without Software",
+      "colAfter": "With Quantifier"
+    },
+    "relatedContent": {
+      "heading": "NIS2 Compliance Resources",
+      "subtitle": "Deep-dive articles to help you prepare for NIS2 requirements.",
+      "articles": [
+        {
+          "title": "NIS2 Compliance Checklist 2026",
+          "desc": "Article 21 requirements mapped to actions and evidence",
+          "slug": "nis2-compliance-checklist-2026"
+        },
+        {
+          "title": "NIS2 Directive — Complete Guide",
+          "desc": "Everything you need to know about the NIS2 Directive",
+          "slug": "nis2-directive"
+        },
+        {
+          "title": "NIS2 Requirements & Implementation",
+          "desc": "Technical implementation guide for compliance teams",
+          "slug": "nis2-directive-compliance-requirements-implementation-guide"
+        }
+      ]
+    },
     "seo": {
-      "titleEn": "NIS2 Compliance – AI-Native GRC Platform | Quantifier.ai",
-      "descEn": "Quantifier is an AI-native GRC platform that prepares your organization for NIS2 audit and ensures continuous compliance.",
+      "titleEn": "NIS2 Compliance Software — AI-Powered Risk & Evidence Platform | Quantifier.ai",
+      "descEn": "Automate NIS2 compliance with AI-native software. Gap analysis, risk management, incident reporting, supply chain security and continuous audit readiness in one platform.",
       "faq1q": "What is NIS2?",
-      "faq1a": "NIS2 is an EU directive expanding cybersecurity requirements to essential and important entities across 18 sectors, covering risk management, incident reporting, and supply chain security.",
+      "faq1a": "NIS2 (EU 2022/2555) is the EU directive on measures for a high common level of cybersecurity. It expands requirements to essential and important entities across 18 sectors, covering risk management, incident reporting, supply chain security, and management accountability.",
       "faq2q": "What are the penalties for NIS2 non-compliance?",
-      "faq2a": "Penalties for NIS2 non-compliance can reach EUR 10M or 2% of global annual revenue for essential entities."
+      "faq2a": "Fines up to EUR 10 million or 2% of global annual turnover for essential entities, and EUR 7 million or 1.4% for important entities. Management can also be held personally liable.",
+      "faq3q": "Does NIS2 apply the same way in every EU country?",
+      "faq3a": "No. NIS2 is an EU directive that sets a baseline, but each member state transposes it into national law. Scope, deadlines, and enforcement details may differ between countries.",
+      "faq4q": "How long does NIS2 implementation take?",
+      "faq4a": "Typical implementation takes 6-18 months depending on current maturity. With compliance automation software, this can be reduced to 3-6 months.",
+      "faq5q": "Is ISO 27001 sufficient for NIS2 compliance?",
+      "faq5a": "ISO 27001 covers many NIS2 requirements but key gaps remain: incident reporting timelines (24h/72h), supply chain obligations, and management accountability provisions specific to NIS2.",
+      "faq6q": "What is Article 21 of NIS2?",
+      "faq6a": "Article 21 defines 10 categories of cybersecurity risk-management measures that essential and important entities must implement, including risk analysis, incident handling, business continuity, supply chain security, and cryptography."
+    }
+  },
+  "compare": {
+    "common": {
+      "requestDemo": "Request a demo",
+      "viewPricing": "View pricing",
+      "seeFrameworks": "See all frameworks",
+      "feature": "Feature",
+      "unconfirmed": "Not publicly confirmed",
+      "legendYes": "Publicly documented",
+      "legendPartial": "Partially documented / narrower scope",
+      "legendNo": "Not available",
+      "legendNote": "Publicly documented = confirmed on official product, framework, trust, help center, or privacy pages reviewed during page update.",
+      "features": {
+        "multiFramework": "Multi-framework compliance",
+        "aiWorkflows": "AI-driven / agentic compliance workflows",
+        "continuousMonitoring": "Continuous compliance monitoring",
+        "nis2Support": "Dedicated NIS2 support",
+        "doraSupport": "Dedicated DORA support",
+        "esgCsrd": "Full ESG / CSRD reporting workflows",
+        "supplyChain": "Third-party / supply chain risk management",
+        "euHosting": "Publicly documented EU data hosting",
+        "evidenceCollection": "Automated evidence collection",
+        "riskAssessment": "AI-assisted risk assessment"
+      },
+      "relatedReading": "Related Reading"
+    },
+    "vantaAlternative": {
+      "seo": {
+        "title": "Vanta Alternative for EU Compliance Teams | Quantifier.ai",
+        "description": "Compare Quantifier.ai vs Vanta. Both platforms offer multi-framework compliance and AI workflows. See where Quantifier leads for EU-regulated organisations needing NIS2, DORA, and ESG/CSRD."
+      },
+      "hero": {
+        "badge": "Vanta Alternative",
+        "heading": "Quantifier.ai vs Vanta: which is better for EU compliance?",
+        "subheading": "Both platforms automate compliance and offer AI-driven workflows. Quantifier differentiates with native ESG/CSRD reporting, deep value-chain collaboration, and a unified EU regulatory environment covering NIS2, DORA, GDPR, and sustainability in one place."
+      },
+      "table": {
+        "heading": "Quantifier.ai vs Vanta — feature comparison"
+      },
+      "comparison": {
+        "multiFramework": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "aiWorkflows": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "continuousMonitoring": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "nis2Support": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "doraSupport": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "esgCsrd": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "supplyChain": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "euHosting": {
+          "quantifier": "unconfirmed",
+          "competitor": "partial"
+        },
+        "evidenceCollection": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "riskAssessment": {
+          "quantifier": "true",
+          "competitor": "true"
+        }
+      },
+      "differentiators": {
+        "heading": "Where Quantifier leads over Vanta",
+        "subheading": "Both platforms are strong in SOC 2 and ISO 27001 automation. Quantifier adds depth where EU-regulated organisations need it most.",
+        "items": [
+          {
+            "title": "Full ESG / CSRD reporting workflows",
+            "desc": "CSRD, ESRS, carbon footprint, and EU Taxonomy reporting natively integrated — not available in Vanta."
+          },
+          {
+            "title": "Value chain / supplier collaboration",
+            "desc": "Deep supplier due diligence, value-chain risk mapping, and collaborative compliance workflows required by NIS2 and DORA."
+          },
+          {
+            "title": "Unified EU regulatory environment",
+            "desc": "NIS2, DORA, GDPR, ESG, and security frameworks in a single governance platform — no switching between tools."
+          },
+          {
+            "title": "AI Agent coordination approach",
+            "desc": "AI Compliance Officer coordinates across frameworks, generating cross-framework evidence and documentation autonomously."
+          },
+          {
+            "title": "Multi-framework governance",
+            "desc": "Map shared controls across SOC 2, ISO 27001, NIS2, DORA, and ESG simultaneously — eliminate redundant compliance work."
+          },
+          {
+            "title": "European regulatory depth",
+            "desc": "Purpose-built for EU directive compliance including country-specific NIS2 implementation and DORA requirements for financial entities."
+          }
+        ]
+      },
+      "bestFor": {
+        "heading": "Who this comparison page is for",
+        "subheading": "This page is for compliance teams evaluating Vanta and considering alternatives with deeper EU regulatory support.",
+        "items": [
+          "Compliance managers evaluating GRC platforms for EU-regulated organisations",
+          "Teams needing NIS2, DORA, and ESG/CSRD alongside SOC 2 and ISO 27001",
+          "Organisations looking for unified governance across security and sustainability",
+          "Companies needing deep supply chain and value-chain compliance workflows"
+        ]
+      },
+      "whenQuantifier": {
+        "heading": "When Quantifier is the better fit",
+        "items": [
+          "You need ESG/CSRD reporting workflows alongside security compliance",
+          "Your organisation operates under NIS2, DORA, and GDPR simultaneously",
+          "You need deep supplier due diligence and value-chain collaboration",
+          "You want a single platform for security, regulatory, and sustainability governance",
+          "You prefer an AI agent that coordinates across multiple EU frameworks"
+        ]
+      },
+      "whenCompetitor": {
+        "heading": "When Vanta may be the better fit",
+        "items": [
+          "Your compliance focus is primarily SOC 2 and ISO 27001 without EU-specific regulatory needs",
+          "You need a very large ecosystem of pre-built integrations with SaaS tools",
+          "Your organisation is US-headquartered with minimal EU regulatory obligations",
+          "You prioritise a well-established vendor trust network and customer base"
+        ]
+      },
+      "whyEu": {
+        "heading": "Why EU-regulated teams may prefer Quantifier",
+        "items": [
+          "Unified NIS2 + DORA + GDPR + ESG governance in one environment",
+          "Native CSRD/ESRS sustainability reporting — not available in Vanta",
+          "Supply chain and value-chain compliance workflows built for EU directives",
+          "AI agent that understands EU regulatory context and cross-framework dependencies",
+          "Purpose-built for organisations operating under multiple EU regulatory regimes"
+        ]
+      },
+      "faq": {
+        "heading": "Frequently asked questions",
+        "items": [
+          {
+            "question": "Is Quantifier.ai a good alternative to Vanta?",
+            "answer": "Yes, especially for EU-regulated organisations that need NIS2, DORA, GDPR, and ESG/CSRD compliance alongside SOC 2 and ISO 27001. Quantifier offers unified governance across security and sustainability frameworks."
+          },
+          {
+            "question": "Does Vanta support NIS2 and DORA?",
+            "answer": "Yes, Vanta publicly documents support for both NIS2 and DORA frameworks. However, Quantifier offers deeper EU regulatory integration with ESG/CSRD workflows and value-chain collaboration features that Vanta does not currently provide."
+          },
+          {
+            "question": "Which platform is better for EU-focused compliance teams?",
+            "answer": "Quantifier is purpose-built for EU regulatory environments. It combines NIS2, DORA, GDPR, and ESG/CSRD in a single governance platform with native supply chain compliance workflows. Vanta is strong for SOC 2 and ISO 27001 but has a broader global focus."
+          },
+          {
+            "question": "Does Quantifier support ESG and CSRD reporting?",
+            "answer": "Yes. Quantifier natively supports CSRD, ESRS, carbon footprint, and EU Taxonomy reporting workflows — a clear differentiator over Vanta, which does not currently offer full ESG/CSRD reporting."
+          },
+          {
+            "question": "How should buyers evaluate AI-driven compliance workflows?",
+            "answer": "Look at the scope and autonomy of AI capabilities. Both Vanta and Quantifier offer AI-driven workflows. Quantifier's AI Compliance Officer coordinates across multiple EU frameworks, generating cross-framework evidence and documentation autonomously."
+          }
+        ]
+      },
+      "disclaimer": "Comparison based on publicly available product information as of March 2026. Feature availability may vary by plan, packaging, region, and implementation scope.",
+      "cta": {
+        "heading": "Ready to see Quantifier in action?",
+        "subheading": "See how Quantifier delivers unified compliance across EU regulatory and sustainability frameworks."
+      }
+    },
+    "drataAlternative": {
+      "seo": {
+        "title": "Drata Alternative for EU Compliance Teams | Quantifier.ai",
+        "description": "Compare Quantifier.ai vs Drata. Both platforms offer compliance automation and AI workflows. See where Quantifier differentiates for EU-regulated organisations needing ESG/CSRD and value-chain governance."
+      },
+      "hero": {
+        "badge": "Drata Alternative",
+        "heading": "Quantifier.ai vs Drata: which fits EU compliance better?",
+        "subheading": "Drata and Quantifier both automate compliance with AI capabilities. Quantifier adds native ESG/CSRD reporting, deep value-chain collaboration, and unified governance for organisations operating under multiple EU regulatory regimes."
+      },
+      "table": {
+        "heading": "Quantifier.ai vs Drata — feature comparison"
+      },
+      "comparison": {
+        "multiFramework": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "aiWorkflows": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "continuousMonitoring": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "nis2Support": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "doraSupport": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "esgCsrd": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "supplyChain": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "euHosting": {
+          "quantifier": "unconfirmed",
+          "competitor": "unconfirmed"
+        },
+        "evidenceCollection": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "riskAssessment": {
+          "quantifier": "true",
+          "competitor": "true"
+        }
+      },
+      "differentiators": {
+        "heading": "Where Quantifier leads over Drata",
+        "subheading": "Both platforms cover SOC 2, ISO 27001, NIS2, and DORA. Quantifier adds ESG/CSRD and deeper value-chain governance.",
+        "items": [
+          {
+            "title": "Full ESG / CSRD reporting workflows",
+            "desc": "CSRD, ESRS, carbon footprint, and EU Taxonomy reporting — not available in Drata."
+          },
+          {
+            "title": "Value chain / supplier collaboration",
+            "desc": "Deep supplier due diligence and collaborative compliance workflows for EU directives."
+          },
+          {
+            "title": "Unified governance platform",
+            "desc": "Security, regulatory, and sustainability compliance in one environment — no tool-switching."
+          },
+          {
+            "title": "AI agent across EU frameworks",
+            "desc": "AI Compliance Officer coordinates cross-framework evidence and documentation generation."
+          },
+          {
+            "title": "Cross-framework control mapping",
+            "desc": "One control satisfies SOC 2, ISO 27001, NIS2, DORA, and ESG simultaneously."
+          },
+          {
+            "title": "European regulatory depth",
+            "desc": "Purpose-built for EU directive compliance including country-specific NIS2 and DORA requirements."
+          }
+        ]
+      },
+      "bestFor": {
+        "heading": "Who this comparison page is for",
+        "subheading": "This page is for compliance teams evaluating Drata and considering alternatives with ESG/CSRD and value-chain capabilities.",
+        "items": [
+          "Compliance teams evaluating GRC platforms for EU-regulated organisations",
+          "Teams needing ESG/CSRD reporting alongside SOC 2, ISO 27001, NIS2, and DORA",
+          "Organisations looking for unified security and sustainability governance",
+          "Companies needing supplier and value-chain compliance workflows"
+        ]
+      },
+      "whenQuantifier": {
+        "heading": "When Quantifier is the better fit",
+        "items": [
+          "You need ESG/CSRD reporting alongside security compliance",
+          "Your organisation operates under NIS2, DORA, and GDPR simultaneously",
+          "You need deep supplier due diligence and value-chain collaboration",
+          "You want security and sustainability governance in one platform"
+        ]
+      },
+      "whenCompetitor": {
+        "heading": "When Drata may be the better fit",
+        "items": [
+          "Your primary compliance focus is SOC 2 and ISO 27001 without ESG/CSRD needs",
+          "You need a very large library of pre-built integrations with cloud and SaaS tools",
+          "Your organisation has minimal EU-specific sustainability reporting obligations",
+          "You prioritise a platform with a well-established US customer base"
+        ]
+      },
+      "whyEu": {
+        "heading": "Why EU-regulated teams may prefer Quantifier",
+        "items": [
+          "Unified NIS2 + DORA + GDPR + ESG governance in one environment",
+          "Native CSRD/ESRS sustainability reporting — not available in Drata",
+          "Supply chain and value-chain compliance workflows for EU directives",
+          "AI agent coordinating across EU regulatory frameworks",
+          "Purpose-built for multi-regime EU compliance"
+        ]
+      },
+      "faq": {
+        "heading": "Frequently asked questions",
+        "items": [
+          {
+            "question": "Is Quantifier.ai a good alternative to Drata?",
+            "answer": "Yes, especially for EU-regulated organisations needing ESG/CSRD reporting and value-chain governance alongside SOC 2, ISO 27001, NIS2, and DORA."
+          },
+          {
+            "question": "Does Drata support NIS2 and DORA?",
+            "answer": "Yes, Drata publicly documents support for both NIS2 and DORA compliance automation. Quantifier differentiates with native ESG/CSRD workflows and deeper value-chain collaboration."
+          },
+          {
+            "question": "Which platform is better for ESG and CSRD reporting?",
+            "answer": "Quantifier natively supports CSRD, ESRS, carbon footprint, and EU Taxonomy reporting. Drata does not currently offer full ESG/CSRD reporting workflows."
+          },
+          {
+            "question": "Does Drata offer AI-driven compliance workflows?",
+            "answer": "Yes, Drata publicly documents AI-native and agentic compliance capabilities. Quantifier's AI Compliance Officer focuses on cross-framework coordination across EU regulatory regimes."
+          },
+          {
+            "question": "How does evidence collection compare?",
+            "answer": "Both platforms offer automated evidence collection. Quantifier extends this with cross-framework evidence mapping that satisfies multiple EU frameworks simultaneously."
+          }
+        ]
+      },
+      "disclaimer": "Comparison based on publicly available product information as of March 2026. Feature availability may vary by plan, packaging, region, and implementation scope.",
+      "cta": {
+        "heading": "Ready to see Quantifier in action?",
+        "subheading": "See how Quantifier delivers unified compliance across EU regulatory and sustainability frameworks."
+      }
+    },
+    "sprintoAlternative": {
+      "seo": {
+        "title": "Sprinto Alternative for EU Compliance Teams | Quantifier.ai",
+        "description": "Compare Quantifier.ai vs Sprinto. Both platforms automate compliance with AI. See where Quantifier leads for EU organisations needing ESG/CSRD, value-chain governance, and EU data hosting."
+      },
+      "hero": {
+        "badge": "Sprinto Alternative",
+        "heading": "Quantifier.ai vs Sprinto: which is better for EU compliance?",
+        "subheading": "Both platforms automate compliance and offer AI-driven workflows. Quantifier adds native ESG/CSRD reporting, deep value-chain collaboration, and is built for organisations operating under EU regulatory regimes."
+      },
+      "table": {
+        "heading": "Quantifier.ai vs Sprinto — feature comparison"
+      },
+      "comparison": {
+        "multiFramework": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "aiWorkflows": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "continuousMonitoring": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "nis2Support": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "doraSupport": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "esgCsrd": {
+          "quantifier": "true",
+          "competitor": "false"
+        },
+        "supplyChain": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "euHosting": {
+          "quantifier": "unconfirmed",
+          "competitor": "false"
+        },
+        "evidenceCollection": {
+          "quantifier": "true",
+          "competitor": "true"
+        },
+        "riskAssessment": {
+          "quantifier": "true",
+          "competitor": "true"
+        }
+      },
+      "differentiators": {
+        "heading": "Where Quantifier leads over Sprinto",
+        "subheading": "Both platforms cover SOC 2 and ISO 27001 with AI workflows. Quantifier adds ESG/CSRD, EU data hosting considerations, and value-chain governance.",
+        "items": [
+          {
+            "title": "Full ESG / CSRD reporting workflows",
+            "desc": "CSRD, ESRS, carbon footprint, and EU Taxonomy reporting — not available in Sprinto."
+          },
+          {
+            "title": "EU data hosting considerations",
+            "desc": "Sprinto's trust center indicates US-based hosting (AWS us-west-1). Quantifier is built with EU-regulated organisations in mind."
+          },
+          {
+            "title": "Value chain / supplier collaboration",
+            "desc": "Deep supplier due diligence and collaborative compliance workflows for EU directives."
+          },
+          {
+            "title": "Unified EU governance platform",
+            "desc": "NIS2, DORA, GDPR, ESG, and security frameworks in one environment."
+          },
+          {
+            "title": "Cross-framework control mapping",
+            "desc": "One control satisfies SOC 2, ISO 27001, NIS2, DORA, and ESG simultaneously."
+          },
+          {
+            "title": "European regulatory depth",
+            "desc": "Purpose-built for EU directive compliance with country-specific NIS2 implementation."
+          }
+        ]
+      },
+      "bestFor": {
+        "heading": "Who this comparison page is for",
+        "subheading": "This page is for compliance teams evaluating Sprinto and considering alternatives with EU data hosting, ESG/CSRD, and value-chain governance.",
+        "items": [
+          "Compliance teams evaluating GRC platforms for EU-regulated organisations",
+          "Teams needing EU data hosting guarantees alongside compliance automation",
+          "Organisations looking for ESG/CSRD reporting in a compliance platform",
+          "Companies needing deep supply chain and value-chain governance"
+        ]
+      },
+      "whenQuantifier": {
+        "heading": "When Quantifier is the better fit",
+        "items": [
+          "You need ESG/CSRD reporting alongside security compliance",
+          "EU data hosting is important for your organisation",
+          "You need deep supplier due diligence and value-chain collaboration",
+          "You want NIS2, DORA, GDPR, and ESG in one governance platform"
+        ]
+      },
+      "whenCompetitor": {
+        "heading": "When Sprinto may be the better fit",
+        "items": [
+          "Your compliance focus is SOC 2 and ISO 27001 for a fast-growing startup",
+          "US-based hosting is acceptable for your organisation",
+          "You do not need ESG/CSRD or sustainability reporting workflows",
+          "You prioritise speed-to-audit for SOC 2 certification"
+        ]
+      },
+      "whyEu": {
+        "heading": "Why EU-regulated teams may prefer Quantifier",
+        "items": [
+          "Unified NIS2 + DORA + GDPR + ESG governance in one environment",
+          "Native CSRD/ESRS sustainability reporting — not available in Sprinto",
+          "EU data hosting considerations — Sprinto uses US-based infrastructure",
+          "Supply chain compliance workflows built for EU directives",
+          "Purpose-built for multi-regime EU compliance"
+        ]
+      },
+      "faq": {
+        "heading": "Frequently asked questions",
+        "items": [
+          {
+            "question": "Is Quantifier.ai a good alternative to Sprinto?",
+            "answer": "Yes, especially for EU-regulated organisations that need ESG/CSRD reporting, EU data hosting considerations, and value-chain governance alongside SOC 2 and ISO 27001."
+          },
+          {
+            "question": "Does Sprinto support NIS2 and DORA?",
+            "answer": "Yes, Sprinto publicly documents support for NIS2 and DORA compliance. Quantifier differentiates with native ESG/CSRD workflows, EU data hosting focus, and deeper value-chain collaboration."
+          },
+          {
+            "question": "Where is Sprinto's data hosted?",
+            "answer": "Sprinto's trust center publicly indicates hosting on AWS us-west-1 (California, USA). Organisations with EU data residency requirements should evaluate this against their compliance needs."
+          },
+          {
+            "question": "Does Quantifier support ESG and CSRD reporting?",
+            "answer": "Yes. Quantifier natively supports CSRD, ESRS, carbon footprint, and EU Taxonomy reporting workflows — a clear differentiator over Sprinto."
+          },
+          {
+            "question": "Which platform is better for fast-growing startups?",
+            "answer": "Sprinto is well-suited for startups focused on SOC 2 certification. Quantifier is better for organisations that also need EU regulatory compliance, ESG/CSRD, and value-chain governance."
+          },
+          {
+            "question": "How do AI capabilities compare?",
+            "answer": "Both platforms offer AI-driven compliance workflows. Sprinto communicates autonomous trust and AI agents. Quantifier's AI Compliance Officer coordinates across EU regulatory frameworks with cross-framework evidence generation."
+          }
+        ]
+      },
+      "disclaimer": "Comparison based on publicly available product information as of March 2026. Feature availability may vary by plan, packaging, region, and implementation scope.",
+      "cta": {
+        "heading": "Ready to see Quantifier in action?",
+        "subheading": "See how Quantifier delivers unified compliance across EU regulatory and sustainability frameworks."
+      }
     }
   }
 }

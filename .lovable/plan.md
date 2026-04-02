@@ -1,45 +1,40 @@
+# SEO Content Clusters — 20-Page Map
 
+## Status: ✅ COMPLETE
 
-## Problem
+### Completed
+- ✅ Meta title updates: NIS2 framework (EN/PL), cybersecurity-check (EN/PL/CS)
+- ✅ P1 blog drafts created in CMS:
+  - EN: `nis2-compliance-checklist-2026`
+  - PL: `lista-kontrolna-nis2-2026`
+  - PL: `wdrozenie-nis2-ksc-przewodnik`
+  - EN: `iso-27001-vs-soc-2-comparison`
+  - EN: `vanta-alternatives-europe-eu-compliance`
+- ✅ UPDATE `/en/frameworks/nis-2/` — Article 21 mapping table, Why Software section, expanded FAQ
+- ✅ UPDATE `/pl/frameworks/nis-2/` — UKSC-specific sections added
+- ✅ P2 blog drafts created in CMS:
+  - EN: `nis2-readiness-assessment-guide`
+  - PL: `przewodnik-ocena-gotowosci-nis2`
+  - EN: `nis2-incident-reporting-requirements`
+  - PL: `nis2-raportowanie-incydentow`
+  - EN: `audit-evidence-collection-automation`
+  - EN: `soc-2-compliance-cost-timeline`
+- ✅ Framework pages (SOC, ISO 27001) — Related Content sections added
+- ✅ P3 blog drafts created in CMS:
+  - EN: `nis2-vs-iso-27001-mapping`
+  - EN: `nis2-board-accountability`
+  - PL: `odpowiedzialnosc-zarzadu-nis2`
+  - EN: `nis2-penalties-fines-enforcement`
+  - PL: `kary-nis2-ksc-sankcje`
+  - EN: `compliance-automation-evaluation-guide`
+  - PL: `alternatywy-dla-vanta-europa`
+- ✅ Compare pages — internal links to Vanta Alternatives blog added
+- ✅ UPDATE Continuous Compliance article — expanded with Evidence Automation, Real-Time Monitoring, Software Requirements sections
+- ✅ UPDATE SOC 2 Complete Guide — added SOC 2 vs ISO 27001 comparison + Best Tools sections
+- ✅ UPDATE Compliance Monitoring Guide — added Best Compliance Monitoring Tools section
 
-When switching language on a content detail page (e.g., `/pl/success-stories/case-study-biofarm`), `changeLanguage` simply replaces the locale prefix (`/pl/` → `/en/`) but keeps the same slug. Since content has different slugs per language (linked via `group_id`), the target URL doesn't exist and shows a 404.
-
-The `alternates` data (containing `{ lang, slug }` pairs for all language versions) is **already fetched** in both `BlogPost.tsx` and `StoryDetail.tsx` via the `useAlternates` hook — it's just not connected to the language switcher.
-
-## Solution
-
-Add an "alternates registry" so content pages can tell the language switcher about their translated URLs.
-
-### 1. Extend `LanguageContext` with alternates registry
-
-Add state + methods to `LanguageContext`:
-- `setAlternates(alternates: Array<{ lang: string; slug: string }>, contentType: 'post' | 'story')` — pages call this when alternates load
-- `clearAlternates()` — pages call this on unmount
-- Update `changeLanguage`: before navigating, check if an alternate exists for the target locale. If so, build the correct URL (e.g., `/${newLocale}/blog/${alternateSlug}` or `/${newLocale}/success-stories/${alternateSlug}`). If not, fall back to the list page (`/${newLocale}/blog` or `/${newLocale}/success-stories`).
-
-### 2. Register alternates in `BlogPost.tsx`
-
-Add a `useEffect` that calls `setAlternates(alternates, 'post')` when `alternates` data loads, and `clearAlternates()` on unmount.
-
-### 3. Register alternates in `StoryDetail.tsx`
-
-Same pattern — call `setAlternates(alternates, 'story')` when data loads, cleanup on unmount.
-
-### 4. Fallback behavior
-
-When switching language on a content page that has **no translation** for the target language:
-- Redirect to the list page (`/${locale}/blog` or `/${locale}/success-stories`) instead of showing a 404.
-
-### Technical Details
-
-**`src/contexts/LanguageContext.tsx`**:
-- Add `contentAlternates` state (`Array<{ lang: string; slug: string }>` + `contentType`)
-- Add `setAlternates` and `clearAlternates` to context value
-- In `changeLanguage`: detect if on `/blog/` or `/success-stories/` detail route, check alternates, navigate to correct slug or fallback to list
-
-**`src/pages/blog/BlogPost.tsx`**: Add useEffect to register/clear alternates
-
-**`src/pages/blog/StoryDetail.tsx`**: Add useEffect to register/clear alternates
-
-**No new dependencies or database changes needed.**
-
+### Product page expansion (completed previously)
+- ✅ All 6 product pages rebuilt with 7-section layout + mockups + FAQ JSON-LD
+- ✅ All 3 role pages rebuilt with unique content + FAQ JSON-LD
+- ✅ Compare pages updated (March 2026 data)
+- ✅ Framework pages have DefinitionsBlock + SoftwareApplication schema

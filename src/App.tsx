@@ -18,9 +18,19 @@ import NotFound from "./pages/NotFound";
 // Product pages
 import ProductOverview from "./pages/product/ProductOverview";
 import Features from "./pages/product/Features";
+import ComplianceOfficer from "./pages/product/ComplianceOfficer";
+import TaskDataManagement from "./pages/product/TaskDataManagement";
+import DocumentsManagement from "./pages/product/DocumentsManagement";
+import ValueChain from "./pages/product/ValueChain";
+import RiskAssessment from "./pages/product/RiskAssessment";
+import AnalyticsDashboards from "./pages/product/AnalyticsDashboards";
+
 
 // By Roles
 import ByRoles from "./pages/roles/ByRoles";
+import Managers from "./pages/roles/Managers";
+import Contributors from "./pages/roles/Contributors";
+import Auditor from "./pages/roles/Auditor";
 
 // Frameworks
 import Frameworks from "./pages/frameworks/Frameworks";
@@ -56,6 +66,9 @@ import StoryDetail from "./pages/blog/StoryDetail";
 // SEO Landing pages
 import GrcPlatform from "./pages/seo-landing/GrcPlatform";
 import Nis2Ksc from "./pages/seo-landing/Nis2Ksc";
+
+// Compare pages
+import ComparePage from "./pages/compare/ComparePage";
 
 // Legal pages
 import CookiesPolicy from "./pages/legal/CookiesPolicy";
@@ -107,20 +120,20 @@ const MainRoutes = () => (
         {/* Product routes */}
         <Route path="/:locale/product" element={<Features />} />
         <Route path="/:locale/product/overview" element={<ProductOverview />} />
-        <Route path="/:locale/product/features" element={<Features />} />
-        <Route path="/:locale/product/ai-compliance-officer" element={<Features />} />
-        <Route path="/:locale/product/task-data-management" element={<Features />} />
-        <Route path="/:locale/product/documents-management" element={<Features />} />
-        <Route path="/:locale/product/value-chain" element={<Features />} />
-        <Route path="/:locale/product/risk-assessment" element={<Features />} />
-        <Route path="/:locale/product/analytics-dashboards" element={<Features />} />
-        <Route path="/:locale/product/api-integrations" element={<Features />} />
+        <Route path="/:locale/product/features" element={<Navigate to="../product" replace />} />
+        <Route path="/:locale/product/ai-compliance-officer" element={<ComplianceOfficer />} />
+        <Route path="/:locale/product/task-data-management" element={<TaskDataManagement />} />
+        <Route path="/:locale/product/documents-management" element={<DocumentsManagement />} />
+        <Route path="/:locale/product/value-chain" element={<ValueChain />} />
+        <Route path="/:locale/product/risk-assessment" element={<RiskAssessment />} />
+        <Route path="/:locale/product/analytics-dashboards" element={<AnalyticsDashboards />} />
+        
     
         {/* By Roles routes */}
         <Route path="/:locale/by-roles" element={<ByRoles />} />
-        <Route path="/:locale/by-roles/managers" element={<ByRoles />} />
-        <Route path="/:locale/by-roles/contributors" element={<ByRoles />} />
-        <Route path="/:locale/by-roles/auditor" element={<ByRoles />} />
+        <Route path="/:locale/by-roles/managers" element={<Managers />} />
+        <Route path="/:locale/by-roles/contributors" element={<Contributors />} />
+        <Route path="/:locale/by-roles/auditor" element={<Auditor />} />
     
         {/* Frameworks main page */}
         <Route path="/:locale/frameworks" element={<Frameworks />} />
@@ -162,6 +175,9 @@ const MainRoutes = () => (
         <Route path="/:locale/nis2" element={<Navigate to="frameworks/nis-2" replace />} />
         <Route path="/:locale/grc-platform" element={<GrcPlatform />} />
         <Route path="/:locale/nis2-ksc" element={<Navigate to="frameworks/nis-2" replace />} />
+
+        {/* Compare pages */}
+        <Route path="/:locale/compare/:slug" element={<ComparePage />} />
 
         {/* Events routes */}
         <Route path="/:locale/events" element={<EventsHub />} />

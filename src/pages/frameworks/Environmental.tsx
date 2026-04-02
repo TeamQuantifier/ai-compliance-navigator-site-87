@@ -10,6 +10,7 @@ import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
 import CarbonFootprintDashboard from '@/components/dashboards/environmental/CarbonFootprintDashboard';
 import DecarbonisationDashboard from '@/components/dashboards/environmental/DecarbonisationDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Environmental = () => {
   const [activeTab, setActiveTab] = useState("iso14001");
@@ -221,6 +222,13 @@ const Environmental = () => {
             </Card>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title={t('environmentalPage.faq.title')}
+          faqs={(t('environmentalPage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/environmental`}
+        />
         
         {/* Call to Action */}
         <div className="mt-10 text-center">

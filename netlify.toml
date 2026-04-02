@@ -142,6 +142,16 @@
   status = 301
 
 [[redirects]]
+  from = "/:locale/product/features"
+  to = "/:locale/product/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/product/api-integrations"
+  to = "/:locale/product/"
+  status = 301
+
+[[redirects]]
   from = "/product/*"
   to = "/en/product/:splat"
   status = 301

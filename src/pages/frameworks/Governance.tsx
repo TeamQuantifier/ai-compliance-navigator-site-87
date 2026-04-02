@@ -8,6 +8,7 @@ import LegalPoliciesDashboard from '@/components/dashboards/governance/LegalPoli
 import WhistleblowingDashboard from '@/components/dashboards/governance/WhistleblowingDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Governance = () => {
   const [activeTab, setActiveTab] = useState("legal-policies");
@@ -129,6 +130,13 @@ const Governance = () => {
             </Card>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title={t('governancePage.faq.title')}
+          faqs={(t('governancePage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
+          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/governance`}
+        />
         
         {/* Call to Action */}
         <div className="mt-10 text-center">
