@@ -1108,7 +1108,47 @@
           "description": "Connect our platform with your existing tools and systems for seamless operation."
         }
       },
-      "learnMore": "Learn more"
+      "learnMore": "Learn more",
+      "whyQuantifier": {
+        "title": "Why Teams Choose Quantifier",
+        "items": {
+          "aiNative": {
+            "title": "AI-Native Platform",
+            "desc": "Built from the ground up with AI — not bolted on. The AI Compliance Officer works autonomously to keep you compliant."
+          },
+          "multiFramework": {
+            "title": "Multi-Framework Coverage",
+            "desc": "Manage SOC 2, ISO 27001, GDPR, NIS2, DORA, ESG, and more from a single workspace."
+          },
+          "fastDeployment": {
+            "title": "Fast Deployment",
+            "desc": "Go from signup to audit-ready in weeks, not months. Pre-built control libraries and automated evidence collection."
+          },
+          "rolesBuiltIn": {
+            "title": "Role-Based Access",
+            "desc": "Dedicated views for managers, contributors, and auditors — everyone sees exactly what they need."
+          }
+        }
+      },
+      "statsTitle": "Platform at a Glance",
+      "stats": {
+        "frameworks": {
+          "value": "15+",
+          "label": "Frameworks Supported"
+        },
+        "controls": {
+          "value": "2,500+",
+          "label": "Pre-Built Controls"
+        },
+        "timeSaved": {
+          "value": "70%",
+          "label": "Time Saved vs Manual"
+        },
+        "auditReady": {
+          "value": "4 weeks",
+          "label": "Average Time to Audit-Ready"
+        }
+      }
     },
     "features": {
       "title": "Built-in Intelligence, Embedded Compliance",
@@ -3152,6 +3192,31 @@
       "description": "Ready to automate your sustainability and ESG compliance? Quantifier makes it easy.",
       "bookConsultation": "Book a Consultation",
       "watchDemo": "Watch Demo Video"
+    },
+    "faq": {
+      "title": "FAQ — ESG & Sustainability Compliance",
+      "items": [
+        {
+          "question": "What ESG frameworks does Quantifier support?",
+          "answer": "Quantifier covers CSRD/ESRS, GRI Standards, and CBAM reporting. The platform maps disclosure requirements, tracks data collection progress, and generates audit-ready reports for each framework."
+        },
+        {
+          "question": "How does the Envirly integration work?",
+          "answer": "Envirly — part of the Quantifier ecosystem — specializes in environmental compliance: GHG accounting (Scope 1-3), LCA analysis, carbon footprint calculations, and CSRD reporting. Data flows seamlessly between both platforms."
+        },
+        {
+          "question": "Can Quantifier handle double materiality assessments?",
+          "answer": "Yes. The platform guides you through the double materiality assessment process required by CSRD, helping identify material topics from both impact and financial perspectives with stakeholder input tracking."
+        },
+        {
+          "question": "Is CBAM reporting automated?",
+          "answer": "Quantifier automates CBAM data collection from importers, calculates embedded emissions per product category, and generates quarterly CBAM reports in the format required by EU authorities."
+        },
+        {
+          "question": "How do you ensure ESG data quality?",
+          "answer": "The platform includes built-in validation rules, audit trails for every data point, and AI-powered anomaly detection. All calculations follow recognized methodologies (GHG Protocol, ISO 14064)."
+        }
+      ]
     }
   },
   "environmentalPage": {
@@ -3280,6 +3345,31 @@
       "title": "Ready to Make Environmental Compliance Effortless?",
       "bookDemo": "Book a Demo",
       "watchTour": "Watch a Quick Tour"
+    },
+    "faq": {
+      "title": "FAQ — Environmental Compliance",
+      "items": [
+        {
+          "question": "What environmental standards does Quantifier support?",
+          "answer": "Quantifier covers ISO 14001 (Environmental Management), Life Cycle Assessment (LCA), Carbon Footprint calculations (Scope 1-3), and Decarbonisation pathway planning — all within a single platform."
+        },
+        {
+          "question": "Can I calculate my organization carbon footprint?",
+          "answer": "Yes. The Carbon Footprint module follows the GHG Protocol methodology, covering Scope 1 (direct emissions), Scope 2 (energy), and Scope 3 (value chain). Data collection is automated with supplier integration."
+        },
+        {
+          "question": "How does ISO 14001 compliance work in Quantifier?",
+          "answer": "The platform maps all ISO 14001 clauses to actionable tasks, tracks environmental aspects and impacts, manages documentation, and prepares you for certification and surveillance audits."
+        },
+        {
+          "question": "What is Life Cycle Assessment and do I need it?",
+          "answer": "LCA evaluates the environmental impact of a product across its entire lifecycle. It is increasingly required by regulations (CSRD, EU Taxonomy) and valuable for product design decisions and green marketing claims."
+        },
+        {
+          "question": "Can I set and track decarbonisation targets?",
+          "answer": "Yes. The Decarbonisation module helps you set science-based targets (SBTi-aligned), create reduction roadmaps, track progress against baselines, and report on climate commitments."
+        }
+      ]
     }
   },
   "governancePage": {
@@ -3370,6 +3460,31 @@
       "title": "Take the Work Out of Governance",
       "bookDemo": "Book a Demo",
       "watchTour": "Watch a Quick Tour"
+    },
+    "faq": {
+      "title": "FAQ — Governance & Compliance",
+      "items": [
+        {
+          "question": "What governance areas does Quantifier cover?",
+          "answer": "Quantifier addresses two key governance domains: Legal Policies Management (policy lifecycle, version control, employee acknowledgments) and Whistleblowing (EU Directive 2019/1937 compliant reporting channels)."
+        },
+        {
+          "question": "Is the whistleblowing channel compliant with EU regulations?",
+          "answer": "Yes. The whistleblowing module meets requirements of EU Directive 2019/1937 and national implementations, including anonymous reporting, case management timelines, and mandatory feedback loops."
+        },
+        {
+          "question": "How does policy management work?",
+          "answer": "Quantifier automates the full policy lifecycle: drafting (AI-assisted), review and approval workflows, version control, employee distribution with read-receipt tracking, and periodic review reminders."
+        },
+        {
+          "question": "Can employees report anonymously?",
+          "answer": "Yes. The whistleblowing channel supports fully anonymous submissions. Reporters can communicate with investigators through a secure, anonymized message thread without revealing their identity."
+        },
+        {
+          "question": "How does this integrate with other compliance frameworks?",
+          "answer": "Governance policies and whistleblowing procedures are cross-referenced with framework requirements (NIS2, DORA, ISO 27001). When a policy is updated, related compliance evidence is automatically refreshed."
+        }
+      ]
     }
   },
   "productLevelPage": {
@@ -3465,6 +3580,31 @@
       "description": "Smarter compliance. Stronger transparency. Lower impact. Quantifier gives your products the intelligence they need to lead.",
       "bookDemo": "Book a Demo",
       "talkExpert": "Talk to Our Product Compliance Expert"
+    },
+    "faq": {
+      "title": "FAQ — Product-Level Compliance",
+      "items": [
+        {
+          "question": "What is a Digital Product Passport (DPP)?",
+          "answer": "A DPP is a digital record containing information about a product materials, manufacturing, certifications, and end-of-life handling. The EU Battery Regulation and Ecodesign Regulation require DPPs for certain product categories starting 2027."
+        },
+        {
+          "question": "How does Quantifier help with DPP compliance?",
+          "answer": "Quantifier automates data collection across your supply chain, generates standardized DPPs, manages QR code linking, and ensures your product data meets evolving EU requirements."
+        },
+        {
+          "question": "What is the difference between DPP and LCA?",
+          "answer": "DPP is a product-level data record required by regulation. LCA (Life Cycle Assessment) is an analytical methodology measuring environmental impact across a product lifecycle. Quantifier supports both — LCA data can feed directly into your DPP."
+        },
+        {
+          "question": "Which industries need Digital Product Passports?",
+          "answer": "Starting with batteries (2027), the DPP requirement will expand to textiles, construction materials, electronics, and other sectors under the EU Ecodesign for Sustainable Products Regulation (ESPR)."
+        },
+        {
+          "question": "Can I manage product compliance across multiple regions?",
+          "answer": "Yes. Quantifier supports multi-region compliance requirements, tracking which products need DPPs in which markets, and adapting documentation to local regulatory requirements."
+        }
+      ]
     }
   },
   "nisIIPage": {
@@ -4574,6 +4714,31 @@
       "description": "Join organizations that trust Quantifier to automate their ISO 9001 compliance journey.",
       "bookDemo": "Book a Demo",
       "explorePlans": "Explore Plans"
+    },
+    "faq": {
+      "title": "FAQ — ISO 9001 Compliance",
+      "items": [
+        {
+          "question": "What is ISO 9001 and who needs it?",
+          "answer": "ISO 9001 is the international standard for quality management systems (QMS). Any organization — regardless of size or industry — that wants to demonstrate consistent quality in products and services can benefit from ISO 9001 certification."
+        },
+        {
+          "question": "How does Quantifier help with ISO 9001 compliance?",
+          "answer": "Quantifier automates clause mapping, task assignment, document control, and audit preparation for ISO 9001. The AI Compliance Officer continuously monitors your QMS status and flags gaps before auditors do."
+        },
+        {
+          "question": "How long does it take to get ISO 9001 certified with Quantifier?",
+          "answer": "Timelines vary by organization size and maturity, but Quantifier typically reduces the preparation time by 60-70% compared to manual approaches. Most organizations using our platform are audit-ready within 3-6 months."
+        },
+        {
+          "question": "Can I manage ISO 9001 alongside other frameworks?",
+          "answer": "Yes. Quantifier supports multi-framework compliance. Controls shared between ISO 9001 and other standards (like ISO 27001 or ISO 14001) are automatically mapped, eliminating duplicate work."
+        },
+        {
+          "question": "What happens after certification?",
+          "answer": "Quantifier supports the full lifecycle — including surveillance audits, continuous improvement tracking (PDCA cycle), and recertification. The platform keeps your QMS evidence current between audits."
+        }
+      ]
     }
   },
   "doraPage": {
