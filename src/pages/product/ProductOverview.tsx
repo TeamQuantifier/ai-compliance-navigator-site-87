@@ -38,17 +38,16 @@ const ProductOverview = () => {
       title={t('seo.product.overview.title')}
       description={t('seo.product.overview.description')}
     >
-      {/* Hero — dark bg like NIS-2 */}
-      <section className="relative bg-slate-950 overflow-hidden -mt-12 pt-24 pb-20">
-        <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute bottom-10 right-0 h-[400px] w-[400px] rounded-full bg-[#9b87f5]/10 blur-[100px]" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+      {/* Hero — light */}
+      <section className="relative overflow-hidden -mt-12 pt-24 pb-20 bg-background">
+        <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute bottom-10 right-0 h-[400px] w-[400px] rounded-full bg-secondary/5 blur-[100px]" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               {t('product.overview.title')}
             </h1>
-            <p className="text-xl text-white/70 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               {t('product.overview.subtitle')}
             </p>
             <Button className="group bg-primary hover:bg-primary/90" asChild>
@@ -59,17 +58,17 @@ const ProductOverview = () => {
             </Button>
           </div>
 
-          {/* Stats Bar — inside dark hero */}
+          {/* Stats Bar */}
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-xl border border-white/10 bg-white/[0.05] backdrop-blur-sm p-6">
-              <h2 className="text-lg font-bold text-center mb-6 text-white/90">{t('product.overview.statsTitle')}</h2>
+            <div className="rounded-xl border border-border bg-card shadow-sm p-6">
+              <h2 className="text-lg font-bold text-center mb-6 text-foreground">{t('product.overview.statsTitle')}</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {stats.map((stat) => (
                   <div key={stat.key} className="text-center">
-                    <div className="text-3xl font-bold text-[#9b87f5] mb-1">
+                    <div className="text-3xl font-bold text-secondary mb-1">
                       {t(`product.overview.stats.${stat.key}.value`)}
                     </div>
-                    <div className="text-sm text-white/60">
+                    <div className="text-sm text-muted-foreground">
                       {t(`product.overview.stats.${stat.key}.label`)}
                     </div>
                   </div>
@@ -107,28 +106,29 @@ const ProductOverview = () => {
         </div>
       </div>
 
-      {/* Product Modules Grid — dark section */}
-      <section className="relative bg-slate-950 py-16 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[400px] w-[800px] rounded-full bg-primary/5 blur-[120px]" />
+      {/* Product Modules Grid — light */}
+      <section className="relative py-16 bg-background overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-white">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
               {t('product.overview.featuresTitle')}
             </h2>
-            <p className="text-lg text-white/70">
+            <p className="text-lg text-muted-foreground">
               {t('product.overview.featuresDescription')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {features.map((feature) => (
-              <div key={feature.titleKey} className="rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 hover:bg-white/[0.08] transition-colors">
-                <h3 className="text-lg font-semibold mb-3 text-white">{t(feature.titleKey)}</h3>
-                <p className="text-white/60 mb-4 text-sm">{t(feature.descKey)}</p>
-                <Link to={`/${currentLocale}${feature.href}`} className="flex items-center text-[#9b87f5] font-medium hover:text-[#9b87f5]/80 transition-colors text-sm">
-                  {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
+              <Card key={feature.titleKey} className="hover:shadow-md transition-all border-border">
+                <CardContent className="pt-6">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">{t(feature.titleKey)}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{t(feature.descKey)}</p>
+                  <Link to={`/${currentLocale}${feature.href}`} className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors text-sm">
+                    {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
