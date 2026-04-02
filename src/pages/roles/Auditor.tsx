@@ -5,7 +5,7 @@ import { ArrowRight, Shield, FileCheck2, Download, Search, CheckCircle, Clipboar
 import AuditorDashboardMockup from '@/components/mockups/AuditorDashboardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Auditor = () => {
   const { t, currentLocale } = useLanguage();
