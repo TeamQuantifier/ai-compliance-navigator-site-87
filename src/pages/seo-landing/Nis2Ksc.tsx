@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import FAQSection from '@/components/seo/FAQSection';
 import {
   Shield,
   ShieldAlert,
@@ -349,21 +350,15 @@ const Nis2KscSeoHead = ({ locale }: { locale: string }) => {
     ],
   };
 
+  const faqKeys = ['faq1', 'faq2', 'faq3', 'faq4', 'faq5', 'faq6'];
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: t('nis2Ksc.seo.faq1q'),
-        acceptedAnswer: { '@type': 'Answer', text: t('nis2Ksc.seo.faq1a') },
-      },
-      {
-        '@type': 'Question',
-        name: t('nis2Ksc.seo.faq2q'),
-        acceptedAnswer: { '@type': 'Answer', text: t('nis2Ksc.seo.faq2a') },
-      },
-    ],
+    mainEntity: faqKeys.map(k => ({
+      '@type': 'Question',
+      name: t(`nis2Ksc.seo.${k}q`),
+      acceptedAnswer: { '@type': 'Answer', text: t(`nis2Ksc.seo.${k}a`) },
+    })),
   };
 
   return (
@@ -666,7 +661,132 @@ const Nis2Ksc = () => {
         </div>
       </Section>
 
-      {/* ────── FINAL CTA ────── */}
+      {/* ────── ARTICLE 21 MAPPING TABLE ────── */}
+      <Section dark={false}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t('nis2Ksc.article21.heading')}
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              {t('nis2Ksc.article21.subtitle')}
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-slate-100">
+                  <th className="text-left p-3 font-semibold text-slate-700 border border-slate-200">{t('nis2Ksc.article21.colReq')}</th>
+                  <th className="text-left p-3 font-semibold text-slate-700 border border-slate-200">{t('nis2Ksc.article21.colAction')}</th>
+                  <th className="text-left p-3 font-semibold text-slate-700 border border-slate-200 hidden md:table-cell">{t('nis2Ksc.article21.colEvidence')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[0,1,2,3,4,5,6,7,8,9].map((i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td className="p-3 border border-slate-200 font-medium text-slate-800">
+                      {t(`nis2Ksc.article21.rows.${i}.req`)}
+                    </td>
+                    <td className="p-3 border border-slate-200 text-slate-600">
+                      {t(`nis2Ksc.article21.rows.${i}.action`)}
+                    </td>
+                    <td className="p-3 border border-slate-200 text-slate-500 hidden md:table-cell">
+                      {t(`nis2Ksc.article21.rows.${i}.evidence`)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Section>
+
+      {/* ────── WHY SOFTWARE ────── */}
+      <Section>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t('nis2Ksc.whySoftware.heading')}
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              {t('nis2Ksc.whySoftware.subtitle')}
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-left p-3 font-semibold text-red-700 bg-red-50 border border-slate-200">{t('nis2Ksc.whySoftware.colBefore')}</th>
+                  <th className="text-left p-3 font-semibold text-emerald-700 bg-emerald-50 border border-slate-200">{t('nis2Ksc.whySoftware.colAfter')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[0,1,2,3,4,5].map((i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td className="p-3 border border-slate-200 text-slate-500 line-through decoration-red-300">
+                      {t(`nis2Ksc.whySoftware.items.${i}.before`)}
+                    </td>
+                    <td className="p-3 border border-slate-200 text-slate-700 font-medium">
+                      {t(`nis2Ksc.whySoftware.items.${i}.after`)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-10">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-base px-8">
+              <Link to={`/${currentLocale}/contact`} state={{ demo: true }}>
+                {t('nis2Ksc.solution.cta')}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* ────── RELATED CONTENT ────── */}
+      <Section dark={false}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t('nis2Ksc.relatedContent.heading')}
+            </h2>
+            <p className="text-slate-500">{t('nis2Ksc.relatedContent.subtitle')}</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[0,1,2].map((i) => (
+              <Link
+                key={i}
+                to={`/${currentLocale}/blog/${t(`nis2Ksc.relatedContent.articles.${i}.slug`)}`}
+                className="block rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-md group"
+              >
+                <FileText className="h-5 w-5 text-primary mb-3" />
+                <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors">
+                  {t(`nis2Ksc.relatedContent.articles.${i}.title`)}
+                </h3>
+                <p className="text-sm text-slate-500">
+                  {t(`nis2Ksc.relatedContent.articles.${i}.desc`)}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ────── FAQ ────── */}
+      <FAQSection
+        title={t('nis2Ksc.seo.faq1q').includes('NIS2') ? 'NIS2 FAQ' : 'FAQ'}
+        faqs={['faq1','faq2','faq3','faq4','faq5','faq6'].map(k => ({
+          question: t(`nis2Ksc.seo.${k}q`),
+          answer: t(`nis2Ksc.seo.${k}a`),
+        }))}
+        pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/nis-2/`}
+      />
       <section
         id="final-cta"
         className="relative py-24 md:py-32 bg-slate-950 overflow-hidden"
