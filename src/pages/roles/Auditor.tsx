@@ -5,7 +5,7 @@ import { ArrowRight, Shield, FileCheck2, Download, Search, CheckCircle, Clipboar
 import AuditorDashboardMockup from '@/components/mockups/AuditorDashboardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Auditor = () => {
   const { t, currentLocale } = useLanguage();
@@ -137,25 +137,14 @@ const Auditor = () => {
         </section>
 
         {/* 6. FAQ */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            {t('roles.auditors.faq.title')}
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {faqKeys.map((key) => (
-                <AccordionItem key={key} value={key}>
-                  <AccordionTrigger className="text-left">
-                    {t(`roles.auditors.faq.${key}.question`)}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {t(`roles.auditors.faq.${key}.answer`)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
+        <FAQSection
+          title={t('roles.auditors.faq.title')}
+          faqs={faqKeys.map((key) => ({
+            question: t(`roles.auditors.faq.${key}.question`),
+            answer: t(`roles.auditors.faq.${key}.answer`),
+          }))}
+          pageUrl={`https://quantifier.ai/${currentLocale}/roles/auditor`}
+        />
 
         {/* 7. CTA */}
         <section className="mb-8">

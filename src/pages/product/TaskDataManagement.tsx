@@ -5,7 +5,7 @@ import { ArrowRight, Database, ListChecks, Users, CheckCircle, Workflow, Kanban,
 import TaskBoardMockup from '@/components/mockups/TaskBoardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const TaskDataManagement = () => {
   const { t, currentLocale } = useLanguage();
@@ -137,25 +137,14 @@ const TaskDataManagement = () => {
         </section>
 
         {/* 6. FAQ */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            {t('product.taskDataManagement.faq.title')}
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {faqKeys.map((key) => (
-                <AccordionItem key={key} value={key}>
-                  <AccordionTrigger className="text-left">
-                    {t(`product.taskDataManagement.faq.${key}.question`)}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {t(`product.taskDataManagement.faq.${key}.answer`)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
+        <FAQSection
+          title={t('product.taskDataManagement.faq.title')}
+          faqs={faqKeys.map((key) => ({
+            question: t(`product.taskDataManagement.faq.${key}.question`),
+            answer: t(`product.taskDataManagement.faq.${key}.answer`),
+          }))}
+          pageUrl={`https://quantifier.ai/${currentLocale}/product/task-data-management`}
+        />
 
         {/* 7. CTA */}
         <section className="mb-8">

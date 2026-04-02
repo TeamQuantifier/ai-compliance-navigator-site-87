@@ -5,7 +5,7 @@ import { ArrowRight, FileText, FolderSearch, Lock, CheckCircle, GitBranch, Histo
 import DocumentRepositoryMockup from '@/components/mockups/DocumentRepositoryMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const DocumentsManagement = () => {
   const { t, currentLocale } = useLanguage();
@@ -137,25 +137,14 @@ const DocumentsManagement = () => {
         </section>
 
         {/* 6. FAQ */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            {t('product.documentsManagement.faq.title')}
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {faqKeys.map((key) => (
-                <AccordionItem key={key} value={key}>
-                  <AccordionTrigger className="text-left">
-                    {t(`product.documentsManagement.faq.${key}.question`)}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {t(`product.documentsManagement.faq.${key}.answer`)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
+        <FAQSection
+          title={t('product.documentsManagement.faq.title')}
+          faqs={faqKeys.map((key) => ({
+            question: t(`product.documentsManagement.faq.${key}.question`),
+            answer: t(`product.documentsManagement.faq.${key}.answer`),
+          }))}
+          pageUrl={`https://quantifier.ai/${currentLocale}/product/documents-management`}
+        />
 
         {/* 7. CTA */}
         <section className="mb-8">

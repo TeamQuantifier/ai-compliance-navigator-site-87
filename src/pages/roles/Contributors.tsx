@@ -5,7 +5,7 @@ import { ArrowRight, FileText, Upload, CheckSquare, Bell, ClipboardList, Message
 import ContributorDashboardMockup from '@/components/mockups/ContributorDashboardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Contributors = () => {
   const { t, currentLocale } = useLanguage();
@@ -137,25 +137,14 @@ const Contributors = () => {
         </section>
 
         {/* 6. FAQ */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            {t('roles.contributors.faq.title')}
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {faqKeys.map((key) => (
-                <AccordionItem key={key} value={key}>
-                  <AccordionTrigger className="text-left">
-                    {t(`roles.contributors.faq.${key}.question`)}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {t(`roles.contributors.faq.${key}.answer`)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
+        <FAQSection
+          title={t('roles.contributors.faq.title')}
+          faqs={faqKeys.map((key) => ({
+            question: t(`roles.contributors.faq.${key}.question`),
+            answer: t(`roles.contributors.faq.${key}.answer`),
+          }))}
+          pageUrl={`https://quantifier.ai/${currentLocale}/roles/contributors`}
+        />
 
         {/* 7. CTA */}
         <section className="mb-8">
