@@ -80,12 +80,14 @@ const ProductOverview = () => {
         </div>
       </section>
 
-      {/* Platform Mockup */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <HomePlatformMockup />
+      {/* Platform Mockup — dark bg to match mockup's white text */}
+      <section className="bg-slate-950 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <HomePlatformMockup />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Why Quantifier */}
       <div className="bg-slate-50 py-16">
