@@ -5,7 +5,7 @@ import { ArrowRight, Link2, Layers, BarChart3, CheckCircle, Globe, ClipboardChec
 import SupplierScoringMockup from '@/components/mockups/SupplierScoringMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const ValueChain = () => {
   const { t, currentLocale } = useLanguage();
