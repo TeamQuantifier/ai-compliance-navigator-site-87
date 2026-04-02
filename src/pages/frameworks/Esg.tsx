@@ -8,6 +8,7 @@ import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieCh
 import { Link } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, AreaChart, Area, CartesianGrid, Tooltip, LineChart, Line, PieChart as RePieChart, Pie, Cell, Legend } from 'recharts';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Esg = () => {
   const [activeTab, setActiveTab] = useState("csdr");
