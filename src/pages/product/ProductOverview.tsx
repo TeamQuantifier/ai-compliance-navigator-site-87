@@ -106,28 +106,29 @@ const ProductOverview = () => {
         </div>
       </div>
 
-      {/* Product Modules Grid — dark section */}
-      <section className="relative bg-slate-950 py-16 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[400px] w-[800px] rounded-full bg-primary/5 blur-[120px]" />
+      {/* Product Modules Grid — light */}
+      <section className="relative py-16 bg-background overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-white">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
               {t('product.overview.featuresTitle')}
             </h2>
-            <p className="text-lg text-white/70">
+            <p className="text-lg text-muted-foreground">
               {t('product.overview.featuresDescription')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {features.map((feature) => (
-              <div key={feature.titleKey} className="rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 hover:bg-white/[0.08] transition-colors">
-                <h3 className="text-lg font-semibold mb-3 text-white">{t(feature.titleKey)}</h3>
-                <p className="text-white/60 mb-4 text-sm">{t(feature.descKey)}</p>
-                <Link to={`/${currentLocale}${feature.href}`} className="flex items-center text-[#9b87f5] font-medium hover:text-[#9b87f5]/80 transition-colors text-sm">
-                  {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
+              <Card key={feature.titleKey} className="hover:shadow-md transition-all border-border">
+                <CardContent className="pt-6">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">{t(feature.titleKey)}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{t(feature.descKey)}</p>
+                  <Link to={`/${currentLocale}${feature.href}`} className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors text-sm">
+                    {t('product.overview.learnMore')} <ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
