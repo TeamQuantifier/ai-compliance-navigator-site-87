@@ -10,6 +10,7 @@ import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
 import CarbonFootprintDashboard from '@/components/dashboards/environmental/CarbonFootprintDashboard';
 import DecarbonisationDashboard from '@/components/dashboards/environmental/DecarbonisationDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const Environmental = () => {
   const [activeTab, setActiveTab] = useState("iso14001");
