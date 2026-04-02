@@ -17,6 +17,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import FAQSection from '@/components/seo/FAQSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
