@@ -37,7 +37,7 @@ const KeyCharts = () => {
           <BarChart4 className="h-4 w-4 text-[#7E69AB]" />
           <h3 className="text-xs font-medium">Cybersecurity Compliance Trend</h3>
         </div>
-        <div className="h-32">
+        <div className="h-36 sm:h-32">
           <ChartContainer
             config={{
               compliance: { 
@@ -52,7 +52,7 @@ const KeyCharts = () => {
               <XAxis dataKey="month" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} />
               <YAxis hide domain={[0, 100]} />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Bar dataKey="value" name="compliance" radius={[4, 4, 0, 0]} barSize={12} fill="var(--color-compliance)" />
+              <Bar dataKey="value" name="compliance" radius={[4, 4, 0, 0]} barSize={20} fill="var(--color-compliance)" />
             </BarChart>
           </ChartContainer>
         </div>
@@ -64,7 +64,7 @@ const KeyCharts = () => {
           <PieChart className="h-4 w-4 text-[#7E69AB]" />
           <h3 className="text-xs font-medium">Cybersecurity Risk Distribution</h3>
         </div>
-        <div className="h-32">
+        <div className="h-36 sm:h-32 flex items-center">
           <ChartContainer
             config={{
               risk: { 
@@ -74,27 +74,29 @@ const KeyCharts = () => {
                 } 
               }
             }}
+            className="w-full h-full"
           >
             <ResponsiveContainer width="100%" height="100%">
               <RePieChart>
                 <Pie
                   data={riskData}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={25}
-                  outerRadius={45}
+                  cx="35%"
+                  cy="45%"
+                  innerRadius={28}
+                  outerRadius={48}
                   paddingAngle={2}
                   dataKey="value"
+                  label={({ name, value }) => `${value}`}
                 >
                   {riskData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={RISK_COLORS[index % RISK_COLORS.length]} />
                   ))}
                 </Pie>
                 <Legend 
-                  layout="horizontal" 
-                  verticalAlign="bottom" 
-                  align="center"
-                  wrapperStyle={{ fontSize: '10px' }}
+                  layout="vertical" 
+                  verticalAlign="middle" 
+                  align="right"
+                  wrapperStyle={{ fontSize: '10px', lineHeight: '18px' }}
                 />
                 <ChartTooltip content={<ChartTooltipContent />} />
               </RePieChart>
