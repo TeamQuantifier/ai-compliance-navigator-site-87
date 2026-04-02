@@ -5,7 +5,7 @@ import { ArrowRight, BarChart4, BrainCircuit, AlertTriangle, Activity, Zap, PieC
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const AnalyticsDashboards = () => {
   const { t, currentLocale } = useLanguage();
