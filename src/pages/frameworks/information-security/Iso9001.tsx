@@ -17,11 +17,17 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import FAQSection from '@/components/seo/FAQSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
 const Iso9001 = () => {
   const { t, currentLocale } = useLanguage();
+
+  const getObjectArrayTranslation = <T,>(key: string): T[] => {
+    const result = t(key, { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  };
 
   return (
     <PageTemplate
@@ -260,6 +266,15 @@ const Iso9001 = () => {
               </CardContent>
             </Card>
           </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-16">
+          <FAQSection
+            title={t('iso9001Page.faq.title')}
+            faqs={getObjectArrayTranslation<{ question: string; answer: string }>('iso9001Page.faq.items')}
+            pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/information-security/iso-9001`}
+          />
         </section>
 
         {/* CTA Section */}
