@@ -1030,7 +1030,47 @@
           "description": "Propojte naši platformu s vašimi existujícími nástroji a systémy pro bezproblémový provoz."
         }
       },
-      "learnMore": "Zjistit více"
+      "learnMore": "Zjistit více",
+      "whyQuantifier": {
+        "title": "Proc tymy voli Quantifier",
+        "items": {
+          "aiNative": {
+            "title": "AI-Nativni Platforma",
+            "desc": "Postavena od zakladu s AI. AI Compliance Officer pracuje autonomne."
+          },
+          "multiFramework": {
+            "title": "Vice Frameworku",
+            "desc": "Spravujte SOC 2, ISO 27001, GDPR, NIS2, DORA, ESG a dalsi z jednoho mista."
+          },
+          "fastDeployment": {
+            "title": "Rychle Nasazeni",
+            "desc": "Od registrace k pripravenosti na audit behem tydnu."
+          },
+          "rolesBuiltIn": {
+            "title": "Pristup Podle Roli",
+            "desc": "Dedicke pohledy pro managery, prispevovatele a auditory."
+          }
+        }
+      },
+      "statsTitle": "Platforma v cislech",
+      "stats": {
+        "frameworks": {
+          "value": "15+",
+          "label": "Podporovanych frameworku"
+        },
+        "controls": {
+          "value": "2 500+",
+          "label": "Pripravenych kontrol"
+        },
+        "timeSaved": {
+          "value": "70%",
+          "label": "Uspora casu oproti manualnimu"
+        },
+        "auditReady": {
+          "value": "4 tydny",
+          "label": "Prumerny cas k pripravenosti"
+        }
+      }
     },
     "features": {
       "title": "Vestavěná inteligence, vložená compliance",
@@ -2826,6 +2866,31 @@
       "description": "Jste připraveni automatizovat svou udržitelnost a ESG compliance? Quantifier to usnadňuje.",
       "bookConsultation": "Objednat konzultaci",
       "watchDemo": "Zhlédnout demo video"
+    },
+    "faq": {
+      "title": "FAQ — ESG a Udrzitelnost",
+      "items": [
+        {
+          "question": "Jake ESG frameworky Quantifier podporuje?",
+          "answer": "Quantifier pokryva CSRD/ESRS, standardy GRI a reportovani CBAM."
+        },
+        {
+          "question": "Jak funguje integrace s Envirly?",
+          "answer": "Envirly — soucast ekosystemu Quantifier — se specializuje na environmentalni shodu: uctovani GHG, analyza LCA a uhlikova stopa."
+        },
+        {
+          "question": "Zvladne Quantifier posouzeni dvojite materialnosti?",
+          "answer": "Ano. Platforma provadi procesem posouzeni dvojite materialnosti pozadovanym CSRD."
+        },
+        {
+          "question": "Je reportovani CBAM automatizovane?",
+          "answer": "Quantifier automatizuje sber dat CBAM, vypocitava vlozene emise a generuje ctvrtletni reporty."
+        },
+        {
+          "question": "Jak zajistujete kvalitu ESG dat?",
+          "answer": "Platforma obsahuje validacni pravidla, auditni stopy a detekci anomalii pohanenout AI."
+        }
+      ]
     }
   },
   "environmentalPage": {
@@ -2954,6 +3019,31 @@
       "title": "Připraveni učinit environmentální compliance snadnou?",
       "bookDemo": "Objednat demo",
       "watchTour": "Zhlédnout rychlou prohlídku"
+    },
+    "faq": {
+      "title": "FAQ — Environmentalni Shoda",
+      "items": [
+        {
+          "question": "Jake environmentalni standardy Quantifier podporuje?",
+          "answer": "Quantifier pokryva ISO 14001, LCA, vypocty uhlikove stopy (Scope 1-3) a planovani dekarbonizace."
+        },
+        {
+          "question": "Mohu vypocitat uhlikovou stopu organizace?",
+          "answer": "Ano. Modul uhlikove stopy pouziva metodologii GHG Protocol pokryvajici Scope 1, 2 a 3."
+        },
+        {
+          "question": "Jak funguje shoda s ISO 14001?",
+          "answer": "Platforma mapuje vsechny klauzule ISO 14001 na ukoly, sleduje environmentalni aspekty a pripravuje na certifikaci."
+        },
+        {
+          "question": "Co je analyza zivotniho cyklu (LCA)?",
+          "answer": "LCA hodnosti environmentalni dopad produktu v celem jeho zivotnim cyklu. Je stale vice vyzadovana regulacemi."
+        },
+        {
+          "question": "Mohu nastavit a sledovat cile dekarbonizace?",
+          "answer": "Ano. Modul dekarbonizace pomaha nastavit vedecky podlozene cile a sledovat pokrok."
+        }
+      ]
     }
   },
   "governancePage": {
@@ -3046,6 +3136,31 @@
       "title": "Odstraňte práci z Governance",
       "bookDemo": "Objednat demo",
       "watchTour": "Zhlédnout rychlou prohlídku"
+    },
+    "faq": {
+      "title": "FAQ — Governance a Shoda",
+      "items": [
+        {
+          "question": "Jake oblasti governance Quantifier pokryva?",
+          "answer": "Quantifier resi Spravu pravnich politik a Whistleblowing (soulad se Smernici EU 2019/1937)."
+        },
+        {
+          "question": "Je whistleblowingovy kanal v souladu s regulacemi EU?",
+          "answer": "Ano. Modul splnuje pozadavky Smernice EU 2019/1937 vcetne anonymniho hlaseni."
+        },
+        {
+          "question": "Jak funguje sprava politik?",
+          "answer": "Quantifier automatizuje cely zivotni cyklus politik: tvorbu, schvalovaci workflow, kontrolu verzi a distribuci."
+        },
+        {
+          "question": "Mohou zamestnanci hlasit anonymne?",
+          "answer": "Ano. Kanal podporuje plne anonymni podani. Oznamovatele mohou komunikovat pres zabezpecene anonymni vlakno."
+        },
+        {
+          "question": "Jak se to integruje s dalsimi frameworky?",
+          "answer": "Governance politiky jsou krizove provazany s pozadavky frameworku (NIS2, DORA, ISO 27001)."
+        }
+      ]
     }
   },
   "productLevelPage": {
@@ -3141,6 +3256,31 @@
       "description": "Chytřejší compliance. Silnější transparentnost. Nižší dopad. Quantifier dává vašim produktům inteligenci, kterou potřebují k vedení.",
       "bookDemo": "Objednat demo",
       "talkExpert": "Promluvte s naším expertem na Compliance produktů"
+    },
+    "faq": {
+      "title": "FAQ — Shoda na Urovni Produktu",
+      "items": [
+        {
+          "question": "Co je Digitalni pas produktu (DPP)?",
+          "answer": "DPP je digitalni zaznam obsahujici informace o materialech produktu, vyrobe a certifikacich. EU vyzaduje DPP pro urcite kategorie produktu od 2027."
+        },
+        {
+          "question": "Jak Quantifier pomaha se shodou DPP?",
+          "answer": "Quantifier automatizuje sber dat, generuje standardizovane DPP a spravuje QR kody."
+        },
+        {
+          "question": "Jaky je rozdil mezi DPP a LCA?",
+          "answer": "DPP je regulacne vyzadovany datovy zaznam. LCA je analyticka metodologie merici environmentalni dopad."
+        },
+        {
+          "question": "Ktera odvetvi potrebuji DPP?",
+          "answer": "Pocinage bateriemi (2027) se pozadavek rozsiri na textil, stavebni materialy a elektroniku."
+        },
+        {
+          "question": "Mohu ridit shodu produktu ve vice regionech?",
+          "answer": "Ano. Quantifier podporuje viceregionalni pozadavky a prizpusobuje dokumentaci lokalnim regulacim."
+        }
+      ]
     }
   },
   "seo": {
@@ -4220,6 +4360,31 @@
       "description": "Připojte se k organizacím, které důvěřují Quantifieru v automatizaci souladu s ISO 9001.",
       "bookDemo": "Rezervovat demo",
       "explorePlans": "Prozkoumat plány"
+    },
+    "faq": {
+      "title": "FAQ — Shoda s ISO 9001",
+      "items": [
+        {
+          "question": "Co je ISO 9001 a kdo ji potrebuje?",
+          "answer": "ISO 9001 je mezinarodni standard pro systemy rizeni kvality (QMS). Kazda organizace muze vyuzit certifikaci ISO 9001 pro prokazani konzistentni kvality produktu a sluzeb."
+        },
+        {
+          "question": "Jak Quantifier pomaha se shodou s ISO 9001?",
+          "answer": "Quantifier automatizuje mapovani klauzuli, pridelovani ukolu, kontrolu dokumentu a pripravu na audit. AI Compliance Officer prubezne monitoruje stav QMS."
+        },
+        {
+          "question": "Jak dlouho trva certifikace ISO 9001 s Quantifier?",
+          "answer": "Quantifier typicky zkracuje dobu pripravy o 60-70%. Vetsina organizaci je pripravena na audit behem 3-6 mesicu."
+        },
+        {
+          "question": "Mohu ridit ISO 9001 spolecne s dalsimi frameworky?",
+          "answer": "Ano. Quantifier podporuje shodu s vice frameworky soucasne. Sdilene kontroly mezi ISO 9001 a dalsimi standardy jsou automaticky mapovany."
+        },
+        {
+          "question": "Co se deje po certifikaci?",
+          "answer": "Quantifier podporuje cely zivotni cyklus — vcetne dozorových auditu, sledovani neustaleho zlepsovani (PDCA) a recertifikace."
+        }
+      ]
     }
   },
   "doraPage": {
