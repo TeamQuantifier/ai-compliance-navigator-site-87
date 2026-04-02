@@ -10,6 +10,7 @@ import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FAQSection from '@/components/seo/FAQSection';
 
 const ProductLevel = () => {
   const [activeTab, setActiveTab] = useState("dpp");
