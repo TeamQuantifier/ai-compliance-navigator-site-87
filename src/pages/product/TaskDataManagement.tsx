@@ -5,7 +5,7 @@ import { ArrowRight, Database, ListChecks, Users, CheckCircle, Workflow, Kanban,
 import TaskBoardMockup from '@/components/mockups/TaskBoardMockup';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQSection from '@/components/seo/FAQSection';
 
 const TaskDataManagement = () => {
   const { t, currentLocale } = useLanguage();
