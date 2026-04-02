@@ -4281,6 +4281,21 @@
       "description": "Join leading organizations that trust Quantifier for SOC 2 compliance automation.",
       "bookDemo": "Book a Demo",
       "seePricing": "See Pricing"
+    },
+    "relatedContent": {
+      "title": "Related Resources",
+      "guide": {
+        "title": "SOC 2 Complete Guide (2026)",
+        "description": "Everything you need to know about SOC 2 Type 1 and Type 2 — requirements, timeline, and preparation."
+      },
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 Comparison",
+        "description": "Which framework do you need? Side-by-side comparison of scope, cost, timeline, and control overlap."
+      },
+      "cost": {
+        "title": "SOC 2 Cost & Timeline",
+        "description": "Realistic breakdown of auditor fees, platform costs, and internal effort for Type 1 and Type 2."
+      }
     }
   },
   "iso27001Page": {
@@ -4628,6 +4643,21 @@
       "description": "Let our AI-powered platform guide you through the entire certification process.",
       "bookDemo": "Book a Demo",
       "explorePlans": "Explore Plans"
+    },
+    "relatedContent": {
+      "title": "Related Resources",
+      "comparison": {
+        "title": "ISO 27001 vs SOC 2 Comparison",
+        "description": "Which framework do you need? Decision framework based on market, scope, and certification goals."
+      },
+      "evidence": {
+        "title": "Audit Evidence Automation",
+        "description": "How to eliminate manual evidence collection across ISO 27001, SOC 2, NIS2, and DORA."
+      },
+      "nis2mapping": {
+        "title": "NIS2 vs ISO 27001 Mapping",
+        "description": "Control-by-control mapping of NIS2 Article 21 to ISO 27001 Annex A — see what overlaps."
+      }
     }
   },
   "iso9001Page": {
@@ -7120,16 +7150,56 @@
       "heading": "Article 21 — Security Measures Mapped to Actions",
       "subtitle": "NIS2 Article 21 defines 10 mandatory cybersecurity risk-management measures. Here is each requirement mapped to concrete actions your organisation must take.",
       "rows": [
-        { "req": "Risk analysis & security policies", "action": "Formal risk assessment, risk register, board-approved policies", "evidence": "Risk reports, policy docs, board approvals" },
-        { "req": "Incident handling", "action": "Detection, response, recovery procedures; 24h/72h/30d reporting", "evidence": "Incident response plan, CSIRT notifications, incident log" },
-        { "req": "Business continuity", "action": "BCP, disaster recovery, crisis management", "evidence": "BCP docs, DR test results, backup logs" },
-        { "req": "Supply chain security", "action": "Supplier risk assessments, contractual security clauses", "evidence": "Due diligence reports, supplier contracts" },
-        { "req": "Systems acquisition & development", "action": "Secure SDLC, vulnerability handling & disclosure", "evidence": "SDLC docs, vulnerability scans, patch records" },
-        { "req": "Effectiveness assessment", "action": "Policies to evaluate cybersecurity measure effectiveness", "evidence": "Audit reports, penetration tests" },
-        { "req": "Cyber hygiene & training", "action": "Security awareness, training for all staff including management", "evidence": "Training records, phishing simulations" },
-        { "req": "Cryptography", "action": "Encryption policies, key management", "evidence": "Encryption policy, key management procedures" },
-        { "req": "HR security & access control", "action": "Access control matrix, asset management, user lifecycle", "evidence": "Access logs, provisioning records" },
-        { "req": "Multi-factor authentication", "action": "MFA deployment, secured emergency communications", "evidence": "MFA records, communication tool inventory" }
+        {
+          "req": "Risk analysis & security policies",
+          "action": "Formal risk assessment, risk register, board-approved policies",
+          "evidence": "Risk reports, policy docs, board approvals"
+        },
+        {
+          "req": "Incident handling",
+          "action": "Detection, response, recovery procedures; 24h/72h/30d reporting",
+          "evidence": "Incident response plan, CSIRT notifications, incident log"
+        },
+        {
+          "req": "Business continuity",
+          "action": "BCP, disaster recovery, crisis management",
+          "evidence": "BCP docs, DR test results, backup logs"
+        },
+        {
+          "req": "Supply chain security",
+          "action": "Supplier risk assessments, contractual security clauses",
+          "evidence": "Due diligence reports, supplier contracts"
+        },
+        {
+          "req": "Systems acquisition & development",
+          "action": "Secure SDLC, vulnerability handling & disclosure",
+          "evidence": "SDLC docs, vulnerability scans, patch records"
+        },
+        {
+          "req": "Effectiveness assessment",
+          "action": "Policies to evaluate cybersecurity measure effectiveness",
+          "evidence": "Audit reports, penetration tests"
+        },
+        {
+          "req": "Cyber hygiene & training",
+          "action": "Security awareness, training for all staff including management",
+          "evidence": "Training records, phishing simulations"
+        },
+        {
+          "req": "Cryptography",
+          "action": "Encryption policies, key management",
+          "evidence": "Encryption policy, key management procedures"
+        },
+        {
+          "req": "HR security & access control",
+          "action": "Access control matrix, asset management, user lifecycle",
+          "evidence": "Access logs, provisioning records"
+        },
+        {
+          "req": "Multi-factor authentication",
+          "action": "MFA deployment, secured emergency communications",
+          "evidence": "MFA records, communication tool inventory"
+        }
       ],
       "colReq": "Article 21 Requirement",
       "colAction": "Required Action",
@@ -7139,12 +7209,30 @@
       "heading": "Why Use Software for NIS2 Compliance?",
       "subtitle": "Manual compliance with NIS2 using spreadsheets and documents is not sustainable at scale. Here's what changes with a compliance automation platform.",
       "items": [
-        { "before": "Risk register in Excel", "after": "Centralised risk register linked to NIS2 articles with AI scoring" },
-        { "before": "Manual evidence collection", "after": "Automated evidence collection mapped across multiple frameworks" },
-        { "before": "Incident reporting via email", "after": "Structured incident workflows with automatic 24h/72h notifications" },
-        { "before": "Supplier assessment once a year", "after": "Continuous supplier monitoring with real-time risk scoring" },
-        { "before": "Point-in-time compliance checks", "after": "Continuous compliance monitoring with board dashboard" },
-        { "before": "Siloed documentation", "after": "Single source of truth with version control and audit trail" }
+        {
+          "before": "Risk register in Excel",
+          "after": "Centralised risk register linked to NIS2 articles with AI scoring"
+        },
+        {
+          "before": "Manual evidence collection",
+          "after": "Automated evidence collection mapped across multiple frameworks"
+        },
+        {
+          "before": "Incident reporting via email",
+          "after": "Structured incident workflows with automatic 24h/72h notifications"
+        },
+        {
+          "before": "Supplier assessment once a year",
+          "after": "Continuous supplier monitoring with real-time risk scoring"
+        },
+        {
+          "before": "Point-in-time compliance checks",
+          "after": "Continuous compliance monitoring with board dashboard"
+        },
+        {
+          "before": "Siloed documentation",
+          "after": "Single source of truth with version control and audit trail"
+        }
       ],
       "colBefore": "Without Software",
       "colAfter": "With Quantifier"
@@ -7153,9 +7241,21 @@
       "heading": "NIS2 Compliance Resources",
       "subtitle": "Deep-dive articles to help you prepare for NIS2 requirements.",
       "articles": [
-        { "title": "NIS2 Compliance Checklist 2026", "desc": "Article 21 requirements mapped to actions and evidence", "slug": "nis2-compliance-checklist-2026" },
-        { "title": "NIS2 Directive — Complete Guide", "desc": "Everything you need to know about the NIS2 Directive", "slug": "nis2-directive" },
-        { "title": "NIS2 Requirements & Implementation", "desc": "Technical implementation guide for compliance teams", "slug": "nis2-directive-compliance-requirements-implementation-guide" }
+        {
+          "title": "NIS2 Compliance Checklist 2026",
+          "desc": "Article 21 requirements mapped to actions and evidence",
+          "slug": "nis2-compliance-checklist-2026"
+        },
+        {
+          "title": "NIS2 Directive — Complete Guide",
+          "desc": "Everything you need to know about the NIS2 Directive",
+          "slug": "nis2-directive"
+        },
+        {
+          "title": "NIS2 Requirements & Implementation",
+          "desc": "Technical implementation guide for compliance teams",
+          "slug": "nis2-directive-compliance-requirements-implementation-guide"
+        }
       ]
     },
     "seo": {
