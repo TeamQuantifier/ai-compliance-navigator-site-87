@@ -1,158 +1,169 @@
-
 import PageTemplate from '@/components/PageTemplate';
-import { ArrowRight, BarChart4, Shield, CheckCircle, FileText, PieChart, BrainCircuit, Activity, AlertTriangle, Zap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, BarChart4, BrainCircuit, AlertTriangle, Activity, Zap, PieChart, FileText, TrendingUp } from 'lucide-react';
 import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const AnalyticsDashboards = () => {
   const { t, currentLocale } = useLanguage();
-  
+
+  const steps = [
+    { icon: Activity, key: 'collect' },
+    { icon: PieChart, key: 'visualize' },
+    { icon: BrainCircuit, key: 'analyze' },
+    { icon: FileText, key: 'report' },
+  ];
+
+  const capabilities = [
+    { icon: BarChart4, key: 'realTime' },
+    { icon: BrainCircuit, key: 'aiInsights' },
+    { icon: AlertTriangle, key: 'riskAssessment' },
+    { icon: Activity, key: 'reporting' },
+    { icon: Zap, key: 'automation' },
+    { icon: TrendingUp, key: 'trends' },
+  ];
+
+  const frameworks = ['iso27001', 'nis2', 'dora', 'gdpr', 'soc2', 'esg'];
+  const faqKeys = ['whatAreDashboards', 'customization', 'whichFrameworks', 'aiInsights', 'exportReports'];
+
   return (
     <PageTemplate
       title={t('seo.product.analyticsDashboards.title')}
       description={t('seo.product.analyticsDashboards.description')}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {t('product.analyticsDashboards.hero.title')}
-              </h2>
-              <p className="text-xl opacity-90 mb-6">
-                {t('product.analyticsDashboards.hero.subtitle')}
-              </p>
-              <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
-                <Link to={`/${currentLocale}/contact`}>
-                  {t('product.analyticsDashboards.hero.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-            <div className="md:w-1/2">
-              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20">
-                <AiComplianceDashboard />
+        {/* 1. Hero */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="lg:w-1/2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  {t('product.analyticsDashboards.hero.title')}
+                </h2>
+                <p className="text-lg opacity-90 mb-6">
+                  {t('product.analyticsDashboards.hero.subtitle')}
+                </p>
+                <Button size="lg" className="bg-white text-[#7E69AB] hover:bg-white/90" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('product.analyticsDashboards.hero.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
+                <div className="bg-white/5 backdrop-blur-sm p-2 rounded-lg border border-white/20">
+                  <AiComplianceDashboard />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Dashboard Features */}
+        {/* 2. How It Works */}
         <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#1A1F2C]">
-            {t('product.analyticsDashboards.keyFeatures.title')}
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
+            {t('product.analyticsDashboards.howItWorks.title')}
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <div className="flex items-start mb-4">
-                  <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <BarChart4 className="h-6 w-6 text-[#9b87f5]" />
+          <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+            {t('product.analyticsDashboards.howItWorks.subtitle')}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((step, i) => (
+              <div key={step.key} className="text-center">
+                <div className="relative mx-auto mb-4">
+                  <div className="h-14 w-14 rounded-full bg-[#9b87f5]/10 flex items-center justify-center mx-auto">
+                    <step.icon className="h-7 w-7 text-[#7E69AB]" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t('product.analyticsDashboards.keyFeatures.realTime.title')}</h3>
-                    <p className="text-slate-600">{t('product.analyticsDashboards.keyFeatures.realTime.description')}</p>
-                  </div>
+                  <span className="absolute -top-1 -right-1 h-6 w-6 rounded-full bg-[#9b87f5] text-white text-xs font-bold flex items-center justify-center">
+                    {i + 1}
+                  </span>
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <div className="flex items-start mb-4">
-                  <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <BrainCircuit className="h-6 w-6 text-[#9b87f5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t('product.analyticsDashboards.keyFeatures.aiInsights.title')}</h3>
-                    <p className="text-slate-600">{t('product.analyticsDashboards.keyFeatures.aiInsights.description')}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-[#9b87f5]/20 bg-white hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <div className="flex items-start mb-4">
-                  <div className="rounded-full bg-[#9b87f5]/10 p-2 mr-4">
-                    <AlertTriangle className="h-6 w-6 text-[#9b87f5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t('product.analyticsDashboards.keyFeatures.riskAssessment.title')}</h3>
-                    <p className="text-slate-600">{t('product.analyticsDashboards.keyFeatures.riskAssessment.description')}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                <h3 className="font-semibold mb-2">{t(`product.analyticsDashboards.howItWorks.steps.${step.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`product.analyticsDashboards.howItWorks.steps.${step.key}.description`)}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Detailed Features */}
+        {/* 3. Platform Mockup */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-slate-50 p-6 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
-                  <Activity className="h-5 w-5 text-[#9b87f5]" />
-                </div>
-                <h3 className="text-xl font-bold">{t('product.analyticsDashboards.detailedFeatures.reporting.title')}</h3>
-              </div>
-              <p className="text-slate-700 mb-5">
-                {t('product.analyticsDashboards.detailedFeatures.reporting.description')}
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.reporting.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.reporting.feature2')}</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.reporting.feature3')}</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-slate-50 p-6 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-full bg-[#9b87f5]/20 flex items-center justify-center">
-                  <Zap className="h-5 w-5 text-[#9b87f5]" />
-                </div>
-                <h3 className="text-xl font-bold">{t('product.analyticsDashboards.detailedFeatures.automation.title')}</h3>
-              </div>
-              <p className="text-slate-700 mb-5">
-                {t('product.analyticsDashboards.detailedFeatures.automation.description')}
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.automation.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.automation.feature2')}</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9b87f5] mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{t('product.analyticsDashboards.detailedFeatures.automation.feature3')}</span>
-                </li>
-              </ul>
-            </div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
+            {t('product.analyticsDashboards.dashboard.title')}
+          </h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+            {t('product.analyticsDashboards.dashboard.subtitle')}
+          </p>
+          <div className="max-w-4xl mx-auto">
+            <AiComplianceDashboard />
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* 4. Key Capabilities */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+            {t('product.analyticsDashboards.capabilities.title')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((cap) => (
+              <Card key={cap.key} className="border-[#9b87f5]/20 hover:shadow-md transition-all">
+                <CardContent className="pt-6">
+                  <div className="h-12 w-12 rounded-full bg-[#9b87f5]/10 flex items-center justify-center mb-4">
+                    <cap.icon className="h-6 w-6 text-[#7E69AB]" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{t(`product.analyticsDashboards.capabilities.${cap.key}.title`)}</h3>
+                  <p className="text-muted-foreground text-sm">{t(`product.analyticsDashboards.capabilities.${cap.key}.description`)}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. Framework Coverage */}
+        <section className="mb-16 bg-slate-50 rounded-xl p-8">
+          <h2 className="text-2xl font-bold mb-3 text-center">
+            {t('product.analyticsDashboards.frameworks.title')}
+          </h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+            {t('product.analyticsDashboards.frameworks.subtitle')}
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {frameworks.map((fw) => (
+              <div key={fw} className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-[#9b87f5]/40 transition-colors">
+                <h3 className="font-semibold text-sm mb-1">{t(`product.analyticsDashboards.frameworks.items.${fw}.name`)}</h3>
+                <p className="text-xs text-muted-foreground">{t(`product.analyticsDashboards.frameworks.items.${fw}.desc`)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 6. FAQ */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            {t('product.analyticsDashboards.faq.title')}
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqKeys.map((key) => (
+                <AccordionItem key={key} value={key}>
+                  <AccordionTrigger className="text-left">
+                    {t(`product.analyticsDashboards.faq.${key}.question`)}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    {t(`product.analyticsDashboards.faq.${key}.answer`)}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* 7. CTA */}
         <section className="mb-8">
           <div className="bg-gradient-to-r from-[#7E69AB] to-[#9b87f5] rounded-xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-4">
                 {t('product.analyticsDashboards.cta.title')}
               </h2>
               <p className="text-xl opacity-90 mb-8">
@@ -164,8 +175,10 @@ const AnalyticsDashboards = () => {
                     {t('product.analyticsDashboards.cta.bookDemo')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  {t('product.analyticsDashboards.cta.explorePlans')}
+                <Button size="lg" className="border-white text-white hover:bg-white/10 border bg-transparent px-8" asChild>
+                  <Link to={`/${currentLocale}/plans`}>
+                    {t('product.analyticsDashboards.cta.explorePlans')}
+                  </Link>
                 </Button>
               </div>
             </div>

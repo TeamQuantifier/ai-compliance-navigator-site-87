@@ -1086,6 +1086,112 @@
         "subtitle": "Join organizations that use Quantifier's AI analytics to transform compliance data into strategic insights.",
         "bookDemo": "Book a Demo",
         "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Analytics & Dashboards Work",
+        "subtitle": "Four steps from data collection to actionable compliance insights and executive reporting.",
+        "steps": {
+          "collect": {
+            "title": "Collect Data",
+            "description": "Automatically aggregate compliance data from tasks, risks, documents, and frameworks."
+          },
+          "visualize": {
+            "title": "Visualize",
+            "description": "Display KPIs, charts, and progress metrics in customizable dashboard layouts."
+          },
+          "analyze": {
+            "title": "AI Analysis",
+            "description": "Get AI-powered insights, trend detection, and compliance gap identification."
+          },
+          "report": {
+            "title": "Generate Reports",
+            "description": "Create board-ready reports and audit packages with one click."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Analytics Dashboard",
+        "subtitle": "Real-time compliance metrics, AI insights, and executive reporting — all in one customizable dashboard."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "realTime": {
+          "title": "Real-Time Analytics",
+          "description": "Live compliance metrics updated automatically as tasks complete and data changes."
+        },
+        "aiInsights": {
+          "title": "AI-Powered Insights",
+          "description": "Machine learning identifies compliance gaps, risk trends, and optimization opportunities."
+        },
+        "riskAssessment": {
+          "title": "Risk Overview",
+          "description": "Visual risk landscape with heatmaps, trend charts, and residual risk tracking."
+        },
+        "reporting": {
+          "title": "Executive Reporting",
+          "description": "Generate board-ready compliance reports with charts, KPIs, and trend analysis."
+        },
+        "automation": {
+          "title": "Automated Alerts",
+          "description": "Get notified of compliance deadline misses, risk threshold breaches, and KPI drops."
+        },
+        "trends": {
+          "title": "Trend Analysis",
+          "description": "Track compliance progress over time with historical data and forecasting capabilities."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Dashboard views and analytics for every compliance framework you manage.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Security controls completion dashboard"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity readiness metrics"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT resilience KPIs and trends"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Privacy compliance status tracking"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria progress monitoring"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability metrics and reporting"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatAreDashboards": {
+          "question": "What do compliance analytics dashboards show?",
+          "answer": "Quantifier dashboards display real-time compliance metrics including framework completion rates, task progress, risk posture, document status, and deadline tracking. All data is aggregated automatically from your compliance activities."
+        },
+        "customization": {
+          "question": "Can I customize the dashboards?",
+          "answer": "Yes. You can configure which KPIs, charts, and widgets appear on your dashboard. Create role-specific views for managers, auditors, and contributors with different data visibility levels."
+        },
+        "whichFrameworks": {
+          "question": "Are there framework-specific dashboards?",
+          "answer": "Yes. Each framework (ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG) has a dedicated dashboard with relevant controls, completion metrics, and compliance-specific KPIs."
+        },
+        "aiInsights": {
+          "question": "How do AI insights work?",
+          "answer": "AI analyzes your compliance data to identify patterns, predict potential gaps, and suggest optimization actions. It detects trends in task completion rates, risk scores, and deadline adherence to proactively flag issues."
+        },
+        "exportReports": {
+          "question": "Can I export reports for the board or auditors?",
+          "answer": "Yes. Generate PDF or Excel reports with one click. Reports include executive summaries, compliance scorecards, risk overviews, and detailed evidence for auditors. You can also schedule automated report delivery."
+        }
       }
     },
     "valueChain": {
@@ -1133,6 +1239,112 @@
         "subtitle": "See how Quantifier gives you visibility across your entire supply chain.",
         "bookDemo": "Book a Demo",
         "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Value Chain Management Works",
+        "subtitle": "Four steps to map, assess, score, and continuously monitor your supply chain compliance.",
+        "steps": {
+          "identify": {
+            "title": "Identify Suppliers",
+            "description": "Map your supply chain and identify all third-party vendors and service providers."
+          },
+          "assess": {
+            "title": "Assess & Due Diligence",
+            "description": "Send questionnaires and collect compliance evidence from suppliers."
+          },
+          "score": {
+            "title": "Risk Scoring",
+            "description": "Automatically score suppliers based on compliance posture and risk factors."
+          },
+          "monitor": {
+            "title": "Continuous Monitoring",
+            "description": "Track supplier compliance status and get alerts on changes or issues."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Supplier Dashboard",
+        "subtitle": "A comprehensive view of your entire supply chain with risk scores, compliance status, and due diligence tracking."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "supplierMapping": {
+          "title": "Supplier Mapping",
+          "description": "Visualize your entire supply chain with detailed vendor profiles and relationship mapping."
+        },
+        "dueDiligence": {
+          "title": "Due Diligence",
+          "description": "Automate supplier assessments with customizable questionnaires and evidence collection."
+        },
+        "riskScoring": {
+          "title": "Risk Scoring",
+          "description": "AI-powered risk scoring based on compliance responses, certifications, and external data."
+        },
+        "esgSupplyChain": {
+          "title": "ESG Supply Chain",
+          "description": "Monitor environmental, social, and governance performance across your value chain."
+        },
+        "complianceTracking": {
+          "title": "Compliance Tracking",
+          "description": "Track supplier certifications, audit results, and compliance status in real-time."
+        },
+        "continuousMonitoring": {
+          "title": "Continuous Monitoring",
+          "description": "Automated alerts for supplier risk changes, expiring certifications, and compliance gaps."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage supply chain compliance requirements across all major frameworks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Supplier security controls (A.15)"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Supply chain cybersecurity (Art. 21)"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT third-party risk management"
+          },
+          "csrd": {
+            "name": "CSRD",
+            "desc": "Value chain sustainability reporting"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data processor management"
+          },
+          "esg": {
+            "name": "ESG",
+            "desc": "Supply chain ESG performance"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsValueChain": {
+          "question": "What is value chain management in GRC?",
+          "answer": "Value chain management in GRC involves mapping, assessing, and monitoring all third-party suppliers and vendors for compliance risks. Quantifier automates supplier due diligence, risk scoring, and continuous monitoring across your entire supply chain."
+        },
+        "howScoring": {
+          "question": "How does supplier risk scoring work?",
+          "answer": "Suppliers are scored based on their questionnaire responses, certifications held, audit results, and compliance posture. The scoring algorithm weighs factors relevant to your specific framework requirements and risk appetite."
+        },
+        "whichFrameworks": {
+          "question": "Which frameworks require supply chain management?",
+          "answer": "NIS2 (Article 21), ISO 27001 (Annex A.15), DORA (ICT third-party risk), CSRD (value chain reporting), and GDPR (data processor management) all have supply chain compliance requirements that Quantifier addresses."
+        },
+        "supplierOnboarding": {
+          "question": "How do I onboard new suppliers?",
+          "answer": "Add suppliers to the platform, send automated assessment questionnaires, collect certifications and evidence, and receive a risk score. The entire onboarding process is tracked and documented for audit purposes."
+        },
+        "continuousMonitoring": {
+          "question": "What does continuous monitoring include?",
+          "answer": "Continuous monitoring tracks certification expiry dates, compliance status changes, periodic reassessment schedules, and external risk signals. You receive automated alerts when supplier risk profiles change."
+        }
       }
     },
     "apiIntegrations": {
@@ -1227,6 +1439,112 @@
         "subtitle": "See how Quantifier keeps your documentation audit-ready at all times.",
         "bookDemo": "Book a Demo",
         "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Document Management Works",
+        "subtitle": "Four steps to organize, version, approve, and audit your compliance documentation.",
+        "steps": {
+          "upload": {
+            "title": "Upload & Organize",
+            "description": "Upload documents and organize them by framework, department, or custom categories."
+          },
+          "version": {
+            "title": "Version Control",
+            "description": "Track every change with automatic versioning and change history."
+          },
+          "approve": {
+            "title": "Review & Approve",
+            "description": "Route documents through approval workflows with role-based permissions."
+          },
+          "audit": {
+            "title": "Audit Trail",
+            "description": "Maintain a complete audit trail of all document activities and access."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Document Repository",
+        "subtitle": "A secure, centralized repository where every compliance document is versioned, approved, and audit-ready."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "centralRepo": {
+          "title": "Central Repository",
+          "description": "Store all compliance documents in one secure, searchable location with folder structures."
+        },
+        "versionControl": {
+          "title": "Version Control",
+          "description": "Automatic version tracking with full change history and rollback capabilities."
+        },
+        "accessControl": {
+          "title": "Access Control",
+          "description": "Role-based permissions ensure only authorized users can view or edit sensitive documents."
+        },
+        "lifecycle": {
+          "title": "Document Lifecycle",
+          "description": "Manage documents from draft through review, approval, publication, and retirement."
+        },
+        "auditReady": {
+          "title": "Audit-Ready",
+          "description": "Generate document packages for auditors with complete evidence trails and approval records."
+        },
+        "search": {
+          "title": "Smart Search",
+          "description": "Find any document instantly with full-text search, filters, and framework-based navigation."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage documentation requirements for any compliance framework in one place.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Policies, SOA, and security procedures"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Incident plans and security documentation"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT policies and continuity plans"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "DPAs, privacy notices, and DPIAs"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Policies and control documentation"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability reports and disclosures"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsDms": {
+          "question": "What is compliance document management?",
+          "answer": "Compliance document management is the systematic organization, versioning, approval, and storage of all documents required for regulatory compliance. Quantifier provides a centralized repository designed specifically for GRC documentation needs."
+        },
+        "versionControl": {
+          "question": "How does version control work?",
+          "answer": "Every document change is automatically versioned. You can view the complete change history, compare versions side by side, and rollback to any previous version if needed. All changes are logged in the audit trail."
+        },
+        "whichFrameworks": {
+          "question": "Which framework documents can I manage?",
+          "answer": "Quantifier supports document management for ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG/CSRD, and more. Each framework comes with template structures and required document checklists."
+        },
+        "accessControl": {
+          "question": "How are document permissions managed?",
+          "answer": "Documents use role-based access control (RBAC). You can set permissions at folder or document level, restrict editing to specific roles, and ensure sensitive documents are only visible to authorized personnel."
+        },
+        "auditTrail": {
+          "question": "Is there a complete audit trail?",
+          "answer": "Yes. Every action — view, edit, approve, download, share — is logged with timestamps and user identity. This audit trail is immutable and can be exported for external auditors."
+        }
       }
     },
     "taskDataManagement": {
@@ -1280,6 +1598,112 @@
         "subtitle": "See how the Task & Data Hub keeps your team on track.",
         "bookDemo": "Book a Demo",
         "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Task & Data Management Works",
+        "subtitle": "Four simple steps to streamline compliance task tracking and data collection across your organization.",
+        "steps": {
+          "create": {
+            "title": "Create Tasks",
+            "description": "Define compliance tasks from framework requirements or create custom ones."
+          },
+          "assign": {
+            "title": "Assign & Delegate",
+            "description": "Assign tasks to team members with deadlines and priority levels."
+          },
+          "track": {
+            "title": "Track Progress",
+            "description": "Monitor task completion with Kanban boards, lists, and status filters."
+          },
+          "report": {
+            "title": "Report & Notify",
+            "description": "Get automated notifications and generate compliance progress reports."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Compliance Task Hub",
+        "subtitle": "A centralized workspace where every compliance task, deadline, and data collection request is visible and actionable."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "taskEngine": {
+          "title": "Task Engine",
+          "description": "Create, assign, and track compliance tasks with automated workflows and deadline management."
+        },
+        "dataHub": {
+          "title": "Data Collection Hub",
+          "description": "Centralize evidence and data gathering from multiple departments and stakeholders."
+        },
+        "collaboration": {
+          "title": "Team Collaboration",
+          "description": "Enable cross-functional teamwork with comments, mentions, and shared task visibility."
+        },
+        "workflows": {
+          "title": "Automated Workflows",
+          "description": "Set up approval chains, escalation rules, and recurring task schedules."
+        },
+        "filters": {
+          "title": "Smart Filters",
+          "description": "Filter tasks by framework, status, assignee, priority, or custom tags."
+        },
+        "kanban": {
+          "title": "Kanban & List Views",
+          "description": "Switch between Kanban boards and list views to manage tasks your way."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage tasks and collect data for any compliance framework in a single workspace.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Information security controls and evidence"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity measures and incident tasks"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT risk management and resilience tasks"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection and privacy activities"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust services criteria evidence"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability data collection"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsTaskManagement": {
+          "question": "What is compliance task management?",
+          "answer": "Compliance task management is the process of creating, assigning, tracking, and reporting on tasks required to meet regulatory and framework requirements. Quantifier automates this process across multiple frameworks simultaneously."
+        },
+        "howAssign": {
+          "question": "How do I assign tasks to team members?",
+          "answer": "You can assign tasks directly from the task board or list view. Set assignees, deadlines, priorities, and add context from the relevant framework requirement. Team members receive notifications and can track their tasks in a personal dashboard."
+        },
+        "whichFrameworks": {
+          "question": "Which compliance frameworks are supported?",
+          "answer": "Quantifier supports ISO 27001, NIS2, DORA, GDPR, SOC 2, ESG/CSRD, and many more. Tasks are automatically mapped to framework controls, so you never miss a requirement."
+        },
+        "dataCollection": {
+          "question": "How does data collection work?",
+          "answer": "The data collection hub allows you to request evidence and information from any department. Contributors receive structured forms and can upload documents, fill in data fields, and confirm completion — all tracked in one place."
+        },
+        "automation": {
+          "question": "Can I automate recurring tasks?",
+          "answer": "Yes. Set up recurring tasks for periodic reviews, audits, and assessments. Quantifier automatically creates new task instances, assigns them, and tracks completion against your compliance calendar."
+        }
       }
     },
     "riskAssessment": {
@@ -1333,6 +1757,112 @@
         "subtitle": "See how Quantifier makes risk assessment structured and actionable.",
         "bookDemo": "Book a Demo",
         "explorePlans": "Explore Plans"
+      },
+      "howItWorks": {
+        "title": "How Risk Assessment Works",
+        "subtitle": "Four steps to identify, assess, treat, and monitor risks across your compliance landscape.",
+        "steps": {
+          "identify": {
+            "title": "Identify Risks",
+            "description": "Catalog risks from threat libraries, framework requirements, and organizational context."
+          },
+          "assess": {
+            "title": "Assess & Score",
+            "description": "Evaluate risks using impact-likelihood matrices with qualitative or quantitative methods."
+          },
+          "treat": {
+            "title": "Treat & Mitigate",
+            "description": "Define treatment plans: mitigate, transfer, accept, or avoid each identified risk."
+          },
+          "monitor": {
+            "title": "Monitor & Review",
+            "description": "Continuously track risk status, residual risk levels, and treatment effectiveness."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Risk Dashboard",
+        "subtitle": "A comprehensive risk register with heatmaps, treatment plans, and real-time risk monitoring."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "identification": {
+          "title": "Risk Identification",
+          "description": "Systematic risk identification with threat libraries, asset mapping, and vulnerability assessment."
+        },
+        "quantification": {
+          "title": "Risk Quantification",
+          "description": "Score risks using customizable impact-likelihood matrices with qualitative and quantitative methods."
+        },
+        "mitigation": {
+          "title": "Risk Mitigation",
+          "description": "Define and track treatment plans with owners, deadlines, and effectiveness metrics."
+        },
+        "riskMatrix": {
+          "title": "Risk Heatmap",
+          "description": "Visual risk heatmap showing risk distribution by impact and likelihood for quick prioritization."
+        },
+        "treatmentPlans": {
+          "title": "Treatment Plans",
+          "description": "Structured treatment plans with action items, responsible parties, and progress tracking."
+        },
+        "reporting": {
+          "title": "Risk Reporting",
+          "description": "Generate risk reports for management, boards, and auditors with exportable formats."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Risk assessment methodology aligned with all major compliance and security frameworks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Information security risk assessment"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity risk management measures"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT risk management framework"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection impact assessments"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Risk assessment for trust criteria"
+          },
+          "iso31000": {
+            "name": "ISO 31000",
+            "desc": "Enterprise risk management standard"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsRiskAssessment": {
+          "question": "What is compliance risk assessment?",
+          "answer": "Compliance risk assessment is the systematic process of identifying, analyzing, evaluating, and treating risks that could affect your organization regulatory compliance. Quantifier provides a structured methodology aligned with ISO 31000 and framework-specific requirements."
+        },
+        "methodology": {
+          "question": "What risk assessment methodology does Quantifier use?",
+          "answer": "Quantifier supports both qualitative (impact-likelihood matrices) and quantitative risk assessment methods. You can customize scoring scales, risk categories, and treatment options to match your organization risk appetite and framework requirements."
+        },
+        "whichFrameworks": {
+          "question": "Which frameworks require risk assessment?",
+          "answer": "Virtually all compliance frameworks require risk assessment: ISO 27001 (Clause 6.1), NIS2 (Article 21), DORA (Chapter II), GDPR (Article 35 DPIA), SOC 2, and ISO 31000. Quantifier maps risks to specific framework controls automatically."
+        },
+        "riskMatrix": {
+          "question": "How does the risk heatmap work?",
+          "answer": "The risk heatmap visualizes all identified risks on an impact-likelihood matrix. Risks are color-coded by severity level (critical, high, medium, low), making it easy to prioritize treatment efforts and communicate risk posture to stakeholders."
+        },
+        "automation": {
+          "question": "Can risk assessments be automated?",
+          "answer": "Yes. Quantifier automates periodic risk reassessments, inherent/residual risk calculation, risk score updates based on treatment progress, and alert generation when risk levels change. You can also set up automated risk reporting schedules."
+        }
       }
     }
   },
