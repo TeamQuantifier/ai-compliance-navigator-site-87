@@ -10,13 +10,13 @@ const ProductOverview = () => {
   const { t, currentLocale } = useLanguage();
   
   const features = [
-    { title: t('product.overview.mainFeatures.title'), href: "/product/features", description: t('product.overview.mainFeatures.description') },
-    { title: t('product.overview.aiOfficer.title'), href: "/product/ai-compliance-officer", description: t('product.overview.aiOfficer.description') },
-    { title: t('product.overview.taskManagement.title'), href: "/product/task-data-management", description: t('product.overview.taskManagement.description') },
-    { title: t('product.overview.documents.title'), href: "/product/documents-management", description: t('product.overview.documents.description') },
-    { title: t('product.overview.valueChain.title'), href: "/product/value-chain", description: t('product.overview.valueChain.description') },
-    { title: t('product.overview.riskAssessment.title'), href: "/product/risk-assessment", description: t('product.overview.riskAssessment.description') },
-    { title: t('product.overview.analytics.title'), href: "/product/analytics-dashboards", description: t('product.overview.analytics.description') },
+    { titleKey: 'product.overview.features.mainFeatures.title', href: "/product", descKey: 'product.overview.features.mainFeatures.description' },
+    { titleKey: 'product.overview.features.aiOfficer.title', href: "/product/ai-compliance-officer", descKey: 'product.overview.features.aiOfficer.description' },
+    { titleKey: 'product.overview.features.taskDataManagement.title', href: "/product/task-data-management", descKey: 'product.overview.features.taskDataManagement.description' },
+    { titleKey: 'product.overview.features.documents.title', href: "/product/documents-management", descKey: 'product.overview.features.documents.description' },
+    { titleKey: 'product.overview.features.valueChain.title', href: "/product/value-chain", descKey: 'product.overview.features.valueChain.description' },
+    { titleKey: 'product.overview.features.riskAssessment.title', href: "/product/risk-assessment", descKey: 'product.overview.features.riskAssessment.description' },
+    { titleKey: 'product.overview.features.analytics.title', href: "/product/analytics-dashboards", descKey: 'product.overview.features.analytics.description' },
   ];
 
   const stats = [
