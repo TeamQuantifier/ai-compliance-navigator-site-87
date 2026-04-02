@@ -151,17 +151,368 @@
     "managers": {
       "title": "For Leadership & Executive",
       "subtitle": "(CFO, COO, CISO, Head of Risk)",
-      "description": "Comprehensive dashboards to oversee compliance and inform decisions."
+      "description": "Comprehensive dashboards to oversee compliance and inform decisions.",
+      "hero": {
+        "title": "Compliance Management at a Glance",
+        "subtitle": "Get a bird-eye view of your team compliance progress, delegate tasks, and track deadlines — all from one dashboard.",
+        "bookDemo": "Book a Demo"
+      },
+      "howItWorks": {
+        "title": "How Manager View Works",
+        "subtitle": "Four steps to full visibility and control over your team compliance activities.",
+        "steps": {
+          "overview": {
+            "title": "Get Overview",
+            "description": "See real-time compliance progress across all teams and frameworks."
+          },
+          "delegate": {
+            "title": "Delegate Tasks",
+            "description": "Assign compliance tasks to team members with context and deadlines."
+          },
+          "track": {
+            "title": "Track Progress",
+            "description": "Monitor completion rates, identify bottlenecks, and manage escalations."
+          },
+          "report": {
+            "title": "Report to Board",
+            "description": "Generate executive reports with KPIs, trends, and compliance scorecards."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Manager Dashboard",
+        "subtitle": "Real-time team progress, task distribution, and compliance KPIs in one unified view."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "overview": {
+          "title": "Team Overview",
+          "description": "See compliance progress for every team, department, and framework at a glance."
+        },
+        "delegation": {
+          "title": "Task Delegation",
+          "description": "Assign and redistribute compliance tasks with full context from framework requirements."
+        },
+        "progress": {
+          "title": "Progress Tracking",
+          "description": "Track task completion rates, overdue items, and team performance metrics."
+        },
+        "kpis": {
+          "title": "Compliance KPIs",
+          "description": "Monitor key compliance indicators with trend analysis and benchmarking."
+        },
+        "riskView": {
+          "title": "Risk Overview",
+          "description": "View aggregated risk posture across teams with drill-down capabilities."
+        },
+        "deadlines": {
+          "title": "Deadline Management",
+          "description": "Track upcoming deadlines, audit dates, and certification renewals in one calendar."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Manage team compliance across all major frameworks from one dashboard.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Security controls team progress"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity readiness by team"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT resilience task tracking"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Privacy compliance delegation"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria team assignments"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability data collection"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsManagerView": {
+          "question": "What can managers see in Quantifier?",
+          "answer": "Managers get a bird-eye dashboard showing team compliance progress, task distribution, overdue items, risk posture, and KPI trends across all frameworks. No compliance expertise required."
+        },
+        "howDelegate": {
+          "question": "How do I delegate tasks to my team?",
+          "answer": "From the manager dashboard, you can assign tasks directly to team members, set deadlines and priorities, add context from framework requirements, and track completion in real-time."
+        },
+        "whichMetrics": {
+          "question": "What metrics and KPIs are available?",
+          "answer": "Key metrics include framework completion rates, task completion velocity, overdue task counts, team performance scores, risk posture trends, and upcoming deadline forecasts."
+        },
+        "teamVisibility": {
+          "question": "Can I see progress across multiple teams?",
+          "answer": "Yes. The manager view aggregates compliance data across all teams you manage. You can drill down into specific teams, departments, or individual contributors."
+        },
+        "reporting": {
+          "question": "Can I generate board-level reports?",
+          "answer": "Yes. Generate executive compliance reports with one click, including scorecards, trend charts, risk summaries, and detailed breakdowns by framework or team."
+        }
+      },
+      "cta": {
+        "title": "Streamline Your Team Compliance",
+        "subtitle": "Give your managers the visibility and tools they need to drive compliance across the organization.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "See Plans"
+      }
     },
     "contributors": {
       "title": "For Operational Teams",
       "subtitle": "(Compliance, IT, Security, ESG)",
-      "description": "Streamlined interfaces for data entry, tasks, and evidence collection."
+      "description": "Streamlined interfaces for data entry, tasks, and evidence collection.",
+      "hero": {
+        "title": "Simple Compliance Tasks for Everyone",
+        "subtitle": "No compliance expertise needed. Get clear tasks, fill in forms, upload evidence, and confirm completion — all guided step by step.",
+        "bookDemo": "Book a Demo"
+      },
+      "howItWorks": {
+        "title": "How Contributor View Works",
+        "subtitle": "Four simple steps — no compliance knowledge required.",
+        "steps": {
+          "notified": {
+            "title": "Get Notified",
+            "description": "Receive clear task notifications with context and deadlines via email or in-app."
+          },
+          "fill": {
+            "title": "Fill in Data",
+            "description": "Complete structured forms designed to be understandable without compliance background."
+          },
+          "upload": {
+            "title": "Upload Evidence",
+            "description": "Attach screenshots, documents, or files as evidence for compliance controls."
+          },
+          "confirm": {
+            "title": "Confirm & Done",
+            "description": "Confirm completion and your task is automatically tracked in the compliance system."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Your Task Dashboard",
+        "subtitle": "A simple, focused view of your assigned tasks with clear instructions and deadlines."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "myTasks": {
+          "title": "My Tasks View",
+          "description": "A personal dashboard showing only your assigned tasks with clear status and deadlines."
+        },
+        "forms": {
+          "title": "Guided Forms",
+          "description": "Structured forms with instructions, examples, and validation — no compliance expertise needed."
+        },
+        "evidenceUpload": {
+          "title": "Evidence Upload",
+          "description": "Drag-and-drop file upload for screenshots, documents, and other evidence artifacts."
+        },
+        "notifications": {
+          "title": "Smart Notifications",
+          "description": "Email and in-app reminders for upcoming deadlines and new task assignments."
+        },
+        "comments": {
+          "title": "Task Comments",
+          "description": "Ask questions and communicate with compliance managers directly within each task."
+        },
+        "confirmations": {
+          "title": "One-Click Confirm",
+          "description": "Simple confirmation actions for acknowledgments, training completion, and policy reviews."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Contribute to any compliance framework — the platform translates requirements into simple tasks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Security evidence and confirmations"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Cybersecurity data collection"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT resilience evidence"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Privacy data and confirmations"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria evidence upload"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Sustainability data input"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsContributor": {
+          "question": "What is a contributor in Quantifier?",
+          "answer": "A contributor is any team member who provides data, evidence, or confirmations for compliance tasks. You do not need compliance expertise — the platform guides you through each task with clear instructions."
+        },
+        "howGetTasks": {
+          "question": "How do I receive tasks?",
+          "answer": "You receive notifications via email and in the platform when a compliance manager assigns you a task. Each task includes clear instructions, deadlines, and context about what is needed."
+        },
+        "whatUpload": {
+          "question": "What kind of evidence can I upload?",
+          "answer": "You can upload any file type — screenshots, PDFs, spreadsheets, documents, or images. The platform tells you exactly what evidence is needed for each task."
+        },
+        "noCompliance": {
+          "question": "Do I need compliance knowledge?",
+          "answer": "No. Tasks are designed to be completed by anyone. Forms include guidance, examples, and validation. If you have questions, you can comment directly on the task."
+        },
+        "timeNeeded": {
+          "question": "How much time does it take?",
+          "answer": "Most contributor tasks take 5-15 minutes. The platform is designed to minimize the time non-compliance staff spend on compliance activities."
+        }
+      },
+      "cta": {
+        "title": "Make Compliance Easy for Everyone",
+        "subtitle": "Empower every team member to contribute to compliance without the complexity.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "See Plans"
+      }
     },
     "auditors": {
       "title": "For Internal & External Auditors",
       "subtitle": "",
-      "description": "Detailed audit trails and verification tools to validate compliance."
+      "description": "Detailed audit trails and verification tools to validate compliance.",
+      "hero": {
+        "title": "Audit-Ready Evidence at Your Fingertips",
+        "subtitle": "Access control mappings, review evidence, verify compliance status, and export complete audit packages — all in one workspace.",
+        "bookDemo": "Book a Demo"
+      },
+      "howItWorks": {
+        "title": "How Auditor View Works",
+        "subtitle": "Four steps from control selection to complete audit package export.",
+        "steps": {
+          "select": {
+            "title": "Select Framework",
+            "description": "Choose the framework and controls you want to audit from the control library."
+          },
+          "review": {
+            "title": "Review Evidence",
+            "description": "Access all evidence files, documents, and audit trails linked to each control."
+          },
+          "verify": {
+            "title": "Verify Compliance",
+            "description": "Mark controls as verified, pending, or identify gaps with structured findings."
+          },
+          "export": {
+            "title": "Export Package",
+            "description": "Download complete audit packages with evidence, trails, and compliance reports."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Audit Workspace",
+        "subtitle": "A dedicated workspace for auditors with control mappings, evidence review, and export capabilities."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "controlMapping": {
+          "title": "Control Mapping",
+          "description": "Complete control-to-evidence mapping for every framework with implementation status."
+        },
+        "evidenceReview": {
+          "title": "Evidence Review",
+          "description": "Review all evidence files linked to each control with timestamps and approval records."
+        },
+        "auditTrail": {
+          "title": "Audit Trail",
+          "description": "Immutable audit trail of all system activities, changes, and approvals."
+        },
+        "exportPackage": {
+          "title": "Export Packages",
+          "description": "Download structured audit packages with evidence bundles, reports, and compliance summaries."
+        },
+        "gapAnalysis": {
+          "title": "Gap Analysis",
+          "description": "Identify compliance gaps with structured findings, recommendations, and remediation tracking."
+        },
+        "readOnlyAccess": {
+          "title": "Read-Only Access",
+          "description": "Secure read-only access ensures auditors can review without modifying compliance data."
+        }
+      },
+      "frameworks": {
+        "title": "Framework Coverage",
+        "subtitle": "Audit evidence and control mappings for all major compliance frameworks.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Annex A control evidence mapping"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Article 21 measures verification"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "ICT risk management evidence"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Data protection compliance evidence"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Trust criteria control testing"
+          },
+          "iso31000": {
+            "name": "ISO 31000",
+            "desc": "Risk management audit trail"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsAuditorView": {
+          "question": "What can auditors access in Quantifier?",
+          "answer": "Auditors get a dedicated read-only workspace with control-to-evidence mappings, document repositories, audit trails, and export capabilities for all compliance frameworks."
+        },
+        "howAccess": {
+          "question": "How do auditors get access?",
+          "answer": "Administrators can create auditor accounts with read-only permissions. Auditors see only the controls, evidence, and trails relevant to their audit scope."
+        },
+        "evidenceExport": {
+          "question": "Can I export evidence packages?",
+          "answer": "Yes. Export structured audit packages including all evidence files, approval records, audit trails, and compliance reports in ZIP or PDF format."
+        },
+        "readOnly": {
+          "question": "Is auditor access read-only?",
+          "answer": "Yes. Auditor accounts have strict read-only permissions. They can view and export data but cannot modify any compliance records, evidence, or configurations."
+        },
+        "multiFramework": {
+          "question": "Can I audit multiple frameworks at once?",
+          "answer": "Yes. The auditor workspace supports multi-framework audits. You can review controls and evidence across ISO 27001, NIS2, DORA, GDPR, SOC 2, and more in one session."
+        }
+      },
+      "cta": {
+        "title": "Simplify Your Audit Process",
+        "subtitle": "Give auditors everything they need — organized evidence, complete trails, and exportable packages.",
+        "bookDemo": "Book a Demo",
+        "explorePlans": "See Plans"
+      }
     },
     "learnMore": "Learn More"
   },

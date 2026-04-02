@@ -150,17 +150,368 @@
     "managers": {
       "title": "Dla Zarządów i Leadershipu",
       "subtitle": "(CFO, COO, CISO, Head of Risk)",
-      "description": "Kompleksowe dashboardy do nadzoru compliance i wsparcia decyzji."
+      "description": "Kompleksowe dashboardy do nadzoru compliance i wsparcia decyzji.",
+      "hero": {
+        "title": "Compliance na pierwszy rzut oka",
+        "subtitle": "Widok z lotu ptaka na postepy compliance zespolu, delegowanie zadan i sledzenie terminow — z jednego dashboardu.",
+        "bookDemo": "Umow demo"
+      },
+      "howItWorks": {
+        "title": "Jak dziala widok managera",
+        "subtitle": "Cztery kroki do pelnej widocznosci i kontroli nad dzialaniami compliance zespolu.",
+        "steps": {
+          "overview": {
+            "title": "Przegladaj",
+            "description": "Zobacz postep compliance w czasie rzeczywistym we wszystkich zespolach."
+          },
+          "delegate": {
+            "title": "Deleguj",
+            "description": "Przydzielaj zadania compliance z kontekstem i terminami."
+          },
+          "track": {
+            "title": "Sledz postep",
+            "description": "Monitoruj wskazniki realizacji, identyfikuj waskie gardla."
+          },
+          "report": {
+            "title": "Raportuj",
+            "description": "Generuj raporty dla zarzadu z KPI i trendami."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Dashboard managera",
+        "subtitle": "Postep zespolu w czasie rzeczywistym, dystrybucja zadan i KPI compliance w jednym widoku."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "overview": {
+          "title": "Przeglad zespolu",
+          "description": "Postep compliance dla kazdego zespolu i frameworku na pierwszy rzut oka."
+        },
+        "delegation": {
+          "title": "Delegowanie zadan",
+          "description": "Przydzielaj zadania z pelnym kontekstem z wymagan frameworkow."
+        },
+        "progress": {
+          "title": "Sledzenie postepu",
+          "description": "Sledz wskazniki realizacji zadan, zaleglosci i metryki zespolu."
+        },
+        "kpis": {
+          "title": "KPI compliance",
+          "description": "Monitoruj kluczowe wskazniki z analiza trendow."
+        },
+        "riskView": {
+          "title": "Przeglad ryzyk",
+          "description": "Zagregowana postura ryzyka z mozliwoscia drillowania."
+        },
+        "deadlines": {
+          "title": "Zarzadzanie terminami",
+          "description": "Sledz nadchodzace terminy, daty audytow i odnowienia certyfikatow."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Zarzadzaj compliance zespolu we wszystkich glownych frameworkach.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Postep kontroli bezpieczenstwa zespolu"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Gotowoscna cyberbezpieczenstwo wg zespolu"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Sledzenie zadan odpornosci ICT"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Delegowanie zgodnosci z prywatnoscia"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Przydzialy kryteriow zaufania zespolu"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Zbieranie danych zrownowazonego rozwoju"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsManagerView": {
+          "question": "Co widza managerowie w Quantifier?",
+          "answer": "Managerowie otrzymuja dashboard z lotu ptaka pokazujacy postep compliance zespolu, dystrybucje zadan, zaleglosci i trendy KPI."
+        },
+        "howDelegate": {
+          "question": "Jak delegowac zadania zespolowi?",
+          "answer": "Z dashboardu managera mozesz przydzielac zadania, ustawiac terminy i priorytety, dodawac kontekst z wymagan frameworkow."
+        },
+        "whichMetrics": {
+          "question": "Jakie metryki i KPI sa dostepne?",
+          "answer": "Kluczowe metryki: wskazniki realizacji frameworkow, szybkosc realizacji zadan, liczba zaleglych zadan, wyniki zespolu i prognozy terminow."
+        },
+        "teamVisibility": {
+          "question": "Czy widze postep wielu zespolow?",
+          "answer": "Tak. Widok managera agreguje dane compliance ze wszystkich zarzadzanych zespolow z mozliwoscia drillowania."
+        },
+        "reporting": {
+          "question": "Czy moge generowac raporty dla zarzadu?",
+          "answer": "Tak. Generuj raporty compliance jednym kliknieciem z kartami wynikow, wykresami trendow i podsumowaniami ryzyk."
+        }
+      },
+      "cta": {
+        "title": "Usprawnij compliance swojego zespolu",
+        "subtitle": "Daj managerom widocznosc i narzedzia do prowadzenia compliance w organizacji.",
+        "bookDemo": "Umow demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "contributors": {
       "title": "Dla zespołów operacyjnych",
       "subtitle": "(Compliance, IT, Security, ESG)",
-      "description": "Uproszczone interfejsy do wprowadzania danych, zadań i zbierania dowodów."
+      "description": "Uproszczone interfejsy do wprowadzania danych, zadań i zbierania dowodów.",
+      "hero": {
+        "title": "Proste zadania compliance dla kazdego",
+        "subtitle": "Nie potrzebujesz wiedzy o compliance. Otrzymaj jasne zadania, wypelnij formularze, przeslij dowody — wszystko krok po kroku.",
+        "bookDemo": "Umow demo"
+      },
+      "howItWorks": {
+        "title": "Jak dziala widok contributora",
+        "subtitle": "Cztery proste kroki — bez wiedzy o compliance.",
+        "steps": {
+          "notified": {
+            "title": "Powiadomienie",
+            "description": "Otrzymuj jasne powiadomienia o zadaniach z kontekstem i terminami."
+          },
+          "fill": {
+            "title": "Wypelnij dane",
+            "description": "Uzupelnij ustrukturyzowane formularze zaprojektowane bez potrzeby wiedzy compliance."
+          },
+          "upload": {
+            "title": "Przeslij dowody",
+            "description": "Zalacz zrzuty ekranu, dokumenty lub pliki jako dowody kontroli compliance."
+          },
+          "confirm": {
+            "title": "Potwierdz",
+            "description": "Potwierdz wykonanie — zadanie jest automatycznie sledzone w systemie compliance."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Twoj dashboard zadan",
+        "subtitle": "Prosty, skupiony widok przydzielonych zadan z jasnymi instrukcjami i terminami."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "myTasks": {
+          "title": "Moje zadania",
+          "description": "Osobisty dashboard pokazujacy tylko Twoje przydzielone zadania ze statusem i terminami."
+        },
+        "forms": {
+          "title": "Formularze z przewodnikiem",
+          "description": "Ustrukturyzowane formularze z instrukcjami i przykladami — bez ekspertyzy compliance."
+        },
+        "evidenceUpload": {
+          "title": "Przesylanie dowodow",
+          "description": "Przeciagnij i upusc pliki jako dowody — zrzuty ekranu, dokumenty i inne artefakty."
+        },
+        "notifications": {
+          "title": "Inteligentne powiadomienia",
+          "description": "Przypomnienia e-mail i w aplikacji o nadchodzacych terminach i nowych zadaniach."
+        },
+        "comments": {
+          "title": "Komentarze do zadan",
+          "description": "Zadawaj pytania i komunikuj sie z managerami compliance bezposrednio w kazdym zadaniu."
+        },
+        "confirmations": {
+          "title": "Potwierdzenie jednym kliknieciem",
+          "description": "Proste akcje potwierdzania dla potwierdzen, szkolen i przegladow polityk."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Przyczyniaj sie do dowolnego frameworku — platforma tlumacy wymagania na proste zadania.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Dowody bezpieczenstwa i potwierdzenia"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Zbieranie danych cyberbezpieczenstwa"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Dowody odpornosci ICT"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Dane prywatnosci i potwierdzenia"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Przesylanie dowodow kryteriow zaufania"
+          },
+          "esg": {
+            "name": "ESG / CSRD",
+            "desc": "Wprowadzanie danych zrownowazonego rozwoju"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsContributor": {
+          "question": "Kim jest contributor w Quantifier?",
+          "answer": "Contributor to kazdy czlonek zespolu dostarczajacy dane, dowody lub potwierdzenia dla zadan compliance. Nie potrzebujesz ekspertyzy compliance."
+        },
+        "howGetTasks": {
+          "question": "Jak otrzymuje zadania?",
+          "answer": "Otrzymujesz powiadomienia e-mail i w platformie gdy manager compliance przydzieli Ci zadanie z jasnymi instrukcjami."
+        },
+        "whatUpload": {
+          "question": "Jakie dowody moge przesylac?",
+          "answer": "Dowolny typ pliku — zrzuty ekranu, PDF, arkusze, dokumenty lub obrazy. Platforma mowi dokladnie czego potrzeba."
+        },
+        "noCompliance": {
+          "question": "Czy potrzebuje wiedzy o compliance?",
+          "answer": "Nie. Zadania sa zaprojektowane do wykonania przez kazdego. Formularze zawieraja wskazowki i przyklady."
+        },
+        "timeNeeded": {
+          "question": "Ile czasu to zajmuje?",
+          "answer": "Wiekszoscozadan contributora zajmuje 5-15 minut. Platforma minimalizuje czas spedzany na compliance."
+        }
+      },
+      "cta": {
+        "title": "Uczynoompliance prostym dla kazdego",
+        "subtitle": "Umozliw kazdemu czlonkowi zespolu wklad w compliance bez zlozonosci.",
+        "bookDemo": "Umow demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "auditors": {
       "title": "Dla audytorów wewnętrznych i zewnętrznych",
       "subtitle": "",
-      "description": "Szczegółowe ścieżki audytu i narzędzia weryfikacyjne do walidacji zgodności."
+      "description": "Szczegółowe ścieżki audytu i narzędzia weryfikacyjne do walidacji zgodności.",
+      "hero": {
+        "title": "Dowody gotowe do audytu na wyciagniecie reki",
+        "subtitle": "Mapowania kontroli, przegladanie dowodow, weryfikacja statusu compliance i eksport pelnych pakietow audytowych — w jednym miejscu.",
+        "bookDemo": "Umow demo"
+      },
+      "howItWorks": {
+        "title": "Jak dziala widok audytora",
+        "subtitle": "Cztery kroki od wyboru kontroli do eksportu pelnego pakietu audytowego.",
+        "steps": {
+          "select": {
+            "title": "Wybierz framework",
+            "description": "Wybierz framework i kontrole do audytu z biblioteki kontroli."
+          },
+          "review": {
+            "title": "Przegladaj dowody",
+            "description": "Dostep do wszystkich plikow dowodowych i sciezek audytu powiazanych z kazda kontrola."
+          },
+          "verify": {
+            "title": "Weryfikuj zgodnosc",
+            "description": "Oznaczaj kontrole jako zweryfikowane, oczekujace lub identyfikuj luki."
+          },
+          "export": {
+            "title": "Eksportuj pakiet",
+            "description": "Pobieraj kompletne pakiety audytowe z dowodami i raportami."
+          }
+        }
+      },
+      "dashboard": {
+        "title": "Przestrzen audytowa",
+        "subtitle": "Dedykowana przestrzen pracy dla audytorow z mapowaniami kontroli, przegladem dowodow i eksportem."
+      },
+      "capabilities": {
+        "title": "Kluczowe funkcje",
+        "controlMapping": {
+          "title": "Mapowanie kontroli",
+          "description": "Kompletne mapowanie kontroli-do-dowodow dla kazdego frameworku ze statusem implementacji."
+        },
+        "evidenceReview": {
+          "title": "Przegladanie dowodow",
+          "description": "Przegladaj wszystkie pliki dowodowe powiazane z kazda kontrola z znacznikami czasu."
+        },
+        "auditTrail": {
+          "title": "Sciezka audytu",
+          "description": "Niezmiennaociezka audytu wszystkich dzialan systemowych, zmian i zatwierdzeh."
+        },
+        "exportPackage": {
+          "title": "Pakiety eksportu",
+          "description": "Pobieraj ustrukturyzowane pakiety audytowe z zestawami dowodow i raportami."
+        },
+        "gapAnalysis": {
+          "title": "Analiza luk",
+          "description": "Identyfikuj luki w compliance ze strukturyzowanymi ustaleniami i rekomendacjami."
+        },
+        "readOnlyAccess": {
+          "title": "Dostep tylko do odczytu",
+          "description": "Bezpieczny dostep tylko do odczytu zapewnia audytorom przegladanie bez modyfikowania danych."
+        }
+      },
+      "frameworks": {
+        "title": "Pokrycie frameworkow",
+        "subtitle": "Dowody audytowe i mapowania kontroli dla wszystkich glownych frameworkow.",
+        "items": {
+          "iso27001": {
+            "name": "ISO 27001",
+            "desc": "Mapowanie dowodow kontroli Aneksu A"
+          },
+          "nis2": {
+            "name": "NIS2",
+            "desc": "Weryfikacja srodkow Artykulu 21"
+          },
+          "dora": {
+            "name": "DORA",
+            "desc": "Dowody zarzadzania ryzykiem ICT"
+          },
+          "gdpr": {
+            "name": "GDPR",
+            "desc": "Dowody zgodnosci z ochrona danych"
+          },
+          "soc2": {
+            "name": "SOC 2",
+            "desc": "Testowanie kontroli kryteriow zaufania"
+          },
+          "iso31000": {
+            "name": "ISO 31000",
+            "desc": "Sciezka audytu zarzadzania ryzykiem"
+          }
+        }
+      },
+      "faq": {
+        "title": "Najczesciej zadawane pytania",
+        "whatIsAuditorView": {
+          "question": "Do czego audytorzy maja dostep w Quantifier?",
+          "answer": "Audytorzy otrzymuja dedykowana przestrzen tylko do odczytu z mapowaniami kontroli-do-dowodow, repozytoriami dokumentow i mozliwosciami eksportu."
+        },
+        "howAccess": {
+          "question": "Jak audytorzy uzyskuja dostep?",
+          "answer": "Administratorzy moga tworzyc konta audytorow z uprawnieniami tylko do odczytu."
+        },
+        "evidenceExport": {
+          "question": "Czy moge eksportowac pakiety dowodow?",
+          "answer": "Tak. Eksportuj ustrukturyzowane pakiety audytowe z plikami dowodowymi, zapisami zatwierdzeh i raportami."
+        },
+        "readOnly": {
+          "question": "Czy dostep audytora jest tylko do odczytu?",
+          "answer": "Tak. Konta audytorow maja scisle uprawnienia tylko do odczytu."
+        },
+        "multiFramework": {
+          "question": "Czy moge audytowac wiele frameworkow naraz?",
+          "answer": "Tak. Przestrzen audytowa obsluguje audyty wieloframeworkowe."
+        }
+      },
+      "cta": {
+        "title": "Uprosz proces audytu",
+        "subtitle": "Daj audytorom wszystko czego potrzebuja — zorganizowane dowody, kompletne sciezki i eksportowalne pakiety.",
+        "bookDemo": "Umow demo",
+        "explorePlans": "Zobacz plany"
+      }
     },
     "learnMore": "Dowiedz się więcej"
   },
