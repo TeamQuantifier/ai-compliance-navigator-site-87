@@ -2160,6 +2160,42 @@
           "value": "4 tygodnie",
           "label": "Średni czas do gotowości audytowej"
         }
+      },
+      "title": "Platforma Quantifier.ai — Przegląd",
+      "subtitle": "Jedna platforma do zarządzania zgodnością z NIS2, ISO 27001, SOC 2, GDPR, DORA i ESG.",
+      "requestDemo": "Umów demo",
+      "featuresTitle": "Funkcje Platformy",
+      "featuresDescription": "Poznaj możliwości naszej platformy compliance opartej na AI, zaprojektowanej aby zrewolucjonizować podejście organizacji do zgodności regulacyjnej.",
+      "learnMore": "Dowiedz się więcej",
+      "features": {
+        "mainFeatures": {
+          "title": "Główne Funkcje",
+          "description": "Poznaj kluczowe możliwości platformy compliance opartej na sztucznej inteligencji."
+        },
+        "aiOfficer": {
+          "title": "AI Compliance Officer",
+          "description": "Twój wirtualny asystent compliance, który monitoruje i wspiera program zgodności."
+        },
+        "taskDataManagement": {
+          "title": "Zarządzanie Zadaniami i Danymi",
+          "description": "Efektywne zarządzanie zadaniami compliance i wrażliwymi danymi z wbudowanymi kontrolami."
+        },
+        "documents": {
+          "title": "Zarządzanie Dokumentami",
+          "description": "Centralizacja i kontrola całej dokumentacji compliance w jednym bezpiecznym miejscu."
+        },
+        "valueChain": {
+          "title": "Łańcuch Wartości",
+          "description": "Mapowanie i monitorowanie zgodności w całym łańcuchu wartości organizacji."
+        },
+        "riskAssessment": {
+          "title": "Ocena Ryzyka",
+          "description": "Identyfikacja, ocena i mitygacja ryzyk compliance za pomocą analizy AI."
+        },
+        "analytics": {
+          "title": "Analityka AI i Dashboardy",
+          "description": "Inteligentna analityka i wizualizacje danych compliance."
+        }
       }
     }
   },
