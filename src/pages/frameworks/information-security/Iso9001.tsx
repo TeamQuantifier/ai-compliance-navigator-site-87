@@ -24,6 +24,11 @@ import { Link } from 'react-router-dom';
 const Iso9001 = () => {
   const { t, currentLocale } = useLanguage();
 
+  const getObjectArrayTranslation = <T,>(key: string): T[] => {
+    const result = t(key, { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  };
+
   return (
     <PageTemplate
       title={t('seo.frameworks.informationSecurity.iso9001.title')}
