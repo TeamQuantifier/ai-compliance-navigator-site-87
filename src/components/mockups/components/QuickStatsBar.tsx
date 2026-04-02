@@ -4,8 +4,8 @@ import { CheckCircle, AlertCircle, Calendar, BrainCircuit } from 'lucide-react';
 
 const QuickStatsBar = () => {
   return (
-    <div className="bg-white rounded-lg border border-slate-200 p-3 flex justify-between items-center">
-      <div className="flex items-center gap-3">
+    <div className="bg-white rounded-lg border border-slate-200 p-2 sm:p-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+      <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
         <StatItem 
           icon={<CheckCircle className="h-4 w-4 text-green-600" />} 
           label="Compliance" 
