@@ -156,19 +156,6 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── 2. CREDIBILITY BAR ─── */}
-      <section className="bg-slate-900 border-y border-white/5 py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm text-slate-400">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>{t(`training.credibilityBar.${i}`)}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ─── 3. PROBLEM SECTION ─── */}
       <section className="py-16 md:py-24 bg-background">
@@ -373,38 +360,6 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── 8. SOCIAL PROOF ─── */}
-      <section className="py-16 md:py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14">
-              {t('training.proof.title')}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="bg-card border border-border rounded-xl p-6">
-                  <p className="text-3xl font-bold text-primary mb-1">{t(`training.proof.stats.${i}.value`)}</p>
-                  <p className="text-sm text-muted-foreground">{t(`training.proof.stats.${i}.label`)}</p>
-                </div>
-              ))}
-            </div>
-            <div className="bg-card border border-border rounded-2xl p-8 max-w-3xl mx-auto">
-              <blockquote className="text-lg text-foreground italic leading-relaxed mb-4">
-                &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
-              </blockquote>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                  {t('training.proof.testimonial.initials')}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{t('training.proof.testimonial.name')}</p>
-                  <p className="text-xs text-muted-foreground">{t('training.proof.testimonial.role')}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ─── 9. HOW WE WORK ─── */}
       <section className="py-16 md:py-24 bg-background">
