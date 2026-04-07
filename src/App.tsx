@@ -91,6 +91,7 @@ import EventRegistrations from "./pages/admin/EventRegistrations";
 
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
+import CybersecurityTraining from "./pages/services/CybersecurityTraining";
 
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
@@ -194,6 +195,10 @@ const MainRoutes = () => (
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />
         <Route path="/:locale/about" element={<About />} />
+        
+        {/* Training / Services */}
+        <Route path="/:locale/szkolenia-cyberbezpieczenstwo-dla-firm" element={<CybersecurityTraining />} />
+        <Route path="/:locale/cybersecurity-training-for-business" element={<CybersecurityTraining />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />

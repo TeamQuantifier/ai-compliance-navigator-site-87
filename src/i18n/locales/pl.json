@@ -8,7 +8,8 @@
     "about": "O nas",
     "contact": "Kontakt",
     "blog": "Blog",
-    "login": "Zaloguj się"
+    "login": "Zaloguj się",
+    "training": "Szkolenia"
   },
   "menu": {
     "product": {
@@ -87,7 +88,11 @@
     "contact": "Kontakt",
     "knowledge": "Wiedza",
     "events": "Webinary i wydarzenia",
-    "cybersecCheck": "Sprawdź Cyberbezp."
+    "cybersecCheck": "Sprawdź Cyberbezp.",
+    "training": {
+      "title": "Szkolenia",
+      "href": "/szkolenia-cyberbezpieczenstwo-dla-firm"
+    }
   },
   "hero": {
     "title": "Platforma i doradztwo",
@@ -4015,6 +4020,10 @@
     "successStories": {
       "title": "Historie Sukcesu Klientów",
       "description": "Odkryj, jak organizacje osiągają doskonałość compliance z Quantifier.ai. Prawdziwe studia przypadków i udowodnione wyniki naszych klientów."
+    },
+    "training": {
+      "title": "Szkolenia Cyberbezpieczeństwo dla Firm | Quantifier.ai",
+      "description": "Profesjonalne szkolenia z cyberbezpieczeństwa dla firm. NIS2, DORA, ISO 27001, security awareness. Programy certyfikowane, online i stacjonarnie."
     }
   },
   "seoLanding": {
@@ -5857,6 +5866,142 @@
       "faq1a": "NIS2 to dyrektywa UE rozszerzająca wymogi cyberbezpieczeństwa na podmioty kluczowe i ważne w 18 sektorach, obejmująca zarządzanie ryzykiem, raportowanie incydentów i bezpieczeństwo łańcucha dostaw.",
       "faq2q": "Jakie kary grożą za brak zgodności z NIS2?",
       "faq2a": "Kary za brak zgodności z NIS2 sięgają 10 mln EUR lub 2% rocznego przychodu globalnego dla podmiotów kluczowych."
+    }
+  },
+  "training": {
+    "hero": {
+      "badge": "Szkolenia dla firm",
+      "title": "Szkolenia z cyberbezpieczeństwa i compliance dla organizacji",
+      "subtitle": "Profesjonalne programy szkoleniowe z NIS2, DORA, ISO 27001 i security awareness. Przygotuj swój zespół na wymogi regulacyjne i zagrożenia cybernetyczne.",
+      "cta": "Zapytaj o szkolenie",
+      "ctaSecondary": "Zobacz programy",
+      "stats": {
+        "participants": "przeszkolonych uczestników",
+        "satisfaction": "satysfakcji",
+        "programs": "programów szkoleniowych",
+        "frameworks": "obsługiwanych standardów"
+      }
+    },
+    "programs": {
+      "title": "Programy szkoleniowe",
+      "subtitle": "Kompleksowa oferta szkoleń z cyberbezpieczeństwa i compliance — od regulacji po praktyczne umiejętności.",
+      "items": {
+        "nis2Dora": {
+          "title": "NIS2 i DORA — Wymagania regulacyjne",
+          "description": "Praktyczne szkolenie z wymogów dyrektywy NIS2 i rozporządzenia DORA. Zarządzanie ryzykiem, raportowanie incydentów, odpowiedzialność zarządu.",
+          "duration": "2 dni / 16h"
+        },
+        "iso27001": {
+          "title": "ISO 27001 — System Zarządzania Bezpieczeństwem",
+          "description": "Wdrożenie i utrzymanie SZBI zgodnego z ISO 27001. Analiza ryzyka, polityki bezpieczeństwa, przygotowanie do audytu certyfikacyjnego.",
+          "duration": "3 dni / 24h"
+        },
+        "awareness": {
+          "title": "Security Awareness dla pracowników",
+          "description": "Program budowania świadomości bezpieczeństwa wśród pracowników. Phishing, social engineering, bezpieczna praca zdalna, ochrona danych.",
+          "duration": "1 dzień / 8h"
+        },
+        "riskManagement": {
+          "title": "Zarządzanie ryzykiem cyberbezpieczeństwa",
+          "description": "Metodyki oceny i zarządzania ryzykiem cyber. Identyfikacja zagrożeń, ocena wpływu, plany mitygacji i ciągłość działania.",
+          "duration": "2 dni / 16h"
+        },
+        "incidentResponse": {
+          "title": "Reagowanie na incydenty bezpieczeństwa",
+          "description": "Procedury reagowania na incydenty cyberbezpieczeństwa. Detekcja, analiza, komunikacja kryzysowa, raportowanie do regulatora.",
+          "duration": "1 dzień / 8h"
+        },
+        "gdprPrivacy": {
+          "title": "RODO i ochrona danych osobowych",
+          "description": "Szkolenie z wymogów RODO dla pracowników i kadry zarządzającej. Przetwarzanie danych, prawa podmiotów, DPIA, rola IOD.",
+          "duration": "1 dzień / 8h"
+        }
+      }
+    },
+    "audience": {
+      "title": "Dla kogo są nasze szkolenia?",
+      "subtitle": "Programy dostosowane do poziomu wiedzy i potrzeb różnych grup w organizacji.",
+      "items": {
+        "executives": {
+          "title": "Zarząd i kadra kierownicza",
+          "description": "Odpowiedzialność prawna, nadzór nad cyberbezpieczeństwem, strategiczne zarządzanie ryzykiem."
+        },
+        "complianceTeams": {
+          "title": "Zespoły compliance i GRC",
+          "description": "Wdrożenie standardów, przygotowanie do audytów, zarządzanie politykami i procedurami."
+        },
+        "allEmployees": {
+          "title": "Wszyscy pracownicy",
+          "description": "Budowanie kultury bezpieczeństwa — rozpoznawanie zagrożeń, bezpieczne nawyki, ochrona danych."
+        },
+        "itSecurity": {
+          "title": "Zespoły IT i bezpieczeństwa",
+          "description": "Zaawansowane tematy techniczne — reagowanie na incydenty, analiza ryzyka, konfiguracja zabezpieczeń."
+        }
+      }
+    },
+    "process": {
+      "title": "Jak wygląda współpraca?",
+      "subtitle": "Cztery proste kroki od analizy potrzeb do certyfikacji zespołu.",
+      "steps": {
+        "assess": {
+          "title": "Analiza potrzeb",
+          "description": "Diagnozujemy poziom wiedzy zespołu i identyfikujemy luki kompetencyjne."
+        },
+        "design": {
+          "title": "Projektowanie programu",
+          "description": "Tworzymy dedykowany program szkoleniowy dopasowany do branży i specyfiki firmy."
+        },
+        "deliver": {
+          "title": "Realizacja szkolenia",
+          "description": "Prowadzenie warsztatów z praktycznymi ćwiczeniami i case studies z branży."
+        },
+        "certify": {
+          "title": "Certyfikacja",
+          "description": "Uczestnicy otrzymują certyfikaty potwierdzające zdobyte kompetencje."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Dlaczego warto wybrać nasze szkolenia?",
+      "items": {
+        "regulatoryCompliance": "Zgodność z wymogami NIS2, DORA, RODO i ISO 27001 — szkolenia opracowane przez praktyków compliance.",
+        "reducedRisk": "Redukcja ryzyka incydentów bezpieczeństwa dzięki przeszkolonemu i świadomemu zespołowi.",
+        "certifiedTeam": "Certyfikaty potwierdzające kompetencje — ważne przy audytach i weryfikacjach regulatorów.",
+        "practicalSkills": "Praktyczne umiejętności, nie tylko teoria — warsztaty oparte na realnych scenariuszach.",
+        "customPrograms": "Programy dopasowane do Twojej branży, wielkości firmy i poziomu zaawansowania uczestników.",
+        "ongoingSupport": "Wsparcie po szkoleniu — dostęp do materiałów, konsultacje i aktualizacje treści."
+      }
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": {
+        "whoShouldAttend": {
+          "question": "Kto powinien uczestniczyć w szkoleniach z cyberbezpieczeństwa?",
+          "answer": "Szkolenia z cyberbezpieczeństwa są przeznaczone dla wszystkich pracowników — od zarządu po osoby na stanowiskach operacyjnych. Programy są dostosowane do poziomu wiedzy i roli uczestników."
+        },
+        "howLong": {
+          "question": "Jak długo trwają szkolenia?",
+          "answer": "W zależności od programu, szkolenia trwają od 1 do 3 dni (8-24h). Oferujemy zarówno intensywne jednodniowe warsztaty, jak i rozbudowane programy certyfikacyjne."
+        },
+        "onlineOrOnsite": {
+          "question": "Czy szkolenia odbywają się online czy stacjonarnie?",
+          "answer": "Oferujemy szkolenia w obu formatach — online (live) oraz stacjonarnie w siedzibie klienta lub wynajętej sali. Format hybrydowy jest również dostępny."
+        },
+        "certification": {
+          "question": "Czy uczestnicy otrzymują certyfikaty?",
+          "answer": "Tak, po ukończeniu szkolenia i zdaniu testu końcowego każdy uczestnik otrzymuje certyfikat potwierdzający zdobyte kompetencje."
+        },
+        "pricing": {
+          "question": "Jak wygląda wycena szkolenia?",
+          "answer": "Wycena zależy od programu, liczby uczestników i formy realizacji. Skontaktuj się z nami, aby otrzymać indywidualną ofertę dopasowaną do potrzeb Twojej organizacji."
+        }
+      }
+    },
+    "cta": {
+      "title": "Zaplanuj szkolenie dla swojego zespołu",
+      "subtitle": "Skontaktuj się z nami, aby omówić potrzeby szkoleniowe Twojej organizacji. Przygotujemy dedykowany program dopasowany do Twoich wymagań.",
+      "button": "Skontaktuj się z nami"
     }
   }
 }
