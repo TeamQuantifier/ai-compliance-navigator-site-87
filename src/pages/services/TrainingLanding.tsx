@@ -76,9 +76,9 @@ const TrainingLanding = () => {
       </div>
 
       {/* ─── 1. HERO ─── */}
-      <section className="relative bg-slate-950 pt-20 md:pt-12">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.15),transparent_60%)]" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      <section className="relative bg-slate-950 overflow-hidden pt-20 md:pt-12">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.15),transparent_60%)] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
