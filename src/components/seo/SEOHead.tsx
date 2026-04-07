@@ -264,6 +264,13 @@ export const SEOHead = ({
         {JSON.stringify(articleSchema)}
       </script>
       
+      {/* JSON-LD Schema - FAQ (additional, from schema_json_override) */}
+      {schemaJsonOverride && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaJsonOverride)}
+        </script>
+      )}
+      
       {/* JSON-LD Schema - Breadcrumbs */}
       {breadcrumbSchema && (
         <script type="application/ld+json">
