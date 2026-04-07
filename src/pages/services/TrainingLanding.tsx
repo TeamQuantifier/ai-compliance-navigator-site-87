@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 
 const TrainingLanding = () => {
+  console.log('TrainingLanding RENDER');
   const { t, currentLocale } = useLanguage();
   const [formStep, setFormStep] = useState(0);
   const [selectedArea, setSelectedArea] = useState('');
