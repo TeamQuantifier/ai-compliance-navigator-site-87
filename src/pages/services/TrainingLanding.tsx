@@ -723,7 +723,7 @@ const TrainingLanding = () => {
           </div>
         </div>
       </section>
-    </PageTemplate>
+    </>
   );
 };
 
