@@ -170,11 +170,15 @@ const TrainingLanding = () => {
     ? (t('training.faq.items', { returnObjects: true }) as { question: string; answer: string }[])
     : [];
 
+  const fullTitle = `${t('seo.training.title')} | Quantifier.ai`;
+  const seoDescription = t('seo.training.description');
+
   return (
-    <PageTemplate
-      title={t('seo.training.title')}
-      description={t('seo.training.description')}
-    >
+    <>
+      <Helmet>
+        <title>{fullTitle}</title>
+        <meta name="description" content={seoDescription} />
+      </Helmet>
       {/* ─── STICKY CTA BAR ─── */}
       <div className="fixed top-16 left-0 right-0 z-40 bg-foreground/95 backdrop-blur-sm border-b border-border/20 hidden md:block">
         <div className="container mx-auto px-4 flex items-center justify-between h-12">
