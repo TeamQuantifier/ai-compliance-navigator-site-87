@@ -141,10 +141,6 @@ export const SEOHead = ({
   
   // Build JSON-LD schema
   const buildSchema = () => {
-    // If custom override provided, use it
-    if (schemaJsonOverride) {
-      return schemaJsonOverride;
-    }
 
     const baseSchema = {
       '@context': 'https://schema.org',
@@ -267,6 +263,13 @@ export const SEOHead = ({
       <script type="application/ld+json">
         {JSON.stringify(articleSchema)}
       </script>
+      
+      {/* JSON-LD Schema - FAQ (additional, from schema_json_override) */}
+      {schemaJsonOverride && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaJsonOverride)}
+        </script>
+      )}
       
       {/* JSON-LD Schema - Breadcrumbs */}
       {breadcrumbSchema && (
