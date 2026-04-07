@@ -4029,8 +4029,8 @@
       "description": "Profesjonalne szkolenia z cyberbezpieczeństwa dla firm. NIS2, DORA, ISO 27001, security awareness. Programy certyfikowane, online i stacjonarnie."
     },
     "trainingCyber": {
-      "title": "Szkolenie Cyberbezpieczeństwo NIS2 ISO 27001 | Quantifier",
-      "description": "Profesjonalne szkolenia z cyberbezpieczeństwa: NIS2, ISO 27001, DORA. Przygotuj zespół na wymogi regulacyjne."
+      "title": "Szkolenie NIS2 + ISO 27001 dla firm | 8h z roadmapą | Quantifier",
+      "description": "Jednodniowe szkolenie z cyberbezpieczeństwa: NIS2, ISO 27001, DORA. 5 bloków, warsztat z roadmapą 3-6-12 mies. i quick wins. Dla zarządu, CISO i IT."
     },
     "trainingEsg": {
       "title": "Szkolenie ESG i CSRD dla Firm | Quantifier",
@@ -6064,114 +6064,223 @@
   },
   "trainingCyber": {
     "hero": {
-      "badge": "Cyberbezpieczeństwo",
-      "title": "Szkolenie z cyberbezpieczeństwa: NIS2 i ISO 27001",
-      "subtitle": "Kompleksowy program szkoleniowy łączący wymogi dyrektywy NIS2 (KSC) z budową systemu zarządzania bezpieczeństwem informacji ISO 27001.",
-      "cta": "Zapytaj o szkolenie",
+      "badge": "Szkolenie 1-dniowe · 8h intensywnego programu",
+      "title": "NIS2 + ISO 27001: Szkolenie dla firm",
+      "subtitle": "Jeden dzień, pięć bloków merytorycznych, gotowy plan działania. Przygotuj zarząd i zespół na wymogi KSC/NIS2 — z rejestrem ryzyk, procedurami i roadmapą wdrożenia.",
+      "cta": "Zamów szkolenie dla zespołu",
       "stats": {
-        "nis2": "Dyrektywa NIS2 / KSC",
-        "iso": "Standard bezpieczeństwa",
-        "hours": "godzin szkolenia",
-        "satisfaction": "satysfakcji"
+        "blocks": {
+          "value": "5",
+          "label": "bloków merytorycznych"
+        },
+        "hours": {
+          "value": "8h",
+          "label": "intensywnego programu"
+        },
+        "frameworks": {
+          "value": "NIS2 + ISO",
+          "label": "mapowanie wymagań"
+        },
+        "workshop": {
+          "value": "Warsztat",
+          "label": "roadmapa + quick wins"
+        }
       }
     },
-    "modules": {
-      "title": "Moduły szkoleniowe",
-      "subtitle": "Program obejmuje kluczowe zagadnienia cyberbezpieczeństwa — od regulacji po praktyczne wdrożenie.",
+    "problem": {
+      "title": "Dlaczego teraz?",
+      "subtitle": "Nowelizacja ustawy o KSC z 19 lutego 2026 r. uruchomiła konkretne terminy. Czas na działanie jest ograniczony.",
       "items": {
-        "nis2Compliance": {
-          "title": "Wymagania NIS2 / KSC",
-          "description": "Obowiązki podmiotów kluczowych i ważnych, samoidentyfikacja, terminy wdrożenia.",
-          "duration": "4h"
+        "deadline": {
+          "title": "6 i 12 miesięcy",
+          "description": "6 miesięcy na samoidentyfikację jako podmiot kluczowy lub ważny. 12 miesięcy na pełne wdrożenie wymogów technicznych i organizacyjnych KSC/NIS2."
         },
-        "iso27001Implementation": {
-          "title": "Wdrożenie ISO 27001",
-          "description": "Budowa SZBI: kontekst organizacji, zakres, polityka bezpieczeństwa, Annex A.",
-          "duration": "4h"
+        "penalties": {
+          "title": "Do 10 mln EUR / 2% obrotu",
+          "description": "Kary finansowe za brak wdrożenia wymogów NIS2 sięgają 10 mln EUR lub 2% globalnego rocznego obrotu — zależnie od tego, która kwota jest wyższa."
         },
-        "riskAssessment": {
-          "title": "Analiza ryzyka",
-          "description": "Metodyki oceny ryzyka, macierz ryzyka, plan postępowania z ryzykiem.",
-          "duration": "3h"
+        "liability": {
+          "title": "Osobista odpowiedzialność zarządu",
+          "description": "Art. 20 NIS2 nakłada na zarząd obowiązek nadzoru nad cyberbezpieczeństwem. Członkowie zarządu odpowiadają osobiście za zaniedbania we wdrożeniu."
+        }
+      }
+    },
+    "agenda": {
+      "title": "Program szkolenia",
+      "subtitle": "Pięć bloków merytorycznych — od diagnozy świadomości, przez analizę ryzyka i wdrożenie kontroli, po warsztat z planem działania.",
+      "items": {
+        "block1": {
+          "time": "09:00–10:30",
+          "title": "Blok 1: Wprowadzenie i kontekst regulacyjny",
+          "topics": [
+            "Otwarcie i diagnoza poziomu dojrzałości — anonimowy quiz mapujący świadomość grupy",
+            "NIS2 w biznesowym TL;DR: kogo dotyczy, jakie obowiązki, jakie sankcje",
+            "Odpowiedzialność zarządu wynikająca z art. 20 NIS2",
+            "ISO 27001 jako framework wdrożenia NIS2 — jak wymagania mapują się na siebie",
+            "Krajowy System Cyberbezpieczeństwa — terminy i obowiązki w polskim porządku prawnym"
+          ]
         },
-        "incidentResponse": {
-          "title": "Zarządzanie incydentami",
-          "description": "Procedury reagowania na incydenty, raportowanie do CSIRT, komunikacja kryzysowa.",
-          "duration": "2h"
+        "block2": {
+          "time": "10:45–12:30",
+          "title": "Blok 2: Ryzyka, incydenty i procesy",
+          "topics": [
+            "Krajobraz zagrożeń: phishing, ransomware, błędy konfiguracyjne, wycieki danych",
+            "Scenariusze incydentów z konsekwencjami operacyjnymi, finansowymi i reputacyjnymi",
+            "Zarządzanie ryzykiem wg ISO 27001: identyfikacja aktywów, zagrożeń, podatności",
+            "Budowa rejestru ryzyk i priorytetyzacja działań",
+            "Prosty model oceny ryzyka do wdrożenia od następnego dnia"
+          ]
         },
-        "securityPolicies": {
-          "title": "Polityki bezpieczeństwa",
-          "description": "Tworzenie i wdrażanie polityk, procedur i instrukcji bezpieczeństwa informacji.",
-          "duration": "2h"
+        "block3": {
+          "time": "13:15–15:00",
+          "title": "Blok 3: Środki techniczno-organizacyjne",
+          "topics": [
+            "Kontrole techniczne: MFA, backupy, monitoring, zarządzanie podatnościami, szyfrowanie",
+            "Segmentacja sieci i zasada najmniejszych uprawnień",
+            "Środki organizacyjne: polityki, procedury, role (CISO, komitet bezpieczeństwa)",
+            "Cykl życia incydentu: detekcja → klasyfikacja → eskalacja → reakcja → wnioski",
+            "Plany ciągłości działania (BCP/DRP) i wymagania NIS2 dot. raportowania"
+          ]
         },
-        "awarenessWorkshops": {
-          "title": "Warsztaty awareness",
-          "description": "Praktyczne ćwiczenia: phishing, social engineering, bezpieczeństwo danych osobowych.",
-          "duration": "2h"
+        "block4": {
+          "time": "15:15–16:30",
+          "title": "Blok 4: Łańcuch dostaw, zarząd i governance",
+          "topics": [
+            "Ocena ryzyka dostawców: IT, chmura, utrzymanie, infrastruktura krytyczna",
+            "Wymagania kontraktowe i due diligence — co wpisać do umów i RFP",
+            "Włączanie wymogów NIS2/ISO 27001 w relacje B2B",
+            "Model nadzoru zarządu: cykliczne przeglądy, KPI bezpieczeństwa",
+            "Formalne osadzenie cyberbezpieczeństwa w strukturze organizacyjnej"
+          ]
+        },
+        "block5": {
+          "time": "16:30–17:00",
+          "title": "Blok 5: Warsztat „Co robimy od jutra?”",
+          "topics": [
+            "Praca w grupach: mini-analiza luk na bazie checklisty",
+            "Stworzenie roadmapy działań na 3, 6 i 12 miesięcy",
+            "Zdefiniowanie 3–5 pierwszych decyzji zarządu",
+            "Quick wins: formalne role, start analizy ryzyka, procedura incydentów, MFA, backup",
+            "Podsumowanie szkolenia i sesja Q&A"
+          ]
+        }
+      }
+    },
+    "benefits": {
+      "title": "Co wyniesiesz ze szkolenia",
+      "subtitle": "Każdy uczestnik wychodzi z konkretnymi materiałami i gotowym planem wdrożenia — nie tylko z wiedzą teoretyczną.",
+      "items": {
+        "riskRegistry": {
+          "title": "Gotowy rejestr ryzyk",
+          "description": "Wypracowany na warsztacie szablon rejestru ryzyk z priorytetyzacją działań."
+        },
+        "incidentProcedure": {
+          "title": "Procedura zarządzania incydentami",
+          "description": "Kompletny cykl: od detekcji po raportowanie do CSIRT i wnioski poincydentalne."
+        },
+        "roadmap": {
+          "title": "Roadmapa 3-6-12 miesięcy",
+          "description": "Realistyczny plan wdrożenia wymogów NIS2/KSC z uwzględnieniem zasobów organizacji."
+        },
+        "quickWins": {
+          "title": "Quick wins na poniedziałek",
+          "description": "3–5 pierwszych decyzji do podjęcia natychmiast: MFA, backup, formalne role."
+        },
+        "supplierChecklist": {
+          "title": "Checklista oceny dostawców",
+          "description": "Gotowy szablon due diligence dostawców IT, chmury i infrastruktury krytycznej."
+        },
+        "nis2Mapping": {
+          "title": "Mapowanie NIS2 ↔ ISO 27001",
+          "description": "Tabela mapowania wymagań dyrektyw na kontrole Annex A z rekomendacjami wdrożenia."
+        },
+        "governanceModel": {
+          "title": "Model governance cyberbezpieczeństwa",
+          "description": "Struktura nadzoru: role, odpowiedzialności, cykliczne przeglądy i KPI dla zarządu."
+        },
+        "maturityReport": {
+          "title": "Raport dojrzałości organizacji",
+          "description": "Wynik quizu diagnostycznego z benchmarkiem — punkt startowy dla dalszych działań."
         }
       }
     },
     "audience": {
       "title": "Dla kogo jest to szkolenie?",
+      "subtitle": "Szkolenie jest zaprojektowane tak, aby każda grupa odbiorców wyniosła konkretną wartość — od strategii po operacje.",
       "items": {
+        "board": {
+          "title": "Zarząd / C-level",
+          "description": "Zrozumienie obowiązków wynikających z NIS2, modelu nadzoru i odpowiedzialności osobistej członków zarządu."
+        },
         "ciso": {
-          "title": "CISO / Oficerowie bezpieczeństwa",
-          "description": "Osoby odpowiedzialne za strategię cyberbezpieczeństwa organizacji."
+          "title": "CISO / Pełnomocnik ds. cyber",
+          "description": "Praktyczne narzędzia: rejestr ryzyk, procedury, roadmapa wdrożenia i mapowanie NIS2 ↔ ISO 27001."
         },
-        "complianceManagers": {
-          "title": "Menedżerowie compliance",
-          "description": "Specjaliści ds. zgodności z regulacjami NIS2, DORA i ISO."
-        },
-        "itTeams": {
+        "itSecurity": {
           "title": "Zespoły IT / Security",
-          "description": "Administratorzy i inżynierowie wdrażający techniczne środki bezpieczeństwa."
+          "description": "Kontrole techniczne do wdrożenia: MFA, monitoring, segmentacja sieci, zarządzanie podatnościami."
         },
-        "boardMembers": {
-          "title": "Członkowie zarządu",
-          "description": "Kadra kierownicza odpowiedzialna za nadzór nad cyberbezpieczeństwem (art. 20 NIS2)."
+        "compliance": {
+          "title": "Compliance / Risk Managers",
+          "description": "Mapowanie regulacji na procesy organizacyjne, checklista dostawców i model governance."
         }
       }
     },
-    "benefits": {
-      "title": "Korzyści ze szkolenia",
-      "items": {
-        "nis2Readiness": "Pełna gotowość na wymogi NIS2 / KSC z praktycznym planem wdrożenia",
-        "isoAlignment": "Mapowanie wymagań ISO 27001 na obowiązki NIS2",
-        "practicalExercises": "Ćwiczenia praktyczne na realnych scenariuszach incydentów",
-        "certificationSupport": "Wsparcie w przygotowaniu do certyfikacji ISO 27001",
-        "customScenarios": "Scenariusze dopasowane do branży i wielkości organizacji",
-        "postTrainingSupport": "Konsultacje po szkoleniu i dostęp do materiałów"
+    "process": {
+      "title": "Jak pracujemy",
+      "steps": {
+        "diagnosis": {
+          "title": "Diagnoza",
+          "description": "Anonimowy quiz na starcie mapuje poziom dojrzałości cyberbezpieczeństwa w Twojej organizacji."
+        },
+        "training": {
+          "title": "Szkolenie",
+          "description": "5 bloków merytorycznych: od regulacji NIS2/ISO 27001, przez analizę ryzyka, po kontrole techniczne i governance."
+        },
+        "action": {
+          "title": "Działanie",
+          "description": "Warsztat końcowy: roadmapa 3-6-12 miesięcy, quick wins i pierwsze decyzje zarządu do wdrożenia od poniedziałku."
+        }
       }
     },
     "faq": {
-      "title": "Najczęściej zadawane pytania",
+      "title": "Najczęstsze pytania",
       "items": {
         "whoFor": {
-          "question": "Dla kogo jest to szkolenie?",
-          "answer": "Szkolenie jest dedykowane dla CISO, menedżerów compliance, zespołów IT/Security oraz członków zarządu organizacji objętych dyrektywą NIS2."
+          "question": "Dla kogo jest przeznaczone szkolenie?",
+          "answer": "Szkolenie jest zaprojektowane dla zarządu, CISO, zespołów IT/Security oraz menedżerów compliance i ryzyka. Program jest modularny — każda grupa odbiorców wynosi konkretne deliverables dopasowane do swojej roli."
         },
         "duration": {
-          "question": "Jak długo trwa szkolenie?",
-          "answer": "Pełny program to 16+ godzin rozłożonych na 2-3 dni. Możliwe są też krótsze formaty modułowe."
+          "question": "Ile trwa szkolenie?",
+          "answer": "Szkolenie trwa 1 dzień, 8 godzin od 09:00 do 17:00. Program składa się z 5 bloków merytorycznych z przerwami kawowymi i obiadową. Na życzenie możemy rozłożyć program na 2 dni po 4 godziny."
+        },
+        "format": {
+          "question": "Czy szkolenie odbywa się stacjonarnie czy online?",
+          "answer": "Realizujemy szkolenia w obu formatach. Format stacjonarny u klienta lub w wynajętej sali sprawdza się najlepiej przy warsztatach grupowych. Format online przez Zoom lub Teams jest wygodny dla rozproszonych zespołów. Rekomendujemy format stacjonarny dla grup powyżej 8 osób."
         },
         "prerequisites": {
-          "question": "Czy wymagana jest wcześniejsza wiedza?",
-          "answer": "Nie — program jest dostosowany do różnych poziomów zaawansowania. Podstawowa znajomość IT jest wystarczająca."
+          "question": "Jakie są wymagania wstępne?",
+          "answer": "Brak wymagań formalnych. Szkolenie zaczynamy od quizu diagnostycznego, który mapuje poziom świadomości grupy. Na tej podstawie dostosowujemy głębokość omawianych zagadnień. Przydatna jest podstawowa znajomość struktury organizacyjnej i procesów IT."
         },
-        "certification": {
-          "question": "Czy otrzymam certyfikat?",
-          "answer": "Tak, każdy uczestnik otrzymuje certyfikat ukończenia szkolenia potwierdzający zdobyte kompetencje."
+        "certificate": {
+          "question": "Czy uczestnicy otrzymują certyfikat?",
+          "answer": "Tak, każdy uczestnik otrzymuje imienny certyfikat ukończenia szkolenia z cyberbezpieczeństwa NIS2/ISO 27001 wystawiony przez Quantifier. Certyfikat potwierdza zakres tematyczny i liczbę godzin szkoleniowych."
+        },
+        "pricing": {
+          "question": "Jaki jest koszt szkolenia?",
+          "answer": "Cena zależy od formatu, liczby uczestników i stopnia personalizacji agendy. Skontaktuj się z nami przez formularz — przygotujemy ofertę dopasowaną do Twojej organizacji w ciągu 24 godzin."
         },
         "customization": {
-          "question": "Czy szkolenie można dostosować do naszej firmy?",
-          "answer": "Tak — program dostosowujemy do branży, wielkości organizacji i poziomu zaawansowania uczestników."
+          "question": "Czy mogę dostosować agendę do mojej branży?",
+          "answer": "Tak. Przed szkoleniem przeprowadzamy krótki wywiad z osobą odpowiedzialną za cyberbezpieczeństwo, aby zrozumieć specyfikę branży, wielkość organizacji i aktualny poziom dojrzałości. Na tej podstawie dostosowujemy proporcje bloków, scenariusze incydentów i warsztaty."
         }
       }
     },
     "cta": {
-      "title": "Przygotuj zespół na NIS2 i ISO 27001",
-      "subtitle": "Skontaktuj się z nami, aby omówić program szkoleniowy dopasowany do Twojej organizacji.",
-      "button": "Zapytaj o szkolenie"
+      "title": "Zabezpiecz firmę przed NIS2 — zacznij od szkolenia",
+      "subtitle": "Jeden dzień szkolenia to konkretny plan wdrożenia na następne 12 miesięcy. Zamów szkolenie dla swojego zespołu.",
+      "button": "Zamów szkolenie",
+      "buttonSecondary": "Pobierz agendę PDF"
     }
   },
   "trainingEsg": {

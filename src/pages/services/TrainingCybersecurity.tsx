@@ -5,51 +5,71 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import {
   ArrowRight,
   Shield,
-  BookOpen,
   Target,
-  Award,
   Clock,
   CheckCircle2,
-  GraduationCap,
   Users,
-  FileText,
   Monitor,
   Briefcase,
   UserCheck,
   Building2,
+  AlertTriangle,
+  Scale,
+  Link2,
+  Zap,
+  ClipboardCheck,
+  Timer,
+  ChevronDown,
+  BookOpen,
+  Hammer,
+  FileCheck,
 } from 'lucide-react';
+import { useState } from 'react';
 
 const TrainingCybersecurity = () => {
   const { t, currentLocale } = useLanguage();
+  const [openBlock, setOpenBlock] = useState<number | null>(0);
 
-  const modules = [
-    { icon: Shield, key: 'nis2Compliance' },
-    { icon: BookOpen, key: 'iso27001Implementation' },
-    { icon: Target, key: 'riskAssessment' },
-    { icon: Monitor, key: 'incidentResponse' },
-    { icon: FileText, key: 'securityPolicies' },
-    { icon: Users, key: 'awarenessWorkshops' },
+  const agendaBlocks = [
+    { icon: BookOpen, color: 'text-blue-500', key: 'block1' },
+    { icon: AlertTriangle, color: 'text-amber-500', key: 'block2' },
+    { icon: Shield, color: 'text-emerald-500', key: 'block3' },
+    { icon: Link2, color: 'text-purple-500', key: 'block4' },
+    { icon: Hammer, color: 'text-red-500', key: 'block5' },
   ];
 
   const audiences = [
-    { icon: Briefcase, key: 'ciso' },
-    { icon: UserCheck, key: 'complianceManagers' },
-    { icon: Building2, key: 'itTeams' },
-    { icon: Users, key: 'boardMembers' },
+    { icon: Building2, key: 'board' },
+    { icon: UserCheck, key: 'ciso' },
+    { icon: Monitor, key: 'itSecurity' },
+    { icon: Briefcase, key: 'compliance' },
   ];
 
   const benefits = [
-    'nis2Readiness',
-    'isoAlignment',
-    'practicalExercises',
-    'certificationSupport',
-    'customScenarios',
-    'postTrainingSupport',
+    'riskRegistry',
+    'incidentProcedure',
+    'roadmap',
+    'quickWins',
+    'supplierChecklist',
+    'nis2Mapping',
+    'governanceModel',
+    'maturityReport',
   ];
 
-  const faqKeys = ['whoFor', 'duration', 'prerequisites', 'certification', 'customization'];
+  const processSteps = [
+    { icon: Target, key: 'diagnosis' },
+    { icon: BookOpen, key: 'training' },
+    { icon: Zap, key: 'action' },
+  ];
+
+  const faqKeys = ['whoFor', 'duration', 'format', 'prerequisites', 'certificate', 'pricing', 'customization'];
 
   return (
     <PageTemplate
@@ -57,7 +77,7 @@ const TrainingCybersecurity = () => {
       description={t('seo.trainingCyber.description')}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Hero */}
+        {/* HERO */}
         <section className="mb-16">
           <div className="bg-gradient-to-r from-slate-900 to-blue-900 rounded-xl p-8 md:p-12 text-white">
             <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -82,10 +102,10 @@ const TrainingCybersecurity = () => {
               </div>
               <div className="lg:w-2/5 grid grid-cols-2 gap-4">
                 {[
-                  { value: 'NIS2', label: t('trainingCyber.hero.stats.nis2') },
-                  { value: 'ISO 27001', label: t('trainingCyber.hero.stats.iso') },
-                  { value: '16h+', label: t('trainingCyber.hero.stats.hours') },
-                  { value: '98%', label: t('trainingCyber.hero.stats.satisfaction') },
+                  { value: t('trainingCyber.hero.stats.blocks.value'), label: t('trainingCyber.hero.stats.blocks.label') },
+                  { value: t('trainingCyber.hero.stats.hours.value'), label: t('trainingCyber.hero.stats.hours.label') },
+                  { value: t('trainingCyber.hero.stats.frameworks.value'), label: t('trainingCyber.hero.stats.frameworks.label') },
+                  { value: t('trainingCyber.hero.stats.workshop.value'), label: t('trainingCyber.hero.stats.workshop.label') },
                 ].map((stat) => (
                   <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                     <div className="text-2xl font-bold">{stat.value}</div>
@@ -97,45 +117,122 @@ const TrainingCybersecurity = () => {
           </div>
         </section>
 
-        {/* Modules */}
+        {/* PROBLEM */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
-            {t('trainingCyber.modules.title')}
+            {t('trainingCyber.problem.title')}
           </h2>
           <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
-            {t('trainingCyber.modules.subtitle')}
+            {t('trainingCyber.problem.subtitle')}
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {modules.map((mod) => (
-              <Card key={mod.key} className="group hover:shadow-lg transition-shadow border-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {['deadline', 'penalties', 'liability'].map((key) => (
+              <Card key={key} className="border-destructive/20 bg-destructive/5">
                 <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <mod.icon className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
+                    {key === 'deadline' && <Timer className="h-6 w-6 text-destructive" />}
+                    {key === 'penalties' && <Scale className="h-6 w-6 text-destructive" />}
+                    {key === 'liability' && <AlertTriangle className="h-6 w-6 text-destructive" />}
                   </div>
                   <h3 className="text-lg font-semibold mb-2">
-                    {t(`trainingCyber.modules.items.${mod.key}.title`)}
+                    {t(`trainingCyber.problem.items.${key}.title`)}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {t(`trainingCyber.modules.items.${mod.key}.description`)}
+                  <p className="text-muted-foreground text-sm">
+                    {t(`trainingCyber.problem.items.${key}.description`)}
                   </p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    {t(`trainingCyber.modules.items.${mod.key}.duration`)}
-                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        {/* Audience */}
+        {/* AGENDA */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
+            {t('trainingCyber.agenda.title')}
+          </h2>
+          <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+            {t('trainingCyber.agenda.subtitle')}
+          </p>
+          <div className="space-y-3 max-w-4xl mx-auto">
+            {agendaBlocks.map((block, idx) => (
+              <Collapsible
+                key={block.key}
+                open={openBlock === idx}
+                onOpenChange={(isOpen) => setOpenBlock(isOpen ? idx : null)}
+              >
+                <CollapsibleTrigger className="w-full">
+                  <div className={`flex items-center gap-4 p-5 rounded-xl border transition-colors ${openBlock === idx ? 'bg-muted border-primary/30' : 'bg-background border-border hover:bg-muted/50'}`}>
+                    <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center shrink-0">
+                      <block.icon className={`h-5 w-5 ${block.color}`} />
+                    </div>
+                    <div className="flex-1 text-left">
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <span className="text-xs font-medium text-muted-foreground">
+                          {t(`trainingCyber.agenda.items.${block.key}.time`)}
+                        </span>
+                      </div>
+                      <h3 className="font-semibold">
+                        {t(`trainingCyber.agenda.items.${block.key}.title`)}
+                      </h3>
+                    </div>
+                    <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${openBlock === idx ? 'rotate-180' : ''}`} />
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <div className="px-5 pb-5 pt-2 ml-14">
+                    <ul className="space-y-2">
+                      {(t(`trainingCyber.agenda.items.${block.key}.topics`, { returnObjects: true }) as string[]).map((topic, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            ))}
+          </div>
+        </section>
+
+        {/* BENEFITS */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900/50 dark:to-blue-900/20 rounded-xl p-8 md:p-12">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <FileCheck className="h-7 w-7 text-primary" />
+              <h2 className="text-2xl md:text-3xl font-bold text-center">
+                {t('trainingCyber.benefits.title')}
+              </h2>
+            </div>
+            <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+              {t('trainingCyber.benefits.subtitle')}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              {benefits.map((key) => (
+                <div key={key} className="flex items-start gap-3 p-4 rounded-lg bg-background/80 border border-border/50">
+                  <CheckCircle2 className="h-5 w-5 text-emerald-600 mt-0.5 shrink-0" />
+                  <div>
+                    <span className="font-medium text-sm">{t(`trainingCyber.benefits.items.${key}.title`)}</span>
+                    <p className="text-xs text-muted-foreground mt-0.5">{t(`trainingCyber.benefits.items.${key}.description`)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* AUDIENCE */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
             {t('trainingCyber.audience.title')}
           </h2>
+          <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+            {t('trainingCyber.audience.subtitle')}
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {audiences.map((a) => (
-              <div key={a.key} className="text-center p-6 rounded-xl bg-muted/50">
+              <div key={a.key} className="text-center p-6 rounded-xl bg-muted/50 border border-border/50">
                 <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <a.icon className="h-7 w-7 text-primary" />
                 </div>
@@ -146,20 +243,24 @@ const TrainingCybersecurity = () => {
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* PROCESS */}
         <section className="mb-16">
-          <div className="bg-muted/30 rounded-xl p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-              {t('trainingCyber.benefits.title')}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {benefits.map((key) => (
-                <div key={key} className="flex items-start gap-3 p-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
-                  <span className="text-sm">{t(`trainingCyber.benefits.items.${key}`)}</span>
+          <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center">
+            {t('trainingCyber.process.title')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {processSteps.map((step, idx) => (
+              <div key={step.key} className="text-center relative">
+                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 relative">
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs font-bold h-6 w-6 rounded-full flex items-center justify-center">
+                    {idx + 1}
+                  </span>
+                  <step.icon className="h-7 w-7 text-primary" />
                 </div>
-              ))}
-            </div>
+                <h3 className="font-semibold mb-2">{t(`trainingCyber.process.steps.${step.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`trainingCyber.process.steps.${step.key}.description`)}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -177,18 +278,25 @@ const TrainingCybersecurity = () => {
 
         {/* CTA */}
         <section className="mb-16">
-          <div className="bg-gradient-to-r from-primary to-primary/80 rounded-xl p-8 md:p-12 text-center text-primary-foreground">
+          <div className="bg-gradient-to-r from-slate-900 to-blue-900 rounded-xl p-8 md:p-12 text-center text-white">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               {t('trainingCyber.cta.title')}
             </h2>
-            <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
               {t('trainingCyber.cta.subtitle')}
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-              <Link to={`/${currentLocale}/contact`}>
-                {t('trainingCyber.cta.button')} <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90" asChild>
+                <Link to={`/${currentLocale}/contact`}>
+                  {t('trainingCyber.cta.button')} <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                <Link to={`/${currentLocale}/contact`}>
+                  {t('trainingCyber.cta.buttonSecondary')}
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
       </div>
