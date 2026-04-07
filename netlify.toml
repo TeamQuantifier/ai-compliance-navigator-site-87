@@ -237,6 +237,17 @@
   to = "/cs/frameworks/nis-2/"
   status = 301
 
+# Blog article redirects (archived/consolidated)
+[[redirects]]
+  from = "/:locale/blog/nis2-directive"
+  to = "/:locale/blog/nis2-directive-compliance-requirements-implementation-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/blog/nis2-vs-iso-27001-differences"
+  to = "/:locale/blog/nis2-vs-iso-27001-mapping/"
+  status = 301
+
 # NIS2-KSC to new canonical path
 [[redirects]]
   from = "/:locale/nis2-ksc"
