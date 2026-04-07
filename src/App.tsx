@@ -91,10 +91,6 @@ import EventRegistrations from "./pages/admin/EventRegistrations";
 
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
-import CybersecurityTraining from "./pages/services/CybersecurityTraining";
-import TrainingCybersecurity from "./pages/services/TrainingCybersecurity";
-import TrainingEsg from "./pages/services/TrainingEsg";
-import TrainingComplianceRisk from "./pages/services/TrainingComplianceRisk";
 
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
@@ -200,14 +196,6 @@ const MainRoutes = () => (
         <Route path="/:locale/about" element={<About />} />
         
         {/* Training / Services */}
-        <Route path="/:locale/szkolenia-cyberbezpieczenstwo-dla-firm" element={<CybersecurityTraining />} />
-        <Route path="/:locale/cybersecurity-training-for-business" element={<CybersecurityTraining />} />
-        <Route path="/:locale/szkolenie-cyberbezpieczenstwo-nis2-iso27001" element={<TrainingCybersecurity />} />
-        <Route path="/:locale/training-cybersecurity-nis2-iso27001" element={<TrainingCybersecurity />} />
-        <Route path="/:locale/szkolenie-esg-csrd" element={<TrainingEsg />} />
-        <Route path="/:locale/training-esg-csrd" element={<TrainingEsg />} />
-        <Route path="/:locale/szkolenie-compliance-zarzadzanie-ryzykiem" element={<TrainingComplianceRisk />} />
-        <Route path="/:locale/training-compliance-risk-management" element={<TrainingComplianceRisk />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
