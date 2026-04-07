@@ -145,11 +145,6 @@ const BlogPost = () => {
 
   const readingTime = calculateReadingTime(post.body_rich as any);
 
-  const { cleaned: cleanedContent, slugs: relatedSlugs } = useMemo(
-    () => extractRelatedArticles(post.body_rich as JSONContent),
-    [post.body_rich]
-  );
-
   return (
     <>
       <SEOHead
