@@ -292,7 +292,6 @@ const TrainingLanding = () => {
       </section>
 
       {/* ─── 3. PROBLEM SECTION ─── */}
-      <div style={{ background: 'red', color: 'white', padding: '40px', fontSize: '24px' }}>DEBUG: PROBLEM SECTION START</div>
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">
