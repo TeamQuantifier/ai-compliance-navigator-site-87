@@ -92,6 +92,9 @@ import EventRegistrations from "./pages/admin/EventRegistrations";
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
 
+// Training / Services
+import TrainingLanding from "./pages/services/TrainingLanding";
+
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
 import EventDetail from "./pages/events/EventDetail";
@@ -196,6 +199,8 @@ const MainRoutes = () => (
         <Route path="/:locale/about" element={<About />} />
         
         {/* Training / Services */}
+        <Route path="/pl/szkolenia-cyberbezpieczenstwo-dla-firm" element={<TrainingLanding />} />
+        <Route path="/en/cybersecurity-training-for-companies" element={<TrainingLanding />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
