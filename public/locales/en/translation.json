@@ -7785,11 +7785,11 @@
       "microcopy": "We respond within 24h · First consultation with no obligations",
       "stats": {
         "cyber": {
-          "value": "NIS2 / ISO",
+          "value": "NIS2 / ISO 27001",
           "label": "Cybersecurity"
         },
         "esg": {
-          "value": "CSRD / ESG",
+          "value": "ESG / CSRD / VSME",
           "label": "Sustainability"
         },
         "compliance": {

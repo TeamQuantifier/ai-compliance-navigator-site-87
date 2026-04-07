@@ -7737,11 +7737,11 @@
       "microcopy": "Odpowiadamy w 24h · Pierwsza konsultacja bez zobowiązań",
       "stats": {
         "cyber": {
-          "value": "NIS2 / ISO",
+          "value": "NIS2 / ISO 27001",
           "label": "Cyberbezpieczeństwo"
         },
         "esg": {
-          "value": "CSRD / ESG",
+          "value": "ESG / CSRD / VSME",
           "label": "Zrównoważony rozwój"
         },
         "compliance": {
