@@ -7,54 +7,54 @@ import FAQSection from '@/components/seo/FAQSection';
 import {
   ArrowRight,
   Shield,
-  Users,
+  Leaf,
+  Scale,
   GraduationCap,
-  BookOpen,
-  Target,
-  Award,
-  Building2,
-  UserCheck,
-  Briefcase,
-  Clock,
   CheckCircle2,
-  Monitor,
-  FileText,
-  HelpCircle,
+  Users,
+  Building2,
+  Award,
+  Target,
 } from 'lucide-react';
 
 const CybersecurityTraining = () => {
   const { t, currentLocale } = useLanguage();
 
-  const programs = [
-    { icon: Shield, key: 'nis2Dora' },
-    { icon: BookOpen, key: 'iso27001' },
-    { icon: Users, key: 'awareness' },
-    { icon: Target, key: 'riskManagement' },
-    { icon: Monitor, key: 'incidentResponse' },
-    { icon: FileText, key: 'gdprPrivacy' },
+  const trainings = [
+    {
+      icon: Shield,
+      key: 'cyber',
+      gradient: 'from-slate-900 to-blue-900',
+      href: currentLocale === 'pl' ? '/szkolenie-cyberbezpieczenstwo-nis2-iso27001' : '/training-cybersecurity-nis2-iso27001',
+    },
+    {
+      icon: Leaf,
+      key: 'esg',
+      gradient: 'from-emerald-900 to-teal-800',
+      href: currentLocale === 'pl' ? '/szkolenie-esg-csrd' : '/training-esg-csrd',
+    },
+    {
+      icon: Scale,
+      key: 'compliance',
+      gradient: 'from-violet-900 to-indigo-900',
+      href: currentLocale === 'pl' ? '/szkolenie-compliance-zarzadzanie-ryzykiem' : '/training-compliance-risk-management',
+    },
   ];
 
-  const audiences = [
-    { icon: Briefcase, key: 'executives' },
-    { icon: UserCheck, key: 'complianceTeams' },
-    { icon: Users, key: 'allEmployees' },
-    { icon: Building2, key: 'itSecurity' },
-  ];
-
-  const processSteps = [
-    { icon: Target, key: 'assess' },
-    { icon: BookOpen, key: 'design' },
-    { icon: GraduationCap, key: 'deliver' },
-    { icon: Award, key: 'certify' },
-  ];
-
-  const benefits = [
-    'regulatoryCompliance',
-    'reducedRisk',
-    'certifiedTeam',
-    'practicalSkills',
+  const whyUs = [
+    'experiencedTrainers',
+    'practicalApproach',
     'customPrograms',
-    'ongoingSupport',
+    'postTrainingSupport',
+    'certificationPaths',
+    'flexibleFormats',
+  ];
+
+  const stats = [
+    { value: '500+', label: t('training.hero.stats.participants') },
+    { value: '98%', label: t('training.hero.stats.satisfaction') },
+    { value: '3', label: t('training.hub.stats.programs') },
+    { value: '6+', label: t('training.hero.stats.frameworks') },
   ];
 
   const faqKeys = ['whoShouldAttend', 'howLong', 'onlineOrOnsite', 'certification', 'pricing'];
@@ -65,7 +65,7 @@ const CybersecurityTraining = () => {
       description={t('seo.training.description')}
     >
       <div className="max-w-6xl mx-auto">
-        {/* 1. Hero */}
+        {/* Hero */}
         <section className="mb-16">
           <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-xl p-8 md:p-12 text-white">
             <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -87,19 +87,12 @@ const CybersecurityTraining = () => {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                    <a href="#programs">
-                      {t('training.hero.ctaSecondary')}
-                    </a>
+                    <a href="#programs">{t('training.hero.ctaSecondary')}</a>
                   </Button>
                 </div>
               </div>
               <div className="lg:w-2/5 grid grid-cols-2 gap-4">
-                {[
-                  { value: '500+', label: t('training.hero.stats.participants') },
-                  { value: '98%', label: t('training.hero.stats.satisfaction') },
-                  { value: '12+', label: t('training.hero.stats.programs') },
-                  { value: '6+', label: t('training.hero.stats.frameworks') },
-                ].map((stat) => (
+                {stats.map((stat) => (
                   <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                     <div className="text-2xl font-bold">{stat.value}</div>
                     <div className="text-sm opacity-70">{stat.label}</div>
@@ -110,7 +103,7 @@ const CybersecurityTraining = () => {
           </div>
         </section>
 
-        {/* 2. Training Programs */}
+        {/* Training Programs Cards */}
         <section id="programs" className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
             {t('training.programs.title')}
@@ -118,92 +111,49 @@ const CybersecurityTraining = () => {
           <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
             {t('training.programs.subtitle')}
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programs.map((program) => (
-              <Card key={program.key} className="group hover:shadow-lg transition-shadow border-border">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <program.icon className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {trainings.map((tr) => (
+              <Link key={tr.key} to={`/${currentLocale}${tr.href}`} className="group">
+                <Card className="h-full overflow-hidden border-border hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                  <div className={`bg-gradient-to-br ${tr.gradient} p-6 text-white`}>
+                    <tr.icon className="h-10 w-10 mb-3 opacity-90" />
+                    <h3 className="text-xl font-bold mb-2">
+                      {t(`training.hub.cards.${tr.key}.title`)}
+                    </h3>
+                    <p className="text-sm opacity-80">
+                      {t(`training.hub.cards.${tr.key}.subtitle`)}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">
-                    {t(`training.programs.items.${program.key}.title`)}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {t(`training.programs.items.${program.key}.description`)}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    {t(`training.programs.items.${program.key}.duration`)}
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground text-sm mb-4">
+                      {t(`training.hub.cards.${tr.key}.description`)}
+                    </p>
+                    <ul className="space-y-2 mb-6">
+                      {[1, 2, 3].map((i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                          {t(`training.hub.cards.${tr.key}.points.${i}`)}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="inline-flex items-center text-sm font-medium text-primary group-hover:gap-2 transition-all">
+                      {t('training.hub.learnMore')} <ArrowRight className="ml-1 h-4 w-4" />
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </section>
 
-        {/* 3. For Whom */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
-            {t('training.audience.title')}
-          </h2>
-          <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
-            {t('training.audience.subtitle')}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {audiences.map((audience) => (
-              <div key={audience.key} className="text-center p-6 rounded-xl bg-muted/50">
-                <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <audience.icon className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">
-                  {t(`training.audience.items.${audience.key}.title`)}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {t(`training.audience.items.${audience.key}.description`)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 4. Process */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center">
-            {t('training.process.title')}
-          </h2>
-          <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
-            {t('training.process.subtitle')}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, i) => (
-              <div key={step.key} className="text-center">
-                <div className="relative mx-auto mb-4">
-                  <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                    <step.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
-                    {i + 1}
-                  </span>
-                </div>
-                <h3 className="font-semibold mb-2">
-                  {t(`training.process.steps.${step.key}.title`)}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {t(`training.process.steps.${step.key}.description`)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 5. Benefits */}
+        {/* Why Us */}
         <section className="mb-16">
           <div className="bg-muted/30 rounded-xl p-8 md:p-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               {t('training.benefits.title')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {benefits.map((key) => (
+              {whyUs.map((key) => (
                 <div key={key} className="flex items-start gap-3 p-3">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
                   <span className="text-sm">{t(`training.benefits.items.${key}`)}</span>
@@ -213,7 +163,7 @@ const CybersecurityTraining = () => {
           </div>
         </section>
 
-        {/* 6. FAQ */}
+        {/* FAQ */}
         <section className="mb-16">
           <FAQSection
             title={t('training.faq.title')}
@@ -225,7 +175,7 @@ const CybersecurityTraining = () => {
           />
         </section>
 
-        {/* 7. CTA */}
+        {/* CTA */}
         <section className="mb-16">
           <div className="bg-gradient-to-r from-primary to-primary/80 rounded-xl p-8 md:p-12 text-center text-primary-foreground">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">

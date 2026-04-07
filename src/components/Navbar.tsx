@@ -115,6 +115,20 @@ export const Navbar = () => {
     {
       title: t('nav.training'),
       href: currentLocale === 'pl' ? '/szkolenia-cyberbezpieczenstwo-dla-firm' : '/cybersecurity-training-for-business',
+      items: [
+        {
+          title: t('nav.trainingCyber'),
+          href: currentLocale === 'pl' ? '/szkolenie-cyberbezpieczenstwo-nis2-iso27001' : '/training-cybersecurity-nis2-iso27001',
+        },
+        {
+          title: t('nav.trainingEsg'),
+          href: currentLocale === 'pl' ? '/szkolenie-esg-csrd' : '/training-esg-csrd',
+        },
+        {
+          title: t('nav.trainingCompliance'),
+          href: currentLocale === 'pl' ? '/szkolenie-compliance-zarzadzanie-ryzykiem' : '/training-compliance-risk-management',
+        },
+      ],
     },
     {
       title: t('menu.plans'),
