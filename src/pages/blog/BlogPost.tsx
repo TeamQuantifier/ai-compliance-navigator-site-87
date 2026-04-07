@@ -241,12 +241,17 @@ const BlogPost = () => {
 
           {/* Article content */}
           <div className="mb-12">
-            <RichTextRenderer content={post.body_rich as any} />
+            <RichTextRenderer content={cleanedContent} />
           </div>
+
+          {/* Related Articles */}
+          {relatedSlugs.length > 0 && (
+            <RelatedArticles slugs={relatedSlugs} lang={currentLocale} />
+          )}
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="mb-8">
+            <div className="mb-8 mt-8">
               <h3 className="text-sm font-semibold mb-3 text-muted-foreground uppercase">Tags</h3>
               <div className="flex gap-2 flex-wrap">
                 {post.tags.map((tag: string) => (
