@@ -216,8 +216,12 @@ const CybersecurityTraining = () => {
         {/* 6. FAQ */}
         <section className="mb-16">
           <FAQSection
-            i18nPrefix="training.faq"
-            keys={faqKeys}
+            title={t('training.faq.title')}
+            pageUrl={`https://quantifier.ai/${currentLocale}/${currentLocale === 'pl' ? 'szkolenia-cyberbezpieczenstwo-dla-firm' : 'cybersecurity-training-for-business'}`}
+            faqs={faqKeys.map((key) => ({
+              question: t(`training.faq.items.${key}.question`),
+              answer: t(`training.faq.items.${key}.answer`),
+            }))}
           />
         </section>
 
