@@ -79,6 +79,10 @@ const BlogPost = () => {
   const { data: alternates } = useAlternates(post?.group_id, currentLocale, 'post');
   usePrerenderReady(!isLoading);
 
+  const { cleaned: cleanedContent, slugs: relatedSlugs } = useMemo(
+    () => (post ? extractRelatedArticles(post.body_rich as JSONContent) : { cleaned: { type: 'doc', content: [] }, slugs: [] }),
+    [post?.body_rich]
+  );
   useEffect(() => {
     if (alternates && alternates.length > 0) {
       setAlternates(alternates, 'post');
