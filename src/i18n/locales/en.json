@@ -4208,8 +4208,8 @@
       "description": "Professional cybersecurity training for organizations. NIS2, DORA, ISO 27001, security awareness. Certified programs, online and on-site."
     },
     "trainingCyber": {
-      "title": "Cybersecurity Training NIS2 ISO 27001 | Quantifier",
-      "description": "Professional cybersecurity training: NIS2, ISO 27001, DORA. Prepare your team for regulatory requirements."
+      "title": "NIS2 + ISO 27001 Training for Businesses | 8h with Roadmap | Quantifier",
+      "description": "1-day cybersecurity training: NIS2, ISO 27001, DORA. 5 modules, workshop with 3-6-12 month roadmap and quick wins. For boards, CISOs, and IT teams."
     },
     "trainingEsg": {
       "title": "ESG and CSRD Training for Business | Quantifier",
@@ -6738,114 +6738,223 @@
   },
   "trainingCyber": {
     "hero": {
-      "badge": "Cybersecurity",
-      "title": "Cybersecurity Training: NIS2 & ISO 27001",
-      "subtitle": "Comprehensive training program combining NIS2 directive requirements with ISO 27001 information security management.",
-      "cta": "Request training",
+      "badge": "1-day training · 8h intensive programme",
+      "title": "NIS2 + ISO 27001: Cybersecurity Training for Businesses",
+      "subtitle": "One day, five expert-led modules, a ready-to-execute action plan. Equip your board and team to meet NIS2 requirements — with a risk register, incident procedures, and an implementation roadmap.",
+      "cta": "Book training for your team",
       "stats": {
-        "nis2": "NIS2 Directive",
-        "iso": "Security standard",
-        "hours": "training hours",
-        "satisfaction": "satisfaction rate"
+        "blocks": {
+          "value": "5",
+          "label": "expert modules"
+        },
+        "hours": {
+          "value": "8h",
+          "label": "intensive programme"
+        },
+        "frameworks": {
+          "value": "NIS2 + ISO",
+          "label": "requirements mapping"
+        },
+        "workshop": {
+          "value": "Workshop",
+          "label": "roadmap + quick wins"
+        }
       }
     },
-    "modules": {
-      "title": "Training Modules",
-      "subtitle": "Program covers key cybersecurity topics — from regulations to practical implementation.",
+    "problem": {
+      "title": "Why now?",
+      "subtitle": "The NIS2 Directive is fully enforceable across the EU. Deadlines are running and non-compliance carries serious consequences.",
       "items": {
-        "nis2Compliance": {
-          "title": "NIS2 Compliance",
-          "description": "Obligations for essential and important entities, self-identification, implementation timelines.",
-          "duration": "4h"
+        "deadline": {
+          "title": "Enforcement is active",
+          "description": "EU Member States have transposed NIS2 into national law. Essential and important entities must comply with technical and organisational measures now — the clock is ticking."
         },
-        "iso27001Implementation": {
-          "title": "ISO 27001 Implementation",
-          "description": "Building an ISMS: organizational context, scope, security policy, Annex A controls.",
-          "duration": "4h"
+        "penalties": {
+          "title": "Up to €10M / 2% of turnover",
+          "description": "Financial penalties for non-compliance reach €10 million or 2% of global annual turnover — whichever is higher. Regulators are empowered to impose them."
         },
-        "riskAssessment": {
-          "title": "Risk Assessment",
-          "description": "Risk assessment methodologies, risk matrix, risk treatment plans.",
-          "duration": "3h"
+        "liability": {
+          "title": "Personal board liability",
+          "description": "Article 20 of NIS2 places cybersecurity oversight responsibility directly on management bodies. Board members are personally accountable for implementation failures."
+        }
+      }
+    },
+    "agenda": {
+      "title": "Training programme",
+      "subtitle": "Five expert modules — from maturity diagnosis and risk analysis through technical controls to a hands-on workshop with an action plan.",
+      "items": {
+        "block1": {
+          "time": "09:00–10:30",
+          "title": "Module 1: Introduction & Regulatory Context",
+          "topics": [
+            "Opening and maturity diagnosis — anonymous quiz mapping group awareness",
+            "NIS2 in a business TL;DR: who it applies to, key obligations, sanctions",
+            "Board responsibility under Article 20 of NIS2",
+            "ISO 27001 as an implementation framework for NIS2 — how requirements map to each other",
+            "National transposition status and compliance timelines in your jurisdiction"
+          ]
         },
-        "incidentResponse": {
-          "title": "Incident Management",
-          "description": "Incident response procedures, CSIRT reporting, crisis communication.",
-          "duration": "2h"
+        "block2": {
+          "time": "10:45–12:30",
+          "title": "Module 2: Risks, Incidents & Processes",
+          "topics": [
+            "Threat landscape: phishing, ransomware, misconfigurations, data breaches",
+            "Incident scenarios with operational, financial, and reputational consequences",
+            "Risk management per ISO 27001: identifying assets, threats, and vulnerabilities",
+            "Building a risk register and prioritising actions",
+            "A simple risk assessment model you can deploy the next day"
+          ]
         },
-        "securityPolicies": {
-          "title": "Security Policies",
-          "description": "Creating and implementing security policies, procedures, and guidelines.",
-          "duration": "2h"
+        "block3": {
+          "time": "13:15–15:00",
+          "title": "Module 3: Technical & Organisational Controls",
+          "topics": [
+            "Technical controls: MFA, backups, monitoring, vulnerability management, encryption",
+            "Network segmentation and the principle of least privilege",
+            "Organisational controls: policies, procedures, roles (CISO, security committee)",
+            "Incident lifecycle: detection → classification → escalation → response → lessons learned",
+            "Business continuity plans (BCP/DRP) and NIS2 reporting requirements"
+          ]
         },
-        "awarenessWorkshops": {
-          "title": "Awareness Workshops",
-          "description": "Hands-on exercises: phishing, social engineering, data protection.",
-          "duration": "2h"
+        "block4": {
+          "time": "15:15–16:30",
+          "title": "Module 4: Supply Chain, Board & Governance",
+          "topics": [
+            "Supplier risk assessment: IT, cloud, maintenance, critical infrastructure",
+            "Contractual requirements and due diligence — what to include in contracts and RFPs",
+            "Embedding NIS2/ISO 27001 requirements in B2B relationships",
+            "Board oversight model: periodic reviews, security KPIs",
+            "Formally embedding cybersecurity in the organisational structure"
+          ]
+        },
+        "block5": {
+          "time": "16:30–17:00",
+          "title": "Module 5: Workshop — What Do We Do Starting Monday?",
+          "topics": [
+            "Group work: mini gap analysis based on a checklist",
+            "Building a 3-6-12 month action roadmap",
+            "Defining 3–5 first board-level decisions",
+            "Quick wins: formal roles, risk analysis kickoff, incident procedure, MFA, backup",
+            "Training wrap-up and Q&A session"
+          ]
+        }
+      }
+    },
+    "benefits": {
+      "title": "What you take away",
+      "subtitle": "Every participant leaves with concrete deliverables and a ready implementation plan — not just theoretical knowledge.",
+      "items": {
+        "riskRegistry": {
+          "title": "Ready-to-use risk register",
+          "description": "A risk register template developed during the workshop with prioritised actions."
+        },
+        "incidentProcedure": {
+          "title": "Incident management procedure",
+          "description": "Complete lifecycle: from detection through CSIRT reporting to post-incident lessons learned."
+        },
+        "roadmap": {
+          "title": "3-6-12 month roadmap",
+          "description": "A realistic NIS2 implementation plan tailored to your organisation's resources and maturity."
+        },
+        "quickWins": {
+          "title": "Quick wins for Monday",
+          "description": "3–5 immediate decisions to implement: MFA, backup, formal roles, and more."
+        },
+        "supplierChecklist": {
+          "title": "Supplier assessment checklist",
+          "description": "A ready-made due diligence template for IT, cloud, and critical infrastructure suppliers."
+        },
+        "nis2Mapping": {
+          "title": "NIS2 ↔ ISO 27001 mapping",
+          "description": "A mapping table of directive requirements to Annex A controls with implementation recommendations."
+        },
+        "governanceModel": {
+          "title": "Cybersecurity governance model",
+          "description": "Oversight structure: roles, responsibilities, periodic reviews, and board-level KPIs."
+        },
+        "maturityReport": {
+          "title": "Organisation maturity report",
+          "description": "Diagnostic quiz results with benchmarks — a starting point for further actions."
         }
       }
     },
     "audience": {
       "title": "Who is this training for?",
+      "subtitle": "The training is designed so that each audience group takes away concrete value — from strategy to operations.",
       "items": {
+        "board": {
+          "title": "Board / C-level",
+          "description": "Understanding NIS2 obligations, the oversight model, and personal liability of board members."
+        },
         "ciso": {
-          "title": "CISO / Security Officers",
-          "description": "People responsible for organizational cybersecurity strategy."
+          "title": "CISO / Security Officer",
+          "description": "Practical tools: risk register, procedures, implementation roadmap, and NIS2 ↔ ISO 27001 mapping."
         },
-        "complianceManagers": {
-          "title": "Compliance Managers",
-          "description": "Specialists in NIS2, DORA and ISO regulatory compliance."
-        },
-        "itTeams": {
+        "itSecurity": {
           "title": "IT / Security Teams",
-          "description": "Administrators and engineers implementing technical security measures."
+          "description": "Technical controls to implement: MFA, monitoring, network segmentation, vulnerability management."
         },
-        "boardMembers": {
-          "title": "Board Members",
-          "description": "Senior management responsible for cybersecurity oversight (Art. 20 NIS2)."
+        "compliance": {
+          "title": "Compliance / Risk Managers",
+          "description": "Mapping regulations to organisational processes, supplier checklist, and governance model."
         }
       }
     },
-    "benefits": {
-      "title": "Training Benefits",
-      "items": {
-        "nis2Readiness": "Full NIS2 readiness with a practical implementation plan",
-        "isoAlignment": "ISO 27001 requirements mapped to NIS2 obligations",
-        "practicalExercises": "Hands-on exercises based on real incident scenarios",
-        "certificationSupport": "Support in preparing for ISO 27001 certification",
-        "customScenarios": "Scenarios tailored to your industry and organization size",
-        "postTrainingSupport": "Post-training consultations and material access"
+    "process": {
+      "title": "How we work",
+      "steps": {
+        "diagnosis": {
+          "title": "Diagnosis",
+          "description": "An anonymous opening quiz maps your organisation's cybersecurity maturity level."
+        },
+        "training": {
+          "title": "Training",
+          "description": "5 expert modules: from NIS2/ISO 27001 regulations through risk analysis to technical controls and governance."
+        },
+        "action": {
+          "title": "Action",
+          "description": "Closing workshop: 3-6-12 month roadmap, quick wins, and first board decisions to implement from Monday."
+        }
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
+      "title": "Frequently asked questions",
       "items": {
         "whoFor": {
-          "question": "Who is this training for?",
-          "answer": "The training is designed for CISOs, compliance managers, IT/Security teams, and board members of organizations subject to the NIS2 directive."
+          "question": "Who is this training designed for?",
+          "answer": "The training is designed for board members, CISOs, IT/Security teams, and compliance/risk managers. The programme is modular — each audience group takes away deliverables tailored to their role."
         },
         "duration": {
           "question": "How long is the training?",
-          "answer": "The full program is 16+ hours spread over 2-3 days. Shorter modular formats are also available."
+          "answer": "The training lasts 1 day, 8 hours from 09:00 to 17:00. It consists of 5 expert modules with coffee and lunch breaks. On request, we can split the programme into 2 half-days of 4 hours each."
+        },
+        "format": {
+          "question": "Is the training on-site or online?",
+          "answer": "We deliver training in both formats. On-site format at your office or a rented venue works best for group workshops. Online format via Zoom or Teams is convenient for distributed teams. We recommend on-site for groups of 8 or more."
         },
         "prerequisites": {
           "question": "Are there any prerequisites?",
-          "answer": "No — the program is adapted to different skill levels. Basic IT knowledge is sufficient."
+          "answer": "No formal prerequisites. We start with a diagnostic quiz that maps the group's awareness level. Based on the results, we adjust the depth of covered topics. Basic familiarity with your organisational structure and IT processes is helpful."
         },
-        "certification": {
-          "question": "Will I receive a certificate?",
-          "answer": "Yes, every participant receives a certificate of completion confirming acquired competencies."
+        "certificate": {
+          "question": "Do participants receive a certificate?",
+          "answer": "Yes, every participant receives a personalised certificate of completion for the NIS2/ISO 27001 cybersecurity training issued by Quantifier. The certificate confirms the scope and number of training hours."
+        },
+        "pricing": {
+          "question": "How much does the training cost?",
+          "answer": "Pricing depends on the format, number of participants, and level of agenda customisation. Contact us via the form — we will prepare a tailored proposal for your organisation within 24 hours."
         },
         "customization": {
-          "question": "Can the training be customized?",
-          "answer": "Yes — we tailor the program to your industry, organization size, and participant skill level."
+          "question": "Can I customise the agenda for my industry?",
+          "answer": "Yes. Before the training, we conduct a brief interview with the person responsible for cybersecurity to understand your industry specifics, organisation size, and current maturity level. Based on this, we adjust module proportions, incident scenarios, and workshops."
         }
       }
     },
     "cta": {
-      "title": "Prepare your team for NIS2 & ISO 27001",
-      "subtitle": "Contact us to discuss a training program tailored to your organization.",
-      "button": "Request training"
+      "title": "Protect your business from NIS2 — start with training",
+      "subtitle": "One day of training delivers a concrete implementation plan for the next 12 months. Book training for your team.",
+      "button": "Book training",
+      "buttonSecondary": "Download agenda PDF"
     }
   },
   "trainingEsg": {
