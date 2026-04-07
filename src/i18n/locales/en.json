@@ -9,7 +9,10 @@
     "contact": "Contact",
     "blog": "Blog",
     "login": "Log In",
-    "training": "Training"
+    "training": "Training",
+    "trainingCyber": "Cybersecurity (NIS2, ISO 27001)",
+    "trainingEsg": "ESG & CSRD",
+    "trainingCompliance": "Compliance & Risk Management"
   },
   "menu": {
     "product": {
@@ -4203,6 +4206,18 @@
     "training": {
       "title": "Cybersecurity Training for Business | Quantifier.ai",
       "description": "Professional cybersecurity training for organizations. NIS2, DORA, ISO 27001, security awareness. Certified programs, online and on-site."
+    },
+    "trainingCyber": {
+      "title": "Cybersecurity Training NIS2 ISO 27001 | Quantifier",
+      "description": "Professional cybersecurity training: NIS2, ISO 27001, DORA. Prepare your team for regulatory requirements."
+    },
+    "trainingEsg": {
+      "title": "ESG and CSRD Training for Business | Quantifier",
+      "description": "ESG reporting, CSRD requirements and sustainability training. Practical knowledge for your organization."
+    },
+    "trainingCompliance": {
+      "title": "Compliance & Risk Management Training | Quantifier",
+      "description": "Compliance, GRC and risk management training. Prepare your organization for audits and inspections."
     }
   },
   "seoLanding": {
@@ -6643,8 +6658,13 @@
         "reducedRisk": "Reduced risk of security incidents through a trained and aware team.",
         "certifiedTeam": "Certificates confirming competencies — valuable during audits and regulatory reviews.",
         "practicalSkills": "Practical skills, not just theory — workshops based on real-world scenarios.",
-        "customPrograms": "Programs tailored to your industry, company size, and participant expertise level.",
-        "ongoingSupport": "Post-training support — access to materials, consultations, and content updates."
+        "customPrograms": "Programs tailored to your industry and organization size",
+        "ongoingSupport": "Post-training support — access to materials, consultations, and content updates.",
+        "experiencedTrainers": "Experienced trainers with hands-on industry experience",
+        "practicalApproach": "Practical approach — exercises, case studies, simulations",
+        "postTrainingSupport": "Post-training support and material access",
+        "certificationPaths": "Certification paths and competency development",
+        "flexibleFormats": "Flexible formats: on-site, online, or hybrid"
       }
     },
     "faq": {
@@ -6676,6 +6696,380 @@
       "title": "Plan Training for Your Team",
       "subtitle": "Contact us to discuss your organization's training needs. We'll prepare a dedicated program tailored to your requirements.",
       "button": "Contact Us"
+    },
+    "hub": {
+      "stats": {
+        "programs": "training programs"
+      },
+      "learnMore": "Learn more",
+      "cards": {
+        "cyber": {
+          "title": "Cybersecurity",
+          "subtitle": "NIS2 · ISO 27001 · DORA",
+          "description": "Comprehensive training on cybersecurity regulatory requirements and information security management systems.",
+          "points": {
+            "1": "NIS2 directive compliance",
+            "2": "ISO 27001 ISMS implementation",
+            "3": "Incident management & response"
+          }
+        },
+        "esg": {
+          "title": "ESG & Sustainability",
+          "subtitle": "CSRD · GRI · Carbon Footprint",
+          "description": "Training on ESG reporting, CSRD requirements, and practical sustainability management for organizations.",
+          "points": {
+            "1": "CSRD/ESRS reporting compliance",
+            "2": "Carbon footprint calculation & reduction",
+            "3": "Double materiality assessment"
+          }
+        },
+        "compliance": {
+          "title": "Compliance & Risk",
+          "subtitle": "GRC · Audit · Internal Controls",
+          "description": "Training programs on compliance management, risk analysis, and preparation for regulatory audits.",
+          "points": {
+            "1": "Building a compliance management system",
+            "2": "Risk assessment methodologies",
+            "3": "Audit and inspection readiness"
+          }
+        }
+      }
+    }
+  },
+  "trainingCyber": {
+    "hero": {
+      "badge": "Cybersecurity",
+      "title": "Cybersecurity Training: NIS2 & ISO 27001",
+      "subtitle": "Comprehensive training program combining NIS2 directive requirements with ISO 27001 information security management.",
+      "cta": "Request training",
+      "stats": {
+        "nis2": "NIS2 Directive",
+        "iso": "Security standard",
+        "hours": "training hours",
+        "satisfaction": "satisfaction rate"
+      }
+    },
+    "modules": {
+      "title": "Training Modules",
+      "subtitle": "Program covers key cybersecurity topics — from regulations to practical implementation.",
+      "items": {
+        "nis2Compliance": {
+          "title": "NIS2 Compliance",
+          "description": "Obligations for essential and important entities, self-identification, implementation timelines.",
+          "duration": "4h"
+        },
+        "iso27001Implementation": {
+          "title": "ISO 27001 Implementation",
+          "description": "Building an ISMS: organizational context, scope, security policy, Annex A controls.",
+          "duration": "4h"
+        },
+        "riskAssessment": {
+          "title": "Risk Assessment",
+          "description": "Risk assessment methodologies, risk matrix, risk treatment plans.",
+          "duration": "3h"
+        },
+        "incidentResponse": {
+          "title": "Incident Management",
+          "description": "Incident response procedures, CSIRT reporting, crisis communication.",
+          "duration": "2h"
+        },
+        "securityPolicies": {
+          "title": "Security Policies",
+          "description": "Creating and implementing security policies, procedures, and guidelines.",
+          "duration": "2h"
+        },
+        "awarenessWorkshops": {
+          "title": "Awareness Workshops",
+          "description": "Hands-on exercises: phishing, social engineering, data protection.",
+          "duration": "2h"
+        }
+      }
+    },
+    "audience": {
+      "title": "Who is this training for?",
+      "items": {
+        "ciso": {
+          "title": "CISO / Security Officers",
+          "description": "People responsible for organizational cybersecurity strategy."
+        },
+        "complianceManagers": {
+          "title": "Compliance Managers",
+          "description": "Specialists in NIS2, DORA and ISO regulatory compliance."
+        },
+        "itTeams": {
+          "title": "IT / Security Teams",
+          "description": "Administrators and engineers implementing technical security measures."
+        },
+        "boardMembers": {
+          "title": "Board Members",
+          "description": "Senior management responsible for cybersecurity oversight (Art. 20 NIS2)."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Training Benefits",
+      "items": {
+        "nis2Readiness": "Full NIS2 readiness with a practical implementation plan",
+        "isoAlignment": "ISO 27001 requirements mapped to NIS2 obligations",
+        "practicalExercises": "Hands-on exercises based on real incident scenarios",
+        "certificationSupport": "Support in preparing for ISO 27001 certification",
+        "customScenarios": "Scenarios tailored to your industry and organization size",
+        "postTrainingSupport": "Post-training consultations and material access"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "whoFor": {
+          "question": "Who is this training for?",
+          "answer": "The training is designed for CISOs, compliance managers, IT/Security teams, and board members of organizations subject to the NIS2 directive."
+        },
+        "duration": {
+          "question": "How long is the training?",
+          "answer": "The full program is 16+ hours spread over 2-3 days. Shorter modular formats are also available."
+        },
+        "prerequisites": {
+          "question": "Are there any prerequisites?",
+          "answer": "No — the program is adapted to different skill levels. Basic IT knowledge is sufficient."
+        },
+        "certification": {
+          "question": "Will I receive a certificate?",
+          "answer": "Yes, every participant receives a certificate of completion confirming acquired competencies."
+        },
+        "customization": {
+          "question": "Can the training be customized?",
+          "answer": "Yes — we tailor the program to your industry, organization size, and participant skill level."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prepare your team for NIS2 & ISO 27001",
+      "subtitle": "Contact us to discuss a training program tailored to your organization.",
+      "button": "Request training"
+    }
+  },
+  "trainingEsg": {
+    "hero": {
+      "badge": "ESG & Sustainability",
+      "title": "ESG Training & CSRD Reporting",
+      "subtitle": "Practical training on sustainability reporting, CSRD/ESRS requirements and ESG strategy for organizations.",
+      "cta": "Request training",
+      "stats": {
+        "csrd": "CSRD Directive",
+        "gri": "Reporting standards",
+        "hours": "training hours",
+        "practical": "practical focus"
+      }
+    },
+    "modules": {
+      "title": "Training Modules",
+      "subtitle": "Program covers key ESG aspects — from regulations to practical reporting.",
+      "items": {
+        "csrdReporting": {
+          "title": "CSRD / ESRS Reporting",
+          "description": "CSRD directive requirements, ESRS standards, reporting obligations and timelines.",
+          "duration": "3h"
+        },
+        "carbonFootprint": {
+          "title": "Carbon Footprint & Decarbonization",
+          "description": "Carbon footprint calculation (Scope 1-3), reduction targets, SBTi.",
+          "duration": "2h"
+        },
+        "supplyChain": {
+          "title": "ESG Supply Chain",
+          "description": "Supplier due diligence, CSDDD, ESG risk assessment in the value chain.",
+          "duration": "2h"
+        },
+        "griStandards": {
+          "title": "GRI Standards",
+          "description": "GRI Standards compliant reporting, indicators and data collection methodology.",
+          "duration": "2h"
+        },
+        "materialityAssessment": {
+          "title": "Materiality Assessment",
+          "description": "Double materiality, identifying key ESG topics for your organization.",
+          "duration": "2h"
+        },
+        "esgStrategy": {
+          "title": "ESG Strategy",
+          "description": "Building a sustainability strategy, KPIs, and integrating ESG with business.",
+          "duration": "2h"
+        }
+      }
+    },
+    "audience": {
+      "title": "Who is this training for?",
+      "items": {
+        "sustainabilityManagers": {
+          "title": "Sustainability Managers",
+          "description": "People responsible for ESG strategy and reporting."
+        },
+        "cfoFinance": {
+          "title": "CFO / Finance Teams",
+          "description": "People responsible for non-financial reporting and CSRD compliance."
+        },
+        "operationsTeams": {
+          "title": "Operations Teams",
+          "description": "Staff collecting ESG data from operational processes."
+        },
+        "boardDirectors": {
+          "title": "Board & Directors",
+          "description": "Decision-makers responsible for the organization ESG strategy."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Training Benefits",
+      "items": {
+        "csrdCompliance": "Readiness for mandatory CSRD/ESRS reporting",
+        "carbonReduction": "Practical knowledge on carbon footprint calculation and reduction",
+        "stakeholderTrust": "Increased investor and client trust through ESG transparency",
+        "practicalTools": "Tools and templates for immediate implementation",
+        "benchmarking": "ESG benchmarking — comparison with industry best practices",
+        "ongoingGuidance": "Post-training support and expert consultations"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "whoShouldAttend": {
+          "question": "Who should attend ESG training?",
+          "answer": "ESG managers, CFOs, operations teams, and board members responsible for sustainability reporting."
+        },
+        "esgKnowledge": {
+          "question": "Do I need prior ESG knowledge?",
+          "answer": "No — we start from the basics and gradually move to advanced CSRD reporting topics."
+        },
+        "format": {
+          "question": "What format is the training in?",
+          "answer": "Training can be on-site, online, or hybrid — we adapt the format to your needs."
+        },
+        "certification": {
+          "question": "Does the training include certification?",
+          "answer": "Yes, every participant receives a certificate of completion in ESG and CSRD."
+        },
+        "roi": {
+          "question": "What is the ROI of ESG training?",
+          "answer": "Training prepares you for mandatory CSRD reporting, minimizing penalty risk and external consulting costs."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prepare your organization for ESG reporting",
+      "subtitle": "Contact us to plan an ESG training tailored to your industry and needs.",
+      "button": "Request training"
+    }
+  },
+  "trainingCompliance": {
+    "hero": {
+      "badge": "Compliance & Risk Management",
+      "title": "Compliance & Risk Management Training",
+      "subtitle": "Practical training on building compliance management systems, risk analysis, and regulatory audit preparation.",
+      "cta": "Request training",
+      "stats": {
+        "grc": "Governance, Risk & Compliance",
+        "iso": "ISO Standards",
+        "hours": "training hours",
+        "satisfaction": "satisfaction rate"
+      }
+    },
+    "modules": {
+      "title": "Training Modules",
+      "subtitle": "Program covers key compliance and risk management areas.",
+      "items": {
+        "complianceFrameworks": {
+          "title": "Compliance Frameworks",
+          "description": "Overview of regulations and standards: NIS2, DORA, ISO 27001, GDPR and their mapping.",
+          "duration": "3h"
+        },
+        "riskAssessment": {
+          "title": "Risk Assessment & Analysis",
+          "description": "Risk assessment methodologies (ISO 31000), risk matrix, risk appetite, mitigation plans.",
+          "duration": "3h"
+        },
+        "auditReadiness": {
+          "title": "Audit Readiness",
+          "description": "Evidence collection, documentation, audit simulation, non-conformity management.",
+          "duration": "2h"
+        },
+        "processMapping": {
+          "title": "Process Mapping",
+          "description": "Identifying and documenting business processes for regulatory compliance.",
+          "duration": "2h"
+        },
+        "kpiMetrics": {
+          "title": "Compliance KPIs & Metrics",
+          "description": "Defining performance indicators, dashboards, board reporting.",
+          "duration": "2h"
+        },
+        "incidentManagement": {
+          "title": "Incident Management",
+          "description": "Reporting, escalation, and regulatory incident management procedures.",
+          "duration": "2h"
+        }
+      }
+    },
+    "audience": {
+      "title": "Who is this training for?",
+      "items": {
+        "complianceOfficers": {
+          "title": "Compliance Officers",
+          "description": "People responsible for organizational regulatory compliance."
+        },
+        "riskManagers": {
+          "title": "Risk Managers",
+          "description": "Specialists in risk identification, assessment, and management."
+        },
+        "legalTeams": {
+          "title": "Legal Teams",
+          "description": "Internal lawyers and advisors supporting compliance programs."
+        },
+        "operationalManagers": {
+          "title": "Operational Managers",
+          "description": "Managers overseeing processes subject to regulatory requirements."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Training Benefits",
+      "items": {
+        "regulatoryConfidence": "Confidence in managing multiple regulatory requirements simultaneously",
+        "riskReduction": "Effective regulatory and operational risk reduction",
+        "auditPreparation": "Professional preparation for audits and inspections",
+        "processOptimization": "Compliance process optimization across the organization",
+        "crossFramework": "Cross-framework requirements mapping (NIS2, ISO, DORA)",
+        "continuousImprovement": "Continuous improvement and compliance monitoring system"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "whoFor": {
+          "question": "Who is compliance training for?",
+          "answer": "Compliance officers, risk managers, legal teams, and management responsible for regulatory compliance."
+        },
+        "frameworks": {
+          "question": "Which frameworks are covered?",
+          "answer": "Training covers NIS2, DORA, ISO 27001, ISO 31000, GDPR, and their cross-mapping and integration."
+        },
+        "practical": {
+          "question": "Is the training practical?",
+          "answer": "Yes — the program includes hands-on exercises, case studies, and audit simulations based on real scenarios."
+        },
+        "followUp": {
+          "question": "Is there post-training support?",
+          "answer": "Yes, we offer follow-up consultations and access to training materials for 12 months."
+        },
+        "pricing": {
+          "question": "How does pricing work?",
+          "answer": "Price depends on participant count, program scope, and delivery format. Contact us for a custom quote."
+        }
+      }
+    },
+    "cta": {
+      "title": "Build compliance competencies in your organization",
+      "subtitle": "Contact us to discuss a compliance and risk management training program.",
+      "button": "Request training"
     }
   }
 }
