@@ -1,40 +1,53 @@
-# SEO Content Clusters — 20-Page Map
 
-## Status: ✅ COMPLETE
 
-### Completed
-- ✅ Meta title updates: NIS2 framework (EN/PL), cybersecurity-check (EN/PL/CS)
-- ✅ P1 blog drafts created in CMS:
-  - EN: `nis2-compliance-checklist-2026`
-  - PL: `lista-kontrolna-nis2-2026`
-  - PL: `wdrozenie-nis2-ksc-przewodnik`
-  - EN: `iso-27001-vs-soc-2-comparison`
-  - EN: `vanta-alternatives-europe-eu-compliance`
-- ✅ UPDATE `/en/frameworks/nis-2/` — Article 21 mapping table, Why Software section, expanded FAQ
-- ✅ UPDATE `/pl/frameworks/nis-2/` — UKSC-specific sections added
-- ✅ P2 blog drafts created in CMS:
-  - EN: `nis2-readiness-assessment-guide`
-  - PL: `przewodnik-ocena-gotowosci-nis2`
-  - EN: `nis2-incident-reporting-requirements`
-  - PL: `nis2-raportowanie-incydentow`
-  - EN: `audit-evidence-collection-automation`
-  - EN: `soc-2-compliance-cost-timeline`
-- ✅ Framework pages (SOC, ISO 27001) — Related Content sections added
-- ✅ P3 blog drafts created in CMS:
-  - EN: `nis2-vs-iso-27001-mapping`
-  - EN: `nis2-board-accountability`
-  - PL: `odpowiedzialnosc-zarzadu-nis2`
-  - EN: `nis2-penalties-fines-enforcement`
-  - PL: `kary-nis2-ksc-sankcje`
-  - EN: `compliance-automation-evaluation-guide`
-  - PL: `alternatywy-dla-vanta-europa`
-- ✅ Compare pages — internal links to Vanta Alternatives blog added
-- ✅ UPDATE Continuous Compliance article — expanded with Evidence Automation, Real-Time Monitoring, Software Requirements sections
-- ✅ UPDATE SOC 2 Complete Guide — added SOC 2 vs ISO 27001 comparison + Best Tools sections
-- ✅ UPDATE Compliance Monitoring Guide — added Best Compliance Monitoring Tools section
+# Analiza błędu GSC: "Alternatywna strona zawierająca prawidłowy tag strony kanonicznej"
 
-### Product page expansion (completed previously)
-- ✅ All 6 product pages rebuilt with 7-section layout + mockups + FAQ JSON-LD
-- ✅ All 3 role pages rebuilt with unique content + FAQ JSON-LD
-- ✅ Compare pages updated (March 2026 data)
-- ✅ Framework pages have DefinitionsBlock + SoftwareApplication schema
+## Diagnoza
+
+Ten komunikat GSC **NIE jest błędem** — to status informacyjny. Oznacza, że Google znalazł stronę, rozpoznał jej tag canonical wskazujący na inny URL i poprawnie wybrał wersję kanoniczną do indeksowania. Strony z tym statusem **nie powinny** być indeksowane osobno — to oczekiwane zachowanie.
+
+### Przyczyna dla każdego URL:
+
+| URL z GSC (nieindeksowany) | Canonical wskazuje na | Powód |
+|---|---|---|
+| `/en/blog` (bez slash) | `/en/blog/` (z slash) | Trailing slash — poprawne |
+| `/en/partners` | `/en/partners/` | Trailing slash — poprawne |
+| `/cs/frameworks/governance` | `/cs/frameworks/governance/` | Trailing slash — poprawne |
+| `/en/product` | `/en/product/` | Trailing slash — poprawne |
+| `/pl` | `/pl/` | Trailing slash — poprawne |
+| `/en` | `/en/` | Trailing slash — poprawne |
+| `/en/frameworks/environmental` | `/en/frameworks/environmental/` | Trailing slash — poprawne |
+| `/en/frameworks/nis-ii` | `/en/frameworks/nis-2/` | 301 redirect + canonical — poprawne |
+| `/blog` (bez locale) | `/en/blog/` | 301 redirect — poprawne |
+| `/by-roles` (bez locale) | `/en/by-roles/` | 301 redirect — poprawne |
+
+### Wnioski
+
+1. **Trailing slash** — 7 z 10 URL-i to wersje bez trailing slash. Canonical wskazuje na wersję z `/` — Google respektuje to poprawnie.
+2. **Stare URL-e** — `/en/frameworks/nis-ii` jest przekierowany 301 na `/nis-2/` — poprawne.
+3. **Brak locale** — `/blog` i `/by-roles` przekierowują 301 na `/en/blog/` i `/en/by-roles/` — poprawne.
+
+## Co zrobić?
+
+**Nic nie trzeba naprawiać.** To prawidłowe zachowanie SEO:
+- Google widzi duplikat (np. `/en/blog` bez slash)
+- Znajduje canonical wskazujący na `/en/blog/`
+- Indeksuje tylko wersję kanoniczną
+- Raportuje duplikat jako "Alternatywna strona z prawidłowym canonical"
+
+### Jedyna opcjonalna optymalizacja
+
+Aby zmniejszyć liczbę tych raportów w GSC (czysto kosmetycznie), można dodać wymuszony redirect 301 z wersji bez trailing slash na wersję z trailing slash w `netlify.toml`. Np.:
+
+```text
+/en/blog → 301 → /en/blog/
+/en/partners → 301 → /en/partners/
+/pl → 301 → /pl/
+```
+
+To sprawi, że Google przestanie crawlować wersje bez slash i raporty znikną z GSC. Ale **nie wpływa to na indeksację** — wersje kanoniczne już są poprawnie indeksowane.
+
+### Weryfikacja
+
+Sprawdź w GSC zakładkę "Strony" → filtr "Prawidłowe" — Twoje strony kanoniczne (z trailing slash) powinny tam być jako zaindeksowane.
+
