@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/seo/FAQSection';
 import {
