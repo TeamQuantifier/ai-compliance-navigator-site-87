@@ -9,7 +9,10 @@
     "contact": "Kontakt",
     "blog": "Blog",
     "login": "Zaloguj się",
-    "training": "Szkolenia"
+    "training": "Szkolenia",
+    "trainingCyber": "Cybersecurity (NIS2, ISO 27001)",
+    "trainingEsg": "ESG i CSRD",
+    "trainingCompliance": "Compliance i zarządzanie ryzykiem"
   },
   "menu": {
     "product": {
