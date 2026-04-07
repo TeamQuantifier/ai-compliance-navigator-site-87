@@ -196,6 +196,10 @@ const MainRoutes = () => (
         <Route path="/:locale/contact" element={<Contact />} />
         <Route path="/:locale/about" element={<About />} />
         
+        {/* Training / Services */}
+        <Route path="/:locale/szkolenia-cyberbezpieczenstwo-dla-firm" element={<CybersecurityTraining />} />
+        <Route path="/:locale/cybersecurity-training-for-business" element={<CybersecurityTraining />} />
+        
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
         <Route path="/:locale/legal/terms" element={<TermsOfService />} />
