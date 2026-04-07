@@ -24,12 +24,16 @@ import {
   Eye,
   MessageSquare,
   ChevronRight,
+  Briefcase,
+  Settings,
 } from 'lucide-react';
 
 const TrainingLanding = () => {
   const { t, currentLocale } = useLanguage();
   const [formStep, setFormStep] = useState(0);
   const [selectedArea, setSelectedArea] = useState('');
+  const [selectedAudience, setSelectedAudience] = useState<'executive' | 'operational' | null>(null);
+  const [selectedTopic, setSelectedTopic] = useState<'cyber' | 'esg' | 'compliance' | null>(null);
 
   const baseUrl = 'https://quantifier.ai';
   const pageUrl = `${baseUrl}/${currentLocale}/${currentLocale === 'pl' ? 'szkolenia-cyberbezpieczenstwo-dla-firm' : 'cybersecurity-training-for-companies'}`;
@@ -47,14 +51,10 @@ const TrainingLanding = () => {
   const fullTitle = `${t('seo.training.title')} | Quantifier.ai`;
 
   const problemIcons = [Eye, ClipboardList, Users, Wrench, AlertTriangle];
-  const trackDefs = [
-    { key: 'cyber', icon: ShieldAlert, colorClass: 'from-blue-600 to-blue-800' },
-    { key: 'esg', icon: Leaf, colorClass: 'from-emerald-600 to-emerald-800' },
-    { key: 'compliance', icon: Scale, colorClass: 'from-violet-600 to-violet-800' },
-  ];
   const tierIcons = [GraduationCap, Layers, Zap];
-  const deliverableIcons = [ClipboardList, FileCheck, BarChart3, Shield, Target, Lock];
   const processIcons = [MessageSquare, Target, GraduationCap, Zap];
+
+  const scopeKey = selectedAudience && selectedTopic ? `${selectedAudience}_${selectedTopic}` : null;
 
   return (
     <>
