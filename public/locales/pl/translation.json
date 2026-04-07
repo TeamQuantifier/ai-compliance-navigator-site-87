@@ -7791,6 +7791,120 @@
         }
       ]
     },
+    "configurator": {
+      "title": "Dopasuj szkolenie do swoich potrzeb",
+      "subtitle": "Wybierz grupę docelową i temat — pokażemy Ci dokładny zakres programu.",
+      "audienceLabel": "Dla kogo?",
+      "topicLabel": "Jaki temat?",
+      "audiences": {
+        "executive": {
+          "label": "Zarząd i kadra zarządzająca",
+          "desc": "Strategia, odpowiedzialność, nadzór"
+        },
+        "operational": {
+          "label": "Szkolenie wdrożeniowe",
+          "desc": "Operacje, procedury, narzędzia"
+        }
+      },
+      "topics": {
+        "cyber": {
+          "label": "Cybersecurity",
+          "desc": "NIS2 · ISO 27001 · DORA"
+        },
+        "esg": {
+          "label": "ESG / CSRD",
+          "desc": "CSRD · ESRS · Taksonomia UE"
+        },
+        "compliance": {
+          "label": "Compliance & GRC",
+          "desc": "GRC · Kontrola wewnętrzna · Audyty"
+        }
+      },
+      "resultLabel": "Zakres programu",
+      "scopeLabels": {
+        "focus": "Fokus szkolenia",
+        "topics": "Program obejmuje",
+        "deliverable": "Co dostajesz",
+        "result": "Rezultat"
+      },
+      "scopes": {
+        "executive_cyber": {
+          "focus": "Odpowiedzialność zarządu w NIS2/KSC i nadzór nad cyberbezpieczeństwem",
+          "topics": [
+            "Osobista odpowiedzialność zarządu wg NIS2 (art. 20) i kary",
+            "Jak czytać raporty ryzyk i podejmować decyzje o budżecie security",
+            "Obowiązki raportowe: incydenty 24h/72h, kogo informować",
+            "Nadzór nad dostawcami i łańcuchem dostaw ICT",
+            "Strategia cyberbezpieczeństwa: co zatwierdzić i jak monitorować"
+          ],
+          "deliverable": "Executive brief z obowiązkami, checklista nadzorcza, dashboard KPI bezpieczeństwa",
+          "result": "Zarząd rozumie swoje obowiązki i potrafi nadzorować cyberbezpieczeństwo"
+        },
+        "executive_esg": {
+          "focus": "Obowiązki raportowe ESG dla zarządu i strategia zrównoważonego rozwoju",
+          "topics": [
+            "Obowiązki zarządu wynikające z CSRD — kto podpisuje raport ESG",
+            "Analiza podwójnej istotności — jak zarząd definiuje priorytety",
+            "Governance ESG: role, komitety, odpowiedzialność na poziomie C-suite",
+            "Taksonomia UE — wpływ na decyzje inwestycyjne i finansowanie",
+            "Ryzyko reputacyjne i greenwashing — jak się zabezpieczyć"
+          ],
+          "deliverable": "Strategia ESG dla zarządu, matryca odpowiedzialności, kalendarz raportowy",
+          "result": "Zarząd gotowy do nadzoru nad raportowaniem ESG i podejmowania decyzji strategicznych"
+        },
+        "executive_compliance": {
+          "focus": "Budowa kultury compliance i nadzór nad systemem kontroli wewnętrznej",
+          "topics": [
+            "Rola zarządu w systemie compliance — odpowiedzialność i delegacja",
+            "Zarządzanie ryzykiem na poziomie strategicznym",
+            "Jak czytać raporty compliance i reagować na czerwone flagi",
+            "Cross-regulacje: NIS2, DORA, GDPR — jak nie zwariować",
+            "Tone from the top: budowa kultury zgodności w organizacji"
+          ],
+          "deliverable": "Executive compliance brief, matryca ryzyk strategicznych, framework eskalacji",
+          "result": "Zarząd aktywnie nadzoruje compliance i podejmuje świadome decyzje o ryzyku"
+        },
+        "operational_cyber": {
+          "focus": "Wdrożenie wymagań NIS2/ISO 27001 w praktyce operacyjnej",
+          "topics": [
+            "Analiza ryzyk i budowa rejestru zagrożeń wg ISO 27001",
+            "Procedura obsługi incydentów: wykrywanie, eskalacja, raportowanie",
+            "Polityki bezpieczeństwa: tworzenie, wdrożenie, utrzymanie",
+            "Bezpieczeństwo łańcucha dostaw — ocena i monitoring dostawców",
+            "Środki techniczno-organizacyjne: co wdrożyć i jak udowodnić",
+            "Mapowanie kontroli: NIS2 → ISO 27001 → DORA"
+          ],
+          "deliverable": "Rejestr ryzyk, procedury incydentów, szablony polityk, roadmapa wdrożenia 3-6-12 mies.",
+          "result": "Zespół gotowy do samodzielnego wdrożenia i utrzymania systemu cyberbezpieczeństwa"
+        },
+        "operational_esg": {
+          "focus": "Zbieranie danych ESG, raportowanie CSRD i wdrożenie procesów",
+          "topics": [
+            "Standardy ESRS w praktyce — co mierzyć i jak dokumentować",
+            "Zbieranie danych ESG: procesy, źródła, narzędzia",
+            "Analiza podwójnej istotności — warsztat praktyczny",
+            "Ślad węglowy: obliczanie Scope 1, 2 i 3",
+            "Przygotowanie danych do weryfikacji przez biegłego rewidenta",
+            "Automatyzacja raportowania ESG z platformą"
+          ],
+          "deliverable": "Matryca istotności, wzory formularzy zbierania danych, checklisty ESRS, szablon raportu",
+          "result": "Zespół gotowy do samodzielnego zbierania danych i przygotowania raportu ESG"
+        },
+        "operational_compliance": {
+          "focus": "Budowa i operacjonalizacja systemu compliance w organizacji",
+          "topics": [
+            "Budowa systemu compliance od zera — role, procesy, eskalacja",
+            "Mapowanie ryzyk operacyjnych i tworzenie rejestru",
+            "Tworzenie polityk i procedur zgodności — od szablonu do wdrożenia",
+            "System kontroli wewnętrznej: monitoring, testy, raportowanie",
+            "Przygotowanie do audytów zewnętrznych: dokumentacja i dowody",
+            "Cross-mapping regulacji: jak zarządzać wieloma standardami naraz"
+          ],
+          "deliverable": "Rejestr ryzyk, wzory polityk, matryca kontroli wewnętrznej, playbooki audytowe",
+          "result": "Zespół gotowy do samodzielnego zarządzania compliance i przygotowania na audyty"
+        }
+      }
+    },
     "tracks": {
       "title": "Trzy ścieżki szkoleniowe",
       "subtitle": "Każda ścieżka to pełny program: od diagnozy problemu, przez wiedzę, po gotowe narzędzia i wdrożenie.",
