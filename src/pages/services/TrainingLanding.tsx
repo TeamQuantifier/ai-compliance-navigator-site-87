@@ -203,72 +203,139 @@ const TrainingLanding = () => {
         </div>
       </section>
 
+      {/* ─── CONFIGURATOR ─── */}
       <section id="tracks" className="py-16 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('training.tracks.title')}
+              {t('training.configurator.title')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              {t('training.tracks.subtitle')}
+              {t('training.configurator.subtitle')}
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {trackDefs.map((track) => {
-              const Icon = track.icon;
-              const topics = getArray(`training.tracks.${track.key}.topics`);
+          <div className="max-w-5xl mx-auto">
+            {/* Row 1: Audience */}
+            <div className="mb-8">
+              <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                {t('training.configurator.audienceLabel')}
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {([
+                  { key: 'executive' as const, icon: Briefcase },
+                  { key: 'operational' as const, icon: Settings },
+                ]).map(({ key, icon: Icon }) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedAudience(key)}
+                    className={`flex items-center gap-4 p-5 rounded-xl border text-left transition-all ${
+                      selectedAudience === key
+                        ? 'border-primary bg-primary/5 shadow-md shadow-primary/10'
+                        : 'border-border bg-card hover:border-primary/40'
+                    }`}
+                  >
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
+                      selectedAudience === key ? 'bg-primary/15' : 'bg-muted'
+                    }`}>
+                      <Icon className={`h-6 w-6 ${selectedAudience === key ? 'text-primary' : 'text-muted-foreground'}`} />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">{t(`training.configurator.audiences.${key}.label`)}</p>
+                      <p className="text-sm text-muted-foreground">{t(`training.configurator.audiences.${key}.desc`)}</p>
+                    </div>
+                    {selectedAudience === key && <CheckCircle2 className="h-5 w-5 text-primary ml-auto shrink-0" />}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-              return (
-                <div key={track.key} className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col">
-                  <div className={`bg-gradient-to-r ${track.colorClass} p-6`}>
-                    <Icon className="h-8 w-8 text-white mb-3" />
-                    <h3 className="text-xl font-bold text-white">{t(`training.tracks.${track.key}.title`)}</h3>
-                    <p className="text-sm text-white/80 mt-1">{t(`training.tracks.${track.key}.subtitle`)}</p>
+            {/* Row 2: Topic */}
+            <div className="mb-10">
+              <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                {t('training.configurator.topicLabel')}
+              </p>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {([
+                  { key: 'cyber' as const, icon: ShieldAlert, accent: 'text-blue-500' },
+                  { key: 'esg' as const, icon: Leaf, accent: 'text-emerald-500' },
+                  { key: 'compliance' as const, icon: Scale, accent: 'text-violet-500' },
+                ]).map(({ key, icon: Icon, accent }) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedTopic(key)}
+                    className={`flex flex-col items-center gap-2 p-5 rounded-xl border text-center transition-all ${
+                      selectedTopic === key
+                        ? 'border-primary bg-primary/5 shadow-md shadow-primary/10'
+                        : 'border-border bg-card hover:border-primary/40'
+                    }`}
+                  >
+                    <Icon className={`h-7 w-7 ${selectedTopic === key ? 'text-primary' : accent}`} />
+                    <p className="font-semibold text-foreground text-sm">{t(`training.configurator.topics.${key}.label`)}</p>
+                    <p className="text-xs text-muted-foreground">{t(`training.configurator.topics.${key}.desc`)}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Result */}
+            {scopeKey && (
+              <div className="bg-card border border-primary/20 rounded-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-4 border-b border-primary/10">
+                  <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    {t('training.configurator.resultLabel')}
+                  </p>
+                  <p className="text-lg font-bold text-foreground mt-1">
+                    {t(`training.configurator.scopes.${scopeKey}.focus`)}
+                  </p>
+                </div>
+                <div className="p-6 grid md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                      {t('training.configurator.scopeLabels.topics')}
+                    </p>
+                    <ul className="space-y-2">
+                      {getArray(`training.configurator.scopes.${scopeKey}.topics`).map((topic, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="mb-4">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
-                        {t('training.tracks.labels.audience')}
-                      </p>
-                      <p className="text-sm text-foreground">{t(`training.tracks.${track.key}.audience`)}</p>
-                    </div>
-                    <div className="mb-4">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
-                        {t('training.tracks.labels.problem')}
-                      </p>
-                      <p className="text-sm text-foreground">{t(`training.tracks.${track.key}.problem`)}</p>
-                    </div>
-                    <div className="mb-4 flex-1">
+                  <div className="space-y-6">
+                    <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                        {t('training.tracks.labels.topics')}
+                        {t('training.configurator.scopeLabels.deliverable')}
                       </p>
-                      <ul className="space-y-1.5">
-                        {topics.map((topic, ti) => (
-                          <li key={ti} className="flex items-start gap-2 text-sm text-foreground">
-                            <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                            {topic}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="mb-4">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
-                        {t('training.tracks.labels.deliverable')}
-                      </p>
-                      <p className="text-sm font-medium text-foreground">{t(`training.tracks.${track.key}.deliverable`)}</p>
-                    </div>
-                    <div className="mt-auto pt-4 border-t border-border">
-                      <p className="text-sm font-semibold text-primary flex items-center gap-2">
-                        <Zap className="h-4 w-4" />
-                        {t(`training.tracks.${track.key}.result`)}
+                      <p className="text-sm text-foreground bg-muted/50 rounded-lg p-3">
+                        {t(`training.configurator.scopes.${scopeKey}.deliverable`)}
                       </p>
                     </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                        {t('training.configurator.scopeLabels.result')}
+                      </p>
+                      <p className="text-sm font-medium text-primary flex items-center gap-2">
+                        <Zap className="h-4 w-4 shrink-0" />
+                        {t(`training.configurator.scopes.${scopeKey}.result`)}
+                      </p>
+                    </div>
+                    <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      <a href="#contact">{t('training.cta.primary')}</a>
+                    </Button>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            )}
+
+            {!scopeKey && (
+              <div className="text-center py-12 bg-card border border-dashed border-border rounded-2xl">
+                <p className="text-muted-foreground">
+                  👆 Wybierz grupę docelową i temat, aby zobaczyć zakres szkolenia
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
