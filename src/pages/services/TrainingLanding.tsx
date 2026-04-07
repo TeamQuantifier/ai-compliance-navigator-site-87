@@ -19,13 +19,10 @@ import {
   BarChart3,
   ClipboardList,
   Target,
-  UserCheck,
-  BookOpen,
   Zap,
   Lock,
   Eye,
   MessageSquare,
-  Clock,
   ChevronRight,
 } from 'lucide-react';
 
@@ -37,17 +34,27 @@ const TrainingLanding = () => {
   const baseUrl = 'https://quantifier.ai';
   const pageUrl = `${baseUrl}/${currentLocale}/${currentLocale === 'pl' ? 'szkolenia-cyberbezpieczenstwo-dla-firm' : 'cybersecurity-training-for-companies'}`;
 
+  const getArray = (key: string): string[] => {
+    const val = t(key, { returnObjects: true });
+    return Array.isArray(val) ? (val as string[]) : [];
+  };
+
   const rawFaqs = t('training.faq.items', { returnObjects: true });
   const faqs = Array.isArray(rawFaqs)
     ? (rawFaqs as { question: string; answer: string }[])
     : [];
 
-  const getArray = (key: string): string[] => {
-    const val = t(key, { returnObjects: true });
-    return Array.isArray(val) ? val as string[] : [];
-  };
-
   const fullTitle = `${t('seo.training.title')} | Quantifier.ai`;
+
+  const problemIcons = [Eye, ClipboardList, Users, Wrench, AlertTriangle];
+  const trackDefs = [
+    { key: 'cyber', icon: ShieldAlert, colorClass: 'from-blue-600 to-blue-800' },
+    { key: 'esg', icon: Leaf, colorClass: 'from-emerald-600 to-emerald-800' },
+    { key: 'compliance', icon: Scale, colorClass: 'from-violet-600 to-violet-800' },
+  ];
+  const tierIcons = [GraduationCap, Layers, Zap];
+  const deliverableIcons = [ClipboardList, FileCheck, BarChart3, Shield, Target, Lock];
+  const processIcons = [MessageSquare, Target, GraduationCap, Zap];
 
   return (
     <>
@@ -70,8 +77,8 @@ const TrainingLanding = () => {
 
       {/* ─── 1. HERO ─── */}
       <section className="relative bg-slate-950 overflow-hidden pt-20 md:pt-12">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.15),transparent_60%)]" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.15),transparent_60%)] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -112,6 +119,7 @@ const TrainingLanding = () => {
               <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
             </div>
 
+            {/* Right — proof block */}
             <div className="hidden lg:block">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">
@@ -175,13 +183,7 @@ const TrainingLanding = () => {
           </div>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: Eye, idx: 0 },
-              { icon: ClipboardList, idx: 1 },
-              { icon: Users, idx: 2 },
-              { icon: Wrench, idx: 3 },
-              { icon: AlertTriangle, idx: 4 },
-            ].map(({ icon: Icon, idx }) => (
+            {problemIcons.map((Icon, idx) => (
               <div key={idx} className={`p-6 rounded-xl border border-border bg-card ${idx === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                 <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
                   <Icon className="h-5 w-5 text-destructive" />
@@ -207,11 +209,7 @@ const TrainingLanding = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {([
-              { key: 'cyber', icon: ShieldAlert, colorClass: 'from-blue-600 to-blue-800' },
-              { key: 'esg', icon: Leaf, colorClass: 'from-emerald-600 to-emerald-800' },
-              { key: 'compliance', icon: Scale, colorClass: 'from-violet-600 to-violet-800' },
-            ] as const).map((track) => {
+            {trackDefs.map((track) => {
               const Icon = track.icon;
               const topics = getArray(`training.tracks.${track.key}.topics`);
 
@@ -230,14 +228,12 @@ const TrainingLanding = () => {
                       </p>
                       <p className="text-sm text-foreground">{t(`training.tracks.${track.key}.audience`)}</p>
                     </div>
-
                     <div className="mb-4">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                         {t('training.tracks.labels.problem')}
                       </p>
                       <p className="text-sm text-foreground">{t(`training.tracks.${track.key}.problem`)}</p>
                     </div>
-
                     <div className="mb-4 flex-1">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
                         {t('training.tracks.labels.topics')}
@@ -251,14 +247,12 @@ const TrainingLanding = () => {
                         ))}
                       </ul>
                     </div>
-
                     <div className="mb-4">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                         {t('training.tracks.labels.deliverable')}
                       </p>
                       <p className="text-sm font-medium text-foreground">{t(`training.tracks.${track.key}.deliverable`)}</p>
                     </div>
-
                     <div className="mt-auto pt-4 border-t border-border">
                       <p className="text-sm font-semibold text-primary flex items-center gap-2">
                         <Zap className="h-4 w-4" />
@@ -286,11 +280,8 @@ const TrainingLanding = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {([
-              { icon: GraduationCap, idx: 0, highlight: false },
-              { icon: Layers, idx: 1, highlight: true },
-              { icon: Zap, idx: 2, highlight: false },
-            ] as const).map(({ icon: Icon, idx, highlight }) => {
+            {tierIcons.map((Icon, idx) => {
+              const highlight = idx === 1;
               const items = getArray(`training.model.tiers.${idx}.items`);
               return (
                 <div
@@ -342,9 +333,8 @@ const TrainingLanding = () => {
               {t('training.deliverables.subtitle')}
             </p>
           </div>
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[ClipboardList, FileCheck, BarChart3, Shield, Target, Lock].map((Icon, i) => (
+            {deliverableIcons.map((Icon, i) => (
               <div key={i} className="bg-card border border-border rounded-xl p-6 flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <Icon className="h-5 w-5 text-primary" />
@@ -367,23 +357,16 @@ const TrainingLanding = () => {
               {t('training.experts.subtitle')}
             </p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { initials: 'MK', idx: 0 },
-              { initials: 'AW', idx: 1 },
-              { initials: 'PZ', idx: 2 },
-            ].map(({ initials, idx }) => {
+            {['MK', 'AW', 'PZ'].map((initials, idx) => {
               const certs = getArray(`training.experts.people.${idx}.certs`);
               return (
                 <div key={idx} className="bg-card border border-border rounded-2xl p-6">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center mb-5 mx-auto">
                     <span className="text-2xl font-bold text-primary">{initials}</span>
                   </div>
-
                   <h3 className="text-lg font-bold text-foreground text-center">{t(`training.experts.people.${idx}.name`)}</h3>
                   <p className="text-sm text-primary font-medium text-center mb-4">{t(`training.experts.people.${idx}.role`)}</p>
-
                   <div className="space-y-3 text-sm">
                     <div>
                       <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.who')}</p>
@@ -398,13 +381,10 @@ const TrainingLanding = () => {
                       <p className="text-foreground">{t(`training.experts.people.${idx}.brings`)}</p>
                     </div>
                   </div>
-
                   <div className="mt-4 pt-4 border-t border-border">
                     <div className="flex flex-wrap gap-1.5">
                       {certs.map((cert, ci) => (
-                        <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">
-                          {cert}
-                        </span>
+                        <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">{cert}</span>
                       ))}
                     </div>
                   </div>
@@ -422,7 +402,6 @@ const TrainingLanding = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14">
               {t('training.proof.title')}
             </h2>
-
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="bg-card border border-border rounded-xl p-6">
@@ -431,7 +410,6 @@ const TrainingLanding = () => {
                 </div>
               ))}
             </div>
-
             <div className="bg-card border border-border rounded-2xl p-8 max-w-3xl mx-auto">
               <blockquote className="text-lg text-foreground italic leading-relaxed mb-4">
                 &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
@@ -461,29 +439,20 @@ const TrainingLanding = () => {
               {t('training.process.subtitle')}
             </p>
           </div>
-
           <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
-            {[
-              { num: '01', icon: MessageSquare },
-              { num: '02', icon: Target },
-              { num: '03', icon: GraduationCap },
-              { num: '04', icon: Zap },
-            ].map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <div key={i} className="relative text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <span className="text-xs font-bold text-primary">{step.num}</span>
-                  <h3 className="text-base font-bold text-foreground mt-1 mb-2">{t(`training.process.steps.${i}.title`)}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`training.process.steps.${i}.desc`)}</p>
-                  {i < 3 && (
-                    <ChevronRight className="hidden md:block absolute top-7 -right-3 h-5 w-5 text-border" />
-                  )}
+            {processIcons.map((Icon, i) => (
+              <div key={i} className="relative text-center">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Icon className="h-6 w-6 text-primary" />
                 </div>
-              );
-            })}
+                <span className="text-xs font-bold text-primary">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="text-base font-bold text-foreground mt-1 mb-2">{t(`training.process.steps.${i}.title`)}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t(`training.process.steps.${i}.desc`)}</p>
+                {i < 3 && (
+                  <ChevronRight className="hidden md:block absolute top-7 -right-3 h-5 w-5 text-border" />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -500,7 +469,6 @@ const TrainingLanding = () => {
       {/* ─── 11. FINAL CTA + CONTACT FORM ─── */}
       <section id="contact" className="relative py-16 md:py-24 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(221_83%_53%/0.15),transparent_60%)]" />
-
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
             <div>
@@ -510,7 +478,6 @@ const TrainingLanding = () => {
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
                 {t('training.finalCta.subtitle')}
               </p>
-
               <div className="space-y-4">
                 {[0, 1, 2].map((i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -519,16 +486,15 @@ const TrainingLanding = () => {
                   </div>
                 ))}
               </div>
-
               <p className="text-xs text-slate-500 mt-8">{t('training.finalCta.microcopy')}</p>
             </div>
 
+            {/* 2-step form */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               {formStep === 0 ? (
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">{t('training.form.step1.title')}</h3>
                   <p className="text-sm text-slate-400 mb-6">{t('training.form.step1.subtitle')}</p>
-
                   <div className="grid gap-3">
                     {(['cybersecurity', 'esg', 'compliance'] as const).map((area) => (
                       <button
@@ -559,28 +525,11 @@ const TrainingLanding = () => {
                   </button>
                   <h3 className="text-lg font-bold text-white mb-2">{t('training.form.step2.title')}</h3>
                   <p className="text-sm text-slate-400 mb-6">{t('training.form.step2.subtitle')}</p>
-
                   <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                    <input
-                      type="text"
-                      placeholder={t('training.form.fields.name')}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary"
-                    />
-                    <input
-                      type="email"
-                      placeholder={t('training.form.fields.email')}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary"
-                    />
-                    <input
-                      type="text"
-                      placeholder={t('training.form.fields.company')}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary"
-                    />
-                    <textarea
-                      placeholder={t('training.form.fields.message')}
-                      rows={3}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary resize-none"
-                    />
+                    <input type="text" placeholder={t('training.form.fields.name')} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" />
+                    <input type="email" placeholder={t('training.form.fields.email')} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" />
+                    <input type="text" placeholder={t('training.form.fields.company')} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" />
+                    <textarea placeholder={t('training.form.fields.message')} rows={3} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary resize-none" />
                     <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6">
                       {t('training.form.submit')}
                     </Button>
