@@ -183,7 +183,26 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── 4. THREE TRAINING TRACKS ─── */}
+      {/* ─── TESTIMONIAL ─── */}
+      <section className="py-10 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="bg-card border border-border rounded-2xl p-8 max-w-3xl mx-auto">
+            <blockquote className="text-lg text-foreground italic leading-relaxed mb-4">
+              &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
+            </blockquote>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
+                {t('training.proof.testimonial.initials')}
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-foreground">{t('training.proof.testimonial.name')}</p>
+                <p className="text-xs text-muted-foreground">{t('training.proof.testimonial.role')}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="tracks" className="py-16 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">
