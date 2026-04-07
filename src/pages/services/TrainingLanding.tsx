@@ -1,15 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/seo/FAQSection';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import {
   Shield,
   ShieldAlert,
@@ -26,7 +19,6 @@ import {
   BarChart3,
   ClipboardList,
   Target,
-  Building2,
   UserCheck,
   BookOpen,
   Zap,
@@ -37,127 +29,6 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-/* ─── data ─── */
-
-const PROBLEMS = [
-  { icon: Eye, titleKey: 'training.problems.items.0.title', descKey: 'training.problems.items.0.desc' },
-  { icon: ClipboardList, titleKey: 'training.problems.items.1.title', descKey: 'training.problems.items.1.desc' },
-  { icon: Users, titleKey: 'training.problems.items.2.title', descKey: 'training.problems.items.2.desc' },
-  { icon: Wrench, titleKey: 'training.problems.items.3.title', descKey: 'training.problems.items.3.desc' },
-  { icon: AlertTriangle, titleKey: 'training.problems.items.4.title', descKey: 'training.problems.items.4.desc' },
-];
-
-const TRACKS = [
-  {
-    icon: ShieldAlert,
-    colorClass: 'from-blue-600 to-blue-800',
-    badgeColor: 'bg-blue-100 text-blue-800',
-    titleKey: 'training.tracks.cyber.title',
-    subtitleKey: 'training.tracks.cyber.subtitle',
-    audienceKey: 'training.tracks.cyber.audience',
-    problemKey: 'training.tracks.cyber.problem',
-    topicsKey: 'training.tracks.cyber.topics',
-    deliverableKey: 'training.tracks.cyber.deliverable',
-    resultKey: 'training.tracks.cyber.result',
-  },
-  {
-    icon: Leaf,
-    colorClass: 'from-emerald-600 to-emerald-800',
-    badgeColor: 'bg-emerald-100 text-emerald-800',
-    titleKey: 'training.tracks.esg.title',
-    subtitleKey: 'training.tracks.esg.subtitle',
-    audienceKey: 'training.tracks.esg.audience',
-    problemKey: 'training.tracks.esg.problem',
-    topicsKey: 'training.tracks.esg.topics',
-    deliverableKey: 'training.tracks.esg.deliverable',
-    resultKey: 'training.tracks.esg.result',
-  },
-  {
-    icon: Scale,
-    colorClass: 'from-violet-600 to-violet-800',
-    badgeColor: 'bg-violet-100 text-violet-800',
-    titleKey: 'training.tracks.compliance.title',
-    subtitleKey: 'training.tracks.compliance.subtitle',
-    audienceKey: 'training.tracks.compliance.audience',
-    problemKey: 'training.tracks.compliance.problem',
-    topicsKey: 'training.tracks.compliance.topics',
-    deliverableKey: 'training.tracks.compliance.deliverable',
-    resultKey: 'training.tracks.compliance.result',
-  },
-];
-
-const TIERS = [
-  {
-    icon: GraduationCap,
-    titleKey: 'training.model.tiers.0.title',
-    descKey: 'training.model.tiers.0.desc',
-    itemsKey: 'training.model.tiers.0.items',
-    highlight: false,
-  },
-  {
-    icon: Layers,
-    titleKey: 'training.model.tiers.1.title',
-    descKey: 'training.model.tiers.1.desc',
-    itemsKey: 'training.model.tiers.1.items',
-    highlight: true,
-  },
-  {
-    icon: Zap,
-    titleKey: 'training.model.tiers.2.title',
-    descKey: 'training.model.tiers.2.desc',
-    itemsKey: 'training.model.tiers.2.items',
-    highlight: false,
-  },
-];
-
-const DELIVERABLES = [
-  { icon: ClipboardList, key: 'training.deliverables.items.0' },
-  { icon: FileCheck, key: 'training.deliverables.items.1' },
-  { icon: BarChart3, key: 'training.deliverables.items.2' },
-  { icon: Shield, key: 'training.deliverables.items.3' },
-  { icon: Target, key: 'training.deliverables.items.4' },
-  { icon: Lock, key: 'training.deliverables.items.5' },
-];
-
-const EXPERTS = [
-  {
-    nameKey: 'training.experts.people.0.name',
-    roleKey: 'training.experts.people.0.role',
-    bioKey: 'training.experts.people.0.bio',
-    advisesKey: 'training.experts.people.0.advises',
-    bringsKey: 'training.experts.people.0.brings',
-    certsKey: 'training.experts.people.0.certs',
-    initials: 'MK',
-  },
-  {
-    nameKey: 'training.experts.people.1.name',
-    roleKey: 'training.experts.people.1.role',
-    bioKey: 'training.experts.people.1.bio',
-    advisesKey: 'training.experts.people.1.advises',
-    bringsKey: 'training.experts.people.1.brings',
-    certsKey: 'training.experts.people.1.certs',
-    initials: 'AW',
-  },
-  {
-    nameKey: 'training.experts.people.2.name',
-    roleKey: 'training.experts.people.2.role',
-    bioKey: 'training.experts.people.2.bio',
-    advisesKey: 'training.experts.people.2.advises',
-    bringsKey: 'training.experts.people.2.brings',
-    certsKey: 'training.experts.people.2.certs',
-    initials: 'PZ',
-  },
-];
-
-const PROCESS_STEPS = [
-  { num: '01', icon: MessageSquare, titleKey: 'training.process.steps.0.title', descKey: 'training.process.steps.0.desc' },
-  { num: '02', icon: Target, titleKey: 'training.process.steps.1.title', descKey: 'training.process.steps.1.desc' },
-  { num: '03', icon: GraduationCap, titleKey: 'training.process.steps.2.title', descKey: 'training.process.steps.2.desc' },
-  { num: '04', icon: Zap, titleKey: 'training.process.steps.3.title', descKey: 'training.process.steps.3.desc' },
-];
-
-/* ─── component ─── */
-
 const TrainingLanding = () => {
   const { t, currentLocale } = useLanguage();
   const [formStep, setFormStep] = useState(0);
@@ -166,15 +37,25 @@ const TrainingLanding = () => {
   const baseUrl = 'https://quantifier.ai';
   const pageUrl = `${baseUrl}/${currentLocale}/${currentLocale === 'pl' ? 'szkolenia-cyberbezpieczenstwo-dla-firm' : 'cybersecurity-training-for-companies'}`;
 
-  const faqs = Array.isArray(t('training.faq.items', { returnObjects: true }))
-    ? (t('training.faq.items', { returnObjects: true }) as { question: string; answer: string }[])
+  const rawFaqs = t('training.faq.items', { returnObjects: true });
+  const faqs = Array.isArray(rawFaqs)
+    ? (rawFaqs as { question: string; answer: string }[])
     : [];
 
+  const getArray = (key: string): string[] => {
+    const val = t(key, { returnObjects: true });
+    return Array.isArray(val) ? val as string[] : [];
+  };
+
+  const fullTitle = `${t('seo.training.title')} | Quantifier.ai`;
+
   return (
-    <PageTemplate
-      title={t('seo.training.title')}
-      description={t('seo.training.description')}
-    >
+    <>
+      <Helmet>
+        <title>{fullTitle}</title>
+        <meta name="description" content={t('seo.training.description')} />
+      </Helmet>
+
       {/* ─── STICKY CTA BAR ─── */}
       <div className="fixed top-16 left-0 right-0 z-40 bg-foreground/95 backdrop-blur-sm border-b border-border/20 hidden md:block">
         <div className="container mx-auto px-4 flex items-center justify-between h-12">
@@ -189,13 +70,11 @@ const TrainingLanding = () => {
 
       {/* ─── 1. HERO ─── */}
       <section className="relative bg-slate-950 overflow-hidden pt-20 md:pt-12">
-        {/* Decorative */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.15),transparent_60%)]" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — copy */}
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <Shield className="h-4 w-4 text-primary" />
@@ -212,7 +91,6 @@ const TrainingLanding = () => {
                 {t('training.hero.subtitle')}
               </p>
 
-              {/* Hero stats */}
               <div className="grid grid-cols-3 gap-4 mb-10">
                 {(['cyber', 'esg', 'compliance'] as const).map((key) => (
                   <div key={key} className="text-center p-3 rounded-lg bg-white/5 border border-white/10">
@@ -234,14 +112,11 @@ const TrainingLanding = () => {
               <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
             </div>
 
-            {/* Right — proof block */}
             <div className="hidden lg:block">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">
                   {t('training.hero.proof.title')}
                 </p>
-
-                {/* Credentials badges */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {['ISO 27001', 'NIS2 / KSC', 'DORA', 'CSRD / ESG', 'RODO / GDPR'].map((cert) => (
                     <span key={cert} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
@@ -249,8 +124,6 @@ const TrainingLanding = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* Value props */}
                 <div className="space-y-4">
                   {[0, 1, 2].map((i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -259,13 +132,11 @@ const TrainingLanding = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* Expert avatars placeholder */}
                 <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-4">
                   <div className="flex -space-x-3">
-                    {EXPERTS.map((e, i) => (
+                    {['MK', 'AW', 'PZ'].map((initials, i) => (
                       <div key={i} className="w-10 h-10 rounded-full bg-primary/20 border-2 border-slate-950 flex items-center justify-center text-xs font-bold text-primary">
-                        {e.initials}
+                        {initials}
                       </div>
                     ))}
                   </div>
@@ -304,18 +175,21 @@ const TrainingLanding = () => {
           </div>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROBLEMS.map((p, i) => {
-              const Icon = p.icon;
-              return (
-                <div key={i} className={`p-6 rounded-xl border border-border bg-card ${i === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
-                  <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
-                    <Icon className="h-5 w-5 text-destructive" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{t(p.titleKey)}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{t(p.descKey)}</p>
+            {[
+              { icon: Eye, idx: 0 },
+              { icon: ClipboardList, idx: 1 },
+              { icon: Users, idx: 2 },
+              { icon: Wrench, idx: 3 },
+              { icon: AlertTriangle, idx: 4 },
+            ].map(({ icon: Icon, idx }) => (
+              <div key={idx} className={`p-6 rounded-xl border border-border bg-card ${idx === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
+                  <Icon className="h-5 w-5 text-destructive" />
                 </div>
-              );
-            })}
+                <h3 className="font-semibold text-foreground mb-2">{t(`training.problems.items.${idx}.title`)}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t(`training.problems.items.${idx}.desc`)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -333,44 +207,43 @@ const TrainingLanding = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {TRACKS.map((track, idx) => {
+            {([
+              { key: 'cyber', icon: ShieldAlert, colorClass: 'from-blue-600 to-blue-800' },
+              { key: 'esg', icon: Leaf, colorClass: 'from-emerald-600 to-emerald-800' },
+              { key: 'compliance', icon: Scale, colorClass: 'from-violet-600 to-violet-800' },
+            ] as const).map((track) => {
               const Icon = track.icon;
-              const topics = t(track.topicsKey, { returnObjects: true });
-              const topicsList = Array.isArray(topics) ? topics as string[] : [];
+              const topics = getArray(`training.tracks.${track.key}.topics`);
 
               return (
-                <div key={idx} className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col">
-                  {/* Header stripe */}
+                <div key={track.key} className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col">
                   <div className={`bg-gradient-to-r ${track.colorClass} p-6`}>
                     <Icon className="h-8 w-8 text-white mb-3" />
-                    <h3 className="text-xl font-bold text-white">{t(track.titleKey)}</h3>
-                    <p className="text-sm text-white/80 mt-1">{t(track.subtitleKey)}</p>
+                    <h3 className="text-xl font-bold text-white">{t(`training.tracks.${track.key}.title`)}</h3>
+                    <p className="text-sm text-white/80 mt-1">{t(`training.tracks.${track.key}.subtitle`)}</p>
                   </div>
 
                   <div className="p-6 flex-1 flex flex-col">
-                    {/* Audience */}
                     <div className="mb-4">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                         {t('training.tracks.labels.audience')}
                       </p>
-                      <p className="text-sm text-foreground">{t(track.audienceKey)}</p>
+                      <p className="text-sm text-foreground">{t(`training.tracks.${track.key}.audience`)}</p>
                     </div>
 
-                    {/* Problem solved */}
                     <div className="mb-4">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                         {t('training.tracks.labels.problem')}
                       </p>
-                      <p className="text-sm text-foreground">{t(track.problemKey)}</p>
+                      <p className="text-sm text-foreground">{t(`training.tracks.${track.key}.problem`)}</p>
                     </div>
 
-                    {/* Topics */}
                     <div className="mb-4 flex-1">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
                         {t('training.tracks.labels.topics')}
                       </p>
                       <ul className="space-y-1.5">
-                        {topicsList.map((topic, ti) => (
+                        {topics.map((topic, ti) => (
                           <li key={ti} className="flex items-start gap-2 text-sm text-foreground">
                             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                             {topic}
@@ -379,19 +252,17 @@ const TrainingLanding = () => {
                       </ul>
                     </div>
 
-                    {/* Deliverable */}
                     <div className="mb-4">
                       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                         {t('training.tracks.labels.deliverable')}
                       </p>
-                      <p className="text-sm font-medium text-foreground">{t(track.deliverableKey)}</p>
+                      <p className="text-sm font-medium text-foreground">{t(`training.tracks.${track.key}.deliverable`)}</p>
                     </div>
 
-                    {/* Result */}
                     <div className="mt-auto pt-4 border-t border-border">
                       <p className="text-sm font-semibold text-primary flex items-center gap-2">
                         <Zap className="h-4 w-4" />
-                        {t(track.resultKey)}
+                        {t(`training.tracks.${track.key}.result`)}
                       </p>
                     </div>
                   </div>
@@ -402,7 +273,7 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── 5. MODEL — Training + Workshop + Implementation ─── */}
+      {/* ─── 5. MODEL ─── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">
@@ -415,40 +286,41 @@ const TrainingLanding = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {TIERS.map((tier, idx) => {
-              const Icon = tier.icon;
-              const items = t(tier.itemsKey, { returnObjects: true });
-              const itemsList = Array.isArray(items) ? items as string[] : [];
-
+            {([
+              { icon: GraduationCap, idx: 0, highlight: false },
+              { icon: Layers, idx: 1, highlight: true },
+              { icon: Zap, idx: 2, highlight: false },
+            ] as const).map(({ icon: Icon, idx, highlight }) => {
+              const items = getArray(`training.model.tiers.${idx}.items`);
               return (
                 <div
                   key={idx}
                   className={`relative rounded-2xl p-6 border flex flex-col ${
-                    tier.highlight
+                    highlight
                       ? 'border-primary bg-primary/5 shadow-lg shadow-primary/10'
                       : 'border-border bg-card'
                   }`}
                 >
-                  {tier.highlight && (
+                  {highlight && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-primary-foreground text-xs font-bold rounded-full">
                       {t('training.model.popular')}
                     </div>
                   )}
-                  <Icon className={`h-8 w-8 mb-4 ${tier.highlight ? 'text-primary' : 'text-muted-foreground'}`} />
-                  <h3 className="text-lg font-bold text-foreground mb-2">{t(tier.titleKey)}</h3>
-                  <p className="text-sm text-muted-foreground mb-6">{t(tier.descKey)}</p>
+                  <Icon className={`h-8 w-8 mb-4 ${highlight ? 'text-primary' : 'text-muted-foreground'}`} />
+                  <h3 className="text-lg font-bold text-foreground mb-2">{t(`training.model.tiers.${idx}.title`)}</h3>
+                  <p className="text-sm text-muted-foreground mb-6">{t(`training.model.tiers.${idx}.desc`)}</p>
                   <ul className="space-y-2 flex-1">
-                    {itemsList.map((item, ii) => (
+                    {items.map((item, ii) => (
                       <li key={ii} className="flex items-start gap-2 text-sm text-foreground">
-                        <CheckCircle2 className={`h-4 w-4 mt-0.5 shrink-0 ${tier.highlight ? 'text-primary' : 'text-muted-foreground'}`} />
+                        <CheckCircle2 className={`h-4 w-4 mt-0.5 shrink-0 ${highlight ? 'text-primary' : 'text-muted-foreground'}`} />
                         {item}
                       </li>
                     ))}
                   </ul>
                   <Button
                     asChild
-                    className={`mt-6 w-full ${tier.highlight ? 'bg-primary text-primary-foreground' : ''}`}
-                    variant={tier.highlight ? 'default' : 'outline'}
+                    className={`mt-6 w-full ${highlight ? 'bg-primary text-primary-foreground' : ''}`}
+                    variant={highlight ? 'default' : 'outline'}
                   >
                     <a href="#contact">{t('training.cta.primary')}</a>
                   </Button>
@@ -459,7 +331,7 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── 6. DELIVERABLES — What you get after ─── */}
+      {/* ─── 6. DELIVERABLES ─── */}
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">
@@ -472,17 +344,14 @@ const TrainingLanding = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {DELIVERABLES.map((d, i) => {
-              const Icon = d.icon;
-              return (
-                <div key={i} className="bg-card border border-border rounded-xl p-6 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <p className="text-sm text-foreground font-medium leading-relaxed">{t(d.key)}</p>
+            {[ClipboardList, FileCheck, BarChart3, Shield, Target, Lock].map((Icon, i) => (
+              <div key={i} className="bg-card border border-border rounded-xl p-6 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Icon className="h-5 w-5 text-primary" />
                 </div>
-              );
-            })}
+                <p className="text-sm text-foreground font-medium leading-relaxed">{t(`training.deliverables.items.${i}`)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -500,46 +369,48 @@ const TrainingLanding = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {EXPERTS.map((expert, idx) => (
-              <div key={idx} className="bg-card border border-border rounded-2xl p-6">
-                {/* Avatar */}
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center mb-5 mx-auto">
-                  <span className="text-2xl font-bold text-primary">{expert.initials}</span>
-                </div>
+            {[
+              { initials: 'MK', idx: 0 },
+              { initials: 'AW', idx: 1 },
+              { initials: 'PZ', idx: 2 },
+            ].map(({ initials, idx }) => {
+              const certs = getArray(`training.experts.people.${idx}.certs`);
+              return (
+                <div key={idx} className="bg-card border border-border rounded-2xl p-6">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center mb-5 mx-auto">
+                    <span className="text-2xl font-bold text-primary">{initials}</span>
+                  </div>
 
-                <h3 className="text-lg font-bold text-foreground text-center">{t(expert.nameKey)}</h3>
-                <p className="text-sm text-primary font-medium text-center mb-4">{t(expert.roleKey)}</p>
+                  <h3 className="text-lg font-bold text-foreground text-center">{t(`training.experts.people.${idx}.name`)}</h3>
+                  <p className="text-sm text-primary font-medium text-center mb-4">{t(`training.experts.people.${idx}.role`)}</p>
 
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.who')}</p>
-                    <p className="text-foreground">{t(expert.bioKey)}</p>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.who')}</p>
+                      <p className="text-foreground">{t(`training.experts.people.${idx}.bio`)}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.advises')}</p>
+                      <p className="text-foreground">{t(`training.experts.people.${idx}.advises`)}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.brings')}</p>
+                      <p className="text-foreground">{t(`training.experts.people.${idx}.brings`)}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.advises')}</p>
-                    <p className="text-foreground">{t(expert.advisesKey)}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.brings')}</p>
-                    <p className="text-foreground">{t(expert.bringsKey)}</p>
+
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <div className="flex flex-wrap gap-1.5">
+                      {certs.map((cert, ci) => (
+                        <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">
+                          {cert}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* Certs */}
-                <div className="mt-4 pt-4 border-t border-border">
-                  <div className="flex flex-wrap gap-1.5">
-                    {(Array.isArray(t(expert.certsKey, { returnObjects: true }))
-                      ? (t(expert.certsKey, { returnObjects: true }) as string[])
-                      : []
-                    ).map((cert, ci) => (
-                      <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">
-                        {cert}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -561,10 +432,9 @@ const TrainingLanding = () => {
               ))}
             </div>
 
-            {/* Testimonial */}
             <div className="bg-card border border-border rounded-2xl p-8 max-w-3xl mx-auto">
               <blockquote className="text-lg text-foreground italic leading-relaxed mb-4">
-                "{t('training.proof.testimonial.quote')}"
+                &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
               </blockquote>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
@@ -580,7 +450,7 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── 9. HOW WE WORK — 4 steps ─── */}
+      {/* ─── 9. HOW WE WORK ─── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">
@@ -593,7 +463,12 @@ const TrainingLanding = () => {
           </div>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
-            {PROCESS_STEPS.map((step, i) => {
+            {[
+              { num: '01', icon: MessageSquare },
+              { num: '02', icon: Target },
+              { num: '03', icon: GraduationCap },
+              { num: '04', icon: Zap },
+            ].map((step, i) => {
               const Icon = step.icon;
               return (
                 <div key={i} className="relative text-center">
@@ -601,9 +476,9 @@ const TrainingLanding = () => {
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
                   <span className="text-xs font-bold text-primary">{step.num}</span>
-                  <h3 className="text-base font-bold text-foreground mt-1 mb-2">{t(step.titleKey)}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{t(step.descKey)}</p>
-                  {i < PROCESS_STEPS.length - 1 && (
+                  <h3 className="text-base font-bold text-foreground mt-1 mb-2">{t(`training.process.steps.${i}.title`)}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`training.process.steps.${i}.desc`)}</p>
+                  {i < 3 && (
                     <ChevronRight className="hidden md:block absolute top-7 -right-3 h-5 w-5 text-border" />
                   )}
                 </div>
@@ -628,7 +503,6 @@ const TrainingLanding = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-            {/* Left — copy */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {t('training.finalCta.title')}
@@ -649,7 +523,6 @@ const TrainingLanding = () => {
               <p className="text-xs text-slate-500 mt-8">{t('training.finalCta.microcopy')}</p>
             </div>
 
-            {/* Right — 2-step form */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               {formStep === 0 ? (
                 <div>
@@ -719,7 +592,7 @@ const TrainingLanding = () => {
           </div>
         </div>
       </section>
-    </PageTemplate>
+    </>
   );
 };
 
