@@ -91,6 +91,7 @@ import EventRegistrations from "./pages/admin/EventRegistrations";
 
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
+import CybersecurityTraining from "./pages/services/CybersecurityTraining";
 
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
