@@ -92,6 +92,9 @@ import EventRegistrations from "./pages/admin/EventRegistrations";
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
 
+// Training / Services
+import TrainingLanding from "./pages/services/TrainingLanding";
+
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
 import EventDetail from "./pages/events/EventDetail";
