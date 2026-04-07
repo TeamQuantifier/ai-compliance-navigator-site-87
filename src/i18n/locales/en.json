@@ -4133,10 +4133,10 @@
     },
     "frameworks": {
       "title": "Compliance Frameworks",
-      "description": "Quantifier.ai supports multiple compliance frameworks: SOC 2, ISO 27001, GDPR, NIS II, DORA, ESG, and more. Manage all your regulatory requirements in one platform.",
+      "description": "Manage SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG compliance in one AI-powered platform. Automate evidence collection and audit readiness.",
       "cybersecurity": {
         "title": "Cybersecurity Compliance Frameworks",
-        "description": "Master cybersecurity compliance with SOC 2, NIS II, and NIST frameworks. AI-powered automation for security controls, risk assessment, and continuous monitoring.",
+        "description": "SOC 2, NIS2, and NIST compliance automation. AI-powered security controls, risk assessment, and continuous monitoring in one platform.",
         "nisII": {
           "title": "NIS2 Compliance Software | Directive Implementation",
           "description": "Meet NIS2 requirements with automated compliance management. Risk assessment, incident reporting, and supply chain security in one platform."

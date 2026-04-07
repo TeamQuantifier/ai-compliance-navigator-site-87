@@ -3905,14 +3905,14 @@
       "description": "Automatyczne zbieranie dowodów, ciągły monitoring, raporty gotowe do audytu. Zobacz wszystkie funkcje platformy compliance Quantifier.ai.",
       "overview": {
         "title": "Przegląd Produktu - Platforma GRC oparta na AI",
-        "description": "Kompleksowy przegląd platformy GRC opartej na AI od Quantifier.ai. Poznaj wszystkie funkcje automatyzacji compliance, zarządzania ryzykiem i standardów regulacyjnych."
+        "description": "Przegląd platformy GRC od Quantifier.ai. Automatyzacja compliance, zarządzanie ryzykiem i zgodność z ISO 27001, SOC 2, NIS2 i DORA."
       },
       "complianceOfficer": {
         "title": "AI Compliance Officer - Automatyczny Monitoring Zgodności",
-        "description": "Poznaj swojego AI Compliance Officer - automatyczny monitoring zgodności, eksperckie wsparcie i proaktywne zarządzanie ryzykiem oparte na sztucznej inteligencji."
+        "description": "AI Compliance Officer — automatyczny monitoring zgodności, eksperckie wsparcie i proaktywne zarządzanie ryzykiem oparte na AI."
       },
       "analyticsDashboards": {
-        "title": "Dashboardy Analityczne - Wgląd w Compliance w Czasie Rzeczywistym",
+        "title": "Dashboardy Analityczne - Compliance w Czasie Rzeczywistym",
         "description": "Analityka compliance w czasie rzeczywistym i wglądy oparte na AI. Interaktywne dashboardy do monitorowania, raportowania i podejmowania decyzji."
       },
       "taskDataManagement": {
@@ -3933,7 +3933,7 @@
       },
       "apiIntegrations": {
         "title": "Integracje API - Bezproblemowa Łączność",
-        "description": "Bezproblemowe integracje API z istniejącymi narzędziami i systemami. Połącz Quantifier.ai ze swoim stosem technologicznym dla ujednoliconego zarządzania compliance."
+        "description": "Integracje API z istniejącymi narzędziami. Połącz Quantifier.ai ze swoim stosem technologicznym dla ujednoliconego zarządzania compliance."
       }
     },
     "plans": {
@@ -3954,7 +3954,7 @@
     },
     "frameworks": {
       "title": "Standardy Compliance",
-      "description": "Quantifier.ai wspiera wiele standardów compliance: SOC 2, ISO 27001, RODO, NIS II, DORA, ESG i więcej. Zarządzaj wszystkimi wymogami regulacyjnymi w jednej platformie.",
+      "description": "SOC 2, ISO 27001, RODO, NIS2, DORA i ESG — zarządzaj wszystkimi wymogami regulacyjnymi w jednej platformie opartej na AI.",
       "cybersecurity": {
         "title": "Standardy Cyberbezpieczeństwa",
         "description": "Opanuj zgodność z SOC 2, NIS II i NIST. Automatyzacja oparta na AI dla kontroli bezpieczeństwa, oceny ryzyka i ciągłego monitoringu.",
@@ -4010,7 +4010,7 @@
     },
     "byRoles": {
       "title": "Rozwiązania według Ról",
-      "description": "Dostosowane rozwiązania compliance dla Menedżerów, Współpracowników i Audytorów. Quantifier.ai zapewnia dostęp oparty na rolach i workflow dla każdego członka zespołu."
+      "description": "Rozwiązania compliance dla Menedżerów, Współpracowników i Audytorów. Dostęp oparty na rolach i dedykowane workflow dla każdego członka zespołu."
     },
     "successStories": {
       "title": "Historie Sukcesu Klientów",
