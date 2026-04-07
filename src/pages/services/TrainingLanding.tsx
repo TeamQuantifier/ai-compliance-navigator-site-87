@@ -117,6 +117,21 @@ const TrainingLanding = () => {
               </div>
 
               <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
+
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <blockquote className="text-sm text-slate-300 italic leading-relaxed mb-3">
+                  &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
+                </blockquote>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-xs font-bold text-primary">
+                    {t('training.proof.testimonial.initials')}
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-slate-200">{t('training.proof.testimonial.name')}</p>
+                    <p className="text-xs text-slate-500">{t('training.proof.testimonial.role')}</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right — proof block */}
@@ -183,25 +198,6 @@ const TrainingLanding = () => {
         </div>
       </section>
 
-      {/* ─── TESTIMONIAL ─── */}
-      <section className="py-10 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="bg-card border border-border rounded-2xl p-8 max-w-3xl mx-auto">
-            <blockquote className="text-lg text-foreground italic leading-relaxed mb-4">
-              &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
-            </blockquote>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                {t('training.proof.testimonial.initials')}
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">{t('training.proof.testimonial.name')}</p>
-                <p className="text-xs text-muted-foreground">{t('training.proof.testimonial.role')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ─── CONFIGURATOR ─── */}
       <section id="tracks" className="py-16 md:py-24 bg-muted/50">
