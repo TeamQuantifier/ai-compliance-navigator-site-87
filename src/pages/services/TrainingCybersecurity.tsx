@@ -182,7 +182,7 @@ const TrainingCybersecurity = () => {
                 <CollapsibleContent>
                   <div className="px-5 pb-5 pt-2 ml-14">
                     <ul className="space-y-2">
-                      {(t(`trainingCyber.agenda.items.${block.key}.topics`, { returnObjects: true }) as string[]).map((topic, i) => (
+                      {(Array.isArray(t(`trainingCyber.agenda.items.${block.key}.topics`, { returnObjects: true })) ? t(`trainingCyber.agenda.items.${block.key}.topics`, { returnObjects: true }) as string[] : []).map((topic, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                           <span>{topic}</span>
