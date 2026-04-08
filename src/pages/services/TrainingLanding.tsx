@@ -38,7 +38,7 @@ const expertsList = [
 ];
 const TrainingLanding = () => {
   const { t, currentLocale } = useLanguage();
-  const [formStep, setFormStep] = useState(0);
+  
   const [selectedArea, setSelectedArea] = useState('');
   const [selectedAudience, setSelectedAudience] = useState<'executive' | 'operational' | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<'cyber' | 'esg' | 'compliance' | null>(null);
