@@ -164,6 +164,45 @@ const Gs1Polska = () => {
           </div>
         </section>
 
+        {/* How it works */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t('gs1.howItWorks.title')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t('gs1.howItWorks.subtitle')}
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {[
+              { step: 1, titleKey: 'gs1.howItWorks.step1.title', descKey: 'gs1.howItWorks.step1.desc', img: '/images/gs1/step-gtin.png' },
+              { step: 2, titleKey: 'gs1.howItWorks.step2.title', descKey: 'gs1.howItWorks.step2.desc', img: '/images/gs1/step-flowchart.png' },
+              { step: 3, titleKey: 'gs1.howItWorks.step3.title', descKey: 'gs1.howItWorks.step3.desc', img: '/images/gs1/step-scenarios.png' },
+              { step: 4, titleKey: 'gs1.howItWorks.step4.title', descKey: 'gs1.howItWorks.step4.desc', img: '/images/gs1/step-passport.png' },
+            ].map((s, i) => (
+              <div key={s.step} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
+                <div className="md:w-1/2 space-y-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
+                    {s.step}
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">{t(s.titleKey)}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{t(s.descKey)}</p>
+                </div>
+                <div className="md:w-1/2">
+                  <img
+                    src={s.img}
+                    alt={t(s.titleKey)}
+                    className="rounded-xl border border-border shadow-lg w-full"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Product Passport Section */}
         <section className="mb-20">
           <div className="text-center mb-12">
