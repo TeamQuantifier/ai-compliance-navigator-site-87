@@ -3331,6 +3331,10 @@
           "description": "Implementujte ISO 9001 QMS s Quantifier.ai. Automatizované řízení kvality, dokumentace procesů a sledování neustálého zlepšování."
         }
       }
+    },
+    "gs1": {
+      "title": "GS1 Polska × Quantifier.ai — Produktový pas a uhlíková stopa",
+      "description": "Partnerství GS1 Polska a Quantifier.ai: Envirly LCA pro digitální produktový pas (DPP) a Envirly GHG pro vykazování emisí Scope 1 a 2."
     }
   },
   "grcPlatform": {
@@ -6724,6 +6728,72 @@
           ]
         }
       ]
+    }
+  },
+  "gs1": {
+    "hero": {
+      "title": "Produktový pas — Víte, z čeho se váš produkt skládá. Dokažte to světu.",
+      "subtitle": "S produktovým pasem Envirly získá každý váš výrobek vlastní digitální identitu — živý, auditovatelný záznam celé environmentální stopy.",
+      "cta": "Promluvte si s námi"
+    },
+    "partnership": {
+      "title": "Partnerství GS1 Polska × Quantifier.ai",
+      "p1": "Partnerství poskytuje nástroj Envirly LCA pro produktový pas kompatibilní s DPP, kde se data integrují se systémem GS1.",
+      "p2": "Envirly GHG navíc umožňuje vykazování emisí skleníkových plynů v rozsahu 1 a 2 s plnou integrací do infrastruktury GS1.",
+      "dppLabel": "Produktový pas",
+      "ghgLabel": "Emise Scope 1 a 2",
+      "membersLabel": "Členů systému GS1 v Polsku"
+    },
+    "quote": {
+      "text": "Toto je skvělý příklad toho, jak standardizace a technologie mohou podporovat malé a střední podniky při dosahování ambiciózních klimatických a sociálních cílů.",
+      "author": "CEO GS1 Polska",
+      "role": "GS1 Polska"
+    },
+    "passport": {
+      "title": "Proměňte každý produkt v ověřený environmentální příběh",
+      "subtitle": "Čistá, důvěryhodná, auditovatelná data — na dosah ruky, během minut.",
+      "hook1": "Zákazníci se ptají. Regulátoři požadují. Investoři sledují.",
+      "hook2": "S produktovým pasem Envirly získá každý váš výrobek vlastní digitální identitu.",
+      "noExcel": "Konec chaosu v Excelu",
+      "noConsultants": "Konec s drahými konzultanty",
+      "noGreenwashing": "Konec s greenwashingem"
+    },
+    "features": {
+      "digitalCard": {
+        "title": "Kompletní digitální karta pro každý produkt",
+        "desc": "Zaznamenávejte materiálové složení, uhlíkovou stopu, spotřebu energie, vody a další."
+      },
+      "scale": {
+        "title": "Postaveno pro škálování",
+        "desc": "Ať máte 5 produktových indexů nebo 5 000 — produktový pas roste s vaším katalogem."
+      },
+      "sharing": {
+        "title": "Vytvořeno pro sdílení",
+        "desc": "Vygenerujte zprávu pasu pro klienta jedním kliknutím."
+      },
+      "regulation": {
+        "title": "O krok napřed před předpisy EU o DPP",
+        "desc": "Nařízení EU o digitálním produktovém pasu přichází."
+      }
+    },
+    "business": {
+      "title": "Obchodní případ je jednoduchý",
+      "desc": "Firmy s ověřenými environmentálními daty produktů vyhrávají více B2B kontraktů.",
+      "b2b": "Více B2B kontraktů",
+      "esg": "Lepší vyjednávání s ESG investory",
+      "dueDiligence": "Snížení nákladů due diligence"
+    },
+    "audience": {
+      "title": "Pro koho je to určeno",
+      "manufacturers": "Výrobci, kteří musí rychle reagovat na dotazníky udržitelnosti",
+      "sustainability": "Týmy pro udržitelnost unavené vytvářením LCA modelů od nuly",
+      "compliance": "Manažeři produktu a compliance potřebující jeden zdroj pravdy",
+      "sales": "Obchodníci, pro které má udržitelnost být argumentem uzavírajícím obchod"
+    },
+    "form": {
+      "title": "Pojďme si promluvit o vašem produktu",
+      "subtitle": "Zanechte zprávu — ozveme se do 24 hodin.",
+      "cta": "Odeslat zprávu"
     }
   }
 }
