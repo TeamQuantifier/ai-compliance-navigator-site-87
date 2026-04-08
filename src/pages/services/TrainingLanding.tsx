@@ -3,9 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/seo/FAQSection';
-import {
-  Shield,
-  ShieldAlert,
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
   Leaf,
   Scale,
   ArrowRight,
