@@ -92,10 +92,7 @@
     "knowledge": "Resources",
     "events": "Webinars & Events",
     "cybersecCheck": "Cybersec. Check",
-    "training": {
-      "title": "Training",
-      "href": "/cybersecurity-training-for-business"
-    }
+    "training": "Training"
   },
   "hero": {
     "title": "Platform and advisory",
