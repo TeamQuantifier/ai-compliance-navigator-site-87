@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { GtinImportMockup, LcaFlowchartMockup, ScenarioExplorerMockup, PassportEditorMockup } from '@/components/mockups/Gs1IntegrationMockups';
 import gs1Logo from '@/assets/gs1-logo.png';
+import martaPhoto from '@/assets/marta-szymborska.png';
 
 /* ─── brown palette tokens ─── */
 const brown = {
@@ -108,7 +109,7 @@ const Gs1Polska = () => {
             <div className="flex items-center gap-4 mb-8">
               <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brown.heroBadge}`}>
                 <Globe className="h-4 w-4" />
-                GS1 Polska × Quantifier.ai
+                GS1 Polska × Envirly by Quantifier.ai
               </span>
               <img src={gs1Logo} alt="GS1 Polska" className="h-12 w-auto bg-white rounded-lg px-2 py-1" />
             </div>
@@ -171,10 +172,8 @@ const Gs1Polska = () => {
               <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6 text-white">
                 &ldquo;{t('gs1.quote.text')}&rdquo;
               </p>
-              <footer className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-amber-800/40 flex items-center justify-center">
-                  <Users className="h-6 w-6 text-amber-200" />
-                </div>
+              <footer className="flex items-center gap-5">
+                <img src={martaPhoto} alt="dr Marta Szymborska" className="w-20 h-20 rounded-full object-cover border-2 border-amber-400/30" />
                 <div>
                   <cite className="not-italic font-bold text-lg text-white">{t('gs1.quote.author')}</cite>
                   <p className="text-white/60 text-sm">{t('gs1.quote.role')}</p>
