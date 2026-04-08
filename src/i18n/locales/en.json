@@ -6608,41 +6608,48 @@
       },
       "people": [
         {
-          "name": "Maciej Kowalski",
-          "role": "Lead Cybersecurity Consultant",
-          "bio": "15+ years in cybersecurity. Led NIS2 and ISO 27001 implementations in financial, energy and telecommunications sectors.",
-          "advises": "NIS2 implementations, ISMS design, inspection preparation, risk analysis and incident response.",
-          "brings": "Real inspection scenarios, proven procedure templates, hands-on risk analysis exercises.",
+          "name": "Klaudia Sałdan",
+          "role": "Lawyer | ESG & Compliance Expert",
+          "bio": "ESG and compliance expert specializing in environmental and social regulations.",
+          "advises": "ESG reporting, CSRD, EU Taxonomy, regulatory compliance",
+          "brings": "Practical experience in ESG legal advisory.",
           "certs": [
-            "CISM",
-            "ISO 27001 LA",
-            "CRISC",
-            "NIS2 Expert"
+            "ESG Expert",
+            "Compliance Specialist"
           ]
         },
         {
-          "name": "Anna Wiśniewska",
-          "role": "ESG & Sustainability Director",
-          "bio": "10+ years in ESG consulting and sustainability. Co-authored ESG reports for listed companies and capital groups.",
-          "advises": "CSRD/ESRS reporting, double materiality analysis, ESG governance and data verification.",
-          "brings": "Auditor verification experience, ready-to-use materiality matrices and data collection processes.",
+          "name": "Enrika Gawłowska-Nabożny",
+          "role": "Sustainability Reporting Expert",
+          "bio": "Lawyer and expert in sustainability reporting, EU Taxonomy, circular economy and human rights in the context of EU legislation and international standards (UN, OECD).",
+          "advises": "EU Taxonomy, CSRD/ESRS, circular economy",
+          "brings": "Deep knowledge of EU legislation and international standards.",
           "certs": [
-            "GRI Certified",
-            "ESRS Specialist",
-            "Sustainability Auditor"
+            "EU Taxonomy",
+            "CSRD/ESRS",
+            "Sustainability Reporting"
           ]
         },
         {
-          "name": "Piotr Zieliński",
-          "role": "GRC & Compliance Manager",
-          "bio": "12+ years in compliance and risk management. Built GRC systems in organizations from 200 to 5,000+ employees.",
-          "advises": "Internal control systems, regulation mapping, audit preparation and cross-compliance.",
-          "brings": "Proven GRC frameworks, audit playbooks, real case studies from Polish companies.",
+          "name": "Weronika Czaplewska",
+          "role": "VP & Co-founder, Quantifier.ai",
+          "bio": "Co-founder of Quantifier.ai. Responsible for product strategy.",
+          "advises": "Compliance strategy, process automation, GRC implementation",
+          "brings": "Product vision and experience building compliance tools.",
           "certs": [
-            "CCEP",
-            "ISO 31000",
-            "CRCM",
-            "DORA Specialist"
+            "GRC Platform",
+            "AI Compliance"
+          ]
+        },
+        {
+          "name": "Mateusz Masiak",
+          "role": "CEO & Co-founder, Quantifier.ai",
+          "bio": "President and co-founder of Quantifier.ai. Leader in building autonomous AI compliance systems.",
+          "advises": "Digital compliance transformation, GRC architecture, AI strategy",
+          "brings": "Experience building compliance platforms for hundreds of organizations.",
+          "certs": [
+            "AI & Compliance",
+            "GRC Architecture"
           ]
         }
       ]
