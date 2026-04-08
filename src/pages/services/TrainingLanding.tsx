@@ -525,93 +525,80 @@ const TrainingLanding = () => {
               <p className="text-xs text-slate-500 mt-8">{t('training.finalCta.microcopy')}</p>
             </div>
 
-            {/* 2-step form */}
+            {/* Contact form */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              {formStep === 0 ? (
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-2">{t('training.form.step1.title')}</h3>
-                  <p className="text-sm text-slate-400 mb-6">{t('training.form.step1.subtitle')}</p>
-                  <div className="grid gap-3">
-                    {(['cybersecurity', 'esg', 'compliance'] as const).map((area) => (
-                      <button
-                        key={area}
-                        onClick={() => { setSelectedArea(area); setFormStep(1); }}
-                        className={`flex items-center gap-3 p-4 rounded-xl border text-left transition-all ${
-                          selectedArea === area
-                            ? 'border-primary bg-primary/10'
-                            : 'border-white/10 hover:border-white/30 bg-white/5'
-                        }`}
-                      >
-                        {area === 'cybersecurity' && <ShieldAlert className="h-5 w-5 text-blue-400" />}
-                        {area === 'esg' && <Leaf className="h-5 w-5 text-emerald-400" />}
-                        {area === 'compliance' && <Scale className="h-5 w-5 text-violet-400" />}
-                        <div>
-                          <p className="text-sm font-semibold text-white">{t(`training.form.areas.${area}.title`)}</p>
-                          <p className="text-xs text-slate-400">{t(`training.form.areas.${area}.desc`)}</p>
-                        </div>
-                        <ArrowRight className="h-4 w-4 text-slate-500 ml-auto" />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div>
-                  <button onClick={() => setFormStep(0)} className="text-xs text-slate-400 hover:text-white mb-4 flex items-center gap-1">
-                    ← {t('training.form.back')}
+              <h3 className="text-lg font-bold text-white mb-2">{t('training.form.step2.title')}</h3>
+              <p className="text-sm text-slate-400 mb-6">{t('training.form.step2.subtitle')}</p>
+              
+              {/* Area selection */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {(['cybersecurity', 'esg', 'compliance'] as const).map((area) => (
+                  <button
+                    key={area}
+                    type="button"
+                    onClick={() => setSelectedArea(area)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-sm transition-all ${
+                      selectedArea === area
+                        ? 'border-primary bg-primary/20 text-white'
+                        : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'
+                    }`}
+                  >
+                    {area === 'cybersecurity' && <ShieldAlert className="h-4 w-4 text-blue-400" />}
+                    {area === 'esg' && <Leaf className="h-4 w-4 text-emerald-400" />}
+                    {area === 'compliance' && <Scale className="h-4 w-4 text-violet-400" />}
+                    {t(`training.form.areas.${area}.title`)}
                   </button>
-                  <h3 className="text-lg font-bold text-white mb-2">{t('training.form.step2.title')}</h3>
-                  <p className="text-sm text-slate-400 mb-6">{t('training.form.step2.subtitle')}</p>
-                  <form className="space-y-4" onSubmit={async (e) => {
-                    e.preventDefault();
-                    const trimmedName = contactName.trim();
-                    const trimmedEmail = contactEmail.trim().toLowerCase();
-                    const trimmedMessage = contactMessage.trim() || `Training inquiry: ${selectedArea}`;
-                    if (!trimmedName || !trimmedEmail) {
-                      toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
-                      return;
-                    }
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(trimmedEmail)) {
-                      toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
-                      return;
-                    }
-                    setContactLoading(true);
-                    try {
-                      const nameParts = trimmedName.split(' ');
-                      const firstName = nameParts[0];
-                      const lastName = nameParts.slice(1).join(' ') || '-';
-                      const { error } = await supabase.functions.invoke('contact-form', {
-                        body: {
-                          firstName,
-                          lastName,
-                          email: trimmedEmail,
-                          company: contactCompany.trim() || undefined,
-                          message: trimmedMessage,
-                          language: currentLocale,
-                          sourceUrl: window.location.href,
-                        },
-                      });
-                      if (error) throw error;
-                      toast({ title: t('contact.toast.messageSent'), description: t('contact.toast.messageSentDesc') });
-                      setContactName(''); setContactEmail(''); setContactCompany(''); setContactMessage('');
-                      setFormStep(0);
-                    } catch {
-                      toast({ title: t('contact.toast.failedToSend'), description: t('contact.toast.failedToSendDesc'), variant: 'destructive' });
-                    } finally {
-                      setContactLoading(false);
-                    }
-                  }}>
-                    <input type="text" placeholder={t('training.form.fields.name')} value={contactName} onChange={(e) => setContactName(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" required />
-                    <input type="email" placeholder={t('training.form.fields.email')} value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" required />
-                    <input type="text" placeholder={t('training.form.fields.company')} value={contactCompany} onChange={(e) => setContactCompany(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" />
-                    <textarea placeholder={t('training.form.fields.message')} rows={3} value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary resize-none" />
-                    <Button type="submit" disabled={contactLoading} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6">
-                      {contactLoading ? t('contact.sending') : t('training.form.submit')}
-                    </Button>
-                    <p className="text-xs text-slate-500 text-center">{t('training.form.privacy')}</p>
-                  </form>
-                </div>
-              )}
+                ))}
+              </div>
+
+              <form className="space-y-4" onSubmit={async (e) => {
+                e.preventDefault();
+                const trimmedName = contactName.trim();
+                const trimmedEmail = contactEmail.trim().toLowerCase();
+                const trimmedMessage = contactMessage.trim() || `Training inquiry: ${selectedArea}`;
+                if (!trimmedName || !trimmedEmail) {
+                  toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
+                  return;
+                }
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(trimmedEmail)) {
+                  toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
+                  return;
+                }
+                setContactLoading(true);
+                try {
+                  const nameParts = trimmedName.split(' ');
+                  const firstName = nameParts[0];
+                  const lastName = nameParts.slice(1).join(' ') || '-';
+                  const { error } = await supabase.functions.invoke('contact-form', {
+                    body: {
+                      firstName,
+                      lastName,
+                      email: trimmedEmail,
+                      company: contactCompany.trim() || undefined,
+                      message: trimmedMessage,
+                      language: currentLocale,
+                      sourceUrl: window.location.href,
+                    },
+                  });
+                  if (error) throw error;
+                  toast({ title: t('contact.toast.messageSent'), description: t('contact.toast.messageSentDesc') });
+                  setContactName(''); setContactEmail(''); setContactCompany(''); setContactMessage('');
+                } catch {
+                  toast({ title: t('contact.toast.failedToSend'), description: t('contact.toast.failedToSendDesc'), variant: 'destructive' });
+                } finally {
+                  setContactLoading(false);
+                }
+              }}>
+                <input type="text" placeholder={t('training.form.fields.name')} value={contactName} onChange={(e) => setContactName(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" required />
+                <input type="email" placeholder={t('training.form.fields.email')} value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" required />
+                <input type="text" placeholder={t('training.form.fields.company')} value={contactCompany} onChange={(e) => setContactCompany(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary" />
+                <textarea placeholder={t('training.form.fields.message')} rows={3} value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-primary resize-none" />
+                <Button type="submit" disabled={contactLoading} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6">
+                  {contactLoading ? t('contact.sending') : t('training.form.submit')}
+                </Button>
+                <p className="text-xs text-slate-500 text-center">{t('training.form.privacy')}</p>
+              </form>
             </div>
           </div>
         </div>
