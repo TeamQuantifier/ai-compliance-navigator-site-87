@@ -84,7 +84,8 @@
     "contact": "Kontakt",
     "knowledge": "Znalosti",
     "events": "Webináře a události",
-    "cybersecCheck": "Kybernetická kontrola"
+    "cybersecCheck": "Kybernetická kontrola",
+    "training": "Skoleni"
   },
   "hero": {
     "title": "Platforma a poradenství",
@@ -622,7 +623,8 @@
       "successStories": "Příběhy úspěchu",
       "blog": "Blog",
       "contact": "Kontakt",
-      "events": "Události"
+      "events": "Události",
+      "plans": "Ceniky"
     },
     "resources": {
       "title": "Zdroje"
@@ -6664,6 +6666,64 @@
         "heading": "Pripraveni videt Quantifier v akci?",
         "subheading": "Podivejte se, jak Quantifier dodava sjednoceny soulad napric EU regulacnimi a ESG frameworky."
       }
+    }
+  },
+  "training": {
+    "experts": {
+      "title": "Nasi lektori",
+      "subtitle": "Praktici se zkusenostmi z kontrol, auditu a implementaci.",
+      "labels": {
+        "who": "Kdo to je",
+        "advises": "V cem radi",
+        "brings": "Co prinasi"
+      },
+      "people": [
+        {
+          "name": "Klaudia Saldan",
+          "role": "Pravnicka | Expertka na ESG & Compliance",
+          "bio": "Expertka na ESG a compliance, specializujici se na environmentalni a socialni regulace.",
+          "advises": "ESG reporting, CSRD, EU taxonomie, regulatorni compliance",
+          "brings": "Prakticke zkusenosti v ESG pravnim poradenstvi.",
+          "certs": [
+            "ESG Expert",
+            "Compliance Specialist"
+          ]
+        },
+        {
+          "name": "Enrika Gawlowska-Nabozny",
+          "role": "Expertka na reporting udrzitelneho rozvoje",
+          "bio": "Pravnicka a expertka na reporting udrzitelneho rozvoje, EU Taxonomii a obehove hospodarstvi.",
+          "advises": "EU Taxonomie, CSRD/ESRS, obehove hospodarstvi",
+          "brings": "Hluboke znalosti legislativy EU a mezinarodnich standardu.",
+          "certs": [
+            "EU Taxonomy",
+            "CSRD/ESRS",
+            "Sustainability Reporting"
+          ]
+        },
+        {
+          "name": "Weronika Czaplewska",
+          "role": "VP & Co-founder, Quantifier.ai",
+          "bio": "Spoluzakladatelka Quantifier.ai. Zodpovedna za produktovou strategii.",
+          "advises": "Compliance strategie, automatizace procesu, implementace GRC",
+          "brings": "Produktova vize a zkusenosti s budovanim compliance nastroju.",
+          "certs": [
+            "GRC Platform",
+            "AI Compliance"
+          ]
+        },
+        {
+          "name": "Mateusz Masiak",
+          "role": "CEO & Co-founder, Quantifier.ai",
+          "bio": "Prezident a spoluzakladatel Quantifier.ai. Lidr v budovani autonomnich AI compliance systemu.",
+          "advises": "Digitalni transformace compliance, architektura GRC, AI strategie",
+          "brings": "Zkusenosti s budovanim compliance platforem pro stovky organizaci.",
+          "certs": [
+            "AI & Compliance",
+            "GRC Architecture"
+          ]
+        }
+      ]
     }
   }
 }

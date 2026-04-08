@@ -92,10 +92,7 @@
     "knowledge": "Resources",
     "events": "Webinars & Events",
     "cybersecCheck": "Cybersec. Check",
-    "training": {
-      "title": "Training",
-      "href": "/cybersecurity-training-for-business"
-    }
+    "training": "Training"
   },
   "hero": {
     "title": "Platform and advisory",
@@ -282,7 +279,8 @@
       "successStories": "Success Stories",
       "blog": "Blog",
       "contact": "Contact",
-      "events": "Events"
+      "events": "Events",
+      "plans": "Pricing"
     },
     "resources": {
       "title": "Resources"
@@ -4077,147 +4075,9 @@
     }
   },
   "seo": {
-    "index": {
-      "title": "AI Compliance Platform | ISO 27001, SOC 2, NIS2",
-      "description": "Automate compliance across ISO 27001, SOC 2, NIS2, GDPR & ESG with AI-native platform. Trusted by 250+ companies including BNP Paribas. Request a demo.",
-      "ogTitle": "Quantifier.ai — AI-Native Compliance Automation Platform",
-      "ogDescription": "Manage multi-framework compliance from one platform. AI-powered policy creation, task automation, and audit readiness."
-    },
-    "blog": {
-      "title": "Blog & Insights",
-      "description": "Latest articles, guides, and insights on compliance, GRC, cybersecurity, and regulatory frameworks from the Quantifier.ai team."
-    },
-    "product": {
-      "title": "Features | AI-Powered Compliance Automation",
-      "description": "Automated evidence collection, continuous monitoring, audit-ready reports. See all features of Quantifier.ai compliance platform.",
-      "overview": {
-        "title": "Product Overview - AI-Powered GRC Platform",
-        "description": "Complete overview of Quantifier.ai's AI-powered GRC platform. Explore all features for compliance automation, risk management, and regulatory frameworks."
-      },
-      "complianceOfficer": {
-        "title": "AI Compliance Officer - Automated Compliance Monitoring",
-        "description": "Meet your AI Compliance Officer - automated compliance monitoring, expert guidance, and proactive risk management powered by artificial intelligence."
-      },
-      "analyticsDashboards": {
-        "title": "Analytics Dashboards - Real-Time Compliance Insights",
-        "description": "Real-time compliance analytics and AI-powered insights. Interactive dashboards for monitoring, reporting, and decision-making across all frameworks."
-      },
-      "taskDataManagement": {
-        "title": "Task & Data Management - Compliance Workflow Hub",
-        "description": "Streamline compliance workflows with centralized task management. Organize, assign, and track compliance activities across your organization."
-      },
-      "riskAssessment": {
-        "title": "Risk Assessment - AI-Driven Risk Analysis",
-        "description": "AI-driven risk assessment and monitoring for proactive compliance. Identify, evaluate, and mitigate risks before they become issues."
-      },
-      "documentsManagement": {
-        "title": "Document Management - Compliance Documentation Hub",
-        "description": "Centralized document management for policies, procedures, and compliance evidence. Version control, audit trails, and secure storage."
-      },
-      "valueChain": {
-        "title": "Value Chain Management - Supply Chain Compliance",
-        "description": "End-to-end value chain compliance and sustainability tracking. Monitor suppliers, assess risks, and ensure regulatory compliance across your supply chain."
-      },
-      "apiIntegrations": {
-        "title": "API Integrations - Seamless Connectivity",
-        "description": "Seamless API integrations with your existing tools and systems. Connect Quantifier.ai to your tech stack for unified compliance management."
-      }
-    },
-    "plans": {
-      "title": "Pricing | Quantifier.ai Compliance Automation",
-      "description": "Flexible pricing for AI-powered compliance automation. Start free, scale as you grow. ISO 27001, SOC 2, NIS2 frameworks included."
-    },
-    "contact": {
-      "title": "Contact Quantifier.ai | Get a Demo of AI Compliance Platform",
-      "description": "Contact our team for a demo. See how Quantifier.ai automates ISO 27001, SOC 2, NIS2 compliance with AI-powered evidence collection."
-    },
-    "partners": {
-      "title": "Partner Network",
-      "description": "Join Quantifier.ai's global partner network. Collaborate with us to deliver AI-powered compliance solutions to organizations worldwide."
-    },
-    "about": {
-      "title": "About Us",
-      "description": "Learn about Quantifier.ai's mission to revolutionize compliance with AI. Our team combines deep regulatory expertise with cutting-edge technology."
-    },
-    "frameworks": {
-      "title": "Compliance Frameworks",
-      "description": "Manage SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG compliance in one AI-powered platform. Automate evidence collection and audit readiness.",
-      "cybersecurity": {
-        "title": "Cybersecurity Compliance Frameworks",
-        "description": "SOC 2, NIS2, and NIST compliance automation. AI-powered security controls, risk assessment, and continuous monitoring in one platform.",
-        "nisII": {
-          "title": "NIS2 Compliance Software | Directive Implementation",
-          "description": "Meet NIS2 requirements with automated compliance management. Risk assessment, incident reporting, and supply chain security in one platform."
-        },
-        "nist": {
-          "title": "NIST Cybersecurity Framework Compliance",
-          "description": "Implement NIST CSF with Quantifier.ai. Identify, Protect, Detect, Respond, Recover - all automated with AI-powered compliance management."
-        },
-        "soc": {
-          "title": "SOC 2 Automation Platform | Type I & II",
-          "description": "Achieve SOC 2 compliance faster with AI-driven evidence collection, policy management, and continuous monitoring. Trusted by 250+ organizations."
-        }
-      },
-      "informationSecurity": {
-        "title": "Information Security Frameworks",
-        "description": "ISO 27001, ISO 9001, and DORA compliance automation. Build robust information security management systems with AI-powered workflows.",
-        "iso27001": {
-          "title": "ISO 27001 Compliance Automation",
-          "description": "Automate ISO 27001 certification with AI. Policy management, risk assessment, evidence collection & audit preparation in one platform."
-        },
-        "iso9001": {
-          "title": "ISO 9001 Quality Management System",
-          "description": "Implement ISO 9001 QMS with Quantifier.ai. Automated quality management, process documentation, and continuous improvement tracking."
-        },
-        "dora": {
-          "title": "DORA Compliance - Digital Operational Resilience",
-          "description": "Meet DORA requirements with Quantifier.ai. ICT risk management, incident reporting, and third-party risk monitoring for financial entities."
-        }
-      },
-      "dataSecurity": {
-        "title": "Data Security & Privacy Frameworks",
-        "description": "GDPR, HIPAA, and CCPA compliance automation. Protect personal data and ensure privacy regulation compliance with AI-powered monitoring."
-      },
-      "environmental": {
-        "title": "Environmental Compliance Frameworks",
-        "description": "ISO 14001, LCA, Carbon Footprint, and Decarbonisation management. Track environmental impact and meet sustainability requirements with AI automation."
-      },
-      "esg": {
-        "title": "ESG Reporting & Compliance Platform | CSRD Ready",
-        "description": "Streamline ESG reporting with double materiality analysis, GHG tracking, and CSRD-compliant reports. Verified by TÜV NORD."
-      },
-      "governance": {
-        "title": "Governance & Legal Compliance",
-        "description": "Legal policies management and whistleblowing compliance. Ensure corporate governance and ethical business practices with automated workflows."
-      },
-      "productLevel": {
-        "title": "Product Level Compliance",
-        "description": "Digital Product Passport (DPP) and Life Cycle Assessment (LCA). Product-level sustainability and regulatory compliance tracking."
-      }
-    },
-    "byRoles": {
-      "title": "Solutions by Role",
-      "description": "Tailored compliance solutions for Managers, Contributors, and Auditors. Quantifier.ai provides role-based access and workflows for every team member."
-    },
-    "successStories": {
-      "title": "Customer Success Stories",
-      "description": "Discover how organizations achieve compliance excellence with Quantifier.ai. Real case studies and proven results from our clients."
-    },
     "training": {
-      "title": "Cybersecurity Training for Business | Quantifier.ai",
-      "description": "Professional cybersecurity training for organizations. NIS2, DORA, ISO 27001, security awareness. Certified programs, online and on-site."
-    },
-    "trainingCyber": {
-      "title": "NIS2 + ISO 27001 Training for Businesses | 8h with Roadmap | Quantifier",
-      "description": "1-day cybersecurity training: NIS2, ISO 27001, DORA. 5 modules, workshop with 3-6-12 month roadmap and quick wins. For boards, CISOs, and IT teams."
-    },
-    "trainingEsg": {
-      "title": "ESG and CSRD Training for Business | Quantifier",
-      "description": "ESG reporting, CSRD requirements and sustainability training. Practical knowledge for your organization."
-    },
-    "trainingCompliance": {
-      "title": "Compliance & Risk Management Training | Quantifier",
-      "description": "Compliance, GRC and risk management training. Prepare your organization for audits and inspections."
+      "title": "Cybersecurity, ESG & Compliance Training for Companies | Quantifier.ai",
+      "description": "We prepare companies for NIS2, ISO 27001, DORA, CSRD and audits. Training with implementation, tools and ready-to-use procedures. Book a consultation."
     }
   },
   "seoLanding": {
@@ -6558,182 +6418,355 @@
     }
   },
   "training": {
+    "stickyBar": "Corporate training — cybersecurity, ESG, compliance. Ready-to-use action systems.",
+    "cta": {
+      "primary": "Book a call",
+      "secondary": "See training tracks"
+    },
     "hero": {
       "badge": "Corporate Training",
-      "title": "Cybersecurity & Compliance Training for Organizations",
-      "subtitle": "Professional training programs on NIS2, DORA, ISO 27001, and security awareness. Prepare your team for regulatory requirements and cyber threats.",
-      "cta": "Request Training",
-      "ctaSecondary": "View Programs",
+      "title": "Training that turns regulatory obligations into a ready-to-use action system",
+      "subtitle": "We don't do slide decks. We prepare companies for obligations, inspections and real-world action — with procedures, tools and post-training support.",
+      "microcopy": "We respond within 24h · First consultation with no obligations",
       "stats": {
-        "participants": "trained participants",
-        "satisfaction": "satisfaction rate",
-        "programs": "training programs",
-        "frameworks": "supported frameworks"
+        "cyber": {
+          "value": "NIS2 / ISO",
+          "label": "Cybersecurity"
+        },
+        "esg": {
+          "value": "CSRD / ESG",
+          "label": "Sustainability"
+        },
+        "compliance": {
+          "value": "GRC",
+          "label": "Compliance & Risk"
+        }
+      },
+      "proof": {
+        "title": "Credentials & certifications",
+        "items": [
+          "Training + workshop + implementation of procedures and operational tools",
+          "Trainers with experience in NIS2 inspections and ISO 27001 audits",
+          "Ready-to-use templates, risk registries and incident playbooks"
+        ],
+        "experts": "Expert team with regulatory experience"
       }
     },
-    "programs": {
-      "title": "Training Programs",
-      "subtitle": "Comprehensive cybersecurity and compliance training — from regulations to practical skills.",
-      "items": {
-        "nis2Dora": {
-          "title": "NIS2 & DORA — Regulatory Requirements",
-          "description": "Practical training on NIS2 directive and DORA regulation requirements. Risk management, incident reporting, board accountability.",
-          "duration": "2 days / 16h"
+    "credibilityBar": [
+      "Training + implementation + tools",
+      "Practitioners with inspection experience",
+      "Ready-to-use procedures and templates",
+      "Post-training support"
+    ],
+    "problems": {
+      "title": "Why companies aren't ready",
+      "subtitle": "Most organizations are aware of their obligations but lack a system that allows them to act.",
+      "items": [
+        {
+          "title": "Low board-level awareness",
+          "desc": "The board knows the term 'NIS2' or 'ESG' but doesn't understand their personal obligations and liability under the regulations."
         },
-        "iso27001": {
-          "title": "ISO 27001 — Information Security Management",
-          "description": "Implementation and maintenance of ISO 27001-compliant ISMS. Risk analysis, security policies, certification audit preparation.",
-          "duration": "3 days / 24h"
+        {
+          "title": "Missing procedures and documentation",
+          "desc": "Security policies exist on paper but aren't implemented. No incident response procedures, risk registries or responsibility matrices."
         },
-        "awareness": {
-          "title": "Security Awareness for Employees",
-          "description": "Building security awareness among employees. Phishing, social engineering, secure remote work, data protection.",
-          "duration": "1 day / 8h"
+        {
+          "title": "No topic owner",
+          "desc": "Nobody in the organization owns compliance as a whole. Responsibility is scattered between IT, legal and operations."
         },
-        "riskManagement": {
-          "title": "Cybersecurity Risk Management",
-          "description": "Risk assessment and management methodologies. Threat identification, impact assessment, mitigation plans, and business continuity.",
-          "duration": "2 days / 16h"
+        {
+          "title": "No tools after training",
+          "desc": "Traditional training ends with slides. The company returns to the office without templates, checklists or tools for implementation."
         },
-        "incidentResponse": {
-          "title": "Security Incident Response",
-          "description": "Cybersecurity incident response procedures. Detection, analysis, crisis communication, regulatory reporting.",
-          "duration": "1 day / 8h"
-        },
-        "gdprPrivacy": {
-          "title": "GDPR & Data Privacy",
-          "description": "GDPR requirements training for employees and management. Data processing, data subject rights, DPIA, DPO role.",
-          "duration": "1 day / 8h"
+        {
+          "title": "Chaos between compliance and operations",
+          "desc": "Compliance requires, IT implements, but nobody coordinates. No shared language, priorities or action roadmap."
         }
+      ]
+    },
+    "tracks": {
+      "title": "Three training tracks",
+      "subtitle": "Each track is a complete program: from problem diagnosis, through knowledge, to ready-to-use tools and implementation.",
+      "labels": {
+        "audience": "Who it's for",
+        "problem": "Problem it solves",
+        "topics": "What you'll learn",
+        "deliverable": "What you get",
+        "result": "Business outcome"
+      },
+      "cyber": {
+        "title": "Cybersecurity",
+        "subtitle": "NIS2 · ISO 27001 · DORA",
+        "audience": "Board, CISO, IT/Security teams, cybersecurity officers",
+        "problem": "The company doesn't know what NIS2 obligations apply, who's responsible for what, and where to start implementation.",
+        "topics": [
+          "Board obligations under NIS2 and personal liability (Art. 20)",
+          "Risk analysis and threat registry per ISO 27001",
+          "Incident response procedure (24h/72h) and reporting",
+          "Supply chain security and supplier assessment",
+          "Policies and technical-organizational measures",
+          "Cross-mapping NIS2 → ISO 27001 → DORA"
+        ],
+        "deliverable": "Risk registry, incident procedures, 3-6-12 month roadmap, control checklists",
+        "result": "Company ready for NIS2 inspection and ISO 27001 audit"
+      },
+      "esg": {
+        "title": "ESG & Sustainability",
+        "subtitle": "CSRD · ESRS · EU Taxonomy",
+        "audience": "Board, CFOs, sustainability officers, reporting teams",
+        "problem": "The organization must report ESG but doesn't know what to measure, how to collect data, and which standards to apply.",
+        "topics": [
+          "CSRD reporting obligations and implementation timeline",
+          "ESRS standards — double materiality analysis",
+          "ESG data collection and value chain",
+          "EU Taxonomy and activity qualification",
+          "ESG governance — roles, processes, accountability",
+          "Preparation for auditor verification"
+        ],
+        "deliverable": "Materiality matrix, report templates, data collection process, ESRS checklists",
+        "result": "Organization ready for first CSRD-compliant ESG report"
+      },
+      "compliance": {
+        "title": "Compliance & Risk Management",
+        "subtitle": "GRC · Internal Controls · Audits",
+        "audience": "Compliance officers, risk managers, legal teams, management",
+        "problem": "The company has fragmented compliance processes, no internal control system and isn't prepared for audits.",
+        "topics": [
+          "Building a compliance system — roles, processes, escalation",
+          "Risk mapping and organizational impact assessment",
+          "Creating compliance policies and procedures",
+          "Internal control system and monitoring",
+          "Preparation for external audits",
+          "Cross-mapping regulations: NIS2, DORA, GDPR, ISO 27001"
+        ],
+        "deliverable": "Risk registry, policy templates, control matrix, audit playbooks",
+        "result": "Integrated compliance system ready for audits and inspections"
       }
     },
-    "audience": {
-      "title": "Who Are Our Trainings For?",
-      "subtitle": "Programs tailored to the knowledge level and needs of different groups within your organization.",
-      "items": {
-        "executives": {
-          "title": "Board & Senior Management",
-          "description": "Legal liability, cybersecurity oversight, strategic risk management."
+    "model": {
+      "title": "Engagement model",
+      "subtitle": "Choose your level of engagement — from training to full implementation with operational tools.",
+      "popular": "Most popular",
+      "tiers": [
+        {
+          "title": "Training",
+          "desc": "Intensive content program with materials and Q&A.",
+          "items": [
+            "1-day training (6-8h)",
+            "Training materials in PDF",
+            "Q&A session with expert",
+            "Certificate of completion",
+            "Access to recording (30 days)"
+          ]
         },
-        "complianceTeams": {
-          "title": "Compliance & GRC Teams",
-          "description": "Framework implementation, audit preparation, policy and procedure management."
+        {
+          "title": "Training + Workshop",
+          "desc": "Training with hands-on workshop using your organization's data.",
+          "items": [
+            "Everything from Training package",
+            "Workshop on company data (4h)",
+            "Mini gap analysis",
+            "Action roadmap for 3-6-12 months",
+            "Quick wins to implement immediately",
+            "Follow-up consultation (1h)"
+          ]
         },
-        "allEmployees": {
-          "title": "All Employees",
-          "description": "Building security culture — recognizing threats, safe habits, data protection."
-        },
-        "itSecurity": {
-          "title": "IT & Security Teams",
-          "description": "Advanced technical topics — incident response, risk analysis, security configuration."
+        {
+          "title": "Training + Implementation + Tools",
+          "desc": "Full program: knowledge, procedure implementation and tools for ongoing work.",
+          "items": [
+            "Everything from Workshop package",
+            "Implementation of key procedures",
+            "Ready-to-use policy and registry templates",
+            "Incident and audit playbooks",
+            "Access to Quantifier.ai platform",
+            "Expert support (3 months)",
+            "Compliance monitoring dashboard"
+          ]
         }
+      ]
+    },
+    "deliverables": {
+      "title": "What you get after training",
+      "subtitle": "We don't stop at slides. Every participant leaves with ready-to-implement tools.",
+      "items": [
+        "Compliance checklists — NIS2, ISO 27001, CSRD, GDPR with specific requirements to fulfil",
+        "Policy and procedure templates — ready-to-adapt security, data protection and compliance templates",
+        "Risk registries — structured registries with probability, impact assessment and assigned owners",
+        "Incident playbooks — response procedures with escalation, 24h/72h reporting and notification templates",
+        "Responsibility matrices (RACI) — clear role assignment: who decides, who implements, who supervises",
+        "Operational dashboard and workspace — compliance monitoring, tasks and documentation tool in Quantifier.ai"
+      ]
+    },
+    "experts": {
+      "title": "Your trainers",
+      "subtitle": "Practitioners with inspection, audit and implementation experience — not textbook theorists.",
+      "labels": {
+        "who": "Who they are",
+        "advises": "What they advise on",
+        "brings": "What they bring to training"
+      },
+      "people": [
+        {
+          "name": "Maciej Kowalski",
+          "role": "Lead Cybersecurity Consultant",
+          "bio": "15+ years in cybersecurity. Led NIS2 and ISO 27001 implementations in financial, energy and telecommunications sectors.",
+          "advises": "NIS2 implementations, ISMS design, inspection preparation, risk analysis and incident response.",
+          "brings": "Real inspection scenarios, proven procedure templates, hands-on risk analysis exercises.",
+          "certs": [
+            "CISM",
+            "ISO 27001 LA",
+            "CRISC",
+            "NIS2 Expert"
+          ]
+        },
+        {
+          "name": "Anna Wiśniewska",
+          "role": "ESG & Sustainability Director",
+          "bio": "10+ years in ESG consulting and sustainability. Co-authored ESG reports for listed companies and capital groups.",
+          "advises": "CSRD/ESRS reporting, double materiality analysis, ESG governance and data verification.",
+          "brings": "Auditor verification experience, ready-to-use materiality matrices and data collection processes.",
+          "certs": [
+            "GRI Certified",
+            "ESRS Specialist",
+            "Sustainability Auditor"
+          ]
+        },
+        {
+          "name": "Piotr Zieliński",
+          "role": "GRC & Compliance Manager",
+          "bio": "12+ years in compliance and risk management. Built GRC systems in organizations from 200 to 5,000+ employees.",
+          "advises": "Internal control systems, regulation mapping, audit preparation and cross-compliance.",
+          "brings": "Proven GRC frameworks, audit playbooks, real case studies from Polish companies.",
+          "certs": [
+            "CCEP",
+            "ISO 31000",
+            "CRCM",
+            "DORA Specialist"
+          ]
+        }
+      ]
+    },
+    "proof": {
+      "title": "Trust and results",
+      "stats": [
+        {
+          "value": "150+",
+          "label": "Organizations trained"
+        },
+        {
+          "value": "2,000+",
+          "label": "Training participants"
+        },
+        {
+          "value": "95%",
+          "label": "Would recommend"
+        }
+      ],
+      "testimonial": {
+        "quote": "After training with Quantifier.ai, our team implemented a complete incident management system within 3 months and passed the NIS2 inspection without remarks. This wasn't typical training — we got a ready system to work with.",
+        "initials": "JN",
+        "name": "Jakub Nowak",
+        "role": "CISO, energy sector company"
       }
     },
     "process": {
-      "title": "How Does It Work?",
-      "subtitle": "Four simple steps from needs assessment to team certification.",
-      "steps": {
-        "assess": {
-          "title": "Needs Assessment",
-          "description": "We diagnose your team's knowledge level and identify competency gaps."
+      "title": "How we work together",
+      "subtitle": "4 steps from first contact to a ready-to-use action system.",
+      "steps": [
+        {
+          "title": "Consultation",
+          "desc": "We discuss your company's challenges, regulations and goals. We tailor the program."
         },
-        "design": {
-          "title": "Program Design",
-          "description": "We create a dedicated training program tailored to your industry and company specifics."
+        {
+          "title": "Diagnosis",
+          "desc": "Short maturity quiz + documentation review. We identify gaps and priorities."
         },
-        "deliver": {
-          "title": "Training Delivery",
-          "description": "Workshops with practical exercises and industry-specific case studies."
+        {
+          "title": "Training",
+          "desc": "Intensive program with workshops on your organization's data. Theory → practice → plan."
         },
-        "certify": {
-          "title": "Certification",
-          "description": "Participants receive certificates confirming their acquired competencies."
+        {
+          "title": "Implementation",
+          "desc": "Ready procedures, templates and tools. Expert support for implementing quick wins."
         }
-      }
-    },
-    "benefits": {
-      "title": "Why Choose Our Training?",
-      "items": {
-        "regulatoryCompliance": "Compliance with NIS2, DORA, GDPR, and ISO 27001 — training developed by compliance practitioners.",
-        "reducedRisk": "Reduced risk of security incidents through a trained and aware team.",
-        "certifiedTeam": "Certificates confirming competencies — valuable during audits and regulatory reviews.",
-        "practicalSkills": "Practical skills, not just theory — workshops based on real-world scenarios.",
-        "customPrograms": "Programs tailored to your industry and organization size",
-        "ongoingSupport": "Post-training support — access to materials, consultations, and content updates.",
-        "experiencedTrainers": "Experienced trainers with hands-on industry experience",
-        "practicalApproach": "Practical approach — exercises, case studies, simulations",
-        "postTrainingSupport": "Post-training support and material access",
-        "certificationPaths": "Certification paths and competency development",
-        "flexibleFormats": "Flexible formats: on-site, online, or hybrid"
-      }
+      ]
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "items": {
-        "whoShouldAttend": {
-          "question": "Who should attend cybersecurity training?",
-          "answer": "Cybersecurity training is designed for all employees — from the board to operational staff. Programs are adapted to participants' knowledge level and role."
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "Who are the trainings for?",
+          "answer": "For companies that need to meet NIS2, ISO 27001, DORA, CSRD or GDPR requirements. We train boards, CISOs, IT teams, compliance officers and risk managers."
         },
-        "howLong": {
-          "question": "How long do the training sessions last?",
-          "answer": "Depending on the program, training lasts from 1 to 3 days (8-24h). We offer both intensive one-day workshops and comprehensive certification programs."
+        {
+          "question": "How long is the training?",
+          "answer": "Base training is 1 day (6-8h). Package with workshop is 1.5-2 days. Package with implementation spans 2-4 weeks."
         },
-        "onlineOrOnsite": {
-          "question": "Are trainings online or on-site?",
-          "answer": "We offer training in both formats — online (live) and on-site at your premises or a rented venue. A hybrid format is also available."
+        {
+          "question": "Is training online or on-site?",
+          "answer": "Both formats. On-site training at client's office or ours. Online training via platform with interactive workshops."
         },
-        "certification": {
-          "question": "Do participants receive certificates?",
-          "answer": "Yes, after completing the training and passing the final test, each participant receives a certificate confirming their acquired competencies."
+        {
+          "question": "Is the program tailored to our industry?",
+          "answer": "Yes — before training we do a short diagnosis and tailor examples, case studies and exercises to your sector and organization size."
         },
-        "pricing": {
-          "question": "How is training priced?",
-          "answer": "Pricing depends on the program, number of participants, and delivery format. Contact us for a customized quote tailored to your organization's needs."
+        {
+          "question": "Do participants get a certificate?",
+          "answer": "Yes, every participant receives a personal certificate of completion with information about scope and hours."
+        },
+        {
+          "question": "How does pricing work?",
+          "answer": "Price depends on chosen package (training / workshop / implementation), participant count and customization scope. Contact us — we'll prepare a custom offer within 24h."
+        },
+        {
+          "question": "Can I combine multiple tracks?",
+          "answer": "Absolutely. Many companies combine e.g. cybersecurity with compliance or ESG with governance. We design combined programs tailored to needs."
         }
-      }
+      ]
     },
-    "cta": {
-      "title": "Plan Training for Your Team",
-      "subtitle": "Contact us to discuss your organization's training needs. We'll prepare a dedicated program tailored to your requirements.",
-      "button": "Contact Us"
+    "finalCta": {
+      "title": "Prepare your company for regulatory obligations — start with a conversation",
+      "subtitle": "You're not buying a presentation. You're getting a complete system of competencies, tools and implementation that lets your company act immediately after training.",
+      "benefits": [
+        "No-obligation consultation — we'll discuss challenges and tailor the program",
+        "Offer within 24h — with scope, agenda and pricing",
+        "Possible to start within 2 weeks of confirmation"
+      ],
+      "microcopy": "Your data is safe. We use it solely to prepare a training offer."
     },
-    "hub": {
-      "stats": {
-        "programs": "training programs"
+    "form": {
+      "step1": {
+        "title": "Which area interests you?",
+        "subtitle": "Choose a track and we'll tailor the program to your needs."
       },
-      "learnMore": "Learn more",
-      "cards": {
-        "cyber": {
+      "step2": {
+        "title": "Leave your contact details",
+        "subtitle": "We'll get back to you within 24h with a program proposal."
+      },
+      "back": "Back to selection",
+      "areas": {
+        "cybersecurity": {
           "title": "Cybersecurity",
-          "subtitle": "NIS2 · ISO 27001 · DORA",
-          "description": "Comprehensive training on cybersecurity regulatory requirements and information security management systems.",
-          "points": {
-            "1": "NIS2 directive compliance",
-            "2": "ISO 27001 ISMS implementation",
-            "3": "Incident management & response"
-          }
+          "desc": "NIS2, ISO 27001, DORA, incident response"
         },
         "esg": {
           "title": "ESG & Sustainability",
-          "subtitle": "CSRD · GRI · Carbon Footprint",
-          "description": "Training on ESG reporting, CSRD requirements, and practical sustainability management for organizations.",
-          "points": {
-            "1": "CSRD/ESRS reporting compliance",
-            "2": "Carbon footprint calculation & reduction",
-            "3": "Double materiality assessment"
-          }
+          "desc": "CSRD, ESRS, taxonomy, reporting"
         },
         "compliance": {
           "title": "Compliance & Risk",
-          "subtitle": "GRC · Audit · Internal Controls",
-          "description": "Training programs on compliance management, risk analysis, and preparation for regulatory audits.",
-          "points": {
-            "1": "Building a compliance management system",
-            "2": "Risk assessment methodologies",
-            "3": "Audit and inspection readiness"
-          }
+          "desc": "GRC, internal controls, audits, policies"
         }
-      }
+      },
+      "fields": {
+        "name": "Full name",
+        "email": "Work email address",
+        "company": "Company name",
+        "message": "Briefly describe your training needs (optional)"
+      },
+      "submit": "Send inquiry",
+      "privacy": "By submitting this form, you agree to data processing for the purpose of preparing an offer."
     }
   },
   "trainingCyber": {
@@ -7179,332 +7212,6 @@
       "title": "Build compliance competencies in your organization",
       "subtitle": "Contact us to discuss a compliance and risk management training program.",
       "button": "Request training"
-    }
-  },
-  "seo": {
-    "training": {
-      "title": "Cybersecurity, ESG & Compliance Training for Companies | Quantifier.ai",
-      "description": "We prepare companies for NIS2, ISO 27001, DORA, CSRD and audits. Training with implementation, tools and ready-to-use procedures. Book a consultation."
-    }
-  },
-  "training": {
-    "stickyBar": "Corporate training — cybersecurity, ESG, compliance. Ready-to-use action systems.",
-    "cta": {
-      "primary": "Book a call",
-      "secondary": "See training tracks"
-    },
-    "hero": {
-      "badge": "Corporate Training",
-      "title": "Training that turns regulatory obligations into a ready-to-use action system",
-      "subtitle": "We don't do slide decks. We prepare companies for obligations, inspections and real-world action — with procedures, tools and post-training support.",
-      "microcopy": "We respond within 24h · First consultation with no obligations",
-      "stats": {
-        "cyber": { "value": "NIS2 / ISO", "label": "Cybersecurity" },
-        "esg": { "value": "CSRD / ESG", "label": "Sustainability" },
-        "compliance": { "value": "GRC", "label": "Compliance & Risk" }
-      },
-      "proof": {
-        "title": "Credentials & certifications",
-        "items": [
-          "Training + workshop + implementation of procedures and operational tools",
-          "Trainers with experience in NIS2 inspections and ISO 27001 audits",
-          "Ready-to-use templates, risk registries and incident playbooks"
-        ],
-        "experts": "Expert team with regulatory experience"
-      }
-    },
-    "credibilityBar": [
-      "Training + implementation + tools",
-      "Practitioners with inspection experience",
-      "Ready-to-use procedures and templates",
-      "Post-training support"
-    ],
-    "problems": {
-      "title": "Why companies aren't ready",
-      "subtitle": "Most organizations are aware of their obligations but lack a system that allows them to act.",
-      "items": [
-        {
-          "title": "Low board-level awareness",
-          "desc": "The board knows the term 'NIS2' or 'ESG' but doesn't understand their personal obligations and liability under the regulations."
-        },
-        {
-          "title": "Missing procedures and documentation",
-          "desc": "Security policies exist on paper but aren't implemented. No incident response procedures, risk registries or responsibility matrices."
-        },
-        {
-          "title": "No topic owner",
-          "desc": "Nobody in the organization owns compliance as a whole. Responsibility is scattered between IT, legal and operations."
-        },
-        {
-          "title": "No tools after training",
-          "desc": "Traditional training ends with slides. The company returns to the office without templates, checklists or tools for implementation."
-        },
-        {
-          "title": "Chaos between compliance and operations",
-          "desc": "Compliance requires, IT implements, but nobody coordinates. No shared language, priorities or action roadmap."
-        }
-      ]
-    },
-    "tracks": {
-      "title": "Three training tracks",
-      "subtitle": "Each track is a complete program: from problem diagnosis, through knowledge, to ready-to-use tools and implementation.",
-      "labels": {
-        "audience": "Who it's for",
-        "problem": "Problem it solves",
-        "topics": "What you'll learn",
-        "deliverable": "What you get",
-        "result": "Business outcome"
-      },
-      "cyber": {
-        "title": "Cybersecurity",
-        "subtitle": "NIS2 · ISO 27001 · DORA",
-        "audience": "Board, CISO, IT/Security teams, cybersecurity officers",
-        "problem": "The company doesn't know what NIS2 obligations apply, who's responsible for what, and where to start implementation.",
-        "topics": [
-          "Board obligations under NIS2 and personal liability (Art. 20)",
-          "Risk analysis and threat registry per ISO 27001",
-          "Incident response procedure (24h/72h) and reporting",
-          "Supply chain security and supplier assessment",
-          "Policies and technical-organizational measures",
-          "Cross-mapping NIS2 → ISO 27001 → DORA"
-        ],
-        "deliverable": "Risk registry, incident procedures, 3-6-12 month roadmap, control checklists",
-        "result": "Company ready for NIS2 inspection and ISO 27001 audit"
-      },
-      "esg": {
-        "title": "ESG & Sustainability",
-        "subtitle": "CSRD · ESRS · EU Taxonomy",
-        "audience": "Board, CFOs, sustainability officers, reporting teams",
-        "problem": "The organization must report ESG but doesn't know what to measure, how to collect data, and which standards to apply.",
-        "topics": [
-          "CSRD reporting obligations and implementation timeline",
-          "ESRS standards — double materiality analysis",
-          "ESG data collection and value chain",
-          "EU Taxonomy and activity qualification",
-          "ESG governance — roles, processes, accountability",
-          "Preparation for auditor verification"
-        ],
-        "deliverable": "Materiality matrix, report templates, data collection process, ESRS checklists",
-        "result": "Organization ready for first CSRD-compliant ESG report"
-      },
-      "compliance": {
-        "title": "Compliance & Risk Management",
-        "subtitle": "GRC · Internal Controls · Audits",
-        "audience": "Compliance officers, risk managers, legal teams, management",
-        "problem": "The company has fragmented compliance processes, no internal control system and isn't prepared for audits.",
-        "topics": [
-          "Building a compliance system — roles, processes, escalation",
-          "Risk mapping and organizational impact assessment",
-          "Creating compliance policies and procedures",
-          "Internal control system and monitoring",
-          "Preparation for external audits",
-          "Cross-mapping regulations: NIS2, DORA, GDPR, ISO 27001"
-        ],
-        "deliverable": "Risk registry, policy templates, control matrix, audit playbooks",
-        "result": "Integrated compliance system ready for audits and inspections"
-      }
-    },
-    "model": {
-      "title": "Engagement model",
-      "subtitle": "Choose your level of engagement — from training to full implementation with operational tools.",
-      "popular": "Most popular",
-      "tiers": [
-        {
-          "title": "Training",
-          "desc": "Intensive content program with materials and Q&A.",
-          "items": [
-            "1-day training (6-8h)",
-            "Training materials in PDF",
-            "Q&A session with expert",
-            "Certificate of completion",
-            "Access to recording (30 days)"
-          ]
-        },
-        {
-          "title": "Training + Workshop",
-          "desc": "Training with hands-on workshop using your organization's data.",
-          "items": [
-            "Everything from Training package",
-            "Workshop on company data (4h)",
-            "Mini gap analysis",
-            "Action roadmap for 3-6-12 months",
-            "Quick wins to implement immediately",
-            "Follow-up consultation (1h)"
-          ]
-        },
-        {
-          "title": "Training + Implementation + Tools",
-          "desc": "Full program: knowledge, procedure implementation and tools for ongoing work.",
-          "items": [
-            "Everything from Workshop package",
-            "Implementation of key procedures",
-            "Ready-to-use policy and registry templates",
-            "Incident and audit playbooks",
-            "Access to Quantifier.ai platform",
-            "Expert support (3 months)",
-            "Compliance monitoring dashboard"
-          ]
-        }
-      ]
-    },
-    "deliverables": {
-      "title": "What you get after training",
-      "subtitle": "We don't stop at slides. Every participant leaves with ready-to-implement tools.",
-      "items": [
-        "Compliance checklists — NIS2, ISO 27001, CSRD, GDPR with specific requirements to fulfil",
-        "Policy and procedure templates — ready-to-adapt security, data protection and compliance templates",
-        "Risk registries — structured registries with probability, impact assessment and assigned owners",
-        "Incident playbooks — response procedures with escalation, 24h/72h reporting and notification templates",
-        "Responsibility matrices (RACI) — clear role assignment: who decides, who implements, who supervises",
-        "Operational dashboard and workspace — compliance monitoring, tasks and documentation tool in Quantifier.ai"
-      ]
-    },
-    "experts": {
-      "title": "Your trainers",
-      "subtitle": "Practitioners with inspection, audit and implementation experience — not textbook theorists.",
-      "labels": {
-        "who": "Who they are",
-        "advises": "What they advise on",
-        "brings": "What they bring to training"
-      },
-      "people": [
-        {
-          "name": "Maciej Kowalski",
-          "role": "Lead Cybersecurity Consultant",
-          "bio": "15+ years in cybersecurity. Led NIS2 and ISO 27001 implementations in financial, energy and telecommunications sectors.",
-          "advises": "NIS2 implementations, ISMS design, inspection preparation, risk analysis and incident response.",
-          "brings": "Real inspection scenarios, proven procedure templates, hands-on risk analysis exercises.",
-          "certs": ["CISM", "ISO 27001 LA", "CRISC", "NIS2 Expert"]
-        },
-        {
-          "name": "Anna Wiśniewska",
-          "role": "ESG & Sustainability Director",
-          "bio": "10+ years in ESG consulting and sustainability. Co-authored ESG reports for listed companies and capital groups.",
-          "advises": "CSRD/ESRS reporting, double materiality analysis, ESG governance and data verification.",
-          "brings": "Auditor verification experience, ready-to-use materiality matrices and data collection processes.",
-          "certs": ["GRI Certified", "ESRS Specialist", "Sustainability Auditor"]
-        },
-        {
-          "name": "Piotr Zieliński",
-          "role": "GRC & Compliance Manager",
-          "bio": "12+ years in compliance and risk management. Built GRC systems in organizations from 200 to 5,000+ employees.",
-          "advises": "Internal control systems, regulation mapping, audit preparation and cross-compliance.",
-          "brings": "Proven GRC frameworks, audit playbooks, real case studies from Polish companies.",
-          "certs": ["CCEP", "ISO 31000", "CRCM", "DORA Specialist"]
-        }
-      ]
-    },
-    "proof": {
-      "title": "Trust and results",
-      "stats": [
-        { "value": "150+", "label": "Organizations trained" },
-        { "value": "2,000+", "label": "Training participants" },
-        { "value": "95%", "label": "Would recommend" }
-      ],
-      "testimonial": {
-        "quote": "After training with Quantifier.ai, our team implemented a complete incident management system within 3 months and passed the NIS2 inspection without remarks. This wasn't typical training — we got a ready system to work with.",
-        "initials": "JN",
-        "name": "Jakub Nowak",
-        "role": "CISO, energy sector company"
-      }
-    },
-    "process": {
-      "title": "How we work together",
-      "subtitle": "4 steps from first contact to a ready-to-use action system.",
-      "steps": [
-        {
-          "title": "Consultation",
-          "desc": "We discuss your company's challenges, regulations and goals. We tailor the program."
-        },
-        {
-          "title": "Diagnosis",
-          "desc": "Short maturity quiz + documentation review. We identify gaps and priorities."
-        },
-        {
-          "title": "Training",
-          "desc": "Intensive program with workshops on your organization's data. Theory → practice → plan."
-        },
-        {
-          "title": "Implementation",
-          "desc": "Ready procedures, templates and tools. Expert support for implementing quick wins."
-        }
-      ]
-    },
-    "faq": {
-      "title": "Frequently asked questions",
-      "items": [
-        {
-          "question": "Who are the trainings for?",
-          "answer": "For companies that need to meet NIS2, ISO 27001, DORA, CSRD or GDPR requirements. We train boards, CISOs, IT teams, compliance officers and risk managers."
-        },
-        {
-          "question": "How long is the training?",
-          "answer": "Base training is 1 day (6-8h). Package with workshop is 1.5-2 days. Package with implementation spans 2-4 weeks."
-        },
-        {
-          "question": "Is training online or on-site?",
-          "answer": "Both formats. On-site training at client's office or ours. Online training via platform with interactive workshops."
-        },
-        {
-          "question": "Is the program tailored to our industry?",
-          "answer": "Yes — before training we do a short diagnosis and tailor examples, case studies and exercises to your sector and organization size."
-        },
-        {
-          "question": "Do participants get a certificate?",
-          "answer": "Yes, every participant receives a personal certificate of completion with information about scope and hours."
-        },
-        {
-          "question": "How does pricing work?",
-          "answer": "Price depends on chosen package (training / workshop / implementation), participant count and customization scope. Contact us — we'll prepare a custom offer within 24h."
-        },
-        {
-          "question": "Can I combine multiple tracks?",
-          "answer": "Absolutely. Many companies combine e.g. cybersecurity with compliance or ESG with governance. We design combined programs tailored to needs."
-        }
-      ]
-    },
-    "finalCta": {
-      "title": "Prepare your company for regulatory obligations — start with a conversation",
-      "subtitle": "You're not buying a presentation. You're getting a complete system of competencies, tools and implementation that lets your company act immediately after training.",
-      "benefits": [
-        "No-obligation consultation — we'll discuss challenges and tailor the program",
-        "Offer within 24h — with scope, agenda and pricing",
-        "Possible to start within 2 weeks of confirmation"
-      ],
-      "microcopy": "Your data is safe. We use it solely to prepare a training offer."
-    },
-    "form": {
-      "step1": {
-        "title": "Which area interests you?",
-        "subtitle": "Choose a track and we'll tailor the program to your needs."
-      },
-      "step2": {
-        "title": "Leave your contact details",
-        "subtitle": "We'll get back to you within 24h with a program proposal."
-      },
-      "back": "Back to selection",
-      "areas": {
-        "cybersecurity": {
-          "title": "Cybersecurity",
-          "desc": "NIS2, ISO 27001, DORA, incident response"
-        },
-        "esg": {
-          "title": "ESG & Sustainability",
-          "desc": "CSRD, ESRS, taxonomy, reporting"
-        },
-        "compliance": {
-          "title": "Compliance & Risk",
-          "desc": "GRC, internal controls, audits, policies"
-        }
-      },
-      "fields": {
-        "name": "Full name",
-        "email": "Work email address",
-        "company": "Company name",
-        "message": "Briefly describe your training needs (optional)"
-      },
-      "submit": "Send inquiry",
-      "privacy": "By submitting this form, you agree to data processing for the purpose of preparing an offer."
     }
   }
 }
