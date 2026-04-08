@@ -5934,41 +5934,48 @@
       },
       "people": [
         {
-          "name": "Maciej Kowalski",
-          "role": "Lead Cybersecurity Consultant",
-          "bio": "15+ lat doświadczenia w cyberbezpieczeństwie. Prowadził wdrożenia NIS2 i ISO 27001 w sektorze finansowym, energetycznym i telekomunikacyjnym.",
-          "advises": "Wdrożenia NIS2/KSC, budowa SZBI, przygotowanie do kontroli, analiza ryzyk i incident response.",
-          "brings": "Realne scenariusze z kontroli, sprawdzone szablony procedur, praktyczne ćwiczenia z analizy ryzyk.",
+          "name": "Klaudia Sałdan",
+          "role": "Prawniczka | Ekspertka ds. ESG & Compliance",
+          "bio": "Ekspertka ds. ESG i compliance, specjalizująca się w regulacjach środowiskowych i społecznych.",
+          "advises": "Raportowanie ESG, CSRD, Taksonomia UE, zgodność regulacyjna",
+          "brings": "Praktyczne doświadczenie w doradztwie prawnym ESG.",
           "certs": [
-            "CISM",
-            "ISO 27001 LA",
-            "CRISC",
-            "NIS2 Expert"
+            "ESG Expert",
+            "Compliance Specialist"
           ]
         },
         {
-          "name": "Anna Wiśniewska",
-          "role": "ESG & Sustainability Director",
-          "bio": "10+ lat w doradztwie ESG i zrównoważonym rozwoju. Współtworzyła raporty ESG dla spółek giełdowych i grup kapitałowych.",
-          "advises": "Raportowanie CSRD/ESRS, analiza podwójnej istotności, governance ESG i weryfikacja danych.",
-          "brings": "Doświadczenie z weryfikacji biegłego rewidenta, gotowe matryce istotności i procesy zbierania danych.",
+          "name": "Enrika Gawłowska-Nabożny",
+          "role": "Ekspertka ds. sprawozdawczości zrównoważonego rozwoju",
+          "bio": "Prawniczka i ekspertka ds. sprawozdawczości zrównoważonego rozwoju, Taksonomii UE, gospodarki o obiegu zamkniętym i praw człowieka w kontekście legislacji UE i standardów międzynarodowych (ONZ, OECD).",
+          "advises": "Taksonomia UE, CSRD/ESRS, gospodarka o obiegu zamkniętym",
+          "brings": "Głęboka znajomość legislacji UE i standardów międzynarodowych.",
           "certs": [
-            "GRI Certified",
-            "ESRS Specialist",
-            "Sustainability Auditor"
+            "EU Taxonomy",
+            "CSRD/ESRS",
+            "Sustainability Reporting"
           ]
         },
         {
-          "name": "Piotr Zieliński",
-          "role": "GRC & Compliance Manager",
-          "bio": "12+ lat w compliance i zarządzaniu ryzykiem. Budował systemy GRC w organizacjach od 200 do 5000+ pracowników.",
-          "advises": "Systemy kontroli wewnętrznej, mapowanie regulacji, przygotowanie do audytów i cross-compliance.",
-          "brings": "Sprawdzone frameworki GRC, playbooki audytowe, realne case studies z wdrożeń w polskich firmach.",
+          "name": "Weronika Czaplewska",
+          "role": "VP & Współzałożycielka, Quantifier.ai",
+          "bio": "Współzałożycielka Quantifier.ai. Odpowiedzialna za strategię produktową.",
+          "advises": "Strategia compliance, automatyzacja procesów, wdrażanie GRC",
+          "brings": "Wizja produktowa i doświadczenie w budowie narzędzi compliance.",
           "certs": [
-            "CCEP",
-            "ISO 31000",
-            "CRCM",
-            "DORA Specialist"
+            "GRC Platform",
+            "AI Compliance"
+          ]
+        },
+        {
+          "name": "Mateusz Masiak",
+          "role": "CEO & Współzałożyciel, Quantifier.ai",
+          "bio": "Prezes i współzałożyciel Quantifier.ai. Lider w budowaniu autonomicznych systemów AI compliance.",
+          "advises": "Cyfrowa transformacja compliance, architektura GRC, strategia AI",
+          "brings": "Doświadczenie w budowie platform compliance dla setek organizacji.",
+          "certs": [
+            "AI & Compliance",
+            "GRC Architecture"
           ]
         }
       ]
