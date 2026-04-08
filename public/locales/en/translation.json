@@ -8201,6 +8201,26 @@
       "title": "Let's talk about your product",
       "subtitle": "Leave a message — we'll get back to you within 24 hours.",
       "cta": "Send message"
+    },
+    "howItWorks": {
+      "title": "How does the GS1 integration work?",
+      "subtitle": "From GTIN code to a ready product passport — in 4 steps.",
+      "step1": {
+        "title": "Connect data from GS1 via GTIN and GPC codes",
+        "desc": "Enter your product's GTIN or GPC code and the system automatically imports data from the GS1 database. Full integration with GS1 Polska infrastructure — no manual data entry."
+      },
+      "step2": {
+        "title": "Complete the product lifecycle flowchart",
+        "desc": "Break down your product into stages: raw materials, transport, production, distribution, use and end of life. Fill in emissions and environmental impact data — following LCA methodology (ISO 14040/14044)."
+      },
+      "step3": {
+        "title": "Analyze scenarios and optimize carbon footprint",
+        "desc": "The scenario explorer lets you simulate the impact of changes: increasing recycled content, material lightweighting, or transport optimization. Compare variants and make data-driven decisions."
+      },
+      "step4": {
+        "title": "Edit the passport and share the link",
+        "desc": "Design the product passport layout: choose sections, fill in content and data, then generate a public link or QR code. Audit-ready, client-ready."
+      }
     }
   }
 }

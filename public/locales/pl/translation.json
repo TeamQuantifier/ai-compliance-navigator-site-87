@@ -8267,6 +8267,26 @@
       "title": "Porozmawiajmy o Twoim produkcie",
       "subtitle": "Zostaw wiadomość — odezwiemy się w ciągu 24 godzin.",
       "cta": "Wyślij wiadomość"
+    },
+    "howItWorks": {
+      "title": "Jak działa integracja z GS1?",
+      "subtitle": "Od kodu GTIN do gotowego paszportu produktowego — w 4 krokach.",
+      "step1": {
+        "title": "Połącz dane z GS1 przez kody GTIN i GPC",
+        "desc": "Wpisz kod GTIN lub GPC swojego produktu, a system automatycznie zaimportuje dane z bazy GS1. Pełna integracja z infrastrukturą GS1 Polska — bez ręcznego przepisywania."
+      },
+      "step2": {
+        "title": "Uzupełnij flowchart cyklu życia produktu",
+        "desc": "Rozłóż produkt na etapy: surowce, transport, produkcja, dystrybucja, użytkowanie i koniec życia. Uzupełnij dane o emisjach i wpływach środowiskowych — zgodnie z metodyką LCA (ISO 14040/14044)."
+      },
+      "step3": {
+        "title": "Analizuj scenariusze i optymalizuj ślad węglowy",
+        "desc": "Eksplorator scenariuszy pozwala symulować wpływ zmian: zwiększenie udziału recyklatu, odchudzenie materiału czy optymalizacja transportu. Porównuj warianty i podejmuj decyzje oparte na danych."
+      },
+      "step4": {
+        "title": "Edytuj paszport i udostępnij link",
+        "desc": "Zaprojektuj układ paszportu produktowego: wybierz sekcje, uzupełnij treści i dane, a następnie wygeneruj publiczny link lub kod QR. Gotowy do audytu, gotowy do klienta."
+      }
     }
   }
 }

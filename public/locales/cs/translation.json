@@ -6794,6 +6794,26 @@
       "title": "Pojďme si promluvit o vašem produktu",
       "subtitle": "Zanechte zprávu — ozveme se do 24 hodin.",
       "cta": "Odeslat zprávu"
+    },
+    "howItWorks": {
+      "title": "Jak funguje integrace s GS1?",
+      "subtitle": "Od kódu GTIN po hotový produktový pas — ve 4 krocích.",
+      "step1": {
+        "title": "Propojte data z GS1 přes kódy GTIN a GPC",
+        "desc": "Zadejte GTIN nebo GPC kód vašeho produktu a systém automaticky importuje data z databáze GS1. Plná integrace s infrastrukturou GS1 — bez ručního přepisování."
+      },
+      "step2": {
+        "title": "Doplňte flowchart životního cyklu produktu",
+        "desc": "Rozložte produkt na etapy: suroviny, doprava, výroba, distribuce, užívání a konec životnosti. Doplňte data o emisích a dopadech na životní prostředí — podle metodiky LCA (ISO 14040/14044)."
+      },
+      "step3": {
+        "title": "Analyzujte scénáře a optimalizujte uhlíkovou stopu",
+        "desc": "Průzkumník scénářů umožňuje simulovat dopad změn: zvýšení podílu recyklátu, odlehčení materiálu nebo optimalizace dopravy. Porovnejte varianty a rozhodujte se na základě dat."
+      },
+      "step4": {
+        "title": "Upravte pas a sdílejte odkaz",
+        "desc": "Navrhněte rozložení produktového pasu: vyberte sekce, doplňte obsah a data, poté vygenerujte veřejný odkaz nebo QR kód. Připraveno na audit, připraveno pro klienta."
+      }
     }
   }
 }
