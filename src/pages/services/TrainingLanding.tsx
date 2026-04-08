@@ -126,9 +126,9 @@ const TrainingLanding = () => {
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
                   <a href="#contact">{t('training.cta.primary')}</a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-slate-200 hover:bg-white/10 px-8 py-6 text-base">
-                  <a href="#tracks">{t('training.cta.secondary')}</a>
-                </Button>
+                <a href="#tracks" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-white/20 bg-white/5 text-white hover:bg-white/10 px-8 py-6 h-11">
+                  {t('training.cta.secondary')}
+                </a>
               </div>
 
               <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
