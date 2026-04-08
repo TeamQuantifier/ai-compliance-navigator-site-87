@@ -5316,6 +5316,10 @@
     "training": {
       "title": "Cybersecurity, ESG & Compliance Training for Companies | Quantifier.ai",
       "description": "We prepare companies for NIS2, ISO 27001, DORA, CSRD and audits. Training with implementation, tools and ready-to-use procedures. Book a consultation."
+    },
+    "gs1": {
+      "title": "GS1 Polska × Quantifier.ai — Product Passport & Carbon Footprint",
+      "description": "GS1 Polska and Quantifier.ai partnership: Envirly LCA for Digital Product Passport (DPP) and Envirly GHG for Scope 1 & 2 emissions reporting."
     }
   },
   "seoLanding": {
@@ -8131,6 +8135,206 @@
       },
       "submit": "Send inquiry",
       "privacy": "By submitting this form, you agree to data processing for the purpose of preparing an offer."
+    },
+    "configurator": {
+      "title": "Tailor the training to your needs",
+      "subtitle": "Choose the target audience and topic — we'll show you the exact program scope.",
+      "audienceLabel": "For whom?",
+      "topicLabel": "What topic?",
+      "audiences": {
+        "executive": {
+          "label": "Board & senior management",
+          "desc": "Strategy, responsibility, oversight"
+        },
+        "operational": {
+          "label": "Implementation training",
+          "desc": "Operations, procedures, tools"
+        }
+      },
+      "topics": {
+        "cyber": {
+          "label": "Cybersecurity",
+          "desc": "NIS2 · ISO 27001 · DORA"
+        },
+        "esg": {
+          "label": "ESG / CSRD",
+          "desc": "CSRD · ESRS · EU Taxonomy"
+        },
+        "compliance": {
+          "label": "Compliance & GRC",
+          "desc": "GRC · Internal control · Audits"
+        }
+      },
+      "resultLabel": "Program scope",
+      "scopeLabels": {
+        "focus": "Training focus",
+        "topics": "Program covers",
+        "deliverable": "What you get",
+        "result": "Outcome"
+      },
+      "scopes": {
+        "executive_cyber": {
+          "focus": "Board responsibility under NIS2/KSC and cybersecurity oversight",
+          "topics": [
+            "Personal board liability under NIS2 (Art. 20) and penalties",
+            "How to read risk reports and make security budget decisions",
+            "Reporting obligations: 24h/72h incidents, whom to inform",
+            "Supplier oversight and ICT supply chain management",
+            "Cybersecurity strategy: what to approve and how to monitor"
+          ],
+          "deliverable": "Executive brief with obligations, supervisory checklist, security KPI dashboard",
+          "result": "The board understands its obligations and can oversee cybersecurity"
+        },
+        "executive_esg": {
+          "focus": "ESG reporting obligations for the board and sustainability strategy",
+          "topics": [
+            "Board obligations under CSRD — who signs the ESG report",
+            "Double materiality analysis — how the board sets priorities",
+            "ESG governance: roles, committees, C-suite accountability",
+            "EU Taxonomy — impact on investment decisions and financing",
+            "Reputational risk and greenwashing — how to protect yourself"
+          ],
+          "deliverable": "ESG strategy for the board, responsibility matrix, reporting calendar",
+          "result": "The board is ready to oversee ESG reporting and make strategic decisions"
+        },
+        "executive_compliance": {
+          "focus": "Building a compliance culture and overseeing internal control systems",
+          "topics": [
+            "Board's role in compliance — responsibility and delegation",
+            "Strategic-level risk management",
+            "How to read compliance reports and respond to red flags",
+            "Cross-regulations: NIS2, DORA, GDPR — how to manage",
+            "Tone from the top: building a culture of compliance"
+          ],
+          "deliverable": "Executive compliance brief, strategic risk matrix, escalation framework",
+          "result": "The board actively oversees compliance and makes informed risk decisions"
+        },
+        "operational_cyber": {
+          "focus": "Implementing NIS2/ISO 27001 requirements in operational practice",
+          "topics": [
+            "Risk analysis and building a threat register per ISO 27001",
+            "Incident handling procedure: detection, escalation, reporting",
+            "Security policies: creation, implementation, maintenance",
+            "Supply chain security — vendor assessment and monitoring",
+            "Technical and organizational measures: what to implement and how to prove it",
+            "Control mapping: NIS2 → ISO 27001 → DORA"
+          ],
+          "deliverable": "Risk register, incident procedures, policy templates, 3-6-12 month implementation roadmap",
+          "result": "The team is ready to independently implement and maintain a cybersecurity system"
+        },
+        "operational_esg": {
+          "focus": "ESG data collection, CSRD reporting, and process implementation",
+          "topics": [
+            "ESRS standards in practice — what to measure and how to document",
+            "ESG data collection: processes, sources, tools",
+            "Double materiality analysis — hands-on workshop",
+            "Carbon footprint: calculating Scope 1, 2, and 3",
+            "Preparing data for auditor verification",
+            "Automating ESG reporting with a platform"
+          ],
+          "deliverable": "Materiality matrix, data collection form templates, ESRS checklists, report template",
+          "result": "The team is ready to independently collect data and prepare an ESG report"
+        },
+        "operational_compliance": {
+          "focus": "Building and operationalizing a compliance system in the organization",
+          "topics": [
+            "Building a compliance system from scratch — roles, processes, escalation",
+            "Mapping operational risks and creating a register",
+            "Creating compliance policies and procedures — from template to implementation",
+            "Internal control system: monitoring, testing, reporting",
+            "Preparing for external audits: documentation and evidence",
+            "Cross-mapping regulations: managing multiple standards at once"
+          ],
+          "deliverable": "Risk register, policy templates, internal control matrix, audit playbooks",
+          "result": "The team is ready to independently manage compliance and prepare for audits"
+        }
+      }
+    }
+  },
+  "gs1": {
+    "hero": {
+      "title": "Product Passport — You know what your product is made of. Prove it to the world.",
+      "subtitle": "With Envirly's Product Passport, every product you manufacture gets its own digital identity — a living, auditable record of its full environmental footprint.",
+      "cta": "Talk to us"
+    },
+    "partnership": {
+      "title": "GS1 Polska × Quantifier.ai Partnership",
+      "p1": "The partnership provides Envirly LCA tools for a Digital Product Passport compliant with DPP, where data integrates with the GS1 system.",
+      "p2": "Additionally, Envirly GHG enables greenhouse gas emissions reporting for Scope 1 and 2, with full integration into GS1 infrastructure.",
+      "dppLabel": "Product Passport",
+      "ghgLabel": "Organization Carbon Footprint",
+      "membersLabel": "GS1 System Members in Poland"
+    },
+    "quote": {
+      "text": "This is a great example of how standardization and technology can support small and medium-sized enterprises in achieving ambitious climate and social goals. I am pleased that we can draw from such solutions and together with over 47,000 System Members in Poland build a more resilient and transparent economy",
+      "author": "dr Marta Szymborska",
+      "role": "co-CEO, GS1 Polska"
+    },
+    "passport": {
+      "title": "Turn every product into a verified environmental story",
+      "subtitle": "Clean, credible, audit-ready data — at your fingertips, in minutes.",
+      "hook1": "Customers ask. Regulators demand. Investors watch. The era of 'trust us, we're green' is over.",
+      "hook2": "With Envirly's Product Passport, every product you manufacture gets its own digital identity — a living, auditable record of its full environmental footprint, from raw materials to end of life.",
+      "noExcel": "No more Excel chaos",
+      "noConsultants": "No more €20K consultant reports",
+      "noGreenwashing": "No more greenwashing accusations"
+    },
+    "features": {
+      "digitalCard": {
+        "title": "Complete digital card for every product",
+        "desc": "Record material composition, carbon footprint, energy and water consumption and more — all aligned with recognized LCA methodologies (ISO 14040/14044)."
+      },
+      "scale": {
+        "title": "Built to scale, not just for audits",
+        "desc": "Whether you have 5 product indexes or 5,000 — the Product Passport grows with your catalog. Changed input data? Recalculate with one click."
+      },
+      "sharing": {
+        "title": "Built for sharing",
+        "desc": "Generate a passport report for your client with one click. Pass it to procurement, ESG teams, or auditors — in the format they need, when they need it."
+      },
+      "regulation": {
+        "title": "One step ahead of EU DPP regulations",
+        "desc": "The EU Digital Product Passport regulation is coming. Companies that start now gain a competitive advantage."
+      }
+    },
+    "business": {
+      "title": "The business case is simple",
+      "desc": "Companies with verified product environmental data win more B2B contracts, negotiate better with ESG-focused investors, and reduce supply chain due diligence costs by up to 60%.",
+      "b2b": "More B2B contracts won",
+      "esg": "Better ESG investor negotiations",
+      "dueDiligence": "Due diligence cost reduction"
+    },
+    "audience": {
+      "title": "Who is this for",
+      "manufacturers": "Manufacturers who need to quickly respond to sustainability questionnaires from clients",
+      "sustainability": "Sustainability teams tired of building LCA models from scratch before every audit",
+      "compliance": "Product and compliance managers who need a single source of truth for product-level emissions",
+      "sales": "Sales teams who want sustainability to be a deal-closing argument, not just another checkbox"
+    },
+    "form": {
+      "title": "Let's talk about your product",
+      "subtitle": "Leave a message — we'll get back to you within 24 hours.",
+      "cta": "Send message"
+    },
+    "howItWorks": {
+      "title": "How does the GS1 integration work?",
+      "subtitle": "From GTIN and GPC codes to a ready product passport — in 4 steps.",
+      "step1": {
+        "title": "Connect data from GS1 via GTIN and GPC codes",
+        "desc": "Enter your product's GTIN or GPC code and the system automatically imports data from the GS1 database. Full integration with GS1 Polska infrastructure — no manual data entry."
+      },
+      "step2": {
+        "title": "Complete the product lifecycle flowchart",
+        "desc": "Break down your product into stages: raw materials, transport, production, distribution, use and end of life. Fill in emissions and environmental impact data — following LCA methodology (ISO 14040/14044)."
+      },
+      "step3": {
+        "title": "Analyze scenarios and optimize carbon footprint",
+        "desc": "The scenario explorer lets you simulate the impact of changes: increasing recycled content, material lightweighting, or transport optimization. Compare variants and make data-driven decisions."
+      },
+      "step4": {
+        "title": "Edit the passport and share the link",
+        "desc": "Design the product passport layout: choose sections, fill in content and data, then generate a public link or QR code. Audit-ready, client-ready."
+      }
     }
   }
 }

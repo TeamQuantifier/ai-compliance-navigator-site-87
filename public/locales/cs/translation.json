@@ -3331,6 +3331,10 @@
           "description": "Implementujte ISO 9001 QMS s Quantifier.ai. Automatizované řízení kvality, dokumentace procesů a sledování neustálého zlepšování."
         }
       }
+    },
+    "gs1": {
+      "title": "GS1 Polska × Quantifier.ai — Produktový pas a uhlíková stopa",
+      "description": "Partnerství GS1 Polska a Quantifier.ai: Envirly LCA pro digitální produktový pas (DPP) a Envirly GHG pro vykazování emisí Scope 1 a 2."
     }
   },
   "grcPlatform": {
@@ -6724,6 +6728,206 @@
           ]
         }
       ]
+    },
+    "configurator": {
+      "title": "Přizpůsobte školení svým potřebám",
+      "subtitle": "Vyberte cílovou skupinu a téma — ukážeme vám přesný rozsah programu.",
+      "audienceLabel": "Pro koho?",
+      "topicLabel": "Jaké téma?",
+      "audiences": {
+        "executive": {
+          "label": "Vedení a top management",
+          "desc": "Strategie, odpovědnost, dohled"
+        },
+        "operational": {
+          "label": "Implementační školení",
+          "desc": "Operace, postupy, nástroje"
+        }
+      },
+      "topics": {
+        "cyber": {
+          "label": "Kybernetická bezpečnost",
+          "desc": "NIS2 · ISO 27001 · DORA"
+        },
+        "esg": {
+          "label": "ESG / CSRD",
+          "desc": "CSRD · ESRS · Taxonomie EU"
+        },
+        "compliance": {
+          "label": "Compliance & GRC",
+          "desc": "GRC · Interní kontrola · Audity"
+        }
+      },
+      "resultLabel": "Rozsah programu",
+      "scopeLabels": {
+        "focus": "Zaměření školení",
+        "topics": "Program zahrnuje",
+        "deliverable": "Co získáte",
+        "result": "Výsledek"
+      },
+      "scopes": {
+        "executive_cyber": {
+          "focus": "Odpovědnost vedení podle NIS2 a dohled nad kybernetickou bezpečností",
+          "topics": [
+            "Osobní odpovědnost vedení podle NIS2 (čl. 20) a sankce",
+            "Jak číst zprávy o rizicích a rozhodovat o rozpočtu",
+            "Povinnosti hlášení: incidenty 24h/72h",
+            "Dohled nad dodavateli a ICT dodavatelským řetězcem",
+            "Strategie kybernetické bezpečnosti"
+          ],
+          "deliverable": "Executive brief, kontrolní seznam, KPI dashboard bezpečnosti",
+          "result": "Vedení rozumí svým povinnostem a dokáže dohlížet na kybernetickou bezpečnost"
+        },
+        "executive_esg": {
+          "focus": "ESG reportovací povinnosti pro vedení a strategie udržitelnosti",
+          "topics": [
+            "Povinnosti vedení podle CSRD",
+            "Analýza dvojí významnosti",
+            "ESG governance: role a odpovědnost",
+            "Taxonomie EU — dopad na investiční rozhodnutí",
+            "Reputační riziko a greenwashing"
+          ],
+          "deliverable": "ESG strategie pro vedení, matice odpovědností, reportovací kalendář",
+          "result": "Vedení připraveno na dohled nad ESG reportingem"
+        },
+        "executive_compliance": {
+          "focus": "Budování kultury compliance a dohled nad systémem vnitřní kontroly",
+          "topics": [
+            "Role vedení v compliance",
+            "Strategické řízení rizik",
+            "Jak číst compliance zprávy",
+            "Cross-regulace: NIS2, DORA, GDPR",
+            "Tone from the top: budování kultury souladu"
+          ],
+          "deliverable": "Executive compliance brief, matice strategických rizik, eskalační framework",
+          "result": "Vedení aktivně dohlíží na compliance"
+        },
+        "operational_cyber": {
+          "focus": "Implementace požadavků NIS2/ISO 27001 v operační praxi",
+          "topics": [
+            "Analýza rizik a registr hrozeb podle ISO 27001",
+            "Procedura řešení incidentů",
+            "Bezpečnostní politiky: tvorba a implementace",
+            "Bezpečnost dodavatelského řetězce",
+            "Technická a organizační opatření",
+            "Mapování kontrol: NIS2 → ISO 27001 → DORA"
+          ],
+          "deliverable": "Registr rizik, procedury incidentů, šablony politik, roadmapa implementace",
+          "result": "Tým připraven samostatně implementovat systém kybernetické bezpečnosti"
+        },
+        "operational_esg": {
+          "focus": "Sběr ESG dat, CSRD reporting a implementace procesů",
+          "topics": [
+            "Standardy ESRS v praxi",
+            "Sběr ESG dat: procesy a nástroje",
+            "Analýza dvojí významnosti — praktický workshop",
+            "Uhlíková stopa: výpočet Scope 1, 2 a 3",
+            "Příprava dat pro ověření auditorem",
+            "Automatizace ESG reportingu"
+          ],
+          "deliverable": "Matice významnosti, formuláře pro sběr dat, ESRS checklisty, šablona reportu",
+          "result": "Tým připraven samostatně sbírat data a připravit ESG report"
+        },
+        "operational_compliance": {
+          "focus": "Budování a operacionalizace compliance systému",
+          "topics": [
+            "Budování compliance systému od nuly",
+            "Mapování operačních rizik",
+            "Tvorba politik a procedur souladu",
+            "Systém vnitřní kontroly",
+            "Příprava na externí audity",
+            "Cross-mapping regulací"
+          ],
+          "deliverable": "Registr rizik, šablony politik, matice vnitřní kontroly, auditové playbook",
+          "result": "Tým připraven samostatně řídit compliance a připravit se na audity"
+        }
+      }
+    }
+  },
+  "gs1": {
+    "hero": {
+      "title": "Produktový pas — Víte, z čeho se váš produkt skládá. Dokažte to světu.",
+      "subtitle": "S produktovým pasem Envirly získá každý váš výrobek vlastní digitální identitu — živý, auditovatelný záznam celé environmentální stopy.",
+      "cta": "Promluvte si s námi"
+    },
+    "partnership": {
+      "title": "Partnerství GS1 Polska × Quantifier.ai",
+      "p1": "Partnerství poskytuje nástroj Envirly LCA pro produktový pas kompatibilní s DPP, kde se data integrují se systémem GS1.",
+      "p2": "Envirly GHG navíc umožňuje vykazování emisí skleníkových plynů v rozsahu 1 a 2 s plnou integrací do infrastruktury GS1.",
+      "dppLabel": "Produktový pas",
+      "ghgLabel": "Uhlíková stopa organizace",
+      "membersLabel": "Členů systému GS1 v Polsku"
+    },
+    "quote": {
+      "text": "Toto je skvělý příklad toho, jak standardizace a technologie mohou podporovat malé a střední podniky při dosahování ambiciózních klimatických a sociálních cílů.",
+      "author": "dr Marta Szymborska",
+      "role": "co-CEO, GS1 Polska"
+    },
+    "passport": {
+      "title": "Proměňte každý produkt v ověřený environmentální příběh",
+      "subtitle": "Čistá, důvěryhodná, auditovatelná data — na dosah ruky, během minut.",
+      "hook1": "Zákazníci se ptají. Regulátoři požadují. Investoři sledují.",
+      "hook2": "S produktovým pasem Envirly získá každý váš výrobek vlastní digitální identitu.",
+      "noExcel": "Konec chaosu v Excelu",
+      "noConsultants": "Konec s drahými konzultanty",
+      "noGreenwashing": "Konec s greenwashingem"
+    },
+    "features": {
+      "digitalCard": {
+        "title": "Kompletní digitální karta pro každý produkt",
+        "desc": "Zaznamenávejte materiálové složení, uhlíkovou stopu, spotřebu energie, vody a další."
+      },
+      "scale": {
+        "title": "Postaveno pro škálování",
+        "desc": "Ať máte 5 produktových indexů nebo 5 000 — produktový pas roste s vaším katalogem."
+      },
+      "sharing": {
+        "title": "Vytvořeno pro sdílení",
+        "desc": "Vygenerujte zprávu pasu pro klienta jedním kliknutím."
+      },
+      "regulation": {
+        "title": "O krok napřed před předpisy EU o DPP",
+        "desc": "Nařízení EU o digitálním produktovém pasu přichází."
+      }
+    },
+    "business": {
+      "title": "Obchodní případ je jednoduchý",
+      "desc": "Firmy s ověřenými environmentálními daty produktů vyhrávají více B2B kontraktů.",
+      "b2b": "Více B2B kontraktů",
+      "esg": "Lepší vyjednávání s ESG investory",
+      "dueDiligence": "Snížení nákladů due diligence"
+    },
+    "audience": {
+      "title": "Pro koho je to určeno",
+      "manufacturers": "Výrobci, kteří musí rychle reagovat na dotazníky udržitelnosti",
+      "sustainability": "Týmy pro udržitelnost unavené vytvářením LCA modelů od nuly",
+      "compliance": "Manažeři produktu a compliance potřebující jeden zdroj pravdy",
+      "sales": "Obchodníci, pro které má udržitelnost být argumentem uzavírajícím obchod"
+    },
+    "form": {
+      "title": "Pojďme si promluvit o vašem produktu",
+      "subtitle": "Zanechte zprávu — ozveme se do 24 hodin.",
+      "cta": "Odeslat zprávu"
+    },
+    "howItWorks": {
+      "title": "Jak funguje integrace s GS1?",
+      "subtitle": "Od kódů GTIN a GPC po hotový produktový pas — ve 4 krocích.",
+      "step1": {
+        "title": "Propojte data z GS1 přes kódy GTIN a GPC",
+        "desc": "Zadejte GTIN nebo GPC kód vašeho produktu a systém automaticky importuje data z databáze GS1. Plná integrace s infrastrukturou GS1 — bez ručního přepisování."
+      },
+      "step2": {
+        "title": "Doplňte flowchart životního cyklu produktu",
+        "desc": "Rozložte produkt na etapy: suroviny, doprava, výroba, distribuce, užívání a konec životnosti. Doplňte data o emisích a dopadech na životní prostředí — podle metodiky LCA (ISO 14040/14044)."
+      },
+      "step3": {
+        "title": "Analyzujte scénáře a optimalizujte uhlíkovou stopu",
+        "desc": "Průzkumník scénářů umožňuje simulovat dopad změn: zvýšení podílu recyklátu, odlehčení materiálu nebo optimalizace dopravy. Porovnejte varianty a rozhodujte se na základě dat."
+      },
+      "step4": {
+        "title": "Upravte pas a sdílejte odkaz",
+        "desc": "Navrhněte rozložení produktového pasu: vyberte sekce, doplňte obsah a data, poté vygenerujte veřejný odkaz nebo QR kód. Připraveno na audit, připraveno pro klienta."
+      }
     }
   }
 }

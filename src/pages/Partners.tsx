@@ -75,6 +75,26 @@ const Partners = () => {
                 <p className="mt-2 text-sm font-medium text-slate-700 text-center">{type.name}</p>
               </div>)}
           </div>
+
+          {/* GS1 Polska highlight */}
+          <div className="mt-10">
+            <Link to={`/${currentLocale}/partners/gs1-polska`} className="block group">
+              <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 hover:shadow-lg transition-all">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-xl bg-primary/10">
+                      <Globe className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">GS1 Polska × Quantifier.ai</h3>
+                      <p className="text-sm text-slate-600">{t('gs1.partnership.dppLabel')} & Envirly GHG</p>
+                    </div>
+                  </div>
+                  <ArrowRight className="h-5 w-5 text-primary group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Card>
+            </Link>
+          </div>
         </section>
         
         <section className="mb-12 bg-gradient-to-r from-blue-50 to-compliance-50 p-8 rounded-xl">
