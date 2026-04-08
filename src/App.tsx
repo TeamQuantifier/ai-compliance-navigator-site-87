@@ -95,6 +95,9 @@ import FormularzPage from "./pages/formularz/FormularzPage";
 // Training / Services
 import TrainingLanding from "./pages/services/TrainingLanding";
 
+// Partner subpages
+import Gs1Polska from "./pages/partners/Gs1Polska";
+
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
 import EventDetail from "./pages/events/EventDetail";
@@ -193,6 +196,7 @@ const MainRoutes = () => (
         {/* Other main routes */}
         <Route path="/:locale/plans" element={<Plans />} />
         <Route path="/:locale/partners" element={<Partners />} />
+        <Route path="/:locale/partners/gs1-polska" element={<Gs1Polska />} />
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />

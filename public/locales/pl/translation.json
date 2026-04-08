@@ -5269,6 +5269,10 @@
     "training": {
       "title": "Szkolenia cyberbezpieczeństwo, ESG i compliance dla firm | Quantifier.ai",
       "description": "Przygotowujemy firmy do NIS2, ISO 27001, DORA, CSRD i audytów. Szkolenia z wdrożeniem, narzędziami i gotowymi procedurami. Umów konsultację."
+    },
+    "gs1": {
+      "title": "GS1 Polska × Quantifier.ai — Paszport Produktowy i Ślad Węglowy",
+      "description": "Współpraca GS1 Polska z Quantifier.ai: Envirly LCA do cyfrowego paszportu produktowego (DPP) oraz Envirly GHG do raportowania emisji Scope 1 i 2."
     }
   },
   "seoLanding": {
@@ -8197,6 +8201,72 @@
       },
       "submit": "Wyślij zapytanie",
       "privacy": "Wysyłając formularz, zgadzasz się na przetwarzanie danych w celu przygotowania oferty."
+    }
+  },
+  "gs1": {
+    "hero": {
+      "title": "Paszport Produktowy — Wiesz, z czego składa się Twój produkt. Udowodnij to światu.",
+      "subtitle": "Dzięki Paszportowi Produktowemu Envirly każdy produkowany przez Ciebie wyrób dostaje własną cyfrową tożsamość — żywy, audytowalny zapis pełnego śladu środowiskowego.",
+      "cta": "Porozmawiaj z nami"
+    },
+    "partnership": {
+      "title": "Współpraca GS1 Polska × Quantifier.ai",
+      "p1": "Współpraca polega na udostępnieniu narzędzia Envirly LCA do paszportu produktowego zgodnego z DPP, gdzie dane integrują się z systemem GS1.",
+      "p2": "Dodatkowo Envirly GHG umożliwia raportowanie emisji gazów cieplarnianych w zakresie 1 i 2, z pełną integracją z infrastrukturą GS1.",
+      "dppLabel": "Paszport Produktowy",
+      "ghgLabel": "Emisje Scope 1 i 2",
+      "membersLabel": "Uczestników Systemu GS1 w Polsce"
+    },
+    "quote": {
+      "text": "To świetny przykład tego, jak standaryzacja i technologia mogą wspierać małe i średnie firmy w realizacji ambitnych celów klimatycznych i społecznych. Cieszę się, że możemy czerpać z takich rozwiązań i wspólnie budować z ponad 47 000 Uczestnikami Systemu w Polsce bardziej odporną i transparentną gospodarkę",
+      "author": "CEO GS1 Polska",
+      "role": "GS1 Polska"
+    },
+    "passport": {
+      "title": "Zamień każdy produkt w zweryfikowaną historię środowiskową",
+      "subtitle": "Czyste, wiarygodne, gotowe na audyt dane — w zasięgu ręki, w kilka minut.",
+      "hook1": "Klienci pytają. Regulatorzy wymagają. Inwestorzy obserwują. Czas na „zaufajcie nam, jesteśmy eko” dobiegł końca.",
+      "hook2": "Dzięki Paszportowi Produktowemu Envirly każdy produkowany przez Ciebie wyrób dostaje własną cyfrową tożsamość — żywy, audytowalny zapis pełnego śladu środowiskowego, od surowców aż po koniec życia produktu.",
+      "noExcel": "Koniec z chaosem w Excelu",
+      "noConsultants": "Koniec z konsultantami za 80 tys. zł",
+      "noGreenwashing": "Koniec z greenwashingiem"
+    },
+    "features": {
+      "digitalCard": {
+        "title": "Kompletna cyfrowa karta dla każdego produktu",
+        "desc": "Rejestruj skład materiałowy, ślad węglowy, zużycie energii, wody i więcej — wszystko zgodnie z uznanymi metodologiami LCA (ISO 14040/14044)."
+      },
+      "scale": {
+        "title": "Zbudowane do skalowania, nie tylko do audytów",
+        "desc": "Masz 5 indeksów produktowych czy 5 000 — Paszport Produktowy rośnie razem z Twoim katalogiem. Zmieniasz dane wejściowe? Przelicz jednym kliknięciem."
+      },
+      "sharing": {
+        "title": "Stworzone do dzielenia się",
+        "desc": "Wygeneruj raport paszportu dla klienta jednym kliknięciem. Przekaż go działom zakupów, zespołom ESG lub audytorom — w formacie, którego potrzebują."
+      },
+      "regulation": {
+        "title": "O krok przed regulacjami UE ws. DPP",
+        "desc": "Rozporządzenie UE o Cyfrowym Paszporcie Produktu nadchodzi. Firmy, które zaczną teraz, zyskają przewagę konkurencyjną."
+      }
+    },
+    "business": {
+      "title": "Biznesowy rachunek jest prosty",
+      "desc": "Firmy z zweryfikowanymi danymi środowiskowymi produktów wygrywają więcej kontraktów B2B, lepiej negocjują z inwestorami zwracającymi uwagę na ESG i obniżają koszty due diligence w łańcuchu dostaw nawet o 60%.",
+      "b2b": "Więcej kontraktów B2B",
+      "esg": "Lepsze negocjacje z inwestorami ESG",
+      "dueDiligence": "Redukcja kosztów due diligence"
+    },
+    "audience": {
+      "title": "Dla kogo to jest",
+      "manufacturers": "Producenci, którzy muszą szybko odpowiadać na kwestionariusze zrównoważonego rozwoju od klientów",
+      "sustainability": "Zespoły ds. sustainability, zmęczone budowaniem modeli LCA od zera przed każdym audytem",
+      "compliance": "Menedżerowie ds. produktu i compliance, którzy potrzebują jednego źródła prawdy o emisjach na poziomie produktu",
+      "sales": "Handlowcy, dla których zrównoważony rozwój ma być argumentem zamykającym deal, a nie kolejnym checkboxem"
+    },
+    "form": {
+      "title": "Porozmawiajmy o Twoim produkcie",
+      "subtitle": "Zostaw wiadomość — odezwiemy się w ciągu 24 godzin.",
+      "cta": "Wyślij wiadomość"
     }
   }
 }

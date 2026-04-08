@@ -5316,6 +5316,10 @@
     "training": {
       "title": "Cybersecurity, ESG & Compliance Training for Companies | Quantifier.ai",
       "description": "We prepare companies for NIS2, ISO 27001, DORA, CSRD and audits. Training with implementation, tools and ready-to-use procedures. Book a consultation."
+    },
+    "gs1": {
+      "title": "GS1 Polska × Quantifier.ai — Product Passport & Carbon Footprint",
+      "description": "GS1 Polska and Quantifier.ai partnership: Envirly LCA for Digital Product Passport (DPP) and Envirly GHG for Scope 1 & 2 emissions reporting."
     }
   },
   "seoLanding": {
@@ -8131,6 +8135,72 @@
       },
       "submit": "Send inquiry",
       "privacy": "By submitting this form, you agree to data processing for the purpose of preparing an offer."
+    }
+  },
+  "gs1": {
+    "hero": {
+      "title": "Product Passport — You know what your product is made of. Prove it to the world.",
+      "subtitle": "With Envirly's Product Passport, every product you manufacture gets its own digital identity — a living, auditable record of its full environmental footprint.",
+      "cta": "Talk to us"
+    },
+    "partnership": {
+      "title": "GS1 Polska × Quantifier.ai Partnership",
+      "p1": "The partnership provides Envirly LCA tools for a Digital Product Passport compliant with DPP, where data integrates with the GS1 system.",
+      "p2": "Additionally, Envirly GHG enables greenhouse gas emissions reporting for Scope 1 and 2, with full integration into GS1 infrastructure.",
+      "dppLabel": "Product Passport",
+      "ghgLabel": "Scope 1 & 2 Emissions",
+      "membersLabel": "GS1 System Members in Poland"
+    },
+    "quote": {
+      "text": "This is a great example of how standardization and technology can support small and medium-sized enterprises in achieving ambitious climate and social goals. I am pleased that we can draw from such solutions and together with over 47,000 System Members in Poland build a more resilient and transparent economy",
+      "author": "CEO GS1 Polska",
+      "role": "GS1 Polska"
+    },
+    "passport": {
+      "title": "Turn every product into a verified environmental story",
+      "subtitle": "Clean, credible, audit-ready data — at your fingertips, in minutes.",
+      "hook1": "Customers ask. Regulators demand. Investors watch. The era of 'trust us, we're green' is over.",
+      "hook2": "With Envirly's Product Passport, every product you manufacture gets its own digital identity — a living, auditable record of its full environmental footprint, from raw materials to end of life.",
+      "noExcel": "No more Excel chaos",
+      "noConsultants": "No more €20K consultant reports",
+      "noGreenwashing": "No more greenwashing accusations"
+    },
+    "features": {
+      "digitalCard": {
+        "title": "Complete digital card for every product",
+        "desc": "Record material composition, carbon footprint, energy and water consumption and more — all aligned with recognized LCA methodologies (ISO 14040/14044)."
+      },
+      "scale": {
+        "title": "Built to scale, not just for audits",
+        "desc": "Whether you have 5 product indexes or 5,000 — the Product Passport grows with your catalog. Changed input data? Recalculate with one click."
+      },
+      "sharing": {
+        "title": "Built for sharing",
+        "desc": "Generate a passport report for your client with one click. Pass it to procurement, ESG teams, or auditors — in the format they need, when they need it."
+      },
+      "regulation": {
+        "title": "One step ahead of EU DPP regulations",
+        "desc": "The EU Digital Product Passport regulation is coming. Companies that start now gain a competitive advantage."
+      }
+    },
+    "business": {
+      "title": "The business case is simple",
+      "desc": "Companies with verified product environmental data win more B2B contracts, negotiate better with ESG-focused investors, and reduce supply chain due diligence costs by up to 60%.",
+      "b2b": "More B2B contracts won",
+      "esg": "Better ESG investor negotiations",
+      "dueDiligence": "Due diligence cost reduction"
+    },
+    "audience": {
+      "title": "Who is this for",
+      "manufacturers": "Manufacturers who need to quickly respond to sustainability questionnaires from clients",
+      "sustainability": "Sustainability teams tired of building LCA models from scratch before every audit",
+      "compliance": "Product and compliance managers who need a single source of truth for product-level emissions",
+      "sales": "Sales teams who want sustainability to be a deal-closing argument, not just another checkbox"
+    },
+    "form": {
+      "title": "Let's talk about your product",
+      "subtitle": "Leave a message — we'll get back to you within 24 hours.",
+      "cta": "Send message"
     }
   }
 }
