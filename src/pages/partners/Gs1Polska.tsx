@@ -1,0 +1,271 @@
+import React, { useState, useRef } from 'react';
+import PageTemplate from '@/components/PageTemplate';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import { 
+  Package, Shield, BarChart3, Globe, ArrowRight, 
+  CheckCircle2, Zap, Link2, FileCheck, Users,
+  Factory, Leaf, Scale, Send, Quote
+} from 'lucide-react';
+
+const Gs1Polska = () => {
+  const { t, currentLocale } = useLanguage();
+  const { toast } = useToast();
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [company, setCompany] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const trimmedFirstName = firstName.trim();
+    const trimmedLastName = lastName.trim();
+    const trimmedEmail = email.trim().toLowerCase();
+    const trimmedMessage = message.trim();
+
+    if (!trimmedFirstName || !trimmedLastName || !trimmedEmail || !trimmedMessage) {
+      toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke('contact-form', {
+        body: {
+          firstName: trimmedFirstName,
+          lastName: trimmedLastName,
+          email: trimmedEmail,
+          company: company.trim() || undefined,
+          message: trimmedMessage,
+          language: currentLocale,
+          sourceUrl: window.location.href,
+        },
+      });
+      if (error) throw error;
+      toast({ title: t('contact.toast.messageSent'), description: t('contact.toast.messageSentDesc') });
+      setFirstName(''); setLastName(''); setEmail(''); setCompany(''); setMessage('');
+    } catch (err: any) {
+      toast({ title: t('contact.toast.failedToSend'), description: err?.message || t('contact.toast.failedToSendDesc'), variant: 'destructive' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const features = [
+    { icon: <Package className="h-8 w-8" />, titleKey: 'gs1.features.digitalCard.title', descKey: 'gs1.features.digitalCard.desc' },
+    { icon: <Zap className="h-8 w-8" />, titleKey: 'gs1.features.scale.title', descKey: 'gs1.features.scale.desc' },
+    { icon: <Link2 className="h-8 w-8" />, titleKey: 'gs1.features.sharing.title', descKey: 'gs1.features.sharing.desc' },
+    { icon: <Shield className="h-8 w-8" />, titleKey: 'gs1.features.regulation.title', descKey: 'gs1.features.regulation.desc' },
+  ];
+
+  const audiences = [
+    { icon: <Factory className="h-5 w-5" />, key: 'gs1.audience.manufacturers' },
+    { icon: <Leaf className="h-5 w-5" />, key: 'gs1.audience.sustainability' },
+    { icon: <Scale className="h-5 w-5" />, key: 'gs1.audience.compliance' },
+    { icon: <Users className="h-5 w-5" />, key: 'gs1.audience.sales' },
+  ];
+
+  return (
+    <PageTemplate title={t('seo.gs1.title')} description={t('seo.gs1.description')}>
+      <div className="max-w-5xl mx-auto">
+
+        {/* Hero */}
+        <section className="relative mb-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl -z-10" />
+          <div className="py-12 px-6 md:px-12">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
+                <Globe className="h-4 w-4" />
+                GS1 Polska × Quantifier.ai
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-[1.1]">
+              {t('gs1.hero.title')}
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mb-8 leading-relaxed">
+              {t('gs1.hero.subtitle')}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="text-lg px-8 py-6 group" onClick={scrollToForm}>
+                {t('gs1.hero.cta')}
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Partnership intro */}
+        <section className="mb-20">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-4">{t('gs1.partnership.title')}</h2>
+              <p className="text-lg text-muted-foreground mb-4">{t('gs1.partnership.p1')}</p>
+              <p className="text-lg text-muted-foreground">{t('gs1.partnership.p2')}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="p-6 text-center border-primary/20 bg-primary/5">
+                <FileCheck className="h-10 w-10 text-primary mx-auto mb-3" />
+                <p className="font-bold text-2xl text-foreground">DPP</p>
+                <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.dppLabel')}</p>
+              </Card>
+              <Card className="p-6 text-center border-accent/20 bg-accent/5">
+                <BarChart3 className="h-10 w-10 text-accent mx-auto mb-3" />
+                <p className="font-bold text-2xl text-foreground">GHG</p>
+                <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.ghgLabel')}</p>
+              </Card>
+              <Card className="p-6 text-center border-primary/20 bg-primary/5">
+                <Globe className="h-10 w-10 text-primary mx-auto mb-3" />
+                <p className="font-bold text-2xl text-foreground">47 000+</p>
+                <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.membersLabel')}</p>
+              </Card>
+              <Card className="p-6 text-center border-accent/20 bg-accent/5">
+                <Shield className="h-10 w-10 text-accent mx-auto mb-3" />
+                <p className="font-bold text-2xl text-foreground">ISO</p>
+                <p className="text-sm text-muted-foreground mt-1">14040 / 14044</p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* CEO Quote */}
+        <section className="mb-20">
+          <div className="relative bg-gradient-to-r from-foreground to-foreground/90 rounded-2xl p-10 md:p-14 text-primary-foreground overflow-hidden">
+            <Quote className="absolute top-6 left-6 h-20 w-20 text-primary-foreground/10" />
+            <blockquote className="relative z-10">
+              <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6">
+                &ldquo;{t('gs1.quote.text')}&rdquo;
+              </p>
+              <footer className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center">
+                  <Users className="h-6 w-6" />
+                </div>
+                <div>
+                  <cite className="not-italic font-bold text-lg">{t('gs1.quote.author')}</cite>
+                  <p className="text-primary-foreground/70 text-sm">{t('gs1.quote.role')}</p>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </section>
+
+        {/* Product Passport Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t('gs1.passport.title')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t('gs1.passport.subtitle')}
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-muted/50 to-muted rounded-2xl p-8 md:p-12 mb-12">
+            <p className="text-lg text-foreground mb-4 font-medium">{t('gs1.passport.hook1')}</p>
+            <p className="text-lg text-muted-foreground mb-6">{t('gs1.passport.hook2')}</p>
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+                ✕ {t('gs1.passport.noExcel')}
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+                ✕ {t('gs1.passport.noConsultants')}
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+                ✕ {t('gs1.passport.noGreenwashing')}
+              </span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((f, i) => (
+              <Card key={i} className="p-8 border-border/50 hover:shadow-lg transition-shadow group">
+                <div className="flex items-start gap-5">
+                  <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                    {f.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{t(f.titleKey)}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{t(f.descKey)}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Business case */}
+        <section className="mb-20">
+          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-10 md:p-14 text-primary-foreground">
+            <h2 className="text-3xl font-bold mb-4">{t('gs1.business.title')}</h2>
+            <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl">{t('gs1.business.desc')}</p>
+            <div className="grid sm:grid-cols-3 gap-6">
+              <div className="bg-primary-foreground/10 backdrop-blur rounded-xl p-6 text-center">
+                <p className="text-4xl font-extrabold mb-2">B2B</p>
+                <p className="text-sm text-primary-foreground/80">{t('gs1.business.b2b')}</p>
+              </div>
+              <div className="bg-primary-foreground/10 backdrop-blur rounded-xl p-6 text-center">
+                <p className="text-4xl font-extrabold mb-2">ESG</p>
+                <p className="text-sm text-primary-foreground/80">{t('gs1.business.esg')}</p>
+              </div>
+              <div className="bg-primary-foreground/10 backdrop-blur rounded-xl p-6 text-center">
+                <p className="text-4xl font-extrabold mb-2">-60%</p>
+                <p className="text-sm text-primary-foreground/80">{t('gs1.business.dueDiligence')}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Audience */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">{t('gs1.audience.title')}</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {audiences.map((a, i) => (
+              <div key={i} className="flex items-start gap-4 p-6 rounded-xl border border-border bg-card hover:bg-muted/50 transition-colors">
+                <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                <p className="text-foreground">{t(a.key)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Form */}
+        <section ref={formRef} className="mb-16" id="contact-form">
+          <div className="bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl font-bold text-foreground mb-3 text-center">{t('gs1.form.title')}</h2>
+            <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">{t('gs1.form.subtitle')}</p>
+            
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto grid sm:grid-cols-2 gap-4">
+              <Input placeholder={t('contact.form.firstName')} value={firstName} onChange={e => setFirstName(e.target.value)} required />
+              <Input placeholder={t('contact.form.lastName')} value={lastName} onChange={e => setLastName(e.target.value)} required />
+              <Input type="email" placeholder={t('contact.form.email')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
+              <Input placeholder={t('contact.form.company')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
+              <Textarea placeholder={t('contact.form.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
+              <Button type="submit" size="lg" className="sm:col-span-2 text-lg py-6" disabled={loading}>
+                <Send className="mr-2 h-5 w-5" />
+                {loading ? t('contact.form.sending') : t('gs1.form.cta')}
+              </Button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </PageTemplate>
+  );
+};
+
+export default Gs1Polska;
