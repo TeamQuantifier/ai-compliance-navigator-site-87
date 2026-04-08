@@ -42,8 +42,15 @@ const TrainingLanding = () => {
   const [selectedAudience, setSelectedAudience] = useState<'executive' | 'operational' | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<'cyber' | 'esg' | 'compliance' | null>(null);
 
+  const { toast } = useToast();
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactCompany, setContactCompany] = useState('');
+  const [contactMessage, setContactMessage] = useState('');
+  const [contactLoading, setContactLoading] = useState(false);
+
   const baseUrl = 'https://quantifier.ai';
-  const pageUrl = `${baseUrl}/${currentLocale}/${currentLocale === 'pl' ? 'szkolenia-cyberbezpieczenstwo-dla-firm' : 'cybersecurity-training-for-companies'}`;
+  const pageUrl = `${baseUrl}/${currentLocale}/${currentLocale === 'pl' ? 'szkolenia-cyberbezpieczenstwo-dla-firm' : currentLocale === 'cs' ? 'skoleni-kyberneticka-bezpecnost-pro-firmy' : 'cybersecurity-training-for-companies'}`;
 
   const getArray = (key: string): string[] => {
     const val = t(key, { returnObjects: true });
@@ -420,37 +427,34 @@ const TrainingLanding = () => {
               {t('training.experts.subtitle')}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {['MK', 'AW', 'PZ'].map((initials, idx) => {
-              const certs = getArray(`training.experts.people.${idx}.certs`);
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {expertsList.map((expert) => {
+              const certs = getArray(`training.experts.people.${expert.idx}.certs`);
               return (
-                <div key={idx} className="bg-card border border-border rounded-2xl p-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center mb-5 mx-auto">
-                    <span className="text-2xl font-bold text-primary">{initials}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground text-center">{t(`training.experts.people.${idx}.name`)}</h3>
-                  <p className="text-sm text-primary font-medium text-center mb-4">{t(`training.experts.people.${idx}.role`)}</p>
+                <div key={expert.idx} className="bg-card border border-border rounded-2xl p-6">
+                  <img
+                    src={expert.avatar}
+                    alt={expert.name}
+                    className="w-20 h-20 rounded-full object-cover border-2 border-primary/20 mb-5 mx-auto"
+                    loading="lazy"
+                  />
+                  <h3 className="text-lg font-bold text-foreground text-center">{expert.name}</h3>
+                  <p className="text-sm text-primary font-medium text-center mb-4">{t(`training.experts.people.${expert.idx}.role`)}</p>
                   <div className="space-y-3 text-sm">
                     <div>
                       <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.who')}</p>
-                      <p className="text-foreground">{t(`training.experts.people.${idx}.bio`)}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.advises')}</p>
-                      <p className="text-foreground">{t(`training.experts.people.${idx}.advises`)}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.brings')}</p>
-                      <p className="text-foreground">{t(`training.experts.people.${idx}.brings`)}</p>
+                      <p className="text-foreground">{t(`training.experts.people.${expert.idx}.bio`)}</p>
                     </div>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <div className="flex flex-wrap gap-1.5">
-                      {certs.map((cert, ci) => (
-                        <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">{cert}</span>
-                      ))}
+                  {certs.length > 0 && (
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <div className="flex flex-wrap gap-1.5">
+                        {certs.map((cert, ci) => (
+                          <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">{cert}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               );
             })}
