@@ -1,83 +1,65 @@
 
 
-# Plan: Przebudowa strony szkolenia Cybersecurity (NIS2 + ISO 27001)
+# Plan: Aktualizacja strony szkoleniowej — nawigacja, eksperci, formularz kontaktowy
 
-## Co robimy
+## 1. Navbar — zamiana "Plans" na "Szkolenia"
 
-Kompletna przebudowa strony `/szkolenie-cyberbezpieczenstwo-nis2-iso27001` z placeholderów na pełną, konwertującą stronę opartą o rzeczywistą agendę 5-blokową (09:00–17:00). Gradient slate→blue, nowoczesny design, zero pustych pól.
+**Navbar.tsx**: Zastąpić element `{ title: t('menu.plans'), href: '/plans' }` nowym elementem:
+- PL: "Szkolenia" → `/szkolenia-cyberbezpieczenstwo-dla-firm`
+- EN: "Training" → `/cybersecurity-training-for-companies`
+- CS: "Školení" → odpowiedni slug
 
-## Struktura strony (nowa)
+Dodać klucze `menu.training` do plików tłumaczeń (PL, EN, CS).
 
-```text
-1. HERO (gradient slate-900 → blue-900)
-   - Badge: "Szkolenie 1-dniowe · 8h intensywnego programu"
-   - H1: "NIS2 + ISO 27001: Szkolenie dla firm"
-   - Subtitle: konkretny opis wartości
-   - Stats: 5 bloków agendy | 8h | NIS2+ISO 27001+DORA | Warsztat + roadmapa
-   - CTA: "Zamów szkolenie dla zespołu"
+## 2. Footer — dodać link do Plans
 
-2. PROBLEM SECTION (jasne tło)
-   - "Dlaczego teraz?" — 3 karty z konkretnymi danymi:
-     · NIS2/KSC: 6 mies. na samoidentyfikację, 12 mies. na wdrożenie
-     · Kary do 10 mln EUR / 2% obrotu
-     · Odpowiedzialność osobista zarządu (art. 20 NIS2)
+**Footer.tsx**: Dodać link "Plany / Plans / Plány" do sekcji "Company" (lub Solutions), wskazujący na `/{locale}/plans`.
 
-3. AGENDA (5 bloków — timeline/accordion)
-   - Blok 1: Wprowadzenie i kontekst (09:00–10:30)
-   - Blok 2: Ryzyka, incydenty i procesy (10:45–12:30)
-   - Blok 3: Środki techniczno-organizacyjne (13:15–15:00)
-   - Blok 4: Łańcuch dostaw, zarząd i governance (15:15–16:30)
-   - Blok 5: Warsztat "Co robimy od jutra?" (16:30–17:00)
-   Każdy blok z ikoną, zakresem godzinowym, listą tematów
+## 3. Eksperci — zaktualizować dane (4 osoby)
 
-4. CO WYNIESIESZ (benefits — 2-kolumnowy grid)
-   - 8 konkretnych korzyści z checkmarkami
-   - Np. "Gotowy rejestr ryzyk", "Procedura incydentów", 
-     "Roadmapa 3-6-12 mies.", "Quick wins na poniedziałek"
+**TrainingLanding.tsx**: Zmienić sekcję ekspertów z 3 placeholderów na 4 realne osoby:
 
-5. DLA KOGO (audience cards — 4 kolumny)
-   - Zarząd / C-level
-   - CISO / Pełnomocnik ds. cyber
-   - Zespoły IT / Security
-   - Compliance / Risk managers
-   Z opisem co konkretnie zyskuje każda grupa
+1. **Klaudia Sałdan** — Prawniczka | Ekspertka ds. ESG & Compliance
+   - Skopiować załączone zdjęcie do `public/images/team/Klaudia.jpg`
+2. **Enrika Gawłowska-Nabożny** — Prawniczka, ekspertka ds. sprawozdawczości zrównoważonego rozwoju, Taksonomii UE, gospodarki o obiegu zamkniętym i praw człowieka
+   - Avatar z `/images/team/Enrika.jpg` (istniejący, z About)
+3. **Weronika Czaplewska** — VP & Co-founder
+   - Avatar z `/images/team/Weronika.jpg`
+4. **Mateusz Masiak** — CEO & Co-founder
+   - Avatar z `/images/team/Mateusz.jpg`
 
-6. JAK PRACUJEMY (3 kroki — format)
-   - Diagnoza: quiz + mapowanie dojrzałości
-   - Szkolenie: 5 bloków merytorycznych
-   - Działanie: warsztat + roadmapa + quick wins
+Zmienić grid na `md:grid-cols-2 lg:grid-cols-4`, zastąpić inicjały avatarami (tag `<img>`), zaktualizować klucze i18n `training.experts.people.*` dla PL, EN, CS.
 
-7. FAQ (rozbudowane, 7 pytań z JSON-LD)
-   - Dla kogo, czas trwania, format, wymagania, 
-     certyfikat, cena, customizacja
+## 4. Formularz kontaktowy — integracja z Edge Function `contact-form`
 
-8. CTA (gradient slate→blue)
-   - "Zabezpiecz firmę przed NIS2 — zacznij od szkolenia"
-   - Dwa przyciski: "Zamów szkolenie" + "Pobierz agendę PDF"
-```
+**TrainingLanding.tsx**: Zastąpić obecny dummy formularz prawdziwą integracją z `supabase.functions.invoke('contact-form')` — ten sam endpoint co `/Contact`. Pola: imię, email, firma, wiadomość. Dodać walidację, loading state i toast notifications.
+
+Przyciski "Umów rozmowę" w hero i sticky bar prowadzą do `#contact` (anchor scroll) — to działa poprawnie, bo formularz jest na dole strony.
+
+## 5. Tłumaczenia — aktualizacja EN i CS
+
+Zaktualizować pliki:
+- `public/locales/en/translation.json` — klucze `training.experts.people.*` z EN bios
+- `public/locales/cs/translation.json` — klucze `training.*` z czeskimi tłumaczeniami
+- `src/i18n/locales/pl.json` i `en.json` — klucze `menu.training`
+- Dodać route CS w `App.tsx` jeśli brakuje
+
+## 6. Trasa czeska
+
+Dodać w `App.tsx` route: `/cs/skoleni-kyberneticka-bezpecnost-pro-firmy` → `TrainingLanding`.
 
 ## Pliki do zmiany
 
-1. **`src/pages/services/TrainingCybersecurity.tsx`** — pełna przebudowa komponentu:
-   - Nowe sekcje: Problem, Agenda (timeline z 5 blokami), "Jak pracujemy"
-   - Usunięcie generycznych 6 modułów → zastąpienie rzeczywistą agendą
-   - Nowe ikony: AlertTriangle, Scale, Link2, Zap, ClipboardCheck, Timer
-   - Accordion dla bloków agendy (collapsible)
-
-2. **`src/i18n/locales/pl.json`** — pełna wymiana sekcji `trainingCyber`:
-   - Nowe klucze: `problem`, `agenda` (5 bloków z topics), `process`, rozbudowane `benefits` (8), `faq` (7 pytań)
-   - Cały tekst wypełniony — zero placeholderów
-   - SEO meta zaktualizowane pod kątem intencji zakupowej
-
-3. **`src/i18n/locales/en.json`** — angielska wersja sekcji `trainingCyber`:
-   - Pełne tłumaczenie wszystkich nowych kluczy
-   - Dostosowanie terminologii (NIS2 EU Baseline, nie KSC)
-
-## Kluczowe decyzje
-
-- Agenda jako accordion (Collapsible) — pozwala na skanowanie bez przytłaczania
-- Sekcja "Problem" buduje urgency przed agendą
-- Sekcja "Jak pracujemy" (3 kroki) pokazuje personalizowane podejście (quiz diagnostyczny na starcie)
-- Benefits skupione na deliverables (rejestr ryzyk, roadmapa, procedury) — nie na abstrakcjach
-- FAQ rozbudowane o pytania o cenę i format (online/stacjonarnie)
+| Plik | Zmiana |
+|------|--------|
+| `src/components/Navbar.tsx` | Plans → Training |
+| `src/components/Footer.tsx` | Dodać link Plans |
+| `src/pages/services/TrainingLanding.tsx` | Eksperci (4 osoby, zdjęcia), formularz z API |
+| `public/locales/pl/translation.json` | Nowe klucze ekspertów, menu.training |
+| `public/locales/en/translation.json` | j.w. w EN |
+| `public/locales/cs/translation.json` | j.w. w CS |
+| `src/i18n/locales/pl.json` | menu.training |
+| `src/i18n/locales/en.json` | menu.training |
+| `src/App.tsx` | Route CS |
+| `public/images/team/Klaudia.jpg` | Nowe zdjęcie (copy z upload) |
 
