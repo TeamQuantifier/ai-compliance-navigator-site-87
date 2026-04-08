@@ -6728,6 +6728,120 @@
           ]
         }
       ]
+    },
+    "configurator": {
+      "title": "Přizpůsobte školení svým potřebám",
+      "subtitle": "Vyberte cílovou skupinu a téma — ukážeme vám přesný rozsah programu.",
+      "audienceLabel": "Pro koho?",
+      "topicLabel": "Jaké téma?",
+      "audiences": {
+        "executive": {
+          "label": "Vedení a top management",
+          "desc": "Strategie, odpovědnost, dohled"
+        },
+        "operational": {
+          "label": "Implementační školení",
+          "desc": "Operace, postupy, nástroje"
+        }
+      },
+      "topics": {
+        "cyber": {
+          "label": "Kybernetická bezpečnost",
+          "desc": "NIS2 · ISO 27001 · DORA"
+        },
+        "esg": {
+          "label": "ESG / CSRD",
+          "desc": "CSRD · ESRS · Taxonomie EU"
+        },
+        "compliance": {
+          "label": "Compliance & GRC",
+          "desc": "GRC · Interní kontrola · Audity"
+        }
+      },
+      "resultLabel": "Rozsah programu",
+      "scopeLabels": {
+        "focus": "Zaměření školení",
+        "topics": "Program zahrnuje",
+        "deliverable": "Co získáte",
+        "result": "Výsledek"
+      },
+      "scopes": {
+        "executive_cyber": {
+          "focus": "Odpovědnost vedení podle NIS2 a dohled nad kybernetickou bezpečností",
+          "topics": [
+            "Osobní odpovědnost vedení podle NIS2 (čl. 20) a sankce",
+            "Jak číst zprávy o rizicích a rozhodovat o rozpočtu",
+            "Povinnosti hlášení: incidenty 24h/72h",
+            "Dohled nad dodavateli a ICT dodavatelským řetězcem",
+            "Strategie kybernetické bezpečnosti"
+          ],
+          "deliverable": "Executive brief, kontrolní seznam, KPI dashboard bezpečnosti",
+          "result": "Vedení rozumí svým povinnostem a dokáže dohlížet na kybernetickou bezpečnost"
+        },
+        "executive_esg": {
+          "focus": "ESG reportovací povinnosti pro vedení a strategie udržitelnosti",
+          "topics": [
+            "Povinnosti vedení podle CSRD",
+            "Analýza dvojí významnosti",
+            "ESG governance: role a odpovědnost",
+            "Taxonomie EU — dopad na investiční rozhodnutí",
+            "Reputační riziko a greenwashing"
+          ],
+          "deliverable": "ESG strategie pro vedení, matice odpovědností, reportovací kalendář",
+          "result": "Vedení připraveno na dohled nad ESG reportingem"
+        },
+        "executive_compliance": {
+          "focus": "Budování kultury compliance a dohled nad systémem vnitřní kontroly",
+          "topics": [
+            "Role vedení v compliance",
+            "Strategické řízení rizik",
+            "Jak číst compliance zprávy",
+            "Cross-regulace: NIS2, DORA, GDPR",
+            "Tone from the top: budování kultury souladu"
+          ],
+          "deliverable": "Executive compliance brief, matice strategických rizik, eskalační framework",
+          "result": "Vedení aktivně dohlíží na compliance"
+        },
+        "operational_cyber": {
+          "focus": "Implementace požadavků NIS2/ISO 27001 v operační praxi",
+          "topics": [
+            "Analýza rizik a registr hrozeb podle ISO 27001",
+            "Procedura řešení incidentů",
+            "Bezpečnostní politiky: tvorba a implementace",
+            "Bezpečnost dodavatelského řetězce",
+            "Technická a organizační opatření",
+            "Mapování kontrol: NIS2 → ISO 27001 → DORA"
+          ],
+          "deliverable": "Registr rizik, procedury incidentů, šablony politik, roadmapa implementace",
+          "result": "Tým připraven samostatně implementovat systém kybernetické bezpečnosti"
+        },
+        "operational_esg": {
+          "focus": "Sběr ESG dat, CSRD reporting a implementace procesů",
+          "topics": [
+            "Standardy ESRS v praxi",
+            "Sběr ESG dat: procesy a nástroje",
+            "Analýza dvojí významnosti — praktický workshop",
+            "Uhlíková stopa: výpočet Scope 1, 2 a 3",
+            "Příprava dat pro ověření auditorem",
+            "Automatizace ESG reportingu"
+          ],
+          "deliverable": "Matice významnosti, formuláře pro sběr dat, ESRS checklisty, šablona reportu",
+          "result": "Tým připraven samostatně sbírat data a připravit ESG report"
+        },
+        "operational_compliance": {
+          "focus": "Budování a operacionalizace compliance systému",
+          "topics": [
+            "Budování compliance systému od nuly",
+            "Mapování operačních rizik",
+            "Tvorba politik a procedur souladu",
+            "Systém vnitřní kontroly",
+            "Příprava na externí audity",
+            "Cross-mapping regulací"
+          ],
+          "deliverable": "Registr rizik, šablony politik, matice vnitřní kontroly, auditové playbook",
+          "result": "Tým připraven samostatně řídit compliance a připravit se na audity"
+        }
+      }
     }
   },
   "gs1": {
