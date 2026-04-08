@@ -6741,7 +6741,7 @@
       "p1": "Partnerství poskytuje nástroj Envirly LCA pro produktový pas kompatibilní s DPP, kde se data integrují se systémem GS1.",
       "p2": "Envirly GHG navíc umožňuje vykazování emisí skleníkových plynů v rozsahu 1 a 2 s plnou integrací do infrastruktury GS1.",
       "dppLabel": "Produktový pas",
-      "ghgLabel": "Emise Scope 1 a 2",
+      "ghgLabel": "Uhlíková stopa organizace",
       "membersLabel": "Členů systému GS1 v Polsku"
     },
     "quote": {
