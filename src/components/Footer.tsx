@@ -132,6 +132,11 @@ const Footer = () => {
                   {t('footer.company.contact')}
                 </Link>
               </li>
+              <li>
+                <Link to={`/${currentLocale}/plans`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.company.plans', 'Plans')}
+                </Link>
+              </li>
             </ul>
             
             <h4 className="font-semibold text-foreground mb-4 mt-6">{t('footer.resources.title')}</h4>
