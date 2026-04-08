@@ -441,21 +441,7 @@ const TrainingLanding = () => {
                   />
                   <h3 className="text-lg font-bold text-foreground text-center">{expert.name}</h3>
                   <p className="text-sm text-primary font-medium text-center mb-4">{t(`training.experts.people.${expert.idx}.role`)}</p>
-                  <div className="space-y-3 text-sm">
-                    <div>
-                      <p className="font-semibold text-muted-foreground text-xs uppercase tracking-wider mb-1">{t('training.experts.labels.who')}</p>
-                      <p className="text-foreground">{t(`training.experts.people.${expert.idx}.bio`)}</p>
-                    </div>
-                  </div>
-                  {certs.length > 0 && (
-                    <div className="mt-4 pt-4 border-t border-border">
-                      <div className="flex flex-wrap gap-1.5">
-                        {certs.map((cert, ci) => (
-                          <span key={ci} className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs">{cert}</span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <p className="text-sm text-foreground text-center">{t(`training.experts.people.${expert.idx}.bio`)}</p>
                 </div>
               );
             })}
