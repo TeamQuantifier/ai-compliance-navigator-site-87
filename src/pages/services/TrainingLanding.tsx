@@ -4,7 +4,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/seo/FAQSection';
 import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/hooks/use-toast';
+import {
+  Shield,
+  ShieldAlert,
   Leaf,
   Scale,
   ArrowRight,
@@ -27,6 +29,12 @@ import { useToast } from '@/hooks/use-toast';
   Settings,
 } from 'lucide-react';
 
+const expertsList = [
+  { name: 'Klaudia Sałdan', avatar: '/images/team/Klaudia.jpg', idx: 0 },
+  { name: 'Enrika Gawłowska-Nabożny', avatar: '/images/team/Enrika.jpg', idx: 1 },
+  { name: 'Weronika Czaplewska', avatar: '/images/team/Weronika.jpg', idx: 2 },
+  { name: 'Mateusz Masiak', avatar: '/images/team/Mateusz.jpg', idx: 3 },
+];
 const TrainingLanding = () => {
   const { t, currentLocale } = useLanguage();
   const [formStep, setFormStep] = useState(0);
