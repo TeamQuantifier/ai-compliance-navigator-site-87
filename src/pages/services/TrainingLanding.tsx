@@ -133,13 +133,10 @@ const TrainingLanding = () => {
 
               <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
 
-              <div className="mt-8 relative">
+              <div className="mt-8">
                 <div className="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-xl p-5">
-                  <div className="absolute -top-3 left-5">
-                    <span className="text-3xl text-primary/60 font-serif leading-none">&ldquo;</span>
-                  </div>
-                  <blockquote className="text-sm text-slate-300 italic leading-relaxed mt-1 mb-4">
-                    {t('training.proof.testimonial.quote')}
+                  <blockquote className="text-sm text-slate-300 italic leading-relaxed mb-4">
+                    <span className="text-primary/60 font-serif not-italic">&ldquo;</span>{t('training.proof.testimonial.quote')}<span className="text-primary/60 font-serif not-italic">&rdquo;</span>
                   </blockquote>
                   <div className="flex items-center gap-3 border-t border-white/10 pt-3">
                     <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/20 flex items-center justify-center text-xs font-bold text-primary">
