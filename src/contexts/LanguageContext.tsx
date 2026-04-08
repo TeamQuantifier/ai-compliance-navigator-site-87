@@ -115,6 +115,31 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         return;
       }
     }
+
+    // Handle pages with locale-specific slugs (e.g. training page)
+    const localizedRoutes: Record<string, Record<string, string>> = {
+      'szkolenia-cyberbezpieczenstwo-dla-firm': {
+        pl: 'szkolenia-cyberbezpieczenstwo-dla-firm',
+        en: 'cybersecurity-training-for-companies',
+        cs: 'skoleni-kyberneticka-bezpecnost-pro-firmy',
+      },
+      'cybersecurity-training-for-companies': {
+        pl: 'szkolenia-cyberbezpieczenstwo-dla-firm',
+        en: 'cybersecurity-training-for-companies',
+        cs: 'skoleni-kyberneticka-bezpecnost-pro-firmy',
+      },
+      'skoleni-kyberneticka-bezpecnost-pro-firmy': {
+        pl: 'szkolenia-cyberbezpieczenstwo-dla-firm',
+        en: 'cybersecurity-training-for-companies',
+        cs: 'skoleni-kyberneticka-bezpecnost-pro-firmy',
+      },
+    };
+
+    const cleanPath = pathWithoutLocale.replace(/^\/|\/$/g, '');
+    if (localizedRoutes[cleanPath]) {
+      navigate(`/${newLocale}/${localizedRoutes[cleanPath][newLocale]}`);
+      return;
+    }
     
     const newPath = `/${newLocale}${pathWithoutLocale ? '/' + pathWithoutLocale : ''}`;
     navigate(newPath);

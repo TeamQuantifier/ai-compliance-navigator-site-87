@@ -1,10 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternates } from '@/hooks/useBlog';
 import { usePrerenderReady } from '@/hooks/usePrerenderReady';
 import { calculateReadingTime } from '@/lib/reading-time';
 import RichTextRenderer from '@/components/blog/RichTextRenderer';
+import RelatedArticles from '@/components/blog/RelatedArticles';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -13,6 +14,62 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ArrowLeft, Clock, Calendar, Share2, AlertCircle } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
+import type { JSONContent } from '@tiptap/react';
+
+/**
+ * Extract related article slugs from body_rich "Related Articles" section
+ * and return cleaned content without that section.
+ */
+function extractRelatedArticles(content: JSONContent): { cleaned: JSONContent; slugs: string[] } {
+  if (!content.content) return { cleaned: content, slugs: [] };
+
+  const nodes = content.content;
+  const relatedHeadings = ['related articles', 'powiązane artykuły', 'czytaj również'];
+  
+  // Find index of "Related Articles" heading
+  let headingIdx = -1;
+  for (let i = nodes.length - 1; i >= 0; i--) {
+    const node = nodes[i];
+    if (node.type === 'heading') {
+      const text = node.content?.map((c: any) => c.text || '').join('').toLowerCase().trim();
+      if (text && relatedHeadings.some((h) => text.includes(h))) {
+        headingIdx = i;
+        break;
+      }
+    }
+  }
+
+  if (headingIdx === -1) return { cleaned: content, slugs: [] };
+
+  // Extract slugs from links in nodes after the heading
+  const slugs: string[] = [];
+  for (let i = headingIdx + 1; i < nodes.length; i++) {
+    const extractLinksFromNode = (node: any) => {
+      if (node.marks) {
+        for (const mark of node.marks) {
+          if (mark.type === 'link' && mark.attrs?.href) {
+            const href = mark.attrs.href as string;
+            // Extract slug from /xx/blog/slug or full URL
+            const match = href.match(/\/blog\/([a-z0-9-]+)\/?$/i);
+            if (match) slugs.push(match[1]);
+          }
+        }
+      }
+      if (node.content) {
+        for (const child of node.content) extractLinksFromNode(child);
+      }
+    };
+    extractLinksFromNode(nodes[i]);
+  }
+
+  // Remove related section from content
+  const cleaned: JSONContent = {
+    ...content,
+    content: nodes.slice(0, headingIdx),
+  };
+
+  return { cleaned, slugs };
+}
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -22,6 +79,10 @@ const BlogPost = () => {
   const { data: alternates } = useAlternates(post?.group_id, currentLocale, 'post');
   usePrerenderReady(!isLoading);
 
+  const { cleaned: cleanedContent, slugs: relatedSlugs } = useMemo(
+    () => (post ? extractRelatedArticles(post.body_rich as JSONContent) : { cleaned: { type: 'doc', content: [] }, slugs: [] }),
+    [post?.body_rich]
+  );
   useEffect(() => {
     if (alternates && alternates.length > 0) {
       setAlternates(alternates, 'post');
@@ -180,12 +241,17 @@ const BlogPost = () => {
 
           {/* Article content */}
           <div className="mb-12">
-            <RichTextRenderer content={post.body_rich as any} />
+            <RichTextRenderer content={cleanedContent} />
           </div>
+
+          {/* Related Articles */}
+          {relatedSlugs.length > 0 && (
+            <RelatedArticles slugs={relatedSlugs} lang={currentLocale} />
+          )}
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="mb-8">
+            <div className="mb-8 mt-8">
               <h3 className="text-sm font-semibold mb-3 text-muted-foreground uppercase">Tags</h3>
               <div className="flex gap-2 flex-wrap">
                 {post.tags.map((tag: string) => (

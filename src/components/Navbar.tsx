@@ -113,8 +113,8 @@ export const Navbar = () => {
       ],
     },
     {
-      title: t('menu.plans'),
-      href: '/plans',
+      title: t('menu.training'),
+      href: currentLocale === 'pl' ? '/szkolenia-cyberbezpieczenstwo-dla-firm' : currentLocale === 'cs' ? '/skoleni-kyberneticka-bezpecnost-pro-firmy' : '/cybersecurity-training-for-companies',
     },
     {
       title: t('menu.partners'),

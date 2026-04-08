@@ -1,40 +1,65 @@
-# SEO Content Clusters — 20-Page Map
 
-## Status: ✅ COMPLETE
 
-### Completed
-- ✅ Meta title updates: NIS2 framework (EN/PL), cybersecurity-check (EN/PL/CS)
-- ✅ P1 blog drafts created in CMS:
-  - EN: `nis2-compliance-checklist-2026`
-  - PL: `lista-kontrolna-nis2-2026`
-  - PL: `wdrozenie-nis2-ksc-przewodnik`
-  - EN: `iso-27001-vs-soc-2-comparison`
-  - EN: `vanta-alternatives-europe-eu-compliance`
-- ✅ UPDATE `/en/frameworks/nis-2/` — Article 21 mapping table, Why Software section, expanded FAQ
-- ✅ UPDATE `/pl/frameworks/nis-2/` — UKSC-specific sections added
-- ✅ P2 blog drafts created in CMS:
-  - EN: `nis2-readiness-assessment-guide`
-  - PL: `przewodnik-ocena-gotowosci-nis2`
-  - EN: `nis2-incident-reporting-requirements`
-  - PL: `nis2-raportowanie-incydentow`
-  - EN: `audit-evidence-collection-automation`
-  - EN: `soc-2-compliance-cost-timeline`
-- ✅ Framework pages (SOC, ISO 27001) — Related Content sections added
-- ✅ P3 blog drafts created in CMS:
-  - EN: `nis2-vs-iso-27001-mapping`
-  - EN: `nis2-board-accountability`
-  - PL: `odpowiedzialnosc-zarzadu-nis2`
-  - EN: `nis2-penalties-fines-enforcement`
-  - PL: `kary-nis2-ksc-sankcje`
-  - EN: `compliance-automation-evaluation-guide`
-  - PL: `alternatywy-dla-vanta-europa`
-- ✅ Compare pages — internal links to Vanta Alternatives blog added
-- ✅ UPDATE Continuous Compliance article — expanded with Evidence Automation, Real-Time Monitoring, Software Requirements sections
-- ✅ UPDATE SOC 2 Complete Guide — added SOC 2 vs ISO 27001 comparison + Best Tools sections
-- ✅ UPDATE Compliance Monitoring Guide — added Best Compliance Monitoring Tools section
+# Plan: Aktualizacja strony szkoleniowej — nawigacja, eksperci, formularz kontaktowy
 
-### Product page expansion (completed previously)
-- ✅ All 6 product pages rebuilt with 7-section layout + mockups + FAQ JSON-LD
-- ✅ All 3 role pages rebuilt with unique content + FAQ JSON-LD
-- ✅ Compare pages updated (March 2026 data)
-- ✅ Framework pages have DefinitionsBlock + SoftwareApplication schema
+## 1. Navbar — zamiana "Plans" na "Szkolenia"
+
+**Navbar.tsx**: Zastąpić element `{ title: t('menu.plans'), href: '/plans' }` nowym elementem:
+- PL: "Szkolenia" → `/szkolenia-cyberbezpieczenstwo-dla-firm`
+- EN: "Training" → `/cybersecurity-training-for-companies`
+- CS: "Školení" → odpowiedni slug
+
+Dodać klucze `menu.training` do plików tłumaczeń (PL, EN, CS).
+
+## 2. Footer — dodać link do Plans
+
+**Footer.tsx**: Dodać link "Plany / Plans / Plány" do sekcji "Company" (lub Solutions), wskazujący na `/{locale}/plans`.
+
+## 3. Eksperci — zaktualizować dane (4 osoby)
+
+**TrainingLanding.tsx**: Zmienić sekcję ekspertów z 3 placeholderów na 4 realne osoby:
+
+1. **Klaudia Sałdan** — Prawniczka | Ekspertka ds. ESG & Compliance
+   - Skopiować załączone zdjęcie do `public/images/team/Klaudia.jpg`
+2. **Enrika Gawłowska-Nabożny** — Prawniczka, ekspertka ds. sprawozdawczości zrównoważonego rozwoju, Taksonomii UE, gospodarki o obiegu zamkniętym i praw człowieka
+   - Avatar z `/images/team/Enrika.jpg` (istniejący, z About)
+3. **Weronika Czaplewska** — VP & Co-founder
+   - Avatar z `/images/team/Weronika.jpg`
+4. **Mateusz Masiak** — CEO & Co-founder
+   - Avatar z `/images/team/Mateusz.jpg`
+
+Zmienić grid na `md:grid-cols-2 lg:grid-cols-4`, zastąpić inicjały avatarami (tag `<img>`), zaktualizować klucze i18n `training.experts.people.*` dla PL, EN, CS.
+
+## 4. Formularz kontaktowy — integracja z Edge Function `contact-form`
+
+**TrainingLanding.tsx**: Zastąpić obecny dummy formularz prawdziwą integracją z `supabase.functions.invoke('contact-form')` — ten sam endpoint co `/Contact`. Pola: imię, email, firma, wiadomość. Dodać walidację, loading state i toast notifications.
+
+Przyciski "Umów rozmowę" w hero i sticky bar prowadzą do `#contact` (anchor scroll) — to działa poprawnie, bo formularz jest na dole strony.
+
+## 5. Tłumaczenia — aktualizacja EN i CS
+
+Zaktualizować pliki:
+- `public/locales/en/translation.json` — klucze `training.experts.people.*` z EN bios
+- `public/locales/cs/translation.json` — klucze `training.*` z czeskimi tłumaczeniami
+- `src/i18n/locales/pl.json` i `en.json` — klucze `menu.training`
+- Dodać route CS w `App.tsx` jeśli brakuje
+
+## 6. Trasa czeska
+
+Dodać w `App.tsx` route: `/cs/skoleni-kyberneticka-bezpecnost-pro-firmy` → `TrainingLanding`.
+
+## Pliki do zmiany
+
+| Plik | Zmiana |
+|------|--------|
+| `src/components/Navbar.tsx` | Plans → Training |
+| `src/components/Footer.tsx` | Dodać link Plans |
+| `src/pages/services/TrainingLanding.tsx` | Eksperci (4 osoby, zdjęcia), formularz z API |
+| `public/locales/pl/translation.json` | Nowe klucze ekspertów, menu.training |
+| `public/locales/en/translation.json` | j.w. w EN |
+| `public/locales/cs/translation.json` | j.w. w CS |
+| `src/i18n/locales/pl.json` | menu.training |
+| `src/i18n/locales/en.json` | menu.training |
+| `src/App.tsx` | Route CS |
+| `public/images/team/Klaudia.jpg` | Nowe zdjęcie (copy z upload) |
+

@@ -237,6 +237,17 @@
   to = "/cs/frameworks/nis-2/"
   status = 301
 
+# Blog article redirects (archived/consolidated)
+[[redirects]]
+  from = "/:locale/blog/nis2-directive"
+  to = "/:locale/blog/nis2-directive-compliance-requirements-implementation-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/blog/nis2-vs-iso-27001-differences"
+  to = "/:locale/blog/nis2-vs-iso-27001-mapping/"
+  status = 301
+
 # NIS2-KSC to new canonical path
 [[redirects]]
   from = "/:locale/nis2-ksc"
@@ -303,6 +314,84 @@
 [[redirects]]
   from = "/:locale/frameworks/data-security/ccpa"
   to = "/:locale/frameworks/ccpa/"
+  status = 301
+
+# --- Trailing-slash enforcement (reduces GSC "alternate page" noise) ---
+# Locale roots
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+
+[[redirects]]
+  from = "/pl"
+  to = "/pl/"
+  status = 301
+
+[[redirects]]
+  from = "/cs"
+  to = "/cs/"
+  status = 301
+
+# Key pages without trailing slash
+[[redirects]]
+  from = "/:locale/blog"
+  to = "/:locale/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/partners"
+  to = "/:locale/partners/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/product"
+  to = "/:locale/product/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks"
+  to = "/:locale/frameworks/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/success-stories"
+  to = "/:locale/success-stories/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/by-roles"
+  to = "/:locale/by-roles/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/contact"
+  to = "/:locale/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/plans"
+  to = "/:locale/plans/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/about"
+  to = "/:locale/about/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/compare"
+  to = "/:locale/compare/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/governance"
+  to = "/:locale/frameworks/governance/"
+  status = 301
+
+[[redirects]]
+  from = "/:locale/frameworks/environmental"
+  to = "/:locale/frameworks/environmental/"
   status = 301
 
 # Root redirect — must be before SPA fallback

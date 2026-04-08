@@ -43,6 +43,8 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'product-level': 'Product Level',
   'success-stories': 'Success Stories',
   'events': 'Events',
+  'szkolenia-cyberbezpieczenstwo-dla-firm': 'Szkolenia Cyberbezpieczeństwo',
+  'cybersecurity-training-for-business': 'Cybersecurity Training',
   'nis2-mapa-ryzyka': 'NIS2 — mapa ryzyka',
   'nis2-role-i-procesy': 'NIS2 — role i procesy',
   'nis2-audit-ready': 'NIS2 — audit-ready',
