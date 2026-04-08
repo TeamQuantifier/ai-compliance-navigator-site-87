@@ -8148,7 +8148,7 @@
       "p1": "The partnership provides Envirly LCA tools for a Digital Product Passport compliant with DPP, where data integrates with the GS1 system.",
       "p2": "Additionally, Envirly GHG enables greenhouse gas emissions reporting for Scope 1 and 2, with full integration into GS1 infrastructure.",
       "dppLabel": "Product Passport",
-      "ghgLabel": "Scope 1 & 2 Emissions",
+      "ghgLabel": "Organization Carbon Footprint",
       "membersLabel": "GS1 System Members in Poland"
     },
     "quote": {

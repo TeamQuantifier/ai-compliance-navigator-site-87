@@ -8213,8 +8213,8 @@
       "title": "Współpraca GS1 Polska × Quantifier.ai",
       "p1": "Współpraca polega na udostępnieniu narzędzia Envirly LCA do paszportu produktowego zgodnego z DPP, gdzie dane integrują się z systemem GS1.",
       "p2": "Dodatkowo Envirly GHG umożliwia raportowanie emisji gazów cieplarnianych w zakresie 1 i 2, z pełną integracją z infrastrukturą GS1.",
-      "dppLabel": "Paszport Produktowy",
-      "ghgLabel": "Emisje Scope 1 i 2",
+      "dppLabel": "Paszport produktowy",
+      "ghgLabel": "Ślad węglowy organizacji",
       "membersLabel": "Uczestników Systemu GS1 w Polsce"
     },
     "quote": {
