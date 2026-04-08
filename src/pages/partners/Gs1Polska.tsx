@@ -12,6 +12,7 @@ import {
   CheckCircle2, Zap, Link2, FileCheck, Users,
   Factory, Leaf, Scale, Send, Quote
 } from 'lucide-react';
+import { GtinImportMockup, LcaFlowchartMockup, ScenarioExplorerMockup, PassportEditorMockup } from '@/components/mockups/Gs1IntegrationMockups';
 
 const Gs1Polska = () => {
   const { t, currentLocale } = useLanguage();
@@ -175,32 +176,33 @@ const Gs1Polska = () => {
             </p>
           </div>
 
-          <div className="space-y-16">
-            {[
-              { step: 1, titleKey: 'gs1.howItWorks.step1.title', descKey: 'gs1.howItWorks.step1.desc', img: '/images/gs1/step-gtin-mockup.png' },
-              { step: 2, titleKey: 'gs1.howItWorks.step2.title', descKey: 'gs1.howItWorks.step2.desc', img: '/images/gs1/step-flowchart-mockup.png' },
-              { step: 3, titleKey: 'gs1.howItWorks.step3.title', descKey: 'gs1.howItWorks.step3.desc', img: '/images/gs1/step-scenarios-mockup.png' },
-              { step: 4, titleKey: 'gs1.howItWorks.step4.title', descKey: 'gs1.howItWorks.step4.desc', img: '/images/gs1/step-passport-mockup.png' },
-            ].map((s, i) => (
-              <div key={s.step} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
-                <div className="md:w-1/2 space-y-4">
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
-                    {s.step}
+          {(() => {
+            const mockups = [<GtinImportMockup />, <LcaFlowchartMockup />, <ScenarioExplorerMockup />, <PassportEditorMockup />];
+            const steps = [
+              { step: 1, titleKey: 'gs1.howItWorks.step1.title', descKey: 'gs1.howItWorks.step1.desc' },
+              { step: 2, titleKey: 'gs1.howItWorks.step2.title', descKey: 'gs1.howItWorks.step2.desc' },
+              { step: 3, titleKey: 'gs1.howItWorks.step3.title', descKey: 'gs1.howItWorks.step3.desc' },
+              { step: 4, titleKey: 'gs1.howItWorks.step4.title', descKey: 'gs1.howItWorks.step4.desc' },
+            ];
+            return (
+              <div className="space-y-16">
+                {steps.map((s, i) => (
+                  <div key={s.step} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
+                    <div className="md:w-2/5 space-y-4">
+                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
+                        {s.step}
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground">{t(s.titleKey)}</h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">{t(s.descKey)}</p>
+                    </div>
+                    <div className="md:w-3/5">
+                      {mockups[i]}
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">{t(s.titleKey)}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{t(s.descKey)}</p>
-                </div>
-                <div className="md:w-1/2">
-                  <img
-                    src={s.img}
-                    alt={t(s.titleKey)}
-                    className="rounded-xl border border-border shadow-lg w-full"
-                    loading="lazy"
-                  />
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </section>
 
         {/* Product Passport Section */}
