@@ -92,10 +92,7 @@
     "knowledge": "Wiedza",
     "events": "Webinary i wydarzenia",
     "cybersecCheck": "Sprawdź Cyberbezp.",
-    "training": {
-      "title": "Szkolenia",
-      "href": "/szkolenia-cyberbezpieczenstwo-dla-firm"
-    }
+    "training": "Szkolenia"
   },
   "hero": {
     "title": "Platforma i doradztwo",
