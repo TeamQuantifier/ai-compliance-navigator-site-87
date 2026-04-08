@@ -118,17 +118,22 @@ const TrainingLanding = () => {
 
               <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
 
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <blockquote className="text-sm text-slate-300 italic leading-relaxed mb-3">
-                  &ldquo;{t('training.proof.testimonial.quote')}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-xs font-bold text-primary">
-                    {t('training.proof.testimonial.initials')}
+              <div className="mt-8 relative">
+                <div className="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-xl p-5">
+                  <div className="absolute -top-3 left-5">
+                    <span className="text-3xl text-primary/60 font-serif leading-none">&ldquo;</span>
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold text-slate-200">{t('training.proof.testimonial.name')}</p>
-                    <p className="text-xs text-slate-500">{t('training.proof.testimonial.role')}</p>
+                  <blockquote className="text-sm text-slate-300 italic leading-relaxed mt-1 mb-4">
+                    {t('training.proof.testimonial.quote')}
+                  </blockquote>
+                  <div className="flex items-center gap-3 border-t border-white/10 pt-3">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/20 flex items-center justify-center text-xs font-bold text-primary">
+                      {t('training.proof.testimonial.initials')}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-200">{t('training.proof.testimonial.name')}</p>
+                      <p className="text-xs text-slate-400">{t('training.proof.testimonial.role')}</p>
+                    </div>
                   </div>
                 </div>
               </div>
