@@ -13,6 +13,24 @@ import {
   Factory, Leaf, Scale, Send, Quote
 } from 'lucide-react';
 import { GtinImportMockup, LcaFlowchartMockup, ScenarioExplorerMockup, PassportEditorMockup } from '@/components/mockups/Gs1IntegrationMockups';
+import gs1Logo from '@/assets/gs1-logo.png';
+
+/* ─── brown palette tokens ─── */
+const brown = {
+  hero: 'bg-gradient-to-br from-amber-950 via-stone-900 to-stone-950',
+  heroBadge: 'bg-amber-800/30 text-amber-200 border border-amber-700/40',
+  cardBorder: 'border-amber-800/30',
+  cardBg: 'bg-amber-900/20',
+  cardBg2: 'bg-stone-800/30',
+  accent: 'text-amber-400',
+  accentBg: 'bg-amber-400',
+  quoteBg: 'bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900',
+  sectionBg: 'bg-gradient-to-br from-stone-50 to-amber-50',
+  businessBg: 'bg-gradient-to-r from-amber-900 to-stone-800',
+  formBg: 'bg-gradient-to-br from-stone-100 to-amber-50',
+  stepCircle: 'bg-amber-800 text-white',
+  btn: 'bg-amber-800 hover:bg-amber-700 text-white',
+};
 
 const Gs1Polska = () => {
   const { t, currentLocale } = useLanguage();
@@ -83,27 +101,28 @@ const Gs1Polska = () => {
     <PageTemplate title={t('seo.gs1.title')} description={t('seo.gs1.description')}>
       <div className="max-w-5xl mx-auto">
 
-        {/* Hero */}
-        <section className="relative mb-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl -z-10" />
-          <div className="py-12 px-6 md:px-12">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
+        {/* Hero — dark brown */}
+        <section className={`relative mb-20 ${brown.hero} rounded-3xl overflow-hidden`}>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(180,120,60,0.15),transparent_60%)]" />
+          <div className="relative py-12 px-6 md:px-12">
+            <div className="flex items-center gap-4 mb-8">
+              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brown.heroBadge}`}>
                 <Globe className="h-4 w-4" />
                 GS1 Polska × Quantifier.ai
               </span>
+              <img src={gs1Logo} alt="GS1 Polska" className="h-12 w-auto bg-white rounded-lg px-2 py-1" />
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
               {t('gs1.hero.title')}
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/70 max-w-3xl mb-8 leading-relaxed">
               {t('gs1.hero.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6 group" onClick={scrollToForm}>
+              <Button size="lg" className={`text-lg px-8 py-6 group ${brown.btn}`} onClick={scrollToForm}>
                 {t('gs1.hero.cta')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -120,45 +139,45 @@ const Gs1Polska = () => {
               <p className="text-lg text-muted-foreground">{t('gs1.partnership.p2')}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <Card className="p-6 text-center border-primary/20 bg-primary/5">
-                <FileCheck className="h-10 w-10 text-primary mx-auto mb-3" />
-                <p className="font-bold text-2xl text-foreground">DPP</p>
+              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
+                <FileCheck className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+                <p className="font-bold text-lg text-foreground">Envirly LCA</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.dppLabel')}</p>
               </Card>
-              <Card className="p-6 text-center border-accent/20 bg-accent/5">
-                <BarChart3 className="h-10 w-10 text-accent mx-auto mb-3" />
-                <p className="font-bold text-2xl text-foreground">GHG</p>
+              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg2}`}>
+                <BarChart3 className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+                <p className="font-bold text-lg text-foreground">Envirly GHG</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.ghgLabel')}</p>
               </Card>
-              <Card className="p-6 text-center border-primary/20 bg-primary/5">
-                <Globe className="h-10 w-10 text-primary mx-auto mb-3" />
+              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
+                <Globe className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
                 <p className="font-bold text-2xl text-foreground">47 000+</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.membersLabel')}</p>
               </Card>
-              <Card className="p-6 text-center border-accent/20 bg-accent/5">
-                <Shield className="h-10 w-10 text-accent mx-auto mb-3" />
-                <p className="font-bold text-2xl text-foreground">ISO</p>
-                <p className="text-sm text-muted-foreground mt-1">14040 / 14044</p>
+              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg2}`}>
+                <Shield className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+                <p className="font-bold text-lg text-foreground">ISO</p>
+                <p className="text-sm text-muted-foreground mt-1">14064 / 14067</p>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* CEO Quote */}
+        {/* CEO Quote — warm brown */}
         <section className="mb-20">
-          <div className="relative bg-gradient-to-r from-foreground to-foreground/90 rounded-2xl p-10 md:p-14 text-primary-foreground overflow-hidden">
-            <Quote className="absolute top-6 left-6 h-20 w-20 text-primary-foreground/10" />
+          <div className={`relative ${brown.quoteBg} rounded-2xl p-10 md:p-14 overflow-hidden border border-amber-800/20`}>
+            <Quote className="absolute top-6 left-6 h-20 w-20 text-amber-400/10" />
             <blockquote className="relative z-10">
-              <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6">
+              <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6 text-white">
                 &ldquo;{t('gs1.quote.text')}&rdquo;
               </p>
               <footer className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                  <Users className="h-6 w-6" />
+                <div className="w-12 h-12 rounded-full bg-amber-800/40 flex items-center justify-center">
+                  <Users className="h-6 w-6 text-amber-200" />
                 </div>
                 <div>
-                  <cite className="not-italic font-bold text-lg">{t('gs1.quote.author')}</cite>
-                  <p className="text-primary-foreground/70 text-sm">{t('gs1.quote.role')}</p>
+                  <cite className="not-italic font-bold text-lg text-white">{t('gs1.quote.author')}</cite>
+                  <p className="text-white/60 text-sm">{t('gs1.quote.role')}</p>
                 </div>
               </footer>
             </blockquote>
@@ -189,7 +208,7 @@ const Gs1Polska = () => {
                 {steps.map((s, i) => (
                   <div key={s.step} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
                     <div className="md:w-2/5 space-y-4">
-                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
+                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg ${brown.stepCircle}`}>
                         {s.step}
                       </div>
                       <h3 className="text-2xl font-bold text-foreground">{t(s.titleKey)}</h3>
@@ -216,17 +235,17 @@ const Gs1Polska = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-muted/50 to-muted rounded-2xl p-8 md:p-12 mb-12">
+          <div className={`${brown.sectionBg} rounded-2xl p-8 md:p-12 mb-12`}>
             <p className="text-lg text-foreground mb-4 font-medium">{t('gs1.passport.hook1')}</p>
             <p className="text-lg text-muted-foreground mb-6">{t('gs1.passport.hook2')}</p>
             <div className="flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 text-sm font-medium">
                 ✕ {t('gs1.passport.noExcel')}
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 text-sm font-medium">
                 ✕ {t('gs1.passport.noConsultants')}
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 text-sm font-medium">
                 ✕ {t('gs1.passport.noGreenwashing')}
               </span>
             </div>
@@ -234,9 +253,9 @@ const Gs1Polska = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((f, i) => (
-              <Card key={i} className="p-8 border-border/50 hover:shadow-lg transition-shadow group">
+              <Card key={i} className={`p-8 ${brown.cardBorder} hover:shadow-lg transition-shadow group`}>
                 <div className="flex items-start gap-5">
-                  <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                  <div className="p-3 rounded-xl bg-amber-100 text-amber-800 group-hover:bg-amber-800 group-hover:text-white transition-colors shrink-0">
                     {f.icon}
                   </div>
                   <div>
@@ -249,23 +268,23 @@ const Gs1Polska = () => {
           </div>
         </section>
 
-        {/* Business case */}
+        {/* Business case — brown gradient */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-10 md:p-14 text-primary-foreground">
-            <h2 className="text-3xl font-bold mb-4">{t('gs1.business.title')}</h2>
-            <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl">{t('gs1.business.desc')}</p>
+          <div className={`${brown.businessBg} rounded-2xl p-10 md:p-14`}>
+            <h2 className="text-3xl font-bold mb-4 text-white">{t('gs1.business.title')}</h2>
+            <p className="text-xl text-white/80 mb-8 max-w-3xl">{t('gs1.business.desc')}</p>
             <div className="grid sm:grid-cols-3 gap-6">
-              <div className="bg-primary-foreground/10 backdrop-blur rounded-xl p-6 text-center">
-                <p className="text-4xl font-extrabold mb-2">B2B</p>
-                <p className="text-sm text-primary-foreground/80">{t('gs1.business.b2b')}</p>
+              <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                <p className="text-4xl font-extrabold mb-2 text-white">B2B</p>
+                <p className="text-sm text-white/70">{t('gs1.business.b2b')}</p>
               </div>
-              <div className="bg-primary-foreground/10 backdrop-blur rounded-xl p-6 text-center">
-                <p className="text-4xl font-extrabold mb-2">ESG</p>
-                <p className="text-sm text-primary-foreground/80">{t('gs1.business.esg')}</p>
+              <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                <p className="text-4xl font-extrabold mb-2 text-white">ESG</p>
+                <p className="text-sm text-white/70">{t('gs1.business.esg')}</p>
               </div>
-              <div className="bg-primary-foreground/10 backdrop-blur rounded-xl p-6 text-center">
-                <p className="text-4xl font-extrabold mb-2">-60%</p>
-                <p className="text-sm text-primary-foreground/80">{t('gs1.business.dueDiligence')}</p>
+              <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                <p className="text-4xl font-extrabold mb-2 text-white">-60%</p>
+                <p className="text-sm text-white/70">{t('gs1.business.dueDiligence')}</p>
               </div>
             </div>
           </div>
@@ -276,8 +295,8 @@ const Gs1Polska = () => {
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">{t('gs1.audience.title')}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {audiences.map((a, i) => (
-              <div key={i} className="flex items-start gap-4 p-6 rounded-xl border border-border bg-card hover:bg-muted/50 transition-colors">
-                <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+              <div key={i} className={`flex items-start gap-4 p-6 rounded-xl ${brown.cardBorder} bg-card hover:bg-amber-50 transition-colors`}>
+                <CheckCircle2 className={`h-6 w-6 ${brown.accent} shrink-0 mt-0.5`} />
                 <p className="text-foreground">{t(a.key)}</p>
               </div>
             ))}
@@ -286,7 +305,7 @@ const Gs1Polska = () => {
 
         {/* Contact Form */}
         <section ref={formRef} className="mb-16" id="contact-form">
-          <div className="bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-8 md:p-12">
+          <div className={`${brown.formBg} rounded-2xl p-8 md:p-12`}>
             <h2 className="text-3xl font-bold text-foreground mb-3 text-center">{t('gs1.form.title')}</h2>
             <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">{t('gs1.form.subtitle')}</p>
             
@@ -296,7 +315,7 @@ const Gs1Polska = () => {
               <Input type="email" placeholder={t('contact.form.email')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
               <Input placeholder={t('contact.form.company')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
               <Textarea placeholder={t('contact.form.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
-              <Button type="submit" size="lg" className="sm:col-span-2 text-lg py-6" disabled={loading}>
+              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading}>
                 <Send className="mr-2 h-5 w-5" />
                 {loading ? t('contact.form.sending') : t('gs1.form.cta')}
               </Button>
