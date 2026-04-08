@@ -8204,7 +8204,7 @@
     },
     "howItWorks": {
       "title": "How does the GS1 integration work?",
-      "subtitle": "From GTIN code to a ready product passport — in 4 steps.",
+      "subtitle": "From GTIN and GPC codes to a ready product passport — in 4 steps.",
       "step1": {
         "title": "Connect data from GS1 via GTIN and GPC codes",
         "desc": "Enter your product's GTIN or GPC code and the system automatically imports data from the GS1 database. Full integration with GS1 Polska infrastructure — no manual data entry."

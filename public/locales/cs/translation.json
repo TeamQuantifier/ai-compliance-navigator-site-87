@@ -6797,7 +6797,7 @@
     },
     "howItWorks": {
       "title": "Jak funguje integrace s GS1?",
-      "subtitle": "Od kódu GTIN po hotový produktový pas — ve 4 krocích.",
+      "subtitle": "Od kódů GTIN a GPC po hotový produktový pas — ve 4 krocích.",
       "step1": {
         "title": "Propojte data z GS1 přes kódy GTIN a GPC",
         "desc": "Zadejte GTIN nebo GPC kód vašeho produktu a systém automaticky importuje data z databáze GS1. Plná integrace s infrastrukturou GS1 — bez ručního přepisování."
