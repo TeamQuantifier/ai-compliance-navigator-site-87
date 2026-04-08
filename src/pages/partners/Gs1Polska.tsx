@@ -177,10 +177,10 @@ const Gs1Polska = () => {
 
           <div className="space-y-16">
             {[
-              { step: 1, titleKey: 'gs1.howItWorks.step1.title', descKey: 'gs1.howItWorks.step1.desc', img: '/images/gs1/step-gtin.png' },
-              { step: 2, titleKey: 'gs1.howItWorks.step2.title', descKey: 'gs1.howItWorks.step2.desc', img: '/images/gs1/step-flowchart.png' },
-              { step: 3, titleKey: 'gs1.howItWorks.step3.title', descKey: 'gs1.howItWorks.step3.desc', img: '/images/gs1/step-scenarios.png' },
-              { step: 4, titleKey: 'gs1.howItWorks.step4.title', descKey: 'gs1.howItWorks.step4.desc', img: '/images/gs1/step-passport.png' },
+              { step: 1, titleKey: 'gs1.howItWorks.step1.title', descKey: 'gs1.howItWorks.step1.desc', img: '/images/gs1/step-gtin-mockup.png' },
+              { step: 2, titleKey: 'gs1.howItWorks.step2.title', descKey: 'gs1.howItWorks.step2.desc', img: '/images/gs1/step-flowchart-mockup.png' },
+              { step: 3, titleKey: 'gs1.howItWorks.step3.title', descKey: 'gs1.howItWorks.step3.desc', img: '/images/gs1/step-scenarios-mockup.png' },
+              { step: 4, titleKey: 'gs1.howItWorks.step4.title', descKey: 'gs1.howItWorks.step4.desc', img: '/images/gs1/step-passport-mockup.png' },
             ].map((s, i) => (
               <div key={s.step} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
                 <div className="md:w-1/2 space-y-4">
