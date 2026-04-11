@@ -317,22 +317,6 @@
   status = 301
 
 # --- Trailing-slash enforcement (reduces GSC "alternate page" noise) ---
-# Locale roots
-[[redirects]]
-  from = "/en"
-  to = "/en/"
-  status = 301
-
-[[redirects]]
-  from = "/pl"
-  to = "/pl/"
-  status = 301
-
-[[redirects]]
-  from = "/cs"
-  to = "/cs/"
-  status = 301
-
 # Key pages without trailing slash
 [[redirects]]
   from = "/:locale/blog"
