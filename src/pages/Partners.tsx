@@ -84,10 +84,10 @@ const Partners = () => {
               <Card className="overflow-hidden border-amber-200/60 bg-gradient-to-br from-amber-50 via-stone-50 to-white hover:shadow-xl transition-all">
                 <div className="flex flex-col md:flex-row">
                   {/* Left: logo + branding */}
-                  <div className="md:w-1/3 bg-white p-8 flex items-center justify-center gap-3">
-                    <img src={gs1LogoNew} alt="GS1 Polska logo" className="h-14 object-contain" />
-                    <span className="text-slate-400 font-medium text-lg">×</span>
-                    <img src={envirlyLogo} alt="Envirly by Quantifier logo" className="h-10 object-contain" />
+                  <div className="md:w-2/5 bg-white p-6 flex items-center justify-center gap-3">
+                    <img src={gs1LogoNew} alt="GS1 Polska logo" className="h-20 object-contain" />
+                    <span className="text-slate-400 font-medium text-2xl">×</span>
+                    <img src={envirlyLogo} alt="Envirly by Quantifier logo" className="h-14 object-contain" />
                   </div>
                   
                   {/* Right: content */}
