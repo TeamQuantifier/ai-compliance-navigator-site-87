@@ -1,6 +1,7 @@
 import logosGrid from '@/assets/logos-grid.png';
+import gs1Logo from '@/assets/gs1-logo.png';
 import PageTemplate from '@/components/PageTemplate';
-import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake } from 'lucide-react';
+import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake, Leaf, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import PartnerMap from '@/components/PartnerMap';
@@ -79,18 +80,42 @@ const Partners = () => {
           {/* GS1 Polska highlight */}
           <div className="mt-10">
             <Link to={`/${currentLocale}/partners/gs1-polska`} className="block group">
-              <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 hover:shadow-lg transition-all">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-xl bg-primary/10">
-                      <Globe className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900">GS1 Polska × Quantifier.ai</h3>
-                      <p className="text-sm text-slate-600">{t('gs1.partnership.dppLabel')} & Envirly GHG</p>
-                    </div>
+              <Card className="overflow-hidden border-amber-200/60 bg-gradient-to-br from-amber-50 via-stone-50 to-white hover:shadow-xl transition-all">
+                <div className="flex flex-col md:flex-row">
+                  {/* Left: logo + branding */}
+                  <div className="md:w-1/3 bg-gradient-to-br from-amber-900 via-stone-800 to-stone-900 p-8 flex flex-col items-center justify-center gap-4">
+                    <img src={gs1Logo} alt="GS1 Polska logo" className="h-16 object-contain" />
+                    <p className="text-amber-200 text-sm font-medium text-center">× Envirly by Quantifier.ai</p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-primary group-hover:translate-x-1 transition-transform" />
+                  
+                  {/* Right: content */}
+                  <div className="md:w-2/3 p-6 md:p-8">
+                    <h3 className="text-xl font-bold text-foreground mb-3">{t('partners.gs1.headline')}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                      {t('partners.gs1.description')}
+                    </p>
+                    
+                    {/* Stats badges */}
+                    <div className="flex flex-wrap gap-3 mb-5">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">
+                        <FileCheck className="h-3.5 w-3.5" />
+                        {t('partners.gs1.dpp')}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-100 text-green-800 text-xs font-medium">
+                        <Leaf className="h-3.5 w-3.5" />
+                        {t('partners.gs1.ghg')}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 text-xs font-medium">
+                        <Users className="h-3.5 w-3.5" />
+                        {t('partners.gs1.members')}
+                      </span>
+                    </div>
+                    
+                    <span className="inline-flex items-center text-amber-700 font-semibold text-sm group-hover:text-amber-900 transition-colors">
+                      {t('partners.gs1.cta')}
+                      <ArrowRight className="ml-1.5 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
                 </div>
               </Card>
             </Link>
