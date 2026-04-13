@@ -91,7 +91,7 @@ const Partners = () => {
                   </div>
                   
                   {/* Right: content */}
-                  <div className="md:w-2/3 p-6 md:p-8">
+                  <div className="md:w-3/5 p-6 md:p-8">
                     <h3 className="text-xl font-bold text-foreground mb-3">{t('partners.gs1.headline')}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                       {t('partners.gs1.description')}
