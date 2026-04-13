@@ -2304,6 +2304,14 @@
       "title": "Ready to become a partner?",
       "description": "Join a trusted network driving real change in compliance and ESG.",
       "button": "Contact Us"
+    },
+    "gs1": {
+      "headline": "GS1 Polska × Envirly by Quantifier.ai",
+      "description": "Together we build Digital Product Passports (DPP) and automate carbon footprint reporting for over 47,000 GS1 system members in Poland. GTIN and GPC code integration with Envirly LCA and GHG tools — compliant with the ESPR directive.",
+      "cta": "Learn more",
+      "dpp": "Product Passport",
+      "ghg": "Carbon Footprint",
+      "members": "47,000+ GS1 members"
     }
   },
   "frameworksPage": {
@@ -8314,7 +8322,10 @@
     "form": {
       "title": "Let's talk about your product",
       "subtitle": "Leave a message — we'll get back to you within 24 hours.",
-      "cta": "Send message"
+      "cta": "Send message",
+      "consent": "I consent to the processing of my personal data in accordance with the",
+      "consentLink": "Privacy Policy",
+      "consentRequired": "You must accept the privacy policy"
     },
     "howItWorks": {
       "title": "How does the GS1 integration work?",

@@ -2257,6 +2257,14 @@
       "title": "Zainteresowany partnerstwem?",
       "description": "Skontaktuj się z nami, aby dowiedzieć się więcej o naszym programie partnerskim i jak możemy rozwijać się razem.",
       "button": "Zostań partnerem"
+    },
+    "gs1": {
+      "headline": "GS1 Polska × Envirly by Quantifier.ai",
+      "description": "Wspólnie budujemy Paszport Produktowy (DPP) i automatyzujemy raportowanie śladu węglowego dla ponad 47 000 uczestników systemu GS1 w Polsce. Integracja kodów GTIN i GPC z narzędziami Envirly LCA i GHG — zgodnie z dyrektywą ESPR.",
+      "cta": "Dowiedz się więcej",
+      "dpp": "Paszport Produktowy",
+      "ghg": "Ślad węglowy",
+      "members": "47 000+ członków GS1"
     }
   },
   "frameworksPage": {
@@ -8266,7 +8274,10 @@
     "form": {
       "title": "Porozmawiajmy o Twoim produkcie",
       "subtitle": "Zostaw wiadomość — odezwiemy się w ciągu 24 godzin.",
-      "cta": "Wyślij wiadomość"
+      "cta": "Wyślij wiadomość",
+      "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z",
+      "consentLink": "Polityką Prywatności",
+      "consentRequired": "Musisz zaakceptować politykę prywatności"
     },
     "howItWorks": {
       "title": "Jak działa integracja z GS1?",

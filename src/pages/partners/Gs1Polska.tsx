@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { 
@@ -37,6 +39,10 @@ const Gs1Polska = () => {
   const { t, currentLocale } = useLanguage();
   const { toast } = useToast();
   const formRef = useRef<HTMLDivElement>(null);
+  const envirlyUrl = currentLocale === 'pl' ? 'https://www.envirly.pl/' : 'https://envirly.com/';
+  const envirlyLink = (label: string) => (
+    <a href={envirlyUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-amber-400/60 underline-offset-2 hover:text-amber-600 transition-colors">{label}</a>
+  );
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -44,6 +50,7 @@ const Gs1Polska = () => {
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [consent, setConsent] = useState(false);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -58,6 +65,11 @@ const Gs1Polska = () => {
 
     if (!trimmedFirstName || !trimmedLastName || !trimmedEmail || !trimmedMessage) {
       toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
+      return;
+    }
+
+    if (!consent) {
+      toast({ title: t('gs1.form.consentRequired'), variant: 'destructive' });
       return;
     }
 
@@ -109,7 +121,7 @@ const Gs1Polska = () => {
             <div className="flex items-center gap-4 mb-8">
               <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brown.heroBadge}`}>
                 <Globe className="h-4 w-4" />
-                GS1 Polska × Envirly by Quantifier.ai
+                GS1 Polska × {envirlyLink('Envirly')} by Quantifier.ai
               </span>
               <img src={gs1Logo} alt="GS1 Polska" className="h-12 w-auto bg-white rounded-lg px-2 py-1" />
             </div>
@@ -142,12 +154,12 @@ const Gs1Polska = () => {
             <div className="grid grid-cols-2 gap-4">
               <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
                 <FileCheck className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
-                <p className="font-bold text-lg text-foreground">Envirly LCA</p>
+                <p className="font-bold text-lg text-foreground">{envirlyLink('Envirly LCA')}</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.dppLabel')}</p>
               </Card>
               <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg2}`}>
                 <BarChart3 className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
-                <p className="font-bold text-lg text-foreground">Envirly GHG</p>
+                <p className="font-bold text-lg text-foreground">{envirlyLink('Envirly GHG')}</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.ghgLabel')}</p>
               </Card>
               <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
@@ -309,14 +321,30 @@ const Gs1Polska = () => {
             <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">{t('gs1.form.subtitle')}</p>
             
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto grid sm:grid-cols-2 gap-4">
-              <Input placeholder={t('contact.form.firstName')} value={firstName} onChange={e => setFirstName(e.target.value)} required />
-              <Input placeholder={t('contact.form.lastName')} value={lastName} onChange={e => setLastName(e.target.value)} required />
-              <Input type="email" placeholder={t('contact.form.email')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
-              <Input placeholder={t('contact.form.company')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
-              <Textarea placeholder={t('contact.form.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
-              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading}>
+              <Input placeholder={t('contact.firstName')} value={firstName} onChange={e => setFirstName(e.target.value)} required />
+              <Input placeholder={t('contact.lastName')} value={lastName} onChange={e => setLastName(e.target.value)} required />
+              <Input type="email" placeholder={t('contact.emailAddress')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
+              <Input placeholder={t('contact.companyName')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
+              <Textarea placeholder={t('contact.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
+              
+              <div className="sm:col-span-2 flex items-start gap-3">
+                <Checkbox
+                  id="consent"
+                  checked={consent}
+                  onCheckedChange={(checked) => setConsent(checked === true)}
+                  className="mt-1 border-amber-600 data-[state=checked]:bg-amber-700 data-[state=checked]:border-amber-700"
+                />
+                <label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                  {t('gs1.form.consent')}{' '}
+                  <Link to={`/${currentLocale}/legal/privacy`} className="text-amber-700 underline hover:text-amber-900" target="_blank">
+                    {t('gs1.form.consentLink')}
+                  </Link>
+                </label>
+              </div>
+
+              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading || !consent}>
                 <Send className="mr-2 h-5 w-5" />
-                {loading ? t('contact.form.sending') : t('gs1.form.cta')}
+                {loading ? t('contact.sending') : t('gs1.form.cta')}
               </Button>
             </form>
           </div>
