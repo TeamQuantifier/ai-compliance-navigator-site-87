@@ -1,25 +1,36 @@
 
 
-## Problem
+## Plan: Formularz RODO + Sekcja GS1 na stronie /partners
 
-The contact form on `/pl/partners/gs1-polska` displays raw i18n keys (`contact.form.firstName`, `contact.form.lastName`, etc.) instead of translated placeholder text. This is because the code references non-existent nested keys like `contact.form.firstName`, while the actual translation keys are `contact.firstName` (without the `.form.` nesting).
+### 1. Checkbox RODO + link do polityki prywatności pod formularzem (GS1 Polska)
 
-## Fix
+**Plik:** `src/pages/partners/Gs1Polska.tsx`
 
-**Single file change**: `src/pages/partners/Gs1Polska.tsx` (lines 312-319)
+- Dodać wymagany checkbox RODO przed przyciskiem „Wyślij" w formularzu kontaktowym
+- Treść checkboxa: zlokalizowany tekst typu *"Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z [Polityką Prywatności]"* z linkiem do `/{locale}/legal/privacy`
+- Checkbox musi być `required` — formularz nie wyśle się bez zaznaczenia
+- Dodać state `consent` (boolean) i walidację w `handleSubmit`
+- Dodać klucze tłumaczeń `gs1.form.consent` i `gs1.form.consentLink` do plików PL, EN, CS
 
-Replace the incorrect translation key paths in the form inputs:
+**Pliki tłumaczeń:** `public/locales/pl/translation.json`, `en/translation.json`, `cs/translation.json`
 
-| Current (broken)              | Corrected                     |
-|-------------------------------|-------------------------------|
-| `contact.form.firstName`      | `contact.firstName`           |
-| `contact.form.lastName`       | `contact.lastName`            |
-| `contact.form.email`          | `contact.emailAddress`        |
-| `contact.form.company`        | `contact.companyName`         |
-| `contact.form.message`        | `contact.message`             |
-| `contact.form.sending`        | `contact.sending`             |
+### 2. Rozbudowana sekcja GS1 Polska na stronie /partners
 
-The form submission logic (`handleSubmit`) already works correctly -- it calls the `contact-form` Edge Function, saves to `contact_submissions` table, and syncs with the marketing API. No backend changes needed.
+**Plik:** `src/pages/Partners.tsx`
 
-This fix applies to all three languages (PL, EN, CS) since they all have the correct keys under `contact.*`.
+Obecna sekcja (linie 79-97) to minimalna karta z jedną linijką tekstu. Rozbudować do pełnego „thumbnail" z:
+
+- Logo GS1 Polska (import `gs1Logo` z `@/assets/gs1-logo.png` — już istnieje w projekcie)
+- Krótki opis partnerstwa (2-3 zdania): integracja GTIN/GPC, Paszport Produktowy, zgodność z ESPR
+- Brązowa kolorystyka spójna z landing page GS1 (amber/stone tones)
+- Ikonki kluczowych elementów (LCA, GHG, 47000+ członków)
+- Wyraźny CTA „Dowiedz się więcej →"
+- Dodać klucze tłumaczeń `partners.gs1.headline`, `partners.gs1.description`, `partners.gs1.cta`
+
+### Szczegóły techniczne
+
+- Checkbox korzysta z istniejącego komponentu `@/components/ui/checkbox`
+- Link do polityki prywatności: `/${currentLocale}/legal/privacy` (ścieżka już istnieje w routerze)
+- Formularz: walidacja `consent === true` przed wywołaniem `supabase.functions.invoke('contact-form', ...)`
+- Łącznie zmiany w 5 plikach: 1 komponent formularza, 1 strona partnerów, 3 pliki tłumaczeń
 
