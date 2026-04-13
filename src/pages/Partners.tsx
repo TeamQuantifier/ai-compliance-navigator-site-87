@@ -1,5 +1,6 @@
 import logosGrid from '@/assets/logos-grid.png';
-import gs1Logo from '@/assets/gs1-logo.png';
+import gs1LogoNew from '@/assets/gs1-logo-new.png';
+import envirlyLogo from '@/assets/envirly-logo.png';
 import PageTemplate from '@/components/PageTemplate';
 import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake, Leaf, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -83,9 +84,10 @@ const Partners = () => {
               <Card className="overflow-hidden border-amber-200/60 bg-gradient-to-br from-amber-50 via-stone-50 to-white hover:shadow-xl transition-all">
                 <div className="flex flex-col md:flex-row">
                   {/* Left: logo + branding */}
-                  <div className="md:w-1/3 bg-gradient-to-br from-amber-900 via-stone-800 to-stone-900 p-8 flex flex-col items-center justify-center gap-4">
-                    <img src={gs1Logo} alt="GS1 Polska logo" className="h-16 object-contain" />
-                    <p className="text-amber-200 text-sm font-medium text-center">× Envirly by Quantifier.ai</p>
+                  <div className="md:w-1/3 bg-white p-8 flex items-center justify-center gap-3">
+                    <img src={gs1LogoNew} alt="GS1 Polska logo" className="h-14 object-contain" />
+                    <span className="text-slate-400 font-medium text-lg">×</span>
+                    <img src={envirlyLogo} alt="Envirly by Quantifier logo" className="h-10 object-contain" />
                   </div>
                   
                   {/* Right: content */}
