@@ -39,6 +39,10 @@ const Gs1Polska = () => {
   const { t, currentLocale } = useLanguage();
   const { toast } = useToast();
   const formRef = useRef<HTMLDivElement>(null);
+  const envirlyUrl = currentLocale === 'pl' ? 'https://www.envirly.pl/' : 'https://envirly.com/';
+  const envirlyLink = (label: string) => (
+    <a href={envirlyUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-amber-400/60 underline-offset-2 hover:text-amber-600 transition-colors">{label}</a>
+  );
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -150,12 +154,12 @@ const Gs1Polska = () => {
             <div className="grid grid-cols-2 gap-4">
               <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
                 <FileCheck className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
-                <p className="font-bold text-lg text-foreground">Envirly LCA</p>
+                <p className="font-bold text-lg text-foreground">{envirlyLink('Envirly LCA')}</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.dppLabel')}</p>
               </Card>
               <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg2}`}>
                 <BarChart3 className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
-                <p className="font-bold text-lg text-foreground">Envirly GHG</p>
+                <p className="font-bold text-lg text-foreground">{envirlyLink('Envirly GHG')}</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.ghgLabel')}</p>
               </Card>
               <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
