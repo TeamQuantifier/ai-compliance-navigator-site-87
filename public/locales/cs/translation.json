@@ -2175,6 +2175,14 @@
       "title": "Jste připraveni stát se partnerem?",
       "description": "Připojte se k důvěryhodné síti, která pohání reálnou změnu v compliance a ESG.",
       "button": "Kontaktujte nás"
+    },
+    "gs1": {
+      "headline": "GS1 Polska × Envirly by Quantifier.ai",
+      "description": "Společně budujeme Digitální produktový pas (DPP) a automatizujeme vykazování uhlíkové stopy pro více než 47 000 členů systému GS1 v Polsku. Integrace kódů GTIN a GPC s nástroji Envirly LCA a GHG — v souladu se směrnicí ESPR.",
+      "cta": "Zjistit více",
+      "dpp": "Produktový pas",
+      "ghg": "Uhlíková stopa",
+      "members": "47 000+ členů GS1"
     }
   },
   "frameworksPage": {
