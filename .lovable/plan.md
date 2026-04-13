@@ -1,36 +1,26 @@
 
 
-## Plan: Formularz RODO + Sekcja GS1 na stronie /partners
+## Plan: Wymiana logo GS1 i dodanie logo Envirly na thumbnailowej karcie /partners
 
-### 1. Checkbox RODO + link do polityki prywatności pod formularzem (GS1 Polska)
+### Zmiany
 
-**Plik:** `src/pages/partners/Gs1Polska.tsx`
+**1. Skopiować nowe logo do projektu**
+- `user-uploads://gs1-logo.png` → `src/assets/gs1-logo-new.png`
+- `user-uploads://logo_envirly_by_quantifier_1_6.png` → `src/assets/envirly-logo.png`
 
-- Dodać wymagany checkbox RODO przed przyciskiem „Wyślij" w formularzu kontaktowym
-- Treść checkboxa: zlokalizowany tekst typu *"Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z [Polityką Prywatności]"* z linkiem do `/{locale}/legal/privacy`
-- Checkbox musi być `required` — formularz nie wyśle się bez zaznaczenia
-- Dodać state `consent` (boolean) i walidację w `handleSubmit`
-- Dodać klucze tłumaczeń `gs1.form.consent` i `gs1.form.consentLink` do plików PL, EN, CS
+**2. Zaktualizować sekcję GS1 w `src/pages/Partners.tsx` (linie 84-89)**
 
-**Pliki tłumaczeń:** `public/locales/pl/translation.json`, `en/translation.json`, `cs/translation.json`
+Obecna lewa kolumna ma ciemne brązowe tło z jednym logo GS1 i tekstem "× Envirly by Quantifier.ai".
 
-### 2. Rozbudowana sekcja GS1 Polska na stronie /partners
-
-**Plik:** `src/pages/Partners.tsx`
-
-Obecna sekcja (linie 79-97) to minimalna karta z jedną linijką tekstu. Rozbudować do pełnego „thumbnail" z:
-
-- Logo GS1 Polska (import `gs1Logo` z `@/assets/gs1-logo.png` — już istnieje w projekcie)
-- Krótki opis partnerstwa (2-3 zdania): integracja GTIN/GPC, Paszport Produktowy, zgodność z ESPR
-- Brązowa kolorystyka spójna z landing page GS1 (amber/stone tones)
-- Ikonki kluczowych elementów (LCA, GHG, 47000+ członków)
-- Wyraźny CTA „Dowiedz się więcej →"
-- Dodać klucze tłumaczeń `partners.gs1.headline`, `partners.gs1.description`, `partners.gs1.cta`
+Zmiana:
+- Tło lewej kolumny z ciemnego gradientu (`from-amber-900 via-stone-800 to-stone-900`) na jasne/białe (`bg-white`)
+- Usunąć stary import `gs1Logo`, dodać import nowego logo GS1 i logo Envirly
+- Wyświetlić oba loga obok siebie z separatorem "×" pomiędzy nimi
+- Loga na jasnym tle będą czytelne (oba są bez tła — ciemne na przezroczystym)
 
 ### Szczegóły techniczne
 
-- Checkbox korzysta z istniejącego komponentu `@/components/ui/checkbox`
-- Link do polityki prywatności: `/${currentLocale}/legal/privacy` (ścieżka już istnieje w routerze)
-- Formularz: walidacja `consent === true` przed wywołaniem `supabase.functions.invoke('contact-form', ...)`
-- Łącznie zmiany w 5 plikach: 1 komponent formularza, 1 strona partnerów, 3 pliki tłumaczeń
+- 2 nowe assety w `src/assets/`
+- 1 plik komponentu: `src/pages/Partners.tsx` — zmiana importów i sekcji logo (linie 2, 86-89)
+- Nie zmienia nic na podstronie `/partners/gs1-polska` — tylko thumbnail na `/partners`
 
