@@ -309,14 +309,14 @@ const Gs1Polska = () => {
             <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">{t('gs1.form.subtitle')}</p>
             
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto grid sm:grid-cols-2 gap-4">
-              <Input placeholder={t('contact.form.firstName')} value={firstName} onChange={e => setFirstName(e.target.value)} required />
-              <Input placeholder={t('contact.form.lastName')} value={lastName} onChange={e => setLastName(e.target.value)} required />
-              <Input type="email" placeholder={t('contact.form.email')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
-              <Input placeholder={t('contact.form.company')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
-              <Textarea placeholder={t('contact.form.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
+              <Input placeholder={t('contact.firstName')} value={firstName} onChange={e => setFirstName(e.target.value)} required />
+              <Input placeholder={t('contact.lastName')} value={lastName} onChange={e => setLastName(e.target.value)} required />
+              <Input type="email" placeholder={t('contact.emailAddress')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
+              <Input placeholder={t('contact.companyName')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
+              <Textarea placeholder={t('contact.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
               <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading}>
                 <Send className="mr-2 h-5 w-5" />
-                {loading ? t('contact.form.sending') : t('gs1.form.cta')}
+                {loading ? t('contact.sending') : t('gs1.form.cta')}
               </Button>
             </form>
           </div>
