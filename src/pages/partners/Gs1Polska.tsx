@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { 
@@ -44,6 +46,7 @@ const Gs1Polska = () => {
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [consent, setConsent] = useState(false);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -58,6 +61,11 @@ const Gs1Polska = () => {
 
     if (!trimmedFirstName || !trimmedLastName || !trimmedEmail || !trimmedMessage) {
       toast({ title: t('contact.toast.missingFields'), description: t('contact.toast.missingFieldsDesc'), variant: 'destructive' });
+      return;
+    }
+
+    if (!consent) {
+      toast({ title: t('gs1.form.consentRequired'), variant: 'destructive' });
       return;
     }
 
@@ -314,7 +322,23 @@ const Gs1Polska = () => {
               <Input type="email" placeholder={t('contact.emailAddress')} value={email} onChange={e => setEmail(e.target.value)} required className="sm:col-span-2" />
               <Input placeholder={t('contact.companyName')} value={company} onChange={e => setCompany(e.target.value)} className="sm:col-span-2" />
               <Textarea placeholder={t('contact.message')} value={message} onChange={e => setMessage(e.target.value)} required className="sm:col-span-2 min-h-[120px]" />
-              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading}>
+              
+              <div className="sm:col-span-2 flex items-start gap-3">
+                <Checkbox
+                  id="consent"
+                  checked={consent}
+                  onCheckedChange={(checked) => setConsent(checked === true)}
+                  className="mt-1 border-amber-600 data-[state=checked]:bg-amber-700 data-[state=checked]:border-amber-700"
+                />
+                <label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                  {t('gs1.form.consent')}{' '}
+                  <Link to={`/${currentLocale}/legal/privacy`} className="text-amber-700 underline hover:text-amber-900" target="_blank">
+                    {t('gs1.form.consentLink')}
+                  </Link>
+                </label>
+              </div>
+
+              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading || !consent}>
                 <Send className="mr-2 h-5 w-5" />
                 {loading ? t('contact.sending') : t('gs1.form.cta')}
               </Button>
