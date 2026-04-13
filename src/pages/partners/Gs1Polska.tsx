@@ -121,7 +121,7 @@ const Gs1Polska = () => {
             <div className="flex items-center gap-4 mb-8">
               <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brown.heroBadge}`}>
                 <Globe className="h-4 w-4" />
-                GS1 Polska × Envirly by Quantifier.ai
+                GS1 Polska × {envirlyLink('Envirly')} by Quantifier.ai
               </span>
               <img src={gs1Logo} alt="GS1 Polska" className="h-12 w-auto bg-white rounded-lg px-2 py-1" />
             </div>
