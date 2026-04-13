@@ -8314,7 +8314,10 @@
     "form": {
       "title": "Let's talk about your product",
       "subtitle": "Leave a message — we'll get back to you within 24 hours.",
-      "cta": "Send message"
+      "cta": "Send message",
+      "consent": "I consent to the processing of my personal data in accordance with the",
+      "consentLink": "Privacy Policy",
+      "consentRequired": "You must accept the privacy policy"
     },
     "howItWorks": {
       "title": "How does the GS1 integration work?",

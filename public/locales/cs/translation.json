@@ -6907,7 +6907,10 @@
     "form": {
       "title": "Pojďme si promluvit o vašem produktu",
       "subtitle": "Zanechte zprávu — ozveme se do 24 hodin.",
-      "cta": "Odeslat zprávu"
+      "cta": "Odeslat zprávu",
+      "consent": "Souhlasím se zpracováním mých osobních údajů v souladu s",
+      "consentLink": "Zásadami ochrany soukromí",
+      "consentRequired": "Musíte přijmout zásady ochrany soukromí"
     },
     "howItWorks": {
       "title": "Jak funguje integrace s GS1?",

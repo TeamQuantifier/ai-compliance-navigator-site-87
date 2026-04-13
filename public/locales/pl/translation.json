@@ -8266,7 +8266,10 @@
     "form": {
       "title": "Porozmawiajmy o Twoim produkcie",
       "subtitle": "Zostaw wiadomość — odezwiemy się w ciągu 24 godzin.",
-      "cta": "Wyślij wiadomość"
+      "cta": "Wyślij wiadomość",
+      "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z",
+      "consentLink": "Polityką Prywatności",
+      "consentRequired": "Musisz zaakceptować politykę prywatności"
     },
     "howItWorks": {
       "title": "Jak działa integracja z GS1?",
