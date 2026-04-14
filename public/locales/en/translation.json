@@ -3498,121 +3498,168 @@
     }
   },
   "productLevelPage": {
-    "title": "Product-Level Compliance, Powered by AI",
-    "description": "Build sustainable, transparent products from the ground up. Quantifier brings intelligence and automation to your product compliance—so you can meet regulatory demands and customer expectations with ease.",
-    "tabs": {
-      "dpp": "Digital Product Passport",
-      "lca": "Life Cycle Assessment"
-    },
-    "dpp": {
-      "title": "Digital Product Passport (DPP): Future-Proof Your Products",
-      "description": "DPP is the new standard for transparency and circularity. Quantifier helps you generate, manage, and update digital product passports automatically—ensuring compliance with EU regulations and positioning your brand for the next generation of sustainable markets.",
-      "featuresTitle": "You get:",
-      "features": [
+    "title": "Digital Product Passport (DPP) — ESPR Compliance",
+    "description": "Prepare your products for the ESPR 2024/1781 Regulation. Envirly automates Digital Product Passport creation — from GS1 identification, through environmental data, to QR code generation.",
+    "hero": {
+      "title": "Digital Product Passport (DPP): Get Ready Before Regulations Catch Up",
+      "subtitle": "The ESPR 2024/1781 Regulation mandates Digital Product Passports for successive product categories from 2027. The EU Central Registry launches in July 2026. Companies without DPP will lose access to the EU market.",
+      "problems": [
         {
-          "title": "AI-generated DPPs",
-          "description": "Automatically aligned with EU Ecodesign Regulation (ESPR)"
+          "icon": "📋",
+          "title": "EU Regulatory Requirements",
+          "description": "Ecodesign Regulation (ESPR), mandatory DPPs, PEF and CBAM — new regulations demand full product data transparency."
         },
         {
-          "title": "Real-time data collection",
-          "description": "Gather information across your entire supply chain"
+          "icon": "🏢",
+          "title": "Market Pressure",
+          "description": "Buyers, banks and contractors require environmental data, EPDs and LCAs. Public procurement increasingly mandates product footprint."
         },
         {
-          "title": "Automated updates",
-          "description": "When inputs, materials, or regulations change"
-        },
-        {
-          "title": "Easy integration",
-          "description": "With QR codes, NFC, or third-party platforms"
-        },
-        {
-          "title": "Ready-to-share passports",
-          "description": "That meet industry-specific requirements"
+          "icon": "⚠️",
+          "title": "Risk Without DPP",
+          "description": "No passport = EU export block. No certification = lost contracts. Competitors with DPP are years ahead."
         }
-      ],
-      "dashboardTitle": "Digital Product Passport Completion",
-      "insightTitle": "Quantifier's AI Generated Insights:",
-      "insight": "Your product passport is 82% complete. Add more end-of-life recycling details to improve compliance with upcoming EU regulations."
+      ]
     },
-    "lca": {
-      "title": "LCA (Life Cycle Assessment): Understand and Optimize Environmental Impact",
-      "description": "Quantifier transforms life cycle assessments from a one-off burden into a continuous, intelligent process. Automate data gathering, track changes over time, and reduce your environmental footprint with clarity.",
-      "featuresTitle": "You get:",
-      "features": [
+    "timeline": {
+      "title": "EU DPP Implementation Timeline",
+      "steps": [
         {
-          "title": "Step-by-step, AI-guided LCA workflows",
-          "description": "Based on ISO 14040/44 standards"
+          "date": "July 2026",
+          "title": "EU Central Registry",
+          "description": "Launch of the European product passport registry — technical infrastructure ready to accept data."
         },
         {
-          "title": "Integrated supplier data collection",
-          "description": "And emissions calculations"
+          "date": "February 2027",
+          "title": "Batteries & Accumulators",
+          "description": "Mandatory DPP for industrial, EV and portable batteries above 2 kWh (Regulation 2023/1542)."
         },
         {
-          "title": "Material libraries and benchmarking tools",
-          "description": "Built in for easy comparison"
+          "date": "2028",
+          "title": "Textiles & Apparel",
+          "description": "Planned DPP requirement for clothing and textiles — material composition, carbon footprint, repair and recycling instructions."
         },
         {
-          "title": "Exportable, audit-ready reports",
-          "description": "For internal and external use"
+          "date": "2028–2029",
+          "title": "Electronics & ICT",
+          "description": "Delegated acts for electronic devices — repairability information, spare parts and lifespan data."
         },
         {
-          "title": "Full transparency",
-          "description": "From raw material to end-of-life"
+          "date": "2029–2030",
+          "title": "Furniture, Construction Materials & More",
+          "description": "Additional product categories covered by DPP obligation. Full ESPR implementation by 2030."
         }
-      ],
-      "dashboardTitle": "Life Cycle Impact Assessment",
-      "insightTitle": "Quantifier's AI Recommendation:",
-      "insight": "Focus on raw material sourcing to reduce your largest environmental impacts. Consider alternative suppliers with documented sustainability practices."
+      ]
     },
-    "whyQuantifier": {
-      "title": "Why Quantifier for Product-Level Compliance?",
-      "features": {
-        "aiPowered": {
-          "title": "AI-Powered Data Collection & Reporting",
-          "description": "Eliminate bottlenecks by letting autonomous agents gather and verify product data."
+    "process": {
+      "title": "Product Passport in 4 Steps",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Product Identification",
+          "description": "Automatic data import via GTIN code. Integration with GS1.",
+          "details": ["GTIN / GPC import", "GS1 verification", "Product category"]
         },
-        "alwaysUpdated": {
-          "title": "Always Up to Date",
-          "description": "Your passports and LCAs evolve in real time as materials, suppliers, or rules change."
+        {
+          "number": "02",
+          "title": "Enter Data",
+          "description": "Import Excel/CSV, API or manual entry. AI Assistant helps at every step.",
+          "details": ["Excel / CSV import", "AI Assistant + help center", "Built-in Ecoinvent database"]
         },
-        "designedCircularity": {
-          "title": "Designed for Circularity",
-          "description": "From recyclability to emissions, Quantifier helps you build better products—and prove it."
+        {
+          "number": "03",
+          "title": "Emission Flowchart",
+          "description": "Interactive lifecycle flowchart: raw materials → manufacturing → distribution → end of life.",
+          "details": ["LCA flowchart", "16 impact categories", "Sensitivity analysis"]
         },
-        "fastCompliance": {
-          "title": "Fast Time-to-Compliance",
-          "description": "Launch new products in new markets without worrying about regulatory delays."
+        {
+          "number": "04",
+          "title": "Generate DPP",
+          "description": "Product passport with QR code and link. Live preview in mobile and desktop.",
+          "details": ["QR code + link", "Live preview", "ESPR compliant"]
         }
-      }
+      ]
+    },
+    "categories": {
+      "title": "Product Categories Covered by DPP",
+      "subtitle": "Mandatory Digital Product Passport implementation schedule per ESPR Regulation 2024/1781.",
+      "colCategory": "Product Category",
+      "colAct": "Delegated Act",
+      "colDeadline": "Deadline",
+      "items": [
+        { "category": "Industrial & EV Batteries", "act": "Regulation 2023/1542", "deadline": "February 2027" },
+        { "category": "Textiles & Apparel", "act": "ESPR — delegated act", "deadline": "2028" },
+        { "category": "Electronics & ICT", "act": "ESPR — delegated act", "deadline": "2028–2029" },
+        { "category": "Furniture", "act": "ESPR — delegated act", "deadline": "2029" },
+        { "category": "Construction Materials", "act": "ESPR + CPR", "deadline": "2029–2030" },
+        { "category": "Iron & Steel", "act": "ESPR — delegated act", "deadline": "2030" }
+      ]
+    },
+    "dataRequirements": {
+      "title": "Mandatory DPP Data Requirements",
+      "items": [
+        { "title": "Material Composition", "description": "Full list of materials, hazardous substances and recycled material content." },
+        { "title": "Carbon Footprint", "description": "CO₂ emissions across product lifecycle — from raw materials to end of life (cradle-to-grave)." },
+        { "title": "Energy Efficiency", "description": "Energy class, usage-phase energy consumption and benchmark comparison." },
+        { "title": "Durability & Repairability", "description": "Product lifespan, spare parts availability, repair instructions." },
+        { "title": "End-of-Life Information", "description": "Recycling, disassembly and proper waste handling instructions." },
+        { "title": "Compliance & Certifications", "description": "CE declaration of conformity, environmental certificates, ISO standards and audits." }
+      ]
+    },
+    "advantages": {
+      "title": "Why Envirly for DPP?",
+      "items": [
+        { "title": "Ecoinvent Included", "description": "The best Swiss emission factor database. No separate purchase needed — included in platform pricing." },
+        { "title": "TÜV Nord Certified", "description": "ISO 14067 — first LCA platform in CEE with this certification. Trusted by clients and regulators." },
+        { "title": "GS1 Integration", "description": "Import product data via GTIN code. Trusted by GS1 — 70+ clients from the ecosystem." },
+        { "title": "Scenario Modeling", "description": "Compare product variants, optimize footprint. Monte Carlo simulation." },
+        { "title": "Excel / CSV / API Import", "description": "Flexible data import. Integration with existing ERP systems and databases." },
+        { "title": "AI Assistant + Help Center", "description": "Support at every step. Training materials, tutorials, dedicated team." }
+      ]
+    },
+    "industries": {
+      "title": "DPP Industry Applications",
+      "items": [
+        { "title": "Manufacturing", "description": "DPP for industrial products, reporting to buyers (DE, FR, NL).", "clients": "📌 Hilding Anders, Cersanit, Black Red White" },
+        { "title": "FMCG & Chemicals", "description": "Product footprint for cleaning and cosmetic products. EPD for tenders and retail chains.", "clients": "📌 Dr Irena Eris, Herbapol, Wosana" },
+        { "title": "Fashion & Textile", "description": "DPP compliant with EU textile requirements from 2028.", "clients": "📌 4F (OTCF), Tatuum, Kazar" },
+        { "title": "Pharma & Healthcare", "description": "LCA for pharmaceutical products and supplements. Scope 3 purchased products.", "clients": "📌 Pelion (300+ subsidiaries)" },
+        { "title": "Food & Beverage", "description": "Cradle-to-gate food footprint. EUDR support, ESG reporting for supply chains.", "clients": "📌 Maspex, Cedrob, AmRest" },
+        { "title": "Media & Marketing", "description": "LCA for advertising campaigns, OOH material footprint, ESG reporting.", "clients": "📌 Jet Line (OOH campaigns)" }
+      ]
     },
     "cta": {
-      "title": "Make Your Products Compliant—and Competitive",
-      "description": "Smarter compliance. Stronger transparency. Lower impact. Quantifier gives your products the intelligence they need to lead.",
+      "title": "Prepare Your Products for DPP — Before It's Too Late",
+      "description": "173 companies already use Envirly LCA. TÜV Nord certified. GS1 integration. Start building product passports today.",
       "bookDemo": "Book a Demo",
-      "talkExpert": "Talk to Our Product Compliance Expert"
+      "talkExpert": "Talk to a DPP Expert"
     },
     "faq": {
-      "title": "FAQ — Product-Level Compliance",
+      "title": "FAQ — Digital Product Passport (DPP)",
       "items": [
         {
           "question": "What is a Digital Product Passport (DPP)?",
-          "answer": "A DPP is a digital record containing information about a product materials, manufacturing, certifications, and end-of-life handling. The EU Battery Regulation and Ecodesign Regulation require DPPs for certain product categories starting 2027."
+          "answer": "A DPP is a digital product data record required by ESPR Regulation 2024/1781. It contains information about material composition, carbon footprint, repairability and recycling instructions. Accessible via QR code or link."
         },
         {
-          "question": "How does Quantifier help with DPP compliance?",
-          "answer": "Quantifier automates data collection across your supply chain, generates standardized DPPs, manages QR code linking, and ensures your product data meets evolving EU requirements."
+          "question": "When does DPP become mandatory?",
+          "answer": "The EU Central Registry launches in July 2026. First product categories (batteries) require DPP from February 2027. Textiles from 2028, electronics 2028–2029, furniture and construction materials by 2030."
         },
         {
-          "question": "What is the difference between DPP and LCA?",
-          "answer": "DPP is a product-level data record required by regulation. LCA (Life Cycle Assessment) is an analytical methodology measuring environmental impact across a product lifecycle. Quantifier supports both — LCA data can feed directly into your DPP."
+          "question": "What data must a product passport contain?",
+          "answer": "Mandatory elements include: material composition, carbon footprint (cradle-to-grave), energy efficiency, durability and repairability, recycling instructions and compliance certificates. Details depend on product category."
         },
         {
-          "question": "Which industries need Digital Product Passports?",
-          "answer": "Starting with batteries (2027), the DPP requirement will expand to textiles, construction materials, electronics, and other sectors under the EU Ecodesign for Sustainable Products Regulation (ESPR)."
+          "question": "What happens if I don't implement DPP on time?",
+          "answer": "Products without a valid DPP will not be allowed on the EU market. This means export blocks, lost contracts with retail chains and risk of financial penalties."
         },
         {
-          "question": "Can I manage product compliance across multiple regions?",
-          "answer": "Yes. Quantifier supports multi-region compliance requirements, tracking which products need DPPs in which markets, and adapting documentation to local regulatory requirements."
+          "question": "How does Envirly help create DPPs?",
+          "answer": "Envirly automates the entire process: product identification via GS1 (GTIN), environmental data import, interactive lifecycle flowchart, passport editing with live preview and QR code generation. Ecoinvent database and TÜV Nord certificate included."
+        },
+        {
+          "question": "Does DPP require carbon footprint calculation (LCA)?",
+          "answer": "Yes — product carbon footprint is one of the mandatory DPP elements. Envirly connects LCA calculations (ISO 14067, PEF) directly with the product passport generator."
         }
       ]
     }
