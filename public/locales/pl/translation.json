@@ -3451,121 +3451,168 @@
     }
   },
   "productLevelPage": {
-    "title": "Compliance na poziomie produktu, napędzany przez AI",
-    "description": "Buduj zrównoważone, przejrzyste produkty od podstaw. Quantifier wnosi inteligencję i automatyzację do Twojego compliance produktowego—abyś mógł spełnić wymagania regulacyjne i oczekiwania klientów z łatwością.",
-    "tabs": {
-      "dpp": "Cyfrowy Paszport Produktowy",
-      "lca": "Ocena cyklu życia"
-    },
-    "dpp": {
-      "title": "Cyfrowy Paszport Produktowy (DPP): Przyszłościuj swoje produkty",
-      "description": "DPP to nowy standard przejrzystości i cyrkularności. Quantifier pomaga generować, zarządzać i aktualizować cyfrowe paszporty produktowe automatycznie—zapewniając zgodność z przepisami UE i pozycjonując Twoją markę dla następnej generacji zrównoważonych rynków.",
-      "featuresTitle": "Otrzymujesz:",
-      "features": [
+    "title": "Cyfrowy Paszport Produktowy (DPP) — Zgodność z ESPR",
+    "description": "Przygotuj swoje produkty na Rozporządzenie ESPR 2024/1781. Envirly automatyzuje tworzenie Cyfrowych Paszportów Produktowych — od identyfikacji GS1, przez dane środowiskowe, po generowanie kodów QR.",
+    "hero": {
+      "title": "Cyfrowy Paszport Produktowy (DPP): Przygotuj się, zanim przepisy Cię wyprzedzą",
+      "subtitle": "Rozporządzenie ESPR 2024/1781 wprowadza obowiązek Cyfrowego Paszportu Produktowego dla kolejnych kategorii produktów od 2027 roku. Rejestr UE rusza w lipcu 2026. Firmy bez DPP stracą dostęp do rynku UE.",
+      "problems": [
         {
-          "title": "DPP generowane przez AI",
-          "description": "Automatycznie dostosowane do rozporządzenia UE w sprawie ekoprojektu (ESPR)"
+          "icon": "📋",
+          "title": "Wymogi regulacyjne UE",
+          "description": "Dyrektywa o Ekoprojektowaniu (ESPR), obowiązkowe DPP, PEF i CBAM — nowe regulacje wymagają pełnej przejrzystości danych produktowych."
         },
         {
-          "title": "Zbieranie danych w czasie rzeczywistym",
-          "description": "Zbieraj informacje w całym łańcuchu dostaw"
+          "icon": "🏢",
+          "title": "Presja rynkowa",
+          "description": "Kupujący, banki i kontrahenci wymagają danych środowiskowych, EPD i LCA. Przetargi publiczne coraz częściej wymuszają ślad produktu."
         },
         {
-          "title": "Automatyczne aktualizacje",
-          "description": "Kiedy zmienia się wejście, materiały lub przepisy"
-        },
-        {
-          "title": "Łatwa integracja",
-          "description": "Z kodami QR, NFC lub platformami stron trzecich"
-        },
-        {
-          "title": "Paszporty gotowe do udostępnienia",
-          "description": "Spełniające wymagania specyficzne dla branży"
+          "icon": "⚠️",
+          "title": "Ryzyko bez DPP",
+          "description": "Brak paszportu = blokada eksportu do UE. Brak certyfikacji = utrata kontraktów. Konkurencja z DPP wyprzedza o lata."
         }
-      ],
-      "dashboardTitle": "Ukończenie cyfrowego paszportu produktowego",
-      "insightTitle": "Wglądy AI generowane przez Quantifier:",
-      "insight": "Twój paszport produktowy jest w 82% ukończony. Dodaj więcej szczegółów dotyczących recyklingu pod koniec życia, aby poprawić zgodność z nadchodzącymi przepisami UE."
+      ]
     },
-    "lca": {
-      "title": "LCA (ocena cyklu życia): Zrozum i zoptymalizuj wpływ środowiskowy",
-      "description": "Quantifier przekształca oceny cyklu życia z jednorazowego obciążenia w ciągły, inteligentny proces. Automatyzuj zbieranie danych, śledź zmiany w czasie i redukuj swój ślad środowiskowy z jasnością.",
-      "featuresTitle": "Otrzymujesz:",
-      "features": [
+    "timeline": {
+      "title": "Oś czasu wdrażania DPP w UE",
+      "steps": [
         {
-          "title": "Krok po kroku, przepływy pracy LCA prowadzone przez AI",
-          "description": "Oparte na standardach ISO 14040/44"
+          "date": "Lipiec 2026",
+          "title": "Rejestr centralny UE",
+          "description": "Uruchomienie europejskiego rejestru paszportów produktowych — infrastruktura techniczna gotowa do przyjmowania danych."
         },
         {
-          "title": "Zintegrowane zbieranie danych od dostawców",
-          "description": "I obliczenia emisji"
+          "date": "Luty 2027",
+          "title": "Baterie i akumulatory",
+          "description": "Obowiązkowe DPP dla baterii przemysłowych, EV i przenośnych powyżej 2 kWh (Rozporządzenie 2023/1542)."
         },
         {
-          "title": "Biblioteki materiałów i narzędzia do benchmarkingu",
-          "description": "Wbudowane dla łatwego porównania"
+          "date": "2028",
+          "title": "Wyroby włókiennicze",
+          "description": "Planowany wymóg DPP dla odzieży i tekstyliów — skład materiałowy, ślad węglowy, instrukcje naprawy i recyklingu."
         },
         {
-          "title": "Raporty do eksportu, gotowe na audyt",
-          "description": "Do użytku wewnętrznego i zewnętrznego"
+          "date": "2028–2029",
+          "title": "Elektronika i ICT",
+          "description": "Delegowane akty dla urządzeń elektronicznych — informacje o naprawialności, części zamiennych i żywotności."
         },
         {
-          "title": "Pełna przejrzystość",
-          "description": "Od surowca po koniec życia"
+          "date": "2029–2030",
+          "title": "Meble, materiały budowlane i inne",
+          "description": "Kolejne kategorie produktowe objęte obowiązkiem DPP. Pełne wdrożenie ESPR do 2030 roku."
         }
-      ],
-      "dashboardTitle": "Ocena wpływu cyklu życia",
-      "insightTitle": "Rekomendacja AI Quantifier:",
-      "insight": "Skoncentruj się na pozyskiwaniu surowców, aby zmniejszyć największe wpływy środowiskowe. Rozważ alternatywnych dostawców z udokumentowanymi praktykami zrównoważonego rozwoju."
+      ]
     },
-    "whyQuantifier": {
-      "title": "Dlaczego Quantifier dla compliance na poziomie produktu?",
-      "features": {
-        "aiPowered": {
-          "title": "Zbieranie i raportowanie danych oparte na AI",
-          "description": "Wyeliminuj wąskie gardła, pozwalając autonomicznym agentom zbierać i weryfikować dane produktów."
+    "process": {
+      "title": "Paszport produktowy w 4 krokach",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Identyfikacja produktu",
+          "description": "Automatyczny import danych po kodzie GTIN. Integracja z GS1 Polska.",
+          "details": ["Import GTIN / GPC", "Weryfikacja w GS1", "Kategoria produktu"]
         },
-        "alwaysUpdated": {
-          "title": "Zawsze na bieżąco",
-          "description": "Twoje paszporty i LCA ewoluują w czasie rzeczywistym, gdy zmieniają się materiały, dostawcy lub zasady."
+        {
+          "number": "02",
+          "title": "Uzupełnij dane",
+          "description": "Import Excel/CSV, API lub ręczne uzupełnienie. Asystent AI pomaga na każdym etapie.",
+          "details": ["Import Excel / CSV", "Asystent AI + help center", "Baza Ecoinvent wbudowana"]
         },
-        "designedCircularity": {
-          "title": "Zaprojektowane dla cyrkularności",
-          "description": "Od recyklingu po emisje, Quantifier pomaga budować lepsze produkty—i to udowadniać."
+        {
+          "number": "03",
+          "title": "Flowchart emisji",
+          "description": "Interaktywny schemat blokowy cyklu życia: surowce → produkcja → dystrybucja → koniec życia.",
+          "details": ["Schemat blokowy LCA", "16 kategorii wpływu", "Analiza wrażliwości"]
         },
-        "fastCompliance": {
-          "title": "Szybki czas do zgodności",
-          "description": "Uruchom nowe produkty na nowych rynkach bez martwienia się o opóźnienia regulacyjne."
+        {
+          "number": "04",
+          "title": "Generuj DPP",
+          "description": "Paszport produktowy z kodem QR i linkiem. Podgląd live w wersji mobilnej i desktop.",
+          "details": ["Kod QR + link", "Podgląd live", "Zgodny z ESPR"]
         }
-      }
+      ]
+    },
+    "categories": {
+      "title": "Kategorie produktów objęte DPP",
+      "subtitle": "Harmonogram wdrażania obowiązkowego Cyfrowego Paszportu Produktowego wg Rozporządzenia ESPR 2024/1781.",
+      "colCategory": "Kategoria produktów",
+      "colAct": "Akt delegowany",
+      "colDeadline": "Termin",
+      "items": [
+        { "category": "Baterie przemysłowe i EV", "act": "Rozporządzenie 2023/1542", "deadline": "Luty 2027" },
+        { "category": "Wyroby włókiennicze i odzież", "act": "ESPR — akt delegowany", "deadline": "2028" },
+        { "category": "Elektronika i ICT", "act": "ESPR — akt delegowany", "deadline": "2028–2029" },
+        { "category": "Meble", "act": "ESPR — akt delegowany", "deadline": "2029" },
+        { "category": "Materiały budowlane", "act": "ESPR + CPR", "deadline": "2029–2030" },
+        { "category": "Żelazo i stal", "act": "ESPR — akt delegowany", "deadline": "2030" }
+      ]
+    },
+    "dataRequirements": {
+      "title": "Obowiązkowe dane w Paszporcie Produktowym",
+      "items": [
+        { "title": "Skład materiałowy", "description": "Pełna lista materiałów, substancji niebezpiecznych i zawartości materiałów z recyklingu." },
+        { "title": "Ślad węglowy", "description": "Emisje CO₂ w cyklu życia produktu — od surowców po koniec życia (cradle-to-grave)." },
+        { "title": "Efektywność energetyczna", "description": "Klasa energetyczna, zużycie energii w fazie użytkowania i porównanie z benchmarkiem." },
+        { "title": "Trwałość i naprawialność", "description": "Żywotność produktu, dostępność części zamiennych, instrukcje naprawy." },
+        { "title": "Informacje o końcu życia", "description": "Instrukcje recyklingu, demontażu i prawidłowego postępowania z odpadami." },
+        { "title": "Zgodność i certyfikaty", "description": "Deklaracja zgodności CE, certyfikaty środowiskowe, normy ISO i audyty." }
+      ]
+    },
+    "advantages": {
+      "title": "Dlaczego Envirly do tworzenia DPP?",
+      "items": [
+        { "title": "Ecoinvent wbudowany w cenę", "description": "Najlepsza szwajcarska baza faktorów emisji. Nie musisz kupować osobno — wszystko w cenie platformy." },
+        { "title": "Certyfikacja TÜV Nord", "description": "ISO 14067 — pierwsza platforma w CEE z tym certyfikatem. Zaufanie klientów i regulatorów." },
+        { "title": "Integracja GS1", "description": "Import danych produktu po kodzie GTIN. Trusted by GS1 — 70+ klientów z ekosystemu." },
+        { "title": "Modelowanie scenariuszy", "description": "Porównuj warianty produktu, optymalizuj ślad. Symulacja Monte Carlo." },
+        { "title": "Import Excel / CSV / API", "description": "Elastyczny import danych. Integracja z istniejącymi systemami ERP i bazami." },
+        { "title": "Asystent AI + Help Center", "description": "Wsparcie na każdym kroku. Materiały szkoleniowe, tutoriale, dedykowany zespół." }
+      ]
+    },
+    "industries": {
+      "title": "Zastosowania branżowe DPP",
+      "items": [
+        { "title": "Produkcja & Manufacturing", "description": "DPP dla wyrobów przemysłowych, raportowanie do kupujących (DE, FR, NL).", "clients": "📌 Hilding Anders, Cersanit, Black Red White" },
+        { "title": "FMCG & Chemia", "description": "Ślad produktu czyszczącego, kosmetycznego. EPD dla przetargów i sieci retail.", "clients": "📌 Dr Irena Eris, Herbapol, Wosana" },
+        { "title": "Fashion & Textile", "description": "DPP zgodny z wymogami UE dot. wyrobów włókienniczych od 2028.", "clients": "📌 4F (OTCF), Tatuum, Kazar" },
+        { "title": "Farmacja & Healthcare", "description": "LCA dla produktów leczniczych i suplementów. Scope 3 kategoria zakupionych produktów.", "clients": "📌 Pelion (300+ subsidiaries)" },
+        { "title": "Food & Beverage", "description": "Ślad żywnościowy cradle-to-gate. Wsparcie EUDR, ESG reporting dla sieci dostaw.", "clients": "📌 Maspex, Cedrob, AmRest" },
+        { "title": "Media & Marketing", "description": "LCA kampanii reklamowych, ślad materiałów OOH, raportowanie ESG.", "clients": "📌 Jet Line (kampanie OOH)" }
+      ]
     },
     "cta": {
-      "title": "Uczyń swoje produkty zgodnymi—i konkurencyjnymi",
-      "description": "Mądrzejsze compliance. Silniejsza przejrzystość. Niższy wpływ. Quantifier daje Twoim produktom inteligencję, której potrzebują do przewodzenia.",
+      "title": "Przygotuj swoje produkty na DPP — zanim będzie za późno",
+      "description": "173 firm już korzysta z Envirly LCA. Certyfikat TÜV Nord. Integracja GS1. Zacznij budować paszporty produktowe już dziś.",
       "bookDemo": "Umów demo",
-      "talkExpert": "Porozmawiaj z naszym ekspertem ds. compliance produktowego"
+      "talkExpert": "Porozmawiaj z ekspertem DPP"
     },
     "faq": {
-      "title": "FAQ — Zgodność na Poziomie Produktu",
+      "title": "FAQ — Cyfrowy Paszport Produktowy (DPP)",
       "items": [
         {
-          "question": "Czym jest Cyfrowy Paszport Produktu (DPP)?",
-          "answer": "DPP to cyfrowy zapis zawierający informacje o materiałach produktu, produkcji, certyfikatach i postępowaniu na końcu życia. Rozporządzenie UE wymaga DPP dla określonych kategorii produktów od 2027."
+          "question": "Czym jest Cyfrowy Paszport Produktowy (DPP)?",
+          "answer": "DPP to cyfrowy zapis danych produktu wymagany przez Rozporządzenie ESPR 2024/1781. Zawiera informacje o składzie materiałowym, śladzie węglowym, naprawialności i instrukcjach recyklingu. Dostępny przez kod QR lub link."
         },
         {
-          "question": "Jak Quantifier pomaga w zgodności DPP?",
-          "answer": "Quantifier automatyzuje zbieranie danych w całym łańcuchu dostaw, generuje standardowe DPP, zarządza kodami QR i zapewnia zgodność danych z wymaganiami UE."
+          "question": "Kiedy DPP staje się obowiązkowy?",
+          "answer": "Rejestr centralny UE rusza w lipcu 2026. Pierwsze kategorie produktów (baterie) wymagają DPP od lutego 2027. Tekstylia od 2028, elektronika 2028–2029, meble i materiały budowlane do 2030."
         },
         {
-          "question": "Jaka jest różnica między DPP a LCA?",
-          "answer": "DPP to wymagany regulacyjnie zapis danych produktu. LCA to metodologia analityczna mierząca wpływ środowiskowy. Quantifier obsługuje oba — dane LCA mogą zasilać DPP."
+          "question": "Jakie dane musi zawierać paszport produktowy?",
+          "answer": "Obowiązkowe elementy to: skład materiałowy, ślad węglowy (cradle-to-grave), efektywność energetyczna, trwałość i naprawialność, instrukcje recyklingu oraz certyfikaty zgodności. Szczegóły zależą od kategorii produktu."
         },
         {
-          "question": "Które branże potrzebują Cyfrowych Paszportów Produktu?",
-          "answer": "Począwszy od baterii (2027), wymóg DPP rozszerzy się na tekstylia, materiały budowlane, elektronikę i inne sektory w ramach Rozporządzenia ESPR."
+          "question": "Co się stanie jeśli nie wdrożę DPP na czas?",
+          "answer": "Produkty bez ważnego DPP nie będą mogły być wprowadzane na rynek UE. Oznacza to blokadę eksportu, utratę kontraktów z sieciami handlowymi i ryzyko kar finansowych."
         },
         {
-          "question": "Czy mogę zarządzać zgodnością produktów w wielu regionach?",
-          "answer": "Tak. Quantifier wspiera wieloregionowe wymagania, śledząc które produkty potrzebują DPP na jakich rynkach i dostosowując dokumentację do lokalnych wymagań."
+          "question": "Jak Envirly pomaga w tworzeniu DPP?",
+          "answer": "Envirly automatyzuje cały proces: identyfikacja produktu przez GS1 (GTIN), import danych środowiskowych, interaktywny flowchart cyklu życia, edycja paszportu z podglądem live i generowanie kodu QR. Baza Ecoinvent i certyfikat TÜV Nord w cenie."
+        },
+        {
+          "question": "Czy DPP wymaga obliczenia śladu węglowego (LCA)?",
+          "answer": "Tak — ślad węglowy produktu jest jednym z obowiązkowych elementów DPP. Envirly łączy obliczenia LCA (ISO 14067, PEF) bezpośrednio z generatorem paszportu produktowego."
         }
       ]
     }
