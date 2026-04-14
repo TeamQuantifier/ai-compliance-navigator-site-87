@@ -1,233 +1,222 @@
-
-import { useState } from 'react';
 import PageTemplate from '@/components/PageTemplate';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, FileText, Scan, RefreshCw, QrCode, BarChart3, Shield, Leaf, Clock, CheckCircle, Zap, Recycle, Globe, Package } from 'lucide-react';
+import { ArrowRight, FileText, Scan, QrCode, BarChart3, Shield, Clock, CheckCircle, Zap, Globe, Package, Database, Bot, Link2, CalendarClock, Factory, ShoppingBag, Shirt, Pill, UtensilsCrossed, Radio } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 const ProductLevel = () => {
-  const [activeTab, setActiveTab] = useState("dpp");
   const { t, currentLocale } = useLanguage();
 
-  const FeatureItem = ({ icon: Icon, title, children }) => (
-    <div className="flex gap-3 mb-5">
-      <div className="flex-shrink-0 mt-1">
-        <div className="bg-green-100 p-2 rounded-full">
-          <Icon className="h-5 w-5 text-green-600" />
-        </div>
-      </div>
-      <div>
-        <h4 className="font-medium text-slate-800 mb-1">{title}</h4>
-        <p className="text-slate-600">{children}</p>
-      </div>
-    </div>
-  );
+  const timelineSteps = t('productLevelPage.timeline.steps', { returnObjects: true }) as Array<{ date: string; title: string; description: string }>;
+  const processSteps = t('productLevelPage.process.steps', { returnObjects: true }) as Array<{ number: string; title: string; description: string; details: string[] }>;
+  const advantages = t('productLevelPage.advantages.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const categories = t('productLevelPage.categories.items', { returnObjects: true }) as Array<{ category: string; act: string; deadline: string }>;
+  const industries = t('productLevelPage.industries.items', { returnObjects: true }) as Array<{ title: string; description: string; clients: string }>;
+  const dataReqs = t('productLevelPage.dataRequirements.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
 
-  // Data for Digital Product Passport visualization
-  const dppCompletionData = [
-    { name: 'Materials', value: 85 },
-    { name: 'Manufacturing', value: 92 },
-    { name: 'Certifications', value: 78 },
-    { name: 'End of Life', value: 65 }
-  ];
-
-  const DPP_COLORS = ['#22c55e', '#16a34a', '#15803d', '#166534'];
-
-  // Data for LCA visualization
-  const lcaImpactData = [
-    { phase: 'Raw Materials', carbon: 38, water: 45, waste: 25 },
-    { phase: 'Manufacturing', carbon: 25, water: 20, waste: 30 },
-    { phase: 'Distribution', carbon: 15, water: 10, waste: 12 },
-    { phase: 'Usage', carbon: 12, water: 15, waste: 8 },
-    { phase: 'End of Life', carbon: 10, water: 10, waste: 25 }
-  ];
+  const advantageIcons = [Database, Shield, Link2, BarChart3, FileText, Bot];
+  const industryIcons = [Factory, ShoppingBag, Shirt, Pill, UtensilsCrossed, Radio];
 
   return (
     <PageTemplate
-      title={t('seo.frameworks.productLevel.title')}
-      description={t('seo.frameworks.productLevel.description')}
+      title={t('productLevelPage.title')}
+      description={t('productLevelPage.description')}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Framework Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
-          <TabsList className="grid grid-cols-2 w-full max-w-md mx-auto mb-8">
-            <TabsTrigger value="dpp" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              {t('productLevelPage.tabs.dpp')}
-            </TabsTrigger>
-            <TabsTrigger value="lca" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
-              {t('productLevelPage.tabs.lca')}
-            </TabsTrigger>
-          </TabsList>
 
-          {/* DPP Tab Content */}
-          <TabsContent value="dpp" className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  {t('productLevelPage.dpp.title')}
-                </h2>
-                <p className="text-slate-600 mb-6">
-                  {t('productLevelPage.dpp.description')}
-                </p>
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('productLevelPage.dpp.featuresTitle')}</h3>
-                  {t('productLevelPage.dpp.features', { returnObjects: true }).map((feature: any, index: number) => (
-                    <FeatureItem key={index} icon={[FileText, Globe, RefreshCw, QrCode, CheckCircle][index]} title={feature.title}>
-                      {feature.description}
-                    </FeatureItem>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('productLevelPage.dpp.dashboardTitle')}</h3>
-                <div className="h-64">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={dppCompletionData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={90}
-                        paddingAngle={2}
-                        dataKey="value"
-                        label={({ name, value }) => `${name}: ${value}%`}
-                        labelLine={false}
-                      >
-                        {dppCompletionData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={DPP_COLORS[index % DPP_COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip formatter={(value) => `${value}%`} />
-                      <Legend layout="horizontal" verticalAlign="bottom" align="center" />
-                    </PieChart>
-                  </ResponsiveContainer>
-                </div>
-                <div className="mt-4 bg-white p-4 rounded-lg border border-green-100">
-                  <h4 className="text-sm font-medium text-green-700 mb-2">{t('productLevelPage.dpp.insightTitle')}</h4>
-                  <p className="text-xs text-slate-600">{t('productLevelPage.dpp.insight')}</p>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* LCA Tab Content */}
-          <TabsContent value="lca" className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-4 text-slate-800">
-                  {t('productLevelPage.lca.title')}
-                </h2>
-                <p className="text-slate-600 mb-6">
-                  {t('productLevelPage.lca.description')}
-                </p>
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('productLevelPage.lca.featuresTitle')}</h3>
-                  {t('productLevelPage.lca.features', { returnObjects: true }).map((feature: any, index: number) => (
-                    <FeatureItem key={index} icon={[Leaf, Globe, BarChart3, FileText, Recycle][index]} title={feature.title}>
-                      {feature.description}
-                    </FeatureItem>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-lg border border-emerald-100">
-                <h3 className="text-lg font-semibold mb-4 text-slate-800 text-center">{t('productLevelPage.lca.dashboardTitle')}</h3>
-                <div className="h-64">
-                  <ChartContainer
-                    config={{
-                      carbon: { 
-                        theme: { 
-                          light: '#15803d',
-                          dark: '#166534'
-                        } 
-                      },
-                      water: { 
-                        theme: { 
-                          light: '#0ea5e9',
-                          dark: '#0284c7'
-                        } 
-                      },
-                      waste: { 
-                        theme: { 
-                          light: '#f97316',
-                          dark: '#ea580c'
-                        } 
-                      }
-                    }}
-                  >
-                    <BarChart 
-                      data={lcaImpactData} 
-                      margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-                      barGap={0}
-                      barCategoryGap="15%"
-                    >
-                      <XAxis dataKey="phase" angle={-45} textAnchor="end" height={80} />
-                      <YAxis />
-                      <ChartTooltip content={<ChartTooltipContent />} />
-                      <Legend />
-                      <Bar dataKey="carbon" name="Carbon Impact" barSize={20} radius={[4, 4, 0, 0]} />
-                      <Bar dataKey="water" name="Water Usage" barSize={20} radius={[4, 4, 0, 0]} />
-                      <Bar dataKey="waste" name="Waste Production" barSize={20} radius={[4, 4, 0, 0]} />
-                    </BarChart>
-                  </ChartContainer>
-                </div>
-                <div className="mt-4 bg-white p-4 rounded-lg border border-emerald-100">
-                  <h4 className="text-sm font-medium text-emerald-700 mb-2">{t('productLevelPage.lca.insightTitle')}</h4>
-                  <p className="text-xs text-slate-600">{t('productLevelPage.lca.insight')}</p>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        {/* Why Choose Quantifier Section */}
-        <div className="my-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
-          <h2 className="text-2xl font-bold mb-6 text-center text-slate-800">
-            {t('productLevelPage.whyQuantifier.title')}
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 border-green-100 bg-white/80">
-              <Package className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.aiPowered.title')}</h3>
-              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.aiPowered.description')}</p>
-            </Card>
-            
-            <Card className="p-6 border-green-100 bg-white/80">
-              <RefreshCw className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.alwaysUpdated.title')}</h3>
-              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.alwaysUpdated.description')}</p>
-            </Card>
-            
-            <Card className="p-6 border-green-100 bg-white/80">
-              <Recycle className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.designedCircularity.title')}</h3>
-              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.designedCircularity.description')}</p>
-            </Card>
-            
-            <Card className="p-6 border-green-100 bg-white/80">
-              <Zap className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="font-semibold text-slate-800 mb-2">{t('productLevelPage.whyQuantifier.features.fastCompliance.title')}</h3>
-              <p className="text-slate-600">{t('productLevelPage.whyQuantifier.features.fastCompliance.description')}</p>
-            </Card>
+        {/* Hero / Problem Section */}
+        <section className="mb-16">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+              ESPR 2024/1781
+            </span>
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              {t('productLevelPage.hero.title')}
+            </h1>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              {t('productLevelPage.hero.subtitle')}
+            </p>
           </div>
-        </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {(t('productLevelPage.hero.problems', { returnObjects: true }) as Array<{ icon: string; title: string; description: string }>).map((problem, i) => (
+              <Card key={i} className="p-6 border-red-100 bg-red-50/50">
+                <div className="text-2xl mb-3">{problem.icon}</div>
+                <h3 className="font-semibold text-slate-800 mb-2">{problem.title}</h3>
+                <p className="text-sm text-slate-600">{problem.description}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Timeline Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-slate-900">
+            {t('productLevelPage.timeline.title')}
+          </h2>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-green-200 -translate-x-1/2" />
+            <div className="space-y-8">
+              {Array.isArray(timelineSteps) && timelineSteps.map((step, i) => (
+                <div key={i} className={`flex flex-col md:flex-row items-center gap-4 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className={`md:w-5/12 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                    <Card className="p-5 border-green-100">
+                      <span className="text-xs font-bold text-green-700 bg-green-100 px-2 py-1 rounded">{step.date}</span>
+                      <h4 className="font-semibold text-slate-800 mt-2">{step.title}</h4>
+                      <p className="text-sm text-slate-600 mt-1">{step.description}</p>
+                    </Card>
+                  </div>
+                  <div className="flex-shrink-0 z-10">
+                    <div className="w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow" />
+                  </div>
+                  <div className="md:w-5/12" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 4-Step Process */}
+        <section className="mb-16 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-slate-900">
+            {t('productLevelPage.process.title')}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Array.isArray(processSteps) && processSteps.map((step, i) => {
+              const StepIcon = [Scan, FileText, BarChart3, QrCode][i];
+              return (
+                <Card key={i} className="p-6 bg-white/90 border-green-100 relative">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    {step.number}
+                  </div>
+                  <StepIcon className="h-8 w-8 text-green-600 mb-3 mt-2" />
+                  <h3 className="font-semibold text-slate-800 mb-2">{step.title}</h3>
+                  <p className="text-sm text-slate-600 mb-3">{step.description}</p>
+                  <ul className="space-y-1">
+                    {step.details.map((d, j) => (
+                      <li key={j} className="text-xs text-slate-500 flex items-start gap-1.5">
+                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Compliance Categories Table */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-slate-900">
+            {t('productLevelPage.categories.title')}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {t('productLevelPage.categories.subtitle')}
+          </p>
+          <Card className="overflow-hidden border-green-100">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-green-50">
+                  <TableHead className="font-semibold text-green-800">{t('productLevelPage.categories.colCategory')}</TableHead>
+                  <TableHead className="font-semibold text-green-800">{t('productLevelPage.categories.colAct')}</TableHead>
+                  <TableHead className="font-semibold text-green-800">{t('productLevelPage.categories.colDeadline')}</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {Array.isArray(categories) && categories.map((cat, i) => (
+                  <TableRow key={i}>
+                    <TableCell className="font-medium">{cat.category}</TableCell>
+                    <TableCell className="text-slate-600">{cat.act}</TableCell>
+                    <TableCell>
+                      <span className="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded">
+                        {cat.deadline}
+                      </span>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Card>
+        </section>
+
+        {/* Mandatory Data Requirements */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
+            {t('productLevelPage.dataRequirements.title')}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.isArray(dataReqs) && dataReqs.map((req, i) => {
+              const ReqIcon = [Package, Globe, Zap, Shield, CalendarClock, CheckCircle][i];
+              return (
+                <Card key={i} className="p-5 border-slate-200">
+                  <ReqIcon className="h-6 w-6 text-green-600 mb-3" />
+                  <h4 className="font-semibold text-slate-800 mb-1">{req.title}</h4>
+                  <p className="text-sm text-slate-600">{req.description}</p>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Why Envirly / Advantages */}
+        <section className="mb-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
+            {t('productLevelPage.advantages.title')}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.isArray(advantages) && advantages.map((adv, i) => {
+              const AdvIcon = advantageIcons[i] || CheckCircle;
+              return (
+                <Card key={i} className="p-6 border-green-100 bg-white/80">
+                  <AdvIcon className="h-8 w-8 text-green-600 mb-4" />
+                  <h3 className="font-semibold text-slate-800 mb-2">{adv.title}</h3>
+                  <p className="text-sm text-slate-600">{adv.description}</p>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Industry Applications */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
+            {t('productLevelPage.industries.title')}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.isArray(industries) && industries.map((ind, i) => {
+              const IndIcon = industryIcons[i] || Factory;
+              return (
+                <Card key={i} className="p-5 border-slate-200 hover:border-green-200 transition-colors">
+                  <IndIcon className="h-7 w-7 text-green-600 mb-3" />
+                  <h3 className="font-semibold text-slate-800 mb-1">{ind.title}</h3>
+                  <p className="text-sm text-slate-600 mb-3">{ind.description}</p>
+                  <p className="text-xs text-green-700 font-medium">{ind.clients}</p>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <FAQSection
           title={t('productLevelPage.faq.title')}
           faqs={(t('productLevelPage.faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>) || []}
-          pageUrl={`https://quantifier.ai/${currentLocale}/frameworks/product-level`}
+          pageUrl={`https://envirly.com/${currentLocale}/frameworks/product-level`}
         />
-        
-        {/* Call to Action */}
+
+        {/* CTA */}
         <div className="mt-10 text-center">
           <h2 className="text-2xl font-bold mb-3 text-slate-800">
             {t('productLevelPage.cta.title')}
