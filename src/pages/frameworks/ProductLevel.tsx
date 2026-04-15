@@ -1,18 +1,11 @@
 import PageTemplate from '@/components/PageTemplate';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, FileText, Scan, QrCode, BarChart3, Shield, Clock, CheckCircle, Zap, Globe, Package, Database, Bot, Link2, CalendarClock, Factory, ShoppingBag, Shirt, Pill, UtensilsCrossed, Radio } from 'lucide-react';
+import { ArrowRight, FileText, Scan, QrCode, BarChart3, Shield, Clock, CheckCircle, Zap, Globe, Package, Database, Bot, Link2, CalendarClock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
+import DppPassportMockup from '@/components/mockups/DppPassportMockup';
 
 const ProductLevel = () => {
   const { t, currentLocale } = useLanguage();
@@ -20,12 +13,9 @@ const ProductLevel = () => {
   const timelineSteps = t('productLevelPage.timeline.steps', { returnObjects: true }) as Array<{ date: string; title: string; description: string }>;
   const processSteps = t('productLevelPage.process.steps', { returnObjects: true }) as Array<{ number: string; title: string; description: string; details: string[] }>;
   const advantages = t('productLevelPage.advantages.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
-  const categories = t('productLevelPage.categories.items', { returnObjects: true }) as Array<{ category: string; act: string; deadline: string }>;
-  const industries = t('productLevelPage.industries.items', { returnObjects: true }) as Array<{ title: string; description: string; clients: string }>;
   const dataReqs = t('productLevelPage.dataRequirements.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
 
   const advantageIcons = [Database, Shield, Link2, BarChart3, FileText, Bot];
-  const industryIcons = [Factory, ShoppingBag, Shirt, Pill, UtensilsCrossed, Radio];
 
   return (
     <PageTemplate
@@ -65,7 +55,6 @@ const ProductLevel = () => {
             {t('productLevelPage.timeline.title')}
           </h2>
           <div className="relative">
-            {/* Vertical line */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-green-200 -translate-x-1/2" />
             <div className="space-y-8">
               {Array.isArray(timelineSteps) && timelineSteps.map((step, i) => (
@@ -85,6 +74,19 @@ const ProductLevel = () => {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* DPP Passport Mockup */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-slate-900">
+            {currentLocale === 'pl' ? 'Jak wygląda Cyfrowy Paszport Produktu w systemie?' : 'What does a Digital Product Passport look like?'}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {currentLocale === 'pl'
+              ? 'Platforma Envirly generuje kompletny paszport produktu zgodny z ESPR, gotowy do udostępnienia przez QR kod.'
+              : 'Envirly platform generates a complete ESPR-compliant product passport, ready to share via QR code.'}
+          </p>
+          <DppPassportMockup />
         </section>
 
         {/* 4-Step Process */}
@@ -115,40 +117,6 @@ const ProductLevel = () => {
               );
             })}
           </div>
-        </section>
-
-        {/* Compliance Categories Table */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-slate-900">
-            {t('productLevelPage.categories.title')}
-          </h2>
-          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
-            {t('productLevelPage.categories.subtitle')}
-          </p>
-          <Card className="overflow-hidden border-green-100">
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-green-50">
-                  <TableHead className="font-semibold text-green-800">{t('productLevelPage.categories.colCategory')}</TableHead>
-                  <TableHead className="font-semibold text-green-800">{t('productLevelPage.categories.colAct')}</TableHead>
-                  <TableHead className="font-semibold text-green-800">{t('productLevelPage.categories.colDeadline')}</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {Array.isArray(categories) && categories.map((cat, i) => (
-                  <TableRow key={i}>
-                    <TableCell className="font-medium">{cat.category}</TableCell>
-                    <TableCell className="text-slate-600">{cat.act}</TableCell>
-                    <TableCell>
-                      <span className="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded">
-                        {cat.deadline}
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Card>
         </section>
 
         {/* Mandatory Data Requirements */}
@@ -183,26 +151,6 @@ const ProductLevel = () => {
                   <AdvIcon className="h-8 w-8 text-green-600 mb-4" />
                   <h3 className="font-semibold text-slate-800 mb-2">{adv.title}</h3>
                   <p className="text-sm text-slate-600">{adv.description}</p>
-                </Card>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Industry Applications */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
-            {t('productLevelPage.industries.title')}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.isArray(industries) && industries.map((ind, i) => {
-              const IndIcon = industryIcons[i] || Factory;
-              return (
-                <Card key={i} className="p-5 border-slate-200 hover:border-green-200 transition-colors">
-                  <IndIcon className="h-7 w-7 text-green-600 mb-3" />
-                  <h3 className="font-semibold text-slate-800 mb-1">{ind.title}</h3>
-                  <p className="text-sm text-slate-600 mb-3">{ind.description}</p>
-                  <p className="text-xs text-green-700 font-medium">{ind.clients}</p>
                 </Card>
               );
             })}
