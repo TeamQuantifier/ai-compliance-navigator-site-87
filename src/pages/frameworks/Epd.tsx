@@ -6,6 +6,8 @@ import { ArrowRight, FileCheck, CheckCircle, Shield, Building2, Factory, Package
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
+import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
+import DppPassportMockup from '@/components/mockups/DppPassportMockup';
 
 const badgeColorMap: Record<string, string> = {
   green: 'bg-green-100 text-green-800',
