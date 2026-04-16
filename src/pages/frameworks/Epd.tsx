@@ -9,6 +9,7 @@ import FAQSection from '@/components/seo/FAQSection';
 import LcaLifecycleMockup from '@/components/mockups/LcaLifecycleMockup';
 import ScenarioExplorerMockup from '@/components/mockups/ScenarioExplorerMockup';
 import EpdReportGeneratorMockup from '@/components/mockups/EpdReportGeneratorMockup';
+import LcaResultsMockup from '@/components/mockups/LcaResultsMockup';
 
 const badgeColorMap: Record<string, string> = {
   green: 'bg-green-100 text-green-800',
@@ -83,7 +84,7 @@ const Epd = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-2xl blur-2xl" />
               <div className="relative rounded-xl overflow-hidden">
-                <EpdReportGeneratorMockup />
+                <LcaResultsMockup />
               </div>
             </div>
           </div>
