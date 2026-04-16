@@ -7,6 +7,14 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import DppPassportMockup from '@/components/mockups/DppPassportMockup';
+const badgeColorMap: Record<string, string> = {
+  green: 'bg-green-100 text-green-800',
+  orange: 'bg-orange-100 text-orange-800',
+  red: 'bg-red-100 text-red-800',
+  blue: 'bg-blue-100 text-blue-800',
+  amber: 'bg-amber-100 text-amber-800',
+};
+
 const ProductLevel = () => {
   const { t, currentLocale } = useLanguage();
 
@@ -14,6 +22,7 @@ const ProductLevel = () => {
   const processSteps = t('productLevelPage.process.steps', { returnObjects: true }) as Array<{ number: string; title: string; description: string; details: string[] }>;
   const advantages = t('productLevelPage.advantages.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
   const dataReqs = t('productLevelPage.dataRequirements.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const useCases = t('productLevelPage.useCases.items', { returnObjects: true }) as Array<{ tabLabel: string; badge: string; badgeColor: string; title: string; description: string; features: string[] }>;
 
   const advantageIcons = [Database, Shield, Link2, BarChart3, FileText, Bot];
 
