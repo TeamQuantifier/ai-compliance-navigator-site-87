@@ -100,19 +100,6 @@ const ProductLevel = () => {
           </div>
         </section>
 
-        {/* DPP Passport Mockup */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-slate-900">
-            {currentLocale === 'pl' ? 'Jak wygląda Cyfrowy Paszport Produktu w systemie?' : 'What does a Digital Product Passport look like?'}
-          </h2>
-          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
-            {currentLocale === 'pl'
-              ? 'Platforma Envirly generuje kompletny paszport produktu zgodny z ESPR, gotowy do udostępnienia przez QR kod.'
-              : 'Envirly platform generates a complete ESPR-compliant product passport, ready to share via QR code.'}
-          </p>
-          <DppPassportMockup />
-        </section>
-
         {/* 4-Step Process */}
         <section className="mb-16 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-slate-900">
