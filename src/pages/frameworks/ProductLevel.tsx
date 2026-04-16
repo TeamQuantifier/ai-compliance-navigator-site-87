@@ -178,7 +178,7 @@ const ProductLevel = () => {
         </section>
 
         {/* Use Cases Tabs */}
-        <section className="mb-16">
+        <section className="mb-16" data-use-cases-section>
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
             {t('productLevelPage.useCases.sectionTitle')}
           </h2>
@@ -187,7 +187,19 @@ const ProductLevel = () => {
           </p>
           
           {Array.isArray(useCases) && (
-            <Tabs defaultValue="0" className="w-full">
+            <Tabs 
+              defaultValue="0" 
+              className="w-full"
+              onValueChange={(value) => {
+                // Prevent scrolling to top when switching tabs
+                setTimeout(() => {
+                  const element = document.querySelector('[data-use-cases-section]');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                  }
+                }, 0);
+              }}
+            >
               <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent p-0 mb-6 justify-center">
                 {useCases.map((uc, i) => (
                   <TabsTrigger
