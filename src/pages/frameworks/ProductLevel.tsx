@@ -24,21 +24,45 @@ const ProductLevel = () => {
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* Hero / Problem Section */}
+        {/* Hero Section with Mockup */}
         <section className="mb-16">
-          <div className="text-center mb-10">
-            <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-              ESPR 2024/1781
-            </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              {t('productLevelPage.hero.title')}
-            </h1>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t('productLevelPage.hero.subtitle')}
-            </p>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Text */}
+            <div>
+              <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+                ESPR 2024/1781
+              </span>
+              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                {t('productLevelPage.hero.title')}
+              </h1>
+              <p className="text-lg text-slate-600 mb-6">
+                {t('productLevelPage.hero.subtitle')}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('productLevelPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('productLevelPage.cta.talkExpert')}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right: Passport Mockup */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-200/40 to-emerald-200/40 rounded-2xl blur-2xl" />
+              <div className="relative">
+                <DppPassportMockup />
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Problem Cards Below */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
             {(t('productLevelPage.hero.problems', { returnObjects: true }) as Array<{ icon: string; title: string; description: string }>).map((problem, i) => (
               <Card key={i} className="p-6 border-red-100 bg-red-50/50">
                 <div className="text-2xl mb-3">{problem.icon}</div>
