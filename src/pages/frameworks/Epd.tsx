@@ -182,7 +182,19 @@ const Epd = () => {
           <LcaLifecycleMockup />
         </section>
 
-        <section className="mb-16 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border border-emerald-100">
+        {/* Platform Mockup - EPD Report Generator */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
+            {currentLocale === 'pl' ? 'Automatyczny generator raportu EPD' : 'Automatic EPD Report Generator'}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {currentLocale === 'pl'
+              ? 'Skonfiguruj markę, wybierz sekcje i wygeneruj gotowy raport deklaracji środowiskowej w kilka minut.'
+              : 'Configure branding, select sections, and generate a ready-to-publish environmental declaration report in minutes.'}
+          </p>
+          <EpdReportGeneratorMockup />
+        </section>
+
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
             {t('epdPage.advantages.title')}
           </h2>
