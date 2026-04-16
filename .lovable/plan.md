@@ -1,36 +1,38 @@
 
 
-## Plan: Sekcja Use Case'ów z przełączanymi kartami na stronie DPP
+## Plan: Rebrand GS1 Polska page to match brand colors
 
-### Co robimy
-Dodajemy sekcję z 5 use case'ami jako przełączane karty (tabs), aby nie zajmowały dużo miejsca na stronie. Każdy use case będzie miał kolorowy nagłówek zgodny ze screenshotem, kluczowe punkty i przycisk CTA.
+### Problem
+The GS1 Polska page (`/partners/gs1-polska`) uses a custom brown/amber palette that clashes with the rest of the site. The hero and card sections need to match the brand's slate-950 + compliance blue + innovation purple palette used on pages like NIS2, homepage, etc.
 
-### Lokalizacja
-Sekcja zostanie umieszczona między "Dlaczego Envirly" (advantages) a FAQ — jako przedostatnia sekcja konwersyjna.
+### Changes
 
-### 5 Use Case'ów (Tabs)
+**File: `src/pages/partners/Gs1Polska.tsx`**
 
-| # | Tytuł taba | Kolor nagłówka | Główny przekaz |
-|---|------------|----------------|----------------|
-| 1 | Jeden produkt fizyczny | Zielony | "1 dzień zamiast 6 tygodni" — GS1 + ecoinvent eliminują ręczną robotę |
-| 2 | Dziesiątki/setki SKU | Pomarańczowy | Skala bez liniowego wzrostu kosztów — klonowanie modeli + import Excel |
-| 3 | Zmienny skład/transport | Czerwony | Monte Carlo: "691 ±8%" zamiast jednego punktu — profesjonalne i bronione |
-| 4 | Usługi i SaaS | Niebieski | LCA nie tylko dla fabryk — kampanie, kod, logistyka usługowa |
-| 5 | Dostawca B2B | Brązowy/Amber | Efekt wiralowy — duży klient (Raben, BNP) generuje falę zapytań do dostawców |
+1. **Replace the `brown` palette object** with brand-consistent tokens:
+   - Hero: `bg-slate-950` (same as homepage/NIS2)
+   - Hero badge: `bg-white/5 text-white/70 border border-white/15` 
+   - Cards: `bg-slate-50` borders with `border-slate-200`
+   - Accent color: `text-primary` / `text-compliance-600` (blue)
+   - Quote section: `bg-slate-950` gradient
+   - Business section: `bg-gradient-to-r from-slate-900 to-slate-800`
+   - Form section: `bg-gradient-to-br from-slate-50 to-blue-50`
+   - Step circles: `bg-primary text-white`
+   - Buttons: `bg-primary hover:bg-primary/90 text-white`
+   - Card backgrounds: `bg-slate-50`, `bg-blue-50/50`
 
-### Implementacja techniczna
+2. **Update inline accent classes** throughout the file:
+   - `text-amber-400` → `text-primary` or `text-compliance-400`
+   - `bg-amber-100` → `bg-blue-100`, `text-amber-800` → `text-primary`
+   - `border-amber-*` → `border-slate-200` or `border-primary/20`
+   - `decoration-amber-*` → `decoration-primary/60`
+   - Checkbox: `border-primary` with `data-[state=checked]:bg-primary`
+   - Consent link: `text-primary` instead of `text-amber-700`
 
-**Plik `src/pages/frameworks/ProductLevel.tsx`:**
-- Dodanie komponentu `Tabs` z shadcn/ui z 5 przyciskami
-- Każdy tab zawiera: kolorowy badge, tytuł, opis problemu, listę kluczowych funkcji (z ikonami CheckCircle), przycisk "Zapytaj Claude" / CTA do kontaktu
-- Responsywność: na mobile tabs zamieniają się w pionową listę przycisków
+3. **Partnership cards** (the ones shown in screenshot): Change from amber/stone backgrounds to light slate/blue backgrounds matching brand palette, with blue icons instead of amber.
 
-**Pliki `public/locales/pl/translation.json` i `en/translation.json`:**
-- Dodanie obiektu `productLevelPage.useCases` z 5 elementami, każdy zawierający: `tabLabel`, `badge`, `title`, `description`, `features[]`, `cta`
-
-### Struktura każdego taba (wzorowana na screenshocie)
-- Kolorowy badge kategorii (np. "1 jeden produkt fizyczny")
-- Tytuł i opis problemu klienta (2-3 zdania)
-- Lista "Kluczowe funkcje" — 4-6 bullet pointów z CheckCircle
-- Przycisk CTA "Zapytaj o wycenę" → link do /contact
+### Scope
+- Single file edit: `src/pages/partners/Gs1Polska.tsx`
+- No translation changes needed
+- Works for all locales (`/pl`, `/en`, `/cs`)
 
