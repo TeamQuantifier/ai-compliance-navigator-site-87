@@ -79,11 +79,11 @@ const Epd = () => {
               </div>
             </div>
 
-            {/* Right: Lifecycle mockup */}
+            {/* Right: Report generator mockup */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 to-indigo-200/40 rounded-2xl blur-2xl" />
               <div className="relative rounded-xl overflow-hidden">
-                <LcaLifecycleMockup />
+                <EpdReportGeneratorMockup />
               </div>
             </div>
           </div>
@@ -169,17 +169,17 @@ const Epd = () => {
           <ScenarioExplorerMockup />
         </section>
 
-        {/* Platform Mockup - EPD Report Generator */}
+        {/* Platform Mockup - Lifecycle */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
-            {currentLocale === 'pl' ? 'Automatyczny generator raportu EPD' : 'Automatic EPD Report Generator'}
+            {currentLocale === 'pl' ? 'Granice systemu i cykl życia produktu' : 'System Boundaries & Product Lifecycle'}
           </h2>
           <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
             {currentLocale === 'pl'
-              ? 'Skonfiguruj markę, wybierz sekcje i wygeneruj gotowy raport deklaracji środowiskowej w kilka minut.'
-              : 'Configure branding, select sections, and generate a ready-to-publish environmental declaration report in minutes.'}
+              ? 'Określ zakres analizy — od kołyski do bramy, od bramy do grobu, lub pełny cykl życia produktu.'
+              : 'Define the scope of analysis — cradle to gate, gate to grave, or full product lifecycle.'}
           </p>
-          <EpdReportGeneratorMockup />
+          <LcaLifecycleMockup />
         </section>
 
         <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
