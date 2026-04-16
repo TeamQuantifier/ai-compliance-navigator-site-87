@@ -84,7 +84,7 @@ const Epd = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-2xl blur-2xl" />
               <div className="relative rounded-xl overflow-hidden">
-                <EpdReportGeneratorMockup />
+                <LcaResultsMockup />
               </div>
             </div>
           </div>
