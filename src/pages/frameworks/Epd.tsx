@@ -79,11 +79,11 @@ const Epd = () => {
               </div>
             </div>
 
-            {/* Right: Platform mockup */}
+            {/* Right: Lifecycle mockup */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 to-indigo-200/40 rounded-2xl blur-2xl" />
-              <div className="relative rounded-xl overflow-hidden shadow-lg border border-blue-200">
-                <LcaDashboard />
+              <div className="relative rounded-xl overflow-hidden">
+                <LcaLifecycleMockup />
               </div>
             </div>
           </div>
