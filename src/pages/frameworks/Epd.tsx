@@ -195,6 +195,7 @@ const Epd = () => {
           <EpdReportGeneratorMockup />
         </section>
 
+        <section className="mb-16 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border border-emerald-100">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
             {t('epdPage.advantages.title')}
           </h2>
