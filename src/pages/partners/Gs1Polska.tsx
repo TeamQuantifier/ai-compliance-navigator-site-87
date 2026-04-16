@@ -41,7 +41,7 @@ const Gs1Polska = () => {
   const formRef = useRef<HTMLDivElement>(null);
   const envirlyUrl = currentLocale === 'pl' ? 'https://www.envirly.pl/' : 'https://envirly.com/';
   const envirlyLink = (label: string) => (
-    <a href={envirlyUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-amber-400/60 underline-offset-2 hover:text-amber-600 transition-colors">{label}</a>
+    <a href={envirlyUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-primary/60 underline-offset-2 hover:text-primary transition-colors">{label}</a>
   );
 
   const [firstName, setFirstName] = useState('');
@@ -115,11 +115,11 @@ const Gs1Polska = () => {
       <div className="max-w-5xl mx-auto">
 
         {/* Hero — dark brown */}
-        <section className={`relative mb-20 ${brown.hero} rounded-3xl overflow-hidden`}>
+        <section className={`relative mb-20 ${brand.hero} rounded-3xl overflow-hidden`}>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(180,120,60,0.15),transparent_60%)]" />
           <div className="relative py-12 px-6 md:px-12">
             <div className="flex items-center gap-4 mb-8">
-              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brown.heroBadge}`}>
+              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brand.heroBadge}`}>
                 <Globe className="h-4 w-4" />
                 GS1 Polska × {envirlyLink('Envirly')} by Quantifier.ai
               </span>
@@ -135,7 +135,7 @@ const Gs1Polska = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className={`text-lg px-8 py-6 group ${brown.btn}`} onClick={scrollToForm}>
+              <Button size="lg" className={`text-lg px-8 py-6 group ${brand.btn}`} onClick={scrollToForm}>
                 {t('gs1.hero.cta')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -152,23 +152,23 @@ const Gs1Polska = () => {
               <p className="text-lg text-muted-foreground">{t('gs1.partnership.p2')}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
-                <FileCheck className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+              <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg}`}>
+                <FileCheck className={`h-10 w-10 ${brand.accent} mx-auto mb-3`} />
                 <p className="font-bold text-lg text-foreground">{envirlyLink('Envirly LCA')}</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.dppLabel')}</p>
               </Card>
-              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg2}`}>
-                <BarChart3 className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+              <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg2}`}>
+                <BarChart3 className={`h-10 w-10 ${brand.accent} mx-auto mb-3`} />
                 <p className="font-bold text-lg text-foreground">{envirlyLink('Envirly GHG')}</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.ghgLabel')}</p>
               </Card>
-              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg}`}>
-                <Globe className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+              <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg}`}>
+                <Globe className={`h-10 w-10 ${brand.accent} mx-auto mb-3`} />
                 <p className="font-bold text-2xl text-foreground">47 000+</p>
                 <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.membersLabel')}</p>
               </Card>
-              <Card className={`p-6 text-center ${brown.cardBorder} ${brown.cardBg2}`}>
-                <Shield className={`h-10 w-10 ${brown.accent} mx-auto mb-3`} />
+              <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg2}`}>
+                <Shield className={`h-10 w-10 ${brand.accent} mx-auto mb-3`} />
                 <p className="font-bold text-lg text-foreground">ISO</p>
                 <p className="text-sm text-muted-foreground mt-1">14064 / 14067</p>
               </Card>
@@ -178,14 +178,14 @@ const Gs1Polska = () => {
 
         {/* CEO Quote — warm brown */}
         <section className="mb-20">
-          <div className={`relative ${brown.quoteBg} rounded-2xl p-10 md:p-14 overflow-hidden border border-amber-800/20`}>
-            <Quote className="absolute top-6 left-6 h-20 w-20 text-amber-400/10" />
+          <div className={`relative ${brand.quoteBg} rounded-2xl p-10 md:p-14 overflow-hidden border border-primary/20`}>
+            <Quote className="absolute top-6 left-6 h-20 w-20 text-primary/10" />
             <blockquote className="relative z-10">
               <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6 text-white">
                 &ldquo;{t('gs1.quote.text')}&rdquo;
               </p>
               <footer className="flex items-center gap-5">
-                <img src={martaPhoto} alt="dr Marta Szymborska" className="w-20 h-20 rounded-full object-cover border-2 border-amber-400/30" />
+                <img src={martaPhoto} alt="dr Marta Szymborska" className="w-20 h-20 rounded-full object-cover border-2 border-primary/30" />
                 <div>
                   <cite className="not-italic font-bold text-lg text-white">{t('gs1.quote.author')}</cite>
                   <p className="text-white/60 text-sm">{t('gs1.quote.role')}</p>
@@ -219,7 +219,7 @@ const Gs1Polska = () => {
                 {steps.map((s, i) => (
                   <div key={s.step} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
                     <div className="md:w-2/5 space-y-4">
-                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg ${brown.stepCircle}`}>
+                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg ${brand.stepCircle}`}>
                         {s.step}
                       </div>
                       <h3 className="text-2xl font-bold text-foreground">{t(s.titleKey)}</h3>
@@ -246,17 +246,17 @@ const Gs1Polska = () => {
             </p>
           </div>
 
-          <div className={`${brown.sectionBg} rounded-2xl p-8 md:p-12 mb-12`}>
+          <div className={`${brand.sectionBg} rounded-2xl p-8 md:p-12 mb-12`}>
             <p className="text-lg text-foreground mb-4 font-medium">{t('gs1.passport.hook1')}</p>
             <p className="text-lg text-muted-foreground mb-6">{t('gs1.passport.hook2')}</p>
             <div className="flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 text-red-600 text-sm font-medium">
                 ✕ {t('gs1.passport.noExcel')}
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 text-red-600 text-sm font-medium">
                 ✕ {t('gs1.passport.noConsultants')}
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 text-red-600 text-sm font-medium">
                 ✕ {t('gs1.passport.noGreenwashing')}
               </span>
             </div>
@@ -264,9 +264,9 @@ const Gs1Polska = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((f, i) => (
-              <Card key={i} className={`p-8 ${brown.cardBorder} hover:shadow-lg transition-shadow group`}>
+              <Card key={i} className={`p-8 ${brand.cardBorder} hover:shadow-lg transition-shadow group`}>
                 <div className="flex items-start gap-5">
-                  <div className="p-3 rounded-xl bg-amber-100 text-amber-800 group-hover:bg-amber-800 group-hover:text-white transition-colors shrink-0">
+                  <div className="p-3 rounded-xl bg-blue-100 text-primary group-hover:bg-amber-800 group-hover:text-white transition-colors shrink-0">
                     {f.icon}
                   </div>
                   <div>
@@ -281,7 +281,7 @@ const Gs1Polska = () => {
 
         {/* Business case — brown gradient */}
         <section className="mb-20">
-          <div className={`${brown.businessBg} rounded-2xl p-10 md:p-14`}>
+          <div className={`${brand.businessBg} rounded-2xl p-10 md:p-14`}>
             <h2 className="text-3xl font-bold mb-4 text-white">{t('gs1.business.title')}</h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl">{t('gs1.business.desc')}</p>
             <div className="grid sm:grid-cols-3 gap-6">
@@ -306,8 +306,8 @@ const Gs1Polska = () => {
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">{t('gs1.audience.title')}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {audiences.map((a, i) => (
-              <div key={i} className={`flex items-start gap-4 p-6 rounded-xl ${brown.cardBorder} bg-card hover:bg-amber-50 transition-colors`}>
-                <CheckCircle2 className={`h-6 w-6 ${brown.accent} shrink-0 mt-0.5`} />
+              <div key={i} className={`flex items-start gap-4 p-6 rounded-xl ${brand.cardBorder} bg-card hover:bg-blue-50 transition-colors`}>
+                <CheckCircle2 className={`h-6 w-6 ${brand.accent} shrink-0 mt-0.5`} />
                 <p className="text-foreground">{t(a.key)}</p>
               </div>
             ))}
@@ -316,7 +316,7 @@ const Gs1Polska = () => {
 
         {/* Contact Form */}
         <section ref={formRef} className="mb-16" id="contact-form">
-          <div className={`${brown.formBg} rounded-2xl p-8 md:p-12`}>
+          <div className={`${brand.formBg} rounded-2xl p-8 md:p-12`}>
             <h2 className="text-3xl font-bold text-foreground mb-3 text-center">{t('gs1.form.title')}</h2>
             <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">{t('gs1.form.subtitle')}</p>
             
@@ -332,17 +332,17 @@ const Gs1Polska = () => {
                   id="consent"
                   checked={consent}
                   onCheckedChange={(checked) => setConsent(checked === true)}
-                  className="mt-1 border-amber-600 data-[state=checked]:bg-amber-700 data-[state=checked]:border-amber-700"
+                  className="mt-1 border-primary data-[state=checked]:bg-primary data-[state=checked]:border-primary"
                 />
                 <label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
                   {t('gs1.form.consent')}{' '}
-                  <Link to={`/${currentLocale}/legal/privacy`} className="text-amber-700 underline hover:text-amber-900" target="_blank">
+                  <Link to={`/${currentLocale}/legal/privacy`} className="text-primary underline hover:text-primary/80" target="_blank">
                     {t('gs1.form.consentLink')}
                   </Link>
                 </label>
               </div>
 
-              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brown.btn}`} disabled={loading || !consent}>
+              <Button type="submit" size="lg" className={`sm:col-span-2 text-lg py-6 ${brand.btn}`} disabled={loading || !consent}>
                 <Send className="mr-2 h-5 w-5" />
                 {loading ? t('contact.sending') : t('gs1.form.cta')}
               </Button>
