@@ -1,11 +1,19 @@
 import PageTemplate from '@/components/PageTemplate';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { ArrowRight, FileText, Scan, QrCode, BarChart3, Shield, Clock, CheckCircle, Zap, Globe, Package, Database, Bot, Link2, CalendarClock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import DppPassportMockup from '@/components/mockups/DppPassportMockup';
+const badgeColorMap: Record<string, string> = {
+  green: 'bg-green-100 text-green-800',
+  orange: 'bg-orange-100 text-orange-800',
+  red: 'bg-red-100 text-red-800',
+  blue: 'bg-blue-100 text-blue-800',
+  amber: 'bg-amber-100 text-amber-800',
+};
 
 const ProductLevel = () => {
   const { t, currentLocale } = useLanguage();
@@ -14,6 +22,7 @@ const ProductLevel = () => {
   const processSteps = t('productLevelPage.process.steps', { returnObjects: true }) as Array<{ number: string; title: string; description: string; details: string[] }>;
   const advantages = t('productLevelPage.advantages.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
   const dataReqs = t('productLevelPage.dataRequirements.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const useCases = t('productLevelPage.useCases.items', { returnObjects: true }) as Array<{ tabLabel: string; badge: string; badgeColor: string; title: string; description: string; features: string[] }>;
 
   const advantageIcons = [Database, Shield, Link2, BarChart3, FileText, Bot];
 
@@ -166,6 +175,62 @@ const ProductLevel = () => {
               );
             })}
           </div>
+        </section>
+
+        {/* Use Cases Tabs */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
+            {t('productLevelPage.useCases.sectionTitle')}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {t('productLevelPage.useCases.sectionSubtitle')}
+          </p>
+          
+          {Array.isArray(useCases) && (
+            <Tabs defaultValue="0" className="w-full">
+              <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent p-0 mb-6 justify-center">
+                {useCases.map((uc, i) => (
+                  <TabsTrigger
+                    key={i}
+                    value={String(i)}
+                    className="data-[state=active]:bg-green-600 data-[state=active]:text-white px-4 py-2 rounded-full border border-slate-200 data-[state=active]:border-green-600 text-sm font-medium"
+                  >
+                    {uc.tabLabel}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {useCases.map((uc, i) => (
+                <TabsContent key={i} value={String(i)}>
+                  <Card className="p-6 md:p-8 border-slate-200">
+                    <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 ${badgeColorMap[uc.badgeColor] || badgeColorMap.green}`}>
+                      {uc.badge}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">{uc.title}</h3>
+                    <p className="text-slate-600 mb-6 max-w-3xl">{uc.description}</p>
+                    
+                    <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">
+                      {t('productLevelPage.useCases.keyFeatures')}
+                    </h4>
+                    <ul className="grid md:grid-cols-2 gap-2 mb-6">
+                      {uc.features.map((f, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-slate-700">
+                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Button className="bg-green-600 hover:bg-green-700" asChild>
+                      <Link to={`/${currentLocale}/contact`}>
+                        {t('productLevelPage.useCases.cta')} <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </Card>
+                </TabsContent>
+              ))}
+            </Tabs>
+          )}
         </section>
 
         {/* FAQ Section */}

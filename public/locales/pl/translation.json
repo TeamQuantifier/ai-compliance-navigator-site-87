@@ -3587,6 +3587,84 @@
       "bookDemo": "Umów demo",
       "talkExpert": "Porozmawiaj z ekspertem DPP"
     },
+    "useCases": {
+      "sectionTitle": "Dla kogo jest Envirly LCA?",
+      "sectionSubtitle": "Wybierz swój scenariusz — każdy wymaga innego podejścia do analizy cyklu życia",
+      "items": [
+        {
+          "tabLabel": "Jeden produkt",
+          "badge": "1 produkt fizyczny",
+          "badgeColor": "green",
+          "title": "1 dzień zamiast 6 tygodni",
+          "description": "Masz jeden produkt fizyczny i potrzebujesz LCA lub DPP? Integracja GS1 eliminuje połowę ręcznej roboty, baza ecoinvent robi resztę. Zamiast czekać 6 tygodni na konsultanta — wynik masz w 1 dzień.",
+          "features": [
+            "Automatyczna identyfikacja produktu przez GS1 GTIN",
+            "Baza danych ecoinvent zintegrowana w modelowanie",
+            "Generowanie DPP z kodem QR w jednym kliknięciu",
+            "Certyfikacja TÜV Nord — wynik broniony przed audytorem",
+            "Eksport do PDF i link do publicznego paszportu"
+          ]
+        },
+        {
+          "tabLabel": "Dziesiątki/setki SKU",
+          "badge": "Skala katalogowa",
+          "badgeColor": "orange",
+          "title": "Cały katalog bez liniowego wzrostu kosztów",
+          "description": "Nie kupujesz kolejnej analizy LCA — kupujesz obsługę całego katalogu. Klonowanie modeli i import Excel to przewaga absolutna nad konsultantami, którzy wyceniają każde SKU osobno.",
+          "features": [
+            "Klonowanie modeli LCA — zmień surowiec, reszta się przelicza",
+            "Import danych z Excel/CSV dla setek produktów naraz",
+            "Bulk export paszportów i raportów",
+            "Porównywanie wariantów produktowych side-by-side",
+            "Dashboard z przeglądem całego portfolio"
+          ]
+        },
+        {
+          "tabLabel": "Zmienny skład",
+          "badge": "Zmienność i niepewność",
+          "badgeColor": "red",
+          "title": "691 ±8% zamiast jednego punktu",
+          "description": "Większość konkurentów podaje jeden wynik (np. '691 kg CO₂'). Envirly z Monte Carlo powie '691 ±8%' — co jest bardziej profesjonalne i bronione przed audytorem. Idealne gdy skład lub trasy transportu się zmieniają.",
+          "features": [
+            "Symulacja Monte Carlo dla analizy niepewności",
+            "Zakres wyników zamiast jednej wartości punktowej",
+            "Scenariusze what-if dla zmiennych tras transportu",
+            "Audytor widzi przedziały ufności — nie musi kwestionować",
+            "Zgodność z ISO 14044 wymaganiami dot. niepewności"
+          ]
+        },
+        {
+          "tabLabel": "Usługi i SaaS",
+          "badge": "Nie tylko fabryki",
+          "badgeColor": "blue",
+          "title": "LCA dla kampanii, kodu i logistyki",
+          "description": "LCA kojarzy się z fabryką, ale rosnący rynek to usługi. Agencje mediowe (Jet Line już to robi), firmy IT, logistycy liczący ślad 'usługi transportowej' — wszyscy potrzebują narzędzia, które rozumie model usługowy.",
+          "features": [
+            "Modelowanie śladu węglowego usług i procesów",
+            "Kategorie emisji Scope 1, 2 i 3 dla usług",
+            "Raporty dla klientów B2B wymagających danych ESG",
+            "Benchmarking usługi vs średnia branżowa",
+            "Integracja z danymi operacyjnymi (zużycie energii, podróże)"
+          ]
+        },
+        {
+          "tabLabel": "Dostawca B2B",
+          "badge": "Efekt wiralowy",
+          "badgeColor": "amber",
+          "title": "Duży klient pyta — Ty musisz odpowiedzieć",
+          "description": "Raben pyta swoich 1000 dostawców, BNP pyta swoich klientów — każdy taki 'duży klient' tworzy falę zapytań o dane środowiskowe. Envirly pozwala odpowiedzieć profesjonalnie, szybko i w standardzie, którego oczekuje korporacja.",
+          "features": [
+            "Gotowe raporty w formacie wymaganym przez korporacje",
+            "Dane LCA zgodne z GHG Protocol i ISO 14067",
+            "Szybka odpowiedź na zapytanie RFI/RFQ dot. śladu",
+            "Publiczny link do paszportu — klient weryfikuje sam",
+            "Przewaga konkurencyjna w przetargach B2B"
+          ]
+        }
+      ],
+      "cta": "Zapytaj o wycenę",
+      "keyFeatures": "Kluczowe funkcje"
+    },
     "faq": {
       "title": "FAQ — Cyfrowy Paszport Produktowy (DPP)",
       "items": [
