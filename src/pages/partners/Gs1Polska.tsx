@@ -114,7 +114,7 @@ const Gs1Polska = () => {
     <PageTemplate title={t('seo.gs1.title')} description={t('seo.gs1.description')}>
       <div className="max-w-5xl mx-auto">
 
-        {/* Hero — dark brown */}
+        {/* Hero */}
         <section className={`relative mb-20 ${brand.hero} rounded-3xl overflow-hidden`}>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(180,120,60,0.15),transparent_60%)]" />
           <div className="relative py-12 px-6 md:px-12">
@@ -176,7 +176,7 @@ const Gs1Polska = () => {
           </div>
         </section>
 
-        {/* CEO Quote — warm brown */}
+        {/* CEO Quote */}
         <section className="mb-20">
           <div className={`relative ${brand.quoteBg} rounded-2xl p-10 md:p-14 overflow-hidden border border-primary/20`}>
             <Quote className="absolute top-6 left-6 h-20 w-20 text-primary/10" />
@@ -266,7 +266,7 @@ const Gs1Polska = () => {
             {features.map((f, i) => (
               <Card key={i} className={`p-8 ${brand.cardBorder} hover:shadow-lg transition-shadow group`}>
                 <div className="flex items-start gap-5">
-                  <div className="p-3 rounded-xl bg-blue-100 text-primary group-hover:bg-amber-800 group-hover:text-white transition-colors shrink-0">
+                  <div className="p-3 rounded-xl bg-blue-100 text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
                     {f.icon}
                   </div>
                   <div>
@@ -279,7 +279,7 @@ const Gs1Polska = () => {
           </div>
         </section>
 
-        {/* Business case — brown gradient */}
+        {/* Business case */}
         <section className="mb-20">
           <div className={`${brand.businessBg} rounded-2xl p-10 md:p-14`}>
             <h2 className="text-3xl font-bold mb-4 text-white">{t('gs1.business.title')}</h2>
