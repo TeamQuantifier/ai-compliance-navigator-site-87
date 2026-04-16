@@ -40,6 +40,7 @@ import Governance from "./pages/frameworks/Governance";
 import ProductLevel from "./pages/frameworks/ProductLevel";
 import ProductLevelHub from "./pages/frameworks/ProductLevelHub";
 import Epd from "./pages/frameworks/Epd";
+import LcaAnalysis from "./pages/frameworks/LcaAnalysis";
 
 // Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
