@@ -18,21 +18,21 @@ import { GtinImportMockup, LcaFlowchartMockup, ScenarioExplorerMockup, PassportE
 import gs1Logo from '@/assets/gs1-logo.png';
 import martaPhoto from '@/assets/marta-szymborska.png';
 
-/* ─── brown palette tokens ─── */
-const brown = {
-  hero: 'bg-gradient-to-br from-amber-950 via-stone-900 to-stone-950',
-  heroBadge: 'bg-amber-800/30 text-amber-200 border border-amber-700/40',
-  cardBorder: 'border-amber-800/30',
-  cardBg: 'bg-amber-900/20',
-  cardBg2: 'bg-stone-800/30',
-  accent: 'text-amber-400',
-  accentBg: 'bg-amber-400',
-  quoteBg: 'bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900',
-  sectionBg: 'bg-gradient-to-br from-stone-50 to-amber-50',
-  businessBg: 'bg-gradient-to-r from-amber-900 to-stone-800',
-  formBg: 'bg-gradient-to-br from-stone-100 to-amber-50',
-  stepCircle: 'bg-amber-800 text-white',
-  btn: 'bg-amber-800 hover:bg-amber-700 text-white',
+/* ─── brand palette tokens ─── */
+const brand = {
+  hero: 'bg-slate-950',
+  heroBadge: 'bg-white/5 text-white/70 border border-white/15',
+  cardBorder: 'border-slate-200',
+  cardBg: 'bg-slate-50',
+  cardBg2: 'bg-blue-50/50',
+  accent: 'text-primary',
+  accentBg: 'bg-primary',
+  quoteBg: 'bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900',
+  sectionBg: 'bg-gradient-to-br from-slate-50 to-blue-50',
+  businessBg: 'bg-gradient-to-r from-slate-900 to-slate-800',
+  formBg: 'bg-gradient-to-br from-slate-50 to-blue-50',
+  stepCircle: 'bg-primary text-white',
+  btn: 'bg-primary hover:bg-primary/90 text-white',
 };
 
 const Gs1Polska = () => {
