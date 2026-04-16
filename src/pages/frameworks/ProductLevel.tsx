@@ -1,12 +1,12 @@
 import PageTemplate from '@/components/PageTemplate';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { ArrowRight, FileText, Scan, QrCode, BarChart3, Shield, Clock, CheckCircle, Zap, Globe, Package, Database, Bot, Link2, CalendarClock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import DppPassportMockup from '@/components/mockups/DppPassportMockup';
-
 const ProductLevel = () => {
   const { t, currentLocale } = useLanguage();
 

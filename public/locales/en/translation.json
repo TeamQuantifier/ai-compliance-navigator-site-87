@@ -3634,6 +3634,84 @@
       "bookDemo": "Book a Demo",
       "talkExpert": "Talk to a DPP Expert"
     },
+    "useCases": {
+      "sectionTitle": "Who is Envirly LCA for?",
+      "sectionSubtitle": "Choose your scenario — each requires a different approach to life cycle analysis",
+      "items": [
+        {
+          "tabLabel": "Single product",
+          "badge": "1 physical product",
+          "badgeColor": "green",
+          "title": "1 day instead of 6 weeks",
+          "description": "Have a single physical product and need LCA or DPP? GS1 integration eliminates half the manual work, ecoinvent database does the rest. Instead of waiting 6 weeks for a consultant — you get results in 1 day.",
+          "features": [
+            "Automatic product identification via GS1 GTIN",
+            "ecoinvent database integrated into modeling",
+            "DPP generation with QR code in one click",
+            "TÜV Nord certification — results defensible in audit",
+            "Export to PDF and link to public passport"
+          ]
+        },
+        {
+          "tabLabel": "Dozens/hundreds of SKUs",
+          "badge": "Catalog scale",
+          "badgeColor": "orange",
+          "title": "Entire catalog without linear cost growth",
+          "description": "You are not buying another LCA analysis — you are buying management of your entire catalog. Model cloning and Excel import give you an absolute advantage over consultants who price each SKU separately.",
+          "features": [
+            "LCA model cloning — change a material, everything recalculates",
+            "Data import from Excel/CSV for hundreds of products at once",
+            "Bulk export of passports and reports",
+            "Side-by-side product variant comparison",
+            "Dashboard with full portfolio overview"
+          ]
+        },
+        {
+          "tabLabel": "Variable composition",
+          "badge": "Variability & uncertainty",
+          "badgeColor": "red",
+          "title": "691 ±8% instead of a single point",
+          "description": "Most competitors give a single result (e.g., '691 kg CO₂'). Envirly with Monte Carlo says '691 ±8%' — which is more professional and defensible before an auditor. Ideal when composition or transport routes change.",
+          "features": [
+            "Monte Carlo simulation for uncertainty analysis",
+            "Result ranges instead of a single point value",
+            "What-if scenarios for variable transport routes",
+            "Auditor sees confidence intervals — no need to question",
+            "Compliance with ISO 14044 uncertainty requirements"
+          ]
+        },
+        {
+          "tabLabel": "Services & SaaS",
+          "badge": "Not just factories",
+          "badgeColor": "blue",
+          "title": "LCA for campaigns, code, and logistics",
+          "description": "LCA is associated with factories, but a growing market is services. Media agencies (Jet Line already does it), IT companies, logistics operators calculating 'transport service' footprint — all need a tool that understands the service model.",
+          "features": [
+            "Carbon footprint modeling for services and processes",
+            "Scope 1, 2 and 3 emission categories for services",
+            "Reports for B2B clients requiring ESG data",
+            "Service benchmarking vs industry average",
+            "Integration with operational data (energy consumption, travel)"
+          ]
+        },
+        {
+          "tabLabel": "B2B Supplier",
+          "badge": "Viral effect",
+          "badgeColor": "amber",
+          "title": "Big client asks — you must answer",
+          "description": "Raben asks its 1,000 suppliers, BNP asks its clients — every such 'big client' creates a wave of environmental data requests. Envirly lets you respond professionally, quickly and in the standard expected by corporations.",
+          "features": [
+            "Ready-made reports in corporate-required format",
+            "LCA data compliant with GHG Protocol and ISO 14067",
+            "Quick response to RFI/RFQ on carbon footprint",
+            "Public passport link — client verifies independently",
+            "Competitive advantage in B2B tenders"
+          ]
+        }
+      ],
+      "cta": "Request a quote",
+      "keyFeatures": "Key features"
+    },
     "faq": {
       "title": "FAQ — Digital Product Passport (DPP)",
       "items": [
