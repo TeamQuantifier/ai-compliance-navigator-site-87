@@ -156,17 +156,30 @@ const Epd = () => {
           </div>
         </section>
 
-        {/* Platform Mockup - DPP Passport */}
+        {/* Platform Mockup - Scenario Explorer */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
-            {t('epdPage.platformPreview.title', { defaultValue: currentLocale === 'pl' ? 'Jak to wygląda w platformie' : 'How it looks in the platform' })}
+            {currentLocale === 'pl' ? 'Eksplorator scenariuszy what-if' : 'What-if Scenario Explorer'}
           </h2>
           <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
-            {t('epdPage.platformPreview.subtitle', { defaultValue: currentLocale === 'pl' ? 'Wyniki analizy LCA trafiają bezpośrednio do Cyfrowego Paszportu Produktu — gotowego do publikacji i weryfikacji.' : 'LCA analysis results feed directly into the Digital Product Passport — ready for publication and verification.' })}
+            {currentLocale === 'pl'
+              ? 'Przesuwaj suwaki i obserwuj, jak zmiany w recyklingu, materiałach i transporcie wpływają na ślad węglowy produktu.'
+              : 'Adjust sliders and see how changes in recycling, materials, and transport affect your product carbon footprint.'}
           </p>
-          <div className="max-w-4xl mx-auto">
-            <DppPassportMockup />
-          </div>
+          <ScenarioExplorerMockup />
+        </section>
+
+        {/* Platform Mockup - EPD Report Generator */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
+            {currentLocale === 'pl' ? 'Automatyczny generator raportu EPD' : 'Automatic EPD Report Generator'}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {currentLocale === 'pl'
+              ? 'Skonfiguruj markę, wybierz sekcje i wygeneruj gotowy raport deklaracji środowiskowej w kilka minut.'
+              : 'Configure branding, select sections, and generate a ready-to-publish environmental declaration report in minutes.'}
+          </p>
+          <EpdReportGeneratorMockup />
         </section>
 
         <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
