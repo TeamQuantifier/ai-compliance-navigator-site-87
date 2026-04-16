@@ -59,6 +59,21 @@ const ProductLevel = () => {
                   </Link>
                 </Button>
               </div>
+              {/* TÜV NORD Certification */}
+              <div className="flex items-center space-x-3 mt-6 pt-6 border-t border-slate-200">
+                <img 
+                  src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" 
+                  alt="TÜV NORD Verified Product Certificate" 
+                  loading="lazy" 
+                  width="60" 
+                  height="60" 
+                  className="h-14 w-auto" 
+                />
+                <div>
+                  <h4 className="font-semibold text-slate-800 text-sm">{t('features.multiFramework.certified')}</h4>
+                  <p className="text-xs text-slate-500">{t('features.multiFramework.verifiedBy')}</p>
+                </div>
+              </div>
             </div>
 
             {/* Right: Passport Mockup */}
