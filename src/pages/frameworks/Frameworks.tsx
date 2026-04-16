@@ -93,11 +93,11 @@ const Frameworks = () => {
         },
         { 
           name: { pl: "Paszporty produktowe DPP", en: "Digital Product Passports DPP", cs: "Digitální produktové pasy DPP" }, 
-          href: `/${currentLocale}/frameworks/product-level` 
+          href: `/${currentLocale}/frameworks/product-level/dpp` 
         },
         { 
           name: { pl: "Deklaracje produktowe EPD", en: "Environmental Product Declarations EPD", cs: "Environmentální prohlášení o produktu EPD" }, 
-          href: `/${currentLocale}/frameworks/product-level` 
+          href: `/${currentLocale}/frameworks/product-level/epd` 
         }
       ]
     },

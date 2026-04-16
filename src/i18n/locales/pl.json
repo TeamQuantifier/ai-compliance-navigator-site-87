@@ -76,7 +76,8 @@
       },
       "productLevel": {
         "title": "Poziom produktu",
-        "dpp": "DPP",
+        "dpp": "Paszport Produktowy (DPP)",
+        "epd": "Deklaracja Środowiskowa (EPD)",
         "lcaAnalysis": "Analiza LCA"
       }
     },
