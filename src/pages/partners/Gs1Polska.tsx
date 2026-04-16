@@ -116,7 +116,7 @@ const Gs1Polska = () => {
 
         {/* Hero */}
         <section className={`relative mb-20 ${brand.hero} rounded-3xl overflow-hidden`}>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(180,120,60,0.15),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.1),transparent_60%)]" />
           <div className="relative py-12 px-6 md:px-12">
             <div className="flex items-center gap-4 mb-8">
               <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brand.heroBadge}`}>
