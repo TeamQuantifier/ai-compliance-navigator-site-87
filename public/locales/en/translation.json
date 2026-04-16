@@ -3742,7 +3742,183 @@
       ]
     }
   },
-  "nisIIPage": {
+  "productLevelHub": {
+    "title": "Product Environmental Analysis — DPP, EPD, LCA",
+    "description": "Digital Product Passports, Environmental Product Declarations and Life Cycle Analysis in one platform. TÜV Nord certified, ecoinvent database, GS1 integration.",
+    "hero": {
+      "title": "DPP · EPD · LCA — Everything in One Platform",
+      "subtitle": "New EU regulations require full environmental transparency of products. Envirly combines Digital Product Passport (DPP), Environmental Product Declaration (EPD) and Life Cycle Analysis (LCA) in one tool."
+    },
+    "cards": {
+      "dpp": {
+        "badge": "ESPR 2024/1781",
+        "title": "Digital Product Passport (DPP)",
+        "description": "Mandatory digital product data record with QR code. Material composition, carbon footprint, repairability — all ESPR compliant.",
+        "features": ["GS1 integration — GTIN import", "QR code + public link", "Ecoinvent included", "TÜV Nord certified"],
+        "cta": "See DPP",
+        "href": "/frameworks/product-level/dpp"
+      },
+      "epd": {
+        "badge": "ISO 14025 · EN 15804",
+        "title": "Environmental Product Declaration (EPD)",
+        "description": "Third-party verified environmental declaration. Required in tenders, construction and B2B export.",
+        "features": ["ISO 14025 & EN 15804 compliant", "Accredited operator verification", "EPD registry publication", "Automated report from LCA data"],
+        "cta": "See EPD",
+        "href": "/frameworks/product-level/epd"
+      },
+      "lca": {
+        "badge": "ISO 14040 · ISO 14044",
+        "title": "Life Cycle Analysis (LCA)",
+        "description": "Calculate product environmental footprint cradle-to-gate or cradle-to-grave. Foundation for both DPP and EPD.",
+        "features": ["16 environmental impact categories", "Monte Carlo simulation", "Model cloning for hundreds of SKUs", "Interactive emission flowchart"],
+        "cta": "See LCA",
+        "href": "/frameworks/product-level/lca-analysis"
+      }
+    },
+    "faq": {
+      "title": "FAQ — Product Environmental Analysis",
+      "items": [
+        { "question": "What is the difference between DPP and EPD?", "answer": "DPP (Digital Product Passport) is a digital product data carrier required by ESPR Regulation — it contains composition, carbon footprint, repairability and a QR code. EPD (Environmental Product Declaration) is a third-party verified environmental declaration used in tenders and construction (ISO 14025, EN 15804)." },
+        { "question": "Do I need LCA for both DPP and EPD?", "answer": "Yes — Life Cycle Analysis (LCA) is the shared calculation base for both DPP (product carbon footprint) and EPD (full environmental declaration). Envirly performs LCA and automatically generates data for both documents." },
+        { "question": "Which solution should I choose?", "answer": "If you export products to the EU — start with DPP (mandatory from 2027). If you participate in tenders or construction — choose EPD. If you want to understand your product footprint and optimize — start with LCA." }
+      ]
+    },
+    "cta": {
+      "title": "Prepare Your Products for New Regulations",
+      "description": "173 companies already use Envirly. TÜV Nord certified. GS1 integration. Ecoinvent database included.",
+      "bookDemo": "Book a Demo"
+    }
+  },
+  "epdPage": {
+    "title": "Environmental Product Declaration (EPD) — ISO 14025",
+    "description": "Prepare a verified Environmental Product Declaration (EPD) compliant with ISO 14025 and EN 15804. Envirly automates the process from LCA to EPD registry publication.",
+    "hero": {
+      "title": "Environmental Product Declaration (EPD): Verified Proof of Environmental Quality",
+      "subtitle": "An EPD is an independently verified document describing the environmental impact of a product across its entire lifecycle. Increasingly required in public procurement, construction and B2B trade.",
+      "comparison": {
+        "title": "EPD vs DPP — Key Differences",
+        "epd": "Verified environmental declaration for B2B/B2C communication. Requires third-party verification.",
+        "dpp": "Digital product data passport. EU regulatory requirement (ESPR) with QR code.",
+        "common": "Shared foundation: Life Cycle Analysis (LCA) per ISO 14040/14044"
+      }
+    },
+    "whatIs": {
+      "title": "What is an EPD?",
+      "description": "An Environmental Product Declaration (EPD) is a standardized environmental document based on ISO 14025. It contains Life Cycle Analysis (LCA) results for a product, verified by an independent EPD program operator.",
+      "keyPoints": [
+        { "title": "Based on LCA", "description": "Product lifecycle calculation results per ISO 14040/14044 — from raw materials to end of life." },
+        { "title": "Independent Verification", "description": "Every EPD must be verified by an accredited third party (e.g., ITB, IBU, EPD International)." },
+        { "title": "Registry Publication", "description": "Verified EPDs are published in international registries — visible to buyers and procurement officers." }
+      ]
+    },
+    "audience": {
+      "title": "Who Needs EPD?",
+      "items": [
+        { "title": "Construction", "description": "EN 15804 requires EPDs for construction materials. Green Public Procurement (GPP) in many EU countries." },
+        { "title": "FMCG & Packaging", "description": "Retail chains and contractors require environmental data. EPD builds competitive advantage in tenders." },
+        { "title": "B2B Exporters", "description": "Corporations (Raben, BNP) require LCA/EPD data from suppliers. No EPD — no contract." },
+        { "title": "Public Procurement", "description": "Green Public Procurement is growing in the EU. EPD provides bonus points in public tenders." }
+      ]
+    },
+    "process": {
+      "title": "EPD in 4 Steps",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Product LCA Analysis",
+          "description": "Calculate product environmental footprint in Envirly. Ecoinvent database, 16 impact categories.",
+          "details": ["Excel/CSV/API data import", "Ecoinvent included", "16 impact categories"]
+        },
+        {
+          "number": "02",
+          "title": "Generate EPD Report",
+          "description": "Automated report from LCA results in the format required by EPD program operator.",
+          "details": ["ISO 14025 compliant format", "EN 15804 template for construction", "PDF export"]
+        },
+        {
+          "number": "03",
+          "title": "External Verification",
+          "description": "Independent verifier reviews LCA data and EPD report. Envirly prepares full documentation.",
+          "details": ["Documentation for verifier", "Revision support", "TÜV Nord certificate"]
+        },
+        {
+          "number": "04",
+          "title": "Registry Publication",
+          "description": "Verified EPD is published in an international registry and becomes publicly accessible.",
+          "details": ["EPD International, IBU, ITB", "Public access for buyers", "5-year validity"]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Why Envirly for EPD?",
+      "items": [
+        { "title": "TÜV Nord Certified", "description": "ISO 14067 — first LCA platform in CEE with this certification. Results defensible before verifiers." },
+        { "title": "Ecoinvent Included", "description": "Best Swiss emission factor database. No separate purchase needed." },
+        { "title": "Automated EPD Report", "description": "Generate EPD report directly from LCA results. ISO 14025 and EN 15804 compliant." },
+        { "title": "Verification Support", "description": "We prepare full documentation for the verifier. Save time and revision costs." },
+        { "title": "LCA to DPP in One Tool", "description": "LCA, EPD and DPP in one platform — no data transfer between systems." },
+        { "title": "Data Import & Cloning", "description": "Excel/CSV/API import. Model cloning for multiple products." }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "EPD Use Cases",
+      "sectionSubtitle": "Choose your scenario — each requires a different approach to environmental declarations",
+      "keyFeatures": "Key features",
+      "cta": "Ask about EPD",
+      "items": [
+        {
+          "tabLabel": "Construction Materials",
+          "badge": "EN 15804",
+          "badgeColor": "green",
+          "title": "EPD mandatory in construction tenders",
+          "description": "Construction material manufacturers need EN 15804-compliant EPDs for public tenders and BREEAM/LEED certification. Without EPD — you lose tenders.",
+          "features": ["Built-in EN 15804 template", "Cradle-to-gate LCA for construction materials", "Ready for ITB or IBU verification", "EPD International publication", "BREEAM and LEED certification points"]
+        },
+        {
+          "tabLabel": "Packaging",
+          "badge": "PPWR",
+          "badgeColor": "orange",
+          "title": "EPD as packaging footprint proof",
+          "description": "The new Packaging and Packaging Waste Regulation (PPWR) requires environmental data. EPD for packaging proves carbon footprint and recyclability.",
+          "features": ["LCA for different packaging types", "Material comparison (plastic vs paper vs glass)", "ESG reporting data", "B2B contractor data export"]
+        },
+        {
+          "tabLabel": "B2B Exporter",
+          "badge": "Client requirement",
+          "badgeColor": "blue",
+          "title": "Corporation requires EPD — you must deliver",
+          "description": "Major clients (Raben, IKEA, Leroy Merlin) require environmental declarations from suppliers. EPD is the standard format understood by every corporation.",
+          "features": ["International format EPD report", "LCA data compliant with GHG Protocol and ISO 14067", "Quick RFI/RFQ response", "Public link to verified EPD", "B2B tender competitive advantage"]
+        },
+        {
+          "tabLabel": "Public Procurement",
+          "badge": "GPP",
+          "badgeColor": "amber",
+          "title": "Extra points in public tenders",
+          "description": "Green Public Procurement (GPP) in many EU countries awards extra points for EPD. Manufacturers with EPD win tenders that competitors without declarations cannot.",
+          "features": ["EPD as scored document in GPP", "National GPP criteria compliance", "Publication in buyer-visible registry", "5-year EPD validity without re-verification"]
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ — Environmental Product Declaration (EPD)",
+      "items": [
+        { "question": "What is an EPD?", "answer": "An EPD (Environmental Product Declaration) is a standardized document based on ISO 14025 that describes the environmental impact of a product based on Life Cycle Analysis (LCA) results. It requires independent verification by an accredited third party." },
+        { "question": "How does EPD differ from DPP?", "answer": "EPD is a verified environmental declaration for B2B/B2C communication (ISO 14025). DPP is a digital product data passport required by ESPR Regulation (2024/1781). Both are based on LCA data but serve different purposes." },
+        { "question": "How much does an EPD cost?", "answer": "EPD cost depends on product complexity and program operator. With Envirly, you automate the LCA and report generation stages, significantly reducing costs compared to traditional consulting." },
+        { "question": "How long does it take to get an EPD?", "answer": "With Envirly, the LCA and report stage takes days instead of weeks. External verification typically takes 4-8 weeks, depending on the operator and product complexity." },
+        { "question": "Is EPD mandatory?", "answer": "EPD is not yet legally mandatory, but it is de facto required in many industries: construction (EN 15804), public procurement (GPP), B2B export to corporations. Lack of EPD means lost tenders and contracts." },
+        { "question": "Can I use the same LCA for EPD and DPP?", "answer": "Yes — Envirly performs one LCA analysis from which it automatically generates data for both EPD and DPP. No need to duplicate calculations or work." }
+      ]
+    },
+    "cta": {
+      "title": "Prepare Your EPD Faster Than Competitors",
+      "description": "Automated EPD report generation from LCA data. TÜV Nord certified. Ecoinvent database included. Verification support.",
+      "bookDemo": "Book EPD Demo",
+      "talkExpert": "Talk to an Expert",
+      "seeDpp": "See Digital Product Passport (DPP)"
+    }
+  },
     "title": "NIS 2 Directive (EU)",
     "description": "Comprehensive NIS2 compliance solution with AI-native workflows for European organizations.",
     "hero": {
