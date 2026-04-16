@@ -14,7 +14,7 @@ const DppPassportMockup = () => {
           <div className="w-3 h-3 rounded-full bg-yellow-400" />
           <div className="w-3 h-3 rounded-full bg-green-400" />
         </div>
-        <span className="text-xs text-slate-400 font-mono">platform.envirly.com/lca/product-passport/...</span>
+        <span className="text-xs text-amber-700 font-mono">platform.envirly.com/lca/product-passport/...</span>
         <div />
       </div>
 
