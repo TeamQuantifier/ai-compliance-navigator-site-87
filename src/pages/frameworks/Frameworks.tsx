@@ -98,6 +98,10 @@ const Frameworks = () => {
         { 
           name: { pl: "Deklaracje produktowe EPD", en: "Environmental Product Declarations EPD", cs: "Environmentální prohlášení o produktu EPD" }, 
           href: `/${currentLocale}/frameworks/product-level/epd` 
+        },
+        { 
+          name: { pl: "Analiza cyklu życia LCA", en: "Life Cycle Assessment LCA", cs: "Analýza životního cyklu LCA" }, 
+          href: `/${currentLocale}/frameworks/product-level/lca-analysis` 
         }
       ]
     },

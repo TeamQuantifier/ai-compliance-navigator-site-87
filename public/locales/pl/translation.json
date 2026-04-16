@@ -3511,25 +3511,41 @@
           "number": "01",
           "title": "Identyfikacja produktu",
           "description": "Automatyczny import danych po kodzie GTIN. Integracja z GS1 Polska.",
-          "details": ["Import GTIN / GPC", "Weryfikacja w GS1", "Kategoria produktu"]
+          "details": [
+            "Import GTIN / GPC",
+            "Weryfikacja w GS1",
+            "Kategoria produktu"
+          ]
         },
         {
           "number": "02",
           "title": "Uzupełnij dane",
           "description": "Import Excel/CSV, API lub ręczne uzupełnienie. Asystent AI pomaga na każdym etapie.",
-          "details": ["Import Excel / CSV", "Asystent AI + help center", "Baza Ecoinvent wbudowana"]
+          "details": [
+            "Import Excel / CSV",
+            "Asystent AI + help center",
+            "Baza Ecoinvent wbudowana"
+          ]
         },
         {
           "number": "03",
           "title": "Flowchart emisji",
           "description": "Interaktywny schemat blokowy cyklu życia: surowce → produkcja → dystrybucja → koniec życia.",
-          "details": ["Schemat blokowy LCA", "16 kategorii wpływu", "Analiza wrażliwości"]
+          "details": [
+            "Schemat blokowy LCA",
+            "16 kategorii wpływu",
+            "Analiza wrażliwości"
+          ]
         },
         {
           "number": "04",
           "title": "Generuj DPP",
           "description": "Paszport produktowy z kodem QR i linkiem. Podgląd live w wersji mobilnej i desktop.",
-          "details": ["Kod QR + link", "Podgląd live", "Zgodny z ESPR"]
+          "details": [
+            "Kod QR + link",
+            "Podgląd live",
+            "Zgodny z ESPR"
+          ]
         }
       ]
     },
@@ -3540,45 +3556,129 @@
       "colAct": "Akt delegowany",
       "colDeadline": "Termin",
       "items": [
-        { "category": "Baterie przemysłowe i EV", "act": "Rozporządzenie 2023/1542", "deadline": "Luty 2027" },
-        { "category": "Wyroby włókiennicze i odzież", "act": "ESPR — akt delegowany", "deadline": "2028" },
-        { "category": "Elektronika i ICT", "act": "ESPR — akt delegowany", "deadline": "2028–2029" },
-        { "category": "Meble", "act": "ESPR — akt delegowany", "deadline": "2029" },
-        { "category": "Materiały budowlane", "act": "ESPR + CPR", "deadline": "2029–2030" },
-        { "category": "Żelazo i stal", "act": "ESPR — akt delegowany", "deadline": "2030" }
+        {
+          "category": "Baterie przemysłowe i EV",
+          "act": "Rozporządzenie 2023/1542",
+          "deadline": "Luty 2027"
+        },
+        {
+          "category": "Wyroby włókiennicze i odzież",
+          "act": "ESPR — akt delegowany",
+          "deadline": "2028"
+        },
+        {
+          "category": "Elektronika i ICT",
+          "act": "ESPR — akt delegowany",
+          "deadline": "2028–2029"
+        },
+        {
+          "category": "Meble",
+          "act": "ESPR — akt delegowany",
+          "deadline": "2029"
+        },
+        {
+          "category": "Materiały budowlane",
+          "act": "ESPR + CPR",
+          "deadline": "2029–2030"
+        },
+        {
+          "category": "Żelazo i stal",
+          "act": "ESPR — akt delegowany",
+          "deadline": "2030"
+        }
       ]
     },
     "dataRequirements": {
       "title": "Obowiązkowe dane w Paszporcie Produktowym",
       "items": [
-        { "title": "Skład materiałowy", "description": "Pełna lista materiałów, substancji niebezpiecznych i zawartości materiałów z recyklingu." },
-        { "title": "Ślad węglowy", "description": "Emisje CO₂ w cyklu życia produktu — od surowców po koniec życia (cradle-to-grave)." },
-        { "title": "Efektywność energetyczna", "description": "Klasa energetyczna, zużycie energii w fazie użytkowania i porównanie z benchmarkiem." },
-        { "title": "Trwałość i naprawialność", "description": "Żywotność produktu, dostępność części zamiennych, instrukcje naprawy." },
-        { "title": "Informacje o końcu życia", "description": "Instrukcje recyklingu, demontażu i prawidłowego postępowania z odpadami." },
-        { "title": "Zgodność i certyfikaty", "description": "Deklaracja zgodności CE, certyfikaty środowiskowe, normy ISO i audyty." }
+        {
+          "title": "Skład materiałowy",
+          "description": "Pełna lista materiałów, substancji niebezpiecznych i zawartości materiałów z recyklingu."
+        },
+        {
+          "title": "Ślad węglowy",
+          "description": "Emisje CO₂ w cyklu życia produktu — od surowców po koniec życia (cradle-to-grave)."
+        },
+        {
+          "title": "Efektywność energetyczna",
+          "description": "Klasa energetyczna, zużycie energii w fazie użytkowania i porównanie z benchmarkiem."
+        },
+        {
+          "title": "Trwałość i naprawialność",
+          "description": "Żywotność produktu, dostępność części zamiennych, instrukcje naprawy."
+        },
+        {
+          "title": "Informacje o końcu życia",
+          "description": "Instrukcje recyklingu, demontażu i prawidłowego postępowania z odpadami."
+        },
+        {
+          "title": "Zgodność i certyfikaty",
+          "description": "Deklaracja zgodności CE, certyfikaty środowiskowe, normy ISO i audyty."
+        }
       ]
     },
     "advantages": {
       "title": "Dlaczego Envirly do tworzenia DPP?",
       "items": [
-        { "title": "Ecoinvent wbudowany w cenę", "description": "Najlepsza szwajcarska baza faktorów emisji. Nie musisz kupować osobno — wszystko w cenie platformy." },
-        { "title": "Certyfikacja TÜV Nord", "description": "ISO 14067 — pierwsza platforma w CEE z tym certyfikatem. Zaufanie klientów i regulatorów." },
-        { "title": "Integracja GS1", "description": "Import danych produktu po kodzie GTIN. Trusted by GS1 — 70+ klientów z ekosystemu." },
-        { "title": "Modelowanie scenariuszy", "description": "Porównuj warianty produktu, optymalizuj ślad. Symulacja Monte Carlo." },
-        { "title": "Import Excel / CSV / API", "description": "Elastyczny import danych. Integracja z istniejącymi systemami ERP i bazami." },
-        { "title": "Asystent AI + Help Center", "description": "Wsparcie na każdym kroku. Materiały szkoleniowe, tutoriale, dedykowany zespół." }
+        {
+          "title": "Ecoinvent wbudowany w cenę",
+          "description": "Najlepsza szwajcarska baza faktorów emisji. Nie musisz kupować osobno — wszystko w cenie platformy."
+        },
+        {
+          "title": "Certyfikacja TÜV Nord",
+          "description": "ISO 14067 — pierwsza platforma w CEE z tym certyfikatem. Zaufanie klientów i regulatorów."
+        },
+        {
+          "title": "Integracja GS1",
+          "description": "Import danych produktu po kodzie GTIN. Trusted by GS1 — 70+ klientów z ekosystemu."
+        },
+        {
+          "title": "Modelowanie scenariuszy",
+          "description": "Porównuj warianty produktu, optymalizuj ślad. Symulacja Monte Carlo."
+        },
+        {
+          "title": "Import Excel / CSV / API",
+          "description": "Elastyczny import danych. Integracja z istniejącymi systemami ERP i bazami."
+        },
+        {
+          "title": "Asystent AI + Help Center",
+          "description": "Wsparcie na każdym kroku. Materiały szkoleniowe, tutoriale, dedykowany zespół."
+        }
       ]
     },
     "industries": {
       "title": "Zastosowania branżowe DPP",
       "items": [
-        { "title": "Produkcja & Manufacturing", "description": "DPP dla wyrobów przemysłowych, raportowanie do kupujących (DE, FR, NL).", "clients": "📌 Hilding Anders, Cersanit, Black Red White" },
-        { "title": "FMCG & Chemia", "description": "Ślad produktu czyszczącego, kosmetycznego. EPD dla przetargów i sieci retail.", "clients": "📌 Dr Irena Eris, Herbapol, Wosana" },
-        { "title": "Fashion & Textile", "description": "DPP zgodny z wymogami UE dot. wyrobów włókienniczych od 2028.", "clients": "📌 4F (OTCF), Tatuum, Kazar" },
-        { "title": "Farmacja & Healthcare", "description": "LCA dla produktów leczniczych i suplementów. Scope 3 kategoria zakupionych produktów.", "clients": "📌 Pelion (300+ subsidiaries)" },
-        { "title": "Food & Beverage", "description": "Ślad żywnościowy cradle-to-gate. Wsparcie EUDR, ESG reporting dla sieci dostaw.", "clients": "📌 Maspex, Cedrob, AmRest" },
-        { "title": "Media & Marketing", "description": "LCA kampanii reklamowych, ślad materiałów OOH, raportowanie ESG.", "clients": "📌 Jet Line (kampanie OOH)" }
+        {
+          "title": "Produkcja & Manufacturing",
+          "description": "DPP dla wyrobów przemysłowych, raportowanie do kupujących (DE, FR, NL).",
+          "clients": "📌 Hilding Anders, Cersanit, Black Red White"
+        },
+        {
+          "title": "FMCG & Chemia",
+          "description": "Ślad produktu czyszczącego, kosmetycznego. EPD dla przetargów i sieci retail.",
+          "clients": "📌 Dr Irena Eris, Herbapol, Wosana"
+        },
+        {
+          "title": "Fashion & Textile",
+          "description": "DPP zgodny z wymogami UE dot. wyrobów włókienniczych od 2028.",
+          "clients": "📌 4F (OTCF), Tatuum, Kazar"
+        },
+        {
+          "title": "Farmacja & Healthcare",
+          "description": "LCA dla produktów leczniczych i suplementów. Scope 3 kategoria zakupionych produktów.",
+          "clients": "📌 Pelion (300+ subsidiaries)"
+        },
+        {
+          "title": "Food & Beverage",
+          "description": "Ślad żywnościowy cradle-to-gate. Wsparcie EUDR, ESG reporting dla sieci dostaw.",
+          "clients": "📌 Maspex, Cedrob, AmRest"
+        },
+        {
+          "title": "Media & Marketing",
+          "description": "LCA kampanii reklamowych, ślad materiałów OOH, raportowanie ESG.",
+          "clients": "📌 Jet Line (kampanie OOH)"
+        }
       ]
     },
     "cta": {
@@ -3707,7 +3807,12 @@
         "badge": "ESPR 2024/1781",
         "title": "Cyfrowy Paszport Produktowy (DPP)",
         "description": "Obowiązkowy cyfrowy zapis danych produktu z kodem QR. Skład materiałowy, ślad węglowy, naprawialność — wszystko zgodne z Rozporządzeniem ESPR.",
-        "features": ["Integracja GS1 — import po GTIN", "Kod QR + link publiczny", "Baza ecoinvent w cenie", "Certyfikat TÜV Nord"],
+        "features": [
+          "Integracja GS1 — import po GTIN",
+          "Kod QR + link publiczny",
+          "Baza ecoinvent w cenie",
+          "Certyfikat TÜV Nord"
+        ],
         "cta": "Zobacz DPP",
         "href": "/frameworks/product-level/dpp"
       },
@@ -3715,7 +3820,12 @@
         "badge": "ISO 14025 · EN 15804",
         "title": "Deklaracja Środowiskowa Produktu (EPD)",
         "description": "Zweryfikowana przez trzecią stronę deklaracja środowiskowa. Wymagana w przetargach, budownictwie i eksporcie B2B.",
-        "features": ["Zgodność z ISO 14025 i EN 15804", "Weryfikacja przez akredytowanego operatora", "Publikacja w rejestrach EPD", "Automatyczny raport z danych LCA"],
+        "features": [
+          "Zgodność z ISO 14025 i EN 15804",
+          "Weryfikacja przez akredytowanego operatora",
+          "Publikacja w rejestrach EPD",
+          "Automatyczny raport z danych LCA"
+        ],
         "cta": "Zobacz EPD",
         "href": "/frameworks/product-level/epd"
       },
@@ -3723,7 +3833,12 @@
         "badge": "ISO 14040 · ISO 14044",
         "title": "Analiza Cyklu Życia (LCA)",
         "description": "Obliczanie śladu środowiskowego produktu cradle-to-gate lub cradle-to-grave. Fundament dla DPP i EPD.",
-        "features": ["16 kategorii wpływu środowiskowego", "Symulacja Monte Carlo", "Klonowanie modeli dla setek SKU", "Flowchart emisji interaktywny"],
+        "features": [
+          "16 kategorii wpływu środowiskowego",
+          "Symulacja Monte Carlo",
+          "Klonowanie modeli dla setek SKU",
+          "Flowchart emisji interaktywny"
+        ],
         "cta": "Zobacz LCA",
         "href": "/frameworks/product-level/lca-analysis"
       }
@@ -3731,9 +3846,18 @@
     "faq": {
       "title": "FAQ — Analiza środowiskowa produktu",
       "items": [
-        { "question": "Czym różni się DPP od EPD?", "answer": "DPP (Digital Product Passport) to cyfrowy nośnik danych produktowych wymagany przez Rozporządzenie ESPR — zawiera skład, ślad węglowy, naprawialność i kod QR. EPD (Environmental Product Declaration) to zweryfikowana przez trzecią stronę deklaracja środowiskowa, stosowana w przetargach i budownictwie (ISO 14025, EN 15804)." },
-        { "question": "Czy potrzebuję LCA do DPP i EPD?", "answer": "Tak — Analiza Cyklu Życia (LCA) jest wspólną bazą obliczeniową zarówno dla DPP (ślad węglowy produktu), jak i EPD (pełna deklaracja środowiskowa). Envirly wykonuje LCA i automatycznie generuje dane do obu dokumentów." },
-        { "question": "Które rozwiązanie wybrać?", "answer": "Jeśli eksportujesz produkty do UE — zacznij od DPP (obowiązkowy od 2027). Jeśli startujesz w przetargach lub budownictwie — wybierz EPD. Jeśli chcesz poznać ślad produktu i zoptymalizować — zacznij od LCA." }
+        {
+          "question": "Czym różni się DPP od EPD?",
+          "answer": "DPP (Digital Product Passport) to cyfrowy nośnik danych produktowych wymagany przez Rozporządzenie ESPR — zawiera skład, ślad węglowy, naprawialność i kod QR. EPD (Environmental Product Declaration) to zweryfikowana przez trzecią stronę deklaracja środowiskowa, stosowana w przetargach i budownictwie (ISO 14025, EN 15804)."
+        },
+        {
+          "question": "Czy potrzebuję LCA do DPP i EPD?",
+          "answer": "Tak — Analiza Cyklu Życia (LCA) jest wspólną bazą obliczeniową zarówno dla DPP (ślad węglowy produktu), jak i EPD (pełna deklaracja środowiskowa). Envirly wykonuje LCA i automatycznie generuje dane do obu dokumentów."
+        },
+        {
+          "question": "Które rozwiązanie wybrać?",
+          "answer": "Jeśli eksportujesz produkty do UE — zacznij od DPP (obowiązkowy od 2027). Jeśli startujesz w przetargach lub budownictwie — wybierz EPD. Jeśli chcesz poznać ślad produktu i zoptymalizować — zacznij od LCA."
+        }
       ]
     },
     "cta": {
@@ -3759,18 +3883,39 @@
       "title": "Czym jest EPD?",
       "description": "Environmental Product Declaration (EPD) to ustandaryzowany dokument środowiskowy oparty na normie ISO 14025. Zawiera wyniki Analizy Cyklu Życia (LCA) produktu, zweryfikowane przez niezależnego operatora programu EPD.",
       "keyPoints": [
-        { "title": "Oparty na LCA", "description": "Wyniki obliczeń cyklu życia produktu wg ISO 14040/14044 — od surowców po koniec życia." },
-        { "title": "Niezależna weryfikacja", "description": "Każda EPD musi być zweryfikowana przez akredytowaną trzecią stronę (np. ITB, IBU, EPD International)." },
-        { "title": "Publikacja w rejestrze", "description": "Zweryfikowana EPD jest publikowana w międzynarodowym rejestrze — widoczna dla kupujących i zamawiających." }
+        {
+          "title": "Oparty na LCA",
+          "description": "Wyniki obliczeń cyklu życia produktu wg ISO 14040/14044 — od surowców po koniec życia."
+        },
+        {
+          "title": "Niezależna weryfikacja",
+          "description": "Każda EPD musi być zweryfikowana przez akredytowaną trzecią stronę (np. ITB, IBU, EPD International)."
+        },
+        {
+          "title": "Publikacja w rejestrze",
+          "description": "Zweryfikowana EPD jest publikowana w międzynarodowym rejestrze — widoczna dla kupujących i zamawiających."
+        }
       ]
     },
     "audience": {
       "title": "Dla kogo jest EPD?",
       "items": [
-        { "title": "Budownictwo", "description": "EN 15804 wymaga EPD dla materiałów budowlanych. Green Public Procurement (GPP) w wielu krajach UE." },
-        { "title": "FMCG i opakowania", "description": "Sieci handlowe i kontrahenci wymagają danych środowiskowych. EPD buduje przewagę w przetargach." },
-        { "title": "Eksporterzy B2B", "description": "Korporacje (Raben, BNP) wymagają danych LCA/EPD od dostawców. Bez EPD — bez kontraktu." },
-        { "title": "Zamówienia publiczne", "description": "Green Public Procurement rośnie w UE. EPD daje punkty w przetargach publicznych." }
+        {
+          "title": "Budownictwo",
+          "description": "EN 15804 wymaga EPD dla materiałów budowlanych. Green Public Procurement (GPP) w wielu krajach UE."
+        },
+        {
+          "title": "FMCG i opakowania",
+          "description": "Sieci handlowe i kontrahenci wymagają danych środowiskowych. EPD buduje przewagę w przetargach."
+        },
+        {
+          "title": "Eksporterzy B2B",
+          "description": "Korporacje (Raben, BNP) wymagają danych LCA/EPD od dostawców. Bez EPD — bez kontraktu."
+        },
+        {
+          "title": "Zamówienia publiczne",
+          "description": "Green Public Procurement rośnie w UE. EPD daje punkty w przetargach publicznych."
+        }
       ]
     },
     "process": {
@@ -3780,37 +3925,71 @@
           "number": "01",
           "title": "Analiza LCA produktu",
           "description": "Obliczanie śladu środowiskowego produktu w Envirly. Baza ecoinvent, 16 kategorii wpływu.",
-          "details": ["Import danych Excel/CSV/API", "Baza ecoinvent w cenie", "16 kategorii wpływu"]
+          "details": [
+            "Import danych Excel/CSV/API",
+            "Baza ecoinvent w cenie",
+            "16 kategorii wpływu"
+          ]
         },
         {
           "number": "02",
           "title": "Generowanie raportu EPD",
           "description": "Automatyczny raport z wyników LCA w formacie wymaganym przez operatora programu EPD.",
-          "details": ["Format zgodny z ISO 14025", "Szablon EN 15804 dla budownictwa", "Export do PDF"]
+          "details": [
+            "Format zgodny z ISO 14025",
+            "Szablon EN 15804 dla budownictwa",
+            "Export do PDF"
+          ]
         },
         {
           "number": "03",
           "title": "Weryfikacja zewnętrzna",
           "description": "Niezależny weryfikator sprawdza dane LCA i raport EPD. Envirly przygotowuje pełną dokumentację.",
-          "details": ["Przygotowanie dokumentacji dla weryfikatora", "Wsparcie w procesie rewizji", "Certyfikat TÜV Nord"]
+          "details": [
+            "Przygotowanie dokumentacji dla weryfikatora",
+            "Wsparcie w procesie rewizji",
+            "Certyfikat TÜV Nord"
+          ]
         },
         {
           "number": "04",
           "title": "Publikacja w rejestrze",
           "description": "Zweryfikowana EPD trafia do międzynarodowego rejestru i staje się publicznie dostępna.",
-          "details": ["EPD International, IBU, ITB", "Publiczny dostęp dla kupujących", "Ważność 5 lat"]
+          "details": [
+            "EPD International, IBU, ITB",
+            "Publiczny dostęp dla kupujących",
+            "Ważność 5 lat"
+          ]
         }
       ]
     },
     "advantages": {
       "title": "Dlaczego Envirly do tworzenia EPD?",
       "items": [
-        { "title": "Certyfikacja TÜV Nord", "description": "ISO 14067 — pierwsza platforma LCA w CEE z tym certyfikatem. Wyniki bronione przed weryfikatorem." },
-        { "title": "Ecoinvent w cenie", "description": "Najlepsza szwajcarska baza faktorów emisji. Nie musisz kupować osobno." },
-        { "title": "Automatyczny raport EPD", "description": "Generuj raport EPD bezpośrednio z wyników LCA. Zgodny z ISO 14025 i EN 15804." },
-        { "title": "Wsparcie weryfikacji", "description": "Przygotowujemy pełną dokumentację dla weryfikatora. Oszczędzasz czas i koszty rewizji." },
-        { "title": "Od LCA do DPP w jednym narzędziu", "description": "LCA, EPD i DPP w jednej platformie — bez przesyłania danych między systemami." },
-        { "title": "Import danych i klonowanie", "description": "Excel/CSV/API import. Klonowanie modeli dla wielu produktów." }
+        {
+          "title": "Certyfikacja TÜV Nord",
+          "description": "ISO 14067 — pierwsza platforma LCA w CEE z tym certyfikatem. Wyniki bronione przed weryfikatorem."
+        },
+        {
+          "title": "Ecoinvent w cenie",
+          "description": "Najlepsza szwajcarska baza faktorów emisji. Nie musisz kupować osobno."
+        },
+        {
+          "title": "Automatyczny raport EPD",
+          "description": "Generuj raport EPD bezpośrednio z wyników LCA. Zgodny z ISO 14025 i EN 15804."
+        },
+        {
+          "title": "Wsparcie weryfikacji",
+          "description": "Przygotowujemy pełną dokumentację dla weryfikatora. Oszczędzasz czas i koszty rewizji."
+        },
+        {
+          "title": "Od LCA do DPP w jednym narzędziu",
+          "description": "LCA, EPD i DPP w jednej platformie — bez przesyłania danych między systemami."
+        },
+        {
+          "title": "Import danych i klonowanie",
+          "description": "Excel/CSV/API import. Klonowanie modeli dla wielu produktów."
+        }
       ]
     },
     "useCases": {
@@ -3878,12 +4057,30 @@
     "faq": {
       "title": "FAQ — Deklaracja Środowiskowa Produktu (EPD)",
       "items": [
-        { "question": "Czym jest EPD?", "answer": "EPD (Environmental Product Declaration) to ustandaryzowany dokument oparty na ISO 14025, który opisuje wpływ środowiskowy produktu na podstawie wyników Analizy Cyklu Życia (LCA). Wymaga niezależnej weryfikacji przez akredytowaną trzecią stronę." },
-        { "question": "Czym EPD różni się od DPP?", "answer": "EPD to zweryfikowana deklaracja środowiskowa do komunikacji B2B/B2C (ISO 14025). DPP to cyfrowy paszport danych produktowych wymagany przez Rozporządzenie ESPR (2024/1781). Oba opierają się na danych LCA, ale służą różnym celom." },
-        { "question": "Ile kosztuje EPD?", "answer": "Koszt EPD zależy od złożoności produktu i operatora programu. Z Envirly automatyzujesz etap LCA i generowania raportu, co znacząco obniża koszty w porównaniu z tradycyjnym procesem konsultingowym." },
-        { "question": "Jak długo trwa uzyskanie EPD?", "answer": "Z Envirly etap LCA i raportu zajmuje dni zamiast tygodni. Weryfikacja zewnętrzna trwa zazwyczaj 4-8 tygodni, zależnie od operatora i złożoności produktu." },
-        { "question": "Czy EPD jest obowiązkowe?", "answer": "EPD nie jest jeszcze obowiązkowe regulacyjnie, ale jest de facto wymagane w wielu branżach: budownictwo (EN 15804), zamówienia publiczne (GPP), eksport B2B do korporacji. Brak EPD oznacza utratę przetargów i kontraktów." },
-        { "question": "Czy mogę użyć tego samego LCA do EPD i DPP?", "answer": "Tak — Envirly wykonuje jedną analizę LCA, z której automatycznie generuje dane zarówno do EPD, jak i DPP. Nie musisz duplikować obliczeń ani pracy." }
+        {
+          "question": "Czym jest EPD?",
+          "answer": "EPD (Environmental Product Declaration) to ustandaryzowany dokument oparty na ISO 14025, który opisuje wpływ środowiskowy produktu na podstawie wyników Analizy Cyklu Życia (LCA). Wymaga niezależnej weryfikacji przez akredytowaną trzecią stronę."
+        },
+        {
+          "question": "Czym EPD różni się od DPP?",
+          "answer": "EPD to zweryfikowana deklaracja środowiskowa do komunikacji B2B/B2C (ISO 14025). DPP to cyfrowy paszport danych produktowych wymagany przez Rozporządzenie ESPR (2024/1781). Oba opierają się na danych LCA, ale służą różnym celom."
+        },
+        {
+          "question": "Ile kosztuje EPD?",
+          "answer": "Koszt EPD zależy od złożoności produktu i operatora programu. Z Envirly automatyzujesz etap LCA i generowania raportu, co znacząco obniża koszty w porównaniu z tradycyjnym procesem konsultingowym."
+        },
+        {
+          "question": "Jak długo trwa uzyskanie EPD?",
+          "answer": "Z Envirly etap LCA i raportu zajmuje dni zamiast tygodni. Weryfikacja zewnętrzna trwa zazwyczaj 4-8 tygodni, zależnie od operatora i złożoności produktu."
+        },
+        {
+          "question": "Czy EPD jest obowiązkowe?",
+          "answer": "EPD nie jest jeszcze obowiązkowe regulacyjnie, ale jest de facto wymagane w wielu branżach: budownictwo (EN 15804), zamówienia publiczne (GPP), eksport B2B do korporacji. Brak EPD oznacza utratę przetargów i kontraktów."
+        },
+        {
+          "question": "Czy mogę użyć tego samego LCA do EPD i DPP?",
+          "answer": "Tak — Envirly wykonuje jedną analizę LCA, z której automatycznie generuje dane zarówno do EPD, jak i DPP. Nie musisz duplikować obliczeń ani pracy."
+        }
       ]
     },
     "cta": {
@@ -8622,6 +8819,198 @@
         "title": "Edytuj paszport i udostępnij link",
         "desc": "Zaprojektuj układ paszportu produktowego: wybierz sekcje, uzupełnij treści i dane, a następnie wygeneruj publiczny link lub kod QR. Gotowy do audytu, gotowy do klienta."
       }
+    }
+  },
+  "lcaPage": {
+    "title": "Analiza LCA — Ocena Cyklu Życia Produktu",
+    "description": "Przeprowadź analizę LCA zgodną z ISO 14040/14044 i PEF. Identyfikuj hotspoty, porównuj scenariusze i generuj dane do EPD, DPP i raportowania CSRD.",
+    "hero": {
+      "title": "Analiza LCA: od danych do decyzji o dekarbonizacji",
+      "subtitle": "Ocena cyklu życia (LCA) to jedyna metodyka, która daje pełny obraz wpływu środowiskowego produktu — od surowców po utylizację. Wyniki LCA zasilają EPD, DPP i raportowanie ESG."
+    },
+    "whatIs": {
+      "title": "Czym jest analiza LCA?",
+      "description": "Life Cycle Assessment (LCA) to znormalizowana metoda oceny wpływu środowiskowego produktu, usługi lub organizacji w całym cyklu życia — zgodnie z ISO 14040 i ISO 14044.",
+      "keyPoints": [
+        {
+          "title": "Definicja",
+          "description": "Systematyczna analiza oddziaływań środowiskowych od pozyskania surowców, przez produkcję i użytkowanie, aż po koniec życia produktu."
+        },
+        {
+          "title": "Cel",
+          "description": "Identyfikacja hotspotów emisyjnych, porównanie wariantów projektowych i dostarczenie danych do certyfikacji EPD, PEF i raportowania CSRD/ESRS."
+        },
+        {
+          "title": "Wynik",
+          "description": "Kwantyfikacja wpływu w 16+ kategoriach (GWP, AP, EP, ODP) z podziałem na etapy cyklu życia i możliwością generowania raportów."
+        }
+      ]
+    },
+    "approaches": {
+      "title": "Trzy podejścia do analizy LCA",
+      "subtitle": "Wybierz metodykę dopasowaną do Twojego celu — od śladu pojedynczego produktu po raportowanie korporacyjne.",
+      "items": [
+        {
+          "tabLabel": "PEF",
+          "badge": "Product Environmental Footprint",
+          "title": "PEF — Europejski standard śladu środowiskowego",
+          "description": "Product Environmental Footprint (PEF) to metodyka Komisji Europejskiej zapewniająca porównywalność wyników LCA między produktami w tej samej kategorii. Wymagana przez ESPR i coraz częściej stosowana w zamówieniach publicznych.",
+          "features": [
+            "16 obowiązkowych kategorii wpływu środowiskowego",
+            "Wyniki porównywalne dzięki PEFCR (Product Category Rules)",
+            "Wymagany przez ESPR dla Cyfrowych Paszportów Produktu",
+            "Dane z bazy EF (Environmental Footprint) 3.1",
+            "Benchmarking na tle branży",
+            "Gotowy wynik do komunikacji B2C (zielone etykiety)"
+          ]
+        },
+        {
+          "tabLabel": "Organizational LCA",
+          "badge": "Scope 1 + 2 + 3",
+          "title": "LCA organizacji — ślad korporacyjny i Scope 3",
+          "description": "Analiza LCA na poziomie organizacji obejmuje wszystkie zakresy emisji (Scope 1, 2 i 3) i dostarcza danych do raportowania CSRD/ESRS, celów SBTi oraz strategii dekarbonizacyjnej całej firmy.",
+          "features": [
+            "Pełne pokrycie Scope 1, 2 i 3 (upstream + downstream)",
+            "Zgodność z GHG Protocol Corporate Standard",
+            "Dane wejściowe do raportowania CSRD / ESRS E1",
+            "Identyfikacja największych źródeł emisji w łańcuchu wartości",
+            "Wsparcie wyznaczania celów SBTi",
+            "Porównanie rok do roku i śledzenie postępu dekarbonizacji"
+          ]
+        },
+        {
+          "tabLabel": "Product Scope 3",
+          "badge": "Product-level carbon footprint",
+          "title": "Scope 3 na poziomie produktu — ślad węglowy SKU",
+          "description": "Analiza śladu węglowego konkretnego produktu (PCF — Product Carbon Footprint) pozwala odpowiedzieć na pytania klientów B2B, spełnić wymagania łańcucha dostaw i dostarczyć dane do EPD lub DPP.",
+          "features": [
+            "Ślad węglowy konkretnego SKU (cradle-to-gate lub cradle-to-grave)",
+            "Hot-spot analysis — identyfikacja etapów o największym wpływie",
+            "Dane z bazy ecoinvent 3.11 (8000+ procesów)",
+            "Eksport wyników do EPD i Cyfrowego Paszportu Produktu",
+            "Porównanie scenariuszy what-if (recykling, transport, materiały)",
+            "Odpowiedź na zapytania klientów B2B o ślad węglowy dostawcy"
+          ]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Dlaczego analiza LCA w Envirly?",
+      "items": [
+        {
+          "title": "Baza ecoinvent 3.11",
+          "description": "Ponad 8000 procesów i 21 000 produktów — największa i najczęściej cytowana baza danych LCA na świecie, w cenie platformy."
+        },
+        {
+          "title": "Automatyczne kalkulacje",
+          "description": "Silnik obliczeniowy przelicza wyniki w czasie rzeczywistym przy każdej zmianie parametrów — bez ręcznego modelowania w arkuszach."
+        },
+        {
+          "title": "Weryfikacja TÜV NORD",
+          "description": "Platforma posiada certyfikat TÜV NORD potwierdzający zgodność z ISO 14040/14044 — wyniki są akceptowane przez audytorów."
+        },
+        {
+          "title": "PEF-compliant",
+          "description": "Moduł PEF uwzględnia wszystkie 16 kategorii wpływu i PEFCR, gotowy do wymogów ESPR i Digital Product Passport."
+        },
+        {
+          "title": "Eksport do EPD i DPP",
+          "description": "Wyniki LCA trafiają bezpośrednio do generatora raportu EPD lub Cyfrowego Paszportu Produktu — bez reintrodukcji danych."
+        },
+        {
+          "title": "Scenariusze what-if",
+          "description": "Porównuj warianty: zmień udział recyklatu, trasę transportu lub źródło energii i zobacz wpływ na wynik LCA w czasie rzeczywistym."
+        }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "Kto potrzebuje analizy LCA?",
+      "sectionSubtitle": "Trzy typowe scenariusze — od producenta FMCG przez firmę raportującą CSRD po dostawcę B2B.",
+      "keyFeatures": "Kluczowe funkcje",
+      "cta": "Zamów analizę LCA",
+      "items": [
+        {
+          "tabLabel": "Producent FMCG",
+          "badge": "PEF & Green Claims",
+          "badgeColor": "amber",
+          "title": "Producent FMCG: zielone etykiety i porównywalność",
+          "description": "Producenci FMCG potrzebują PEF, aby umieszczać wiarygodne informacje środowiskowe na opakowaniach i spełnić wymagania Green Claims Directive. Envirly dostarcza wyniki w formacie gotowym do komunikacji B2C.",
+          "features": [
+            "PEF z 16 kategoriami wpływu",
+            "Dane do etykiety środowiskowej zgodnej z Green Claims Directive",
+            "Automatyczny benchmark na tle kategorii produktowej",
+            "Eksport do DPP z kodem QR",
+            "Porównanie wariantów opakowań (szkło vs PET vs aluminium)",
+            "Raport gotowy do weryfikacji przez stronę trzecią"
+          ]
+        },
+        {
+          "tabLabel": "Firma CSRD",
+          "badge": "Organizational LCA",
+          "badgeColor": "blue",
+          "title": "Firma raportująca CSRD: Scope 3 i dekarbonizacja",
+          "description": "Firmy objęte CSRD muszą raportować emisje w Scope 1, 2 i 3 zgodnie z ESRS E1. Organizational LCA w Envirly automatyzuje zbieranie danych z łańcucha wartości i identyfikuje największe źródła emisji.",
+          "features": [
+            "Pełne pokrycie Scope 1, 2 i 3",
+            "Zgodność z ESRS E1 i GHG Protocol",
+            "Automatyczne zbieranie danych od dostawców",
+            "Dashboard dekarbonizacyjny z celami SBTi",
+            "Porównanie rok do roku",
+            "Eksport danych do raportu zrównoważonego rozwoju"
+          ]
+        },
+        {
+          "tabLabel": "Dostawca B2B",
+          "badge": "Product Carbon Footprint",
+          "badgeColor": "green",
+          "title": "Dostawca B2B: odpowiedź na zapytania klientów",
+          "description": "Duże korporacje (Raben, BNP, IKEA) coraz częściej pytają dostawców o ślad węglowy produktów. Product-level Scope 3 w Envirly pozwala szybko policzyć PCF i dostarczyć dane w formacie akceptowanym przez klienta.",
+          "features": [
+            "Ślad węglowy produktu (PCF) w 1 dzień zamiast 6 tygodni",
+            "Dane z ecoinvent 3.11 — akceptowane przez audytorów",
+            "Hot-spot analysis z rekomendacjami redukcji",
+            "Eksport wyników w formacie CDP, EcoVadis, SBTI",
+            "Skalowalność: od 1 SKU do całego katalogu",
+            "Wyniki gotowe do dalszego przekazania klientowi B2B"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania o LCA",
+      "items": [
+        {
+          "question": "Czym różni się PEF od LCA?",
+          "answer": "PEF (Product Environmental Footprint) to europejska metodyka oparta na LCA, ale z dodatkowymi wymaganiami dotyczącymi porównywalności wyników. PEF narzuca 16 obowiązkowych kategorii wpływu i stosowanie PEFCR (Product Category Rules), podczas gdy klasyczne LCA wg ISO 14040 daje większą elastyczność w doborze kategorii."
+        },
+        {
+          "question": "Ile trwa analiza LCA w Envirly?",
+          "answer": "Prosty produkt (1 SKU, cradle-to-gate) — od 1 dnia roboczego. Złożony produkt z pełnym cyklem życia (cradle-to-grave) — 3-5 dni. Analiza organizacyjna (Scope 1+2+3) — 2-4 tygodnie w zależności od dostępności danych od dostawców."
+        },
+        {
+          "question": "Jaką bazę danych LCA wykorzystuje Envirly?",
+          "answer": "Envirly korzysta z ecoinvent 3.11 — największej i najczęściej cytowanej bazy danych LCA na świecie, zawierającej ponad 8000 procesów i 21 000 produktów. Baza jest aktualizowana rocznie i akceptowana przez wszystkich głównych weryfikatorów EPD."
+        },
+        {
+          "question": "Kto weryfikuje wyniki LCA?",
+          "answer": "Platforma Envirly posiada certyfikat TÜV NORD potwierdzający zgodność z ISO 14040/14044. Wyniki LCA mogą być dodatkowo zweryfikowane przez niezależnego audytora (np. TÜV, Bureau Veritas, SGS) na potrzeby EPD lub certyfikacji."
+        },
+        {
+          "question": "Czy wyniki LCA z Envirly mogą zasilić EPD?",
+          "answer": "Tak. Wyniki analizy LCA trafiają bezpośrednio do wbudowanego generatora raportu EPD zgodnego z ISO 14025 i EN 15804. Raport można opublikować w rejestrze EPD International, ITB lub IBU."
+        },
+        {
+          "question": "Czy Envirly obsługuje LCA organizacji (Scope 1+2+3)?",
+          "answer": "Tak. Moduł Organizational LCA obejmuje pełne pokrycie Scope 1, 2 i 3 zgodnie z GHG Protocol Corporate Standard. Dane są gotowe do raportowania CSRD/ESRS E1 i wyznaczania celów SBTi."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Zamów analizę LCA dla swojego produktu lub organizacji",
+      "description": "Ponad 173 firmy korzysta z Envirly do analizy cyklu życia. Certyfikat TÜV NORD. Baza ecoinvent w cenie. Wyniki gotowe do EPD, DPP i CSRD.",
+      "bookDemo": "Zamów analizę LCA",
+      "talkExpert": "Porozmawiaj z ekspertem",
+      "seeEpd": "Zobacz EPD →"
     }
   }
 }

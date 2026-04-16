@@ -40,6 +40,7 @@ import Governance from "./pages/frameworks/Governance";
 import ProductLevel from "./pages/frameworks/ProductLevel";
 import ProductLevelHub from "./pages/frameworks/ProductLevelHub";
 import Epd from "./pages/frameworks/Epd";
+import LcaAnalysis from "./pages/frameworks/LcaAnalysis";
 
 // Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
@@ -163,7 +164,8 @@ const MainRoutes = () => (
         <Route path="/:locale/frameworks/product-level" element={<ProductLevelHub />} />
         <Route path="/:locale/frameworks/product-level/dpp" element={<ProductLevel />} />
         <Route path="/:locale/frameworks/product-level/epd" element={<Epd />} />
-        
+        <Route path="/:locale/frameworks/product-level/lca-analysis" element={<LcaAnalysis />} />
+
         {/* Redirects from old nested URLs */}
         <Route path="/:locale/frameworks/cybersecurity" element={<Navigate to="../frameworks" replace />} />
         <Route path="/:locale/frameworks/information-security" element={<Navigate to="../frameworks" replace />} />
