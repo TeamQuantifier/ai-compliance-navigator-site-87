@@ -13,7 +13,7 @@ import EpdReportGeneratorMockup from '@/components/mockups/EpdReportGeneratorMoc
 const badgeColorMap: Record<string, string> = {
   green: 'bg-green-100 text-green-800',
   orange: 'bg-orange-100 text-orange-800',
-  blue: 'bg-blue-100 text-blue-800',
+  blue: 'bg-emerald-100 text-emerald-800',
   amber: 'bg-amber-100 text-amber-800',
 };
 
@@ -41,7 +41,7 @@ const Epd = () => {
         <section className="mb-16">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <span className="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+              <span className="inline-block bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
                 ISO 14025 · EN 15804
               </span>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -51,12 +51,12 @@ const Epd = () => {
                 {t('epdPage.hero.subtitle')}
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+                <Button size="lg" className="bg-emerald-700 hover:bg-emerald-800" asChild>
                   <Link to={`/${currentLocale}/contact`}>
                     {t('epdPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50" asChild>
+                <Button size="lg" variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50" asChild>
                   <Link to={`/${currentLocale}/contact`}>
                     {t('epdPage.cta.talkExpert')}
                   </Link>
@@ -81,7 +81,7 @@ const Epd = () => {
 
             {/* Right: Report generator mockup */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 to-indigo-200/40 rounded-2xl blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-2xl blur-2xl" />
               <div className="relative rounded-xl overflow-hidden">
                 <EpdReportGeneratorMockup />
               </div>
@@ -90,7 +90,7 @@ const Epd = () => {
         </section>
 
         {/* What is EPD */}
-        <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
+        <section className="mb-16 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border border-emerald-100">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-slate-900">
             {t('epdPage.whatIs.title')}
           </h2>
@@ -99,8 +99,8 @@ const Epd = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {(t('epdPage.whatIs.keyPoints', { returnObjects: true }) as Array<{ title: string; description: string }>)?.map((point, i) => (
-              <Card key={i} className="p-5 border-blue-100 bg-white/80">
-                <CheckCircle className="h-6 w-6 text-blue-600 mb-3" />
+              <Card key={i} className="p-5 border-emerald-100 bg-white/80">
+                <CheckCircle className="h-6 w-6 text-emerald-600 mb-3" />
                 <h4 className="font-semibold text-slate-800 mb-1">{point.title}</h4>
                 <p className="text-sm text-slate-600">{point.description}</p>
               </Card>
@@ -118,7 +118,7 @@ const Epd = () => {
               const AudIcon = audienceIcons[i] || Building2;
               return (
                 <Card key={i} className="p-5 border-slate-200">
-                  <AudIcon className="h-6 w-6 text-blue-600 mb-3" />
+                  <AudIcon className="h-6 w-6 text-emerald-600 mb-3" />
                   <h4 className="font-semibold text-slate-800 mb-1">{aud.title}</h4>
                   <p className="text-sm text-slate-600">{aud.description}</p>
                 </Card>
@@ -136,17 +136,17 @@ const Epd = () => {
             {Array.isArray(processSteps) && processSteps.map((step, i) => {
               const StepIcon = processIcons[i] || FileCheck;
               return (
-                <Card key={i} className="p-6 border-blue-100 relative">
+                <Card key={i} className="p-6 border-emerald-100 relative">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl font-bold text-blue-600">{step.number}</span>
-                    <StepIcon className="h-6 w-6 text-blue-500" />
+                    <span className="text-2xl font-bold text-emerald-700">{step.number}</span>
+                    <StepIcon className="h-6 w-6 text-emerald-600" />
                   </div>
                   <h3 className="font-semibold text-slate-800 mb-2">{step.title}</h3>
                   <p className="text-sm text-slate-600 mb-3">{step.description}</p>
                   <ul className="space-y-1">
                     {Array.isArray(step.details) && step.details.map((d, j) => (
                       <li key={j} className="text-xs text-slate-500 flex items-center gap-1.5">
-                        <CheckCircle className="h-3 w-3 text-blue-400 flex-shrink-0" /> {d}
+                        <CheckCircle className="h-3 w-3 text-emerald-500 flex-shrink-0" /> {d}
                       </li>
                     ))}
                   </ul>
@@ -182,7 +182,7 @@ const Epd = () => {
           <LcaLifecycleMockup />
         </section>
 
-        <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
+        <section className="mb-16 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border border-emerald-100">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
             {t('epdPage.advantages.title')}
           </h2>
@@ -190,8 +190,8 @@ const Epd = () => {
             {Array.isArray(advantages) && advantages.map((adv, i) => {
               const AdvIcon = advantageIcons[i] || CheckCircle;
               return (
-                <Card key={i} className="p-6 border-blue-100 bg-white/80">
-                  <AdvIcon className="h-8 w-8 text-blue-600 mb-4" />
+                <Card key={i} className="p-6 border-emerald-100 bg-white/80">
+                  <AdvIcon className="h-8 w-8 text-emerald-600 mb-4" />
                   <h3 className="font-semibold text-slate-800 mb-2">{adv.title}</h3>
                   <p className="text-sm text-slate-600">{adv.description}</p>
                 </Card>
@@ -216,7 +216,7 @@ const Epd = () => {
                   <TabsTrigger
                     key={i}
                     value={String(i)}
-                    className="data-[state=active]:bg-blue-600 data-[state=active]:text-white px-4 py-2 rounded-full border border-slate-200 data-[state=active]:border-blue-600 text-sm font-medium"
+                    className="data-[state=active]:bg-emerald-700 data-[state=active]:text-white px-4 py-2 rounded-full border border-slate-200 data-[state=active]:border-emerald-700 text-sm font-medium"
                   >
                     {uc.tabLabel}
                   </TabsTrigger>
@@ -236,14 +236,14 @@ const Epd = () => {
                       <ul className="grid md:grid-cols-2 gap-2">
                         {Array.isArray(uc.features) && uc.features.map((f, j) => (
                           <li key={j} className="flex items-start gap-2 text-sm text-slate-700">
-                            <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5 flex-shrink-0" />
                             {f}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div className="mt-6">
-                      <Button className="bg-blue-600 hover:bg-blue-700" asChild>
+                      <Button className="bg-emerald-700 hover:bg-emerald-800" asChild>
                         <Link to={`/${currentLocale}/contact`}>
                           {t('epdPage.useCases.cta')} <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -272,12 +272,12 @@ const Epd = () => {
             {t('epdPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+            <Button size="lg" className="bg-emerald-700 hover:bg-emerald-800" asChild>
               <Link to={`/${currentLocale}/contact`}>
                 {t('epdPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50" asChild>
+            <Button size="lg" variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50" asChild>
               <Link to={`/${currentLocale}/frameworks/product-level/dpp`}>
                 {t('epdPage.cta.seeDpp')}
               </Link>
