@@ -155,7 +155,19 @@ const Epd = () => {
           </div>
         </section>
 
-        {/* Advantages */}
+        {/* Platform Mockup - DPP Passport */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
+            {t('epdPage.platformPreview.title', { defaultValue: currentLocale === 'pl' ? 'Jak to wygląda w platformie' : 'How it looks in the platform' })}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {t('epdPage.platformPreview.subtitle', { defaultValue: currentLocale === 'pl' ? 'Wyniki analizy LCA trafiają bezpośrednio do Cyfrowego Paszportu Produktu — gotowego do publikacji i weryfikacji.' : 'LCA analysis results feed directly into the Digital Product Passport — ready for publication and verification.' })}
+          </p>
+          <div className="max-w-4xl mx-auto">
+            <DppPassportMockup />
+          </div>
+        </section>
+
         <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
             {t('epdPage.advantages.title')}
