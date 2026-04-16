@@ -6,6 +6,8 @@ import { ArrowRight, FileCheck, CheckCircle, Shield, Building2, Factory, Package
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
+import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
+import DppPassportMockup from '@/components/mockups/DppPassportMockup';
 
 const badgeColorMap: Record<string, string> = {
   green: 'bg-green-100 text-green-800',
@@ -76,26 +78,11 @@ const Epd = () => {
               </div>
             </div>
 
-            {/* Right: EPD vs DPP visual */}
+            {/* Right: Platform mockup */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 to-indigo-200/40 rounded-2xl blur-2xl" />
-              <div className="relative bg-white rounded-xl border border-blue-200 p-6 shadow-lg">
-                <h3 className="font-bold text-slate-900 mb-4 text-center">{t('epdPage.hero.comparison.title')}</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-                    <FileCheck className="h-8 w-8 text-blue-600 mb-2" />
-                    <h4 className="font-semibold text-blue-900 text-sm">EPD</h4>
-                    <p className="text-xs text-blue-700 mt-1">{t('epdPage.hero.comparison.epd')}</p>
-                  </div>
-                  <div className="bg-green-50 rounded-lg p-4 border border-green-100">
-                    <Package className="h-8 w-8 text-green-600 mb-2" />
-                    <h4 className="font-semibold text-green-900 text-sm">DPP</h4>
-                    <p className="text-xs text-green-700 mt-1">{t('epdPage.hero.comparison.dpp')}</p>
-                  </div>
-                </div>
-                <div className="mt-4 bg-slate-50 rounded-lg p-3 border border-slate-200 text-center">
-                  <p className="text-xs text-slate-600">{t('epdPage.hero.comparison.common')}</p>
-                </div>
+              <div className="relative rounded-xl overflow-hidden shadow-lg border border-blue-200">
+                <LcaDashboard />
               </div>
             </div>
           </div>
@@ -168,7 +155,19 @@ const Epd = () => {
           </div>
         </section>
 
-        {/* Advantages */}
+        {/* Platform Mockup - DPP Passport */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-slate-900">
+            {t('epdPage.platformPreview.title', { defaultValue: currentLocale === 'pl' ? 'Jak to wygląda w platformie' : 'How it looks in the platform' })}
+          </h2>
+          <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+            {t('epdPage.platformPreview.subtitle', { defaultValue: currentLocale === 'pl' ? 'Wyniki analizy LCA trafiają bezpośrednio do Cyfrowego Paszportu Produktu — gotowego do publikacji i weryfikacji.' : 'LCA analysis results feed directly into the Digital Product Passport — ready for publication and verification.' })}
+          </p>
+          <div className="max-w-4xl mx-auto">
+            <DppPassportMockup />
+          </div>
+        </section>
+
         <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
             {t('epdPage.advantages.title')}
