@@ -3695,7 +3695,205 @@
       ]
     }
   },
-  "nisIIPage": {
+  "productLevelHub": {
+    "title": "Analiza środowiskowa produktu — DPP, EPD, LCA",
+    "description": "Cyfrowe Paszporty Produktowe, Deklaracje Środowiskowe i Analiza Cyklu Życia produktu w jednej platformie. Certyfikat TÜV Nord, baza ecoinvent, integracja GS1.",
+    "hero": {
+      "title": "DPP · EPD · LCA — wszystko w jednej platformie",
+      "subtitle": "Nowe regulacje UE wymagają pełnej przejrzystości środowiskowej produktów. Envirly łączy Cyfrowy Paszport Produktowy (DPP), Deklarację Środowiskową (EPD) i Analizę Cyklu Życia (LCA) w jednym narzędziu."
+    },
+    "cards": {
+      "dpp": {
+        "badge": "ESPR 2024/1781",
+        "title": "Cyfrowy Paszport Produktowy (DPP)",
+        "description": "Obowiązkowy cyfrowy zapis danych produktu z kodem QR. Skład materiałowy, ślad węglowy, naprawialność — wszystko zgodne z Rozporządzeniem ESPR.",
+        "features": ["Integracja GS1 — import po GTIN", "Kod QR + link publiczny", "Baza ecoinvent w cenie", "Certyfikat TÜV Nord"],
+        "cta": "Zobacz DPP",
+        "href": "/frameworks/product-level/dpp"
+      },
+      "epd": {
+        "badge": "ISO 14025 · EN 15804",
+        "title": "Deklaracja Środowiskowa Produktu (EPD)",
+        "description": "Zweryfikowana przez trzecią stronę deklaracja środowiskowa. Wymagana w przetargach, budownictwie i eksporcie B2B.",
+        "features": ["Zgodność z ISO 14025 i EN 15804", "Weryfikacja przez akredytowanego operatora", "Publikacja w rejestrach EPD", "Automatyczny raport z danych LCA"],
+        "cta": "Zobacz EPD",
+        "href": "/frameworks/product-level/epd"
+      },
+      "lca": {
+        "badge": "ISO 14040 · ISO 14044",
+        "title": "Analiza Cyklu Życia (LCA)",
+        "description": "Obliczanie śladu środowiskowego produktu cradle-to-gate lub cradle-to-grave. Fundament dla DPP i EPD.",
+        "features": ["16 kategorii wpływu środowiskowego", "Symulacja Monte Carlo", "Klonowanie modeli dla setek SKU", "Flowchart emisji interaktywny"],
+        "cta": "Zobacz LCA",
+        "href": "/frameworks/product-level/lca-analysis"
+      }
+    },
+    "faq": {
+      "title": "FAQ — Analiza środowiskowa produktu",
+      "items": [
+        { "question": "Czym różni się DPP od EPD?", "answer": "DPP (Digital Product Passport) to cyfrowy nośnik danych produktowych wymagany przez Rozporządzenie ESPR — zawiera skład, ślad węglowy, naprawialność i kod QR. EPD (Environmental Product Declaration) to zweryfikowana przez trzecią stronę deklaracja środowiskowa, stosowana w przetargach i budownictwie (ISO 14025, EN 15804)." },
+        { "question": "Czy potrzebuję LCA do DPP i EPD?", "answer": "Tak — Analiza Cyklu Życia (LCA) jest wspólną bazą obliczeniową zarówno dla DPP (ślad węglowy produktu), jak i EPD (pełna deklaracja środowiskowa). Envirly wykonuje LCA i automatycznie generuje dane do obu dokumentów." },
+        { "question": "Które rozwiązanie wybrać?", "answer": "Jeśli eksportujesz produkty do UE — zacznij od DPP (obowiązkowy od 2027). Jeśli startujesz w przetargach lub budownictwie — wybierz EPD. Jeśli chcesz poznać ślad produktu i zoptymalizować — zacznij od LCA." }
+      ]
+    },
+    "cta": {
+      "title": "Przygotuj swoje produkty na nowe regulacje",
+      "description": "173 firmy już korzystają z Envirly. Certyfikat TÜV Nord. Integracja GS1. Baza ecoinvent w cenie.",
+      "bookDemo": "Umów demo"
+    }
+  },
+  "epdPage": {
+    "title": "Deklaracja Środowiskowa Produktu (EPD) — ISO 14025",
+    "description": "Przygotuj zweryfikowaną Deklarację Środowiskową Produktu (EPD) zgodną z ISO 14025 i EN 15804. Envirly automatyzuje proces od LCA do publikacji w rejestrze EPD.",
+    "hero": {
+      "title": "Deklaracja Środowiskowa Produktu (EPD): Zweryfikowany dowód na jakość środowiskową",
+      "subtitle": "EPD to niezależnie zweryfikowany dokument opisujący wpływ środowiskowy produktu w całym cyklu życia. Coraz częściej wymagany w przetargach publicznych, budownictwie i handlu B2B.",
+      "comparison": {
+        "title": "EPD vs DPP — kluczowe różnice",
+        "epd": "Zweryfikowana deklaracja środowiskowa do komunikacji B2B/B2C. Wymaga weryfikacji przez trzecią stronę.",
+        "dpp": "Cyfrowy paszport danych produktowych. Wymóg regulacyjny UE (ESPR) z kodem QR.",
+        "common": "Wspólna baza: Analiza Cyklu Życia (LCA) wg ISO 14040/14044"
+      }
+    },
+    "whatIs": {
+      "title": "Czym jest EPD?",
+      "description": "Environmental Product Declaration (EPD) to ustandaryzowany dokument środowiskowy oparty na normie ISO 14025. Zawiera wyniki Analizy Cyklu Życia (LCA) produktu, zweryfikowane przez niezależnego operatora programu EPD.",
+      "keyPoints": [
+        { "title": "Oparty na LCA", "description": "Wyniki obliczeń cyklu życia produktu wg ISO 14040/14044 — od surowców po koniec życia." },
+        { "title": "Niezależna weryfikacja", "description": "Każda EPD musi być zweryfikowana przez akredytowaną trzecią stronę (np. ITB, IBU, EPD International)." },
+        { "title": "Publikacja w rejestrze", "description": "Zweryfikowana EPD jest publikowana w międzynarodowym rejestrze — widoczna dla kupujących i zamawiających." }
+      ]
+    },
+    "audience": {
+      "title": "Dla kogo jest EPD?",
+      "items": [
+        { "title": "Budownictwo", "description": "EN 15804 wymaga EPD dla materiałów budowlanych. Green Public Procurement (GPP) w wielu krajach UE." },
+        { "title": "FMCG i opakowania", "description": "Sieci handlowe i kontrahenci wymagają danych środowiskowych. EPD buduje przewagę w przetargach." },
+        { "title": "Eksporterzy B2B", "description": "Korporacje (Raben, BNP) wymagają danych LCA/EPD od dostawców. Bez EPD — bez kontraktu." },
+        { "title": "Zamówienia publiczne", "description": "Green Public Procurement rośnie w UE. EPD daje punkty w przetargach publicznych." }
+      ]
+    },
+    "process": {
+      "title": "EPD w 4 krokach",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Analiza LCA produktu",
+          "description": "Obliczanie śladu środowiskowego produktu w Envirly. Baza ecoinvent, 16 kategorii wpływu.",
+          "details": ["Import danych Excel/CSV/API", "Baza ecoinvent w cenie", "16 kategorii wpływu"]
+        },
+        {
+          "number": "02",
+          "title": "Generowanie raportu EPD",
+          "description": "Automatyczny raport z wyników LCA w formacie wymaganym przez operatora programu EPD.",
+          "details": ["Format zgodny z ISO 14025", "Szablon EN 15804 dla budownictwa", "Export do PDF"]
+        },
+        {
+          "number": "03",
+          "title": "Weryfikacja zewnętrzna",
+          "description": "Niezależny weryfikator sprawdza dane LCA i raport EPD. Envirly przygotowuje pełną dokumentację.",
+          "details": ["Przygotowanie dokumentacji dla weryfikatora", "Wsparcie w procesie rewizji", "Certyfikat TÜV Nord"]
+        },
+        {
+          "number": "04",
+          "title": "Publikacja w rejestrze",
+          "description": "Zweryfikowana EPD trafia do międzynarodowego rejestru i staje się publicznie dostępna.",
+          "details": ["EPD International, IBU, ITB", "Publiczny dostęp dla kupujących", "Ważność 5 lat"]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Dlaczego Envirly do tworzenia EPD?",
+      "items": [
+        { "title": "Certyfikacja TÜV Nord", "description": "ISO 14067 — pierwsza platforma LCA w CEE z tym certyfikatem. Wyniki bronione przed weryfikatorem." },
+        { "title": "Ecoinvent w cenie", "description": "Najlepsza szwajcarska baza faktorów emisji. Nie musisz kupować osobno." },
+        { "title": "Automatyczny raport EPD", "description": "Generuj raport EPD bezpośrednio z wyników LCA. Zgodny z ISO 14025 i EN 15804." },
+        { "title": "Wsparcie weryfikacji", "description": "Przygotowujemy pełną dokumentację dla weryfikatora. Oszczędzasz czas i koszty rewizji." },
+        { "title": "Od LCA do DPP w jednym narzędziu", "description": "LCA, EPD i DPP w jednej platformie — bez przesyłania danych między systemami." },
+        { "title": "Import danych i klonowanie", "description": "Excel/CSV/API import. Klonowanie modeli dla wielu produktów." }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "Scenariusze użycia EPD",
+      "sectionSubtitle": "Wybierz swój scenariusz — każdy wymaga innego podejścia do deklaracji środowiskowej",
+      "keyFeatures": "Kluczowe funkcje",
+      "cta": "Zapytaj o EPD",
+      "items": [
+        {
+          "tabLabel": "Materiały budowlane",
+          "badge": "EN 15804",
+          "badgeColor": "green",
+          "title": "EPD obowiązkowe w przetargach budowlanych",
+          "description": "Producenci materiałów budowlanych potrzebują EPD zgodnej z EN 15804 do przetargów publicznych i certyfikacji BREEAM/LEED. Bez EPD — tracisz przetargi.",
+          "features": [
+            "Szablon EN 15804 wbudowany w platformę",
+            "LCA cradle-to-gate dla materiałów budowlanych",
+            "Gotowe do weryfikacji przez ITB lub IBU",
+            "Publikacja w EPD International",
+            "Punkty w certyfikacji BREEAM i LEED"
+          ]
+        },
+        {
+          "tabLabel": "Opakowania",
+          "badge": "PPWR",
+          "badgeColor": "orange",
+          "title": "EPD jako dowód śladu opakowań",
+          "description": "Nowe Rozporządzenie o Opakowaniach (PPWR) wymaga danych środowiskowych. EPD dla opakowań to sposób na udowodnienie śladu węglowego i recyklowalności.",
+          "features": [
+            "LCA dla różnych typów opakowań",
+            "Porównanie materiałów (plastik vs papier vs szkło)",
+            "Dane do raportowania ESG",
+            "Eksport danych do kontrahentów B2B"
+          ]
+        },
+        {
+          "tabLabel": "Eksporter B2B",
+          "badge": "Wymóg klienta",
+          "badgeColor": "blue",
+          "title": "Korporacja wymaga EPD — musisz dostarczyć",
+          "description": "Duży klient (Raben, IKEA, Leroy Merlin) wymaga od dostawców deklaracji środowiskowej. EPD to standardowy format, który rozumie każda korporacja.",
+          "features": [
+            "Raport EPD w formacie międzynarodowym",
+            "Dane LCA zgodne z GHG Protocol i ISO 14067",
+            "Szybka odpowiedź na zapytanie RFI/RFQ",
+            "Publiczny link do zweryfikowanej EPD",
+            "Przewaga w przetargach B2B"
+          ]
+        },
+        {
+          "tabLabel": "Zamówienia publiczne",
+          "badge": "GPP",
+          "badgeColor": "amber",
+          "title": "Dodatkowe punkty w przetargach publicznych",
+          "description": "Green Public Procurement (GPP) w wielu krajach UE daje dodatkowe punkty za EPD. Producenci z EPD wygrywają przetargi, których nie wygrywa konkurencja bez deklaracji.",
+          "features": [
+            "EPD jako dokument punktowany w GPP",
+            "Zgodność z krajowymi kryteriami GPP",
+            "Publikacja w rejestrze widocznym dla zamawiających",
+            "Ważność EPD — 5 lat bez ponownej weryfikacji"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ — Deklaracja Środowiskowa Produktu (EPD)",
+      "items": [
+        { "question": "Czym jest EPD?", "answer": "EPD (Environmental Product Declaration) to ustandaryzowany dokument oparty na ISO 14025, który opisuje wpływ środowiskowy produktu na podstawie wyników Analizy Cyklu Życia (LCA). Wymaga niezależnej weryfikacji przez akredytowaną trzecią stronę." },
+        { "question": "Czym EPD różni się od DPP?", "answer": "EPD to zweryfikowana deklaracja środowiskowa do komunikacji B2B/B2C (ISO 14025). DPP to cyfrowy paszport danych produktowych wymagany przez Rozporządzenie ESPR (2024/1781). Oba opierają się na danych LCA, ale służą różnym celom." },
+        { "question": "Ile kosztuje EPD?", "answer": "Koszt EPD zależy od złożoności produktu i operatora programu. Z Envirly automatyzujesz etap LCA i generowania raportu, co znacząco obniża koszty w porównaniu z tradycyjnym procesem konsultingowym." },
+        { "question": "Jak długo trwa uzyskanie EPD?", "answer": "Z Envirly etap LCA i raportu zajmuje dni zamiast tygodni. Weryfikacja zewnętrzna trwa zazwyczaj 4-8 tygodni, zależnie od operatora i złożoności produktu." },
+        { "question": "Czy EPD jest obowiązkowe?", "answer": "EPD nie jest jeszcze obowiązkowe regulacyjnie, ale jest de facto wymagane w wielu branżach: budownictwo (EN 15804), zamówienia publiczne (GPP), eksport B2B do korporacji. Brak EPD oznacza utratę przetargów i kontraktów." },
+        { "question": "Czy mogę użyć tego samego LCA do EPD i DPP?", "answer": "Tak — Envirly wykonuje jedną analizę LCA, z której automatycznie generuje dane zarówno do EPD, jak i DPP. Nie musisz duplikować obliczeń ani pracy." }
+      ]
+    },
+    "cta": {
+      "title": "Przygotuj EPD szybciej niż konkurencja",
+      "description": "Automatyczne generowanie raportu EPD z danych LCA. Certyfikat TÜV Nord. Baza ecoinvent w cenie. Wsparcie weryfikacji.",
+      "bookDemo": "Umów demo EPD",
+      "talkExpert": "Porozmawiaj z ekspertem",
+      "seeDpp": "Zobacz Paszport Produktowy (DPP)"
+    }
+  },
     "title": "Dyrektywa NIS 2 (UE)",
     "description": "Kompleksowe rozwiązanie zgodności NIS2 z przepływami pracy opartymi na AI dla organizacji europejskich.",
     "hero": {
