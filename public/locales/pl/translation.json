@@ -8741,13 +8741,13 @@
     "partnership": {
       "title": "Współpraca GS1 Polska × Quantifier.ai",
       "p1": "Współpraca polega na udostępnieniu narzędzia Envirly LCA do paszportu produktowego zgodnego z DPP, gdzie dane integrują się z systemem GS1.",
-      "p2": "Dodatkowo Envirly GHG umożliwia raportowanie emisji gazów cieplarnianych w zakresie 1 i 2, z pełną integracją z infrastrukturą GS1.",
+      "p2": "Dodatkowo Envirly GHG umożliwia raportowanie emisji gazów cieplarnianych w zakresie 1 i 2, z pełną integracją\nz infrastrukturą GS1.",
       "dppLabel": "Paszport produktowy",
       "ghgLabel": "Ślad węglowy organizacji",
-      "membersLabel": "Uczestników Systemu GS1 w Polsce"
+      "membersLabel": "Uczestników Systemu GS1\nw Polsce"
     },
     "quote": {
-      "text": "To świetny przykład tego, jak standaryzacja i technologia mogą wspierać małe i średnie firmy w realizacji ambitnych celów klimatycznych i społecznych. Cieszę się, że możemy czerpać z takich rozwiązań i wspólnie budować z ponad 47 000 Uczestnikami Systemu w Polsce bardziej odporną i transparentną gospodarkę",
+      "text": "To świetny przykład tego, jak standaryzacja i technologia mogą wspierać małe\ni średnie firmy w realizacji ambitnych celów klimatycznych i społecznych. Cieszę się, że możemy czerpać z takich rozwiązań i wspólnie budować z ponad 47 000 Uczestnikami Systemu w Polsce bardziej odporną i transparentną gospodarkę",
       "author": "dr Marta Szymborska",
       "role": "co-CEO, GS1 Polska"
     },
@@ -8780,7 +8780,7 @@
     },
     "business": {
       "title": "Biznesowy rachunek jest prosty",
-      "desc": "Firmy z zweryfikowanymi danymi środowiskowymi produktów wygrywają więcej kontraktów B2B, lepiej negocjują z inwestorami zwracającymi uwagę na ESG i obniżają koszty due diligence w łańcuchu dostaw nawet o 60%.",
+      "desc": "Firmy z zweryfikowanymi danymi środowiskowymi produktów wygrywają więcej kontraktów B2B, lepiej negocjują z inwestorami zwracającymi uwagę na ESG\ni obniżają koszty due diligence w łańcuchu dostaw nawet o 60%.",
       "b2b": "Więcej kontraktów B2B",
       "esg": "Lepsze negocjacje z inwestorami ESG",
       "dueDiligence": "Redukcja kosztów due diligence"
@@ -8805,19 +8805,19 @@
       "subtitle": "Od kodu GTIN i GPC do gotowego paszportu produktowego — w 4 krokach.",
       "step1": {
         "title": "Połącz dane z GS1 przez kody GTIN i GPC",
-        "desc": "Wpisz kod GTIN lub GPC swojego produktu, a system automatycznie zaimportuje dane z bazy GS1. Pełna integracja z infrastrukturą GS1 Polska — bez ręcznego przepisywania."
+        "desc": "Wpisz kod GTIN lub GPC swojego produktu,\na system automatycznie zaimportuje dane z bazy GS1. Pełna integracja z infrastrukturą GS1 Polska — bez ręcznego przepisywania."
       },
       "step2": {
         "title": "Uzupełnij flowchart cyklu życia produktu",
         "desc": "Rozłóż produkt na etapy: surowce, transport, produkcja, dystrybucja, użytkowanie i koniec życia. Uzupełnij dane o emisjach i wpływach środowiskowych — zgodnie z metodyką LCA (ISO 14040/14044)."
       },
       "step3": {
-        "title": "Analizuj scenariusze i optymalizuj ślad węglowy",
+        "title": "Analizuj scenariusze\ni optymalizuj ślad węglowy",
         "desc": "Eksplorator scenariuszy pozwala symulować wpływ zmian: zwiększenie udziału recyklatu, odchudzenie materiału czy optymalizacja transportu. Porównuj warianty i podejmuj decyzje oparte na danych."
       },
       "step4": {
         "title": "Edytuj paszport i udostępnij link",
-        "desc": "Zaprojektuj układ paszportu produktowego: wybierz sekcje, uzupełnij treści i dane, a następnie wygeneruj publiczny link lub kod QR. Gotowy do audytu, gotowy do klienta."
+        "desc": "Zaprojektuj układ paszportu produktowego: wybierz sekcje, uzupełnij treści i dane,\na następnie wygeneruj publiczny link lub kod QR. Gotowy do audytu, gotowy do klienta."
       }
     }
   },
