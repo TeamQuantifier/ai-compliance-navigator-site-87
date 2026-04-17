@@ -60,11 +60,6 @@ const LcaAnalysis = () => {
                     {t('lcaPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-amber-200 text-amber-700 hover:bg-amber-50" asChild>
-                  <Link to={`/${currentLocale}/contact`}>
-                    {t('lcaPage.cta.talkExpert')}
-                  </Link>
-                </Button>
               </div>
               {/* TÜV NORD */}
               <div className="flex items-center space-x-3 mt-6 pt-6 border-t border-slate-200">
