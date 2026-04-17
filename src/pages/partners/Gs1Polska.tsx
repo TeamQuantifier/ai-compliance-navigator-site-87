@@ -149,7 +149,7 @@ const Gs1Polska = () => {
             <div>
               <h2 className="text-3xl font-bold text-foreground mb-4">{t('gs1.partnership.title')}</h2>
               <p className="text-lg text-muted-foreground mb-4">{t('gs1.partnership.p1')}</p>
-              <p className="text-lg text-muted-foreground">{t('gs1.partnership.p2')}</p>
+              <p className="text-lg text-muted-foreground whitespace-pre-line">{t('gs1.partnership.p2')}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg}`}>
@@ -165,7 +165,7 @@ const Gs1Polska = () => {
               <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg}`}>
                 <Globe className={`h-10 w-10 ${brand.accent} mx-auto mb-3`} />
                 <p className="font-bold text-2xl text-foreground">47 000+</p>
-                <p className="text-sm text-muted-foreground mt-1">{t('gs1.partnership.membersLabel')}</p>
+                <p className="text-sm text-muted-foreground mt-1 whitespace-pre-line">{t('gs1.partnership.membersLabel')}</p>
               </Card>
               <Card className={`p-6 text-center ${brand.cardBorder} ${brand.cardBg2}`}>
                 <Shield className={`h-10 w-10 ${brand.accent} mx-auto mb-3`} />
@@ -181,7 +181,7 @@ const Gs1Polska = () => {
           <div className={`relative ${brand.quoteBg} rounded-2xl p-10 md:p-14 overflow-hidden border border-primary/20`}>
             <Quote className="absolute top-6 left-6 h-20 w-20 text-primary/10" />
             <blockquote className="relative z-10">
-              <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6 text-white">
+              <p className="text-xl md:text-2xl font-medium italic leading-relaxed mb-6 text-white whitespace-pre-line">
                 &ldquo;{t('gs1.quote.text')}&rdquo;
               </p>
               <footer className="flex items-center gap-5">
@@ -222,8 +222,8 @@ const Gs1Polska = () => {
                       <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg ${brand.stepCircle}`}>
                         {s.step}
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground">{t(s.titleKey)}</h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">{t(s.descKey)}</p>
+                      <h3 className="text-2xl font-bold text-foreground whitespace-pre-line">{t(s.titleKey)}</h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">{t(s.descKey)}</p>
                     </div>
                     <div className="md:w-3/5">
                       {mockups[i]}
@@ -283,7 +283,7 @@ const Gs1Polska = () => {
         <section className="mb-20">
           <div className={`${brand.businessBg} rounded-2xl p-10 md:p-14`}>
             <h2 className="text-3xl font-bold mb-4 text-white">{t('gs1.business.title')}</h2>
-            <p className="text-xl text-white/80 mb-8 max-w-3xl">{t('gs1.business.desc')}</p>
+            <p className="text-xl text-white/80 mb-8 max-w-3xl whitespace-pre-line">{t('gs1.business.desc')}</p>
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
                 <p className="text-4xl font-extrabold mb-2 text-white">B2B</p>
