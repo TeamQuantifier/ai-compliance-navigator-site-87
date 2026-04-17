@@ -3498,123 +3498,644 @@
     }
   },
   "productLevelPage": {
-    "title": "Product-Level Compliance, Powered by AI",
-    "description": "Build sustainable, transparent products from the ground up. Quantifier brings intelligence and automation to your product compliance—so you can meet regulatory demands and customer expectations with ease.",
-    "tabs": {
-      "dpp": "Digital Product Passport",
-      "lca": "Life Cycle Assessment"
-    },
-    "dpp": {
-      "title": "Digital Product Passport (DPP): Future-Proof Your Products",
-      "description": "DPP is the new standard for transparency and circularity. Quantifier helps you generate, manage, and update digital product passports automatically—ensuring compliance with EU regulations and positioning your brand for the next generation of sustainable markets.",
-      "featuresTitle": "You get:",
-      "features": [
+    "title": "Digital Product Passport (DPP) — ESPR Compliance",
+    "description": "Prepare your products for the ESPR 2024/1781 Regulation. Envirly automates Digital Product Passport creation — from GS1 identification, through environmental data, to QR code generation.",
+    "hero": {
+      "title": "Digital Product Passport (DPP): Get Ready Before Regulations Catch Up",
+      "subtitle": "The ESPR 2024/1781 Regulation mandates Digital Product Passports for successive product categories from 2027. The EU Central Registry launches in July 2026. Companies without DPP will lose access to the EU market.",
+      "problems": [
         {
-          "title": "AI-generated DPPs",
-          "description": "Automatically aligned with EU Ecodesign Regulation (ESPR)"
+          "icon": "📋",
+          "title": "EU Regulatory Requirements",
+          "description": "Ecodesign Regulation (ESPR), mandatory DPPs, PEF and CBAM — new regulations demand full product data transparency."
         },
         {
-          "title": "Real-time data collection",
-          "description": "Gather information across your entire supply chain"
+          "icon": "🏢",
+          "title": "Market Pressure",
+          "description": "Buyers, banks and contractors require environmental data, EPDs and LCAs. Public procurement increasingly mandates product footprint."
         },
         {
-          "title": "Automated updates",
-          "description": "When inputs, materials, or regulations change"
-        },
-        {
-          "title": "Easy integration",
-          "description": "With QR codes, NFC, or third-party platforms"
-        },
-        {
-          "title": "Ready-to-share passports",
-          "description": "That meet industry-specific requirements"
+          "icon": "⚠️",
+          "title": "Risk Without DPP",
+          "description": "No passport = EU export block. No certification = lost contracts. Competitors with DPP are years ahead."
         }
-      ],
-      "dashboardTitle": "Digital Product Passport Completion",
-      "insightTitle": "Quantifier's AI Generated Insights:",
-      "insight": "Your product passport is 82% complete. Add more end-of-life recycling details to improve compliance with upcoming EU regulations."
+      ]
     },
-    "lca": {
-      "title": "LCA (Life Cycle Assessment): Understand and Optimize Environmental Impact",
-      "description": "Quantifier transforms life cycle assessments from a one-off burden into a continuous, intelligent process. Automate data gathering, track changes over time, and reduce your environmental footprint with clarity.",
-      "featuresTitle": "You get:",
-      "features": [
+    "timeline": {
+      "title": "EU DPP Implementation Timeline",
+      "steps": [
         {
-          "title": "Step-by-step, AI-guided LCA workflows",
-          "description": "Based on ISO 14040/44 standards"
+          "date": "July 2026",
+          "title": "EU Central Registry",
+          "description": "Launch of the European product passport registry — technical infrastructure ready to accept data."
         },
         {
-          "title": "Integrated supplier data collection",
-          "description": "And emissions calculations"
+          "date": "February 2027",
+          "title": "Batteries & Accumulators",
+          "description": "Mandatory DPP for industrial, EV and portable batteries above 2 kWh (Regulation 2023/1542)."
         },
         {
-          "title": "Material libraries and benchmarking tools",
-          "description": "Built in for easy comparison"
+          "date": "2028",
+          "title": "Textiles & Apparel",
+          "description": "Planned DPP requirement for clothing and textiles — material composition, carbon footprint, repair and recycling instructions."
         },
         {
-          "title": "Exportable, audit-ready reports",
-          "description": "For internal and external use"
+          "date": "2028–2029",
+          "title": "Electronics & ICT",
+          "description": "Delegated acts for electronic devices — repairability information, spare parts and lifespan data."
         },
         {
-          "title": "Full transparency",
-          "description": "From raw material to end-of-life"
+          "date": "2029–2030",
+          "title": "Furniture, Construction Materials & More",
+          "description": "Additional product categories covered by DPP obligation. Full ESPR implementation by 2030."
         }
-      ],
-      "dashboardTitle": "Life Cycle Impact Assessment",
-      "insightTitle": "Quantifier's AI Recommendation:",
-      "insight": "Focus on raw material sourcing to reduce your largest environmental impacts. Consider alternative suppliers with documented sustainability practices."
+      ]
     },
-    "whyQuantifier": {
-      "title": "Why Quantifier for Product-Level Compliance?",
-      "features": {
-        "aiPowered": {
-          "title": "AI-Powered Data Collection & Reporting",
-          "description": "Eliminate bottlenecks by letting autonomous agents gather and verify product data."
+    "process": {
+      "title": "Product Passport in 4 Steps",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Product Identification",
+          "description": "Automatic data import via GTIN code. Integration with GS1.",
+          "details": [
+            "GTIN / GPC import",
+            "GS1 verification",
+            "Product category"
+          ]
         },
-        "alwaysUpdated": {
-          "title": "Always Up to Date",
-          "description": "Your passports and LCAs evolve in real time as materials, suppliers, or rules change."
+        {
+          "number": "02",
+          "title": "Enter Data",
+          "description": "Import Excel/CSV, API or manual entry. AI Assistant helps at every step.",
+          "details": [
+            "Excel / CSV import",
+            "AI Assistant + help center",
+            "Built-in Ecoinvent database"
+          ]
         },
-        "designedCircularity": {
-          "title": "Designed for Circularity",
-          "description": "From recyclability to emissions, Quantifier helps you build better products—and prove it."
+        {
+          "number": "03",
+          "title": "Emission Flowchart",
+          "description": "Interactive lifecycle flowchart: raw materials → manufacturing → distribution → end of life.",
+          "details": [
+            "LCA flowchart",
+            "16 impact categories",
+            "Sensitivity analysis"
+          ]
         },
-        "fastCompliance": {
-          "title": "Fast Time-to-Compliance",
-          "description": "Launch new products in new markets without worrying about regulatory delays."
+        {
+          "number": "04",
+          "title": "Generate DPP",
+          "description": "Product passport with QR code and link. Live preview in mobile and desktop.",
+          "details": [
+            "QR code + link",
+            "Live preview",
+            "ESPR compliant"
+          ]
         }
-      }
+      ]
+    },
+    "categories": {
+      "title": "Product Categories Covered by DPP",
+      "subtitle": "Mandatory Digital Product Passport implementation schedule per ESPR Regulation 2024/1781.",
+      "colCategory": "Product Category",
+      "colAct": "Delegated Act",
+      "colDeadline": "Deadline",
+      "items": [
+        {
+          "category": "Industrial & EV Batteries",
+          "act": "Regulation 2023/1542",
+          "deadline": "February 2027"
+        },
+        {
+          "category": "Textiles & Apparel",
+          "act": "ESPR — delegated act",
+          "deadline": "2028"
+        },
+        {
+          "category": "Electronics & ICT",
+          "act": "ESPR — delegated act",
+          "deadline": "2028–2029"
+        },
+        {
+          "category": "Furniture",
+          "act": "ESPR — delegated act",
+          "deadline": "2029"
+        },
+        {
+          "category": "Construction Materials",
+          "act": "ESPR + CPR",
+          "deadline": "2029–2030"
+        },
+        {
+          "category": "Iron & Steel",
+          "act": "ESPR — delegated act",
+          "deadline": "2030"
+        }
+      ]
+    },
+    "dataRequirements": {
+      "title": "Mandatory DPP Data Requirements",
+      "items": [
+        {
+          "title": "Material Composition",
+          "description": "Full list of materials, hazardous substances and recycled material content."
+        },
+        {
+          "title": "Carbon Footprint",
+          "description": "CO₂ emissions across product lifecycle — from raw materials to end of life (cradle-to-grave)."
+        },
+        {
+          "title": "Energy Efficiency",
+          "description": "Energy class, usage-phase energy consumption and benchmark comparison."
+        },
+        {
+          "title": "Durability & Repairability",
+          "description": "Product lifespan, spare parts availability, repair instructions."
+        },
+        {
+          "title": "End-of-Life Information",
+          "description": "Recycling, disassembly and proper waste handling instructions."
+        },
+        {
+          "title": "Compliance & Certifications",
+          "description": "CE declaration of conformity, environmental certificates, ISO standards and audits."
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Why Envirly for DPP?",
+      "items": [
+        {
+          "title": "Ecoinvent Included",
+          "description": "The best Swiss emission factor database. No separate purchase needed — included in platform pricing."
+        },
+        {
+          "title": "TÜV Nord Certified",
+          "description": "ISO 14067 — first LCA platform in CEE with this certification. Trusted by clients and regulators."
+        },
+        {
+          "title": "GS1 Integration",
+          "description": "Import product data via GTIN code. Trusted by GS1 — 70+ clients from the ecosystem."
+        },
+        {
+          "title": "Scenario Modeling",
+          "description": "Compare product variants, optimize footprint. Monte Carlo simulation."
+        },
+        {
+          "title": "Excel / CSV / API Import",
+          "description": "Flexible data import. Integration with existing ERP systems and databases."
+        },
+        {
+          "title": "AI Assistant + Help Center",
+          "description": "Support at every step. Training materials, tutorials, dedicated team."
+        }
+      ]
+    },
+    "industries": {
+      "title": "DPP Industry Applications",
+      "items": [
+        {
+          "title": "Manufacturing",
+          "description": "DPP for industrial products, reporting to buyers (DE, FR, NL).",
+          "clients": "📌 Hilding Anders, Cersanit, Black Red White"
+        },
+        {
+          "title": "FMCG & Chemicals",
+          "description": "Product footprint for cleaning and cosmetic products. EPD for tenders and retail chains.",
+          "clients": "📌 Dr Irena Eris, Herbapol, Wosana"
+        },
+        {
+          "title": "Fashion & Textile",
+          "description": "DPP compliant with EU textile requirements from 2028.",
+          "clients": "📌 4F (OTCF), Tatuum, Kazar"
+        },
+        {
+          "title": "Pharma & Healthcare",
+          "description": "LCA for pharmaceutical products and supplements. Scope 3 purchased products.",
+          "clients": "📌 Pelion (300+ subsidiaries)"
+        },
+        {
+          "title": "Food & Beverage",
+          "description": "Cradle-to-gate food footprint. EUDR support, ESG reporting for supply chains.",
+          "clients": "📌 Maspex, Cedrob, AmRest"
+        },
+        {
+          "title": "Media & Marketing",
+          "description": "LCA for advertising campaigns, OOH material footprint, ESG reporting.",
+          "clients": "📌 Jet Line (OOH campaigns)"
+        }
+      ]
     },
     "cta": {
-      "title": "Make Your Products Compliant—and Competitive",
-      "description": "Smarter compliance. Stronger transparency. Lower impact. Quantifier gives your products the intelligence they need to lead.",
+      "title": "Prepare Your Products for DPP — Before It's Too Late",
+      "description": "173 companies already use Envirly LCA. TÜV Nord certified. GS1 integration. Start building product passports today.",
       "bookDemo": "Book a Demo",
-      "talkExpert": "Talk to Our Product Compliance Expert"
+      "talkExpert": "Talk to a DPP Expert"
+    },
+    "useCases": {
+      "sectionTitle": "Who is Envirly LCA for?",
+      "sectionSubtitle": "Choose your scenario — each requires a different approach to life cycle analysis",
+      "items": [
+        {
+          "tabLabel": "Single product",
+          "badge": "1 physical product",
+          "badgeColor": "green",
+          "title": "1 day instead of 6 weeks",
+          "description": "Have a single physical product and need LCA or DPP? GS1 integration eliminates half the manual work, ecoinvent database does the rest. Instead of waiting 6 weeks for a consultant — you get results in 1 day.",
+          "features": [
+            "Automatic product identification via GS1 GTIN",
+            "ecoinvent database integrated into modeling",
+            "DPP generation with QR code in one click",
+            "TÜV Nord certification — results defensible in audit",
+            "Export to PDF and link to public passport"
+          ]
+        },
+        {
+          "tabLabel": "Dozens/hundreds of SKUs",
+          "badge": "Catalog scale",
+          "badgeColor": "orange",
+          "title": "Entire catalog without linear cost growth",
+          "description": "You are not buying another LCA analysis — you are buying management of your entire catalog. Model cloning and Excel import give you an absolute advantage over consultants who price each SKU separately.",
+          "features": [
+            "LCA model cloning — change a material, everything recalculates",
+            "Data import from Excel/CSV for hundreds of products at once",
+            "Bulk export of passports and reports",
+            "Side-by-side product variant comparison",
+            "Dashboard with full portfolio overview"
+          ]
+        },
+        {
+          "tabLabel": "Variable composition",
+          "badge": "Variability & uncertainty",
+          "badgeColor": "red",
+          "title": "691 ±8% instead of a single point",
+          "description": "Most competitors give a single result (e.g., '691 kg CO₂'). Envirly with Monte Carlo says '691 ±8%' — which is more professional and defensible before an auditor. Ideal when composition or transport routes change.",
+          "features": [
+            "Monte Carlo simulation for uncertainty analysis",
+            "Result ranges instead of a single point value",
+            "What-if scenarios for variable transport routes",
+            "Auditor sees confidence intervals — no need to question",
+            "Compliance with ISO 14044 uncertainty requirements"
+          ]
+        },
+        {
+          "tabLabel": "Services & SaaS",
+          "badge": "Not just factories",
+          "badgeColor": "blue",
+          "title": "LCA for campaigns, code, and logistics",
+          "description": "LCA is associated with factories, but a growing market is services. Media agencies (Jet Line already does it), IT companies, logistics operators calculating 'transport service' footprint — all need a tool that understands the service model.",
+          "features": [
+            "Carbon footprint modeling for services and processes",
+            "Scope 1, 2 and 3 emission categories for services",
+            "Reports for B2B clients requiring ESG data",
+            "Service benchmarking vs industry average",
+            "Integration with operational data (energy consumption, travel)"
+          ]
+        },
+        {
+          "tabLabel": "B2B Supplier",
+          "badge": "Viral effect",
+          "badgeColor": "amber",
+          "title": "Big client asks — you must answer",
+          "description": "Raben asks its 1,000 suppliers, BNP asks its clients — every such 'big client' creates a wave of environmental data requests. Envirly lets you respond professionally, quickly and in the standard expected by corporations.",
+          "features": [
+            "Ready-made reports in corporate-required format",
+            "LCA data compliant with GHG Protocol and ISO 14067",
+            "Quick response to RFI/RFQ on carbon footprint",
+            "Public passport link — client verifies independently",
+            "Competitive advantage in B2B tenders"
+          ]
+        }
+      ],
+      "cta": "Request a quote",
+      "keyFeatures": "Key features"
     },
     "faq": {
-      "title": "FAQ — Product-Level Compliance",
+      "title": "FAQ — Digital Product Passport (DPP)",
       "items": [
         {
           "question": "What is a Digital Product Passport (DPP)?",
-          "answer": "A DPP is a digital record containing information about a product materials, manufacturing, certifications, and end-of-life handling. The EU Battery Regulation and Ecodesign Regulation require DPPs for certain product categories starting 2027."
+          "answer": "A DPP is a digital product data record required by ESPR Regulation 2024/1781. It contains information about material composition, carbon footprint, repairability and recycling instructions. Accessible via QR code or link."
         },
         {
-          "question": "How does Quantifier help with DPP compliance?",
-          "answer": "Quantifier automates data collection across your supply chain, generates standardized DPPs, manages QR code linking, and ensures your product data meets evolving EU requirements."
+          "question": "When does DPP become mandatory?",
+          "answer": "The EU Central Registry launches in July 2026. First product categories (batteries) require DPP from February 2027. Textiles from 2028, electronics 2028–2029, furniture and construction materials by 2030."
         },
         {
-          "question": "What is the difference between DPP and LCA?",
-          "answer": "DPP is a product-level data record required by regulation. LCA (Life Cycle Assessment) is an analytical methodology measuring environmental impact across a product lifecycle. Quantifier supports both — LCA data can feed directly into your DPP."
+          "question": "What data must a product passport contain?",
+          "answer": "Mandatory elements include: material composition, carbon footprint (cradle-to-grave), energy efficiency, durability and repairability, recycling instructions and compliance certificates. Details depend on product category."
         },
         {
-          "question": "Which industries need Digital Product Passports?",
-          "answer": "Starting with batteries (2027), the DPP requirement will expand to textiles, construction materials, electronics, and other sectors under the EU Ecodesign for Sustainable Products Regulation (ESPR)."
+          "question": "What happens if I don't implement DPP on time?",
+          "answer": "Products without a valid DPP will not be allowed on the EU market. This means export blocks, lost contracts with retail chains and risk of financial penalties."
         },
         {
-          "question": "Can I manage product compliance across multiple regions?",
-          "answer": "Yes. Quantifier supports multi-region compliance requirements, tracking which products need DPPs in which markets, and adapting documentation to local regulatory requirements."
+          "question": "How does Envirly help create DPPs?",
+          "answer": "Envirly automates the entire process: product identification via GS1 (GTIN), environmental data import, interactive lifecycle flowchart, passport editing with live preview and QR code generation. Ecoinvent database and TÜV Nord certificate included."
+        },
+        {
+          "question": "Does DPP require carbon footprint calculation (LCA)?",
+          "answer": "Yes — product carbon footprint is one of the mandatory DPP elements. Envirly connects LCA calculations (ISO 14067, PEF) directly with the product passport generator."
         }
       ]
+    }
+  },
+  "productLevelHub": {
+    "title": "Product Environmental Analysis — DPP, EPD, LCA",
+    "description": "Digital Product Passports, Environmental Product Declarations and Life Cycle Analysis in one platform. TÜV Nord certified, ecoinvent database, GS1 integration.",
+    "hero": {
+      "title": "DPP · EPD · LCA — Everything in One Platform",
+      "subtitle": "New EU regulations require full environmental transparency of products. Envirly combines Digital Product Passport (DPP), Environmental Product Declaration (EPD) and Life Cycle Analysis (LCA) in one tool."
+    },
+    "cards": {
+      "dpp": {
+        "badge": "ESPR 2024/1781",
+        "title": "Digital Product Passport (DPP)",
+        "description": "Mandatory digital product data record with QR code. Material composition, carbon footprint, repairability — all ESPR compliant.",
+        "features": [
+          "GS1 integration — GTIN import",
+          "QR code + public link",
+          "Ecoinvent included",
+          "TÜV Nord certified"
+        ],
+        "cta": "See DPP",
+        "href": "/frameworks/product-level/dpp"
+      },
+      "epd": {
+        "badge": "ISO 14025 · EN 15804",
+        "title": "Environmental Product Declaration (EPD)",
+        "description": "Third-party verified environmental declaration. Required in tenders, construction and B2B export.",
+        "features": [
+          "ISO 14025 & EN 15804 compliant",
+          "Accredited operator verification",
+          "EPD registry publication",
+          "Automated report from LCA data"
+        ],
+        "cta": "See EPD",
+        "href": "/frameworks/product-level/epd"
+      },
+      "lca": {
+        "badge": "ISO 14040 · ISO 14044",
+        "title": "Life Cycle Analysis (LCA)",
+        "description": "Calculate product environmental footprint cradle-to-gate or cradle-to-grave. Foundation for both DPP and EPD.",
+        "features": [
+          "16 environmental impact categories",
+          "Monte Carlo simulation",
+          "Model cloning for hundreds of SKUs",
+          "Interactive emission flowchart"
+        ],
+        "cta": "See LCA",
+        "href": "/frameworks/product-level/lca-analysis"
+      }
+    },
+    "faq": {
+      "title": "FAQ — Product Environmental Analysis",
+      "items": [
+        {
+          "question": "What is the difference between DPP and EPD?",
+          "answer": "DPP (Digital Product Passport) is a digital product data carrier required by ESPR Regulation — it contains composition, carbon footprint, repairability and a QR code. EPD (Environmental Product Declaration) is a third-party verified environmental declaration used in tenders and construction (ISO 14025, EN 15804)."
+        },
+        {
+          "question": "Do I need LCA for both DPP and EPD?",
+          "answer": "Yes — Life Cycle Analysis (LCA) is the shared calculation base for both DPP (product carbon footprint) and EPD (full environmental declaration). Envirly performs LCA and automatically generates data for both documents."
+        },
+        {
+          "question": "Which solution should I choose?",
+          "answer": "If you export products to the EU — start with DPP (mandatory from 2027). If you participate in tenders or construction — choose EPD. If you want to understand your product footprint and optimize — start with LCA."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prepare Your Products for New Regulations",
+      "description": "173 companies already use Envirly. TÜV Nord certified. GS1 integration. Ecoinvent database included.",
+      "bookDemo": "Book a Demo"
+    }
+  },
+  "epdPage": {
+    "title": "Environmental Product Declaration (EPD) — ISO 14025",
+    "description": "Prepare a verified Environmental Product Declaration (EPD) compliant with ISO 14025 and EN 15804. Envirly automates the process from LCA to EPD registry publication.",
+    "hero": {
+      "title": "Environmental Product Declaration (EPD): Verified Proof of Environmental Quality",
+      "subtitle": "An EPD is an independently verified document describing the environmental impact of a product across its entire lifecycle. Increasingly required in public procurement, construction and B2B trade.",
+      "comparison": {
+        "title": "EPD vs DPP — Key Differences",
+        "epd": "Verified environmental declaration for B2B/B2C communication. Requires third-party verification.",
+        "dpp": "Digital product data passport. EU regulatory requirement (ESPR) with QR code.",
+        "common": "Shared foundation: Life Cycle Analysis (LCA) per ISO 14040/14044"
+      }
+    },
+    "whatIs": {
+      "title": "What is an EPD?",
+      "description": "An Environmental Product Declaration (EPD) is a standardized environmental document based on ISO 14025. It contains Life Cycle Analysis (LCA) results for a product, verified by an independent EPD program operator.",
+      "keyPoints": [
+        {
+          "title": "Based on LCA",
+          "description": "Product lifecycle calculation results per ISO 14040/14044 — from raw materials to end of life."
+        },
+        {
+          "title": "Independent Verification",
+          "description": "Every EPD must be verified by an accredited third party (e.g., ITB, IBU, EPD International)."
+        },
+        {
+          "title": "Registry Publication",
+          "description": "Verified EPDs are published in international registries — visible to buyers and procurement officers."
+        }
+      ]
+    },
+    "audience": {
+      "title": "Who Needs EPD?",
+      "items": [
+        {
+          "title": "Construction",
+          "description": "EN 15804 requires EPDs for construction materials. Green Public Procurement (GPP) in many EU countries."
+        },
+        {
+          "title": "FMCG & Packaging",
+          "description": "Retail chains and contractors require environmental data. EPD builds competitive advantage in tenders."
+        },
+        {
+          "title": "B2B Exporters",
+          "description": "Corporations (Raben, BNP) require LCA/EPD data from suppliers. No EPD — no contract."
+        },
+        {
+          "title": "Public Procurement",
+          "description": "Green Public Procurement is growing in the EU. EPD provides bonus points in public tenders."
+        }
+      ]
+    },
+    "process": {
+      "title": "EPD in 4 Steps",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Product LCA Analysis",
+          "description": "Calculate product environmental footprint in Envirly. Ecoinvent database, 16 impact categories.",
+          "details": [
+            "Excel/CSV/API data import",
+            "Ecoinvent included",
+            "16 impact categories"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Generate EPD Report",
+          "description": "Automated report from LCA results in the format required by EPD program operator.",
+          "details": [
+            "ISO 14025 compliant format",
+            "EN 15804 template for construction",
+            "PDF export"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "External Verification",
+          "description": "Independent verifier reviews LCA data and EPD report. Envirly prepares full documentation.",
+          "details": [
+            "Documentation for verifier",
+            "Revision support",
+            "TÜV Nord certificate"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Registry Publication",
+          "description": "Verified EPD is published in an international registry and becomes publicly accessible.",
+          "details": [
+            "EPD International, IBU, ITB",
+            "Public access for buyers",
+            "5-year validity"
+          ]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Why Envirly for EPD?",
+      "items": [
+        {
+          "title": "TÜV Nord Certified",
+          "description": "ISO 14067 — first LCA platform in CEE with this certification. Results defensible before verifiers."
+        },
+        {
+          "title": "Ecoinvent Included",
+          "description": "Best Swiss emission factor database. No separate purchase needed."
+        },
+        {
+          "title": "Automated EPD Report",
+          "description": "Generate EPD report directly from LCA results. ISO 14025 and EN 15804 compliant."
+        },
+        {
+          "title": "Verification Support",
+          "description": "We prepare full documentation for the verifier. Save time and revision costs."
+        },
+        {
+          "title": "LCA to DPP in One Tool",
+          "description": "LCA, EPD and DPP in one platform — no data transfer between systems."
+        },
+        {
+          "title": "Data Import & Cloning",
+          "description": "Excel/CSV/API import. Model cloning for multiple products."
+        }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "EPD Use Cases",
+      "sectionSubtitle": "Choose your scenario — each requires a different approach to environmental declarations",
+      "keyFeatures": "Key features",
+      "cta": "Ask about EPD",
+      "items": [
+        {
+          "tabLabel": "Construction Materials",
+          "badge": "EN 15804",
+          "badgeColor": "green",
+          "title": "EPD mandatory in construction tenders",
+          "description": "Construction material manufacturers need EN 15804-compliant EPDs for public tenders and BREEAM/LEED certification. Without EPD — you lose tenders.",
+          "features": [
+            "Built-in EN 15804 template",
+            "Cradle-to-gate LCA for construction materials",
+            "Ready for ITB or IBU verification",
+            "EPD International publication",
+            "BREEAM and LEED certification points"
+          ]
+        },
+        {
+          "tabLabel": "Packaging",
+          "badge": "PPWR",
+          "badgeColor": "orange",
+          "title": "EPD as packaging footprint proof",
+          "description": "The new Packaging and Packaging Waste Regulation (PPWR) requires environmental data. EPD for packaging proves carbon footprint and recyclability.",
+          "features": [
+            "LCA for different packaging types",
+            "Material comparison (plastic vs paper vs glass)",
+            "ESG reporting data",
+            "B2B contractor data export"
+          ]
+        },
+        {
+          "tabLabel": "B2B Exporter",
+          "badge": "Client requirement",
+          "badgeColor": "blue",
+          "title": "Corporation requires EPD — you must deliver",
+          "description": "Major clients (Raben, IKEA, Leroy Merlin) require environmental declarations from suppliers. EPD is the standard format understood by every corporation.",
+          "features": [
+            "International format EPD report",
+            "LCA data compliant with GHG Protocol and ISO 14067",
+            "Quick RFI/RFQ response",
+            "Public link to verified EPD",
+            "B2B tender competitive advantage"
+          ]
+        },
+        {
+          "tabLabel": "Public Procurement",
+          "badge": "GPP",
+          "badgeColor": "amber",
+          "title": "Extra points in public tenders",
+          "description": "Green Public Procurement (GPP) in many EU countries awards extra points for EPD. Manufacturers with EPD win tenders that competitors without declarations cannot.",
+          "features": [
+            "EPD as scored document in GPP",
+            "National GPP criteria compliance",
+            "Publication in buyer-visible registry",
+            "5-year EPD validity without re-verification"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ — Environmental Product Declaration (EPD)",
+      "items": [
+        {
+          "question": "What is an EPD?",
+          "answer": "An EPD (Environmental Product Declaration) is a standardized document based on ISO 14025 that describes the environmental impact of a product based on Life Cycle Analysis (LCA) results. It requires independent verification by an accredited third party."
+        },
+        {
+          "question": "How does EPD differ from DPP?",
+          "answer": "EPD is a verified environmental declaration for B2B/B2C communication (ISO 14025). DPP is a digital product data passport required by ESPR Regulation (2024/1781). Both are based on LCA data but serve different purposes."
+        },
+        {
+          "question": "How much does an EPD cost?",
+          "answer": "EPD cost depends on product complexity and program operator. With Envirly, you automate the LCA and report generation stages, significantly reducing costs compared to traditional consulting."
+        },
+        {
+          "question": "How long does it take to get an EPD?",
+          "answer": "With Envirly, the LCA and report stage takes days instead of weeks. External verification typically takes 4-8 weeks, depending on the operator and product complexity."
+        },
+        {
+          "question": "Is EPD mandatory?",
+          "answer": "EPD is not yet legally mandatory, but it is de facto required in many industries: construction (EN 15804), public procurement (GPP), B2B export to corporations. Lack of EPD means lost tenders and contracts."
+        },
+        {
+          "question": "Can I use the same LCA for EPD and DPP?",
+          "answer": "Yes — Envirly performs one LCA analysis from which it automatically generates data for both EPD and DPP. No need to duplicate calculations or work."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prepare Your EPD Faster Than Competitors",
+      "description": "Automated EPD report generation from LCA data. TÜV Nord certified. Ecoinvent database included. Verification support.",
+      "bookDemo": "Book EPD Demo",
+      "talkExpert": "Talk to an Expert",
+      "seeDpp": "See Digital Product Passport (DPP)"
     }
   },
   "nisIIPage": {
@@ -8346,6 +8867,198 @@
         "title": "Edit the passport and share the link",
         "desc": "Design the product passport layout: choose sections, fill in content and data, then generate a public link or QR code. Audit-ready, client-ready."
       }
+    }
+  },
+  "lcaPage": {
+    "title": "LCA Analysis — Life Cycle Assessment",
+    "description": "Conduct ISO 14040/14044 and PEF-compliant LCA analysis. Identify hotspots, compare scenarios, and generate data for EPD, DPP, and CSRD reporting.",
+    "hero": {
+      "title": "LCA Analysis: From Data to Decarbonisation Decisions",
+      "subtitle": "Life Cycle Assessment (LCA) is the only methodology that provides a complete picture of a product's environmental impact — from raw materials to end of life. LCA results feed into EPD, DPP, and ESG reporting."
+    },
+    "whatIs": {
+      "title": "What is LCA?",
+      "description": "Life Cycle Assessment (LCA) is a standardised method for evaluating the environmental impact of a product, service, or organisation across its entire lifecycle — in accordance with ISO 14040 and ISO 14044.",
+      "keyPoints": [
+        {
+          "title": "Definition",
+          "description": "Systematic analysis of environmental impacts from raw material extraction, through manufacturing and use, to end of life."
+        },
+        {
+          "title": "Purpose",
+          "description": "Identify emission hotspots, compare design variants, and provide data for EPD certification, PEF, and CSRD/ESRS reporting."
+        },
+        {
+          "title": "Output",
+          "description": "Quantification of impact across 16+ categories (GWP, AP, EP, ODP) broken down by lifecycle stage with report generation."
+        }
+      ]
+    },
+    "approaches": {
+      "title": "3 Approaches to LCA",
+      "subtitle": "Choose the methodology that fits your goal — from a single product footprint to corporate reporting.",
+      "items": [
+        {
+          "tabLabel": "PEF",
+          "badge": "Product Environmental Footprint",
+          "title": "PEF — The European Environmental Footprint Standard",
+          "description": "Product Environmental Footprint (PEF) is the European Commission's methodology ensuring comparability of LCA results across products in the same category. Required by ESPR and increasingly used in public procurement.",
+          "features": [
+            "16 mandatory environmental impact categories",
+            "Comparable results through PEFCR (Product Category Rules)",
+            "Required by ESPR for Digital Product Passports",
+            "Data from EF (Environmental Footprint) 3.1 database",
+            "Industry benchmarking",
+            "Results ready for B2C communication (green labels)"
+          ]
+        },
+        {
+          "tabLabel": "Organizational LCA",
+          "badge": "Scope 1 + 2 + 3",
+          "title": "Organizational LCA — Corporate Footprint & Scope 3",
+          "description": "Organisation-level LCA covers all emission scopes (Scope 1, 2 and 3) and provides data for CSRD/ESRS reporting, SBTi targets, and company-wide decarbonisation strategy.",
+          "features": [
+            "Full Scope 1, 2 and 3 coverage (upstream + downstream)",
+            "GHG Protocol Corporate Standard compliant",
+            "Input data for CSRD / ESRS E1 reporting",
+            "Identify largest emission sources in the value chain",
+            "Support for SBTi target setting",
+            "Year-on-year comparison and decarbonisation tracking"
+          ]
+        },
+        {
+          "tabLabel": "Product Scope 3",
+          "badge": "Product-level carbon footprint",
+          "title": "Product Scope 3 — SKU-level Carbon Footprint",
+          "description": "Product Carbon Footprint (PCF) analysis lets you answer B2B customer queries, meet supply chain requirements, and provide data for EPD or DPP.",
+          "features": [
+            "Carbon footprint per SKU (cradle-to-gate or cradle-to-grave)",
+            "Hot-spot analysis — identify highest-impact stages",
+            "Data from ecoinvent 3.11 (8,000+ processes)",
+            "Export results to EPD and Digital Product Passport",
+            "What-if scenario comparison (recycling, transport, materials)",
+            "Answer B2B customer queries about supplier carbon footprint"
+          ]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Why LCA with Envirly?",
+      "items": [
+        {
+          "title": "ecoinvent 3.11 Database",
+          "description": "Over 8,000 processes and 21,000 products — the world's largest and most cited LCA database, included in the platform."
+        },
+        {
+          "title": "Automated Calculations",
+          "description": "The calculation engine recalculates results in real time with every parameter change — no manual spreadsheet modelling."
+        },
+        {
+          "title": "TÜV NORD Verification",
+          "description": "The platform holds a TÜV NORD certificate confirming ISO 14040/14044 compliance — results are accepted by auditors."
+        },
+        {
+          "title": "PEF-compliant",
+          "description": "The PEF module covers all 16 impact categories and PEFCR, ready for ESPR requirements and Digital Product Passport."
+        },
+        {
+          "title": "Export to EPD & DPP",
+          "description": "LCA results feed directly into the EPD report generator or Digital Product Passport — no data re-entry needed."
+        },
+        {
+          "title": "What-if Scenarios",
+          "description": "Compare variants: change recycled content, transport route, or energy source and see the LCA impact in real time."
+        }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "Who Needs LCA Analysis?",
+      "sectionSubtitle": "Three typical scenarios — from FMCG manufacturer to CSRD-reporting company to B2B supplier.",
+      "keyFeatures": "Key Features",
+      "cta": "Order LCA Analysis",
+      "items": [
+        {
+          "tabLabel": "FMCG Manufacturer",
+          "badge": "PEF & Green Claims",
+          "badgeColor": "amber",
+          "title": "FMCG Manufacturer: Green Labels & Comparability",
+          "description": "FMCG manufacturers need PEF to place credible environmental information on packaging and meet Green Claims Directive requirements. Envirly delivers results in a format ready for B2C communication.",
+          "features": [
+            "PEF with 16 impact categories",
+            "Data for Green Claims Directive-compliant environmental labels",
+            "Automatic benchmark against product category",
+            "Export to DPP with QR code",
+            "Compare packaging variants (glass vs PET vs aluminium)",
+            "Report ready for third-party verification"
+          ]
+        },
+        {
+          "tabLabel": "CSRD Company",
+          "badge": "Organizational LCA",
+          "badgeColor": "blue",
+          "title": "CSRD-Reporting Company: Scope 3 & Decarbonisation",
+          "description": "Companies subject to CSRD must report Scope 1, 2 and 3 emissions under ESRS E1. Organizational LCA in Envirly automates value chain data collection and identifies the largest emission sources.",
+          "features": [
+            "Full Scope 1, 2 and 3 coverage",
+            "ESRS E1 and GHG Protocol compliant",
+            "Automated supplier data collection",
+            "Decarbonisation dashboard with SBTi targets",
+            "Year-on-year comparison",
+            "Data export for sustainability report"
+          ]
+        },
+        {
+          "tabLabel": "B2B Supplier",
+          "badge": "Product Carbon Footprint",
+          "badgeColor": "green",
+          "title": "B2B Supplier: Answering Customer Queries",
+          "description": "Large corporations (Raben, BNP, IKEA) increasingly ask suppliers for product carbon footprint data. Product-level Scope 3 in Envirly lets you quickly calculate PCF and deliver data in a format accepted by your customer.",
+          "features": [
+            "Product carbon footprint (PCF) in 1 day instead of 6 weeks",
+            "ecoinvent 3.11 data — accepted by auditors",
+            "Hot-spot analysis with reduction recommendations",
+            "Export results in CDP, EcoVadis, SBTi format",
+            "Scalability: from 1 SKU to the entire catalogue",
+            "Results ready for B2B customer handover"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions About LCA",
+      "items": [
+        {
+          "question": "What is the difference between PEF and LCA?",
+          "answer": "PEF (Product Environmental Footprint) is a European methodology based on LCA but with additional comparability requirements. PEF mandates 16 impact categories and PEFCR (Product Category Rules), while classic ISO 14040 LCA offers more flexibility in category selection."
+        },
+        {
+          "question": "How long does an LCA analysis take in Envirly?",
+          "answer": "Simple product (1 SKU, cradle-to-gate) — from 1 business day. Complex product with full lifecycle (cradle-to-grave) — 3-5 days. Organisational analysis (Scope 1+2+3) — 2-4 weeks depending on supplier data availability."
+        },
+        {
+          "question": "Which LCA database does Envirly use?",
+          "answer": "Envirly uses ecoinvent 3.11 — the world's largest and most cited LCA database, containing over 8,000 processes and 21,000 products. The database is updated annually and accepted by all major EPD verifiers."
+        },
+        {
+          "question": "Who verifies LCA results?",
+          "answer": "The Envirly platform holds a TÜV NORD certificate confirming ISO 14040/14044 compliance. LCA results can be additionally verified by an independent auditor (e.g., TÜV, Bureau Veritas, SGS) for EPD or certification purposes."
+        },
+        {
+          "question": "Can Envirly LCA results feed into an EPD?",
+          "answer": "Yes. LCA analysis results feed directly into the built-in EPD report generator compliant with ISO 14025 and EN 15804. The report can be published in the EPD International, ITB, or IBU registry."
+        },
+        {
+          "question": "Does Envirly support Organizational LCA (Scope 1+2+3)?",
+          "answer": "Yes. The Organizational LCA module covers full Scope 1, 2, and 3 in accordance with the GHG Protocol Corporate Standard. Data is ready for CSRD/ESRS E1 reporting and SBTi target setting."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Order LCA Analysis for Your Product or Organisation",
+      "description": "Over 173 companies use Envirly for life cycle assessment. TÜV NORD certified. Ecoinvent database included. Results ready for EPD, DPP, and CSRD.",
+      "bookDemo": "Order LCA Analysis",
+      "talkExpert": "Talk to an Expert",
+      "seeEpd": "See EPD →"
     }
   }
 }

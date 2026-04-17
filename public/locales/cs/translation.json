@@ -3176,121 +3176,239 @@
   "productLevelPage": {
     "title": "Compliance na úrovni produktu, poháněná AI",
     "description": "Budujte udržitelné, transparentní produkty od základů. Quantifier přináší inteligenci a automatizaci do vaší compliance produktů—takže můžete splnit regulační požadavky a očekávání zákazníků s lehkostí.",
-    "tabs": {
-      "dpp": "Digitální pas produktu",
-      "lca": "Analýza životního cyklu"
-    },
-    "dpp": {
-      "title": "Digitální pas produktu (DPP): Zajistěte budoucnost svých produktů",
-      "description": "DPP je nový standard pro transparentnost a cirkularitu. Quantifier vám pomáhá automaticky generovat, spravovat a aktualizovat digitální pasy produktů—zajišťující compliance s regulacemi EU a pozicionující vaši značku pro novou generaci udržitelných trhů.",
-      "featuresTitle": "Získáte:",
-      "features": [
+    "hero": {
+      "title": "Digitální produktový pas (DPP): Připravte produkty na ESPR 2027",
+      "subtitle": "Nařízení ESPR 2024/1781 zavádí povinný Digitální produktový pas pro většinu kategorií zboží prodávaných v EU. Envirly automatizuje proces od dat o produktu po QR kód připravený k tisku.",
+      "problems": [
         {
-          "title": "AI-generované DPP",
-          "description": "Automaticky sladěné s Nařízením EU o ekodesignu (ESPR)"
+          "icon": "📋",
+          "title": "Stovky datových polí",
+          "description": "ESPR vyžaduje materiálové složení, uhlíkovou stopu, opravitelnost a desítky dalších atributů — pro každou SKU."
         },
         {
-          "title": "Sběr dat v reálném čase",
-          "description": "Shromažďujte informace napříč celým dodavatelským řetězcem"
+          "icon": "⏱️",
+          "title": "Termín 2027",
+          "description": "První kategorie produktů (baterie, textil, elektronika) musí splňovat DPP do roku 2027. Příprava trvá měsíce."
         },
         {
-          "title": "Automatizované aktualizace",
-          "description": "Při změně vstupů, materiálů nebo regulací"
-        },
-        {
-          "title": "Snadná integrace",
-          "description": "S QR kódy, NFC nebo platformami třetích stran"
-        },
-        {
-          "title": "Pasy připravené ke sdílení",
-          "description": "Splňující požadavky specifické pro odvětví"
-        }
-      ],
-      "dashboardTitle": "Dokončení digitálního pasu produktu",
-      "insightTitle": "AI Generované Insights Quantifier:",
-      "insight": "Váš pas produktu je 82% dokončen. Přidejte více detailů o recyklaci na konci životnosti pro zlepšení compliance s nadcházejícími regulacemi EU."
-    },
-    "lca": {
-      "title": "LCA (Analýza životního cyklu): Pochopte a optimalizujte environmentální dopad",
-      "description": "Quantifier transformuje analýzy životního cyklu z jednorázové zátěže na kontinuální, inteligentní proces. Automatizujte sběr dat, sledujte změny v čase a snižte svou environmentální stopu s jasností.",
-      "featuresTitle": "Získáte:",
-      "features": [
-        {
-          "title": "LCA workflow krok za krokem, vedené AI",
-          "description": "Založené na standardech ISO 14040/44"
-        },
-        {
-          "title": "Integrovaný sběr dat od dodavatelů",
-          "description": "A výpočty emisí"
-        },
-        {
-          "title": "Knihovny materiálů a benchmarkingové nástroje",
-          "description": "Vestavěné pro snadné srovnání"
-        },
-        {
-          "title": "Exportovatelné reporty připravené na audit",
-          "description": "Pro interní i externí použití"
-        },
-        {
-          "title": "Plná transparentnost",
-          "description": "Od suroviny po konec životnosti"
-        }
-      ],
-      "dashboardTitle": "Hodnocení dopadu životního cyklu",
-      "insightTitle": "AI Doporučení Quantifier:",
-      "insight": "Zaměřte se na získávání surovin pro snížení vašich největších environmentálních dopadů. Zvažte alternativní dodavatele s dokumentovanými postupy udržitelnosti."
-    },
-    "whyQuantifier": {
-      "title": "Proč Quantifier pro Compliance na úrovni produktu?",
-      "features": {
-        "aiPowered": {
-          "title": "AI-poháněný sběr dat a Reportování",
-          "description": "Eliminujte úzká místa tím, že necháte autonomní agenty shromažďovat a ověřovat data produktu."
-        },
-        "alwaysUpdated": {
-          "title": "Vždy aktuální",
-          "description": "Vaše pasy a LCA se vyvíjejí v reálném čase jak se mění materiály, dodavatelé nebo pravidla."
-        },
-        "designedCircularity": {
-          "title": "Navrženo pro cirkularitu",
-          "description": "Od recyklovatelnosti po emise, Quantifier vám pomáhá budovat lepší produkty—a dokazovat to."
-        },
-        "fastCompliance": {
-          "title": "Rychlá doba do Compliance",
-          "description": "Uveďte nové produkty na nové trhy bez obav z regulačních zpoždění."
-        }
-      }
-    },
-    "cta": {
-      "title": "Učiňte své produkty v souladu—a konkurenceschopné",
-      "description": "Chytřejší compliance. Silnější transparentnost. Nižší dopad. Quantifier dává vašim produktům inteligenci, kterou potřebují k vedení.",
-      "bookDemo": "Objednat demo",
-      "talkExpert": "Promluvte s naším expertem na Compliance produktů"
-    },
-    "faq": {
-      "title": "FAQ — Shoda na Urovni Produktu",
-      "items": [
-        {
-          "question": "Co je Digitalni pas produktu (DPP)?",
-          "answer": "DPP je digitalni zaznam obsahujici informace o materialech produktu, vyrobe a certifikacich. EU vyzaduje DPP pro urcite kategorie produktu od 2027."
-        },
-        {
-          "question": "Jak Quantifier pomaha se shodou DPP?",
-          "answer": "Quantifier automatizuje sber dat, generuje standardizovane DPP a spravuje QR kody."
-        },
-        {
-          "question": "Jaky je rozdil mezi DPP a LCA?",
-          "answer": "DPP je regulacne vyzadovany datovy zaznam. LCA je analyticka metodologie merici environmentalni dopad."
-        },
-        {
-          "question": "Ktera odvetvi potrebuji DPP?",
-          "answer": "Pocinage bateriemi (2027) se pozadavek rozsiri na textil, stavebni materialy a elektroniku."
-        },
-        {
-          "question": "Mohu ridit shodu produktu ve vice regionech?",
-          "answer": "Ano. Quantifier podporuje viceregionalni pozadavky a prizpusobuje dokumentaci lokalnim regulacim."
+          "icon": "🔗",
+          "title": "Integrace GS1 a ERP",
+          "description": "DPP musí být propojen s GTIN, ERP a daty dodavatelů. Bez automatizace je to manuální noční můra."
         }
       ]
+    },
+    "timeline": {
+      "title": "Časová osa zavedení DPP podle ESPR",
+      "steps": [
+        {
+          "date": "2024",
+          "title": "Přijetí ESPR",
+          "description": "Nařízení 2024/1781 zveřejněno v Úředním věstníku EU. Začátek přípravy delegovaných aktů."
+        },
+        {
+          "date": "2025–2026",
+          "title": "Delegované akty",
+          "description": "Komise zveřejňuje pravidla pro první kategorie produktů: baterie, textil, elektronika, ocel."
+        },
+        {
+          "date": "2027",
+          "title": "Povinnost první vlny",
+          "description": "Baterie, textil a vybraná elektronika musí mít DPP s QR kódem dostupným pro spotřebitele a inspektory."
+        },
+        {
+          "date": "2028–2030",
+          "title": "Rozšíření povinnosti",
+          "description": "Další kategorie: nábytek, chemikálie, stavební materiály, plasty. Pokrytí většiny zboží na trhu EU."
+        }
+      ]
+    },
+    "process": {
+      "title": "DPP ve 4 krocích s Envirly",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Import dat o produktu",
+          "description": "Načtěte data ze systému ERP, Excelu nebo přes integraci GS1 (GTIN). Žádné ruční přepisování.",
+          "details": [
+            "Integrace GS1 podle GTIN",
+            "Import Excel/CSV/API",
+            "Konektor SAP, Comarch, IFS"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Doplnění environmentálních dat",
+          "description": "Envirly vypočítá uhlíkovou stopu produktu (LCA) pomocí databáze ecoinvent. Není třeba samostatný nástroj.",
+          "details": [
+            "Databáze ecoinvent v ceně",
+            "Automatický výpočet LCA",
+            "16 kategorií dopadu"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Validace souladu s ESPR",
+          "description": "Platforma kontroluje úplnost dat podle aktuálních delegovaných aktů ESPR pro vaši kategorii produktu.",
+          "details": [
+            "Kontrolní seznam ESPR pro každou kategorii",
+            "Upozornění na chybějící data",
+            "Verzování delegovaných aktů"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "QR kód a publikace",
+          "description": "Vygenerujte QR kód s veřejným odkazem na DPP. Připraveno k tisku na obalech a etiketách.",
+          "details": [
+            "Veřejný odkaz s daty produktu",
+            "QR kód k tisku (SVG/PNG)",
+            "Aktualizace dat bez nutnosti změny QR"
+          ]
+        }
+      ]
+    },
+    "dataRequirements": {
+      "title": "Povinná data v DPP podle ESPR",
+      "items": [
+        {
+          "title": "Identifikace produktu",
+          "description": "GTIN, sériové číslo, číslo modelu, výrobce, datum výroby."
+        },
+        {
+          "title": "Materiálové složení",
+          "description": "Seznam materiálů s procentuálním podílem, podíl recyklovaného obsahu, obsah nebezpečných látek."
+        },
+        {
+          "title": "Uhlíková stopa a energie",
+          "description": "PCF (Product Carbon Footprint), spotřeba energie ve fázi užívání, energetická třída."
+        },
+        {
+          "title": "Opravitelnost a životnost",
+          "description": "Index opravitelnosti, dostupnost náhradních dílů, návody k opravám, očekávaná životnost."
+        },
+        {
+          "title": "Konec životnosti",
+          "description": "Doporučení k recyklaci, sběrná místa, postup demontáže, plán likvidace."
+        },
+        {
+          "title": "Soulad a certifikace",
+          "description": "Certifikáty CE, RoHS, REACH, EPD, prohlášení dodavatelů."
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Proč Envirly pro DPP?",
+      "items": [
+        {
+          "title": "Integrace GS1",
+          "description": "Import dat o produktech podle GTIN přímo z databáze GS1 — bez ručního zadávání."
+        },
+        {
+          "title": "Certifikace TÜV Nord",
+          "description": "ISO 14067 — první LCA platforma v regionu CEE s touto certifikací. Akceptováno inspektory."
+        },
+        {
+          "title": "Konektor ERP",
+          "description": "Integrace se SAP, Comarch, IFS a dalšími systémy. Data tečou automaticky."
+        },
+        {
+          "title": "Databáze ecoinvent",
+          "description": "Nejlepší světová databáze emisních faktorů v ceně platformy. Není třeba kupovat zvlášť."
+        },
+        {
+          "title": "Automatické reporty",
+          "description": "Generujte DPP, EPD a CSRD reporty z jedné datové sady. Bez duplicit."
+        },
+        {
+          "title": "Verzování ESPR",
+          "description": "Sledujeme delegované akty ESPR a aktualizujeme šablony DPP automaticky."
+        }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "Scénáře využití DPP",
+      "sectionSubtitle": "Vyberte odvětví — každé má jiné termíny a požadavky podle ESPR.",
+      "keyFeatures": "Klíčové funkce",
+      "cta": "Domluvit demo DPP",
+      "items": [
+        {
+          "tabLabel": "Textil",
+          "badge": "ESPR — první vlna",
+          "badgeColor": "green",
+          "title": "Textil: DPP povinné od roku 2027",
+          "description": "Textilní průmysl je v první vlně ESPR. Každý oděv prodaný v EU bude muset mít QR kód s daty o materiálech, uhlíkové stopě a recyklovatelnosti.",
+          "features": [
+            "Šablona DPP pro textil podle ESPR",
+            "Materiálové složení s podílem recyklátu",
+            "Uhlíková stopa cradle-to-gate",
+            "Doporučení k péči a recyklaci",
+            "QR kód k tisku na etiketu"
+          ]
+        },
+        {
+          "tabLabel": "Baterie",
+          "badge": "Battery Regulation",
+          "badgeColor": "amber",
+          "title": "Baterie: Battery Passport od roku 2027",
+          "description": "Nařízení o bateriích (EU 2023/1542) zavádí Battery Passport pro průmyslové a trakční baterie nad 2 kWh. DPP musí obsahovat data o chemii, stavu zdraví a recyklovatelnosti.",
+          "features": [
+            "Šablona Battery Passport",
+            "Data o chemii a kapacitě",
+            "Sledování stavu zdraví baterie (SoH)",
+            "Postup demontáže a recyklace",
+            "Soulad s nařízením EU 2023/1542"
+          ]
+        },
+        {
+          "tabLabel": "Elektronika",
+          "badge": "ESPR + RoHS",
+          "badgeColor": "blue",
+          "title": "Elektronika: opravitelnost a recyklace",
+          "description": "Spotřební elektronika podléhá ESPR i RoHS. DPP musí obsahovat index opravitelnosti, dostupnost dílů a soulad s omezeními nebezpečných látek.",
+          "features": [
+            "Index opravitelnosti (Repairability Score)",
+            "Návody k opravám a demontáži",
+            "Soulad s RoHS a REACH",
+            "Energetická třída a spotřeba",
+            "Sledování dostupnosti náhradních dílů"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Nejčastější otázky o DPP",
+      "items": [
+        {
+          "question": "Co je Digitální produktový pas (DPP)?",
+          "answer": "DPP je digitální záznam dat o produktu zavedený nařízením ESPR 2024/1781. Obsahuje materiálové složení, uhlíkovou stopu, opravitelnost a další informace dostupné přes QR kód."
+        },
+        {
+          "question": "Kdy musím mít DPP?",
+          "answer": "První vlna povinnosti začíná v roce 2027 pro baterie, textil a vybranou elektroniku. Další kategorie (nábytek, chemikálie, stavební materiály) budou přidávány postupně do roku 2030."
+        },
+        {
+          "question": "Co musí DPP obsahovat?",
+          "answer": "DPP musí obsahovat identifikaci produktu (GTIN), materiálové složení, uhlíkovou stopu (PCF), opravitelnost, doporučení pro konec životnosti a relevantní certifikace. Přesný seznam závisí na delegovaném aktu ESPR pro danou kategorii."
+        },
+        {
+          "question": "Jaký je rozdíl mezi DPP a EPD?",
+          "answer": "DPP je regulační požadavek EU s QR kódem pro přístup spotřebitelů a inspektorů. EPD je dobrovolné environmentální prohlášení ověřené třetí stranou pro B2B komunikaci. Oba se opírají o data LCA."
+        },
+        {
+          "question": "Jak Envirly pomáhá s DPP?",
+          "answer": "Envirly automatizuje celý proces: import dat o produktu (GS1, ERP), výpočet LCA, validaci souladu s ESPR a generování QR kódu. Šetříte měsíce práce ve srovnání s manuálním přístupem."
+        },
+        {
+          "question": "Kolik stojí příprava DPP?",
+          "answer": "Cena závisí na počtu SKU a složitosti produktů. Envirly nabízí cenové modely pro jeden produkt i pro celý katalog. Domluvte si demo pro individuální kalkulaci."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Připravte své produkty na ESPR ještě dnes",
+      "description": "Nečekejte do roku 2027. Příprava DPP trvá měsíce — začněte pilotem na jednom produktu a získejte konkurenční výhodu.",
+      "bookDemo": "Domluvit demo DPP",
+      "talkExpert": "Promluvit se specialistou"
     }
   },
   "seo": {
@@ -6939,6 +7057,492 @@
         "title": "Upravte pas a sdílejte odkaz",
         "desc": "Navrhněte rozložení produktového pasu: vyberte sekce, doplňte obsah a data, poté vygenerujte veřejný odkaz nebo QR kód. Připraveno na audit, připraveno pro klienta."
       }
+    }
+  },
+  "productLevelHub": {
+    "title": "Environmentální analýza produktu — DPP, EPD, LCA",
+    "description": "Digitální produktové pasy, environmentální prohlášení a analýza životního cyklu produktu v jedné platformě. Certifikace TÜV Nord, databáze ecoinvent, integrace GS1.",
+    "hero": {
+      "title": "DPP · EPD · LCA — vše v jedné platformě",
+      "subtitle": "Nové předpisy EU vyžadují plnou environmentální transparentnost produktů. Envirly spojuje Digitální produktový pas (DPP), Environmentální prohlášení (EPD) a Analýzu životního cyklu (LCA) v jednom nástroji."
+    },
+    "cards": {
+      "dpp": {
+        "badge": "ESPR 2024/1781",
+        "title": "Digitální produktový pas (DPP)",
+        "description": "Povinný digitální záznam dat produktu s QR kódem. Materiálové složení, uhlíková stopa, opravitelnost — vše v souladu s nařízením ESPR.",
+        "features": [
+          "Integrace GS1 — import podle GTIN",
+          "QR kód + veřejný odkaz",
+          "Databáze ecoinvent v ceně",
+          "Certifikace TÜV Nord"
+        ],
+        "cta": "Zobrazit DPP",
+        "href": "/frameworks/product-level/dpp"
+      },
+      "epd": {
+        "badge": "ISO 14025 · EN 15804",
+        "title": "Environmentální prohlášení o produktu (EPD)",
+        "description": "Environmentální prohlášení ověřené třetí stranou. Vyžadováno ve veřejných zakázkách, stavebnictví a B2B exportu.",
+        "features": [
+          "Soulad s ISO 14025 a EN 15804",
+          "Ověření akreditovaným operátorem",
+          "Publikace v registrech EPD",
+          "Automatický report z dat LCA"
+        ],
+        "cta": "Zobrazit EPD",
+        "href": "/frameworks/product-level/epd"
+      },
+      "lca": {
+        "badge": "ISO 14040 · ISO 14044",
+        "title": "Analýza životního cyklu (LCA)",
+        "description": "Výpočet environmentální stopy produktu cradle-to-gate nebo cradle-to-grave. Základ pro DPP a EPD.",
+        "features": [
+          "16 kategorií dopadu na životní prostředí",
+          "Simulace Monte Carlo",
+          "Klonování modelů pro stovky SKU",
+          "Interaktivní emisní flowchart"
+        ],
+        "cta": "Zobrazit LCA",
+        "href": "/frameworks/product-level/lca-analysis"
+      }
+    },
+    "faq": {
+      "title": "FAQ — Environmentální analýza produktu",
+      "items": [
+        {
+          "question": "Jaký je rozdíl mezi DPP a EPD?",
+          "answer": "DPP (Digital Product Passport) je digitální nosič dat produktu vyžadovaný nařízením ESPR — obsahuje složení, uhlíkovou stopu, opravitelnost a QR kód. EPD (Environmental Product Declaration) je environmentální prohlášení ověřené třetí stranou, používané ve veřejných zakázkách a stavebnictví (ISO 14025, EN 15804)."
+        },
+        {
+          "question": "Potřebuji LCA pro DPP a EPD?",
+          "answer": "Ano — Analýza životního cyklu (LCA) je společným výpočetním základem pro DPP (uhlíková stopa produktu) i EPD (kompletní environmentální prohlášení). Envirly provede LCA a automaticky vygeneruje data pro oba dokumenty."
+        },
+        {
+          "question": "Které řešení zvolit?",
+          "answer": "Pokud exportujete produkty do EU — začněte s DPP (povinné od roku 2027). Pokud se účastníte výběrových řízení nebo působíte ve stavebnictví — vyberte EPD. Pokud chcete poznat stopu produktu a optimalizovat ji — začněte s LCA."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Připravte své produkty na nové předpisy",
+      "description": "173 firem již používá Envirly. Certifikace TÜV Nord. Integrace GS1. Databáze ecoinvent v ceně.",
+      "bookDemo": "Domluvit demo"
+    }
+  },
+  "epdPage": {
+    "title": "Environmentální prohlášení o produktu (EPD) — ISO 14025",
+    "description": "Připravte ověřené Environmentální prohlášení o produktu (EPD) v souladu s ISO 14025 a EN 15804. Envirly automatizuje proces od LCA po publikaci v registru EPD.",
+    "hero": {
+      "title": "Environmentální prohlášení o produktu (EPD): Ověřený důkaz environmentální kvality",
+      "subtitle": "EPD je nezávisle ověřený dokument popisující environmentální dopad produktu během celého životního cyklu. Stále častěji vyžadován ve veřejných zakázkách, stavebnictví a B2B obchodu.",
+      "comparison": {
+        "title": "EPD vs DPP — klíčové rozdíly",
+        "epd": "Ověřené environmentální prohlášení pro B2B/B2C komunikaci. Vyžaduje ověření třetí stranou.",
+        "dpp": "Digitální pas dat produktu. Regulační požadavek EU (ESPR) s QR kódem.",
+        "common": "Společný základ: Analýza životního cyklu (LCA) podle ISO 14040/14044"
+      }
+    },
+    "whatIs": {
+      "title": "Co je EPD?",
+      "description": "Environmental Product Declaration (EPD) je standardizovaný environmentální dokument založený na normě ISO 14025. Obsahuje výsledky Analýzy životního cyklu (LCA) produktu, ověřené nezávislým operátorem programu EPD.",
+      "keyPoints": [
+        {
+          "title": "Založené na LCA",
+          "description": "Výsledky výpočtů životního cyklu produktu podle ISO 14040/14044 — od surovin po konec životnosti."
+        },
+        {
+          "title": "Nezávislé ověření",
+          "description": "Každé EPD musí být ověřeno akreditovanou třetí stranou (např. ITB, IBU, EPD International)."
+        },
+        {
+          "title": "Publikace v registru",
+          "description": "Ověřené EPD je publikováno v mezinárodním registru — viditelné pro kupující a zadavatele."
+        }
+      ]
+    },
+    "audience": {
+      "title": "Pro koho je EPD určeno?",
+      "items": [
+        {
+          "title": "Stavebnictví",
+          "description": "EN 15804 vyžaduje EPD pro stavební materiály. Green Public Procurement (GPP) v mnoha zemích EU."
+        },
+        {
+          "title": "FMCG a obaly",
+          "description": "Obchodní řetězce a smluvní partneři vyžadují environmentální data. EPD buduje konkurenční výhodu ve výběrových řízeních."
+        },
+        {
+          "title": "B2B exportéři",
+          "description": "Korporace (Raben, BNP) vyžadují od dodavatelů data LCA/EPD. Bez EPD — bez kontraktu."
+        },
+        {
+          "title": "Veřejné zakázky",
+          "description": "Green Public Procurement v EU roste. EPD přináší body ve veřejných výběrových řízeních."
+        }
+      ]
+    },
+    "process": {
+      "title": "EPD ve 4 krocích",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Analýza LCA produktu",
+          "description": "Výpočet environmentální stopy produktu v Envirly. Databáze ecoinvent, 16 kategorií dopadu.",
+          "details": [
+            "Import dat Excel/CSV/API",
+            "Databáze ecoinvent v ceně",
+            "16 kategorií dopadu"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Generování reportu EPD",
+          "description": "Automatický report z výsledků LCA ve formátu vyžadovaném operátorem programu EPD.",
+          "details": [
+            "Formát v souladu s ISO 14025",
+            "Šablona EN 15804 pro stavebnictví",
+            "Export do PDF"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Externí ověření",
+          "description": "Nezávislý ověřovatel kontroluje data LCA a report EPD. Envirly připravuje kompletní dokumentaci.",
+          "details": [
+            "Příprava dokumentace pro ověřovatele",
+            "Podpora v procesu revize",
+            "Certifikace TÜV Nord"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Publikace v registru",
+          "description": "Ověřené EPD je zařazeno do mezinárodního registru a stává se veřejně dostupným.",
+          "details": [
+            "EPD International, IBU, ITB",
+            "Veřejný přístup pro kupující",
+            "Platnost 5 let"
+          ]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Proč Envirly pro tvorbu EPD?",
+      "items": [
+        {
+          "title": "Certifikace TÜV Nord",
+          "description": "ISO 14067 — první LCA platforma v regionu CEE s touto certifikací. Výsledky obhájené před ověřovatelem."
+        },
+        {
+          "title": "Ecoinvent v ceně",
+          "description": "Nejlepší švýcarská databáze emisních faktorů. Není třeba kupovat zvlášť."
+        },
+        {
+          "title": "Automatický report EPD",
+          "description": "Generujte EPD report přímo z výsledků LCA. V souladu s ISO 14025 a EN 15804."
+        },
+        {
+          "title": "Podpora ověření",
+          "description": "Připravujeme kompletní dokumentaci pro ověřovatele. Šetříte čas i náklady na revize."
+        },
+        {
+          "title": "Od LCA po DPP v jednom nástroji",
+          "description": "LCA, EPD i DPP v jedné platformě — bez přenosu dat mezi systémy."
+        },
+        {
+          "title": "Import dat a klonování",
+          "description": "Import Excel/CSV/API. Klonování modelů pro více produktů."
+        }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "Scénáře využití EPD",
+      "sectionSubtitle": "Vyberte svůj scénář — každý vyžaduje jiný přístup k environmentálnímu prohlášení",
+      "keyFeatures": "Klíčové funkce",
+      "cta": "Zeptejte se na EPD",
+      "items": [
+        {
+          "tabLabel": "Stavební materiály",
+          "badge": "EN 15804",
+          "badgeColor": "green",
+          "title": "EPD povinné ve stavebních výběrových řízeních",
+          "description": "Výrobci stavebních materiálů potřebují EPD podle EN 15804 pro veřejné zakázky a certifikace BREEAM/LEED. Bez EPD — ztrácíte zakázky.",
+          "features": [
+            "Šablona EN 15804 zabudovaná v platformě",
+            "LCA cradle-to-gate pro stavební materiály",
+            "Připraveno k ověření přes ITB nebo IBU",
+            "Publikace v EPD International",
+            "Body v certifikaci BREEAM a LEED"
+          ]
+        },
+        {
+          "tabLabel": "Obaly",
+          "badge": "PPWR",
+          "badgeColor": "orange",
+          "title": "EPD jako důkaz stopy obalů",
+          "description": "Nové nařízení o obalech (PPWR) vyžaduje environmentální data. EPD pro obaly je způsob, jak doložit uhlíkovou stopu a recyklovatelnost.",
+          "features": [
+            "LCA pro různé typy obalů",
+            "Porovnání materiálů (plast vs papír vs sklo)",
+            "Data pro ESG reporting",
+            "Export dat pro B2B partnery"
+          ]
+        },
+        {
+          "tabLabel": "B2B exportér",
+          "badge": "Požadavek zákazníka",
+          "badgeColor": "blue",
+          "title": "Korporace vyžaduje EPD — musíte dodat",
+          "description": "Velký zákazník (Raben, IKEA, Leroy Merlin) vyžaduje od dodavatelů environmentální prohlášení. EPD je standardní formát, kterému rozumí každá korporace.",
+          "features": [
+            "EPD report v mezinárodním formátu",
+            "Data LCA v souladu s GHG Protocol a ISO 14067",
+            "Rychlá odpověď na poptávku RFI/RFQ",
+            "Veřejný odkaz na ověřené EPD",
+            "Konkurenční výhoda v B2B výběrových řízeních"
+          ]
+        },
+        {
+          "tabLabel": "Veřejné zakázky",
+          "badge": "GPP",
+          "badgeColor": "amber",
+          "title": "Bonusové body ve veřejných zakázkách",
+          "description": "Green Public Procurement (GPP) v mnoha zemích EU dává bonusové body za EPD. Výrobci s EPD vyhrávají zakázky, které konkurence bez prohlášení nezískává.",
+          "features": [
+            "EPD jako bodovaný dokument v GPP",
+            "Soulad s národními kritérii GPP",
+            "Publikace v registru viditelném pro zadavatele",
+            "Platnost EPD — 5 let bez nutnosti opětovného ověření"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ — Environmentální prohlášení o produktu (EPD)",
+      "items": [
+        {
+          "question": "Co je EPD?",
+          "answer": "EPD (Environmental Product Declaration) je standardizovaný dokument založený na ISO 14025, který popisuje environmentální dopad produktu na základě výsledků Analýzy životního cyklu (LCA). Vyžaduje nezávislé ověření akreditovanou třetí stranou."
+        },
+        {
+          "question": "Jak se EPD liší od DPP?",
+          "answer": "EPD je ověřené environmentální prohlášení pro B2B/B2C komunikaci (ISO 14025). DPP je digitální pas dat produktu vyžadovaný nařízením ESPR (2024/1781). Oba dokumenty se opírají o data LCA, ale slouží odlišným účelům."
+        },
+        {
+          "question": "Kolik stojí EPD?",
+          "answer": "Cena EPD závisí na složitosti produktu a operátorovi programu. S Envirly automatizujete fázi LCA i generování reportu, což výrazně snižuje náklady ve srovnání s tradičním konzultačním procesem."
+        },
+        {
+          "question": "Jak dlouho trvá získání EPD?",
+          "answer": "S Envirly fáze LCA a reportu trvá dny místo týdnů. Externí ověření obvykle trvá 4–8 týdnů v závislosti na operátorovi a složitosti produktu."
+        },
+        {
+          "question": "Je EPD povinné?",
+          "answer": "EPD zatím není povinné regulačně, ale de facto je vyžadováno v mnoha odvětvích: stavebnictví (EN 15804), veřejné zakázky (GPP), B2B export do korporací. Absence EPD znamená ztrátu výběrových řízení a kontraktů."
+        },
+        {
+          "question": "Mohu použít stejné LCA pro EPD i DPP?",
+          "answer": "Ano — Envirly provede jednu analýzu LCA, ze které automaticky generuje data jak pro EPD, tak pro DPP. Není třeba duplikovat výpočty ani práci."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Připravte EPD rychleji než konkurence",
+      "description": "Automatické generování EPD reportu z dat LCA. Certifikace TÜV Nord. Databáze ecoinvent v ceně. Plná podpora ověřovacího procesu.",
+      "bookDemo": "Domluvit demo",
+      "talkExpert": "Promluvit se specialistou"
+    }
+  },
+  "lcaPage": {
+    "title": "Analýza LCA — Posouzení životního cyklu produktu",
+    "description": "Proveďte analýzu LCA v souladu s ISO 14040/14044 a PEF. Identifikujte hotspoty, porovnávejte scénáře a generujte data pro EPD, DPP a CSRD reporting.",
+    "hero": {
+      "title": "Analýza LCA: od dat k rozhodnutím o dekarbonizaci",
+      "subtitle": "Posouzení životního cyklu (LCA) je jediná metodika, která poskytuje úplný obraz environmentálního dopadu produktu — od surovin po likvidaci. Výsledky LCA napájejí EPD, DPP a ESG reporting."
+    },
+    "whatIs": {
+      "title": "Co je analýza LCA?",
+      "description": "Life Cycle Assessment (LCA) je standardizovaná metoda pro posouzení environmentálního dopadu produktu, služby nebo organizace v celém životním cyklu — v souladu s ISO 14040 a ISO 14044.",
+      "keyPoints": [
+        {
+          "title": "Definice",
+          "description": "Systematická analýza environmentálních dopadů od těžby surovin přes výrobu a užívání až po konec životnosti produktu."
+        },
+        {
+          "title": "Cíl",
+          "description": "Identifikace emisních hotspotů, porovnání návrhových variant a poskytnutí dat pro certifikace EPD, PEF a CSRD/ESRS reporting."
+        },
+        {
+          "title": "Výsledek",
+          "description": "Kvantifikace dopadu v 16+ kategoriích (GWP, AP, EP, ODP) s rozdělením na fáze životního cyklu a možností generování reportů."
+        }
+      ]
+    },
+    "approaches": {
+      "title": "3 přístupy k analýze LCA",
+      "subtitle": "Vyberte metodiku odpovídající vašemu cíli — od stopy jednotlivého produktu po korporátní reporting.",
+      "items": [
+        {
+          "tabLabel": "PEF",
+          "badge": "Product Environmental Footprint",
+          "title": "PEF — Evropský standard environmentální stopy",
+          "description": "Product Environmental Footprint (PEF) je metodika Evropské komise zajišťující porovnatelnost výsledků LCA mezi produkty stejné kategorie. Vyžadována ESPR a stále častěji používaná ve veřejných zakázkách.",
+          "features": [
+            "16 povinných kategorií environmentálního dopadu",
+            "Porovnatelné výsledky díky PEFCR (Product Category Rules)",
+            "Vyžadováno ESPR pro Digitální produktové pasy",
+            "Data z databáze EF (Environmental Footprint) 3.1",
+            "Benchmarking v rámci odvětví",
+            "Hotový výsledek pro B2C komunikaci (zelené etikety)"
+          ]
+        },
+        {
+          "tabLabel": "Organizational LCA",
+          "badge": "Scope 1 + 2 + 3",
+          "title": "LCA organizace — korporátní stopa a Scope 3",
+          "description": "Analýza LCA na úrovni organizace zahrnuje všechny rozsahy emisí (Scope 1, 2 a 3) a poskytuje data pro CSRD/ESRS reporting, cíle SBTi a strategii dekarbonizace celé firmy.",
+          "features": [
+            "Plné pokrytí Scope 1, 2 a 3 (upstream + downstream)",
+            "Soulad s GHG Protocol Corporate Standard",
+            "Vstupní data pro CSRD / ESRS E1 reporting",
+            "Identifikace největších zdrojů emisí v hodnotovém řetězci",
+            "Podpora stanovení cílů SBTi",
+            "Meziroční porovnání a sledování pokroku v dekarbonizaci"
+          ]
+        },
+        {
+          "tabLabel": "Product Scope 3",
+          "badge": "Product-level carbon footprint",
+          "title": "Scope 3 na úrovni produktu — uhlíková stopa SKU",
+          "description": "Analýza uhlíkové stopy konkrétního produktu (PCF — Product Carbon Footprint) umožňuje odpovědět na otázky B2B zákazníků, splnit požadavky dodavatelského řetězce a poskytnout data pro EPD nebo DPP.",
+          "features": [
+            "Uhlíková stopa konkrétního SKU (cradle-to-gate nebo cradle-to-grave)",
+            "Hot-spot analýza — identifikace fází s největším dopadem",
+            "Data z databáze ecoinvent 3.11 (8 000+ procesů)",
+            "Export výsledků do EPD a Digitálního produktového pasu",
+            "Porovnání what-if scénářů (recyklace, doprava, materiály)",
+            "Odpověď na dotazy B2B zákazníků o uhlíkové stopě dodavatele"
+          ]
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Proč analýza LCA v Envirly?",
+      "items": [
+        {
+          "title": "Databáze ecoinvent 3.11",
+          "description": "Více než 8 000 procesů a 21 000 produktů — největší a nejcitovanější LCA databáze na světě, v ceně platformy."
+        },
+        {
+          "title": "Automatické výpočty",
+          "description": "Výpočetní engine přepočítává výsledky v reálném čase při každé změně parametrů — bez ručního modelování v tabulkách."
+        },
+        {
+          "title": "Ověření TÜV NORD",
+          "description": "Platforma má certifikaci TÜV NORD potvrzující soulad s ISO 14040/14044 — výsledky jsou akceptovány auditory."
+        },
+        {
+          "title": "PEF-compliant",
+          "description": "Modul PEF zohledňuje všech 16 kategorií dopadu a PEFCR, připraven na požadavky ESPR a Digital Product Passport."
+        },
+        {
+          "title": "Export do EPD a DPP",
+          "description": "Výsledky LCA jdou přímo do generátoru reportu EPD nebo Digitálního produktového pasu — bez opětovného zadávání dat."
+        },
+        {
+          "title": "What-if scénáře",
+          "description": "Porovnávejte varianty: změňte podíl recyklátu, trasu dopravy nebo zdroj energie a vidíte vliv na výsledek LCA v reálném čase."
+        }
+      ]
+    },
+    "useCases": {
+      "sectionTitle": "Kdo potřebuje analýzu LCA?",
+      "sectionSubtitle": "Tři typické scénáře — od FMCG výrobce přes firmu reportující CSRD po B2B dodavatele.",
+      "keyFeatures": "Klíčové funkce",
+      "cta": "Objednat analýzu LCA",
+      "items": [
+        {
+          "tabLabel": "FMCG výrobce",
+          "badge": "PEF & Green Claims",
+          "badgeColor": "amber",
+          "title": "FMCG výrobce: zelené etikety a porovnatelnost",
+          "description": "FMCG výrobci potřebují PEF, aby mohli umisťovat věrohodné environmentální informace na obaly a splnit požadavky směrnice Green Claims. Envirly poskytuje výsledky ve formátu připraveném pro B2C komunikaci.",
+          "features": [
+            "PEF s 16 kategoriemi dopadu",
+            "Data pro environmentální etiketu v souladu se směrnicí Green Claims",
+            "Automatický benchmark vůči produktové kategorii",
+            "Export do DPP s QR kódem",
+            "Porovnání variant obalů (sklo vs PET vs hliník)",
+            "Report připravený k ověření třetí stranou"
+          ]
+        },
+        {
+          "tabLabel": "Firma CSRD",
+          "badge": "Organizational LCA",
+          "badgeColor": "blue",
+          "title": "Firma reportující CSRD: Scope 3 a dekarbonizace",
+          "description": "Firmy spadající pod CSRD musí reportovat emise ve Scope 1, 2 a 3 v souladu s ESRS E1. Organizational LCA v Envirly automatizuje sběr dat z hodnotového řetězce a identifikuje největší zdroje emisí.",
+          "features": [
+            "Plné pokrytí Scope 1, 2 a 3",
+            "Soulad s ESRS E1 a GHG Protocol",
+            "Automatický sběr dat od dodavatelů",
+            "Dekarbonizační dashboard s cíli SBTi",
+            "Meziroční porovnání",
+            "Export dat do reportu udržitelnosti"
+          ]
+        },
+        {
+          "tabLabel": "B2B dodavatel",
+          "badge": "Product Carbon Footprint",
+          "badgeColor": "green",
+          "title": "B2B dodavatel: odpověď na dotazy zákazníků",
+          "description": "Velké korporace (Raben, BNP, IKEA) se stále častěji ptají dodavatelů na uhlíkovou stopu produktů. Product-level Scope 3 v Envirly umožňuje rychle vypočítat PCF a dodat data ve formátu akceptovaném zákazníkem.",
+          "features": [
+            "Uhlíková stopa produktu (PCF) za 1 den místo 6 týdnů",
+            "Data z ecoinvent 3.11 — akceptovaná auditory",
+            "Hot-spot analýza s doporučeními pro snížení",
+            "Export výsledků ve formátu CDP, EcoVadis, SBTI",
+            "Škálovatelnost: od 1 SKU po celý katalog",
+            "Výsledky připravené k předání B2B zákazníkovi"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Nejčastější otázky o LCA",
+      "items": [
+        {
+          "question": "Jaký je rozdíl mezi PEF a LCA?",
+          "answer": "PEF (Product Environmental Footprint) je evropská metodika založená na LCA, ale s dodatečnými požadavky na porovnatelnost výsledků. PEF předepisuje 16 povinných kategorií dopadu a používání PEFCR (Product Category Rules), zatímco klasické LCA podle ISO 14040 dává větší flexibilitu při výběru kategorií."
+        },
+        {
+          "question": "Jak dlouho trvá analýza LCA v Envirly?",
+          "answer": "Jednoduchý produkt (1 SKU, cradle-to-gate) — od 1 pracovního dne. Složitý produkt s plným životním cyklem (cradle-to-grave) — 3–5 dní. Organizační analýza (Scope 1+2+3) — 2–4 týdny v závislosti na dostupnosti dat od dodavatelů."
+        },
+        {
+          "question": "Jakou databázi LCA Envirly používá?",
+          "answer": "Envirly používá ecoinvent 3.11 — největší a nejcitovanější LCA databázi na světě, obsahující více než 8 000 procesů a 21 000 produktů. Databáze je každoročně aktualizována a akceptována všemi hlavními ověřovateli EPD."
+        },
+        {
+          "question": "Kdo ověřuje výsledky LCA?",
+          "answer": "Platforma Envirly má certifikaci TÜV NORD potvrzující soulad s ISO 14040/14044. Výsledky LCA mohou být dále ověřeny nezávislým auditorem (např. TÜV, Bureau Veritas, SGS) pro účely EPD nebo certifikace."
+        },
+        {
+          "question": "Mohou výsledky LCA z Envirly napájet EPD?",
+          "answer": "Ano. Výsledky analýzy LCA jdou přímo do zabudovaného generátoru reportu EPD v souladu s ISO 14025 a EN 15804. Report je připraven k ověření třetí stranou a publikaci v mezinárodním registru."
+        },
+        {
+          "question": "Co je PCF a jak souvisí s LCA?",
+          "answer": "PCF (Product Carbon Footprint) je uhlíková stopa konkrétního produktu — podmnožina kompletní LCA zaměřená pouze na kategorii GWP (Global Warming Potential). PCF je stále častěji vyžadován B2B zákazníky a v dotaznících jako CDP nebo EcoVadis."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Začněte analýzu LCA ještě dnes",
+      "description": "Certifikace TÜV NORD. Databáze ecoinvent v ceně. PEF, organizační LCA i product-level v jedné platformě. Výsledky připravené pro EPD, DPP a CSRD.",
+      "bookDemo": "Domluvit demo",
+      "talkExpert": "Promluvit se specialistou"
     }
   }
 }

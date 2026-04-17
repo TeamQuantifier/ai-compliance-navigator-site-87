@@ -107,6 +107,7 @@ export const Navbar = () => {
           href: '/frameworks/product-level',
           items: [
             { title: t('menu.frameworks.productLevel.dpp'), href: '/frameworks/product-level/dpp' },
+            { title: t('menu.frameworks.productLevel.epd'), href: '/frameworks/product-level/epd' },
             { title: t('menu.frameworks.productLevel.lcaAnalysis'), href: '/frameworks/product-level/lca-analysis' },
           ],
         },

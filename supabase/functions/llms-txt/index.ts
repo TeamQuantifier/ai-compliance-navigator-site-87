@@ -324,7 +324,8 @@ ${BASE_URL}/en/frameworks/governance/
 ${BASE_URL}/en/frameworks/product-level/
 
 - **Digital Product Passport (DPP)**: Product-level sustainability data collection and reporting
-- **Product LCA**: Lifecycle assessment at the individual product level for eco-design compliance`;
+- **Product LCA** (${BASE_URL}/en/frameworks/product-level/lca-analysis/): Life Cycle Assessment per ISO 14040/14044 and PEF — quantify environmental impact across 16+ categories with cradle-to-grave scope
+- **EPD** (${BASE_URL}/en/frameworks/product-level/epd/): Environmental Product Declarations per ISO 14025 and EN 15804 — third-party verified product environmental data for B2B buyers and tenders`;
 
 const PRODUCT_FEATURES_SHORT = `## Product Features
 
