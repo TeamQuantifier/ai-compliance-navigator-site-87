@@ -281,7 +281,7 @@ const LcaAnalysis = () => {
                 {t('lcaPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-amber-200 text-amber-700 hover:bg-amber-50" asChild>
+            <Button size="lg" variant="outline" className="border-amber-200 text-amber-700 hover:bg-amber-50 hover:text-amber-800" asChild>
               <Link to={`/${currentLocale}/frameworks/product-level/epd`}>
                 {t('lcaPage.cta.seeEpd')}
               </Link>
