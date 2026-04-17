@@ -286,7 +286,7 @@ const Epd = () => {
                 {t('epdPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50" asChild>
+            <Button size="lg" variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 hover:text-emerald-800" asChild>
               <Link to={`/${currentLocale}/frameworks/product-level/dpp`}>
                 {t('epdPage.cta.seeDpp')}
               </Link>

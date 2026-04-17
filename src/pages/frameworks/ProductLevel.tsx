@@ -53,7 +53,7 @@ const ProductLevel = () => {
                     {t('productLevelPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50" asChild>
+                <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800" asChild>
                   <Link to={`/${currentLocale}/contact`}>
                     {t('productLevelPage.cta.talkExpert')}
                   </Link>
@@ -281,7 +281,7 @@ const ProductLevel = () => {
                 {t('productLevelPage.cta.bookDemo')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50" asChild>
+            <Button size="lg" variant="outline" className="border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800" asChild>
               <Link to={`/${currentLocale}/contact`}>
                 {t('productLevelPage.cta.talkExpert')}
               </Link>
