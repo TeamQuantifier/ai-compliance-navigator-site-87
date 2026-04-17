@@ -46,6 +46,8 @@ const staticPages = [
   { path: '/frameworks/environmental', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-22' },
   { path: '/frameworks/governance', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-18' },
   { path: '/frameworks/product-level', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
+  { path: '/frameworks/product-level/epd', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-17' },
+  { path: '/frameworks/product-level/lca-analysis', changefreq: 'monthly', priority: '0.8', lastmod: '2026-04-17' },
   { path: '/legal/privacy', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/terms', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },
   { path: '/legal/cookies', changefreq: 'yearly', priority: '0.3', lastmod: '2026-01-01' },

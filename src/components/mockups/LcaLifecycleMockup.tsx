@@ -22,8 +22,8 @@ const labels = {
     scopes: [
       { label: 'Od kołyski do bramy', span: 2, color: 'border-amber-300 text-amber-800' },
       { label: 'Od bramy do bramy', span: 1, color: 'border-amber-300 text-amber-800', offset: 1 },
-      { label: 'Od kołyski do grobu', span: 5, color: 'bg-amber-700 text-white', full: true },
       { label: 'Od bramy do grobu', span: 3, color: 'border-amber-300 text-amber-800', offset: 2 },
+      { label: 'Od kołyski do grobu', span: 5, color: 'bg-amber-700 text-white', full: true },
     ],
   },
   en: {
@@ -38,8 +38,8 @@ const labels = {
     scopes: [
       { label: 'Cradle to gate', span: 2, color: 'border-amber-300 text-amber-800' },
       { label: 'Gate to gate', span: 1, color: 'border-amber-300 text-amber-800', offset: 1 },
-      { label: 'Cradle to grave', span: 5, color: 'bg-amber-700 text-white', full: true },
       { label: 'Gate to grave', span: 3, color: 'border-amber-300 text-amber-800', offset: 2 },
+      { label: 'Cradle to grave', span: 5, color: 'bg-amber-700 text-white', full: true },
     ],
   },
 };
