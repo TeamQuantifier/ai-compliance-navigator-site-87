@@ -1,38 +1,56 @@
 
 
-## Plan: Rebrand GS1 Polska page to match brand colors
+## Plan: Audyt i poprawki UI/UX/SEO strony LCA Analysis
 
-### Problem
-The GS1 Polska page (`/partners/gs1-polska`) uses a custom brown/amber palette that clashes with the rest of the site. The hero and card sections need to match the brand's slate-950 + compliance blue + innovation purple palette used on pages like NIS2, homepage, etc.
+### Zakres
+Strona `/pl/frameworks/product-level/lca-analysis` (+ EN/CS) oraz analogiczne podstrony `/frameworks/product-level/dpp` i `/frameworks/product-level/epd`.
 
-### Changes
+### Problemy do naprawienia
 
-**File: `src/pages/partners/Gs1Polska.tsx`**
+**1. Hero — duplikat CTA**
+- Oba przyciski w hero LCA prowadzą do `/contact`. Usuwam drugi przycisk ("Talk to expert"), zostawiam tylko "Book demo".
+- Sprawdzam i naprawiam ten sam problem na DPP i EPD.
 
-1. **Replace the `brown` palette object** with brand-consistent tokens:
-   - Hero: `bg-slate-950` (same as homepage/NIS2)
-   - Hero badge: `bg-white/5 text-white/70 border border-white/15` 
-   - Cards: `bg-slate-50` borders with `border-slate-200`
-   - Accent color: `text-primary` / `text-compliance-600` (blue)
-   - Quote section: `bg-slate-950` gradient
-   - Business section: `bg-gradient-to-r from-slate-900 to-slate-800`
-   - Form section: `bg-gradient-to-br from-slate-50 to-blue-50`
-   - Step circles: `bg-primary text-white`
-   - Buttons: `bg-primary hover:bg-primary/90 text-white`
-   - Card backgrounds: `bg-slate-50`, `bg-blue-50/50`
+**2. Bug scrollowania na Tabs (kluczowy bug UI)**
+- Komponenty `<Tabs>` w LCA, EPD i DPP używają `<Link>`/`<Button asChild>` wewnątrz `TabsTrigger` lub mają nieprawidłowe propsy powodujące re-render i scroll do góry. Po analizie kodu przyczyną jest najprawdopodobniej brak zapobiegania domyślnemu zachowaniu lub focus management Radix Tabs przewijający do aktywnego panelu.
+- Fix: dodać `onClick` z `preventDefault` na `TabsTrigger` lub użyć `scroll-mt` / wyłączyć auto-focus przez `onValueChange` z zachowaniem pozycji scroll (`window.scrollY` snapshot + restore w `useLayoutEffect`).
+- Najczystsze rozwiązanie: dodać `onMouseDown={(e) => e.preventDefault()}` na `TabsTrigger` aby zapobiec focus-induced scroll, oraz `tabIndex={-1}` na `TabsContent`.
 
-2. **Update inline accent classes** throughout the file:
-   - `text-amber-400` → `text-primary` or `text-compliance-400`
-   - `bg-amber-100` → `bg-blue-100`, `text-amber-800` → `text-primary`
-   - `border-amber-*` → `border-slate-200` or `border-primary/20`
-   - `decoration-amber-*` → `decoration-primary/60`
-   - Checkbox: `border-primary` with `data-[state=checked]:bg-primary`
-   - Consent link: `text-primary` instead of `text-amber-700`
+**3. Sekcja "Trzy podejścia" → "3 podejścia"**
+- Zmiana w tłumaczeniach `lcaPage.approaches.title` (PL/EN/CS).
 
-3. **Partnership cards** (the ones shown in screenshot): Change from amber/stone backgrounds to light slate/blue backgrounds matching brand palette, with blue icons instead of amber.
+**4. Lifecycle Mockup — kolejność pasków**
+- W `LcaLifecycleMockup.tsx` przestawiam kolejność zakresów: "Od kołyski do bramy" → "Od bramy do bramy" → "Od bramy do grobu" → **"Od kołyski do grobu"** (najdłuższy na dole). Alternatywnie najdłuższy na górze — wybieram dół jako logiczne zakończenie.
 
-### Scope
-- Single file edit: `src/pages/partners/Gs1Polska.tsx`
-- No translation changes needed
-- Works for all locales (`/pl`, `/en`, `/cs`)
+**5. CTA "Zobacz EPD" i podobne na innych stronach**
+- Audyt wszystkich finalnych CTA w `LcaAnalysis.tsx`, `Epd.tsx`, `Dpp.tsx`, `ProductLevelHub.tsx` — usunięcie duplikujących się przycisków prowadzących do tego samego URL, ujednolicenie kontrastu i hover state.
+
+**6. Audyt SEO + sitemap + llms.txt**
+- Sprawdzam czy `/frameworks/product-level/lca-analysis` jest w:
+  - `supabase/functions/sitemap/index.ts` (3 lokale)
+  - `supabase/functions/llms-txt/index.ts`
+  - `supabase/functions/prerender-marketing/index.ts` (metadane SEO)
+- Dodaję jeśli brakuje + weryfikuję canonical, hreflang, JSON-LD (TechArticle/Service schema).
+- Weryfikuję meta title (≤60 znaków) i description (≤160 znaków) w PL/EN/CS.
+
+### Pliki do edycji
+- `src/pages/frameworks/LcaAnalysis.tsx` — usunięcie duplikatu CTA, fix tabs scroll, fix przycisku EPD
+- `src/pages/frameworks/Epd.tsx` — analogiczne fixy tabs + CTA
+- `src/pages/frameworks/Dpp.tsx` — analogiczne fixy tabs + CTA
+- `src/components/mockups/LcaLifecycleMockup.tsx` — reorder pasków zakresu
+- `public/locales/pl/translation.json`, `en/translation.json`, `cs/translation.json` — "3 podejścia", ewentualne braki CS
+- `supabase/functions/sitemap/index.ts` — dodanie LCA jeśli brak
+- `supabase/functions/llms-txt/index.ts` — dodanie LCA
+- `supabase/functions/prerender-marketing/index.ts` — metadane SEO dla LCA
+
+### Podejście techniczne do bug'a scroll na Tabs
+Radix UI `Tabs` przy zmianie wartości ustawia focus na `TabsContent`, co powoduje przeglądarkową auto-scroll do tego elementu. Rozwiązanie:
+```tsx
+<TabsContent 
+  value={String(i)} 
+  tabIndex={-1}
+  onFocus={(e) => e.preventDefault()}
+>
+```
+oraz na wrapperze sekcji `style={{ scrollMarginTop: 0 }}` nie pomoże — kluczowe jest `tabIndex={-1}` na content i wyłączenie auto-focus.
 
