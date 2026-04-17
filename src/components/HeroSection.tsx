@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Lock, Network, Leaf, FileCheck, Brain, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Shield, Lock, Network, Leaf, FileCheck, Brain, Award, CheckCircle, BarChart3, QrCode } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -134,6 +134,20 @@ const HeroSection = () => {
                   <Award className="h-8 w-8 text-compliance-300" />
                 </div>
                 <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">ISO 42001</span>
+              </Link>
+
+              <Link to={`/${currentLocale}/frameworks/product-level/lca-analysis`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-innovation-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-innovation-700/30 group-hover:scale-110 transition-transform">
+                  <BarChart3 className="h-8 w-8 text-innovation-300" />
+                </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">LCA</span>
+              </Link>
+
+              <Link to={`/${currentLocale}/frameworks/product-level/dpp`} className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-full bg-compliance-950 flex items-center justify-center mb-2 shadow-lg shadow-black/50 border border-compliance-700/30 group-hover:scale-110 transition-transform">
+                  <QrCode className="h-8 w-8 text-compliance-300" />
+                </div>
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">DPP</span>
               </Link>
             </div>
           </div>
