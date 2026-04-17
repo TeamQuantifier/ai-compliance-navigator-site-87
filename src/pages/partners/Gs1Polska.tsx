@@ -118,12 +118,12 @@ const Gs1Polska = () => {
         <section className={`relative mb-20 ${brand.hero} rounded-3xl overflow-hidden`}>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.1),transparent_60%)]" />
           <div className="relative py-12 px-6 md:px-12">
-            <div className="flex items-center gap-4 mb-8">
-              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brand.heroBadge}`}>
-                <Globe className="h-4 w-4" />
-                GS1 Polska × {envirlyLink('Envirly')} by Quantifier.ai
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
+              <img src={gs1Logo} alt="GS1 Polska" className="h-12 w-auto bg-white rounded-lg px-2 py-1 self-start shrink-0" />
+              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase ${brand.heroBadge} self-start sm:self-auto max-w-full`}>
+                <Globe className="h-4 w-4 shrink-0" />
+                <span className="truncate sm:whitespace-normal">GS1 Polska × {envirlyLink('Envirly')} by Quantifier.ai</span>
               </span>
-              <img src={gs1Logo} alt="GS1 Polska" className="h-12 w-auto bg-white rounded-lg px-2 py-1" />
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
