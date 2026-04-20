@@ -1,24 +1,32 @@
 
 
-## Plan: Dodanie ikon LCA i DPP do hero homepage
+## Plan: Aktualizacja llms.txt o nowe strony
 
 ### Zakres
-Dodanie dwóch nowych ikon w sekcji "Wspieramy kluczowe standardy compliance" na stronie głównej (`HeroSection.tsx`), dopasowanych stylowo do istniejących ikon (alternujący schemat `compliance-950` / `innovation-950`).
+Dodanie brakujących stron do `supabase/functions/llms-txt/index.ts`:
+- `/en/frameworks/product-level/lca-analysis` (LCA)
+- `/en/frameworks/product-level/epd` (EPD)
+- `/en/frameworks/product-level/dpp` (DPP - Digital Product Passport)
+- `/en/partners/gs1-polska` (Partner GS1 Polska)
 
-### Zmiany — plik `src/components/HeroSection.tsx`
+### Obecny stan
+W pliku llms.txt brakuje powyższych ścieżek. Są one jedynie wspomniane pobieżnie w sekcji Environmental (linie 325-328), ale nie mają dedykowanych opisów w `FRAMEWORKS_SHORT`/`FRAMEWORKS_FULL`.
 
-Dodaję dwa nowe `<Link>` na końcu listy (po ISO 42001):
+### Zmiany — plik `supabase/functions/llms-txt/index.ts`
 
-1. **LCA** — ikona `BarChart3` (już używana na stronie LCA), tło `innovation-950`, link do `/${currentLocale}/frameworks/product-level/lca-analysis`
-2. **DPP** — ikona `QrCode` (używana na stronie DPP), tło `compliance-950`, link do `/${currentLocale}/frameworks/product-level/dpp`
+1. **FRAMEWORKS_SHORT** (linia 195): Dodanie trzech nowych wpisów pod "Product Level":
+   - LCA: `${BASE_URL}/en/frameworks/product-level/lca-analysis/` — Analiza cyklu życia (Life Cycle Assessment) zgodnie z ISO 14040/14044 i PEF, 16+ kategorii wpływu środowiskowego
+   - EPD: `${BASE_URL}/en/frameworks/product-level/epd/` — Environmental Product Declaration zgodnie z ISO 14025 i EN 15804, weryfikowane deklaracje środowiskowe produktu
+   - DPP: `${BASE_URL}/en/frameworks/product-level/` — Cyfrowy Paszport Produktu (Digital Product Passport), zbieranie i raportowanie danych zrównoważoności na poziomie produktu
 
-Aby zachować naprzemienny schemat kolorów (compliance/innovation/compliance/innovation/compliance/innovation/compliance), dwie nowe ikony rozszerzą cykl: **LCA = innovation** (8. pozycja), **DPP = compliance** (9. pozycja).
+2. **FRAMEWORKS_FULL** (linia 211): Dodanie pełnych sekcji opisujących:
+   - **LCA** — metodologia ISO 14040/14044, PEF (Product Environmental Footprint), 16 kategorii wpływu (GWP, ecotoxicity, water use, etc.), zakresy analizy (cradle-to-gate, cradle-to-grave, gate-to-gate)
+   - **EPD** — ISO 14025, EN 15804, trzecia strona weryfikująca, B2B przetargi, integracja z GS1
+   - **DPP** — wymagania CSRD/ESG, Ecodesign for Sustainable Products Regulation (ESPR), łączenie danych z weryfikacją przez kod QR, redukcja due diligence o 60%
 
-Import nowych ikon: `BarChart3, QrCode` z `lucide-react`.
-
-### Lokalizacja
-Etykiety "LCA" i "DPP" pozostają jako akronimy uniwersalne dla wszystkich języków (PL/EN/CS) — analogicznie jak "GDPR", "ISO 27001", "AI Act". Linki używają `currentLocale`, więc działają poprawnie dla `/pl`, `/en`, `/cs`. Brak potrzeby zmian w plikach tłumaczeń.
+3. **PARTNERS_SHORT i PARTNERS_FULL**: Utworzenie nowej sekcji dla partnerów lub dodanie do istniejącej struktury:
+   - **GS1 Polska** — `${BASE_URL}/en/partners/gs1-polska/` — Partner strategiczny, integracja z infrastrukturą kodów kreskowych i standardami GS1, 40 000+ firm w Polsce
 
 ### Pliki do edycji
-- `src/components/HeroSection.tsx` — import 2 ikon + dodanie 2 bloków `<Link>` po ISO 42001
+- `supabase/functions/llms-txt/index.ts` — dodanie wpisów w sekcjach FRAMEWORKS_SHORT, FRAMEWORKS_FULL, oraz nowej sekcji PARTNERS (lub rozszerzenie istniejącej)
 
