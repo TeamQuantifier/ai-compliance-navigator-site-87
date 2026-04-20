@@ -206,7 +206,13 @@ const FRAMEWORKS_SHORT = `## Framework-Specific Pages
 - CCPA: ${BASE_URL}/en/frameworks/ccpa/ — California Consumer Privacy Act compliance for consumer data rights, opt-out mechanisms, and data sale restrictions
 - Environmental: ${BASE_URL}/en/frameworks/environmental/ — Environmental compliance frameworks including ISO 14001, carbon footprint (GHG Protocol), LCA, and decarbonisation planning
 - Governance: ${BASE_URL}/en/frameworks/governance/ — Corporate governance frameworks including whistleblowing procedures, legal policies management, and board-level reporting
-- Product Level: ${BASE_URL}/en/frameworks/product-level/ — Product-level sustainability and compliance including lifecycle assessment, eco-design, and product carbon footprint`;
+- Product Level (DPP): ${BASE_URL}/en/frameworks/product-level/ — Digital Product Passport (DPP) hub for product-level sustainability data collection, eco-design, and ESPR/CSRD-aligned reporting
+- Product LCA: ${BASE_URL}/en/frameworks/product-level/lca-analysis/ — Life Cycle Assessment per ISO 14040/14044 and PEF, quantifying product environmental impact across 16+ categories (GWP, water use, ecotoxicity, etc.)
+- EPD: ${BASE_URL}/en/frameworks/product-level/epd/ — Environmental Product Declarations per ISO 14025 and EN 15804, third-party verified product environmental data for B2B procurement and tenders`;
+
+const PARTNERS_SHORT = `## Strategic Partners
+
+- GS1 Polska × Envirly: ${BASE_URL}/en/partners/gs1-polska/ — Strategic partnership with GS1 Polska (47,000+ member companies) integrating GS1 barcode/GTIN infrastructure with Envirly LCA and Digital Product Passport data for verified product sustainability information`;
 
 const FRAMEWORKS_FULL = `---
 
