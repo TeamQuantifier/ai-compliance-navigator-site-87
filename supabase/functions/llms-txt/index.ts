@@ -206,7 +206,13 @@ const FRAMEWORKS_SHORT = `## Framework-Specific Pages
 - CCPA: ${BASE_URL}/en/frameworks/ccpa/ — California Consumer Privacy Act compliance for consumer data rights, opt-out mechanisms, and data sale restrictions
 - Environmental: ${BASE_URL}/en/frameworks/environmental/ — Environmental compliance frameworks including ISO 14001, carbon footprint (GHG Protocol), LCA, and decarbonisation planning
 - Governance: ${BASE_URL}/en/frameworks/governance/ — Corporate governance frameworks including whistleblowing procedures, legal policies management, and board-level reporting
-- Product Level: ${BASE_URL}/en/frameworks/product-level/ — Product-level sustainability and compliance including lifecycle assessment, eco-design, and product carbon footprint`;
+- Product Level (DPP): ${BASE_URL}/en/frameworks/product-level/ — Digital Product Passport (DPP) hub for product-level sustainability data collection, eco-design, and ESPR/CSRD-aligned reporting
+- Product LCA: ${BASE_URL}/en/frameworks/product-level/lca-analysis/ — Life Cycle Assessment per ISO 14040/14044 and PEF, quantifying product environmental impact across 16+ categories (GWP, water use, ecotoxicity, etc.)
+- EPD: ${BASE_URL}/en/frameworks/product-level/epd/ — Environmental Product Declarations per ISO 14025 and EN 15804, third-party verified product environmental data for B2B procurement and tenders`;
+
+const PARTNERS_SHORT = `## Strategic Partners
+
+- GS1 Polska × Envirly: ${BASE_URL}/en/partners/gs1-polska/ — Strategic partnership with GS1 Polska (47,000+ member companies) integrating GS1 barcode/GTIN infrastructure with Envirly LCA and Digital Product Passport data for verified product sustainability information`;
 
 const FRAMEWORKS_FULL = `---
 
@@ -323,9 +329,52 @@ ${BASE_URL}/en/frameworks/governance/
 ### Product Level Compliance
 ${BASE_URL}/en/frameworks/product-level/
 
-- **Digital Product Passport (DPP)**: Product-level sustainability data collection and reporting
-- **Product LCA** (${BASE_URL}/en/frameworks/product-level/lca-analysis/): Life Cycle Assessment per ISO 14040/14044 and PEF — quantify environmental impact across 16+ categories with cradle-to-grave scope
-- **EPD** (${BASE_URL}/en/frameworks/product-level/epd/): Environmental Product Declarations per ISO 14025 and EN 15804 — third-party verified product environmental data for B2B buyers and tenders`;
+The Product Level hub focuses on the **Digital Product Passport (DPP)** — a Quantifier.ai workflow for collecting, structuring and reporting product-level sustainability data aligned with the EU Ecodesign for Sustainable Products Regulation (ESPR) and CSRD requirements. The 4-step process covers data ingestion (BOM, suppliers, GS1/GTIN identifiers), automated LCA calculation, scenario modelling, and publication of a verifiable passport accessible via QR code. Reduces supplier due diligence effort by up to 60%.
+
+### Product LCA (Life Cycle Assessment)
+${BASE_URL}/en/frameworks/product-level/lca-analysis/
+
+Full Life Cycle Assessment per **ISO 14040 / ISO 14044** and the European Commission's **Product Environmental Footprint (PEF)** methodology. Quantifier.ai (in collaboration with Envirly) supports:
+- **16+ impact categories**: Global Warming Potential (GWP), water use, ecotoxicity, eutrophication, acidification, resource depletion, particulate matter, ionising radiation, ozone depletion, and more
+- **System boundary scopes**: cradle-to-gate, cradle-to-grave, and gate-to-gate analyses
+- **BOM-driven modelling**: import bill of materials, processes, and energy inputs from ERP or spreadsheets
+- **Scenario explorer**: compare design alternatives, suppliers, and end-of-life pathways
+- **EF and ecoinvent data**: industry-standard background datasets
+- **Outputs**: results suitable for EPDs, DPPs, CSRD/ESRS E1–E5 disclosures, and customer/B2B requests
+
+### EPD (Environmental Product Declaration)
+${BASE_URL}/en/frameworks/product-level/epd/
+
+Verified Environmental Product Declarations per **ISO 14025** and **EN 15804** (construction products), with workflows covering:
+- **Third-party verification**: structured evidence packages for accredited verifiers and EPD programme operators
+- **PCR alignment**: Product Category Rules selection and compliance
+- **B2B procurement & tenders**: machine-readable EPDs that meet customer ESG questionnaires, public procurement (GPP) and green building requirements (LEED, BREEAM, DGNB)
+- **GS1 integration**: link EPDs to GTIN identifiers for traceability across the value chain
+- **Reuse of LCA data**: EPDs generated directly from the underlying LCA model — single source of truth
+
+### Digital Product Passport (DPP)
+${BASE_URL}/en/frameworks/product-level/
+
+Digital Product Passport implementation aligned with the EU **Ecodesign for Sustainable Products Regulation (ESPR)**:
+- **CSRD/ESG data layer**: connect product-level metrics to corporate sustainability reporting
+- **QR-code verifiable passports**: end consumers, regulators and B2B buyers verify provenance, materials, recyclability and carbon footprint
+- **GS1/GTIN identifiers**: passports anchored to global product identifiers via the GS1 Polska partnership
+- **Supplier collaboration**: structured supplier data requests reduce due diligence effort by ~60%
+- **Sector readiness**: prioritised categories include batteries, textiles, electronics, construction products and packaging`;
+
+const PARTNERS_FULL = `---
+
+## Strategic Partners (Detailed)
+
+### GS1 Polska × Envirly by Quantifier.ai
+${BASE_URL}/en/partners/gs1-polska/
+
+Strategic partnership between **GS1 Polska** — the Polish national organisation of GS1 (the global standards body behind barcodes, GTINs and EPCIS) with **47,000+ member companies** — and **Envirly by Quantifier.ai**. The partnership integrates GS1's product identification infrastructure with Envirly LCA and Digital Product Passport workflows so that:
+- Each product carries a GS1 GTIN that links a single barcode/QR scan to a verified sustainability profile (LCA results, EPD, DPP)
+- Manufacturers reuse existing GS1 master data instead of rebuilding product registries for ESG reporting
+- B2B buyers, retailers and public procurement bodies can request standardised, machine-readable sustainability data via GS1 channels
+- Quantified benefits include: faster onboarding of suppliers into ESG programmes, reduction of supplier due diligence effort by up to ~60%, and CSRD/ESPR-ready documentation
+- Endorsed by dr Marta Szymborska (GS1 Polska) as a model for digitising sustainable product data across the Polish and EU markets`;
 
 const PRODUCT_FEATURES_SHORT = `## Product Features
 
@@ -891,6 +940,7 @@ Deno.serve(async (req) => {
         CORE_CAPABILITIES_FULL,
         PRODUCT_FEATURES_FULL,
         FRAMEWORKS_FULL,
+        PARTNERS_FULL,
         INTEGRATIONS_FULL,
         FREE_TOOLS_FULL,
         EVENTS_FULL,
@@ -918,6 +968,7 @@ Deno.serve(async (req) => {
         FREE_TOOLS_SHORT,
         EVENTS_SHORT,
         FRAMEWORKS_SHORT,
+        PARTNERS_SHORT,
         PRODUCT_FEATURES_SHORT,
         INTEGRATIONS_SHORT,
         BY_ROLE,
