@@ -940,6 +940,7 @@ Deno.serve(async (req) => {
         CORE_CAPABILITIES_FULL,
         PRODUCT_FEATURES_FULL,
         FRAMEWORKS_FULL,
+        PARTNERS_FULL,
         INTEGRATIONS_FULL,
         FREE_TOOLS_FULL,
         EVENTS_FULL,
