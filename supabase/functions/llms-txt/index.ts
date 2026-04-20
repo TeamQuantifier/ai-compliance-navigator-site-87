@@ -968,6 +968,7 @@ Deno.serve(async (req) => {
         FREE_TOOLS_SHORT,
         EVENTS_SHORT,
         FRAMEWORKS_SHORT,
+        PARTNERS_SHORT,
         PRODUCT_FEATURES_SHORT,
         INTEGRATIONS_SHORT,
         BY_ROLE,
