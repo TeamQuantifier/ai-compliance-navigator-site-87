@@ -1,5 +1,4 @@
-import { Node, mergeAttributes } from '@tiptap/core';
-import { ReactNodeViewRenderer } from '@tiptap/react';
+import { Node, mergeAttributes, ReactNodeViewRenderer } from '@tiptap/react';
 import KpiBlockComponent from './KpiBlockComponent';
 
 export interface KpiBlockAttributes {
