@@ -6,14 +6,6 @@ export interface KpiBlockAttributes {
   label: string;
 }
 
-declare module '@tiptap/core' {
-  interface Commands<ReturnType> {
-    kpiBlock: {
-      setKpiBlock: (attributes: KpiBlockAttributes) => ReturnType;
-    };
-  }
-}
-
 export const KpiBlock = Node.create({
   name: 'kpiBlock',
 
@@ -45,19 +37,19 @@ export const KpiBlock = Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(KpiBlockComponent);
+    return ReactNodeViewRenderer(KpiBlockComponent as any);
   },
 
   addCommands() {
     return {
       setKpiBlock:
-        (attributes) =>
-        ({ commands }) => {
+        (attributes: KpiBlockAttributes) =>
+        ({ commands }: { commands: any }) => {
           return commands.insertContent({
             type: this.name,
             attrs: attributes,
           });
         },
-    };
+    } as any;
   },
 });
