@@ -1,18 +1,9 @@
-import { Node, mergeAttributes } from '@tiptap/core';
-import { ReactNodeViewRenderer } from '@tiptap/react';
+import { Node, mergeAttributes, ReactNodeViewRenderer } from '@tiptap/react';
 import KpiBlockComponent from './KpiBlockComponent';
 
 export interface KpiBlockAttributes {
   value: string;
   label: string;
-}
-
-declare module '@tiptap/core' {
-  interface Commands<ReturnType> {
-    kpiBlock: {
-      setKpiBlock: (attributes: KpiBlockAttributes) => ReturnType;
-    };
-  }
 }
 
 export const KpiBlock = Node.create({
@@ -46,19 +37,19 @@ export const KpiBlock = Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(KpiBlockComponent);
+    return ReactNodeViewRenderer(KpiBlockComponent as any);
   },
 
   addCommands() {
     return {
       setKpiBlock:
-        (attributes) =>
-        ({ commands }) => {
+        (attributes: KpiBlockAttributes) =>
+        ({ commands }: { commands: any }) => {
           return commands.insertContent({
             type: this.name,
             attrs: attributes,
           });
         },
-    };
+    } as any;
   },
 });
