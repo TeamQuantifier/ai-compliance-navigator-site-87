@@ -184,23 +184,55 @@ function initLinkedIn(): void {
 }
 
 /**
+ * Update Google Consent Mode v2 signals based on user choices.
+ * Called whenever consent state changes so Google services receive proper signals,
+ * even if the underlying tracking scripts haven't been loaded yet.
+ */
+export function updateConsentMode(categories: ConsentCategories): void {
+  if (typeof window === 'undefined') return;
+
+  window.dataLayer = window.dataLayer || [];
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function gtag(...args: unknown[]) {
+      window.dataLayer.push(args);
+    };
+  }
+
+  window.gtag('consent', 'update', {
+    ad_storage: categories.marketing ? 'granted' : 'denied',
+    ad_user_data: categories.marketing ? 'granted' : 'denied',
+    ad_personalization: categories.marketing ? 'granted' : 'denied',
+    analytics_storage: categories.analytics ? 'granted' : 'denied',
+    functionality_storage: categories.preferences ? 'granted' : 'denied',
+    personalization_storage: categories.preferences ? 'granted' : 'denied',
+    security_storage: 'granted',
+  });
+
+  console.log('[Consent] Google Consent Mode v2 updated', categories);
+}
+
+/**
  * Load scripts based on consent categories
  */
 export async function loadConsentedScripts(categories: ConsentCategories): Promise<void> {
+  // Update Consent Mode signals first — applies even if no scripts load,
+  // so GTM/GA4 (loaded later or server-side) sees correct consent state.
+  updateConsentMode(categories);
+
   const promises: Promise<void>[] = [];
-  
+
   // Analytics: GA4 and Clarity
   if (categories.analytics) {
     promises.push(initGA4());
     initClarity();
   }
-  
+
   // Marketing: GTM + LinkedIn
   if (categories.marketing) {
     initGTM();
     initLinkedIn();
   }
-  
+
   await Promise.all(promises);
 }
 
