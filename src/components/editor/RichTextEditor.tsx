@@ -59,7 +59,7 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
       TableHeader,
       TableCell,
       KpiBlock,
-    ],
+    ] as any,
     content: '',
     onUpdate: ({ editor }) => {
       onChange(editor.getJSON());
