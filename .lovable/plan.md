@@ -1,32 +1,52 @@
 
 
-## Plan: Aktualizacja llms.txt o nowe strony
+## Plan: Naprawa "Brak tagów" w Tag Assistant na stronach prerenderowanych
 
-### Zakres
-Dodanie brakujących stron do `supabase/functions/llms-txt/index.ts`:
-- `/en/frameworks/product-level/lca-analysis` (LCA)
-- `/en/frameworks/product-level/epd` (EPD)
-- `/en/frameworks/product-level/dpp` (DPP - Digital Product Passport)
-- `/en/partners/gs1-polska` (Partner GS1 Polska)
+### Diagnoza problemu
 
-### Obecny stan
-W pliku llms.txt brakuje powyższych ścieżek. Są one jedynie wspomniane pobieżnie w sekcji Environmental (linie 325-328), ale nie mają dedykowanych opisów w `FRAMEWORKS_SHORT`/`FRAMEWORKS_FULL`.
+Tag Assistant skanuje strony jako **bot** (User-Agent typu bot). Trzy raportowane URL-e to strony zwracane przez **edge functions prerenderujące** dla botów:
 
-### Zmiany — plik `supabase/functions/llms-txt/index.ts`
+| URL | Funkcja zwracająca HTML | Co widzi Tag Assistant |
+|-----|------------------------|------------------------|
+| `/en/frameworks/product-level/dpp` | `prerender-marketing` | Brak GTM, brak GA4, brak Consent Mode |
+| `/pl/blog/dyrektywa-nis2` | `prerender-post` | Brak GTM, brak GA4, brak Consent Mode |
+| `/pl/product` | `prerender-marketing` | Tylko GA4 (G-H6H8QRZF1R) — nieprawidłowy, bo brak GTM-5LLXS7KR |
 
-1. **FRAMEWORKS_SHORT** (linia 195): Dodanie trzech nowych wpisów pod "Product Level":
-   - LCA: `${BASE_URL}/en/frameworks/product-level/lca-analysis/` — Analiza cyklu życia (Life Cycle Assessment) zgodnie z ISO 14040/14044 i PEF, 16+ kategorii wpływu środowiskowego
-   - EPD: `${BASE_URL}/en/frameworks/product-level/epd/` — Environmental Product Declaration zgodnie z ISO 14025 i EN 15804, weryfikowane deklaracje środowiskowe produktu
-   - DPP: `${BASE_URL}/en/frameworks/product-level/` — Cyfrowy Paszport Produktu (Digital Product Passport), zbieranie i raportowanie danych zrównoważoności na poziomie produktu
+**Dlaczego `/pl/product` pokazuje GA4 a nie GTM:** prawdopodobnie ta strona w pewnych przypadkach jest serwowana z klienta SPA, gdzie `index.html` ładuje gtag (Consent Mode), ale GTM ładuje się tylko po zgodzie marketingowej w `script-loader.ts` — a bot nie wyrazi zgody.
 
-2. **FRAMEWORKS_FULL** (linia 211): Dodanie pełnych sekcji opisujących:
-   - **LCA** — metodologia ISO 14040/14044, PEF (Product Environmental Footprint), 16 kategorii wpływu (GWP, ecotoxicity, water use, etc.), zakresy analizy (cradle-to-gate, cradle-to-grave, gate-to-gate)
-   - **EPD** — ISO 14025, EN 15804, trzecia strona weryfikująca, B2B przetargi, integracja z GS1
-   - **DPP** — wymagania CSRD/ESG, Ecodesign for Sustainable Products Regulation (ESPR), łączenie danych z weryfikacją przez kod QR, redukcja due diligence o 60%
+**Główna przyczyna:** żadna z trzech funkcji prerender (`prerender-marketing/index.ts`, `prerender-post/index.ts`, `prerender-story/index.ts`) nie wstawia w `<head>` tagów GTM ani Consent Mode v2 default. Boty dostają HTML bez jakiegokolwiek śladu po tagach.
 
-3. **PARTNERS_SHORT i PARTNERS_FULL**: Utworzenie nowej sekcji dla partnerów lub dodanie do istniejącej struktury:
-   - **GS1 Polska** — `${BASE_URL}/en/partners/gs1-polska/` — Partner strategiczny, integracja z infrastrukturą kodów kreskowych i standardami GS1, 40 000+ firm w Polsce
+### Rozwiązanie
 
-### Pliki do edycji
-- `supabase/functions/llms-txt/index.ts` — dodanie wpisów w sekcjach FRAMEWORKS_SHORT, FRAMEWORKS_FULL, oraz nowej sekcji PARTNERS (lub rozszerzenie istniejącej)
+Wstrzykiwać do prerenderowanego HTML **dwa elementy**, identyczne jak w `index.html`:
+
+1. **Google Consent Mode v2 default denied** (skrypt inicjalizujący `dataLayer` + `gtag('consent', 'default', ...)`)
+2. **GTM container snippet** (`GTM-5LLXS7KR`) ładujący `https://www.googletagmanager.com/gtm.js?id=GTM-5LLXS7KR`
+
+Tag Assistant wykrywa GTM po obecności URL `googletagmanager.com/gtm.js?id=GTM-XXXXX` w HTML lub po wykonaniu JS — wstawienie samego snippetu w `<head>` wystarczy do wykrycia kontenera (w stanie `denied`, więc bez naruszenia RODO).
+
+### Zmiany — pliki
+
+#### 1. `supabase/functions/prerender-marketing/index.ts`
+- W szablonie HTML (~linia 2900, sekcja `<head>`) — dodać blok skryptów Consent Mode + GTM **bezpośrednio po `<meta charset>`**, przed pozostałymi metatagami.
+- Wynik: boty otrzymają snippet GTM w head + `<noscript>` iframe w `<body>`.
+
+#### 2. `supabase/functions/prerender-post/index.ts`
+- Analogicznie wstrzyknąć ten sam blok Consent Mode + GTM w `<head>` generowanym dla artykułów blogowych.
+
+#### 3. `supabase/functions/prerender-story/index.ts`
+- Analogicznie wstrzyknąć ten sam blok w `<head>` dla case studies.
+
+#### 4. Refaktor — wspólny helper (opcjonalnie, dla DRY)
+- Utworzyć `supabase/functions/_shared/tracking-snippets.ts` eksportujący stałe `CONSENT_MODE_DEFAULT_DENIED` i `GTM_HEAD_SNIPPET` + `GTM_NOSCRIPT_BODY`, importowany przez wszystkie trzy funkcje prerender. Zapobiega dryfowi konfiguracji w przyszłości.
+
+### Zgodność z RODO
+
+- Consent Mode default `denied` dla wszystkich kategorii poza `security_storage` — żadne ciasteczka analityczne/marketingowe nie zostaną zapisane bez zgody.
+- GTM container ładuje się, ale wszystkie tagi w środku respektują sygnał `denied` (cookieless pings + conversion modeling).
+- Identyczna logika jak już zaimplementowana w `index.html` dla SPA — rozszerzamy ją na ścieżkę bot/prerender.
+
+### Po wdrożeniu
+
+Tag Assistant powinien pokazać status **"Otagowana" (denied)** zamiast "Brak tagów" dla wszystkich trzech URL-i oraz wszystkich pozostałych prerenderowanych stron (frameworks, blog posts, success stories).
 

@@ -1,5 +1,5 @@
 import { NodeViewWrapper } from '@tiptap/react';
-import { NodeViewProps } from '@tiptap/core';
+import type { NodeViewProps } from '@tiptap/react';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 
