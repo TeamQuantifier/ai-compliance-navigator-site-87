@@ -120,7 +120,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
 
   const addKpiBlock = () => {
     if (kpiValue && kpiLabel) {
-      editor.chain().focus().setKpiBlock({ value: kpiValue, label: kpiLabel }).run();
+      (editor.chain().focus() as any).setKpiBlock({ value: kpiValue, label: kpiLabel }).run();
       setKpiValue('');
       setKpiLabel('');
       setIsKpiDialogOpen(false);
