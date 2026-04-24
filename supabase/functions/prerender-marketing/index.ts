@@ -2964,6 +2964,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
   </script>
 </head>
 <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LLXS7KR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   ${mainNavHtml}
   
   <header>
