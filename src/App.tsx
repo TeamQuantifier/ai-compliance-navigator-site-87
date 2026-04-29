@@ -271,7 +271,7 @@ const AppContent = () => {
         <Route path="/*" element={<MainRoutes />} />
       </Routes>
       <CookieConsentBanner />
-      {!isCyberCheck && <BookPromoPopup />}
+      {/* {!isCyberCheck && <BookPromoPopup />} */}
     </>
   );
 };
