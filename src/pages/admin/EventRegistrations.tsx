@@ -156,26 +156,26 @@ export default function EventRegistrations() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Data</TableHead>
-                  <TableHead>Event</TableHead>
-                  <TableHead>Imię</TableHead>
-                  <TableHead>Email</TableHead>
-                  <TableHead>Firma</TableHead>
-                  <TableHead>Stanowisko</TableHead>
-                  <TableHead>Wielkość</TableHead>
-                  <TableHead>NIS2?</TableHead>
+                  <SortableHead sortKey="created_at" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Data</SortableHead>
+                  <SortableHead sortKey="event_slug" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Event</SortableHead>
+                  <SortableHead sortKey="first_name" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Imię</SortableHead>
+                  <SortableHead sortKey="work_email" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Email</SortableHead>
+                  <SortableHead sortKey="company" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Firma</SortableHead>
+                  <SortableHead sortKey="role" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Stanowisko</SortableHead>
+                  <SortableHead sortKey="company_size" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Wielkość</SortableHead>
+                  <SortableHead sortKey="nis2_qualifier" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>NIS2?</SortableHead>
                   <TableHead>UTM</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filtered.length === 0 ? (
+                {sortedData.length === 0 ? (
                   <TableRow>
                     <TableCell colSpan={9} className="text-center text-muted-foreground py-8">
                       Brak zapisów
                     </TableCell>
                   </TableRow>
                 ) : (
-                  filtered.map(r => (
+                  sortedData.map(r => (
                     <TableRow key={r.id}>
                       <TableCell className="whitespace-nowrap text-sm">
                         {format(new Date(r.created_at), 'dd.MM.yyyy HH:mm')}
