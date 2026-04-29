@@ -112,20 +112,6 @@ export default function StoriesList() {
     }
   };
 
-  if (loading) {
-    return (
-      <div>
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">Success Stories</h1>
-          <Skeleton className="h-10 w-32" />
-        </div>
-        <div className="space-y-4">
-          {[...Array(5)].map((_, i) => <Skeleton key={i} className="h-16 w-full" />)}
-        </div>
-      </div>
-    );
-  }
-
   const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
     stories,
     {
@@ -139,6 +125,20 @@ export default function StoriesList() {
     'title',
     'asc'
   );
+
+  if (loading) {
+    return (
+      <div>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold">Success Stories</h1>
+          <Skeleton className="h-10 w-32" />
+        </div>
+        <div className="space-y-4">
+          {[...Array(5)].map((_, i) => <Skeleton key={i} className="h-16 w-full" />)}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
