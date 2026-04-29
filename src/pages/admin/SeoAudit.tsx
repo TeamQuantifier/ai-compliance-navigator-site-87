@@ -117,6 +117,23 @@ export default function SeoAudit() {
     });
   }, [content, typeFilter, langFilter, statusFilter, scoreFilter]);
 
+  const { sortedData: sortedContent, sortKey, sortDir, toggleSort } = useTableSort(
+    filteredContent,
+    {
+      title: (i) => i.meta_title || i.title,
+      contentType: (i) => i.contentType,
+      lang: (i) => i.lang,
+      score: (i) => i.analysis?.score ?? 0,
+      issues: (i) => {
+        const s = i.analysis ? getIssueSummary(i.analysis) : { critical: 0, warning: 0, info: 0 };
+        return s.critical + s.warning + s.info;
+      },
+      status: (i) => i.status,
+    },
+    'score',
+    'asc'
+  );
+
   // Stats
   const stats = useMemo(() => {
     const total = content.length;
