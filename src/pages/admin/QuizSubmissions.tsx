@@ -163,9 +163,23 @@ export default function QuizSubmissions() {
     if (resultFilter !== 'all') {
       list = list.filter(r => r.result_key === resultFilter);
     }
-    if (sortAsc) list = [...list].reverse();
     return list;
-  }, [rows, emailFilter, resultFilter, sortAsc]);
+  }, [rows, emailFilter, resultFilter]);
+
+  const { sortedData: sortedFiltered, sortKey, sortDir, toggleSort } = useTableSort(
+    filtered,
+    {
+      created_at: (r) => r.created_at,
+      email: (r) => r.email,
+      q1: (r) => formatArray(r.q1, Q1_MAP),
+      q2: (r) => formatArray(r.q2, Q2_MAP),
+      q3: (r) => formatArray(r.q3, NACE_MAP),
+      q4: (r) => formatArray(r.q4, Q4_MAP),
+      result_key: (r) => r.result_key,
+    },
+    'created_at',
+    'desc'
+  );
 
   const exportCSV = () => {
     const headers = ['Data', 'Email', 'Q1 (Pracownicy)', 'Q2 (Obrót)', 'Q3 (Sektor NACE)', 'Q4 (Klienci)', 'Wynik'];
