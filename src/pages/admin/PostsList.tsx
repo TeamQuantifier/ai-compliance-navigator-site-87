@@ -15,6 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface GroupedPost {
   group_id: string;
