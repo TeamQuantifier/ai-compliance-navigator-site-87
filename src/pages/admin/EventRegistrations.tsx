@@ -77,6 +77,22 @@ export default function EventRegistrations() {
     return true;
   });
 
+  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
+    filtered,
+    {
+      created_at: (r) => r.created_at,
+      event_slug: (r) => r.event_slug,
+      first_name: (r) => r.first_name,
+      work_email: (r) => r.work_email,
+      company: (r) => r.company,
+      role: (r) => r.role,
+      company_size: (r) => r.company_size,
+      nis2_qualifier: (r) => r.nis2_qualifier,
+    },
+    'created_at',
+    'desc'
+  );
+
   const exportCsv = () => {
     const headers = ['Data', 'Event', 'Imię', 'Email', 'Firma', 'Stanowisko', 'Wielkość firmy', 'NIS2?', 'UTM Source', 'UTM Medium', 'UTM Campaign'];
     const rows = filtered.map(r => [
