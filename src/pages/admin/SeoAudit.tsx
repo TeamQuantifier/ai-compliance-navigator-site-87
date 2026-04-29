@@ -24,6 +24,7 @@ import {
 import { analyzeSeoContent, getIssueSummary, SeoContentData } from '@/lib/seo-analyzer';
 import { SeoAnalysisResult } from '@/lib/seo-rules';
 import { cn } from '@/lib/utils';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface ContentItem extends SeoContentData {
   id: string;
