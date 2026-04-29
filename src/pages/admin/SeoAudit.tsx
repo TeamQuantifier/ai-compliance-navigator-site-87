@@ -313,24 +313,24 @@ export default function SeoAudit() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-10"></TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead className="w-20">Type</TableHead>
-              <TableHead className="w-16">Lang</TableHead>
-              <TableHead className="w-24">Score</TableHead>
-              <TableHead className="w-24">Issues</TableHead>
-              <TableHead className="w-24">Status</TableHead>
+              <SortableHead sortKey="title" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Title</SortableHead>
+              <SortableHead sortKey="contentType" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-20">Type</SortableHead>
+              <SortableHead sortKey="lang" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-16">Lang</SortableHead>
+              <SortableHead sortKey="score" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-24">Score</SortableHead>
+              <SortableHead sortKey="issues" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-24">Issues</SortableHead>
+              <SortableHead sortKey="status" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-24">Status</SortableHead>
               <TableHead className="w-16"></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredContent.length === 0 ? (
+            {sortedContent.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={8} className="text-center py-8 text-muted-foreground">
                   No content found matching filters
                 </TableCell>
               </TableRow>
             ) : (
-              filteredContent.map(item => {
+              sortedContent.map(item => {
                 const isExpanded = expandedRows.has(item.id);
                 const issues = item.analysis ? getIssueSummary(item.analysis) : { critical: 0, warning: 0, info: 0 };
                 const totalIssues = issues.critical + issues.warning + issues.info;
