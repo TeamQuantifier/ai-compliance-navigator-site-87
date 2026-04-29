@@ -302,7 +302,7 @@ export default function QuizSubmissions() {
         <div className="flex items-center justify-center py-16 text-muted-foreground">
           <RefreshCw className="animate-spin h-5 w-5 mr-2" /> Ładowanie…
         </div>
-      ) : filtered.length === 0 ? (
+      ) : sortedFiltered.length === 0 ? (
         <div className="text-center py-16 text-muted-foreground">
           Brak zgłoszeń pasujących do filtrów.
         </div>
@@ -312,19 +312,40 @@ export default function QuizSubmissions() {
             <thead className="bg-muted/50 border-b">
               <tr>
                 <th className="px-3 py-3">
-                  <Checkbox checked={selected.size === filtered.length && filtered.length > 0} onCheckedChange={toggleAll} />
+                  <Checkbox checked={selected.size === sortedFiltered.length && sortedFiltered.length > 0} onCheckedChange={toggleAll} />
                 </th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Data</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Email</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Q1 Pracownicy</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Q2 Obrót</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Q3 Sektor</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Q4 Klienci</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Wynik</th>
+                {([
+                  ['created_at', 'Data', 'whitespace-nowrap'],
+                  ['email', 'Email', ''],
+                  ['q1', 'Q1 Pracownicy', 'whitespace-nowrap'],
+                  ['q2', 'Q2 Obrót', 'whitespace-nowrap'],
+                  ['q3', 'Q3 Sektor', ''],
+                  ['q4', 'Q4 Klienci', ''],
+                  ['result_key', 'Wynik', ''],
+                ] as const).map(([key, label, extra]) => {
+                  const active = sortKey === key;
+                  const Icon = active ? (sortDir === 'asc' ? ArrowUp : ArrowDown) : ArrowUpDown;
+                  return (
+                    <th
+                      key={key}
+                      onClick={() => toggleSort(key)}
+                      className={cn(
+                        'text-left px-4 py-3 font-semibold cursor-pointer select-none hover:bg-muted/80 transition-colors',
+                        active ? 'text-foreground' : 'text-muted-foreground',
+                        extra
+                      )}
+                    >
+                      <span className="inline-flex items-center gap-1.5">
+                        {label}
+                        <Icon className={cn('h-3.5 w-3.5', active ? 'opacity-100' : 'opacity-40')} />
+                      </span>
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody className="divide-y">
-              {filtered.map(row => (
+              {sortedFiltered.map(row => (
                 <tr key={row.id} className={`hover:bg-muted/30 transition-colors ${selected.has(row.id) ? 'bg-primary/5' : ''}`}>
                   <td className="px-3 py-3">
                     <Checkbox checked={selected.has(row.id)} onCheckedChange={() => toggleSelect(row.id)} />
