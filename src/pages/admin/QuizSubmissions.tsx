@@ -132,7 +132,7 @@ export default function QuizSubmissions() {
   const [error, setError] = useState<string | null>(null);
   const [emailFilter, setEmailFilter] = useState('');
   const [resultFilter, setResultFilter] = useState<string>('all');
-  const [sortAsc, setSortAsc] = useState(false);
+  // sortAsc removed — replaced with useTableSort below
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [deleting, setDeleting] = useState(false);
 
