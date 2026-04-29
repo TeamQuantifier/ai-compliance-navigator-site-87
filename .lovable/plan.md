@@ -1,52 +1,51 @@
+## Plan: Sortowalne kolumny w tabelach panelu admina
 
+### Cel
+Umożliwić klikanie nagłówków kolumn w tabelach `/admin/*`, aby sortować dane rosnąco/malejąco (toggle), z wizualnym wskaźnikiem kierunku (strzałka ↑/↓).
 
-## Plan: Naprawa "Brak tagów" w Tag Assistant na stronach prerenderowanych
+### Zakres — strony do objęcia
 
-### Diagnoza problemu
+| Strona | Plik | Sortowalne kolumny |
+|---|---|---|
+| Blog Posts | `src/pages/admin/PostsList.tsx` | Tytuł, Języki (liczba), Status, Publikacja |
+| Success Stories | `src/pages/admin/StoriesList.tsx` | Tytuł, Klient, Branża, Języki, Status, SEO |
+| Event Registrations | `src/pages/admin/EventRegistrations.tsx` | wszystkie tekstowe + data |
+| Quiz Submissions | `src/pages/admin/QuizSubmissions.tsx` | wszystkie tekstowe + data + score |
+| SEO Audit | `src/pages/admin/SeoAudit.tsx` | URL, Score, Status, ostatnia aktualizacja |
 
-Tag Assistant skanuje strony jako **bot** (User-Agent typu bot). Trzy raportowane URL-e to strony zwracane przez **edge functions prerenderujące** dla botów:
+(Kolumny "Obrazek" i "Akcje" pozostają niesortowalne.)
 
-| URL | Funkcja zwracająca HTML | Co widzi Tag Assistant |
-|-----|------------------------|------------------------|
-| `/en/frameworks/product-level/dpp` | `prerender-marketing` | Brak GTM, brak GA4, brak Consent Mode |
-| `/pl/blog/dyrektywa-nis2` | `prerender-post` | Brak GTM, brak GA4, brak Consent Mode |
-| `/pl/product` | `prerender-marketing` | Tylko GA4 (G-H6H8QRZF1R) — nieprawidłowy, bo brak GTM-5LLXS7KR |
+### Rozwiązanie techniczne
 
-**Dlaczego `/pl/product` pokazuje GA4 a nie GTM:** prawdopodobnie ta strona w pewnych przypadkach jest serwowana z klienta SPA, gdzie `index.html` ładuje gtag (Consent Mode), ale GTM ładuje się tylko po zgodzie marketingowej w `script-loader.ts` — a bot nie wyrazi zgody.
+1. **Wspólny hook** `src/hooks/useTableSort.ts`:
+   - Generyczny `useTableSort<T>(data, defaultKey?, defaultDir?)`
+   - Stan: `{ sortKey, sortDir: 'asc' | 'desc' }`
+   - Zwraca: `sortedData`, `sortKey`, `sortDir`, `toggleSort(key)`
+   - Sortowanie tolerancyjne na typy: string (localeCompare, case-insensitive), number, Date (parsowanie ISO), array (po `.length`), null/undefined zawsze na końcu.
 
-**Główna przyczyna:** żadna z trzech funkcji prerender (`prerender-marketing/index.ts`, `prerender-post/index.ts`, `prerender-story/index.ts`) nie wstawia w `<head>` tagów GTM ani Consent Mode v2 default. Boty dostają HTML bez jakiegokolwiek śladu po tagach.
+2. **Komponent `SortableHead`** (mały helper w tym samym pliku lub w `src/components/admin/SortableHead.tsx`):
+   - Renderuje `<TableHead>` z `cursor-pointer`, label + ikona `ArrowUp` / `ArrowDown` / `ArrowUpDown` (lucide-react, już używane).
+   - Props: `sortKey`, `currentSort`, `currentDir`, `onSort`, `children`.
 
-### Rozwiązanie
+3. **Integracja w każdej liście**:
+   - Zamienić surowe `<TableHead>` dla sortowalnych kolumn na `<SortableHead>`.
+   - Zamiast iterować po surowym `posts`/`stories`/... iterować po `sortedData` z hooka.
+   - Domyślne sortowanie zachowuje obecne (np. `created_at desc` dla postów → po dacie publikacji desc; quiz/events po dacie utworzenia desc).
 
-Wstrzykiwać do prerenderowanego HTML **dwa elementy**, identyczne jak w `index.html`:
+### Szczegóły UX
+- Kliknięcie nieaktywnej kolumny → ustawia `asc`. Kolejne kliknięcia tej samej kolumny: `asc → desc → asc`.
+- Aktywna kolumna podświetla nagłówek (pogrubienie tekstu) i pokazuje kierunkową strzałkę; nieaktywne pokazują `ArrowUpDown` w `text-muted-foreground/50`.
+- Sortowanie jest klient-side (dane już są w pamięci po `loadPosts()` itd.) — zero dodatkowych zapytań do bazy.
 
-1. **Google Consent Mode v2 default denied** (skrypt inicjalizujący `dataLayer` + `gtag('consent', 'default', ...)`)
-2. **GTM container snippet** (`GTM-5LLXS7KR`) ładujący `https://www.googletagmanager.com/gtm.js?id=GTM-5LLXS7KR`
+### Pliki do utworzenia/zmiany
+- **nowy:** `src/hooks/useTableSort.ts` (hook + komponent `SortableHead`)
+- **edycja:** `src/pages/admin/PostsList.tsx`
+- **edycja:** `src/pages/admin/StoriesList.tsx`
+- **edycja:** `src/pages/admin/EventRegistrations.tsx`
+- **edycja:** `src/pages/admin/QuizSubmissions.tsx`
+- **edycja:** `src/pages/admin/SeoAudit.tsx`
 
-Tag Assistant wykrywa GTM po obecności URL `googletagmanager.com/gtm.js?id=GTM-XXXXX` w HTML lub po wykonaniu JS — wstawienie samego snippetu w `<head>` wystarczy do wykrycia kontenera (w stanie `denied`, więc bez naruszenia RODO).
-
-### Zmiany — pliki
-
-#### 1. `supabase/functions/prerender-marketing/index.ts`
-- W szablonie HTML (~linia 2900, sekcja `<head>`) — dodać blok skryptów Consent Mode + GTM **bezpośrednio po `<meta charset>`**, przed pozostałymi metatagami.
-- Wynik: boty otrzymają snippet GTM w head + `<noscript>` iframe w `<body>`.
-
-#### 2. `supabase/functions/prerender-post/index.ts`
-- Analogicznie wstrzyknąć ten sam blok Consent Mode + GTM w `<head>` generowanym dla artykułów blogowych.
-
-#### 3. `supabase/functions/prerender-story/index.ts`
-- Analogicznie wstrzyknąć ten sam blok w `<head>` dla case studies.
-
-#### 4. Refaktor — wspólny helper (opcjonalnie, dla DRY)
-- Utworzyć `supabase/functions/_shared/tracking-snippets.ts` eksportujący stałe `CONSENT_MODE_DEFAULT_DENIED` i `GTM_HEAD_SNIPPET` + `GTM_NOSCRIPT_BODY`, importowany przez wszystkie trzy funkcje prerender. Zapobiega dryfowi konfiguracji w przyszłości.
-
-### Zgodność z RODO
-
-- Consent Mode default `denied` dla wszystkich kategorii poza `security_storage` — żadne ciasteczka analityczne/marketingowe nie zostaną zapisane bez zgody.
-- GTM container ładuje się, ale wszystkie tagi w środku respektują sygnał `denied` (cookieless pings + conversion modeling).
-- Identyczna logika jak już zaimplementowana w `index.html` dla SPA — rozszerzamy ją na ścieżkę bot/prerender.
-
-### Po wdrożeniu
-
-Tag Assistant powinien pokazać status **"Otagowana" (denied)** zamiast "Brak tagów" dla wszystkich trzech URL-i oraz wszystkich pozostałych prerenderowanych stron (frameworks, blog posts, success stories).
-
+### Poza zakresem
+- Filtrowanie/wyszukiwanie kolumn (osobny temat).
+- Paginacja po stronie serwera.
+- Zapamiętywanie wybranego sortowania w localStorage (można dodać później jeśli będzie potrzeba).
