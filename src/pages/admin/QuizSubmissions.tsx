@@ -4,9 +4,11 @@ import { NACE_SECTORS, Q1_OPTIONS, Q2_OPTIONS, Q4_OPTIONS, RESULT_BADGE_COLORS, 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download, Search, RefreshCw, Users, TrendingUp, Calendar, Trash2 } from 'lucide-react';
+import { Download, Search, RefreshCw, Users, TrendingUp, Calendar, Trash2, ArrowUp, ArrowDown, ArrowUpDown } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
+import { useTableSort } from '@/hooks/useTableSort';
+import { cn } from '@/lib/utils';
 
 interface Submission {
   id: string;
