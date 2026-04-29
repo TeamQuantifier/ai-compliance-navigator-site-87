@@ -14,6 +14,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface GroupedStory {
   group_id: string;
