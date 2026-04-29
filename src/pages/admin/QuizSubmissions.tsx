@@ -4,9 +4,11 @@ import { NACE_SECTORS, Q1_OPTIONS, Q2_OPTIONS, Q4_OPTIONS, RESULT_BADGE_COLORS, 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download, Search, RefreshCw, Users, TrendingUp, Calendar, Trash2 } from 'lucide-react';
+import { Download, Search, RefreshCw, Users, TrendingUp, Calendar, Trash2, ArrowUp, ArrowDown, ArrowUpDown } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
+import { useTableSort } from '@/hooks/useTableSort';
+import { cn } from '@/lib/utils';
 
 interface Submission {
   id: string;
@@ -130,7 +132,7 @@ export default function QuizSubmissions() {
   const [error, setError] = useState<string | null>(null);
   const [emailFilter, setEmailFilter] = useState('');
   const [resultFilter, setResultFilter] = useState<string>('all');
-  const [sortAsc, setSortAsc] = useState(false);
+  // sortAsc removed — replaced with useTableSort below
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [deleting, setDeleting] = useState(false);
 
@@ -161,9 +163,23 @@ export default function QuizSubmissions() {
     if (resultFilter !== 'all') {
       list = list.filter(r => r.result_key === resultFilter);
     }
-    if (sortAsc) list = [...list].reverse();
     return list;
-  }, [rows, emailFilter, resultFilter, sortAsc]);
+  }, [rows, emailFilter, resultFilter]);
+
+  const { sortedData: sortedFiltered, sortKey, sortDir, toggleSort } = useTableSort(
+    filtered,
+    {
+      created_at: (r) => r.created_at,
+      email: (r) => r.email,
+      q1: (r) => formatArray(r.q1, Q1_MAP),
+      q2: (r) => formatArray(r.q2, Q2_MAP),
+      q3: (r) => formatArray(r.q3, NACE_MAP),
+      q4: (r) => formatArray(r.q4, Q4_MAP),
+      result_key: (r) => r.result_key,
+    },
+    'created_at',
+    'desc'
+  );
 
   const exportCSV = () => {
     const headers = ['Data', 'Email', 'Q1 (Pracownicy)', 'Q2 (Obrót)', 'Q3 (Sektor NACE)', 'Q4 (Klienci)', 'Wynik'];
@@ -272,14 +288,6 @@ export default function QuizSubmissions() {
             <SelectItem value="GREEN">🟢 Niskie ryzyko</SelectItem>
           </SelectContent>
         </Select>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setSortAsc(a => !a)}
-          className="gap-2"
-        >
-          Data: {sortAsc ? '↑ rosnąco' : '↓ malejąco'}
-        </Button>
       </div>
 
       {/* Błąd */}
@@ -294,7 +302,7 @@ export default function QuizSubmissions() {
         <div className="flex items-center justify-center py-16 text-muted-foreground">
           <RefreshCw className="animate-spin h-5 w-5 mr-2" /> Ładowanie…
         </div>
-      ) : filtered.length === 0 ? (
+      ) : sortedFiltered.length === 0 ? (
         <div className="text-center py-16 text-muted-foreground">
           Brak zgłoszeń pasujących do filtrów.
         </div>
@@ -304,19 +312,40 @@ export default function QuizSubmissions() {
             <thead className="bg-muted/50 border-b">
               <tr>
                 <th className="px-3 py-3">
-                  <Checkbox checked={selected.size === filtered.length && filtered.length > 0} onCheckedChange={toggleAll} />
+                  <Checkbox checked={selected.size === sortedFiltered.length && sortedFiltered.length > 0} onCheckedChange={toggleAll} />
                 </th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Data</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Email</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Q1 Pracownicy</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground whitespace-nowrap">Q2 Obrót</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Q3 Sektor</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Q4 Klienci</th>
-                <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Wynik</th>
+                {([
+                  ['created_at', 'Data', 'whitespace-nowrap'],
+                  ['email', 'Email', ''],
+                  ['q1', 'Q1 Pracownicy', 'whitespace-nowrap'],
+                  ['q2', 'Q2 Obrót', 'whitespace-nowrap'],
+                  ['q3', 'Q3 Sektor', ''],
+                  ['q4', 'Q4 Klienci', ''],
+                  ['result_key', 'Wynik', ''],
+                ] as const).map(([key, label, extra]) => {
+                  const active = sortKey === key;
+                  const Icon = active ? (sortDir === 'asc' ? ArrowUp : ArrowDown) : ArrowUpDown;
+                  return (
+                    <th
+                      key={key}
+                      onClick={() => toggleSort(key)}
+                      className={cn(
+                        'text-left px-4 py-3 font-semibold cursor-pointer select-none hover:bg-muted/80 transition-colors',
+                        active ? 'text-foreground' : 'text-muted-foreground',
+                        extra
+                      )}
+                    >
+                      <span className="inline-flex items-center gap-1.5">
+                        {label}
+                        <Icon className={cn('h-3.5 w-3.5', active ? 'opacity-100' : 'opacity-40')} />
+                      </span>
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody className="divide-y">
-              {filtered.map(row => (
+              {sortedFiltered.map(row => (
                 <tr key={row.id} className={`hover:bg-muted/30 transition-colors ${selected.has(row.id) ? 'bg-primary/5' : ''}`}>
                   <td className="px-3 py-3">
                     <Checkbox checked={selected.has(row.id)} onCheckedChange={() => toggleSelect(row.id)} />

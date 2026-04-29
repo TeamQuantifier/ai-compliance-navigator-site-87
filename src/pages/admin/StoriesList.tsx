@@ -14,6 +14,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface GroupedStory {
   group_id: string;
@@ -125,6 +126,20 @@ export default function StoriesList() {
     );
   }
 
+  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
+    stories,
+    {
+      title: (s) => s.title,
+      client_name: (s) => s.client_name,
+      industry: (s) => s.industry,
+      languages: (s) => s.languages.length,
+      status: (s) => s.status,
+      seo_score: (s) => s.seo_score,
+    },
+    'title',
+    'asc'
+  );
+
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
@@ -139,24 +154,24 @@ export default function StoriesList() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Tytuł</TableHead>
-              <TableHead>Klient</TableHead>
-              <TableHead>Branża</TableHead>
-              <TableHead className="w-32">Języki</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>SEO</TableHead>
+              <SortableHead sortKey="title" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Tytuł</SortableHead>
+              <SortableHead sortKey="client_name" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Klient</SortableHead>
+              <SortableHead sortKey="industry" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Branża</SortableHead>
+              <SortableHead sortKey="languages" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-32">Języki</SortableHead>
+              <SortableHead sortKey="status" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Status</SortableHead>
+              <SortableHead sortKey="seo_score" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>SEO</SortableHead>
               <TableHead className="text-right">Akcje</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {stories.length === 0 ? (
+            {sortedData.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
                   Brak success stories. Utwórz pierwsze!
                 </TableCell>
               </TableRow>
             ) : (
-              stories.map((story) => (
+              sortedData.map((story) => (
                 <TableRow key={story.group_id}>
                   <TableCell className="font-medium max-w-xs truncate">{story.title}</TableCell>
                   <TableCell>{story.client_name || '-'}</TableCell>

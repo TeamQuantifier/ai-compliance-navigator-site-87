@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Download, Users, Search } from 'lucide-react';
 import { format } from 'date-fns';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface Registration {
   id: string;
@@ -75,6 +76,22 @@ export default function EventRegistrations() {
     }
     return true;
   });
+
+  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
+    filtered,
+    {
+      created_at: (r) => r.created_at,
+      event_slug: (r) => r.event_slug,
+      first_name: (r) => r.first_name,
+      work_email: (r) => r.work_email,
+      company: (r) => r.company,
+      role: (r) => r.role,
+      company_size: (r) => r.company_size,
+      nis2_qualifier: (r) => r.nis2_qualifier,
+    },
+    'created_at',
+    'desc'
+  );
 
   const exportCsv = () => {
     const headers = ['Data', 'Event', 'Imię', 'Email', 'Firma', 'Stanowisko', 'Wielkość firmy', 'NIS2?', 'UTM Source', 'UTM Medium', 'UTM Campaign'];
@@ -155,26 +172,26 @@ export default function EventRegistrations() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Data</TableHead>
-                  <TableHead>Event</TableHead>
-                  <TableHead>Imię</TableHead>
-                  <TableHead>Email</TableHead>
-                  <TableHead>Firma</TableHead>
-                  <TableHead>Stanowisko</TableHead>
-                  <TableHead>Wielkość</TableHead>
-                  <TableHead>NIS2?</TableHead>
+                  <SortableHead sortKey="created_at" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Data</SortableHead>
+                  <SortableHead sortKey="event_slug" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Event</SortableHead>
+                  <SortableHead sortKey="first_name" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Imię</SortableHead>
+                  <SortableHead sortKey="work_email" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Email</SortableHead>
+                  <SortableHead sortKey="company" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Firma</SortableHead>
+                  <SortableHead sortKey="role" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Stanowisko</SortableHead>
+                  <SortableHead sortKey="company_size" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Wielkość</SortableHead>
+                  <SortableHead sortKey="nis2_qualifier" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>NIS2?</SortableHead>
                   <TableHead>UTM</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filtered.length === 0 ? (
+                {sortedData.length === 0 ? (
                   <TableRow>
                     <TableCell colSpan={9} className="text-center text-muted-foreground py-8">
                       Brak zapisów
                     </TableCell>
                   </TableRow>
                 ) : (
-                  filtered.map(r => (
+                  sortedData.map(r => (
                     <TableRow key={r.id}>
                       <TableCell className="whitespace-nowrap text-sm">
                         {format(new Date(r.created_at), 'dd.MM.yyyy HH:mm')}
