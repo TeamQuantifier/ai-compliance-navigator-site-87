@@ -15,6 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface GroupedPost {
   group_id: string;
@@ -124,6 +125,18 @@ export default function PostsList() {
     }
   };
 
+  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
+    posts,
+    {
+      title: (p) => p.title,
+      languages: (p) => p.languages.length,
+      status: (p) => p.status,
+      published_at: (p) => p.published_at,
+    },
+    'published_at',
+    'desc'
+  );
+
   if (loading) {
     return (
       <div>
@@ -155,22 +168,22 @@ export default function PostsList() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-20">Obrazek</TableHead>
-              <TableHead>Tytuł</TableHead>
-              <TableHead className="w-32">Języki</TableHead>
-              <TableHead className="w-24">Status</TableHead>
-              <TableHead className="w-32">Publikacja</TableHead>
+              <SortableHead sortKey="title" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Tytuł</SortableHead>
+              <SortableHead sortKey="languages" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-32">Języki</SortableHead>
+              <SortableHead sortKey="status" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-24">Status</SortableHead>
+              <SortableHead sortKey="published_at" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-32">Publikacja</SortableHead>
               <TableHead className="text-right w-32">Akcje</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {posts.length === 0 ? (
+            {sortedData.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
                   Brak artykułów. Utwórz pierwszy!
                 </TableCell>
               </TableRow>
             ) : (
-              posts.map((post) => (
+              sortedData.map((post) => (
                 <TableRow key={post.group_id}>
                   <TableCell>
                     {post.featured_image_url ? (
