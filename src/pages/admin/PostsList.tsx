@@ -125,6 +125,18 @@ export default function PostsList() {
     }
   };
 
+  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
+    posts,
+    {
+      title: (p) => p.title,
+      languages: (p) => p.languages.length,
+      status: (p) => p.status,
+      published_at: (p) => p.published_at,
+    },
+    'published_at',
+    'desc'
+  );
+
   if (loading) {
     return (
       <div>
@@ -140,18 +152,6 @@ export default function PostsList() {
       </div>
     );
   }
-
-  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
-    posts,
-    {
-      title: (p) => p.title,
-      languages: (p) => p.languages.length,
-      status: (p) => p.status,
-      published_at: (p) => p.published_at,
-    },
-    'published_at',
-    'desc'
-  );
 
   return (
     <div>
