@@ -141,6 +141,18 @@ export default function PostsList() {
     );
   }
 
+  const { sortedData, sortKey, sortDir, toggleSort } = useTableSort(
+    posts,
+    {
+      title: (p) => p.title,
+      languages: (p) => p.languages.length,
+      status: (p) => p.status,
+      published_at: (p) => p.published_at,
+    },
+    'published_at',
+    'desc'
+  );
+
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
@@ -156,10 +168,10 @@ export default function PostsList() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-20">Obrazek</TableHead>
-              <TableHead>Tytuł</TableHead>
-              <TableHead className="w-32">Języki</TableHead>
-              <TableHead className="w-24">Status</TableHead>
-              <TableHead className="w-32">Publikacja</TableHead>
+              <SortableHead sortKey="title" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort}>Tytuł</SortableHead>
+              <SortableHead sortKey="languages" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-32">Języki</SortableHead>
+              <SortableHead sortKey="status" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-24">Status</SortableHead>
+              <SortableHead sortKey="published_at" currentSort={sortKey} currentDir={sortDir} onSort={toggleSort} className="w-32">Publikacja</SortableHead>
               <TableHead className="text-right w-32">Akcje</TableHead>
             </TableRow>
           </TableHeader>
