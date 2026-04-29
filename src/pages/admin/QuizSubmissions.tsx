@@ -288,14 +288,6 @@ export default function QuizSubmissions() {
             <SelectItem value="GREEN">🟢 Niskie ryzyko</SelectItem>
           </SelectContent>
         </Select>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setSortAsc(a => !a)}
-          className="gap-2"
-        >
-          Data: {sortAsc ? '↑ rosnąco' : '↓ malejąco'}
-        </Button>
       </div>
 
       {/* Błąd */}
