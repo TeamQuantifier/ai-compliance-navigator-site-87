@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Download, Users, Search } from 'lucide-react';
 import { format } from 'date-fns';
+import { useTableSort, SortableHead } from '@/hooks/useTableSort';
 
 interface Registration {
   id: string;
