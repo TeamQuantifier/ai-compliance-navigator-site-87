@@ -176,14 +176,14 @@ export default function PostsList() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {posts.length === 0 ? (
+            {sortedData.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
                   Brak artykułów. Utwórz pierwszy!
                 </TableCell>
               </TableRow>
             ) : (
-              posts.map((post) => (
+              sortedData.map((post) => (
                 <TableRow key={post.group_id}>
                   <TableCell>
                     {post.featured_image_url ? (
