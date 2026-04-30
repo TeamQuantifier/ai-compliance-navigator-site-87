@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useEffect, useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternates } from '@/hooks/useBlog';
@@ -103,6 +104,7 @@ const BlogPost = () => {
   if (error) {
     return (
       <PageTemplate title={t('blog.title')} description="" noSeo>
+        <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{t('blog.error')}</AlertDescription>
@@ -130,6 +132,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <PageTemplate title={t('blog.notFound')} description="" noSeo>
+        <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
         <div className="max-w-4xl mx-auto text-center py-12">
           <h2 className="text-2xl font-bold mb-4">{t('blog.notFound')}</h2>
           <Link to={`/${currentLocale}/blog`}>
