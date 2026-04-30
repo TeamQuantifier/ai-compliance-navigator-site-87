@@ -229,11 +229,15 @@ export const SEOHead = ({
       
       {/* Canonical & hreflang with geo-targeting */}
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[lang as Locale] || lang} href={canonicalUrl} />
+      {!isConsolidated && (
+        <link rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[lang as Locale] || lang} href={selfUrl} />
+      )}
       {alternateLinks.map(alt => (
         <link key={alt.lang} rel="alternate" hrefLang={alt.hreflang} href={alt.url} />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={defaultLangUrl} />
+      {!isConsolidated && (
+        <link rel="alternate" hrefLang="x-default" href={defaultLangUrl} />
+      )}
       
       {/* Open Graph */}
       <meta property="og:title" content={finalOgTitle} />
