@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useEffect, useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { usePost, useAlternates } from '@/hooks/useBlog';
