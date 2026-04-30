@@ -7733,19 +7733,19 @@
       "subtitle": "Pogłębione artykuły pomagające przygotować się na wymagania NIS2.",
       "articles": [
         {
-          "title": "Lista kontrolna NIS2 2026",
+          "title": "Lista kontrolna NIS2 — Artykuł 21",
           "desc": "Wymagania Artykułu 21 zmapowane na działania i dowody",
-          "slug": "lista-kontrolna-nis2-2026"
+          "slug": "dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia"
         },
         {
           "title": "Wdrożenie NIS2/KSC w Polsce",
           "desc": "Przewodnik po nowelizacji UKSC z terminami i krokami",
-          "slug": "wdrozenie-nis2-ksc-przewodnik"
+          "slug": "dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia"
         },
         {
-          "title": "Dyrektywa NIS2 — Przewodnik",
-          "desc": "Wszystko co musisz wiedzieć o dyrektywie NIS2",
-          "slug": "dyrektywa-nis2"
+          "title": "Dyrektywa NIS2 — Pełny przewodnik",
+          "desc": "Kompletne omówienie dyrektywy i obowiązków podmiotów",
+          "slug": "dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia"
         }
       ]
     },

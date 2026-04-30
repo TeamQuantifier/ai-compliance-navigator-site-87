@@ -7781,14 +7781,14 @@
       "subtitle": "Deep-dive articles to help you prepare for NIS2 requirements.",
       "articles": [
         {
-          "title": "NIS2 Compliance Checklist 2026",
+          "title": "NIS2 Compliance Checklist — Article 21",
           "desc": "Article 21 requirements mapped to actions and evidence",
-          "slug": "nis2-compliance-checklist-2026"
+          "slug": "nis2-directive-compliance-requirements-implementation-guide"
         },
         {
           "title": "NIS2 Directive — Complete Guide",
           "desc": "Everything you need to know about the NIS2 Directive",
-          "slug": "nis2-directive"
+          "slug": "nis2-directive-compliance-requirements-implementation-guide"
         },
         {
           "title": "NIS2 Requirements & Implementation",

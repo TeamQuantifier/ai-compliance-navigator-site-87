@@ -73,30 +73,8 @@ export const usePost = (slug: string, lang: string) => {
 
       if (error) throw error;
 
-      // Fallback to English for Czech if post not found
-      if (!data && lang === 'cs') {
-        const { data: fallbackData, error: fallbackError } = await supabase
-          .from('posts')
-          .select(`*, category:categories(*)`)
-          .eq('slug', slug)
-          .eq('lang', 'en')
-          .eq('status', 'published')
-          .maybeSingle();
-
-        if (fallbackError) throw fallbackError;
-
-        if (fallbackData) {
-          const { data: alternateData } = await supabase
-            .from('alternates')
-            .select('*')
-            .eq('content_type', 'post')
-            .or(`primary_id.eq.${fallbackData.id},alternate_id.eq.${fallbackData.id}`)
-            .maybeSingle();
-
-          return { ...fallbackData, alternate: alternateData } as PostWithRelations;
-        }
-        return null;
-      }
+      // No CS→EN fallback: serving EN content under /cs/blog/* causes
+      // duplicate content and broken hreflang. Missing CS post → 404.
 
       if (data) {
         const { data: alternateData } = await supabase
@@ -273,6 +251,7 @@ export const useAlternates = (groupId: string | null | undefined, currentLang: s
         .select('lang, slug')
         .eq('group_id', groupId)
         .eq('status', 'published')
+        .eq('robots_index', true)
         .neq('lang', currentLang);
       
       if (error) throw error;
