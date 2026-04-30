@@ -6272,19 +6272,19 @@
       "subtitle": "Podrobné články pomáhající s přípravou na požadavky NIS2.",
       "articles": [
         {
-          "title": "NIS2 Compliance Checklist 2026",
+          "title": "Kontrolní seznam NIS2 — Článek 21",
           "desc": "Požadavky článku 21 mapované na akce a důkazy",
-          "slug": "nis2-compliance-checklist-2026"
+          "slug": "smernice-nis2-pozadavky-na-soulad-pruvodce-implementaci"
         },
         {
-          "title": "NIS2 Directive — Complete Guide",
+          "title": "Směrnice NIS2 — Kompletní průvodce",
           "desc": "Vše co potřebujete vědět o směrnici NIS2",
-          "slug": "nis2-directive"
+          "slug": "smernice-nis2-pozadavky-na-soulad-pruvodce-implementaci"
         },
         {
-          "title": "NIS2 Requirements & Implementation",
+          "title": "Požadavky NIS2 a implementace",
           "desc": "Technický průvodce implementací pro compliance týmy",
-          "slug": "nis2-directive-compliance-requirements-implementation-guide"
+          "slug": "smernice-nis2-pozadavky-na-soulad-pruvodce-implementaci"
         }
       ]
     },

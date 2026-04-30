@@ -1,105 +1,149 @@
-## Plan: Optymalizacja SEO slugów + wytyczne graficzne (EN, drafty)
-
-### Status w bazie (EN)
-
-| # | Aktualny slug | Status | Grafika | Body |
-|---|---|---|---|---|
-| 1 | `dora-compliance-checklist` | **published** | TAK | 64k znaków (gotowy) |
-| 2 | `iso-27001-vs-soc-2-comparison` | draft | brak | 16k |
-| 3 | `audit-evidence-collection-automation` | draft | brak | 5k (krótki) |
-| 4 | `soc-2-compliance-tools-stack-2026` | draft | brak | 16k |
-| 5 | `compliance-automation-evaluation-guide` | draft | brak | 8k |
-| 6 | `soc-2-for-startups-fast-track-guide` | draft | brak | 24k |
-| 7 | `soc-2-audit-preparation-checklist` | draft | brak | 25k |
-| bonus | `soc-2-compliance-cost-timeline` | draft | brak | 2.7k (szkic) |
-
-DORA już jest live — zostawiamy. Reszta **pozostaje draftem**, tłumaczenia PL/CS później.
+## Cel
+Naprawić linkowanie i SEO klastra NIS2 (PL/EN/CS) zgodnie z kryteriami akceptacji. Wszystkie zmiany dotyczą tylko obszaru NIS2 + globalna naprawa fallbacku CS i logiki canonical/hreflang.
 
 ---
 
-### Rekomendowane slugi pod SEO (EN)
+## 1. Naprawa linków na `/pl/frameworks/nis-2`
 
-Zasady: krótko (3–5 słów), główna fraza na początku, bez roku w slugu (chyba że to ranking/stack year-specific), bez stopwords, intent-match.
+Sekcja „Materiały o zgodności z NIS2" (komponent `Nis2Ksc.tsx`, linie ~761–777) renderuje 3 karty z tłumaczeń `nis2Ksc.relatedContent.articles[]`.
 
-| # | Obecny | **Rekomendowany slug** | Uzasadnienie SEO |
-|---|---|---|---|
-| 2 | `iso-27001-vs-soc-2-comparison` | **`iso-27001-vs-soc-2`** | Krócej, dokładny match wysokowolumenowej frazy "iso 27001 vs soc 2"; "comparison" to filler — Google i tak rozumie intent porównawczy |
-| 3 | `audit-evidence-collection-automation` | **`audit-evidence-automation`** | Krócej, zgodne z focus_keyword w bazie ("audit evidence automation"), "collection" redundantne |
-| 4 | `soc-2-compliance-tools-stack-2026` | **`soc-2-compliance-tools`** | Evergreen — rok w slugu starzeje URL i blokuje aktualizacje. Rok zostaje w meta_title (gdzie pomaga w CTR) |
-| 5 | `compliance-automation-evaluation-guide` | **`compliance-automation-software`** | Match z focus_keyword "compliance automation software" (komercyjny intent, wyższy volume niż "evaluation guide") |
-| 6 | `soc-2-for-startups-fast-track-guide` | **`soc-2-for-startups`** | Dokładny match głównej frazy; "fast-track guide" w tytule, nie w URL |
-| 7 | `soc-2-audit-preparation-checklist` | **`soc-2-audit-preparation`** | Krócej; "checklist" zostaje w title/H1 (zwiększa CTR), URL czystszy |
-| bonus | `soc-2-compliance-cost-timeline` | **`soc-2-cost`** lub zostawić (treść za krótka, 2.7k — najpierw rozwinąć do ~1500 słów) |
+Stan obecny w `public/locales/pl/translation.json`:
+- `lista-kontrolna-nis2-2026` → istnieje jako **draft** (404 dla anonima)
+- `wdrozenie-nis2-ksc-przewodnik` → **nie istnieje w bazie**
+- `dyrektywa-nis2` → opublikowany, ale stary (do degradacji, p. sekcja 2)
 
-**Uwaga:** zmiana slugu = automatycznie tworzy się 301 redirect (mechanizm `useSlugRedirect` już istnieje w projekcie) — żaden link nie zginie.
+**Akcja — edycja `public/locales/pl/translation.json`:**
 
----
+```
+articles[0].slug = "dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia"
+articles[0].title = "Lista kontrolna NIS2 — Artykuł 21"
+articles[0].desc = "Wymagania Artykułu 21 zmapowane na działania i dowody"
 
-### Co robimy w tej iteracji
+articles[1].slug = "dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia"
+articles[1].title = "Wdrożenie NIS2/KSC w Polsce"
+articles[1].desc = "Przewodnik po nowelizacji UKSC z terminami i krokami"
 
-1. **Aktualizacja slugów** (6 artykułów EN) — zgodnie z tabelą powyżej. Status pozostaje `draft`.
-2. **Sanity-check meta_title / meta_desc** — większość już OK (50–60 / 130–160 znaków). Drobne korekty tam, gdzie po zmianie slugu warto dopasować H1.
-3. **Wytyczne graficzne** (poniżej) — tylko jako tekst, nie generujemy plików.
-4. **NIE robimy:** tłumaczeń PL/CS, publikacji, generowania grafik AI.
-
----
-
-### Wytyczne graficzne (featured images, 1200×630, OG-friendly)
-
-Spójna paleta z brandem Quantifier: granat `#0F172A`, akcent `#3B82F6`, biel, akcent compliance-green `#10B981`. Sans-serif (Inter/SF Pro). Bez stockowych ludzi w garniturach.
-
-**1. ISO 27001 vs SOC 2** (`iso-27001-vs-soc-2`)
-- Split-screen 50/50: lewa strona = tarcza z napisem "ISO 27001" (granat + biały), prawa = tarcza "SOC 2" (niebieski + biały).
-- W centrum pionowa linia podziału z ikoną wagi (⚖) lub strzałkami "VS".
-- Subtle grid w tle (compliance/audit feel).
-- W rogu: małe flagi 🇪🇺 (ISO) i 🇺🇸 (SOC 2) sygnalizujące rynek.
-
-**2. Audit Evidence Automation** (`audit-evidence-automation`)
-- Po lewej: stos chaotycznie ułożonych dokumentów / ikony folderów + symbol ⚠.
-- Strzałka pośrodku → koło zębate / automation icon.
-- Po prawej: czysty dashboard-mockup z zielonymi checkmarkami w tabeli (3–4 wiersze).
-- Komunikat wizualny: chaos → automatyzacja → kontrola.
-
-**3. SOC 2 Compliance Tools** (`soc-2-compliance-tools`)
-- Izometryczny "stack" warstw (4–5 nakładających się prostokątów) z etykietami: GRC / IAM / SIEM / Vuln Scan / Training.
-- Każda warstwa w innym odcieniu niebieskiego (gradient od jasnego do granatowego).
-- W tle subtelna siatka serwerowa lub linie połączeń między warstwami.
-
-**4. Compliance Automation Software** (`compliance-automation-software`)
-- Lupa (🔍) na pierwszym planie, w środku lupy widać wycinek dashboardu z kolumnami "Coverage / Evidence / AI / EU / Price" i checkboxami.
-- Tło: ghost'owe logo platform compliance (rozmyte, nieczytelne — żeby nie wyglądało reklamowo).
-- Akcent: zielony pasek "8 criteria" w dolnym pasku.
-
-**5. SOC 2 for Startups** (`soc-2-for-startups`)
-- Rakieta startująca (🚀, ale stylizowana wektorowo, nie emoji) z tarczą SOC 2 jako "ładunkiem".
-- Ślad rakiety jako timeline 3 etapów: "Month 1 → Month 3 → Month 6" (oznaczenia tekstowe).
-- Tło: gradient noc → świt (granat → niebieski) sugerujący "fast track".
-
-**6. SOC 2 Audit Preparation** (`soc-2-audit-preparation`)
-- Pozioma oś czasu / kalendarz z 4–5 milestone'ami: Scope → Gap Analysis → Remediation → Evidence → Audit.
-- Każdy milestone jako okrąg z ikoną; checkmarki na pierwszych 3.
-- Po prawej stronie sylwetka audytora z teczką (płaska ilustracja, nie zdjęcie).
-
-**Bonus — SOC 2 Cost & Timeline** (jeśli rozwijamy):
-- Wykres słupkowy 2D: oś X = "Type 1 / Type 2 / Year 2", oś Y = $. Plus mała ikona zegara obok każdego słupka pokazująca timeline.
-
----
-
-### Sekcja techniczna
-
-**Operacja:** UPDATE na 6 wierszach `posts` w schemacie public (kolumna `slug`).
-
-```sql
-UPDATE posts SET slug = 'iso-27001-vs-soc-2'           WHERE slug = 'iso-27001-vs-soc-2-comparison'    AND lang='en';
-UPDATE posts SET slug = 'audit-evidence-automation'    WHERE slug = 'audit-evidence-collection-automation' AND lang='en';
-UPDATE posts SET slug = 'soc-2-compliance-tools'       WHERE slug = 'soc-2-compliance-tools-stack-2026'  AND lang='en';
-UPDATE posts SET slug = 'compliance-automation-software' WHERE slug = 'compliance-automation-evaluation-guide' AND lang='en';
-UPDATE posts SET slug = 'soc-2-for-startups'           WHERE slug = 'soc-2-for-startups-fast-track-guide' AND lang='en';
-UPDATE posts SET slug = 'soc-2-audit-preparation'      WHERE slug = 'soc-2-audit-preparation-checklist'  AND lang='en';
+articles[2].slug = "dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia"
+articles[2].title = "Dyrektywa NIS2 — Pełny przewodnik"
+articles[2].desc = "Kompletne omówienie dyrektywy i obowiązków podmiotów"
 ```
 
-- Status pozostaje `draft` — brak ekspozycji publicznej, więc redirect-y nie są krytyczne, ale `useSlugRedirect` i tak załatwia sprawę po publikacji.
-- Brak zmian w `body_rich`, `meta_title`, `meta_desc`, `featured_image_url` — wszystko zostaje.
-- Brak migracji schematu, tylko data migration via migration tool.
+Wszystkie trzy karty tymczasowo prowadzą do opublikowanego pillara, co spełnia wymóg „brak linków do 404/draftów". Gdy artykuły 1 i 2 zostaną opublikowane (z docelowymi slugami `lista-kontrolna-nis2` i `nis2-a-ksc-zmiany-prawo-cyberbezpieczenstwo`), wystarczy zaktualizować slugi w JSON (utworzymy też migracje slugów w bazie).
 
-**Po Twojej akceptacji:** wykonam UPDATE-y i wrócę z potwierdzeniem. Grafiki wgrasz sam przez panel `/admin/posts/edit` (pole "Główny obrazek"). Tłumaczenia PL/CS — w osobnej iteracji.
+**To samo dla CS i EN** (te same tłumaczenia obecnie też wskazują na drafty/archiwa: `nis2-compliance-checklist-2026` = draft, `nis2-directive` = archived):
+- EN karty 0 i 1 → `nis2-directive-compliance-requirements-implementation-guide`
+- CS karty 0 i 1 → `smernice-nis2-pozadavky-na-soulad-pruvodce-implementaci`
+- karta 2 EN/CS → już wskazuje na poprawny pillar
+
+---
+
+## 2. Degradacja starego artykułu PL `dyrektywa-nis2`
+
+Post `id=88188e1d…`, status `published`, zawiera w `excerpt` i `meta_desc` zdezaktualizowaną informację „ustawa czeka na podpis Prezydenta".
+
+**Akcja — migracja UPDATE na `posts`:**
+
+1. Zaktualizować `meta_desc` (≤155 zn.):
+   > „Dyrektywa NIS2 (UE 2022/2555) – kompletny przewodnik 2026. 18 sektorów, terminy 24h/72h/1 mies., obowiązki zarządu. Nowelizacja UKSC obowiązuje od 3 kwietnia 2026 r."
+
+2. Zaktualizować `excerpt` analogicznie (usunąć „czeka na podpis Prezydenta", zastąpić: „Nowelizacja ustawy o KSC weszła w życie 3 kwietnia 2026 r., obejmuje ok. 42 000 podmiotów, 12-miesięczny termin wdrożenia, 2-letnie odroczenie kar.").
+
+3. Ustawić `canonical_url = https://quantifier.ai/pl/blog/dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia/` oraz `robots_index = false` (consolidacja na nowy pillar — chroni przed kanibalizacją bez ryzyka utraty linków przychodzących).
+
+4. Wstawić wpis do tabeli `redirects`:
+   - `from_path = /pl/blog/dyrektywa-nis2`
+   - `to_path = /pl/blog/dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia`
+   - `http_code = 301`, `is_active = true`
+   (Zostawiamy też canonical+noindex jako zabezpieczenie SEO; redirect 301 obsługiwany jest przez istniejący system `redirects`.)
+
+---
+
+## 3. Naprawa CS fallbacku `/cs/blog/nis2-directive`
+
+Źródło problemu jest **globalne**: `src/hooks/useBlog.ts` (linie 77–99) — funkcja `usePost` przy braku posta CS automatycznie zwraca EN post pod tym samym slugiem. To powoduje że KAŻDY angielski slug otwarty pod `/cs/blog/...` renderuje EN treść z duplicate-content i błędnymi hreflangami.
+
+**Akcja — `src/hooks/useBlog.ts`:**
+
+Usunąć fallback CS→EN w `usePost` (linie 77–99). Gdy posta CS brak — zwracać `null` → `BlogPost.tsx` wyrenderuje stronę „nie znaleziono" / 404.
+
+Dodatkowo w `BlogPost.tsx` po `error || !post` wyrenderować `<meta name="robots" content="noindex">` (już jest komponent „not found" — należy upewnić się że ma noindex).
+
+**To rozwiązuje sprawę `/cs/blog/nis2-directive`** bez potrzeby ręcznych redirectów — strona zwróci 404 z noindex zamiast EN treści.
+
+Opcjonalnie: dodać redirect w bazie z `/cs/blog/nis2-directive` → `/en/blog/nis2-directive-compliance-requirements-implementation-guide` (302) dla lepszego UX. **Pominąć fallback `usePosts` (listing) — listing CS świadomie pokazuje EN treści jako zaślepkę, to inny case.** Można rozważyć w osobnym ticketcie.
+
+---
+
+## 4. Logika hreflang i canonical dla bloga
+
+Audyt `src/components/seo/SEOHead.tsx`:
+- ✅ Self-canonical: linia 101 — generuje canonical na własny URL artykułu (chyba że `canonical_url` z DB nadpisze — co właśnie wykorzystamy w sekcji 2).
+- ✅ Hreflang dodawany tylko z `alternates` (przekazywanych z `useAlternates`, który filtruje po `status='published'`).
+- ✅ x-default = EN alternate jeśli istnieje, inaczej self.
+- ✅ Self-hreflang dodawany (linia 224).
+
+**Wymagane korekty:**
+
+a) `useAlternates` (`src/hooks/useBlog.ts`, linia 264) filtruje przez `status='published'` — OK. Ale dodatkowo trzeba filtrować po `robots_index = true`, żeby canonicalized stary `dyrektywa-nis2` (po sekcji 2 będzie miał noindex) nie pojawiał się w hreflangach nowego pillara. Dodać `.eq('robots_index', true)`.
+
+b) `BlogPost.tsx` — przy renderowaniu `<SEOHead>` przekazywać `canonical_url` z DB (już to robi przez prop `customCanonicalUrl`?). Zweryfikować i upewnić się, że jeżeli post ma niestandardowy `canonical_url`, to NIE są wstrzykiwane hreflangi (bo strona już deklaruje konsolidację gdzie indziej). Jeśli `canonical_url` jest ustawione i wskazuje na inny URL — pominąć blok hreflangów w `SEOHead`.
+
+c) Czyszczenie tabeli `alternates`: usunąć rekordy łączące stary `dyrektywa-nis2` (`88188e1d…`) z EN `nis2-directive` (`2e298e95…`). Stary EN jest archived, stary PL idzie do noindex — nie powinny mieć alternates.
+
+```sql
+DELETE FROM alternates 
+WHERE primary_id IN ('88188e1d-...','2e298e95-...') 
+   OR alternate_id IN ('88188e1d-...','2e298e95-...');
+```
+
+---
+
+## 5. Sitemap i linkowanie wewnętrzne
+
+`supabase/functions/sitemap/index.ts` (linia 188) już filtruje `.eq('status', 'published')`. Trzeba dodać:
+
+a) `.eq('robots_index', true)` — żeby stary `dyrektywa-nis2` (po sekcji 2 noindex) zniknął z sitemapy.
+
+b) Sitemap dla postów (linia 261, `generateDynamicHreflangLinks`) — funkcja dodaje x-default na bazie EN slugu z `allVersions.find(v => v.lang === 'en')`. Jeżeli EN nie istnieje — robi fallback na current. To jest OK. Ale jeśli post ma ustawiony `canonical_url` na inny URL, sitemap powinien pominąć cały wpis. Dodać filtr `.is('canonical_url', null)` w pobieraniu postów do sitemapy (lub: zwracać tylko self-canonical).
+
+c) Po deployu edge function — wymusić regenerację (trigger już istnieje, ale można od ręki uderzyć w endpoint).
+
+**Linkowanie wewnętrzne:** sekcje „Related Articles" w innych artykułach klastra NIS2 nie są w zakresie tego ticketu (są generowane z body_rich) — warto zaadresować w osobnym przeglądzie po opublikowaniu draftów.
+
+---
+
+## Pliki do zmiany
+
+```text
+public/locales/pl/translation.json     - linki w nis2Ksc.relatedContent
+public/locales/en/translation.json     - linki w nis2Ksc.relatedContent
+public/locales/cs/translation.json     - linki w nis2Ksc.relatedContent
+src/hooks/useBlog.ts                   - usunąć fallback CS→EN w usePost,
+                                         dodać robots_index filter w useAlternates
+src/components/seo/SEOHead.tsx         - pominąć hreflangi gdy custom canonical
+src/pages/blog/BlogPost.tsx            - noindex na 404
+supabase/functions/sitemap/index.ts    - filtr robots_index + canonical_url IS NULL
+```
+
+## Migracje DB (insert tool)
+
+```text
+1. UPDATE posts SET meta_desc=…, excerpt=…, canonical_url=…, robots_index=false 
+   WHERE id='88188e1d-cf79-44c7-a795-608093f4da86';
+
+2. INSERT INTO redirects (from_path, to_path, http_code, is_active) VALUES (…);
+
+3. DELETE FROM alternates WHERE primary_id IN (…) OR alternate_id IN (…);
+```
+
+## Acceptance check
+
+- `/pl/frameworks/nis-2` „Materiały" → 3 linki, wszystkie do opublikowanego pillara.
+- `/pl/blog/dyrektywa-nis2` → 301 → nowy pillar; treść zawiera datę 3 kwietnia 2026 r.
+- `/cs/blog/nis2-directive` → 404 (lub redirect do EN), noindex, brak EN treści pod CS URL.
+- Hreflang generowany tylko dla published + indeksowalnych wersji; każda strona ma self-canonical (chyba że celowo skonsolidowana).
+- Sitemap nie zawiera `dyrektywa-nis2` (noindex) ani draftów.
+
+## Pytanie do decyzji
+
+W kroku 1 chcesz, żeby karty 1 i 2 (Lista kontrolna, NIS2/KSC) **tymczasowo wskazywały na pillar** (sugerowane), czy **całkowicie zniknęły** z UI do czasu opublikowania właściwych draftów? Sugeruję pillar — utrzymuje wartość UX i SEO sekcji.
