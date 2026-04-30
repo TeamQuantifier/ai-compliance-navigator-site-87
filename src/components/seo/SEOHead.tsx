@@ -98,21 +98,29 @@ export const SEOHead = ({
 }: SEOHeadProps) => {
   // Build URLs with trailing slash
   const basePath = contentType === 'post' ? 'blog' : 'success-stories';
-  const canonicalUrl = customCanonicalUrl || ensureTrailingSlash(`${BASE_URL}/${lang}/${basePath}/${slug}`);
-  
+  const selfUrl = ensureTrailingSlash(`${BASE_URL}/${lang}/${basePath}/${slug}`);
+  const canonicalUrl = customCanonicalUrl || selfUrl;
+
+  // If a custom canonical points to a different URL, the page is being
+  // consolidated into another resource — suppress hreflang to avoid
+  // conflicting language signals to search engines.
+  const isConsolidated = !!customCanonicalUrl && customCanonicalUrl !== selfUrl;
+
   // Build alternates URLs with proper hreflang
-  const alternateLinks = (alternates || []).map(alt => ({
-    lang: alt.lang,
-    hreflang: LOCALE_HREFLANG_MAP[alt.lang as Locale] || alt.lang,
-    url: ensureTrailingSlash(`${BASE_URL}/${alt.lang}/${basePath}/${alt.slug}`),
-  }));
-  
+  const alternateLinks = isConsolidated
+    ? []
+    : (alternates || []).map(alt => ({
+        lang: alt.lang,
+        hreflang: LOCALE_HREFLANG_MAP[alt.lang as Locale] || alt.lang,
+        url: ensureTrailingSlash(`${BASE_URL}/${alt.lang}/${basePath}/${alt.slug}`),
+      }));
+
   // x-default: use EN alternate if exists, otherwise current URL
   const enAlternate = alternateLinks.find(a => a.lang === 'en');
-  const defaultLangUrl = lang === 'en' 
-    ? canonicalUrl 
-    : enAlternate 
-      ? enAlternate.url 
+  const defaultLangUrl = lang === 'en'
+    ? canonicalUrl
+    : enAlternate
+      ? enAlternate.url
       : canonicalUrl;
 
   // Fallback logic for meta fields
