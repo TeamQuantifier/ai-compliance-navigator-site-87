@@ -181,11 +181,15 @@ serve(async (req) => {
       console.error('Error fetching stories:', storiesError);
     }
 
-    // Fetch all published posts with group_id
+    // Fetch all published, indexable posts with group_id.
+    // Exclude posts with a custom canonical_url that points elsewhere
+    // (consolidated/duplicate content) — those should not appear in the sitemap.
     const { data: posts, error: postsError } = await supabase
       .from('posts')
-      .select('id, slug, lang, group_id, updated_at, published_at')
+      .select('id, slug, lang, group_id, updated_at, published_at, canonical_url, robots_index')
       .eq('status', 'published')
+      .eq('robots_index', true)
+      .is('canonical_url', null)
       .order('published_at', { ascending: false });
 
     if (postsError) {
