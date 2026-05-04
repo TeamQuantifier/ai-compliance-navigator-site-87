@@ -316,67 +316,11 @@
   to = "/:locale/frameworks/ccpa/"
   status = 301
 
-# --- Trailing-slash enforcement (reduces GSC "alternate page" noise) ---
-# Key pages without trailing slash
-[[redirects]]
-  from = "/:locale/blog"
-  to = "/:locale/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/partners"
-  to = "/:locale/partners/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/product"
-  to = "/:locale/product/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/frameworks"
-  to = "/:locale/frameworks/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/success-stories"
-  to = "/:locale/success-stories/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/by-roles"
-  to = "/:locale/by-roles/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/contact"
-  to = "/:locale/contact/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/plans"
-  to = "/:locale/plans/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/about"
-  to = "/:locale/about/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/compare"
-  to = "/:locale/compare/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/frameworks/governance"
-  to = "/:locale/frameworks/governance/"
-  status = 301
-
-[[redirects]]
-  from = "/:locale/frameworks/environmental"
-  to = "/:locale/frameworks/environmental/"
-  status = 301
+# --- Trailing-slash enforcement ---
+# DISABLED: Netlify ignores trailing slash when matching `from`, so
+# `from = "/:locale/blog"` -> `to = "/:locale/blog/"` matched both variants
+# and produced an infinite 301 loop (ERR_TOO_MANY_REDIRECTS).
+# Trailing slash is now enforced via canonical URLs in <SEOHead> only.
 
 # Root redirect — must be before SPA fallback
 [[redirects]]
