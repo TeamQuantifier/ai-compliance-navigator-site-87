@@ -66,6 +66,10 @@ const pageUrlMap: Record<string, string> = {
   'legal-cookies': 'legal/cookies',
   'cybersecurity-check': 'cybersecurity-check',
   'cybersecurity-check-pl': 'sprawdz-cyberbezpieczenstwo',
+  'product-hub': 'product',
+  'epd': 'frameworks/product-level/epd',
+  'lca-analysis': 'frameworks/product-level/lca-analysis',
+  'events': 'events',
 };
 
 interface FAQ {
