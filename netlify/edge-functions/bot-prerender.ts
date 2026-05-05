@@ -110,52 +110,51 @@ function shouldSkip(pathname: string): boolean {
  * Returns null if no mapping (let SPA handle it).
  */
 function resolvePrerenderUrl(pathname: string): string | null {
-  // Strip trailing slash for matching, then re-normalize.
+  // Strip trailing slash for matching.
   const path = pathname.replace(/\/+$/, "") || "/";
 
-  // Root → marketing with path "/"
+  // Root → marketing index EN
   if (path === "/") {
-    return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?path=/`;
+    return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?locale=en&page=index`;
   }
 
   const parts = path.split("/").filter(Boolean);
-  const locale = parts[0];
+  const locale = LOCALES.includes(parts[0]) ? parts[0] : "en";
+  const localePath = LOCALES.includes(parts[0])
+    ? parts.slice(1).join("/")
+    : parts.join("/");
 
   // Locale root: /en, /pl, /cs
-  if (parts.length === 1 && LOCALES.includes(locale)) {
-    return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?path=${encodeURIComponent(
-      "/" + locale + "/"
-    )}`;
+  if (!localePath) {
+    return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?locale=${locale}&page=index`;
   }
 
-  // Non-localized paths fall through to marketing too (covers legacy + redirects).
-  if (!LOCALES.includes(locale)) {
-    return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?path=${encodeURIComponent(
-      path + "/"
-    )}`;
-  }
+  const subParts = localePath.split("/");
 
   // /:locale/blog/:slug → prerender-post
-  if (parts.length === 3 && parts[1] === "blog") {
-    const slug = parts[2];
+  if (subParts.length === 2 && subParts[0] === "blog") {
     return `${SUPABASE_FUNCTIONS_BASE}/prerender-post?locale=${locale}&slug=${encodeURIComponent(
-      slug
+      subParts[1]
     )}`;
   }
 
   // /:locale/success-stories/:slug → prerender-story
-  if (parts.length === 3 && parts[1] === "success-stories") {
-    const slug = parts[2];
+  if (subParts.length === 2 && subParts[0] === "success-stories") {
     return `${SUPABASE_FUNCTIONS_BASE}/prerender-story?locale=${locale}&slug=${encodeURIComponent(
-      slug
+      subParts[1]
     )}`;
   }
 
-  // Everything else (frameworks, product, by-roles, plans, contact, about,
-  // legal, partners, blog listing, success-stories listing, landings, etc.)
-  return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?path=${encodeURIComponent(
-    path + "/"
-  )}`;
+  // Marketing: reverse-map URL path to known page slug.
+  const pageSlug = PATH_TO_PAGE[localePath];
+  if (pageSlug) {
+    return `${SUPABASE_FUNCTIONS_BASE}/prerender-marketing?locale=${locale}&page=${encodeURIComponent(
+      pageSlug
+    )}`;
+  }
+
+  // Unknown route — let SPA handle it (avoids serving wrong/generic HTML to bots).
+  return null;
 }
 
 export default async (request: Request, _context: Context) => {
