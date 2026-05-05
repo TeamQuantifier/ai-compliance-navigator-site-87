@@ -43,7 +43,7 @@ function richTextToHtml(content: Record<string, unknown> | null): string {
       }).join('');
     switch (type) {
       case 'paragraph': return '<p>' + inlineText(children) + '</p>';
-      case 'heading': { const l = (attrs.level as number) || 2; const t = children.map((c) => (c.text as string) || '').join(''); return '<h' + l + '>' + t + '</h' + l + '>'; }
+      case 'heading': { const raw = (attrs.level as number) || 2; const l = Math.max(2, Math.min(6, raw)); const t = children.map((c) => (c.text as string) || '').join(''); return '<h' + l + '>' + t + '</h' + l + '>'; }
       case 'bulletList': return '<ul>' + children.map((li) => '<li>' + ((li.content || []) as Array<Record<string, unknown>>).map((p) => ((p.content || []) as Array<Record<string, unknown>>).map((c) => (c.text as string) || '').join('')).join('') + '</li>').join('') + '</ul>';
       case 'orderedList': return '<ol>' + children.map((li) => '<li>' + ((li.content || []) as Array<Record<string, unknown>>).map((p) => ((p.content || []) as Array<Record<string, unknown>>).map((c) => (c.text as string) || '').join('')).join('') + '</li>').join('') + '</ol>';
       case 'image': return '<img src="' + ((attrs.src as string) || '') + '" alt="' + ((attrs.alt as string) || '') + '" />';
