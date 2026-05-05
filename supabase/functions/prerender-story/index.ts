@@ -96,7 +96,9 @@ serve(async (req) => {
   try {
     const url = new URL(req.url);
     const locale = url.searchParams.get('locale') || 'en';
-    const slug = url.searchParams.get('slug');
+    const rawSlug = url.searchParams.get('slug');
+    let slug: string | null = rawSlug;
+    if (rawSlug) { try { slug = decodeURIComponent(rawSlug); } catch { slug = rawSlug; } }
 
     if (!slug) {
       return new Response('Missing slug parameter', { status: 400, headers: corsHeaders });
