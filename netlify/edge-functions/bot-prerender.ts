@@ -52,6 +52,50 @@ const SKIP_PATH_PATTERNS = [
 
 const LOCALES = ["en", "pl", "cs"];
 
+// Reverse map: URL path (without locale, no leading/trailing slash) → marketing page slug.
+// Must mirror pageUrlMap inside supabase/functions/prerender-marketing/index.ts.
+const PATH_TO_PAGE: Record<string, string> = {
+  "": "index",
+  "frameworks": "frameworks",
+  "frameworks/soc": "soc2-automation",
+  "frameworks/iso-27001": "iso27001",
+  "frameworks/gdpr": "gdpr-compliance",
+  "frameworks/nis-2": "nis2",
+  "frameworks/dora": "dora",
+  "frameworks/iso-9001": "iso-9001",
+  "frameworks/hipaa": "hipaa",
+  "frameworks/ccpa": "ccpa",
+  "frameworks/esg": "esg",
+  "frameworks/environmental": "environmental",
+  "frameworks/governance": "governance",
+  "frameworks/product-level": "product-level",
+  "grc-platform": "grc-platform",
+  "product/features": "product-features",
+  "product/overview": "product-overview",
+  "product/ai-compliance-officer": "compliance-officer",
+  "product/task-data-management": "task-data-management",
+  "product/analytics-dashboards": "analytics-dashboards",
+  "product/documents-management": "documents-management",
+  "product/value-chain": "value-chain",
+  "product/risk-assessment": "risk-assessment",
+  "plans": "plans",
+  "about": "about",
+  "contact": "contact",
+  "partners": "partners",
+  "by-roles": "by-roles",
+  "by-roles/managers": "by-roles-managers",
+  "by-roles/contributors": "by-roles-contributors",
+  "by-roles/auditor": "by-roles-auditor",
+  "blog": "blog",
+  "success-stories": "success-stories",
+  "legal/privacy": "legal-privacy",
+  "legal/terms": "legal-terms",
+  "legal/cookies": "legal-cookies",
+  "cybersecurity-check": "cybersecurity-check",
+  "sprawdz-cyberbezpieczenstwo": "cybersecurity-check-pl",
+  "zkontrolujte-kybernetickou-bezpecnost": "cybersecurity-check",
+};
+
 function isBot(ua: string): boolean {
   const u = ua.toLowerCase();
   return BOT_UA_PATTERNS.some((p) => u.includes(p));
