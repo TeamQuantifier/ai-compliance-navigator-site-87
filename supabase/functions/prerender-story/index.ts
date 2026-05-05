@@ -55,7 +55,8 @@ function richTextToHtml(content: any): string {
         }).join('') || '';
         return `<p>${text}</p>`;
       case 'heading':
-        const level = node.attrs?.level || 2;
+        const rawLevel = node.attrs?.level || 2;
+        const level = Math.max(2, Math.min(6, rawLevel));
         const headingText = node.content?.map((c: any) => c.text || '').join('') || '';
         return `<h${level}>${headingText}</h${level}>`;
       case 'bulletList':
