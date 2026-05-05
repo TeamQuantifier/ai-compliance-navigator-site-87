@@ -58,8 +58,10 @@ serve(async (req: Request) => {
   try {
     const url = new URL(req.url);
     const locale = url.searchParams.get('locale') || 'en';
-    const slug = url.searchParams.get('slug');
-    if (!slug) return new Response('Missing slug parameter', { status: 400, headers: corsHeaders });
+    const rawSlug = url.searchParams.get('slug');
+    if (!rawSlug) return new Response('Missing slug parameter', { status: 400, headers: corsHeaders });
+    let slug = rawSlug;
+    try { slug = decodeURIComponent(rawSlug); } catch { /* keep raw */ }
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const { data: post, error } = await supabase.from('posts').select('*, category:categories(name)').eq('slug', slug).eq('lang', locale).eq('status', 'published').single();
     if (error || !post) return new Response('Post not found', { status: 404, headers: corsHeaders });
