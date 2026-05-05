@@ -13,9 +13,12 @@
     Content-Security-Policy = "frame-ancestors 'self'"
 
 # --- Edge Functions: bot prerendering ---
-# Netlify Edge Functions intercept requests BEFORE they reach the origin.
-# The bot-prerender function checks User-Agent and proxies bots to
-# Supabase prerender functions. Regular users get the SPA.
+# Intercepts requests BEFORE the SPA. Detects bot User-Agent and proxies
+# to our Supabase prerender-* functions. Humans pass through to the SPA.
+# Replaces the disabled Netlify Prerender Extension and rejected Prerender.io.
+[[edge_functions]]
+  function = "bot-prerender"
+  path = "/*"
 
 # --- Redirects (301) for non-localized paths ---
 # These take priority over public/_redirects
