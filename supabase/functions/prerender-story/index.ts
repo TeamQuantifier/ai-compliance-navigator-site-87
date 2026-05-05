@@ -55,7 +55,8 @@ function richTextToHtml(content: any): string {
         }).join('') || '';
         return `<p>${text}</p>`;
       case 'heading':
-        const level = node.attrs?.level || 2;
+        const rawLevel = node.attrs?.level || 2;
+        const level = Math.max(2, Math.min(6, rawLevel));
         const headingText = node.content?.map((c: any) => c.text || '').join('') || '';
         return `<h${level}>${headingText}</h${level}>`;
       case 'bulletList':
@@ -95,7 +96,9 @@ serve(async (req) => {
   try {
     const url = new URL(req.url);
     const locale = url.searchParams.get('locale') || 'en';
-    const slug = url.searchParams.get('slug');
+    const rawSlug = url.searchParams.get('slug');
+    let slug: string | null = rawSlug;
+    if (rawSlug) { try { slug = decodeURIComponent(rawSlug); } catch { slug = rawSlug; } }
 
     if (!slug) {
       return new Response('Missing slug parameter', { status: 400, headers: corsHeaders });
