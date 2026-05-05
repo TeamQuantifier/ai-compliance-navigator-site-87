@@ -70,6 +70,11 @@ const pageUrlMap: Record<string, string> = {
   'epd': 'frameworks/product-level/epd',
   'lca-analysis': 'frameworks/product-level/lca-analysis',
   'events': 'events',
+  'event-nis2-in-poland': 'events/nis2-in-poland',
+  'event-nis2-risk-map': 'events/nis2-risk-map',
+  'compare-vanta': 'compare/vanta-alternative',
+  'compare-drata': 'compare/drata-alternative',
+  'compare-sprinto': 'compare/sprinto-alternative',
 };
 
 interface FAQ {
