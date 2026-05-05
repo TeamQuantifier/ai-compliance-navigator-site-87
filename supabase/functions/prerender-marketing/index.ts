@@ -2628,6 +2628,8 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
     'by-roles-managers': { segment: 'by-roles', nameKey: 'by-roles' },
     'by-roles-contributors': { segment: 'by-roles', nameKey: 'by-roles' },
     'by-roles-auditor': { segment: 'by-roles', nameKey: 'by-roles' },
+    'epd': { segment: 'frameworks/product-level', nameKey: 'product-level' },
+    'lca-analysis': { segment: 'frameworks/product-level', nameKey: 'product-level' },
   };
   
   // BreadcrumbList
