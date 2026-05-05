@@ -121,8 +121,10 @@ function shouldSkip(pathname: string): boolean {
  * Returns null if no mapping (let SPA handle it).
  */
 function resolvePrerenderUrl(pathname: string): string | null {
-  // Strip trailing slash for matching.
-  const path = pathname.replace(/\/+$/, "") || "/";
+  // Strip trailing slash for matching, decode percent-encoded chars (CS/PL diacritics).
+  let decoded = pathname;
+  try { decoded = decodeURIComponent(pathname); } catch { /* keep raw */ }
+  const path = decoded.replace(/\/+$/, "") || "/";
 
   // Root → marketing index EN
   if (path === "/") {
