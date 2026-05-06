@@ -103,7 +103,7 @@ const PATH_TO_PAGE: Record<string, string> = {
   "legal/terms": "legal-terms",
   "legal/cookies": "legal-cookies",
   "cybersecurity-check": "cybersecurity-check",
-  "sprawdz-cyberbezpieczenstwo": "cybersecurity-check-pl",
+  "sprawdz-cyberbezpieczenstwo": "cybersecurity-check",
   "zkontrolujte-kybernetickou-bezpecnost": "cybersecurity-check",
 };
 
