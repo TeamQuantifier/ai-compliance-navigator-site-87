@@ -1,77 +1,57 @@
-## Kontekst
+## Status nowego artykułu `nis2-requirements-checklist-2026`
 
-Wyłączyłeś w Netlify obie wtyczki (`Netlify Prerender Extension` + `Prerender.io`). Bardzo dobrze — zgodnie z naszą zasadą Core: *"Use custom Supabase Edge Functions for bot prerendering. Never use Prerender.io."*
+Sprawdziłem produkcję — wszystko OK:
 
-Konsekwencja: w tej chwili **żaden bot nie dostaje prerenderowanego HTML** — Googlebot widzi pusty SPA shell z `index.html`. Nasze funkcje Supabase (`prerender-post`, `prerender-marketing`, `prerender-story`) istnieją, ale nikt do nich nie kieruje ruchu. To pilne — każdy dzień bez prerenderingu to utracone crawl budget.
+- **Sitemap**: artykuł obecny w `https://quantifier.ai/sitemap.xml` (znaleziono 7 wystąpień: EN URL + alternates + hreflangi).
+- **Prerender bota**: `GET /en/blog/nis2-requirements-checklist-2026/` z UA Googlebot zwraca 200 z poprawnym `<title>` i `<link rel="canonical">`. Bot-prerender działa.
+- **Meta**: `meta_title` 47 znaków ✅, `meta_desc` 145 znaków ✅, `published_at = 2026-05-07` ✅.
+- **GSC**: pojawi się w 1–7 dni naturalnie (sitemap odpytywana cyklicznie). Możesz przyspieszyć przez **Inspect URL → Request indexing** w Google Search Console — zalecam zrobić to ręcznie dla tego URL i jego PL/CS alternates (jeśli istnieją).
 
-## Plan naprawy (2 etapy)
+## Pozostałe rzeczy do zrobienia (po v5)
 
-### Etap 1 — Netlify Edge Function: bot-prerender
+1. **Tytuły > 60 znaków** — 53 wpisy łącznie (posts + stories, wszystkie języki). Robimy batchami po 30.
+2. **Title vs H1**: wyjaśnienie — `meta_title` (SEO, ≤60 zn., w `<head>`) i `title`/H1 (na stronie) to dwa różne pola w bazie. W większości postów `meta_title` jest pusty → prerender używa wtedy `title` jako `<title>`, co tworzy długie tytuły SEO. Strategia: dla każdego za długiego rekordu uzupełnimy `meta_title` (≤60 zn., focus keyword na początku) **bez zmiany on-page H1** (`title`), żeby nie naruszyć treści ani UX.
+3. **Re-audyt v6** po batchu, żeby potwierdzić zniknięcie ostrzeżeń `LONG_TITLE`.
 
-Stworzę plik `netlify/edge-functions/bot-prerender.ts` + wpis w `netlify.toml`. Funkcja działa **na edge** (przed origin), czyli przechwytuje żądanie zanim trafi do SPA.
+## Plan tej iteracji — Batch 1 (30 najdłuższych tytułów)
 
-**Logika routingu:**
+### Zakres
 
-1. Wykryj User-Agent bota (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, facebookexternalhit, LinkedInBot, Twitterbot, Slackbot, etc. — pełna lista ~30 UA).
-2. Jeśli to **człowiek** → `return` (Netlify serwuje normalny SPA `index.html`).
-3. Jeśli to **bot** → sproxuj do odpowiedniej funkcji Supabase wg ścieżki:
-   - `/:locale/blog/:slug/` → `prerender-post?locale=&slug=`
-   - `/:locale/success-stories/:slug/` → `prerender-story?locale=&slug=`
-   - wszystko inne (`/`, `/:locale/`, `/:locale/frameworks/...`, `/:locale/product/...`, listingi, landings) → `prerender-marketing?path=`
-4. Zwróć HTML z funkcji Supabase 1:1 (z poprawnym `Content-Type`, `Cache-Control`, `X-Robots-Tag`).
-5. Fallback: jeśli funkcja Supabase zwróci 404/500 → przepuść na SPA (lepszy SPA shell niż 5xx dla Googlebota).
+Top 30 rekordów po długości `title` (z `posts` + `stories`, wszystkie języki: PL/EN/CS), gdzie `meta_title IS NULL` lub > 60 znaków. Wśród nich m.in.:
 
-**Dodatkowe zabezpieczenia:**
-- Skip dla zasobów statycznych (`/assets/`, `/*.js`, `/*.css`, `/*.png`, sitemap, llms.txt) — te muszą iść na origin/Supabase bez modyfikacji.
-- Nagłówek `Vary: User-Agent` żeby Netlify CDN nie zacachował botowej odpowiedzi dla człowieka.
-- Logowanie (console) UA + path → łatwy debug w Netlify Function logs.
+- `case-study-seris-konsalnet` (PL/EN/CS, 116–118 zn.)
+- `ciagla-zgodnosc-od-reakcji-do-proakcji` (PL, 112)
+- `dyrektywa-nis2` (PL, 104)
+- `dyrektywa-nis2-wymagania-zgodnosci-przewodnik-wdrozenia` (PL, 99)
+- `smernice-nis2-pozadavky-na-soulad-pruvodce-implementaci` (CS, 96)
+- `průvodce-připraveností-na-digitální-produktový-pas` (CS, 96)
+- `compliance-monitoring` (PL, 96 / EN, 81)
+- `ecovadis-in-practice` + warianty (95, 86)
+- `ai-agents-in-quantifier` + warianty (95, 91)
+- `continuous-compliance-from-reaction-to-proaction` (95)
+- `nis2-directive-compliance-requirements-implementation-guide` (84)
+- `cyfrowy-paszport-produktu-przewodnik-2026` (84)
+- `digitla-product-assport-readiness-guide` (82)
+- `dora-compliance-checklist` (69)
+- `soc-2-a-complete-guide-in-2026` (69)
+- + reszta do uzbierania 30
 
-### Etap 2 — Pełny audyt SEO/GEO + raport
+### Reguły dla nowych `meta_title`
 
-Po deployu skrypt sprawdzi **wszystkie ścieżki z sitemapy** (40+ URL × 3 języki + artykuły blogowe + success stories) w **dwóch wariantach**:
+- ≤ 60 znaków (z buforem na ` | Quantifier.ai Blog` → faktyczny limit treści ~40 zn.; **lub** zostawiamy bez sufiksu jeśli generuje duplikat brandu).
+- Focus keyword na początku (NIS2, DORA, SOC 2, EcoVadis, DPP, Continuous Compliance, AI Agents).
+- Język/terminologia zgodna z memory: EN = "NIS2"/"Inspector", PL = "KSC"/"UKSC", CS = lokalna terminologia.
+- Bez ozdobników, bez wykrzykników, bez emoji.
 
-1. **Jako przeglądarka** (`User-Agent: Mozilla/5.0...`) — sprawdź: 200 OK, brak loopów, brak 404.
-2. **Jako Googlebot** (`User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)`) — sprawdź:
-   - HTTP status 200
-   - `<title>` obecny i niegeneryczny
-   - `<meta name="description">` obecny, ≤160 znaków, brak duplikatów
-   - `<link rel="canonical">` z trailing slash, self-referencing
-   - `<link rel="alternate" hreflang>` — wszystkie 3 języki + x-default
-   - `<script type="application/ld+json">` obecny (BlogPosting / Article / Organization / WebPage)
-   - `<meta property="og:*">` komplet (title, description, image, type, url, locale)
-   - `<h1>` obecny i niegeneryczny
-   - body content > 500 znaków (nie pusty SPA shell)
+### Kroki wykonawcze (po Twojej akceptacji planu — w trybie default)
 
-**Output:** `/mnt/documents/seo-audit-2026-05-05.csv` + `seo-audit-summary.md` z:
-- Statystyki ogólne (X/Y URL-i OK, top issues)
-- Lista URL-i z problemami posortowana po severity (Critical: brak title/canonical/JSON-LD; High: hreflang asymmetry; Medium: meta length; Low: missing OG image)
-- Per-URL detail z konkretnymi brakami
-- Rekomendacje napraw
+1. Pobiorę dokładną listę top-30 rekordów z bazy (posts + stories) z aktualnymi `title` / `meta_title`.
+2. Wygeneruję propozycje `meta_title` (≤60 zn.) w pliku `/mnt/documents/title-batch-1.md` do Twojego review **przed** wprowadzeniem zmian.
+3. Po akceptacji — migracja SQL `UPDATE` dla 30 rekordów (posts + stories), tylko kolumna `meta_title`. `title`/H1 nietknięte.
+4. Re-audyt v6 ograniczony do tych 30 URL-i + ogólny check `LONG_TITLE` na całej sitemapie. Raport: `/mnt/documents/seo-audit-summary-v6.md`.
+5. Jeśli wynik OK → robimy Batch 2 (kolejne 23 rekordy + ewentualne pozostałe ostrzeżenia).
 
-### Etap 3 — Naprawy znalezionych problemów
+## Co musisz zrobić
 
-Na bazie raportu — naprawy w kolejności priorytetu. Najczęściej spodziewane:
-- Niedopisane ścieżki w `prerender-marketing` (np. `/grc-platform`, `/cybersecurity-check`, `/training`).
-- Brak JSON-LD na niektórych typach stron.
-- Hreflang dla stron które nie mają wszystkich 3 wersji językowych.
-- Duplikaty meta description (jeśli prerender doda swoje, a SPA shell też ma).
-
-## Pliki do stworzenia/edycji
-
-**Nowe:**
-- `netlify/edge-functions/bot-prerender.ts` — bot detection + proxy do Supabase
-- `/mnt/documents/seo-audit-2026-05-05.csv` — raport per-URL
-- `/mnt/documents/seo-audit-summary.md` — executive summary
-
-**Edycja:**
-- `netlify.toml` — rejestracja Edge Function (`[[edge_functions]] path = "/*" function = "bot-prerender"`)
-
-**Potencjalna edycja po audycie:**
-- `supabase/functions/prerender-marketing/index.ts` — uzupełnienie brakujących ścieżek
-- `supabase/functions/sitemap/index.ts` — wykluczenie URL-i z 404
-
-## Co dalej z Twojej strony
-
-Po implementacji **musisz kliknąć Publish** w Lovable, żeby Edge Function została wdrożona na Netlify. Edge Functions z `netlify/edge-functions/` są deployowane razem z buildem — nie ma osobnego kroku w panelu Netlify.
-
-Po deployu natychmiast uruchomię audyt na produkcji i wrócę z raportem.
+- Zatwierdź plan → przejdę do wykonania kroku 1+2 i wrócę z propozycjami tytułów do akceptacji **przed** zapisem do bazy.
+- Równolegle (opcjonalnie): w GSC zrób "Request indexing" dla `https://quantifier.ai/en/blog/nis2-requirements-checklist-2026/` — przyspieszy indeksację.
