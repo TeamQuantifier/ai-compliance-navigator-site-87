@@ -1,4 +1,5 @@
-import { Editor, BubbleMenu } from '@tiptap/react';
+import { Editor } from '@tiptap/react';
+import { BubbleMenu } from '@tiptap/react/menus';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {
