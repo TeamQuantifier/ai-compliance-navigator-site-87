@@ -82,6 +82,13 @@ const PATH_TO_PAGE: Record<string, string> = {
   "frameworks/product-level/epd": "epd",
   "frameworks/product-level/lca-analysis": "lca-analysis",
   "events": "events",
+  "events/nis2-in-poland": "event-nis2-in-poland",
+  "events/nis2-w-polsce": "event-nis2-in-poland",
+  "events/nis2-risk-map": "event-nis2-risk-map",
+  "events/nis2-mapa-ryzyka": "event-nis2-risk-map",
+  "compare/vanta-alternative": "compare-vanta",
+  "compare/drata-alternative": "compare-drata",
+  "compare/sprinto-alternative": "compare-sprinto",
   "plans": "plans",
   "about": "about",
   "contact": "contact",
@@ -96,7 +103,7 @@ const PATH_TO_PAGE: Record<string, string> = {
   "legal/terms": "legal-terms",
   "legal/cookies": "legal-cookies",
   "cybersecurity-check": "cybersecurity-check",
-  "sprawdz-cyberbezpieczenstwo": "cybersecurity-check-pl",
+  "sprawdz-cyberbezpieczenstwo": "cybersecurity-check",
   "zkontrolujte-kybernetickou-bezpecnost": "cybersecurity-check",
 };
 
@@ -114,8 +121,10 @@ function shouldSkip(pathname: string): boolean {
  * Returns null if no mapping (let SPA handle it).
  */
 function resolvePrerenderUrl(pathname: string): string | null {
-  // Strip trailing slash for matching.
-  const path = pathname.replace(/\/+$/, "") || "/";
+  // Strip trailing slash for matching, decode percent-encoded chars (CS/PL diacritics).
+  let decoded = pathname;
+  try { decoded = decodeURIComponent(pathname); } catch { /* keep raw */ }
+  const path = decoded.replace(/\/+$/, "") || "/";
 
   // Root → marketing index EN
   if (path === "/") {
