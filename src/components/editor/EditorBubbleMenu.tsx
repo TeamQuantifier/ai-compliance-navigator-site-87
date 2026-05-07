@@ -35,10 +35,8 @@ const EditorBubbleMenu = ({ editor }: Props) => {
   return (
     <BubbleMenu
       editor={editor}
-      tippyOptions={{ duration: 100, placement: 'top' }}
       shouldShow={({ editor, state }) => {
         const { from, to } = state.selection;
-        // Show only when there's a non-empty text selection (not in tables/images/KPI blocks)
         if (from === to) return false;
         if (editor.isActive('image') || editor.isActive('kpiBlock')) return false;
         return editor.isEditable;
