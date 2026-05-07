@@ -12,6 +12,7 @@ import { TableHeader } from '@tiptap/extension-table';
 import { KpiBlock } from './KpiBlockExtension';
 import { ResizableImage } from './ResizableImageExtension';
 import EditorToolbar from './EditorToolbar';
+import EditorBubbleMenu from './EditorBubbleMenu';
 import './editor-styles.css';
 
 interface RichTextEditorProps {
@@ -103,8 +104,11 @@ const RichTextEditor = ({ content, onChange, placeholder = 'Zacznij pisać...' }
   }
 
   return (
-    <div className="border rounded-lg overflow-hidden">
-      <EditorToolbar editor={editor} />
+    <div className="border rounded-lg overflow-visible">
+      <div className="sticky top-0 z-30 bg-background border-b">
+        <EditorToolbar editor={editor} />
+      </div>
+      <EditorBubbleMenu editor={editor} />
       <EditorContent editor={editor} />
     </div>
   );
