@@ -1,77 +1,130 @@
-## Kontekst
+## Cel
 
-Wyłączyłeś w Netlify obie wtyczki (`Netlify Prerender Extension` + `Prerender.io`). Bardzo dobrze — zgodnie z naszą zasadą Core: *"Use custom Supabase Edge Functions for bot prerendering. Never use Prerender.io."*
+Zastąpić zakładkę **Categories** w `/admin` nową zakładką **Admins / Users** do zarządzania uprawnieniami (kto jest adminem, editorem, viewerem) — wraz z audytem i wzmocnieniem bezpieczeństwa CMS.
 
-Konsekwencja: w tej chwili **żaden bot nie dostaje prerenderowanego HTML** — Googlebot widzi pusty SPA shell z `index.html`. Nasze funkcje Supabase (`prerender-post`, `prerender-marketing`, `prerender-story`) istnieją, ale nikt do nich nie kieruje ruchu. To pilne — każdy dzień bez prerenderingu to utracone crawl budget.
+---
 
-## Plan naprawy (2 etapy)
+## Część 1 — Audyt bezpieczeństwa (stan obecny)
 
-### Etap 1 — Netlify Edge Function: bot-prerender
+### Co działa dobrze
+- Role w osobnej tabeli `user_roles` (nie w `profiles`) — zgodnie z best practice, brak privilege escalation.
+- Funkcja `has_role()` / `is_admin()` jest `SECURITY DEFINER` z `search_path = public` — chroni przed rekursją RLS.
+- `ProtectedRoute` blokuje dostęp do `/admin/*` jeśli `!user || !isAdmin` (sprawdzane po stronie klienta przez `AuthContext.checkAdminRole`).
+- Wszystkie tabele CMS (posts, stories, settings, redirects, authors, categories, topics, alternates, article_groups) mają RLS z `is_admin(auth.uid())` na INSERT/UPDATE/DELETE → **nawet jeśli ktoś obejdzie UI, baza odrzuci zapis**.
+- `user_roles` ma RLS — użytkownicy widzą tylko własne role, brak INSERT/UPDATE/DELETE policy → **nikt nie może sam sobie nadać admina** (nawet przez API).
 
-Stworzę plik `netlify/edge-functions/bot-prerender.ts` + wpis w `netlify.toml`. Funkcja działa **na edge** (przed origin), czyli przechwytuje żądanie zanim trafi do SPA.
+### Luki do naprawienia
+1. **Brak policy dla zarządzania `user_roles` przez adminów** — obecnie role można dodawać tylko ręcznie przez SQL. Trzeba to umożliwić adminom (kontrolowane).
+2. **Leaked Password Protection wyłączony** (lint #17) — włączyć HIBP check.
+3. **`ProtectedRoute` to tylko zabezpieczenie UX** — prawdziwe egzekwowanie jest w RLS (jest OK), ale warto też dodać rate-limit/lockout na `/admin/login` (Supabase ma to wbudowane).
+4. **Brak audit log** — nie wiadomo kto i kiedy nadał/odebrał komuś rolę. Dodamy tabelę `role_audit_log`.
+5. **Brak ochrony przed usunięciem ostatniego admina** — trigger zabezpieczający.
+6. Lint warningi #1-6 (RLS USING true) i #9-16 (SECURITY DEFINER executable) dotyczą funkcji typu `is_admin`, `has_role`, `update_updated_at_column`, `trigger_sitemap_regen` — to oczekiwane zachowanie (funkcje muszą być wywoływalne przez RLS), ale warto przejrzeć i opcjonalnie zrewokować EXECUTE z `anon` dla `update_updated_at_column` i `trigger_sitemap_regen` (nie powinny być wołane z REST).
 
-**Logika routingu:**
+---
 
-1. Wykryj User-Agent bota (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, facebookexternalhit, LinkedInBot, Twitterbot, Slackbot, etc. — pełna lista ~30 UA).
-2. Jeśli to **człowiek** → `return` (Netlify serwuje normalny SPA `index.html`).
-3. Jeśli to **bot** → sproxuj do odpowiedniej funkcji Supabase wg ścieżki:
-   - `/:locale/blog/:slug/` → `prerender-post?locale=&slug=`
-   - `/:locale/success-stories/:slug/` → `prerender-story?locale=&slug=`
-   - wszystko inne (`/`, `/:locale/`, `/:locale/frameworks/...`, `/:locale/product/...`, listingi, landings) → `prerender-marketing?path=`
-4. Zwróć HTML z funkcji Supabase 1:1 (z poprawnym `Content-Type`, `Cache-Control`, `X-Robots-Tag`).
-5. Fallback: jeśli funkcja Supabase zwróci 404/500 → przepuść na SPA (lepszy SPA shell niż 5xx dla Googlebota).
+## Część 2 — Zmiany w bazie (migracja)
 
-**Dodatkowe zabezpieczenia:**
-- Skip dla zasobów statycznych (`/assets/`, `/*.js`, `/*.css`, `/*.png`, sitemap, llms.txt) — te muszą iść na origin/Supabase bez modyfikacji.
-- Nagłówek `Vary: User-Agent` żeby Netlify CDN nie zacachował botowej odpowiedzi dla człowieka.
-- Logowanie (console) UA + path → łatwy debug w Netlify Function logs.
+```sql
+-- 1. Audit log
+CREATE TABLE public.role_audit_log (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  actor_id uuid NOT NULL,           -- kto dokonał zmiany
+  target_user_id uuid NOT NULL,     -- kogo dotyczy
+  action text NOT NULL,             -- 'granted' | 'revoked'
+  role app_role NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+ALTER TABLE public.role_audit_log ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Admins can read audit log" ON public.role_audit_log
+  FOR SELECT USING (is_admin(auth.uid()));
 
-### Etap 2 — Pełny audyt SEO/GEO + raport
+-- 2. Pozwolenie adminom zarządzać user_roles (przez RLS)
+CREATE POLICY "Admins can insert user_roles" ON public.user_roles
+  FOR INSERT WITH CHECK (is_admin(auth.uid()));
+CREATE POLICY "Admins can delete user_roles" ON public.user_roles
+  FOR DELETE USING (is_admin(auth.uid()));
+CREATE POLICY "Admins can view all user_roles" ON public.user_roles
+  FOR SELECT USING (is_admin(auth.uid()));
 
-Po deployu skrypt sprawdzi **wszystkie ścieżki z sitemapy** (40+ URL × 3 języki + artykuły blogowe + success stories) w **dwóch wariantach**:
+-- 3. Trigger: nie pozwól usunąć ostatniego admina + zapisuj audit
+CREATE OR REPLACE FUNCTION public.protect_last_admin()
+RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+BEGIN
+  IF (TG_OP = 'DELETE' AND OLD.role = 'admin') THEN
+    IF (SELECT count(*) FROM public.user_roles WHERE role = 'admin') <= 1 THEN
+      RAISE EXCEPTION 'Cannot remove the last admin';
+    END IF;
+    INSERT INTO public.role_audit_log(actor_id, target_user_id, action, role)
+      VALUES (auth.uid(), OLD.user_id, 'revoked', OLD.role);
+  ELSIF (TG_OP = 'INSERT') THEN
+    INSERT INTO public.role_audit_log(actor_id, target_user_id, action, role)
+      VALUES (auth.uid(), NEW.user_id, 'granted', NEW.role);
+  END IF;
+  RETURN COALESCE(NEW, OLD);
+END $$;
+CREATE TRIGGER user_roles_protect BEFORE INSERT OR DELETE ON public.user_roles
+  FOR EACH ROW EXECUTE FUNCTION public.protect_last_admin();
 
-1. **Jako przeglądarka** (`User-Agent: Mozilla/5.0...`) — sprawdź: 200 OK, brak loopów, brak 404.
-2. **Jako Googlebot** (`User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)`) — sprawdź:
-   - HTTP status 200
-   - `<title>` obecny i niegeneryczny
-   - `<meta name="description">` obecny, ≤160 znaków, brak duplikatów
-   - `<link rel="canonical">` z trailing slash, self-referencing
-   - `<link rel="alternate" hreflang>` — wszystkie 3 języki + x-default
-   - `<script type="application/ld+json">` obecny (BlogPosting / Article / Organization / WebPage)
-   - `<meta property="og:*">` komplet (title, description, image, type, url, locale)
-   - `<h1>` obecny i niegeneryczny
-   - body content > 500 znaków (nie pusty SPA shell)
+-- 4. Funkcja do listowania userów z auth.users (tylko dla adminów)
+CREATE OR REPLACE FUNCTION public.list_users_with_roles()
+RETURNS TABLE(user_id uuid, email text, created_at timestamptz, roles app_role[])
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+BEGIN
+  IF NOT is_admin(auth.uid()) THEN
+    RAISE EXCEPTION 'Forbidden';
+  END IF;
+  RETURN QUERY
+    SELECT u.id, u.email::text, u.created_at,
+           COALESCE(array_agg(ur.role) FILTER (WHERE ur.role IS NOT NULL), '{}')
+    FROM auth.users u
+    LEFT JOIN public.user_roles ur ON ur.user_id = u.id
+    GROUP BY u.id ORDER BY u.created_at DESC;
+END $$;
+REVOKE EXECUTE ON FUNCTION public.list_users_with_roles() FROM anon;
+```
 
-**Output:** `/mnt/documents/seo-audit-2026-05-05.csv` + `seo-audit-summary.md` z:
-- Statystyki ogólne (X/Y URL-i OK, top issues)
-- Lista URL-i z problemami posortowana po severity (Critical: brak title/canonical/JSON-LD; High: hreflang asymmetry; Medium: meta length; Low: missing OG image)
-- Per-URL detail z konkretnymi brakami
-- Rekomendacje napraw
+Włączenie HIBP password check (`configure_auth`).
 
-### Etap 3 — Naprawy znalezionych problemów
+---
 
-Na bazie raportu — naprawy w kolejności priorytetu. Najczęściej spodziewane:
-- Niedopisane ścieżki w `prerender-marketing` (np. `/grc-platform`, `/cybersecurity-check`, `/training`).
-- Brak JSON-LD na niektórych typach stron.
-- Hreflang dla stron które nie mają wszystkich 3 wersji językowych.
-- Duplikaty meta description (jeśli prerender doda swoje, a SPA shell też ma).
+## Część 3 — Zmiany w UI
 
-## Pliki do stworzenia/edycji
+### A. `AdminLayout.tsx` — zamień Categories na Users
+```text
+{ icon: Shield, label: 'Admins & Users', path: '/admin/users' }
+```
 
-**Nowe:**
-- `netlify/edge-functions/bot-prerender.ts` — bot detection + proxy do Supabase
-- `/mnt/documents/seo-audit-2026-05-05.csv` — raport per-URL
-- `/mnt/documents/seo-audit-summary.md` — executive summary
+### B. Nowa strona `src/pages/admin/UsersList.tsx`
+Tabela: **Email | Rola | Dodano | Akcje**
+- Lista przez `supabase.rpc('list_users_with_roles')`.
+- Akcja **Add admin**: dialog z polem email → wyszukuje usera w `auth.users` (przez RPC) i woła `INSERT INTO user_roles`. Jeśli user nie istnieje → komunikat "User must sign up first at /admin/login".
+- Akcja **Revoke**: `DELETE FROM user_roles WHERE id = ...` (trigger nie pozwoli usunąć ostatniego admina — pokaż toast z błędem).
+- Tabela poniżej: **Audit log** (ostatnie 50 zmian z `role_audit_log` z join do email).
+- Walidacja Zod email; potwierdzenie przy revoke (`AlertDialog`).
+- Wskaźnik "You are signed in as: …" — blokada revoke własnej roli (UX).
 
-**Edycja:**
-- `netlify.toml` — rejestracja Edge Function (`[[edge_functions]] path = "/*" function = "bot-prerender"`)
+### C. Routing w `App.tsx`
+```text
+<Route path="users" element={<UsersList />} />
+```
+Usuń linię `categories` z menu (route może zostać jako placeholder lub też zostać usunięty).
 
-**Potencjalna edycja po audycie:**
-- `supabase/functions/prerender-marketing/index.ts` — uzupełnienie brakujących ścieżek
-- `supabase/functions/sitemap/index.ts` — wykluczenie URL-i z 404
+---
 
-## Co dalej z Twojej strony
+## Część 4 — Komunikat dla użytkownika po implementacji
 
-Po implementacji **musisz kliknąć Publish** w Lovable, żeby Edge Function została wdrożona na Netlify. Edge Functions z `netlify/edge-functions/` są deployowane razem z buildem — nie ma osobnego kroku w panelu Netlify.
+- Gdzie znaleźć panel: `/admin/users`
+- Jak dodać nowego admina: poprosić osobę o sign-up na `/admin/login` → potem w panelu Add admin po emailu.
+- Co jest zabezpieczone: RLS w bazie, audit log, ochrona ostatniego admina, HIBP.
 
-Po deployu natychmiast uruchomię audyt na produkcji i wrócę z raportem.
+---
+
+## Pliki do utworzenia / edycji
+- **migracja SQL** (nowe tabele/policies/triggery/RPC)
+- `src/pages/admin/UsersList.tsx` (nowy)
+- `src/components/admin/AdminLayout.tsx` (zmiana menu)
+- `src/App.tsx` (nowy route)
+- `configure_auth` → włączyć `password_hibp_enabled`
+
+Czy zatwierdzasz? Po Twoim OK wdrażam migrację + UI.
