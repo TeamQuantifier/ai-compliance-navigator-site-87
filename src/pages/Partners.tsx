@@ -1,6 +1,14 @@
 import logosGrid from '@/assets/logos-grid.png';
 import gs1LogoNew from '@/assets/gs1-logo-new.png';
 import envirlyLogo from '@/assets/envirly-logo.png';
+import logoBnp from '@/assets/partners/bnp-paribas.svg';
+import logoAlior from '@/assets/partners/alior-bank.svg';
+import logoPfr from '@/assets/partners/pfr.svg';
+import logoUeWroclaw from '@/assets/partners/ue-wroclaw.png';
+import logoKlasterGoz from '@/assets/partners/klaster-goz.png';
+import logoLife from '@/assets/partners/life-programme.png';
+import logoReo from '@/assets/partners/reo.svg';
+import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
 import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake, Leaf, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
