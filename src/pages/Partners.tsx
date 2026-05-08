@@ -18,23 +18,6 @@ import { Link } from 'react-router-dom';
 const Partners = () => {
   const { t, currentLocale } = useLanguage();
   
-  const partnerBenefits = [{
-    title: t('partners.benefits.expand.title'),
-    description: t('partners.benefits.expand.description'),
-    icon: <Sparkles className="h-10 w-10 text-primary" />
-  }, {
-    title: t('partners.benefits.access.title'),
-    description: t('partners.benefits.access.description'),
-    icon: <Gift className="h-10 w-10 text-primary" />
-  }, {
-    title: t('partners.benefits.comarket.title'),
-    description: t('partners.benefits.comarket.description'),
-    icon: <Users className="h-10 w-10 text-primary" />
-  }, {
-    title: t('partners.benefits.value.title'),
-    description: t('partners.benefits.value.description'),
-    icon: <BarChart className="h-10 w-10 text-primary" />
-  }];
   
   const partnerTypes = [{
     name: t('partners.types.consulting'),
