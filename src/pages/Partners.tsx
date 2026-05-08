@@ -9,7 +9,7 @@ import logoLife from '@/assets/partners/life-programme.png';
 import logoReo from '@/assets/partners/reo.svg';
 import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
-import { ArrowRight, Globe, MessageSquare, Users, Building, Handshake, Leaf, FileCheck, Check } from 'lucide-react';
+import { ArrowRight, Globe, MessageSquare, Sparkles, Users, Building, Handshake, Leaf, FileCheck, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
