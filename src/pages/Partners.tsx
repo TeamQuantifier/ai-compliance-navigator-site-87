@@ -1,4 +1,3 @@
-import logosGrid from '@/assets/logos-grid.png';
 import gs1LogoNew from '@/assets/gs1-logo-new.png';
 import envirlyLogo from '@/assets/envirly-logo.png';
 import logoBnp from '@/assets/partners/bnp-paribas.svg';
@@ -10,12 +9,9 @@ import logoLife from '@/assets/partners/life-programme.png';
 import logoReo from '@/assets/partners/reo.svg';
 import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
-import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake, Leaf, FileCheck } from 'lucide-react';
+import { ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, Building, Handshake, Leaf, FileCheck, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import PartnerMap from '@/components/PartnerMap';
-import { Separator } from '@/components/ui/separator';
-import CtaSection from '@/components/CtaSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
