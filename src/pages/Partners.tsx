@@ -5,7 +5,7 @@ import logoAlior from '@/assets/partners/alior-bank.svg';
 import logoPfr from '@/assets/partners/pfr.svg';
 import logoUeWroclaw from '@/assets/partners/ue-wroclaw.png';
 import logoKlasterGoz from '@/assets/partners/klaster-goz.png';
-import logoLife from '@/assets/partners/life-programme.png';
+import logoCpc from '@/assets/partners/circular-production-community.png';
 import logoReo from '@/assets/partners/reo.svg';
 import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
@@ -64,9 +64,9 @@ const Partners = () => {
       description: 'Wspólne projekty wokół DPP, LCA i transformacji cyrkularnej członków klastra.',
     },
     {
-      name: 'Projekt LIFE',
-      logo: logoLife,
-      description: 'Udział w projektach finansowanych z programu LIFE Komisji Europejskiej w obszarze klimatu i środowiska.',
+      name: 'Circular Production Community',
+      logo: logoCpc,
+      description: 'Społeczność producentów wdrażających gospodarkę obiegu zamkniętego — wspólne projekty wokół DPP, LCA i cyrkularnych modeli produkcji.',
     },
     {
       name: 'Reo.pl',
@@ -114,7 +114,7 @@ const Partners = () => {
                   Sami nie zrobimy wszystkiego — i nie chcemy. Quantifier to platforma, ale realne wdrożenie wymaga ludzi: audytorów, prawników, konsultantów i integratorów. Dlatego budujemy sieć partnerów, którzy dokładają swoją wiedzę tam, gdzie klient jej potrzebuje.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Współpracujemy z <strong className="text-slate-900">firmami audytorskimi</strong> przy wdrożeniach NIS 2, ISO 27001 i SOC 2, z <strong className="text-slate-900">kancelariami prawnymi</strong> przy DORA, RODO i sygnalistach, z <strong className="text-slate-900">firmami konsultingowymi</strong> w obszarze ESG i CSRD, z <strong className="text-slate-900">integratorami IT i cybersecurity</strong> przy zabezpieczeniach technicznych, oraz z <strong className="text-slate-900">uczelniami i NGO</strong> przy badaniach, edukacji i projektach finansowanych m.in. z programu LIFE.
+                  Współpracujemy z <strong className="text-slate-900">firmami audytorskimi</strong> przy wdrożeniach NIS 2, ISO 27001, SOC 2 oraz ESG i CSRD, z <strong className="text-slate-900">kancelariami prawnymi</strong> i <strong className="text-slate-900">firmami konsultingowymi</strong> przy wszystkich kluczowych regulacjach (DORA, RODO, sygnaliści, NIS 2, CSRD, ESG), z <strong className="text-slate-900">integratorami IT i cybersecurity</strong> przy zabezpieczeniach technicznych, oraz z <strong className="text-slate-900">uczelniami i NGO</strong> przy badaniach, edukacji i projektach finansowanych m.in. z programu LIFE.
                 </p>
               </div>
 
@@ -129,7 +129,7 @@ const Partners = () => {
                       'Wspólne projekty z realnymi klientami, nie pilotaże dla samej technologii.',
                       'Dostęp do platformy GRC z gotowymi modułami NIS 2, ESG, DPP i LCA.',
                       'Wsparcie merytoryczne i materiały edukacyjne (webinary, raporty, szkolenia).',
-                      'Widoczność marki partnera w ekosystemie 47 tys. firm sieci GS1 Polska.',
+                      'Marketplace partnerów bezpośrednio na platformie Quantifier — widoczność u klientów wdrażających GRC i ESG.',
                     ].map((point, i) => (
                       <li key={i} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
                         <Check className="h-4 w-4 text-compliance-600 shrink-0 mt-0.5" />
