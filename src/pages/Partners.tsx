@@ -1,6 +1,14 @@
 import logosGrid from '@/assets/logos-grid.png';
 import gs1LogoNew from '@/assets/gs1-logo-new.png';
 import envirlyLogo from '@/assets/envirly-logo.png';
+import logoBnp from '@/assets/partners/bnp-paribas.svg';
+import logoAlior from '@/assets/partners/alior-bank.svg';
+import logoPfr from '@/assets/partners/pfr.svg';
+import logoUeWroclaw from '@/assets/partners/ue-wroclaw.png';
+import logoKlasterGoz from '@/assets/partners/klaster-goz.png';
+import logoLife from '@/assets/partners/life-programme.png';
+import logoReo from '@/assets/partners/reo.svg';
+import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
 import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake, Leaf, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -48,7 +56,50 @@ const Partners = () => {
     name: t('partners.types.ngos'),
     icon: <Globe className="h-6 w-6 text-compliance-600" />
   }];
-  
+
+  // Wybrani partnerzy (tylko PL — opisy do weryfikacji przez zespół)
+  const selectedPartners = [
+    {
+      name: 'BNP Paribas Bank Polska',
+      logo: logoBnp,
+      description: 'Partnerstwo w obszarze finansowania zrównoważonej transformacji i wsparcia raportowania ESG dla klientów korporacyjnych.',
+    },
+    {
+      name: 'Alior Bank',
+      logo: logoAlior,
+      description: 'Współpraca przy edukacji i narzędziach ESG / cyberbezpieczeństwa dla sektora MŚP.',
+    },
+    {
+      name: 'Polski Fundusz Rozwoju',
+      logo: logoPfr,
+      description: 'Partner programów rozwoju kompetencji ESG i odporności cyfrowej polskich przedsiębiorstw.',
+    },
+    {
+      name: 'Uniwersytet Ekonomiczny we Wrocławiu',
+      logo: logoUeWroclaw,
+      description: 'Współpraca naukowo-badawcza w obszarze GRC, śladu węglowego i bezpieczeństwa informacji.',
+    },
+    {
+      name: 'Klaster Gospodarki Obiegu Zamkniętego',
+      logo: logoKlasterGoz,
+      description: 'Wspólne projekty wokół DPP, LCA i transformacji cyrkularnej członków klastra.',
+    },
+    {
+      name: 'Projekt LIFE',
+      logo: logoLife,
+      description: 'Udział w projektach finansowanych z programu LIFE Komisji Europejskiej w obszarze klimatu i środowiska.',
+    },
+    {
+      name: 'Reo.pl',
+      logo: logoReo,
+      description: 'Integracja danych o energii OZE i umowach PPA z modułami carbon Quantifier.',
+    },
+    {
+      name: 'Raben Group',
+      logo: logoRaben,
+      description: 'Współpraca w obszarze raportowania emisji łańcucha dostaw (Scope 3) i zrównoważonej logistyki.',
+    },
+  ];
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
@@ -123,6 +174,44 @@ const Partners = () => {
             </Link>
           </div>
         </section>
+
+        {/* Logo wall — wybrani partnerzy (PL only) */}
+        {currentLocale === 'pl' && (
+          <section className="mb-12">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl font-bold mb-3 gradient-heading">Wybrani partnerzy</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                Współpracujemy z liderami sektora finansowego, instytucjami publicznymi, uczelniami oraz organizacjami zrównoważonego rozwoju i logistyki.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {selectedPartners.map((p) => (
+                <Card
+                  key={p.name}
+                  className="p-6 flex flex-col items-center text-center border border-slate-200 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
+                  <div className="h-16 w-full flex items-center justify-center mb-4">
+                    <img
+                      src={p.logo}
+                      alt={`${p.name} logo`}
+                      className="max-h-16 max-w-[160px] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                      loading="lazy"
+                      width={160}
+                      height={64}
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-2 leading-snug">
+                    {p.name}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {p.description}
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </section>
+        )}
         
         <section className="mb-12 bg-gradient-to-r from-blue-50 to-compliance-50 p-8 rounded-xl">
           <h2 className="text-2xl font-bold mb-6 gradient-heading">{t('partners.map.title')}</h2>
