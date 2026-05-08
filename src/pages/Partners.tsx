@@ -1,4 +1,3 @@
-import logosGrid from '@/assets/logos-grid.png';
 import gs1LogoNew from '@/assets/gs1-logo-new.png';
 import envirlyLogo from '@/assets/envirly-logo.png';
 import logoBnp from '@/assets/partners/bnp-paribas.svg';
@@ -10,12 +9,9 @@ import logoLife from '@/assets/partners/life-programme.png';
 import logoReo from '@/assets/partners/reo.svg';
 import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
-import { Check, ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, MapPin, Building, Handshake, Leaf, FileCheck } from 'lucide-react';
+import { ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, Building, Handshake, Leaf, FileCheck, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import PartnerMap from '@/components/PartnerMap';
-import { Separator } from '@/components/ui/separator';
-import CtaSection from '@/components/CtaSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
@@ -101,32 +97,77 @@ const Partners = () => {
     },
   ];
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
-      <div className="max-w-4xl mx-auto">
-        <section className="mb-12">
-          <div className="bg-gradient-to-r from-compliance-50 to-blue-50 p-8 rounded-xl mb-10">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-compliance-100 text-compliance-800 mb-6">
-              <Handshake className="w-5 h-5 mr-2" />
-              <span className="font-medium">{t('partners.network.badge')}</span>
-            </div>
-            
-            <h2 className="text-2xl font-bold mb-4 gradient-heading">{t('partners.network.heading')}</h2>
-            
-            <div className="prose prose-lg max-w-none text-slate-700">
-              <p className="text-lg mb-4">
-                {t('partners.network.intro1')}
-              </p>
-              
-              <p className="text-lg">
-                {t('partners.network.intro2')}
-              </p>
+      <div className="max-w-5xl mx-auto">
+        {/* HERO — modern partnership invitation */}
+        <section className="mb-16">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-compliance-900 via-compliance-800 to-innovation-900 p-10 md:p-14">
+            {/* Decorative blobs */}
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-innovation-500/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-compliance-500/20 rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.08),transparent_60%)]" />
+
+            <div className="relative grid md:grid-cols-5 gap-10 items-center">
+              <div className="md:col-span-3">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur text-white border border-white/20 mb-6">
+                  <Handshake className="w-4 h-4 mr-2" />
+                  <span className="font-medium text-sm">{t('partners.network.badge')}</span>
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-bold mb-5 text-white leading-tight">
+                  {t('partners.network.heading')}
+                </h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-4">
+                  {t('partners.network.intro1')}
+                </p>
+                <p className="text-white/70 leading-relaxed mb-8">
+                  {t('partners.network.intro2')}
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="bg-white text-compliance-900 hover:bg-white/90 shadow-lg" asChild>
+                    <Link to={`/${currentLocale}/contact`}>
+                      <MessageSquare className="mr-2 h-5 w-5" />
+                      {t('partners.cta.button')}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right: stats */}
+              <div className="md:col-span-2 grid grid-cols-2 gap-4">
+                {[
+                  { value: '50+', label: 'Partnerów', icon: <Handshake className="h-5 w-5" /> },
+                  { value: '8', label: 'Sektorów', icon: <Building className="h-5 w-5" /> },
+                  { value: '47k+', label: 'Firm w sieci GS1', icon: <Users className="h-5 w-5" /> },
+                  { value: 'EU', label: 'Zasięg', icon: <Globe className="h-5 w-5" /> },
+                ].map((s, i) => (
+                  <div key={i} className="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-5 hover:bg-white/15 transition-colors">
+                    <div className="text-white/70 mb-2">{s.icon}</div>
+                    <div className="text-3xl font-bold text-white mb-1">{s.value}</div>
+                    <div className="text-xs text-white/70 uppercase tracking-wider">{s.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
-            {partnerTypes.map((type, idx) => <div key={idx} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-all">
-                {type.icon}
-                <p className="mt-2 text-sm font-medium text-slate-700 text-center">{type.name}</p>
-              </div>)}
+          {/* Partner types — modern pills */}
+          <div className="mt-10">
+            <p className="text-center text-sm text-slate-500 uppercase tracking-wider font-medium mb-6">
+              Z kim współpracujemy
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {partnerTypes.map((type, idx) => (
+                <div
+                  key={idx}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white rounded-full border border-slate-200 shadow-sm hover:shadow-md hover:border-compliance-300 transition-all"
+                >
+                  {type.icon}
+                  <span className="text-sm font-medium text-slate-700">{type.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* GS1 Polska highlight */}
@@ -175,7 +216,7 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* Logo wall — wybrani partnerzy (PL only) */}
+        {/* Logo wall — wybrani partnerzy (PL only) — 2 per row */}
         {currentLocale === 'pl' && (
           <section className="mb-16">
             <div className="text-center mb-12">
@@ -185,55 +226,38 @@ const Partners = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {selectedPartners.map((p) => (
                 <Card
                   key={p.name}
-                  className="group relative p-8 flex flex-col items-center text-center border-0 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden rounded-2xl"
+                  className="group relative p-8 md:p-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:text-left text-center border-0 bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-2xl"
                 >
-                  {/* Accent bar */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-compliance-500 to-innovation-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  <div className="h-24 w-full flex items-center justify-center mb-6">
+                  <div className="shrink-0 h-28 w-40 flex items-center justify-center bg-slate-50 rounded-xl p-4 group-hover:bg-white group-hover:shadow-inner transition-all">
                     <img
                       src={p.logo}
                       alt={`${p.name} logo`}
-                      className="max-h-20 max-w-[200px] object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+                      className="max-h-20 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
-                      width={200}
+                      width={160}
                       height={80}
                     />
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-3 leading-snug">
-                    {p.name}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {p.description}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                      {p.name}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
                 </Card>
               ))}
             </div>
           </section>
         )}
-        
-        <section className="mb-12 bg-gradient-to-r from-blue-50 to-compliance-50 p-8 rounded-xl">
-          <h2 className="text-2xl font-bold mb-6 gradient-heading">{t('partners.map.title')}</h2>
-          <p className="text-lg text-slate-700 mb-6">
-            {t('partners.map.description')}
-          </p>
-          
-          <div className="h-[400px] mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
-            <PartnerMap />
-          </div>
-          
-          <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-primary">
-            <p className="text-lg italic text-slate-700 mb-4">{t('partners.map.testimonial')}</p>
-            <div className="flex items-center">
-              <p className="font-medium text-slate-900">{t('partners.map.testimonialAuthor')}</p>
-            </div>
-          </div>
-        </section>
-        
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-8 gradient-heading text-center">{t('partners.benefits.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -247,21 +271,10 @@ const Partners = () => {
                 </div>
               </Card>)}
           </div>
-
-          <div className="mt-12">
-            <img
-              src={logosGrid}
-              alt="Partnerzy Quantifier.ai – logotypy"
-              className="w-full object-contain"
-              width={700}
-              height={500}
-              loading="lazy"
-            />
-          </div>
         </section>
-        
+
         <div className="mb-16">
-          <Separator className="my-8" />
+          <div className="my-8 h-px bg-slate-200" />
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
