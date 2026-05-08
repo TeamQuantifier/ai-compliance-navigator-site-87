@@ -177,34 +177,37 @@ const Partners = () => {
 
         {/* Logo wall — wybrani partnerzy (PL only) */}
         {currentLocale === 'pl' && (
-          <section className="mb-12">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl font-bold mb-3 gradient-heading">Wybrani partnerzy</h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
+          <section className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4 gradient-heading">Wybrani partnerzy</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto text-lg">
                 Współpracujemy z liderami sektora finansowego, instytucjami publicznymi, uczelniami oraz organizacjami zrównoważonego rozwoju i logistyki.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {selectedPartners.map((p) => (
                 <Card
                   key={p.name}
-                  className="p-6 flex flex-col items-center text-center border border-slate-200 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                  className="group relative p-8 flex flex-col items-center text-center border-0 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden rounded-2xl"
                 >
-                  <div className="h-16 w-full flex items-center justify-center mb-4">
+                  {/* Accent bar */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-compliance-500 to-innovation-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  <div className="h-24 w-full flex items-center justify-center mb-6">
                     <img
                       src={p.logo}
                       alt={`${p.name} logo`}
-                      className="max-h-16 max-w-[160px] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                      className="max-h-20 max-w-[200px] object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
-                      width={160}
-                      height={64}
+                      width={200}
+                      height={80}
                     />
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-2 leading-snug">
+                  <h3 className="text-base font-bold text-slate-900 mb-3 leading-snug">
                     {p.name}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {p.description}
                   </p>
                 </Card>
