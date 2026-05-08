@@ -9,7 +9,7 @@ import logoLife from '@/assets/partners/life-programme.png';
 import logoReo from '@/assets/partners/reo.svg';
 import logoRaben from '@/assets/partners/raben.svg';
 import PageTemplate from '@/components/PageTemplate';
-import { ArrowRight, Globe, MessageSquare, Sparkles, Users, BarChart, Gift, Building, Handshake, Leaf, FileCheck, Check } from 'lucide-react';
+import { ArrowRight, Globe, MessageSquare, Sparkles, Users, Building, Handshake, Leaf, FileCheck, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -18,23 +18,6 @@ import { Link } from 'react-router-dom';
 const Partners = () => {
   const { t, currentLocale } = useLanguage();
   
-  const partnerBenefits = [{
-    title: t('partners.benefits.expand.title'),
-    description: t('partners.benefits.expand.description'),
-    icon: <Sparkles className="h-10 w-10 text-primary" />
-  }, {
-    title: t('partners.benefits.access.title'),
-    description: t('partners.benefits.access.description'),
-    icon: <Gift className="h-10 w-10 text-primary" />
-  }, {
-    title: t('partners.benefits.comarket.title'),
-    description: t('partners.benefits.comarket.description'),
-    icon: <Users className="h-10 w-10 text-primary" />
-  }, {
-    title: t('partners.benefits.value.title'),
-    description: t('partners.benefits.value.description'),
-    icon: <BarChart className="h-10 w-10 text-primary" />
-  }];
   
   const partnerTypes = [{
     name: t('partners.types.consulting'),
@@ -258,23 +241,7 @@ const Partners = () => {
           </section>
         )}
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-8 gradient-heading text-center">{t('partners.benefits.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {partnerBenefits.map((benefit, index) => <Card key={index} className="p-6 border border-slate-200 h-full flex flex-col card-hover">
-                <div className="mb-4 p-3 rounded-full bg-compliance-50 w-fit">
-                  {benefit.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600">{benefit.description}</p>
-                </div>
-              </Card>)}
-          </div>
-        </section>
-
         <div className="mb-16">
-          <div className="my-8 h-px bg-slate-200" />
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
