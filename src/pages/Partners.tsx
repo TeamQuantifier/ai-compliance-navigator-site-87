@@ -81,73 +81,96 @@ const Partners = () => {
   ];
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
       <div className="max-w-5xl mx-auto">
-        {/* HERO — modern partnership invitation */}
+        {/* HERO — editorial, fact-based partnership intro */}
         <section className="mb-16">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-compliance-900 via-compliance-800 to-innovation-900 p-10 md:p-14">
-            {/* Decorative blobs */}
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-innovation-500/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-compliance-500/20 rounded-full blur-3xl" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.08),transparent_60%)]" />
-
-            <div className="relative grid md:grid-cols-5 gap-10 items-center">
-              <div className="md:col-span-3">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur text-white border border-white/20 mb-6">
-                  <Handshake className="w-4 h-4 mr-2" />
-                  <span className="font-medium text-sm">{t('partners.network.badge')}</span>
+          <div className="border-b border-slate-200 pb-12 mb-12">
+            <div className="grid md:grid-cols-12 gap-10 items-start">
+              {/* Left: heading + copy */}
+              <div className="md:col-span-7">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-compliance-700 mb-5">
+                  <span className="h-px w-8 bg-compliance-700" />
+                  Sieć partnerska Quantifier
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-5 text-white leading-tight">
-                  {t('partners.network.heading')}
-                </h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-[1.1] tracking-tight">
+                  50+ partnerów,<br />
+                  z którymi wdrażamy zgodność i&nbsp;ESG w&nbsp;polskich firmach.
+                </h1>
 
-                <p className="text-white/80 text-lg leading-relaxed mb-4">
-                  {t('partners.network.intro1')}
+                <p className="text-slate-700 text-lg leading-relaxed mb-5">
+                  Sami nie zrobimy wszystkiego — i nie chcemy. Quantifier to platforma, ale realne wdrożenie wymaga ludzi: audytorów, prawników, konsultantów i integratorów. Dlatego budujemy sieć partnerów, którzy dokładają swoją wiedzę tam, gdzie klient jej potrzebuje.
                 </p>
-                <p className="text-white/70 leading-relaxed mb-8">
-                  {t('partners.network.intro2')}
+                <p className="text-slate-600 leading-relaxed">
+                  Współpracujemy z <strong className="text-slate-900">firmami audytorskimi</strong> przy wdrożeniach NIS 2, ISO 27001 i SOC 2, z <strong className="text-slate-900">kancelariami prawnymi</strong> przy DORA, RODO i sygnalistach, z <strong className="text-slate-900">firmami konsultingowymi</strong> w obszarze ESG i CSRD, z <strong className="text-slate-900">integratorami IT i cybersecurity</strong> przy zabezpieczeniach technicznych, oraz z <strong className="text-slate-900">uczelniami i NGO</strong> przy badaniach, edukacji i projektach finansowanych m.in. z programu LIFE.
                 </p>
+              </div>
 
-                <div className="flex flex-wrap gap-3">
-                  <Button size="lg" className="bg-white text-compliance-900 hover:bg-white/90 shadow-lg" asChild>
+              {/* Right: facts panel */}
+              <div className="md:col-span-5">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 md:p-7">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-5">
+                    Dlaczego warto być w sieci
+                  </p>
+                  <ul className="space-y-4 mb-7">
+                    {[
+                      'Wspólne projekty z realnymi klientami, nie pilotaże dla samej technologii.',
+                      'Dostęp do platformy GRC z gotowymi modułami NIS 2, ESG, DPP i LCA.',
+                      'Wsparcie merytoryczne i materiały edukacyjne (webinary, raporty, szkolenia).',
+                      'Widoczność marki partnera w ekosystemie 47 tys. firm sieci GS1 Polska.',
+                    ].map((point, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
+                        <Check className="h-4 w-4 text-compliance-600 shrink-0 mt-0.5" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="grid grid-cols-3 gap-3 pt-5 border-t border-slate-200">
+                    <div>
+                      <div className="text-2xl font-bold text-slate-900">50+</div>
+                      <div className="text-xs text-slate-500 uppercase tracking-wider">Partnerów</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-slate-900">5</div>
+                      <div className="text-xs text-slate-500 uppercase tracking-wider">Obszarów</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-slate-900">PL · EU</div>
+                      <div className="text-xs text-slate-500 uppercase tracking-wider">Zasięg</div>
+                    </div>
+                  </div>
+
+                  <Button size="lg" className="w-full mt-6 bg-compliance-900 text-white hover:bg-compliance-800" asChild>
                     <Link to={`/${currentLocale}/contact`}>
-                      <MessageSquare className="mr-2 h-5 w-5" />
-                      {t('partners.cta.button')}
+                      <MessageSquare className="mr-2 h-4 w-4" />
+                      Porozmawiajmy o partnerstwie
                     </Link>
                   </Button>
                 </div>
               </div>
-
-              {/* Right: stats */}
-              <div className="md:col-span-2 grid grid-cols-2 gap-4">
-                {[
-                  { value: '50+', label: 'Partnerów', icon: <Handshake className="h-5 w-5" /> },
-                  { value: '8', label: 'Sektorów', icon: <Building className="h-5 w-5" /> },
-                  { value: '47k+', label: 'Firm w sieci GS1', icon: <Users className="h-5 w-5" /> },
-                  { value: 'EU', label: 'Zasięg', icon: <Globe className="h-5 w-5" /> },
-                ].map((s, i) => (
-                  <div key={i} className="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-5 hover:bg-white/15 transition-colors">
-                    <div className="text-white/70 mb-2">{s.icon}</div>
-                    <div className="text-3xl font-bold text-white mb-1">{s.value}</div>
-                    <div className="text-xs text-white/70 uppercase tracking-wider">{s.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
-          {/* Partner types — modern pills */}
-          <div className="mt-10">
-            <p className="text-center text-sm text-slate-500 uppercase tracking-wider font-medium mb-6">
-              Z kim współpracujemy
+          {/* Partner types — areas of cooperation */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-5">
+              Z jakich obszarów są nasi partnerzy
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {partnerTypes.map((type, idx) => (
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {[
+                { name: 'Audytorzy', desc: 'NIS 2, ISO 27001, SOC 2', icon: <Check className="h-5 w-5" /> },
+                { name: 'Kancelarie prawne', desc: 'DORA, RODO, sygnaliści', icon: <FileCheck className="h-5 w-5" /> },
+                { name: 'Konsulting', desc: 'ESG, CSRD, ślad węglowy', icon: <Building className="h-5 w-5" /> },
+                { name: 'IT i cybersec', desc: 'Wdrożenia, integracje, SOC', icon: <Sparkles className="h-5 w-5" /> },
+                { name: 'NGO i uczelnie', desc: 'Badania, edukacja, LIFE', icon: <Globe className="h-5 w-5" /> },
+              ].map((type, idx) => (
                 <div
                   key={idx}
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white rounded-full border border-slate-200 shadow-sm hover:shadow-md hover:border-compliance-300 transition-all"
+                  className="p-5 bg-white rounded-xl border border-slate-200 hover:border-compliance-400 hover:shadow-md transition-all"
                 >
-                  {type.icon}
-                  <span className="text-sm font-medium text-slate-700">{type.name}</span>
+                  <div className="text-compliance-600 mb-3">{type.icon}</div>
+                  <div className="text-sm font-semibold text-slate-900 mb-1">{type.name}</div>
+                  <div className="text-xs text-slate-500 leading-relaxed">{type.desc}</div>
                 </div>
               ))}
             </div>
