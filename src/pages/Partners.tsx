@@ -80,10 +80,23 @@ const Partners = () => {
     },
   ];
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
-      <div className="max-w-5xl mx-auto">
+      {/* Subtle decorative background orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-compliance-200/40 blur-[100px]" />
+        <div className="absolute top-[30%] -left-60 w-[400px] h-[400px] rounded-full bg-innovation-200/30 blur-[90px]" />
+        <div className="absolute bottom-20 right-20 w-[350px] h-[350px] rounded-full bg-amber-200/25 blur-[80px]" />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative">
         {/* HERO — editorial, fact-based partnership intro */}
-        <section className="mb-16">
-          <div className="border-b border-slate-200 pb-12 mb-12">
+        <section className="mb-16 relative">
+          {/* Decorative dot pattern behind hero */}
+          <div className="absolute inset-0 -z-10 opacity-[0.03]" style={{
+            backgroundImage: 'radial-gradient(circle, #1c3da1 1px, transparent 1px)',
+            backgroundSize: '24px 24px'
+          }} />
+
+          <div className="border-b border-slate-200/80 pb-12 mb-12">
             <div className="grid md:grid-cols-12 gap-10 items-start">
               {/* Left: heading + copy */}
               <div className="md:col-span-7">
