@@ -174,6 +174,44 @@ const Partners = () => {
             </Link>
           </div>
         </section>
+
+        {/* Logo wall — wybrani partnerzy (PL only) */}
+        {currentLocale === 'pl' && (
+          <section className="mb-12">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl font-bold mb-3 gradient-heading">Wybrani partnerzy</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                Współpracujemy z liderami sektora finansowego, instytucjami publicznymi, uczelniami oraz organizacjami zrównoważonego rozwoju i logistyki.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {selectedPartners.map((p) => (
+                <Card
+                  key={p.name}
+                  className="p-6 flex flex-col items-center text-center border border-slate-200 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
+                  <div className="h-16 w-full flex items-center justify-center mb-4">
+                    <img
+                      src={p.logo}
+                      alt={`${p.name} logo`}
+                      className="max-h-16 max-w-[160px] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                      loading="lazy"
+                      width={160}
+                      height={64}
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-2 leading-snug">
+                    {p.name}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {p.description}
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </section>
+        )}
         
         <section className="mb-12 bg-gradient-to-r from-blue-50 to-compliance-50 p-8 rounded-xl">
           <h2 className="text-2xl font-bold mb-6 gradient-heading">{t('partners.map.title')}</h2>
