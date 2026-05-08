@@ -80,10 +80,23 @@ const Partners = () => {
     },
   ];
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
-      <div className="max-w-5xl mx-auto">
+      {/* Subtle decorative background orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-compliance-200/40 blur-[100px]" />
+        <div className="absolute top-[30%] -left-60 w-[400px] h-[400px] rounded-full bg-innovation-200/30 blur-[90px]" />
+        <div className="absolute bottom-20 right-20 w-[350px] h-[350px] rounded-full bg-amber-200/25 blur-[80px]" />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative">
         {/* HERO — editorial, fact-based partnership intro */}
-        <section className="mb-16">
-          <div className="border-b border-slate-200 pb-12 mb-12">
+        <section className="mb-16 relative">
+          {/* Decorative dot pattern behind hero */}
+          <div className="absolute inset-0 -z-10 opacity-[0.03]" style={{
+            backgroundImage: 'radial-gradient(circle, #1c3da1 1px, transparent 1px)',
+            backgroundSize: '24px 24px'
+          }} />
+
+          <div className="border-b border-slate-200/80 pb-12 mb-12">
             <div className="grid md:grid-cols-12 gap-10 items-start">
               {/* Left: heading + copy */}
               <div className="md:col-span-7">
@@ -224,7 +237,11 @@ const Partners = () => {
 
         {/* Logo wall — wybrani partnerzy (PL only) — 2 per row */}
         {currentLocale === 'pl' && (
-          <section className="mb-16">
+          <section className="mb-16 relative">
+            {/* Subtle corner flourish */}
+            <div className="absolute -top-8 -left-8 w-32 h-32 border-t-2 border-l-2 border-compliance-200/50 rounded-tl-3xl pointer-events-none" />
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 border-b-2 border-r-2 border-innovation-200/40 rounded-br-3xl pointer-events-none" />
+
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 gradient-heading">Wybrani partnerzy</h2>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">
@@ -266,23 +283,26 @@ const Partners = () => {
 
         <div className="mb-16">
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
-            
-            <h2 className="text-3xl font-bold mb-4 text-white">
+            {/* Decorative rings */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-white/[0.03] pointer-events-none" />
+
+            <h2 className="text-3xl font-bold mb-4 text-white relative z-10">
               {t('partners.cta.title')}
             </h2>
-            <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto relative z-10">
               {t('partners.cta.description')}
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
           <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg group shadow-lg" asChild>
             <Link to={`/${currentLocale}/contact`}>
               <MessageSquare className="mr-2 h-5 w-5" />
               {t('partners.cta.button')}
             </Link>
           </Button>
-              
+
             </div>
           </div>
         </div>
