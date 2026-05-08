@@ -241,23 +241,7 @@ const Partners = () => {
           </section>
         )}
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-8 gradient-heading text-center">{t('partners.benefits.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {partnerBenefits.map((benefit, index) => <Card key={index} className="p-6 border border-slate-200 h-full flex flex-col card-hover">
-                <div className="mb-4 p-3 rounded-full bg-compliance-50 w-fit">
-                  {benefit.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600">{benefit.description}</p>
-                </div>
-              </Card>)}
-          </div>
-        </section>
-
         <div className="mb-16">
-          <div className="my-8 h-px bg-slate-200" />
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
