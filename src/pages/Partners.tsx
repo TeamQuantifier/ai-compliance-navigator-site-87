@@ -274,7 +274,7 @@ const Partners = () => {
         </section>
 
         <div className="mb-16">
-          <Separator className="my-8" />
+          <div className="my-8 h-px bg-slate-200" />
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
