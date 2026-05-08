@@ -292,17 +292,17 @@ const Partners = () => {
             <h2 className="text-3xl font-bold mb-4 text-white relative z-10">
               {t('partners.cta.title')}
             </h2>
-            <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto relative z-10">
               {t('partners.cta.description')}
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
           <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 px-8 py-6 text-lg group shadow-lg" asChild>
             <Link to={`/${currentLocale}/contact`}>
               <MessageSquare className="mr-2 h-5 w-5" />
               {t('partners.cta.button')}
             </Link>
           </Button>
-              
+
             </div>
           </div>
         </div>
