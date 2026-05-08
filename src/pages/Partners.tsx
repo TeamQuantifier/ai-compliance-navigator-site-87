@@ -283,10 +283,13 @@ const Partners = () => {
 
         <div className="mb-16">
           <div className="bg-gradient-to-r from-compliance-900 to-innovation-900 rounded-xl p-8 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10"></div>
-            
-            <h2 className="text-3xl font-bold mb-4 text-white">
+            {/* Decorative rings */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-white/[0.03] pointer-events-none" />
+
+            <h2 className="text-3xl font-bold mb-4 text-white relative z-10">
               {t('partners.cta.title')}
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto">
