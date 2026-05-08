@@ -56,7 +56,50 @@ const Partners = () => {
     name: t('partners.types.ngos'),
     icon: <Globe className="h-6 w-6 text-compliance-600" />
   }];
-  
+
+  // Wybrani partnerzy (tylko PL — opisy do weryfikacji przez zespół)
+  const selectedPartners = [
+    {
+      name: 'BNP Paribas Bank Polska',
+      logo: logoBnp,
+      description: 'Partnerstwo w obszarze finansowania zrównoważonej transformacji i wsparcia raportowania ESG dla klientów korporacyjnych.',
+    },
+    {
+      name: 'Alior Bank',
+      logo: logoAlior,
+      description: 'Współpraca przy edukacji i narzędziach ESG / cyberbezpieczeństwa dla sektora MŚP.',
+    },
+    {
+      name: 'Polski Fundusz Rozwoju',
+      logo: logoPfr,
+      description: 'Partner programów rozwoju kompetencji ESG i odporności cyfrowej polskich przedsiębiorstw.',
+    },
+    {
+      name: 'Uniwersytet Ekonomiczny we Wrocławiu',
+      logo: logoUeWroclaw,
+      description: 'Współpraca naukowo-badawcza w obszarze GRC, śladu węglowego i bezpieczeństwa informacji.',
+    },
+    {
+      name: 'Klaster Gospodarki Obiegu Zamkniętego',
+      logo: logoKlasterGoz,
+      description: 'Wspólne projekty wokół DPP, LCA i transformacji cyrkularnej członków klastra.',
+    },
+    {
+      name: 'Projekt LIFE',
+      logo: logoLife,
+      description: 'Udział w projektach finansowanych z programu LIFE Komisji Europejskiej w obszarze klimatu i środowiska.',
+    },
+    {
+      name: 'Reo.pl',
+      logo: logoReo,
+      description: 'Integracja danych o energii OZE i umowach PPA z modułami carbon Quantifier.',
+    },
+    {
+      name: 'Raben Group',
+      logo: logoRaben,
+      description: 'Współpraca w obszarze raportowania emisji łańcucha dostaw (Scope 3) i zrównoważonej logistyki.',
+    },
+  ];
   return <PageTemplate title={t('seo.partners.title')} description={t('seo.partners.description')}>
       <div className="max-w-4xl mx-auto">
         <section className="mb-12">
