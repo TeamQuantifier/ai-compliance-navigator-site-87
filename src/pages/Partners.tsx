@@ -237,7 +237,11 @@ const Partners = () => {
 
         {/* Logo wall — wybrani partnerzy (PL only) — 2 per row */}
         {currentLocale === 'pl' && (
-          <section className="mb-16">
+          <section className="mb-16 relative">
+            {/* Subtle corner flourish */}
+            <div className="absolute -top-8 -left-8 w-32 h-32 border-t-2 border-l-2 border-compliance-200/50 rounded-tl-3xl pointer-events-none" />
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 border-b-2 border-r-2 border-innovation-200/40 rounded-br-3xl pointer-events-none" />
+
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 gradient-heading">Wybrani partnerzy</h2>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">
