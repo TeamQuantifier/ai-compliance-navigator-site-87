@@ -20,142 +20,270 @@ import leonOfficer from "@/assets/leon-compliance-officer.png";
 
 /* ----------------------------- Visual mockups ----------------------------- */
 
-const LeonMonitorMockup = () => (
-  <div className="rounded-xl bg-slate-900 border border-white/10 shadow-2xl overflow-hidden text-xs">
-    <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 bg-slate-950">
-      <div className="relative h-7 w-7 rounded-full overflow-hidden ring-2 ring-emerald-400/60">
-        <img src={leonOfficer} alt="Leon" className="h-full w-full object-cover scale-110" />
+/* Reusable platform window chrome */
+const PlatformWindow = ({
+  title,
+  module,
+  children,
+}: {
+  title: string;
+  module: string;
+  children: React.ReactNode;
+}) => (
+  <div className="rounded-xl bg-slate-950 border border-white/10 shadow-2xl overflow-hidden text-xs ring-1 ring-white/5">
+    {/* Top bar */}
+    <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 bg-slate-900/80">
+      <div className="flex gap-1.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
+        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
+        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
       </div>
-      <div className="flex-1">
-        <div className="text-white font-semibold leading-tight">Leon · AI Compliance Officer</div>
-        <div className="flex items-center gap-1 text-[10px] text-emerald-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> online · monitoruje 24/7
-        </div>
+      <div className="flex-1 text-center">
+        <span className="text-[10px] text-white/50 font-mono">platform.quantifier.ai</span>
       </div>
+      <span className="text-[9px] uppercase tracking-wider text-white/40 font-semibold">{module}</span>
     </div>
-    <div className="p-3 space-y-2">
-      <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 rounded-lg p-2">
-        <AlertTriangle className="h-3.5 w-3.5 text-amber-400 mt-0.5 flex-shrink-0" />
-        <div className="text-[11px] text-amber-100">
-          <strong>Polityka BCM</strong> wygasa za 9 dni — przygotowałem draft v3.2
-        </div>
-      </div>
-      <div className="flex items-start gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-2">
-        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 mt-0.5 flex-shrink-0" />
-        <div className="text-[11px] text-emerald-100">
-          <strong>ISO 27001 A.8.2</strong> — 14 dowodów odświeżonych w nocy
-        </div>
-      </div>
-      <div className="flex items-start gap-2 bg-blue-500/10 border border-blue-500/30 rounded-lg p-2">
-        <Clock className="h-3.5 w-3.5 text-blue-400 mt-0.5 flex-shrink-0" />
-        <div className="text-[11px] text-blue-100">
-          <strong>NIS2 Art. 21</strong> — wysłałem 3 przypomnienia do właścicieli kontroli
-        </div>
-      </div>
+    {/* Module title */}
+    <div className="px-4 py-2.5 border-b border-white/10 bg-slate-900/40">
+      <div className="text-white text-[12px] font-semibold">{title}</div>
     </div>
+    {children}
   </div>
+);
+
+const LeonMonitorMockup = () => (
+  <PlatformWindow title="Leon · AI Compliance Officer" module="Dashboard">
+    <div className="flex">
+      {/* Mini sidebar */}
+      <div className="w-24 border-r border-white/10 bg-slate-900/40 py-3 px-2 space-y-1.5">
+        {[
+          { label: "Overview", active: true },
+          { label: "Alerty", count: 7 },
+          { label: "Zadania", count: 12 },
+          { label: "Polityki" },
+          { label: "Raporty" },
+        ].map((i) => (
+          <div
+            key={i.label}
+            className={`flex items-center justify-between text-[10px] px-2 py-1 rounded-md ${
+              i.active ? "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30" : "text-white/60"
+            }`}
+          >
+            <span className="truncate">{i.label}</span>
+            {i.count && <span className="text-[9px] text-white/50">{i.count}</span>}
+          </div>
+        ))}
+      </div>
+      {/* Main */}
+      <div className="flex-1 p-3 space-y-2.5">
+        <div className="flex items-center gap-2">
+          <div className="relative h-8 w-8 rounded-full overflow-hidden ring-2 ring-emerald-400/60">
+            <img src={leonOfficer} alt="Leon" className="h-full w-full object-cover scale-110" />
+          </div>
+          <div className="flex-1">
+            <div className="text-white font-semibold leading-tight text-[11px]">Dzień dobry, Anna 👋</div>
+            <div className="flex items-center gap-1 text-[9px] text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> 24/7 · monitoring 4 frameworków
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-1.5">
+          {[
+            { v: "94%", l: "Zgodność", c: "text-emerald-300" },
+            { v: "7", l: "Alerty", c: "text-amber-300" },
+            { v: "12", l: "Taski", c: "text-blue-300" },
+          ].map((s) => (
+            <div key={s.l} className="bg-white/5 border border-white/10 rounded-md px-2 py-1.5">
+              <div className={`text-sm font-bold leading-tight ${s.c}`}>{s.v}</div>
+              <div className="text-[9px] text-white/50 uppercase tracking-wider">{s.l}</div>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-1.5">
+          <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 rounded-md p-1.5">
+            <AlertTriangle className="h-3 w-3 text-amber-400 mt-0.5 flex-shrink-0" />
+            <div className="text-[10px] text-amber-100">
+              <strong>Polityka BCM</strong> — wygasa za 9 dni · draft v3.2 gotowy
+            </div>
+          </div>
+          <div className="flex items-start gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-md p-1.5">
+            <CheckCircle2 className="h-3 w-3 text-emerald-400 mt-0.5 flex-shrink-0" />
+            <div className="text-[10px] text-emerald-100">
+              <strong>ISO 27001 A.8.2</strong> — 14 dowodów odświeżonych w nocy
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </PlatformWindow>
 );
 
 const DataIntegrationMockup = () => {
   const sources = [
-    { name: "Microsoft 365", color: "bg-blue-500" },
-    { name: "Jira", color: "bg-sky-500" },
-    { name: "AWS / Azure", color: "bg-amber-500" },
-    { name: "HRIS", color: "bg-emerald-500" },
-    { name: "Vendors API", color: "bg-purple-500" },
-    { name: "Excel / CSV", color: "bg-rose-500" },
+    { name: "Microsoft 365", status: "synced", count: "1 248", color: "bg-blue-500" },
+    { name: "Jira", status: "synced", count: "342", color: "bg-sky-500" },
+    { name: "AWS / Azure", status: "syncing", count: "—", color: "bg-amber-500" },
+    { name: "HRIS Workday", status: "synced", count: "187", color: "bg-emerald-500" },
+    { name: "Vendors API", status: "synced", count: "56", color: "bg-purple-500" },
+    { name: "Excel / CSV", status: "synced", count: "23", color: "bg-rose-500" },
   ];
   return (
-    <div className="rounded-xl bg-slate-900 border border-white/10 shadow-2xl overflow-hidden text-xs p-4">
-      <div className="text-[10px] uppercase tracking-wider text-white/50 font-semibold mb-3">Źródła danych</div>
-      <div className="grid grid-cols-3 gap-2 mb-4">
-        {sources.map((s) => (
-          <div key={s.name} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-md px-2 py-1.5">
-            <div className={`h-2 w-2 rounded-full ${s.color}`} />
-            <span className="text-[10px] text-white/80 truncate">{s.name}</span>
-          </div>
-        ))}
-      </div>
-      <div className="relative flex items-center justify-center my-2">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent" />
-        <div className="px-2 text-emerald-300 text-[10px] font-bold flex items-center gap-1">
-          <Plug className="h-3 w-3" /> AUTO-SYNC
+    <PlatformWindow title="Hub danych — konektory i Data Lake" module="Integrations">
+      <div className="p-3 space-y-2">
+        <div className="grid grid-cols-2 gap-1.5">
+          {sources.map((s) => (
+            <div
+              key={s.name}
+              className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-md px-2 py-1.5"
+            >
+              <div className={`h-2 w-2 rounded-full ${s.color} flex-shrink-0`} />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] text-white/85 truncate font-medium">{s.name}</div>
+                <div className="text-[9px] text-white/45">{s.count} dowodów</div>
+              </div>
+              <span
+                className={`text-[8px] uppercase tracking-wider font-bold ${
+                  s.status === "syncing" ? "text-amber-300" : "text-emerald-300"
+                }`}
+              >
+                {s.status === "syncing" ? "sync…" : "OK"}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent" />
+        <div className="relative flex items-center justify-center my-1">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent" />
+          <div className="px-2 text-emerald-300 text-[9px] font-bold flex items-center gap-1">
+            <Plug className="h-2.5 w-2.5" /> AUTO-SYNC · co 15 min
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent" />
+        </div>
+        <div className="bg-gradient-to-br from-emerald-500/15 to-blue-500/15 border border-emerald-400/30 rounded-md p-2.5 flex items-center gap-3">
+          <Database className="h-6 w-6 text-emerald-300 flex-shrink-0" />
+          <div className="flex-1">
+            <div className="text-white text-[11px] font-semibold">Quantifier Data Lake</div>
+            <div className="text-[9px] text-white/55">1 856 dowodów · 412 metryk · 89 dokumentów</div>
+          </div>
+          <span className="text-[9px] text-emerald-300 font-bold">LIVE</span>
+        </div>
       </div>
-      <div className="bg-gradient-to-br from-emerald-500/20 to-blue-500/20 border border-emerald-400/30 rounded-lg p-3 text-center">
-        <Database className="h-5 w-5 text-emerald-300 mx-auto mb-1" />
-        <div className="text-white text-xs font-semibold">Quantifier Data Lake</div>
-        <div className="text-[10px] text-white/60">Dowody · metryki · dokumenty · ryzyka</div>
-      </div>
-    </div>
+    </PlatformWindow>
   );
 };
 
 const TaskAutomationMockup = () => (
-  <div className="rounded-xl bg-slate-900 border border-white/10 shadow-2xl overflow-hidden text-xs">
-    <div className="px-3 py-2 border-b border-white/10 bg-slate-950 flex items-center justify-between">
-      <span className="text-white font-semibold">Auto-zadania z procedury</span>
-      <span className="text-[10px] text-emerald-400">+12 dziś</span>
-    </div>
-    <div className="p-3 space-y-2">
+  <PlatformWindow title="Hub zadań compliance" module="Tasks">
+    <div className="p-0">
+      <div className="grid grid-cols-3 text-[9px] uppercase tracking-wider text-white/40 font-semibold border-b border-white/10 px-3 py-1.5 bg-slate-900/30">
+        <span>Zadanie</span>
+        <span>Owner</span>
+        <span className="text-right">Termin</span>
+      </div>
       {[
-        { t: "Przegląd uprawnień M365", d: "Owner: A. Nowak", due: "do 14.05", color: "bg-amber-500/20 text-amber-300 border-amber-500/30" },
-        { t: "Dowód MFA — eksport raportu", d: "Owner: IT Team", due: "do 16.05", color: "bg-blue-500/20 text-blue-300 border-blue-500/30" },
-        { t: "Ocena dostawcy — Acme Sp.", d: "Owner: Procurement", due: "do 22.05", color: "bg-purple-500/20 text-purple-300 border-purple-500/30" },
+        { t: "Przegląd uprawnień M365", d: "A. Nowak", due: "14.05", chip: "bg-amber-500/15 text-amber-300 border-amber-500/30" },
+        { t: "Dowód MFA — eksport raportu", d: "IT Team", due: "16.05", chip: "bg-blue-500/15 text-blue-300 border-blue-500/30" },
+        { t: "Ocena dostawcy — Acme Sp.", d: "Procurement", due: "22.05", chip: "bg-purple-500/15 text-purple-300 border-purple-500/30" },
+        { t: "Backup test BCM", d: "DevOps", due: "28.05", chip: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30" },
       ].map((row, i) => (
-        <div key={i} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2">
-          <div className="h-4 w-4 rounded border border-white/30" />
-          <div className="flex-1 min-w-0">
-            <div className="text-white text-[11px] font-medium truncate">{row.t}</div>
-            <div className="text-[10px] text-white/50 truncate">{row.d}</div>
+        <div
+          key={i}
+          className="grid grid-cols-3 items-center px-3 py-2 border-b border-white/5 hover:bg-white/[0.02]"
+        >
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="h-3.5 w-3.5 rounded border border-white/30 flex-shrink-0" />
+            <span className="text-white text-[10px] truncate">{row.t}</span>
           </div>
-          <span className={`text-[9px] px-1.5 py-0.5 rounded border ${row.color} whitespace-nowrap`}>{row.due}</span>
+          <span className="text-[10px] text-white/60 truncate">{row.d}</span>
+          <span
+            className={`text-[9px] px-1.5 py-0.5 rounded border whitespace-nowrap justify-self-end font-semibold ${row.chip}`}
+          >
+            {row.due}
+          </span>
         </div>
       ))}
-      <div className="mt-3 flex items-center gap-2 text-[10px] text-white/60 bg-blue-500/10 border border-blue-500/30 rounded-lg p-2">
+      <div className="flex items-center gap-2 text-[10px] text-white/65 bg-blue-500/10 border-t border-blue-500/30 px-3 py-2">
         <Mail className="h-3.5 w-3.5 text-blue-300 flex-shrink-0" />
         <span>Realizacja zadań prosto z maila — kliknij „Zatwierdź", Leon zamknie task</span>
       </div>
     </div>
-  </div>
+  </PlatformWindow>
 );
 
-const PolicyBuilderMockup = () => (
-  <div className="rounded-xl bg-slate-900 border border-white/10 shadow-2xl overflow-hidden text-xs">
-    <div className="px-3 py-2 border-b border-white/10 bg-slate-950 flex items-center gap-2">
-      <FileSignature className="h-4 w-4 text-purple-300" />
-      <span className="text-white font-semibold">Policy Builder — kreator polityki</span>
-      <span className="ml-auto text-[10px] text-emerald-400">Live preview</span>
-    </div>
-    <div className="grid grid-cols-2">
-      <div className="border-r border-white/10 p-3 space-y-1.5">
-        {["1. Wybór szablonu", "2. Owner & Collaborators", "3. Sekcje i kontrole", "4. Wersjonowanie", "5. Podpis e-IDAS"].map((step, i) => (
-          <div key={step} className="flex items-center gap-2">
-            <div className={`h-4 w-4 rounded-full flex items-center justify-center text-[9px] font-bold ${i < 3 ? "bg-emerald-500 text-white" : "bg-white/10 text-white/50"}`}>
-              {i < 3 ? "✓" : i + 1}
-            </div>
-            <span className={`text-[10px] ${i < 3 ? "text-white" : "text-white/50"}`}>{step}</span>
+const PolicyBuilderMockup = () => {
+  const steps = [
+    { label: "Wybór szablonu", state: "done" },
+    { label: "Owner & Collaborators", state: "done" },
+    { label: "Sekcje i kontrole", state: "active" },
+    { label: "Wersjonowanie", state: "todo" },
+    { label: "Podpis e-IDAS", state: "todo" },
+  ];
+  return (
+    <PlatformWindow title="Policy Builder — kreator polityki" module="Documents">
+      <div className="grid grid-cols-5">
+        {/* Stepper */}
+        <div className="col-span-2 border-r border-white/10 p-3 bg-slate-900/30">
+          <ol className="relative space-y-2.5">
+            <span className="absolute left-[11px] top-2 bottom-2 w-px bg-white/10" />
+            {steps.map((s, i) => {
+              const isDone = s.state === "done";
+              const isActive = s.state === "active";
+              return (
+                <li key={s.label} className="relative flex items-center gap-2.5 pl-0">
+                  <span
+                    className={`relative z-10 h-[22px] w-[22px] rounded-full flex items-center justify-center text-[9px] font-bold flex-shrink-0 ${
+                      isDone
+                        ? "bg-emerald-500 text-white"
+                        : isActive
+                        ? "bg-blue-500 text-white ring-4 ring-blue-500/20 animate-pulse"
+                        : "bg-white/10 text-white/50 border border-white/15"
+                    }`}
+                  >
+                    {isDone ? "✓" : i + 1}
+                  </span>
+                  <span
+                    className={`text-[10px] leading-tight ${
+                      isDone ? "text-white/70 line-through decoration-white/30" : isActive ? "text-white font-semibold" : "text-white/50"
+                    }`}
+                  >
+                    {s.label}
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
+          <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[9px]">
+            <span className="text-white/50">Postęp</span>
+            <span className="text-emerald-300 font-bold">2 / 5</span>
           </div>
-        ))}
-      </div>
-      <div className="p-3 bg-white/[0.03]">
-        <div className="bg-white rounded-md p-2 shadow-inner">
-          <div className="h-1.5 w-3/4 bg-slate-800 rounded mb-1" />
-          <div className="h-1 w-full bg-slate-200 rounded mb-1" />
-          <div className="h-1 w-5/6 bg-slate-200 rounded mb-1" />
-          <div className="h-1 w-2/3 bg-slate-200 rounded mb-2" />
-          <div className="h-1 w-full bg-slate-200 rounded mb-1" />
-          <div className="h-1 w-4/5 bg-slate-200 rounded" />
         </div>
-        <div className="mt-2 flex items-center justify-between text-[9px] text-white/60">
-          <span>v1.3 · draft</span>
-          <span className="text-emerald-300 font-semibold">15 min</span>
+        {/* Live preview */}
+        <div className="col-span-3 p-3 bg-white/[0.02]">
+          <div className="flex items-center justify-between text-[9px] text-white/50 mb-1.5">
+            <span className="flex items-center gap-1">
+              <Sparkles className="h-2.5 w-2.5 text-emerald-300" /> Live preview
+            </span>
+            <span>v1.3 · draft</span>
+          </div>
+          <div className="bg-white rounded-md p-2 shadow-inner">
+            <div className="h-1.5 w-3/4 bg-slate-800 rounded mb-1.5" />
+            <div className="h-1 w-full bg-slate-200 rounded mb-1" />
+            <div className="h-1 w-5/6 bg-slate-200 rounded mb-1" />
+            <div className="h-1 w-2/3 bg-slate-200 rounded mb-2" />
+            <div className="h-1 w-full bg-slate-200 rounded mb-1" />
+            <div className="h-1 w-4/5 bg-slate-200 rounded mb-1" />
+            <div className="h-1 w-3/5 bg-slate-200 rounded" />
+          </div>
+          <div className="mt-2 flex items-center justify-between">
+            <span className="text-[9px] text-white/55">NIS2 · BCM Policy</span>
+            <span className="text-[9px] text-emerald-300 font-bold bg-emerald-500/10 border border-emerald-500/30 rounded px-1.5 py-0.5">
+              gotowe w 15 min
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    </PlatformWindow>
+  );
+};
 
 const AuditExportMockup = () => (
   <div className="rounded-xl bg-slate-900 border border-white/10 shadow-2xl overflow-hidden text-xs">
