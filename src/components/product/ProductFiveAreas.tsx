@@ -285,6 +285,7 @@ const PolicyBuilderMockup = () => {
   );
 };
 
+const AuditExportMockup = () => (
   <div className="rounded-xl bg-slate-900 border border-white/10 shadow-2xl overflow-hidden text-xs">
     <div className="px-3 py-2 border-b border-white/10 bg-slate-950 flex items-center gap-2">
       <ShieldCheck className="h-4 w-4 text-emerald-300" />
