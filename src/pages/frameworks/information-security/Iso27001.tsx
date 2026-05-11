@@ -32,6 +32,29 @@ import { Link } from "react-router-dom";
 import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
 import IsmsSchema from "@/components/frameworks/IsmsSchema";
+import HomePlatformMockup from "@/components/mockups/HomePlatformMockup";
+import AiComplianceDashboard from "@/components/mockups/AiComplianceDashboard";
+import RiskHeatmapMockup from "@/components/mockups/RiskHeatmapMockup";
+import DocumentRepositoryMockup from "@/components/mockups/DocumentRepositoryMockup";
+import TaskBoardMockup from "@/components/mockups/TaskBoardMockup";
+import AuditorDashboardMockup from "@/components/mockups/AuditorDashboardMockup";
+import ManagerDashboardMockup from "@/components/mockups/ManagerDashboardMockup";
+
+const StepMockup = ({ children, label }: { children: React.ReactNode; label: string }) => (
+  <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+    <div className="flex items-center justify-between mb-2 px-1">
+      <div className="flex items-center gap-1.5">
+        <span className="h-2 w-2 rounded-full bg-red-400" />
+        <span className="h-2 w-2 rounded-full bg-yellow-400" />
+        <span className="h-2 w-2 rounded-full bg-green-400" />
+      </div>
+      <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wide">{label}</span>
+    </div>
+    <div className="overflow-hidden rounded-lg max-h-[360px]">
+      {children}
+    </div>
+  </div>
+);
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
