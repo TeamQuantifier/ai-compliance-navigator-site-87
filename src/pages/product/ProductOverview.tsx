@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageTemplate from '@/components/PageTemplate';
 import HomePlatformMockup from '@/components/mockups/HomePlatformMockup';
+import ProductFiveAreas from '@/components/product/ProductFiveAreas';
 
 const ProductOverview = () => {
   const { t, currentLocale } = useLanguage();
