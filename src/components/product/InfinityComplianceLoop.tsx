@@ -271,6 +271,32 @@ const InfinityComplianceLoop = () => {
               </circle>
             </svg>
 
+            {/* Center: regulatory frameworks emblem */}
+            <div
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+              style={{ left: "50%", top: `${(220 / 440) * 100}%` }}
+              aria-hidden
+            >
+              <div className="flex flex-col items-center gap-2">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/30 via-blue-400/30 to-purple-400/30 blur-xl" />
+                  <div className="relative flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-slate-950/90 border border-white/20 backdrop-blur shadow-[0_0_40px_rgba(99,102,241,0.25)]">
+                    <ShieldCheck className="h-7 w-7 md:h-9 md:w-9 text-white" strokeWidth={1.5} />
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-1 max-w-[180px] md:max-w-[220px]">
+                  {["NIS2", "ISO 27001", "DORA", "GDPR", "SOC 2"].map((f) => (
+                    <span
+                      key={f}
+                      className="text-[9px] md:text-[10px] font-semibold text-white/75 bg-white/10 border border-white/15 px-1.5 py-0.5 rounded-full backdrop-blur"
+                    >
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Nodes */}
             {NODES.map((node) => {
               const Icon = node.icon;
