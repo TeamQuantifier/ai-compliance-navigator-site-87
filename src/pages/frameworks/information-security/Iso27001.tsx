@@ -143,81 +143,8 @@ const Iso27001 = () => {
           </div>
         </section>
 
-        {/* Why ISO 27001 Matters Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.whyMatters.title")}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("iso27001Page.whyMatters.subtitle")}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Penalties Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-4">
-                  <Euro className="h-8 w-8 text-red-600" />
-                </div>
-                <div className="text-3xl font-bold text-brand-blue-dark mb-2">
-                  {t("iso27001Page.whyMatters.cards.penalties.stat")}
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("iso27001Page.whyMatters.cards.penalties.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.penalties.description")}
-                </p>
-              </CardContent>
-            </Card>
-            {/* Downtime Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-                  <AlertTriangle className="h-8 w-8 text-amber-600" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 mt-4">
-                  {t("iso27001Page.whyMatters.cards.downtime.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.downtime.description")}
-                </p>
-              </CardContent>
-            </Card>
-            {/* Reputation Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                  <Users className="h-8 w-8 text-brand-purple" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 mt-4">
-                  {t("iso27001Page.whyMatters.cards.reputation.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.reputation.description")}
-                </p>
-              </CardContent>
-            </Card>
-            {/* Timeline Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                  <Clock className="h-8 w-8 text-brand-blue" />
-                </div>
-                <div className="text-3xl font-bold text-brand-blue-dark mb-2">
-                  {t("iso27001Page.whyMatters.cards.timeline.stat")}
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("iso27001Page.whyMatters.cards.timeline.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.timeline.description")}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        {/* Why ISO 27001 matters — interactive industry selector */}
+        <IndustryWhySection currentLocale={currentLocale} />
 
         {/* Understanding ISO 27001 Section */}
         <section className="mb-16">
