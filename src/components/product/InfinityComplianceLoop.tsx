@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Bot, Database, Workflow, FileSignature, ShieldCheck, ArrowRight, X } from "lucide-react";
+import { Bot, Database, Workflow, FileSignature, ShieldCheck, BarChart3, ArrowRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-type AreaId = "01" | "02" | "03" | "04" | "05";
+type AreaId = "01" | "02" | "03" | "04" | "05" | "06";
 
 type Node = {
   id: AreaId;
