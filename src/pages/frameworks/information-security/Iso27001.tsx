@@ -384,7 +384,7 @@ const Iso27001 = () => {
               <div className="relative flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
                   <StepMockup label="AI Compliance · Gap Analysis">
-                    <AiComplianceDashboard />
+                    <Iso27001GapAnalysisMockup />
                   </StepMockup>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
@@ -441,7 +441,7 @@ const Iso27001 = () => {
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
                   <StepMockup label="Risk Heatmap">
-                    <RiskHeatmapMockup />
+                    <Iso27001RiskHeatmapMockup />
                   </StepMockup>
                 </div>
               </div>
@@ -450,7 +450,7 @@ const Iso27001 = () => {
               <div className="relative flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
                   <StepMockup label="Document Repository · Polityki">
-                    <DocumentRepositoryMockup />
+                    <Iso27001PoliciesMockup />
                   </StepMockup>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
@@ -507,7 +507,7 @@ const Iso27001 = () => {
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue-dark border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
                   <StepMockup label="Task Board · Wdrożenie kontroli">
-                    <TaskBoardMockup />
+                    <Iso27001ControlsMockup />
                   </StepMockup>
                 </div>
               </div>
@@ -516,7 +516,7 @@ const Iso27001 = () => {
               <div className="relative flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
                   <StepMockup label="Auditor Dashboard · Certyfikacja">
-                    <AuditorDashboardMockup />
+                    <Iso27001CertificationMockup />
                   </StepMockup>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-mint border-4 border-white shadow" />
@@ -573,7 +573,7 @@ const Iso27001 = () => {
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
                   <StepMockup label="Manager Dashboard · Utrzymanie ISMS">
-                    <ManagerDashboardMockup />
+                    <Iso27001MaintenanceMockup />
                   </StepMockup>
                 </div>
               </div>
