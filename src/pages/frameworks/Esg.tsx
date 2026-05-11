@@ -121,7 +121,7 @@ const Esg = () => {
 
         {/* Framework Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
-          <TabsList className="grid grid-cols-3 w-full max-w-2xl mx-auto mb-8">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full max-w-3xl mx-auto mb-8 h-auto">
             <TabsTrigger value="csdr" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
               {t('esgPage.tabs.csdr')}
             </TabsTrigger>
@@ -130,6 +130,9 @@ const Esg = () => {
             </TabsTrigger>
             <TabsTrigger value="cbam" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
               {t('esgPage.tabs.cbam')}
+            </TabsTrigger>
+            <TabsTrigger value="vsme" className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800">
+              {t('esgPage.tabs.vsme')}
             </TabsTrigger>
           </TabsList>
 
@@ -152,42 +155,8 @@ const Esg = () => {
                   ))}
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-100">
-                <h3 className="text-sm font-medium text-green-800 mb-3 flex items-center">
-                  <BarChart3 className="h-4 w-4 mr-2 text-green-600" />
-                  {t('esgPage.csdr.dashboardTitle')}
-                </h3>
-                <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-                  <div className="text-sm text-center font-medium mb-3 text-slate-700">
-                    {t('esgPage.csdr.chartTitle')}
-                  </div>
-                  <div className="h-64">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart
-                        data={csdrComplianceData}
-                        layout="vertical"
-                        margin={{ top: 5, right: 30, left: 60, bottom: 5 }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                        <XAxis type="number" domain={[0, 100]} />
-                        <YAxis dataKey="category" type="category" width={80} />
-                        <Tooltip 
-                          formatter={(value) => [`${value}%`, 'Completion']}
-                          labelFormatter={(value) => `${value} Category`}
-                        />
-                        <Bar dataKey="complete" stackId="a" fill="#22c55e" name="Complete" />
-                        <Bar dataKey="incomplete" stackId="a" fill="#e5e7eb" name="Incomplete" />
-                        <Legend />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
-                <div className="bg-green-50 py-2 px-3 rounded-md text-xs text-green-700">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 
-                    {t('esgPage.csdr.insight')}
-                  </div>
-                </div>
+              <div>
+                <CsrdDarkMockup />
               </div>
             </div>
           </TabsContent>
@@ -211,57 +180,8 @@ const Esg = () => {
                   ))}
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-lg border border-emerald-100">
-                <h3 className="text-sm font-medium text-emerald-800 mb-3 flex items-center">
-                  <Globe className="h-4 w-4 mr-2 text-emerald-600" />
-                  {t('esgPage.gri.dashboardTitle')}
-                </h3>
-                <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-                  <div className="text-sm text-center font-medium mb-3 text-slate-700">
-                    {t('esgPage.gri.chartTitle')}
-                  </div>
-                  <div className="h-64">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <LineChart
-                        data={griTrendData}
-                        margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                        <XAxis dataKey="month" />
-                        <YAxis domain={[0, 100]} />
-                        <Tooltip />
-                        <Legend />
-                        <Line 
-                          type="monotone" 
-                          dataKey="environmental" 
-                          stroke="#10b981" 
-                          strokeWidth={2}
-                          activeDot={{ r: 6 }} 
-                        />
-                        <Line 
-                          type="monotone" 
-                          dataKey="social" 
-                          stroke="#3b82f6" 
-                          strokeWidth={2}
-                          activeDot={{ r: 6 }} 
-                        />
-                        <Line 
-                          type="monotone" 
-                          dataKey="governance" 
-                          stroke="#8b5cf6" 
-                          strokeWidth={2}
-                          activeDot={{ r: 6 }} 
-                        />
-                      </LineChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
-                <div className="bg-emerald-50 py-2 px-3 rounded-md text-xs text-emerald-700">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 
-                    {t('esgPage.gri.insight')}
-                  </div>
-                </div>
+              <div>
+                <GriDarkMockup />
               </div>
             </div>
           </TabsContent>
@@ -285,53 +205,33 @@ const Esg = () => {
                   ))}
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-green-50 p-6 rounded-lg border border-teal-100">
-                <h3 className="text-sm font-medium text-teal-800 mb-3 flex items-center">
-                  <PieChart className="h-4 w-4 mr-2 text-teal-600" />
-                  {t('esgPage.cbam.dashboardTitle')}
-                </h3>
-                <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-                  <div className="text-sm text-center font-medium mb-3 text-slate-700">
-                    {t('esgPage.cbam.chartTitle')}
-                  </div>
-                  <div className="h-64 flex items-center justify-center">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <RePieChart>
-                        <Pie
-                          data={cbamEmissionsData}
-                          cx="50%"
-                          cy="50%"
-                          outerRadius={80}
-                          innerRadius={40}
-                          paddingAngle={5}
-                          dataKey="value"
-                          label={({name, percent}) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                          labelLine={false}
-                        >
-                          {cbamEmissionsData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={EMISSIONS_COLORS[index % EMISSIONS_COLORS.length]} />
-                          ))}
-                        </Pie>
-                        <Legend />
-                        <Tooltip formatter={(value) => [`${value}%`, 'of Total Emissions']} />
-                      </RePieChart>
-                    </ResponsiveContainer>
-                  </div>
+              <div>
+                <CbamDarkMockup />
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* VSME Tab Content */}
+          <TabsContent value="vsme" className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-slate-800">
+                  {t('esgPage.vsme.title')}
+                </h2>
+                <p className="text-slate-600 mb-6">
+                  {t('esgPage.vsme.description')}
+                </p>
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-4 text-slate-800">{t('esgPage.vsme.featuresTitle')}</h3>
+                  {t('esgPage.vsme.features', { returnObjects: true }).map((feature: any, index: number) => (
+                    <FeatureItem key={index} icon={[Leaf, BarChart3, Recycle, FileText][index]} title={feature.title}>
+                      {feature.description}
+                    </FeatureItem>
+                  ))}
                 </div>
-                <div className="flex gap-2">
-                  <div className="bg-teal-50 py-2 px-3 rounded-md text-xs text-teal-700 flex-1">
-                    <div className="flex items-center">
-                      <AlertCircle className="h-3 w-3 mr-1" /> 
-                      {t('esgPage.cbam.insight1')}
-                    </div>
-                  </div>
-                  <div className="bg-amber-50 py-2 px-3 rounded-md text-xs text-amber-700 flex-1">
-                    <div className="flex items-center">
-                      <Clock className="h-3 w-3 mr-1" /> 
-                      {t('esgPage.cbam.insight2')}
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <div>
+                <VsmeDarkMockup />
               </div>
             </div>
           </TabsContent>
