@@ -140,10 +140,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-green-50 p-4 rounded-lg border border-teal-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <CarbonFootprintDashboard />
-                </div>
+              <div>
+                <CarbonDarkMockup />
               </div>
             </div>
           </TabsContent>
