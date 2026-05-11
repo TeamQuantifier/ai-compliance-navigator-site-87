@@ -281,68 +281,13 @@ const InfinityComplianceLoop = () => {
             })}
           </div>
 
-          {/* Hint */}
-          <p className="text-center text-xs text-white/50 mt-12 mb-6 flex items-center justify-center gap-1">
-            <ChevronDown className="h-3.5 w-3.5 animate-bounce" />
-            Kliknij węzeł, aby zobaczyć szczegóły
-          </p>
-
-          {/* Detail panel */}
-          <div
-            id="loop-detail-panel"
-            className="overflow-hidden transition-all duration-500"
-            style={{ maxHeight: activeNode ? "1000px" : "0px" }}
-          >
-            {activeNode && (
-              <div
-                key={activeNode.id}
-                className="animate-fade-in bg-white/[0.04] border border-white/15 rounded-2xl p-6 md:p-8 backdrop-blur-sm"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-6 items-start">
-                  <div className="flex md:flex-col items-center md:items-start gap-3">
-                    <span
-                      className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 border-2 border-white/20 ring-4 ${activeNode.ring} ring-offset-2 ring-offset-slate-950`}
-                    >
-                      <activeNode.icon className={`h-8 w-8 ${activeNode.color}`} />
-                    </span>
-                    <span className="text-5xl md:text-6xl font-bold text-white/10 leading-none">
-                      {activeNode.id}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                      {activeNode.label}
-                    </h3>
-                    <p className="text-white/80 leading-relaxed mb-4">{activeNode.description}</p>
-                    <ul className="space-y-2 mb-5">
-                      {activeNode.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-sm text-white/85">
-                          <span className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${activeNode.color.replace("text-", "bg-")}`} />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-3">
-                      <a
-                        href={`#area-${activeNode.id}`}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg px-4 py-2 transition-colors"
-                      >
-                        Zobacz pełny opis
-                        <ChevronDown className="h-4 w-4" />
-                      </a>
-                      <Link
-                        to={`/${currentLocale}${activeNode.href}/`}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-950 bg-white hover:bg-white/90 rounded-lg px-4 py-2 transition-colors"
-                      >
-                        Dedykowana strona
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+          {/* Hint (only visible when nothing is open) */}
+          {!activeNode && (
+            <p className="text-center text-xs text-white/50 mt-12 flex items-center justify-center gap-1.5">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Kliknij węzeł, aby zobaczyć szczegóły
+            </p>
+          )}
         </div>
       </div>
     </section>
