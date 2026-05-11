@@ -45,8 +45,8 @@ const NODES: Node[] = [
     label: "Dane i integracje",
     short: "Dane i integracje",
     icon: Database,
-    x: 220,
-    y: 80,
+    x: 240,
+    y: 90,
     description:
       "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
     bullets: [
