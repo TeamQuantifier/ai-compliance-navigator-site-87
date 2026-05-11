@@ -301,7 +301,7 @@ const ProductFiveAreas = () => {
             AI Native GRC
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            5 obszarów, w których Quantifier robi różnicę
+            6 obszarów, w których Quantifier robi różnicę
           </h2>
           <p className="text-lg text-white/70">
             System klasy AI Native GRC — nie kolejna baza dokumentów. Quantifier myśli, integruje, automatyzuje
