@@ -317,7 +317,8 @@ const ProductFiveAreas = () => {
             return (
               <div
                 key={area.num}
-                className={`relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-gradient-to-br ${area.accent} bg-white/[0.03] border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-sm`}
+                id={`area-${area.num}`}
+                className={`relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-gradient-to-br ${area.accent} bg-white/[0.03] border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-sm scroll-mt-24`}
               >
                 {/* Text */}
                 <div className={reverse ? "lg:order-2" : ""}>
