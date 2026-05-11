@@ -111,10 +111,10 @@ const Partners = () => {
                 </h1>
 
                 <p className="text-slate-700 text-lg leading-relaxed mb-5">
-                  Sami nie zrobimy wszystkiego — i nie chcemy. Quantifier to platforma, ale realne wdrożenie wymaga ludzi: audytorów, prawników, konsultantów i integratorów. Dlatego budujemy sieć partnerów, którzy dokładają swoją wiedzę tam, gdzie klient jej potrzebuje.
+                  Budujemy sieć partnerów, którzy dokładają swoją wiedzę tam, gdzie klient jej potrzebuje.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Współpracujemy z <strong className="text-slate-900">firmami audytorskimi</strong> przy wdrożeniach NIS 2, ISO 27001, SOC 2 oraz ESG i CSRD, z <strong className="text-slate-900">kancelariami prawnymi</strong> i <strong className="text-slate-900">firmami konsultingowymi</strong> przy wszystkich kluczowych regulacjach (DORA, RODO, sygnaliści, NIS 2, CSRD, ESG), z <strong className="text-slate-900">integratorami IT i cybersecurity</strong> przy zabezpieczeniach technicznych, oraz z <strong className="text-slate-900">uczelniami i NGO</strong> przy badaniach, edukacji i projektach finansowanych m.in. z programu LIFE.
+                  Współpracujemy z <strong className="text-slate-900">firmami audytorskimi</strong> przy wdrożeniach NIS 2, ISO 27001, SOC 2 oraz ESG i CSRD, z <strong className="text-slate-900">kancelariami prawnymi</strong> i <strong className="text-slate-900">firmami konsultingowymi</strong> przy wszystkich kluczowych regulacjach (DORA, RODO, sygnaliści, NIS 2, CSRD, ESG), z <strong className="text-slate-900">integratorami IT i cybersecurity</strong> przy zabezpieczeniach technicznych, oraz z <strong className="text-slate-900">uczelniami i NGO</strong> przy badaniach, edukacji i projektach finansowanych.
                 </p>
               </div>
 
@@ -126,7 +126,7 @@ const Partners = () => {
                   </p>
                   <ul className="space-y-4 mb-7">
                     {[
-                      'Wspólne projekty z realnymi klientami, nie pilotaże dla samej technologii.',
+                      'Wspólne projekty z klientami.',
                       'Dostęp do platformy GRC z gotowymi modułami NIS 2, ESG, DPP i LCA.',
                       'Wsparcie merytoryczne i materiały edukacyjne (webinary, raporty, szkolenia).',
                       'Marketplace partnerów bezpośrednio na platformie Quantifier — widoczność u klientów wdrażających GRC i ESG.',
@@ -148,7 +148,7 @@ const Partners = () => {
                       <div className="text-xs text-slate-500 uppercase tracking-wider">Obszarów</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-slate-900">PL · EU</div>
+                      <div className="text-2xl font-bold text-slate-900">EU · USA</div>
                       <div className="text-xs text-slate-500 uppercase tracking-wider">Zasięg</div>
                     </div>
                   </div>
