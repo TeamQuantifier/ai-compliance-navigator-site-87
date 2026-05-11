@@ -20,7 +20,7 @@ const ROLES = [
   {
     icon: Users,
     name: "Contributor",
-    desc: "Realizujesz zadania prosto z maila. Bez logowania w 5 systemach, bez „dogadaj się z IT".",
+    desc: "Realizujesz zadania prosto z maila. Bez logowania w 5 systemach, bez „dogadaj się z IT”.",
     href: "/roles/contributors",
     color: "from-emerald-500/20 to-teal-500/10",
   },

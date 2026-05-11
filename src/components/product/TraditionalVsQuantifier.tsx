@@ -2,7 +2,7 @@ import { X, Check } from "lucide-react";
 
 const ROWS: { trad: string; q: string }[] = [
   { trad: "Excel + maile + foldery", q: "Jeden Data Lake, Leon zaciąga dowody sam" },
-  { trad: "Dowody zbierane „pod audyt"", q: "Dowody odświeżane 24/7, zawsze świeże" },
+  { trad: "Dowody zbierane „pod audyt”", q: "Dowody odświeżane 24/7, zawsze świeże" },
   { trad: "Polityka — 3 miesiące pracy", q: "Polityka w 15 minut z biblioteki + e-IDAS" },
   { trad: "Audytor wchodzi = pożar", q: "Audytor wchodzi → 1 klik → pakiet PDF/XBRL" },
   { trad: "Compliance = projekt z deadline'em", q: "Compliance = stan ciągły, pętla ∞" },
