@@ -99,8 +99,8 @@ const NODES: Node[] = [
   },
   {
     id: "05",
-    label: "Audyt — 1 klik",
-    short: "Audyt",
+    label: "Audyt, jedno kliknięcie",
+    short: "Audyt, jedno kliknięcie",
     icon: ShieldCheck,
     x: 720,
     y: 160,
