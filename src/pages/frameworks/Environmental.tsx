@@ -108,10 +108,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-lg border border-emerald-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <LcaDashboard />
-                </div>
+              <div>
+                <LcaDarkMockup />
               </div>
             </div>
           </TabsContent>
