@@ -123,26 +123,26 @@ const InfinityComplianceLoop = () => {
   const activeNode = NODES.find((n) => n.id === active) ?? null;
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 md:py-28 overflow-hidden -mt-12 -mx-4">
       <div aria-hidden className="absolute inset-0 opacity-40">
         <div className="absolute top-1/3 left-1/4 h-[400px] w-[400px] rounded-full bg-purple-500/20 blur-[120px]" />
         <div className="absolute top-1/3 right-1/4 h-[400px] w-[400px] rounded-full bg-emerald-500/20 blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
-            ∞ Continuous Compliance
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-5">
+            ∞ Continuous Compliance · AI-Native GRC
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            W tradycyjnym GRC compliance to projekt.
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            Compliance to nie projekt.
             <br />
             <span className="bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
-              W Quantifier — to stan.
+              To stan ciągły.
             </span>
-          </h2>
-          <p className="text-lg text-white/70">
-            Dane wchodzą. Leon decyduje. Zespół działa. Audytor dostaje pakiet. Pętla zamyka się sama — i zaczyna od nowa.
+          </h1>
+          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
+            Quantifier zamyka 5 obszarów GRC w jedną nieskończoną pętlę. Kliknij dowolny węzeł, by zobaczyć, jak działa.
           </p>
         </div>
 
