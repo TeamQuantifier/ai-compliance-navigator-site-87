@@ -127,14 +127,14 @@ const InfinityComplianceLoop = () => {
   const activeNode = NODES.find((n) => n.id === active) ?? null;
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 md:py-28 overflow-hidden -mt-12 -mx-4">
+    <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-10 md:py-14 overflow-hidden -mt-12 -mx-4">
       <div aria-hidden className="absolute inset-0 opacity-40">
         <div className="absolute top-1/3 left-1/4 h-[400px] w-[400px] rounded-full bg-purple-500/20 blur-[120px]" />
         <div className="absolute top-1/3 right-1/4 h-[400px] w-[400px] rounded-full bg-emerald-500/20 blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-4 md:mb-6">
           <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-5">
             ∞ Continuous Compliance · AI-Native GRC
           </span>
