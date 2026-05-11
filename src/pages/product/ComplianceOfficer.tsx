@@ -99,7 +99,7 @@ const ComplianceOfficer = () => {
             {t('product.complianceOfficer.dashboard.subtitle')}
           </p>
           <div className="max-w-4xl mx-auto">
-            <AiComplianceDashboard />
+            <StaticAiOfficerDashboard />
           </div>
         </section>
 
