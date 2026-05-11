@@ -71,7 +71,6 @@ const AnimatedStep = ({ children, index }: { children: React.ReactNode; index: n
     </div>
   );
 };
-);
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
