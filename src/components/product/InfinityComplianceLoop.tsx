@@ -214,9 +214,9 @@ const InfinityComplianceLoop = () => {
 
         {/* Loop SVG + nodes */}
         <div className="relative max-w-5xl mx-auto">
-          <div className="relative w-full" style={{ aspectRatio: "800 / 320" }}>
+          <div className="relative w-full" style={{ aspectRatio: "800 / 440" }}>
             <svg
-              viewBox="0 0 800 320"
+              viewBox="0 0 800 440"
               className="absolute inset-0 w-full h-full"
               fill="none"
               aria-hidden
