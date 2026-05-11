@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Bot, Database, Workflow, FileSignature, ShieldCheck, ArrowRight, X } from "lucide-react";
+import { Bot, Database, Workflow, FileSignature, ShieldCheck, BarChart3, ArrowRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-type AreaId = "01" | "02" | "03" | "04" | "05";
+type AreaId = "01" | "02" | "03" | "04" | "05" | "06";
 
 type Node = {
   id: AreaId;
@@ -114,6 +114,25 @@ const NODES: Node[] = [
     href: "/product/analytics-dashboards",
     color: "text-blue-300",
     ring: "ring-blue-400/60",
+  },
+  {
+    id: "06",
+    label: "Analityka, dashboardy i raporty",
+    short: "Analityka, dashboardy i raporty",
+    icon: BarChart3,
+    x: 560,
+    y: 350,
+    description:
+      "Status zgodności w czasie rzeczywistym: dashboardy KPI, trendy ryzyk, mapy ciepła, postęp wdrożeń i gotowe raporty dla zarządu, audytora i regulatora — bez budowania pivotów w arkuszach.",
+    bullets: [
+      "Dashboardy KPI dla zarządu, zespołu i audytora",
+      "Trendy ryzyk, incydentów i zaległości w jednym widoku",
+      "Mapy ciepła ryzyk i postęp wdrożeń frameworków",
+      "Eksport raportów do PDF, XLSX i prezentacji jednym kliknięciem",
+    ],
+    href: "/product/analytics-dashboards",
+    color: "text-cyan-300",
+    ring: "ring-cyan-400/60",
   },
 ];
 
