@@ -31,6 +31,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
+import IsmsSchema from "@/components/frameworks/IsmsSchema";
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
