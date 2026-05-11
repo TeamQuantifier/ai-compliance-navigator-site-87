@@ -102,8 +102,8 @@ const NODES: Node[] = [
     label: "Audyt, jedno kliknięcie",
     short: "Audyt, jedno kliknięcie",
     icon: ShieldCheck,
-    x: 720,
-    y: 160,
+    x: 680,
+    y: 220,
     description:
       "Każda decyzja, data, osoba i podpis elektroniczny są zarejestrowane. Jedno kliknięcie = raport dla organu nadzoru w PDF, Excel, XBRL lub XML. Management Body Accountability gotowy do okazania.",
     bullets: [
