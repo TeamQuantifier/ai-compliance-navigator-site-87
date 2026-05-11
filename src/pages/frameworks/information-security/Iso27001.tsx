@@ -41,6 +41,7 @@ import {
   Iso27001CertificationMockup,
   Iso27001MaintenanceMockup,
 } from "@/components/mockups/Iso27001StepMockups";
+import { useInView } from "@/hooks/useInView";
 
 const StepMockup = ({ children, label }: { children: React.ReactNode; label: string }) => (
   <div className="rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-xl">
@@ -55,6 +56,21 @@ const StepMockup = ({ children, label }: { children: React.ReactNode; label: str
     </div>
   </div>
 );
+
+const AnimatedStep = ({ children, index }: { children: React.ReactNode; index: number }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className={`relative flex flex-col md:flex-row md:items-center transition-all duration-700 ease-out will-change-transform ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+      style={{ transitionDelay: inView ? `${Math.min(index * 80, 400)}ms` : "0ms" }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
@@ -358,7 +374,7 @@ const Iso27001 = () => {
             
             <div className="space-y-8 md:space-y-12">
               {/* Step 1 - Onboarding */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={0}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -388,10 +404,9 @@ const Iso27001 = () => {
                     <HomePlatformMockup />
                   </StepMockup>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 2 - Gap Analysis */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={1}>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
                   <StepMockup label="AI Compliance · Gap Analysis">
                     <Iso27001GapAnalysisMockup />
@@ -421,10 +436,9 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 3 - Risk Assessment */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={2}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -454,10 +468,9 @@ const Iso27001 = () => {
                     <Iso27001RiskHeatmapMockup />
                   </StepMockup>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 4 - Policies */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={3}>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
                   <StepMockup label="Document Repository · Polityki">
                     <Iso27001PoliciesMockup />
@@ -487,10 +500,9 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 5 - Controls */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={4}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -520,10 +532,9 @@ const Iso27001 = () => {
                     <Iso27001ControlsMockup />
                   </StepMockup>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 6 - Certification */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={5}>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
                   <StepMockup label="Auditor Dashboard · Certyfikacja">
                     <Iso27001CertificationMockup />
@@ -553,10 +564,9 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 7 - Maintenance */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={6}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-gradient-to-r from-brand-blue/5 to-brand-purple/5 p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -587,7 +597,7 @@ const Iso27001 = () => {
                   </StepMockup>
                 </div>
               </div>
-            </div>
+            </AnimatedStep>
           </div>
         </section>
 
