@@ -23,8 +23,8 @@ type Node = {
 const NODES: Node[] = [
   {
     id: "01",
-    label: "Leon — AI Compliance Officer",
-    short: "Leon",
+    label: "AI Officer Leon",
+    short: "AI Officer Leon",
     icon: Bot,
     x: 80,
     y: 160,
@@ -34,6 +34,7 @@ const NODES: Node[] = [
       "Monitoring 24/7 wszystkich frameworków",
       "Proaktywne alerty zamiast reaktywnych pożarów",
       "Asystent w czacie: zapytaj, deleguj, zatwierdź",
+      "Drafty polityk i procedur generowane na żądanie",
     ],
     href: "/product/ai-compliance-officer",
     color: "text-purple-300",
@@ -41,17 +42,18 @@ const NODES: Node[] = [
   },
   {
     id: "02",
-    label: "Integracje i dane",
-    short: "Integracje",
+    label: "Dane i integracje",
+    short: "Dane i integracje",
     icon: Database,
     x: 240,
     y: 70,
     description:
-      "Koniec z ręcznym zbieraniem screenshotów. Quantifier łączy się z M365, Jirą, chmurą, HR i dostawcami — automatycznie zaciągając dowody, metryki i dokumenty do jednego repozytorium.",
+      "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
     bullets: [
-      "Konektory out-of-the-box do najważniejszych systemów",
-      "Automatyczna walidacja świeżości dowodów",
-      "Jeden Data Lake — koniec z plikami w mailach",
+      "Import z istniejących arkuszy bez zmiany ich struktury",
+      "Automatyczne mapowanie danych do wymagań frameworków",
+      "Brak żmudnego dopasowywania pól i kolumn",
+      "Jedno spójne źródło prawdy dla całego zespołu",
     ],
     href: "/product/task-data-management",
     color: "text-emerald-300",
@@ -60,16 +62,17 @@ const NODES: Node[] = [
   {
     id: "03",
     label: "Zarządzanie pracą",
-    short: "Project Mgmt",
+    short: "Zarządzanie pracą",
     icon: Workflow,
     x: 400,
     y: 160,
     description:
       "Procedury rozkładają się na zadania z jasno określonym timeline'em, ownerem i dowodami. AI przydziela, przypomina i zamyka — zespół realizuje wszystko z poziomu maila lub Slacka.",
     bullets: [
-      "Procedury → zadania z timeline'em i ownerem",
+      "Procedury rozbijane na zadania z timeline'em i ownerem",
       "Auto-przydziały i przypomnienia od Leona",
       "Realizacja zadań prosto ze skrzynki mailowej",
+      "Pełna widoczność postępu na dashboardzie",
     ],
     href: "/product/task-data-management",
     color: "text-amber-300",
@@ -77,17 +80,18 @@ const NODES: Node[] = [
   },
   {
     id: "04",
-    label: "Polityki w 15 minut",
-    short: "Polityki",
+    label: "Polityki, rejestry, dostawcy",
+    short: "Polityki, rejestry, dostawcy",
     icon: FileSignature,
     x: 560,
     y: 70,
     description:
-      "Policy Builder prowadzi przez tworzenie polityki krok po kroku z biblioteki gotowych szablonów. Live preview, wersjonowanie, podpis elektroniczny zgodny z eIDAS — w 15 minut, nie w 3 miesiące.",
+      "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
     bullets: [
-      "Biblioteka szablonów dla NIS2, ISO, DORA, GDPR",
-      "Mapowanie danych i łańcuch dostaw pod stałą kontrolą",
-      "Wersjonowanie + podpis e-IDAS w jednym miejscu",
+      "Policy Builder z szablonami dla NIS2, ISO, DORA, GDPR",
+      "Rejestry ryzyk, incydentów i aktywów w jednym miejscu",
+      "Ocena i monitoring dostawców w stałym cyklu",
+      "Wersjonowanie + podpis eIDAS",
     ],
     href: "/product/documents-management",
     color: "text-pink-300",
@@ -135,14 +139,14 @@ const InfinityComplianceLoop = () => {
             ∞ Continuous Compliance · AI-Native GRC
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Compliance to nie projekt.
+            Compliance to nie projekt —
             <br />
             <span className="bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
-              To stan ciągły.
+              to stan ciągłej zgodności.
             </span>
           </h1>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-            Quantifier zamyka 5 obszarów GRC w jedną nieskończoną pętlę. Kliknij dowolny węzeł, by zobaczyć, jak działa.
+            Quantifier zamyka 5 obszarów w jedną nieskończoną pętlę ciągłej zgodności. Kliknij dowolny węzeł, by zobaczyć, jak działa.
           </p>
         </div>
 
