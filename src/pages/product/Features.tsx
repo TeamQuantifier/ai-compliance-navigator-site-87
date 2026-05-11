@@ -6,6 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import PageTemplate from '@/components/PageTemplate';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ProductFiveAreas from '@/components/product/ProductFiveAreas';
 
 const ProductFeatures = () => {
   const { t, currentLocale } = useLanguage();
@@ -54,10 +55,9 @@ const ProductFeatures = () => {
           {JSON.stringify(softwareApplicationSchema)}
         </script>
       </Helmet>
-      <div className="max-w-4xl mx-auto mb-12">
-        
-        
-      </div>
+      <div className="max-w-4xl mx-auto mb-12"></div>
+
+      <ProductFiveAreas />
 
       <Tabs defaultValue="ai-officer" className="w-full mb-16" onValueChange={handleTabChange}>
         <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-transparent h-auto p-0">
