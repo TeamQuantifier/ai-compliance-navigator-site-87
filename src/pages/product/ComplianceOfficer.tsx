@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BrainCircuit, Shield, Activity, MessageCircle, Eye, Zap, FileCheck2, Target, HelpCircle } from 'lucide-react';
 import AiAgentMockup from '@/components/mockups/AiAgentMockup';
-import AiComplianceDashboard from '@/components/mockups/AiComplianceDashboard';
+import StaticAiOfficerDashboard from '@/components/mockups/StaticAiOfficerDashboard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import FAQSection from '@/components/seo/FAQSection';
