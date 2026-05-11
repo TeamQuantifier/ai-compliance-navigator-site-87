@@ -180,66 +180,76 @@ const Iso27001 = () => {
         {/* Why ISO 27001 matters — interactive industry selector */}
         <IndustryWhySection currentLocale={currentLocale} />
 
-        {/* Understanding ISO 27001 Section */}
+        {/* Understanding ISO 27001 — highlighted */}
         <section className="mb-16">
-          <div className="bg-brand-gray-light/30 p-8 rounded-2xl">
-            <h2 className="text-3xl font-bold text-center text-brand-blue-dark mb-4">
-              {t("iso27001Page.understanding.title")}
-            </h2>
-            <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-10">
-              {t("iso27001Page.understanding.description")}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="border-brand-gray-light bg-white">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6 text-brand-blue" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
-                    {t("iso27001Page.understanding.whatIs.title")}
-                  </h3>
-                  <p className="text-slate-600">
-                    {t("iso27001Page.understanding.whatIs.description")}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-brand-gray-light bg-white">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-brand-purple" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
-                    {t("iso27001Page.understanding.whoNeeds.title")}
-                  </h3>
-                  <p className="text-slate-600">
-                    {t("iso27001Page.understanding.whoNeeds.description")}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-brand-gray-light bg-white">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-full bg-brand-mint/50 flex items-center justify-center mb-4">
-                    <FileText className="h-6 w-6 text-brand-blue-dark" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
-                    {t("iso27001Page.understanding.keyRequirements.title")}
-                  </h3>
-                  <ul className="text-slate-600 space-y-2">
-                    {getArrayTranslation("iso27001Page.understanding.keyRequirements.items").map(
-                      (item, index) => (
-                        <li key={index} className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-brand-blue mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-sm">{item}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </CardContent>
-              </Card>
+          <div className="relative overflow-hidden rounded-3xl border-2 border-brand-blue/20 bg-gradient-to-br from-white via-brand-mint/10 to-brand-blue/5 p-8 md:p-12 shadow-xl">
+            <div aria-hidden="true" className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-brand-blue/10 blur-2xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-brand-purple/10 blur-2xl" />
+
+            <div className="relative">
+              <div className="text-center max-w-3xl mx-auto mb-10">
+                <Badge className="bg-brand-blue text-white mb-4 font-medium">
+                  <FileText className="h-4 w-4 mr-1.5" />
+                  Wprowadzenie
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
+                  {t("iso27001Page.understanding.title")}
+                </h2>
+                <p className="text-lg text-slate-600">
+                  {t("iso27001Page.understanding.description")}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Card className="border-brand-blue/20 bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-blue to-brand-blue-dark flex items-center justify-center mb-4 shadow-lg">
+                      <Shield className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
+                      {t("iso27001Page.understanding.whatIs.title")}
+                    </h3>
+                    <p className="text-slate-600">
+                      {t("iso27001Page.understanding.whatIs.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-brand-purple/20 bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-purple to-brand-blue-dark flex items-center justify-center mb-4 shadow-lg">
+                      <Users className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
+                      {t("iso27001Page.understanding.whoNeeds.title")}
+                    </h3>
+                    <p className="text-slate-600">
+                      {t("iso27001Page.understanding.whoNeeds.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-brand-mint bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-mint to-brand-blue flex items-center justify-center mb-4 shadow-lg">
+                      <FileText className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
+                      {t("iso27001Page.understanding.keyRequirements.title")}
+                    </h3>
+                    <ul className="text-slate-600 space-y-2">
+                      {getArrayTranslation("iso27001Page.understanding.keyRequirements.items").map(
+                        (item, index) => (
+                          <li key={index} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-brand-blue mt-1 mr-2 flex-shrink-0" />
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
-
         {/* How Quantifier Helps Section */}
         <section className="mb-16">
           <div className="text-center mb-10">
@@ -582,142 +592,52 @@ const Iso27001 = () => {
         </section>
 
 
+        {/* AI Module — highlighted */}
         <section className="mb-16">
-          <div className="bg-brand-mint/30 rounded-2xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-blue-dark via-brand-purple to-brand-blue p-8 md:p-12 text-white shadow-2xl">
+            {/* Decorative elements */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)",
+                backgroundSize: "24px 24px",
+              }} />
+            <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-brand-mint/20 blur-3xl" />
+
+            <div className="relative flex flex-col md:flex-row items-center gap-10">
               <div className="md:w-2/3">
-                <Badge className="bg-brand-purple text-white mb-4">
-                  <Sparkles className="h-4 w-4 mr-1" />
+                <Badge className="bg-white/20 backdrop-blur text-white border border-white/30 mb-5 font-medium">
+                  <Sparkles className="h-4 w-4 mr-1.5" />
                   {t("iso27001Page.aiModule.badge")}
                 </Badge>
-                <h2 className="text-3xl font-bold text-brand-blue-dark mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                   {t("iso27001Page.aiModule.title")}
                 </h2>
-                <p className="text-lg text-slate-600">
+                <p className="text-lg text-white/85 leading-relaxed mb-6">
                   {t("iso27001Page.aiModule.description")}
                 </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold shadow-lg"
+                >
+                  <Link to={`/${currentLocale}/contact`}>
+                    Zobacz AI w akcji <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
               </div>
               <div className="md:w-1/3 flex justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-purple to-brand-blue flex items-center justify-center">
-                  <Sparkles className="h-16 w-16 text-white" />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-white/20 blur-2xl rounded-full" />
+                  <div className="relative w-40 h-40 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur border border-white/30 flex items-center justify-center">
+                    <Sparkles className="h-20 w-20 text-white" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Results Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.results.title")}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("iso27001Page.results.description")}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-brand-purple mb-2">
-                {t("iso27001Page.results.metrics.coverage.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.coverage.label")}
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-brand-blue mb-2">
-                {t("iso27001Page.results.metrics.controls.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.controls.label")}
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-brand-blue-dark mb-2">
-                {t("iso27001Page.results.metrics.monitoring.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.monitoring.label")}
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-green-600 mb-2">
-                {t("iso27001Page.results.metrics.reduction.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.reduction.label")}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* For Whom Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.forWhom.title")}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("iso27001Page.forWhom.subtitle")}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                  <Shield className="h-8 w-8 text-brand-purple" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.ciso.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.ciso.description")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                  <Briefcase className="h-8 w-8 text-brand-blue" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.ceo.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.ceo.description")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-mint/50 flex items-center justify-center mb-4">
-                  <UserCheck className="h-8 w-8 text-brand-blue-dark" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.itManager.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.itManager.description")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-gray-light flex items-center justify-center mb-4">
-                  <Scale className="h-8 w-8 text-brand-blue-dark" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.compliance.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.compliance.description")}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
+        {/* Results & For Whom sections removed */}
         {/* Continuous ISMS Operations Section */}
         <section className="mb-16">
           <div className="bg-brand-gray-light/30 rounded-2xl p-8 md:p-12">
@@ -816,40 +736,7 @@ const Iso27001 = () => {
           className="mb-20"
         />
 
-        {/* Related Content */}
-        <section className="mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">{t('iso27001Page.relatedContent.title')}</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Link to={`/${currentLocale}/blog/iso-27001-vs-soc-2-comparison`} className="group">
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <Scale className="h-8 w-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.comparison.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.comparison.description')}</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link to={`/${currentLocale}/blog/audit-evidence-collection-automation`} className="group">
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <FileCheck className="h-8 w-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.evidence.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.evidence.description')}</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link to={`/${currentLocale}/blog/nis2-vs-iso-27001-mapping`} className="group">
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <Target className="h-8 w-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.nis2mapping.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.nis2mapping.description')}</p>
-                </CardContent>
-              </Card>
-            </Link>
-          </div>
-        </section>
-
+        {/* Related Content section removed */}
         {/* FAQ Section */}
         <section className="mb-20">
           <FAQSection
