@@ -76,10 +76,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <Iso14001Dashboard />
-                </div>
+              <div>
+                <Iso14001DarkMockup />
               </div>
             </div>
           </TabsContent>
