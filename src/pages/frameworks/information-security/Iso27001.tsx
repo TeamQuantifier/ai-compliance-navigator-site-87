@@ -33,6 +33,7 @@ import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
 import IsmsSchema from "@/components/frameworks/IsmsSchema";
 import HomePlatformMockup from "@/components/mockups/HomePlatformMockup";
+import leonOfficer from "@/assets/leon-compliance-officer.png";
 import {
   Iso27001GapAnalysisMockup,
   Iso27001RiskHeatmapMockup,
