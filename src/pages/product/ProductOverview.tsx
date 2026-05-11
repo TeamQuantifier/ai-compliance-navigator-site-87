@@ -80,6 +80,9 @@ const ProductOverview = () => {
         </div>
       </section>
 
+      {/* 5 areas where Quantifier makes a difference */}
+      <ProductFiveAreas />
+
       {/* Platform Mockup — dark bg to match mockup's white text */}
       <section className="bg-slate-950 py-16">
         <div className="container mx-auto px-4">
