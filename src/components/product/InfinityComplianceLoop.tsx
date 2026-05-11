@@ -257,7 +257,7 @@ const InfinityComplianceLoop = () => {
               const Icon = node.icon;
               const isActive = active === node.id;
               const leftPct = (node.x / 800) * 100;
-              const topPct = (node.y / 320) * 100;
+              const topPct = (node.y / 440) * 100;
               return (
                 <button
                   key={node.id}
