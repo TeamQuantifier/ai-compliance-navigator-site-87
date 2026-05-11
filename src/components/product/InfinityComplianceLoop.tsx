@@ -26,8 +26,8 @@ const NODES: Node[] = [
     label: "AI Officer Leon",
     short: "AI Officer Leon",
     icon: Bot,
-    x: 80,
-    y: 160,
+    x: 120,
+    y: 220,
     description:
       "Leon nie śpi. Codziennie analizuje status kontroli, sygnalizuje wygasające dowody, przygotowuje drafty polityk i przypomina właścicielom o terminach — zanim audytor zdąży wpisać nazwę firmy w wyszukiwarkę.",
     bullets: [
@@ -45,8 +45,8 @@ const NODES: Node[] = [
     label: "Dane i integracje",
     short: "Dane i integracje",
     icon: Database,
-    x: 240,
-    y: 70,
+    x: 220,
+    y: 80,
     description:
       "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
     bullets: [
@@ -65,7 +65,7 @@ const NODES: Node[] = [
     short: "Zarządzanie pracą",
     icon: Workflow,
     x: 400,
-    y: 160,
+    y: 220,
     description:
       "Procedury rozkładają się na zadania z jasno określonym timeline'em, ownerem i dowodami. AI przydziela, przypomina i zamyka — zespół realizuje wszystko z poziomu maila lub Slacka.",
     bullets: [
@@ -83,8 +83,8 @@ const NODES: Node[] = [
     label: "Polityki, rejestry, dostawcy",
     short: "Polityki, rejestry, dostawcy",
     icon: FileSignature,
-    x: 560,
-    y: 70,
+    x: 580,
+    y: 80,
     description:
       "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
     bullets: [
@@ -102,8 +102,8 @@ const NODES: Node[] = [
     label: "Audyt, jedno kliknięcie",
     short: "Audyt, jedno kliknięcie",
     icon: ShieldCheck,
-    x: 720,
-    y: 160,
+    x: 680,
+    y: 220,
     description:
       "Każda decyzja, data, osoba i podpis elektroniczny są zarejestrowane. Jedno kliknięcie = raport dla organu nadzoru w PDF, Excel, XBRL lub XML. Management Body Accountability gotowy do okazania.",
     bullets: [
@@ -117,9 +117,9 @@ const NODES: Node[] = [
   },
 ];
 
-// Lemniscate-ish figure-8 path in 800x320 viewBox
+// Lemniscate-ish figure-8 path in 800x440 viewBox (taller for clearer ∞ shape)
 const LOOP_PATH =
-  "M 400,160 C 400,60 240,60 80,160 C 240,260 400,260 400,160 C 400,60 560,60 720,160 C 560,260 400,260 400,160 Z";
+  "M 400,220 C 400,40 220,40 120,220 C 220,400 400,400 400,220 C 400,40 580,40 680,220 C 580,400 400,400 400,220 Z";
 
 const InfinityComplianceLoop = () => {
   const [active, setActive] = useState<AreaId | null>("01");
@@ -214,9 +214,9 @@ const InfinityComplianceLoop = () => {
 
         {/* Loop SVG + nodes */}
         <div className="relative max-w-5xl mx-auto">
-          <div className="relative w-full" style={{ aspectRatio: "800 / 320" }}>
+          <div className="relative w-full" style={{ aspectRatio: "800 / 440" }}>
             <svg
-              viewBox="0 0 800 320"
+              viewBox="0 0 800 440"
               className="absolute inset-0 w-full h-full"
               fill="none"
               aria-hidden
@@ -257,7 +257,7 @@ const InfinityComplianceLoop = () => {
               const Icon = node.icon;
               const isActive = active === node.id;
               const leftPct = (node.x / 800) * 100;
-              const topPct = (node.y / 320) * 100;
+              const topPct = (node.y / 440) * 100;
               return (
                 <button
                   key={node.id}
