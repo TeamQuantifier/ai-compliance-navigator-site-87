@@ -78,56 +78,59 @@ const Iso27001 = () => {
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="mb-16">
-          <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple rounded-2xl p-8 md:p-12 text-white">
-            <div className="flex flex-col lg:flex-row items-center gap-10">
-              <div className="lg:w-1/2">
-                <Badge className="bg-white/20 text-white border-white/30 mb-4">
-                  {t("iso27001Page.hero.badge")}
-                </Badge>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                  {t("iso27001Page.hero.title")}
-                </h1>
-                <p className="text-lg md:text-xl opacity-90 mb-6">
-                  {t("iso27001Page.hero.subtitle")}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold"
-                  >
-                    <Link to={`/${currentLocale}/contact`}>
-                      {t("iso27001Page.hero.button")} <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-blue-dark via-brand-blue to-brand-purple p-8 md:p-16 text-white">
+            {/* Decorative blobs */}
+            <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-brand-purple/40 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
+
+            <div className="relative max-w-4xl mx-auto text-center">
+              <Badge className="bg-white/15 text-white border-white/30 mb-6 backdrop-blur-sm">
+                {t("iso27001Page.hero.badge")}
+              </Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                {t("iso27001Page.hero.title")}
+              </h1>
+              <p className="text-lg md:text-xl text-white/85 mb-10 max-w-3xl mx-auto leading-relaxed">
+                {t("iso27001Page.hero.subtitle")}
+              </p>
+
+              {/* Quick proof points */}
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 text-sm text-white/90">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-brand-mint" />
+                  <span>93 kontrole Aneksu A gotowe</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-brand-mint" />
+                  <span>SoA generowany automatycznie</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-brand-mint" />
+                  <span>1 wdrożenie = ISO 27001 + ~70% SOC 2</span>
                 </div>
               </div>
-              <div className="lg:w-1/2">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <h3 className="text-xl font-semibold mb-4">
-                    {t("iso27001Page.hero.formTitle")}
-                  </h3>
-                  <form className="space-y-4">
-                    <Input
-                      placeholder={t("iso27001Page.hero.nameLabel")}
-                      className="bg-white/10 border-white/30 text-white placeholder:text-white/60"
-                    />
-                    <Input
-                      type="email"
-                      placeholder={t("iso27001Page.hero.emailLabel")}
-                      className="bg-white/10 border-white/30 text-white placeholder:text-white/60"
-                    />
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="marketing" className="border-white/50" />
-                      <label htmlFor="marketing" className="text-sm opacity-80">
-                        {t("iso27001Page.hero.marketingConsent")}
-                      </label>
-                    </div>
-                    <Button className="w-full bg-white text-brand-blue-dark hover:bg-white/90">
-                      {t("iso27001Page.hero.requestDemoButton")}
-                    </Button>
-                  </form>
-                </div>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold shadow-xl shadow-black/10"
+                >
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t("iso27001Page.hero.button")} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-white/40 bg-transparent text-white hover:bg-white hover:text-brand-blue-dark font-semibold"
+                >
+                  <Link to={`/${currentLocale}/cybersecurity-check`}>
+                    Sprawdź gotowość ISMS
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
