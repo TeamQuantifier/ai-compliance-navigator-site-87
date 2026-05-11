@@ -65,7 +65,7 @@ const NODES: Node[] = [
     short: "Zarządzanie pracą",
     icon: Workflow,
     x: 400,
-    y: 160,
+    y: 220,
     description:
       "Procedury rozkładają się na zadania z jasno określonym timeline'em, ownerem i dowodami. AI przydziela, przypomina i zamyka — zespół realizuje wszystko z poziomu maila lub Slacka.",
     bullets: [
