@@ -31,6 +31,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
+import IsmsSchema from "@/components/frameworks/IsmsSchema";
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
@@ -76,61 +77,78 @@ const Iso27001 = () => {
         <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
       </Helmet>
       <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
+        {/* Hero Section — modern, light, with ISMS schema */}
         <section className="mb-16">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-blue-dark via-brand-blue to-brand-purple p-8 md:p-16 text-white">
-            {/* Decorative blobs */}
-            <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-brand-purple/40 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 md:p-12">
+            {/* Subtle dot grid */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-[0.35]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgba(56,127,239,0.18) 1px, transparent 0)",
+                backgroundSize: "28px 28px",
+                maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+              }}
+            />
+            {/* Soft accent shapes */}
+            <div aria-hidden="true" className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-brand-blue/5" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-brand-purple/5" />
 
-            <div className="relative max-w-4xl mx-auto text-center">
-              <Badge className="bg-white/15 text-white border-white/30 mb-6 backdrop-blur-sm">
-                {t("iso27001Page.hero.badge")}
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
-                {t("iso27001Page.hero.title")}
-              </h1>
-              <p className="text-lg md:text-xl text-white/85 mb-10 max-w-3xl mx-auto leading-relaxed">
-                {t("iso27001Page.hero.subtitle")}
-              </p>
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              {/* LEFT: copy */}
+              <div className="lg:col-span-6">
+                <Badge className="bg-brand-blue/10 text-brand-blue-dark border border-brand-blue/20 mb-5 font-medium">
+                  {t("iso27001Page.hero.badge")}
+                </Badge>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-[1.1] tracking-tight text-brand-blue-dark">
+                  {t("iso27001Page.hero.title")}
+                </h1>
+                <p className="text-base md:text-lg text-slate-600 mb-7 max-w-xl leading-relaxed">
+                  {t("iso27001Page.hero.subtitle")}
+                </p>
 
-              {/* Quick proof points */}
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 text-sm text-white/90">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-brand-mint" />
-                  <span>93 kontrole Aneksu A gotowe</span>
+                <div className="flex flex-col sm:flex-row gap-3 mb-7">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-brand-blue-dark text-white hover:bg-brand-blue-dark/90 font-semibold shadow-lg shadow-brand-blue/20"
+                  >
+                    <Link to={`/${currentLocale}/contact`}>
+                      {t("iso27001Page.hero.button")} <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-slate-300 text-brand-blue-dark hover:bg-slate-50 hover:text-brand-blue-dark font-semibold"
+                  >
+                    <Link to={`/${currentLocale}/cybersecurity-check`}>
+                      Sprawdź gotowość ISMS
+                    </Link>
+                  </Button>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-brand-mint" />
-                  <span>SoA generowany automatycznie</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-brand-mint" />
-                  <span>1 wdrożenie = ISO 27001 + ~70% SOC 2</span>
+
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-brand-blue" />
+                    <span>93 kontrole Aneksu A</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-brand-blue" />
+                    <span>SoA automatycznie</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-brand-blue" />
+                    <span>~70% SOC 2 w pakiecie</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold shadow-xl shadow-black/10"
-                >
-                  <Link to={`/${currentLocale}/contact`}>
-                    {t("iso27001Page.hero.button")} <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="border-white/40 bg-transparent text-white hover:bg-white hover:text-brand-blue-dark font-semibold"
-                >
-                  <Link to={`/${currentLocale}/cybersecurity-check`}>
-                    Sprawdź gotowość ISMS
-                  </Link>
-                </Button>
+              {/* RIGHT: ISMS schema */}
+              <div className="lg:col-span-6">
+                <IsmsSchema />
               </div>
             </div>
           </div>
