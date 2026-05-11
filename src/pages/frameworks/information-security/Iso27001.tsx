@@ -382,7 +382,11 @@ const Iso27001 = () => {
 
               {/* Step 2 - Gap Analysis */}
               <div className="relative flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/2 md:pr-12" />
+                <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                  <StepMockup label="AI Compliance · Gap Analysis">
+                    <AiComplianceDashboard />
+                  </StepMockup>
+                </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12">
                   <Card className="border-brand-gray-light bg-white p-6 w-full">
@@ -435,12 +439,20 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Risk Heatmap">
+                    <RiskHeatmapMockup />
+                  </StepMockup>
+                </div>
               </div>
 
               {/* Step 4 - Policies */}
               <div className="relative flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/2 md:pr-12" />
+                <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                  <StepMockup label="Document Repository · Polityki">
+                    <DocumentRepositoryMockup />
+                  </StepMockup>
+                </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12">
                   <Card className="border-brand-gray-light bg-white p-6 w-full">
@@ -493,12 +505,20 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue-dark border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Task Board · Wdrożenie kontroli">
+                    <TaskBoardMockup />
+                  </StepMockup>
+                </div>
               </div>
 
               {/* Step 6 - Certification */}
               <div className="relative flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/2 md:pr-12" />
+                <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                  <StepMockup label="Auditor Dashboard · Certyfikacja">
+                    <AuditorDashboardMockup />
+                  </StepMockup>
+                </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-mint border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12">
                   <Card className="border-brand-gray-light bg-white p-6 w-full">
@@ -551,7 +571,11 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Manager Dashboard · Utrzymanie ISMS">
+                    <ManagerDashboardMockup />
+                  </StepMockup>
+                </div>
               </div>
             </div>
           </div>
