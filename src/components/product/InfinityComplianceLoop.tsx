@@ -284,8 +284,8 @@ const InfinityComplianceLoop = () => {
                     <ShieldCheck className="h-7 w-7 md:h-9 md:w-9 text-white" strokeWidth={1.5} />
                   </div>
                 </div>
-                <div className="flex flex-wrap justify-center gap-1 max-w-[180px] md:max-w-[220px]">
-                  {["NIS2", "ISO 27001", "DORA", "GDPR", "SOC 2"].map((f) => (
+                <div className="flex flex-wrap justify-center gap-1 max-w-[240px] md:max-w-[300px]">
+                  {["NIS2", "ISO 27001", "DORA", "GDPR", "SOC 2", "CSRD", "VSME", "GHG", "DPP/LCA"].map((f) => (
                     <span
                       key={f}
                       className="text-[9px] md:text-[10px] font-semibold text-white/75 bg-white/10 border border-white/15 px-1.5 py-0.5 rounded-full backdrop-blur"
