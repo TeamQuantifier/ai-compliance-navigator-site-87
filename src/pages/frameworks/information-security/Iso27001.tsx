@@ -404,8 +404,7 @@ const Iso27001 = () => {
                     <HomePlatformMockup />
                   </StepMockup>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 2 - Gap Analysis */}
               <AnimatedStep index={1}>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
@@ -437,8 +436,7 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 3 - Risk Assessment */}
               <AnimatedStep index={2}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
@@ -470,8 +468,7 @@ const Iso27001 = () => {
                     <Iso27001RiskHeatmapMockup />
                   </StepMockup>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 4 - Policies */}
               <AnimatedStep index={3}>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
@@ -503,8 +500,7 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 5 - Controls */}
               <AnimatedStep index={4}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
@@ -536,8 +532,7 @@ const Iso27001 = () => {
                     <Iso27001ControlsMockup />
                   </StepMockup>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 6 - Certification */}
               <AnimatedStep index={5}>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
@@ -569,8 +564,7 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 7 - Maintenance */}
               <AnimatedStep index={6}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
