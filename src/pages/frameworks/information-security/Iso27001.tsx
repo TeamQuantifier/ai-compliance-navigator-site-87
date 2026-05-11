@@ -632,15 +632,6 @@ const Iso27001 = () => {
                   <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Podpowiedzi „następnego najlepszego kroku" dla każdego właściciela kontroli</span></li>
                   <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Asystent w czacie — zapytaj Leona o status SoA, polityki, audyt</span></li>
                 </ul>
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold shadow-lg"
-                >
-                  <Link to={`/${currentLocale}/contact`}>
-                    Porozmawiaj z Leonem <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
               </div>
               <div className="md:w-1/3 flex justify-center">
                 <div className="relative">
