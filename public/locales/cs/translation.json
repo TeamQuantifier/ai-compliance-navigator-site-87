@@ -2757,7 +2757,8 @@
     "tabs": {
       "csdr": "CSDR Reporting",
       "gri": "GRI Reporting",
-      "cbam": "CBAM Reporting"
+      "cbam": "CBAM Reporting",
+      "vsme": "VSME Reporting"
     },
     "csdr": {
       "title": "CSDR Reporting: Zefektivněte firemní udržitelnost",
@@ -2901,6 +2902,32 @@
           "answer": "Platforma obsahuje validacni pravidla, auditni stopy a detekci anomalii pohanenout AI."
         }
       ]
+    },
+    "vsme": {
+      "title": "VSME: Dobrovolný ESG standard pro MSP",
+      "description": "Voluntary Sustainability Reporting Standard for SMEs (VSME) od EFRAG je zjednodušený ESG standard pro malé a střední firmy. Quantifier vás provede modulem Basic a Comprehensive a vygeneruje report připravený pro banky, pojišťovny a velké zákazníky z dodavatelského řetězce.",
+      "featuresTitle": "Získáváte:",
+      "features": [
+        {
+          "title": "Modul Basic za hodiny",
+          "description": "Vyplňte 11 základních zveřejnění (B1–B11) s pomocí AI a vestavěného návodu EFRAG."
+        },
+        {
+          "title": "Modul Comprehensive (PAT)",
+          "description": "Rozšiřte o zveřejnění C1–C9 vyžadovaná bankami a obchodními partnery."
+        },
+        {
+          "title": "Mapování na CSRD/ESRS",
+          "description": "Data z VSME automaticky napájejí budoucí CSRD reporty, jakmile firma poroste."
+        },
+        {
+          "title": "PDF report pro banky",
+          "description": "Vygenerujte profesionální report dle VSME pro banky a zákazníky."
+        }
+      ],
+      "dashboardTitle": "Dashboard zveřejnění VSME",
+      "chartTitle": "Postup modulů Basic a Comprehensive",
+      "insight": "Modul Basic dokončen na 100 % - připraven ke sdílení s partnery"
     }
   },
   "environmentalPage": {
