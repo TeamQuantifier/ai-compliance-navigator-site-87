@@ -636,14 +636,14 @@ const Iso27001 = () => {
               <div className="md:w-1/3 flex justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-white/30 blur-3xl rounded-full" />
-                  <div className="relative w-56 h-56 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur border border-white/30 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-56 h-56 rounded-full bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 border-4 border-white/40 shadow-2xl overflow-hidden ring-4 ring-white/10">
                     <img
                       src={leonOfficer}
                       alt="Leon — AI Compliance Officer Quantifier"
                       width={224}
                       height={224}
                       loading="lazy"
-                      className="w-48 h-48 object-contain drop-shadow-xl"
+                      className="absolute inset-0 w-full h-full object-cover scale-110"
                     />
                   </div>
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white text-brand-blue-dark text-xs font-bold px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
