@@ -33,6 +33,7 @@ import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
 import IsmsSchema from "@/components/frameworks/IsmsSchema";
 import HomePlatformMockup from "@/components/mockups/HomePlatformMockup";
+import leonOfficer from "@/assets/leon-compliance-officer.png";
 import {
   Iso27001GapAnalysisMockup,
   Iso27001RiskHeatmapMockup,
@@ -618,29 +619,44 @@ const Iso27001 = () => {
               <div className="md:w-2/3">
                 <Badge className="bg-white/20 backdrop-blur text-white border border-white/30 mb-5 font-medium">
                   <Sparkles className="h-4 w-4 mr-1.5" />
-                  {t("iso27001Page.aiModule.badge")}
+                  Poznaj Leona — Twojego AI Compliance Officera
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                  {t("iso27001Page.aiModule.title")}
+                  Moduł ISMS oparty na AI — Leon czuwa 24/7
                 </h2>
-                <p className="text-lg text-white/85 leading-relaxed mb-6">
-                  {t("iso27001Page.aiModule.description")}
+                <p className="text-lg text-white/85 leading-relaxed mb-4">
+                  Leon to Twój wirtualny Compliance Officer, który nigdy nie śpi. Monitoruje status zgodności ISO 27001, przypomina o terminach przeglądów polityk, sygnalizuje luki w kontrolach i pomaga zespołowi reagować zanim audytor zapuka do drzwi.
                 </p>
+                <ul className="space-y-2 mb-6 text-white/90">
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Codzienna analiza ryzyka i automatyczne alerty o wygasających dowodach</span></li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Podpowiedzi „następnego najlepszego kroku" dla każdego właściciela kontroli</span></li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Asystent w czacie — zapytaj Leona o status SoA, polityki, audyt</span></li>
+                </ul>
                 <Button
                   asChild
                   size="lg"
                   className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold shadow-lg"
                 >
                   <Link to={`/${currentLocale}/contact`}>
-                    Zobacz AI w akcji <ArrowRight className="ml-2 h-5 w-5" />
+                    Porozmawiaj z Leonem <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </div>
               <div className="md:w-1/3 flex justify-center">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-white/20 blur-2xl rounded-full" />
-                  <div className="relative w-40 h-40 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur border border-white/30 flex items-center justify-center">
-                    <Sparkles className="h-20 w-20 text-white" />
+                  <div className="absolute inset-0 bg-white/30 blur-3xl rounded-full" />
+                  <div className="relative w-56 h-56 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur border border-white/30 flex items-center justify-center overflow-hidden">
+                    <img
+                      src={leonOfficer}
+                      alt="Leon — AI Compliance Officer Quantifier"
+                      width={224}
+                      height={224}
+                      loading="lazy"
+                      className="w-48 h-48 object-contain drop-shadow-xl"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white text-brand-blue-dark text-xs font-bold px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
+                    Leon · zawsze online
                   </div>
                 </div>
               </div>
