@@ -304,8 +304,7 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
               </div>
             </CardContent>
           </Card>
-        </motion.div>
-      </AnimatePresence>
+      </div>
     </section>
   );
 }
