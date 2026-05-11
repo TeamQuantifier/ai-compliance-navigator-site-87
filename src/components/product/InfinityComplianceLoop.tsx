@@ -91,7 +91,7 @@ const NODES: Node[] = [
       "Policy Builder z szablonami dla NIS2, ISO, DORA, GDPR",
       "Rejestry ryzyk, incydentów i aktywów w jednym miejscu",
       "Ocena i monitoring dostawców w stałym cyklu",
-      "Wersjonowanie + podpis eIDAS",
+      "Wersjonowanie i podpis elektroniczny",
     ],
     href: "/product/documents-management",
     color: "text-pink-300",
