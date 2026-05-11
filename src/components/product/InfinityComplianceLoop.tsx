@@ -26,7 +26,7 @@ const NODES: Node[] = [
     label: "AI Officer Leon",
     short: "AI Officer Leon",
     icon: Bot,
-    x: 120,
+    x: 80,
     y: 220,
     description:
       "Leon nie śpi. Codziennie analizuje status kontroli, sygnalizuje wygasające dowody, przygotowuje drafty polityk i przypomina właścicielom o terminach — zanim audytor zdąży wpisać nazwę firmy w wyszukiwarkę.",
@@ -45,8 +45,8 @@ const NODES: Node[] = [
     label: "Dane i integracje",
     short: "Dane i integracje",
     icon: Database,
-    x: 220,
-    y: 80,
+    x: 240,
+    y: 90,
     description:
       "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
     bullets: [
@@ -83,8 +83,8 @@ const NODES: Node[] = [
     label: "Polityki, rejestry, dostawcy",
     short: "Polityki, rejestry, dostawcy",
     icon: FileSignature,
-    x: 580,
-    y: 80,
+    x: 560,
+    y: 90,
     description:
       "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
     bullets: [
@@ -102,7 +102,7 @@ const NODES: Node[] = [
     label: "Audyt, jedno kliknięcie",
     short: "Audyt, jedno kliknięcie",
     icon: ShieldCheck,
-    x: 680,
+    x: 720,
     y: 220,
     description:
       "Każda decyzja, data, osoba i podpis elektroniczny są zarejestrowane. Jedno kliknięcie = raport dla organu nadzoru w PDF, Excel, XBRL lub XML. Management Body Accountability gotowy do okazania.",
@@ -117,9 +117,9 @@ const NODES: Node[] = [
   },
 ];
 
-// Lemniscate-ish figure-8 path in 800x440 viewBox (taller for clearer ∞ shape)
+// Lemniscate figure-8 in 800x440 viewBox — wider, rounded ends (no cusps at L/R)
 const LOOP_PATH =
-  "M 400,220 C 400,40 220,40 120,220 C 220,400 400,400 400,220 C 400,40 580,40 680,220 C 580,400 400,400 400,220 Z";
+  "M 400,220 C 400,40 80,40 80,220 C 80,400 400,400 400,220 C 400,40 720,40 720,220 C 720,400 400,400 400,220 Z";
 
 const InfinityComplianceLoop = () => {
   const [active, setActive] = useState<AreaId | null>("01");
