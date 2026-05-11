@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Database, Workflow, FileSignature, ShieldCheck, ChevronDown, ArrowRight } from "lucide-react";
+import { Bot, Database, Workflow, FileSignature, ShieldCheck, ArrowRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
