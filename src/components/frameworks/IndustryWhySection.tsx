@@ -228,14 +228,7 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
       </div>
 
       {/* Active panel */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current.id}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.25 }}
-        >
+      <div key={current.id} className="animate-fade-in">
           <Card className="border-brand-gray-light bg-gradient-to-br from-white to-brand-gray-light/30 overflow-hidden">
             <CardContent className="p-6 md:p-10">
               {/* Header row */}
