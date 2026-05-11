@@ -165,7 +165,7 @@ const InfinityComplianceLoop = () => {
             </span>
           </h1>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-            Quantifier zamyka 5 obszarów w jedną nieskończoną pętlę ciągłej zgodności. Kliknij dowolny węzeł, by zobaczyć, jak działa.
+            Quantifier zamyka 6 obszarów w jedną nieskończoną pętlę ciągłej zgodności. Kliknij dowolny węzeł, by zobaczyć, jak działa.
           </p>
         </div>
 
@@ -332,7 +332,7 @@ const InfinityComplianceLoop = () => {
 
           {/* Hint (only visible when nothing is open) */}
           {!activeNode && (
-            <p className="text-center text-xs text-white/50 mt-12 flex items-center justify-center gap-1.5">
+            <p className="text-center text-xs text-white/50 mt-3 flex items-center justify-center gap-1.5">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Kliknij węzeł, aby zobaczyć szczegóły
             </p>
