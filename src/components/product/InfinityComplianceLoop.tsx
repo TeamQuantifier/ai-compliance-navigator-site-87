@@ -117,9 +117,9 @@ const NODES: Node[] = [
   },
 ];
 
-// Lemniscate-ish figure-8 path in 800x440 viewBox (taller for clearer ∞ shape)
+// Lemniscate figure-8 in 800x440 viewBox — wider, rounded ends (no cusps at L/R)
 const LOOP_PATH =
-  "M 400,220 C 400,40 220,40 120,220 C 220,400 400,400 400,220 C 400,40 580,40 680,220 C 580,400 400,400 400,220 Z";
+  "M 400,220 C 400,40 80,40 80,220 C 80,400 400,400 400,220 C 400,40 720,40 720,220 C 720,400 400,400 400,220 Z";
 
 const InfinityComplianceLoop = () => {
   const [active, setActive] = useState<AreaId | null>("01");
