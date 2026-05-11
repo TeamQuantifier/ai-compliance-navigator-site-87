@@ -86,7 +86,7 @@ const Iso27001 = () => {
               className="pointer-events-none absolute inset-0 opacity-[0.35]"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle at 1px 1px, hsl(var(--brand-blue) / 0.18) 1px, transparent 0)",
+                  "radial-gradient(circle at 1px 1px, rgba(56,127,239,0.18) 1px, transparent 0)",
                 backgroundSize: "28px 28px",
                 maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
               }}

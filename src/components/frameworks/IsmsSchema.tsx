@@ -28,7 +28,7 @@ export default function IsmsSchema() {
       >
         <defs>
           <pattern id="ringDots" width="6" height="6" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="hsl(var(--brand-blue) / 0.25)" />
+            <circle cx="1" cy="1" r="1" fill="rgba(56,127,239,0.25)" />
           </pattern>
         </defs>
         {/* Outer dotted ring */}
@@ -37,7 +37,7 @@ export default function IsmsSchema() {
           cy={center}
           r={radius + 6}
           fill="none"
-          stroke="hsl(var(--brand-blue) / 0.18)"
+          stroke="rgba(56,127,239,0.18)"
           strokeWidth="1"
           strokeDasharray="3 6"
         />
@@ -53,7 +53,7 @@ export default function IsmsSchema() {
               y1={center}
               x2={x}
               y2={y}
-              stroke="hsl(var(--brand-blue) / 0.2)"
+              stroke="rgba(56,127,239,0.2)"
               strokeWidth="1"
               strokeDasharray="2 4"
             />
