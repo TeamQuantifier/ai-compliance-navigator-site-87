@@ -4845,8 +4845,8 @@
     "description": "Chroń swoje aktywa informacyjne dzięki globalnie uznanemu standardowi ISO 27001 dla zarządzania bezpieczeństwem informacji.",
     "hero": {
       "badge": "ISO 27001 Bezpieczeństwo Informacji",
-      "title": "Certyfikacja ISO 27001 w prosty sposób",
-      "subtitle": "Quantifier automatyzuje całą Twoją podróż do ISO 27001 — od oceny ryzyka po certyfikację — abyś mógł skupić się na bezpiecznym rozwoju biznesu.",
+      "title": "Wdróż ISO 27001 i przejdź certyfikację",
+      "subtitle": "Cała dokumentacja ISO 27001 w jednym miejscu. Audyt zdasz bez paniki.",
       "formTitle": "Zamów demo",
       "nameLabel": "Imię i nazwisko",
       "emailLabel": "Adres e-mail",
@@ -4927,31 +4927,31 @@
     },
     "howQuantifierHelps": {
       "title": "Jak Quantifier automatyzuje ISO 27001",
-      "description": "Nasza platforma oparta na AI przejmuje ciężką pracę wdrażania i utrzymywania ISMS",
+      "description": "Cała dokumentacja, kontrole i dowody w jednym miejscu — sprawnie, dobrze i gotowe do audytu",
       "features": {
         "riskAssessment": {
           "title": "Ocena i postępowanie z ryzykiem",
-          "description": "Identyfikacja ryzyka, scoring i planowanie postępowania oparte na AI z automatyczną aktualizacją rejestru ryzyka"
+          "description": "Identyfikacja ryzyka, scoring i plany postępowania oparte na AI z automatyczną aktualizacją rejestru ryzyka — fundament Twojego ISMS"
         },
         "policyManagement": {
-          "title": "Zarządzanie politykami i dokumentami",
-          "description": "Gotowe szablony polityk, kontrola wersji i automatyczne cykle przeglądu całej dokumentacji ISMS"
+          "title": "Biblioteka kontroli Aneksu A",
+          "description": "Wszystkie 93 kontrole ISO 27001:2022 (Annex A) gotowe do wdrożenia — z opisem, właścicielem, statusem i powiązanymi politykami w jednym miejscu"
         },
         "assetInventory": {
-          "title": "Inwentaryzacja aktywów",
-          "description": "Kompleksowe odkrywanie i klasyfikacja aktywów z automatycznym mapowaniem wymagań bezpieczeństwa"
+          "title": "Statement of Applicability (SoA)",
+          "description": "Automatycznie generowany SoA — wskazujesz, które kontrole stosujesz, a Quantifier utrzymuje aktualny dokument zgodny z wymogami audytora"
         },
         "incidentManagement": {
-          "title": "Zarządzanie incydentami",
-          "description": "Strukturalne workflow reagowania na incydenty z zbieraniem dowodów i dokumentacją wniosków"
+          "title": "Evidence collection",
+          "description": "Centralne repozytorium dowodów: polityki, screeny, logi, decyzje zarządu — pogrupowane przy odpowiednich kontrolach, zawsze gotowe do okazania audytorowi"
         },
         "internalAudit": {
           "title": "Wsparcie audytu wewnętrznego",
-          "description": "Automatyczne planowanie audytów, zbieranie dowodów i śledzenie niezgodności"
+          "description": "Automatyczne planowanie audytów, zbieranie dowodów i śledzenie niezgodności — bez paniki przed certyfikacją"
         },
         "certificationReadiness": {
-          "title": "Gotowość do certyfikacji",
-          "description": "Dashboard analizy luk pokazujący dokładnie co jest potrzebne do udanej certyfikacji"
+          "title": "Multi-framework: jedna kontrola, wiele norm",
+          "description": "Raz wdrożone ISO 27001 pokrywa Ci ~70% SOC 2, a także istotne fragmenty NIS 2, DORA i RODO. Mapowanie kontroli między normami robimy za Ciebie"
         }
       }
     },
