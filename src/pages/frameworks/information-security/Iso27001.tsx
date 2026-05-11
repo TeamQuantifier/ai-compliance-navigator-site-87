@@ -31,17 +31,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
-import { useState } from "react";
-import {
-  Landmark,
-  Cpu,
-  Factory,
-  Truck,
-  ShoppingBag,
-  HeartPulse,
-  Zap,
-  Scale as ScaleIcon,
-} from "lucide-react";
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
