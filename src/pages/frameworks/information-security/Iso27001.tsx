@@ -41,6 +41,7 @@ import {
   Iso27001CertificationMockup,
   Iso27001MaintenanceMockup,
 } from "@/components/mockups/Iso27001StepMockups";
+import { useInView } from "@/hooks/useInView";
 
 const StepMockup = ({ children, label }: { children: React.ReactNode; label: string }) => (
   <div className="rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-xl">
@@ -54,6 +55,22 @@ const StepMockup = ({ children, label }: { children: React.ReactNode; label: str
       {children}
     </div>
   </div>
+);
+
+const AnimatedStep = ({ children, index }: { children: React.ReactNode; index: number }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className={`relative flex flex-col md:flex-row md:items-center transition-all duration-700 ease-out will-change-transform ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+      style={{ transitionDelay: inView ? `${Math.min(index * 80, 400)}ms` : "0ms" }}
+    >
+      {children}
+    </div>
+  );
+};
 );
 
 const Iso27001 = () => {
