@@ -596,8 +596,8 @@ const Iso27001 = () => {
                     <Iso27001MaintenanceMockup />
                   </StepMockup>
                 </div>
-              </div>
-            </AnimatedStep>
+              </AnimatedStep>
+            </div>
           </div>
         </section>
 
