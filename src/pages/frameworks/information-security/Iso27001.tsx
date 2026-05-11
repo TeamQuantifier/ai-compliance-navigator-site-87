@@ -33,12 +33,14 @@ import FAQSection from "@/components/seo/FAQSection";
 import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
 import IsmsSchema from "@/components/frameworks/IsmsSchema";
 import HomePlatformMockup from "@/components/mockups/HomePlatformMockup";
-import AiComplianceDashboard from "@/components/mockups/AiComplianceDashboard";
-import RiskHeatmapMockup from "@/components/mockups/RiskHeatmapMockup";
-import DocumentRepositoryMockup from "@/components/mockups/DocumentRepositoryMockup";
-import TaskBoardMockup from "@/components/mockups/TaskBoardMockup";
-import AuditorDashboardMockup from "@/components/mockups/AuditorDashboardMockup";
-import ManagerDashboardMockup from "@/components/mockups/ManagerDashboardMockup";
+import {
+  Iso27001GapAnalysisMockup,
+  Iso27001RiskHeatmapMockup,
+  Iso27001PoliciesMockup,
+  Iso27001ControlsMockup,
+  Iso27001CertificationMockup,
+  Iso27001MaintenanceMockup,
+} from "@/components/mockups/Iso27001StepMockups";
 
 const StepMockup = ({ children, label }: { children: React.ReactNode; label: string }) => (
   <div className="rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-xl">
