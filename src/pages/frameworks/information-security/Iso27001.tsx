@@ -635,8 +635,21 @@ const Iso27001 = () => {
               </div>
               <div className="md:w-1/3 flex justify-center">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-white/30 blur-3xl rounded-full" />
-                  <div className="relative w-56 h-56 rounded-full bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 border-4 border-white/40 shadow-2xl overflow-hidden ring-4 ring-white/10">
+                  {/* Animated glow halos */}
+                  <div className="absolute -inset-6 bg-gradient-to-tr from-brand-mint/40 via-brand-blue/30 to-brand-purple/40 blur-3xl rounded-full animate-pulse" />
+                  <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-brand-mint via-brand-blue to-brand-purple opacity-80 blur-md" />
+
+                  {/* Rotating conic gradient ring */}
+                  <div
+                    className="absolute -inset-1 rounded-full opacity-90"
+                    style={{
+                      background: "conic-gradient(from 0deg, hsl(var(--brand-mint)), hsl(var(--brand-blue)), hsl(var(--brand-purple)), hsl(var(--brand-mint)))",
+                      animation: "spin 8s linear infinite",
+                    }}
+                  />
+
+                  {/* Inner image circle */}
+                  <div className="relative w-56 h-56 rounded-full bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden ring-1 ring-white/20 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]">
                     <img
                       src={leonOfficer}
                       alt="Leon — AI Compliance Officer Quantifier"
@@ -645,9 +658,17 @@ const Iso27001 = () => {
                       loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover scale-110"
                     />
+                    {/* Subtle inner highlight */}
+                    <div aria-hidden="true" className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/15 via-transparent to-transparent pointer-events-none" />
                   </div>
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white text-brand-blue-dark text-xs font-bold px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
-                    Leon · zawsze online
+
+                  {/* Status pill */}
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur text-brand-blue-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-xl whitespace-nowrap flex items-center gap-1.5 border border-white/60">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    Leon · online 24/7
                   </div>
                 </div>
               </div>
