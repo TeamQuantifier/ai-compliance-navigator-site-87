@@ -173,12 +173,16 @@ export const Navbar = () => {
   };
   const cybersecHref = CYBERSEC_HREF[currentLocale] ?? '/cybersecurity-check';
 
+  // Routes with a dark hero that bleeds under the navbar — force solid bg for logo legibility
+  const forceSolidBg = /^\/(en|pl|cs)\/product\/?$/.test(location.pathname);
+  const isSolid = scrolled || forceSolidBg;
+
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-2"
+        isSolid
+          ? "bg-white/95 backdrop-blur-md shadow-sm py-2"
           : "bg-transparent py-4"
       )}
     >
