@@ -1940,7 +1940,8 @@
     "tabs": {
       "csdr": "Raportowanie CSDR",
       "gri": "Raportowanie GRI",
-      "cbam": "Raportowanie CBAM"
+      "cbam": "Raportowanie CBAM",
+      "vsme": "Raportowanie VSME"
     },
     "csdr": {
       "title": "Raportowanie CSDR: Usprawnij zrównoważony rozwój korporacyjny",
@@ -2059,6 +2060,32 @@
       "description": "Gotowy do automatyzacji zgodności z zrównoważonym rozwojem i ESG? Quantifier to ułatwia.",
       "bookConsultation": "Umów konsultację",
       "watchDemo": "Obejrzyj wideo demo"
+    },
+    "vsme": {
+      "title": "VSME: Dobrowolny standard ESG dla MŚP",
+      "description": "Voluntary Sustainability Reporting Standard for SMEs (VSME) opracowany przez EFRAG to uproszczony standard ESG dla małych i średnich firm. Quantifier prowadzi Cię przez moduł Basic i Comprehensive, generując raport gotowy dla banków, ubezpieczycieli i dużych klientów z łańcucha dostaw.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Moduł Basic gotowy w godziny",
+          "description": "Wypełnij 11 podstawowych ujawnień (B1–B11) z pomocą AI i wbudowanych podpowiedzi EFRAG."
+        },
+        {
+          "title": "Moduł Comprehensive (PAT)",
+          "description": "Rozszerz raport o ujawnienia C1–C9 wymagane przez banki i partnerów biznesowych."
+        },
+        {
+          "title": "Mapowanie do CSRD/ESRS",
+          "description": "Dane z VSME automatycznie zasilają przyszłe raporty CSRD, gdy firma urośnie."
+        },
+        {
+          "title": "Raport PDF dla banków",
+          "description": "Wygeneruj profesjonalny raport zgodny z VSME do przekazania bankom i klientom."
+        }
+      ],
+      "dashboardTitle": "Dashboard ujawnień VSME",
+      "chartTitle": "Postęp modułów Basic i Comprehensive",
+      "insight": "Moduł Basic ukończony w 100% - możesz udostępnić raport partnerom"
     }
   },
   "environmentalPage": {
