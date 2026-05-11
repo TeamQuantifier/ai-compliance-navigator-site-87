@@ -4,11 +4,11 @@ import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle } from 'lucide-react';
+import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, AreaChart, Area, CartesianGrid, Tooltip, LineChart, Line, PieChart as RePieChart, Pie, Cell, Legend } from 'recharts';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
+import { CsrdDarkMockup, GriDarkMockup, CbamDarkMockup, VsmeDarkMockup } from '@/components/mockups/EsgDarkMockups';
 
 const Esg = () => {
   const [activeTab, setActiveTab] = useState("csdr");
