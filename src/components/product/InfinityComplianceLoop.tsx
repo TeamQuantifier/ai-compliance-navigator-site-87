@@ -26,7 +26,7 @@ const NODES: Node[] = [
     label: "AI Officer Leon",
     short: "AI Officer Leon",
     icon: Bot,
-    x: 120,
+    x: 80,
     y: 220,
     description:
       "Leon nie śpi. Codziennie analizuje status kontroli, sygnalizuje wygasające dowody, przygotowuje drafty polityk i przypomina właścicielom o terminach — zanim audytor zdąży wpisać nazwę firmy w wyszukiwarkę.",
