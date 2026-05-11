@@ -661,7 +661,6 @@ const Iso27001 = () => {
                 </div>
               </div>
             </div>
-            </div>
           </div>
         </section>
         {/* Results & For Whom sections removed */}
