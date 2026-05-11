@@ -139,10 +139,10 @@ const InfinityComplianceLoop = () => {
             ∞ Continuous Compliance · AI-Native GRC
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Compliance to nie projekt —
+            Compliance to nie projekt.
             <br />
             <span className="bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
-              to stan ciągłej zgodności.
+              To stan ciągłej zgodności.
             </span>
           </h1>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
