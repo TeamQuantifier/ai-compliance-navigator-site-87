@@ -141,7 +141,7 @@ const LOOP_PATH =
   "M 400,220 C 400,40 80,40 80,220 C 80,400 400,400 400,220 C 400,40 720,40 720,220 C 720,400 400,400 400,220 Z";
 
 const InfinityComplianceLoop = () => {
-  const [active, setActive] = useState<AreaId | null>("01");
+  const [active, setActive] = useState<AreaId | null>(null);
   const { currentLocale } = useLanguage();
   const activeNode = NODES.find((n) => n.id === active) ?? null;
 
