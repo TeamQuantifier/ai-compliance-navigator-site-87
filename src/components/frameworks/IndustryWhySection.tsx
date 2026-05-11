@@ -17,7 +17,7 @@ import {
   AlertTriangle,
   type LucideIcon,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+
 
 type Industry = {
   id: string;
