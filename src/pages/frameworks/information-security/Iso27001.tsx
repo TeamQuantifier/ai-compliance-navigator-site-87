@@ -41,16 +41,14 @@ import AuditorDashboardMockup from "@/components/mockups/AuditorDashboardMockup"
 import ManagerDashboardMockup from "@/components/mockups/ManagerDashboardMockup";
 
 const StepMockup = ({ children, label }: { children: React.ReactNode; label: string }) => (
-  <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+  <div className="rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-xl">
     <div className="flex items-center justify-between mb-2 px-1">
       <div className="flex items-center gap-1.5">
-        <span className="h-2 w-2 rounded-full bg-red-400" />
-        <span className="h-2 w-2 rounded-full bg-yellow-400" />
-        <span className="h-2 w-2 rounded-full bg-green-400" />
+        <span className="h-1.5 w-8 rounded-full bg-slate-600" />
       </div>
       <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wide">{label}</span>
     </div>
-    <div className="overflow-hidden rounded-lg max-h-[360px]">
+    <div className="overflow-hidden rounded-lg max-h-[360px] border border-slate-800">
       {children}
     </div>
   </div>
