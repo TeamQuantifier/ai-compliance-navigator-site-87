@@ -180,10 +180,10 @@ const TaskAutomationMockup = () => (
         <span className="text-right">Termin</span>
       </div>
       {[
-        { t: "Przegląd uprawnień M365", d: "A. Nowak", due: "14.05", color: "amber" },
-        { t: "Dowód MFA — eksport raportu", d: "IT Team", due: "16.05", color: "blue" },
-        { t: "Ocena dostawcy — Acme Sp.", d: "Procurement", due: "22.05", color: "purple" },
-        { t: "Backup test BCM", d: "DevOps", due: "28.05", color: "emerald" },
+        { t: "Przegląd uprawnień M365", d: "A. Nowak", due: "14.05", chip: "bg-amber-500/15 text-amber-300 border-amber-500/30" },
+        { t: "Dowód MFA — eksport raportu", d: "IT Team", due: "16.05", chip: "bg-blue-500/15 text-blue-300 border-blue-500/30" },
+        { t: "Ocena dostawcy — Acme Sp.", d: "Procurement", due: "22.05", chip: "bg-purple-500/15 text-purple-300 border-purple-500/30" },
+        { t: "Backup test BCM", d: "DevOps", due: "28.05", chip: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30" },
       ].map((row, i) => (
         <div
           key={i}
@@ -195,7 +195,7 @@ const TaskAutomationMockup = () => (
           </div>
           <span className="text-[10px] text-white/60 truncate">{row.d}</span>
           <span
-            className={`text-[9px] px-1.5 py-0.5 rounded border whitespace-nowrap justify-self-end font-semibold bg-${row.color}-500/15 text-${row.color}-300 border-${row.color}-500/30`}
+            className={`text-[9px] px-1.5 py-0.5 rounded border whitespace-nowrap justify-self-end font-semibold ${row.chip}`}
           >
             {row.due}
           </span>
