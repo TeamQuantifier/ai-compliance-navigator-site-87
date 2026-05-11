@@ -146,6 +146,68 @@ const InfinityComplianceLoop = () => {
           </p>
         </div>
 
+
+        {/* Detail panel — ABOVE the loop, so user can't miss it */}
+        <div
+          id="loop-detail-panel"
+          className="max-w-3xl mx-auto overflow-hidden transition-all duration-500 mb-8"
+          style={{ maxHeight: activeNode ? "600px" : "0px", opacity: activeNode ? 1 : 0 }}
+          aria-live="polite"
+        >
+          {activeNode && (
+            <div
+              key={activeNode.id}
+              className="relative animate-fade-in bg-white/[0.06] border border-white/20 rounded-2xl p-5 md:p-7 backdrop-blur-md shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]"
+            >
+              <button
+                type="button"
+                onClick={() => setActive(null)}
+                aria-label="Zamknij"
+                className="absolute top-3 right-3 h-8 w-8 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+              <div className="flex items-start gap-4 pr-8">
+                <span
+                  className={`flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-slate-900 border-2 border-white/20 ring-2 ${activeNode.ring} flex-shrink-0`}
+                >
+                  <activeNode.icon className={`h-6 w-6 md:h-7 md:w-7 ${activeNode.color}`} />
+                </span>
+                <div className="flex-1 min-w-0">
+                  <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider">
+                    Obszar {activeNode.id}
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
+                    {activeNode.label}
+                  </h3>
+                  <p className="text-white/80 leading-relaxed text-sm md:text-base mb-3">
+                    {activeNode.description}
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-1.5 mb-4">
+                    {activeNode.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-xs md:text-sm text-white/85">
+                        <span
+                          className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${activeNode.color.replace("text-", "bg-")}`}
+                        />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={`/${currentLocale}${activeNode.href}/`}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg px-3.5 py-1.5 transition-colors"
+                  >
+                    Dowiedz się więcej
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+              {/* Pointer arrow toward the loop below */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-4 w-4 rotate-45 bg-white/[0.06] border-r border-b border-white/20" />
+            </div>
+          )}
+        </div>
+
         {/* Loop SVG + nodes */}
         <div className="relative max-w-5xl mx-auto">
           <div className="relative w-full" style={{ aspectRatio: "800 / 320" }}>
