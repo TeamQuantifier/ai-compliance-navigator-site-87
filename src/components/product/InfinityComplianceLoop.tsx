@@ -83,8 +83,8 @@ const NODES: Node[] = [
     label: "Polityki, rejestry, dostawcy",
     short: "Polityki, rejestry, dostawcy",
     icon: FileSignature,
-    x: 560,
-    y: 70,
+    x: 580,
+    y: 80,
     description:
       "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
     bullets: [
