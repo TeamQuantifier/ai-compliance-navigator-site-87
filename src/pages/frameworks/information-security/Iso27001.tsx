@@ -206,39 +206,6 @@ const Iso27001 = () => {
           </div>
         </section>
 
-        {/* Why Leadership Should Care Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-brand-purple/10 to-brand-blue/10 rounded-2xl p-8 md:p-12">
-            <Badge className="bg-brand-purple text-white mb-4">
-              {t("iso27001Page.whyLeadership.badge")}
-            </Badge>
-            <h2 className="text-3xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.whyLeadership.title")}
-            </h2>
-            <p className="text-lg text-slate-600 mb-8 max-w-3xl">
-              {t("iso27001Page.whyLeadership.description")}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {getObjectArrayTranslation<{ title: string; description: string }>(
-                "iso27001Page.whyLeadership.points"
-              ).map((point, index) => (
-                <div key={index} className="flex items-start bg-white rounded-xl p-5 shadow-sm">
-                  <div className="w-10 h-10 rounded-full bg-brand-purple/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    {index === 0 && <AlertTriangle className="h-5 w-5 text-brand-purple" />}
-                    {index === 1 && <Target className="h-5 w-5 text-brand-purple" />}
-                    {index === 2 && <Lock className="h-5 w-5 text-brand-purple" />}
-                    {index === 3 && <BarChart4 className="h-5 w-5 text-brand-purple" />}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-brand-blue-dark mb-1">{point.title}</h3>
-                    <p className="text-slate-600 text-sm">{point.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* How Quantifier Helps Section */}
         <section className="mb-16">
           <div className="text-center mb-10">
