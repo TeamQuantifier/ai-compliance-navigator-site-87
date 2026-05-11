@@ -195,11 +195,11 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
       <div className="text-center mb-8">
         <Badge className="bg-brand-purple text-white mb-4">Dla Twojej branży</Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-          Dlaczego ISO 27001 ma znaczenie dla Twojego biznesu
+          Dlaczego System Zarządzania Bezpieczeństwem Informacji (ISO 27001) ma znaczenie dla Twojego biznesu
         </h2>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-          Wybierz swoją branżę — zobacz konkretne wymagania regulacyjne, presje rynkowe i korzyści,
-          jakie da Ci certyfikacja w Twoim kontekście.
+          ISMS wg ISO 27001 to nie tylko certyfikat — to ramy prawne, organizacyjne i techniczne, których oczekują
+          klienci enterprise i regulatorzy. Wybierz swoją branżę i zobacz konkretne wymagania oraz korzyści.
         </p>
       </div>
 
