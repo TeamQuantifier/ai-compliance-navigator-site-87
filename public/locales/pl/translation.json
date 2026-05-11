@@ -4881,8 +4881,8 @@
       }
     },
     "understanding": {
-      "title": "Zrozumienie ISO 27001 i Systemu Zarządzania Bezpieczeństwem Informacji",
-      "description": "ISO 27001 to międzynarodowy standard ustanawiania, wdrażania, utrzymywania i ciągłego doskonalenia Systemu Zarządzania Bezpieczeństwem Informacji (ISMS — Information Security Management System).",
+      "title": "Zrozumienie ISO 27001",
+      "description": "Międzynarodowy standard ustanawiania, wdrażania, utrzymywania i ciągłego doskonalenia Systemu Zarządzania Bezpieczeństwem Informacji (ISMS).",
       "whatIs": {
         "title": "Czym jest ISO 27001?",
         "description": "ISO 27001 to globalnie uznany standard zarządzania bezpieczeństwem informacji. Zapewnia systematyczne ramy ochrony wrażliwych danych, zarządzania ryzykiem i demonstrowania zaangażowania w bezpieczeństwo."
@@ -4926,8 +4926,8 @@
       ]
     },
     "howQuantifierHelps": {
-      "title": "Jak Quantifier automatyzuje System Zarządzania Bezpieczeństwem Informacji (ISO 27001)",
-      "description": "Cały ISMS — ryzyka, polityki, kontrole Aneksu A, SoA i dowody — w jednym miejscu, gotowe do audytu certyfikacyjnego",
+      "title": "Jak Quantifier automatyzuje ISO 27001",
+      "description": "Cała dokumentacja ISMS, kontrole Aneksu A i dowody w jednym miejscu — sprawnie, dobrze i gotowe do audytu",
       "features": {
         "riskAssessment": {
           "title": "Ocena i postępowanie z ryzykiem",
