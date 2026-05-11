@@ -378,6 +378,9 @@ const Iso27001 = () => {
                     <HomePlatformMockup />
                   </StepMockup>
                 </div>
+              </div>
+
+              {/* Step 2 - Gap Analysis */}
               <div className="relative flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 md:pr-12" />
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
