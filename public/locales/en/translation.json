@@ -3083,7 +3083,8 @@
     "tabs": {
       "csdr": "CSDR Reporting",
       "gri": "GRI Reporting",
-      "cbam": "CBAM Reporting"
+      "cbam": "CBAM Reporting",
+      "vsme": "VSME Reporting"
     },
     "csdr": {
       "title": "CSDR Reporting: Streamline Corporate Sustainability",
@@ -3227,6 +3228,32 @@
           "answer": "The platform includes built-in validation rules, audit trails for every data point, and AI-powered anomaly detection. All calculations follow recognized methodologies (GHG Protocol, ISO 14064)."
         }
       ]
+    },
+    "vsme": {
+      "title": "VSME: Voluntary ESG Standard for SMEs",
+      "description": "EFRAG Voluntary Sustainability Reporting Standard for SMEs (VSME) is a simplified ESG standard for small and medium-sized companies. Quantifier guides you through the Basic and Comprehensive modules, generating a report ready for banks, insurers and large supply-chain customers.",
+      "featuresTitle": "You get:",
+      "features": [
+        {
+          "title": "Basic module in hours",
+          "description": "Complete the 11 core disclosures (B1–B11) with AI assistance and built-in EFRAG guidance."
+        },
+        {
+          "title": "Comprehensive module (PAT)",
+          "description": "Extend with C1–C9 disclosures required by banks and business partners."
+        },
+        {
+          "title": "CSRD/ESRS mapping",
+          "description": "VSME data automatically feeds future CSRD reports as your company grows."
+        },
+        {
+          "title": "Bank-ready PDF report",
+          "description": "Generate a professional VSME-compliant report to share with banks and customers."
+        }
+      ],
+      "dashboardTitle": "VSME disclosures dashboard",
+      "chartTitle": "Basic and Comprehensive module progress",
+      "insight": "Basic module 100% complete - ready to share with partners"
     }
   },
   "environmentalPage": {
