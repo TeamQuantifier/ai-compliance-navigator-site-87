@@ -4926,8 +4926,8 @@
       ]
     },
     "howQuantifierHelps": {
-      "title": "Jak Quantifier automatyzuje ISO 27001",
-      "description": "Cała dokumentacja, kontrole i dowody w jednym miejscu — sprawnie, dobrze i gotowe do audytu",
+      "title": "Jak Quantifier automatyzuje System Zarządzania Bezpieczeństwem Informacji (ISO 27001)",
+      "description": "Cały ISMS — ryzyka, polityki, kontrole Aneksu A, SoA i dowody — w jednym miejscu, gotowe do audytu certyfikacyjnego",
       "features": {
         "riskAssessment": {
           "title": "Ocena i postępowanie z ryzykiem",
