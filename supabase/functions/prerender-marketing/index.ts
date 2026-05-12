@@ -33,7 +33,7 @@ const pageUrlMap: Record<string, string> = {
   'gdpr-compliance': 'frameworks/gdpr',
   'nis2': 'frameworks/nis-2',
   'grc-platform': 'grc-platform',
-  'product-features': 'product/features',
+  'product': 'product',
   'plans': 'plans',
   'about': 'about',
   'contact': 'contact',
@@ -953,7 +953,7 @@ const getPageContent = (locale: string, page: string): PageData | null => {
         ]
       }
     },
-    'product-features': {
+    'product': {
       en: {
         title: 'Product Features - AI-Powered Compliance Automation | Quantifier',
         description: 'Explore Quantifier features: AI compliance officer, risk assessments, document management, analytics dashboards, and 100+ integrations.',
@@ -2654,7 +2654,7 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
     'environmental': { segment: 'frameworks', nameKey: 'frameworks' },
     'governance': { segment: 'frameworks', nameKey: 'frameworks' },
     'product-level': { segment: 'frameworks', nameKey: 'frameworks' },
-    'product-features': { segment: 'product', nameKey: 'product' },
+    'product': { segment: 'product', nameKey: 'product' },
     'product-overview': { segment: 'product', nameKey: 'product' },
     'compliance-officer': { segment: 'product', nameKey: 'product' },
     'task-data-management': { segment: 'product', nameKey: 'product' },
@@ -2704,7 +2704,7 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
   });
   
   // SoftwareApplication for relevant pages (including DORA, HIPAA, CCPA)
-  if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product-features', 'dora', 'hipaa', 'ccpa'].includes(page)) {
+  if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product', 'dora', 'hipaa', 'ccpa'].includes(page)) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',

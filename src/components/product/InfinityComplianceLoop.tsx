@@ -5,131 +5,67 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 type AreaId = "01" | "02" | "03" | "04" | "05" | "06";
 
-type Node = {
+type NodeConfig = {
   id: AreaId;
-  label: string;
-  short: string;
   icon: React.ElementType;
-  // position in viewBox 800x320
   x: number;
   y: number;
-  description: string;
-  bullets: string[];
   href: string; // path under /{locale}
   color: string; // tailwind text color for icon
   ring: string; // tailwind ring color
 };
 
-const NODES: Node[] = [
+const NODES_CONFIG: NodeConfig[] = [
   {
     id: "01",
-    label: "AI Officer Leon",
-    short: "AI Officer Leon",
     icon: Bot,
     x: 80,
     y: 220,
-    description:
-      "Leon nie śpi. Codziennie analizuje status kontroli, sygnalizuje wygasające dowody, przygotowuje drafty polityk i przypomina właścicielom o terminach — zanim audytor zdąży wpisać nazwę firmy w wyszukiwarkę.",
-    bullets: [
-      "Monitoring 24/7 wszystkich frameworków",
-      "Proaktywne alerty zamiast reaktywnych pożarów",
-      "Asystent w czacie: zapytaj, deleguj, zatwierdź",
-      "Drafty polityk i procedur generowane na żądanie",
-    ],
     href: "/product/ai-compliance-officer",
     color: "text-purple-300",
     ring: "ring-purple-400/60",
   },
   {
     id: "02",
-    label: "Dane i integracje",
-    short: "Dane i integracje",
     icon: Database,
     x: 240,
     y: 90,
-    description:
-      "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
-    bullets: [
-      "Import z istniejących arkuszy bez zmiany ich struktury",
-      "Automatyczne mapowanie danych do wymagań frameworków",
-      "Brak żmudnego dopasowywania pól i kolumn",
-      "Jedno spójne źródło prawdy dla całego zespołu",
-    ],
     href: "/product/task-data-management",
     color: "text-emerald-300",
     ring: "ring-emerald-400/60",
   },
   {
     id: "03",
-    label: "Zarządzanie pracą",
-    short: "Zarządzanie pracą",
     icon: Workflow,
     x: 240,
     y: 350,
-    description:
-      "Procedury rozkładają się na zadania z jasno określonym timeline'em, ownerem i dowodami. AI przydziela, przypomina i zamyka — zespół realizuje wszystko z poziomu maila lub Slacka.",
-    bullets: [
-      "Procedury rozbijane na zadania z timeline'em i ownerem",
-      "Auto-przydziały i przypomnienia od Leona",
-      "Realizacja zadań prosto ze skrzynki mailowej",
-      "Pełna widoczność postępu na dashboardzie",
-    ],
     href: "/product/task-data-management",
     color: "text-amber-300",
     ring: "ring-amber-400/60",
   },
   {
     id: "04",
-    label: "Polityki, rejestry, dostawcy",
-    short: "Polityki, rejestry, dostawcy",
     icon: FileSignature,
     x: 560,
     y: 90,
-    description:
-      "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
-    bullets: [
-      "Policy Builder z szablonami dla NIS2, ISO, DORA, GDPR",
-      "Rejestry ryzyk, incydentów i aktywów w jednym miejscu",
-      "Ocena i monitoring dostawców w stałym cyklu",
-      "Wersjonowanie i podpis elektroniczny",
-    ],
     href: "/product/documents-management",
     color: "text-pink-300",
     ring: "ring-pink-400/60",
   },
   {
     id: "05",
-    label: "Audyt, jedno kliknięcie",
-    short: "Audyt, jedno kliknięcie",
     icon: ShieldCheck,
     x: 720,
     y: 220,
-    description:
-      "Każda decyzja, data, osoba i podpis elektroniczny są zarejestrowane. Jedno kliknięcie = raport dla organu nadzoru w PDF, Excel, XBRL lub XML. Management Body Accountability gotowy do okazania.",
-    bullets: [
-      "Pełny audit trail każdej zmiany i decyzji",
-      "Eksport w PDF / XLSX / XBRL / XML jednym przyciskiem",
-      "Management Body Accountability out-of-the-box",
-    ],
     href: "/product/analytics-dashboards",
     color: "text-blue-300",
     ring: "ring-blue-400/60",
   },
   {
     id: "06",
-    label: "Analityka, dashboardy i raporty",
-    short: "Analityka, dashboardy i raporty",
     icon: BarChart3,
     x: 560,
     y: 350,
-    description:
-      "Status zgodności w czasie rzeczywistym: dashboardy KPI, trendy ryzyk, mapy ciepła, postęp wdrożeń i gotowe raporty dla zarządu, audytora i regulatora — bez budowania pivotów w arkuszach.",
-    bullets: [
-      "Dashboardy KPI dla zarządu, zespołu i audytora",
-      "Trendy ryzyk, incydentów i zaległości w jednym widoku",
-      "Mapy ciepła ryzyk i postęp wdrożeń frameworków",
-      "Eksport raportów do PDF, XLSX i prezentacji jednym kliknięciem",
-    ],
     href: "/product/analytics-dashboards",
     color: "text-cyan-300",
     ring: "ring-cyan-400/60",
@@ -142,8 +78,8 @@ const LOOP_PATH =
 
 const InfinityComplianceLoop = () => {
   const [active, setActive] = useState<AreaId | null>(null);
-  const { currentLocale } = useLanguage();
-  const activeNode = NODES.find((n) => n.id === active) ?? null;
+  const { currentLocale, t } = useLanguage();
+  const activeNodeConfig = NODES_CONFIG.find((n) => n.id === active) ?? null;
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-10 md:py-14 overflow-hidden -mt-12 -mx-4">
@@ -155,17 +91,17 @@ const InfinityComplianceLoop = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-4 md:mb-6">
           <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-5">
-            ∞ Continuous Compliance · AI-Native GRC
+            {t('infinityLoop.badge')}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Compliance to nie projekt.
+            {t('infinityLoop.title1')}
             <br />
             <span className="bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
-              To stan ciągłej zgodności.
+              {t('infinityLoop.title2')}
             </span>
           </h1>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-            Quantifier zamyka 6 obszarów w jedną nieskończoną pętlę ciągłej zgodności. Kliknij dowolny węzeł, by zobaczyć, jak działa.
+            {t('infinityLoop.subtitle')}
           </p>
         </div>
 
@@ -174,53 +110,55 @@ const InfinityComplianceLoop = () => {
         <div
           id="loop-detail-panel"
           className="max-w-3xl mx-auto overflow-hidden transition-all duration-500 mb-8"
-          style={{ maxHeight: activeNode ? "600px" : "0px", opacity: activeNode ? 1 : 0 }}
+          style={{ maxHeight: activeNodeConfig ? "600px" : "0px", opacity: activeNodeConfig ? 1 : 0 }}
           aria-live="polite"
         >
-          {activeNode && (
+          {activeNodeConfig && (() => {
+            const translatedNode = t(`infinityLoop.nodes.${activeNodeConfig.id}`, { returnObjects: true }) as any;
+            return (
             <div
-              key={activeNode.id}
+              key={activeNodeConfig.id}
               className="relative animate-fade-in bg-white/[0.06] border border-white/20 rounded-2xl p-5 md:p-7 backdrop-blur-md shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]"
             >
               <button
                 type="button"
                 onClick={() => setActive(null)}
-                aria-label="Zamknij"
+                aria-label={t('infinityLoop.close')}
                 className="absolute top-3 right-3 h-8 w-8 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-colors"
               >
                 <X className="h-4 w-4" />
               </button>
               <div className="flex items-start gap-4 pr-8">
                 <span
-                  className={`flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-slate-900 border-2 border-white/20 ring-2 ${activeNode.ring} flex-shrink-0`}
+                  className={`flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-slate-900 border-2 border-white/20 ring-2 ${activeNodeConfig.ring} flex-shrink-0`}
                 >
-                  <activeNode.icon className={`h-6 w-6 md:h-7 md:w-7 ${activeNode.color}`} />
+                  <activeNodeConfig.icon className={`h-6 w-6 md:h-7 md:w-7 ${activeNodeConfig.color}`} />
                 </span>
                 <div className="flex-1 min-w-0">
                   <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider">
-                    Obszar {activeNode.id}
+                    {t('infinityLoop.areaPrefix')} {activeNodeConfig.id}
                   </span>
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
-                    {activeNode.label}
+                    {translatedNode.label}
                   </h3>
                   <p className="text-white/80 leading-relaxed text-sm md:text-base mb-3">
-                    {activeNode.description}
+                    {translatedNode.description}
                   </p>
                   <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-1.5 mb-4">
-                    {activeNode.bullets.map((b) => (
+                    {(translatedNode.bullets || []).map((b: string) => (
                       <li key={b} className="flex items-start gap-2 text-xs md:text-sm text-white/85">
                         <span
-                          className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${activeNode.color.replace("text-", "bg-")}`}
+                          className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${activeNodeConfig.color.replace("text-", "bg-")}`}
                         />
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
-                    to={`/${currentLocale}${activeNode.href}/`}
+                    to={`/${currentLocale}${activeNodeConfig.href}/`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg px-3.5 py-1.5 transition-colors"
                   >
-                    Dowiedz się więcej
+                    {t('infinityLoop.learnMore')}
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
@@ -228,7 +166,8 @@ const InfinityComplianceLoop = () => {
               {/* Pointer arrow toward the loop below */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-4 w-4 rotate-45 bg-white/[0.06] border-r border-b border-white/20" />
             </div>
-          )}
+            );
+          })()}
         </div>
 
         {/* Loop SVG + nodes */}
@@ -298,11 +237,12 @@ const InfinityComplianceLoop = () => {
             </div>
 
             {/* Nodes */}
-            {NODES.map((node) => {
+            {NODES_CONFIG.map((node) => {
               const Icon = node.icon;
               const isActive = active === node.id;
               const leftPct = (node.x / 800) * 100;
               const topPct = (node.y / 440) * 100;
+              const nodeShortText = t(`infinityLoop.nodes.${node.id}.short`) as string;
               return (
                 <button
                   key={node.id}
@@ -323,7 +263,7 @@ const InfinityComplianceLoop = () => {
                     <Icon className={`h-6 w-6 md:h-7 md:w-7 ${node.color}`} />
                   </span>
                   <span className="absolute left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap text-[10px] md:text-xs font-bold text-white/80 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded-full border border-white/10">
-                    {node.id} · {node.short}
+                    {node.id} · {nodeShortText}
                   </span>
                 </button>
               );
@@ -331,10 +271,10 @@ const InfinityComplianceLoop = () => {
           </div>
 
           {/* Hint (only visible when nothing is open) */}
-          {!activeNode && (
+          {!activeNodeConfig && (
             <p className="text-center text-xs text-white/50 -mt-6 md:-mt-10 flex items-center justify-center gap-1.5">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Kliknij węzeł, aby zobaczyć szczegóły
+              {t('infinityLoop.hint')}
             </p>
           )}
         </div>
