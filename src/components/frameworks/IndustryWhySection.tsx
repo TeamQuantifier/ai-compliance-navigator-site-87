@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Landmark,
   Cpu,
@@ -18,171 +19,20 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-
-type Industry = {
+type IndustryConfig = {
   id: string;
-  label: string;
-  short: string;
   icon: LucideIcon;
-  driver: string;
-  challenges: string[];
-  benefits: string[];
-  example: string;
 };
 
-const INDUSTRIES: Industry[] = [
-  {
-    id: "finance",
-    label: "Sektor finansowy i ubezpieczenia",
-    short: "Finanse",
-    icon: Landmark,
-    driver: "DORA + KNF + wymagania kontrahentów",
-    challenges: [
-      "DORA (od 17.01.2025) wymaga udokumentowanego zarządzania ryzykiem ICT i odporności operacyjnej",
-      "Banki-partnerzy i ubezpieczyciele audytują dostawców według własnych checklist bezpieczeństwa",
-      "KNF oczekuje dowodów na zgodność z Rekomendacją D i wytycznymi cyberbezpieczeństwa",
-    ],
-    benefits: [
-      "ISO 27001 jako baza dowodowa dla DORA, KNF i RODO — jeden ISMS, wiele regulacji",
-      "Skrócenie procesu due diligence przy współpracy z bankami i ubezpieczycielami",
-      "Niższa składka cyber insurance po przedstawieniu certyfikatu",
-    ],
-    example:
-      "Instytucja płatnicza po certyfikacji ISO 27001 skróciła vendor onboarding w bankach z 4 do 6 tygodni — wcześniej blokowała ich sekcja security w ankietach.",
-  },
-  {
-    id: "tech",
-    label: "Technologie i usługi IT",
-    short: "IT i SaaS",
-    icon: Cpu,
-    driver: "Wymóg w RFP od klientów enterprise",
-    challenges: [
-      "Klienci enterprise (banki, telco, retail) wymagają certyfikatu już na etapie RFI",
-      "Każdy klient ma własną ankietę bezpieczeństwa — bez ISMS zespół tonie w odpowiedziach",
-      "Sales cycle wydłuża się o tygodnie z powodu sekcji security w due diligence",
-    ],
-    benefits: [
-      "Skrócenie sales cycle o 30–60% — certyfikat zastępuje większość pytań w ankietach",
-      "Otwarcie drzwi do kontraktów enterprise i sektora publicznego",
-      "Raz wdrożone ISO 27001 pokrywa ~70% SOC 2 — dwie certyfikacje za cenę jednej",
-    ],
-    example:
-      "Polski software house B2B (50 osób) zamknął kontrakt z bankiem 3 mies. po certyfikacji — wcześniej dwa razy odpadał na security review.",
-  },
-  {
-    id: "industry",
-    label: "Przemysł i produkcja",
-    short: "Przemysł",
-    icon: Factory,
-    driver: "NIS 2 + wymagania OEM + ciągłość produkcji",
-    challenges: [
-      "Sektor produkcyjny jest 'sektorem ważnym' w Ustawie KSC (transpozycja NIS 2)",
-      "OEM-y motoryzacyjne wymagają TISAX, który w 70% pokrywa się z ISO 27001",
-      "Ataki ransomware na linie produkcyjne to milionowe straty za każdą dobę przestoju",
-    ],
-    benefits: [
-      "Spełnienie wymagań NIS 2 i KSC w jednym wdrożeniu",
-      "Baza pod TISAX — szybka droga do kontraktów z OEM motoryzacyjnymi",
-      "Plan ciągłości działania (BCP) chroni linie produkcyjne przed paraliżem",
-    ],
-    example:
-      "Producent komponentów dla automotive uniknął utraty kontraktu z VW po wdrożeniu ISO 27001 — TISAX-owa ocena spadła z czerwonej do żółtej w 4 miesiące.",
-  },
-  {
-    id: "tsl",
-    label: "Transport, logistyka i łańcuch dostaw",
-    short: "TSL",
-    icon: Truck,
-    driver: "NIS 2 + wymagania klientów retail i e-commerce",
-    challenges: [
-      "Branża TSL jest 'sektorem kluczowym' w NIS 2 — pełne obowiązki rejestracyjne i raportowe",
-      "Retail i e-commerce wymagają od kurierów i operatorów magazynowych certyfikatów bezpieczeństwa",
-      "Cyberataki na operatorów logistycznych (Maersk, DHL, InPost) pokazują skalę ryzyka",
-    ],
-    benefits: [
-      "Zgodność z NIS 2 i UKSC bez budowania osobnego programu",
-      "Status preferred vendor dla sieci handlowych i marketplace",
-      "Ochrona systemów WMS/TMS przed ransomware = ochrona ciągłości dostaw",
-    ],
-    example:
-      "Operator magazynowy obsługujący e-commerce dostał ISO 27001 jako warunek przedłużenia umowy z marketplace — wdrożenie zajęło 7 mies. z Quantifierem.",
-  },
-  {
-    id: "retail",
-    label: "Handel i e-commerce",
-    short: "Handel",
-    icon: ShoppingBag,
-    driver: "RODO + PCI DSS + ochrona danych klientów",
-    challenges: [
-      "Sklepy online są celem #1 dla ataków na dane kart i tożsamości klientów",
-      "RODO: kary do 20 mln EUR lub 4% obrotu za wyciek danych klientów",
-      "PCI DSS wymaga systematycznego zarządzania ryzykiem — ISO 27001 to dostarcza",
-    ],
-    benefits: [
-      "Niższe ryzyko kar UODO — udokumentowany system zarządzania bezpieczeństwem",
-      "Ochrona reputacji marki — wycieki kosztują klientów, nie tylko pieniądze",
-      "Zgodność z PCI DSS i RODO w jednym frameworku",
-    ],
-    example:
-      "Sieć retail (omnichannel) po wdrożeniu ISO 27001 zamknęła 12 z 18 obserwacji UODO z kontroli — bez konieczności kary administracyjnej.",
-  },
-  {
-    id: "health",
-    label: "Ochrona zdrowia i life sciences",
-    short: "Zdrowie",
-    icon: HeartPulse,
-    driver: "NIS 2 + RODO art. 9 (dane wrażliwe) + MDR",
-    challenges: [
-      "Sektor zdrowia jest 'sektorem kluczowym' w NIS 2 — najwyższe obowiązki",
-      "RODO art. 9: dane medyczne to kategoria szczególna — wycieki = kary i pozwy",
-      "MDR i wymagania szpitali jako klientów MedTech wymagają udokumentowanego ISMS",
-    ],
-    benefits: [
-      "Spełnienie NIS 2 dla podmiotów leczniczych i dostawców MedTech",
-      "Dowód na zgodność z RODO art. 9 dla danych pacjentów",
-      "Zaufanie szpitali, NFZ i ubezpieczycieli zdrowotnych jako kontrahenta",
-    ],
-    example:
-      "Sieć przychodni po wdrożeniu ISO 27001 dostała kontrakt z dużym pracodawcą na medycynę pracy — security review trwał 2 tygodnie zamiast 2 miesięcy.",
-  },
-  {
-    id: "energy",
-    label: "Energetyka i infrastruktura krytyczna",
-    short: "Energetyka",
-    icon: Zap,
-    driver: "NIS 2 + KSC + URE + ataki APT",
-    challenges: [
-      "Energetyka, gaz, woda, ciepłownictwo — 'sektory kluczowe' z najwyższymi sankcjami w KSC",
-      "URE i CSIRT GOV wymagają udokumentowanego zarządzania ryzykiem ICT",
-      "Ataki APT na operatorów infrastruktury krytycznej rosną — SCADA i OT są celem",
-    ],
-    benefits: [
-      "Zgodność z UKSC i NIS 2 dla operatorów usług kluczowych (OUK)",
-      "Framework do zarządzania ryzykiem ICT i OT/SCADA",
-      "Niższe ryzyko sankcji administracyjnych z UKSC (do 100 tys. PLN dziennie)",
-    ],
-    example:
-      "Operator ciepłowniczy dla 80 tys. mieszkańców wdrożył ISO 27001 jako fundament zgodności z UKSC — uniknął kary po pierwszej kontroli organu nadzoru.",
-  },
-  {
-    id: "services",
-    label: "Usługi profesjonalne i doradcze",
-    short: "Usługi B2B",
-    icon: ScaleIcon,
-    driver: "Audyty od klientów + tajemnica zawodowa + RODO procesora",
-    challenges: [
-      "Klienci enterprise (Big4 standard) audytują dostawców — bez ISO 27001 odpadasz",
-      "Kancelarie i konsulting przetwarzają tajemnicę zawodową — wyciek = utrata licencji",
-      "RODO: jako procesor odpowiadasz za bezpieczeństwo powierzonych danych",
-    ],
-    benefits: [
-      "Status preferred vendor w przetargach enterprise i sektora publicznego",
-      "Spełnienie wymagań klauzul DPA (RODO art. 28) bez negocjacji per klient",
-      "Wyższa wycena usług — bezpieczeństwo to argument sprzedażowy, nie koszt",
-    ],
-    example:
-      "Kancelaria prawna (40 prawników) po certyfikacji ISO 27001 weszła do panelu dostawców banku — wcześniej dwukrotnie odpadała na security questionnaire.",
-  },
+const INDUSTRIES_CONFIG: IndustryConfig[] = [
+  { id: "finance", icon: Landmark },
+  { id: "tech", icon: Cpu },
+  { id: "industry", icon: Factory },
+  { id: "tsl", icon: Truck },
+  { id: "retail", icon: ShoppingBag },
+  { id: "health", icon: HeartPulse },
+  { id: "energy", icon: Zap },
+  { id: "services", icon: ScaleIcon },
 ];
 
 export default function IndustryWhySection({ currentLocale }: { currentLocale: string }) {
