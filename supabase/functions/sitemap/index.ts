@@ -70,7 +70,7 @@ const localeSpecificPages: Array<{
     paths: {
       en: '/partners',
       pl: '/partnerzy',
-      cs: '/partneři',
+      cs: '/partneri',
     },
     changefreq: 'monthly',
     priority: '0.7',
@@ -80,7 +80,7 @@ const localeSpecificPages: Array<{
     paths: {
       en: '/partners/gs1-polska',
       pl: '/partnerzy/gs1-polska',
-      cs: '/partneři/gs1-polska',
+      cs: '/partneri/gs1-polska',
     },
     changefreq: 'monthly',
     priority: '0.7',

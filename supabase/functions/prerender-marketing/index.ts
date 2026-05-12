@@ -79,7 +79,7 @@ const pageUrlMap: Record<string, string> = {
 
 const getLocalizedUrlPath = (page: string, locale: string): string => {
   if (page === 'partners') {
-    return locale === 'pl' ? 'partnerzy' : locale === 'cs' ? 'partneři' : 'partners';
+    return locale === 'pl' ? 'partnerzy' : locale === 'cs' ? 'partneri' : 'partners';
   }
 
   return pageUrlMap[page] || page;
