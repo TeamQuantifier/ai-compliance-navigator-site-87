@@ -82,7 +82,7 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
       </div>
 
       {/* Active panel */}
-      <div key={current.id} className="animate-fade-in">
+      <div key={currentConfig.id} className="animate-fade-in">
           <Card className="border-brand-gray-light bg-gradient-to-br from-white to-brand-gray-light/30 overflow-hidden">
             <CardContent className="p-6 md:p-10">
               {/* Header row */}
@@ -91,9 +91,9 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
                   <Icon className="h-7 w-7 text-brand-blue-dark" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-brand-blue-dark">{current.label}</h3>
+                  <h3 className="text-2xl font-bold text-brand-blue-dark">{translatedCurrent.label}</h3>
                   <p className="text-sm text-slate-600 mt-1">
-                    Główny driver: <span className="font-medium">{current.driver}</span>
+                    {t("iso27001Page.industryWhy.mainDriver")}: <span className="font-medium">{translatedCurrent.driver}</span>
                   </p>
                 </div>
               </div>
@@ -103,10 +103,10 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <AlertTriangle className="h-5 w-5 text-amber-600" />
-                    <h4 className="font-semibold text-brand-blue-dark">Twoje wyzwania</h4>
+                    <h4 className="font-semibold text-brand-blue-dark">{t("iso27001Page.industryWhy.yourChallenges")}</h4>
                   </div>
                   <ul className="space-y-3">
-                    {current.challenges.map((c, i) => (
+                    {(translatedCurrent.challenges || []).map((c: string, i: number) => (
                       <li key={i} className="flex items-start gap-2 text-slate-700 text-sm">
                         <span className="text-amber-600 mt-0.5">•</span>
                         <span>{c}</span>
@@ -118,11 +118,11 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
                   <div className="flex items-center gap-2 mb-4">
                     <CheckCircle className="h-5 w-5 text-brand-blue" />
                     <h4 className="font-semibold text-brand-blue-dark">
-                      Co zyskujesz z ISO 27001
+                      {t("iso27001Page.industryWhy.whatYouGain")}
                     </h4>
                   </div>
                   <ul className="space-y-3">
-                    {current.benefits.map((b, i) => (
+                    {(translatedCurrent.benefits || []).map((b: string, i: number) => (
                       <li key={i} className="flex items-start gap-2 text-slate-700 text-sm">
                         <CheckCircle className="h-4 w-4 text-brand-blue mt-0.5 flex-shrink-0" />
                         <span>{b}</span>
@@ -135,9 +135,9 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
               {/* Example */}
               <div className="bg-brand-blue/5 border-l-4 border-brand-blue rounded-r-lg p-5 mb-6">
                 <div className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-2">
-                  Konkretny przykład
+                  {t("iso27001Page.industryWhy.concreteExample")}
                 </div>
-                <p className="text-slate-700 italic">„{current.example}"</p>
+                <p className="text-slate-700 italic">„{translatedCurrent.example}"</p>
               </div>
 
               {/* CTA */}
@@ -147,12 +147,12 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
                   className="bg-brand-blue-dark text-white hover:bg-brand-blue-dark/90"
                 >
                   <Link to={`/${currentLocale}/contact`}>
-                    Umów demo dla Twojej branży <ArrowRight className="ml-2 h-4 w-4" />
+                    {t("iso27001Page.industryWhy.bookDemo")} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="hover:text-brand-blue-dark">
                   <Link to={`/${currentLocale}/cybersecurity-check`}>
-                    Sprawdź swoją gotowość
+                    {t("iso27001Page.industryWhy.checkReadiness")}
                   </Link>
                 </Button>
               </div>
