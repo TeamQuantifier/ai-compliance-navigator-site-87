@@ -78,8 +78,8 @@ const LOOP_PATH =
 
 const InfinityComplianceLoop = () => {
   const [active, setActive] = useState<AreaId | null>(null);
-  const { currentLocale } = useLanguage();
-  const activeNode = NODES.find((n) => n.id === active) ?? null;
+  const { currentLocale, t } = useLanguage();
+  const activeNodeConfig = NODES_CONFIG.find((n) => n.id === active) ?? null;
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-10 md:py-14 overflow-hidden -mt-12 -mx-4">
