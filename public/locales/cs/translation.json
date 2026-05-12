@@ -4239,7 +4239,13 @@
       "emailLabel": "Emailová adresa",
       "marketingConsent": "Souhlasím se zasíláním marketingových sdělení o ISO 27001 řešeních",
       "requestDemoButton": "Požádat o demo",
-      "button": "Objednat demo"
+      "button": "Objednat demo",
+      "checkReadiness": "Zkontrolovat připravenost ISMS",
+      "features": [
+        "93 kontrol Přílohy A",
+        "Automatizované SoA",
+        "~70 % SOC 2 v ceně"
+      ]
     },
     "whyMatters": {
       "title": "Proč záleží na ISO 27001",
@@ -4287,7 +4293,8 @@
           "Interní audit a přezkum managementem",
           "Proces neustálého zlepšování"
         ]
-      }
+      },
+      "badge": "Úvod"
     },
     "whyLeadership": {
       "badge": "Odpovědnost vedení",
@@ -4553,6 +4560,27 @@
         "title": "NIS2 vs ISO 27001 — mapování",
         "description": "Mapování kontrol NIS2 Článek 21 na ISO 27001 Příloha A — co se překrývá."
       }
+    },
+    "definitions": {
+      "title": "Definice a pojmy ISO 27001",
+      "items": [
+        {
+          "term": "ISMS (Systém řízení bezpečnosti informací)",
+          "definition": "Systematický přístup ke správě citlivých firemních informací tak, aby zůstaly v bezpečí. Zahrnuje lidi, procesy a IT systémy prostřednictvím aplikace procesu řízení rizik."
+        },
+        {
+          "term": "Prohlášení o aplikovatelnosti (SoA)",
+          "definition": "Dokument, který uvádí všechna bezpečnostní opatření z Přílohy A normy ISO 27001 (93 opatření ve verzi 2022) a stanovuje, která jsou použitelná a která nikoli, s odůvodněním případných výjimek."
+        },
+        {
+          "term": "Plán ošetření rizik (Risk Treatment Plan)",
+          "definition": "Strukturovaný plán, který popisuje, jak budou řešena zjištěná rizika pro bezpečnost informací – ať už zmírněním, přenosem, přijetím nebo vyhnutím se – včetně termínů, odpovědných osob a očekávaných výsledků."
+        },
+        {
+          "term": "Opatření Přílohy A",
+          "definition": "Soubor 93 referenčních bezpečnostních opatření rozdělených do 4 tematických oblastí (Organizační, Personální, Fyzická, Technologická), která si organizace mohou vybrat na základě výsledků hodnocení rizik."
+        }
+      ]
     }
   },
   "iso9001Page": {
