@@ -2911,7 +2911,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
         <li><a href="${BASE_URL}/${locale}/product/features">${labels.product}</a></li>
         <li><a href="${BASE_URL}/${locale}/frameworks">${labels.frameworks}</a></li>
         <li><a href="${BASE_URL}/${locale}/plans">${labels.plans}</a></li>
-        <li><a href="${BASE_URL}/${locale}/partners">${labels.partners}</a></li>
+        <li><a href="${BASE_URL}/${locale}/${getLocalizedUrlPath('partners', locale)}">${labels.partners}</a></li>
         <li><a href="${BASE_URL}/${locale}/blog">${labels.blog}</a></li>
         <li><a href="${BASE_URL}/${locale}/contact">${labels.contact}</a></li>
       </ul>
