@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getLocalizedPathWithLocale, PARTNERS_PATHS } from '@/lib/localized-routes';
 
 const Footer = () => {
   const { t, currentLocale } = useLanguage();
@@ -123,7 +124,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLocale}/partners`} className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to={getLocalizedPathWithLocale(PARTNERS_PATHS[currentLocale], currentLocale)} className="text-muted-foreground hover:text-primary transition-colors">
                   {t('footer.company.partners')}
                 </Link>
               </li>
