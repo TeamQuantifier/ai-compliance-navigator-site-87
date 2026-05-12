@@ -2183,6 +2183,92 @@
       "dpp": "Produktový pas",
       "ghg": "Uhlíková stopa",
       "members": "47 000+ členů GS1"
+    },
+    "page": {
+      "hero": {
+        "eyebrow": "Partnerská síť Quantifier",
+        "title": "50+ partnerů, se kterými zavádíme compliance a ESG.",
+        "lead": "Budujeme partnerskou síť, která doplňuje odborné know-how přesně tam, kde ho klient potřebuje.",
+        "body": "Spolupracujeme s auditorskými firmami na implementacích NIS2, ISO 27001, SOC 2, ESG a CSRD; s právními kancelářemi a poradenskými společnostmi u klíčových regulací, jako jsou DORA, GDPR, whistleblowing, NIS2, CSRD a ESG; s IT a kyberbezpečnostními integrátory na technických opatřeních; a s univerzitami a NGO na výzkumu, vzdělávání a financovaných projektech.",
+        "cta": "Promluvme si o partnerství"
+      },
+      "reasons": {
+        "title": "Proč být v síti",
+        "items": [
+          "Společné projekty s klienty.",
+          "Přístup k GRC platformě s hotovými moduly NIS2, ESG, DPP a LCA.",
+          "Odborná podpora a vzdělávací materiály: webináře, reporty a školení.",
+          "Partnerský marketplace přímo v platformě Quantifier — viditelnost u klientů zavádějících GRC a ESG."
+        ]
+      },
+      "stats": {
+        "partners": "Partnerů",
+        "areas": "Oblastí",
+        "reach": "Dosah"
+      },
+      "areas": {
+        "title": "Z jakých oblastí jsou naši partneři",
+        "items": [
+          {
+            "name": "Auditoři",
+            "desc": "NIS2, ISO 27001, SOC 2"
+          },
+          {
+            "name": "Právní kanceláře",
+            "desc": "DORA, GDPR, whistleblowing"
+          },
+          {
+            "name": "Konzultanti",
+            "desc": "ESG, CSRD, uhlíková stopa"
+          },
+          {
+            "name": "IT a kyberbezpečnost",
+            "desc": "Implementace, integrace, SOC"
+          },
+          {
+            "name": "NGO a univerzity",
+            "desc": "Výzkum, vzdělávání, LIFE"
+          }
+        ]
+      },
+      "selected": {
+        "title": "Vybraní partneři",
+        "description": "Spolupracujeme s lídry finančního sektoru, veřejnými institucemi, univerzitami a organizacemi zaměřenými na udržitelný rozvoj a logistiku.",
+        "items": [
+          {
+            "name": "BNP Paribas Bank Polska",
+            "description": "Partnerství v oblasti financování udržitelné transformace a podpory ESG reportingu pro korporátní klienty."
+          },
+          {
+            "name": "Alior Bank",
+            "description": "Spolupráce na vzdělávání a nástrojích ESG a kyberbezpečnosti pro sektor MSP."
+          },
+          {
+            "name": "Polski Fundusz Rozwoju",
+            "description": "Partner programů rozvoje ESG kompetencí a digitální odolnosti polských podniků."
+          },
+          {
+            "name": "Ekonomická univerzita ve Vratislavi",
+            "description": "Vědecko-výzkumná spolupráce v oblasti GRC, uhlíkové stopy a informační bezpečnosti."
+          },
+          {
+            "name": "Klaster oběhového hospodářství",
+            "description": "Společné projekty v oblasti DPP, LCA a cirkulární transformace členů klastru."
+          },
+          {
+            "name": "Circular Production Community",
+            "description": "Komunita výrobců zavádějících oběhové hospodářství — společné projekty kolem DPP, LCA a cirkulárních výrobních modelů."
+          },
+          {
+            "name": "Reo.pl",
+            "description": "Integrace dat o obnovitelné energii a smlouvách PPA s carbon moduly Quantifier."
+          },
+          {
+            "name": "Raben Group",
+            "description": "Spolupráce v oblasti reportingu emisí dodavatelského řetězce (Scope 3) a udržitelné logistiky."
+          }
+        ]
+      }
     }
   },
   "frameworksPage": {
@@ -3488,6 +3574,10 @@
     "gs1": {
       "title": "GS1 Polska × Quantifier.ai — Produktový pas a uhlíková stopa",
       "description": "Partnerství GS1 Polska a Quantifier.ai: Envirly LCA pro digitální produktový pas (DPP) a Envirly GHG pro vykazování emisí Scope 1 a 2."
+    },
+    "partners": {
+      "title": "Partneři Quantifier.ai | Síť 50+ GRC a ESG partnerů",
+      "description": "Poznejte partnerskou síť Quantifier.ai: auditory, právní kanceláře, konzultanty, IT integrátory, univerzity a ESG organizace podporující NIS2, ISO 27001, CSRD, DPP a LCA."
     }
   },
   "grcPlatform": {
