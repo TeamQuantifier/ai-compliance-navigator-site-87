@@ -237,11 +237,12 @@ const InfinityComplianceLoop = () => {
             </div>
 
             {/* Nodes */}
-            {NODES.map((node) => {
+            {NODES_CONFIG.map((node) => {
               const Icon = node.icon;
               const isActive = active === node.id;
               const leftPct = (node.x / 800) * 100;
               const topPct = (node.y / 440) * 100;
+              const nodeShortText = t(`infinityLoop.nodes.${node.id}.short`) as string;
               return (
                 <button
                   key={node.id}
@@ -262,7 +263,7 @@ const InfinityComplianceLoop = () => {
                     <Icon className={`h-6 w-6 md:h-7 md:w-7 ${node.color}`} />
                   </span>
                   <span className="absolute left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap text-[10px] md:text-xs font-bold text-white/80 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded-full border border-white/10">
-                    {node.id} · {node.short}
+                    {node.id} · {nodeShortText}
                   </span>
                 </button>
               );
@@ -270,10 +271,10 @@ const InfinityComplianceLoop = () => {
           </div>
 
           {/* Hint (only visible when nothing is open) */}
-          {!activeNode && (
+          {!activeNodeConfig && (
             <p className="text-center text-xs text-white/50 -mt-6 md:-mt-10 flex items-center justify-center gap-1.5">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Kliknij węzeł, aby zobaczyć szczegóły
+              {t('infinityLoop.hint')}
             </p>
           )}
         </div>
