@@ -5,131 +5,67 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 type AreaId = "01" | "02" | "03" | "04" | "05" | "06";
 
-type Node = {
+type NodeConfig = {
   id: AreaId;
-  label: string;
-  short: string;
   icon: React.ElementType;
-  // position in viewBox 800x320
   x: number;
   y: number;
-  description: string;
-  bullets: string[];
   href: string; // path under /{locale}
   color: string; // tailwind text color for icon
   ring: string; // tailwind ring color
 };
 
-const NODES: Node[] = [
+const NODES_CONFIG: NodeConfig[] = [
   {
     id: "01",
-    label: "AI Officer Leon",
-    short: "AI Officer Leon",
     icon: Bot,
     x: 80,
     y: 220,
-    description:
-      "Leon nie śpi. Codziennie analizuje status kontroli, sygnalizuje wygasające dowody, przygotowuje drafty polityk i przypomina właścicielom o terminach — zanim audytor zdąży wpisać nazwę firmy w wyszukiwarkę.",
-    bullets: [
-      "Monitoring 24/7 wszystkich frameworków",
-      "Proaktywne alerty zamiast reaktywnych pożarów",
-      "Asystent w czacie: zapytaj, deleguj, zatwierdź",
-      "Drafty polityk i procedur generowane na żądanie",
-    ],
     href: "/product/ai-compliance-officer",
     color: "text-purple-300",
     ring: "ring-purple-400/60",
   },
   {
     id: "02",
-    label: "Dane i integracje",
-    short: "Dane i integracje",
     icon: Database,
     x: 240,
     y: 90,
-    description:
-      "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
-    bullets: [
-      "Import z istniejących arkuszy bez zmiany ich struktury",
-      "Automatyczne mapowanie danych do wymagań frameworków",
-      "Brak żmudnego dopasowywania pól i kolumn",
-      "Jedno spójne źródło prawdy dla całego zespołu",
-    ],
     href: "/product/task-data-management",
     color: "text-emerald-300",
     ring: "ring-emerald-400/60",
   },
   {
     id: "03",
-    label: "Zarządzanie pracą",
-    short: "Zarządzanie pracą",
     icon: Workflow,
     x: 240,
     y: 350,
-    description:
-      "Procedury rozkładają się na zadania z jasno określonym timeline'em, ownerem i dowodami. AI przydziela, przypomina i zamyka — zespół realizuje wszystko z poziomu maila lub Slacka.",
-    bullets: [
-      "Procedury rozbijane na zadania z timeline'em i ownerem",
-      "Auto-przydziały i przypomnienia od Leona",
-      "Realizacja zadań prosto ze skrzynki mailowej",
-      "Pełna widoczność postępu na dashboardzie",
-    ],
     href: "/product/task-data-management",
     color: "text-amber-300",
     ring: "ring-amber-400/60",
   },
   {
     id: "04",
-    label: "Polityki, rejestry, dostawcy",
-    short: "Polityki, rejestry, dostawcy",
     icon: FileSignature,
     x: 560,
     y: 90,
-    description:
-      "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
-    bullets: [
-      "Policy Builder z szablonami dla NIS2, ISO, DORA, GDPR",
-      "Rejestry ryzyk, incydentów i aktywów w jednym miejscu",
-      "Ocena i monitoring dostawców w stałym cyklu",
-      "Wersjonowanie i podpis elektroniczny",
-    ],
     href: "/product/documents-management",
     color: "text-pink-300",
     ring: "ring-pink-400/60",
   },
   {
     id: "05",
-    label: "Audyt, jedno kliknięcie",
-    short: "Audyt, jedno kliknięcie",
     icon: ShieldCheck,
     x: 720,
     y: 220,
-    description:
-      "Każda decyzja, data, osoba i podpis elektroniczny są zarejestrowane. Jedno kliknięcie = raport dla organu nadzoru w PDF, Excel, XBRL lub XML. Management Body Accountability gotowy do okazania.",
-    bullets: [
-      "Pełny audit trail każdej zmiany i decyzji",
-      "Eksport w PDF / XLSX / XBRL / XML jednym przyciskiem",
-      "Management Body Accountability out-of-the-box",
-    ],
     href: "/product/analytics-dashboards",
     color: "text-blue-300",
     ring: "ring-blue-400/60",
   },
   {
     id: "06",
-    label: "Analityka, dashboardy i raporty",
-    short: "Analityka, dashboardy i raporty",
     icon: BarChart3,
     x: 560,
     y: 350,
-    description:
-      "Status zgodności w czasie rzeczywistym: dashboardy KPI, trendy ryzyk, mapy ciepła, postęp wdrożeń i gotowe raporty dla zarządu, audytora i regulatora — bez budowania pivotów w arkuszach.",
-    bullets: [
-      "Dashboardy KPI dla zarządu, zespołu i audytora",
-      "Trendy ryzyk, incydentów i zaległości w jednym widoku",
-      "Mapy ciepła ryzyk i postęp wdrożeń frameworków",
-      "Eksport raportów do PDF, XLSX i prezentacji jednym kliknięciem",
-    ],
     href: "/product/analytics-dashboards",
     color: "text-cyan-300",
     ring: "ring-cyan-400/60",
