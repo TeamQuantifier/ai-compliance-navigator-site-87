@@ -4581,6 +4581,147 @@
           "definition": "Soubor 93 referenčních bezpečnostních opatření rozdělených do 4 tematických oblastí (Organizační, Personální, Fyzická, Technologická), která si organizace mohou vybrat na základě výsledků hodnocení rizik."
         }
       ]
+    },
+    "industryWhy": {
+      "badge": "Pro váš obor",
+      "title": "Proč má ISO 27001 význam pro vaše podnikání",
+      "description": "Vyberte si svůj obor — podívejte se na konkrétní regulační požadavky, tržní tlaky a výhody, které vám certifikace v daném kontextu přinese.",
+      "mainDriver": "Hlavní hnací síla",
+      "yourChallenges": "Vaše výzvy",
+      "whatYouGain": "Co získáte s ISO 27001",
+      "concreteExample": "Konkrétní příklad",
+      "bookDemo": "Rezervovat demo pro váš obor",
+      "checkReadiness": "Zkontrolovat připravenost",
+      "industries": {
+        "finance": {
+          "label": "Finanční a pojišťovací sektor",
+          "short": "Finance",
+          "driver": "DORA + regulační požadavky + audity partnerů",
+          "challenges": [
+            "DORA vyžaduje zdokumentované řízení rizik ICT a provozní odolnost",
+            "Partnerské banky a pojišťovny auditují dodavatele pomocí vlastních bezpečnostních dotazníků",
+            "Regulátoři očekávají důkazy o shodě s pokyny pro kybernetickou bezpečnost"
+          ],
+          "benefits": [
+            "ISO 27001 jako důkazní základna pro DORA a GDPR — jeden ISMS, více regulací",
+            "Zkrácení procesu due diligence při spolupráci s bankami a pojišťovnami",
+            "Nižší pojistné na kybernetická rizika po předložení certifikátu"
+          ],
+          "example": "Platební instituce po certifikaci ISO 27001 zkrátila onboarding dodavatelů v bankách ze 4 na 6 týdnů — dříve byla blokována bezpečnostními částmi v dotaznících."
+        },
+        "tech": {
+          "label": "Technologie a IT služby",
+          "short": "IT a SaaS",
+          "driver": "Požadavek v RFP od enterprise klientů",
+          "challenges": [
+            "Enterprise klienti (banky, telekomunikace, maloobchod) vyžadují certifikaci již ve fázi RFI",
+            "Každý klient má vlastní bezpečnostní dotazník — bez ISMS se tým utopí v odpovědích",
+            "Prodejní cyklus se prodlužuje o týdny kvůli bezpečnostní sekci v due diligence"
+          ],
+          "benefits": [
+            "Zkrácení prodejního cyklu o 30–60 % — certifikát nahrazuje většinu otázek v dotaznících",
+            "Otevření dveří k enterprise kontraktům a veřejnému sektoru",
+            "Jednou zavedené ISO 27001 pokrývá ~70 % SOC 2 — dvě certifikace za cenu jedné"
+          ],
+          "example": "B2B softwarová společnost (50 lidí) uzavřela smlouvu s bankou 3 měsíce po certifikaci — dříve dvakrát neprošla bezpečnostní prověrkou."
+        },
+        "industry": {
+          "label": "Průmysl a výroba",
+          "short": "Průmysl",
+          "driver": "NIS2 + požadavky OEM + kontinuita výroby",
+          "challenges": [
+            "Výrobní sektor je podle NIS2 'důležitým subjektem'",
+            "Automobiloví OEM vyžadují TISAX, který se ze 70 % překrývá s ISO 27001",
+            "Ransomwarové útoky na výrobní linky znamenají milionové ztráty za každý den prostojů"
+          ],
+          "benefits": [
+            "Splnění požadavků NIS2 v rámci jedné implementace",
+            "Základ pro TISAX — rychlá cesta ke kontraktům s automobilovými OEM",
+            "Plán kontinuity činností (BCP) chrání výrobní linky před ochromením"
+          ],
+          "example": "Výrobce automobilových komponent se vyhnul ztrátě kontraktu s VW po zavedení ISO 27001 — hodnocení TISAX kleslo z červené na žlutou za 4 měsíce."
+        },
+        "tsl": {
+          "label": "Doprava, logistika a dodavatelský řetězec",
+          "short": "Logistika",
+          "driver": "NIS2 + požadavky maloobchodu a e-commerce",
+          "challenges": [
+            "Odvětví logistiky je v NIS2 'základním subjektem' — plné registrační a ohlašovací povinnosti",
+            "Maloobchod a e-commerce vyžadují od kurýrů a provozovatelů skladů bezpečnostní certifikáty",
+            "Kybernetické útoky na logistické operátory (Maersk, DHL) ukazují rozsah rizika"
+          ],
+          "benefits": [
+            "Shoda s NIS2 bez budování samostatného programu",
+            "Status preferovaného dodavatele pro obchodní řetězce a tržiště",
+            "Ochrana systémů WMS/TMS proti ransomwaru = ochrana kontinuity dodávek"
+          ],
+          "example": "Provozovatel skladu pro e-commerce získal ISO 27001 jako podmínku pro prodloužení smlouvy s tržištěm — zavedení trvalo 7 měsíců s Quantifierem."
+        },
+        "retail": {
+          "label": "Maloobchod a e-commerce",
+          "short": "Maloobchod",
+          "driver": "GDPR + PCI DSS + ochrana dat zákazníků",
+          "challenges": [
+            "Online obchody jsou cílem #1 pro útoky na údaje o kartách a identity zákazníků",
+            "GDPR: pokuty až do 20 milionů EUR nebo 4 % obratu za únik dat zákazníků",
+            "PCI DSS vyžaduje systematické řízení rizik — ISO 27001 to zajišťuje"
+          ],
+          "benefits": [
+            "Nižší riziko regulačních pokut — zdokumentovaný systém řízení bezpečnosti",
+            "Ochrana pověsti značky — úniky stojí zákazníky, nejen peníze",
+            "Shoda s PCI DSS a GDPR v jednom rámci"
+          ],
+          "example": "Maloobchodní řetězec po zavedení ISO 27001 uzavřel 12 z 18 připomínek z regulační kontroly — čímž se vyhnul správním pokutám."
+        },
+        "health": {
+          "label": "Zdravotnictví a vědy o živé přírodě",
+          "short": "Zdravotnictví",
+          "driver": "NIS2 + GDPR čl. 9 (citlivá data) + MDR",
+          "challenges": [
+            "Sektor zdravotnictví je v NIS2 'základním subjektem' — nejvyšší povinnosti",
+            "GDPR čl. 9: zdravotní údaje jsou zvláštní kategorií — úniky = pokuty a žaloby",
+            "Požadavky MDR a nemocnic jako klientů MedTech vyžadují zdokumentovaný ISMS"
+          ],
+          "benefits": [
+            "Splnění požadavků NIS2 pro poskytovatele zdravotní péče a dodavatele MedTech",
+            "Důkaz o shodě s GDPR čl. 9 pro údaje pacientů",
+            "Důvěra nemocnic, pojišťoven a národních fondů jako dodavatele"
+          ],
+          "example": "Síť klinik získala kontrakt s velkým zaměstnavatelem po zavedení ISO 27001 — bezpečnostní prověrka trvala 2 týdny místo 2 měsíců."
+        },
+        "energy": {
+          "label": "Energetika a kritická infrastruktura",
+          "short": "Energetika",
+          "driver": "NIS2 + regulátoři + útoky APT",
+          "challenges": [
+            "Energetika, plyn, voda, teplo — 'základní subjekty' s nejvyššími sankcemi v NIS2",
+            "Regulátoři a národní CSIRT vyžadují zdokumentované řízení rizik ICT",
+            "Útoky APT na operátory kritické infrastruktury rostou — SCADA a OT jsou cílem"
+          ],
+          "benefits": [
+            "Shoda s vnitrostátními zákony o kybernetické bezpečnosti a NIS2 pro provozovatele základních služeb",
+            "Rámec pro řízení rizik ICT a OT/SCADA",
+            "Nižší riziko správních sankcí"
+          ],
+          "example": "Provozovatel vytápění pro 80 000 obyvatel zavedl ISO 27001 jako základ pro shodu s předpisy — po první kontrole se vyhnul pokutám."
+        },
+        "services": {
+          "label": "Profesionální a poradenské služby",
+          "short": "B2B služby",
+          "driver": "Audity klientů + profesní tajemství + zpracovatel GDPR",
+          "challenges": [
+            "Enterprise klienti (standard Big4) auditují dodavatele — bez ISO 27001 vypadáváte",
+            "Advokátní kanceláře a poradenství zpracovávají profesní tajemství — únik = ztráta licence",
+            "GDPR: jako zpracovatel odpovídáte za bezpečnost svěřených dat"
+          ],
+          "benefits": [
+            "Status preferovaného dodavatele v enterprise a veřejných tendrech",
+            "Splnění požadavků doložek DPA (GDPR čl. 28) bez vyjednávání s každým klientem",
+            "Vyšší ocenění služeb — bezpečnost je prodejní argument, ne náklad"
+          ],
+          "example": "Advokátní kancelář (40 právníků) se po certifikaci ISO 27001 dostala do panelu dodavatelů banky — dříve dvakrát propadla v bezpečnostním dotazníku."
+        }
+      }
     }
   },
   "iso9001Page": {
