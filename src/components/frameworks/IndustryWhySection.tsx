@@ -36,28 +36,32 @@ const INDUSTRIES_CONFIG: IndustryConfig[] = [
 ];
 
 export default function IndustryWhySection({ currentLocale }: { currentLocale: string }) {
+  const { t } = useLanguage();
   const [active, setActive] = useState<string>("tech");
-  const current = INDUSTRIES.find((i) => i.id === active) ?? INDUSTRIES[0];
-  const Icon = current.icon;
+  
+  const currentConfig = INDUSTRIES_CONFIG.find((i) => i.id === active) ?? INDUSTRIES_CONFIG[0];
+  const Icon = currentConfig.icon;
+  
+  const translatedCurrent = t(`iso27001Page.industryWhy.industries.${currentConfig.id}`, { returnObjects: true }) as any;
 
   return (
     <section className="mb-16">
       <div className="text-center mb-8">
-        <Badge className="bg-brand-purple text-white mb-4">Dla Twojej branży</Badge>
+        <Badge className="bg-brand-purple text-white mb-4">{t("iso27001Page.industryWhy.badge")}</Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-          Dlaczego ISO 27001 ma znaczenie dla Twojego biznesu
+          {t("iso27001Page.industryWhy.title")}
         </h2>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-          Wybierz swoją branżę — zobacz konkretne wymagania regulacyjne, presje rynkowe i korzyści,
-          jakie da Ci certyfikacja w Twoim kontekście.
+          {t("iso27001Page.industryWhy.description")}
         </p>
       </div>
 
       {/* Industry pills */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
-        {INDUSTRIES.map((ind) => {
+        {INDUSTRIES_CONFIG.map((ind) => {
           const IndIcon = ind.icon;
           const isActive = ind.id === active;
+          const translatedInd = t(`iso27001Page.industryWhy.industries.${ind.id}`, { returnObjects: true }) as any;
           return (
             <button
               key={ind.id}
@@ -70,8 +74,8 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
               aria-pressed={isActive}
             >
               <IndIcon className="h-4 w-4" />
-              <span className="hidden sm:inline">{ind.label}</span>
-              <span className="sm:hidden">{ind.short}</span>
+              <span className="hidden sm:inline">{translatedInd.label}</span>
+              <span className="sm:hidden">{translatedInd.short}</span>
             </button>
           );
         })}
