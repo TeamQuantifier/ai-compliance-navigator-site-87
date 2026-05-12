@@ -205,13 +205,15 @@ const MainRoutes = () => (
         <Route path="/en/partners" element={<Partners />} />
         <Route path="/pl/partnerzy" element={<Partners />} />
         <Route path="/cs/partneři" element={<Partners />} />
+        <Route path="/pl/partners" element={<Navigate to="/pl/partnerzy" replace />} />
+        <Route path="/cs/partners" element={<Navigate to="/cs/partneři" replace />} />
         <Route path="/cs/partneri" element={<Navigate to="/cs/partneři" replace />} />
-        <Route path="/:locale/partners" element={<Partners />} />
         <Route path="/en/partners/gs1-polska" element={<Gs1Polska />} />
         <Route path="/pl/partnerzy/gs1-polska" element={<Gs1Polska />} />
         <Route path="/cs/partneři/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/pl/partners/gs1-polska" element={<Navigate to="/pl/partnerzy/gs1-polska" replace />} />
+        <Route path="/cs/partners/gs1-polska" element={<Navigate to="/cs/partneři/gs1-polska" replace />} />
         <Route path="/cs/partneri/gs1-polska" element={<Navigate to="/cs/partneři/gs1-polska" replace />} />
-        <Route path="/:locale/partners/gs1-polska" element={<Gs1Polska />} />
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />
