@@ -165,24 +165,18 @@ const Iso27001 = () => {
                     className="border-slate-300 text-brand-blue-dark hover:bg-slate-50 hover:text-brand-blue-dark font-semibold"
                   >
                     <Link to={`/${currentLocale}/cybersecurity-check`}>
-                      Sprawdź gotowość ISMS
+                      {t("iso27001Page.hero.checkReadiness")}
                     </Link>
                   </Button>
                 </div>
 
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 text-brand-blue" />
-                    <span>93 kontrole Aneksu A</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 text-brand-blue" />
-                    <span>SoA automatycznie</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 text-brand-blue" />
-                    <span>~70% SOC 2 w pakiecie</span>
-                  </div>
+                  {getArrayTranslation("iso27001Page.hero.features").map((feature, i) => (
+                    <div key={i} className="flex items-center gap-1.5">
+                      <CheckCircle className="h-4 w-4 text-brand-blue" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -207,7 +201,7 @@ const Iso27001 = () => {
               <div className="text-center max-w-3xl mx-auto mb-10">
                 <Badge className="bg-brand-blue text-white mb-4 font-medium">
                   <FileText className="h-4 w-4 mr-1.5" />
-                  Wprowadzenie
+                  {t("iso27001Page.understanding.badge")}
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
                   {t("iso27001Page.understanding.title")}
@@ -764,13 +758,8 @@ const Iso27001 = () => {
 
         {/* Key Definitions */}
         <DefinitionsBlock
-          title={t("iso27001Page.definitions.title", { defaultValue: "Key ISO 27001 Terms & Definitions" })}
-          definitions={[
-            { term: "ISMS (Information Security Management System)", definition: "A systematic approach to managing sensitive company information so that it remains secure. It includes people, processes, and IT/technology systems by applying a risk management process." },
-            { term: "Statement of Applicability (SoA)", definition: "A document that lists all controls from ISO 27001 Annex A (93 controls in the 2022 version) and states which are applicable and which are not, with justification for exclusions." },
-            { term: "Risk Treatment Plan", definition: "A structured plan that outlines how identified information security risks will be addressed — whether through mitigation, transfer, acceptance, or avoidance — including timelines, responsible parties, and expected outcomes." },
-            { term: "Annex A Controls", definition: "A set of 93 reference controls organized into 4 themes (Organizational, People, Physical, Technological) that organizations can select based on their risk assessment results." }
-          ]}
+          title={t("iso27001Page.definitions.title")}
+          definitions={getObjectArrayTranslation<{term: string; definition: string}>("iso27001Page.definitions.items")}
           className="mb-20"
         />
 
