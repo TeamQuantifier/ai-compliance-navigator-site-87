@@ -1,112 +1,114 @@
-## Cel
+# Plan: Audyt i pełna lokalizacja podstrony /partners
 
-Przebudować `/pl/product` (`src/pages/product/Features.tsx`) na nowoczesną stronę AI-Native GRC, w której **sercem narracji jest interaktywna pętla nieskończoności (∞)** symbolizująca Continuous Compliance. 5 obszarów Quantifier rozłożonych jest na dwóch pętlach ósemki — kliknięcie w dowolny węzeł rozwija szczegóły obszaru bez przeładowania strony.
+## 1. Audyt obecnego stanu (PL)
 
-## Nowa struktura strony
+Strona `src/pages/Partners.tsx` ma poprawną stylistykę, ale **większość treści hero jest zaszyta w kodzie po polsku** (nie używa `t()`). Skutki:
+- wersje EN i CS pokazują polski tekst w hero, w panelu „Dlaczego warto", w siatce typów partnerów, w nagłówku „Wybrani partnerzy" oraz w CTA „Porozmawiajmy o partnerstwie",
+- sekcja „Wybrani partnerzy" (logo wall) jest renderowana tylko dla `pl` (`currentLocale === 'pl'`) i ma opisy hardcoded po polsku,
+- istniejące klucze `partners.network`, `partners.map`, `partners.benefits` w `pl/en` to stare, nieużywane teksty (zostaną pominięte / wyczyszczone w zakresie tej strony — nie usuwam ich, bo mogą być w innych miejscach),
+- klucz `seo.partners` istnieje w PL i EN, brakuje go w CS,
+- brak JSON-LD `Organization` / `CollectionPage` z listą partnerów.
 
-```text
-1. HERO — „Compliance, który nigdy nie śpi" (Leon + 3 KPI)
-2. INFINITY LOOP ∞ — interaktywna pętla nieskończoności (clue strony)
-3. ALWAYS-ON BAR — animowane liczniki Continuous Compliance
-4. 5 OBSZARÓW (rozbudowany ProductFiveAreas — sekcja-deep-dive)
-5. TRADITIONAL vs QUANTIFIER — porównanie 2-kolumnowe
-6. FRAMEWORK ENGINE — grid frameworków w jednym silniku
-7. ROLES — Zarząd / Manager / Contributor / Auditor
-8. CTA — „Zobacz Leona w akcji"
+### Drobne korekty językowe PL (do wprowadzenia w treści hero)
+- Ujednolicenie zapisu: **„NIS2"** (bez spacji) zamiast „NIS 2" — zgodnie z core memory projektu.
+- „leading-edge rozwiązania AI compliance" → „nowoczesne rozwiązania AI compliance" (usunięcie anglicyzmu — dotyczy nieużywanych kluczy, pominę).
+- Ujednolicenie: „śladu węglowego", „łańcucha dostaw (Scope 3)" — OK.
+- „RODO" zostaje (PL); w EN → „GDPR"; w CS → „GDPR".
+- „sygnaliści" (PL) → „whistleblowing" (EN) → „whistleblowing / oznamovatelé" (CS).
+- Drobne: „NGO i uczelnie" — OK; „IT i cybersec" → w EN „IT & cybersec", w CS „IT a kyberbezpečnost".
+
+## 2. Refaktor `Partners.tsx` — pełna lokalizacja
+
+Wszystkie teksty zaszyte w JSX zamieniam na `t('partnersPage.*')` w nowej, czystej przestrzeni kluczy `partnersPage` (żeby nie kolidować ze starym `partners.*`):
+
+```
+partnersPage.hero.eyebrow            // „Sieć partnerska Quantifier"
+partnersPage.hero.title              // 2-liniowy nagłówek z <br/>
+partnersPage.hero.lead               // pierwszy akapit
+partnersPage.hero.body               // drugi akapit z <strong>
+partnersPage.hero.factsTitle         // „Dlaczego warto być w sieci"
+partnersPage.hero.bullets[]          // 4 punkty
+partnersPage.hero.stats.partners     // „Partnerów" / „Partners" / „Partnerů"
+partnersPage.hero.stats.areas        // „Obszarów" / „Areas" / „Oblastí"
+partnersPage.hero.stats.reach        // „Zasięg" / „Reach" / „Dosah"
+partnersPage.hero.ctaTalk            // „Porozmawiajmy o partnerstwie"
+partnersPage.areas.title             // „Z jakich obszarów są nasi partnerzy"
+partnersPage.areas.items[]           // 5 obiektów {name, desc}
+partnersPage.selected.title          // „Wybrani partnerzy"
+partnersPage.selected.subtitle       // opis pod nagłówkiem
+partnersPage.selected.list[]         // 8 obiektów {name, description}
 ```
 
-## Sekcja 2 — Infinity Loop (NOWY, kluczowy element)
+Zmiany dodatkowe:
+- Sekcja „Wybrani partnerzy" przestaje być warunkowana `currentLocale === 'pl'` — wyświetlamy ją we wszystkich językach z przetłumaczonymi opisami (nazwy własne partnerów zostają w oryginale; opisy lokalizujemy).
+- Przycisk CTA hero używa `t('partnersPage.hero.ctaTalk')`.
+- Akapit `body` renderuję przez tablicę fragmentów (4 kategorie pogrubione) lub wstawiam JSX z `<Trans i18nKey>` — wybiorę prostszą wersję: trzymam kategorie jako osobne klucze i składam zdanie w komponencie, żeby tłumacze mogli przetłumaczyć każdą kategorię niezależnie.
 
-### Koncepcja wizualna
+## 3. Tłumaczenia EN i CS
 
-Pozioma pętla nieskończoności (∞) narysowana w SVG, po której krąży świecąca kropka (data point) — symbol danych przepływających non-stop przez Quantifier. Na pętli umieszczone są **5 klikalnych węzłów-przycisków** (po jednym na każdy obszar), rozłożonych w punktach przecięć i ekstremach pętli.
+W `public/locales/{en,cs,pl}/translation.json` dodaję blok `partnersPage` (PL = obecna treść po korektach, EN i CS = wierne tłumaczenia z zachowaniem stylu).
 
-```text
-                  ┌─ (02) Integracje ─┐         ┌─ (04) Polityki ─┐
-                 │                     │         │                  │
-   (01) Leon ───┤        ✕ ←── (03) Project Mgmt ──→ ✕            ├─── (05) Audyt
-                 │                     │         │                  │
-                  └────────────────────┘         └──────────────────┘
-                            ↑                              ↑
-                        lewa pętla                   prawa pętla
-                        (Detect/Connect)           (Decide/Act/Prove)
+Kluczowe odpowiedniki terminologiczne (zgodnie z memory):
+- PL: „NIS2, ISO 27001, SOC 2, ESG, CSRD, DORA, RODO, sygnaliści"
+- EN: „NIS2, ISO 27001, SOC 2, ESG, CSRD, DORA, GDPR, whistleblowing"
+- CS: „NIS2, ISO 27001, SOC 2, ESG, CSRD, DORA, GDPR, whistleblowing"
+
+Tytuł hero — odpowiedniki:
+- EN: „50+ partners helping us roll out compliance and ESG across European companies."
+- CS: „50+ partnerů, se kterými zavádíme compliance a ESG v evropských firmách."
+
+## 4. SEO i schema
+
+### Meta (klucze `seo.partners`)
+- PL: tytuł `Partnerzy Quantifier.ai | Sieć 50+ partnerów GRC i ESG` (≤60), opis `Sieć 50+ partnerów Quantifier.ai: audytorzy, kancelarie, konsulting, IT/cybersec, NGO i uczelnie. Wspólne wdrożenia NIS2, ISO 27001, ESG, CSRD, DPP.` (≤160).
+- EN: `Quantifier.ai Partners | Network of 50+ GRC & ESG Experts` / `Quantifier.ai partner network: auditors, law firms, consultancies, IT & cybersecurity integrators, NGOs and universities. Joint NIS2, ISO 27001, ESG and DPP rollouts.`
+- CS: `Partneři Quantifier.ai | Síť 50+ expertů GRC a ESG` / `Partnerská síť Quantifier.ai: auditoři, advokátní kanceláře, konzultanti, IT a kyberbezpečnost, NNO a univerzity. Společné projekty NIS2, ISO 27001, ESG a DPP.`
+
+Brakujący `seo.partners` w `cs/translation.json` zostaje dodany.
+
+### JSON-LD
+Dodaję w `Partners.tsx` (przez `<Helmet>`) **dodatkowy** schemat `CollectionPage` z `mainEntity: ItemList` zawierający wybranych partnerów (8 organizacji). Każdy element to `Organization` z polami `name` i ewentualnym `url` (dla tych, które mają oficjalną stronę). To uzupełnia istniejący `BreadcrumbList` z `PageTemplate` — schematy są addytywne, zgodnie z memory.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "<seo.partners.title>",
+  "description": "<seo.partners.description>",
+  "url": "https://quantifier.ai/<locale>/partners/",
+  "inLanguage": "<pl-PL|en|cs-CZ>",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [ /* 8 × Organization */ ]
+  }
+}
 ```
 
-- **Lewa pętla** = „przyjmowanie świata": Integracje (02) + Leon obserwujący (01).
-- **Środek (przecięcie ∞)** = Project Management (03) — orkiestracja.
-- **Prawa pętla** = „odpowiedź światu": Polityki/dokumenty (04) + Audyt (05).
-- **Animacja**: kropka porusza się po ścieżce SVG (`<animateMotion>` lub framer-motion `motionPath`) w nieskończonej pętli ~12s, z pulsującą poświatą.
-- **Hasło nad pętlą**: „W tradycyjnym GRC compliance to projekt. W Quantifier — to stan."
-- **Hasło pod pętlą**: „Dane wchodzą. Leon decyduje. Zespół działa. Audytor dostaje pakiet. Pętla zamyka się sama — i zaczyna od nowa."
+### Hreflang i kanoniczne
+`PageTemplate` już generuje:
+- `<link rel="canonical">` z trailing slash dla aktualnej wersji,
+- `hreflang` dla `en`, `pl-PL`, `cs-CZ` + `x-default`.
 
-### Interakcja
+Sprawdzam, że ścieżka `/partners/` jest jednakowa we wszystkich locale (jest — używamy tej samej trasy), więc hreflang będzie symetryczny automatycznie. Dodatkowo upewniam się, że trasa `/partners` w `App.tsx` jest zarejestrowana dla wszystkich trzech języków (jest — to wspólna trasa pod prefiksem locale).
 
-- Każdy z 5 węzłów to przycisk z numerem + ikoną + krótką etykietą („01 · Leon", „02 · Integracje" itd.).
-- Hover → węzeł powiększa się, pokazuje tooltip z 1-zdaniowym opisem.
-- Klik → pod pętlą rozwija się **panel detali** (accordion / animowany drawer wewnątrz sekcji) z:
-  - pełną nazwą obszaru,
-  - 2–3 zdaniowym opisem,
-  - 3 bulletami z konkretami,
-  - mini-mockupem (te same komponenty co w sekcji 4: `LeonMonitorMockup`, `DataIntegrationMockup`, `TaskAutomationMockup`, `PolicyBuilderMockup`, `AuditExportMockup` — reuse, nie duplikujemy),
-  - linkiem „Zobacz pełny opis ↓" przewijającym do sekcji 4 (deep-dive) lub do podstrony `/product/*`.
-- Tylko jeden panel otwarty naraz; ponowny klik w aktywny węzeł zamyka panel.
-- Domyślnie żaden węzeł nie jest aktywny (lub opcjonalnie: pierwszy „01 · Leon" auto-expanded przy wejściu).
+W edge function `supabase/functions/sitemap/index.ts` weryfikuję, że `/partners/` jest na liście dla każdego locale (jeśli nie — dodam wpis, żeby URL był indeksowany).
 
-### Stany / accessibility
+## 5. QA / akceptacja
 
-- Każdy węzeł = `<button>` z `aria-expanded`, `aria-controls`.
-- Klawiatura: Tab między węzłami, Enter/Space otwiera panel.
-- Mobile: pętla skaluje się; jeżeli za mała — fallback na pionową listę 5 kart z tą samą interaktywnością (rozwijanie w miejscu).
-- Reduced-motion: kropka przestaje krążyć, ale pętla nadal jest klikalna.
+- Wizualna weryfikacja `/pl/partners`, `/en/partners`, `/cs/partners` w preview (1191 px) — układ identyczny, tylko język się zmienia.
+- Sprawdzenie w devtools: `<title>`, `<meta description>`, `<link rel="canonical">`, 4× `hreflang` (pl-PL, en, cs-CZ, x-default), 2× JSON-LD (Breadcrumb + CollectionPage).
+- Brak ostrzeżeń w konsoli; brak błędów typu `t(...).map is not a function` (wszystkie tablice z `Array.isArray` guard zgodnie z core memory).
 
-### Dlaczego to działa
+## Sekcja techniczna
 
-- Symbol ∞ = continuous, nigdy się nie kończy — wizualne uzasadnienie hasła „Continuous Compliance".
-- Klikalne węzły zamiast statycznego diagramu = strona „żyje" i zachęca do eksploracji.
-- Sekcja 4 (deep-dive) zostaje dla tych, którzy chcą przewinąć i przeczytać wszystko po kolei — pętla to **interaktywna mapa**, sekcja 4 to **długa lektura**.
+**Edytowane pliki**
+- `src/pages/Partners.tsx` — refaktor na `t()`, dodanie `<Helmet>` z JSON-LD `CollectionPage`, usunięcie warunku `currentLocale === 'pl'` przy logo wall.
+- `public/locales/pl/translation.json` — nowy blok `partnersPage`, korekta tytułu/opisu w `seo.partners`, ujednolicenie „NIS2".
+- `public/locales/en/translation.json` — nowy blok `partnersPage`, aktualizacja `seo.partners`.
+- `public/locales/cs/translation.json` — nowy blok `partnersPage`, dodanie `seo.partners` (obecnie brak).
+- `supabase/functions/sitemap/index.ts` — weryfikacja/uzupełnienie `/partners/` dla wszystkich locale (tylko jeśli brakuje).
 
-## Pozostałe sekcje (skrót)
-
-- **Hero**: dark, Leon po prawej (reuse stylu pierścieni z `Iso27001.tsx`), 3 KPI pill, 2 CTA.
-- **Always-on bar**: 4 liczniki count-up + zdanie „Każda liczba aktualizuje się sama. To jest Continuous Compliance."
-- **5 obszarów (deep-dive)**: zostaje obecny `ProductFiveAreas`, dodajemy `id="area-01"`...`id="area-05"` na sekcjach (do scroll-from-loop), micro-stat pill, „Continuous"-badge na mockupie, link do podstrony `/product/*` pod każdym obszarem.
-- **Traditional vs Quantifier**: 2-kolumnowy split (lewa szara, prawa brand-glow).
-- **Framework engine**: grid kafli (NIS2, ISO 27001, DORA, GDPR, SOC 2, ISO 27701, KSC, ESG/CSRD) z linkami.
-- **Roles**: 4 karty z linkami do `/roles/*`.
-- **CTA**: ciemny blok z Leonem + „Umów demo z Leonem" + drugi CTA do `/cybersecurity-check`.
-
-## Co usuwamy
-
-- Stary blok `<Tabs>` (AI Officer / Analytics / Task Hub / Risk) z `Features.tsx` — duplikuje treść z pętli i sekcji 4.
-- Pusty `<div className="max-w-4xl mx-auto mb-12"></div>`.
-- `useState`/`handleTabChange` (zbędne po usunięciu Tabs).
-
-## Pliki
-
-- **edit** `src/pages/product/Features.tsx` — nowa kompozycja sekcji, usunięcie Tabs, zachowanie `<Helmet>` z JSON-LD.
-- **edit** `src/components/product/ProductFiveAreas.tsx` — `id` na sekcjach, micro-stat, link do podstrony.
-- **new** `src/components/product/InfinityComplianceLoop.tsx` — SVG ∞ + 5 klikalnych węzłów + animowana kropka + panel detali (state lokalny `useState<activeArea>`).
-- **new** `src/components/product/AlwaysOnBar.tsx` — count-up + `useInView`.
-- **new** `src/components/product/TraditionalVsQuantifier.tsx`.
-- **new** `src/components/product/FrameworkEngineGrid.tsx`.
-- **new** `src/components/product/RolesValueCards.tsx`.
-- **new** `src/components/product/ProductHeroLeon.tsx`.
-
-## Detale techniczne
-
-- Pętla ∞: SVG `<path d="M…"/>` (lemniskata Bernoulliego lub uproszczona ósemka), gradient stroke (brand-mint → brand-blue → brand-purple), kropka jako `<circle>` z `<animateMotion>` na tym samym path. Alternatywnie framer-motion `<motion.circle>` + `offsetPath` (czystszy reduced-motion).
-- Węzły = absolutnie pozycjonowane `<button>` nad SVG (ułatwia accessibility i hover).
-- Panel detali: `framer-motion` `AnimatePresence` + `motion.div` z `height: auto`.
-- Tokeny tylko z `index.css` / `tailwind.config.ts` (brand-mint, brand-blue, brand-purple, slate-950).
-- `<Link>` z `react-router-dom` + `currentLocale`, trailing slash.
-- i18n: PL hardcoded w komponentach (jak obecny `ProductFiveAreas`). Jeśli chcesz EN/CS — osobny krok.
-
-## Czego NIE ruszamy
-
-- `ProductOverview.tsx` (oddzielna strona /product/overview).
-- Mockupy w `ProductFiveAreas` — tylko reuse w panelu pętli.
-- Routing, SEO globalne, tłumaczenia core.
-
-## Pytanie otwarte
-
-Czy w pętli ∞ chcesz, żeby pierwszy węzeł („01 · Leon") był **auto-otwarty** przy wejściu na stronę (od razu widać przykład interakcji), czy pętla startuje **„czysta"** (użytkownik sam klika)? Domyślnie idę z auto-otwartym „01 · Leon" — to mocniej buduje rolę Leona jako bohatera narracji.
+**Bez zmian**
+- `src/components/PageTemplate.tsx` — hreflang/canonical działają bez zmian.
+- Trasy w `App.tsx` — bez zmian.
+- Stare klucze `partners.network/map/benefits` — zostawiam (mogą być używane w innych miejscach; sprawdzę przed ewentualnym czyszczeniem).
