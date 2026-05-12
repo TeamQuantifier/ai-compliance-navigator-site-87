@@ -2612,7 +2612,7 @@ async function fetchPublishedStories(locale: string) {
 // Generate JSON-LD schemas
 function generateSchemas(locale: string, page: string, pageData: PageData, collectionItems?: Array<{url: string; name: string; description?: string}>): string {
   const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
-  const urlPath = pageUrlMap[page] || page;
+  const urlPath = getLocalizedUrlPath(page, locale);
   const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   const schemas: object[] = [];
@@ -2825,13 +2825,14 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
 // Generate HTML content
 async function generateHtml(locale: string, page: string, pageData: PageData): Promise<string> {
   const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
-  const urlPath = pageUrlMap[page] || page;
+  const urlPath = getLocalizedUrlPath(page, locale);
   const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   // Generate all locale URLs for hreflang with regional codes
   const locales = ['en', 'pl', 'cs'];
   const hreflangTags = locales.map(l => {
-    const url = page === 'index' ? ensureTrailingSlash(`${BASE_URL}/${l}`) : ensureTrailingSlash(`${BASE_URL}/${l}/${urlPath}`);
+    const localizedUrlPath = getLocalizedUrlPath(page, l);
+    const url = page === 'index' ? ensureTrailingSlash(`${BASE_URL}/${l}`) : ensureTrailingSlash(`${BASE_URL}/${l}/${localizedUrlPath}`);
     const hreflang = localeHreflangMap[l] || l;
     return `<link rel="alternate" hreflang="${hreflang}" href="${url}">`;
   }).join('\n  ');
