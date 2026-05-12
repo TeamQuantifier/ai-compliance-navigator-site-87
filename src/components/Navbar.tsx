@@ -14,6 +14,7 @@ import { MobileMenu } from './MobileMenu';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitch } from './LanguageSwitch';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getLocalizedPathWithLocale, PARTNERS_PATHS } from '@/lib/localized-routes';
 
 
 export const Navbar = () => {
@@ -119,7 +120,7 @@ export const Navbar = () => {
     },
     {
       title: t('menu.partners'),
-      href: '/partners',
+      href: PARTNERS_PATHS[currentLocale],
     },
     {
       title: t('menu.knowledge'),
@@ -213,7 +214,7 @@ export const Navbar = () => {
             {menuItems.map((item) => (
               <NavigationMenuItem key={item.title}>
                 <Link 
-                  to={`/${currentLocale}${item.href}`}
+                  to={getLocalizedPathWithLocale(item.href, currentLocale)}
                   className={navigationMenuTriggerStyle() + " h-9 px-3"}
                   onClick={handleLinkClick}
                 >
@@ -223,7 +224,7 @@ export const Navbar = () => {
             ))}
             <NavigationMenuItem>
               <Link
-                to={`/${currentLocale}${cybersecHref}`}
+                to={getLocalizedPathWithLocale(cybersecHref, currentLocale)}
                 className="inline-flex items-center px-3 py-2 h-9 text-sm font-semibold bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
                 onClick={handleLinkClick}
               >
