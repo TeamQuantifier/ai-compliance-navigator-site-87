@@ -201,7 +201,7 @@ const Iso27001 = () => {
               <div className="text-center max-w-3xl mx-auto mb-10">
                 <Badge className="bg-brand-blue text-white mb-4 font-medium">
                   <FileText className="h-4 w-4 mr-1.5" />
-                  Wprowadzenie
+                  {t("iso27001Page.understanding.badge")}
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
                   {t("iso27001Page.understanding.title")}
