@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getLocalizedPathWithLocale } from '@/lib/localized-routes';
 
 interface SubSubMenuItem {
   title: string;
@@ -83,7 +84,7 @@ export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: Mob
                                         {subItem.items.map((subSubItem) => (
                                           <Link
                                             key={subSubItem.title}
-                                            to={`/${currentLocale}${subSubItem.href}`}
+                                            to={getLocalizedPathWithLocale(subSubItem.href, currentLocale)}
                                             className="py-2 text-sm text-muted-foreground hover:text-foreground"
                                             onClick={handleLinkClick}
                                           >
@@ -96,7 +97,7 @@ export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: Mob
                                 </Accordion>
                               ) : (
                                 <Link
-                                  to={`/${currentLocale}${subItem.href}`}
+                                  to={getLocalizedPathWithLocale(subItem.href, currentLocale)}
                                   className="py-2 text-sm font-medium hover:text-primary"
                                   onClick={handleLinkClick}
                                 >
@@ -111,7 +112,7 @@ export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: Mob
                   </Accordion>
                 ) : (
                   <Link
-                    to={`/${currentLocale}${item.href}`}
+                    to={getLocalizedPathWithLocale(item.href, currentLocale)}
                     className="block py-2 text-base font-medium hover:text-primary"
                     onClick={handleLinkClick}
                   >
@@ -124,7 +125,7 @@ export const MobileMenu = ({ items, cybersecHref = '/cybersecurity-check' }: Mob
             {/* Cybersec-Check CTA in mobile menu */}
             <div className="px-4 pt-2">
               <Link
-                to={`/${currentLocale}${cybersecHref}`}
+                to={getLocalizedPathWithLocale(cybersecHref, currentLocale)}
                 className="flex items-center justify-center w-full px-3 py-2 text-sm font-semibold bg-[#6d38a8] text-white rounded-md hover:bg-[#5a2e8e] transition-colors"
                 onClick={handleLinkClick}
               >
