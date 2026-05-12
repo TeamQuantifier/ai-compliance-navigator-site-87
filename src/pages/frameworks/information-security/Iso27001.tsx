@@ -758,13 +758,8 @@ const Iso27001 = () => {
 
         {/* Key Definitions */}
         <DefinitionsBlock
-          title={t("iso27001Page.definitions.title", { defaultValue: "Key ISO 27001 Terms & Definitions" })}
-          definitions={[
-            { term: "ISMS (Information Security Management System)", definition: "A systematic approach to managing sensitive company information so that it remains secure. It includes people, processes, and IT/technology systems by applying a risk management process." },
-            { term: "Statement of Applicability (SoA)", definition: "A document that lists all controls from ISO 27001 Annex A (93 controls in the 2022 version) and states which are applicable and which are not, with justification for exclusions." },
-            { term: "Risk Treatment Plan", definition: "A structured plan that outlines how identified information security risks will be addressed — whether through mitigation, transfer, acceptance, or avoidance — including timelines, responsible parties, and expected outcomes." },
-            { term: "Annex A Controls", definition: "A set of 93 reference controls organized into 4 themes (Organizational, People, Physical, Technological) that organizations can select based on their risk assessment results." }
-          ]}
+          title={t("iso27001Page.definitions.title")}
+          definitions={getObjectArrayTranslation<{term: string; definition: string}>("iso27001Page.definitions.items")}
           className="mb-20"
         />
 
