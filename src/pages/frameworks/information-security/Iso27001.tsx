@@ -165,24 +165,18 @@ const Iso27001 = () => {
                     className="border-slate-300 text-brand-blue-dark hover:bg-slate-50 hover:text-brand-blue-dark font-semibold"
                   >
                     <Link to={`/${currentLocale}/cybersecurity-check`}>
-                      Sprawdź gotowość ISMS
+                      {t("iso27001Page.hero.checkReadiness")}
                     </Link>
                   </Button>
                 </div>
 
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 text-brand-blue" />
-                    <span>93 kontrole Aneksu A</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 text-brand-blue" />
-                    <span>SoA automatycznie</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 text-brand-blue" />
-                    <span>~70% SOC 2 w pakiecie</span>
-                  </div>
+                  {getArrayTranslation("iso27001Page.hero.features").map((feature, i) => (
+                    <div key={i} className="flex items-center gap-1.5">
+                      <CheckCircle className="h-4 w-4 text-brand-blue" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
