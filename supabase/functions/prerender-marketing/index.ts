@@ -77,6 +77,14 @@ const pageUrlMap: Record<string, string> = {
   'compare-sprinto': 'compare/sprinto-alternative',
 };
 
+const getLocalizedUrlPath = (page: string, locale: string): string => {
+  if (page === 'partners') {
+    return locale === 'pl' ? 'partnerzy' : locale === 'cs' ? 'partneři' : 'partners';
+  }
+
+  return pageUrlMap[page] || page;
+};
+
 interface FAQ {
   question: string;
   answer: string;
