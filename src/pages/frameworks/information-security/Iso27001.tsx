@@ -30,6 +30,48 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/seo/FAQSection";
+import IndustryWhySection from "@/components/frameworks/IndustryWhySection";
+import IsmsSchema from "@/components/frameworks/IsmsSchema";
+import HomePlatformMockup from "@/components/mockups/HomePlatformMockup";
+import leonOfficer from "@/assets/leon-compliance-officer.png";
+import {
+  Iso27001GapAnalysisMockup,
+  Iso27001RiskHeatmapMockup,
+  Iso27001PoliciesMockup,
+  Iso27001ControlsMockup,
+  Iso27001CertificationMockup,
+  Iso27001MaintenanceMockup,
+} from "@/components/mockups/Iso27001StepMockups";
+import { useInView } from "@/hooks/useInView";
+
+const StepMockup = ({ children, label }: { children: React.ReactNode; label: string }) => (
+  <div className="rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-xl">
+    <div className="flex items-center justify-between mb-2 px-1">
+      <div className="flex items-center gap-1.5">
+        <span className="h-1.5 w-8 rounded-full bg-slate-600" />
+      </div>
+      <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wide">{label}</span>
+    </div>
+    <div className="overflow-hidden rounded-lg max-h-[360px] border border-slate-800">
+      {children}
+    </div>
+  </div>
+);
+
+const AnimatedStep = ({ children, index }: { children: React.ReactNode; index: number }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className={`relative flex flex-col md:flex-row md:items-center transition-all duration-700 ease-out will-change-transform ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+      style={{ transitionDelay: inView ? `${Math.min(index * 80, 400)}ms` : "0ms" }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Iso27001 = () => {
   const { t, currentLocale } = useLanguage();
@@ -75,232 +117,150 @@ const Iso27001 = () => {
         <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
       </Helmet>
       <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
+        {/* Hero Section — modern, light, with ISMS schema */}
         <section className="mb-16">
-          <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue to-brand-purple rounded-2xl p-8 md:p-12 text-white">
-            <div className="flex flex-col lg:flex-row items-center gap-10">
-              <div className="lg:w-1/2">
-                <Badge className="bg-white/20 text-white border-white/30 mb-4">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 md:p-12">
+            {/* Subtle dot grid */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-[0.35]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgba(56,127,239,0.18) 1px, transparent 0)",
+                backgroundSize: "28px 28px",
+                maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+              }}
+            />
+            {/* Soft accent shapes */}
+            <div aria-hidden="true" className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-brand-blue/5" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-brand-purple/5" />
+
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              {/* LEFT: copy */}
+              <div className="lg:col-span-6">
+                <Badge className="bg-brand-blue/10 text-brand-blue-dark border border-brand-blue/20 mb-5 font-medium">
                   {t("iso27001Page.hero.badge")}
                 </Badge>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-[1.1] tracking-tight text-brand-blue-dark">
                   {t("iso27001Page.hero.title")}
                 </h1>
-                <p className="text-lg md:text-xl opacity-90 mb-6">
+                <p className="text-base md:text-lg text-slate-600 mb-7 max-w-xl leading-relaxed">
                   {t("iso27001Page.hero.subtitle")}
                 </p>
-                <div className="flex flex-wrap gap-4">
+
+                <div className="flex flex-col sm:flex-row gap-3 mb-7">
                   <Button
                     asChild
                     size="lg"
-                    className="bg-white text-brand-blue-dark hover:bg-white/90 font-semibold"
+                    className="bg-brand-blue-dark text-white hover:bg-brand-blue-dark/90 font-semibold shadow-lg shadow-brand-blue/20"
                   >
                     <Link to={`/${currentLocale}/contact`}>
                       {t("iso27001Page.hero.button")} <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-slate-300 text-brand-blue-dark hover:bg-slate-50 hover:text-brand-blue-dark font-semibold"
+                  >
+                    <Link to={`/${currentLocale}/cybersecurity-check`}>
+                      {t("iso27001Page.hero.checkReadiness")}
+                    </Link>
+                  </Button>
                 </div>
-              </div>
-              <div className="lg:w-1/2">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <h3 className="text-xl font-semibold mb-4">
-                    {t("iso27001Page.hero.formTitle")}
-                  </h3>
-                  <form className="space-y-4">
-                    <Input
-                      placeholder={t("iso27001Page.hero.nameLabel")}
-                      className="bg-white/10 border-white/30 text-white placeholder:text-white/60"
-                    />
-                    <Input
-                      type="email"
-                      placeholder={t("iso27001Page.hero.emailLabel")}
-                      className="bg-white/10 border-white/30 text-white placeholder:text-white/60"
-                    />
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="marketing" className="border-white/50" />
-                      <label htmlFor="marketing" className="text-sm opacity-80">
-                        {t("iso27001Page.hero.marketingConsent")}
-                      </label>
+
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
+                  {getArrayTranslation("iso27001Page.hero.features").map((feature, i) => (
+                    <div key={i} className="flex items-center gap-1.5">
+                      <CheckCircle className="h-4 w-4 text-brand-blue" />
+                      <span>{feature}</span>
                     </div>
-                    <Button className="w-full bg-white text-brand-blue-dark hover:bg-white/90">
-                      {t("iso27001Page.hero.requestDemoButton")}
-                    </Button>
-                  </form>
+                  ))}
                 </div>
+              </div>
+
+              {/* RIGHT: ISMS schema */}
+              <div className="lg:col-span-6">
+                <IsmsSchema />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why ISO 27001 Matters Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.whyMatters.title")}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("iso27001Page.whyMatters.subtitle")}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Penalties Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-4">
-                  <Euro className="h-8 w-8 text-red-600" />
-                </div>
-                <div className="text-3xl font-bold text-brand-blue-dark mb-2">
-                  {t("iso27001Page.whyMatters.cards.penalties.stat")}
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("iso27001Page.whyMatters.cards.penalties.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.penalties.description")}
-                </p>
-              </CardContent>
-            </Card>
-            {/* Downtime Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-                  <AlertTriangle className="h-8 w-8 text-amber-600" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 mt-4">
-                  {t("iso27001Page.whyMatters.cards.downtime.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.downtime.description")}
-                </p>
-              </CardContent>
-            </Card>
-            {/* Reputation Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                  <Users className="h-8 w-8 text-brand-purple" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 mt-4">
-                  {t("iso27001Page.whyMatters.cards.reputation.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.reputation.description")}
-                </p>
-              </CardContent>
-            </Card>
-            {/* Timeline Card */}
-            <Card className="border-brand-gray-light bg-white text-center p-6">
-              <CardContent className="pt-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                  <Clock className="h-8 w-8 text-brand-blue" />
-                </div>
-                <div className="text-3xl font-bold text-brand-blue-dark mb-2">
-                  {t("iso27001Page.whyMatters.cards.timeline.stat")}
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("iso27001Page.whyMatters.cards.timeline.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.whyMatters.cards.timeline.description")}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        {/* Why ISO 27001 matters — interactive industry selector */}
+        <IndustryWhySection currentLocale={currentLocale} />
 
-        {/* Understanding ISO 27001 Section */}
+        {/* Understanding ISO 27001 — highlighted */}
         <section className="mb-16">
-          <div className="bg-brand-gray-light/30 p-8 rounded-2xl">
-            <h2 className="text-3xl font-bold text-center text-brand-blue-dark mb-4">
-              {t("iso27001Page.understanding.title")}
-            </h2>
-            <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-10">
-              {t("iso27001Page.understanding.description")}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="border-brand-gray-light bg-white">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6 text-brand-blue" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
-                    {t("iso27001Page.understanding.whatIs.title")}
-                  </h3>
-                  <p className="text-slate-600">
-                    {t("iso27001Page.understanding.whatIs.description")}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-brand-gray-light bg-white">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-brand-purple" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
-                    {t("iso27001Page.understanding.whoNeeds.title")}
-                  </h3>
-                  <p className="text-slate-600">
-                    {t("iso27001Page.understanding.whoNeeds.description")}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-brand-gray-light bg-white">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-full bg-brand-mint/50 flex items-center justify-center mb-4">
-                    <FileText className="h-6 w-6 text-brand-blue-dark" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
-                    {t("iso27001Page.understanding.keyRequirements.title")}
-                  </h3>
-                  <ul className="text-slate-600 space-y-2">
-                    {getArrayTranslation("iso27001Page.understanding.keyRequirements.items").map(
-                      (item, index) => (
-                        <li key={index} className="flex items-start">
-                          <CheckCircle className="h-4 w-4 text-brand-blue mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-sm">{item}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </CardContent>
-              </Card>
+          <div className="relative overflow-hidden rounded-3xl border-2 border-brand-blue/20 bg-gradient-to-br from-white via-brand-mint/10 to-brand-blue/5 p-8 md:p-12 shadow-xl">
+            <div aria-hidden="true" className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-brand-blue/10 blur-2xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-brand-purple/10 blur-2xl" />
+
+            <div className="relative">
+              <div className="text-center max-w-3xl mx-auto mb-10">
+                <Badge className="bg-brand-blue text-white mb-4 font-medium">
+                  <FileText className="h-4 w-4 mr-1.5" />
+                  {t("iso27001Page.understanding.badge")}
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
+                  {t("iso27001Page.understanding.title")}
+                </h2>
+                <p className="text-lg text-slate-600">
+                  {t("iso27001Page.understanding.description")}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Card className="border-brand-blue/20 bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-blue to-brand-blue-dark flex items-center justify-center mb-4 shadow-lg">
+                      <Shield className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
+                      {t("iso27001Page.understanding.whatIs.title")}
+                    </h3>
+                    <p className="text-slate-600">
+                      {t("iso27001Page.understanding.whatIs.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-brand-purple/20 bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-purple to-brand-blue-dark flex items-center justify-center mb-4 shadow-lg">
+                      <Users className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
+                      {t("iso27001Page.understanding.whoNeeds.title")}
+                    </h3>
+                    <p className="text-slate-600">
+                      {t("iso27001Page.understanding.whoNeeds.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-brand-mint bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-mint to-brand-blue flex items-center justify-center mb-4 shadow-lg">
+                      <FileText className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-3 text-brand-blue-dark">
+                      {t("iso27001Page.understanding.keyRequirements.title")}
+                    </h3>
+                    <ul className="text-slate-600 space-y-2">
+                      {getArrayTranslation("iso27001Page.understanding.keyRequirements.items").map(
+                        (item, index) => (
+                          <li key={index} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-brand-blue mt-1 mr-2 flex-shrink-0" />
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
-
-        {/* Why Leadership Should Care Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-brand-purple/10 to-brand-blue/10 rounded-2xl p-8 md:p-12">
-            <Badge className="bg-brand-purple text-white mb-4">
-              {t("iso27001Page.whyLeadership.badge")}
-            </Badge>
-            <h2 className="text-3xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.whyLeadership.title")}
-            </h2>
-            <p className="text-lg text-slate-600 mb-8 max-w-3xl">
-              {t("iso27001Page.whyLeadership.description")}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {getObjectArrayTranslation<{ title: string; description: string }>(
-                "iso27001Page.whyLeadership.points"
-              ).map((point, index) => (
-                <div key={index} className="flex items-start bg-white rounded-xl p-5 shadow-sm">
-                  <div className="w-10 h-10 rounded-full bg-brand-purple/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    {index === 0 && <AlertTriangle className="h-5 w-5 text-brand-purple" />}
-                    {index === 1 && <Target className="h-5 w-5 text-brand-purple" />}
-                    {index === 2 && <Lock className="h-5 w-5 text-brand-purple" />}
-                    {index === 3 && <BarChart4 className="h-5 w-5 text-brand-purple" />}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-brand-blue-dark mb-1">{point.title}</h3>
-                    <p className="text-slate-600 text-sm">{point.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* How Quantifier Helps Section */}
         <section className="mb-16">
           <div className="text-center mb-10">
@@ -409,7 +369,7 @@ const Iso27001 = () => {
             
             <div className="space-y-8 md:space-y-12">
               {/* Step 1 - Onboarding */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={0}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -434,12 +394,19 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
-              </div>
-
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Platforma · Onboarding">
+                    <HomePlatformMockup />
+                  </StepMockup>
+                </div>
+              </AnimatedStep>
               {/* Step 2 - Gap Analysis */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/2 md:pr-12" />
+              <AnimatedStep index={1}>
+                <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                  <StepMockup label="AI Compliance · Gap Analysis">
+                    <Iso27001GapAnalysisMockup />
+                  </StepMockup>
+                </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12">
                   <Card className="border-brand-gray-light bg-white p-6 w-full">
@@ -464,10 +431,9 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 3 - Risk Assessment */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={2}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -492,12 +458,19 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
-              </div>
-
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Risk Heatmap">
+                    <Iso27001RiskHeatmapMockup />
+                  </StepMockup>
+                </div>
+              </AnimatedStep>
               {/* Step 4 - Policies */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/2 md:pr-12" />
+              <AnimatedStep index={3}>
+                <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                  <StepMockup label="Document Repository · Polityki">
+                    <Iso27001PoliciesMockup />
+                  </StepMockup>
+                </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-purple border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12">
                   <Card className="border-brand-gray-light bg-white p-6 w-full">
@@ -522,10 +495,9 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 5 - Controls */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={4}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-white p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -550,12 +522,19 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-blue-dark border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
-              </div>
-
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Task Board · Wdrożenie kontroli">
+                    <Iso27001ControlsMockup />
+                  </StepMockup>
+                </div>
+              </AnimatedStep>
               {/* Step 6 - Certification */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/2 md:pr-12" />
+              <AnimatedStep index={5}>
+                <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                  <StepMockup label="Auditor Dashboard · Certyfikacja">
+                    <Iso27001CertificationMockup />
+                  </StepMockup>
+                </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-brand-mint border-4 border-white shadow" />
                 <div className="md:w-1/2 md:pl-12">
                   <Card className="border-brand-gray-light bg-white p-6 w-full">
@@ -580,10 +559,9 @@ const Iso27001 = () => {
                     </ul>
                   </Card>
                 </div>
-              </div>
-
+              </AnimatedStep>
               {/* Step 7 - Maintenance */}
-              <div className="relative flex flex-col md:flex-row md:items-center">
+              <AnimatedStep index={6}>
                 <div className="md:w-1/2 md:pr-12 md:text-right">
                   <Card className="border-brand-gray-light bg-gradient-to-r from-brand-blue/5 to-brand-purple/5 p-6 inline-block text-left w-full">
                     <div className="flex items-center gap-3 mb-3">
@@ -608,149 +586,90 @@ const Iso27001 = () => {
                   </Card>
                 </div>
                 <div className="hidden md:flex absolute left-1/2 -ml-3 w-6 h-6 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple border-4 border-white shadow" />
-                <div className="md:w-1/2 md:pl-12" />
-              </div>
+                <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                  <StepMockup label="Manager Dashboard · Utrzymanie ISMS">
+                    <Iso27001MaintenanceMockup />
+                  </StepMockup>
+                </div>
+              </AnimatedStep>
             </div>
           </div>
         </section>
 
 
+        {/* AI Module — highlighted */}
         <section className="mb-16">
-          <div className="bg-brand-mint/30 rounded-2xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-blue-dark via-brand-purple to-brand-blue p-8 md:p-12 text-white shadow-2xl">
+            {/* Decorative elements */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)",
+                backgroundSize: "24px 24px",
+              }} />
+            <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-brand-mint/20 blur-3xl" />
+
+            <div className="relative flex flex-col md:flex-row items-center gap-10">
               <div className="md:w-2/3">
-                <Badge className="bg-brand-purple text-white mb-4">
-                  <Sparkles className="h-4 w-4 mr-1" />
-                  {t("iso27001Page.aiModule.badge")}
+                <Badge className="bg-white/20 backdrop-blur text-white border border-white/30 mb-5 font-medium">
+                  <Sparkles className="h-4 w-4 mr-1.5" />
+                  Poznaj Leona — Twojego AI Compliance Officera
                 </Badge>
-                <h2 className="text-3xl font-bold text-brand-blue-dark mb-4">
-                  {t("iso27001Page.aiModule.title")}
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  Moduł ISMS oparty na AI — Leon czuwa 24/7
                 </h2>
-                <p className="text-lg text-slate-600">
-                  {t("iso27001Page.aiModule.description")}
+                <p className="text-lg text-white/85 leading-relaxed mb-4">
+                  Leon to Twój wirtualny Compliance Officer, który nigdy nie śpi. Monitoruje status zgodności ISO 27001, przypomina o terminach przeglądów polityk, sygnalizuje luki w kontrolach i pomaga zespołowi reagować zanim audytor zapuka do drzwi.
                 </p>
+                <ul className="space-y-2 mb-6 text-white/90">
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Codzienna analiza ryzyka i automatyczne alerty o wygasających dowodach</span></li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Podpowiedzi „następnego najlepszego kroku" dla każdego właściciela kontroli</span></li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-brand-mint" /><span>Asystent w czacie — zapytaj Leona o status SoA, polityki, audyt</span></li>
+                </ul>
               </div>
               <div className="md:w-1/3 flex justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-purple to-brand-blue flex items-center justify-center">
-                  <Sparkles className="h-16 w-16 text-white" />
+                <div className="relative">
+                  {/* Animated glow halos */}
+                  <div className="absolute -inset-6 bg-gradient-to-tr from-brand-mint/40 via-brand-blue/30 to-brand-purple/40 blur-3xl rounded-full animate-pulse" />
+                  <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-brand-mint via-brand-blue to-brand-purple opacity-80 blur-md" />
+
+                  {/* Rotating conic gradient ring */}
+                  <div
+                    className="absolute -inset-1 rounded-full opacity-90"
+                    style={{
+                      background: "conic-gradient(from 0deg, hsl(var(--brand-mint)), hsl(var(--brand-blue)), hsl(var(--brand-purple)), hsl(var(--brand-mint)))",
+                      animation: "spin 8s linear infinite",
+                    }}
+                  />
+
+                  {/* Inner image circle */}
+                  <div className="relative w-56 h-56 rounded-full bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden ring-1 ring-white/20 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]">
+                    <img
+                      src={leonOfficer}
+                      alt="Leon — AI Compliance Officer Quantifier"
+                      width={224}
+                      height={224}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover scale-110"
+                    />
+                    {/* Subtle inner highlight */}
+                    <div aria-hidden="true" className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/15 via-transparent to-transparent pointer-events-none" />
+                  </div>
+
+                  {/* Status pill */}
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur text-brand-blue-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-xl whitespace-nowrap flex items-center gap-1.5 border border-white/60">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    Leon · online 24/7
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Results Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.results.title")}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("iso27001Page.results.description")}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-brand-purple mb-2">
-                {t("iso27001Page.results.metrics.coverage.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.coverage.label")}
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-brand-blue mb-2">
-                {t("iso27001Page.results.metrics.controls.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.controls.label")}
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-brand-blue-dark mb-2">
-                {t("iso27001Page.results.metrics.monitoring.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.monitoring.label")}
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center border border-brand-gray-light">
-              <div className="text-4xl font-bold text-green-600 mb-2">
-                {t("iso27001Page.results.metrics.reduction.value")}
-              </div>
-              <p className="text-slate-600 text-sm">
-                {t("iso27001Page.results.metrics.reduction.label")}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* For Whom Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue-dark mb-4">
-              {t("iso27001Page.forWhom.title")}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("iso27001Page.forWhom.subtitle")}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                  <Shield className="h-8 w-8 text-brand-purple" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.ciso.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.ciso.description")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                  <Briefcase className="h-8 w-8 text-brand-blue" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.ceo.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.ceo.description")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-mint/50 flex items-center justify-center mb-4">
-                  <UserCheck className="h-8 w-8 text-brand-blue-dark" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.itManager.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.itManager.description")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-brand-gray-light bg-white hover:border-brand-purple/30 transition-all">
-              <CardContent className="pt-6 text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand-gray-light flex items-center justify-center mb-4">
-                  <Scale className="h-8 w-8 text-brand-blue-dark" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-brand-blue-dark">
-                  {t("iso27001Page.forWhom.personas.compliance.title")}
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  {t("iso27001Page.forWhom.personas.compliance.description")}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
+        {/* Results & For Whom sections removed */}
         {/* Continuous ISMS Operations Section */}
         <section className="mb-16">
           <div className="bg-brand-gray-light/30 rounded-2xl p-8 md:p-12">
@@ -839,50 +758,12 @@ const Iso27001 = () => {
 
         {/* Key Definitions */}
         <DefinitionsBlock
-          title={t("iso27001Page.definitions.title", { defaultValue: "Key ISO 27001 Terms & Definitions" })}
-          definitions={[
-            { term: "ISMS (Information Security Management System)", definition: "A systematic approach to managing sensitive company information so that it remains secure. It includes people, processes, and IT/technology systems by applying a risk management process." },
-            { term: "Statement of Applicability (SoA)", definition: "A document that lists all controls from ISO 27001 Annex A (93 controls in the 2022 version) and states which are applicable and which are not, with justification for exclusions." },
-            { term: "Risk Treatment Plan", definition: "A structured plan that outlines how identified information security risks will be addressed — whether through mitigation, transfer, acceptance, or avoidance — including timelines, responsible parties, and expected outcomes." },
-            { term: "Annex A Controls", definition: "A set of 93 reference controls organized into 4 themes (Organizational, People, Physical, Technological) that organizations can select based on their risk assessment results." }
-          ]}
+          title={t("iso27001Page.definitions.title")}
+          definitions={getObjectArrayTranslation<{term: string; definition: string}>("iso27001Page.definitions.items")}
           className="mb-20"
         />
 
-        {/* Related Content */}
-        <section className="mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">{t('iso27001Page.relatedContent.title')}</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Link to={`/${currentLocale}/blog/iso-27001-vs-soc-2-comparison`} className="group">
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <Scale className="h-8 w-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.comparison.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.comparison.description')}</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link to={`/${currentLocale}/blog/audit-evidence-collection-automation`} className="group">
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <FileCheck className="h-8 w-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.evidence.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.evidence.description')}</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link to={`/${currentLocale}/blog/nis2-vs-iso-27001-mapping`} className="group">
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <Target className="h-8 w-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{t('iso27001Page.relatedContent.nis2mapping.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('iso27001Page.relatedContent.nis2mapping.description')}</p>
-                </CardContent>
-              </Card>
-            </Link>
-          </div>
-        </section>
-
+        {/* Related Content section removed */}
         {/* FAQ Section */}
         <section className="mb-20">
           <FAQSection

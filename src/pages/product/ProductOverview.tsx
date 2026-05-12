@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageTemplate from '@/components/PageTemplate';
 import HomePlatformMockup from '@/components/mockups/HomePlatformMockup';
+import ProductFiveAreas from '@/components/product/ProductFiveAreas';
 
 const ProductOverview = () => {
   const { t, currentLocale } = useLanguage();
@@ -78,6 +79,9 @@ const ProductOverview = () => {
           </div>
         </div>
       </section>
+
+      {/* 5 areas where Quantifier makes a difference */}
+      <ProductFiveAreas />
 
       {/* Platform Mockup — dark bg to match mockup's white text */}
       <section className="bg-slate-950 py-16">

@@ -15,7 +15,6 @@ const staticPages = [
   { path: '', changefreq: 'weekly', priority: '1.0', lastmod: '2026-04-02' },
   { path: '/about', changefreq: 'monthly', priority: '0.8', lastmod: '2026-01-15' },
   { path: '/contact', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-10' },
-  { path: '/partners', changefreq: 'monthly', priority: '0.7', lastmod: '2026-01-12' },
   { path: '/plans', changefreq: 'weekly', priority: '0.9', lastmod: '2026-01-20' },
   { path: '/success-stories', changefreq: 'weekly', priority: '0.9', lastmod: '2026-02-17' },
   { path: '/blog', changefreq: 'daily', priority: '0.9', lastmod: '2026-04-02' },
@@ -67,6 +66,26 @@ const localeSpecificPages: Array<{
   priority: string;
   lastmod: string;
 }> = [
+  {
+    paths: {
+      en: '/partners',
+      pl: '/partnerzy',
+      cs: '/partneri',
+    },
+    changefreq: 'monthly',
+    priority: '0.7',
+    lastmod: '2026-05-12',
+  },
+  {
+    paths: {
+      en: '/partners/gs1-polska',
+      pl: '/partnerzy/gs1-polska',
+      cs: '/partneri/gs1-polska',
+    },
+    changefreq: 'monthly',
+    priority: '0.7',
+    lastmod: '2026-05-12',
+  },
   {
     paths: {
       en: '/cybersecurity-check',

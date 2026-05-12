@@ -5,10 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, Leaf, Recycle, FileText, BarChart3, Clock, Globe, AlertCircle, Zap, Shield, PieChart, Activity, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Iso14001Dashboard from '@/components/dashboards/environmental/Iso14001Dashboard';
-import LcaDashboard from '@/components/dashboards/environmental/LcaDashboard';
-import CarbonFootprintDashboard from '@/components/dashboards/environmental/CarbonFootprintDashboard';
-import DecarbonisationDashboard from '@/components/dashboards/environmental/DecarbonisationDashboard';
+import { Iso14001DarkMockup, LcaDarkMockup, CarbonDarkMockup, DecarbonisationDarkMockup } from '@/components/mockups/EnvironmentalDarkMockups';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 
@@ -79,10 +76,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <Iso14001Dashboard />
-                </div>
+              <div>
+                <Iso14001DarkMockup />
               </div>
             </div>
           </TabsContent>
@@ -113,10 +108,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-lg border border-emerald-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <LcaDashboard />
-                </div>
+              <div>
+                <LcaDarkMockup />
               </div>
             </div>
           </TabsContent>
@@ -147,10 +140,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-green-50 p-4 rounded-lg border border-teal-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <CarbonFootprintDashboard />
-                </div>
+              <div>
+                <CarbonDarkMockup />
               </div>
             </div>
           </TabsContent>
@@ -181,10 +172,8 @@ const Environmental = () => {
                   </FeatureItem>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-                <div className="rounded-lg shadow-md w-full overflow-hidden">
-                  <DecarbonisationDashboard />
-                </div>
+              <div>
+                <DecarbonisationDarkMockup />
               </div>
             </div>
           </TabsContent>

@@ -202,8 +202,18 @@ const MainRoutes = () => (
         
         {/* Other main routes */}
         <Route path="/:locale/plans" element={<Plans />} />
-        <Route path="/:locale/partners" element={<Partners />} />
-        <Route path="/:locale/partners/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/en/partners" element={<Partners />} />
+        <Route path="/pl/partnerzy" element={<Partners />} />
+        <Route path="/cs/partneri" element={<Partners />} />
+        <Route path="/pl/partners" element={<Navigate to="/pl/partnerzy" replace />} />
+        <Route path="/cs/partners" element={<Navigate to="/cs/partneri" replace />} />
+        <Route path="/cs/partneři" element={<Navigate to="/cs/partneri" replace />} />
+        <Route path="/en/partners/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/pl/partnerzy/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/cs/partneri/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/pl/partners/gs1-polska" element={<Navigate to="/pl/partnerzy/gs1-polska" replace />} />
+        <Route path="/cs/partners/gs1-polska" element={<Navigate to="/cs/partneri/gs1-polska" replace />} />
+        <Route path="/cs/partneři/gs1-polska" element={<Navigate to="/cs/partneri/gs1-polska" replace />} />
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />

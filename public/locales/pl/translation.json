@@ -2265,6 +2265,92 @@
       "dpp": "Paszport Produktowy",
       "ghg": "Ślad węglowy",
       "members": "47 000+ członków GS1"
+    },
+    "page": {
+      "hero": {
+        "eyebrow": "Sieć partnerska Quantifier",
+        "title": "50+ partnerów, z którymi wdrażamy zgodność i ESG w polskich firmach.",
+        "lead": "Budujemy sieć partnerów, którzy dokładają swoją wiedzę tam, gdzie klient jej potrzebuje.",
+        "body": "Współpracujemy z firmami audytorskimi przy wdrożeniach NIS2, ISO 27001, SOC 2 oraz ESG i CSRD, z kancelariami prawnymi i firmami konsultingowymi przy kluczowych regulacjach (DORA, RODO, sygnaliści, NIS2, CSRD, ESG), z integratorami IT i cybersecurity przy zabezpieczeniach technicznych oraz z uczelniami i NGO przy badaniach, edukacji i projektach finansowanych.",
+        "cta": "Porozmawiajmy o partnerstwie"
+      },
+      "reasons": {
+        "title": "Dlaczego warto być w sieci",
+        "items": [
+          "Wspólne projekty z klientami.",
+          "Dostęp do platformy GRC z gotowymi modułami NIS2, ESG, DPP i LCA.",
+          "Wsparcie merytoryczne i materiały edukacyjne: webinary, raporty i szkolenia.",
+          "Marketplace partnerów bezpośrednio na platformie Quantifier — widoczność u klientów wdrażających GRC i ESG."
+        ]
+      },
+      "stats": {
+        "partners": "Partnerów",
+        "areas": "Obszarów",
+        "reach": "Zasięg"
+      },
+      "areas": {
+        "title": "Z jakich obszarów są nasi partnerzy",
+        "items": [
+          {
+            "name": "Audytorzy",
+            "desc": "NIS2, ISO 27001, SOC 2"
+          },
+          {
+            "name": "Kancelarie prawne",
+            "desc": "DORA, RODO, sygnaliści"
+          },
+          {
+            "name": "Konsulting",
+            "desc": "ESG, CSRD, ślad węglowy"
+          },
+          {
+            "name": "IT i cybersec",
+            "desc": "Wdrożenia, integracje, SOC"
+          },
+          {
+            "name": "NGO i uczelnie",
+            "desc": "Badania, edukacja, LIFE"
+          }
+        ]
+      },
+      "selected": {
+        "title": "Wybrani partnerzy",
+        "description": "Współpracujemy z liderami sektora finansowego, instytucjami publicznymi, uczelniami oraz organizacjami zrównoważonego rozwoju i logistyki.",
+        "items": [
+          {
+            "name": "BNP Paribas Bank Polska",
+            "description": "Partnerstwo w obszarze finansowania zrównoważonej transformacji i wsparcia raportowania ESG dla klientów korporacyjnych."
+          },
+          {
+            "name": "Alior Bank",
+            "description": "Współpraca przy edukacji i narzędziach ESG oraz cyberbezpieczeństwa dla sektora MŚP."
+          },
+          {
+            "name": "Polski Fundusz Rozwoju",
+            "description": "Partner programów rozwoju kompetencji ESG i odporności cyfrowej polskich przedsiębiorstw."
+          },
+          {
+            "name": "Uniwersytet Ekonomiczny we Wrocławiu",
+            "description": "Współpraca naukowo-badawcza w obszarze GRC, śladu węglowego i bezpieczeństwa informacji."
+          },
+          {
+            "name": "Klaster Gospodarki Obiegu Zamkniętego",
+            "description": "Wspólne projekty wokół DPP, LCA i transformacji cyrkularnej członków klastra."
+          },
+          {
+            "name": "Circular Production Community",
+            "description": "Społeczność producentów wdrażających gospodarkę obiegu zamkniętego — wspólne projekty wokół DPP, LCA i cyrkularnych modeli produkcji."
+          },
+          {
+            "name": "Reo.pl",
+            "description": "Integracja danych o energii OZE i umowach PPA z modułami carbon Quantifier."
+          },
+          {
+            "name": "Raben Group",
+            "description": "Współpraca w obszarze raportowania emisji łańcucha dostaw (Scope 3) i zrównoważonej logistyki."
+          }
+        ]
+      }
     }
   },
   "frameworksPage": {
@@ -3036,7 +3122,8 @@
     "tabs": {
       "csdr": "Raportowanie CSDR",
       "gri": "Raportowanie GRI",
-      "cbam": "Raportowanie CBAM"
+      "cbam": "Raportowanie CBAM",
+      "vsme": "Raportowanie VSME"
     },
     "csdr": {
       "title": "Raportowanie CSDR: Usprawnij zrównoważony rozwój korporacyjny",
@@ -3180,6 +3267,32 @@
           "answer": "Platforma zawiera wbudowane reguły walidacji, ścieżki audytu dla każdego punktu danych i wykrywanie anomalii oparte na AI. Wszystkie obliczenia są zgodne z uznanymi metodologiami."
         }
       ]
+    },
+    "vsme": {
+      "title": "VSME: Dobrowolny standard ESG dla MŚP",
+      "description": "Voluntary Sustainability Reporting Standard for SMEs (VSME) opracowany przez EFRAG to uproszczony standard ESG dla małych i średnich firm. Quantifier prowadzi Cię przez moduł Basic i Comprehensive, generując raport gotowy dla banków, ubezpieczycieli i dużych klientów z łańcucha dostaw.",
+      "featuresTitle": "Otrzymujesz:",
+      "features": [
+        {
+          "title": "Moduł Basic gotowy w godziny",
+          "description": "Wypełnij 11 podstawowych ujawnień (B1–B11) z pomocą AI i wbudowanych podpowiedzi EFRAG."
+        },
+        {
+          "title": "Moduł Comprehensive (PAT)",
+          "description": "Rozszerz raport o ujawnienia C1–C9 wymagane przez banki i partnerów biznesowych."
+        },
+        {
+          "title": "Mapowanie do CSRD/ESRS",
+          "description": "Dane z VSME automatycznie zasilają przyszłe raporty CSRD, gdy firma urośnie."
+        },
+        {
+          "title": "Raport PDF dla banków",
+          "description": "Wygeneruj profesjonalny raport zgodny z VSME do przekazania bankom i klientom."
+        }
+      ],
+      "dashboardTitle": "Dashboard ujawnień VSME",
+      "chartTitle": "Postęp modułów Basic i Comprehensive",
+      "insight": "Moduł Basic ukończony w 100% - możesz udostępnić raport partnerom"
     }
   },
   "environmentalPage": {
@@ -4841,18 +4954,35 @@
     }
   },
   "iso27001Page": {
+    "schema": {
+      "riskAssessment": "Ocena ryzyka",
+      "annexA": "Aneks A — 93 kontrole",
+      "soa": "Deklaracja Stosowania",
+      "evidence": "Gromadzenie dowodów",
+      "audit": "Audyt + doskonalenie",
+      "plan": "PLAN",
+      "do": "DO",
+      "check": "CHECK",
+      "act": "ACT"
+    },
     "title": "ISO 27001",
     "description": "Chroń swoje aktywa informacyjne dzięki globalnie uznanemu standardowi ISO 27001 dla zarządzania bezpieczeństwem informacji.",
     "hero": {
-      "badge": "ISO 27001 Bezpieczeństwo Informacji",
-      "title": "Certyfikacja ISO 27001 w prosty sposób",
-      "subtitle": "Quantifier automatyzuje całą Twoją podróż do ISO 27001 — od oceny ryzyka po certyfikację — abyś mógł skupić się na bezpiecznym rozwoju biznesu.",
+      "badge": "ISO 27001 — System Zarządzania Bezpieczeństwem Informacji (ISMS)",
+      "title": "Wdróż System Zarządzania Bezpieczeństwem Informacji wg ISO 27001 i przejdź certyfikację",
+      "subtitle": "Cała dokumentacja ISMS (ISO 27001) w jednym miejscu — ryzyka, polityki, kontrole Aneksu A i dowody. Audyt zdasz bez paniki.",
       "formTitle": "Zamów demo",
       "nameLabel": "Imię i nazwisko",
       "emailLabel": "Adres e-mail",
       "marketingConsent": "Zgadzam się na otrzymywanie komunikacji marketingowej o rozwiązaniach ISO 27001",
       "requestDemoButton": "Zamów demo",
-      "button": "Zamów demo"
+      "button": "Zamów demo",
+      "checkReadiness": "Sprawdź gotowość ISMS",
+      "features": [
+        "93 kontrole Aneksu A",
+        "SoA automatycznie",
+        "~70% SOC 2 w pakiecie"
+      ]
     },
     "whyMatters": {
       "title": "Dlaczego ISO 27001 ma znaczenie",
@@ -4900,7 +5030,8 @@
           "Audyt wewnętrzny i przegląd zarządu",
           "Proces ciągłego doskonalenia"
         ]
-      }
+      },
+      "badge": "Wprowadzenie"
     },
     "whyLeadership": {
       "badge": "Odpowiedzialność kierownictwa",
@@ -4927,31 +5058,31 @@
     },
     "howQuantifierHelps": {
       "title": "Jak Quantifier automatyzuje ISO 27001",
-      "description": "Nasza platforma oparta na AI przejmuje ciężką pracę wdrażania i utrzymywania ISMS",
+      "description": "Cała dokumentacja ISMS, kontrole Aneksu A i dowody w jednym miejscu — sprawnie, dobrze i gotowe do audytu",
       "features": {
         "riskAssessment": {
           "title": "Ocena i postępowanie z ryzykiem",
-          "description": "Identyfikacja ryzyka, scoring i planowanie postępowania oparte na AI z automatyczną aktualizacją rejestru ryzyka"
+          "description": "Identyfikacja ryzyka, scoring i plany postępowania oparte na AI z automatyczną aktualizacją rejestru ryzyka — fundament Twojego ISMS"
         },
         "policyManagement": {
-          "title": "Zarządzanie politykami i dokumentami",
-          "description": "Gotowe szablony polityk, kontrola wersji i automatyczne cykle przeglądu całej dokumentacji ISMS"
+          "title": "Biblioteka kontroli Aneksu A",
+          "description": "Wszystkie 93 kontrole ISO 27001:2022 (Annex A) gotowe do wdrożenia — z opisem, właścicielem, statusem i powiązanymi politykami w jednym miejscu"
         },
         "assetInventory": {
-          "title": "Inwentaryzacja aktywów",
-          "description": "Kompleksowe odkrywanie i klasyfikacja aktywów z automatycznym mapowaniem wymagań bezpieczeństwa"
+          "title": "Statement of Applicability (SoA)",
+          "description": "Automatycznie generowany SoA — wskazujesz, które kontrole stosujesz, a Quantifier utrzymuje aktualny dokument zgodny z wymogami audytora"
         },
         "incidentManagement": {
-          "title": "Zarządzanie incydentami",
-          "description": "Strukturalne workflow reagowania na incydenty z zbieraniem dowodów i dokumentacją wniosków"
+          "title": "Evidence collection",
+          "description": "Centralne repozytorium dowodów: polityki, screeny, logi, decyzje zarządu — pogrupowane przy odpowiednich kontrolach, zawsze gotowe do okazania audytorowi"
         },
         "internalAudit": {
           "title": "Wsparcie audytu wewnętrznego",
-          "description": "Automatyczne planowanie audytów, zbieranie dowodów i śledzenie niezgodności"
+          "description": "Automatyczne planowanie audytów, zbieranie dowodów i śledzenie niezgodności — bez paniki przed certyfikacją"
         },
         "certificationReadiness": {
-          "title": "Gotowość do certyfikacji",
-          "description": "Dashboard analizy luk pokazujący dokładnie co jest potrzebne do udanej certyfikacji"
+          "title": "Multi-framework: jedna kontrola, wiele norm",
+          "description": "Raz wdrożone ISO 27001 pokrywa Ci ~70% SOC 2, a także istotne fragmenty NIS 2, DORA i RODO. Mapowanie kontroli między normami robimy za Ciebie"
         }
       }
     },
@@ -5199,6 +5330,168 @@
       "nis2mapping": {
         "title": "NIS2 vs ISO 27001 — mapowanie",
         "description": "Mapowanie kontroli NIS2 Artykuł 21 na ISO 27001 Annex A — co się pokrywa."
+      }
+    },
+    "definitions": {
+      "title": "Definicje i pojęcia ISO 27001",
+      "items": [
+        {
+          "term": "ISMS (System Zarządzania Bezpieczeństwem Informacji)",
+          "definition": "Systematyczne podejście do zarządzania wrażliwymi informacjami firmowymi, aby pozostały bezpieczne. Obejmuje ludzi, procesy i systemy IT poprzez zastosowanie procesu zarządzania ryzykiem."
+        },
+        {
+          "term": "Deklaracja Stosowania (SoA)",
+          "definition": "Dokument wymieniający wszystkie zabezpieczenia z Załącznika A normy ISO 27001 (93 zabezpieczenia w wersji 2022) i określający, które mają zastosowanie, a które nie, wraz z uzasadnieniem wyłączeń."
+        },
+        {
+          "term": "Plan Postępowania z Ryzykiem",
+          "definition": "Ustrukturyzowany plan określający, w jaki sposób zidentyfikowane ryzyka bezpieczeństwa informacji będą adresowane — poprzez łagodzenie, przeniesienie, akceptację lub unikanie — w tym ramy czasowe, osoby odpowiedzialne i oczekiwane rezultaty."
+        },
+        {
+          "term": "Zabezpieczenia Załącznika A",
+          "definition": "Zestaw 93 referencyjnych zabezpieczeń podzielonych na 4 obszary (Organizacyjne, Ludzkie, Fizyczne, Technologiczne), które organizacje mogą wybrać na podstawie wyników oceny ryzyka."
+        }
+      ]
+    },
+    "industryWhy": {
+      "badge": "Dla Twojej branży",
+      "title": "Dlaczego ISO 27001 ma znaczenie dla Twojego biznesu",
+      "description": "Wybierz swoją branżę — zobacz konkretne wymagania regulacyjne, presje rynkowe i korzyści, jakie da Ci certyfikacja w Twoim kontekście.",
+      "mainDriver": "Główny driver",
+      "yourChallenges": "Twoje wyzwania",
+      "whatYouGain": "Co zyskujesz z ISO 27001",
+      "concreteExample": "Konkretny przykład",
+      "bookDemo": "Umów demo dla Twojej branży",
+      "checkReadiness": "Sprawdź swoją gotowość",
+      "industries": {
+        "finance": {
+          "label": "Sektor finansowy i ubezpieczenia",
+          "short": "Finanse",
+          "driver": "DORA + KNF + wymagania kontrahentów",
+          "challenges": [
+            "DORA (od 17.01.2025) wymaga udokumentowanego zarządzania ryzykiem ICT i odporności operacyjnej",
+            "Banki-partnerzy i ubezpieczyciele audytują dostawców według własnych checklist bezpieczeństwa",
+            "KNF oczekuje dowodów na zgodność z Rekomendacją D i wytycznymi cyberbezpieczeństwa"
+          ],
+          "benefits": [
+            "ISO 27001 jako baza dowodowa dla DORA, KNF i RODO — jeden ISMS, wiele regulacji",
+            "Skrócenie procesu due diligence przy współpracy z bankami i ubezpieczycielami",
+            "Niższa składka cyber insurance po przedstawieniu certyfikatu"
+          ],
+          "example": "Instytucja płatnicza po certyfikacji ISO 27001 skróciła vendor onboarding w bankach z 4 do 6 tygodni — wcześniej blokowała ich sekcja security w ankietach."
+        },
+        "tech": {
+          "label": "Technologie i usługi IT",
+          "short": "IT i SaaS",
+          "driver": "Wymóg w RFP od klientów enterprise",
+          "challenges": [
+            "Klienci enterprise (banki, telco, retail) wymagają certyfikatu już na etapie RFI",
+            "Każdy klient ma własną ankietę bezpieczeństwa — bez ISMS zespół tonie w odpowiedziach",
+            "Sales cycle wydłuża się o tygodnie z powodu sekcji security w due diligence"
+          ],
+          "benefits": [
+            "Skrócenie sales cycle o 30–60% — certyfikat zastępuje większość pytań w ankietach",
+            "Otwarcie drzwi do kontraktów enterprise i sektora publicznego",
+            "Raz wdrożone ISO 27001 pokrywa ~70% SOC 2 — dwie certyfikacje za cenę jednej"
+          ],
+          "example": "Polski software house B2B (50 osób) zamknął kontrakt z bankiem 3 mies. po certyfikacji — wcześniej dwa razy odpadał na security review."
+        },
+        "industry": {
+          "label": "Przemysł i produkcja",
+          "short": "Przemysł",
+          "driver": "NIS 2 + wymagania OEM + ciągłość produkcji",
+          "challenges": [
+            "Sektor produkcyjny jest 'sektorem ważnym' w Ustawie KSC (transpozycja NIS 2)",
+            "OEM-y motoryzacyjne wymagają TISAX, który w 70% pokrywa się z ISO 27001",
+            "Ataki ransomware na linie produkcyjne to milionowe straty za każdą dobę przestoju"
+          ],
+          "benefits": [
+            "Spełnienie wymagań NIS 2 i KSC w jednym wdrożeniu",
+            "Baza pod TISAX — szybka droga do kontraktów z OEM motoryzacyjnymi",
+            "Plan ciągłości działania (BCP) chroni linie produkcyjne przed paraliżem"
+          ],
+          "example": "Producent komponentów dla automotive uniknął utraty kontraktu z VW po wdrożeniu ISO 27001 — TISAX-owa ocena spadła z czerwonej do żółtej w 4 miesiące."
+        },
+        "tsl": {
+          "label": "Transport, logistyka i łańcuch dostaw",
+          "short": "TSL",
+          "driver": "NIS 2 + wymagania klientów retail i e-commerce",
+          "challenges": [
+            "Branża TSL jest 'sektorem kluczowym' w NIS 2 — pełne obowiązki rejestracyjne i raportowe",
+            "Retail i e-commerce wymagają od kurierów i operatorów magazynowych certyfikatów bezpieczeństwa",
+            "Cyberataki na operatorów logistycznych (Maersk, DHL, InPost) pokazują skalę ryzyka"
+          ],
+          "benefits": [
+            "Zgodność z NIS 2 i UKSC bez budowania osobnego programu",
+            "Status preferred vendor dla sieci handlowych i marketplace",
+            "Ochrona systemów WMS/TMS przed ransomware = ochrona ciągłości dostaw"
+          ],
+          "example": "Operator magazynowy obsługujący e-commerce dostał ISO 27001 jako warunek przedłużenia umowy z marketplace — wdrożenie zajęło 7 mies. z Quantifierem."
+        },
+        "retail": {
+          "label": "Handel i e-commerce",
+          "short": "Handel",
+          "driver": "RODO + PCI DSS + ochrona danych klientów",
+          "challenges": [
+            "Sklepy online są celem #1 dla ataków na dane kart i tożsamości klientów",
+            "RODO: kary do 20 mln EUR lub 4% obrotu za wyciek danych klientów",
+            "PCI DSS wymaga systematycznego zarządzania ryzykiem — ISO 27001 to dostarcza"
+          ],
+          "benefits": [
+            "Niższe ryzyko kar UODO — udokumentowany system zarządzania bezpieczeństwem",
+            "Ochrona reputacji marki — wycieki kosztują klientów, nie tylko pieniądze",
+            "Zgodność z PCI DSS i RODO w jednym frameworku"
+          ],
+          "example": "Sieć retail (omnichannel) po wdrożeniu ISO 27001 zamknęła 12 z 18 obserwacji UODO z kontroli — bez konieczności kary administracyjnej."
+        },
+        "health": {
+          "label": "Ochrona zdrowia i life sciences",
+          "short": "Zdrowie",
+          "driver": "NIS 2 + RODO art. 9 (dane wrażliwe) + MDR",
+          "challenges": [
+            "Sektor zdrowia jest 'sektorem kluczowym' w NIS 2 — najwyższe obowiązki",
+            "RODO art. 9: dane medyczne to kategoria szczególna — wycieki = kary i pozwy",
+            "MDR i wymagania szpitali jako klientów MedTech wymagają udokumentowanego ISMS"
+          ],
+          "benefits": [
+            "Spełnienie NIS 2 dla podmiotów leczniczych i dostawców MedTech",
+            "Dowód na zgodność z RODO art. 9 dla danych pacjentów",
+            "Zaufanie szpitali, NFZ i ubezpieczycieli zdrowotnych jako kontrahenta"
+          ],
+          "example": "Sieć przychodni po wdrożeniu ISO 27001 dostała kontrakt z dużym pracodawcą na medycynę pracy — security review trwał 2 tygodnie zamiast 2 miesięcy."
+        },
+        "energy": {
+          "label": "Energetyka i infrastruktura krytyczna",
+          "short": "Energetyka",
+          "driver": "NIS 2 + KSC + URE + ataki APT",
+          "challenges": [
+            "Energetyka, gaz, woda, ciepłownictwo — 'sektory kluczowe' z najwyższymi sankcjami w KSC",
+            "URE i CSIRT GOV wymagają udokumentowanego zarządzania ryzykiem ICT",
+            "Ataki APT na operatorów infrastruktury krytycznej rosną — SCADA i OT są celem"
+          ],
+          "benefits": [
+            "Zgodność z UKSC i NIS 2 dla operatorów usług kluczowych (OUK)",
+            "Framework do zarządzania ryzykiem ICT i OT/SCADA",
+            "Niższe ryzyko sankcji administracyjnych z UKSC (do 100 tys. PLN dziennie)"
+          ],
+          "example": "Operator ciepłowniczy dla 80 tys. mieszkańców wdrożył ISO 27001 jako fundament zgodności z UKSC — uniknął kary po pierwszej kontroli organu nadzoru."
+        },
+        "services": {
+          "label": "Usługi profesjonalne i doradcze",
+          "short": "Usługi B2B",
+          "driver": "Audyty od klientów + tajemnica zawodowa + RODO procesora",
+          "challenges": [
+            "Klienci enterprise (Big4 standard) audytują dostawców — bez ISO 27001 odpadasz",
+            "Kancelarie i konsulting przetwarzają tajemnicę zawodową — wyciek = utrata licencji",
+            "RODO: jako procesor odpowiadasz za bezpieczeństwo powierzonych danych"
+          ],
+          "benefits": [
+            "Status preferred vendor w przetargach enterprise i sektora publicznego",
+            "Spełnienie wymagań klauzul DPA (RODO art. 28) bez negocjacji per klient",
+            "Wyższa wycena usług — bezpieczeństwo to argument sprzedażowy, nie koszt"
+          ],
+          "example": "Kancelaria prawna (40 prawników) po certyfikacji ISO 27001 weszła do panelu dostawców banku — wcześniej dwukrotnie odpadała na security questionnaire."
+        }
       }
     }
   },
@@ -5724,8 +6017,8 @@
       "description": "Skontaktuj się z naszym zespołem po demo. Zobacz jak Quantifier.ai automatyzuje compliance ISO 27001, SOC 2, NIS2 dzięki zbieraniu dowodów z AI."
     },
     "partners": {
-      "title": "Sieć Partnerów",
-      "description": "Dołącz do globalnej sieci partnerów Quantifier.ai. Współpracuj z nami, aby dostarczać rozwiązania compliance oparte na AI organizacjom na całym świecie."
+      "title": "Partnerzy Quantifier.ai | Sieć 50+ partnerów GRC i ESG",
+      "description": "Poznaj sieć partnerów Quantifier.ai: audytorów, kancelarie, konsultantów, integratorów IT, uczelnie i organizacje ESG wspierające NIS2, ISO 27001, CSRD, DPP i LCA."
     },
     "about": {
       "title": "O Nas",
@@ -9011,6 +9304,83 @@
       "bookDemo": "Zamów analizę LCA",
       "talkExpert": "Porozmawiaj z ekspertem",
       "seeEpd": "Zobacz EPD →"
+    }
+  },
+  "infinityLoop": {
+    "badge": "∞ Continuous Compliance · AI-Native GRC",
+    "title1": "Compliance to nie projekt.",
+    "title2": "To stan ciągłej zgodności.",
+    "subtitle": "Quantifier zamyka 6 obszarów w jedną nieskończoną pętlę ciągłej zgodności. Kliknij dowolny węzeł, by zobaczyć, jak działa.",
+    "close": "Zamknij",
+    "areaPrefix": "Obszar",
+    "learnMore": "Dowiedz się więcej",
+    "hint": "Kliknij węzeł, aby zobaczyć szczegóły",
+    "nodes": {
+      "01": {
+        "label": "AI Officer Leon",
+        "short": "AI Officer Leon",
+        "description": "Leon nie śpi. Codziennie analizuje status kontroli, sygnalizuje wygasające dowody, przygotowuje drafty polityk i przypomina właścicielom o terminach — zanim audytor zdąży wpisać nazwę firmy w wyszukiwarkę.",
+        "bullets": [
+          "Monitoring 24/7 wszystkich frameworków",
+          "Proaktywne alerty zamiast reaktywnych pożarów",
+          "Asystent w czacie: zapytaj, deleguj, zatwierdź",
+          "Drafty polityk i procedur generowane na żądanie"
+        ]
+      },
+      "02": {
+        "label": "Dane i integracje",
+        "short": "Dane i integracje",
+        "description": "Mapowanie danych z Twoich arkuszy i systemów — bez przepisywania, bez dopasowywania formatów. Wrzucasz to, czym już pracujesz, a Quantifier sam układa to w spójny obraz zgodności.",
+        "bullets": [
+          "Import z istniejących arkuszy bez zmiany ich struktury",
+          "Automatyczne mapowanie danych do wymagań frameworków",
+          "Brak żmudnego dopasowywania pól i kolumn",
+          "Jedno spójne źródło prawdy dla całego zespołu"
+        ]
+      },
+      "03": {
+        "label": "Zarządzanie pracą",
+        "short": "Zarządzanie pracą",
+        "description": "Procedury rozkładają się na zadania z jasno określonym timeline'em, ownerem i dowodami. AI przydziela, przypomina i zamyka — zespół realizuje wszystko z poziomu maila lub Slacka.",
+        "bullets": [
+          "Procedury rozbijane na zadania z timeline'em i ownerem",
+          "Auto-przydziały i przypomnienia od Leona",
+          "Realizacja zadań prosto ze skrzynki mailowej",
+          "Pełna widoczność postępu na dashboardzie"
+        ]
+      },
+      "04": {
+        "label": "Polityki, rejestry, dostawcy",
+        "short": "Polityki, rejestry, dostawcy",
+        "description": "Polityki tworzone w 15 minut z biblioteki szablonów, rejestry (ryzyk, incydentów, aktywów) prowadzone w jednym miejscu, a dostawcy oceniani i monitorowani w stałym cyklu.",
+        "bullets": [
+          "Policy Builder z szablonami dla NIS2, ISO, DORA, GDPR",
+          "Rejestry ryzyk, incydentów i aktywów w jednym miejscu",
+          "Ocena i monitoring dostawców w stałym cyklu",
+          "Wersjonowanie i podpis elektroniczny"
+        ]
+      },
+      "05": {
+        "label": "Audyt, jedno kliknięcie",
+        "short": "Audyt, jedno kliknięcie",
+        "description": "Każda decyzja, data, osoba i podpis elektroniczny są zarejestrowane. Jedno kliknięcie = raport dla organu nadzoru w PDF, Excel, XBRL lub XML. Management Body Accountability gotowy do okazania.",
+        "bullets": [
+          "Pełny audit trail każdej zmiany i decyzji",
+          "Eksport w PDF / XLSX / XBRL / XML jednym przyciskiem",
+          "Management Body Accountability out-of-the-box"
+        ]
+      },
+      "06": {
+        "label": "Analityka, dashboardy i raporty",
+        "short": "Analityka, dashboardy i raporty",
+        "description": "Status zgodności w czasie rzeczywistym: dashboardy KPI, trendy ryzyk, mapy ciepła, postęp wdrożeń i gotowe raporty dla zarządu, audytora i regulatora — bez budowania pivotów w arkuszach.",
+        "bullets": [
+          "Dashboardy KPI dla zarządu, zespołu i audytora",
+          "Trendy ryzyk, incydentów i zaległości w jednym widoku",
+          "Mapy ciepła ryzyk i postęp wdrożeń frameworków",
+          "Eksport raportów do PDF, XLSX i prezentacji jednym kliknięciem"
+        ]
+      }
     }
   }
 }
