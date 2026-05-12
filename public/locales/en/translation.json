@@ -9173,5 +9173,82 @@
       "talkExpert": "Talk to an Expert",
       "seeEpd": "See EPD →"
     }
+  },
+  "infinityLoop": {
+    "badge": "∞ Continuous Compliance · AI-Native GRC",
+    "title1": "Compliance is not a project.",
+    "title2": "It's a state of continuous compliance.",
+    "subtitle": "Quantifier connects 6 core areas into one infinite continuous compliance loop. Click any node to see how it works.",
+    "close": "Close",
+    "areaPrefix": "Area",
+    "learnMore": "Learn more",
+    "hint": "Click a node to view details",
+    "nodes": {
+      "01": {
+        "label": "AI Officer Leon",
+        "short": "AI Officer Leon",
+        "description": "Leon never sleeps. Every day, he analyzes control statuses, signals expiring evidence, prepares policy drafts, and reminds owners of deadlines — before an auditor even types your company name into a search engine.",
+        "bullets": [
+          "24/7 monitoring across all frameworks",
+          "Proactive alerts instead of reactive firefighting",
+          "Chat assistant: ask, delegate, approve",
+          "Policy and procedure drafts generated on demand"
+        ]
+      },
+      "02": {
+        "label": "Data & Integrations",
+        "short": "Data & Integrations",
+        "description": "Map data from your spreadsheets and systems — no rewriting, no format matching. Upload what you already work with, and Quantifier seamlessly shapes it into a unified compliance picture.",
+        "bullets": [
+          "Import from existing spreadsheets without changing structure",
+          "Automated data mapping to framework requirements",
+          "No tedious field and column matching",
+          "One single source of truth for the entire team"
+        ]
+      },
+      "03": {
+        "label": "Task Management",
+        "short": "Task Management",
+        "description": "Procedures break down into tasks with clear timelines, owners, and evidence requirements. AI assigns, reminds, and closes — your team can handle everything directly from their email or Slack.",
+        "bullets": [
+          "Procedures broken down into tasks with timelines and owners",
+          "Auto-assignments and reminders from Leon",
+          "Task execution directly from your inbox",
+          "Full progress visibility on the dashboard"
+        ]
+      },
+      "04": {
+        "label": "Policies, Registers, Vendors",
+        "short": "Policies, Registers, Vendors",
+        "description": "Create policies in 15 minutes using template libraries, maintain registers (risks, incidents, assets) in one place, and assess vendors in a continuous monitoring cycle.",
+        "bullets": [
+          "Policy Builder with templates for NIS2, ISO, DORA, GDPR",
+          "Risk, incident, and asset registers in one place",
+          "Continuous vendor assessment and monitoring",
+          "Versioning and electronic signatures"
+        ]
+      },
+      "05": {
+        "label": "One-Click Audit",
+        "short": "One-Click Audit",
+        "description": "Every decision, date, person, and electronic signature is recorded. One click = a report for the supervisory authority in PDF, Excel, XBRL, or XML. Management Body Accountability ready to be shown.",
+        "bullets": [
+          "Full audit trail of every change and decision",
+          "One-click export to PDF / XLSX / XBRL / XML",
+          "Out-of-the-box Management Body Accountability"
+        ]
+      },
+      "06": {
+        "label": "Analytics, Dashboards & Reports",
+        "short": "Analytics & Reports",
+        "description": "Real-time compliance status: KPI dashboards, risk trends, heat maps, implementation progress, and ready-made reports for the board, auditors, and regulators — without building pivot tables.",
+        "bullets": [
+          "KPI dashboards for the board, team, and auditors",
+          "Risk, incident, and backlog trends in one view",
+          "Risk heat maps and framework implementation progress",
+          "One-click report exports to PDF, XLSX, and presentations"
+        ]
+      }
+    }
   }
 }

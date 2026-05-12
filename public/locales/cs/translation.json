@@ -7661,5 +7661,82 @@
       "bookDemo": "Domluvit demo",
       "talkExpert": "Promluvit se specialistou"
     }
+  },
+  "infinityLoop": {
+    "badge": "∞ Continuous Compliance · AI-Native GRC",
+    "title1": "Compliance není projekt.",
+    "title2": "Je to stav neustálého souladu.",
+    "subtitle": "Quantifier spojuje 6 klíčových oblastí do jedné nekonečné smyčky průběžné shody. Kliknutím na libovolný uzel zjistíte, jak funguje.",
+    "close": "Zavřít",
+    "areaPrefix": "Oblast",
+    "learnMore": "Zjistit více",
+    "hint": "Kliknutím na uzel zobrazíte podrobnosti",
+    "nodes": {
+      "01": {
+        "label": "AI Officer Leon",
+        "short": "AI Officer Leon",
+        "description": "Leon nikdy nespí. Každý den analyzuje stavy kontrol, signalizuje vypršení platnosti důkazů, připravuje návrhy politik a připomíná vlastníkům termíny — dříve, než auditor vůbec zadá název vaší společnosti do vyhledávače.",
+        "bullets": [
+          "Nepřetržité monitorování všech frameworků (24/7)",
+          "Proaktivní upozornění namísto reaktivního hašení problémů",
+          "Asistent na chatu: ptejte se, delegujte, schvalujte",
+          "Návrhy politik a postupů generované na vyžádání"
+        ]
+      },
+      "02": {
+        "label": "Data a integrace",
+        "short": "Data a integrace",
+        "description": "Mapování dat z vašich tabulek a systémů — bez přepisování, bez shodování formátů. Nahrajte to, s čím již pracujete, a Quantifier to plynule přetvoří do jednotného obrazu shody.",
+        "bullets": [
+          "Import ze stávajících tabulek bez změny jejich struktury",
+          "Automatizované mapování dat k požadavkům frameworků",
+          "Žádné zdlouhavé párování polí a sloupců",
+          "Jeden jediný zdroj pravdy pro celý tým"
+        ]
+      },
+      "03": {
+        "label": "Řízení úkolů",
+        "short": "Řízení úkolů",
+        "description": "Postupy se dělí na úkoly s jasnými časovými osami, vlastníky a požadavky na důkazy. AI přiděluje, připomíná a uzavírá — váš tým může vše spravovat přímo ze svého e-mailu nebo Slacku.",
+        "bullets": [
+          "Postupy rozdělené do úkolů s termíny a vlastníky",
+          "Automatické přiřazování a připomínky od Leona",
+          "Vyřizování úkolů přímo z vaší schránky",
+          "Plná viditelnost postupu na řídicím panelu"
+        ]
+      },
+      "04": {
+        "label": "Politiky, registry, dodavatelé",
+        "short": "Politiky a registry",
+        "description": "Vytvářejte politiky za 15 minut pomocí knihoven šablon, udržujte registry (rizika, incidenty, aktiva) na jednom místě a průběžně hodnoťte dodavatele.",
+        "bullets": [
+          "Nástroj pro tvorbu politik s šablonami pro NIS2, ISO, DORA, GDPR",
+          "Registry rizik, incidentů a aktiv na jednom místě",
+          "Průběžné hodnocení a monitorování dodavatelů",
+          "Verzování a elektronické podpisy"
+        ]
+      },
+      "05": {
+        "label": "Audit jedním kliknutím",
+        "short": "Audit jedním kliknutím",
+        "description": "Každé rozhodnutí, datum, osoba a elektronický podpis jsou zaznamenány. Jedno kliknutí = zpráva pro dozorčí orgán v PDF, Excelu, XBRL nebo XML. Management Body Accountability je připraveno k předložení.",
+        "bullets": [
+          "Kompletní auditní stopa každé změny a rozhodnutí",
+          "Export do PDF / XLSX / XBRL / XML jedním kliknutím",
+          "Připravená odpovědnost řídícího orgánu (Management Body Accountability)"
+        ]
+      },
+      "06": {
+        "label": "Analytika, řídicí panely a reporty",
+        "short": "Analytika a reporty",
+        "description": "Stav shody v reálném čase: panely KPI, trendy rizik, teplotní mapy, postup implementace a hotové zprávy pro představenstvo, auditory a regulátory — bez tvorby kontingenčních tabulek.",
+        "bullets": [
+          "Řídicí panely KPI pro představenstvo, tým a auditory",
+          "Trendy rizik, incidentů a nevyřízených položek v jednom přehledu",
+          "Teplotní mapy rizik a pokrok v implementaci frameworků",
+          "Export reportů jedním kliknutím do PDF, XLSX a prezentací"
+        ]
+      }
+    }
   }
 }
