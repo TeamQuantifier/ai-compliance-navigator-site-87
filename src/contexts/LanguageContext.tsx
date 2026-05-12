@@ -2,6 +2,7 @@ import { createContext, useContext, ReactNode, useEffect, useState } from 'react
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { SUPPORTED_LOCALES, Locale, LOCALE_REGEX } from '@/i18n/config';
+import { getLocalizedPath } from '@/lib/localized-routes';
 import i18n from '@/i18n/config';
 
 interface ContentAlternate {
@@ -116,28 +117,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     }
 
-    // Handle pages with locale-specific slugs (e.g. training page)
-    const localizedRoutes: Record<string, Record<string, string>> = {
-      'szkolenia-cyberbezpieczenstwo-dla-firm': {
-        pl: 'szkolenia-cyberbezpieczenstwo-dla-firm',
-        en: 'cybersecurity-training-for-companies',
-        cs: 'skoleni-kyberneticka-bezpecnost-pro-firmy',
-      },
-      'cybersecurity-training-for-companies': {
-        pl: 'szkolenia-cyberbezpieczenstwo-dla-firm',
-        en: 'cybersecurity-training-for-companies',
-        cs: 'skoleni-kyberneticka-bezpecnost-pro-firmy',
-      },
-      'skoleni-kyberneticka-bezpecnost-pro-firmy': {
-        pl: 'szkolenia-cyberbezpieczenstwo-dla-firm',
-        en: 'cybersecurity-training-for-companies',
-        cs: 'skoleni-kyberneticka-bezpecnost-pro-firmy',
-      },
-    };
-
-    const cleanPath = pathWithoutLocale.replace(/^\/|\/$/g, '');
-    if (localizedRoutes[cleanPath]) {
-      navigate(`/${newLocale}/${localizedRoutes[cleanPath][newLocale]}`);
+    const localizedPath = getLocalizedPath(pathWithoutLocale, newLocale);
+    if (localizedPath !== (pathWithoutLocale.startsWith('/') ? pathWithoutLocale : `/${pathWithoutLocale}`)) {
+      navigate(`/${newLocale}${localizedPath}`);
       return;
     }
     
