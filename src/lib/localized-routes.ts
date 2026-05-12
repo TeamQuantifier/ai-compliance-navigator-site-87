@@ -3,13 +3,13 @@ import { Locale } from '@/i18n/config';
 export const PARTNERS_PATHS: Record<Locale, string> = {
   en: '/partners',
   pl: '/partnerzy',
-  cs: '/partneři',
+  cs: '/partneri',
 };
 
 export const GS1_PARTNER_PATHS: Record<Locale, string> = {
   en: '/partners/gs1-polska',
   pl: '/partnerzy/gs1-polska',
-  cs: '/partneři/gs1-polska',
+  cs: '/partneri/gs1-polska',
 };
 
 const LOCALIZED_SEGMENTS: Record<string, Record<Locale, string>> = {
