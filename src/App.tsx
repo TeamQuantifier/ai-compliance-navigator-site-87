@@ -202,7 +202,15 @@ const MainRoutes = () => (
         
         {/* Other main routes */}
         <Route path="/:locale/plans" element={<Plans />} />
+        <Route path="/en/partners" element={<Partners />} />
+        <Route path="/pl/partnerzy" element={<Partners />} />
+        <Route path="/cs/partneři" element={<Partners />} />
+        <Route path="/cs/partneri" element={<Navigate to="/cs/partneři" replace />} />
         <Route path="/:locale/partners" element={<Partners />} />
+        <Route path="/en/partners/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/pl/partnerzy/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/cs/partneři/gs1-polska" element={<Gs1Polska />} />
+        <Route path="/cs/partneri/gs1-polska" element={<Navigate to="/cs/partneři/gs1-polska" replace />} />
         <Route path="/:locale/partners/gs1-polska" element={<Gs1Polska />} />
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
