@@ -53,7 +53,6 @@ const Partners = () => {
   const reasons = asArray<string>(t('partners.page.reasons.items', { returnObjects: true }));
   const areas = asArray<PartnerArea>(t('partners.page.areas.items', { returnObjects: true }));
   const selectedPartners = asArray<SelectedPartnerCopy>(t('partners.page.selected.items', { returnObjects: true }));
-  const partnersPath = getLocalizedPathWithLocale(PARTNERS_PATHS[currentLocale], currentLocale);
   const gs1Path = getLocalizedPathWithLocale(GS1_PARTNER_PATHS[currentLocale], currentLocale);
   const contactPath = `/${currentLocale}/contact`;
   const canonicalUrl = `https://quantifier.ai${PARTNERS_PATHS[currentLocale]}/`;
