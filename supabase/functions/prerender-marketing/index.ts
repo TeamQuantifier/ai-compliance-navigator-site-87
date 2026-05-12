@@ -33,7 +33,7 @@ const pageUrlMap: Record<string, string> = {
   'gdpr-compliance': 'frameworks/gdpr',
   'nis2': 'frameworks/nis-2',
   'grc-platform': 'grc-platform',
-  'product-features': 'product/features',
+  'product': 'product',
   'plans': 'plans',
   'about': 'about',
   'contact': 'contact',
