@@ -145,6 +145,7 @@ const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
 
   for (let i = 0; i < contentSegments.length; i++) {
     const segment = contentSegments[i];
+    const decodedSegment = decodeURIComponent(segment);
     currentPath += `/${segment}`;
     
     // Check if this is the last segment and it has a parent that isn't already in the path
@@ -159,7 +160,7 @@ const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
       position++;
     }
 
-    const displayName = SEGMENT_NAME_MAP[segment] || segment
+    const displayName = SEGMENT_NAME_MAP[decodedSegment] || decodedSegment
       .split('-')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
