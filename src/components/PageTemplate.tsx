@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SUPPORTED_LOCALES, LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
+import { getLocalizedAlternates, getLocalizedPath } from '@/lib/localized-routes';
 
 interface PageTemplateProps {
   title: string;
@@ -45,6 +46,9 @@ const SEGMENT_NAME_MAP: Record<string, string> = {
   'epd': 'Environmental Product Declaration (EPD)',
   'lca-analysis': 'Life Cycle Analysis (LCA)',
   'success-stories': 'Success Stories',
+  'partners': 'Partners',
+  'partnerzy': 'Partnerzy',
+  'partneři': 'Partneři',
   'events': 'Events',
   'szkolenia-cyberbezpieczenstwo-dla-firm': 'Szkolenia Cyberbezpieczeństwo',
   'cybersecurity-training-for-business': 'Cybersecurity Training',
@@ -141,6 +145,7 @@ const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
 
   for (let i = 0; i < contentSegments.length; i++) {
     const segment = contentSegments[i];
+    const decodedSegment = decodeURIComponent(segment);
     currentPath += `/${segment}`;
     
     // Check if this is the last segment and it has a parent that isn't already in the path
@@ -155,7 +160,7 @@ const generateBreadcrumbs = (pathname: string, baseUrl: string) => {
       position++;
     }
 
-    const displayName = SEGMENT_NAME_MAP[segment] || segment
+    const displayName = SEGMENT_NAME_MAP[decodedSegment] || decodedSegment
       .split('-')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
@@ -195,18 +200,29 @@ const PageTemplate = ({
   const baseUrl = 'https://quantifier.ai';
   // Strip locale prefix AND any tracking parameters
   const currentPath = stripTrackingParams(location.pathname.replace(/^\/(en|pl|cs)/, ''));
-  const canonicalUrl = ensureTrailingSlash(`${baseUrl}/${currentLocale}${currentPath}`);
+  const canonicalPath = getLocalizedPath(currentPath || '/', currentLocale);
+  const canonicalUrl = ensureTrailingSlash(`${baseUrl}/${currentLocale}${canonicalPath}`);
   
   const fullTitle = `${title} | Quantifier.ai`;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
 
   // Generate hreflang for all supported locales
   const hreflangUrls = useMemo(() => {
+    const localizedAlternates = getLocalizedAlternates(currentPath);
+    if (localizedAlternates) {
+      return localizedAlternates.map(({ locale, path }) => ({
+        locale,
+        url: ensureTrailingSlash(`${baseUrl}/${locale}${path}`)
+      }));
+    }
+
     return SUPPORTED_LOCALES.map(locale => ({
       locale,
       url: ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)
     }));
   }, [currentPath]);
+
+  const defaultHref = hreflangUrls.find(({ locale }) => locale === 'en')?.url || ensureTrailingSlash(`${baseUrl}/en${canonicalPath}`);
 
   // Generate BreadcrumbList schema
   const breadcrumbSchema = useMemo(() => ({
@@ -232,7 +248,7 @@ const PageTemplate = ({
           {hreflangUrls.map(({ locale, url }) => (
             <link key={locale} rel="alternate" hrefLang={LOCALE_HREFLANG_MAP[locale as Locale]} href={url} />
           ))}
-          <link rel="alternate" hrefLang="x-default" href={ensureTrailingSlash(`${baseUrl}/en${currentPath}`)} />
+          <link rel="alternate" hrefLang="x-default" href={defaultHref} />
           
           {/* Open Graph */}
           <meta property="og:title" content={fullTitle} />

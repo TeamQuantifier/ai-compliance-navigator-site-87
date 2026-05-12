@@ -77,6 +77,14 @@ const pageUrlMap: Record<string, string> = {
   'compare-sprinto': 'compare/sprinto-alternative',
 };
 
+const getLocalizedUrlPath = (page: string, locale: string): string => {
+  if (page === 'partners') {
+    return locale === 'pl' ? 'partnerzy' : locale === 'cs' ? 'partneři' : 'partners';
+  }
+
+  return pageUrlMap[page] || page;
+};
+
 interface FAQ {
   question: string;
   answer: string;
@@ -2604,7 +2612,7 @@ async function fetchPublishedStories(locale: string) {
 // Generate JSON-LD schemas
 function generateSchemas(locale: string, page: string, pageData: PageData, collectionItems?: Array<{url: string; name: string; description?: string}>): string {
   const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
-  const urlPath = pageUrlMap[page] || page;
+  const urlPath = getLocalizedUrlPath(page, locale);
   const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   const schemas: object[] = [];
@@ -2817,13 +2825,14 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
 // Generate HTML content
 async function generateHtml(locale: string, page: string, pageData: PageData): Promise<string> {
   const baseUrl = ensureTrailingSlash(`${BASE_URL}/${locale}`);
-  const urlPath = pageUrlMap[page] || page;
+  const urlPath = getLocalizedUrlPath(page, locale);
   const pageUrl = page === 'index' ? baseUrl : ensureTrailingSlash(`${BASE_URL}/${locale}/${urlPath}`);
   
   // Generate all locale URLs for hreflang with regional codes
   const locales = ['en', 'pl', 'cs'];
   const hreflangTags = locales.map(l => {
-    const url = page === 'index' ? ensureTrailingSlash(`${BASE_URL}/${l}`) : ensureTrailingSlash(`${BASE_URL}/${l}/${urlPath}`);
+    const localizedUrlPath = getLocalizedUrlPath(page, l);
+    const url = page === 'index' ? ensureTrailingSlash(`${BASE_URL}/${l}`) : ensureTrailingSlash(`${BASE_URL}/${l}/${localizedUrlPath}`);
     const hreflang = localeHreflangMap[l] || l;
     return `<link rel="alternate" hreflang="${hreflang}" href="${url}">`;
   }).join('\n  ');
@@ -2902,7 +2911,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
         <li><a href="${BASE_URL}/${locale}/product/features">${labels.product}</a></li>
         <li><a href="${BASE_URL}/${locale}/frameworks">${labels.frameworks}</a></li>
         <li><a href="${BASE_URL}/${locale}/plans">${labels.plans}</a></li>
-        <li><a href="${BASE_URL}/${locale}/partners">${labels.partners}</a></li>
+        <li><a href="${BASE_URL}/${locale}/${getLocalizedUrlPath('partners', locale)}">${labels.partners}</a></li>
         <li><a href="${BASE_URL}/${locale}/blog">${labels.blog}</a></li>
         <li><a href="${BASE_URL}/${locale}/contact">${labels.contact}</a></li>
       </ul>
@@ -2962,7 +2971,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
   <meta name="description" content="${pageData.description}">
   <link rel="canonical" href="${pageUrl}">
   ${hreflangTags}
-  <link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en/${page === 'index' ? '' : urlPath}`)}">
+  <link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en/${page === 'index' ? '' : getLocalizedUrlPath(page, 'en')}`)}">
   
   <!-- Open Graph -->
   <meta property="og:title" content="${pageData.title}">

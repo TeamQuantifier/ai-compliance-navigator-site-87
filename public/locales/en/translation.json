@@ -2312,6 +2312,92 @@
       "dpp": "Product Passport",
       "ghg": "Carbon Footprint",
       "members": "47,000+ GS1 members"
+    },
+    "page": {
+      "hero": {
+        "eyebrow": "Quantifier partner network",
+        "title": "50+ partners helping organizations implement compliance and ESG.",
+        "lead": "We build a partner network that adds specialist expertise exactly where clients need it.",
+        "body": "We work with audit firms on NIS2, ISO 27001, SOC 2, ESG and CSRD implementations; with law firms and consulting companies on key regulations such as DORA, GDPR, whistleblowing, NIS2, CSRD and ESG; with IT and cybersecurity integrators on technical safeguards; and with universities and NGOs on research, education and funded projects.",
+        "cta": "Let’s talk about partnership"
+      },
+      "reasons": {
+        "title": "Why join the network",
+        "items": [
+          "Joint client projects.",
+          "Access to a GRC platform with ready-to-use NIS2, ESG, DPP and LCA modules.",
+          "Expert support and educational materials: webinars, reports and training.",
+          "Partner marketplace inside the Quantifier platform — visibility among clients implementing GRC and ESG."
+        ]
+      },
+      "stats": {
+        "partners": "Partners",
+        "areas": "Areas",
+        "reach": "Reach"
+      },
+      "areas": {
+        "title": "Which areas our partners cover",
+        "items": [
+          {
+            "name": "Auditors",
+            "desc": "NIS2, ISO 27001, SOC 2"
+          },
+          {
+            "name": "Law firms",
+            "desc": "DORA, GDPR, whistleblowing"
+          },
+          {
+            "name": "Consulting",
+            "desc": "ESG, CSRD, carbon footprint"
+          },
+          {
+            "name": "IT & cybersec",
+            "desc": "Implementations, integrations, SOC"
+          },
+          {
+            "name": "NGOs & universities",
+            "desc": "Research, education, LIFE"
+          }
+        ]
+      },
+      "selected": {
+        "title": "Selected partners",
+        "description": "We cooperate with leaders in finance, public institutions, universities and organizations focused on sustainable development and logistics.",
+        "items": [
+          {
+            "name": "BNP Paribas Bank Polska",
+            "description": "Partnership in financing sustainable transformation and supporting ESG reporting for corporate clients."
+          },
+          {
+            "name": "Alior Bank",
+            "description": "Cooperation on ESG and cybersecurity education and tools for the SME sector."
+          },
+          {
+            "name": "Polski Fundusz Rozwoju",
+            "description": "Partner for programs developing ESG capabilities and digital resilience among Polish companies."
+          },
+          {
+            "name": "Wroclaw University of Economics and Business",
+            "description": "Research cooperation in GRC, carbon footprint and information security."
+          },
+          {
+            "name": "Circular Economy Cluster",
+            "description": "Joint projects around DPP, LCA and circular transformation for cluster members."
+          },
+          {
+            "name": "Circular Production Community",
+            "description": "A community of manufacturers implementing circular economy practices — joint work on DPP, LCA and circular production models."
+          },
+          {
+            "name": "Reo.pl",
+            "description": "Integration of renewable energy and PPA data with Quantifier carbon modules."
+          },
+          {
+            "name": "Raben Group",
+            "description": "Cooperation on supply-chain emissions reporting (Scope 3) and sustainable logistics."
+          }
+        ]
+      }
     }
   },
   "frameworksPage": {
@@ -5798,8 +5884,8 @@
       "description": "Contact our team for a demo. See how Quantifier.ai automates ISO 27001, SOC 2, NIS2 compliance with AI-powered evidence collection."
     },
     "partners": {
-      "title": "Partner Network",
-      "description": "Join Quantifier.ai's global partner network. Collaborate with us to deliver AI-powered compliance solutions to organizations worldwide."
+      "title": "Quantifier.ai Partners | 50+ GRC and ESG partners",
+      "description": "Explore the Quantifier.ai partner network: auditors, law firms, consultants, IT integrators, universities and ESG organizations supporting NIS2, ISO 27001, CSRD, DPP and LCA."
     },
     "about": {
       "title": "About Us",
