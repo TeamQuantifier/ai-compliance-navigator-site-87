@@ -4954,6 +4954,17 @@
     }
   },
   "iso27001Page": {
+    "schema": {
+      "riskAssessment": "Ocena ryzyka",
+      "annexA": "Aneks A — 93 kontrole",
+      "soa": "Deklaracja Stosowania",
+      "evidence": "Gromadzenie dowodów",
+      "audit": "Audyt + doskonalenie",
+      "plan": "PLAN",
+      "do": "DO",
+      "check": "CHECK",
+      "act": "ACT"
+    },
     "title": "ISO 27001",
     "description": "Chroń swoje aktywa informacyjne dzięki globalnie uznanemu standardowi ISO 27001 dla zarządzania bezpieczeństwem informacji.",
     "hero": {
