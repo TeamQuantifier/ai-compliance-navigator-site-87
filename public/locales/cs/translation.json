@@ -4228,6 +4228,17 @@
     }
   },
   "iso27001Page": {
+    "schema": {
+      "riskAssessment": "Hodnocení rizik",
+      "annexA": "Příloha A — 93 kontrol",
+      "soa": "Prohlášení o aplikovatelnosti",
+      "evidence": "Sběr důkazů",
+      "audit": "Audit a zlepšování",
+      "plan": "PLAN",
+      "do": "DO",
+      "check": "CHECK",
+      "act": "ACT"
+    },
     "title": "ISO 27001 Framework",
     "description": "Chraňte svá informační aktiva s globálně uznávaným standardem ISO 27001 pro řízení informační bezpečnosti.",
     "hero": {

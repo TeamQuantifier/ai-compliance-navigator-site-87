@@ -1,4 +1,5 @@
 import { Shield, FileCheck, Library, ClipboardCheck, FolderCheck, RefreshCw } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /**
  * Interactive-feel ISMS (ISO 27001) schema.
@@ -6,12 +7,14 @@ import { Shield, FileCheck, Library, ClipboardCheck, FolderCheck, RefreshCw } fr
  * Pure SVG + Tailwind, no images, no gradient backgrounds.
  */
 export default function IsmsSchema() {
+  const { t } = useLanguage();
+
   const nodes = [
-    { icon: ClipboardCheck, label: "Ocena ryzyka", sub: "Plan", angle: -90 },
-    { icon: Library, label: "Aneks A — 93 kontrole", sub: "Do", angle: -18 },
-    { icon: FileCheck, label: "Statement of Applicability", sub: "Do", angle: 54 },
-    { icon: FolderCheck, label: "Evidence collection", sub: "Check", angle: 126 },
-    { icon: RefreshCw, label: "Audyt + doskonalenie", sub: "Act", angle: 198 },
+    { icon: ClipboardCheck, label: t('iso27001Page.schema.riskAssessment', "Ocena ryzyka"), sub: t('iso27001Page.schema.plan', "PLAN"), angle: -90 },
+    { icon: Library, label: t('iso27001Page.schema.annexA', "Aneks A — 93 kontrole"), sub: t('iso27001Page.schema.do', "DO"), angle: -18 },
+    { icon: FileCheck, label: t('iso27001Page.schema.soa', "Statement of Applicability"), sub: t('iso27001Page.schema.do', "DO"), angle: 54 },
+    { icon: FolderCheck, label: t('iso27001Page.schema.evidence', "Evidence collection"), sub: t('iso27001Page.schema.check', "CHECK"), angle: 126 },
+    { icon: RefreshCw, label: t('iso27001Page.schema.audit', "Audyt + doskonalenie"), sub: t('iso27001Page.schema.act', "ACT"), angle: 198 },
   ];
 
   const radius = 140; // px

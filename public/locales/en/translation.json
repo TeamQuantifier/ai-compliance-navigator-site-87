@@ -4943,6 +4943,17 @@
     }
   },
   "iso27001Page": {
+    "schema": {
+      "riskAssessment": "Risk assessment",
+      "annexA": "Annex A — 93 controls",
+      "soa": "Statement of Applicability",
+      "evidence": "Evidence collection",
+      "audit": "Audit & improvement",
+      "plan": "PLAN",
+      "do": "DO",
+      "check": "CHECK",
+      "act": "ACT"
+    },
     "title": "ISO 27001 Framework",
     "description": "Protect your information assets with the globally recognized ISO 27001 standard for information security management.",
     "hero": {
