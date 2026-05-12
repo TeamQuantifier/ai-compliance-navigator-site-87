@@ -2971,7 +2971,7 @@ async function generateHtml(locale: string, page: string, pageData: PageData): P
   <meta name="description" content="${pageData.description}">
   <link rel="canonical" href="${pageUrl}">
   ${hreflangTags}
-  <link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en/${page === 'index' ? '' : urlPath}`)}">
+  <link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(`${BASE_URL}/en/${page === 'index' ? '' : getLocalizedUrlPath(page, 'en')}`)}">
   
   <!-- Open Graph -->
   <meta property="og:title" content="${pageData.title}">
