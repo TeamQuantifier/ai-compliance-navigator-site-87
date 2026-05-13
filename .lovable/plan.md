@@ -1,20 +1,50 @@
-Twoje spostrzeżenia są całkowicie słuszne. Przeanalizowałem plik `src/pages/Partners.tsx` i oto dlaczego te sekcje nie działają prawidłowo na stronach w języku angielskim (EN) i czeskim (CS):
+## Co znalazłem
 
-1. **Brak sekcji "Wybrani partnerzy" na EN i CS:**
-   W kodzie sekcja z logotypami partnerów jest obecnie celowo zablokowana i wyświetla się *tylko* na polskiej wersji językowej: `{currentLocale === 'pl' && (...)}`. Ponadto cała lista partnerów i ich opisy wpisane są "na sztywno" w języku polskim wewnątrz pliku.
+Problem nie wygląda na błąd w routingu Reacta ani w sitemapie. Produkcja `https://quantifier.ai/en/product` serwuje stary bundle aplikacji:
 
-2. **Problem z sekcją "Z jakich obszarów są nasi partnerzy":**
-   Ta sekcja formalnie pojawia się na stronach EN i CS, ale wszystkie etykiety (np. *Audytorzy*, *Kancelarie prawne*, *Konsulting*) oraz nagłówek są wpisane na sztywno po polsku. Co więcej, cała górna sekcja (Hero) z tekstem *"50+ partnerów..."* również jest wpisana w kodzie na stałe w języku polskim.
+- produkcyjny HTML ładuje `/assets/index-wSAOWkkd.js`,
+- w tym pliku nie ma nowych markerów kodu: `InfinityComplianceLoop`, nowych tekstów produktu, lokalizowanego `iso27001Page.schema.*`, ani trasy `/cs/partneri`,
+- aktualny kod w projekcie te zmiany ma,
+- `sitemap.xml` na produkcji już pokazuje wpisy dla `/en/product/`, `/pl/product/`, `/cs/product/`, więc backend/sitemap częściowo jest aktualny.
 
-### Plan naprawczy (Gotowy do wdrożenia):
+Wniosek: domena `quantifier.ai` nadal działa na starym deployu Netlify albo Netlify buduje z innego brancha/commita niż ten, do którego zostały zmergowane zmiany.
 
-1. **Refaktoryzacja `src/pages/Partners.tsx`:**
-   - Usuniemy warunek `{currentLocale === 'pl' &&}`, aby sekcja "Wybrani partnerzy" była widoczna dla wszystkich języków.
-   - Usuniemy polski tekst zaszyty bezpośrednio w kodzie komponentu (cała sekcja Hero, powody, obszary partnerów i lista wybranych partnerów). Zastąpimy go wywołaniami funkcji `t()` (np. `t('partnersPage.hero.title')`, `t('partnersPage.areas.items')`).
+## Plan naprawy
 
-2. **Aktualizacja plików językowych (`pl`, `en`, `cs`):**
-   - **PL (`public/locales/pl/translation.json`)**: Przeniesiemy wszystkie obecne polskie teksty ze strony Partners do słownika.
-   - **EN (`public/locales/en/translation.json`)**: Przetłumaczymy wszystkie elementy (Hero, Obszary, Wybrani Partnerzy) na profesjonalny, biznesowy język angielski, utrzymując terminologię GRC.
-   - **CS (`public/locales/cs/translation.json`)**: Przetłumaczymy wszystkie elementy na język czeski (np. *IT a kyberbezpečnost*, *Právní kanceláře*), z zachowaniem poprawności stylistycznej.
+1. **Sprawdzić Netlify Deploys**
+   - Wejdź w Netlify → projekt `quantifier.ai` → **Deploys**.
+   - Sprawdź ostatni deploy: czy jest po merge’u i czy zakończył się statusem **Published**.
+   - Otwórz deploy details i sprawdź commit SHA/branch.
 
-Zatwierdź ten plan, a od razu wdrożę te zmiany!
+2. **Zweryfikować branch produkcyjny**
+   - Netlify → **Site configuration → Build & deploy → Continuous deployment**.
+   - Sprawdź **Production branch**.
+   - Jeśli merge poszedł np. do `main`, a Netlify publikuje `master`, `production`, `lovable`, albo inny branch — produkcja nie zobaczy zmian.
+   - Ustaw production branch na branch, do którego faktycznie mergujesz.
+
+3. **Wymusić czysty redeploy**
+   - W Netlify → **Deploys** kliknij **Trigger deploy → Clear cache and deploy site**.
+   - To ważne, bo zwykły deploy może czasem zachować stare artefakty/cache.
+
+4. **Po deployu porównać asset hash**
+   - Po nowym deployu produkcyjny HTML nie powinien już wskazywać na `/assets/index-wSAOWkkd.js`.
+   - Jeśli hash pliku JS się nie zmienił, Netlify nadal buduje stary kod albo zły branch.
+
+5. **Sprawdzić brak błędów builda**
+   - Jeżeli deploy failed/canceled/skipped, trzeba otworzyć log builda i naprawić konkretny błąd.
+   - Konfiguracja builda wygląda poprawnie: `command = "npm run build"`, `publish = "dist"`.
+
+6. **Dopiero po tym sprawdzić URL-e**
+   - `https://quantifier.ai/en/product/`
+   - `https://quantifier.ai/pl/product/`
+   - `https://quantifier.ai/cs/product/`
+   - `https://quantifier.ai/cs/partneri/`
+   - `https://quantifier.ai/pl/frameworks/iso-27001/`
+
+## Najbardziej prawdopodobna przyczyna
+
+Netlify nie opublikował commita z tymi zmianami na produkcyjnej domenie. Sam merge na GitHubie nie wystarczy, jeśli Netlify ma ustawiony inny production branch, build się nie uruchomił, deploy nie został opublikowany, albo został pominięty przez konfigurację CI.
+
+## Co mogę zrobić po Twojej stronie w kodzie
+
+Nie trzeba teraz zmieniać kodu aplikacji — aktualny kod zawiera zmiany. Jeśli chcesz, po tym jak sprawdzisz Netlify/branch, mogę przeanalizować log deploya, jeśli wkleisz jego błąd albo dasz screen z ostatniego deployu.
