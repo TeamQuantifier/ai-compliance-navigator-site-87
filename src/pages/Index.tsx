@@ -274,6 +274,7 @@ const Index = () => {
       </Helmet>
 
       <HeroSection />
+      <FeaturedBySection />
       <FeatureSection />
       <InsidersSection />
       <TrustReasonsSection />
