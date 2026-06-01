@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
+import FeaturedBySection from "@/components/FeaturedBySection";
 import FeatureSection from "@/components/FeatureSection";
 import InsidersSection from "@/components/InsidersSection";
 import TrustReasonsSection from "@/components/TrustReasonsSection";
