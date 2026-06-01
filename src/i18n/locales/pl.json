@@ -95,6 +95,11 @@
     "cybersecCheck": "Sprawdź Cyberbezp.",
     "training": "Szkolenia"
   },
+  "featuredBy": {
+    "badge": "Zaufali nam",
+    "title": "Wyróżnieni przez ekspertów i instytucje",
+    "subtitle": "Współpracujemy z instytucjami publicznymi i organizacjami eksperckimi kształtującymi standardy cyberbezpieczeństwa i compliance."
+  },
   "hero": {
     "title": "Platforma i doradztwo",
     "titleLine2": "do zarządzania regulacjami i zgodnością",
