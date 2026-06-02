@@ -1,16 +1,23 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import nccPl from "@/assets/featured/ncc-pl.png.asset.json";
-import ministerstwo from "@/assets/featured/ministerstwo-cyfryzacji.png.asset.json";
-import topAi from "@/assets/featured/top-ai-driven-companies.png.asset.json";
-import featuredLogo from "@/assets/featured/featured-logo.svg.asset.json";
-import featuredHeader from "@/assets/featured/featured-header.svg.asset.json";
 
+// Served from /public/featured so they work on both Lovable preview AND the
+// Netlify-hosted production domain (the /__l5e/ asset path is preview-only).
 const logos = [
-  { src: ministerstwo.url, alt: "Ministerstwo Cyfryzacji", h: "h-16" },
-  { src: nccPl.url, alt: "NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa", h: "h-16" },
-  { src: featuredHeader.url, alt: "Partner instytucjonalny", h: "h-12" },
-  { src: featuredLogo.url, alt: "Partner technologiczny", h: "h-10" },
-  { src: topAi.url, alt: "Top AI Driven Companies", h: "h-14" },
+  {
+    src: "/featured/ministerstwo-cyfryzacji.png",
+    alt: "Ministerstwo Cyfryzacji",
+    h: "h-14 md:h-16",
+  },
+  {
+    src: "/featured/ncc-pl.png",
+    alt: "NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa",
+    h: "h-14 md:h-16",
+  },
+  {
+    src: "/featured/top-ai-driven-companies.png",
+    alt: "Top AI Driven Companies",
+    h: "h-12 md:h-14",
+  },
 ];
 
 const FeaturedBySection = () => {
@@ -30,16 +37,16 @@ const FeaturedBySection = () => {
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             {t("featuredBy.subtitle", {
               defaultValue:
-                "Współpracujemy z instytucjami publicznymi i organizacjami eksperckimi kształtującymi standardy cyberbezpieczeństwa i compliance.",
+                "Nasze technologie zdobywają uznanie ekspertów, a współpraca z czołowymi instytucjami pozwala nam współtworzyć standardy cyberbezpieczeństwa, AI i compliance.",
             })}
           </p>
         </div>
 
-        <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
+        <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 md:gap-x-20">
           {logos.map((logo) => (
             <li
               key={logo.src}
-              className="flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               <img
                 src={logo.src}
