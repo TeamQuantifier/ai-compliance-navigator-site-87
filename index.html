@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <!-- 
-      GDPR/ePrivacy Compliance: Tracking scripts (GTM, GA4, Clarity) are NOT loaded here.
-      They are conditionally loaded by the React app ONLY after user consent.
+      GDPR/ePrivacy Compliance: GTM is loaded with Google Consent Mode v2 default DENIED.
+      Marketing/analytics storage is only granted by the React app after cookie consent.
       See: src/lib/script-loader.ts and src/contexts/CookieConsentContext.tsx
     -->
     
@@ -60,11 +60,23 @@
       gtag('set', 'url_passthrough', true);
     </script>
 
+    <!-- Google Tag Manager — detectable immediately, tags remain consent-gated by default denied mode above -->
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5LLXS7KR');
+    </script>
+
     <script>window.prerenderReady = false;</script>
   </head>
 
   <body>
-    <!-- GTM noscript iframe is NOT included here - loaded dynamically after consent -->
+    <!-- GTM noscript iframe is intentionally omitted so non-JS tracking cannot bypass consent. -->
     
     <div id="root"></div>
     <noscript>
