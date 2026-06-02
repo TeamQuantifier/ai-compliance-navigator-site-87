@@ -12,6 +12,7 @@ import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
 import { CookieConsentBanner } from "./components/cookies/CookieConsentBanner";
 import { BookPromoPopup } from "./components/BookPromoPopup";
+import { SpaPageviewTracker } from "./components/SpaPageviewTracker";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -265,6 +266,7 @@ const AppContent = () => {
   const isCyberCheck = typeof window !== 'undefined' && /\/(en|cs)\/(cybersecurity-check)|\/pl\/(sprawdz-cyberbezpieczenstwo)/.test(window.location.pathname);
   return (
     <>
+      <SpaPageviewTracker />
       <Toaster />
       <Sonner />
       <Routes>
