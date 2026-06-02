@@ -3,6 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/seo/FAQSection';
+import {
+  TrainingPromoBanner,
+  TrainingPromoSection,
+  TrainingPromoDialog,
+} from '@/components/promo/TrainingPromo2026';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import {
@@ -77,6 +82,9 @@ const TrainingLanding = () => {
         <title>{fullTitle}</title>
         <meta name="description" content={t('seo.training.description')} />
       </Helmet>
+
+      <TrainingPromoBanner locale={currentLocale} />
+      <TrainingPromoDialog locale={currentLocale} />
 
       {/* ─── STICKY CTA BAR ─── */}
       <div className="fixed top-16 left-0 right-0 z-40 bg-foreground/95 backdrop-blur-sm border-b border-border/20 hidden md:block">
@@ -187,6 +195,9 @@ const TrainingLanding = () => {
           </div>
         </div>
       </section>
+
+      <TrainingPromoSection locale={currentLocale} />
+
 
 
       {/* ─── 3. PROBLEM SECTION ─── */}
