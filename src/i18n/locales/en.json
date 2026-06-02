@@ -95,6 +95,11 @@
     "cybersecCheck": "Cybersec. Check",
     "training": "Training"
   },
+  "featuredBy": {
+    "badge": "Trusted by",
+    "title": "Featured by experts and institutions",
+    "subtitle": "We work with public institutions and expert organizations shaping cybersecurity and compliance standards."
+  },
   "hero": {
     "title": "Platform and advisory",
     "titleLine2": "for regulatory and compliance management",
