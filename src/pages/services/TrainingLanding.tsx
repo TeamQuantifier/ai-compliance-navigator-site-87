@@ -197,6 +197,10 @@ const TrainingLanding = () => {
       </section>
 
 
+      </section>
+
+      <TrainingPromoSection locale={currentLocale} />
+
       {/* ─── 3. PROBLEM SECTION ─── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
