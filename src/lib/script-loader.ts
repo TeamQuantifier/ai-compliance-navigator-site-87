@@ -106,6 +106,16 @@ function initClarity(): void {
  */
 function initGTM(): void {
   if (loadedScripts.has('gtm')) return;
+
+  const gtmScriptAlreadyPresent = Array.from(document.scripts).some((script) =>
+    script.src.includes(`googletagmanager.com/gtm.js?id=${GTM_ID}`)
+  );
+
+  if (gtmScriptAlreadyPresent) {
+    loadedScripts.add('gtm');
+    console.log('[Consent] Google Tag Manager already present; consent state updated');
+    return;
+  }
   
   // GTM initialization script
   (function(w: Window, d: Document, s: string, l: string, i: string) {
