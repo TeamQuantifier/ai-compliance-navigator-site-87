@@ -9430,5 +9430,10 @@
         ]
       }
     }
+  },
+  "featuredBy": {
+    "badge": "Trusted by",
+    "title": "Recognized by Experts and Institutions",
+    "subtitle": "Our technologies earn recognition from experts, and partnerships with leading institutions allow us to co-create standards in cybersecurity, AI, and compliance."
   }
 }
