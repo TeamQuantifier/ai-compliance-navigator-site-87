@@ -14,6 +14,16 @@ const logos = [
     h: "h-14 md:h-16",
   },
   {
+    src: "/featured/ai-chamber.png",
+    alt: "AI Chamber",
+    h: "h-10 md:h-12",
+  },
+  {
+    src: "/featured/klaster-gospodarki-cyrkularnej.png",
+    alt: "Klaster Gospodarki Cyrkularnej i Recyklingu",
+    h: "h-12 md:h-14",
+  },
+  {
     src: "/featured/top-ai-driven-companies.png",
     alt: "Top AI Driven Companies",
     h: "h-12 md:h-14",
