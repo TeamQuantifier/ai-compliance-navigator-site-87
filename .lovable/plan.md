@@ -1,49 +1,133 @@
-# Plan: GTM na /pl/frameworks/soc i /pl/success-stories/case-study-grupa-raben + audyt SEO
 
-## 1. Diagnoza GTM
+## Cel
 
-GTM (`GTM-5LLXS7KR`) ładuje się dynamicznie w `src/lib/script-loader.ts` **wyłącznie po akceptacji cookies marketingowych** (RODO, banner cookies). Dotyczy wszystkich podstron jednakowo — kod nie ma żadnej logiki, która wyłączałaby GTM dla `/pl/frameworks/soc` ani `/pl/success-stories/case-study-grupa-raben`.
+Wyeksponować na stronie `/pl/szkolenia-cyberbezpieczenstwo-dla-firm` (oraz w wersjach EN/CS) ofertę:
 
-Możliwe realne przyczyny "brak tagów" zgłaszane przez Tag Assistant:
+- **4h szkolenie dla Twojej firmy** z nowych obowiązków: **NIS2 / KSC / ISO 27001**
+- **100% finansowania** – „dowiedz się jak pozyskać za darmo"
+- **Decyzja w 3 dni robocze**
+- **Limit miejsc** – rejestracja do **30.06.2026**, realizacja może być później
+- Mocne CTA → formularz kontaktowy/„Umów rozmowę"
 
-- **A.** Tag Assistant otwiera stronę w izolowanym kontekście (`tagassistant.google.com` w iframe) — banner cookies pojawia się od nowa, a bez kliknięcia "Akceptuj wszystkie" GTM się nie inicjalizuje. To zachowanie globalne, nie problem 2 stron.
-- **B.** Runtime error w komponencie strony przerywa hydratację Reacta zanim `script-loader` zdąży zareagować na consent. Sprawdzę console + hydration na obu trasach.
-- **C.** Edge function `prerender-marketing` serwuje botom HTML bez GTM (to akurat OK dla Googlebota — GTM dla SEO nie jest potrzebny), ale jeśli Tag Assistant trafia na wersję bot — wytłumaczę.
+Proponuję wdrożyć **trzy uzupełniające się formaty jednocześnie** (banner + sekcja + pop-up), żeby maksymalnie zwiększyć konwersję, ale każdy z nich może działać osobno. Poniżej opisuję, jak każdy z nich miałby wyglądać – wybierz, które chcesz wdrożyć (jeden, dwa albo wszystkie trzy).
 
-## 2. Co zrobię
+---
 
-1. **Otworzę obie strony w sandboxie** (`browser--navigate_to_sandbox`), zaakceptuję cookies marketingowe, sprawdzę:
-   - czy `window.google_tag_manager['GTM-5LLXS7KR']` istnieje,
-   - czy `dataLayer` ma `gtm.js` event,
-   - request do `googletagmanager.com/gtm.js?id=GTM-5LLXS7KR`,
-   - console errors / runtime errors blokujące init.
-2. Jeśli GTM nie startuje na konkretnej trasie pomimo zgody → znajdę i naprawię błąd w komponencie (`Soc.tsx` lub `DetailedCaseStudy.tsx` / hooku `useMultiLangStory`).
-3. Jeśli GTM startuje normalnie → opiszę dlaczego Tag Assistant pokazuje "brak tagów" (najczęściej: brak akceptacji cookies w iframe Tag Assistant) i podam sposób testu, który zadziała (extension Tag Assistant Legacy po ręcznym akceptowaniu cookies na żywej stronie, albo GTM Preview Mode z `?gtm_debug=...`).
+## Wariant A – Sticky banner na górze strony (announcement bar)
 
-## 3. Audyt SEO
+Wąski, pełnej szerokości pasek tuż nad nawigacją albo zaraz pod nią, widoczny od razu po wejściu.
 
-1. **`seo_chat--list_findings`** — odczytam aktualne failing/ignored findings z ostatniego skanu.
-2. **`seo_chat--trigger_scan`** — uruchomię świeży skan (wymaga akceptacji użytkownika).
-3. Po skanie naprawię wszystkie failing findings w jednym podejściu (typowo: meta title/description, canonical, hreflang, JSON-LD, sitemap). Każdy fix → `seo_chat--update_findings`.
+```text
+╔══════════════════════════════════════════════════════════════════════╗
+║ 🎓  Tylko do 30.06.2026 · 4h szkolenia NIS2 / KSC / ISO 27001        ║
+║     dla Twojej firmy — sprawdź, jak uzyskać 100% finansowania        ║
+║     · decyzja w 3 dni roboczych · [ Sprawdź ofertę → ]   ✕           ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
 
-## 4. Interpretacja Semrush (screenshot)
+- Gradient w kolorach marki (np. `from-primary to-primary/80`), tekst biały
+- Countdown / data „do 30.06.2026" wyróżniona pogrubieniem
+- Przycisk CTA przewija do nowej sekcji promocyjnej (kotwica `#oferta-finansowanie`)
+- Krzyżyk „✕" do zamknięcia, stan zapisany w `localStorage` (raz zamknięty – nie wraca w sesji)
+- Widoczny na desktop i mobile (na mobile 2 linijki + CTA pod spodem)
 
-Krótka analiza tego co widać (PL):
+---
 
-- **Słowa kluczowe** rosną od marca 2026: TOP3 (pomarańczowy) wystartowały z 0 → ~5 w maju 2026, TOP4–10 z ~5 → ~14, TOP11–20 z ~10 → ~21. Wszystkie pasma w trendzie wzrostowym = sygnał, że Google odzyskuje zaufanie i zaczyna wynagradzać świeże publikacje / fixy techniczne.
-- **Ruch organiczny** (górny wykres) — wzrost z 0 do ~21 wizyt/dz w maju 2026. Niski wolumen bezwzględny, ale **kierunek właściwy**.
-- **Przegląd od AI** (różowa) wciąż 0 — nie pojawia się jeszcze w AI Overviews. Tu pomoże dalsza ekspansja klastrów filarowych i JSON-LD (FAQPage, HowTo, DefinedTermSet).
+## Wariant B – Dedykowana sekcja promocyjna na stronie
 
-Crawlowanie i ruch robotów — sprawdzę realnie:
-- czy `quantifier.ai/sitemap.xml` (edge function) zwraca poprawny XML ze wszystkimi 40+ ścieżkami × 3 języki,
-- czy `robots.txt` nie blokuje krytycznych ścieżek,
-- czy `prerender-marketing` poprawnie serwuje treść dla Googlebota dla `/pl/frameworks/soc` i `/pl/success-stories/...` (jeśli bot dostaje pustą stronę, indeksacja stoi),
-- czy hreflang / canonical są symetryczne.
+Wstawiona wysoko na stronie (tuż po Hero, przed sekcją „Problem"), żeby od razu po scrollu rzucała się w oczy.
 
-## 5. Deliverable
+```text
+┌──────────────────────────────────────────────────────────────────────┐
+│  [ Oferta limitowana · do 30.06.2026 ]                               │
+│                                                                      │
+│   4h szkolenia dla Twojej firmy z nowych obowiązków                  │
+│   cyberbezpieczeństwa: NIS2 · KSC · ISO 27001                        │
+│                                                                      │
+│   Pokażemy Ci, jak sfinansować je w 100% — bez ukrytych kosztów.    │
+│                                                                      │
+│   ✓ Szkolenie szyte na miarę Twojej firmy i branży                   │
+│   ✓ Pomoc w pozyskaniu 100% dofinansowania                           │
+│   ✓ Decyzja w 3 dni roboczych                                        │
+│   ✓ Rejestracja do 30.06.2026 — realizacja możliwa później           │
+│   ✓ Limitowana liczba miejsc                                         │
+│                                                                      │
+│   [ Sprawdź dostępność →  ]   [ Pobierz szczegóły oferty ]           │
+└──────────────────────────────────────────────────────────────────────┘
+```
 
-- Werdykt + ewentualny fix dla GTM na obu stronach.
-- Lista naprawionych failing SEO findings.
-- Sekcja "Crawlowanie i ruch robotów" — co aktualnie działa, gdzie są wąskie gardła, 3–5 konkretnych rekomendacji co zrobić, żeby przyspieszyć trend ze screenshotu.
+- Tło: ciemny gradient (np. slate → primary), zgodne z resztą strony szkoleń (zgodnie z memory: premium slate-to-blue)
+- Po lewej tekst + bullet list, po prawej karta z dużą datą **30.06.2026** i licznikiem dni / „3 dni roboczych na decyzję"
+- Główne CTA → formularz kontaktowy na dole strony (kotwica do istniejącej sekcji)
+- Drugorzędne CTA → opcjonalnie do PDF/strony z opisem warunków (jeśli będzie)
+- Sekcja zawiera mały disclaimer małym fontem: „Liczba szkoleń ograniczona. Oferta ważna do 30.06.2026 (rejestracja). Termin realizacji ustalany indywidualnie."
 
-Bez zmian w logice biznesowej — tylko diagnostyka + fixy SEO/tracking.
+---
+
+## Wariant C – Pop-up (exit-intent + opóźniony)
+
+Pojawia się raz na sesję: po ~15 sekundach lub przy próbie opuszczenia strony (ruch myszy w stronę zamknięcia karty na desktop).
+
+```text
+        ┌──────────────────────────────────────────────┐
+        │   ✕                                          │
+        │                                              │
+        │   🎯  Tylko do 30.06.2026                    │
+        │                                              │
+        │   4h szkolenia z NIS2 / KSC / ISO 27001      │
+        │   dla Twojej firmy — nawet 100% za free       │
+        │                                              │
+        │   • Decyzja w 3 dni roboczych                │
+        │   • Limitowana liczba miejsc                 │
+        │   • Realizacja możliwa po 30.06              │
+        │                                              │
+        │   [ email firmowy ____________________ ]     │
+        │   [   Chcę poznać szczegóły  →   ]           │
+        │                                              │
+        │   Bez spamu. Odpowiadamy w 1 dzień roboczy.  │
+        └──────────────────────────────────────────────┘
+```
+
+- Modal oparty o istniejący komponent `Dialog` (shadcn) – spójny ze stylem strony
+- Pole „email" + przycisk → wysyłka przez istniejącą funkcję `contact-form` (z tagiem `source: training-promo-2026`)
+- Zapamiętanie w `localStorage`, że użytkownik już widział / zamknął / wysłał → nie pokazujemy ponownie
+- Trigger: pierwszy z: 15s na stronie, scroll > 50%, lub exit-intent
+
+---
+
+## Treść (3 języki)
+
+Dodam klucze do `public/locales/{pl,en,cs}/translation.json` pod `training.promo2026`:
+
+- `badge` – „Oferta limitowana · do 30.06.2026" / „Limited offer · until 30.06.2026" / „Limitovaná nabídka · do 30. 6. 2026"
+- `title`, `subtitle`, `bullets[]`, `cta`, `disclaimer`
+- Wszystkie warianty (banner / sekcja / pop-up) korzystają z tej samej puli tekstów
+
+Domyślne formułowanie (PL):
+
+> **4h szkolenie z NIS2 / KSC / ISO 27001 dla Twojej firmy.** Pokażemy Ci, jak sfinansować je w 100%. Decyzja w 3 dni roboczych. Rejestracja do 30.06.2026 – realizacja również po tej dacie. Liczba szkoleń ograniczona.
+
+---
+
+## Co potrzebuję od Ciebie, żeby zacząć
+
+1. **Które formaty wdrażamy?** (zaznacz: banner / sekcja / pop-up – możesz wybrać kilka)
+2. **Gdzie ma prowadzić główne CTA?** Domyślnie: przewinięcie do istniejącego formularza kontaktowego na stronie szkoleń. Alternatywy: `/pl/kontakt`, dedykowany formularz „dofinansowanie".
+3. **„100% za free" – jak ma brzmieć dokładnie?** Czy mogę użyć sformułowania „do 100% dofinansowania" / „nawet 100% finansowania", czy chcesz literalnie „100% za free / za darmo"? (sugeruję pierwsze – bardziej wiarygodne i bezpieczne prawnie)
+4. **Czy włączamy ofertę także na EN/CS, czy tylko PL?**
+
+Po Twojej odpowiedzi wdrażam wybrane warianty + tłumaczenia.
+
+---
+
+## Szczegóły techniczne (dla porządku)
+
+- Nowe komponenty:
+  - `src/components/promo/TrainingPromoBanner.tsx` (Wariant A)
+  - `src/components/promo/TrainingPromoSection.tsx` (Wariant B)
+  - `src/components/promo/TrainingPromoDialog.tsx` (Wariant C)
+- Montaż wszystkich w `src/pages/services/TrainingLanding.tsx` (banner na górze, sekcja po Hero, dialog na poziomie strony)
+- Stan „zamknięte / wysłane" w `localStorage` pod kluczami `promo2026.banner`, `promo2026.dialog`
+- Treści w `public/locales/{pl,en,cs}/translation.json` → `training.promo2026.*`
+- Pop-up wysyła lead przez istniejącą edge function `contact-form` z polem `source: 'training-promo-2026'` (bez nowych migracji DB)
+- Zgodność z istniejącym design systemem (semantic tokens, slate-to-blue z memory)
