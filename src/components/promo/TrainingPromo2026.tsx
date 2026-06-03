@@ -138,20 +138,23 @@ const getCopy = (locale: string): Copy => COPY[detectLocale(locale)];
 
 /* ─────────────────────────── Banner ─────────────────────────── */
 export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const keys = STORAGE_KEYS(resolved);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!localStorage.getItem(STORAGE.banner)) setVisible(true);
-  }, []);
+    if (!localStorage.getItem(keys.banner)) setVisible(true);
+  }, [keys.banner]);
 
   if (!visible) return null;
 
   const dismiss = () => {
-    localStorage.setItem(STORAGE.banner, '1');
+    localStorage.setItem(keys.banner, '1');
     setVisible(false);
   };
+
 
   return (
     <div className="relative z-50 bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground">
