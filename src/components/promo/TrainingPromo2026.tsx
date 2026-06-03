@@ -120,29 +120,41 @@ const COPY: Record<Locale, Copy> = {
   },
 };
 
-const STORAGE = {
-  banner: 'promo2026.banner.dismissed',
-  dialog: 'promo2026.dialog.dismissed',
+const STORAGE_KEYS = (locale: string) => ({
+  banner: `promo2026.banner.dismissed.${locale}`,
+  dialog: `promo2026.dialog.dismissed.${locale}`,
+});
+
+const detectLocale = (input?: string): Locale => {
+  if (input === 'pl' || input === 'en' || input === 'cs') return input;
+  if (typeof window !== 'undefined') {
+    const seg = window.location.pathname.split('/')[1];
+    if (seg === 'en' || seg === 'cs' || seg === 'pl') return seg;
+  }
+  return 'pl';
 };
 
-const getCopy = (locale: string): Copy => COPY[(locale as Locale)] ?? COPY.pl;
+const getCopy = (locale: string): Copy => COPY[detectLocale(locale)];
 
 /* ─────────────────────────── Banner ─────────────────────────── */
 export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const keys = STORAGE_KEYS(resolved);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!localStorage.getItem(STORAGE.banner)) setVisible(true);
-  }, []);
+    if (!localStorage.getItem(keys.banner)) setVisible(true);
+  }, [keys.banner]);
 
   if (!visible) return null;
 
   const dismiss = () => {
-    localStorage.setItem(STORAGE.banner, '1');
+    localStorage.setItem(keys.banner, '1');
     setVisible(false);
   };
+
 
   return (
     <div className="relative z-50 bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground">
@@ -176,9 +188,10 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
   return (
     <section
       id="promo-finansowanie"
-      className="relative py-14 md:py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-primary/30 overflow-hidden"
+      className="relative py-14 md:py-20 bg-slate-950 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_hsl(221_83%_53%/0.25),transparent_60%)] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[520px] h-[520px] bg-[radial-gradient(circle_at_center,_hsl(221_83%_53%/0.18),transparent_70%)] pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-[420px] h-[420px] bg-[radial-gradient(circle_at_center,_hsl(221_83%_53%/0.08),transparent_70%)] pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
           <div>
@@ -225,14 +238,14 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
               </Button>
             </div>
 
-            <p className="text-xs text-white/60 mt-5 max-w-2xl leading-relaxed">
+            <p className="text-xs text-white/70 mt-5 max-w-2xl leading-relaxed">
               {c.disclaimer}
             </p>
           </div>
 
           {/* Date card */}
           <div className="relative">
-            <div className="bg-white/[0.06] backdrop-blur-md border border-white/15 rounded-2xl p-7 shadow-2xl">
+            <div className="bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-2xl p-7 shadow-2xl">
               <p className="text-xs uppercase tracking-wider text-white/60 mb-2">
                 {c.dateLabel}
               </p>
@@ -252,7 +265,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 {['NIS2', 'KSC', 'ISO 27001'].map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold border border-primary/30"
+                    className="px-2.5 py-1 rounded-full bg-primary/25 text-white text-xs font-semibold border border-primary/40"
                   >
                     {tag}
                   </span>
@@ -268,12 +281,14 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
 
 /* ─────────────────────────── Dialog ─────────────────────────── */
 export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const keys = STORAGE_KEYS(resolved);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (localStorage.getItem(STORAGE.dialog)) return;
+    if (localStorage.getItem(keys.dialog)) return;
 
     let opened = false;
     const trigger = () => {
@@ -303,12 +318,13 @@ export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
       window.removeEventListener('scroll', onScroll);
       document.removeEventListener('mouseleave', onMouseLeave);
     };
-  }, []);
+  }, [keys.dialog]);
 
   const handleOpenChange = (next: boolean) => {
     setOpen(next);
-    if (!next) localStorage.setItem(STORAGE.dialog, '1');
+    if (!next) localStorage.setItem(keys.dialog, '1');
   };
+
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
