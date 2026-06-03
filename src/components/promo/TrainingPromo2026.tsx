@@ -120,12 +120,21 @@ const COPY: Record<Locale, Copy> = {
   },
 };
 
-const STORAGE = {
-  banner: 'promo2026.banner.dismissed',
-  dialog: 'promo2026.dialog.dismissed',
+const STORAGE_KEYS = (locale: string) => ({
+  banner: `promo2026.banner.dismissed.${locale}`,
+  dialog: `promo2026.dialog.dismissed.${locale}`,
+});
+
+const detectLocale = (input?: string): Locale => {
+  if (input === 'pl' || input === 'en' || input === 'cs') return input;
+  if (typeof window !== 'undefined') {
+    const seg = window.location.pathname.split('/')[1];
+    if (seg === 'en' || seg === 'cs' || seg === 'pl') return seg;
+  }
+  return 'pl';
 };
 
-const getCopy = (locale: string): Copy => COPY[(locale as Locale)] ?? COPY.pl;
+const getCopy = (locale: string): Copy => COPY[detectLocale(locale)];
 
 /* ─────────────────────────── Banner ─────────────────────────── */
 export const TrainingPromoBanner = ({ locale }: { locale: string }) => {

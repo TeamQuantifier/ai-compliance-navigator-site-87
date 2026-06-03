@@ -1,133 +1,43 @@
 
-## Cel
+## Co naprawiamy
 
-Wyeksponować na stronie `/pl/szkolenia-cyberbezpieczenstwo-dla-firm` (oraz w wersjach EN/CS) ofertę:
+Na screenshocie widać **sekcję promo "Rejestracja do 30.06.2026"** (to nie hero, tylko sekcja zaraz pod hero) — jej dolna część jest jasna/biaława, przez co tekst po lewej („…100%", „…dofinansowaniu", disclaimer) jest praktycznie nieczytelny. Powód: gradient `from-slate-950 via-slate-900 to-primary/30` + duża plama radialna `from primary/0.25` → dół sekcji robi się jasnoniebieski/szary.
 
-- **4h szkolenie dla Twojej firmy** z nowych obowiązków: **NIS2 / KSC / ISO 27001**
-- **100% finansowania** – „dowiedz się jak pozyskać za darmo"
-- **Decyzja w 3 dni robocze**
-- **Limit miejsc** – rejestracja do **30.06.2026**, realizacja może być później
-- Mocne CTA → formularz kontaktowy/„Umów rozmowę"
-
-Proponuję wdrożyć **trzy uzupełniające się formaty jednocześnie** (banner + sekcja + pop-up), żeby maksymalnie zwiększyć konwersję, ale każdy z nich może działać osobno. Poniżej opisuję, jak każdy z nich miałby wyglądać – wybierz, które chcesz wdrożyć (jeden, dwa albo wszystkie trzy).
+Dodatkowo: pop-up (dialog) i sticky banner mają pokazywać się w języku zgodnym z wersją strony (PL / EN / CS).
 
 ---
 
-## Wariant A – Sticky banner na górze strony (announcement bar)
+## 1. Sekcja promo — przyciemnienie tła
 
-Wąski, pełnej szerokości pasek tuż nad nawigacją albo zaraz pod nią, widoczny od razu po wejściu.
+Plik: `src/components/promo/TrainingPromo2026.tsx` → `TrainingPromoSection`.
 
-```text
-╔══════════════════════════════════════════════════════════════════════╗
-║ 🎓  Tylko do 30.06.2026 · 4h szkolenia NIS2 / KSC / ISO 27001        ║
-║     dla Twojej firmy — sprawdź, jak uzyskać 100% finansowania        ║
-║     · decyzja w 3 dni roboczych · [ Sprawdź ofertę → ]   ✕           ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
+Zmiany:
+- Gradient sekcji: `bg-gradient-to-br from-slate-950 via-slate-900 to-primary/30` → **`bg-slate-950`** + subtelny gradient `from-slate-950 via-slate-900 to-slate-950` (bez jaśnienia w stronę primary).
+- Radial overlay: zmniejszyć intensywność z `0.25` → `0.12` i przesunąć tak, żeby nie rozjaśniał dolnej-lewej części (gdzie jest tekst). Druga subtelna plama w prawym górnym rogu (pod kartą daty).
+- Karta daty (po prawej): tło `bg-white/[0.06]` → `bg-slate-900/60` + `border-white/10`, żeby trzymała kontrast z ciemniejszym tłem.
+- Tagi NIS2 / KSC / ISO 27001: lekka zmiana na bardziej czytelne (`bg-primary/15`, `text-primary-foreground` lub jaśniejszy odcień) — obecnie ledwo widoczne.
+- Disclaimer: `text-white/60` → `text-white/70` dla minimalnej poprawy kontrastu (zgodne z memory dla ciemnych teł).
 
-- Gradient w kolorach marki (np. `from-primary to-primary/80`), tekst biały
-- Countdown / data „do 30.06.2026" wyróżniona pogrubieniem
-- Przycisk CTA przewija do nowej sekcji promocyjnej (kotwica `#oferta-finansowanie`)
-- Krzyżyk „✕" do zamknięcia, stan zapisany w `localStorage` (raz zamknięty – nie wraca w sesji)
-- Widoczny na desktop i mobile (na mobile 2 linijki + CTA pod spodem)
+Efekt: cała sekcja ma jednolicie ciemne, granatowe tło, tekst i karta daty mają wyraźny kontrast.
 
 ---
 
-## Wariant B – Dedykowana sekcja promocyjna na stronie
+## 2. Pop-up i banner — lokalizacja PL / EN / CS
 
-Wstawiona wysoko na stronie (tuż po Hero, przed sekcją „Problem"), żeby od razu po scrollu rzucała się w oczy.
+Komponent już przyjmuje `locale` z `currentLocale` (`useLanguage()`) i ma `COPY` dla `pl` / `en` / `cs`, więc logika powinna działać. Co zrobię, żeby to faktycznie zadziałało na produkcji:
 
-```text
-┌──────────────────────────────────────────────────────────────────────┐
-│  [ Oferta limitowana · do 30.06.2026 ]                               │
-│                                                                      │
-│   4h szkolenia dla Twojej firmy z nowych obowiązków                  │
-│   cyberbezpieczeństwa: NIS2 · KSC · ISO 27001                        │
-│                                                                      │
-│   Pokażemy Ci, jak sfinansować je w 100% — bez ukrytych kosztów.    │
-│                                                                      │
-│   ✓ Szkolenie szyte na miarę Twojej firmy i branży                   │
-│   ✓ Pomoc w pozyskaniu 100% dofinansowania                           │
-│   ✓ Decyzja w 3 dni roboczych                                        │
-│   ✓ Rejestracja do 30.06.2026 — realizacja możliwa później           │
-│   ✓ Limitowana liczba miejsc                                         │
-│                                                                      │
-│   [ Sprawdź dostępność →  ]   [ Pobierz szczegóły oferty ]           │
-└──────────────────────────────────────────────────────────────────────┘
-```
+- **Klucze `localStorage` per locale**, żeby zamknięcie banneru/popupu po polsku nie blokowało wyświetlenia na EN/CS (i odwrotnie):
+  - `promo2026.banner.dismissed` → `promo2026.banner.dismissed.${locale}`
+  - `promo2026.dialog.dismissed` → `promo2026.dialog.dismissed.${locale}`
+- Dodam **fallback locale**: jeśli `currentLocale` z jakiegoś powodu nie jest `pl/en/cs`, czytam locale z `window.location.pathname` (`/en/...` → `en`, `/cs/...` → `cs`, domyślnie `pl`). To zabezpiecza przed sytuacją, w której kontekst języka nie jest jeszcze zainicjalizowany przy pierwszym renderze.
+- Reset triggerów (countdown 15s, scroll 50%, exit-intent) — bez zmian.
 
-- Tło: ciemny gradient (np. slate → primary), zgodne z resztą strony szkoleń (zgodnie z memory: premium slate-to-blue)
-- Po lewej tekst + bullet list, po prawej karta z dużą datą **30.06.2026** i licznikiem dni / „3 dni roboczych na decyzję"
-- Główne CTA → formularz kontaktowy na dole strony (kotwica do istniejącej sekcji)
-- Drugorzędne CTA → opcjonalnie do PDF/strony z opisem warunków (jeśli będzie)
-- Sekcja zawiera mały disclaimer małym fontem: „Liczba szkoleń ograniczona. Oferta ważna do 30.06.2026 (rejestracja). Termin realizacji ustalany indywidualnie."
+Dzięki temu na `/en/cybersecurity-training-for-companies` zobaczysz banner + dialog po angielsku, a na `/cs/skoleni-kyberneticka-bezpecnost-pro-firmy` — po czesku.
 
 ---
 
-## Wariant C – Pop-up (exit-intent + opóźniony)
+## Pliki
 
-Pojawia się raz na sesję: po ~15 sekundach lub przy próbie opuszczenia strony (ruch myszy w stronę zamknięcia karty na desktop).
+- `src/components/promo/TrainingPromo2026.tsx` — zmiany w `TrainingPromoSection` (tło, karta, tagi, disclaimer) + lokalne klucze `localStorage` + fallback locale dla `TrainingPromoBanner` i `TrainingPromoDialog`.
 
-```text
-        ┌──────────────────────────────────────────────┐
-        │   ✕                                          │
-        │                                              │
-        │   🎯  Tylko do 30.06.2026                    │
-        │                                              │
-        │   4h szkolenia z NIS2 / KSC / ISO 27001      │
-        │   dla Twojej firmy — nawet 100% za free       │
-        │                                              │
-        │   • Decyzja w 3 dni roboczych                │
-        │   • Limitowana liczba miejsc                 │
-        │   • Realizacja możliwa po 30.06              │
-        │                                              │
-        │   [ email firmowy ____________________ ]     │
-        │   [   Chcę poznać szczegóły  →   ]           │
-        │                                              │
-        │   Bez spamu. Odpowiadamy w 1 dzień roboczy.  │
-        └──────────────────────────────────────────────┘
-```
-
-- Modal oparty o istniejący komponent `Dialog` (shadcn) – spójny ze stylem strony
-- Pole „email" + przycisk → wysyłka przez istniejącą funkcję `contact-form` (z tagiem `source: training-promo-2026`)
-- Zapamiętanie w `localStorage`, że użytkownik już widział / zamknął / wysłał → nie pokazujemy ponownie
-- Trigger: pierwszy z: 15s na stronie, scroll > 50%, lub exit-intent
-
----
-
-## Treść (3 języki)
-
-Dodam klucze do `public/locales/{pl,en,cs}/translation.json` pod `training.promo2026`:
-
-- `badge` – „Oferta limitowana · do 30.06.2026" / „Limited offer · until 30.06.2026" / „Limitovaná nabídka · do 30. 6. 2026"
-- `title`, `subtitle`, `bullets[]`, `cta`, `disclaimer`
-- Wszystkie warianty (banner / sekcja / pop-up) korzystają z tej samej puli tekstów
-
-Domyślne formułowanie (PL):
-
-> **4h szkolenie z NIS2 / KSC / ISO 27001 dla Twojej firmy.** Pokażemy Ci, jak sfinansować je w 100%. Decyzja w 3 dni roboczych. Rejestracja do 30.06.2026 – realizacja również po tej dacie. Liczba szkoleń ograniczona.
-
----
-
-## Co potrzebuję od Ciebie, żeby zacząć
-
-1. **Które formaty wdrażamy?** (zaznacz: banner / sekcja / pop-up – możesz wybrać kilka)
-2. **Gdzie ma prowadzić główne CTA?** Domyślnie: przewinięcie do istniejącego formularza kontaktowego na stronie szkoleń. Alternatywy: `/pl/kontakt`, dedykowany formularz „dofinansowanie".
-3. **„100% za free" – jak ma brzmieć dokładnie?** Czy mogę użyć sformułowania „do 100% dofinansowania" / „nawet 100% finansowania", czy chcesz literalnie „100% za free / za darmo"? (sugeruję pierwsze – bardziej wiarygodne i bezpieczne prawnie)
-4. **Czy włączamy ofertę także na EN/CS, czy tylko PL?**
-
-Po Twojej odpowiedzi wdrażam wybrane warianty + tłumaczenia.
-
----
-
-## Szczegóły techniczne (dla porządku)
-
-- Nowe komponenty:
-  - `src/components/promo/TrainingPromoBanner.tsx` (Wariant A)
-  - `src/components/promo/TrainingPromoSection.tsx` (Wariant B)
-  - `src/components/promo/TrainingPromoDialog.tsx` (Wariant C)
-- Montaż wszystkich w `src/pages/services/TrainingLanding.tsx` (banner na górze, sekcja po Hero, dialog na poziomie strony)
-- Stan „zamknięte / wysłane" w `localStorage` pod kluczami `promo2026.banner`, `promo2026.dialog`
-- Treści w `public/locales/{pl,en,cs}/translation.json` → `training.promo2026.*`
-- Pop-up wysyła lead przez istniejącą edge function `contact-form` z polem `source: 'training-promo-2026'` (bez nowych migracji DB)
-- Zgodność z istniejącym design systemem (semantic tokens, slate-to-blue z memory)
+Bez zmian w treści, tłumaczeniach (`COPY` już ma `pl/en/cs`) ani w samym hero strony szkoleń.
