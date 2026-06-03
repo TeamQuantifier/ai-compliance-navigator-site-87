@@ -198,6 +198,8 @@ const TrainingLanding = () => {
       </section>
 
       <TrainingPromoSection locale={currentLocale} />
+      <TrainingPromoForm locale={currentLocale} />
+
 
 
 
