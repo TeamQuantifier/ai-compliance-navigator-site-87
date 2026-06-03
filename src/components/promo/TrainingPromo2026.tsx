@@ -245,7 +245,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
 
           {/* Date card */}
           <div className="relative">
-            <div className="bg-white/[0.06] backdrop-blur-md border border-white/15 rounded-2xl p-7 shadow-2xl">
+            <div className="bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-2xl p-7 shadow-2xl">
               <p className="text-xs uppercase tracking-wider text-white/60 mb-2">
                 {c.dateLabel}
               </p>
