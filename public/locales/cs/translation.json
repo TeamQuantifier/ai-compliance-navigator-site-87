@@ -7918,5 +7918,10 @@
         ]
       }
     }
+  },
+  "featuredBy": {
+    "badge": "Důvěřují nám",
+    "title": "Uznáni odborníky a institucemi",
+    "subtitle": "Naše technologie získávají uznání od odborníků a spolupráce s předními institucemi nám umožňuje spolutvářet standardy kybernetické bezpečnosti, AI a compliance."
   }
 }

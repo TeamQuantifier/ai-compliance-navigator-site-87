@@ -1,49 +1,43 @@
-# Plan: GTM na /pl/frameworks/soc i /pl/success-stories/case-study-grupa-raben + audyt SEO
 
-## 1. Diagnoza GTM
+## Co naprawiamy
 
-GTM (`GTM-5LLXS7KR`) ładuje się dynamicznie w `src/lib/script-loader.ts` **wyłącznie po akceptacji cookies marketingowych** (RODO, banner cookies). Dotyczy wszystkich podstron jednakowo — kod nie ma żadnej logiki, która wyłączałaby GTM dla `/pl/frameworks/soc` ani `/pl/success-stories/case-study-grupa-raben`.
+Na screenshocie widać **sekcję promo "Rejestracja do 30.06.2026"** (to nie hero, tylko sekcja zaraz pod hero) — jej dolna część jest jasna/biaława, przez co tekst po lewej („…100%", „…dofinansowaniu", disclaimer) jest praktycznie nieczytelny. Powód: gradient `from-slate-950 via-slate-900 to-primary/30` + duża plama radialna `from primary/0.25` → dół sekcji robi się jasnoniebieski/szary.
 
-Możliwe realne przyczyny "brak tagów" zgłaszane przez Tag Assistant:
+Dodatkowo: pop-up (dialog) i sticky banner mają pokazywać się w języku zgodnym z wersją strony (PL / EN / CS).
 
-- **A.** Tag Assistant otwiera stronę w izolowanym kontekście (`tagassistant.google.com` w iframe) — banner cookies pojawia się od nowa, a bez kliknięcia "Akceptuj wszystkie" GTM się nie inicjalizuje. To zachowanie globalne, nie problem 2 stron.
-- **B.** Runtime error w komponencie strony przerywa hydratację Reacta zanim `script-loader` zdąży zareagować na consent. Sprawdzę console + hydration na obu trasach.
-- **C.** Edge function `prerender-marketing` serwuje botom HTML bez GTM (to akurat OK dla Googlebota — GTM dla SEO nie jest potrzebny), ale jeśli Tag Assistant trafia na wersję bot — wytłumaczę.
+---
 
-## 2. Co zrobię
+## 1. Sekcja promo — przyciemnienie tła
 
-1. **Otworzę obie strony w sandboxie** (`browser--navigate_to_sandbox`), zaakceptuję cookies marketingowe, sprawdzę:
-   - czy `window.google_tag_manager['GTM-5LLXS7KR']` istnieje,
-   - czy `dataLayer` ma `gtm.js` event,
-   - request do `googletagmanager.com/gtm.js?id=GTM-5LLXS7KR`,
-   - console errors / runtime errors blokujące init.
-2. Jeśli GTM nie startuje na konkretnej trasie pomimo zgody → znajdę i naprawię błąd w komponencie (`Soc.tsx` lub `DetailedCaseStudy.tsx` / hooku `useMultiLangStory`).
-3. Jeśli GTM startuje normalnie → opiszę dlaczego Tag Assistant pokazuje "brak tagów" (najczęściej: brak akceptacji cookies w iframe Tag Assistant) i podam sposób testu, który zadziała (extension Tag Assistant Legacy po ręcznym akceptowaniu cookies na żywej stronie, albo GTM Preview Mode z `?gtm_debug=...`).
+Plik: `src/components/promo/TrainingPromo2026.tsx` → `TrainingPromoSection`.
 
-## 3. Audyt SEO
+Zmiany:
+- Gradient sekcji: `bg-gradient-to-br from-slate-950 via-slate-900 to-primary/30` → **`bg-slate-950`** + subtelny gradient `from-slate-950 via-slate-900 to-slate-950` (bez jaśnienia w stronę primary).
+- Radial overlay: zmniejszyć intensywność z `0.25` → `0.12` i przesunąć tak, żeby nie rozjaśniał dolnej-lewej części (gdzie jest tekst). Druga subtelna plama w prawym górnym rogu (pod kartą daty).
+- Karta daty (po prawej): tło `bg-white/[0.06]` → `bg-slate-900/60` + `border-white/10`, żeby trzymała kontrast z ciemniejszym tłem.
+- Tagi NIS2 / KSC / ISO 27001: lekka zmiana na bardziej czytelne (`bg-primary/15`, `text-primary-foreground` lub jaśniejszy odcień) — obecnie ledwo widoczne.
+- Disclaimer: `text-white/60` → `text-white/70` dla minimalnej poprawy kontrastu (zgodne z memory dla ciemnych teł).
 
-1. **`seo_chat--list_findings`** — odczytam aktualne failing/ignored findings z ostatniego skanu.
-2. **`seo_chat--trigger_scan`** — uruchomię świeży skan (wymaga akceptacji użytkownika).
-3. Po skanie naprawię wszystkie failing findings w jednym podejściu (typowo: meta title/description, canonical, hreflang, JSON-LD, sitemap). Każdy fix → `seo_chat--update_findings`.
+Efekt: cała sekcja ma jednolicie ciemne, granatowe tło, tekst i karta daty mają wyraźny kontrast.
 
-## 4. Interpretacja Semrush (screenshot)
+---
 
-Krótka analiza tego co widać (PL):
+## 2. Pop-up i banner — lokalizacja PL / EN / CS
 
-- **Słowa kluczowe** rosną od marca 2026: TOP3 (pomarańczowy) wystartowały z 0 → ~5 w maju 2026, TOP4–10 z ~5 → ~14, TOP11–20 z ~10 → ~21. Wszystkie pasma w trendzie wzrostowym = sygnał, że Google odzyskuje zaufanie i zaczyna wynagradzać świeże publikacje / fixy techniczne.
-- **Ruch organiczny** (górny wykres) — wzrost z 0 do ~21 wizyt/dz w maju 2026. Niski wolumen bezwzględny, ale **kierunek właściwy**.
-- **Przegląd od AI** (różowa) wciąż 0 — nie pojawia się jeszcze w AI Overviews. Tu pomoże dalsza ekspansja klastrów filarowych i JSON-LD (FAQPage, HowTo, DefinedTermSet).
+Komponent już przyjmuje `locale` z `currentLocale` (`useLanguage()`) i ma `COPY` dla `pl` / `en` / `cs`, więc logika powinna działać. Co zrobię, żeby to faktycznie zadziałało na produkcji:
 
-Crawlowanie i ruch robotów — sprawdzę realnie:
-- czy `quantifier.ai/sitemap.xml` (edge function) zwraca poprawny XML ze wszystkimi 40+ ścieżkami × 3 języki,
-- czy `robots.txt` nie blokuje krytycznych ścieżek,
-- czy `prerender-marketing` poprawnie serwuje treść dla Googlebota dla `/pl/frameworks/soc` i `/pl/success-stories/...` (jeśli bot dostaje pustą stronę, indeksacja stoi),
-- czy hreflang / canonical są symetryczne.
+- **Klucze `localStorage` per locale**, żeby zamknięcie banneru/popupu po polsku nie blokowało wyświetlenia na EN/CS (i odwrotnie):
+  - `promo2026.banner.dismissed` → `promo2026.banner.dismissed.${locale}`
+  - `promo2026.dialog.dismissed` → `promo2026.dialog.dismissed.${locale}`
+- Dodam **fallback locale**: jeśli `currentLocale` z jakiegoś powodu nie jest `pl/en/cs`, czytam locale z `window.location.pathname` (`/en/...` → `en`, `/cs/...` → `cs`, domyślnie `pl`). To zabezpiecza przed sytuacją, w której kontekst języka nie jest jeszcze zainicjalizowany przy pierwszym renderze.
+- Reset triggerów (countdown 15s, scroll 50%, exit-intent) — bez zmian.
 
-## 5. Deliverable
+Dzięki temu na `/en/cybersecurity-training-for-companies` zobaczysz banner + dialog po angielsku, a na `/cs/skoleni-kyberneticka-bezpecnost-pro-firmy` — po czesku.
 
-- Werdykt + ewentualny fix dla GTM na obu stronach.
-- Lista naprawionych failing SEO findings.
-- Sekcja "Crawlowanie i ruch robotów" — co aktualnie działa, gdzie są wąskie gardła, 3–5 konkretnych rekomendacji co zrobić, żeby przyspieszyć trend ze screenshotu.
+---
 
-Bez zmian w logice biznesowej — tylko diagnostyka + fixy SEO/tracking.
+## Pliki
+
+- `src/components/promo/TrainingPromo2026.tsx` — zmiany w `TrainingPromoSection` (tło, karta, tagi, disclaimer) + lokalne klucze `localStorage` + fallback locale dla `TrainingPromoBanner` i `TrainingPromoDialog`.
+
+Bez zmian w treści, tłumaczeniach (`COPY` już ma `pl/en/cs`) ani w samym hero strony szkoleń.
