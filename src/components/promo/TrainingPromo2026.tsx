@@ -164,7 +164,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
           {c.bannerShort}
         </p>
         <a
-          href="#promo-finansowanie"
+          href="#promo-form"
           className="hidden sm:inline-flex items-center gap-1 rounded-md bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap"
         >
           {c.bannerCta} <ArrowRight className="h-3.5 w-3.5" />
