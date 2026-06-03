@@ -280,12 +280,14 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
 
 /* ─────────────────────────── Dialog ─────────────────────────── */
 export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const keys = STORAGE_KEYS(resolved);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (localStorage.getItem(STORAGE.dialog)) return;
+    if (localStorage.getItem(keys.dialog)) return;
 
     let opened = false;
     const trigger = () => {
@@ -315,12 +317,13 @@ export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
       window.removeEventListener('scroll', onScroll);
       document.removeEventListener('mouseleave', onMouseLeave);
     };
-  }, []);
+  }, [keys.dialog]);
 
   const handleOpenChange = (next: boolean) => {
     setOpen(next);
-    if (!next) localStorage.setItem(STORAGE.dialog, '1');
+    if (!next) localStorage.setItem(keys.dialog, '1');
   };
+
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
