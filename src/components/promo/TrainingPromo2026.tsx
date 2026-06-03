@@ -238,7 +238,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
               </Button>
             </div>
 
-            <p className="text-xs text-white/60 mt-5 max-w-2xl leading-relaxed">
+            <p className="text-xs text-white/70 mt-5 max-w-2xl leading-relaxed">
               {c.disclaimer}
             </p>
           </div>
