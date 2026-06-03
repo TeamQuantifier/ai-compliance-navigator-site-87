@@ -265,7 +265,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 {['NIS2', 'KSC', 'ISO 27001'].map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold border border-primary/30"
+                    className="px-2.5 py-1 rounded-full bg-primary/25 text-white text-xs font-semibold border border-primary/40"
                   >
                     {tag}
                   </span>
