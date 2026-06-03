@@ -188,10 +188,12 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
   return (
     <section
       id="promo-finansowanie"
-      className="relative py-14 md:py-20 bg-slate-950 overflow-hidden"
+      className="relative py-14 md:py-20 bg-gradient-to-br from-[hsl(222_47%_14%)] via-[hsl(222_47%_11%)] to-[hsl(221_60%_18%)] overflow-hidden border-y border-primary/20"
     >
-      <div className="absolute top-0 right-0 w-[520px] h-[520px] bg-[radial-gradient(circle_at_center,_hsl(221_83%_53%/0.18),transparent_70%)] pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-[420px] h-[420px] bg-[radial-gradient(circle_at_center,_hsl(221_83%_53%/0.08),transparent_70%)] pointer-events-none" />
+      {/* Top accent divider to separate from hero */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+      <div className="absolute top-0 right-0 w-[520px] h-[520px] bg-[radial-gradient(circle_at_center,_hsl(221_83%_53%/0.22),transparent_70%)] pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-[420px] h-[420px] bg-[radial-gradient(circle_at_center,_hsl(260_84%_60%/0.12),transparent_70%)] pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
           <div>
