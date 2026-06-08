@@ -39,10 +39,10 @@ const logos: Logo[] = [
   { id: 25, src: "/lovable-uploads/marc-kolor-logo.png", alt: "Marc Kolor", scale: 1.25 },
   { id: 26, src: "/lovable-uploads/oex-logo.png", alt: "OEX" },
   { id: 27, src: "/lovable-uploads/baltic-logo.png", alt: "Grupa Przemysłowa Baltic" },
-  { id: 28, src: "/__l5e/assets-v1/placeholder", alt: "Drogeria DOT", scale: 1.5 },
-  { id: 29, src: "/__l5e/assets-v1/placeholder", alt: "Gala Design Meble", scale: 1.5 },
-  { id: 30, src: "/__l5e/assets-v1/placeholder", alt: "Mąka ze Smokiem", scale: 1.5 },
-  { id: 31, src: "/__l5e/assets-v1/placeholder", alt: "Silesian Farming & Food Solutions", scale: 1.5 },
+  { id: 28, src: "/__l5e/assets-v1/f6e19d88-2179-44f4-85f7-40450bb7a494/logo_drogeria_dot.png", alt: "Drogeria DOT", scale: 1.5 },
+  { id: 29, src: "/__l5e/assets-v1/24050f7d-8d88-489e-a28c-52ad9c725c85/logo_gala_meble.png", alt: "Gala Design Meble", scale: 1.5 },
+  { id: 30, src: "/__l5e/assets-v1/d0acede3-859e-4ebf-ab75-6ebb2abf654b/logo_makazesmokiem.png", alt: "Mąka ze Smokiem", scale: 1.5 },
+  { id: 31, src: "/__l5e/assets-v1/61f21a43-311a-4967-9150-29cf69432f71/logo_silesian.png", alt: "Silesian Farming & Food Solutions", scale: 1.5 },
 ];
 
 const row1 = logos.slice(0, 11);
