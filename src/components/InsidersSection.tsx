@@ -39,11 +39,16 @@ const logos: Logo[] = [
   { id: 25, src: "/lovable-uploads/marc-kolor-logo.png", alt: "Marc Kolor", scale: 1.25 },
   { id: 26, src: "/lovable-uploads/oex-logo.png", alt: "OEX" },
   { id: 27, src: "/lovable-uploads/baltic-logo.png", alt: "Grupa Przemysłowa Baltic" },
+  { id: 28, src: "/__l5e/assets-v1/placeholder", alt: "Drogeria DOT", scale: 1.5 },
+  { id: 29, src: "/__l5e/assets-v1/placeholder", alt: "Gala Design Meble", scale: 1.5 },
+  { id: 30, src: "/__l5e/assets-v1/placeholder", alt: "Mąka ze Smokiem", scale: 1.5 },
+  { id: 31, src: "/__l5e/assets-v1/placeholder", alt: "Silesian Farming & Food Solutions", scale: 1.5 },
 ];
 
-const row1 = logos.slice(0, 9);
-const row2 = logos.slice(9, 18);
-const row3 = logos.slice(18, 27);
+const row1 = logos.slice(0, 11);
+const row2 = logos.slice(11, 21);
+const row3 = logos.slice(21, 31);
+
 
 const LogoCard = ({ logo }: { logo: Logo }) => (
   <div className="flex-shrink-0 w-40 mx-2">
