@@ -43,11 +43,18 @@ const logos: Logo[] = [
   { id: 29, src: "/__l5e/assets-v1/24050f7d-8d88-489e-a28c-52ad9c725c85/logo_gala_meble.png", alt: "Gala Design Meble", scale: 1.5 },
   { id: 30, src: "/__l5e/assets-v1/d0acede3-859e-4ebf-ab75-6ebb2abf654b/logo_makazesmokiem.png", alt: "Mąka ze Smokiem", scale: 1.5 },
   { id: 31, src: "/__l5e/assets-v1/61f21a43-311a-4967-9150-29cf69432f71/logo_silesian.png", alt: "Silesian Farming & Food Solutions", scale: 1.5 },
+  { id: 32, src: "/__l5e/assets-v1/5b9cbb51-ecba-47ef-8798-2ff6ed3b4ee9/logo_cersanit.png", alt: "Cersanit" },
+  { id: 33, src: "/__l5e/assets-v1/50e48581-2d24-4d9d-81cf-df57a08a0483/logo_enelmed.png", alt: "Enel-Med" },
+  { id: 34, src: "/__l5e/assets-v1/a6c9d32b-80a1-4f57-be9f-75d06ec41e13/logo_hoppecke.png", alt: "Hoppecke" },
+  { id: 35, src: "/__l5e/assets-v1/b1ea8768-4799-4b5b-b131-688aefcea5f9/logo_ikano_industry.png", alt: "IKANO Industry" },
+  { id: 36, src: "/__l5e/assets-v1/b9209731-6fb0-4afc-931a-aa836675d279/logo_mostostal.png", alt: "Mostostal Warszawa" },
+  { id: 37, src: "/__l5e/assets-v1/57a84b00-7fe1-47f6-8ca6-0e09963fbbbb/logo_Raben.png", alt: "Raben" },
+  { id: 38, src: "/__l5e/assets-v1/4d63745f-4a7d-4dca-b3ba-ccd3b54c105c/logo_watlow.png", alt: "Watlow" },
 ];
 
-const row1 = logos.slice(0, 11);
-const row2 = logos.slice(11, 21);
-const row3 = logos.slice(21, 31);
+const row1 = logos.slice(0, 13);
+const row2 = logos.slice(13, 26);
+const row3 = logos.slice(26, 38);
 
 
 const LogoCard = ({ logo }: { logo: Logo }) => (
