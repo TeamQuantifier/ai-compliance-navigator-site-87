@@ -9382,5 +9382,10 @@
         ]
       }
     }
+  },
+  "featuredBy": {
+    "badge": "Zaufali nam",
+    "title": "Wyróżnieni przez ekspertów i instytucje",
+    "subtitle": "Nasze technologie zdobywają uznanie ekspertów, a współpraca z czołowymi instytucjami pozwala nam współtworzyć standardy cyberbezpieczeństwa, AI i compliance."
   }
 }
