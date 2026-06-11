@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
 import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
+import { buildServicePageSchema } from "@/lib/seo-schema";
 import {
   Shield,
   CheckCircle,
