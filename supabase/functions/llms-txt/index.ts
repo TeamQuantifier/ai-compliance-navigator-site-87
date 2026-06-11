@@ -35,7 +35,7 @@ const langOrder = ['en', 'pl', 'cs'];
 
 const HEADER = `# Quantifier.ai - AI-Native GRC & Compliance Platform
 
-> Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform that automates continuous compliance for frameworks including SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG standards. The platform uses autonomous AI agents to collect evidence, assess controls, generate documentation, and maintain audit-readiness without manual spreadsheet work.`;
+> Quantifier.ai is an AI-native governance, risk, and compliance (GRC) platform that automates continuous compliance for SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG. Autonomous AI agents collect evidence, assess controls, generate documentation, and maintain audit-readiness without manual spreadsheet work. See also: [llms-full.txt](${BASE_URL}/llms-full.txt).`;
 
 const HEADER_FULL = `# Quantifier.ai - AI-Native GRC & Compliance Platform (Full Reference)
 
