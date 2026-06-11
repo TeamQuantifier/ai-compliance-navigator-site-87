@@ -331,12 +331,78 @@
 # and produced an infinite 301 loop (ERR_TOO_MANY_REDIRECTS).
 # Trailing slash is now enforced via canonical URLs in <SEOHead> only.
 
+# ============================================================
+# HOST-LEVEL CANONICALIZATION (for Google Tag / GTM diagnostics)
+# ------------------------------------------------------------
+# Production host = https://quantifier.ai (apex, primary).
+# All other hosts that publicly serve this build must 301 to it so
+# GTM (GTM-5LLXS7KR) never fires from non-production domains and
+# Google Tag Diagnostics stops reporting "additional domains".
+#
+# Netlify evaluates these BEFORE the path-only redirects below
+# because `force = true` and an absolute `from` URL takes priority.
+# ============================================================
+
+# www -> apex
+[[redirects]]
+  from = "https://www.quantifier.ai/*"
+  to = "https://quantifier.ai/:splat"
+  status = 301
+  force = true
+
+# Netlify auto-generated subdomain -> apex
+# (Replace <site-name> at deploy time if Netlify site slug differs.)
+[[redirects]]
+  from = "https://:site.netlify.app/*"
+  to = "https://quantifier.ai/:splat"
+  status = 301
+  force = true
+
+# Deploy-preview / branch subdomains on Netlify -> apex
+[[redirects]]
+  from = "https://:branch--:site.netlify.app/*"
+  to = "https://quantifier.ai/:splat"
+  status = 301
+  force = true
+
+# Staging / demo (if ever pointed at this Netlify site) -> apex
+[[redirects]]
+  from = "https://staging.quantifier.ai/*"
+  to = "https://quantifier.ai/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://demo.quantifier.ai/*"
+  to = "https://quantifier.ai/:splat"
+  status = 301
+  force = true
+
+# ============================================================
+# Google Tag Gateway (first-party serving) — PREPARED, DISABLED
+# ------------------------------------------------------------
+# Enable ONLY after the Google Tag Gateway endpoint is confirmed
+# in Google Ads / GA4 admin. The expected origin is:
+#     https://GTM-5LLXS7KR.fps.goog
+# (Google issues the exact host once Gateway is provisioned.)
+# /metrics is currently unused in the SPA — no route conflict.
+# Uncomment to activate:
+#
+# [[redirects]]
+#   from = "/metrics/*"
+#   to = "https://GTM-5LLXS7KR.fps.goog/:splat"
+#   status = 200
+#   force = true
+# ============================================================
+
 # Root redirect — must be before SPA fallback
 [[redirects]]
   from = "/"
   to = "/en/"
   status = 301
   force = true
+
+
 
 # SPA fallback — must be last
 [[redirects]]
