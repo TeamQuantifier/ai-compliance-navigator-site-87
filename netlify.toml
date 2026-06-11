@@ -350,20 +350,11 @@
   status = 301
   force = true
 
-# Netlify auto-generated subdomain -> apex
-# (Replace <site-name> at deploy time if Netlify site slug differs.)
-[[redirects]]
-  from = "https://:site.netlify.app/*"
-  to = "https://quantifier.ai/:splat"
-  status = 301
-  force = true
-
-# Deploy-preview / branch subdomains on Netlify -> apex
-[[redirects]]
-  from = "https://:branch--:site.netlify.app/*"
-  to = "https://quantifier.ai/:splat"
-  status = 301
-  force = true
+# NOTE: Netlify does not support path-style placeholders (:site, :branch)
+# in the hostname part of a redirect rule. Catch-all rules for
+# *.netlify.app deploy-previews are therefore not possible in
+# netlify.toml.  The www → apex rules above and staging/demo rules
+# below remain active.
 
 # Staging / demo (if ever pointed at this Netlify site) -> apex
 [[redirects]]
