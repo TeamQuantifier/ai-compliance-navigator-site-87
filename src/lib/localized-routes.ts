@@ -53,3 +53,25 @@ export const getLocalizedAlternates = (path: string): Array<{ locale: Locale; pa
   if (!routes) return null;
   return (Object.keys(routes) as Locale[]).map((locale) => ({ locale, path: routes[locale] }));
 };
+
+/**
+ * Paths that exist ONLY in a subset of locales.
+ * Used by hreflang generator to avoid pointing to non-existent translations,
+ * which Semrush flags as "Missing self-referencing hreflang" / hreflang conflict.
+ * Key = normalized path (no leading/trailing slash).
+ */
+const LOCALE_AVAILABILITY: Record<string, Locale[]> = {
+  // English-only pages
+  'frameworks/product-level/dpp': ['en'],
+  'partners/gs1-polska': ['en'],
+};
+
+/**
+ * Returns the locales in which a given path actually has a translated page.
+ * Defaults to all three locales unless the path is registered above.
+ */
+export const getAvailableLocales = (path: string): Locale[] => {
+  const cleanPath = normalizePathKey(path);
+  return LOCALE_AVAILABILITY[cleanPath] ?? ['en', 'pl', 'cs'];
+};
+

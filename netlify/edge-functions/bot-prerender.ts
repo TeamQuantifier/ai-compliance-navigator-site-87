@@ -170,11 +170,36 @@ function resolvePrerenderUrl(pathname: string): string | null {
   return null;
 }
 
+// Language root paths that must NOT receive a trailing slash (canonical = no slash).
+const LANG_ROOT_PATHS = new Set(["/en", "/pl", "/cs"]);
+
+/**
+ * Trailing-slash canonicalization.
+ * Policy: every content URL ends with `/`, except language roots and assets.
+ * Returns a 301 Response when the request URL must be redirected, else null.
+ */
+function enforceTrailingSlash(url: URL): Response | null {
+  const { pathname } = url;
+  if (pathname === "/") return null;
+  if (LANG_ROOT_PATHS.has(pathname)) return null;
+  if (pathname.endsWith("/")) return null;
+  if (shouldSkip(pathname)) return null; // assets keep their literal path
+
+  const target = new URL(url.toString());
+  target.pathname = pathname + "/";
+  return Response.redirect(target.toString(), 301);
+}
+
 export default async (request: Request, _context: Context) => {
   const url = new URL(request.url);
 
   // Only handle GET/HEAD.
   if (request.method !== "GET" && request.method !== "HEAD") return;
+
+  // 1) Canonical slash policy — applies to everyone (humans + bots).
+  //    Prevents Semrush "duplicate content" between /path and /path/.
+  const slashRedirect = enforceTrailingSlash(url);
+  if (slashRedirect) return slashRedirect;
 
   // Skip non-page assets.
   if (shouldSkip(url.pathname)) return;
@@ -184,6 +209,8 @@ export default async (request: Request, _context: Context) => {
 
   const target = resolvePrerenderUrl(url.pathname);
   if (!target) return;
+
+
 
   try {
     const upstream = await fetch(target, {

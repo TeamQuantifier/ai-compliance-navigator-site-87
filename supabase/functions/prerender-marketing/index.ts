@@ -2703,30 +2703,38 @@ function generateSchemas(locale: string, page: string, pageData: PageData, colle
     }))
   });
   
-  // SoftwareApplication for relevant pages (including DORA, HIPAA, CCPA)
+  // Service schema (replaces SoftwareApplication — Google/Semrush flag
+  // SoftwareApplication without aggregateRating/review; Service has no such requirement)
   if (['index', 'soc2-automation', 'iso27001', 'gdpr-compliance', 'nis2', 'grc-platform', 'product', 'dora', 'hipaa', 'ccpa'].includes(page)) {
+    const serviceNameMap: Record<string, string> = {
+      'index': 'Quantifier.ai — AI-Native GRC Platform',
+      'soc2-automation': 'SOC 2 Automation Platform',
+      'iso27001': 'ISO 27001 Compliance Software',
+      'gdpr-compliance': 'GDPR Compliance Software',
+      'nis2': 'NIS2 Compliance Platform',
+      'grc-platform': 'AI-Native GRC Platform',
+      'product': 'Quantifier.ai — AI-Native GRC Platform',
+      'dora': 'DORA Compliance Platform',
+      'hipaa': 'HIPAA Compliance Software',
+      'ccpa': 'CCPA Compliance Software',
+    };
     schemas.push({
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      'name': 'Quantifier.ai',
-      'applicationCategory': 'BusinessApplication',
-      'applicationSubCategory': 'Governance, Risk and Compliance (GRC)',
-      'operatingSystem': 'Web Browser',
+      '@type': 'Service',
+      '@id': `${pageUrl}#service`,
+      'name': serviceNameMap[page] || 'Quantifier.ai',
+      'serviceType': 'Governance, Risk and Compliance (GRC) automation platform',
       'description': pageData.description,
-      'url': BASE_URL,
-      'offers': {
-        '@type': 'Offer',
-        'url': `${BASE_URL}/${locale}/plans`,
-        'priceCurrency': 'USD',
-        'availability': 'https://schema.org/OnlineOnly'
-      },
+      'url': pageUrl,
+      'areaServed': ['EU', 'US', 'Worldwide'],
       'provider': {
         '@type': 'Organization',
         'name': 'Quantifier.ai',
-        'url': BASE_URL
-      }
+        'url': BASE_URL,
+      },
     });
   }
+
   
   // FAQPage for pages with FAQs
   if (pageData.faqs && pageData.faqs.length > 0) {

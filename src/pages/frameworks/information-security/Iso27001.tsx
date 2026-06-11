@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
 import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
+import { buildServicePageSchema } from "@/lib/seo-schema";
 import {
   Shield,
   CheckCircle,
@@ -93,20 +94,14 @@ const Iso27001 = () => {
     "iso27001Page.faq.items"
   );
 
-  // SoftwareApplication JSON-LD
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": "https://quantifier.ai",
-    "description": t("seo.frameworks.informationSecurity.iso27001.description"),
-    "featureList": ["ISO 27001 ISMS Automation", "Risk Assessment & Treatment", "Statement of Applicability", "Policy & Document Management", "Internal Audit Management", "Certification Readiness"],
-    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
-    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
-  };
+  // Service JSON-LD (replaces SoftwareApplication — no aggregateRating needed)
+  const softwareAppSchema = buildServicePageSchema({
+    url: `https://quantifier.ai/${currentLocale}/frameworks/iso-27001/`,
+    name: "ISO 27001 Compliance Software",
+    description: t("seo.frameworks.informationSecurity.iso27001.description"),
+    serviceType: "ISO/IEC 27001 ISMS automation",
+    featureList: ["ISO 27001 ISMS Automation", "Risk Assessment & Treatment", "Statement of Applicability", "Policy & Document Management", "Internal Audit Management", "Certification Readiness"],
+  });
 
   return (
     <PageTemplate

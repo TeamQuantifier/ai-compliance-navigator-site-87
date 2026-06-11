@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import PageTemplate from "@/components/PageTemplate";
 import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
 import { Button } from "@/components/ui/button";
+import { buildServicePageSchema } from "@/lib/seo-schema";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -49,19 +50,14 @@ const Dora = () => {
 
   const faqItems = getObjectArrayTranslation("doraPage.faq.items");
 
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": "https://quantifier.ai",
-    "description": t("doraPage.meta.description"),
-    "featureList": ["DORA Compliance Automation", "ICT Risk Management", "Incident Response", "Digital Resilience Testing", "Third-Party Risk Management", "Audit Readiness"],
-    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
-    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
-  };
+  const softwareAppSchema = buildServicePageSchema({
+    url: `https://quantifier.ai/${currentLocale}/frameworks/dora/`,
+    name: "DORA Compliance Platform",
+    description: t("doraPage.meta.description"),
+    serviceType: "DORA (Digital Operational Resilience Act) compliance automation",
+    areaServed: "EU",
+    featureList: ["DORA Compliance Automation", "ICT Risk Management", "Incident Response", "Digital Resilience Testing", "Third-Party Risk Management", "Audit Readiness"],
+  });
 
   return (
     <PageTemplate

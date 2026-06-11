@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import FAQSection from '@/components/seo/FAQSection';
+import { buildServicePageSchema } from '@/lib/seo-schema';
 import {
   Shield,
   ShieldAlert,
@@ -328,17 +329,13 @@ const Nis2KscSeoHead = ({ locale }: { locale: string }) => {
     ? t('nis2Ksc.seo.descCs')
     : t('nis2Ksc.seo.descEn');
 
-  const softwareSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: BRAND_NAME,
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Web',
-    description,
+  const softwareSchema = buildServicePageSchema({
     url: canonicalUrl,
-    publisher: { '@type': 'Organization', name: BRAND_NAME, url: BASE_URL },
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', availability: 'https://schema.org/OnlineOnly' },
-  };
+    name: locale === 'pl' ? 'NIS2 / KSC Compliance Platform' : 'NIS2 Compliance Platform',
+    description,
+    serviceType: 'NIS2 Directive compliance automation',
+    areaServed: 'EU',
+  });
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',

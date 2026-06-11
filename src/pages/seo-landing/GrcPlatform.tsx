@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Shield, BarChart3, Layers, Bot, ArrowRight, Boxes, Workflow } from 'lucide-react';
 import FAQSection from '@/components/seo/FAQSection';
+import { buildServicePageSchema } from '@/lib/seo-schema';
 
 const GrcPlatform = () => {
   const { t } = useTranslation();
@@ -69,28 +70,13 @@ const GrcPlatform = () => {
     ]
   };
 
-  // SoftwareApplication JSON-LD
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": baseUrl,
-    "description": seoDescription,
-    "offers": {
-      "@type": "Offer",
-      "url": `${baseUrl}/${locale}/plans`,
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/OnlineOnly"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "Quantifier.ai",
-      "url": baseUrl
-    }
-  };
+  // Service JSON-LD (replaces SoftwareApplication — no aggregateRating needed)
+  const softwareAppSchema = buildServicePageSchema({
+    url: pageUrl,
+    name: "AI-Native GRC Platform",
+    description: seoDescription,
+    serviceType: "Governance, Risk and Compliance (GRC) automation platform",
+  });
 
   return (
     <>
