@@ -207,9 +207,10 @@ const Index = () => {
             "@context": "https://schema.org",
             "@type": "Review",
             "itemReviewed": {
-              "@type": "SoftwareApplication",
+              "@type": "Service",
+              "@id": `https://quantifier.ai/${currentLocale}/#service`,
               "name": "Quantifier.ai",
-              "url": "https://quantifier.ai"
+              "url": `https://quantifier.ai/${currentLocale}/`
             },
             "author": {
               "@type": "Organization",
