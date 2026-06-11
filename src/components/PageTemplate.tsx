@@ -206,7 +206,9 @@ const PageTemplate = ({
   const fullTitle = `${title} | Quantifier.ai`;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
 
-  // Generate hreflang for all supported locales
+  // Generate hreflang ONLY for locales where the page actually exists,
+  // and always include a self-reference. Prevents "missing self-referencing
+  // hreflang" + reciprocity conflicts flagged by Semrush.
   const hreflangUrls = useMemo(() => {
     const localizedAlternates = getLocalizedAlternates(currentPath);
     if (localizedAlternates) {
@@ -216,13 +218,21 @@ const PageTemplate = ({
       }));
     }
 
-    return SUPPORTED_LOCALES.map(locale => ({
+    const available = getAvailableLocales(currentPath);
+    const localesWithSelf = available.includes(currentLocale as Locale)
+      ? available
+      : [currentLocale as Locale, ...available];
+    return localesWithSelf.map(locale => ({
       locale,
       url: ensureTrailingSlash(`${baseUrl}/${locale}${currentPath}`)
     }));
-  }, [currentPath]);
+  }, [currentPath, currentLocale]);
 
-  const defaultHref = hreflangUrls.find(({ locale }) => locale === 'en')?.url || ensureTrailingSlash(`${baseUrl}/en${canonicalPath}`);
+  const defaultHref =
+    hreflangUrls.find(({ locale }) => locale === 'en')?.url ||
+    hreflangUrls.find(({ locale }) => locale === currentLocale)?.url ||
+    ensureTrailingSlash(`${baseUrl}/${currentLocale}${canonicalPath}`);
+
 
   // Generate BreadcrumbList schema
   const breadcrumbSchema = useMemo(() => ({
@@ -258,7 +268,7 @@ const PageTemplate = ({
           <meta property="og:image" content={ogImageUrl} />
           <meta property="og:site_name" content="Quantifier.ai" />
           <meta property="og:locale" content={currentLocale === 'en' ? 'en_US' : currentLocale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
-          {SUPPORTED_LOCALES.filter(l => l !== currentLocale).map(locale => (
+          {hreflangUrls.filter(({ locale }) => locale !== currentLocale).map(({ locale }) => (
             <meta key={locale} property="og:locale:alternate" content={locale === 'en' ? 'en_US' : locale === 'pl' ? 'pl_PL' : 'cs_CZ'} />
           ))}
           
