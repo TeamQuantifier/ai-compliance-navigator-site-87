@@ -2,8 +2,8 @@ import { ReactNode, useMemo, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { SUPPORTED_LOCALES, LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
-import { getLocalizedAlternates, getLocalizedPath } from '@/lib/localized-routes';
+import { LOCALE_HREFLANG_MAP, Locale } from '@/i18n/config';
+import { getAvailableLocales, getLocalizedAlternates, getLocalizedPath } from '@/lib/localized-routes';
 
 interface PageTemplateProps {
   title: string;
