@@ -99,46 +99,51 @@ const Index = () => {
     "url": "https://quantifier.ai"
   };
 
-  // SoftwareApplication JSON-LD Schema
+  // Service JSON-LD Schema (replaces SoftwareApplication — Google/Semrush flag
+  // SoftwareApplication without aggregateRating/review; Service has no such requirement)
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": "https://quantifier.ai",
+    "@type": "Service",
+    "@id": `https://quantifier.ai/${currentLocale}/#service`,
+    "name": "Quantifier.ai — AI-Native GRC Platform",
+    "serviceType": "Governance, Risk and Compliance (GRC) automation platform",
+    "url": `https://quantifier.ai/${currentLocale}/`,
+    "areaServed": ["EU", "US", "Worldwide"],
+    "provider": { "@id": "https://quantifier.ai/#organization" },
     "description": currentLocale === 'en'
       ? "AI-native GRC platform for automated compliance with SOC 2, ISO 27001, GDPR, NIS2, DORA, and ESG frameworks. Continuous compliance monitoring with autonomous AI agents."
       : currentLocale === 'pl'
       ? "AI-natywna platforma GRC do automatyzacji zgodności z SOC 2, ISO 27001, GDPR, NIS2, DORA i ESG. Ciągłe monitorowanie zgodności z autonomicznymi agentami AI."
       : "AI-nativní GRC platforma pro automatizaci compliance s SOC 2, ISO 27001, GDPR, NIS2, DORA a ESG. Kontinuální monitoring compliance s autonomními AI agenty.",
-    "featureList": [
-      "SOC 2 Type I/II Automation",
-      "ISO 27001 Compliance",
-      "GDPR Compliance Management",
-      "NIS2 Directive Compliance",
-      "DORA Compliance",
-      "ESG Reporting",
-      "Autonomous AI Compliance Officer",
-      "Continuous Control Monitoring",
-      "Automated Evidence Collection",
-      "Risk Assessment & Management",
-      "Policy & Document Management",
-      "Audit-Ready Reporting"
-    ],
-    "offers": {
-      "@type": "Offer",
-      "url": "https://quantifier.ai/en/plans",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/OnlineOnly"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Quantifier.ai capabilities",
+      "itemListElement": [
+        "SOC 2 Type I/II Automation",
+        "ISO 27001 Compliance",
+        "GDPR Compliance Management",
+        "NIS2 Directive Compliance",
+        "DORA Compliance",
+        "ESG Reporting",
+        "Autonomous AI Compliance Officer",
+        "Continuous Control Monitoring",
+        "Automated Evidence Collection",
+        "Risk Assessment & Management",
+        "Policy & Document Management",
+        "Audit-Ready Reporting",
+      ].map((name, i) => ({
+        "@type": "Offer",
+        position: i + 1,
+        itemOffered: { "@type": "Service", name },
+      })),
     },
-    "provider": {
-      "@type": "Organization",
-      "name": "Quantifier.ai",
-      "url": "https://quantifier.ai"
-    }
   };
+
+  // Add @id to organization + website schemas for @graph cross-referencing
+  (organizationSchema as any)["@id"] = "https://quantifier.ai/#organization";
+  (websiteSchema as any)["@id"] = "https://quantifier.ai/#website";
+  (websiteSchema as any).publisher = { "@id": "https://quantifier.ai/#organization" };
+
 
   // Get locale for og:locale
   const getOgLocale = (locale: string) => {
