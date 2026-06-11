@@ -10,6 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
+import { buildServicePageSchema } from '@/lib/seo-schema';
 
 const Soc = () => {
   const { t, currentLocale } = useLanguage();
@@ -26,19 +27,13 @@ const Soc = () => {
     return Array.isArray(result) ? result : [];
   };
 
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": "https://quantifier.ai",
-    "description": t('seo.frameworks.cybersecurity.soc.description'),
-    "featureList": ["SOC 2 Type I/II Automation", "Trust Services Criteria Mapping", "Automated Evidence Collection", "Continuous Control Monitoring", "Audit-Ready Reports", "Gap Analysis"],
-    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
-    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
-  };
+  const softwareAppSchema = buildServicePageSchema({
+    url: `https://quantifier.ai/${currentLocale}/frameworks/soc/`,
+    name: "SOC 2 Automation Platform",
+    description: t('seo.frameworks.cybersecurity.soc.description'),
+    serviceType: "SOC 2 Type I/II compliance automation",
+    featureList: ["SOC 2 Type I/II Automation", "Trust Services Criteria Mapping", "Automated Evidence Collection", "Continuous Control Monitoring", "Audit-Ready Reports", "Gap Analysis"],
+  });
 
   return (
     <PageTemplate

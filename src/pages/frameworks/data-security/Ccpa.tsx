@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
 import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
+import { buildServicePageSchema } from "@/lib/seo-schema";
 import {
   Shield,
   CheckCircle,
@@ -63,19 +64,14 @@ const Ccpa = () => {
   // Consumer rights
   const consumerRights = getArrayTranslation("ccpaPage.understanding.consumerRights.items");
 
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": "https://quantifier.ai",
-    "description": t("ccpaPage.seo.description"),
-    "featureList": ["CCPA Compliance Automation", "Consumer Request Management", "Data Inventory", "Opt-Out Management", "Privacy Policy Compliance", "Vendor Management"],
-    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
-    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
-  };
+  const softwareAppSchema = buildServicePageSchema({
+    url: `https://quantifier.ai/${currentLocale}/frameworks/ccpa/`,
+    name: "CCPA Compliance Software",
+    description: t("ccpaPage.seo.description"),
+    serviceType: "CCPA compliance automation",
+    areaServed: "US",
+    featureList: ["CCPA Compliance Automation", "Consumer Request Management", "Data Inventory", "Opt-Out Management", "Privacy Policy Compliance", "Vendor Management"],
+  });
 
   return (
     <PageTemplate
