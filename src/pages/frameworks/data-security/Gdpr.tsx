@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import PageTemplate from "@/components/PageTemplate";
 import DefinitionsBlock from "@/components/seo/DefinitionsBlock";
+import { buildServicePageSchema } from "@/lib/seo-schema";
 import {
   Shield,
   CheckCircle,
@@ -60,19 +61,14 @@ const Gdpr = () => {
   // Data subject rights
   const dataSubjectRights = getArrayTranslation("gdprPage.understanding.dataSubjectRights.items");
 
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Quantifier.ai",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Governance, Risk and Compliance (GRC)",
-    "operatingSystem": "Web Browser",
-    "url": "https://quantifier.ai",
-    "description": t("gdprPage.seo.description"),
-    "featureList": ["GDPR Compliance Automation", "Data Mapping & Inventory", "Consent Management", "DSAR Automation", "DPIA Templates", "Breach Management"],
-    "offers": { "@type": "Offer", "url": `https://quantifier.ai/${currentLocale}/plans`, "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
-    "provider": { "@type": "Organization", "name": "Quantifier.ai", "url": "https://quantifier.ai" }
-  };
+  const softwareAppSchema = buildServicePageSchema({
+    url: `https://quantifier.ai/${currentLocale}/frameworks/gdpr/`,
+    name: "GDPR Compliance Software",
+    description: t("gdprPage.seo.description"),
+    serviceType: "GDPR compliance automation",
+    areaServed: "EU",
+    featureList: ["GDPR Compliance Automation", "Data Mapping & Inventory", "Consent Management", "DSAR Automation", "DPIA Templates", "Breach Management"],
+  });
 
   return (
     <PageTemplate

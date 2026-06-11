@@ -85,15 +85,16 @@ const ComparePage = () => {
               '@type': 'ItemList',
               itemListElement: [
                 {
-                  '@type': 'SoftwareApplication',
+                  '@type': 'Service',
                   name: 'Quantifier.ai',
-                  applicationCategory: 'BusinessApplication',
+                  serviceType: 'GRC compliance automation platform',
+                  provider: { '@type': 'Organization', name: 'Quantifier.ai', url: 'https://quantifier.ai' },
                   url: 'https://quantifier.ai',
                 },
                 {
-                  '@type': 'SoftwareApplication',
+                  '@type': 'Service',
                   name: config.competitor,
-                  applicationCategory: 'BusinessApplication',
+                  serviceType: 'GRC compliance automation platform',
                   ...(config.competitorUrl && { url: config.competitorUrl }),
                 },
               ],
