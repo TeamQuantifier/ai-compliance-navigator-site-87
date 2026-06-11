@@ -962,7 +962,6 @@ Deno.serve(async (req) => {
     } else {
       output = [
         HEADER,
-        `> For comprehensive details, see [llms-full.txt](${BASE_URL}/llms-full.txt)`,
         CORE_CAPABILITIES,
         KEY_LINKS,
         FREE_TOOLS_SHORT,
