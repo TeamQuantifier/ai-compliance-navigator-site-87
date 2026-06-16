@@ -393,6 +393,24 @@
   status = 301
   force = true
 
+# Force trailing slash on language roots (consolidate /en vs /en/, etc.)
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pl"
+  to = "/pl/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cs"
+  to = "/cs/"
+  status = 301
+  force = true
 
 
 # SPA fallback — must be last
