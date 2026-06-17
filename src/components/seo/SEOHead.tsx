@@ -62,6 +62,9 @@ const ensureTrailingSlash = (url: string): string => {
   return url + '/';
 };
 
+// Strip leading/trailing slashes from slugs to avoid // in URLs
+const cleanSlug = (s: string): string => (s || '').replace(/^\/+|\/+$/g, '');
+
 export const SEOHead = ({
   title,
   description,
@@ -98,7 +101,7 @@ export const SEOHead = ({
 }: SEOHeadProps) => {
   // Build URLs with trailing slash
   const basePath = contentType === 'post' ? 'blog' : 'success-stories';
-  const selfUrl = ensureTrailingSlash(`${BASE_URL}/${lang}/${basePath}/${slug}`);
+  const selfUrl = ensureTrailingSlash(`${BASE_URL}/${lang}/${basePath}/${cleanSlug(slug)}`);
   const canonicalUrl = customCanonicalUrl || selfUrl;
 
   // If a custom canonical points to a different URL, the page is being
@@ -112,7 +115,7 @@ export const SEOHead = ({
     : (alternates || []).map(alt => ({
         lang: alt.lang,
         hreflang: LOCALE_HREFLANG_MAP[alt.lang as Locale] || alt.lang,
-        url: ensureTrailingSlash(`${BASE_URL}/${alt.lang}/${basePath}/${alt.slug}`),
+        url: ensureTrailingSlash(`${BASE_URL}/${alt.lang}/${basePath}/${cleanSlug(alt.slug)}`),
       }));
 
   // x-default: use EN alternate if exists, otherwise current URL
