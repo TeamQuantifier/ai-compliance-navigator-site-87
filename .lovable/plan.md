@@ -1,69 +1,71 @@
-# Trailing slash dla korzeni językowych (/en, /pl, /cs)
+# Audyt SEO artykułów dodawanych przez CMS
 
-## Diagnoza (zweryfikowana na produkcji)
+## Co działa automatycznie (potwierdzone na żywym artykule)
 
-Sprawdziłem oba URL-e (curl + Googlebot UA):
+Przykład: `https://quantifier.ai/en/blog/nis2-spreadsheet-vs-grc-platform`
 
-| URL | Status | Content-length | ETag | Canonical | H1 |
-|---|---|---|---|---|---|
-| `https://quantifier.ai/en` | 200 | 6569 (SPA) / 13264 (bot) | `811712f0…` | `https://quantifier.ai/en/` | „End-to-end GRC…" |
-| `https://quantifier.ai/en/` | 200 | 6569 / 13264 | `811712f0…` (identyczny) | `https://quantifier.ai/en/` | „End-to-end GRC…" |
+Każdy post/story dodany przez CMS dostaje z `SEOHead` + `useAlternates`:
 
-**Treść jest identyczna** (ten sam ETag, ten sam HTML w wersji prerendered dla bota, ten sam H1, ten sam canonical). Teza z artykułu, że „wersja bez ukośnika ma rozbudowaną stronę, a wersja z ukośnikiem uproszczony dokument", jest **nieaktualna** – prawdopodobnie pochodzi z momentu sprzed wdrożenia prerendera lub z porównania cached vs miss (widać `cache-status: hit` vs `miss`).
+- **`<title>`** — `meta_title` lub `{title} | Quantifier.ai`
+- **`<meta name="description">`** — `meta_desc` / `excerpt`
+- **`<link rel="canonical">`** — self-URL z wymuszonym trailing slash, lub `canonical_url` z bazy (jeśli ustawiony — wtedy hreflang jest celowo wyłączony, bo strona jest konsolidowana)
+- **`<link rel="alternate" hreflang>`** — automatycznie z tabeli `alternates` po `group_id`:
+  - self (`en`)
+  - `pl-PL` (geo-targeting PL)
+  - `cs-CZ` (geo-targeting CZ)
+  - `x-default` → wersja EN
+- **Open Graph** — `og:title/description/url/image/locale` + `og:locale:alternate` dla każdej wersji
+- **Twitter Card** — `summary_large_image` z fallbackami
+- **`article:published_time` / `modified_time` / `tag`**
+- **JSON-LD**: `BlogPosting` (+ opcjonalny `schema_json_override` np. FAQPage) + `BreadcrumbList`
+- **`<html lang>`** — dynamicznie przez `react-helmet-async`
+- **Sitemap & RSS** — edge function automatycznie podbija nowe wpisy
+- **301 redirect przy zmianie sluga** — `useSlugRedirect`
 
-**Realny problem, który zostaje:** oba URL-e zwracają 200 zamiast jeden 301 → drugi. Canonical jest poprawny (zawsze `/en/`), więc Google powinien skonsolidować, ale dla pewności indeksacyjnej i zgodności z naszą polityką trailing slash – warto wymusić 301.
+Czyli: **TAK, nowe artykuły są automatycznie skonfigurowane pod SEO** o ile w CMS uzupełnione są 3 wersje językowe powiązane `group_id`.
 
-To koliduje z obecnym memo `wymuszenie-trailing-slash-netlify`, które jawnie **wyłącza** korzenie językowe z reguły. Trzeba świadomie tę regułę zmienić.
+## Znaleziony bug (wymaga fixa)
 
-## Plan
+Na żywej stronie hreflang dla CS ma **podwójny slash**:
 
-### 1. `netlify.toml` – dodać 3 reguły 301 przed SPA fallback
-
-```toml
-# Force trailing slash on language roots (consolidate /en vs /en/)
-[[redirects]]
-  from = "/en"
-  to = "/en/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pl"
-  to = "/pl/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/cs"
-  to = "/cs/"
-  status = 301
-  force = true
+```
+<link rel="alternate" hreflang="cs-CZ"
+      href="https://quantifier.ai/cs/blog//nis2-excel-nebo-grc-platforma/">
 ```
 
-Wstawić w bloku „Redirects (301) for non-localized paths" (przed `SPA fallback — must be last`). `force = true` jest konieczne, bo bez niego Netlify nie nadpisze istniejącej ścieżki obsługiwanej przez SPA.
+Przyczyna: czeski wpis ma slug zapisany w bazie z wiodącym `/` (`/nis2-excel-nebo-grc-platforma`), a `SEOHead` skleja URL przez `` `${BASE_URL}/${lang}/${basePath}/${alt.slug}` ``. Skutek: Google widzi 404-podobny URL i może nie powiązać wersji językowych.
 
-### 2. Aktualizacja pamięci projektu
+## Plan naprawy
 
-- `mem://seo/wymuszenie-trailing-slash-netlify` – usunąć wyjątek dla `/en`, `/pl`, `/cs` (teraz też mają trailing slash).
-- `mem://index.md` Core – zmienić linię „Trailing slashes are mandatory in paths, canonicals, and hreflang (except language roots /pl, /en, /cs)" na wersję bez wyjątku.
+1. **`src/components/seo/SEOHead.tsx`** — znormalizować slug przed sklejeniem URL:
+   - dodać helper `stripSlashes(s)` (usuwa wiodące/końcowe `/`)
+   - zastosować do `slug` w `selfUrl` oraz do `alt.slug` w `alternateLinks`
+   - to samo dla `basePath` jeżeli zaszłaby kiedyś podobna pomyłka
 
-### 3. Weryfikacja po deployu
+2. **Sanityzacja przy zapisie w CMS** (defensywnie, żeby nie wracało):
+   - `src/pages/admin/PostEditor.tsx` i `StoryEditor.tsx` — przy zapisie `slug` zrobić `.trim().replace(/^\/+|\/+$/g, '')`
+   - to samo w `alternates` (tabela trzyma `target_slug`) — jeżeli zapis idzie przez ten sam formularz, czyścić tam też
 
-```bash
-curl -sI https://quantifier.ai/en   # oczekiwane: 301 → /en/
-curl -sI https://quantifier.ai/pl
-curl -sI https://quantifier.ai/cs
-curl -sI https://quantifier.ai/en/  # oczekiwane: 200
-```
+3. **Migracja czyszcząca dane historyczne** (jednorazowo):
+   ```sql
+   UPDATE public.posts
+     SET slug = regexp_replace(slug, '^/+|/+$', '', 'g')
+     WHERE slug LIKE '/%' OR slug LIKE '%/';
+   UPDATE public.stories  SET slug = regexp_replace(slug, '^/+|/+$', '', 'g')
+     WHERE slug LIKE '/%' OR slug LIKE '%/';
+   UPDATE public.alternates SET target_slug = regexp_replace(target_slug, '^/+|/+$', '', 'g')
+     WHERE target_slug LIKE '/%' OR target_slug LIKE '%/';
+   ```
+   (Nazwy kolumn potwierdzę przed migracją — `alternates` może mieć `slug` zamiast `target_slug`.)
 
-Następnie w GSC „Inspect URL" dla `/en` – powinno pokazać „Page with redirect" zamiast indeksacji.
+4. **Weryfikacja** po wdrożeniu:
+   - `curl -sL https://quantifier.ai/en/blog/nis2-spreadsheet-vs-grc-platform | grep hreflang`
+     → wszystkie 3 hreflangi bez `//`
+   - sprawdzić 1-2 inne artykuły z 3 wersjami, czy slugi są spójne
+   - zaktualizować `mem://i18n/content-slug-switching-logic-v2` o regułę „slug bez wiodącego `/`"
 
-## Czego NIE robimy (świadomie)
+## Co NIE jest zmieniane
 
-- Nie zmieniamy `canonical` ani `hreflang` – są już poprawne (wskazują `/en/`, `/pl/`, `/cs/`).
-- Nie ruszamy prerendera ani treści strony głównej – treść jest identyczna na obu wariantach.
-- Nie dodajemy reguł dla głębszych ścieżek – wymuszenie trailing slash dla nich już działa.
-
-## Co napisać w artykule
-
-Możesz w artykule potwierdzić, że problem **został zaadresowany na poziomie infrastruktury** poprzez 301 na korzeniach językowych i że treść była identyczna (nie było realnej duplikacji treści, tylko ryzyko podwójnej indeksacji URL-a).
+- Logika hreflang, canonical, JSON-LD — działa poprawnie
+- Routing, prerender, sitemap
+- Treść artykułów
