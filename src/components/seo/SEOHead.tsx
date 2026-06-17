@@ -62,6 +62,9 @@ const ensureTrailingSlash = (url: string): string => {
   return url + '/';
 };
 
+// Strip leading/trailing slashes from slugs to avoid // in URLs
+const cleanSlug = (s: string): string => (s || '').replace(/^\/+|\/+$/g, '');
+
 export const SEOHead = ({
   title,
   description,
