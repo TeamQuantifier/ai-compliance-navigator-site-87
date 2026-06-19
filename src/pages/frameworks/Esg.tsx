@@ -4,7 +4,7 @@ import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle, Users } from 'lucide-react';
+import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle, Users, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
@@ -232,6 +232,64 @@ const Esg = () => {
               </div>
               <div>
                 <VsmeDarkMockup />
+              </div>
+            </div>
+
+            {/* Envirly VSME module — video + narration */}
+            <div className="mt-12 pt-12 border-t border-slate-200">
+              <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Leaf className="h-4 w-4" />
+                {t('esgPage.vsme.envirly.sectionTitle')}
+              </div>
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+                {/* Video placeholder */}
+                <div className="aspect-video rounded-xl bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border border-slate-700 flex flex-col items-center justify-center text-white/80 shadow-xl">
+                  <div className="h-16 w-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-3">
+                    <Play className="h-7 w-7 text-white" />
+                  </div>
+                  <span className="text-sm uppercase tracking-wider text-white/60">
+                    {t('esgPage.vsme.envirly.videoPlaceholder')}
+                  </span>
+                </div>
+
+                {/* Narration */}
+                <div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-3">
+                    {t('esgPage.vsme.envirly.headline')}
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    {t('esgPage.vsme.envirly.intro')}
+                  </p>
+                  <h4 className="font-semibold text-slate-800 mb-2">
+                    {t('esgPage.vsme.envirly.howItWorksTitle')}
+                  </h4>
+                  <ul className="space-y-2 mb-4">
+                    {(t('esgPage.vsme.envirly.steps', { returnObjects: true }) as string[] || []).map((step, i) => (
+                      <li key={i} className="flex items-start gap-2 text-slate-700">
+                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-slate-600 mb-3">
+                    {t('esgPage.vsme.envirly.effect')}
+                  </p>
+                  <p className="text-slate-600 mb-3">
+                    {t('esgPage.vsme.envirly.integration')}
+                  </p>
+                  <p className="text-slate-600 mb-6">
+                    {t('esgPage.vsme.envirly.closing')}
+                  </p>
+                  <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white" asChild>
+                    <a
+                      href={currentLocale === 'pl' ? 'https://www.envirly.pl/' : 'https://www.envirly.com/'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t('esgPage.vsme.envirly.cta')} <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </TabsContent>
