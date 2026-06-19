@@ -3026,10 +3026,9 @@
           "Leon – AI agent Envirly – analyzuje materiály a automaticky vyplní velkou část požadavků VSME",
           "Hotový report lze libovolně upravit a přizpůsobit organizaci"
         ],
-        "effect": "Výsledek? Místo začínání s prázdnou stránkou získáte profesionálně připravený report, který zvyšuje transparentnost firmy vůči korporátním klientům, bankám a obchodním partnerům.",
-        "integration": "Modul je navíc integrován s ostatními řešeními Envirly, takže reportování se může stát součástí širšího procesu správy ESG dat a compliance.",
-        "closing": "Je to další krok ke světu, kde reportování neznamená týdny práce a stovky Excel tabulek, ale jen několik jednoduchých kroků podpořených umělou inteligencí.",
-        "cta": "🚀 Nahrajte dokumenty. Leon se postará o zbytek."
+        "effectSectionTitle": "Výsledek?",
+        "effectSectionBody": "Místo začínání s prázdnou stránkou získáte profesionálně připravený report, který zvyšuje transparentnost firmy vůči korporátním klientům, bankám a obchodním partnerům. Modul je navíc integrován s ostatními řešeními Envirly, takže reportování se může stát součástí širšího procesu správy ESG dat a compliance. Je to další krok ke světu, kde reportování neznamená týdny práce a stovky Excel tabulek, ale jen několik jednoduchých kroků podpořených umělou inteligencí.",
+        "cta": "Objednat demo"
       }
     }
   },

@@ -3305,10 +3305,9 @@
           "Leon – agent AI Envirly – analizuje materiały i automatycznie wypełnia znaczną część wymagań VSME",
           "Gotowy raport można dowolnie edytować i dostosować do organizacji"
         ],
-        "effect": "Efekt? Zamiast zaczynać od pustej strony, otrzymujesz profesjonalnie przygotowany raport, który zwiększa przejrzystość firmy wobec klientów korporacyjnych, banków i partnerów biznesowych.",
-        "integration": "Co więcej, moduł jest zintegrowany z pozostałymi rozwiązaniami Envirly, dzięki czemu raportowanie może stać się częścią szerszego procesu zarządzania danymi ESG i compliance.",
-        "closing": "To kolejny krok w kierunku świata, w którym raportowanie nie oznacza tygodni pracy i setek arkuszy Excel, lecz kilka prostych kroków wspieranych przez sztuczną inteligencję.",
-        "cta": "🚀 Wgraj dokumenty. Leon zajmie się resztą."
+        "effectSectionTitle": "Efekt?",
+        "effectSectionBody": "Zamiast zaczynać od pustej strony, otrzymujesz profesjonalnie przygotowany raport, który zwiększa przejrzystość firmy wobec klientów korporacyjnych, banków i partnerów biznesowych. Co więcej, moduł jest zintegrowany z pozostałymi rozwiązaniami Envirly, dzięki czemu raportowanie może stać się częścią szerszego procesu zarządzania danymi ESG i compliance. To kolejny krok w kierunku świata, w którym raportowanie nie oznacza tygodni pracy i setek arkuszy Excel, lecz kilka prostych kroków wspieranych przez sztuczną inteligencją.",
+        "cta": "Umów demo"
       }
     }
   },

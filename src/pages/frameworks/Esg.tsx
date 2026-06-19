@@ -275,25 +275,20 @@ const Esg = () => {
                       </li>
                     ))}
                   </ul>
-                  <p className="text-slate-600 mb-3">
-                    {t('esgPage.vsme.envirly.effect')}
-                  </p>
-                  <p className="text-slate-600 mb-3">
-                    {t('esgPage.vsme.envirly.integration')}
-                  </p>
-                  <p className="text-slate-600 mb-6">
-                    {t('esgPage.vsme.envirly.closing')}
-                  </p>
-                  <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white" asChild>
-                    <a
-                      href={currentLocale === 'pl' ? 'https://www.envirly.pl/' : 'https://www.envirly.com/'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t('esgPage.vsme.envirly.cta')} <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
                 </div>
+              </div>
+              <div className="mt-12 text-center">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  {t('esgPage.vsme.envirly.effectSectionTitle')}
+                </h3>
+                <p className="text-slate-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
+                  {t('esgPage.vsme.envirly.effectSectionBody')}
+                </p>
+                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('esgPage.vsme.envirly.cta')} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </TabsContent>
