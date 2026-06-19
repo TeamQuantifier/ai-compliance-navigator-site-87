@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import { CsrdDarkMockup, GriDarkMockup, CbamDarkMockup, VsmeDarkMockup } from '@/components/mockups/EsgDarkMockups';
+import vsmeVideo from '@/assets/vsme-walkthrough.mp4.asset.json';
 
 const Esg = () => {
   const [activeTab, setActiveTab] = useState("csdr");
@@ -242,14 +243,17 @@ const Esg = () => {
                 {t('esgPage.vsme.envirly.sectionTitle')}
               </div>
               <div className="grid md:grid-cols-2 gap-10 items-start">
-                {/* Video placeholder */}
-                <div className="aspect-video rounded-xl bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border border-slate-700 flex flex-col items-center justify-center text-white/80 shadow-xl">
-                  <div className="h-16 w-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-3">
-                    <Play className="h-7 w-7 text-white" />
-                  </div>
-                  <span className="text-sm uppercase tracking-wider text-white/60">
+                {/* Video */}
+                <div className="aspect-video rounded-xl overflow-hidden bg-slate-900 border border-slate-700 shadow-xl">
+                  <video
+                    src={vsmeVideo.url}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  >
                     {t('esgPage.vsme.envirly.videoPlaceholder')}
-                  </span>
+                  </video>
                 </div>
 
                 {/* Narration */}
