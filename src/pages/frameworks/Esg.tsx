@@ -246,7 +246,7 @@ const Esg = () => {
                 {/* Video */}
                 <div className="aspect-video rounded-xl overflow-hidden bg-slate-900 border border-slate-700 shadow-xl">
                   <video
-                    src={vsmeVideo.url}
+                    src="/videos/vsme-walkthrough.mp4"
                     controls
                     playsInline
                     preload="metadata"
