@@ -4,11 +4,12 @@ import PageTemplate from '@/components/PageTemplate';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle, Users } from 'lucide-react';
+import { ArrowRight, FileText, BarChart3, Globe, CheckCircle, Zap, Shield, PieChart, Clock, AlertCircle, Leaf, Recycle, Users, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import { CsrdDarkMockup, GriDarkMockup, CbamDarkMockup, VsmeDarkMockup } from '@/components/mockups/EsgDarkMockups';
+
 
 const Esg = () => {
   const [activeTab, setActiveTab] = useState("csdr");
@@ -232,6 +233,62 @@ const Esg = () => {
               </div>
               <div>
                 <VsmeDarkMockup />
+              </div>
+            </div>
+
+            {/* Envirly VSME module — video + narration */}
+            <div className="mt-12 pt-12 border-t border-slate-200">
+              <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Leaf className="h-4 w-4" />
+                {t('esgPage.vsme.envirly.sectionTitle')}
+              </div>
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+                {/* Video */}
+                <div className="aspect-video rounded-xl overflow-hidden bg-slate-900 border border-slate-700 shadow-xl">
+                  <video
+                    src="/videos/vsme-walkthrough.mp4"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  >
+                    {t('esgPage.vsme.envirly.videoPlaceholder')}
+                  </video>
+                </div>
+
+                {/* Narration */}
+                <div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-3">
+                    {t('esgPage.vsme.envirly.headline')}
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    {t('esgPage.vsme.envirly.intro')}
+                  </p>
+                  <h4 className="font-semibold text-slate-800 mb-2">
+                    {t('esgPage.vsme.envirly.howItWorksTitle')}
+                  </h4>
+                  <ul className="space-y-2 mb-4">
+                    {(t('esgPage.vsme.envirly.steps', { returnObjects: true }) as string[] || []).map((step, i) => (
+                      <li key={i} className="flex items-start gap-2 text-slate-700">
+                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-12 text-center">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  {t('esgPage.vsme.envirly.effectSectionTitle')}
+                </h3>
+                <p className="text-slate-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
+                  {t('esgPage.vsme.envirly.effectSectionBody')}
+                </p>
+                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white" asChild>
+                  <Link to={`/${currentLocale}/contact`}>
+                    {t('esgPage.vsme.envirly.cta')} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </TabsContent>

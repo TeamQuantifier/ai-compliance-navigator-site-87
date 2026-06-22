@@ -3292,7 +3292,23 @@
       ],
       "dashboardTitle": "Dashboard ujawnień VSME",
       "chartTitle": "Postęp modułów Basic i Comprehensive",
-      "insight": "Moduł Basic ukończony w 100% - możesz udostępnić raport partnerom"
+      "insight": "Moduł Basic ukończony w 100% - możesz udostępnić raport partnerom",
+      "envirly": {
+        "sectionTitle": "Nowość: moduł VSME w Envirly",
+        "videoPlaceholder": "Filmik wkrótce",
+        "headline": "Raportowanie VSME dla MŚP właśnie stało się dużo prostsze.",
+        "intro": "W Envirly udostępniamy nowy moduł VSME, który pozwala przygotować raport zrównoważonego rozwoju w sposób szybki, intuicyjny i wspierany przez AI.",
+        "howItWorksTitle": "Jak to działa?",
+        "steps": [
+          "Krótki onboarding",
+          "Wgranie podstawowych dokumentów firmy",
+          "Leon – agent AI Envirly – analizuje materiały i automatycznie wypełnia znaczną część wymagań VSME",
+          "Gotowy raport można dowolnie edytować i dostosować do organizacji"
+        ],
+        "effectSectionTitle": "Efekt?",
+        "effectSectionBody": "Zamiast zaczynać od pustej strony, otrzymujesz profesjonalnie przygotowany raport, który zwiększa przejrzystość firmy wobec klientów korporacyjnych, banków i partnerów biznesowych. Co więcej, moduł jest zintegrowany z pozostałymi rozwiązaniami Envirly, dzięki czemu raportowanie może stać się częścią szerszego procesu zarządzania danymi ESG i compliance. To kolejny krok w kierunku świata, w którym raportowanie nie oznacza tygodni pracy i setek arkuszy Excel, lecz kilka prostych kroków wspieranych przez sztuczną inteligencją.",
+        "cta": "Umów demo"
+      }
     }
   },
   "environmentalPage": {

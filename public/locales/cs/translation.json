@@ -3013,7 +3013,23 @@
       ],
       "dashboardTitle": "Dashboard zveřejnění VSME",
       "chartTitle": "Postup modulů Basic a Comprehensive",
-      "insight": "Modul Basic dokončen na 100 % - připraven ke sdílení s partnery"
+      "insight": "Modul Basic dokončen na 100 % - připraven ke sdílení s partnery",
+      "envirly": {
+        "sectionTitle": "Novinka: modul VSME v Envirly",
+        "videoPlaceholder": "Video brzy",
+        "headline": "Reportování VSME pro MSP právě začalo být mnohem jednodušší.",
+        "intro": "V Envirly uvádíme nový modul VSME, který umožňuje připravit zprávu o udržitelnosti rychle, intuitivně a s podporou AI.",
+        "howItWorksTitle": "Jak to funguje?",
+        "steps": [
+          "Krátký onboarding",
+          "Nahrání základních firemních dokumentů",
+          "Leon – AI agent Envirly – analyzuje materiály a automaticky vyplní velkou část požadavků VSME",
+          "Hotový report lze libovolně upravit a přizpůsobit organizaci"
+        ],
+        "effectSectionTitle": "Výsledek?",
+        "effectSectionBody": "Místo začínání s prázdnou stránkou získáte profesionálně připravený report, který zvyšuje transparentnost firmy vůči korporátním klientům, bankám a obchodním partnerům. Modul je navíc integrován s ostatními řešeními Envirly, takže reportování se může stát součástí širšího procesu správy ESG dat a compliance. Je to další krok ke světu, kde reportování neznamená týdny práce a stovky Excel tabulek, ale jen několik jednoduchých kroků podpořených umělou inteligencí.",
+        "cta": "Objednat demo"
+      }
     }
   },
   "environmentalPage": {

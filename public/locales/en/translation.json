@@ -3339,7 +3339,23 @@
       ],
       "dashboardTitle": "VSME disclosures dashboard",
       "chartTitle": "Basic and Comprehensive module progress",
-      "insight": "Basic module 100% complete - ready to share with partners"
+      "insight": "Basic module 100% complete - ready to share with partners",
+      "envirly": {
+        "sectionTitle": "New: VSME module in Envirly",
+        "videoPlaceholder": "Video coming soon",
+        "headline": "VSME reporting for SMEs just got a lot easier.",
+        "intro": "Envirly is releasing a new VSME module that lets you prepare a sustainability report in a fast, intuitive and AI-supported way.",
+        "howItWorksTitle": "How does it work?",
+        "steps": [
+          "Short onboarding",
+          "Upload your core company documents",
+          "Leon – Envirly's AI agent – analyses the materials and automatically fills in a large part of the VSME requirements",
+          "The ready report can be freely edited and tailored to your organisation"
+        ],
+        "effectSectionTitle": "The result?",
+        "effectSectionBody": "Instead of starting from a blank page, you get a professionally prepared report that increases your company's transparency towards corporate clients, banks and business partners. What's more, the module is integrated with the rest of Envirly's solutions, so reporting can become part of a broader ESG data management and compliance process. It's another step toward a world where reporting no longer means weeks of work and hundreds of Excel sheets, but a few simple steps supported by artificial intelligence.",
+        "cta": "Book a demo"
+      }
     }
   },
   "environmentalPage": {
