@@ -393,24 +393,12 @@
   status = 301
   force = true
 
-# Force trailing slash on language roots (consolidate /en vs /en/, etc.)
-[[redirects]]
-  from = "/en"
-  to = "/en/"
-  status = 301
-  force = true
+# NOTE: Do NOT add `/en` -> `/en/` style rules here. Netlify ignores trailing
+# slash when matching `from`, so `from = "/pl"` matches both `/pl` and `/pl/`
+# and produces an infinite 301 loop (ERR_TOO_MANY_REDIRECTS). Trailing slash
+# is enforced via canonical URLs in <SEOHead>.
 
-[[redirects]]
-  from = "/pl"
-  to = "/pl/"
-  status = 301
-  force = true
 
-[[redirects]]
-  from = "/cs"
-  to = "/cs/"
-  status = 301
-  force = true
 
 
 # SPA fallback — must be last
