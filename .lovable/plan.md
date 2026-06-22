@@ -1,51 +1,33 @@
-## Cel
+# Problem
 
-W zakładce **VSME** na stronie `/:locale/frameworks/esg` dodać nową sekcję z:
-1. Miejscem na filmik (placeholder gotowy do podmiany, gdy prześlesz plik).
-2. Statycznym tekstem narracji (treść Twojego posta o module VSME / Leon AI).
+Filmik VSME nie odtwarza się na opublikowanej stronie (quantifier.ai), choć jest widoczny w preview Lovable.
 
-## Co zmieniam
+## Diagnoza
 
-### 1. `src/pages/frameworks/Esg.tsx` — rozbudowa `TabsContent value="vsme"`
+Strona jest hostowana na **Netlify**, a nie na Lovable Hosting. Filmik został wgrany jako Lovable Asset (CDN) pod adresem:
 
-Pod istniejącym gridem (opis + `VsmeDarkMockup`) dodaję nową sekcję w 2 kolumnach:
+```
+/__l5e/assets-v1/a7c7f3e6-.../vsme-walkthrough.mp4
+```
 
-- **Lewa kolumna — wideo placeholder**
-  - Kontener `aspect-video` z `rounded-xl`, gradient slate, ikona `Play`, podpis „Filmik wkrótce" (PL) / „Video coming soon" (EN) / „Video brzy" (CS).
-  - Przygotowany pod podmianę: jeden `<video>` lub `<iframe>` (YouTube embed) — po przesłaniu pliku/URL podmienię to w jednym miejscu.
+Ten endpoint (`/__l5e/`) działa wyłącznie na infrastrukturze Lovable. Na Netlify żądanie tego URL trafia w SPA fallback i zwraca `index.html` (potwierdzone: `curl` na produkcji zwraca `content-type: text/html`). Dlatego `<video>` nie ma czego odtworzyć — i przeglądarka pokazuje pusty/czarny kontener (a Ty widzisz „starszą wersję" z cache).
 
-- **Prawa kolumna — narracja**
-  - Nagłówek: „📄 Raportowanie VSME dla MŚP właśnie stało się dużo prostsze."
-  - Akapit wstępny.
-  - Pod-nagłówek „Jak to działa?" z 4 punktami (✅) jako lista.
-  - Akapit „Efekt? …".
-  - Akapit „Co więcej, moduł jest zintegrowany…".
-  - Akapit zamykający „To kolejny krok w kierunku świata…".
-  - CTA na końcu: „🚀 Wgraj dokumenty. Leon zajmie się resztą." jako wyróżniony przycisk linkujący do `envirly.pl` (PL) / `envirly.com` (EN/CS), analogicznie do istniejącej sekcji Envirly na górze strony.
+# Rozwiązanie
 
-Sekcja oddzielona `mt-12 pt-12 border-t border-slate-200`, tytuł sekcji: „Nowość: moduł VSME w Envirly" (PL) / „New: VSME module in Envirly" (EN) / „Novinka: modul VSME v Envirly" (CS).
+Przenieść plik filmu do katalogu `public/`, który Netlify serwuje bezpośrednio jako statyczny zasób. Rozmiar 3,3 MB jest w pełni akceptowalny.
 
-### 2. Tłumaczenia (i18n)
+## Kroki
 
-Dodaję nowy blok `esgPage.vsme.envirly` w `src/i18n/locales/pl/*.json`, `en/*.json`, `cs/*.json` (sprawdzę najpierw strukturę plików), zawierający:
-- `sectionTitle`
-- `videoPlaceholder`
-- `headline`
-- `intro`
-- `howItWorksTitle`
-- `steps` (array 4 elementów)
-- `effect`
-- `integration`
-- `closing`
-- `cta`
+1. **Pobrać** plik mp4 z Lovable CDN (przez `lovable-assets` lub bezpośrednio z URL asset) i zapisać jako `public/videos/vsme-walkthrough.mp4`.
+2. **Zaktualizować `src/pages/frameworks/Esg.tsx`**:
+   - Usunąć `import vsmeVideo from '@/assets/vsme-walkthrough.mp4.asset.json'`.
+   - Zmienić `src={vsmeVideo.url}` na `src="/videos/vsme-walkthrough.mp4"`.
+3. **Usunąć asset pointer** `src/assets/vsme-walkthrough.mp4.asset.json` (już niepotrzebny).
+4. Po opublikowaniu — wymusić odświeżenie (hard refresh / cache bust), aby ominąć cache przeglądarki na starym, niedziałającym URL-u.
 
-Polska wersja używa Twojego oryginalnego tekstu 1:1. EN i CS dostaną wierne tłumaczenie utrzymujące ten sam ton i strukturę.
+## Alternatywy (do rozważenia w przyszłości)
 
-### 3. Zero zmian w innych miejscach
+- **Supabase Storage** (publiczny bucket) — dobre dla większych plików / wielu wideo.
+- **YouTube / Vimeo embed** — zero kosztów hostingu, ale inny UX (branding zewnętrzny).
 
-- Nie ruszam istniejących mockupów, FAQ, CTA, ani innych zakładek (CSDR/GRI/CBAM).
-- Nie ruszam routingu ani SEO — strona już ma poprawny canonical + hreflang.
-
-## Po Twojej stronie
-
-Gdy prześlesz filmik (URL YouTube/Vimeo albo plik MP4), w jednej iteracji podmienię placeholder na właściwy `<iframe>` lub `<video controls>`.
+Rekomendacja: opcja podstawowa (public/) — najprostsza i wystarczająca dla jednego 3 MB pliku.

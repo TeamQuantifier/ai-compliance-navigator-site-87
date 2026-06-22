@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
 import { CsrdDarkMockup, GriDarkMockup, CbamDarkMockup, VsmeDarkMockup } from '@/components/mockups/EsgDarkMockups';
-import vsmeVideo from '@/assets/vsme-walkthrough.mp4.asset.json';
+
 
 const Esg = () => {
   const [activeTab, setActiveTab] = useState("csdr");
@@ -246,7 +246,7 @@ const Esg = () => {
                 {/* Video */}
                 <div className="aspect-video rounded-xl overflow-hidden bg-slate-900 border border-slate-700 shadow-xl">
                   <video
-                    src={vsmeVideo.url}
+                    src="/videos/vsme-walkthrough.mp4"
                     controls
                     playsInline
                     preload="metadata"
