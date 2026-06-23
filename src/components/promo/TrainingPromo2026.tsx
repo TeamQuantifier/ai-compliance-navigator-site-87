@@ -184,7 +184,9 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
 
 /* ─────────────────────────── Section ─────────────────────────── */
 export const TrainingPromoSection = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const ctaHref = resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form';
 
   return (
     <section
@@ -227,7 +229,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-7 py-6 text-base"
               >
-                <a href="#promo-form">
+                <a href={ctaHref}>
                   {c.primaryCta} <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
@@ -237,7 +239,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 variant="outline"
                 className="border-white/30 bg-white/5 text-white hover:bg-white/15 hover:text-white px-7 py-6 text-base"
               >
-                <a href="#promo-form">{c.secondaryCta}</a>
+                <a href={ctaHref}>{c.secondaryCta}</a>
               </Button>
             </div>
 
@@ -245,6 +247,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
               {c.disclaimer}
             </p>
           </div>
+
 
           {/* Date card */}
           <div className="relative">
