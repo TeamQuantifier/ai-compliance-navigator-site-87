@@ -36,14 +36,14 @@ type Copy = {
 
 const COPY: Record<Locale, Copy> = {
   pl: {
-    badge: 'Zgłoszenie do 30.06.2026',
+    badge: 'Zgłoszenie do 14.07.2026',
     title: 'Zgłoś firmę na 4h szkolenie — sprawdzimy dofinansowanie',
     subtitle:
       'Wypełnij krótki formularz. Odezwiemy się w 1 dzień roboczy z decyzją o kwalifikacji do nawet 100% dofinansowania (NIS2 / KSC / ISO 27001).',
     bullets: [
       'Decyzja o kwalifikacji w 3 dni robocze',
       'Liczba miejsc ograniczona — decyduje kolejność zgłoszeń',
-      'Rejestracja do 30.06.2026, realizacja możliwa później',
+      'Rejestracja do 14.07.2026, realizacja możliwa później',
     ],
     fields: {
       firstName: 'Imię osoby kontaktowej *',
@@ -80,14 +80,14 @@ const COPY: Record<Locale, Copy> = {
     invalidEmail: 'Podaj poprawny e-mail służbowy',
   },
   en: {
-    badge: 'Register by 30 June 2026',
+    badge: 'Register by 14 July 2026',
     title: 'Sign your company up for the 4h training — we check funding eligibility',
     subtitle:
       'Fill in the short form. We will respond within 1 business day with an eligibility decision for up to 100% funding (NIS2 / ISO 27001).',
     bullets: [
       'Eligibility decision within 3 business days',
       'Limited number of slots — first come, first served',
-      'Register by 30 June 2026, delivery can take place later',
+      'Register by 14 July 2026, delivery can take place later',
     ],
     fields: {
       firstName: 'Contact first name *',
@@ -124,14 +124,14 @@ const COPY: Record<Locale, Copy> = {
     invalidEmail: 'Please enter a valid business email',
   },
   cs: {
-    badge: 'Registrace do 30. 6. 2026',
+    badge: 'Registrace do 14. 7. 2026',
     title: 'Přihlaste firmu na 4h školení — ověříme financování',
     subtitle:
       'Vyplňte krátký formulář. Ozveme se do 1 pracovního dne s rozhodnutím o způsobilosti až ke 100% financování (NIS2 / ISO 27001).',
     bullets: [
       'Rozhodnutí o způsobilosti do 3 pracovních dnů',
       'Omezený počet míst — rozhoduje pořadí přihlášek',
-      'Registrace do 30. 6. 2026, realizace možná i později',
+      'Registrace do 14. 7. 2026, realizace možná i později',
     ],
     fields: {
       firstName: 'Jméno kontaktní osoby *',
@@ -211,7 +211,7 @@ export const TrainingPromoForm = ({ locale }: { locale: string }) => {
 
     const sectorLabel = c.sectors.find((s) => s.value === sector)?.label ?? sector;
     const message = [
-      '[Promo 30.06.2026 — 4h training / NIS2 / KSC / ISO 27001]',
+      '[Promo 14.07.2026 — 4h training / NIS2 / KSC / ISO 27001]',
       `Company: ${co}`,
       `NIP / Tax ID: ${nipV}`,
       `Sector: ${sectorLabel}`,
