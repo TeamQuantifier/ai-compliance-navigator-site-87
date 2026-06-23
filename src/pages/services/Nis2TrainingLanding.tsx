@@ -394,10 +394,10 @@ const Nis2TrainingLanding = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-5 max-w-5xl mx-auto">
             <div className="text-center md:text-left">
               <p className="text-xs font-semibold tracking-wider text-primary-foreground/80 uppercase mb-1">
-                Zapisy do {DEADLINE}
+                Zgłoszenia do {DEADLINE}
               </p>
               <p className="text-xl md:text-2xl font-bold text-primary-foreground leading-tight">
-                Zarezerwuj miejsce — liczba ograniczona
+                Dołącz do 100 firm objętych akcją wsparcia
               </p>
             </div>
             <Button
