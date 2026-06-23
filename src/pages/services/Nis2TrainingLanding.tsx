@@ -125,9 +125,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Course',
-      name: 'Darmowe szkolenie NIS2 / KSC 2.0 dla firm',
+      name: 'Akcja wsparcia cyberbezpieczeństwa polskich firm — przygotowanie do NIS2 / KSC 2.0',
       description:
-        '4-godzinne praktyczne szkolenie z NIS2 i Krajowego Systemu Cyberbezpieczeństwa (KSC 2.0). Samoidentyfikacja, obowiązki, dokumentacja, harmonogram. Prowadzą eksperci i prawnicy Quantifier.ai.',
+        'Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw. Wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0 — 4-godzinne praktyczne szkolenie z ekspertami i prawnikami Quantifier.ai.',
       provider: {
         '@type': 'Organization',
         name: 'Quantifier.ai',
