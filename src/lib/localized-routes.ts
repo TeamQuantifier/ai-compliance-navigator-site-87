@@ -36,6 +36,11 @@ const LOCALIZED_SEGMENTS: Record<string, Record<Locale, string>> = {
     en: '/cybersecurity-training-for-companies',
     cs: '/skoleni-kyberneticka-bezpecnost-pro-firmy',
   },
+  'darmowe-szkolenie-nis2': {
+    pl: '/darmowe-szkolenie-nis2',
+    en: '/darmowe-szkolenie-nis2',
+    cs: '/darmowe-szkolenie-nis2',
+  },
 };
 
 export const normalizePathKey = (path: string) => decodeURIComponent(path).replace(/^\/|\/$/g, '');
@@ -64,6 +69,8 @@ const LOCALE_AVAILABILITY: Record<string, Locale[]> = {
   // English-only pages
   'frameworks/product-level/dpp': ['en'],
   'partners/gs1-polska': ['en'],
+  // Polish-only pages
+  'darmowe-szkolenie-nis2': ['pl'],
 };
 
 /**

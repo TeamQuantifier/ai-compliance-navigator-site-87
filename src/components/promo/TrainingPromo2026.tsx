@@ -32,9 +32,9 @@ type Copy = {
 
 const COPY: Record<Locale, Copy> = {
   pl: {
-    badge: 'Oferta limitowana · do 30.06.2026',
+    badge: 'Oferta limitowana · do 14.07.2026',
     bannerShort:
-      'Tylko do 30.06.2026 · 4h szkolenia NIS2 / KSC / ISO 27001 dla Twojej firmy — sprawdź, jak uzyskać do 100% dofinansowania',
+      'Tylko do 14.07.2026 · 4h szkolenia NIS2 / KSC / ISO 27001 dla Twojej firmy — sprawdź, jak uzyskać do 100% dofinansowania',
     bannerCta: 'Sprawdź ofertę',
     sectionTitle:
       '4h szkolenia z NIS2 / KSC / ISO 27001 dla Twojej firmy — nawet do 100% dofinansowania',
@@ -44,26 +44,26 @@ const COPY: Record<Locale, Copy> = {
       'Szkolenie szyte na miarę Twojej firmy, branży i poziomu dojrzałości',
       'Pomoc w pozyskaniu do 100% dofinansowania (analiza dostępnych źródeł)',
       'Decyzja o kwalifikacji w 3 dni robocze',
-      'Rejestracja do 30.06.2026 — realizacja możliwa również po tej dacie',
+      'Rejestracja do 14.07.2026 — realizacja możliwa również po tej dacie',
       'Liczba szkoleń ograniczona — decyduje kolejność zgłoszeń',
     ],
     primaryCta: 'Sprawdź dostępność',
     secondaryCta: 'Porozmawiajmy o dofinansowaniu',
     disclaimer:
-      'Liczba szkoleń ograniczona. Oferta ważna do 30.06.2026 (rejestracja). Termin realizacji ustalany indywidualnie. Wysokość dofinansowania zależy od dostępnych programów i profilu firmy.',
+      'Liczba szkoleń ograniczona. Oferta ważna do 14.07.2026 (rejestracja). Termin realizacji ustalany indywidualnie. Wysokość dofinansowania zależy od dostępnych programów i profilu firmy.',
     dateLabel: 'Rejestracja do',
     decisionLabel: 'Decyzja w',
     decisionValue: '3 dni robocze',
-    dialogTitle: 'Tylko do 30.06.2026 — 4h szkolenia za 0 zł?',
+    dialogTitle: 'Tylko do 14.07.2026 — 4h szkolenia za 0 zł?',
     dialogBody:
       'Sprawdzimy, czy Twoja firma kwalifikuje się do nawet 100% dofinansowania szkolenia z NIS2 / KSC / ISO 27001. Decyzja w 3 dni robocze, liczba miejsc ograniczona.',
     dialogCta: 'Chcę poznać szczegóły',
     dialogFootnote: 'Bez spamu. Odpowiadamy w 1 dzień roboczy.',
   },
   en: {
-    badge: 'Limited offer · until 30 June 2026',
+    badge: 'Limited offer · until 14 July 2026',
     bannerShort:
-      'Only until 30 June 2026 · 4h NIS2 / ISO 27001 training for your company — see how to get up to 100% funded',
+      'Only until 14 July 2026 · 4h NIS2 / ISO 27001 training for your company — see how to get up to 100% funded',
     bannerCta: 'See the offer',
     sectionTitle:
       '4h NIS2 / ISO 27001 training for your company — up to 100% funded',
@@ -73,26 +73,26 @@ const COPY: Record<Locale, Copy> = {
       'Training tailored to your company, sector and maturity level',
       'Help securing up to 100% funding (we map the available programs)',
       'Eligibility decision within 3 business days',
-      'Register by 30 June 2026 — delivery can take place later',
+      'Register by 14 July 2026 — delivery can take place later',
       'Limited number of training slots — first come, first served',
     ],
     primaryCta: 'Check availability',
     secondaryCta: 'Talk about funding',
     disclaimer:
-      'Limited number of training slots. Offer valid until 30 June 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile.',
+      'Limited number of training slots. Offer valid until 14 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile.',
     dateLabel: 'Register by',
     decisionLabel: 'Decision in',
     decisionValue: '3 business days',
-    dialogTitle: 'Only until 30 June 2026 — 4h training for €0?',
+    dialogTitle: 'Only until 14 July 2026 — 4h training for €0?',
     dialogBody:
       'We will check whether your company qualifies for up to 100% funding of a NIS2 / ISO 27001 training. Decision within 3 business days, limited number of slots.',
     dialogCta: 'I want the details',
     dialogFootnote: 'No spam. We reply within 1 business day.',
   },
   cs: {
-    badge: 'Limitovaná nabídka · do 30. 6. 2026',
+    badge: 'Limitovaná nabídka · do 14. 7. 2026',
     bannerShort:
-      'Jen do 30. 6. 2026 · 4h školení NIS2 / ISO 27001 pro vaši firmu — zjistěte, jak získat až 100% financování',
+      'Jen do 14. 7. 2026 · 4h školení NIS2 / ISO 27001 pro vaši firmu — zjistěte, jak získat až 100% financování',
     bannerCta: 'Zobrazit nabídku',
     sectionTitle:
       '4h školení z NIS2 / ISO 27001 pro vaši firmu — až 100 % financování',
@@ -102,17 +102,17 @@ const COPY: Record<Locale, Copy> = {
       'Školení na míru vaší firmě, oboru a úrovni vyspělosti',
       'Pomoc se získáním až 100% financování (zmapujeme dostupné programy)',
       'Rozhodnutí o způsobilosti do 3 pracovních dnů',
-      'Registrace do 30. 6. 2026 — realizace možná i později',
+      'Registrace do 14. 7. 2026 — realizace možná i později',
       'Omezený počet školení — rozhoduje pořadí přihlášek',
     ],
     primaryCta: 'Ověřit dostupnost',
     secondaryCta: 'Probrat financování',
     disclaimer:
-      'Omezený počet školení. Nabídka platí do 30. 6. 2026 (registrace). Termín realizace dohodneme individuálně. Výše financování závisí na dostupných programech a profilu firmy.',
+      'Omezený počet školení. Nabídka platí do 14. 7. 2026 (registrace). Termín realizace dohodneme individuálně. Výše financování závisí na dostupných programech a profilu firmy.',
     dateLabel: 'Registrace do',
     decisionLabel: 'Rozhodnutí do',
     decisionValue: '3 pracovních dnů',
-    dialogTitle: 'Jen do 30. 6. 2026 — 4h školení za 0 Kč?',
+    dialogTitle: 'Jen do 14. 7. 2026 — 4h školení za 0 Kč?',
     dialogBody:
       'Ověříme, zda vaše firma splňuje podmínky pro až 100% financování školení NIS2 / ISO 27001. Rozhodnutí do 3 pracovních dnů, počet míst omezen.',
     dialogCta: 'Chci znát detaily',
@@ -155,6 +155,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
     setVisible(false);
   };
 
+  const ctaHref = resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form';
 
   return (
     <div className="relative z-50 bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground">
@@ -164,7 +165,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
           {c.bannerShort}
         </p>
         <a
-          href="#promo-form"
+          href={ctaHref}
           className="hidden sm:inline-flex items-center gap-1 rounded-md bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap"
         >
           {c.bannerCta} <ArrowRight className="h-3.5 w-3.5" />
@@ -183,7 +184,9 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
 
 /* ─────────────────────────── Section ─────────────────────────── */
 export const TrainingPromoSection = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const ctaHref = resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form';
 
   return (
     <section
@@ -226,7 +229,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-7 py-6 text-base"
               >
-                <a href="#promo-form">
+                <a href={ctaHref}>
                   {c.primaryCta} <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
@@ -236,7 +239,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 variant="outline"
                 className="border-white/30 bg-white/5 text-white hover:bg-white/15 hover:text-white px-7 py-6 text-base"
               >
-                <a href="#promo-form">{c.secondaryCta}</a>
+                <a href={ctaHref}>{c.secondaryCta}</a>
               </Button>
             </div>
 
@@ -245,6 +248,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
             </p>
           </div>
 
+
           {/* Date card */}
           <div className="relative">
             <div className="bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-2xl p-7 shadow-2xl">
@@ -252,7 +256,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 {c.dateLabel}
               </p>
               <p className="text-5xl md:text-6xl font-bold text-white leading-none mb-1">
-                30.06
+                14.07
               </p>
               <p className="text-2xl font-semibold text-primary mb-6">2026</p>
 
@@ -361,7 +365,7 @@ export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
           className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
           onClick={() => handleOpenChange(false)}
         >
-          <a href="#promo-form">
+          <a href={resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form'}>
             {c.dialogCta} <ArrowRight className="h-4 w-4" />
           </a>
         </Button>
