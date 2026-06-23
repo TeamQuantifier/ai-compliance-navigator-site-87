@@ -103,8 +103,8 @@ const faqs = [
     a: 'Wtedy NIS2 dotyczy Cię pośrednio. Klienci objęci dyrektywą będą wymagać klauzul NIS2 w umowach, audytów i monitoringu ryzyka. W praktyce musisz spełnić część obowiązków, żeby nie wypaść z łańcucha dostaw.',
   },
   {
-    q: 'Ile kosztuje to szkolenie?',
-    a: '0 zł. Szkolenie jest darmowe. Rejestracja do 14.07.2026, liczba miejsc ograniczona — decyduje kolejność zgłoszeń.',
+    q: 'Ile kosztuje udział w akcji wsparcia?',
+    a: '0 zł dla zakwalifikowanych firm. To akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2. Rejestracja do 14.07.2026, decyduje kolejność zgłoszeń.',
   },
   {
     q: 'Stacjonarnie czy online?',
@@ -125,9 +125,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Course',
-      name: 'Darmowe szkolenie NIS2 / KSC 2.0 dla firm',
+      name: 'Akcja wsparcia cyberbezpieczeństwa polskich firm — przygotowanie do NIS2 / KSC 2.0',
       description:
-        '4-godzinne praktyczne szkolenie z NIS2 i Krajowego Systemu Cyberbezpieczeństwa (KSC 2.0). Samoidentyfikacja, obowiązki, dokumentacja, harmonogram. Prowadzą eksperci i prawnicy Quantifier.ai.',
+        'Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw. Wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0 — 4-godzinne praktyczne szkolenie z ekspertami i prawnikami Quantifier.ai.',
       provider: {
         '@type': 'Organization',
         name: 'Quantifier.ai',
@@ -161,17 +161,17 @@ const Nis2TrainingLanding = () => {
     <>
       <Helmet>
         <html lang="pl" />
-        <title>Darmowe szkolenie NIS2 / KSC 2.0 dla firm — Quantifier.ai</title>
+        <title>Akcja wsparcia cyberbezpieczeństwa polskich firm (NIS2 / KSC 2.0) — Quantifier.ai</title>
         <meta
           name="description"
-          content="Darmowe 4h szkolenie z NIS2 i KSC 2.0 dla firm. Praktyka, nie teoria — prowadzą eksperci i prawnicy wdrażający NIS2. Zapisy do 14.07.2026, liczba miejsc ograniczona."
+          content="Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4h praktyki z ekspertami i prawnikami. Zgłoszenia do 14.07.2026."
         />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Darmowe szkolenie NIS2 / KSC 2.0 dla firm — Quantifier.ai" />
+        <meta property="og:title" content="Akcja wsparcia cyberbezpieczeństwa polskich firm — NIS2 / KSC 2.0" />
         <meta
           property="og:description"
-          content="4h praktyki z NIS2 i KSC 2.0. Samoidentyfikacja, obowiązki, dokumentacja, harmonogram. Zapisy do 14.07.2026."
+          content="Wspieramy 100 polskich firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4h praktyki z ekspertami. Zgłoszenia do 14.07.2026."
         />
         <meta property="og:url" content={CANONICAL} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -188,19 +188,19 @@ const Nis2TrainingLanding = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-6 backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5 text-primary" />
               <span className="text-xs font-semibold tracking-wide text-white uppercase">
-                Darmowe szkolenie · zapisy do {DEADLINE}
+                Akcja wsparcia 100 polskich firm · zgłoszenia do {DEADLINE}
               </span>
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
-              Darmowe szkolenie <span className="text-primary">NIS2 / KSC 2.0</span> dla firm
+              Akcja wsparcia poziomu <span className="text-primary">cyberbezpieczeństwa</span> polskich przedsiębiorstw
             </h1>
             <p className="text-base md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-              4 godziny praktyki z ekspertami i prawnikami wdrażającymi NIS2. Wychodzisz z konkretnym planem działania — nie ze stosem slajdów.
+              Wspieramy <strong className="text-white">100 firm</strong> we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4 godziny praktyki z ekspertami i prawnikami — wychodzisz z konkretnym planem działania, nie ze stosem slajdów.
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-9">
-              {['4 godziny', 'Stacjonarnie lub online', 'Q&A z ekspertami', 'NIS2 + KSC 2.0'].map((tag) => (
+              {['100 firm objętych wsparciem', '4 godziny praktyki', 'Stacjonarnie lub online', 'NIS2 + KSC 2.0'].map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold"
@@ -213,7 +213,7 @@ const Nis2TrainingLanding = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
                 <a href="#promo-form">
-                  Zapisz się na szkolenie <ArrowRight className="h-4 w-4" />
+                  Zgłoś firmę do akcji <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button
@@ -227,7 +227,7 @@ const Nis2TrainingLanding = () => {
             </div>
 
             <p className="text-xs text-white/60 mt-6">
-              Liczba miejsc ograniczona · decyduje kolejność zgłoszeń
+              Limit 100 firm · decyduje kolejność zgłoszeń
             </p>
           </div>
         </div>
@@ -394,10 +394,10 @@ const Nis2TrainingLanding = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-5 max-w-5xl mx-auto">
             <div className="text-center md:text-left">
               <p className="text-xs font-semibold tracking-wider text-primary-foreground/80 uppercase mb-1">
-                Zapisy do {DEADLINE}
+                Zgłoszenia do {DEADLINE}
               </p>
               <p className="text-xl md:text-2xl font-bold text-primary-foreground leading-tight">
-                Zarezerwuj miejsce — liczba ograniczona
+                Dołącz do 100 firm objętych akcją wsparcia
               </p>
             </div>
             <Button
