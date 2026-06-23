@@ -155,6 +155,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
     setVisible(false);
   };
 
+  const ctaHref = resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form';
 
   return (
     <div className="relative z-50 bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground">
@@ -164,7 +165,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
           {c.bannerShort}
         </p>
         <a
-          href="#promo-form"
+          href={ctaHref}
           className="hidden sm:inline-flex items-center gap-1 rounded-md bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap"
         >
           {c.bannerCta} <ArrowRight className="h-3.5 w-3.5" />
