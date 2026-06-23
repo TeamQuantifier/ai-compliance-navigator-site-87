@@ -103,8 +103,8 @@ const faqs = [
     a: 'Wtedy NIS2 dotyczy Cię pośrednio. Klienci objęci dyrektywą będą wymagać klauzul NIS2 w umowach, audytów i monitoringu ryzyka. W praktyce musisz spełnić część obowiązków, żeby nie wypaść z łańcucha dostaw.',
   },
   {
-    q: 'Ile kosztuje to szkolenie?',
-    a: '0 zł. Szkolenie jest darmowe. Rejestracja do 14.07.2026, liczba miejsc ograniczona — decyduje kolejność zgłoszeń.',
+    q: 'Ile kosztuje udział w akcji wsparcia?',
+    a: '0 zł dla zakwalifikowanych firm. To akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2. Rejestracja do 14.07.2026, decyduje kolejność zgłoszeń.',
   },
   {
     q: 'Stacjonarnie czy online?',
