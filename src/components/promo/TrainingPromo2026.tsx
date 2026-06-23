@@ -365,7 +365,7 @@ export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
           className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
           onClick={() => handleOpenChange(false)}
         >
-          <a href="#promo-form">
+          <a href={resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form'}>
             {c.dialogCta} <ArrowRight className="h-4 w-4" />
           </a>
         </Button>
