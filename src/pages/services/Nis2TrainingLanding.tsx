@@ -188,15 +188,15 @@ const Nis2TrainingLanding = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-6 backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5 text-primary" />
               <span className="text-xs font-semibold tracking-wide text-white uppercase">
-                Darmowe szkolenie · zapisy do {DEADLINE}
+                Akcja wsparcia 100 polskich firm · zgłoszenia do {DEADLINE}
               </span>
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
-              Darmowe szkolenie <span className="text-primary">NIS2 / KSC 2.0</span> dla firm
+              Akcja wsparcia poziomu <span className="text-primary">cyberbezpieczeństwa</span> polskich przedsiębiorstw
             </h1>
             <p className="text-base md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-              4 godziny praktyki z ekspertami i prawnikami wdrażającymi NIS2. Wychodzisz z konkretnym planem działania — nie ze stosem slajdów.
+              Wspieramy <strong className="text-white">100 firm</strong> we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4 godziny praktyki z ekspertami i prawnikami — wychodzisz z konkretnym planem działania, nie ze stosem slajdów.
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-9">
