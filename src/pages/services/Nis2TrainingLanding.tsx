@@ -161,17 +161,17 @@ const Nis2TrainingLanding = () => {
     <>
       <Helmet>
         <html lang="pl" />
-        <title>Darmowe szkolenie NIS2 / KSC 2.0 dla firm — Quantifier.ai</title>
+        <title>Akcja wsparcia cyberbezpieczeństwa polskich firm (NIS2 / KSC 2.0) — Quantifier.ai</title>
         <meta
           name="description"
-          content="Darmowe 4h szkolenie z NIS2 i KSC 2.0 dla firm. Praktyka, nie teoria — prowadzą eksperci i prawnicy wdrażający NIS2. Zapisy do 14.07.2026, liczba miejsc ograniczona."
+          content="Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4h praktyki z ekspertami i prawnikami. Zgłoszenia do 14.07.2026."
         />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Darmowe szkolenie NIS2 / KSC 2.0 dla firm — Quantifier.ai" />
+        <meta property="og:title" content="Akcja wsparcia cyberbezpieczeństwa polskich firm — NIS2 / KSC 2.0" />
         <meta
           property="og:description"
-          content="4h praktyki z NIS2 i KSC 2.0. Samoidentyfikacja, obowiązki, dokumentacja, harmonogram. Zapisy do 14.07.2026."
+          content="Wspieramy 100 polskich firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4h praktyki z ekspertami. Zgłoszenia do 14.07.2026."
         />
         <meta property="og:url" content={CANONICAL} />
         <meta name="twitter:card" content="summary_large_image" />
