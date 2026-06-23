@@ -99,6 +99,7 @@ import FormularzPage from "./pages/formularz/FormularzPage";
 
 // Training / Services
 import TrainingLanding from "./pages/services/TrainingLanding";
+import Nis2TrainingLanding from "./pages/services/Nis2TrainingLanding";
 
 // Partner subpages
 import Gs1Polska from "./pages/partners/Gs1Polska";
@@ -224,6 +225,7 @@ const MainRoutes = () => (
         <Route path="/pl/szkolenia-cyberbezpieczenstwo-dla-firm" element={<TrainingLanding />} />
         <Route path="/en/cybersecurity-training-for-companies" element={<TrainingLanding />} />
         <Route path="/cs/skoleni-kyberneticka-bezpecnost-pro-firmy" element={<TrainingLanding />} />
+        <Route path="/pl/darmowe-szkolenie-nis2" element={<Nis2TrainingLanding />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
