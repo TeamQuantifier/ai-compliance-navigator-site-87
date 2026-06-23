@@ -155,6 +155,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
     setVisible(false);
   };
 
+  const ctaHref = resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form';
 
   return (
     <div className="relative z-50 bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground">
@@ -164,7 +165,7 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
           {c.bannerShort}
         </p>
         <a
-          href="#promo-form"
+          href={ctaHref}
           className="hidden sm:inline-flex items-center gap-1 rounded-md bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap"
         >
           {c.bannerCta} <ArrowRight className="h-3.5 w-3.5" />
@@ -183,7 +184,9 @@ export const TrainingPromoBanner = ({ locale }: { locale: string }) => {
 
 /* ─────────────────────────── Section ─────────────────────────── */
 export const TrainingPromoSection = ({ locale }: { locale: string }) => {
-  const c = getCopy(locale);
+  const resolved = detectLocale(locale);
+  const c = COPY[resolved];
+  const ctaHref = resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form';
 
   return (
     <section
@@ -226,7 +229,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-7 py-6 text-base"
               >
-                <a href="#promo-form">
+                <a href={ctaHref}>
                   {c.primaryCta} <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
@@ -236,7 +239,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 variant="outline"
                 className="border-white/30 bg-white/5 text-white hover:bg-white/15 hover:text-white px-7 py-6 text-base"
               >
-                <a href="#promo-form">{c.secondaryCta}</a>
+                <a href={ctaHref}>{c.secondaryCta}</a>
               </Button>
             </div>
 
@@ -244,6 +247,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
               {c.disclaimer}
             </p>
           </div>
+
 
           {/* Date card */}
           <div className="relative">
@@ -361,7 +365,7 @@ export const TrainingPromoDialog = ({ locale }: { locale: string }) => {
           className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
           onClick={() => handleOpenChange(false)}
         >
-          <a href="#promo-form">
+          <a href={resolved === 'pl' ? '/pl/darmowe-szkolenie-nis2/#promo-form' : '#promo-form'}>
             {c.dialogCta} <ArrowRight className="h-4 w-4" />
           </a>
         </Button>
