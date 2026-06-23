@@ -227,7 +227,7 @@ const Nis2TrainingLanding = () => {
             </div>
 
             <p className="text-xs text-white/60 mt-6">
-              Liczba miejsc ograniczona · decyduje kolejność zgłoszeń
+              Limit 100 firm · decyduje kolejność zgłoszeń
             </p>
           </div>
         </div>
