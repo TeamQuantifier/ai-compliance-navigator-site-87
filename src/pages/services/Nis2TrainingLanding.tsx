@@ -200,7 +200,7 @@ const Nis2TrainingLanding = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-9">
-              {['4 godziny', 'Stacjonarnie lub online', 'Q&A z ekspertami', 'NIS2 + KSC 2.0'].map((tag) => (
+              {['100 firm objętych wsparciem', '4 godziny praktyki', 'Stacjonarnie lub online', 'NIS2 + KSC 2.0'].map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold"
@@ -213,7 +213,7 @@ const Nis2TrainingLanding = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
                 <a href="#promo-form">
-                  Zapisz się na szkolenie <ArrowRight className="h-4 w-4" />
+                  Zgłoś firmę do akcji <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button
