@@ -25,7 +25,7 @@ const InformationSecurityPolicy = () => {
         </h1>
         <p className="text-slate-600 mb-2">Quantifier.ai sp. z o.o.</p>
         <p className="text-slate-500 mb-8">
-          {t('legal.informationSecurity.lastUpdated')}: 2026-01-12
+          {t('legal.informationSecurity.lastUpdated')}: {t('legal.informationSecurity.lastUpdatedDate')}
         </p>
 
         <div className="prose prose-slate max-w-none space-y-8">
