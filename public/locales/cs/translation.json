@@ -977,6 +977,82 @@
         "title": "Kontakt",
         "content": "V případě jakýchkoli dotazů ohledně těchto Podmínek služby nás prosím kontaktujte na: legal@quantifier.ai"
       }
+    },
+    "informationSecurity": {
+      "title": "Zásady bezpečnosti informací",
+      "metaDescription": "Zásady bezpečnosti informací Quantifier.ai sp. z o.o. – přehled našeho Systému řízení bezpečnosti informací (ISMS) v souladu s ISO/IEC 27001:2022.",
+      "lastUpdated": "Poslední aktualizace",
+      "intro": {
+        "title": "1. Úvod",
+        "p1": "Quantifier.ai sp. z o.o. (dále jen „Quantifier\" nebo „Organizace\") považuje bezpečnost informací za jeden ze základů poskytování služeb svým Klientům a obchodním partnerům. Tyto zásady představují, v obecné podobě určené ke zveřejnění, principy fungování Systému řízení bezpečnosti informací (ISMS) zavedeného v Organizaci.",
+        "p2": "Quantifier zavedl Systém řízení bezpečnosti informací (ISMS) v souladu s požadavky normy ISO/IEC 27001:2022. Tento systém zahrnuje soubor interních politik, postupů a kontrolních mechanismů zaměřených na systematickou identifikaci, hodnocení a zmírňování rizik bezpečnosti informací."
+      },
+      "commitments": {
+        "title": "2. Naše závazky a cíle",
+        "intro": "V rámci zavedeného ISMS se Quantifier zavazuje k plnění následujících strategických cílů:",
+        "items": [
+          "zajištění důvěrnosti, integrity a dostupnosti informací zpracovávaných v souvislosti s činností Organizace a poskytovanými službami,",
+          "soulad s platnými právními předpisy, včetně předpisů o ochraně osobních údajů a regulatorních a smluvních požadavků,",
+          "systematická identifikace, hodnocení a zmírňování rizik bezpečnosti informací,",
+          "zajištění odpovídající úrovně bezpečnosti při spolupráci s dodavateli a dalšími třetími stranami,",
+          "budování povědomí a kompetencí v oblasti bezpečnosti informací mezi zaměstnanci a spolupracovníky,",
+          "udržování připravenosti detekovat, hlásit a řešit incidenty bezpečnosti informací,",
+          "zajištění kontinuity klíčových procesů Organizace v případě narušení,",
+          "neustálé zlepšování fungování ISMS na základě přezkumů, auditů a poznatků z incidentů."
+        ],
+        "review": "Dosahování výše uvedených cílů podléhá pravidelnému přezkumu a hodnocení ze strany vedení Organizace."
+      },
+      "scope": {
+        "title": "3. Rozsah systému",
+        "intro": "ISMS pokrývá veškerou činnost Quantifier související se zpracováním informací, zejména následující oblasti:",
+        "items": [
+          "správa informačních aktiv, včetně jejich identifikace, klasifikace a dohledu nad životním cyklem,",
+          "hodnocení a řízení rizik bezpečnosti informací,",
+          "technická a organizační bezpečnostní opatření a pravidla řízení přístupu,",
+          "bezpečnost lidských zdrojů, včetně školení a zvyšování povědomí v oblasti bezpečnosti informací,",
+          "bezpečnost ve vztazích s dodavateli a třetími stranami (bezpečnost dodavatelského řetězce),",
+          "hlášení a řešení incidentů bezpečnosti informací,",
+          "krizové řízení v případě závažných incidentů,",
+          "plánování kontinuity činnosti a obnovy po incidentech."
+        ]
+      },
+      "governance": {
+        "title": "4. Struktura řízení bezpečnosti informací",
+        "content": "Dohled nad ISMS má vedení Organizace, které schvaluje politiky, přiděluje zdroje a pravidelně přezkoumává účinnost systému. Organizace jmenovala Cybersecurity Officera odpovědného za fungování ISMS, jakož i další osoby vykonávající funkce klíčové pro systém, včetně osob odpovědných za správu aktiv, přístupů, lidských zdrojů a řešení incidentů."
+      },
+      "employees": {
+        "title": "5. Zásady ochrany údajů zaměstnanci a spolupracovníky",
+        "intro": "Všichni zaměstnanci a spolupracovníci Quantifier s přístupem k informacím nebo systémům Organizace jsou povinni dodržovat následující zásady:",
+        "items": [
+          "zpracovávat informace pouze v rozsahu nezbytném pro plnění svěřených povinností, v souladu se zásadou minimálního přístupu (least privilege),",
+          "používat bezpečné metody ověřování a chránit přístupové údaje (včetně hesel a dalších autentizačních údajů),",
+          "zachovávat důvěrnost informací, ke kterým získali přístup v souvislosti se svou prací nebo spoluprací, a to i po jejím ukončení,",
+          "neprodleně hlásit jakákoli podezření na narušení bezpečnosti informací,",
+          "uplatňovat zásady bezpečné práce na dálku a používat výhradně nástroje a komunikační kanály schválené Organizací,",
+          "účastnit se školení v oblasti bezpečnosti informací organizovaných společností Quantifier."
+        ]
+      },
+      "suppliers": {
+        "title": "6. Požadavky na dodavatele",
+        "intro": "Quantifier vyžaduje od svých dodavatelů, subdodavatelů a dalších třetích stran s přístupem k informacím nebo systémům Organizace:",
+        "items": [
+          "zavedení odpovídajících opatření bezpečnosti informací, přiměřených povaze a rozsahu spolupráce,",
+          "dodržování pravidel bezpečnosti informací sdělených jim Organizací,",
+          "neprodlené hlášení Quantifier všech bezpečnostních incidentů, které mohou ovlivnit důvěrnost, integritu nebo dostupnost informací nebo systémů Organizace,",
+          "spolupráci při ověřovacích a auditních činnostech prováděných společností Quantifier, v rozsahu odůvodněném povahou spolupráce."
+        ],
+        "consequence": "Nesplnění výše uvedených požadavků může vést k omezení nebo ukončení spolupráce s daným subjektem."
+      },
+      "incidents": {
+        "title": "7. Hlášení incidentů bezpečnosti informací",
+        "content": "Jakékoli potenciální incidenty bezpečnosti informací související se spoluprací s Quantifier, včetně podezření na neoprávněný přístup, ztrátu dat nebo jiných událostí, které mohou ovlivnit bezpečnost informací, je třeba neprodleně hlásit na vyhrazenou adresu:",
+        "contactLabel": "Kontakt ve věcech bezpečnosti informací:",
+        "handling": "Každé hlášení je analyzováno a zpracováno v souladu s interními postupy Organizace."
+      },
+      "review": {
+        "title": "8. Přezkum a aktualizace zásad",
+        "content": "Tyto zásady představují shrnutí klíčových informací pro Klienty a obchodní partnery vyplývajících z interních politik přijatých v Organizaci a budou aktualizovány v případě změn interních politik, jakož i v případě významných změn v právním, regulatorním nebo organizačním prostředí Quantifier."
+      }
     }
   },
   "successStories": {
