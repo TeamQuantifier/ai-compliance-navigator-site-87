@@ -979,6 +979,82 @@
         "title": "Kontakt",
         "content": "W przypadku pytań dotyczących niniejszego Regulaminu, skontaktuj się z nami: legal@quantifier.ai"
       }
+    },
+    "informationSecurity": {
+      "title": "Polityka Bezpieczeństwa Informacji",
+      "metaDescription": "Polityka Bezpieczeństwa Informacji Quantifier.ai sp. z o.o. – ogólny opis Systemu Zarządzania Bezpieczeństwem Informacji (ISMS) zgodnego z ISO/IEC 27001:2022.",
+      "lastUpdated": "Ostatnia aktualizacja",
+      "intro": {
+        "title": "1. Wprowadzenie",
+        "p1": "Quantifier.ai sp. z o.o. (dalej: „Quantifier\" lub „Organizacja\") traktuje bezpieczeństwo informacji jako jeden z fundamentów świadczenia usług swoim Klientom i partnerom biznesowym. Niniejsza polityka przedstawia, w sposób ogólny i przeznaczony do publikacji, zasady funkcjonowania Systemu Zarządzania Bezpieczeństwem Informacji (ISMS) wdrożonego w Organizacji.",
+        "p2": "Quantifier wdrożył System Zarządzania Bezpieczeństwem Informacji (ISMS) zgodny z wymogami normy ISO/IEC 27001:2022. System ten obejmuje zestaw wewnętrznych polityk, procedur oraz mechanizmów nadzoru, których celem jest systematyczna identyfikacja, ocena i ograniczanie ryzyk związanych z bezpieczeństwem informacji."
+      },
+      "commitments": {
+        "title": "2. Nasze zobowiązania i cele",
+        "intro": "W ramach wdrożonego ISMS, Quantifier zobowiązuje się do realizacji następujących celów strategicznych:",
+        "items": [
+          "zapewnienia poufności, integralności i dostępności informacji przetwarzanych w związku z działalnością Organizacji oraz świadczonymi usługami,",
+          "zgodności z obowiązującymi przepisami prawa, w tym z przepisami o ochronie danych osobowych oraz wymogami regulacyjnymi i kontraktowymi,",
+          "systematycznej identyfikacji, oceny i ograniczania ryzyk związanych z bezpieczeństwem informacji,",
+          "zapewnienia odpowiedniego poziomu bezpieczeństwa we współpracy z dostawcami i innymi podmiotami trzecimi,",
+          "budowania świadomości i kompetencji w zakresie bezpieczeństwa informacji wśród pracowników i współpracowników,",
+          "zapewnienia gotowości do wykrywania, zgłaszania i obsługi incydentów bezpieczeństwa informacji,",
+          "zapewnienia ciągłości działania kluczowych procesów Organizacji w przypadku zakłóceń,",
+          "ciągłego doskonalenia funkcjonowania ISMS w oparciu o przeglądy, audyty oraz wnioski wynikające z incydentów."
+        ],
+        "review": "Realizacja powyższych celów podlega okresowemu przeglądowi i ocenie ze strony kierownictwa Organizacji."
+      },
+      "scope": {
+        "title": "3. Zakres systemu",
+        "intro": "ISMS obejmuje całość działalności Quantifier związanej z przetwarzaniem informacji, w szczególności następujące obszary:",
+        "items": [
+          "zarządzanie aktywami informacyjnymi (w tym ich identyfikację, klasyfikację oraz nadzór nad cyklem ich życia),",
+          "analizę i zarządzanie ryzykiem bezpieczeństwa informacji,",
+          "środki bezpieczeństwa technicznego i organizacyjnego oraz zasady kontroli dostępu,",
+          "bezpieczeństwo zasobów ludzkich, w tym szkolenia i budowanie świadomości w zakresie bezpieczeństwa informacji,",
+          "bezpieczeństwo w relacjach z dostawcami i podmiotami trzecimi (bezpieczeństwo łańcucha dostaw),",
+          "zgłaszanie i obsługę incydentów bezpieczeństwa informacji,",
+          "zarządzanie kryzysowe w przypadku poważnych incydentów,",
+          "planowanie ciągłości działania i odtwarzania po incydentach."
+        ]
+      },
+      "governance": {
+        "title": "4. Struktura zarządzania bezpieczeństwem informacji",
+        "content": "Za nadzór nad ISMS odpowiada kierownictwo Organizacji, które zatwierdza polityki, przydziela zasoby oraz okresowo dokonuje przeglądu skuteczności systemu. W Organizacji wyznaczono Cybersecurity Officera odpowiedzialnego za funkcjonowanie ISMS, a także inne osoby pełniące funkcje kluczowe dla systemu, w tym osoby odpowiedzialne za zarządzanie aktywami, dostępami, zasobami ludzkimi oraz obsługą incydentów."
+      },
+      "employees": {
+        "title": "5. Zasady ochrony danych przez pracowników i współpracowników",
+        "intro": "Wszyscy pracownicy oraz współpracownicy Quantifier, posiadający dostęp do informacji lub systemów Organizacji, są zobowiązani do przestrzegania następujących zasad:",
+        "items": [
+          "przetwarzania informacji wyłącznie w zakresie niezbędnym do wykonywania powierzonych obowiązków, zgodnie z zasadą minimalnego dostępu (least privilege),",
+          "stosowania bezpiecznych metod uwierzytelniania oraz ochrony danych dostępowych (w tym haseł i innych danych autoryzacyjnych),",
+          "zachowania poufności informacji, do których uzyskali dostęp w związku z wykonywaną pracą lub współpracą, w tym po zakończeniu takiej współpracy,",
+          "niezwłocznego zgłaszania wszelkich podejrzeń naruszenia bezpieczeństwa informacji,",
+          "stosowania zasad bezpiecznej pracy zdalnej oraz korzystania wyłącznie z zatwierdzonych przez Organizację narzędzi i kanałów komunikacji,",
+          "udziału w szkoleniach z zakresu bezpieczeństwa informacji organizowanych przez Quantifier."
+        ]
+      },
+      "suppliers": {
+        "title": "6. Wymogi wobec dostawców",
+        "intro": "Quantifier wymaga od swoich dostawców, podwykonawców oraz innych podmiotów trzecich mających dostęp do informacji lub systemów Organizacji:",
+        "items": [
+          "wdrożenia odpowiednich środków bezpieczeństwa informacji, proporcjonalnych do charakteru i zakresu współpracy,",
+          "przestrzegania zasad bezpieczeństwa informacji komunikowanych im przez Organizację,",
+          "niezwłocznego zgłaszania Quantifier wszelkich incydentów bezpieczeństwa, które mogą mieć wpływ na poufność, integralność lub dostępność informacji lub systemów Organizacji,",
+          "współpracy w ramach działań weryfikacyjnych oraz audytowych prowadzonych przez Quantifier, w zakresie uzasadnionym charakterem współpracy."
+        ],
+        "consequence": "Niespełnienie powyższych wymogów może skutkować ograniczeniem lub zakończeniem współpracy z danym podmiotem."
+      },
+      "incidents": {
+        "title": "7. Zgłaszanie incydentów bezpieczeństwa informacji",
+        "content": "Wszelkie potencjalne incydenty bezpieczeństwa informacji dotyczące współpracy z Quantifier, w tym podejrzenia nieautoryzowanego dostępu, utraty danych lub innych zdarzeń mogących wpływać na bezpieczeństwo informacji, należy zgłaszać niezwłocznie na wyznaczony adres:",
+        "contactLabel": "Kontakt w sprawach bezpieczeństwa informacji:",
+        "handling": "Każde zgłoszenie jest analizowane i obsługiwane zgodnie z wewnętrznymi procedurami Organizacji."
+      },
+      "review": {
+        "title": "8. Przegląd i aktualizacja polityki",
+        "content": "Niniejsza polityka stanowi skrót najważniejszych informacji dla Klientów i partnerów biznesowych wynikających z polityk wewnętrznych przyjętych w Organizacji, i będzie aktualizowana w razie zmian dokonywanych w politykach wewnętrznych, a także w przypadku istotnych zmian w otoczeniu prawnym, regulacyjnym lub organizacyjnym Quantifier."
+      }
     }
   },
   "successStories": {

@@ -980,6 +980,82 @@
         "title": "Contact",
         "content": "For any questions about these Terms of Service, please contact us at: legal@quantifier.ai"
       }
+    },
+    "informationSecurity": {
+      "title": "Information Security Policy",
+      "metaDescription": "Information Security Policy of Quantifier.ai sp. z o.o. – an overview of our ISO/IEC 27001:2022-aligned Information Security Management System (ISMS).",
+      "lastUpdated": "Last updated",
+      "intro": {
+        "title": "1. Introduction",
+        "p1": "Quantifier.ai sp. z o.o. (hereinafter: \"Quantifier\" or the \"Organization\") treats information security as one of the foundations of the services it provides to its Clients and business partners. This policy presents, in a general form intended for public disclosure, the principles governing the Information Security Management System (ISMS) implemented within the Organization.",
+        "p2": "Quantifier has implemented an Information Security Management System (ISMS) compliant with the requirements of the ISO/IEC 27001:2022 standard. This system comprises a set of internal policies, procedures, and oversight mechanisms aimed at the systematic identification, assessment, and mitigation of information security risks."
+      },
+      "commitments": {
+        "title": "2. Our commitments and objectives",
+        "intro": "As part of the implemented ISMS, Quantifier commits to pursuing the following strategic objectives:",
+        "items": [
+          "ensuring the confidentiality, integrity, and availability of information processed in connection with the Organization's activities and the services it provides,",
+          "complying with applicable laws, including data protection legislation, as well as regulatory and contractual requirements,",
+          "systematically identifying, assessing, and mitigating information security risks,",
+          "ensuring an appropriate level of security in cooperation with suppliers and other third parties,",
+          "building awareness and competence in information security among employees and associates,",
+          "maintaining readiness to detect, report, and handle information security incidents,",
+          "ensuring the continuity of the Organization's key processes in the event of disruptions,",
+          "continually improving the operation of the ISMS based on reviews, audits, and lessons learned from incidents."
+        ],
+        "review": "The achievement of the above objectives is subject to periodic review and assessment by the Organization's management."
+      },
+      "scope": {
+        "title": "3. Scope of the system",
+        "intro": "The ISMS covers the entirety of Quantifier's activities related to the processing of information, in particular the following areas:",
+        "items": [
+          "management of information assets, including their identification, classification, and lifecycle oversight,",
+          "information security risk assessment and management,",
+          "technical and organizational security measures and access control rules,",
+          "human resources security, including training and awareness-raising in information security,",
+          "security in relationships with suppliers and third parties (supply chain security),",
+          "reporting and handling of information security incidents,",
+          "crisis management in the event of serious incidents,",
+          "business continuity planning and post-incident recovery."
+        ]
+      },
+      "governance": {
+        "title": "4. Information security governance structure",
+        "content": "Oversight of the ISMS rests with the Organization's management, which approves policies, allocates resources, and periodically reviews the effectiveness of the system. The Organization has appointed a Cybersecurity Officer responsible for the operation of the ISMS, as well as other persons performing functions that are key to the system, including those responsible for asset management, access control, human resources, and incident handling."
+      },
+      "employees": {
+        "title": "5. Data protection principles for employees and associates",
+        "intro": "All Quantifier employees and associates with access to the Organization's information or systems are required to comply with the following principles:",
+        "items": [
+          "processing information only to the extent necessary to perform their assigned duties, in accordance with the principle of least privilege,",
+          "using secure authentication methods and protecting access credentials, including passwords and other authentication data,",
+          "maintaining the confidentiality of information accessed in connection with their work or cooperation, including after such cooperation ends,",
+          "promptly reporting any suspected information security breaches,",
+          "applying secure remote working practices and using only tools and communication channels approved by the Organization,",
+          "participating in information security training organized by Quantifier."
+        ]
+      },
+      "suppliers": {
+        "title": "6. Requirements for suppliers",
+        "intro": "Quantifier requires its suppliers, subcontractors, and other third parties with access to the Organization's information or systems to:",
+        "items": [
+          "implement appropriate information security measures, proportionate to the nature and scope of the cooperation,",
+          "comply with the information security rules communicated to them by the Organization,",
+          "promptly notify Quantifier of any security incidents that may affect the confidentiality, integrity, or availability of the Organization's information or systems,",
+          "cooperate with verification and audit activities carried out by Quantifier, to the extent justified by the nature of the cooperation."
+        ],
+        "consequence": "Failure to meet the above requirements may result in the restriction or termination of cooperation with the relevant party."
+      },
+      "incidents": {
+        "title": "7. Reporting information security incidents",
+        "content": "Any potential information security incidents related to cooperation with Quantifier — including suspected unauthorized access, data loss, or other events that may affect information security — should be reported promptly to the following dedicated address:",
+        "contactLabel": "Information security contact:",
+        "handling": "Each report is reviewed and handled in accordance with the Organization's internal procedures."
+      },
+      "review": {
+        "title": "8. Review and update of this policy",
+        "content": "This policy constitutes a summary of the key information for Clients and business partners arising from the internal policies adopted within the Organization, and will be updated in the event of changes made to the internal policies, as well as in the event of significant changes in Quantifier's legal, regulatory, or organizational environment."
+      }
     }
   },
   "successStories": {
