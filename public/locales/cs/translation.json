@@ -862,23 +862,98 @@
     "privacy": {
       "title": "Zásady ochrany osobních údajů",
       "metaDescription": "Zjistěte, jak Quantifier.ai shromažďuje, používá a chrání vaše osobní údaje.",
-      "intro": "V Quantifier.ai se zavazujeme chránit vaše soukromí a zajistit bezpečnost vašich osobních údajů. Tyto Zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a chráníme vaše informace.",
-      "dataCollection": {
-        "title": "Jaké údaje shromažďujeme",
-        "content": "Shromažďujeme informace, které nám přímo poskytujete, jako je vaše jméno, e-mailová adresa a informace o společnosti při registraci k našim službám, žádosti o demo nebo přihlášení k odběru newsletteru. Prostřednictvím cookies a podobných technologií také shromažďujeme údaje o používání."
+      "lastUpdated": "Poslední aktualizace",
+      "admin": {
+        "title": "1. Správce údajů",
+        "content": "Správcem vašich osobních údajů je Quantifier (služba Quantifier.ai). Identifikační údaje a sídlo správce jsou k dispozici na Webu v sekci Kontakt.",
+        "contactEmail": "Kontakt ve věcech ochrany osobních údajů:"
       },
-      "dataUse": {
-        "title": "Jak používáme vaše údaje",
-        "content": "Vaše osobní údaje používáme k poskytování a zlepšování našich služeb, ke komunikaci s vámi o aktualizacích a nabídkách a k zajištění bezpečnosti naší platformy. Vaše osobní údaje neprodáváme třetím stranám."
+      "dataProcessed": {
+        "title": "2. Jaké údaje zpracováváme",
+        "intro": "V závislosti na tom, jak Web používáte, můžeme zpracovávat:",
+        "formData": "údaje, které nám poskytnete prostřednictvím formulářů (např. e-mailovou adresu při přihlášení k odběru newsletteru, údaje a obsah zprávy při kontaktu nebo žádosti o demo);",
+        "technicalData": "technické a provozní údaje související s vaším používáním Webu (např. IP adresu, identifikátory cookies, informace o prohlížeči a zařízení, serverové logy)."
       },
-      "contact": {
-        "title": "Kontakt",
-        "content": "V případě jakýchkoli dotazů ohledně našich postupů ochrany osobních údajů nás prosím kontaktujte na: privacy@quantifier.ai"
+      "purposes": {
+        "title": "3. Účely a právní základy zpracování",
+        "newsletter": {
+          "title": "3.1 Newsletter a e-mailový marketing",
+          "content": "Pokud se přihlásíte k odběru našeho newsletteru, zpracováváme vaši e-mailovou adresu za účelem zasílání newsletteru a obchodních či marketingových informací o společnosti Quantifier (např. aktualizace, nabídky, materiály, akce).",
+          "legalBasis": "Právní základ (GDPR): váš souhlas (čl. 6 odst. 1 písm. a) GDPR).",
+          "electronicComm": "Požadavky e-Privacy: marketingová komunikace je zasílána pouze po získání vašeho předchozího souhlasu.",
+          "withdrawal": "Souhlas můžete kdykoli odvolat kliknutím na odhlašovací odkaz v patičce e-mailu nebo nás kontaktovat na contact@quantifier.ai. Odvolání souhlasu nemá vliv na zákonnost zpracování provedeného před odvoláním."
+        },
+        "contact": {
+          "title": "3.2 Kontakt, dotazy a žádosti o demo",
+          "content": "Pokud nás kontaktujete (např. žádáte o demo), zpracováváme údaje uvedené ve vaší korespondenci za účelem vyřízení dotazu a komunikace s vámi.",
+          "legalBasis": "Právní základ: kroky učiněné na vaši žádost před uzavřením smlouvy nebo plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR), pokud je to relevantní, a oprávněný zájem správce (čl. 6 odst. 1 písm. f) GDPR) na vyřizování dotazů a udržování komunikace."
+        },
+        "security": {
+          "title": "3.3 Bezpečnost a provoz Webu",
+          "content": "Zpracováváme technické údaje (např. logy, IP adresy) za účelem zajištění bezpečnosti, odhalování zneužití a údržby a zlepšování Webu.",
+          "legalBasis": "Právní základ: oprávněný zájem správce (čl. 6 odst. 1 písm. f) GDPR)."
+        }
       },
-      "thirdParty": {
-        "title": "Služby třetích stran",
-        "content": "Na našich webových stránkách používáme služby Google (včetně Google Analytics a reCAPTCHA). Tyto služby podléhají zásadám ochrany osobních údajů Google.",
-        "googleLink": "Zobrazit Zásady ochrany osobních údajů Google"
+      "recipients": {
+        "title": "4. Příjemci údajů",
+        "intro": "Vaše údaje mohou být sdíleny se subjekty, které nás podporují při provozu Webu a komunikaci, zejména:",
+        "hosting": "poskytovateli hostingu a IT infrastruktury;",
+        "newsletter": "poskytovateli nástrojů pro newsletter a komunikaci;",
+        "analytics": "poskytovateli analytických a bezpečnostních nástrojů (pokud jsou na Webu používány);",
+        "legal": "subjektům oprávněným přijímat údaje na základě platných právních předpisů.",
+        "processors": "Zpracovatelé jednají naším jménem na základě smluv o zpracování údajů a pouze v rozsahu nezbytném pro poskytování svých služeb."
+      },
+      "googleServices": {
+        "title": "5. Služby Google",
+        "content": "Na Webu můžeme používat služby Google, včetně Google Analytics a Google reCAPTCHA. Používání těchto služeb se řídí zásadami Google:",
+        "privacyLink": "Zásady ochrany osobních údajů Google",
+        "termsLink": "Podmínky služby Google",
+        "recaptchaNote": "Při použití reCAPTCHA může být v rozhraní Webu zobrazeno upozornění o ochraně formulářů reCAPTCHA spolu s výše uvedenými odkazy."
+      },
+      "internationalTransfer": {
+        "title": "6. Předávání mimo EHP",
+        "content": "V souvislosti s využíváním poskytovatelů služeb (např. analytických nebo bezpečnostních nástrojů) mohou být vaše údaje předávány mimo Evropský hospodářský prostor. V takových případech používáme mechanismy přenosu požadované zákonem (např. standardní smluvní doložky) nebo jiné právní základy povolené platnými předpisy. Podrobnosti o tom, jak Google zpracovává údaje, naleznete v zásadách Google uvedených výše."
+      },
+      "retention": {
+        "title": "7. Doby uchovávání údajů",
+        "newsletter": "Newsletter: do odvolání souhlasu nebo úspěšného odhlášení; poté po dobu nezbytnou k prokázání udělení nebo odvolání souhlasu a k obraně proti právním nárokům.",
+        "contact": "Kontakt / demo: po dobu vyřizování záležitosti a korespondence, poté po dobu promlčecí lhůty nároků nebo do úspěšného vznesení námitky – v závislosti na právním základu.",
+        "technical": "Technické údaje (logy): po dobu nezbytnou k zajištění bezpečnosti a diagnostiky a v souladu s našimi interními plány uchovávání.",
+        "cookies": "Cookies: v souladu s životností cookies a vašimi nastaveními (podrobnosti viz sekce Cookies)."
+      },
+      "rights": {
+        "title": "8. Vaše práva",
+        "intro": "Máte právo:",
+        "access": "na přístup k vašim údajům;",
+        "rectification": "na opravu vašich údajů;",
+        "erasure": "na výmaz vašich údajů;",
+        "restriction": "na omezení zpracování;",
+        "portability": "na přenositelnost údajů (pokud je zpracování založeno na souhlasu nebo smlouvě a probíhá automatizovaně);",
+        "objection": "vznést námitku proti zpracování založenému na oprávněných zájmech;",
+        "withdrawConsent": "kdykoli odvolat souhlas (pokud je zpracování založeno na souhlasu).",
+        "howToExercise": "Pro uplatnění svých práv nás prosím kontaktujte:"
+      },
+      "complaint": {
+        "title": "9. Právo podat stížnost",
+        "content": "Pokud se domníváte, že zpracováváme vaše údaje v rozporu se zákonem, máte právo podat stížnost u příslušného dozorového úřadu (v Polsku: u prezidenta Úřadu pro ochranu osobních údajů, UODO; v České republice: u Úřadu pro ochranu osobních údajů, ÚOOÚ)."
+      },
+      "mandatory": {
+        "title": "10. Je poskytnutí údajů povinné?",
+        "newsletter": "Newsletter: poskytnutí e-mailové adresy je dobrovolné, ale nezbytné pro zasílání newsletteru.",
+        "contact": "Kontakt / demo: poskytnutí údajů je dobrovolné, ale může být nezbytné pro odpověď na váš dotaz nebo splnění vaší žádosti."
+      },
+      "automatedDecisions": {
+        "title": "11. Automatizované rozhodování",
+        "content": "Nepřijímáme vůči vám rozhodnutí založená výhradně na automatizovaném zpracování, včetně profilování, která by pro vás měla právní účinky nebo se vás obdobně významně dotýkala."
+      },
+      "cookies": {
+        "title": "12. Cookies",
+        "content": "Web používá cookies a podobné technologie. Nezbytné cookies se používají k zajištění správné funkčnosti a bezpečnosti Webu. Analytické a funkční cookies (pokud jsou používány) mohou být nasazeny na základě vašeho souhlasu, který můžete kdykoli odvolat nebo upravit prostřednictvím nastavení cookies dostupného na Webu (pokud poskytujeme panel souhlasu) nebo nastavení vašeho prohlížeče.",
+        "manage": "Cookies můžete spravovat v nastavení svého prohlížeče. Omezení cookies může ovlivnit funkčnost některých funkcí Webu."
+      },
+      "changes": {
+        "title": "13. Změny těchto Zásad ochrany osobních údajů",
+        "content": "Tyto Zásady ochrany osobních údajů můžeme aktualizovat, zejména v případě změn ve fungování Webu nebo platných právních předpisů. Aktuální verze je zveřejněna na této stránce spolu s datem poslední aktualizace."
       }
     },
     "terms": {
