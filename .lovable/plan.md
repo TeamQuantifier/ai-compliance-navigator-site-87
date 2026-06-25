@@ -1,83 +1,58 @@
-## Cel
 
-Zbudować dedykowany landing page pod darmowe szkolenie NIS2 / KSC 2.0 z jasną ścieżką konwersji: info o szkoleniu → ból (dlaczego teraz) → CTA do formularza. Zmienić deadline z 30.06.2026 na 14.07.2026 we wszystkich miejscach promocji.
+## Co robimy
 
-## Lokalizacja
+1. **Nowa podstrona** `Information Security Policy` (Polityka Bezpieczeństwa Informacji) z pełnymi treściami z dostarczonego pliku — 3 wersje językowe (PL, EN, CS).
+2. **Uzupełnienie czeskich tłumaczeń** dla istniejących podstron `/legal/privacy` i `/legal/terms` — obecnie czeski plik `public/locales/cs/translation.json` ma uproszczoną, starą strukturę (np. `legal.privacy` ma tylko `intro/dataCollection/dataUse/contact/thirdParty`), podczas gdy komponenty `PrivacyPolicy.tsx` i `TermsOfService.tsx` używają pełnej struktury obecnej w EN/PL (sekcje 1–13 dla privacy, `useOfService/intellectualProperty/thirdParty/contact` dla terms). Bez tego CS pokazuje surowe klucze.
+3. **Footer** — dodanie linków do Privacy / Terms / Information Security Policy w sekcji **Company** (linki na dole stopki zostawiamy bez zmian — istnieją w obu miejscach).
 
-- Nowa strona: `src/pages/services/Nis2TrainingLanding.tsx` (PL-only na start, ścieżka `/pl/darmowe-szkolenie-nis2`)
-- Route dodany w `src/App.tsx`
-- Komponent formularza: reużycie `src/components/promo/TrainingPromoForm.tsx` (kotwica `#promo-form`)
-- Aktualizacja deadline w `src/components/promo/TrainingPromoteSection/Banner/Dialog` (`TrainingPromo2026.tsx`) — wszystkie 3 lokalne kopie (PL/EN/CS): `30.06.2026` → `14.07.2026`, `30.06` → `14.07`
+Nie ruszamy istniejących stron `/legal/privacy` i `/legal/terms` — tylko dopełniamy tłumaczenia czeskie.
 
-## Struktura strony (single-column, ścieżka konwersji)
+## Pliki do zmiany
 
-1. **Hero**
-   - Badge: „Darmowe szkolenie · zapisy do 14.07.2026"
-   - H1: „Darmowe szkolenie NIS2 / KSC 2.0 dla firm"
-   - Podtytuł: 4h praktyki, eksperci i prawnicy wdrażający NIS2, gotowy plan działania
-   - 3 trust pille: „4h", „Stacjonarnie lub online", „Q&A z ekspertami"
-   - Primary CTA: „Zapisz się na szkolenie" → `#promo-form`
-   - Secondary CTA: „Zobacz program"
-   - Wizualnie spójny z `TrainingPromoSection` (slate→blue, premium)
+### Nowa strona
+- `src/pages/legal/InformationSecurityPolicy.tsx` — analogiczna struktura do `PrivacyPolicy.tsx`, używa `useLanguage()` + `PageTemplate`, sekcje 1–8 zgodnie z dokumentem.
 
-2. **Ból / dlaczego teraz (urgency)**
-   - 3–4 karty z konkretnymi datami i kwotami:
-     - „KSC 2.0 już obowiązuje (3.04.2026)"
-     - „Samoidentyfikacja do 3.10.2026 — zostało < 4 miesiące"
-     - „Kary do 10 mln EUR / 2% obrotu + 2-letni zakaz dla zarządu"
-     - „~10 000 firm w 18 sektorach + cały ich łańcuch dostaw"
-   - Krótki akapit: większość firm nie wie nawet, czy ich dotyczy
+### Routing
+- `src/App.tsx` — import + nowa trasa:
+  ```
+  <Route path="/:locale/legal/information-security" element={<InformationSecurityPolicy />} />
+  ```
 
-3. **Co dostaniesz — program 4h** (główna sekcja)
-   - 5 bloków agendy (45/60/60/45/30 min) z ikonami i krótkimi opisami zgodnie z briefem:
-     1. Czy to dotyczy Twojej firmy? (45 min)
-     2. Cztery obszary obowiązków NIS2 (60 min)
-     3. Rejestry i dokumentacja — co sprawdzi audytor (60 min)
-     4. Jak się przygotować bez chaosu (45 min)
-     5. Q&A (30 min)
-   - Pasek: „Forma: stacjonarnie lub online"
+### Tłumaczenia (`public/locales/{en,pl,cs}/translation.json`)
+- Dodać klucz **`legal.informationSecurity`** w EN, PL, CS z polami:
+  - `title`, `metaDescription`, `lastUpdated`
+  - `intro.title`, `intro.p1`, `intro.p2`
+  - `commitments.title`, `commitments.intro`, `commitments.items[1..8]`, `commitments.review`
+  - `scope.title`, `scope.intro`, `scope.items[1..8]`
+  - `governance.title`, `governance.content`
+  - `employees.title`, `employees.intro`, `employees.items[1..6]`
+  - `suppliers.title`, `suppliers.intro`, `suppliers.items[1..4]`, `suppliers.consequence`
+  - `incidents.title`, `incidents.content`, `incidents.contactLabel`, `incidents.handling`
+  - `review.title`, `review.content`
+  
+  PL = treść polska z dokumentu, EN = treść angielska z dokumentu, CS = wierne tłumaczenie czeskie.
 
-4. **Dlaczego to szkolenie / dlaczego Quantifier**
-   - 3 punkty: eksperci + prawnicy wdrażający NIS2 / praktyka, nie teoria / wychodzisz z planem działania
-   - Krótki blok o Quantifier.ai: polska platforma GRC, fundament Envirly (300+ projektów, TÜV NORD), 250+ organizacji, 2000+ użytkowników, BNP Paribas jako referencja
+- **Uzupełnić CS** `legal.privacy` w `public/locales/cs/translation.json` o pełną strukturę z EN/PL (klucze: `lastUpdated`, `admin.{title,content,contactEmail}`, `dataProcessed.{title,intro,formData,technicalData}`, `purposes.{title,newsletter.*,contact.*,security.*}`, `recipients.*`, `googleServices.*`, `internationalTransfer.*`, `retention.*`, `rights.*`, `complaint.*`, `mandatory.*`, `automatedDecisions.*`, `cookies.*`, `changes.*`). Stare klucze (`intro`, `dataCollection`, `dataUse`, `thirdParty`) usuwamy — nie są używane przez komponent.
 
-5. **Mid-page CTA**
-   - Wąski pasek przypominający deadline 14.07.2026 + przycisk „Zapisz się"
+- **Uzupełnić CS** `legal.terms` o brakujące `lastUpdated` jeśli wymagane (komponent używa `legal.cookies.lastUpdated` — zostaje).
 
-6. **Kalendarz NIS2 / KSC 2.0** (rozszerzenie bólu, edukacja)
-   - Timeline z 4 datami: 3.04.2026 → 3.10.2026 → 3.04.2027 → 3.04.2028
-   - Krótkie opisy pod każdą datą
-   - Box „Obowiązki w 4 obszarach": zarządzanie ryzykiem / incydenty (24h/72h/1m) / łańcuch dostaw / odpowiedzialność zarządu
-   - Box „Kary": kluczowe vs ważne
+- Dodać klucz w sekcji `footer.legal` (PL/EN/CS):
+  - `informationSecurity` = "Polityka Bezpieczeństwa Informacji" / "Information Security Policy" / "Zásady bezpečnosti informací"
+  - Etykiety `privacy/terms` (które są też w `footer.legal`) wykorzystamy też w nowej sekcji Company.
 
-7. **FAQ (akordeon, 5–6 pytań)**
-   - Czy moja firma podlega NIS2?
-   - Czy łańcuch dostaw też?
-   - Ile kosztuje szkolenie? (0 zł)
-   - Stacjonarnie czy online?
-   - Kto prowadzi?
-   - Co dalej po szkoleniu?
+### Footer
+- `src/components/Footer.tsx` — w sekcji **Company** (po linku „Plans") dodać 3 nowe pozycje:
+  ```
+  <Link to={`/${currentLocale}/legal/privacy`}>{t('footer.legal.privacy')}</Link>
+  <Link to={`/${currentLocale}/legal/terms`}>{t('footer.legal.terms')}</Link>
+  <Link to={`/${currentLocale}/legal/information-security`}>{t('footer.legal.informationSecurity')}</Link>
+  ```
+  Bottom-row linki (Privacy/Terms/Cookies) zostawiamy bez zmian.
 
-8. **Końcowy CTA + formularz**
-   - Sekcja `#promo-form` z `TrainingPromoForm`
-   - Nad formularzem krótka obietnica: „Zostaw kontakt — odzywamy się w 1 dzień roboczy"
-   - Pod formularzem disclaimer (liczba miejsc ograniczona, deadline 14.07.2026)
+### Sitemap (opcjonalnie, ale spójność SEO)
+- `supabase/functions/sitemap/index.ts` — jeśli zawiera listę legal pages dla wszystkich locali, dodać `/legal/information-security` × 3 locale. Sprawdzę przed edycją.
 
-## Detale techniczne
-
-- Komponent `Nis2TrainingLanding.tsx` zbudowany jako full-width (bez `PageTemplate`), spójnie ze standardem landing pages
-- Navbar + Footer z istniejących komponentów
-- SEO: `<SEOHead>` z tytułem „Darmowe szkolenie NIS2 / KSC 2.0 dla firm — Quantifier", meta description, canonical `/pl/darmowe-szkolenie-nis2/` (trailing slash), JSON-LD `Event` + `Course`
-- Trailing slash zgodnie z core rule
-- Dodać wpis do `LOCALIZED_SEGMENTS` w `src/lib/localized-routes.ts` (na razie tylko `pl`; `en`/`cs` mogą wskazywać na istniejącą `/training` lub być pominięte z `LOCALE_AVAILABILITY`)
-- Wszystkie kolory przez semantic tokens (`bg-primary`, `text-white`, gradients z `index.css`), spójnie z `TrainingPromo2026.tsx`
-- Sekcje na ciemnym tle: `text-white` (h2), `text-white/80` (opisy)
-- Wszystkie wewnętrzne linki przez React Router `<Link>`
-- Aktualizacja `TrainingPromo2026.tsx`: deadline `30.06.2026` → `14.07.2026` we wszystkich 3 językach + link z bannera/dialogu kieruje do `/pl/darmowe-szkolenie-nis2/#promo-form` (PL) — w EN/CS zostaje obecna kotwica do `#promo-form`
-- Dodać link do nowego landingu z istniejącej sekcji `TrainingPromoSection` (przycisk „Sprawdź dostępność" → nowy landing zamiast `#promo-form`) — tylko dla PL
-
-## Poza zakresem
-
-- Wersje EN i CS tego landinga (zrobimy w kolejnym kroku, jeśli potrzeba)
-- Zmiany w `TrainingPromoForm` (używamy as-is)
-- Integracje CRM / Edge Functions (formularz już je obsługuje)
+## Czego NIE robimy
+- Nie zmieniamy `PrivacyPolicy.tsx` ani `TermsOfService.tsx`.
+- Nie zmieniamy istniejących tras `/legal/privacy`, `/legal/terms`, `/legal/cookies`.
+- Nie zmieniamy dolnego paska legal w stopce.
