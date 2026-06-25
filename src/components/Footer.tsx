@@ -138,6 +138,21 @@ const Footer = () => {
                   {t('footer.company.plans', 'Plans')}
                 </Link>
               </li>
+              <li>
+                <Link to={`/${currentLocale}/legal/privacy`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.legal.privacy')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${currentLocale}/legal/terms`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.legal.terms')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${currentLocale}/legal/information-security`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.legal.informationSecurity')}
+                </Link>
+              </li>
             </ul>
             
             <h4 className="font-semibold text-foreground mb-4 mt-6">{t('footer.resources.title')}</h4>
