@@ -78,6 +78,7 @@ import ComparePage from "./pages/compare/ComparePage";
 import CookiesPolicy from "./pages/legal/CookiesPolicy";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsOfService from "./pages/legal/TermsOfService";
+import InformationSecurityPolicy from "./pages/legal/InformationSecurityPolicy";
 
 // Admin pages
 import Login from "./pages/admin/Login";
@@ -231,6 +232,7 @@ const MainRoutes = () => (
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
         <Route path="/:locale/legal/terms" element={<TermsOfService />} />
         <Route path="/:locale/legal/cookies" element={<CookiesPolicy />} />
+        <Route path="/:locale/legal/information-security" element={<InformationSecurityPolicy />} />
         
         {/* Admin routes */}
         <Route path="/admin/login" element={<Login />} />

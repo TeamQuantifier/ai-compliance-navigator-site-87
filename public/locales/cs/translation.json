@@ -653,7 +653,8 @@
       "privacy": "Zásady ochrany osobních údajů",
       "terms": "Podmínky služby",
       "cookies": "Zásady cookies",
-      "cookieSettings": "Nastavení cookies"
+      "cookieSettings": "Nastavení cookies",
+      "informationSecurity": "Zásady bezpečnosti informací"
     },
     "contact": {
       "usaPhone": "USA: (+1) 415-799-8206",
@@ -861,23 +862,98 @@
     "privacy": {
       "title": "Zásady ochrany osobních údajů",
       "metaDescription": "Zjistěte, jak Quantifier.ai shromažďuje, používá a chrání vaše osobní údaje.",
-      "intro": "V Quantifier.ai se zavazujeme chránit vaše soukromí a zajistit bezpečnost vašich osobních údajů. Tyto Zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a chráníme vaše informace.",
-      "dataCollection": {
-        "title": "Jaké údaje shromažďujeme",
-        "content": "Shromažďujeme informace, které nám přímo poskytujete, jako je vaše jméno, e-mailová adresa a informace o společnosti při registraci k našim službám, žádosti o demo nebo přihlášení k odběru newsletteru. Prostřednictvím cookies a podobných technologií také shromažďujeme údaje o používání."
+      "lastUpdated": "Poslední aktualizace",
+      "admin": {
+        "title": "1. Správce údajů",
+        "content": "Správcem vašich osobních údajů je Quantifier (služba Quantifier.ai). Identifikační údaje a sídlo správce jsou k dispozici na Webu v sekci Kontakt.",
+        "contactEmail": "Kontakt ve věcech ochrany osobních údajů:"
       },
-      "dataUse": {
-        "title": "Jak používáme vaše údaje",
-        "content": "Vaše osobní údaje používáme k poskytování a zlepšování našich služeb, ke komunikaci s vámi o aktualizacích a nabídkách a k zajištění bezpečnosti naší platformy. Vaše osobní údaje neprodáváme třetím stranám."
+      "dataProcessed": {
+        "title": "2. Jaké údaje zpracováváme",
+        "intro": "V závislosti na tom, jak Web používáte, můžeme zpracovávat:",
+        "formData": "údaje, které nám poskytnete prostřednictvím formulářů (např. e-mailovou adresu při přihlášení k odběru newsletteru, údaje a obsah zprávy při kontaktu nebo žádosti o demo);",
+        "technicalData": "technické a provozní údaje související s vaším používáním Webu (např. IP adresu, identifikátory cookies, informace o prohlížeči a zařízení, serverové logy)."
       },
-      "contact": {
-        "title": "Kontakt",
-        "content": "V případě jakýchkoli dotazů ohledně našich postupů ochrany osobních údajů nás prosím kontaktujte na: privacy@quantifier.ai"
+      "purposes": {
+        "title": "3. Účely a právní základy zpracování",
+        "newsletter": {
+          "title": "3.1 Newsletter a e-mailový marketing",
+          "content": "Pokud se přihlásíte k odběru našeho newsletteru, zpracováváme vaši e-mailovou adresu za účelem zasílání newsletteru a obchodních či marketingových informací o společnosti Quantifier (např. aktualizace, nabídky, materiály, akce).",
+          "legalBasis": "Právní základ (GDPR): váš souhlas (čl. 6 odst. 1 písm. a) GDPR).",
+          "electronicComm": "Požadavky e-Privacy: marketingová komunikace je zasílána pouze po získání vašeho předchozího souhlasu.",
+          "withdrawal": "Souhlas můžete kdykoli odvolat kliknutím na odhlašovací odkaz v patičce e-mailu nebo nás kontaktovat na contact@quantifier.ai. Odvolání souhlasu nemá vliv na zákonnost zpracování provedeného před odvoláním."
+        },
+        "contact": {
+          "title": "3.2 Kontakt, dotazy a žádosti o demo",
+          "content": "Pokud nás kontaktujete (např. žádáte o demo), zpracováváme údaje uvedené ve vaší korespondenci za účelem vyřízení dotazu a komunikace s vámi.",
+          "legalBasis": "Právní základ: kroky učiněné na vaši žádost před uzavřením smlouvy nebo plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR), pokud je to relevantní, a oprávněný zájem správce (čl. 6 odst. 1 písm. f) GDPR) na vyřizování dotazů a udržování komunikace."
+        },
+        "security": {
+          "title": "3.3 Bezpečnost a provoz Webu",
+          "content": "Zpracováváme technické údaje (např. logy, IP adresy) za účelem zajištění bezpečnosti, odhalování zneužití a údržby a zlepšování Webu.",
+          "legalBasis": "Právní základ: oprávněný zájem správce (čl. 6 odst. 1 písm. f) GDPR)."
+        }
       },
-      "thirdParty": {
-        "title": "Služby třetích stran",
-        "content": "Na našich webových stránkách používáme služby Google (včetně Google Analytics a reCAPTCHA). Tyto služby podléhají zásadám ochrany osobních údajů Google.",
-        "googleLink": "Zobrazit Zásady ochrany osobních údajů Google"
+      "recipients": {
+        "title": "4. Příjemci údajů",
+        "intro": "Vaše údaje mohou být sdíleny se subjekty, které nás podporují při provozu Webu a komunikaci, zejména:",
+        "hosting": "poskytovateli hostingu a IT infrastruktury;",
+        "newsletter": "poskytovateli nástrojů pro newsletter a komunikaci;",
+        "analytics": "poskytovateli analytických a bezpečnostních nástrojů (pokud jsou na Webu používány);",
+        "legal": "subjektům oprávněným přijímat údaje na základě platných právních předpisů.",
+        "processors": "Zpracovatelé jednají naším jménem na základě smluv o zpracování údajů a pouze v rozsahu nezbytném pro poskytování svých služeb."
+      },
+      "googleServices": {
+        "title": "5. Služby Google",
+        "content": "Na Webu můžeme používat služby Google, včetně Google Analytics a Google reCAPTCHA. Používání těchto služeb se řídí zásadami Google:",
+        "privacyLink": "Zásady ochrany osobních údajů Google",
+        "termsLink": "Podmínky služby Google",
+        "recaptchaNote": "Při použití reCAPTCHA může být v rozhraní Webu zobrazeno upozornění o ochraně formulářů reCAPTCHA spolu s výše uvedenými odkazy."
+      },
+      "internationalTransfer": {
+        "title": "6. Předávání mimo EHP",
+        "content": "V souvislosti s využíváním poskytovatelů služeb (např. analytických nebo bezpečnostních nástrojů) mohou být vaše údaje předávány mimo Evropský hospodářský prostor. V takových případech používáme mechanismy přenosu požadované zákonem (např. standardní smluvní doložky) nebo jiné právní základy povolené platnými předpisy. Podrobnosti o tom, jak Google zpracovává údaje, naleznete v zásadách Google uvedených výše."
+      },
+      "retention": {
+        "title": "7. Doby uchovávání údajů",
+        "newsletter": "Newsletter: do odvolání souhlasu nebo úspěšného odhlášení; poté po dobu nezbytnou k prokázání udělení nebo odvolání souhlasu a k obraně proti právním nárokům.",
+        "contact": "Kontakt / demo: po dobu vyřizování záležitosti a korespondence, poté po dobu promlčecí lhůty nároků nebo do úspěšného vznesení námitky – v závislosti na právním základu.",
+        "technical": "Technické údaje (logy): po dobu nezbytnou k zajištění bezpečnosti a diagnostiky a v souladu s našimi interními plány uchovávání.",
+        "cookies": "Cookies: v souladu s životností cookies a vašimi nastaveními (podrobnosti viz sekce Cookies)."
+      },
+      "rights": {
+        "title": "8. Vaše práva",
+        "intro": "Máte právo:",
+        "access": "na přístup k vašim údajům;",
+        "rectification": "na opravu vašich údajů;",
+        "erasure": "na výmaz vašich údajů;",
+        "restriction": "na omezení zpracování;",
+        "portability": "na přenositelnost údajů (pokud je zpracování založeno na souhlasu nebo smlouvě a probíhá automatizovaně);",
+        "objection": "vznést námitku proti zpracování založenému na oprávněných zájmech;",
+        "withdrawConsent": "kdykoli odvolat souhlas (pokud je zpracování založeno na souhlasu).",
+        "howToExercise": "Pro uplatnění svých práv nás prosím kontaktujte:"
+      },
+      "complaint": {
+        "title": "9. Právo podat stížnost",
+        "content": "Pokud se domníváte, že zpracováváme vaše údaje v rozporu se zákonem, máte právo podat stížnost u příslušného dozorového úřadu (v Polsku: u prezidenta Úřadu pro ochranu osobních údajů, UODO; v České republice: u Úřadu pro ochranu osobních údajů, ÚOOÚ)."
+      },
+      "mandatory": {
+        "title": "10. Je poskytnutí údajů povinné?",
+        "newsletter": "Newsletter: poskytnutí e-mailové adresy je dobrovolné, ale nezbytné pro zasílání newsletteru.",
+        "contact": "Kontakt / demo: poskytnutí údajů je dobrovolné, ale může být nezbytné pro odpověď na váš dotaz nebo splnění vaší žádosti."
+      },
+      "automatedDecisions": {
+        "title": "11. Automatizované rozhodování",
+        "content": "Nepřijímáme vůči vám rozhodnutí založená výhradně na automatizovaném zpracování, včetně profilování, která by pro vás měla právní účinky nebo se vás obdobně významně dotýkala."
+      },
+      "cookies": {
+        "title": "12. Cookies",
+        "content": "Web používá cookies a podobné technologie. Nezbytné cookies se používají k zajištění správné funkčnosti a bezpečnosti Webu. Analytické a funkční cookies (pokud jsou používány) mohou být nasazeny na základě vašeho souhlasu, který můžete kdykoli odvolat nebo upravit prostřednictvím nastavení cookies dostupného na Webu (pokud poskytujeme panel souhlasu) nebo nastavení vašeho prohlížeče.",
+        "manage": "Cookies můžete spravovat v nastavení svého prohlížeče. Omezení cookies může ovlivnit funkčnost některých funkcí Webu."
+      },
+      "changes": {
+        "title": "13. Změny těchto Zásad ochrany osobních údajů",
+        "content": "Tyto Zásady ochrany osobních údajů můžeme aktualizovat, zejména v případě změn ve fungování Webu nebo platných právních předpisů. Aktuální verze je zveřejněna na této stránce spolu s datem poslední aktualizace."
       }
     },
     "terms": {
@@ -900,6 +976,82 @@
       "contact": {
         "title": "Kontakt",
         "content": "V případě jakýchkoli dotazů ohledně těchto Podmínek služby nás prosím kontaktujte na: legal@quantifier.ai"
+      }
+    },
+    "informationSecurity": {
+      "title": "Zásady bezpečnosti informací",
+      "metaDescription": "Zásady bezpečnosti informací Quantifier.ai sp. z o.o. – přehled našeho Systému řízení bezpečnosti informací (ISMS) v souladu s ISO/IEC 27001:2022.",
+      "lastUpdated": "Poslední aktualizace",
+      "intro": {
+        "title": "1. Úvod",
+        "p1": "Quantifier.ai sp. z o.o. (dále jen „Quantifier\" nebo „Organizace\") považuje bezpečnost informací za jeden ze základů poskytování služeb svým Klientům a obchodním partnerům. Tyto zásady představují, v obecné podobě určené ke zveřejnění, principy fungování Systému řízení bezpečnosti informací (ISMS) zavedeného v Organizaci.",
+        "p2": "Quantifier zavedl Systém řízení bezpečnosti informací (ISMS) v souladu s požadavky normy ISO/IEC 27001:2022. Tento systém zahrnuje soubor interních politik, postupů a kontrolních mechanismů zaměřených na systematickou identifikaci, hodnocení a zmírňování rizik bezpečnosti informací."
+      },
+      "commitments": {
+        "title": "2. Naše závazky a cíle",
+        "intro": "V rámci zavedeného ISMS se Quantifier zavazuje k plnění následujících strategických cílů:",
+        "items": [
+          "zajištění důvěrnosti, integrity a dostupnosti informací zpracovávaných v souvislosti s činností Organizace a poskytovanými službami,",
+          "soulad s platnými právními předpisy, včetně předpisů o ochraně osobních údajů a regulatorních a smluvních požadavků,",
+          "systematická identifikace, hodnocení a zmírňování rizik bezpečnosti informací,",
+          "zajištění odpovídající úrovně bezpečnosti při spolupráci s dodavateli a dalšími třetími stranami,",
+          "budování povědomí a kompetencí v oblasti bezpečnosti informací mezi zaměstnanci a spolupracovníky,",
+          "udržování připravenosti detekovat, hlásit a řešit incidenty bezpečnosti informací,",
+          "zajištění kontinuity klíčových procesů Organizace v případě narušení,",
+          "neustálé zlepšování fungování ISMS na základě přezkumů, auditů a poznatků z incidentů."
+        ],
+        "review": "Dosahování výše uvedených cílů podléhá pravidelnému přezkumu a hodnocení ze strany vedení Organizace."
+      },
+      "scope": {
+        "title": "3. Rozsah systému",
+        "intro": "ISMS pokrývá veškerou činnost Quantifier související se zpracováním informací, zejména následující oblasti:",
+        "items": [
+          "správa informačních aktiv, včetně jejich identifikace, klasifikace a dohledu nad životním cyklem,",
+          "hodnocení a řízení rizik bezpečnosti informací,",
+          "technická a organizační bezpečnostní opatření a pravidla řízení přístupu,",
+          "bezpečnost lidských zdrojů, včetně školení a zvyšování povědomí v oblasti bezpečnosti informací,",
+          "bezpečnost ve vztazích s dodavateli a třetími stranami (bezpečnost dodavatelského řetězce),",
+          "hlášení a řešení incidentů bezpečnosti informací,",
+          "krizové řízení v případě závažných incidentů,",
+          "plánování kontinuity činnosti a obnovy po incidentech."
+        ]
+      },
+      "governance": {
+        "title": "4. Struktura řízení bezpečnosti informací",
+        "content": "Dohled nad ISMS má vedení Organizace, které schvaluje politiky, přiděluje zdroje a pravidelně přezkoumává účinnost systému. Organizace jmenovala Cybersecurity Officera odpovědného za fungování ISMS, jakož i další osoby vykonávající funkce klíčové pro systém, včetně osob odpovědných za správu aktiv, přístupů, lidských zdrojů a řešení incidentů."
+      },
+      "employees": {
+        "title": "5. Zásady ochrany údajů zaměstnanci a spolupracovníky",
+        "intro": "Všichni zaměstnanci a spolupracovníci Quantifier s přístupem k informacím nebo systémům Organizace jsou povinni dodržovat následující zásady:",
+        "items": [
+          "zpracovávat informace pouze v rozsahu nezbytném pro plnění svěřených povinností, v souladu se zásadou minimálního přístupu (least privilege),",
+          "používat bezpečné metody ověřování a chránit přístupové údaje (včetně hesel a dalších autentizačních údajů),",
+          "zachovávat důvěrnost informací, ke kterým získali přístup v souvislosti se svou prací nebo spoluprací, a to i po jejím ukončení,",
+          "neprodleně hlásit jakákoli podezření na narušení bezpečnosti informací,",
+          "uplatňovat zásady bezpečné práce na dálku a používat výhradně nástroje a komunikační kanály schválené Organizací,",
+          "účastnit se školení v oblasti bezpečnosti informací organizovaných společností Quantifier."
+        ]
+      },
+      "suppliers": {
+        "title": "6. Požadavky na dodavatele",
+        "intro": "Quantifier vyžaduje od svých dodavatelů, subdodavatelů a dalších třetích stran s přístupem k informacím nebo systémům Organizace:",
+        "items": [
+          "zavedení odpovídajících opatření bezpečnosti informací, přiměřených povaze a rozsahu spolupráce,",
+          "dodržování pravidel bezpečnosti informací sdělených jim Organizací,",
+          "neprodlené hlášení Quantifier všech bezpečnostních incidentů, které mohou ovlivnit důvěrnost, integritu nebo dostupnost informací nebo systémů Organizace,",
+          "spolupráci při ověřovacích a auditních činnostech prováděných společností Quantifier, v rozsahu odůvodněném povahou spolupráce."
+        ],
+        "consequence": "Nesplnění výše uvedených požadavků může vést k omezení nebo ukončení spolupráce s daným subjektem."
+      },
+      "incidents": {
+        "title": "7. Hlášení incidentů bezpečnosti informací",
+        "content": "Jakékoli potenciální incidenty bezpečnosti informací související se spoluprací s Quantifier, včetně podezření na neoprávněný přístup, ztrátu dat nebo jiných událostí, které mohou ovlivnit bezpečnost informací, je třeba neprodleně hlásit na vyhrazenou adresu:",
+        "contactLabel": "Kontakt ve věcech bezpečnosti informací:",
+        "handling": "Každé hlášení je analyzováno a zpracováno v souladu s interními postupy Organizace."
+      },
+      "review": {
+        "title": "8. Přezkum a aktualizace zásad",
+        "content": "Tyto zásady představují shrnutí klíčových informací pro Klienty a obchodní partnery vyplývajících z interních politik přijatých v Organizaci a budou aktualizovány v případě změn interních politik, jakož i v případě významných změn v právním, regulatorním nebo organizačním prostředí Quantifier."
       }
     }
   },
