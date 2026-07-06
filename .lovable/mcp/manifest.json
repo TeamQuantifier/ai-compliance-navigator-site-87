@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "quantifier-ai-mcp",
+      "version": "0.1.0",
+      "title": "Quantifier.ai MCP"
+    },
+    "tools": [
+      {
+        "name": "list_blog_posts",
+        "title": "List blog posts",
+        "description": "List published Quantifier.ai blog posts, optionally filtered by locale (en, pl, cs).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "locale": {
+              "description": "Language filter.",
+              "type": "string",
+              "enum": [
+                "en",
+                "pl",
+                "cs"
+              ]
+            },
+            "limit": {
+              "description": "Maximum posts to return (default 20).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_case_studies",
+        "title": "List case studies",
+        "description": "List published Quantifier.ai customer case studies (success stories).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "locale": {
+              "description": "Language filter.",
+              "type": "string",
+              "enum": [
+                "en",
+                "pl",
+                "cs"
+              ]
+            },
+            "limit": {
+              "description": "Maximum stories to return (default 20).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
