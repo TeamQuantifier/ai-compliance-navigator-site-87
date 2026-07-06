@@ -102,6 +102,10 @@ const Frameworks = () => {
         { 
           name: { pl: "Analiza cyklu życia LCA", en: "Life Cycle Assessment LCA", cs: "Analýza životního cyklu LCA" }, 
           href: `/${currentLocale}/frameworks/product-level/lca-analysis` 
+        },
+        { 
+          name: { pl: "PPWR — Rozporządzenie opakowaniowe UE", en: "PPWR — EU Packaging Regulation", cs: "PPWR — Nařízení EU o obalech" }, 
+          href: `/${currentLocale}/frameworks/product-level/ppwr` 
         }
       ]
     },
