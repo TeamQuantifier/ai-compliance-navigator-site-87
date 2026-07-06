@@ -180,12 +180,20 @@ export const useStories = (lang: string) => {
   return useQuery({
     queryKey: ['stories', lang],
     queryFn: async () => {
+      const sortByDateDesc = (rows: StoryWithRelations[] | null) =>
+        (rows ?? []).slice().sort((a, b) => {
+          const da = new Date(a.published_at || a.created_at).getTime();
+          const db = new Date(b.published_at || b.created_at).getTime();
+          return db - da;
+        });
+
       const { data, error } = await supabase
         .from('stories')
         .select(`*, author:authors(*)`)
         .eq('lang', lang)
         .eq('status', 'published')
-        .order('published_at', { ascending: false });
+        .order('published_at', { ascending: false, nullsFirst: false })
+        .order('created_at', { ascending: false });
 
       if (error) throw error;
 
@@ -196,13 +204,14 @@ export const useStories = (lang: string) => {
           .select(`*, author:authors(*)`)
           .eq('lang', 'en')
           .eq('status', 'published')
-          .order('published_at', { ascending: false });
+          .order('published_at', { ascending: false, nullsFirst: false })
+          .order('created_at', { ascending: false });
 
         if (fallbackError) throw fallbackError;
-        return fallbackData as StoryWithRelations[];
+        return sortByDateDesc(fallbackData as StoryWithRelations[]);
       }
 
-      return data as StoryWithRelations[];
+      return sortByDateDesc(data as StoryWithRelations[]);
     },
   });
 };
