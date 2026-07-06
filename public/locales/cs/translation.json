@@ -73,7 +73,8 @@
       "productLevel": {
         "title": "Digitální pas produktu",
         "dpp": "DPP",
-        "lcaAnalysis": "LCA analýza"
+        "lcaAnalysis": "LCA analýza",
+        "ppwr": "PPWR"
       }
     },
     "plans": "Plány",
@@ -7571,6 +7572,19 @@
         ],
         "cta": "Zobrazit LCA",
         "href": "/frameworks/product-level/lca-analysis"
+      },
+      "ppwr": {
+        "badge": "Nařízení EU 2025/40",
+        "title": "PPWR — Nařízení o obalech",
+        "description": "Nové nařízení EU pro obaly: technická dokumentace, prohlášení o shodě, environmentální data. Hlavní povinnosti od 12. srpna 2026.",
+        "features": [
+          "Evidence obalů na úrovni SKU",
+          "LCA obalů (PEF, Ecoinvent)",
+          "Workflow důkazů od dodavatelů",
+          "Cross-linky na DPP, CSRD, CBAM"
+        ],
+        "cta": "Zobrazit PPWR",
+        "href": "/frameworks/product-level/ppwr"
       }
     },
     "faq": {
@@ -8092,5 +8106,172 @@
     "badge": "Důvěřují nám",
     "title": "Uznáni odborníky a institucemi",
     "subtitle": "Naše technologie získávají uznání od odborníků a spolupráce s předními institucemi nám umožňuje spolutvářet standardy kybernetické bezpečnosti, AI a compliance."
+  },
+  "ppwrPage": {
+    "title": "PPWR 2025/40 — Nařízení EU o obalech | Quantifier.ai",
+    "description": "PPWR (EU 2025/40) — povinnosti od 12. 8. 2026. Technická dokumentace, prohlášení o shodě, environmentální data obalů. Ověřte připravenost své firmy.",
+    "hero": {
+      "badge": "Nařízení EU 2025/40",
+      "title": "PPWR — Nařízení EU o obalech (2025/40)",
+      "subtitle": "Nařízení vstoupilo v platnost 11. února 2025, hlavní povinnosti platí od 12. srpna 2026.",
+      "positioning": "Shoda obalů, technická dokumentace a environmentální data v jedné platformě.",
+      "counterLabel": "dní do 12. 8. 2026",
+      "ctaPrimary": "Ověřte připravenost svých obalů",
+      "ctaSecondary": "Domluvit demo"
+    },
+    "whatIs": {
+      "title": "Co je PPWR",
+      "lead": "PPWR je nařízení, nikoli směrnice — platí přímo ve všech členských státech EU bez nutnosti transpozice do národního práva a nahrazuje směrnici 94/62/ES.",
+      "scopeTitle": "Celý životní cyklus obalu",
+      "scope": [
+        {
+          "title": "Návrh",
+          "description": "Požadavky na návrh obalu: minimalizace hmotnosti a objemu, omezení prázdného prostoru."
+        },
+        {
+          "title": "Materiálové složení",
+          "description": "Podíl recyklátu, omezení nebezpečných látek, zákaz PFAS v obalech pro styk s potravinami."
+        },
+        {
+          "title": "Označování",
+          "description": "Harmonizované piktogramy třídění, označení typu, šarže a série, kontaktní údaje výrobce."
+        },
+        {
+          "title": "Opakované použití",
+          "description": "Cíle podílu opakovaně použitelných obalů pro vybraná odvětví."
+        },
+        {
+          "title": "Recyklovatelnost",
+          "description": "Třídy recyklovatelnosti A/B/C, požadavky na design-for-recycling."
+        },
+        {
+          "title": "Odpadové hospodářství",
+          "description": "Cíle tříděného sběru a rozšířená odpovědnost výrobce (EPR)."
+        }
+      ],
+      "context": "Přímo použitelné nařízení EU — bez zdržení kvůli národní transpozici, bez výjimek pro členské státy."
+    },
+    "whoConcerned": {
+      "title": "Koho se týká — týká se to vás",
+      "lead": "\"Výrobcem\" podle PPWR je každý výrobce, dovozce nebo distributor uvádějící obal na trh EU. Nařízení nezná žádné výjimky pro MSP.",
+      "importerTitle": "Dovozce nemůže odpovědnost přenést (čl. 18)",
+      "importerBody": "Dovozce nese plnou odpovědnost za shodu obalů a nemůže ji smluvně přenést na dodavatele mimo EU. Týká se to i obalů z Číny, Turecka nebo USA.",
+      "statTitle": "Rozsah trhu (PL)",
+      "statValue": "≈ 113 000",
+      "statCaption": "firem v Polsku registrovaných jako subjekty uvádějící produkty v obalech na trh.",
+      "actorsTitle": "V rozsahu působnosti",
+      "actors": [
+        "Výrobci obalů a baleného zboží",
+        "Dovozci uvádějící obaly na trh EU",
+        "Distributoři a maloobchodní řetězce",
+        "Značky privátního označení",
+        "E-commerce a fulfillment platformy",
+        "MSP — bez výjimek"
+      ]
+    },
+    "timeline": {
+      "title": "Harmonogram PPWR",
+      "subtitle": "Srpen 2026 = dokumentační a projektové povinnosti. Materiálové cíle přicházejí ve fázích do roku 2030.",
+      "callout": {
+        "title": "Důležité rozlišení",
+        "body": "12. 8. 2026 = technická dokumentace, prohlášení o shodě, označování a zákaz PFAS. Požadavky na recyklovatelnost a obsah recyklátu přicházejí do roku 2030. Nekomunikujte zákazníkům \"všechno od 2026\"."
+      },
+      "steps": [
+        {
+          "date": "11. 2. 2025",
+          "title": "Vstup v platnost",
+          "description": "Nařízení (EU) 2025/40 zveřejněno v Úředním věstníku EU. Přímo použitelné jako právo EU."
+        },
+        {
+          "date": "12. 8. 2026",
+          "title": "Dokumentační a projektové povinnosti",
+          "description": "Posouzení shody, technická dokumentace, EU prohlášení o shodě, označení typu/šarže/série, kontaktní údaje výrobce. Zákaz PFAS v obalech pro styk s potravinami nad limity."
+        },
+        {
+          "date": "2028",
+          "title": "Harmonizované třídicí štítky",
+          "description": "V rámci celé EU harmonizované piktogramy třídění a označení materiálu obalu."
+        },
+        {
+          "date": "2030",
+          "title": "Materiálové cíle a limity",
+          "description": "Vymahatelné požadavky na recyklovatelnost, povinný podíl recyklátu v plastech, zákazy vybraných jednorázových formátů, limit 50 % prázdného prostoru ve skupinových a e-commerce obalech."
+        }
+      ]
+    },
+    "consequences": {
+      "title": "Důsledky neshody",
+      "regulatoryTitle": "Regulační riziko",
+      "regulatoryBody": "Chybějící technická dokumentace a prohlášení o shodě po 12. srpnu 2026 je závažné porušení. Orgány dozoru nad trhem mohou nařídit stažení produktu z celého trhu EU — nejen z jednoho členského státu.",
+      "commercialTitle": "Obchodní riziko",
+      "commercialBody": "B2B odběratelé, maloobchodní řetězce a e-commerce platformy již dnes začínají vyžadovat prohlášení o shodě PPWR při nákupu. Bez dokumentů = bez zalistování.",
+      "financialTitle": "Finanční riziko",
+      "financialBody": "Vyšší poplatky EPR pro obtížně recyklovatelné obaly (modulace poplatků). Správní pokuty definované národním právem."
+    },
+    "howHelps": {
+      "title": "Jak platforma pomáhá",
+      "subtitle": "Připravu na PPWR podporujeme prostřednictvím existujících datových modulů, LCA a workflow důkazů. Realizaci vedou experti Quantifier.ai a spolupracující advokátní kanceláře.",
+      "items": [
+        {
+          "title": "Data o obalech na úrovni SKU",
+          "description": "Evidence hmotnosti, materiálu a podílu recyklátu na SKU. PPWR vyžaduje sběr a reporting dat o množství, hmotnosti, materiálu a míře recyklace obalů."
+        },
+        {
+          "title": "Workflow důkazů od dodavatelů",
+          "description": "Automatizované dotazníky pro dodavatele obalů, audit trail, verzování souborů. Archivace dokumentace: 5 let (jednorázové) / 10 let (opakovaně použitelné)."
+        },
+        {
+          "title": "LCA obalů",
+          "description": "Modelování scénářů — změna materiálu, formátu, redukce hmotnosti. 16 kategorií PEF, databáze Ecoinvent, výsledek v souladu s ISO 14040."
+        },
+        {
+          "title": "Cross-linky DPP · ESRS E5 · CBAM",
+          "description": "Data o obalech napájí Digitální pas produktu (DPP), reporting ESRS E5 (Využívání zdrojů a oběhové hospodářství) a výpočty CBAM pro dovážené materiály."
+        },
+        {
+          "title": "Prohlášení o shodě — pracovní návrh",
+          "description": "Šablony EU prohlášení, kontrolní seznamy povinných polí, ověření úplnosti před vydáním. Konečný podpis zůstává u oprávněné osoby."
+        },
+        {
+          "title": "Podpora experta",
+          "description": "Konzultace s experty Quantifier.ai a spolupracujícími advokátními kancelářemi k výkladu předpisů a implementaci."
+        }
+      ]
+    },
+    "faq": {
+      "title": "PPWR — FAQ",
+      "items": [
+        {
+          "question": "Od kdy PPWR platí?",
+          "answer": "Nařízení (EU) 2025/40 vstoupilo v platnost 11. února 2025. Hlavní dokumentační a projektové povinnosti začínají platit 12. srpna 2026. Materiálové cíle (podíl recyklátu, požadavky na recyklovatelnost) přicházejí ve fázích do roku 2030."
+        },
+        {
+          "question": "Vztahuje se PPWR na MSP?",
+          "answer": "Ano. Nařízení neobsahuje žádné výjimky pro mikro, malé ani střední podniky. Rozsah povinností je úměrný objemu obalů uváděných na trh, ale samotný požadavek na shodu platí bez výjimky."
+        },
+        {
+          "question": "Odpovídá dovozce za obaly ze zemí mimo EU (Čína, Turecko, USA)?",
+          "answer": "Ano. Podle článku 18 nese dovozce plnou odpovědnost za shodu obalů uváděných na trh EU a nemůže ji smluvně přenést na dodavatele mimo EU. Dovozce musí mít úplnou technickou dokumentaci a prohlášení o shodě."
+        },
+        {
+          "question": "Jak PPWR souvisí s národními zákony o EPR?",
+          "answer": "PPWR jako nařízení EU platí přímo — bez potřeby transpozice. Národní systémy EPR se upravují podle PPWR, včetně modulace poplatků podle třídy recyklovatelnosti obalu."
+        },
+        {
+          "question": "Co hrozí za chybějící prohlášení o shodě po 12. 8. 2026?",
+          "answer": "Chybějící technická dokumentace a EU prohlášení o shodě po tomto datu je závažné porušení. Orgány dozoru nad trhem mohou nařídit stažení produktu z celého trhu EU a uložit správní pokuty podle národního práva. Další riziko: ztráta zalistování u B2B odběratelů a v maloobchodních řetězcích."
+        },
+        {
+          "question": "Jak se PPWR liší od směrnice 94/62/ES?",
+          "answer": "Směrnice 94/62/ES vyžadovala transpozici do národního práva, což dávalo členským státům prostor pro výklad. PPWR je nařízení — platí přímo a jednotně v celé EU. PPWR rozšiřuje působnost o požadavky na recyklovatelnost, cíle podílu recyklátu, omezení jednorázových formátů a harmonizaci označování."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Připravte se na PPWR s Quantifier.ai",
+      "description": "Začněte auditem portfolia obalů a mapou nedostatků vůči PPWR. Stáhněte si kontrolní seznam připravenosti nebo si domluvte konzultaci s expertem.",
+      "primary": "Domluvit demo",
+      "checklist": "Stáhnout kontrolní seznam připravenosti PPWR"
+    }
   }
 }
