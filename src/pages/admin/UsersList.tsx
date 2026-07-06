@@ -69,7 +69,7 @@ export default function UsersList() {
   const grantRole = async () => {
     const parsed = emailSchema.safeParse(addEmail);
     if (!parsed.success) {
-      toast({ title: 'Invalid email', description: parsed.error.errors[0].message, variant: 'destructive' });
+      toast({ title: 'Invalid email', description: parsed.error.issues[0].message, variant: 'destructive' });
       return;
     }
     setSubmitting(true);
