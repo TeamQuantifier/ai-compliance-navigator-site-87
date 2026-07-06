@@ -1,7 +1,7 @@
 import PageTemplate from '@/components/PageTemplate';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, QrCode, FileCheck, BarChart3 } from 'lucide-react';
+import { ArrowRight, QrCode, FileCheck, BarChart3, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FAQSection from '@/components/seo/FAQSection';
@@ -10,12 +10,14 @@ const hubCards = [
   { key: 'dpp', icon: QrCode, color: 'green' },
   { key: 'epd', icon: FileCheck, color: 'blue' },
   { key: 'lca', icon: BarChart3, color: 'amber' },
+  { key: 'ppwr', icon: Package, color: 'emerald' },
 ] as const;
 
 const colorMap: Record<string, { bg: string; border: string; icon: string; badge: string; btn: string; btnHover: string }> = {
   green: { bg: 'bg-green-50', border: 'border-green-200', icon: 'text-green-600', badge: 'bg-green-100 text-green-800', btn: 'bg-green-600 hover:bg-green-700', btnHover: '' },
   blue: { bg: 'bg-blue-50', border: 'border-blue-200', icon: 'text-blue-600', badge: 'bg-blue-100 text-blue-800', btn: 'bg-blue-600 hover:bg-blue-700', btnHover: '' },
   amber: { bg: 'bg-amber-50', border: 'border-amber-200', icon: 'text-amber-600', badge: 'bg-amber-100 text-amber-800', btn: 'bg-amber-600 hover:bg-amber-700', btnHover: '' },
+  emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', icon: 'text-emerald-700', badge: 'bg-emerald-100 text-emerald-800', btn: 'bg-emerald-700 hover:bg-emerald-800', btnHover: '' },
 };
 
 const ProductLevelHub = () => {
@@ -41,7 +43,7 @@ const ProductLevelHub = () => {
         </section>
 
         {/* Cards */}
-        <section className="grid md:grid-cols-3 gap-8 mb-16">
+        <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {hubCards.map(({ key, icon: Icon, color }) => {
             const c = colorMap[color];
             const card = t(`productLevelHub.cards.${key}`, { returnObjects: true }) as { badge: string; title: string; description: string; features: string[]; cta: string; href: string };

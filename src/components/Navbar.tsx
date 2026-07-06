@@ -110,6 +110,7 @@ export const Navbar = () => {
             { title: t('menu.frameworks.productLevel.dpp'), href: '/frameworks/product-level/dpp' },
             { title: t('menu.frameworks.productLevel.epd'), href: '/frameworks/product-level/epd' },
             { title: t('menu.frameworks.productLevel.lcaAnalysis'), href: '/frameworks/product-level/lca-analysis' },
+            { title: t('menu.frameworks.productLevel.ppwr'), href: '/frameworks/product-level/ppwr' },
           ],
         },
       ],
