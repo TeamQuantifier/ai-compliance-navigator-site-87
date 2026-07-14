@@ -218,6 +218,30 @@ export type Database = {
         }
         Relationships: []
       }
+      pending_role_grants: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          email: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          email: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          email?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+        }
+        Relationships: []
+      }
       posts: {
         Row: {
           body_rich: Json
@@ -683,6 +707,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      grant_role_by_email: {
+        Args: { _email: string; _role: Database["public"]["Enums"]["app_role"] }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
