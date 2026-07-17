@@ -33,31 +33,31 @@ const CANONICAL = 'https://quantifier.ai/pl/darmowe-szkolenie-nis2/';
 const agenda = [
   {
     icon: Target,
-    duration: '45 min',
+    duration: '10 min',
     title: 'Czy to dotyczy Twojej firmy?',
     desc: 'Samoidentyfikacja krok po kroku. 18 sektorów krytycznych, podmioty kluczowe vs. ważne, progi wielkości.',
   },
   {
     icon: ShieldAlert,
-    duration: '60 min',
+    duration: '15 min',
     title: 'Cztery obszary obowiązków NIS2',
     desc: 'Zarządzanie ryzykiem, obsługa incydentów (zgłoszenie do CSIRT w 24h), bezpieczeństwo łańcucha dostaw, odpowiedzialność zarządu (art. 20 — osobista odpowiedzialność kierownictwa, kary do 10 mln EUR).',
   },
   {
     icon: FileCheck,
-    duration: '60 min',
+    duration: '15 min',
     title: 'Co trzeba mieć „na papierze”: rejestry i dokumentacja',
     desc: 'Praktyczny przegląd: rejestr ryzyk, rejestr incydentów, rejestr aktywów, ewidencja dostawców, polityki bezpieczeństwa, ścieżka audytowa. Co dokładnie sprawdzi audytor.',
   },
   {
     icon: Layers,
-    duration: '45 min',
+    duration: '10 min',
     title: 'Jak się przygotować bez chaosu',
     desc: 'Harmonogram terminów (samoidentyfikacja → system do kwietnia 2027 → audyty od 2028). Automatyzacja, rejestry, gap analysis i dokumentacja bez zbędnej pracy.',
   },
   {
     icon: MessageSquare,
-    duration: '30 min',
+    duration: '10 min',
     title: 'Q&A z ekspertami',
     desc: 'Czas na indywidualne pytania uczestników — eksperci i prawnicy odpowiadają na realne wątpliwości z Twojej firmy.',
   },
