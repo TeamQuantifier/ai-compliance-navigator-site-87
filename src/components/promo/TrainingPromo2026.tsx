@@ -32,58 +32,58 @@ type Copy = {
 
 const COPY: Record<Locale, Copy> = {
   pl: {
-    badge: 'Oferta limitowana · do 14.07.2026',
+    badge: 'Oferta limitowana · do 31.07.2026',
     bannerShort:
-      'Tylko do 14.07.2026 · 4h szkolenia NIS2 / KSC / ISO 27001 dla Twojej firmy — sprawdź, jak uzyskać do 100% dofinansowania',
+      'Tylko do 31.07.2026 · 1h szkolenia NIS2 / KSC / ISO 27001 dla Twojej firmy — sprawdź, jak uzyskać do 100% dofinansowania',
     bannerCta: 'Sprawdź ofertę',
     sectionTitle:
-      '4h szkolenia z NIS2 / KSC / ISO 27001 dla Twojej firmy — nawet do 100% dofinansowania',
+      '1h szkolenia z NIS2 / KSC / ISO 27001 dla Twojej firmy — nawet do 100% dofinansowania',
     sectionSubtitle:
       'Pokażemy Ci, jak sfinansować dedykowane szkolenie z nowych obowiązków cyberbezpieczeństwa. Bez ukrytych kosztów, z konkretną decyzją w 3 dni robocze.',
     bullets: [
       'Szkolenie szyte na miarę Twojej firmy, branży i poziomu dojrzałości',
       'Pomoc w pozyskaniu do 100% dofinansowania (analiza dostępnych źródeł)',
       'Decyzja o kwalifikacji w 3 dni robocze',
-      'Rejestracja do 14.07.2026 — realizacja możliwa również po tej dacie',
+      'Rejestracja do 31.07.2026 — realizacja możliwa również po tej dacie',
       'Liczba szkoleń ograniczona — decyduje kolejność zgłoszeń',
     ],
     primaryCta: 'Sprawdź dostępność',
     secondaryCta: 'Porozmawiajmy o dofinansowaniu',
     disclaimer:
-      'Liczba szkoleń ograniczona. Oferta ważna do 14.07.2026 (rejestracja). Termin realizacji ustalany indywidualnie. Wysokość dofinansowania zależy od dostępnych programów i profilu firmy.',
+      'Liczba szkoleń ograniczona. Oferta ważna do 31.07.2026 (rejestracja). Termin realizacji ustalany indywidualnie. Wysokość dofinansowania zależy od dostępnych programów i profilu firmy.',
     dateLabel: 'Rejestracja do',
     decisionLabel: 'Decyzja w',
     decisionValue: '3 dni robocze',
-    dialogTitle: 'Tylko do 14.07.2026 — 4h szkolenia za 0 zł?',
+    dialogTitle: 'Tylko do 31.07.2026 — 1h szkolenia za 0 zł?',
     dialogBody:
       'Sprawdzimy, czy Twoja firma kwalifikuje się do nawet 100% dofinansowania szkolenia z NIS2 / KSC / ISO 27001. Decyzja w 3 dni robocze, liczba miejsc ograniczona.',
     dialogCta: 'Chcę poznać szczegóły',
     dialogFootnote: 'Bez spamu. Odpowiadamy w 1 dzień roboczy.',
   },
   en: {
-    badge: 'Limited offer · until 14 July 2026',
+    badge: 'Limited offer · until 31 July 2026',
     bannerShort:
-      'Only until 14 July 2026 · 4h NIS2 / ISO 27001 training for your company — see how to get up to 100% funded',
+      'Only until 31 July 2026 · 1h NIS2 / ISO 27001 training for your company — see how to get up to 100% funded',
     bannerCta: 'See the offer',
     sectionTitle:
-      '4h NIS2 / ISO 27001 training for your company — up to 100% funded',
+      '1h NIS2 / ISO 27001 training for your company — up to 100% funded',
     sectionSubtitle:
       'We will show you how to fund a tailored training on the new cybersecurity obligations. No hidden costs, a clear go / no-go decision within 3 business days.',
     bullets: [
       'Training tailored to your company, sector and maturity level',
       'Help securing up to 100% funding (we map the available programs)',
       'Eligibility decision within 3 business days',
-      'Register by 14 July 2026 — delivery can take place later',
+      'Register by 31 July 2026 — delivery can take place later',
       'Limited number of training slots — first come, first served',
     ],
     primaryCta: 'Check availability',
     secondaryCta: 'Talk about funding',
     disclaimer:
-      'Limited number of training slots. Offer valid until 14 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile.',
+      'Limited number of training slots. Offer valid until 31 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile.',
     dateLabel: 'Register by',
     decisionLabel: 'Decision in',
     decisionValue: '3 business days',
-    dialogTitle: 'Only until 14 July 2026 — 4h training for €0?',
+    dialogTitle: 'Only until 31 July 2026 — 1h training for €0?',
     dialogBody:
       'We will check whether your company qualifies for up to 100% funding of a NIS2 / ISO 27001 training. Decision within 3 business days, limited number of slots.',
     dialogCta: 'I want the details',
