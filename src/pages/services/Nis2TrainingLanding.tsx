@@ -27,37 +27,37 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const DEADLINE = '14.07.2026';
+const DEADLINE = '31.07.2026';
 const CANONICAL = 'https://quantifier.ai/pl/darmowe-szkolenie-nis2/';
 
 const agenda = [
   {
     icon: Target,
-    duration: '45 min',
+    duration: '10 min',
     title: 'Czy to dotyczy Twojej firmy?',
     desc: 'Samoidentyfikacja krok po kroku. 18 sektorów krytycznych, podmioty kluczowe vs. ważne, progi wielkości.',
   },
   {
     icon: ShieldAlert,
-    duration: '60 min',
+    duration: '15 min',
     title: 'Cztery obszary obowiązków NIS2',
     desc: 'Zarządzanie ryzykiem, obsługa incydentów (zgłoszenie do CSIRT w 24h), bezpieczeństwo łańcucha dostaw, odpowiedzialność zarządu (art. 20 — osobista odpowiedzialność kierownictwa, kary do 10 mln EUR).',
   },
   {
     icon: FileCheck,
-    duration: '60 min',
+    duration: '15 min',
     title: 'Co trzeba mieć „na papierze”: rejestry i dokumentacja',
     desc: 'Praktyczny przegląd: rejestr ryzyk, rejestr incydentów, rejestr aktywów, ewidencja dostawców, polityki bezpieczeństwa, ścieżka audytowa. Co dokładnie sprawdzi audytor.',
   },
   {
     icon: Layers,
-    duration: '45 min',
+    duration: '10 min',
     title: 'Jak się przygotować bez chaosu',
     desc: 'Harmonogram terminów (samoidentyfikacja → system do kwietnia 2027 → audyty od 2028). Automatyzacja, rejestry, gap analysis i dokumentacja bez zbędnej pracy.',
   },
   {
     icon: MessageSquare,
-    duration: '30 min',
+    duration: '10 min',
     title: 'Q&A z ekspertami',
     desc: 'Czas na indywidualne pytania uczestników — eksperci i prawnicy odpowiadają na realne wątpliwości z Twojej firmy.',
   },
@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: 'Ile kosztuje udział w akcji wsparcia?',
-    a: '0 zł dla zakwalifikowanych firm. To akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2. Rejestracja do 14.07.2026, decyduje kolejność zgłoszeń.',
+    a: '0 zł dla zakwalifikowanych firm. To akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2. Rejestracja do 31.07.2026, decyduje kolejność zgłoszeń.',
   },
   {
     q: 'Stacjonarnie czy online?',
@@ -127,7 +127,7 @@ const jsonLd = {
       '@type': 'Course',
       name: 'Akcja wsparcia cyberbezpieczeństwa polskich firm — przygotowanie do NIS2 / KSC 2.0',
       description:
-        'Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw. Wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0 — 4-godzinne praktyczne szkolenie z ekspertami i prawnikami Quantifier.ai.',
+        'Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw. Wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0 — 1-godzinne praktyczne szkolenie z ekspertami i prawnikami Quantifier.ai.',
       provider: {
         '@type': 'Organization',
         name: 'Quantifier.ai',
@@ -141,7 +141,7 @@ const jsonLd = {
         price: '0',
         priceCurrency: 'PLN',
         availability: 'https://schema.org/LimitedAvailability',
-        validThrough: '2026-07-14',
+        validThrough: '2026-07-31',
         url: `${CANONICAL}#promo-form`,
       },
     },
@@ -164,14 +164,14 @@ const Nis2TrainingLanding = () => {
         <title>Akcja wsparcia cyberbezpieczeństwa polskich firm (NIS2 / KSC 2.0) — Quantifier.ai</title>
         <meta
           name="description"
-          content="Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4h praktyki z ekspertami i prawnikami. Zgłoszenia do 14.07.2026."
+          content="Akcja wsparcia poziomu cyberbezpieczeństwa polskich przedsiębiorstw — wspieramy 100 firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 1h praktyki z ekspertami i prawnikami. Zgłoszenia do 31.07.2026."
         />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Akcja wsparcia cyberbezpieczeństwa polskich firm — NIS2 / KSC 2.0" />
         <meta
           property="og:description"
-          content="Wspieramy 100 polskich firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4h praktyki z ekspertami. Zgłoszenia do 14.07.2026."
+          content="Wspieramy 100 polskich firm we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 1h praktyki z ekspertami. Zgłoszenia do 31.07.2026."
         />
         <meta property="og:url" content={CANONICAL} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -196,11 +196,11 @@ const Nis2TrainingLanding = () => {
               Akcja wsparcia poziomu <span className="text-primary">cyberbezpieczeństwa</span> polskich przedsiębiorstw
             </h1>
             <p className="text-base md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Wspieramy <strong className="text-white">100 firm</strong> we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 4 godziny praktyki z ekspertami i prawnikami — wychodzisz z konkretnym planem działania, nie ze stosem slajdów.
+              Wspieramy <strong className="text-white">100 firm</strong> we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 1 godzina praktyki z ekspertami i prawnikami — wychodzisz z konkretnym planem działania, nie ze stosem slajdów.
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-9">
-              {['100 firm objętych wsparciem', '4 godziny praktyki', 'Stacjonarnie lub online', 'NIS2 + KSC 2.0'].map((tag) => (
+              {['100 firm objętych wsparciem', '1 godzina praktyki', 'Stacjonarnie lub online', 'NIS2 + KSC 2.0'].map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold"
@@ -222,7 +222,7 @@ const Nis2TrainingLanding = () => {
                 variant="outline"
                 className="border-white/30 bg-white/5 text-white hover:bg-white/15 hover:text-white px-8 py-6 text-base"
               >
-                <a href="#agenda">Zobacz program (4h)</a>
+                <a href="#agenda">Zobacz program (1h)</a>
               </Button>
             </div>
 
@@ -278,11 +278,11 @@ const Nis2TrainingLanding = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
               <ClipboardList className="h-3.5 w-3.5 text-primary" />
               <span className="text-xs font-semibold tracking-wide text-primary uppercase">
-                Program 4h
+                Program 1h
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Co dostaniesz w 4 godziny szkolenia
+              Co dostaniesz w 1 godzinę szkolenia
             </h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               5 bloków — od samoidentyfikacji, przez obowiązki i dokumentację, po praktyczny plan wdrożenia.
