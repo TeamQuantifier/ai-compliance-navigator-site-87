@@ -256,7 +256,7 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
                 {c.dateLabel}
               </p>
               <p className="text-5xl md:text-6xl font-bold text-white leading-none mb-1">
-                14.07
+                31.07
               </p>
               <p className="text-2xl font-semibold text-primary mb-6">2026</p>
 
