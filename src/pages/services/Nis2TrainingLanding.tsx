@@ -510,9 +510,6 @@ const Nis2TrainingLanding = () => {
         </div>
       </section>
 
-      {/* FORM */}
-      <TrainingPromoForm locale="pl" />
-
       {/* Trust footer line */}
       <section className="py-8 bg-slate-950 border-t border-white/10">
         <div className="container mx-auto px-4 text-center">
