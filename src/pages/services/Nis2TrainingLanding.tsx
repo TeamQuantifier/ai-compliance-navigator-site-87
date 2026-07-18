@@ -19,7 +19,7 @@ import {
   Award,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { TrainingPromoForm } from '@/components/promo/TrainingPromoForm';
+import { TrainingPromoFormInline } from '@/components/promo/TrainingPromoForm';
 import {
   Accordion,
   AccordionContent,
