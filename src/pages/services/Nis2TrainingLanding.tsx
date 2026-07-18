@@ -19,7 +19,7 @@ import {
   Award,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { TrainingPromoForm } from '@/components/promo/TrainingPromoForm';
+import { TrainingPromoFormInline } from '@/components/promo/TrainingPromoForm';
 import {
   Accordion,
   AccordionContent,
@@ -318,15 +318,11 @@ const Nis2TrainingLanding = () => {
             })}
           </div>
 
-          <div className="mt-10 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-primary/5 border border-primary/20 rounded-2xl">
-            <p className="text-sm md:text-base text-slate-700">
-              <strong className="text-slate-900">Forma:</strong> do wyboru — stacjonarnie lub online. Dopasujemy do zespołu.
+          <div className="mt-10 max-w-4xl mx-auto">
+            <p className="text-sm text-slate-500 text-center mb-4">
+              Forma do wyboru — stacjonarnie lub online. Dopasujemy do zespołu.
             </p>
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <a href="#promo-form">
-                Zapisz się <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
+            <TrainingPromoFormInline locale="pl" id="promo-form" />
           </div>
         </div>
       </section>
@@ -513,9 +509,6 @@ const Nis2TrainingLanding = () => {
           </div>
         </div>
       </section>
-
-      {/* FORM */}
-      <TrainingPromoForm locale="pl" />
 
       {/* Trust footer line */}
       <section className="py-8 bg-slate-950 border-t border-white/10">
