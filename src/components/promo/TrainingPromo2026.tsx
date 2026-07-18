@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
+import { TrainingPromoFormInline } from '@/components/promo/TrainingPromoForm';
 
 type Locale = 'pl' | 'en' | 'cs';
 
