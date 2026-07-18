@@ -5,9 +5,10 @@ import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/seo/FAQSection';
 import {
   TrainingPromoBanner,
-  TrainingPromoSection,
   TrainingPromoDialog,
 } from '@/components/promo/TrainingPromo2026';
+import { TrainingPromoFormInline } from '@/components/promo/TrainingPromoForm';
+
 
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -34,7 +35,9 @@ import {
   ChevronRight,
   Briefcase,
   Settings,
+  Sparkles,
 } from 'lucide-react';
+
 
 const expertsList = [
   { name: 'Klaudia Sałdan', avatar: '/images/team/Klaudia.jpg', idx: 0 },
@@ -99,16 +102,16 @@ const TrainingLanding = () => {
         </div>
       </div>
 
-      {/* ─── 1. HERO ─── */}
+      {/* ─── 1. HERO — 1h training ─── */}
       <section className="relative bg-slate-950 overflow-hidden pt-20 md:pt-12">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.15),transparent_60%)] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <Shield className="h-4 w-4 text-primary" />
+                <Sparkles className="h-4 w-4 text-primary" />
                 <span className="text-xs font-semibold tracking-wide text-primary uppercase">
                   {t('training.hero.badge')}
                 </span>
@@ -122,68 +125,68 @@ const TrainingLanding = () => {
                 {t('training.hero.subtitle')}
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-10">
-                {(['cyber', 'esg', 'compliance'] as const).map((key) => (
-                  <div key={key} className="text-center p-3 rounded-lg bg-white/5 border border-white/10">
-                    <p className="text-xl font-bold text-white">{t(`training.hero.stats.${key}.value`)}</p>
-                    <p className="text-xs text-slate-400 mt-1">{t(`training.hero.stats.${key}.label`)}</p>
-                  </div>
+              <ul className="space-y-3 mb-8">
+                {getArray('training.hero.bullets').map((b, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm md:text-base text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    {b}
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
-                  <a href="#contact">{t('training.cta.primary')}</a>
+                  <a href="#promo-form">{t('training.hero.primaryCta')}</a>
                 </Button>
-                <a href="#tracks" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-white/20 bg-white/5 text-white hover:bg-white/10 px-8 py-6 h-11">
-                  {t('training.cta.secondary')}
+                <a href="#promo-form" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-white/20 bg-white/5 text-white hover:bg-white/10 px-8 py-6 h-11">
+                  {t('training.hero.secondaryCta')}
                 </a>
               </div>
 
-              <p className="text-xs text-slate-500 mt-4">{t('training.hero.microcopy')}</p>
-
+              <p className="text-xs text-slate-500 mt-4">{t('training.hero.disclaimer')}</p>
             </div>
 
-            {/* Right — proof block */}
-            <div className="hidden lg:block">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">
-                  {t('training.hero.proof.title')}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {['ISO 27001', 'NIS2 / KSC', 'DORA', 'CSRD / ESG', 'RODO / GDPR'].map((cert) => (
-                    <span key={cert} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
-                      {cert}
-                    </span>
-                  ))}
-                </div>
-                <div className="space-y-4">
-                  {[0, 1, 2].map((i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                      <p className="text-sm text-slate-300">{t(`training.hero.proof.items.${i}`)}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-4">
-                  <div className="flex -space-x-3">
-                    {['MK', 'AW', 'PZ'].map((initials, i) => (
-                      <div key={i} className="w-10 h-10 rounded-full bg-primary/20 border-2 border-slate-950 flex items-center justify-center text-xs font-bold text-primary">
-                        {initials}
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-sm text-slate-400">{t('training.hero.proof.experts')}</p>
-                </div>
-              </div>
+            <div className="max-w-md mx-auto lg:mx-0 lg:ml-auto w-full">
+              <TrainingPromoFormInline locale={currentLocale} id="promo-form" />
             </div>
           </div>
         </div>
       </section>
 
-      <TrainingPromoSection locale={currentLocale} />
+
+      {/* ─── 2. OTHER TRAININGS — Cybersec ─── */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-5">
+              <Shield className="h-4 w-4 text-primary" />
+              <span className="text-xs font-semibold tracking-wide text-primary uppercase">Cybersec</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t('training.other.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {t('training.other.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {([ShieldAlert, Lock] as const).map((Icon, i) => (
+              <div key={i} className="bg-card border border-border rounded-2xl p-6 flex flex-col">
+                <Icon className={`h-8 w-8 mb-4 ${i === 0 ? 'text-blue-500' : 'text-violet-500'}`} />
+                <h3 className="text-lg font-bold text-foreground mb-2">{t(`training.other.items.${i}.title`)}</h3>
+                <p className="text-sm text-muted-foreground mb-6 flex-1">{t(`training.other.items.${i}.desc`)}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <a href="#contact">{t(`training.other.items.${i}.cta`)}</a>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ─── 3. PROBLEM SECTION ─── */}
+
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-14">

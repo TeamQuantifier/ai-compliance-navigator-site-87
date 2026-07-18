@@ -6457,34 +6457,37 @@
       "secondary": "See training tracks"
     },
     "hero": {
-      "badge": "Corporate Training",
-      "title": "Training that turns regulatory obligations into a ready-to-use action system",
-      "subtitle": "We don't do slide decks. We prepare companies for obligations, inspections and real-world action — with procedures, tools and post-training support.",
-      "microcopy": "We respond within 24h · First consultation with no obligations",
-      "stats": {
-        "cyber": {
-          "value": "NIS2 / ISO",
-          "label": "Cybersecurity"
-        },
-        "esg": {
-          "value": "CSRD / ESG",
-          "label": "Sustainability"
-        },
-        "compliance": {
-          "value": "GRC",
-          "label": "Compliance & Risk"
-        }
-      },
-      "proof": {
-        "title": "Credentials & certifications",
-        "items": [
-          "Training + workshop + implementation of procedures and operational tools",
-          "Trainers with experience in NIS2 inspections and ISO 27001 audits",
-          "Ready-to-use templates, risk registries and incident playbooks"
-        ],
-        "experts": "Expert team with regulatory experience"
-      }
+      "badge": "1h training · NIS2 / KSC / ISO 27001",
+      "title": "1h NIS2 / ISO 27001 training for your company — up to 100% funded",
+      "subtitle": "We will show you how to fund a tailored training on the new cybersecurity obligations. No hidden costs, a clear go / no-go decision within 3 business days.",
+      "microcopy": "We respond within 1 business day. Data used only to prepare the training offer.",
+      "bullets": [
+        "Training tailored to your company, sector and maturity level",
+        "Help securing up to 100% funding",
+        "Decision within 3 business days",
+        "Register by 31 July 2026 — delivery can take place later"
+      ],
+      "primaryCta": "Check availability",
+      "secondaryCta": "Talk about funding",
+      "disclaimer": "Limited number of training slots. Offer valid until 31 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile."
     },
+    "other": {
+      "title": "Cybersecurity trainings (NIS2 / KSC2 and ISO 27001)",
+      "subtitle": "Deep-dive training programs for teams preparing for audits, inspections and regulatory obligations.",
+      "items": [
+        {
+          "title": "NIS2 / KSC2 cybersecurity training",
+          "desc": "1-day intensive for management, CISO, IT and compliance teams. Roles, obligations, risk registers, incident reporting, supply chain and audit preparation.",
+          "cta": "See the program"
+        },
+        {
+          "title": "ISO 27001 training",
+          "desc": "Build and operate an ISMS aligned with ISO 27001:2022. Internal audits, risk management, controls, documentation and certification readiness.",
+          "cta": "See the program"
+        }
+      ]
+    },
+
     "credibilityBar": [
       "Training + implementation + tools",
       "Practitioners with inspection experience",
@@ -6702,9 +6705,10 @@
           "value": "95%",
           "label": "Would recommend"
         }
-      ],
+      ]
     },
     "process": {
+
       "title": "How we work together",
       "subtitle": "4 steps from first contact to a ready-to-use action system.",
       "steps": [
