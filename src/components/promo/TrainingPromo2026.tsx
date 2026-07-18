@@ -250,36 +250,8 @@ export const TrainingPromoSection = ({ locale }: { locale: string }) => {
           </div>
 
 
-          {/* Date card */}
-          <div className="relative">
-            <div className="bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-2xl p-7 shadow-2xl">
-              <p className="text-xs uppercase tracking-wider text-white/60 mb-2">
-                {c.dateLabel}
-              </p>
-              <p className="text-5xl md:text-6xl font-bold text-white leading-none mb-1">
-                31.07
-              </p>
-              <p className="text-2xl font-semibold text-primary mb-6">2026</p>
-
-              <div className="h-px bg-white/15 mb-6" />
-
-              <p className="text-xs uppercase tracking-wider text-white/60 mb-1">
-                {c.decisionLabel}
-              </p>
-              <p className="text-xl font-bold text-white mb-6">{c.decisionValue}</p>
-
-              <div className="flex flex-wrap gap-2">
-                {['NIS2', 'KSC', 'ISO 27001'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-full bg-primary/25 text-white text-xs font-semibold border border-primary/40"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Registration form */}
+          <TrainingPromoFormInline locale={locale} id="promo-form" />
         </div>
       </div>
     </section>
