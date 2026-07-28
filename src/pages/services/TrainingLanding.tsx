@@ -480,7 +480,7 @@ const TrainingLanding = () => {
           </div>
 
           <div className="max-w-xl mx-auto">
-            <TrainingPromoFormInline locale={currentLocale} id="promo-form" compact />
+            <TrainingPromoFormInline locale={currentLocale} id="promo-form" minimal />
           </div>
         </div>
       </section>
