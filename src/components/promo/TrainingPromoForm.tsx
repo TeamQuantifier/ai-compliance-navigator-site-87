@@ -233,7 +233,12 @@ const FormCard = ({
     const em = email.trim().toLowerCase();
     const co = company.trim();
     const nipV = nip.trim();
-    if (compact || minimal) {
+    if (minimal) {
+      if (!fn || !em || !co) {
+        toast({ title: c.required, variant: 'destructive' });
+        return;
+      }
+    } else if (compact) {
       if (!fn || !em) {
         toast({ title: c.required, variant: 'destructive' });
         return;
@@ -248,10 +253,10 @@ const FormCard = ({
     }
 
     const sectorLabel = c.sectors.find((s) => s.value === sector)?.label ?? sector;
-    const message = (compact || minimal)
-      ? [messageTag(resolved), !minimal && notes.trim() ? `Notes: ${notes.trim()}` : null]
-          .filter(Boolean)
-          .join('\n')
+    const message = minimal
+      ? [messageTag(resolved), `Company: ${co}`].filter(Boolean).join('\n')
+      : compact
+      ? [messageTag(resolved), notes.trim() ? `Notes: ${notes.trim()}` : null].filter(Boolean).join('\n')
       : [
           messageTag(resolved),
           `Company: ${co}`,
@@ -268,9 +273,9 @@ const FormCard = ({
       const { error } = await supabase.functions.invoke('contact-form', {
         body: {
           firstName: fn,
-          lastName: (compact || minimal) ? '—' : ln,
+          lastName: minimal ? '—' : (compact ? '—' : ln),
           email: em,
-          company: (compact || minimal) ? '(compact form)' : co,
+          company: minimal ? co : (compact ? '(compact form)' : co),
           message,
           language: resolved,
           sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
