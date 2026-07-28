@@ -302,7 +302,7 @@ const FormCard = ({
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
-          {compact ? (
+          {(compact || minimal) ? (
             <input
               type="text"
               placeholder={c.fields.firstName}
