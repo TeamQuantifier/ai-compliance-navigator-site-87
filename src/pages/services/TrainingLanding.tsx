@@ -23,7 +23,7 @@ import {
   Clock,
   Map,
   BookOpen,
-  MessagesSquare,
+  
   Building2,
   Scale,
   Gavel,
