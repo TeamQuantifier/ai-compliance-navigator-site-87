@@ -37,11 +37,11 @@ type Copy = {
 const COPY: Record<Locale, Copy> = {
   pl: {
     badge: 'Zgłoszenie do 31.07.2026',
-    title: 'Zgłoś firmę na 1h szkolenie — sprawdzimy dofinansowanie',
+    title: 'Zgłoś firmę na 1h szkolenie KSC / NIS2',
     subtitle:
-      'Wypełnij krótki formularz. Odezwiemy się w 1 dzień roboczy z decyzją o kwalifikacji do nawet 100% dofinansowania (NIS2 / KSC / ISO 27001).',
+      'Wypełnij krótki formularz. Odezwiemy się w 1 dzień roboczy z potwierdzeniem udziału i propozycją terminu.',
     bullets: [
-      'Decyzja o kwalifikacji w 3 dni robocze',
+      'Potwierdzenie udziału w 1 dzień roboczy',
       'Liczba miejsc ograniczona — decyduje kolejność zgłoszeń',
       'Rejestracja do 31.07.2026, realizacja możliwa później',
     ],
