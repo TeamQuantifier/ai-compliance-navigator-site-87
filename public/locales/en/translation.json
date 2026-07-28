@@ -8729,22 +8729,6 @@
       "secondaryCta": "Talk about funding",
       "disclaimer": "Limited number of training slots. Offer valid until 31 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile."
     },
-    "other": {
-      "title": "Cybersecurity trainings (NIS2 / KSC2 and ISO 27001)",
-      "subtitle": "Deep-dive training programs for teams preparing for audits, inspections and regulatory obligations.",
-      "items": [
-        {
-          "title": "NIS2 / KSC2 cybersecurity training",
-          "desc": "1-day intensive for management, CISO, IT and compliance teams. Roles, obligations, risk registers, incident reporting, supply chain and audit preparation.",
-          "cta": "See the program"
-        },
-        {
-          "title": "ISO 27001 training",
-          "desc": "Build and operate an ISMS aligned with ISO 27001:2022. Internal audits, risk management, controls, documentation and certification readiness.",
-          "cta": "See the program"
-        }
-      ]
-    },
 
     "credibilityBar": [
       "Training + implementation + tools",

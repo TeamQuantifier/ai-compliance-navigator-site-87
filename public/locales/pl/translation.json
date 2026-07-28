@@ -8681,22 +8681,6 @@
       "secondaryCta": "Porozmawiajmy o dofinansowaniu",
       "disclaimer": "Liczba szkoleń ograniczona. Oferta ważna do 31.07.2026 (rejestracja). Termin realizacji ustalany indywidualnie. Wysokość dofinansowania zależy od dostępnych programów i profilu firmy."
     },
-    "other": {
-      "title": "Szkolenia cybersec (NIS2 / KSC2 i ISO 27001)",
-      "subtitle": "Pogłębione programy szkoleniowe dla zespołów przygotowujących się do audytów, kontroli i obowiązków regulacyjnych.",
-      "items": [
-        {
-          "title": "Szkolenie NIS2 / KSC2 — cyberbezpieczeństwo",
-          "desc": "Intensywny 1-dniowy program dla zarządu, CISO, IT i compliance. Role, obowiązki, rejestry ryzyk, raportowanie incydentów, łańcuch dostaw i przygotowanie do kontroli.",
-          "cta": "Zobacz program"
-        },
-        {
-          "title": "Szkolenie ISO 27001",
-          "desc": "Zbuduj i prowadź ISMS zgodnie z ISO 27001:2022. Audyty wewnętrzne, zarządzanie ryzykiem, kontrolie, dokumentacja i gotowość do certyfikacji.",
-          "cta": "Zobacz program"
-        }
-      ]
-    },
 
     "credibilityBar": [
       "Szkolenie + wdrożenie + narzędzia",
