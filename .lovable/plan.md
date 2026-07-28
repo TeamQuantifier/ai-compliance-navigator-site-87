@@ -1,44 +1,107 @@
-## Cel
+Plan budowy panelu podsumowania leadów
 
-Kompletna przebudowa strony `/pl/szkolenia-cyberbezpieczenstwo-dla-firm` (`src/pages/services/TrainingLanding.tsx`) na spójny landing pod 60-minutowe szkolenie KSC/NIS2 z jedną ścieżką konwersji.
+Cel: Nowa zakładka w panelu admina (`/admin/leads`), która zbiera i grupuje leady ze wszystkich formularzy na stronie, z widocznym linkiem do podstrony, z której lead został zapisany.
 
-## Nowa struktura sekcji (w kolejności)
+Wybory użytkownika (potwierdzone):
+- Grupowanie po źródle (nie jedna wspólna tabela).
+- Tylko podstawowe dane + link do podstrony.
+- Nowa zakładka w menu bocznym admina.
 
-1. **Hero + CTA + pasek zaufania**
-2. **Problem** — 3 karty (podleganie / odpowiedzialność / dowody)
-3. **Efekty szkolenia** — 7 punktów „co wychodzi z sali po 60 minutach"
-4. **Dla kogo** — 4 grupy odbiorców
-5. **Prowadzący** — Quantifier.ai + audytorzy + blok „Zaufali nam" (logotypy z `FeaturedBySection`)
-6. **FAQ** — 8 pytań (nowa treść dostarczona przez użytkownika)
-7. **Końcowe CTA** — formularz `TrainingPromoFormInline` + link do 15-min rozmowy
+Źródła leadów obecnie w bazie:
+1. `contact_submissions` — formularz kontaktowy i wszystkie formularze wysyłane przez edge function `contact-form` (m.in. landingi szkoleniowe, partnerzy).
+2. `event_registrations` — zapisy na webinary i szkolenia.
+3. `submissions` — quiz / sprawdzian cyberbezpieczeństwa NIS2.
 
-## Zmiany plikowe
+Aktualne wolumeny (na dzień dzisiejszy):
+- contact_submissions: 75 leadów
+- event_registrations: 318 leadów
+- submissions: 178 leadów
 
-### `src/pages/services/TrainingLanding.tsx`
-Przepisanie komponentu od zera zgodnie ze strukturą powyżej:
-- Hero: eyebrow „Szkolenie dla firm · 60 minut · online lub stacjonarnie · Cyberbezpieczeństwo", H1, lead o podpisie ustawy 19.02.2026 i terminie 3.10.2026, główne CTA scrollujące do `#contact`, pasek zaufania (4 elementy).
-- Sekcja problem: `H2` + 3 karty w gridzie.
-- Efekty: lista 7 punktów z ikonami `CheckCircle`.
-- Dla kogo: 4 karty (Zarządy, Compliance, CISO/IT, Zakupy).
-- Prowadzący: krótki opis Quantifier.ai + audytorzy (bez Klaudii), poniżej reużyty `FeaturedBySection` lub inline'owy blok logotypów pobranych z `FeaturedBySection.tsx` (`ministerstwo-cyfryzacji`, `ncc-pl`, `ai-chamber`, `klaster-gospodarki-cyrkularnej`, `top-ai-driven-companies`).
-- FAQ: `Accordion` z 8 pytaniami (nowa treść).
-- Końcowe CTA (`#contact`): nagłówek „Do 3 października zostało mniej, niż się wydaje", `TrainingPromoFormInline`, poniżej link „Umów 15-minutową rozmowę wstępną" → `/pl/contact`.
+Szczegółowy plan implementacji
 
-### `public/locales/pl/translation.json`
-Wymiana zawartości gałęzi `training.hero`, `training.problem`, `training.effects`, `training.audience`, `training.hosts`, `training.faq`, `training.finalCta` na nową treść PL dostarczoną przez użytkownika (dokładnie 1:1, bez parafrazy).
+1. Nowa pozycja w menu admina
+Plik: `src/components/admin/AdminLayout.tsx`
+- Dodanie ikony `Users` (lub `BarChart`) i etykiety „Leads” w `menuItems`.
+- Ścieżka: `/admin/leads`.
 
-### `public/locales/en/translation.json`
-Synchronizacja tych samych kluczy z tłumaczeniem angielskim (żeby nie zostały puste — użyjemy wiernego tłumaczenia PL→EN zachowując daty i terminy).
+2. Nowa trasa w routerze
+Plik: `src/App.tsx`
+- Dodanie importu `Leads`.
+- Dodanie `<Route path="leads" element={<Leads />} />` w sekcji `/admin`.
 
-## Uwagi
+3. Główny komponent panelu leadów
+Plik: `src/pages/admin/Leads.tsx` (nowy)
 
-- Zachowujemy istniejący `TrainingPromoFormInline` jako mechanizm zapisu — jedno kotwiczne `#contact`.
-- Usuwamy z pliku wszystkie pozostałości sekcji, które nie występują w nowej strukturze (np. „Dlaczego firmy nie są gotowe", stare bloki „proof", stary hero z formularzem obok).
-- Sekcja „Prowadzący" nie wymienia z imienia Klaudii ani innych trenerów — tylko „audytorzy Quantifier.ai" + logotypy „Zaufali nam".
-- SEO/meta (title, description) aktualizujemy pod nową narrację KSC/3.10.2026.
+Widok składa się z:
 
-## Poza zakresem
+a) Nagłówek z liczbą leadów
+- Tytuł „Leads — podsumowanie zgłoszeń".
+- Pod spodem: liczba leadów w wybranym okresie / ogółem.
 
-- Zmiany w `TrainingPromoFormInline` (formularz zostaje bez modyfikacji).
-- Zmiany w globalnych banerach promo (`TrainingPromo2026.tsx`).
-- Wersja CS (nie istnieje dla tej podstrony).
+b) Kafelki KPI na górze (4 karty)
+- Wszystkich leadów (suma z 3 tabel).
+- Nowi dziś.
+- Nowi w tym tygodniu.
+- Największe źródło (np. webinar, contact, quiz).
+
+c) Sekcje grupowane po źródle
+
+Każda sekcja to karta z tabelą lub listą. Kolumny podstawowe: data, email, imię, firma, link do podstrony.
+
+i) Sekcja „Contact page"
+- Źródło: `contact_submissions` gdzie `source_url` zawiera `/contact`.
+- Kolumny: Data, Imię, Email, Firma, Link.
+- Link: wartość `source_url` (otwierany w nowej karcie).
+
+ii) Sekcja „Training landing pages"
+- Źródło: `contact_submissions` gdzie `source_url` zawiera `/darmowe-szkolenie-nis2`, `/szkolenia-cyberbezpieczenstwo-dla-firm`, `/cybersecurity-training-for-companies` itp.
+- Dodatkowo: `event_registrations` dla eventów związanych ze szkoleniami (opcjonalnie, w osobnym wierszu „Szkolenia / webinary").
+- Kolumny: Data, Email, Imię, Firma, Link.
+
+iii) Sekcja „Quiz NIS2 / Cybersecurity check"
+- Źródło: `submissions`.
+- Kolumny: Data, Email, Wynik, Sektor, Link.
+- Link: przekierowanie do strony quizu. Dla nowych zapisów — dodanie `source_url` w tabeli (patrz punkt 4). Dla historycznych — link do polskiej wersji quizu `/pl/sprawdz-cyberbezpieczenstwo`.
+
+iv) Sekcja „Webinary / Events"
+- Źródło: `event_registrations`.
+- Kolumny: Data, Event, Imię, Email, Firma, Link.
+- Link: `/pl/events/:event_slug` (lub inny locale, jeśli dostępny).
+
+d) Wspólne funkcje dla wszystkich sekcji
+- Wyszukiwarka po emailu / firmie / imieniu (globalna, filtruje wszystkie sekcje).
+- Sortowanie po dacie (domyślnie najnowsze na górze).
+- Eksport CSV (globalny lub per sekcja) — przycisk „Eksportuj CSV".
+- Paginacja lub „Pokaż więcej" jeśli lista > 50 pozycji.
+
+4. Ulepszenie zapisu źródła dla quizu
+Plik źródłowy: formularz quizu (`src/pages/formularz/FormularzPage.tsx` lub podobny)
+- Dodać `source_url` do insertu w tabelę `submissions` (z `window.location.href`), aby przyszłe quiz-leady miały dokładny link.
+- Opcjonalnie dodać `language`/`locale` do tabeli, jeśli brak.
+- Wymaga migracji dodającej kolumnę `source_url` do `public.submissions` (z RLS / GRANT).
+
+5. Ulepszenie linków dla event_registrations
+Pliki: formularze eventów (`src/components/events/EventRegistrationForm.tsx`, `CycleRegistrationForm.tsx`)
+- Dodać `source_url` do insertu w `event_registrations`, aby link w panelu leadów wskazywał dokładną stronę, z której zapisano się na webinar/szkolenie.
+- Alternatywnie: wykorzystać `event_slug` i zbudować link `/events/:event_slug`.
+
+6. Style i spójność
+- Użyć istniejących komponentów: `Card`, `Table`, `Badge`, `Button`, `Input`, `Select`.
+- Spójne z obecnym adminem (ciemne / jasne motywy, odstępy, typografia).
+- Linki jako `ExternalLink` (lub `<a>`) z otwieraniem w nowej karcie, z ikonką.
+
+7. Testy / weryfikacja
+- Sprawdzenie, że zakładka pojawia się w menu bocznym.
+- Weryfikacja, że dane ładują się poprawnie i liczby się zgadzają.
+- Sprawdzenie linków do podstron (czy nie prowadzą do błędnych adresów).
+- Weryfikacja eksportu CSV.
+
+Kolejność prac:
+1. Migracja: dodać `source_url` do `submissions` (opcjonalnie do `event_registrations`).
+2. Zaktualizować formularze quizu/eventów, żeby zapisywały `source_url`.
+3. Stworzyć komponent `Leads.tsx` z sekcjami i KPI.
+4. Dodać trasę i pozycję w menu.
+5. Przetestować build i poprawność danych.
+
+Oczekiwany efekt końcowy:
+Admin ma jedną zakładkę „Leads", w której na pierwszy rzut oka widać, ile leadów przyszło z każdej części strony, i może kliknąć link do podstrony, by zobaczyć kontekst formularza.
