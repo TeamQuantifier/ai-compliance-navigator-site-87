@@ -217,7 +217,12 @@ const TrainingLanding = () => {
                   ))}
                 </div>
                 <p className="text-xs text-slate-400">
-                  Dołącz do <span className="text-white font-semibold">zarządów i managerów</span>, którzy już przygotowują organizację.
+                  {(() => {
+                    const seg = typeof window !== 'undefined' ? window.location.pathname.split('/')[1] : 'pl';
+                    if (seg === 'en') return (<>Join <span className="text-white font-semibold">boards and managers</span> who are already preparing their organization.</>);
+                    if (seg === 'cs') return (<>Připojte se k <span className="text-white font-semibold">představenstvům a manažerům</span>, kteří už připravují svou organizaci.</>);
+                    return (<>Dołącz do <span className="text-white font-semibold">zarządów i managerów</span>, którzy już przygotowują organizację.</>);
+                  })()}
                 </p>
               </div>
             </div>
