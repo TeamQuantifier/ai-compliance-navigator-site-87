@@ -23,7 +23,7 @@ import {
   Clock,
   Map,
   BookOpen,
-  MessagesSquare,
+  
   Building2,
   Scale,
   Gavel,
@@ -399,20 +399,12 @@ const TrainingLanding = () => {
               Do 3 października zostało mniej, niż się wydaje
             </h2>
             <p className="text-lg text-slate-300">
-              Zarezerwuj termin szkolenia. Wolicie najpierw porozmawiać?{' '}
-              <a
-                href={`/${currentLocale}/contact`}
-                className="text-primary underline underline-offset-4 hover:text-primary/80 inline-flex items-center gap-1"
-              >
-                <MessagesSquare className="h-4 w-4" />
-                Umów 15-minutową rozmowę wstępną
-              </a>
-              .
+              Zostaw dane – odezwiemy się i uzgodnimy termin.
             </p>
           </div>
 
           <div className="max-w-xl mx-auto">
-            <TrainingPromoFormInline locale={currentLocale} id="promo-form" />
+            <TrainingPromoFormInline locale={currentLocale} id="promo-form" compact />
           </div>
         </div>
       </section>
