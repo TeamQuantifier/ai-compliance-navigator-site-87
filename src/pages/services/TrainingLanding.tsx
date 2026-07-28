@@ -235,7 +235,7 @@ const TrainingLanding = () => {
                     <h3 className="text-xl font-bold text-white leading-snug">
                       Zarezerwuj miejsce
                       <span className="block text-sm font-normal text-slate-400 mt-1">
-                        Imię i służbowy e-mail – tyle wystarczy.
+                        Imię, nazwa firmy i służbowy e-mail – tyle wystarczy.
                       </span>
                     </h3>
                   </div>
