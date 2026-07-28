@@ -231,7 +231,12 @@ const FormCard = ({
     const em = email.trim().toLowerCase();
     const co = company.trim();
     const nipV = nip.trim();
-    if (!fn || !ln || !em || !co || !nipV || !sector) {
+    if (compact) {
+      if (!fn || !em) {
+        toast({ title: c.required, variant: 'destructive' });
+        return;
+      }
+    } else if (!fn || !ln || !em || !co || !nipV || !sector) {
       toast({ title: c.required, variant: 'destructive' });
       return;
     }
@@ -241,16 +246,20 @@ const FormCard = ({
     }
 
     const sectorLabel = c.sectors.find((s) => s.value === sector)?.label ?? sector;
-    const message = [
-      messageTag(resolved),
-      `Company: ${co}`,
-      `NIP / Tax ID: ${nipV}`,
-      `Sector: ${sectorLabel}`,
-      phone.trim() ? `Phone: ${phone.trim()}` : null,
-      notes.trim() ? `Notes: ${notes.trim()}` : null,
-    ]
-      .filter(Boolean)
-      .join('\n');
+    const message = compact
+      ? [messageTag(resolved), notes.trim() ? `Notes: ${notes.trim()}` : null]
+          .filter(Boolean)
+          .join('\n')
+      : [
+          messageTag(resolved),
+          `Company: ${co}`,
+          `NIP / Tax ID: ${nipV}`,
+          `Sector: ${sectorLabel}`,
+          phone.trim() ? `Phone: ${phone.trim()}` : null,
+          notes.trim() ? `Notes: ${notes.trim()}` : null,
+        ]
+          .filter(Boolean)
+          .join('\n');
 
     setLoading(true);
     try {
