@@ -174,14 +174,14 @@ const TrainingLanding = () => {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6 tracking-tight">
-                60 minut, które ochronią{' '}
+                Szkolenie z cyberbezpieczeństwa, które może{' '}
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Twoją firmę
+                    uratować Twoją firmę
                   </span>
                   <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-primary/60 to-purple-400/60 blur-sm" />
                 </span>{' '}
-                przed karami KSC / NIS2.
+                przed karami KSC / Dyrektywy NIS2.
               </h1>
 
               <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl">
