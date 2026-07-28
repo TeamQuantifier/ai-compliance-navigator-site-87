@@ -175,6 +175,7 @@ export type Database = {
           id: string
           nis2_qualifier: string
           role: string
+          source_url: string | null
           utm_campaign: string | null
           utm_content: string | null
           utm_medium: string | null
@@ -192,6 +193,7 @@ export type Database = {
           id?: string
           nis2_qualifier: string
           role: string
+          source_url?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
           utm_medium?: string | null
@@ -209,6 +211,7 @@ export type Database = {
           id?: string
           nis2_qualifier?: string
           role?: string
+          source_url?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
           utm_medium?: string | null
@@ -623,6 +626,7 @@ export type Database = {
           q4: string[] | null
           result_key: string | null
           result_text: string | null
+          source_url: string | null
         }
         Insert: {
           created_at?: string | null
@@ -634,6 +638,7 @@ export type Database = {
           q4?: string[] | null
           result_key?: string | null
           result_text?: string | null
+          source_url?: string | null
         }
         Update: {
           created_at?: string | null
@@ -645,6 +650,7 @@ export type Database = {
           q4?: string[] | null
           result_key?: string | null
           result_text?: string | null
+          source_url?: string | null
         }
         Relationships: []
       }

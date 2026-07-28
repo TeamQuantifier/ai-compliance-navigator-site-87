@@ -307,6 +307,7 @@ export default function FormularzPage() {
           q4: data.q4,
           result_key: resultKey,
           result_text: resultText,
+          source_url: window.location.href,
         });
 
       if (insertError) throw new Error(ERROR_INSERT[lang]);
