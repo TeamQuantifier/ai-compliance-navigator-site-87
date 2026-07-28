@@ -395,24 +395,16 @@ const FormCard = ({
             </>
           )}
 
-          <textarea
-            placeholder={c.fields.notes}
-            rows={3}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            maxLength={1000}
-            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary resize-none"
-          />
-
-
-          <textarea
-            placeholder={c.fields.notes}
-            rows={3}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            maxLength={1000}
-            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary resize-none"
-          />
+          {!minimal && (
+            <textarea
+              placeholder={c.fields.notes}
+              rows={3}
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              maxLength={1000}
+              className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary resize-none"
+            />
+          )}
 
           <Button
             type="submit"
