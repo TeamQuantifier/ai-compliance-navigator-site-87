@@ -233,7 +233,7 @@ const FormCard = ({
     const em = email.trim().toLowerCase();
     const co = company.trim();
     const nipV = nip.trim();
-    if (compact) {
+    if (compact || minimal) {
       if (!fn || !em) {
         toast({ title: c.required, variant: 'destructive' });
         return;
