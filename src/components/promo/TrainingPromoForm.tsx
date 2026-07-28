@@ -248,8 +248,8 @@ const FormCard = ({
     }
 
     const sectorLabel = c.sectors.find((s) => s.value === sector)?.label ?? sector;
-    const message = compact
-      ? [messageTag(resolved), notes.trim() ? `Notes: ${notes.trim()}` : null]
+    const message = (compact || minimal)
+      ? [messageTag(resolved), !minimal && notes.trim() ? `Notes: ${notes.trim()}` : null]
           .filter(Boolean)
           .join('\n')
       : [
@@ -268,9 +268,9 @@ const FormCard = ({
       const { error } = await supabase.functions.invoke('contact-form', {
         body: {
           firstName: fn,
-          lastName: compact ? '—' : ln,
+          lastName: (compact || minimal) ? '—' : ln,
           email: em,
-          company: compact ? '(compact form)' : co,
+          company: (compact || minimal) ? '(compact form)' : co,
           message,
           language: resolved,
           sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
