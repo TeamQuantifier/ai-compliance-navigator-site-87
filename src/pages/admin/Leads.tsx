@@ -78,15 +78,14 @@ function isTrainingUrl(url: string | null): boolean {
 }
 
 function isContactUrl(url: string | null): boolean {
-  if (!url) return true; // fallback
-  const lower = url.toLowerCase();
-  return lower.includes('/contact');
+  if (!url) return false;
+  return url.toLowerCase().includes('/contact');
 }
 
 function normalizeContact(row: ContactRow): Lead {
   const source_url = row.source_url || CONTACT_FALLBACK_URL;
   const isTraining = isTrainingUrl(row.source_url);
-  const isContact = isContactUrl(row.source_url) && !isTraining;
+  const isContact = isContactUrl(row.source_url);
   const label = isTraining ? 'Landing page szkolenia' : isContact ? 'Strona kontaktowa' : 'Formularz';
 
   return {
