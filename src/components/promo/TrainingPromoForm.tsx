@@ -37,11 +37,11 @@ type Copy = {
 const COPY: Record<Locale, Copy> = {
   pl: {
     badge: 'Zgłoszenie do 31.07.2026',
-    title: 'Zgłoś firmę na 1h szkolenie — sprawdzimy dofinansowanie',
+    title: 'Zgłoś firmę na 1h szkolenie KSC / NIS2',
     subtitle:
-      'Wypełnij krótki formularz. Odezwiemy się w 1 dzień roboczy z decyzją o kwalifikacji do nawet 100% dofinansowania (NIS2 / KSC / ISO 27001).',
+      'Wypełnij krótki formularz. Odezwiemy się w 1 dzień roboczy z potwierdzeniem udziału i propozycją terminu.',
     bullets: [
-      'Decyzja o kwalifikacji w 3 dni robocze',
+      'Potwierdzenie udziału w 1 dzień roboczy',
       'Liczba miejsc ograniczona — decyduje kolejność zgłoszeń',
       'Rejestracja do 31.07.2026, realizacja możliwa później',
     ],
@@ -81,11 +81,11 @@ const COPY: Record<Locale, Copy> = {
   },
   en: {
     badge: 'Register by 31 July 2026',
-    title: 'Sign your company up for the 1h training — we check funding eligibility',
+    title: 'Sign your company up for the 1h NIS2 / KSC training',
     subtitle:
-      'Fill in the short form. We will respond within 1 business day with an eligibility decision for up to 100% funding (NIS2 / ISO 27001).',
+      'Fill in the short form. We will respond within 1 business day to confirm your seat and propose a date.',
     bullets: [
-      'Eligibility decision within 3 business days',
+      'Confirmation within 1 business day',
       'Limited number of slots — first come, first served',
       'Register by 31 July 2026, delivery can take place later',
     ],
@@ -233,7 +233,12 @@ const FormCard = ({
     const em = email.trim().toLowerCase();
     const co = company.trim();
     const nipV = nip.trim();
-    if (compact || minimal) {
+    if (minimal) {
+      if (!fn || !em || !co) {
+        toast({ title: c.required, variant: 'destructive' });
+        return;
+      }
+    } else if (compact) {
       if (!fn || !em) {
         toast({ title: c.required, variant: 'destructive' });
         return;
@@ -248,10 +253,10 @@ const FormCard = ({
     }
 
     const sectorLabel = c.sectors.find((s) => s.value === sector)?.label ?? sector;
-    const message = (compact || minimal)
-      ? [messageTag(resolved), !minimal && notes.trim() ? `Notes: ${notes.trim()}` : null]
-          .filter(Boolean)
-          .join('\n')
+    const message = minimal
+      ? [messageTag(resolved), `Company: ${co}`].filter(Boolean).join('\n')
+      : compact
+      ? [messageTag(resolved), notes.trim() ? `Notes: ${notes.trim()}` : null].filter(Boolean).join('\n')
       : [
           messageTag(resolved),
           `Company: ${co}`,
@@ -268,9 +273,9 @@ const FormCard = ({
       const { error } = await supabase.functions.invoke('contact-form', {
         body: {
           firstName: fn,
-          lastName: (compact || minimal) ? '—' : ln,
+          lastName: minimal ? '—' : (compact ? '—' : ln),
           email: em,
-          company: (compact || minimal) ? '(compact form)' : co,
+          company: minimal ? co : (compact ? '(compact form)' : co),
           message,
           language: resolved,
           sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
@@ -302,18 +307,8 @@ const FormCard = ({
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
-          {(compact || minimal) ? (
-            <input
-              type="text"
-              placeholder={c.fields.firstName}
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              maxLength={80}
-              required
-              className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
-            />
-          ) : (
-            <div className="grid sm:grid-cols-2 gap-3">
+          {minimal ? (
+            <>
               <input
                 type="text"
                 placeholder={c.fields.firstName}
@@ -324,29 +319,78 @@ const FormCard = ({
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
               />
               <input
+                type="email"
+                placeholder={c.fields.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+              <input
                 type="text"
-                placeholder={c.fields.lastName}
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
+                placeholder={c.fields.company}
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                maxLength={150}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </>
+          ) : compact ? (
+            <>
+              <input
+                type="text"
+                placeholder={c.fields.firstName}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 maxLength={80}
                 required
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
               />
-            </div>
-          )}
-
-          <input
-            type="email"
-            placeholder={c.fields.email}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            maxLength={200}
-            required
-            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
-          />
-
-          {!compact && (
+              <input
+                type="email"
+                placeholder={c.fields.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </>
+          ) : (
             <>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  placeholder={c.fields.firstName}
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  maxLength={80}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+                />
+                <input
+                  type="text"
+                  placeholder={c.fields.lastName}
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  maxLength={80}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+                />
+              </div>
+
+              <input
+                type="email"
+                placeholder={c.fields.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+
               <div className="grid sm:grid-cols-2 gap-3">
                 <input
                   type="text"
@@ -395,7 +439,7 @@ const FormCard = ({
             </>
           )}
 
-          {!minimal && (
+          {!minimal && !compact && (
             <textarea
               placeholder={c.fields.notes}
               rows={3}
