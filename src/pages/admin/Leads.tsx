@@ -306,7 +306,7 @@ export default function Leads() {
   useEffect(() => { fetchData(); }, []);
 
   const contactPageLeads = useMemo(
-    () => contacts.filter(c => c.source_label === 'Strona kontaktowa'),
+    () => contacts.filter(c => c.source_label === 'Strona kontaktowa' || c.source_label === 'Formularz'),
     [contacts]
   );
   const trainingLeads = useMemo(
