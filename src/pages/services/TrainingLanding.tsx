@@ -217,7 +217,7 @@ const TrainingLanding = () => {
                   ))}
                 </div>
                 <p className="text-xs text-slate-400">
-                  Dołącz do <span className="text-white font-semibold">setek zarządów i CISO</span>, którzy już przygotowują organizację.
+                  Dołącz do <span className="text-white font-semibold">zarządów i managerów</span>, którzy już przygotowują organizację.
                 </p>
               </div>
             </div>
