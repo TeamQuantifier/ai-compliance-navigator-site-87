@@ -11,7 +11,8 @@ import {
   Menu,
   X,
   Search,
-  ClipboardList
+  ClipboardList,
+  Users
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -22,6 +23,7 @@ const menuItems = [
   { icon: Award, label: 'Case Study', path: '/admin/stories' },
   { icon: ClipboardList, label: 'Quiz NIS2', path: '/admin/quiz-submissions' },
   { icon: ClipboardList, label: 'Webinar Signups', path: '/admin/event-registrations' },
+  { icon: Users, label: 'Leads', path: '/admin/leads' },
   { icon: Search, label: 'SEO Audit', path: '/admin/seo-audit' },
   { icon: Settings, label: 'SEO Settings', path: '/admin/seo-settings' },
   { icon: ShieldCheck, label: 'Admins & Users', path: '/admin/users' },
