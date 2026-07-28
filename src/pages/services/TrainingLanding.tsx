@@ -134,41 +134,117 @@ const TrainingLanding = () => {
       </Helmet>
 
       {/* ─── 1. HERO ─── */}
-      <section className="relative bg-slate-950 overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.18),transparent_60%)] pointer-events-none" />
+      <section className="relative bg-slate-950 overflow-hidden pt-20 min-h-[calc(100vh-5rem)] flex items-center">
+        {/* Ambient gradients */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(221_83%_53%/0.25),transparent_55%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(263_70%_50%/0.15),transparent_55%)] pointer-events-none" />
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(hsl(0,0%,100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0,0%,100%) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
+        <div className="container mx-auto px-4 py-14 md:py-16 relative z-10">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
             {/* LEFT: copy */}
-            <div className="lg:col-span-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground mb-5 shadow-lg shadow-primary/20">
-                <Building2 className="h-4 w-4" />
-                <span className="text-xs font-bold tracking-wide uppercase">
-                  Szkolenie dla firm · B2B · 60 minut
+            <div className="lg:col-span-3 animate-fade-in">
+              {/* Urgency ribbon */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/30 mb-5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                </span>
+                <span className="text-xs font-bold tracking-wider uppercase text-red-200">
+                  Deadline KSC: 3 października 2026
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
-                Cyberbezpieczeństwo dla firm. Ustawa o KSC obowiązuje. Termin wpisu do wykazu mija 3 października.
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 mb-5 ml-0 sm:ml-3">
+                <Building2 className="h-3.5 w-3.5" />
+                <span className="text-[11px] font-semibold tracking-wide uppercase">
+                  Szkolenie B2B · 60 minut · bezpłatne
+                </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6 tracking-tight">
+                60 minut, które ochronią{' '}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Twoją firmę
+                  </span>
+                  <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-primary/60 to-purple-400/60 blur-sm" />
+                </span>{' '}
+                przed karami KSC / NIS2.
               </h1>
 
-              <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-                Prezydent podpisał nowelizację ustawy o krajowym systemie cyberbezpieczeństwa 19 lutego 2026 r., a przepisy wdrażające dyrektywę NIS2 weszły w życie 3 kwietnia 2026 r. Podmioty kluczowe i ważne mają obowiązek złożyć wniosek o wpis do Wykazu KSC do 3 października 2026 r.
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl">
+                Ustawa obowiązuje od 3 kwietnia 2026 r. Do <strong className="text-white">3 października</strong> podmioty kluczowe i ważne muszą złożyć wniosek do Wykazu KSC. Pokażemy Wam, co robić – konkretnie i po kolei.
               </p>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">
-                <span className="inline-flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> 60 minut</span>
-                <span className="inline-flex items-center gap-2"><FileCheck className="h-4 w-4 text-primary" /> Materiały i checklisty</span>
-                <span className="inline-flex items-center gap-2"><Cpu className="h-4 w-4 text-primary" /> Dostęp do DEMO</span>
-                <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> Praktycy GRC</span>
+              {/* Trust chips */}
+              <div className="flex flex-wrap items-center gap-2 mb-8">
+                {[
+                  { icon: Clock, label: '60 minut, online' },
+                  { icon: FileCheck, label: 'Materiały + checklisty' },
+                  { icon: Cpu, label: 'Dostęp DEMO platformy' },
+                  { icon: ShieldCheck, label: 'Prawnicy + audytorzy' },
+                ].map(({ icon: Icon, label }) => (
+                  <div
+                    key={label}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-slate-300 hover:bg-white/[0.08] hover:border-white/20 transition-colors"
+                  >
+                    <Icon className="h-3.5 w-3.5 text-primary" />
+                    {label}
+                  </div>
+                ))}
+              </div>
+
+              {/* Social proof strip */}
+              <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                <div className="flex -space-x-2">
+                  {['bg-blue-500', 'bg-purple-500', 'bg-emerald-500', 'bg-amber-500'].map((c) => (
+                    <div
+                      key={c}
+                      className={`w-8 h-8 rounded-full border-2 border-slate-950 ${c} opacity-80`}
+                    />
+                  ))}
+                </div>
+                <p className="text-xs text-slate-400">
+                  Dołącz do <span className="text-white font-semibold">setek zarządów i CISO</span>, którzy już przygotowują organizację.
+                </p>
               </div>
             </div>
 
-            {/* RIGHT: compact form */}
-            <div className="lg:col-span-2">
-              <div className="bg-white/95 backdrop-blur rounded-2xl border border-white/10 shadow-2xl shadow-black/40 p-1">
-                <TrainingPromoFormInline locale={currentLocale} id="promo-form-hero" />
+            {/* RIGHT: minimal form */}
+            <div className="lg:col-span-2 animate-fade-in">
+              <div className="relative">
+                {/* Glow */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur opacity-40" />
+                <div className="relative bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl p-6 md:p-7">
+                  <div className="mb-4">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">
+                      Zapisz się teraz
+                    </p>
+                    <h3 className="text-xl font-bold text-white leading-snug">
+                      Zarezerwuj miejsce
+                      <span className="block text-sm font-normal text-slate-400 mt-1">
+                        Imię i służbowy e-mail – tyle wystarczy.
+                      </span>
+                    </h3>
+                  </div>
+                  <TrainingPromoFormInline
+                    locale={currentLocale}
+                    id="promo-form-hero"
+                    minimal
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -193,10 +193,12 @@ const FormCard = ({
   locale,
   id,
   compact = false,
+  minimal = false,
 }: {
   locale: string;
   id?: string;
   compact?: boolean;
+  minimal?: boolean;
 }) => {
   const resolved = detectLocale(locale);
   const c = COPY[resolved];
@@ -231,7 +233,7 @@ const FormCard = ({
     const em = email.trim().toLowerCase();
     const co = company.trim();
     const nipV = nip.trim();
-    if (compact) {
+    if (compact || minimal) {
       if (!fn || !em) {
         toast({ title: c.required, variant: 'destructive' });
         return;
@@ -246,8 +248,8 @@ const FormCard = ({
     }
 
     const sectorLabel = c.sectors.find((s) => s.value === sector)?.label ?? sector;
-    const message = compact
-      ? [messageTag(resolved), notes.trim() ? `Notes: ${notes.trim()}` : null]
+    const message = (compact || minimal)
+      ? [messageTag(resolved), !minimal && notes.trim() ? `Notes: ${notes.trim()}` : null]
           .filter(Boolean)
           .join('\n')
       : [
@@ -266,9 +268,9 @@ const FormCard = ({
       const { error } = await supabase.functions.invoke('contact-form', {
         body: {
           firstName: fn,
-          lastName: compact ? '—' : ln,
+          lastName: (compact || minimal) ? '—' : ln,
           email: em,
-          company: compact ? '(compact form)' : co,
+          company: (compact || minimal) ? '(compact form)' : co,
           message,
           language: resolved,
           sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
@@ -300,7 +302,7 @@ const FormCard = ({
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
-          {compact ? (
+          {(compact || minimal) ? (
             <input
               type="text"
               placeholder={c.fields.firstName}
@@ -393,24 +395,16 @@ const FormCard = ({
             </>
           )}
 
-          <textarea
-            placeholder={c.fields.notes}
-            rows={3}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            maxLength={1000}
-            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary resize-none"
-          />
-
-
-          <textarea
-            placeholder={c.fields.notes}
-            rows={3}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            maxLength={1000}
-            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary resize-none"
-          />
+          {!minimal && (
+            <textarea
+              placeholder={c.fields.notes}
+              rows={3}
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              maxLength={1000}
+              className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary resize-none"
+            />
+          )}
 
           <Button
             type="submit"
