@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { TrainingPromoFormInline } from '@/components/promo/TrainingPromoForm';
-import DocumentRepositoryMockup from '@/components/mockups/DocumentRepositoryMockup';
+import PolicyPlatformMockup from '@/components/mockups/PolicyPlatformMockup';
 import {
   Sparkles,
   AlertTriangle,
