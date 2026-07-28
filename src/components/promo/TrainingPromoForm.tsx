@@ -193,10 +193,12 @@ const FormCard = ({
   locale,
   id,
   compact = false,
+  minimal = false,
 }: {
   locale: string;
   id?: string;
   compact?: boolean;
+  minimal?: boolean;
 }) => {
   const resolved = detectLocale(locale);
   const c = COPY[resolved];
