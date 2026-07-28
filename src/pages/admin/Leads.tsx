@@ -433,7 +433,7 @@ export default function Leads() {
       ) : (
         <div className="space-y-6">
           <SectionCard
-            title="Strona kontaktowa"
+            title="Strona kontaktowa i inne formularze"
             icon={MessageSquare}
             leads={contactPageLeads}
             search={search}
