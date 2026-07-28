@@ -13,11 +13,9 @@ import { TrainingPromoFormInline } from '@/components/promo/TrainingPromoForm';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import {
-  Shield,
   ShieldAlert,
   Leaf,
   Scale,
-  ArrowRight,
   CheckCircle2,
   AlertTriangle,
   Users,
@@ -29,7 +27,6 @@ import {
   ClipboardList,
   Target,
   Zap,
-  Lock,
   Eye,
   MessageSquare,
   ChevronRight,
@@ -154,38 +151,7 @@ const TrainingLanding = () => {
       </section>
 
 
-      {/* ─── 2. OTHER TRAININGS — Cybersec ─── */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-5">
-              <Shield className="h-4 w-4 text-primary" />
-              <span className="text-xs font-semibold tracking-wide text-primary uppercase">Cybersec</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('training.other.title')}
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              {t('training.other.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {([ShieldAlert, Lock] as const).map((Icon, i) => (
-              <div key={i} className="bg-card border border-border rounded-2xl p-6 flex flex-col">
-                <Icon className={`h-8 w-8 mb-4 ${i === 0 ? 'text-blue-500' : 'text-violet-500'}`} />
-                <h3 className="text-lg font-bold text-foreground mb-2">{t(`training.other.items.${i}.title`)}</h3>
-                <p className="text-sm text-muted-foreground mb-6 flex-1">{t(`training.other.items.${i}.desc`)}</p>
-                <Button asChild variant="outline" className="w-full">
-                  <a href="#contact">{t(`training.other.items.${i}.cta`)}</a>
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 3. PROBLEM SECTION ─── */}
+      {/* ─── 2. PROBLEM SECTION ─── */}
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
