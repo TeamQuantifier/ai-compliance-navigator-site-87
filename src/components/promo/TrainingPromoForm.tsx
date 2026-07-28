@@ -307,18 +307,8 @@ const FormCard = ({
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
-          {(compact || minimal) ? (
-            <input
-              type="text"
-              placeholder={c.fields.firstName}
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              maxLength={80}
-              required
-              className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
-            />
-          ) : (
-            <div className="grid sm:grid-cols-2 gap-3">
+          {minimal ? (
+            <>
               <input
                 type="text"
                 placeholder={c.fields.firstName}
@@ -329,29 +319,78 @@ const FormCard = ({
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
               />
               <input
+                type="email"
+                placeholder={c.fields.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+              <input
                 type="text"
-                placeholder={c.fields.lastName}
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
+                placeholder={c.fields.company}
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                maxLength={150}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </>
+          ) : compact ? (
+            <>
+              <input
+                type="text"
+                placeholder={c.fields.firstName}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 maxLength={80}
                 required
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
               />
-            </div>
-          )}
-
-          <input
-            type="email"
-            placeholder={c.fields.email}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            maxLength={200}
-            required
-            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
-          />
-
-          {!compact && (
+              <input
+                type="email"
+                placeholder={c.fields.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </>
+          ) : (
             <>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  placeholder={c.fields.firstName}
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  maxLength={80}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+                />
+                <input
+                  type="text"
+                  placeholder={c.fields.lastName}
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  maxLength={80}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+                />
+              </div>
+
+              <input
+                type="email"
+                placeholder={c.fields.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary"
+              />
+
               <div className="grid sm:grid-cols-2 gap-3">
                 <input
                   type="text"
@@ -400,7 +439,7 @@ const FormCard = ({
             </>
           )}
 
-          {!minimal && (
+          {!minimal && !compact && (
             <textarea
               placeholder={c.fields.notes}
               rows={3}
