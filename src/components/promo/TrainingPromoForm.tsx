@@ -266,9 +266,9 @@ const FormCard = ({
       const { error } = await supabase.functions.invoke('contact-form', {
         body: {
           firstName: fn,
-          lastName: ln,
+          lastName: compact ? '—' : ln,
           email: em,
-          company: co,
+          company: compact ? '(compact form)' : co,
           message,
           language: resolved,
           sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
