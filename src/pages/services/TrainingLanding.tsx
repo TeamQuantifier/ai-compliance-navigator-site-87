@@ -261,7 +261,7 @@ const TrainingLanding = () => {
             </div>
 
             <div className="animate-fade-in">
-              <DocumentRepositoryMockup />
+              <PolicyPlatformMockup />
             </div>
           </div>
         </div>
