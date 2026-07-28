@@ -192,9 +192,11 @@ const messageTag = (locale: Locale): string => {
 const FormCard = ({
   locale,
   id,
+  compact = false,
 }: {
   locale: string;
   id?: string;
+  compact?: boolean;
 }) => {
   const resolved = detectLocale(locale);
   const c = COPY[resolved];
