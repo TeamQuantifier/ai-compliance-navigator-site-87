@@ -81,11 +81,11 @@ const COPY: Record<Locale, Copy> = {
   },
   en: {
     badge: 'Register by 31 July 2026',
-    title: 'Sign your company up for the 1h training — we check funding eligibility',
+    title: 'Sign your company up for the 1h NIS2 / KSC training',
     subtitle:
-      'Fill in the short form. We will respond within 1 business day with an eligibility decision for up to 100% funding (NIS2 / ISO 27001).',
+      'Fill in the short form. We will respond within 1 business day to confirm your seat and propose a date.',
     bullets: [
-      'Eligibility decision within 3 business days',
+      'Confirmation within 1 business day',
       'Limited number of slots — first come, first served',
       'Register by 31 July 2026, delivery can take place later',
     ],
