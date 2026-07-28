@@ -78,6 +78,7 @@ const EventRegistrationForm = ({ event, className = '' }: Props) => {
         utm_campaign: utmParams.utm_campaign || null,
         utm_content: utmParams.utm_content || null,
         utm_term: utmParams.utm_term || null,
+        source_url: window.location.href,
       });
       if (error) throw error;
 
