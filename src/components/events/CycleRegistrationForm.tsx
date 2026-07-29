@@ -72,6 +72,7 @@ const CycleRegistrationForm = () => {
         utm_campaign: utmParams.utm_campaign ? `${utmParams.utm_campaign}_cycle` : 'cycle-registration',
         utm_content: utmParams.utm_content || null,
         utm_term: utmParams.utm_term || null,
+        source_url: window.location.href,
       }));
 
       const { error } = await supabase.from('event_registrations').insert(rows);

@@ -73,7 +73,8 @@
       "productLevel": {
         "title": "Product Level",
         "dpp": "DPP",
-        "lcaAnalysis": "LCA Analysis"
+        "lcaAnalysis": "LCA Analysis",
+        "ppwr": "PPWR"
       }
     },
     "popular": {
@@ -4095,6 +4096,19 @@
         ],
         "cta": "See LCA",
         "href": "/frameworks/product-level/lca-analysis"
+      },
+      "ppwr": {
+        "badge": "EU Regulation 2025/40",
+        "title": "PPWR — Packaging Regulation",
+        "description": "New EU packaging regulation: technical documentation, declaration of conformity, environmental data. Core obligations from 12 August 2026.",
+        "features": [
+          "SKU-level packaging inventory",
+          "Packaging LCA (PEF, Ecoinvent)",
+          "Supplier evidence workflow",
+          "Cross-links to DPP, CSRD, CBAM"
+        ],
+        "cta": "See PPWR",
+        "href": "/frameworks/product-level/ppwr"
       }
     },
     "faq": {
@@ -8701,34 +8715,21 @@
       "secondary": "See training tracks"
     },
     "hero": {
-      "badge": "Corporate Training",
-      "title": "Training that turns regulatory obligations into a ready-to-use action system",
-      "subtitle": "We don't do slide decks. We prepare companies for obligations, inspections and real-world action — with procedures, tools and post-training support.",
-      "microcopy": "We respond within 24h · First consultation with no obligations",
-      "stats": {
-        "cyber": {
-          "value": "NIS2 / ISO 27001",
-          "label": "Cybersecurity"
-        },
-        "esg": {
-          "value": "ESG / CSRD / VSME",
-          "label": "Sustainability"
-        },
-        "compliance": {
-          "value": "GRC",
-          "label": "Compliance & Risk"
-        }
-      },
-      "proof": {
-        "title": "Credentials & certifications",
-        "items": [
-          "Training + workshop + implementation of procedures and operational tools",
-          "Trainers with experience in NIS2 inspections and ISO 27001 audits",
-          "Ready-to-use templates, risk registries and incident playbooks"
-        ],
-        "experts": "Expert team with regulatory experience"
-      }
+      "badge": "1h training · NIS2 / KSC / ISO 27001",
+      "title": "1h NIS2 / ISO 27001 training for your company — up to 100% funded",
+      "subtitle": "We will show you how to fund a tailored training on the new cybersecurity obligations. No hidden costs, a clear go / no-go decision within 3 business days.",
+      "microcopy": "We respond within 1 business day. Data used only to prepare the training offer.",
+      "bullets": [
+        "Training tailored to your company, sector and maturity level",
+        "Help securing up to 100% funding",
+        "Decision within 3 business days",
+        "Register by 31 July 2026 — delivery can take place later"
+      ],
+      "primaryCta": "Check availability",
+      "secondaryCta": "Talk about funding",
+      "disclaimer": "Limited number of training slots. Offer valid until 31 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile."
     },
+
     "credibilityBar": [
       "Training + implementation + tools",
       "Practitioners with inspection experience",
@@ -8946,15 +8947,11 @@
           "value": "95%",
           "label": "Would recommend"
         }
-      ],
-      "testimonial": {
-        "quote": "After training with Quantifier.ai, our team implemented a complete incident management system within 3 months and passed the NIS2 inspection without remarks. This wasn't typical training — we got a ready system to work with.",
-        "initials": "JN",
-        "name": "Jakub Nowak",
-        "role": "CISO, energy sector company"
-      }
+      ]
     },
     "process": {
+
+
       "title": "How we work together",
       "subtitle": "4 steps from first contact to a ready-to-use action system.",
       "steps": [
@@ -9529,5 +9526,172 @@
     "badge": "Trusted by",
     "title": "Recognized by Experts and Institutions",
     "subtitle": "Our solutions are recognized by experts and leading institutions. Through strategic partnerships, we help shape standards in cybersecurity, AI, and compliance."
+  },
+  "ppwrPage": {
+    "title": "PPWR 2025/40 — EU Packaging Regulation | Quantifier.ai",
+    "description": "PPWR (EU 2025/40) — obligations from 12 Aug 2026. Technical documentation, declaration of conformity, packaging environmental data. Check your readiness.",
+    "hero": {
+      "badge": "EU Regulation 2025/40",
+      "title": "PPWR — EU Packaging Regulation (2025/40)",
+      "subtitle": "The regulation entered into force on 11 February 2025 and the main obligations apply from 12 August 2026.",
+      "positioning": "Packaging compliance, technical documentation and environmental data on a single platform.",
+      "counterLabel": "days to 12 Aug 2026",
+      "ctaPrimary": "Check your packaging readiness",
+      "ctaSecondary": "Book a demo"
+    },
+    "whatIs": {
+      "title": "What PPWR is",
+      "lead": "PPWR is a regulation, not a directive — it applies directly across every EU member state without national transposition and replaces Directive 94/62/EC.",
+      "scopeTitle": "The full packaging lifecycle",
+      "scope": [
+        {
+          "title": "Design",
+          "description": "Design requirements: minimising packaging weight and volume, reducing empty space."
+        },
+        {
+          "title": "Material composition",
+          "description": "Recycled content, restrictions on hazardous substances, ban on PFAS in food-contact packaging."
+        },
+        {
+          "title": "Labelling",
+          "description": "Harmonised sorting pictograms, type/batch/serial marking, manufacturer contact data."
+        },
+        {
+          "title": "Reuse",
+          "description": "Reuse targets for selected sectors (transport, e-commerce, HoReCa)."
+        },
+        {
+          "title": "Recyclability",
+          "description": "Recyclability grades A/B/C and design-for-recycling requirements."
+        },
+        {
+          "title": "Waste management",
+          "description": "Separate collection targets and Extended Producer Responsibility (EPR)."
+        }
+      ],
+      "context": "EU-wide directly applicable regulation — no national transposition delay, no member-state carve-outs."
+    },
+    "whoConcerned": {
+      "title": "Who it applies to — that means you",
+      "lead": "Under PPWR a \"producer\" is any manufacturer, importer or distributor placing packaging on the EU market. The regulation contains no SME exemptions.",
+      "importerTitle": "Importers cannot pass the buck (Art. 18)",
+      "importerBody": "The importer carries full responsibility for packaging compliance and cannot contractually transfer it to a non-EU supplier. This includes packaging sourced from China, Turkey or the US.",
+      "statTitle": "Market scale (Poland)",
+      "statValue": "≈ 113,000",
+      "statCaption": "companies registered in Poland as placing packaged products on the market.",
+      "actorsTitle": "In scope",
+      "actors": [
+        "Packaging and packaged-goods manufacturers",
+        "Importers placing packaging on the EU market",
+        "Distributors and retail chains",
+        "Private label brands",
+        "E-commerce and fulfilment platforms",
+        "SMEs — no exemption"
+      ]
+    },
+    "timeline": {
+      "title": "PPWR timeline",
+      "subtitle": "August 2026 covers documentation and design duties. Material-content targets phase in through 2030.",
+      "callout": {
+        "title": "Important distinction",
+        "body": "12 Aug 2026 = technical documentation, declaration of conformity, labelling and the PFAS ban. Recyclability and recycled-content targets land by 2030. Do not tell customers \"everything applies from 2026\"."
+      },
+      "steps": [
+        {
+          "date": "11 Feb 2025",
+          "title": "Entry into force",
+          "description": "Regulation (EU) 2025/40 published in the Official Journal. Directly applicable as EU law."
+        },
+        {
+          "date": "12 Aug 2026",
+          "title": "Documentation and design duties",
+          "description": "Conformity assessment, technical documentation, EU declaration of conformity, type/batch/serial marking, manufacturer contact data. PFAS ban above thresholds in food-contact packaging."
+        },
+        {
+          "date": "2028",
+          "title": "Harmonised sorting labels",
+          "description": "EU-wide harmonised sorting pictograms and material marking on packaging."
+        },
+        {
+          "date": "2030",
+          "title": "Material targets and limits",
+          "description": "Recyclability grades enforceable, mandatory recycled content in plastics, bans on selected single-use formats, 50% empty-space limit in grouped and e-commerce packaging."
+        }
+      ]
+    },
+    "consequences": {
+      "title": "Consequences of non-compliance",
+      "regulatoryTitle": "Regulatory risk",
+      "regulatoryBody": "Missing technical documentation and declaration of conformity after 12 August 2026 is a material breach. Market surveillance authorities can order withdrawal of the product from the entire EU market — not just a single member state.",
+      "commercialTitle": "Commercial risk",
+      "commercialBody": "B2B buyers, retail chains and e-commerce platforms are already starting to require PPWR declarations of conformity at procurement. No documents = no listing.",
+      "financialTitle": "Financial risk",
+      "financialBody": "Higher EPR fees for poorly recyclable packaging (fee modulation). Administrative fines set by national law."
+    },
+    "howHelps": {
+      "title": "How the platform helps",
+      "subtitle": "We support PPWR readiness through the existing data, LCA and evidence-workflow modules. Delivery is led by Quantifier.ai experts and cooperating law firms.",
+      "items": [
+        {
+          "title": "SKU-level packaging data",
+          "description": "Inventory of mass, material and recycled content per SKU. PPWR requires collecting and reporting packaging quantity, mass, material and recycling rate data."
+        },
+        {
+          "title": "Supplier evidence workflow",
+          "description": "Automated questionnaires to packaging suppliers, audit trail, file versioning. Documentation retention: 5 years (single-use) / 10 years (reusable)."
+        },
+        {
+          "title": "Packaging LCA",
+          "description": "Scenario modelling — material change, format change, mass reduction. 16 PEF impact categories, Ecoinvent database, results consistent with ISO 14040."
+        },
+        {
+          "title": "Cross-links DPP · ESRS E5 · CBAM",
+          "description": "Packaging data feeds the Digital Product Passport (DPP), ESRS E5 (Resource use and circular economy) reporting and CBAM calculations for imported materials."
+        },
+        {
+          "title": "Declaration of conformity — draft",
+          "description": "EU declaration templates, mandatory-field checklists, completeness checks before publication. Final signature stays with the authorised person."
+        },
+        {
+          "title": "Expert support",
+          "description": "Consultations with Quantifier.ai experts and cooperating law firms on regulatory interpretation and implementation."
+        }
+      ]
+    },
+    "faq": {
+      "title": "PPWR — FAQ",
+      "items": [
+        {
+          "question": "When does PPWR apply?",
+          "answer": "Regulation (EU) 2025/40 entered into force on 11 February 2025. Core documentation and design obligations start applying on 12 August 2026. Material targets (recycled content, recyclability requirements) phase in through 2030."
+        },
+        {
+          "question": "Does PPWR apply to SMEs?",
+          "answer": "Yes. The regulation contains no exemptions for micro, small or medium-sized enterprises. The scale of duties is proportional to packaging volume placed on the market, but compliance itself is mandatory."
+        },
+        {
+          "question": "Is the importer liable for packaging sourced outside the EU (China, Turkey, US)?",
+          "answer": "Yes. Under Article 18 the importer carries full responsibility for the compliance of packaging placed on the EU market and cannot contractually shift this to a non-EU supplier. The importer must hold complete technical documentation and the declaration of conformity."
+        },
+        {
+          "question": "How does PPWR relate to national EPR laws?",
+          "answer": "PPWR as an EU regulation is directly applicable — no transposition needed. National EPR systems are being adjusted to PPWR, including fee modulation based on the packaging's recyclability grade. In Poland the UC100 draft aligns the national EPR system with PPWR."
+        },
+        {
+          "question": "What are the penalties for missing a declaration of conformity after 12 Aug 2026?",
+          "answer": "Missing technical documentation and the EU declaration of conformity after that date is a material breach. Market surveillance authorities can order product withdrawal from the entire EU market and impose administrative fines under national law. Additional risk: loss of listing with B2B buyers and retail chains."
+        },
+        {
+          "question": "How does PPWR differ from Directive 94/62/EC?",
+          "answer": "Directive 94/62/EC required transposition into national law, giving member states interpretive latitude. PPWR is a regulation — it applies directly and uniformly across the EU. PPWR expands the scope to include recyclability requirements, recycled-content targets, restrictions on single-use formats and harmonised labelling."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Get PPWR-ready with Quantifier.ai",
+      "description": "Start with a packaging portfolio audit and a gap map against PPWR requirements. Download the readiness checklist or book a call with an expert.",
+      "primary": "Book a demo",
+      "checklist": "Download the PPWR readiness checklist"
+    }
   }
 }

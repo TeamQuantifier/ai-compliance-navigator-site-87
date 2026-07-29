@@ -69,37 +69,31 @@ export default function UsersList() {
   const grantRole = async () => {
     const parsed = emailSchema.safeParse(addEmail);
     if (!parsed.success) {
-      toast({ title: 'Invalid email', description: parsed.error.errors[0].message, variant: 'destructive' });
+      toast({ title: 'Invalid email', description: parsed.error.issues[0].message, variant: 'destructive' });
       return;
     }
     setSubmitting(true);
-    const target = users.find(u => u.email.toLowerCase() === parsed.data.toLowerCase());
-    if (!target) {
-      toast({
-        title: 'User not found',
-        description: 'The user must first sign up at /admin/login. Then come back to grant a role.',
-        variant: 'destructive',
-      });
-      setSubmitting(false);
-      return;
-    }
-    if (target.roles.includes(addRole)) {
-      toast({ title: 'Already assigned', description: `User already has role "${addRole}".` });
-      setSubmitting(false);
-      return;
-    }
-    const { error } = await supabase
-      .from('user_roles')
-      .insert({ user_id: target.user_id, role: addRole });
+    const { data, error } = await supabase.rpc('grant_role_by_email', {
+      _email: parsed.data,
+      _role: addRole,
+    });
     setSubmitting(false);
     if (error) {
       toast({ title: 'Failed to grant role', description: error.message, variant: 'destructive' });
-    } else {
-      toast({ title: 'Role granted', description: `${addRole} → ${target.email}` });
-      setAddOpen(false);
-      setAddEmail('');
-      load();
+      return;
     }
+    const status = (data as any)?.status;
+    if (status === 'pending') {
+      toast({
+        title: 'Role queued',
+        description: `${parsed.data} hasn't signed up yet. The ${addRole} role will be assigned automatically after their first sign-up at /admin/login.`,
+      });
+    } else {
+      toast({ title: 'Role granted', description: `${addRole} → ${parsed.data}` });
+    }
+    setAddOpen(false);
+    setAddEmail('');
+    load();
   };
 
   const revokeRole = async (userId: string, role: AppRole, email: string) => {

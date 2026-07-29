@@ -42,6 +42,7 @@ import ProductLevel from "./pages/frameworks/ProductLevel";
 import ProductLevelHub from "./pages/frameworks/ProductLevelHub";
 import Epd from "./pages/frameworks/Epd";
 import LcaAnalysis from "./pages/frameworks/LcaAnalysis";
+import Ppwr from "./pages/frameworks/product-level/Ppwr";
 
 // Framework specific pages (flattened structure)
 import Soc from "./pages/frameworks/cybersecurity/Soc";
@@ -94,6 +95,7 @@ import SeoSettings from "./pages/admin/SeoSettings";
 import QuizSubmissions from "./pages/admin/QuizSubmissions";
 import EventRegistrations from "./pages/admin/EventRegistrations";
 import UsersList from "./pages/admin/UsersList";
+import Leads from "./pages/admin/Leads";
 
 // Standalone pages
 import FormularzPage from "./pages/formularz/FormularzPage";
@@ -169,6 +171,7 @@ const MainRoutes = () => (
         <Route path="/:locale/frameworks/product-level/dpp" element={<ProductLevel />} />
         <Route path="/:locale/frameworks/product-level/epd" element={<Epd />} />
         <Route path="/:locale/frameworks/product-level/lca-analysis" element={<LcaAnalysis />} />
+        <Route path="/:locale/frameworks/product-level/ppwr" element={<Ppwr />} />
 
         {/* Redirects from old nested URLs */}
         <Route path="/:locale/frameworks/cybersecurity" element={<Navigate to="../frameworks" replace />} />
@@ -251,6 +254,7 @@ const MainRoutes = () => (
           <Route path="seo-settings" element={<SeoSettings />} />
           <Route path="quiz-submissions" element={<QuizSubmissions />} />
           <Route path="event-registrations" element={<EventRegistrations />} />
+          <Route path="leads" element={<Leads />} />
           <Route path="users" element={<UsersList />} />
           <Route path="authors" element={<div className="p-6"><h1 className="text-3xl font-bold">Authors (Coming Soon)</h1></div>} />
           <Route path="redirects" element={<div className="p-6"><h1 className="text-3xl font-bold">Redirects (Coming Soon)</h1></div>} />

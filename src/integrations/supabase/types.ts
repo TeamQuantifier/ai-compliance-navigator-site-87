@@ -175,6 +175,7 @@ export type Database = {
           id: string
           nis2_qualifier: string
           role: string
+          source_url: string | null
           utm_campaign: string | null
           utm_content: string | null
           utm_medium: string | null
@@ -192,6 +193,7 @@ export type Database = {
           id?: string
           nis2_qualifier: string
           role: string
+          source_url?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
           utm_medium?: string | null
@@ -209,12 +211,37 @@ export type Database = {
           id?: string
           nis2_qualifier?: string
           role?: string
+          source_url?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
           utm_medium?: string | null
           utm_source?: string | null
           utm_term?: string | null
           work_email?: string
+        }
+        Relationships: []
+      }
+      pending_role_grants: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          email: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          email: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          email?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
         }
         Relationships: []
       }
@@ -599,6 +626,7 @@ export type Database = {
           q4: string[] | null
           result_key: string | null
           result_text: string | null
+          source_url: string | null
         }
         Insert: {
           created_at?: string | null
@@ -610,6 +638,7 @@ export type Database = {
           q4?: string[] | null
           result_key?: string | null
           result_text?: string | null
+          source_url?: string | null
         }
         Update: {
           created_at?: string | null
@@ -621,6 +650,7 @@ export type Database = {
           q4?: string[] | null
           result_key?: string | null
           result_text?: string | null
+          source_url?: string | null
         }
         Relationships: []
       }
@@ -683,6 +713,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      grant_role_by_email: {
+        Args: { _email: string; _role: Database["public"]["Enums"]["app_role"] }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

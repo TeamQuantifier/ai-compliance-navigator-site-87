@@ -1,58 +1,107 @@
+Plan budowy panelu podsumowania leadów
 
-## Co robimy
+Cel: Nowa zakładka w panelu admina (`/admin/leads`), która zbiera i grupuje leady ze wszystkich formularzy na stronie, z widocznym linkiem do podstrony, z której lead został zapisany.
 
-1. **Nowa podstrona** `Information Security Policy` (Polityka Bezpieczeństwa Informacji) z pełnymi treściami z dostarczonego pliku — 3 wersje językowe (PL, EN, CS).
-2. **Uzupełnienie czeskich tłumaczeń** dla istniejących podstron `/legal/privacy` i `/legal/terms` — obecnie czeski plik `public/locales/cs/translation.json` ma uproszczoną, starą strukturę (np. `legal.privacy` ma tylko `intro/dataCollection/dataUse/contact/thirdParty`), podczas gdy komponenty `PrivacyPolicy.tsx` i `TermsOfService.tsx` używają pełnej struktury obecnej w EN/PL (sekcje 1–13 dla privacy, `useOfService/intellectualProperty/thirdParty/contact` dla terms). Bez tego CS pokazuje surowe klucze.
-3. **Footer** — dodanie linków do Privacy / Terms / Information Security Policy w sekcji **Company** (linki na dole stopki zostawiamy bez zmian — istnieją w obu miejscach).
+Wybory użytkownika (potwierdzone):
+- Grupowanie po źródle (nie jedna wspólna tabela).
+- Tylko podstawowe dane + link do podstrony.
+- Nowa zakładka w menu bocznym admina.
 
-Nie ruszamy istniejących stron `/legal/privacy` i `/legal/terms` — tylko dopełniamy tłumaczenia czeskie.
+Źródła leadów obecnie w bazie:
+1. `contact_submissions` — formularz kontaktowy i wszystkie formularze wysyłane przez edge function `contact-form` (m.in. landingi szkoleniowe, partnerzy).
+2. `event_registrations` — zapisy na webinary i szkolenia.
+3. `submissions` — quiz / sprawdzian cyberbezpieczeństwa NIS2.
 
-## Pliki do zmiany
+Aktualne wolumeny (na dzień dzisiejszy):
+- contact_submissions: 75 leadów
+- event_registrations: 318 leadów
+- submissions: 178 leadów
 
-### Nowa strona
-- `src/pages/legal/InformationSecurityPolicy.tsx` — analogiczna struktura do `PrivacyPolicy.tsx`, używa `useLanguage()` + `PageTemplate`, sekcje 1–8 zgodnie z dokumentem.
+Szczegółowy plan implementacji
 
-### Routing
-- `src/App.tsx` — import + nowa trasa:
-  ```
-  <Route path="/:locale/legal/information-security" element={<InformationSecurityPolicy />} />
-  ```
+1. Nowa pozycja w menu admina
+Plik: `src/components/admin/AdminLayout.tsx`
+- Dodanie ikony `Users` (lub `BarChart`) i etykiety „Leads” w `menuItems`.
+- Ścieżka: `/admin/leads`.
 
-### Tłumaczenia (`public/locales/{en,pl,cs}/translation.json`)
-- Dodać klucz **`legal.informationSecurity`** w EN, PL, CS z polami:
-  - `title`, `metaDescription`, `lastUpdated`
-  - `intro.title`, `intro.p1`, `intro.p2`
-  - `commitments.title`, `commitments.intro`, `commitments.items[1..8]`, `commitments.review`
-  - `scope.title`, `scope.intro`, `scope.items[1..8]`
-  - `governance.title`, `governance.content`
-  - `employees.title`, `employees.intro`, `employees.items[1..6]`
-  - `suppliers.title`, `suppliers.intro`, `suppliers.items[1..4]`, `suppliers.consequence`
-  - `incidents.title`, `incidents.content`, `incidents.contactLabel`, `incidents.handling`
-  - `review.title`, `review.content`
-  
-  PL = treść polska z dokumentu, EN = treść angielska z dokumentu, CS = wierne tłumaczenie czeskie.
+2. Nowa trasa w routerze
+Plik: `src/App.tsx`
+- Dodanie importu `Leads`.
+- Dodanie `<Route path="leads" element={<Leads />} />` w sekcji `/admin`.
 
-- **Uzupełnić CS** `legal.privacy` w `public/locales/cs/translation.json` o pełną strukturę z EN/PL (klucze: `lastUpdated`, `admin.{title,content,contactEmail}`, `dataProcessed.{title,intro,formData,technicalData}`, `purposes.{title,newsletter.*,contact.*,security.*}`, `recipients.*`, `googleServices.*`, `internationalTransfer.*`, `retention.*`, `rights.*`, `complaint.*`, `mandatory.*`, `automatedDecisions.*`, `cookies.*`, `changes.*`). Stare klucze (`intro`, `dataCollection`, `dataUse`, `thirdParty`) usuwamy — nie są używane przez komponent.
+3. Główny komponent panelu leadów
+Plik: `src/pages/admin/Leads.tsx` (nowy)
 
-- **Uzupełnić CS** `legal.terms` o brakujące `lastUpdated` jeśli wymagane (komponent używa `legal.cookies.lastUpdated` — zostaje).
+Widok składa się z:
 
-- Dodać klucz w sekcji `footer.legal` (PL/EN/CS):
-  - `informationSecurity` = "Polityka Bezpieczeństwa Informacji" / "Information Security Policy" / "Zásady bezpečnosti informací"
-  - Etykiety `privacy/terms` (które są też w `footer.legal`) wykorzystamy też w nowej sekcji Company.
+a) Nagłówek z liczbą leadów
+- Tytuł „Leads — podsumowanie zgłoszeń".
+- Pod spodem: liczba leadów w wybranym okresie / ogółem.
 
-### Footer
-- `src/components/Footer.tsx` — w sekcji **Company** (po linku „Plans") dodać 3 nowe pozycje:
-  ```
-  <Link to={`/${currentLocale}/legal/privacy`}>{t('footer.legal.privacy')}</Link>
-  <Link to={`/${currentLocale}/legal/terms`}>{t('footer.legal.terms')}</Link>
-  <Link to={`/${currentLocale}/legal/information-security`}>{t('footer.legal.informationSecurity')}</Link>
-  ```
-  Bottom-row linki (Privacy/Terms/Cookies) zostawiamy bez zmian.
+b) Kafelki KPI na górze (4 karty)
+- Wszystkich leadów (suma z 3 tabel).
+- Nowi dziś.
+- Nowi w tym tygodniu.
+- Największe źródło (np. webinar, contact, quiz).
 
-### Sitemap (opcjonalnie, ale spójność SEO)
-- `supabase/functions/sitemap/index.ts` — jeśli zawiera listę legal pages dla wszystkich locali, dodać `/legal/information-security` × 3 locale. Sprawdzę przed edycją.
+c) Sekcje grupowane po źródle
 
-## Czego NIE robimy
-- Nie zmieniamy `PrivacyPolicy.tsx` ani `TermsOfService.tsx`.
-- Nie zmieniamy istniejących tras `/legal/privacy`, `/legal/terms`, `/legal/cookies`.
-- Nie zmieniamy dolnego paska legal w stopce.
+Każda sekcja to karta z tabelą lub listą. Kolumny podstawowe: data, email, imię, firma, link do podstrony.
+
+i) Sekcja „Contact page"
+- Źródło: `contact_submissions` gdzie `source_url` zawiera `/contact`.
+- Kolumny: Data, Imię, Email, Firma, Link.
+- Link: wartość `source_url` (otwierany w nowej karcie).
+
+ii) Sekcja „Training landing pages"
+- Źródło: `contact_submissions` gdzie `source_url` zawiera `/darmowe-szkolenie-nis2`, `/szkolenia-cyberbezpieczenstwo-dla-firm`, `/cybersecurity-training-for-companies` itp.
+- Dodatkowo: `event_registrations` dla eventów związanych ze szkoleniami (opcjonalnie, w osobnym wierszu „Szkolenia / webinary").
+- Kolumny: Data, Email, Imię, Firma, Link.
+
+iii) Sekcja „Quiz NIS2 / Cybersecurity check"
+- Źródło: `submissions`.
+- Kolumny: Data, Email, Wynik, Sektor, Link.
+- Link: przekierowanie do strony quizu. Dla nowych zapisów — dodanie `source_url` w tabeli (patrz punkt 4). Dla historycznych — link do polskiej wersji quizu `/pl/sprawdz-cyberbezpieczenstwo`.
+
+iv) Sekcja „Webinary / Events"
+- Źródło: `event_registrations`.
+- Kolumny: Data, Event, Imię, Email, Firma, Link.
+- Link: `/pl/events/:event_slug` (lub inny locale, jeśli dostępny).
+
+d) Wspólne funkcje dla wszystkich sekcji
+- Wyszukiwarka po emailu / firmie / imieniu (globalna, filtruje wszystkie sekcje).
+- Sortowanie po dacie (domyślnie najnowsze na górze).
+- Eksport CSV (globalny lub per sekcja) — przycisk „Eksportuj CSV".
+- Paginacja lub „Pokaż więcej" jeśli lista > 50 pozycji.
+
+4. Ulepszenie zapisu źródła dla quizu
+Plik źródłowy: formularz quizu (`src/pages/formularz/FormularzPage.tsx` lub podobny)
+- Dodać `source_url` do insertu w tabelę `submissions` (z `window.location.href`), aby przyszłe quiz-leady miały dokładny link.
+- Opcjonalnie dodać `language`/`locale` do tabeli, jeśli brak.
+- Wymaga migracji dodającej kolumnę `source_url` do `public.submissions` (z RLS / GRANT).
+
+5. Ulepszenie linków dla event_registrations
+Pliki: formularze eventów (`src/components/events/EventRegistrationForm.tsx`, `CycleRegistrationForm.tsx`)
+- Dodać `source_url` do insertu w `event_registrations`, aby link w panelu leadów wskazywał dokładną stronę, z której zapisano się na webinar/szkolenie.
+- Alternatywnie: wykorzystać `event_slug` i zbudować link `/events/:event_slug`.
+
+6. Style i spójność
+- Użyć istniejących komponentów: `Card`, `Table`, `Badge`, `Button`, `Input`, `Select`.
+- Spójne z obecnym adminem (ciemne / jasne motywy, odstępy, typografia).
+- Linki jako `ExternalLink` (lub `<a>`) z otwieraniem w nowej karcie, z ikonką.
+
+7. Testy / weryfikacja
+- Sprawdzenie, że zakładka pojawia się w menu bocznym.
+- Weryfikacja, że dane ładują się poprawnie i liczby się zgadzają.
+- Sprawdzenie linków do podstron (czy nie prowadzą do błędnych adresów).
+- Weryfikacja eksportu CSV.
+
+Kolejność prac:
+1. Migracja: dodać `source_url` do `submissions` (opcjonalnie do `event_registrations`).
+2. Zaktualizować formularze quizu/eventów, żeby zapisywały `source_url`.
+3. Stworzyć komponent `Leads.tsx` z sekcjami i KPI.
+4. Dodać trasę i pozycję w menu.
+5. Przetestować build i poprawność danych.
+
+Oczekiwany efekt końcowy:
+Admin ma jedną zakładkę „Leads", w której na pierwszy rzut oka widać, ile leadów przyszło z każdej części strony, i może kliknąć link do podstrony, by zobaczyć kontekst formularza.
