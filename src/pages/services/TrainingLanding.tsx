@@ -97,7 +97,7 @@ const COPY: Record<Locale, Copy> = {
     heroLead: (
       <>
         Ustawa obowiązuje od 3 kwietnia 2026 r. Do{' '}
-        <strong className="text-white">3 października</strong> podmioty kluczowe i ważne muszą złożyć wniosek do Wykazu KSC. Pokażemy Wam, co robić – konkretnie i po kolei.
+        <strong className="text-white">3 października</strong> podmioty kluczowe i ważne muszą złożyć wniosek do Wykazu KSC. Pokażemy Państwu, co robić - konkretnie i po kolei.
       </>
     ),
     trustChips: ['60 minut, online', 'Materiały + checklisty', 'Dostęp DEMO platformy', 'Prawnicy + audytorzy'],
