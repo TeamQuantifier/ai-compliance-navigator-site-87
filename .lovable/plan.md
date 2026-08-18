@@ -1,107 +1,39 @@
-Plan budowy panelu podsumowania leadów
+# Redesign strony KSC START w stylu topowej kancelarii
 
-Cel: Nowa zakładka w panelu admina (`/admin/leads`), która zbiera i grupuje leady ze wszystkich formularzy na stronie, z widocznym linkiem do podstrony, z której lead został zapisany.
+Zakres: wyłącznie `/pl/start-nis2-ksc/`. Obecna typografia zostaje bez zmian. Nowa paleta: granat kancelaryjny (#0f1b3d, #1e3a5f, #3b6fa0, #e8edf3). Układ hero: split screen.
 
-Wybory użytkownika (potwierdzone):
-- Grupowanie po źródle (nie jedna wspólna tabela).
-- Tylko podstawowe dane + link do podstrony.
-- Nowa zakładka w menu bocznym admina.
+## Dlaczego teraz wygląda "AI-owo"
 
-Źródła leadów obecnie w bazie:
-1. `contact_submissions` — formularz kontaktowy i wszystkie formularze wysyłane przez edge function `contact-form` (m.in. landingi szkoleniowe, partnerzy).
-2. `event_registrations` — zapisy na webinary i szkolenia.
-3. `submissions` — quiz / sprawdzian cyberbezpieczeństwa NIS2.
+- Wszystko jest w domyślnym slate + niebieskim akcencie, sekcje naprzemiennie białe/szare bez rytmu.
+- Dużo kolorowych ikon w kółkach, zaokrąglone karty z cieniami, gradienty — typowy język landingów SaaS, nie kancelarii.
+- Brak hierarchii: każda sekcja krzyczy równie mocno, nagłówki tej samej wagi.
 
-Aktualne wolumeny (na dzień dzisiejszy):
-- contact_submissions: 75 leadów
-- event_registrations: 318 leadów
-- submissions: 178 leadów
+## Kierunek wizualny
 
-Szczegółowy plan implementacji
+Powaga i redakcyjny spokój zamiast efektów: dużo światła, cienkie linie zamiast cieni, ostrzejsze narożniki, akcent granatowy, złamana biel jako tło treści.
 
-1. Nowa pozycja w menu admina
-Plik: `src/components/admin/AdminLayout.tsx`
-- Dodanie ikony `Users` (lub `BarChart`) i etykiety „Leads” w `menuItems`.
-- Ścieżka: `/admin/leads`.
+- Kolor: granat #0f1b3d jako dominanta sekcji ciemnych, #1e3a5f dla powierzchni, #3b6fa0 wyłącznie jako akcent (linki, ikony, podkreślenia), #e8edf3 jako jasne tło przekładek.
+- Kształt: promień 2–4 px zamiast `rounded-2xl`, brak `shadow-2xl`, obramowania 1 px w granacie 10–15%.
+- Ikony: monochromatyczne, cienka kreska, bez kolorowych tłem kółek.
+- Rytm: nagłówek sekcji wyrównany do lewej z krótką linią-akcentem nad nim (kicker), nie wszystko wyśrodkowane.
+- Numeracja jak w dokumencie prawnym: 01 / 02 / 03 w wersalikach, ze spacjonowaniem.
 
-2. Nowa trasa w routerze
-Plik: `src/App.tsx`
-- Dodanie importu `Leads`.
-- Dodanie `<Route path="leads" element={<Leads />} />` w sekcji `/admin`.
+## Nowa struktura strony
 
-3. Główny komponent panelu leadów
-Plik: `src/pages/admin/Leads.tsx` (nowy)
+1. **Hero — split screen.** Lewa kolumna (60%): kicker "Pakiet startowy NIS2 / KSC", H1, jeden akapit, licznik dni jako powściągliwa pozioma listwa (nie kolorowy pill), trzy krótkie dowody (10 dni roboczych / 5 elementów / 0 zł). Prawa kolumna (40%): formularz na jasnej karcie z cienką ramką, przypięty na desktopie. Tło: granat #0f1b3d z bardzo subtelną siatką linii zamiast gradientowych plam.
+2. **Pasek zaufania.** Wąski jasny pas pod hero: logotypy / "Zespół prawników i praktyków audytu" — buduje autorytet od razu.
+3. **Zegar ustawowy (3 daty).** Pozioma oś czasu na białym tle, cienka linia, daty jako duże liczby, opis pod spodem. Bez kart z cieniem.
+4. **Zakres pakietu (5 elementów).** Lista dwukolumnowa w stylu spisu treści: numer, tytuł, punkty. Separatory liniowe zamiast kafelków.
+5. **Harmonogram 10 dni.** Tabela dzień-po-dniu (nagłówki wersaliki, wiersze rozdzielone linią) — czyta się jak plan prac kancelarii.
+6. **Cena 0 zł vs 5 000 zł.** Sekcja granatowa, dwie kolumny kontrastu, bez gradientu, akcent #3b6fa0 na kwocie.
+7. **Dla kogo.** Trzy profile podmiotów, tekstowo, z ikoną liniową.
+8. **FAQ.** Bez zmian merytorycznych, przestylizowane akordeony (linie zamiast kart).
+9. **CTA końcowe.** Granatowa sekcja, powtórzony formularz, jedno zdanie zamknięcia.
 
-Widok składa się z:
+## Szczegóły techniczne
 
-a) Nagłówek z liczbą leadów
-- Tytuł „Leads — podsumowanie zgłoszeń".
-- Pod spodem: liczba leadów w wybranym okresie / ogółem.
-
-b) Kafelki KPI na górze (4 karty)
-- Wszystkich leadów (suma z 3 tabel).
-- Nowi dziś.
-- Nowi w tym tygodniu.
-- Największe źródło (np. webinar, contact, quiz).
-
-c) Sekcje grupowane po źródle
-
-Każda sekcja to karta z tabelą lub listą. Kolumny podstawowe: data, email, imię, firma, link do podstrony.
-
-i) Sekcja „Contact page"
-- Źródło: `contact_submissions` gdzie `source_url` zawiera `/contact`.
-- Kolumny: Data, Imię, Email, Firma, Link.
-- Link: wartość `source_url` (otwierany w nowej karcie).
-
-ii) Sekcja „Training landing pages"
-- Źródło: `contact_submissions` gdzie `source_url` zawiera `/darmowe-szkolenie-nis2`, `/szkolenia-cyberbezpieczenstwo-dla-firm`, `/cybersecurity-training-for-companies` itp.
-- Dodatkowo: `event_registrations` dla eventów związanych ze szkoleniami (opcjonalnie, w osobnym wierszu „Szkolenia / webinary").
-- Kolumny: Data, Email, Imię, Firma, Link.
-
-iii) Sekcja „Quiz NIS2 / Cybersecurity check"
-- Źródło: `submissions`.
-- Kolumny: Data, Email, Wynik, Sektor, Link.
-- Link: przekierowanie do strony quizu. Dla nowych zapisów — dodanie `source_url` w tabeli (patrz punkt 4). Dla historycznych — link do polskiej wersji quizu `/pl/sprawdz-cyberbezpieczenstwo`.
-
-iv) Sekcja „Webinary / Events"
-- Źródło: `event_registrations`.
-- Kolumny: Data, Event, Imię, Email, Firma, Link.
-- Link: `/pl/events/:event_slug` (lub inny locale, jeśli dostępny).
-
-d) Wspólne funkcje dla wszystkich sekcji
-- Wyszukiwarka po emailu / firmie / imieniu (globalna, filtruje wszystkie sekcje).
-- Sortowanie po dacie (domyślnie najnowsze na górze).
-- Eksport CSV (globalny lub per sekcja) — przycisk „Eksportuj CSV".
-- Paginacja lub „Pokaż więcej" jeśli lista > 50 pozycji.
-
-4. Ulepszenie zapisu źródła dla quizu
-Plik źródłowy: formularz quizu (`src/pages/formularz/FormularzPage.tsx` lub podobny)
-- Dodać `source_url` do insertu w tabelę `submissions` (z `window.location.href`), aby przyszłe quiz-leady miały dokładny link.
-- Opcjonalnie dodać `language`/`locale` do tabeli, jeśli brak.
-- Wymaga migracji dodającej kolumnę `source_url` do `public.submissions` (z RLS / GRANT).
-
-5. Ulepszenie linków dla event_registrations
-Pliki: formularze eventów (`src/components/events/EventRegistrationForm.tsx`, `CycleRegistrationForm.tsx`)
-- Dodać `source_url` do insertu w `event_registrations`, aby link w panelu leadów wskazywał dokładną stronę, z której zapisano się na webinar/szkolenie.
-- Alternatywnie: wykorzystać `event_slug` i zbudować link `/events/:event_slug`.
-
-6. Style i spójność
-- Użyć istniejących komponentów: `Card`, `Table`, `Badge`, `Button`, `Input`, `Select`.
-- Spójne z obecnym adminem (ciemne / jasne motywy, odstępy, typografia).
-- Linki jako `ExternalLink` (lub `<a>`) z otwieraniem w nowej karcie, z ikonką.
-
-7. Testy / weryfikacja
-- Sprawdzenie, że zakładka pojawia się w menu bocznym.
-- Weryfikacja, że dane ładują się poprawnie i liczby się zgadzają.
-- Sprawdzenie linków do podstron (czy nie prowadzą do błędnych adresów).
-- Weryfikacja eksportu CSV.
-
-Kolejność prac:
-1. Migracja: dodać `source_url` do `submissions` (opcjonalnie do `event_registrations`).
-2. Zaktualizować formularze quizu/eventów, żeby zapisywały `source_url`.
-3. Stworzyć komponent `Leads.tsx` z sekcjami i KPI.
-4. Dodać trasę i pozycję w menu.
-5. Przetestować build i poprawność danych.
-
-Oczekiwany efekt końcowy:
-Admin ma jedną zakładkę „Leads", w której na pierwszy rzut oka widać, ile leadów przyszło z każdej części strony, i może kliknąć link do podstrony, by zobaczyć kontekst formularza.
+- Nowe tokeny semantyczne w `src/index.css` scope'owane do klasy strony (np. `.ksc-theme`), żeby nie ruszać globalnego motywu: `--ksc-ink`, `--ksc-surface`, `--ksc-accent`, `--ksc-paper`, plus mapowanie w `tailwind.config.ts` jako paleta `ksc`.
+- Przebudowa JSX w `src/pages/services/KscStart.tsx` — sekcje jak wyżej; treść merytoryczna, daty, FAQ i CTA pozostają bez zmian.
+- `KscStartForm` dostaje wariant `paper` (jasna karta, ramka 1 px, pola bez zaokrągleń, przycisk pełnej szerokości w granacie).
+- Bez zmian w SEO: canonical, hreflang PL-only, schema Service + BreadcrumbList + FAQPage zostają jak są.
+- Logika formularza (`contact-form`, tagowanie leada KSC START) nietknięta.
