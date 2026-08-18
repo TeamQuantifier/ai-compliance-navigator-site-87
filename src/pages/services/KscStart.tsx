@@ -432,7 +432,7 @@ const KscStart = () => {
             ].map((t) => (
               <span
                 key={t}
-                className="text-[11px] md:text-xs uppercase tracking-[0.12em] text-ksc-ink/60 px-4 lg:border-r lg:border-ksc-ink/15 lg:last:border-r-0 first:pl-0"
+                className="text-[11px] md:text-xs uppercase tracking-[0.12em] text-ksc-ink/80 px-4 lg:border-r lg:border-ksc-ink/15 lg:last:border-r-0 first:pl-0 font-semibold"
               >
                 {t}
               </span>
