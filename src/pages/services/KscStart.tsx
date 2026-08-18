@@ -378,7 +378,7 @@ const KscStart = () => {
 
               <div className="w-16 h-px bg-ksc-accent mb-6" aria-hidden="true" />
 
-              <p className="text-lg md:text-xl text-ksc-paper/80 max-w-2xl leading-relaxed mb-6">
+              <p className="text-lg md:text-xl text-ksc-paper/80 leading-relaxed mb-6">
                 Pakiet startowy zgodności z dyrektywą NIS2 i Krajowym Systemem Cyberbezpieczeństwa: szkolenie, wpis do wykazu KSC, rejestr aktywów i dostęp do platformy — w 10 dni roboczych.
               </p>
 
@@ -395,7 +395,7 @@ const KscStart = () => {
               </div>
 
               {/* trzy dowody */}
-              <dl className="grid grid-cols-3 gap-6 max-w-xl mb-8">
+              <dl className="grid grid-cols-3 gap-6 mb-8">
                 {[
                   { k: '10', l: 'dni roboczych' },
                   { k: '5', l: 'elementów pakietu' },
@@ -408,7 +408,7 @@ const KscStart = () => {
                 ))}
               </dl>
 
-              <p className="text-sm text-ksc-paper/55 max-w-2xl leading-relaxed border-l-2 border-ksc-accent/50 pl-4">
+              <p className="text-sm text-ksc-paper/55 max-w-3xl leading-relaxed border-l-2 border-ksc-accent/50 pl-4">
                 <strong className="text-ksc-paper/80 font-semibold">Sankcje:</strong> podmiot kluczowy — do 10 mln EUR lub 2% światowego obrotu; podmiot ważny — do 7 mln EUR lub 1,4% (min. 15 000 zł). Kierownik podmiotu odpowiada osobiście — kara do 300% wynagrodzenia.
               </p>
             </div>
