@@ -512,25 +512,50 @@ const KscStart = () => {
             <p className="text-ksc-ink/65">Wiecie z góry, co dzieje się każdego dnia i jaki dokument z tego zostaje.</p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead>
-                <tr className="border-y border-ksc-ink/20 text-ksc-ink/50 uppercase text-[11px] tracking-[0.16em]">
-                  <th className="py-4 pr-6 font-semibold">Dzień</th>
-                  <th className="py-4 pr-6 font-semibold">Działanie</th>
-                  <th className="py-4 font-semibold">Artefakt</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-ksc-ink/10">
-                {timeline.map((row) => (
-                  <tr key={row.day}>
-                    <td className="py-5 pr-6 font-bold text-ksc-ink whitespace-nowrap tabular-nums">{row.day}</td>
-                    <td className="py-5 pr-6 text-ksc-ink/80">{row.action}</td>
-                    <td className="py-5 text-ksc-ink/60">{row.artifact}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="relative max-w-4xl">
+            {/* vertical spine */}
+            <div
+              className="absolute left-[15px] md:left-[23px] top-3 bottom-3 w-px bg-ksc-ink/15"
+              aria-hidden="true"
+            />
+
+            <div className="space-y-0">
+              {timeline.map((row, idx) => (
+                <div key={row.day} className="relative pl-12 md:pl-20 pb-10 last:pb-0">
+                  {/* day marker */}
+                  <div className="absolute left-0 md:left-1 top-0 flex flex-col items-center">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border border-ksc-ink/20 bg-white flex items-center justify-center z-10">
+                      <span className="text-[10px] md:text-xs font-bold text-ksc-ink tabular-nums">
+                        {row.day.replace(/[^0-9]/g, '').slice(0, 2)}
+                      </span>
+                    </div>
+                    {idx !== timeline.length - 1 && (
+                      <div className="h-full w-px bg-ksc-ink/10" aria-hidden="true" />
+                    )}
+                  </div>
+
+                  {/* card */}
+                  <div className="border border-ksc-ink/10 rounded-sm bg-ksc-paper/40 p-5 md:p-6 hover:border-ksc-accent/30 transition-colors">
+                    <div className="flex flex-col md:flex-row md:items-start gap-3 md:gap-8">
+                      <div className="flex-1">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ksc-accent mb-2">
+                          Dzień {row.day}
+                        </p>
+                        <p className="text-lg md:text-xl font-bold text-ksc-ink leading-snug">
+                          {row.action}
+                        </p>
+                      </div>
+                      <div className="md:w-64 md:text-right md:border-l md:border-ksc-ink/10 md:pl-6">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ksc-ink/40 mb-1">
+                          Artefakt
+                        </p>
+                        <p className="text-sm text-ksc-ink/70">{row.artifact}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
