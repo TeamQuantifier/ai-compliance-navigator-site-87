@@ -608,7 +608,6 @@ const KscStart = () => {
               </div>
             ))}
           </div>
-          </div>
         </div>
       </section>
 
