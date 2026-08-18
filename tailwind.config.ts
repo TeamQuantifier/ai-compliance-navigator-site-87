@@ -95,8 +95,15 @@ export default {
 					'purple': '#6d38a8',
 					'blue': '#387fef',
 					'blue-dark': '#324691',
+				},
+				ksc: {
+					ink: '#0f1b3d',
+					surface: '#1e3a5f',
+					accent: '#3b6fa0',
+					paper: '#e8edf3',
 				}
 			},
+
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
