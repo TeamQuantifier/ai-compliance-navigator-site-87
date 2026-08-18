@@ -470,7 +470,7 @@ const KscStart = () => {
       {/* ────── ZAKRES PAKIETU ────── */}
       <section id="zakres" className="py-16 md:py-24 bg-ksc-paper">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-12">
+          <div className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Zakres pakietu</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink mb-3">Pięć elementów, które zamykają start zgodności</h2>
             <p className="text-ksc-ink/65">
