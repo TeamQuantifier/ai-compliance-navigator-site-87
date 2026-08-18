@@ -30,7 +30,7 @@ const daysLeft = () =>
 
 /* ───────────────────────── formularz ───────────────────────── */
 
-const KscStartForm = ({ id, variant = 'dark' }: { id?: string; variant?: 'dark' | 'light' }) => {
+const KscStartForm = ({ id, variant = 'paper' }: { id?: string; variant?: 'paper' | 'light' }) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -40,9 +40,7 @@ const KscStartForm = ({ id, variant = 'dark' }: { id?: string; variant?: 'dark' 
   const [phone, setPhone] = useState('');
 
   const inputClass =
-    variant === 'dark'
-      ? 'w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-primary'
-      : 'w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:border-primary';
+    'w-full px-4 py-3 rounded-sm bg-white border border-ksc-ink/20 text-ksc-ink placeholder:text-ksc-ink/40 text-sm focus:outline-none focus:border-ksc-accent focus:ring-1 focus:ring-ksc-accent/40';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,33 +89,31 @@ const KscStartForm = ({ id, variant = 'dark' }: { id?: string; variant?: 'dark' 
   };
 
   const wrapper =
-    variant === 'dark'
-      ? 'bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl'
-      : 'bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm';
+    variant === 'paper'
+      ? 'bg-white border border-ksc-ink/15 rounded-sm p-6 md:p-8'
+      : 'bg-ksc-paper border border-ksc-ink/10 rounded-sm p-6 md:p-8';
 
   return (
     <div id={id} className={wrapper}>
       {sent ? (
         <div className="text-center py-10">
-          <div className="w-14 h-14 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-4">
-            <CheckCircle2 className="h-7 w-7 text-primary" />
+          <div className="w-14 h-14 mx-auto rounded-full border border-ksc-accent/40 bg-ksc-paper flex items-center justify-center mb-4">
+            <CheckCircle2 className="h-7 w-7 text-ksc-accent" strokeWidth={1.5} />
           </div>
-          <h3 className={`text-xl font-bold mb-2 ${variant === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-            Dziękujemy — zgłoszenie wysłane
-          </h3>
-          <p className={variant === 'dark' ? 'text-sm text-white/70' : 'text-sm text-slate-600'}>
+          <h3 className="text-xl font-bold mb-2 text-ksc-ink">Dziękujemy — zgłoszenie wysłane</h3>
+          <p className="text-sm text-ksc-ink/65">
             Odezwiemy się w 1 dzień roboczy z propozycją startu pakietu.
           </p>
         </div>
       ) : (
         <>
-          <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${variant === 'dark' ? 'text-primary' : 'text-primary'}`}>
-            Start w 2 tygodnie
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">
+            Zgłoszenie firmy
           </p>
-          <h2 className={`text-xl md:text-2xl font-bold mb-1 ${variant === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+          <h2 className="text-xl md:text-2xl font-bold mb-2 text-ksc-ink leading-snug">
             Zgłoś firmę do pakietu KSC START
           </h2>
-          <p className={`text-sm mb-5 ${variant === 'dark' ? 'text-white/70' : 'text-slate-600'}`}>
+          <p className="text-sm mb-6 text-ksc-ink/65">
             Trzy pola. Odpowiadamy w 1 dzień roboczy i proponujemy termin startu.
           </p>
           <form onSubmit={handleSubmit} className="space-y-3">
@@ -156,11 +152,15 @@ const KscStartForm = ({ id, variant = 'dark' }: { id?: string; variant?: 'dark' 
               maxLength={40}
               className={inputClass}
             />
-            <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90 text-white h-12 text-base">
-              {loading ? 'Wysyłanie…' : 'Startujemy — zgłaszam firmę'}
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full rounded-sm bg-ksc-ink hover:bg-ksc-surface text-white h-12 text-base font-semibold"
+            >
+              {loading ? 'Wysyłanie…' : 'Zgłaszam firmę'}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <p className={`text-xs ${variant === 'dark' ? 'text-white/50' : 'text-slate-500'}`}>
+            <p className="text-xs text-ksc-ink/50 leading-relaxed">
               Wysyłając formularz zgadzasz się na kontakt w sprawie pakietu KSC START. Dane wykorzystujemy wyłącznie do obsługi zgłoszenia.
             </p>
           </form>
@@ -169,6 +169,7 @@ const KscStartForm = ({ id, variant = 'dark' }: { id?: string; variant?: 'dark' 
     </div>
   );
 };
+
 
 /* ───────────────────────── dane sekcji ───────────────────────── */
 
