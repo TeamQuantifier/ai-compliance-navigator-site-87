@@ -378,7 +378,7 @@ const KscStart = () => {
 
               <div className="w-16 h-px bg-ksc-accent mb-6" aria-hidden="true" />
 
-              <p className="text-lg md:text-xl text-ksc-paper/80 max-w-2xl leading-relaxed mb-6">
+              <p className="text-lg md:text-xl text-ksc-paper/80 leading-relaxed mb-6">
                 Pakiet startowy zgodności z dyrektywą NIS2 i Krajowym Systemem Cyberbezpieczeństwa: szkolenie, wpis do wykazu KSC, rejestr aktywów i dostęp do platformy — w 10 dni roboczych.
               </p>
 
@@ -395,7 +395,7 @@ const KscStart = () => {
               </div>
 
               {/* trzy dowody */}
-              <dl className="grid grid-cols-3 gap-6 max-w-xl mb-8">
+              <dl className="grid grid-cols-3 gap-6 mb-8">
                 {[
                   { k: '10', l: 'dni roboczych' },
                   { k: '5', l: 'elementów pakietu' },
@@ -408,7 +408,7 @@ const KscStart = () => {
                 ))}
               </dl>
 
-              <p className="text-sm text-ksc-paper/55 max-w-2xl leading-relaxed border-l-2 border-ksc-accent/50 pl-4">
+              <p className="text-sm text-ksc-paper/55 max-w-3xl leading-relaxed border-l-2 border-ksc-accent/50 pl-4">
                 <strong className="text-ksc-paper/80 font-semibold">Sankcje:</strong> podmiot kluczowy — do 10 mln EUR lub 2% światowego obrotu; podmiot ważny — do 7 mln EUR lub 1,4% (min. 15 000 zł). Kierownik podmiotu odpowiada osobiście — kara do 300% wynagrodzenia.
               </p>
             </div>
@@ -445,7 +445,7 @@ const KscStart = () => {
       {/* ────── ZEGAR USTAWOWY ────── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-12">
+          <div className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Zegar ustawowy</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink">Trzy daty, które wyznaczają Wasz harmonogram</h2>
           </div>
@@ -470,7 +470,7 @@ const KscStart = () => {
       {/* ────── ZAKRES PAKIETU ────── */}
       <section id="zakres" className="py-16 md:py-24 bg-ksc-paper">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-12">
+          <div className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Zakres pakietu</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink mb-3">Pięć elementów, które zamykają start zgodności</h2>
             <p className="text-ksc-ink/65">
@@ -506,13 +506,13 @@ const KscStart = () => {
       {/* ────── HARMONOGRAM ────── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-12">
+          <div className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Harmonogram</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink mb-3">10 dni roboczych, dzień po dniu</h2>
             <p className="text-ksc-ink/65">Wiecie z góry, co dzieje się każdego dnia i jaki dokument z tego zostaje.</p>
           </div>
 
-          <div className="relative max-w-4xl">
+          <div className="relative">
             {/* vertical spine */}
             <div
               className="absolute left-[15px] md:left-[23px] top-3 bottom-3 w-px bg-ksc-ink/15"
@@ -592,7 +592,7 @@ const KscStart = () => {
       {/* ────── DLA KOGO ────── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-12">
+          <div className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Dla kogo</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink">Kto powinien zacząć teraz</h2>
           </div>
