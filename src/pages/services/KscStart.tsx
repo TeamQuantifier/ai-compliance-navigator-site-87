@@ -608,25 +608,6 @@ const KscStart = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 flex flex-wrap gap-4">
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-sm border-ksc-ink text-ksc-ink hover:bg-ksc-paper hover:text-ksc-ink"
-            >
-              <Link to="/pl/frameworks/nis-2/">
-                Zobacz pełne wymagania NIS2 / KSC
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-sm border-ksc-ink/25 text-ksc-ink/70 hover:bg-ksc-paper hover:text-ksc-ink"
-            >
-              <Link to="/pl/sprawdz-cyberbezpieczenstwo/">Sprawdź gotowość w 5 minut</Link>
-            </Button>
-          </div>
         </div>
       </section>
 
