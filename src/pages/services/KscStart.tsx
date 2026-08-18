@@ -506,7 +506,7 @@ const KscStart = () => {
       {/* ────── HARMONOGRAM ────── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-12">
+          <div className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Harmonogram</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink mb-3">10 dni roboczych, dzień po dniu</h2>
             <p className="text-ksc-ink/65">Wiecie z góry, co dzieje się każdego dnia i jaki dokument z tego zostaje.</p>
