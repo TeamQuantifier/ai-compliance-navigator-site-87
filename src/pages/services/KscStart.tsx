@@ -487,10 +487,10 @@ const KscStart = () => {
                       <s.icon className="h-5 w-5 text-ksc-ink/70" strokeWidth={1.5} />
                       <h3 className="font-bold text-ksc-ink leading-snug">{s.title}</h3>
                     </div>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2.5">
                       {s.items.map((i) => (
-                        <li key={i} className="flex gap-2.5 text-sm text-ksc-ink/70 leading-relaxed">
-                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ksc-accent" aria-hidden="true" />
+                        <li key={i} className="flex gap-3 text-[15px] text-ksc-ink/75 leading-relaxed">
+                          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ksc-accent" aria-hidden="true" />
                           <span>{i}</span>
                         </li>
                       ))}
