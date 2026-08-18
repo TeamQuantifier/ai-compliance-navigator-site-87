@@ -545,7 +545,7 @@ const KscStart = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-slate-900">
-              <Link to="/pl/cybersecurity-check/">Sprawdź gotowość w 5 minut</Link>
+              <Link to="/pl/sprawdz-cyberbezpieczenstwo/">Sprawdź gotowość w 5 minut</Link>
             </Button>
           </div>
         </div>
