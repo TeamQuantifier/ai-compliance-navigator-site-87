@@ -512,7 +512,7 @@ const KscStart = () => {
             <p className="text-ksc-ink/65">Wiecie z góry, co dzieje się każdego dnia i jaki dokument z tego zostaje.</p>
           </div>
 
-          <div className="relative max-w-4xl">
+          <div className="relative">
             {/* vertical spine */}
             <div
               className="absolute left-[15px] md:left-[23px] top-3 bottom-3 w-px bg-ksc-ink/15"
