@@ -3,7 +3,7 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { defineMcp, auth } from "npm:@lovable.dev/mcp-js@0.20.0";
 
 // src/lib/mcp/tools/list-blog-posts.ts
 import { createClient } from "npm:@supabase/supabase-js@^2.81.1";
@@ -75,6 +75,10 @@ var mcp_default = defineMcp({
   title: "Quantifier.ai MCP",
   version: "0.1.0",
   instructions: "Read-only access to Quantifier.ai public marketing content. Use `list_blog_posts` for published blog articles and `list_case_studies` for customer success stories. Both accept an optional `locale` (en, pl, cs).",
+  auth: auth.oauth.issuer({
+    issuer: `${process.env.SUPABASE_URL}/auth/v1`,
+    acceptedAudiences: ["authenticated"]
+  }),
   tools: [list_blog_posts_default, list_case_studies_default]
 });
 
