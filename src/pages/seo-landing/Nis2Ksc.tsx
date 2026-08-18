@@ -453,9 +453,27 @@ const Nis2Ksc = () => {
               <p className="text-lg md:text-xl text-white/70 mb-4 max-w-2xl leading-relaxed">
                 {t('nis2Ksc.hero.subtext1')}
               </p>
-              <p className="text-sm md:text-base text-white/50 mb-6 max-w-2xl leading-relaxed lg:mb-0">
+              <p className="text-sm md:text-base text-white/50 mb-6 max-w-2xl leading-relaxed">
                 {t('nis2Ksc.hero.subtext2')}
               </p>
+
+              {currentLocale === 'pl' && (
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25"
+                  >
+                    <Link to="/pl/start-nis2-ksc/">
+                      Start NIS2 / KSC w dwa tygodnie
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <span className="text-xs text-white/50">
+                    Pakiet startowy: szkolenie, wpis do wykazu KSC, rejestr aktywów.
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="lg:pt-4">
