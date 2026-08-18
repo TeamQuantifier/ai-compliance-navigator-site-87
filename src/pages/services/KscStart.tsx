@@ -423,17 +423,21 @@ const KscStart = () => {
       {/* ────── PASEK ZAUFANIA ────── */}
       <section className="bg-ksc-paper border-b border-ksc-ink/10">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-3 py-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-3 py-5">
             {[
               'Prawnicy i praktycy audytu',
               'Metodyka zgodna z ustawą o KSC',
-              'Asysta przy wniosku w systemie S46',
+              'Asysta przy wniosku w S46',
               'Dokumentacja gotowa dla organu',
             ].map((t) => (
-              <span key={t} className="text-xs md:text-sm uppercase tracking-[0.12em] text-ksc-ink/60">
+              <span
+                key={t}
+                className="text-[11px] md:text-xs uppercase tracking-[0.12em] text-ksc-ink/60 px-4 lg:border-r lg:border-ksc-ink/15 lg:last:border-r-0 first:pl-0"
+              >
                 {t}
               </span>
             ))}
+
           </div>
         </div>
       </section>
