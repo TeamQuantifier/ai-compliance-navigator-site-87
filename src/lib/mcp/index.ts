@@ -10,7 +10,7 @@ export default defineMcp({
   instructions:
     "Read-only access to Quantifier.ai public marketing content. Use `list_blog_posts` for published blog articles and `list_case_studies` for customer success stories. Both accept an optional `locale` (en, pl, cs).",
   auth: auth.oauth.issuer({
-    issuerUrl: `${process.env.SUPABASE_URL}/auth/v1`,
+    issuer: `${process.env.SUPABASE_URL}/auth/v1`,
     acceptedAudiences: ["authenticated"],
   }),
   tools: [listBlogPosts, listCaseStudies],
