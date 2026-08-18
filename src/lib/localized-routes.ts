@@ -71,6 +71,7 @@ const LOCALE_AVAILABILITY: Record<string, Locale[]> = {
   'partners/gs1-polska': ['en'],
   // Polish-only pages
   'darmowe-szkolenie-nis2': ['pl'],
+  'start-nis2-ksc': ['pl'],
 };
 
 /**
