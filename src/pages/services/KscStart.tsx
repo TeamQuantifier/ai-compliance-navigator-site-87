@@ -358,10 +358,10 @@ const KscStart = () => {
         <div className="container relative mx-auto px-4">
           <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-400/30 bg-red-500/10 px-4 py-1.5 mb-6">
-                <AlertTriangle className="h-4 w-4 text-red-300" />
-                <span className="text-sm font-semibold text-red-200">
-                  Wniosek do wykazu KSC: 3 października 2026 r. — zostało {days} dni
+              <div className="inline-flex items-center gap-3 rounded-full border border-red-400/30 bg-red-500/10 px-5 py-2.5 mb-6">
+                <AlertTriangle className="h-5 w-5 text-red-300" />
+                <span className="text-base md:text-lg font-semibold text-red-200">
+                  Wniosek do wykazu KSC: <span className="text-red-100">3 października 2026 r.</span> — zostało <span className="font-bold text-white">{days} dni</span>
                 </span>
               </div>
 
