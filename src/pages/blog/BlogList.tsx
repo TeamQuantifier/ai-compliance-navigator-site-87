@@ -322,7 +322,7 @@ const BlogList = () => {
                 </CardHeader>
                 <CardContent>
                   <Link
-                    to="/pl/checklista-nis2-ksc-wdrozenie-audyt"
+                    to="/pl/checklista-nis2-ksc-wdrozenie-audyt/"
                     className="inline-flex items-center text-sm font-medium text-primary hover:underline group"
                   >
                     {t('blog.knowledgeHub.downloads.cta')}
