@@ -141,22 +141,6 @@ export const ChecklistDownloadForm = ({
           required
           className={inputClass}
         />
-        <label className="flex items-start gap-3 cursor-pointer pt-1">
-          <input
-            type="checkbox"
-            checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="mt-1 h-4 w-4 accent-ksc-accent"
-          />
-          <span className="text-[12px] leading-relaxed text-ksc-ink/60">
-            Chcę otrzymywać materiały wdrożeniowe NIS2 / KSC na podany adres. Zgoda jest
-            dobrowolna i można ją wycofać w każdej chwili —{' '}
-            <Link to="/pl/legal/privacy" className="underline hover:text-ksc-accent">
-              polityka prywatności
-            </Link>
-            .
-          </span>
-        </label>
         <Button
           type="submit"
           disabled={loading}
@@ -165,9 +149,18 @@ export const ChecklistDownloadForm = ({
           {loading ? 'Przygotowujemy pliki…' : 'Pobierz checklistę'}
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
-        <p className="text-[11px] text-ksc-ink/45 pt-1">
+        <p className="text-[12px] leading-relaxed text-ksc-ink/60 pt-1">
+          Klikając „Pobierz checklistę” zapisujesz się na materiały wdrożeniowe NIS2 / KSC
+          wysyłane na podany adres. Zapis możesz wycofać w każdej chwili jednym kliknięciem -{' '}
+          <Link to="/pl/legal/privacy" className="underline hover:text-ksc-accent">
+            polityka prywatności
+          </Link>
+          .
+        </p>
+        <p className="text-[11px] text-ksc-ink/45">
           Materiał edukacyjny. Nie stanowi porady prawnej.
         </p>
+
       </form>
     </div>
   );
