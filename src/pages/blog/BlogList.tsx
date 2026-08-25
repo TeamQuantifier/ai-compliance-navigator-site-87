@@ -22,7 +22,6 @@ import {
   Download,
   CalendarDays,
   Search,
-  FileText,
   Users,
   ArrowUpRight,
   Play,
@@ -30,6 +29,8 @@ import {
 } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
 import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
+import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
+
 
 const BlogList = () => {
   const { currentLocale, t } = useLanguage();
@@ -75,8 +76,17 @@ const BlogList = () => {
 
   const scrollTo = (href: string) => {
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (href === '#featured-resource') {
+        setTimeout(() => {
+          const input = document.querySelector<HTMLInputElement>('#featured-resource-email');
+          input?.focus();
+        }, 700);
+      }
+    }
   };
+
 
   if (postsError) {
     return (
@@ -290,46 +300,73 @@ const BlogList = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video overflow-hidden bg-gradient-to-br from-compliance-50 to-innovation-50 flex items-center justify-center">
-                <FileText className="h-16 w-16 text-primary/60" />
+            {/* Calendar card — scrolls to featured resource */}
+            <Card
+              className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group"
+              onClick={() => scrollTo('#featured-resource')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  scrollTo('#featured-resource');
+                }
+              }}
+            >
+              <div className="aspect-video overflow-hidden bg-gradient-to-br from-compliance-50 to-innovation-50 flex items-center justify-center p-6">
+                <img
+                  src="/lovable-uploads/compliance-calendar-2026-new.png"
+                  alt={t('blog.knowledgeHub.downloads.calendarTitle')}
+                  className="h-full w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
+                  width={270}
+                  height={380}
+                  loading="lazy"
+                />
               </div>
               <CardHeader>
-                <CardTitle className="text-lg">{t('blog.knowledgeHub.downloads.calendarTitle')}</CardTitle>
+                <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                  {t('blog.knowledgeHub.downloads.calendarTitle')}
+                </CardTitle>
                 <CardDescription className="line-clamp-2">
                   {t('blog.knowledgeHub.downloads.calendarDesc')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <button onClick={() => scrollTo('#featured-resource')} className="inline-flex items-center text-sm font-medium text-primary hover:underline group">
+                <span className="inline-flex items-center text-sm font-medium text-primary group-hover:underline">
                   {t('blog.knowledgeHub.downloads.cta')}
                   <Download className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
-                </button>
+                </span>
               </CardContent>
             </Card>
 
             {/* NIS2 / KSC checklist — PL only */}
             {currentLocale === 'pl' ? (
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video overflow-hidden bg-gradient-to-br from-compliance-50 to-innovation-50 flex items-center justify-center">
-                  <FileText className="h-16 w-16 text-primary/60" />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-lg">Checklista NIS2 / KSC 2.0 (XLSX)</CardTitle>
-                  <CardDescription className="line-clamp-2">
-                    Arkusz roboczy z harmonogramem 10 dni, właścicielami zadań i listą dowodów do audytu.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link
-                    to="/pl/checklista-nis2-ksc-wdrozenie-audyt/"
-                    className="inline-flex items-center text-sm font-medium text-primary hover:underline group"
-                  >
-                    {t('blog.knowledgeHub.downloads.cta')}
-                    <Download className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
-                  </Link>
-                </CardContent>
-              </Card>
+              <Link to="/pl/checklista-nis2-ksc-wdrozenie-audyt/" className="block group">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
+                  <div className="aspect-video overflow-hidden bg-gradient-to-br from-compliance-50 to-innovation-50 flex items-center justify-center p-6">
+                    <img
+                      src={nis2ChecklistThumb}
+                      alt="Checklista NIS2 / KSC 2.0"
+                      className="h-full w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
+                      width={320}
+                      height={240}
+                      loading="lazy"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-lg group-hover:text-primary transition-colors">Checklista NIS2 / KSC 2.0 (XLSX)</CardTitle>
+                    <CardDescription className="line-clamp-2">
+                      Arkusz roboczy z harmonogramem 10 dni, właścicielami zadań i listą dowodów do audytu.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <span className="inline-flex items-center text-sm font-medium text-primary group-hover:underline">
+                      {t('blog.knowledgeHub.downloads.cta')}
+                      <Download className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ) : (
               <Card className="overflow-hidden border-dashed">
                 <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
@@ -350,6 +387,7 @@ const BlogList = () => {
 
           </div>
         </section>
+
 
         {/* Blog posts */}
         <section id="latest-posts">
