@@ -852,8 +852,10 @@
       },
       "topics": {
         "title": "Przeglądaj według tematu",
+        "searchPlaceholder": "Szukaj artykułu, standardu lub tematu...",
         "all": "Wszystkie"
       },
+
       "caseStudies": {
         "title": "Historie sukcesu",
         "subtitle": "Jak organizacje przygotowują się do NIS2, KSC i ISO 27001 z Quantifier.",
