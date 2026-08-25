@@ -60,6 +60,7 @@ const EbookDownloadSection = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
+                id="featured-resource-email"
                 type="email"
                 placeholder={t('blog.ebookSection.emailPlaceholder')}
                 value={email}
@@ -67,6 +68,7 @@ const EbookDownloadSection = () => {
                 className="bg-white"
                 disabled={isLoading}
               />
+
 
               <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
                 {isLoading ? (
