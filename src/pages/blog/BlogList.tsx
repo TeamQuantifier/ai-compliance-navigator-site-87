@@ -117,11 +117,12 @@ const BlogList = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder={t('blog.knowledgeHub.topics.title')}
+                placeholder={t('blog.knowledgeHub.topics.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus-visible:ring-primary"
               />
+
             </div>
           </div>
 
@@ -270,11 +271,12 @@ const BlogList = () => {
               </CardHeader>
               <CardContent>
                 <Link to={`/${currentLocale}/contact`}>
-                  <Button variant="outline" className="group border-white/20 text-white hover:bg-white/10 hover:text-white">
+                  <Button variant="outline" className="group border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white">
                     {t('blog.knowledgeHub.training.card2.cta')}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
+
               </CardContent>
             </Card>
           </div>
@@ -313,14 +315,15 @@ const BlogList = () => {
                   <div className="mx-auto h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                     <Download className="h-6 w-6 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground">Więcej materiałów wkrótce</p>
+                  <p className="text-sm text-muted-foreground">{t('blog.knowledgeHub.downloads.moreSoon')}</p>
                 </div>
               </div>
               <CardHeader>
-                <CardTitle className="text-lg text-muted-foreground">Checklisty i szablony</CardTitle>
-                <CardDescription>Przygotowujemy praktyczne checklisty NIS2, ISO 27001 i DORA.</CardDescription>
+                <CardTitle className="text-lg text-muted-foreground">{t('blog.knowledgeHub.downloads.moreTitle')}</CardTitle>
+                <CardDescription>{t('blog.knowledgeHub.downloads.moreDesc')}</CardDescription>
               </CardHeader>
             </Card>
+
           </div>
         </section>
 
