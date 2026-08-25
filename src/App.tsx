@@ -104,6 +104,8 @@ import FormularzPage from "./pages/formularz/FormularzPage";
 import TrainingLanding from "./pages/services/TrainingLanding";
 import Nis2TrainingLanding from "./pages/services/Nis2TrainingLanding";
 import KscStart from "./pages/services/KscStart";
+import Nis2ChecklistLanding from "./pages/services/Nis2ChecklistLanding";
+import Nis2ChecklistThankYou from "./pages/services/Nis2ChecklistThankYou";
 
 // Partner subpages
 import Gs1Polska from "./pages/partners/Gs1Polska";
@@ -232,6 +234,8 @@ const MainRoutes = () => (
         <Route path="/cs/skoleni-kyberneticka-bezpecnost-pro-firmy" element={<TrainingLanding />} />
         <Route path="/pl/darmowe-szkolenie-nis2" element={<Nis2TrainingLanding />} />
         <Route path="/pl/start-nis2-ksc" element={<KscStart />} />
+        <Route path="/pl/checklista-nis2-ksc-wdrozenie-audyt" element={<Nis2ChecklistLanding />} />
+        <Route path="/pl/checklista-nis2-ksc-wdrozenie-audyt/dziekujemy" element={<Nis2ChecklistThankYou />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />
