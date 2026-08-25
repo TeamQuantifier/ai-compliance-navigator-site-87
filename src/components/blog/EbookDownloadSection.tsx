@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Download, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -16,33 +15,26 @@ const EbookDownloadSection = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
   const { currentLocale } = useLanguage();
-  
+
   const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!email || !isValidEmail(email)) {
       toast({ variant: 'destructive', title: t('blog.ebookSection.emailRequired') });
       return;
     }
-    
-    if (!consent) {
-      toast({ variant: 'destructive', title: t('blog.ebookSection.consentRequired') });
-      return;
-    }
-    
+
     setIsLoading(true);
-    
+
     // Show dialog immediately - don't wait for API
     setShowSuccessDialog(true);
     setEmail('');
-    setConsent(false);
     setIsLoading(false);
-    
+
     // Newsletter subscription in background - fire-and-forget
     newsletterClient.subscribe(email, currentLocale, {
       source: 'compliance_calendar_2026',
@@ -53,7 +45,7 @@ const EbookDownloadSection = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-compliance-50 via-white to-innovation-50 rounded-2xl p-8 md:p-12 mb-12 shadow-lg border border-slate-100">
+      <section id="featured-resource" className="bg-gradient-to-br from-compliance-50 via-white to-innovation-50 rounded-2xl p-8 md:p-12 mb-12 shadow-lg border border-slate-100">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left column - form */}
           <div className="space-y-6">
@@ -75,28 +67,7 @@ const EbookDownloadSection = () => {
                 className="bg-white"
                 disabled={isLoading}
               />
-              
-              <div className="flex items-start space-x-3">
-                <Checkbox
-                  id="consent"
-                  checked={consent}
-                  onCheckedChange={(checked) => setConsent(checked as boolean)}
-                  disabled={isLoading}
-                  className="mt-1"
-                />
-                <label htmlFor="consent" className="text-sm text-slate-600 leading-tight cursor-pointer">
-                  {t('blog.ebookSection.consent')}{' '}
-                  <Link to={`/${currentLocale}/legal/privacy`} className="text-primary hover:underline">
-                    {t('blog.ebookSection.privacyPolicy')}
-                  </Link>
-                  {' '}{t('blog.ebookSection.and')}{' '}
-                  <Link to={`/${currentLocale}/legal/terms`} className="text-primary hover:underline">
-                    {t('blog.ebookSection.termsOfService')}
-                  </Link>
-                  .
-                </label>
-              </div>
-              
+
               <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
                 {isLoading ? (
                   <>
@@ -110,13 +81,21 @@ const EbookDownloadSection = () => {
                   </>
                 )}
               </Button>
+
+              <p className="text-[12px] leading-relaxed text-slate-500 pt-1">
+                {t('blog.ebookSection.consent')}{' '}
+                <Link to={`/${currentLocale}/legal/privacy`} className="underline hover:text-primary">
+                  {t('blog.ebookSection.privacyPolicy')}
+                </Link>
+                .
+              </p>
             </form>
           </div>
 
           {/* Right column - image */}
           <div className="flex justify-center">
-            <img 
-              src="/lovable-uploads/compliance-calendar-2026-new.png" 
+            <img
+              src="/lovable-uploads/compliance-calendar-2026-new.png"
               alt="Compliance Kalendarz 2026"
               className="max-w-xs md:max-w-sm h-auto drop-shadow-xl"
               width={384}
@@ -143,13 +122,13 @@ const EbookDownloadSection = () => {
               {t('blog.ebookSection.successDialog.description')}
             </DialogDescription>
           </DialogHeader>
-          
+
           {/* Direct download link - pure HTML, no auth, no blocking */}
           <div className="space-y-3 mt-4">
             <div className="bg-slate-50 p-4 rounded-lg border">
               <Button asChild size="lg" className="w-full">
-                <a 
-                  href="/downloads/compliance-kalendarz-2026.pdf" 
+                <a
+                  href="/downloads/compliance-kalendarz-2026.pdf"
                   download="Compliance-Kalendarz-2026.pdf"
                   target="_self"
                 >
