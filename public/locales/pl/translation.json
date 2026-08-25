@@ -832,8 +832,74 @@
         "nis2Button": "Dowiedz się więcej o NIS2",
         "close": "Zamknij"
       }
+    },
+    "knowledgeHub": {
+      "title": "Centrum wiedzy",
+      "subtitle": "Wiedza, która pomaga zmniejszyć ryzyko i przyspieszyć compliance",
+      "description": "Blog, case studies, szkolenia i pliki do pobrania dla zarządów, CISO, audytorów i managerów compliance.",
+      "nav": {
+        "blog": "Blog",
+        "caseStudies": "Case studies",
+        "training": "Szkolenia",
+        "downloads": "Do pobrania",
+        "events": "Webinary"
+      },
+      "featured": {
+        "label": "Wyróżniony materiał",
+        "title": "Compliance Kalendarz 2026",
+        "description": "Terminy, deadline'y i kluczowe zmiany w regulacjach compliance na 2026 rok.",
+        "cta": "Pobierz PDF"
+      },
+      "topics": {
+        "title": "Przeglądaj według tematu",
+        "searchPlaceholder": "Szukaj artykułu, standardu lub tematu...",
+        "all": "Wszystkie"
+      },
+
+      "caseStudies": {
+        "title": "Historie sukcesu",
+        "subtitle": "Jak organizacje przygotowują się do NIS2, KSC i ISO 27001 z Quantifier.",
+        "cta": "Zobacz wszystkie"
+      },
+      "training": {
+        "title": "Szkolenia",
+        "subtitle": "Praktyczna wiedza od prawników i audytorów.",
+        "card1": {
+          "label": "Bezpłatne — 60 min",
+          "title": "Szkolenie NIS2 / KSC dla zarządów i managerów",
+          "description": "Zrozum obowiązki, terminy i pierwsze kroki w 60 minut.",
+          "cta": "Zapisz się"
+        },
+        "card2": {
+          "label": "Dedykowane",
+          "title": "Szkolenia wdrożeniowe dla zespołów",
+          "description": "Programy na zamówienie: ISO 27001, DORA, ESG, Digital Product Passport.",
+          "cta": "Umów spotkanie"
+        }
+      },
+      "downloads": {
+        "title": "Pliki do pobrania",
+        "subtitle": "Checklisty, kalendarze i szablony gotowe do użycia.",
+        "calendarTitle": "Compliance Kalendarz 2026",
+        "calendarDesc": "Terminy, deadline'y i kluczowe zmiany w regulacjach compliance na 2026 rok.",
+        "moreTitle": "Checklisty i szablony",
+        "moreDesc": "Przygotowujemy praktyczne checklisty NIS2, ISO 27001 i DORA.",
+        "moreSoon": "Więcej materiałów wkrótce",
+        "cta": "Pobierz"
+      },
+
+      "events": {
+        "title": "Najbliższe webinary",
+        "subtitle": "Bezpłatne sesje online z ekspertami.",
+        "cta": "Zapisz się"
+      },
+      "latestPosts": {
+        "title": "Najnowsze na blogu",
+        "cta": "Przeglądaj wszystkie"
+      }
     }
   },
+
   "legal": {
     "cookies": {
       "title": "Polityka Cookies",
