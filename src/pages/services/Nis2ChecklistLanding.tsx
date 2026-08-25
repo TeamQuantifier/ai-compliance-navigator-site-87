@@ -36,7 +36,6 @@ export const ChecklistDownloadForm = ({
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
-  const [consent, setConsent] = useState(false);
 
   const inputClass =
     'w-full px-4 py-3 rounded-sm bg-white border border-ksc-ink/20 text-ksc-ink placeholder:text-ksc-ink/40 text-sm focus:outline-none focus:border-ksc-accent focus:ring-1 focus:ring-ksc-accent/40';
@@ -69,7 +68,7 @@ export const ChecklistDownloadForm = ({
           message: [
             '[CHECKLISTA NIS2/KSC] Pobranie arkusza roboczego',
             `Firma: ${co}`,
-            consent ? 'Zgoda marketingowa: TAK' : 'Zgoda marketingowa: NIE',
+            'Zapis na materiały: TAK (zgoda wyrażona przez kliknięcie CTA)',
           ].join('\n'),
           language: 'pl',
           sourceUrl,
@@ -80,7 +79,7 @@ export const ChecklistDownloadForm = ({
       // Nie blokujemy pobrania — materiał jest bezpłatny.
     }
 
-    if (consent) {
+    {
       newsletterClient
         .subscribe(em, 'pl', {
           first_name: fn,
