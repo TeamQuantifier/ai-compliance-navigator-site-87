@@ -60,6 +60,18 @@ const staticPages = [
   // cybersecurity-check and events with locale-specific slugs handled separately below
 ];
 
+// Pages that exist in a single locale only (no hreflang alternates)
+const singleLocalePages: Array<{
+  locale: string;
+  path: string;
+  changefreq: string;
+  priority: string;
+  lastmod: string;
+}> = [
+  { locale: 'pl', path: '/start-nis2-ksc', changefreq: 'monthly', priority: '0.8', lastmod: '2026-08-18' },
+  { locale: 'pl', path: '/checklista-nis2-ksc-wdrozenie-audyt', changefreq: 'monthly', priority: '0.8', lastmod: '2026-08-25' },
+];
+
 // Pages with locale-specific paths (different URL per language)
 const localeSpecificPages: Array<{
   paths: Record<string, string>;
@@ -269,6 +281,20 @@ serve(async (req) => {
       }
     }
 
+
+    // Single-locale pages (self-referencing hreflang only)
+    for (const page of singleLocalePages) {
+      const fullPath = ensureTrailingSlash(`${BASE_URL}/${page.locale}${page.path}`);
+      const hreflang = localeHreflangMap[page.locale] || page.locale;
+      urlEntries += `
+  <url>
+    <loc>${fullPath}</loc>
+    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${fullPath}" />
+    <lastmod>${page.lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
+    }
 
     if (posts && posts.length > 0) {
       for (const post of posts) {
