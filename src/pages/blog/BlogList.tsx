@@ -308,21 +308,45 @@ const BlogList = () => {
               </CardContent>
             </Card>
 
-            {/* Placeholder for future resources */}
-            <Card className="overflow-hidden border-dashed">
-              <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="mx-auto h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                    <Download className="h-6 w-6 text-primary" />
-                  </div>
-                  <p className="text-sm text-muted-foreground">{t('blog.knowledgeHub.downloads.moreSoon')}</p>
+            {/* NIS2 / KSC checklist — PL only */}
+            {currentLocale === 'pl' ? (
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="aspect-video overflow-hidden bg-gradient-to-br from-compliance-50 to-innovation-50 flex items-center justify-center">
+                  <FileText className="h-16 w-16 text-primary/60" />
                 </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-lg text-muted-foreground">{t('blog.knowledgeHub.downloads.moreTitle')}</CardTitle>
-                <CardDescription>{t('blog.knowledgeHub.downloads.moreDesc')}</CardDescription>
-              </CardHeader>
-            </Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Checklista NIS2 / KSC 2.0 (XLSX)</CardTitle>
+                  <CardDescription className="line-clamp-2">
+                    Arkusz roboczy z harmonogramem 10 dni, właścicielami zadań i listą dowodów do audytu.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Link
+                    to="/pl/checklista-nis2-ksc-wdrozenie-audyt"
+                    className="inline-flex items-center text-sm font-medium text-primary hover:underline group"
+                  >
+                    {t('blog.knowledgeHub.downloads.cta')}
+                    <Download className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
+                  </Link>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card className="overflow-hidden border-dashed">
+                <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <div className="mx-auto h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                      <Download className="h-6 w-6 text-primary" />
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t('blog.knowledgeHub.downloads.moreSoon')}</p>
+                  </div>
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-lg text-muted-foreground">{t('blog.knowledgeHub.downloads.moreTitle')}</CardTitle>
+                  <CardDescription>{t('blog.knowledgeHub.downloads.moreDesc')}</CardDescription>
+                </CardHeader>
+              </Card>
+            )}
+
 
           </div>
         </section>
