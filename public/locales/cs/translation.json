@@ -850,8 +850,10 @@
       },
       "topics": {
         "title": "Procházet podle tématu",
+        "searchPlaceholder": "Hledat článek, standard nebo téma...",
         "all": "Všechny"
       },
+
       "caseStudies": {
         "title": "Příběhy úspěchů",
         "subtitle": "Jak se organizace připravují na NIS2, KSC a ISO 27001 s Quantifier.",
