@@ -22,7 +22,6 @@ import {
   Download,
   CalendarDays,
   Search,
-  FileText,
   Users,
   ArrowUpRight,
   Play,
@@ -30,6 +29,8 @@ import {
 } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
 import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
+import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
+
 
 const BlogList = () => {
   const { currentLocale, t } = useLanguage();
