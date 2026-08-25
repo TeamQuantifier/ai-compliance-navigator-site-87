@@ -76,8 +76,17 @@ const BlogList = () => {
 
   const scrollTo = (href: string) => {
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (href === '#featured-resource') {
+        setTimeout(() => {
+          const input = document.querySelector<HTMLInputElement>('#featured-resource-email');
+          input?.focus();
+        }, 700);
+      }
+    }
   };
+
 
   if (postsError) {
     return (
