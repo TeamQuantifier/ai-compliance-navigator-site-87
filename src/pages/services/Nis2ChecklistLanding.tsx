@@ -36,7 +36,6 @@ export const ChecklistDownloadForm = ({
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
-  const [consent, setConsent] = useState(false);
 
   const inputClass =
     'w-full px-4 py-3 rounded-sm bg-white border border-ksc-ink/20 text-ksc-ink placeholder:text-ksc-ink/40 text-sm focus:outline-none focus:border-ksc-accent focus:ring-1 focus:ring-ksc-accent/40';
@@ -69,7 +68,7 @@ export const ChecklistDownloadForm = ({
           message: [
             '[CHECKLISTA NIS2/KSC] Pobranie arkusza roboczego',
             `Firma: ${co}`,
-            consent ? 'Zgoda marketingowa: TAK' : 'Zgoda marketingowa: NIE',
+            'Zapis na materiały: TAK (zgoda wyrażona przez kliknięcie CTA)',
           ].join('\n'),
           language: 'pl',
           sourceUrl,
@@ -80,7 +79,7 @@ export const ChecklistDownloadForm = ({
       // Nie blokujemy pobrania — materiał jest bezpłatny.
     }
 
-    if (consent) {
+    {
       newsletterClient
         .subscribe(em, 'pl', {
           first_name: fn,
@@ -141,22 +140,6 @@ export const ChecklistDownloadForm = ({
           required
           className={inputClass}
         />
-        <label className="flex items-start gap-3 cursor-pointer pt-1">
-          <input
-            type="checkbox"
-            checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="mt-1 h-4 w-4 accent-ksc-accent"
-          />
-          <span className="text-[12px] leading-relaxed text-ksc-ink/60">
-            Chcę otrzymywać materiały wdrożeniowe NIS2 / KSC na podany adres. Zgoda jest
-            dobrowolna i można ją wycofać w każdej chwili —{' '}
-            <Link to="/pl/legal/privacy" className="underline hover:text-ksc-accent">
-              polityka prywatności
-            </Link>
-            .
-          </span>
-        </label>
         <Button
           type="submit"
           disabled={loading}
@@ -165,9 +148,18 @@ export const ChecklistDownloadForm = ({
           {loading ? 'Przygotowujemy pliki…' : 'Pobierz checklistę'}
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
-        <p className="text-[11px] text-ksc-ink/45 pt-1">
+        <p className="text-[12px] leading-relaxed text-ksc-ink/60 pt-1">
+          Klikając „Pobierz checklistę” zapisujesz się na materiały wdrożeniowe NIS2 / KSC
+          wysyłane na podany adres. Zapis możesz wycofać w każdej chwili jednym kliknięciem -{' '}
+          <Link to="/pl/legal/privacy" className="underline hover:text-ksc-accent">
+            polityka prywatności
+          </Link>
+          .
+        </p>
+        <p className="text-[11px] text-ksc-ink/45">
           Materiał edukacyjny. Nie stanowi porady prawnej.
         </p>
+
       </form>
     </div>
   );
