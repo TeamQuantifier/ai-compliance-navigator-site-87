@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
 
 const FeaturedBookSection = () => {
   const { t } = useTranslation();
@@ -42,7 +41,7 @@ const FeaturedBookSection = () => {
         {/* Right column - image */}
         <div className="flex justify-center rounded-lg bg-card p-6 md:p-8">
           <img
-            src={bookCoverAsset.url}
+            src="/images/nowa-architektura-compliance-okladka.png"
             alt={t('blog.knowledgeHub.downloads.bookTitle')}
             className="max-w-[200px] md:max-w-[240px] h-auto drop-shadow-2xl"
             width={270}
