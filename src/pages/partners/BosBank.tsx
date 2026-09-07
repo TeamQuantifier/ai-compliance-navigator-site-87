@@ -9,8 +9,8 @@ import bosLogo from '@/assets/partners/bos-bank.png';
 export default function BosBank() {
   const { t } = useTranslation();
   const { locale = 'pl' } = useParams<{ locale?: string }>();
-  const contactPath = `/${locale}/contact/`;
-  const calculatorUrl = 'https://www.envirly.pl/';
+  const calculatorUrl = 'https://www.bosbank.pl/kalkulator-sladu-weglowego';
+
 
   const brand = {
     hero: 'bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900',
@@ -81,11 +81,7 @@ export default function BosBank() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
-                <a href={contactPath}>
-                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white text-base px-8 py-6 h-auto">
-                    {t('bos.hero.secondaryCta')}
-                  </Button>
-                </a>
+
               </div>
             </div>
             <div className="shrink-0">
@@ -226,11 +222,6 @@ export default function BosBank() {
               <Button size="lg" className={`${brand.btn} text-base px-8 py-6 h-auto`}>
                 {t('bos.cta.button')}
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </a>
-            <a href={contactPath}>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white text-base px-8 py-6 h-auto">
-                {t('bos.cta.secondaryButton')}
               </Button>
             </a>
           </div>

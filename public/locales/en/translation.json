@@ -857,7 +857,6 @@
         "searchPlaceholder": "Search for an article, standard or topic...",
         "all": "All"
       },
-
       "caseStudies": {
         "title": "Success stories",
         "subtitle": "How organisations prepare for NIS2, KSC and ISO 27001 with Quantifier.",
@@ -897,7 +896,6 @@
         "bookDesc": "A practical guide for organizations that must operate under growing regulatory demands, technological pressure and increasing board accountability. In the reality of regulations such as NIS2, DORA, AI Act, GDPR, CSRD/ESRS, CSDDD and EUDR, an approach based on one-off policy implementation, annual audits and firefighting problems only after they appear in practice is no longer enough. A coherent system for managing compliance, risk and organizational resilience that works continuously — not just for inspections — is needed.",
         "bookCta": "Buy in bookstore"
       },
-
       "events": {
         "title": "Upcoming webinars",
         "subtitle": "Free online sessions with experts.",
@@ -909,7 +907,6 @@
       }
     }
   },
-
   "legal": {
     "cookies": {
       "title": "Cookie Policy",
@@ -8814,7 +8811,6 @@
       "secondaryCta": "Talk about funding",
       "disclaimer": "Limited number of training slots. Offer valid until 31 July 2026 (registration). Delivery date agreed individually. Funding level depends on available programs and the company profile."
     },
-
     "credibilityBar": [
       "Training + implementation + tools",
       "Practitioners with inspection experience",
@@ -9035,8 +9031,6 @@
       ]
     },
     "process": {
-
-
       "title": "How we work together",
       "subtitle": "4 steps from first contact to a ready-to-use action system.",
       "steps": [
@@ -9387,12 +9381,12 @@
     "quote1": {
       "text": "Access to simple, credible emissions measurement tools is the foundation of the green transformation of Polish enterprises. We are pleased that together with Envirly we can make them available to our clients.",
       "author": "Piotr Wątroba",
-      "role": "Director, Bank Ochrony Środowiska S.A."
+      "role": "Manager for environmental policy, ESG and Taxonomy, Bank Ochrony Środowiska"
     },
     "quote2": {
       "text": "The Envirly platform was designed so that companies can independently — and in line with international standards — estimate their carbon footprint. Cooperation with BOŚ is an opportunity to reach an even wider group of Polish entrepreneurs.",
       "author": "Anna Burza",
-      "role": "CEO, Envirly"
+      "role": "Director of the Department of Environmental Policy, ESG and Taxonomy, Bank Ochrony Środowiska"
     },
     "strategy": {
       "title": "Part of the bank's transformational strategy",

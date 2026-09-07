@@ -854,7 +854,6 @@
         "searchPlaceholder": "Hledat článek, standard nebo téma...",
         "all": "Všechny"
       },
-
       "caseStudies": {
         "title": "Příběhy úspěchů",
         "subtitle": "Jak se organizace připravují na NIS2, KSC a ISO 27001 s Quantifier.",
@@ -894,7 +893,6 @@
         "bookDesc": "Praktický průvodce pro organizace, které musí působit za podmínek rostoucích regulačních požadavků, technologického tlaku a rostoucí odpovědnosti vedení. V realitě předpisů jako NIS2, DORA, AI Act, GDPR, CSRD/ESRS, CSDDD a EUDR již nestačí přístup založený na jednorázové implementaci politik, ročním auditu a hašení problémů až tehdy, když se objeví v praxi. Je potřeba soudržný systém řízení shody, rizika a odolnosti organizace, který funguje nepřetržitě, a ne jen pro potřeby kontroly.",
         "bookCta": "Koupit v knihkupectví"
       },
-
       "events": {
         "title": "Nejbližší webináře",
         "subtitle": "Bezplatné online relace s odborníky.",
@@ -906,7 +904,6 @@
       }
     }
   },
-
   "legal": {
     "cookies": {
       "title": "Zásady používání cookies",
@@ -7660,12 +7657,12 @@
     "quote1": {
       "text": "Přístup k jednoduchým, důvěryhodným nástrojům pro měření emisí je dnes základem zelené transformace polských podniků. Těší nás, že společně s Envirly můžeme našim klientům tyto nástroje zpřístupnit.",
       "author": "Piotr Wątroba",
-      "role": "Ředitel, Bank Ochrony Środowiska S.A."
+      "role": "Manažer pro ekologickou politiku, ESG a Taxonomii, Bank Ochrony Środowiska"
     },
     "quote2": {
       "text": "Platforma Envirly byla navržena tak, aby si firmy mohly samostatně — a v souladu s mezinárodními standardy — odhadnout svou uhlíkovou stopu. Spolupráce s BOŚ je pro nás příležitostí oslovit ještě širší skupinu polských podnikatelů.",
       "author": "Anna Burza",
-      "role": "CEO, Envirly"
+      "role": "Ředitelka odboru ekologické politiky, ESG a Taxonomie, Bank Ochrony Środowiska"
     },
     "strategy": {
       "title": "Součást transformační strategie banky",
