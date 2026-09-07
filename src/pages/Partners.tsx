@@ -40,13 +40,13 @@ const areaIcons = [
 const partnerLogos = [
   logoBnp,
   logoAlior,
+  logoBos,
   logoPfr,
   logoUeWroclaw,
   logoKlasterGoz,
   logoCpc,
   logoReo,
   logoRaben,
-  logoBos,
 ];
 
 const asArray = <T,>(value: unknown): T[] => Array.isArray(value) ? value : [];
