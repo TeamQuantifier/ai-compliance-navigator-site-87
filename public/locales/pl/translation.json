@@ -889,7 +889,11 @@
         "cta": "Pobierz",
         "checklistTitle": "Checklista NIS2 / KSC 2.0",
         "checklistDesc": "Arkusz roboczy z harmonogramem 10 dni, właścicielami zadań i listą dowodów do audytu.",
-        "comingSoon": "Wkrótce dostępna"
+        "comingSoon": "Wkrótce dostępna",
+        "bookLabel": "Nowość",
+        "bookTitle": "Nowa architektura compliance",
+        "bookDesc": "Druga książka Weroniki Czaplewskiej o zgodności, ryzyku, cyberbezpieczeństwie i AI – z gotowymi wzorami do pobrania.",
+        "bookCta": "Kup w księgarni"
       },
 
       "events": {

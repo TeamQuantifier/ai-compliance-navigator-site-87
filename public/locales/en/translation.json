@@ -890,7 +890,11 @@
         "cta": "Download",
         "checklistTitle": "NIS2 / KSC 2.0 Checklist",
         "checklistDesc": "Worksheet with a 10-day schedule, task owners and audit evidence list.",
-        "comingSoon": "Coming soon"
+        "comingSoon": "Coming soon",
+        "bookLabel": "New",
+        "bookTitle": "New Architecture of Compliance",
+        "bookDesc": "Weronika Czaplewska's second book on compliance, risk, cybersecurity and AI — with ready-to-use templates.",
+        "bookCta": "Buy in bookstore"
       },
 
       "events": {

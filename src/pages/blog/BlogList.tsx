@@ -300,6 +300,36 @@ const BlogList = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Book card */}
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
+              <div className="aspect-video overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-6 text-white">
+                <div className="text-center">
+                  <div className="mx-auto h-16 w-16 rounded-full bg-white/10 flex items-center justify-center mb-3">
+                    <BookOpen className="h-8 w-8 text-primary" />
+                  </div>
+                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">{t('blog.knowledgeHub.downloads.bookLabel')}</p>
+                  <h3 className="font-bold text-lg leading-tight max-w-[220px] mx-auto">{t('blog.knowledgeHub.downloads.bookTitle')}</h3>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-lg">{t('blog.knowledgeHub.downloads.bookTitle')}</CardTitle>
+                <CardDescription className="line-clamp-3">
+                  {t('blog.knowledgeHub.downloads.bookDesc')}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a
+                  href="https://www.ksiegarnia.beck.pl/23755-nowa-architektura-compliance-zgodnosc-ryzyko-cyberbezpieczenstwo-i-sztuczna-inteligencja-wzory-do-pobrania-weronika-czaplewska"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium text-primary hover:underline"
+                >
+                  {t('blog.knowledgeHub.downloads.bookCta')}
+                  <ArrowUpRight className="ml-1 h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
+
             {/* Calendar card — scrolls to featured resource */}
             <Card
               className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group"
