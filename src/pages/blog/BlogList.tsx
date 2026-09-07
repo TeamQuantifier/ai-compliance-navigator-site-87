@@ -28,7 +28,6 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
-import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
 import FeaturedBookSection from '@/components/blog/FeaturedBookSection';
 import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
 import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
@@ -163,16 +162,6 @@ const BlogList = () => {
             </Badge>
           </div>
           <FeaturedBookSection />
-        </section>
-
-        {/* Featured resource */}
-        <section>
-          <div className="flex items-center gap-2 mb-4">
-            <Badge variant="outline" className="text-primary border-primary/30">
-              {t('blog.knowledgeHub.featured.label')}
-            </Badge>
-          </div>
-          <EbookDownloadSection />
         </section>
 
         {/* Case studies */}
