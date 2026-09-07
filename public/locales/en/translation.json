@@ -893,7 +893,8 @@
         "comingSoon": "Coming soon",
         "bookLabel": "New",
         "bookTitle": "New Architecture of Compliance",
-        "bookDesc": "Weronika Czaplewska's second book on compliance, risk, cybersecurity and AI — with ready-to-use templates.",
+        "bookSubtitle": "Table of contents · Downloadable files · Repository",
+        "bookDesc": "A practical guide for organizations that must operate under growing regulatory demands, technological pressure and increasing board accountability. In the reality of regulations such as NIS2, DORA, AI Act, GDPR, CSRD/ESRS, CSDDD and EUDR, an approach based on one-off policy implementation, annual audits and firefighting problems only after they appear in practice is no longer enough. A coherent system for managing compliance, risk and organizational resilience that works continuously — not just for inspections — is needed.",
         "bookCta": "Buy in bookstore"
       },
 
