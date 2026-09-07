@@ -28,6 +28,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import PageTemplate from '@/components/PageTemplate';
+import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
 import FeaturedBookSection from '@/components/blog/FeaturedBookSection';
 import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
 import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
@@ -303,7 +304,7 @@ const BlogList = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Book card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
-              <div className="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
+              <div className="aspect-video overflow-hidden bg-card flex items-center justify-center p-4">
                 <img
                   src={bookCoverAsset.url}
                   alt={t('blog.knowledgeHub.downloads.bookTitle')}
@@ -404,6 +405,10 @@ const BlogList = () => {
             </Card>
 
 
+          </div>
+
+          <div className="mt-8">
+            <EbookDownloadSection />
           </div>
         </section>
 
