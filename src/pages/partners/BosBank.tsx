@@ -224,11 +224,6 @@ export default function BosBank() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href={contactPath}>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white text-base px-8 py-6 h-auto">
-                {t('bos.cta.secondaryButton')}
-              </Button>
-            </a>
           </div>
         </div>
       </section>
