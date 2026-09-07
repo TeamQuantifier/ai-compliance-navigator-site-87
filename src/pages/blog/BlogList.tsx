@@ -31,7 +31,6 @@ import PageTemplate from '@/components/PageTemplate';
 import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
 import FeaturedBookSection from '@/components/blog/FeaturedBookSection';
 import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
-import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
 
 
 const BlogList = () => {
@@ -163,16 +162,6 @@ const BlogList = () => {
             </Badge>
           </div>
           <FeaturedBookSection />
-        </section>
-
-        {/* Featured resource */}
-        <section>
-          <div className="flex items-center gap-2 mb-4">
-            <Badge variant="outline" className="text-primary border-primary/30">
-              {t('blog.knowledgeHub.featured.label')}
-            </Badge>
-          </div>
-          <EbookDownloadSection />
         </section>
 
         {/* Case studies */}
@@ -314,9 +303,9 @@ const BlogList = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Book card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
-              <div className="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
+              <div className="aspect-video overflow-hidden bg-card flex items-center justify-center p-4">
                 <img
-                  src={bookCoverAsset.url}
+                  src="/images/nowa-architektura-compliance-okladka.png"
                   alt={t('blog.knowledgeHub.downloads.bookTitle')}
                   className="h-full w-auto object-contain drop-shadow-xl"
                   width={270}
@@ -415,6 +404,10 @@ const BlogList = () => {
             </Card>
 
 
+          </div>
+
+          <div className="mt-8">
+            <EbookDownloadSection />
           </div>
         </section>
 

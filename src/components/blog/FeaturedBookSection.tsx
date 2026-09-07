@@ -2,27 +2,26 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
 
 const FeaturedBookSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 md:p-12 mb-8 shadow-lg overflow-hidden">
+    <section className="bg-card border border-border rounded-lg p-8 md:p-12 mb-8 shadow-sm overflow-hidden">
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Left column - content */}
-        <div className="space-y-6 text-white">
+        <div className="space-y-6 text-foreground">
           <div>
             <Badge variant="secondary" className="mb-3">
               {t('blog.knowledgeHub.downloads.bookLabel')}
             </Badge>
-            <p className="text-xs uppercase tracking-wider text-white/60 mb-2">
+            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
               {t('blog.knowledgeHub.downloads.bookSubtitle')}
             </p>
             <h2 className="text-2xl md:text-3xl font-bold mb-3">
               {t('blog.knowledgeHub.downloads.bookTitle')}
             </h2>
-            <p className="text-base md:text-lg text-white/80 leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               {t('blog.knowledgeHub.downloads.bookDesc')}
             </p>
           </div>
@@ -40,9 +39,9 @@ const FeaturedBookSection = () => {
         </div>
 
         {/* Right column - image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center rounded-lg bg-card p-6 md:p-8">
           <img
-            src={bookCoverAsset.url}
+            src="/images/nowa-architektura-compliance-okladka.png"
             alt={t('blog.knowledgeHub.downloads.bookTitle')}
             className="max-w-[200px] md:max-w-[240px] h-auto drop-shadow-2xl"
             width={270}
