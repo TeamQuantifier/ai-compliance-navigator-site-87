@@ -887,7 +887,11 @@
         "cta": "Stáhnout",
         "checklistTitle": "Checklist NIS2 / KSC 2.0",
         "checklistDesc": "Pracovní list s 10denním harmonogramem, vlastníky úkolů a seznamem důkazů pro audit.",
-        "comingSoon": "Již brzy dostupné"
+        "comingSoon": "Již brzy dostupné",
+        "bookLabel": "Novinka",
+        "bookTitle": "Nová architektura compliance",
+        "bookDesc": "Druhá kniha Weroniky Czaplewské o compliance, riziku, kybernetické bezpečnosti a AI – s připravenými vzory ke stažení.",
+        "bookCta": "Koupit v knihkupectví"
       },
 
       "events": {
