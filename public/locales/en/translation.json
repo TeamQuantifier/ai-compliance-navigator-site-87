@@ -887,7 +887,10 @@
         "moreTitle": "Checklists and templates",
         "moreDesc": "We are preparing practical NIS2, ISO 27001 and DORA checklists.",
         "moreSoon": "More materials coming soon",
-        "cta": "Download"
+        "cta": "Download",
+        "checklistTitle": "NIS2 / KSC 2.0 Checklist",
+        "checklistDesc": "Worksheet with a 10-day schedule, task owners and audit evidence list.",
+        "comingSoon": "Coming soon"
       },
 
       "events": {

@@ -339,50 +339,31 @@ const BlogList = () => {
               </CardContent>
             </Card>
 
-            {/* NIS2 / KSC checklist — PL only */}
-            {currentLocale === 'pl' ? (
-              <Link to="/pl/checklista-nis2-ksc-wdrozenie-audyt/" className="block group">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
-                  <div className="aspect-video overflow-hidden bg-gradient-to-br from-compliance-50 to-innovation-50 flex items-center justify-center p-6">
-                    <img
-                      src={nis2ChecklistThumb}
-                      alt="Checklista NIS2 / KSC 2.0"
-                      className="h-full w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
-                      width={320}
-                      height={240}
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors">Checklista NIS2 / KSC 2.0 (XLSX)</CardTitle>
-                    <CardDescription className="line-clamp-2">
-                      Arkusz roboczy z harmonogramem 10 dni, właścicielami zadań i listą dowodów do audytu.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <span className="inline-flex items-center text-sm font-medium text-primary group-hover:underline">
-                      {t('blog.knowledgeHub.downloads.cta')}
-                      <Download className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
-            ) : (
-              <Card className="overflow-hidden border-dashed">
-                <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="mx-auto h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                      <Download className="h-6 w-6 text-primary" />
-                    </div>
-                    <p className="text-sm text-muted-foreground">{t('blog.knowledgeHub.downloads.moreSoon')}</p>
-                  </div>
+            {/* NIS2 / KSC checklist — coming soon */}
+            <Card className="overflow-hidden border-dashed">
+              <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center p-6 relative">
+                <img
+                  src={nis2ChecklistThumb}
+                  alt={t('blog.knowledgeHub.downloads.checklistTitle')}
+                  className="h-full w-auto object-contain drop-shadow-xl opacity-60"
+                  width={320}
+                  height={240}
+                  loading="lazy"
+                />
+                <div className="absolute top-3 right-3">
+                  <Badge variant="secondary">{t('blog.knowledgeHub.downloads.comingSoon')}</Badge>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-lg text-muted-foreground">{t('blog.knowledgeHub.downloads.moreTitle')}</CardTitle>
-                  <CardDescription>{t('blog.knowledgeHub.downloads.moreDesc')}</CardDescription>
-                </CardHeader>
-              </Card>
-            )}
+              </div>
+              <CardHeader>
+                <CardTitle className="text-lg text-muted-foreground">{t('blog.knowledgeHub.downloads.checklistTitle')}</CardTitle>
+                <CardDescription className="line-clamp-2">{t('blog.knowledgeHub.downloads.checklistDesc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <span className="inline-flex items-center text-sm font-medium text-muted-foreground">
+                  {t('blog.knowledgeHub.downloads.comingSoon')}
+                </span>
+              </CardContent>
+            </Card>
 
 
           </div>
