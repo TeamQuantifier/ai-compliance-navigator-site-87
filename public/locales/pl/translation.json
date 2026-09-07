@@ -886,7 +886,10 @@
         "moreTitle": "Checklisty i szablony",
         "moreDesc": "Przygotowujemy praktyczne checklisty NIS2, ISO 27001 i DORA.",
         "moreSoon": "Więcej materiałów wkrótce",
-        "cta": "Pobierz"
+        "cta": "Pobierz",
+        "checklistTitle": "Checklista NIS2 / KSC 2.0",
+        "checklistDesc": "Arkusz roboczy z harmonogramem 10 dni, właścicielami zadań i listą dowodów do audytu.",
+        "comingSoon": "Wkrótce dostępna"
       },
 
       "events": {

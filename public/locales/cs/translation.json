@@ -884,7 +884,10 @@
         "moreTitle": "Checklisty a šablony",
         "moreDesc": "Připravujeme praktické checklisty NIS2, ISO 27001 a DORA.",
         "moreSoon": "Více materiálů již brzy",
-        "cta": "Stáhnout"
+        "cta": "Stáhnout",
+        "checklistTitle": "Checklist NIS2 / KSC 2.0",
+        "checklistDesc": "Pracovní list s 10denním harmonogramem, vlastníky úkolů a seznamem důkazů pro audit.",
+        "comingSoon": "Již brzy dostupné"
       },
 
       "events": {
