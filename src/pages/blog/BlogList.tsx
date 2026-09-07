@@ -30,6 +30,7 @@ import {
 import PageTemplate from '@/components/PageTemplate';
 import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
 import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
+import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
 
 
 const BlogList = () => {
