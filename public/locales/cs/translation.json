@@ -890,7 +890,8 @@
         "comingSoon": "Již brzy dostupné",
         "bookLabel": "Novinka",
         "bookTitle": "Nová architektura compliance",
-        "bookDesc": "Druhá kniha Weroniky Czaplewské o compliance, riziku, kybernetické bezpečnosti a AI – s připravenými vzory ke stažení.",
+        "bookSubtitle": "Obsah · Soubory ke stažení · Repozitář",
+        "bookDesc": "Praktický průvodce pro organizace, které musí působit za podmínek rostoucích regulačních požadavků, technologického tlaku a rostoucí odpovědnosti vedení. V realitě předpisů jako NIS2, DORA, AI Act, GDPR, CSRD/ESRS, CSDDD a EUDR již nestačí přístup založený na jednorázové implementaci politik, ročním auditu a hašení problémů až tehdy, když se objeví v praxi. Je potřeba soudržný systém řízení shody, rizika a odolnosti organizace, který funguje nepřetržitě, a ne jen pro potřeby kontroly.",
         "bookCta": "Koupit v knihkupectví"
       },
 

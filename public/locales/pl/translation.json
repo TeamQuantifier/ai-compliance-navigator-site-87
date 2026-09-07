@@ -892,7 +892,8 @@
         "comingSoon": "Wkrótce dostępna",
         "bookLabel": "Nowość",
         "bookTitle": "Nowa architektura compliance",
-        "bookDesc": "Druga książka Weroniki Czaplewskiej o zgodności, ryzyku, cyberbezpieczeństwie i AI – z gotowymi wzorami do pobrania.",
+        "bookSubtitle": "Spis treści · Pliki do pobrania · Repozytorium",
+        "bookDesc": "Praktyczny przewodnik dla organizacji, które muszą działać w warunkach rosnących wymagań regulacyjnych, presji technologicznej i coraz większej odpowiedzialności zarządów. W realiach regulacji takich jak NIS2, DORA, AI Act, RODO, CSRD/ESRS, CSDDD czy EUDR nie wystarcza już jednorazowe wdrożenie polityk i coroczny audyt. Potrzebny jest spójny system zarządzania zgodnością, ryzykiem i odpornością organizacji, który działa stale, a nie tylko na potrzeby kontroli.",
         "bookCta": "Kup w księgarni"
       },
 

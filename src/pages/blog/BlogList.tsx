@@ -30,6 +30,7 @@ import {
 import PageTemplate from '@/components/PageTemplate';
 import EbookDownloadSection from '@/components/blog/EbookDownloadSection';
 import nis2ChecklistThumb from '@/assets/downloads/nis2-ksc-checklist.jpg';
+import bookCoverAsset from '@/assets/nowa-architektura-compliance-okladka.png.asset.json';
 
 
 const BlogList = () => {
@@ -302,16 +303,23 @@ const BlogList = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Book card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
-              <div className="aspect-video overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-6 text-white">
-                <div className="text-center">
-                  <div className="mx-auto h-16 w-16 rounded-full bg-white/10 flex items-center justify-center mb-3">
-                    <BookOpen className="h-8 w-8 text-primary" />
-                  </div>
-                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">{t('blog.knowledgeHub.downloads.bookLabel')}</p>
-                  <h3 className="font-bold text-lg leading-tight max-w-[220px] mx-auto">{t('blog.knowledgeHub.downloads.bookTitle')}</h3>
-                </div>
+              <div className="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
+                <img
+                  src={bookCoverAsset.url}
+                  alt={t('blog.knowledgeHub.downloads.bookTitle')}
+                  className="h-full w-auto object-contain drop-shadow-xl"
+                  width={270}
+                  height={380}
+                  loading="lazy"
+                />
               </div>
               <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge variant="secondary">{t('blog.knowledgeHub.downloads.bookLabel')}</Badge>
+                </div>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                  {t('blog.knowledgeHub.downloads.bookSubtitle')}
+                </p>
                 <CardTitle className="text-lg">{t('blog.knowledgeHub.downloads.bookTitle')}</CardTitle>
                 <CardDescription className="line-clamp-3">
                   {t('blog.knowledgeHub.downloads.bookDesc')}
