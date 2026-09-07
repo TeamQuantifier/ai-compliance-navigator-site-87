@@ -317,6 +317,9 @@ const BlogList = () => {
                 <div className="flex items-center gap-2 mb-2">
                   <Badge variant="secondary">{t('blog.knowledgeHub.downloads.bookLabel')}</Badge>
                 </div>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                  {t('blog.knowledgeHub.downloads.bookSubtitle')}
+                </p>
                 <CardTitle className="text-lg">{t('blog.knowledgeHub.downloads.bookTitle')}</CardTitle>
                 <CardDescription className="line-clamp-3">
                   {t('blog.knowledgeHub.downloads.bookDesc')}
