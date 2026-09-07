@@ -856,7 +856,6 @@
         "searchPlaceholder": "Szukaj artykułu, standardu lub tematu...",
         "all": "Wszystkie"
       },
-
       "caseStudies": {
         "title": "Historie sukcesu",
         "subtitle": "Jak organizacje przygotowują się do NIS2, KSC i ISO 27001 z Quantifier.",
@@ -896,7 +895,6 @@
         "bookDesc": "Praktyczny przewodnik dla organizacji, które muszą działać w warunkach rosnących wymagań regulacyjnych, presji technologicznej i coraz większej odpowiedzialności zarządów. W realiach regulacji takich jak NIS2, DORA, AI Act, RODO, CSRD/ESRS, CSDDD czy EUDR nie wystarcza już jednorazowe wdrożenie polityk i coroczny audyt. Potrzebny jest spójny system zarządzania zgodnością, ryzykiem i odpornością organizacji, który działa stale, a nie tylko na potrzeby kontroli.",
         "bookCta": "Kup w księgarni"
       },
-
       "events": {
         "title": "Najbliższe webinary",
         "subtitle": "Bezpłatne sesje online z ekspertami.",
@@ -908,7 +906,6 @@
       }
     }
   },
-
   "legal": {
     "cookies": {
       "title": "Polityka Cookies",
@@ -8766,7 +8763,6 @@
       "secondaryCta": "Porozmawiajmy o dofinansowaniu",
       "disclaimer": "Liczba szkoleń ograniczona. Oferta ważna do 31.07.2026 (rejestracja). Termin realizacji ustalany indywidualnie. Wysokość dofinansowania zależy od dostępnych programów i profilu firmy."
     },
-
     "credibilityBar": [
       "Szkolenie + wdrożenie + narzędzia",
       "Praktycy z doświadczeniem w kontrolach",
@@ -9101,8 +9097,6 @@
       ]
     },
     "process": {
-
-
       "title": "Jak wygląda współpraca",
       "subtitle": "4 kroki od pierwszego kontaktu do gotowego systemu działania.",
       "steps": [
@@ -9339,12 +9333,12 @@
     "quote1": {
       "text": "Dostęp do prostych, wiarygodnych narzędzi do pomiaru emisji to dziś podstawa zielonej transformacji polskich przedsiębiorstw. Cieszymy się, że wspólnie z Envirly możemy udostępniać je naszym klientom.",
       "author": "Piotr Wątroba",
-      "role": "Dyrektor, Bank Ochrony Środowiska S.A."
+      "role": "Menedżer ds. polityki ekologicznej, ESG i Taksonomii, Bank Ochrony Środowiska"
     },
     "quote2": {
       "text": "Platforma Envirly została zaprojektowana tak, aby firmy mogły samodzielnie — i zgodnie z międzynarodowymi standardami — oszacować swój ślad węglowy. Współpraca z BOŚ to dla nas szansa dotarcia do jeszcze szerszej grupy polskich przedsiębiorców.",
       "author": "Anna Burza",
-      "role": "CEO, Envirly"
+      "role": "Dyrektor Departamentu polityki ekologicznej, ESG i Taksonomii, Bank Ochrony Środowiska"
     },
     "strategy": {
       "title": "Element strategii transformacyjnej banku",
