@@ -2469,6 +2469,7 @@
       "selected": {
         "title": "Wybrani partnerzy",
         "description": "Współpracujemy z liderami sektora finansowego, instytucjami publicznymi, uczelniami oraz organizacjami zrównoważonego rozwoju i logistyki.",
+        "readMore": "Dowiedz się więcej",
         "items": [
           {
             "name": "BNP Paribas Bank Polska",
@@ -2477,6 +2478,11 @@
           {
             "name": "Alior Bank",
             "description": "Współpraca przy edukacji i narzędziach ESG oraz cyberbezpieczeństwa dla sektora MŚP."
+          },
+          {
+            "name": "Bank Ochrony Środowiska S.A.",
+            "description": "BOŚ udostępnia przedsiębiorcom bezpłatny, trzymiesięczny dostęp do platformy Envirly do obliczenia śladu węglowego organizacji w zakresach 1, 2 i 3.",
+            "link": "/pl/partnerzy/bos-bank"
           },
           {
             "name": "Polski Fundusz Rozwoju",
@@ -6277,6 +6283,10 @@
     "gs1": {
       "title": "GS1 Polska × Quantifier.ai — Paszport Produktowy i Ślad Węglowy",
       "description": "Współpraca GS1 Polska z Quantifier.ai: Envirly LCA do cyfrowego paszportu produktowego (DPP) oraz Envirly GHG do raportowania emisji Scope 1 i 2."
+    },
+    "bos": {
+      "title": "BOŚ Bank × Envirly — Bezpłatny kalkulator śladu węglowego dla MŚP",
+      "description": "Bank Ochrony Środowiska S.A. oferuje polskim przedsiębiorstwom bezpłatny, trzymiesięczny dostęp do platformy Envirly. Oblicz emisje Scope 1, 2 i 3 zgodnie z GHG Protocol."
     }
   },
   "seoLanding": {
@@ -9277,6 +9287,76 @@
         "title": "Edytuj paszport i udostępnij link",
         "desc": "Zaprojektuj układ paszportu produktowego: wybierz sekcje, uzupełnij treści i dane,\na następnie wygeneruj publiczny link lub kod QR. Gotowy do audytu, gotowy do klienta."
       }
+    }
+  },
+  "bos": {
+    "hero": {
+      "eyebrow": "Bank Ochrony Środowiska S.A. × Envirly",
+      "title": "Bezpłatny kalkulator śladu węglowego dla polskich przedsiębiorców",
+      "subtitle": "Trzymiesięczny, bezpłatny dostęp do platformy Envirly. Oblicz emisje zakresów 1, 2 i 3, przygotuj dane dla banku i zbuduj realny plan redukcji — bez wdrożeń IT i kosztownych audytów.",
+      "cta": "Skorzystaj z kalkulatora",
+      "secondaryCta": "Porozmawiaj z ekspertem"
+    },
+    "partnership": {
+      "title": "Na czym polega współpraca BOŚ z Envirly",
+      "p1": "Bank Ochrony Środowiska S.A. w ramach wsparcia zielonej transformacji polskich przedsiębiorstw udostępnia bezpłatny, trzymiesięczny dostęp do platformy Envirly.",
+      "p2": "Narzędzie pozwala samodzielnie oszacować ślad węglowego organizacji, zidentyfikować największe źródła emisji oraz przygotować dane niezbędne do dialogu z bankiem i inwestorami.",
+      "ghgLabel": "Ślad węglowo organizacji",
+      "scopeLabel": "Zakresy 1, 2 i 3 GHG Protocol",
+      "periodLabel": "Bezpłatny dostęp przez 3 miesiące",
+      "smeLabel": "Przeznaczone dla MŚP"
+    },
+    "howItWorks": {
+      "title": "Jak działa kalkulator śladu węglowego",
+      "subtitle": "Prosty proces online — od danych wejściowych po gotowy raport redukcyjny.",
+      "platform": "Platforma Envirly prowadzi użytkownika krok po kroku przez proces inwentaryzacji emisji zgodnie z GHG Protocol. Wystarczy wprowadzić podstawowe dane operacyjne: zużycie energii, paliw, transportu, surowców i odpadów."
+    },
+    "scope1": {
+      "title": "Zakres 1 — Bezpośrednie emisje",
+      "desc": "Spalanie paliw we własnych źródłach, procesy technologiczne i emisje z własnych pojazdów."
+    },
+    "scope2": {
+      "title": "Zakres 2 — Energia zewnętrzna",
+      "desc": "Emisje pośrednie z zakupu energii elektrycznej, ciepła, chłodu i pary."
+    },
+    "scope3": {
+      "title": "Zakres 3 — Łańcuch wartości",
+      "desc": "Emisje związane z zakupami, transportem towarów, podróżami służbowymi i utylizacją odpadów."
+    },
+    "why": {
+      "title": "Dlaczego warto skorzystać",
+      "p1": "Dla wielu firm ślad węglowy staje się warunkiem uczestnictwa w przetargach, dialogu z bankiem i przygotowania raportowania ESG.",
+      "p2": "Bezpłatny dostęp do Envirly pozwala rozpocząć ten proces bez konieczności angażowania kosztownych konsultantów czy wdrożeń IT."
+    },
+    "audience": {
+      "title": "Dla kogo jest to narzędzie",
+      "beginners": "Firmy, które dopiero zaczynają mierzyć emisje i potrzebują prostego kalkulatora",
+      "experienced": "Przedsiębiorstwa przygotowujące dane dla banku, inwestorów lub raportów ESG",
+      "supplyChain": "Dostawcy dużych kontrahentów, którzy muszą udokumentować emisje Scope 3",
+      "strategy": "Zarządy planujące realną strategię dekarbonizacji i redukcji kosztów energii"
+    },
+    "quote1": {
+      "text": "Dostęp do prostych, wiarygodnych narzędzi do pomiaru emisji to dziś podstawa zielonej transformacji polskich przedsiębiorstw. Cieszymy się, że wspólnie z Envirly możemy udostępniać je naszym klientom.",
+      "author": "Piotr Wątroba",
+      "role": "Dyrektor, Bank Ochrony Środowiska S.A."
+    },
+    "quote2": {
+      "text": "Platforma Envirly została zaprojektowana tak, aby firmy mogły samodzielnie — i zgodnie z międzynarodowymi standardami — oszacować swój ślad węglowy. Współpraca z BOŚ to dla nas szansa dotarcia do jeszcze szerszej grupy polskich przedsiębiorców.",
+      "author": "Anna Burza",
+      "role": "CEO, Envirly"
+    },
+    "strategy": {
+      "title": "Element strategii transformacyjnej banku",
+      "desc": "BOŚ angażuje się w finansowanie zielonej transformacji nie tylko poprzez kredytowanie, ale także poprzez edukację i dostarczanie praktycznych narzędzi. Program z Envirly to kolejny krok w budowaniu ekosystemu wspierającego polskie MŚP na drodze do neutralności klimatycznej.",
+      "esg": "Wsparcie raportowania ESG",
+      "sme": "Dostępność dla MŚP",
+      "netZero": "Droga do Net Zero"
+    },
+    "cta": {
+      "title": "Oblicz ślad węglowego swojej firmy",
+      "subtitle": "Bezpłatny, trzymiesięczny dostęp do platformy Envirly — bez zobowiązań.",
+      "button": "Skorzystaj z kalkulatora",
+      "secondaryButton": "Skontaktuj się z nami"
     }
   },
   "lcaPage": {

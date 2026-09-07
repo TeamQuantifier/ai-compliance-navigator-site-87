@@ -2516,6 +2516,7 @@
       "selected": {
         "title": "Selected partners",
         "description": "We cooperate with leaders in finance, public institutions, universities and organizations focused on sustainable development and logistics.",
+        "readMore": "Learn more",
         "items": [
           {
             "name": "BNP Paribas Bank Polska",
@@ -2524,6 +2525,11 @@
           {
             "name": "Alior Bank",
             "description": "Cooperation on ESG and cybersecurity education and tools for the SME sector."
+          },
+          {
+            "name": "Bank Ochrony Środowiska S.A.",
+            "description": "BOŚ gives Polish entrepreneurs free, three-month access to the Envirly platform to calculate their organisation's carbon footprint across Scopes 1, 2 and 3.",
+            "link": "/en/partners/bos-bank"
           },
           {
             "name": "Polski Fundusz Rozwoju",
@@ -6324,6 +6330,10 @@
     "gs1": {
       "title": "GS1 Polska × Quantifier.ai — Product Passport & Carbon Footprint",
       "description": "GS1 Polska and Quantifier.ai partnership: Envirly LCA for Digital Product Passport (DPP) and Envirly GHG for Scope 1 & 2 emissions reporting."
+    },
+    "bos": {
+      "title": "BOŚ Bank × Envirly — Free carbon footprint calculator for SMEs",
+      "description": "Bank Ochrony Środowiska S.A. offers Polish enterprises free, three-month access to the Envirly platform. Calculate Scope 1, 2 and 3 emissions in line with GHG Protocol."
     }
   },
   "seoLanding": {
@@ -9325,6 +9335,76 @@
         "title": "Edit the passport and share the link",
         "desc": "Design the product passport layout: choose sections, fill in content and data, then generate a public link or QR code. Audit-ready, client-ready."
       }
+    }
+  },
+  "bos": {
+    "hero": {
+      "eyebrow": "Bank Ochrony Środowiska S.A. × Envirly",
+      "title": "Free carbon footprint calculator for Polish entrepreneurs",
+      "subtitle": "Three months of free access to the Envirly platform. Calculate Scope 1, 2 and 3 emissions, prepare data for your bank and build a real reduction plan — without IT implementations or costly audits.",
+      "cta": "Use the calculator",
+      "secondaryCta": "Talk to an expert"
+    },
+    "partnership": {
+      "title": "How BOŚ cooperates with Envirly",
+      "p1": "Bank Ochrony Środowiska S.A., as part of its support for the green transformation of Polish enterprises, provides free, three-month access to the Envirly platform.",
+      "p2": "The tool allows companies to independently estimate their organisation's carbon footprint, identify the largest sources of emissions and prepare data necessary for dialogue with the bank and investors.",
+      "ghgLabel": "Organisation carbon footprint",
+      "scopeLabel": "Scopes 1, 2 and 3 GHG Protocol",
+      "periodLabel": "Free access for 3 months",
+      "smeLabel": "Designed for SMEs"
+    },
+    "howItWorks": {
+      "title": "How the carbon footprint calculator works",
+      "subtitle": "A simple online process — from input data to a ready reduction report.",
+      "platform": "The Envirly platform guides the user step by step through the GHG Protocol-compliant emissions inventory process. Just enter basic operational data: energy consumption, fuels, transport, raw materials and waste."
+    },
+    "scope1": {
+      "title": "Scope 1 — Direct emissions",
+      "desc": "Fuel combustion in own sources, technological processes and emissions from company vehicles."
+    },
+    "scope2": {
+      "title": "Scope 2 — External energy",
+      "desc": "Indirect emissions from purchased electricity, heat, cooling and steam."
+    },
+    "scope3": {
+      "title": "Scope 3 — Value chain",
+      "desc": "Emissions related to procurement, goods transport, business travel and waste disposal."
+    },
+    "why": {
+      "title": "Why use it",
+      "p1": "For many companies, the carbon footprint is becoming a condition for participating in tenders, talking to banks and preparing ESG reporting.",
+      "p2": "Free access to Envirly allows you to start this process without hiring expensive consultants or IT implementations."
+    },
+    "audience": {
+      "title": "Who is this tool for",
+      "beginners": "Companies just starting to measure emissions and needing a simple calculator",
+      "experienced": "Enterprises preparing data for banks, investors or ESG reports",
+      "supplyChain": "Suppliers to large contractors who need to document Scope 3 emissions",
+      "strategy": "Management teams planning a real decarbonisation and energy cost reduction strategy"
+    },
+    "quote1": {
+      "text": "Access to simple, credible emissions measurement tools is the foundation of the green transformation of Polish enterprises. We are pleased that together with Envirly we can make them available to our clients.",
+      "author": "Piotr Wątroba",
+      "role": "Director, Bank Ochrony Środowiska S.A."
+    },
+    "quote2": {
+      "text": "The Envirly platform was designed so that companies can independently — and in line with international standards — estimate their carbon footprint. Cooperation with BOŚ is an opportunity to reach an even wider group of Polish entrepreneurs.",
+      "author": "Anna Burza",
+      "role": "CEO, Envirly"
+    },
+    "strategy": {
+      "title": "Part of the bank's transformational strategy",
+      "desc": "BOŚ engages in financing green transformation not only through lending, but also through education and providing practical tools. The Envirly programme is another step in building an ecosystem supporting Polish SMEs on the road to climate neutrality.",
+      "esg": "ESG reporting support",
+      "sme": "SME accessibility",
+      "netZero": "Road to Net Zero"
+    },
+    "cta": {
+      "title": "Calculate your company's carbon footprint",
+      "subtitle": "Free, three-month access to the Envirly platform — no obligations.",
+      "button": "Use the calculator",
+      "secondaryButton": "Contact us"
     }
   },
   "lcaPage": {

@@ -2462,6 +2462,7 @@
       "selected": {
         "title": "Vybraní partneři",
         "description": "Spolupracujeme s lídry finančního sektoru, veřejnými institucemi, univerzitami a organizacemi zaměřenými na udržitelný rozvoj a logistiku.",
+        "readMore": "Dozvědět se více",
         "items": [
           {
             "name": "BNP Paribas Bank Polska",
@@ -2470,6 +2471,11 @@
           {
             "name": "Alior Bank",
             "description": "Spolupráce na vzdělávání a nástrojích ESG a kyberbezpečnosti pro sektor MSP."
+          },
+          {
+            "name": "Bank Ochrony Środowiska S.A.",
+            "description": "BOŚ poskytuje polským podnikatelům bezplatný tříměsíční přístup k platformě Envirly pro výpočet uhlíkové stopy organizace v rozmezích 1, 2 a 3.",
+            "link": "/cs/partneri/bos-bank"
           },
           {
             "name": "Polski Fundusz Rozwoju",
@@ -3818,6 +3824,10 @@
     "gs1": {
       "title": "GS1 Polska × Quantifier.ai — Produktový pas a uhlíková stopa",
       "description": "Partnerství GS1 Polska a Quantifier.ai: Envirly LCA pro digitální produktový pas (DPP) a Envirly GHG pro vykazování emisí Scope 1 a 2."
+    },
+    "bos": {
+      "title": "BOŚ Bank × Envirly — Bezplatný kalkulátor uhlíkové stopy pro MSP",
+      "description": "Bank Ochrony Środowiska S.A. nabízí polským podnikům bezplatný, tříměsíční přístup k platformě Envirly. Vypočítejte emise Scope 1, 2 a 3 v souladu s GHG Protocol."
     },
     "partners": {
       "title": "Partneři Quantifier.ai | Síť 50+ GRC a ESG partnerů",
@@ -7598,6 +7608,76 @@
         "title": "Upravte pas a sdílejte odkaz",
         "desc": "Navrhněte rozložení produktového pasu: vyberte sekce, doplňte obsah a data, poté vygenerujte veřejný odkaz nebo QR kód. Připraveno na audit, připraveno pro klienta."
       }
+    }
+  },
+  "bos": {
+    "hero": {
+      "eyebrow": "Bank Ochrony Środowiska S.A. × Envirly",
+      "title": "Bezplatný kalkulátor uhlíkové stopy pro polské podnikatele",
+      "subtitle": "Tříměsíční bezplatný přístup k platformě Envirly. Vypočítejte emise v rozmezích 1, 2 a 3, připravte data pro banku a vybudujte reálný plán redukce — bez IT implementací a nákladných auditů.",
+      "cta": "Využijte kalkulátor",
+      "secondaryCta": "Promluvte si s expertem"
+    },
+    "partnership": {
+      "title": "Na čem spočívá spolupráce BOŚ s Envirly",
+      "p1": "Bank Ochrony Środowiska S.A. v rámci podpory zelené transformace polských podniků poskytuje bezplatný, tříměsíční přístup k platformě Envirly.",
+      "p2": "Nástroj umožňuje samostatně odhadnout uhlíkovou stopu organizace, identifikovat největší zdroje emisí a připravit data nezbytná pro dialog s bankou a investory.",
+      "ghgLabel": "Uhlíková stopa organizace",
+      "scopeLabel": "Rozmezí 1, 2 a 3 GHG Protocol",
+      "periodLabel": "Bezplatný přístup na 3 měsíce",
+      "smeLabel": "Určeno pro MSP"
+    },
+    "howItWorks": {
+      "title": "Jak funguje kalkulátor uhlíkové stopy",
+      "subtitle": "Jednoduchý online proces — od vstupních dat po hotovou redukční zprávu.",
+      "platform": "Platforma Envirly provede uživatele krok za krokem procesem inventarizace emisí v souladu s GHG Protocol. Stačí zadat základní provozní data: spotřebu energie, paliv, dopravy, surovin a odpadů."
+    },
+    "scope1": {
+      "title": "Rozmezí 1 — Přímé emise",
+      "desc": "Spalování paliv ve vlastních zdrojích, technologické procesy a emise z vlastních vozidel."
+    },
+    "scope2": {
+      "title": "Rozmezí 2 — Externí energie",
+      "desc": "Nepřímé emise z nákupu elektrické energie, tepla, chladu a páry."
+    },
+    "scope3": {
+      "title": "Rozmezí 3 — Řetězec hodnot",
+      "desc": "Emise spojené s nákupem, přepravou zboží, služebními cestami a likvidací odpadů."
+    },
+    "why": {
+      "title": "Proč využít tuto nabídku",
+      "p1": "Pro mnoho firem se uhlíková stopa stává podmínkou účasti ve výběrových řízeních, jednání s bankou a přípravy ESG reportingu.",
+      "p2": "Bezplatný přístup k Envirly umožňuje začít tento proces bez nákladných konzultantů či IT implementací."
+    },
+    "audience": {
+      "title": "Pro koho je tento nástroj určen",
+      "beginners": "Firmy, které začínají měřit emise a potřebují jednoduchý kalkulátor",
+      "experienced": "Podniky připravující data pro banku, investory nebo ESG zprávy",
+      "supplyChain": "Dodavatelé velkých zadavatelů, kteří musí dokumentovat emise Scope 3",
+      "strategy": "Vedení podniků plánujících reálnou strategii dekarbonizace a snížení energetických nákladů"
+    },
+    "quote1": {
+      "text": "Přístup k jednoduchým, důvěryhodným nástrojům pro měření emisí je dnes základem zelené transformace polských podniků. Těší nás, že společně s Envirly můžeme našim klientům tyto nástroje zpřístupnit.",
+      "author": "Piotr Wątroba",
+      "role": "Ředitel, Bank Ochrony Środowiska S.A."
+    },
+    "quote2": {
+      "text": "Platforma Envirly byla navržena tak, aby si firmy mohly samostatně — a v souladu s mezinárodními standardy — odhadnout svou uhlíkovou stopu. Spolupráce s BOŚ je pro nás příležitostí oslovit ještě širší skupinu polských podnikatelů.",
+      "author": "Anna Burza",
+      "role": "CEO, Envirly"
+    },
+    "strategy": {
+      "title": "Součást transformační strategie banky",
+      "desc": "BOŚ se zapojuje do financování zelené transformace nejen prostřednictvím úvěrů, ale také vzděláváním a poskytováním praktických nástrojů. Program s Envirly je dalším krokem při budování ekosystému podporujícího polská MSP na cestě k klimatické neutralitě.",
+      "esg": "Podpora ESG reportingu",
+      "sme": "Dostupnost pro MSP",
+      "netZero": "Cesta k Net Zero"
+    },
+    "cta": {
+      "title": "Vypočítejte uhlíkovou stopu své firmy",
+      "subtitle": "Bezplatný, tříměsíční přístup k platformě Envirly — bez závazků.",
+      "button": "Využijte kalkulátor",
+      "secondaryButton": "Kontaktujte nás"
     }
   },
   "productLevelHub": {
