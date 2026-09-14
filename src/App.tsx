@@ -104,9 +104,12 @@ import FormularzPage from "./pages/formularz/FormularzPage";
 import TrainingLanding from "./pages/services/TrainingLanding";
 import Nis2TrainingLanding from "./pages/services/Nis2TrainingLanding";
 import KscStart from "./pages/services/KscStart";
+import Nis2ChecklistLanding from "./pages/services/Nis2ChecklistLanding";
+import Nis2ChecklistThankYou from "./pages/services/Nis2ChecklistThankYou";
 
 // Partner subpages
 import Gs1Polska from "./pages/partners/Gs1Polska";
+import BosBank from "./pages/partners/BosBank";
 
 // Events pages
 import EventsHub from "./pages/events/EventsHub";
@@ -221,6 +224,13 @@ const MainRoutes = () => (
         <Route path="/pl/partners/gs1-polska" element={<Navigate to="/pl/partnerzy/gs1-polska" replace />} />
         <Route path="/cs/partners/gs1-polska" element={<Navigate to="/cs/partneri/gs1-polska" replace />} />
         <Route path="/cs/partneři/gs1-polska" element={<Navigate to="/cs/partneri/gs1-polska" replace />} />
+
+        <Route path="/en/partners/bos-bank" element={<BosBank />} />
+        <Route path="/pl/partnerzy/bos-bank" element={<BosBank />} />
+        <Route path="/cs/partneri/bos-bank" element={<BosBank />} />
+        <Route path="/pl/partners/bos-bank" element={<Navigate to="/pl/partnerzy/bos-bank" replace />} />
+        <Route path="/cs/partners/bos-bank" element={<Navigate to="/cs/partneri/bos-bank" replace />} />
+        <Route path="/cs/partneři/bos-bank" element={<Navigate to="/cs/partneri/bos-bank" replace />} />
         <Route path="/:locale/success-stories" element={<SuccessStories />} />
         <Route path="/:locale/success-stories/:slug" element={<StoryDetail />} />
         <Route path="/:locale/contact" element={<Contact />} />
@@ -232,6 +242,8 @@ const MainRoutes = () => (
         <Route path="/cs/skoleni-kyberneticka-bezpecnost-pro-firmy" element={<TrainingLanding />} />
         <Route path="/pl/darmowe-szkolenie-nis2" element={<Nis2TrainingLanding />} />
         <Route path="/pl/start-nis2-ksc" element={<KscStart />} />
+        <Route path="/pl/checklista-nis2-ksc-wdrozenie-audyt" element={<Nis2ChecklistLanding />} />
+        <Route path="/pl/checklista-nis2-ksc-wdrozenie-audyt/dziekujemy" element={<Nis2ChecklistThankYou />} />
         
         {/* Legal routes */}
         <Route path="/:locale/legal/privacy" element={<PrivacyPolicy />} />

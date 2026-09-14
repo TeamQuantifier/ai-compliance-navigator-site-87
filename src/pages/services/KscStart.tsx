@@ -474,8 +474,16 @@ const KscStart = () => {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ksc-accent mb-3">Zakres pakietu</p>
             <h2 className="text-3xl md:text-4xl font-bold text-ksc-ink mb-3">Pięć elementów, które zamykają start zgodności</h2>
             <p className="text-ksc-ink/65">
-              Każdy element kończy się artefaktem, który możecie pokazać organowi, audytorowi i zarządowi.
+              Każdy element kończy się artefaktem, który możecie pokazać organowi, audytorowi i zarządowi.{' '}
+              <Link
+                to="/pl/checklista-nis2-ksc-wdrozenie-audyt"
+                className="font-semibold text-ksc-accent underline underline-offset-4 hover:text-ksc-ink"
+              >
+                Pobierz bezpłatną checklistę NIS2 / KSC
+              </Link>
+              , jeśli chcecie najpierw zobaczyć pełny zakres dokumentacji.
             </p>
+
           </div>
           <div className="grid md:grid-cols-2 gap-x-14 border-t border-ksc-ink/15">
             {scope.map((s) => (

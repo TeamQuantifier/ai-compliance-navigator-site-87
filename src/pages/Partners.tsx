@@ -11,6 +11,7 @@ import logoKlasterGoz from '@/assets/partners/klaster-goz.png';
 import logoCpc from '@/assets/partners/circular-production-community.png';
 import logoReo from '@/assets/partners/reo.svg';
 import logoRaben from '@/assets/partners/raben.svg';
+import logoBos from '@/assets/partners/bos-bank.png';
 import PageTemplate from '@/components/PageTemplate';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -25,6 +26,7 @@ interface PartnerArea {
 interface SelectedPartnerCopy {
   name: string;
   description: string;
+  link?: string;
 }
 
 const areaIcons = [
@@ -38,6 +40,7 @@ const areaIcons = [
 const partnerLogos = [
   logoBnp,
   logoAlior,
+  logoBos,
   logoPfr,
   logoUeWroclaw,
   logoKlasterGoz,
@@ -225,28 +228,40 @@ const Partners = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {selectedPartners.map((p, index) => (
-              <Card
-                key={p.name}
-                className="group relative p-8 md:p-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:text-left text-center border-0 bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-2xl"
-              >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-compliance-500 to-innovation-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="shrink-0 h-28 w-40 flex items-center justify-center bg-slate-50 rounded-xl p-4 group-hover:bg-white group-hover:shadow-inner transition-all">
-                  <img
-                    src={partnerLogos[index]}
-                    alt={`${p.name} logo`}
-                    className="max-h-20 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    width={160}
-                    height={80}
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{p.name}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{p.description}</p>
-                </div>
-              </Card>
-            ))}
+            {selectedPartners.map((p, index) => {
+              const card = (
+                <Card
+                  className="group relative p-8 md:p-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:text-left text-center border-0 bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-2xl h-full"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-compliance-500 to-innovation-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="shrink-0 h-28 w-40 flex items-center justify-center bg-slate-50 rounded-xl p-4 group-hover:bg-white group-hover:shadow-inner transition-all">
+                    <img
+                      src={partnerLogos[index]}
+                      alt={`${p.name} logo`}
+                      className="max-h-20 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width={160}
+                      height={80}
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{p.name}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{p.description}</p>
+                    {p.link && (
+                      <span className="inline-flex items-center text-sm font-semibold text-primary mt-4 group-hover:underline">
+                        {t('partners.page.selected.readMore')}
+                        <ArrowRight className="ml-1.5 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    )}
+                  </div>
+                </Card>
+              );
+              return p.link ? (
+                <Link key={p.name} to={p.link} className="block">{card}</Link>
+              ) : (
+                <div key={p.name}>{card}</div>
+              );
+            })}
           </div>
         </section>
 

@@ -72,6 +72,7 @@ const LOCALE_AVAILABILITY: Record<string, Locale[]> = {
   // Polish-only pages
   'darmowe-szkolenie-nis2': ['pl'],
   'start-nis2-ksc': ['pl'],
+  'checklista-nis2-ksc-wdrozenie-audyt': ['pl'],
 };
 
 /**

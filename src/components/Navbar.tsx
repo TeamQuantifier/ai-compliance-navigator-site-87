@@ -130,6 +130,9 @@ export const Navbar = () => {
         { title: t('menu.blog'), href: '/blog' },
         { title: t('menu.successStories'), href: '/success-stories' },
         { title: t('menu.events'), href: '/events' },
+        ...(currentLocale === 'pl'
+          ? [{ title: t('menu.checklists'), href: '/checklista-nis2-ksc-wdrozenie-audyt/' }]
+          : []),
       ],
     },
     {
