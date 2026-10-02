@@ -239,15 +239,6 @@ export const Navbar = () => {
         </NavigationMenu>
         
         <div className="flex items-center gap-2">
-          {location.pathname.replace(/\/$/, '').endsWith('/ksc-dla-samorzadow') && (
-            <div className="hidden lg:flex">
-              <a href="#przeglad" aria-label="Przejdź do formularza bezpłatnego przeglądu">
-                <Button size="sm" className="text-white px-3">
-                  Bezpłatny przegląd: co zostało po grancie
-                </Button>
-              </a>
-            </div>
-          )}
           <LanguageSwitch />
           <div className="hidden md:flex">
             <Button variant="outline" size="sm" onClick={handleLoginClick}>
