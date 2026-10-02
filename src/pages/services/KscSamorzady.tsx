@@ -475,14 +475,6 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Kompetencje i publikacje */}
-        <section className="container mx-auto px-4 py-12 md:py-16" aria-labelledby="kompetencje-h2">
-          <div className="max-w-3xl mb-10">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
-            <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
-            <p className="text-muted-foreground">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
-          </div>
-        </section>
 
         {/* Autorzy książek — ciemny band */}
         <section className="relative overflow-hidden bg-foreground" aria-labelledby="autorzy-h2">
@@ -541,11 +533,17 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Certyfikowane i zaufane rozwiązanie */}
-        <section className="bg-foreground border-y" aria-labelledby="certyfikaty-h2">
+        {/* Kompetencje + Certyfikowane i zaufane rozwiązanie */}
+        <section className="bg-foreground border-y" aria-labelledby="kompetencje-h2">
           <div className="container mx-auto px-4 py-12 md:py-16">
-            <h2 id="certyfikaty-h2" className="text-2xl md:text-4xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h2>
+            <div className="max-w-3xl mb-12">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
+              <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold text-white mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
+              <p className="text-background/80">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h3>
             <div className="mb-10 h-1 w-32 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
               {CERTIFICATES.map((item) => (
                 <article key={item.title} className="group">
