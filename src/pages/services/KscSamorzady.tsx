@@ -260,10 +260,10 @@ const EvidenceFolder = () => {
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div>
               <p className="mb-2 text-sm font-semibold">Status dowodów</p>
-              <div className="h-40">
+              <div className="h-36">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
-                    <Pie data={EVIDENCE_STATUS} dataKey="value" nameKey="name" innerRadius={30} outerRadius={52} cx="45%" cy="50%" label={({ value }) => value}>
+                    <Pie data={EVIDENCE_STATUS} dataKey="value" nameKey="name" innerRadius={30} outerRadius={50} cx="50%" cy="50%" isAnimationActive={false}>
                       <Cell fill={PRIMARY} />
                       <Cell fill="hsl(45 93% 47%)" />
                     </Pie>
@@ -272,6 +272,7 @@ const EvidenceFolder = () => {
                   </PieChart>
                 </ResponsiveContainer>
               </div>
+              <p className="text-xs text-muted-foreground">10 dowodów kompletnych · 2 w toku</p>
             </div>
             <div>
               <p className="mb-2 text-sm font-semibold">Zgodność z wymaganiami</p>
