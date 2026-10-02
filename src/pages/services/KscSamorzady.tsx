@@ -9,7 +9,7 @@ import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveCo
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { FAQSection } from '@/components/seo/FAQSection';
+import FAQSection from '@/components/seo/FAQSection';
 import nowaArchitekturaOkladka from '@/assets/nowa-architektura-compliance-okladka.png';
 
 const CANONICAL = 'https://quantifier.ai/pl/ksc-dla-samorzadow/';
