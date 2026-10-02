@@ -27,7 +27,7 @@ const TYPES: { id: OfficeType; icon: typeof Building; title: string; desc: strin
     id: 'kluczowy', icon: Landmark, title: 'Urząd kluczowy',
     desc: 'Gmina od 50 etatów, starostwo, miasto na prawach powiatu, urząd marszałkowski — audyt do 3.04.2028.',
     pkg: 'Zakres dla urzędu kluczowego',
-    items: ['Wszystko z Pakietu Gmina', 'Przygotowanie do audytu KSC 2028', 'Rejestry aktywów, incydentów, dostawców', 'Mapowanie KRI–ISO–KSC–RODO'],
+    items: ['Pełny zakres dla gminy', 'Przygotowanie do audytu KSC 2028', 'Rejestry aktywów, incydentów, dostawców', 'Mapowanie KRI–ISO–KSC–RODO'],
   },
   {
     id: 'lcc', icon: Network, title: 'Lider partnerstwa LCC',
@@ -72,7 +72,8 @@ const COOPERATION = [
 ];
 
 const RECOGNITION = [
-  { title: '3 certyfikaty TÜV NORD', description: 'W tym certyfikacja systemu zarządzania bezpieczeństwem informacji ISO 27001.' },
+  { title: '3 certyfikaty TÜV NORD', description: 'Niezależne potwierdzenie kompetencji i jakości naszych rozwiązań.' },
+  { title: 'ISO 27001', description: 'Pracujemy w oparciu o uznany międzynarodowy standard bezpieczeństwa informacji.' },
   { title: 'NCC-PL i Ministerstwo Cyfryzacji', description: 'Obecność w krajowej społeczności kompetencji cyberbezpieczeństwa.' },
   { title: 'OT Cyber Challenge', description: 'Praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.' },
   { title: 'ATLAS', description: 'Jesteśmy częścią ekosystemu łączącego wiedzę, technologię i odporność organizacji.' },
@@ -89,7 +90,7 @@ const faqs = [
   { question: 'Czy gmina podlega KSC?', answer: 'Tak. Nowelizacja ustawy o krajowym systemie cyberbezpieczeństwa obejmuje jednostki samorządu terytorialnego. Urzędy do 50 etatów są zwykle podmiotami ważnymi (uproszczony SZBI), większe urzędy, starostwa, miasta na prawach powiatu i urzędy marszałkowskie — podmiotami kluczowymi.' },
   { question: 'Czym audyt KRI różni się od audytu KSC?', answer: 'Audyt z § 19 rozporządzenia KRI urząd przeprowadza co najmniej raz w roku we własnym zakresie. Audyt KSC dotyczy podmiotów kluczowych, jest wykonywany przez uprawnionego audytora, a pierwszy przypada do 3.04.2028 r. Jeden SZBI może pokrywać oba wymagania.' },
   { question: 'Co po Cyberbezpiecznym Samorządzie?', answer: 'Grant się skończył, obowiązki zostały: dwuletnia trwałość projektu, coroczny audyt KRI i wymagania KSC. Utrzymanie SZBI oznacza aktualizację dokumentacji, rejestrów, analizy ryzyka i dowodów — nie jednorazowe wdrożenie.' },
-  { question: 'Czy można kupić bez przetargu?', answer: 'Tak, jeśli wartość zamówienia nie przekracza 130 tys. zł netto — wtedy wystarcza zapytanie ofertowe zgodnie z regulaminem urzędu. Udostępniamy neutralny wzór opisu przedmiotu zamówienia.' },
+  { question: 'Jak sprawnie przygotować zakup?', answer: 'Pomagamy precyzyjnie określić zakres i udostępniamy neutralny wzór opisu przedmiotu zamówienia. Tryb zakupu urząd dobiera zgodnie ze swoim regulaminem i obowiązującymi przepisami.' },
   { question: 'Kto w urzędzie odpowiada za SZBI?', answer: 'Kierownik urzędu (wójt, burmistrz, prezydent, starosta, marszałek). Zadania można delegować, ale odpowiedzialność pozostaje osobista — stąd znaczenie dowodów i raportu rocznego.' },
 ];
 
@@ -447,7 +448,7 @@ const KscSamorzady = () => {
             <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
             <p className="text-muted-foreground">Łączymy interpretację prawa, praktykę audytową i technologię. Dzięki temu rekomendacje można od razu przełożyć na zadania, dowody i raporty.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
             {RECOGNITION.map((item) => (
               <article key={item.title} className="group border-t-2 border-primary bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <Award className="h-6 w-6 text-primary mb-4" aria-hidden />
@@ -457,6 +458,7 @@ const KscSamorzady = () => {
             ))}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-8 border-y py-8 mb-12">
+            <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="Certyfikat TÜV NORD" width={220} height={90} loading="lazy" className="h-14 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
             <img src="/featured/ministerstwo-cyfryzacji.png" alt="Ministerstwo Cyfryzacji" width={220} height={70} loading="lazy" className="h-12 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
             <img src="/featured/ncc-pl.png" alt="NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa" width={220} height={70} loading="lazy" className="h-12 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
           </div>
