@@ -131,7 +131,7 @@ export const Navbar = () => {
         { title: t('menu.successStories'), href: '/success-stories' },
         { title: t('menu.events'), href: '/events' },
         ...(currentLocale === 'pl'
-          ? [{ title: t('menu.checklists'), href: '/checklista-nis2-ksc-wdrozenie-audyt/' }]
+          ? [{ title: t('menu.checklists'), href: '/checklista-nis2-ksc-wdrozenie-audyt/' }, { title: 'Dla samorządów', href: '/ksc-dla-samorzadow/' }]
           : []),
       ],
     },

@@ -69,6 +69,7 @@ const singleLocalePages: Array<{
   lastmod: string;
 }> = [
   { locale: 'pl', path: '/start-nis2-ksc', changefreq: 'monthly', priority: '0.8', lastmod: '2026-08-18' },
+  { locale: 'pl', path: '/ksc-dla-samorzadow', changefreq: 'monthly', priority: '0.8', lastmod: '2026-10-02' },
   { locale: 'pl', path: '/checklista-nis2-ksc-wdrozenie-audyt', changefreq: 'monthly', priority: '0.8', lastmod: '2026-08-25' },
 ];
 
