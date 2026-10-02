@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import {
   Activity, ArrowRight, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileSignature,
-  FileText, FolderCheck, Landmark, Layers3, Network, Scale, Server, ShieldCheck, Sparkles, UserCheck,
+  FileText, FolderCheck, Landmark, Layers3, Network, Scale, Server, Sparkles, UserCheck,
 } from 'lucide-react';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Button } from '@/components/ui/button';
@@ -17,6 +17,13 @@ const DESC =
   'Utrzymanie SZBI po Cyberbezpiecznym Samorządzie: coroczny audyt KRI, obowiązki KSC i dowody dla kontroli. Zapytanie ofertowe, gotowy OPZ, realizacja zdalna.';
 
 type OfficeType = 'maly' | 'kluczowy' | 'lcc';
+
+const TRUST_ITEMS: { icon: typeof Building; title: string; desc: string }[] = [
+  { icon: Server, title: 'Hosting danych w Unii Europejskiej', desc: 'Dane urzędu pozostają w infrastrukturze zlokalizowanej w UE — zgodnie z wymogami dla podmiotów publicznych.' },
+  { icon: FileSignature, title: 'Umowa powierzenia przetwarzania danych', desc: 'Formalna podstawa prawna współpracy: powierzenie przetwarzania danych zapisane w umowie przed startem prac.' },
+  { icon: UserCheck, title: 'Kwalifikacje i CV audytorów dostępne na potrzeby postępowania', desc: 'Dokumentacja kompetencji zespołu gotowa do wglądu na każdym etapie postępowania.' },
+  { icon: Layers3, title: 'Mapowanie KRI–ISO 27001–KSC–RODO w jednym raporcie', desc: 'Jeden raport spina wymagania wszystkich narzędzi regulacyjnych — bez dublowania pracy w osobnych arkuszach.' },
+];
 
 const TYPES: { id: OfficeType; icon: typeof Building; title: string; desc: string; pkg: string; items: string[] }[] = [
   {
