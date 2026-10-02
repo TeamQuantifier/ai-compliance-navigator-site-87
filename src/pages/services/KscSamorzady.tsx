@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import FAQSection from '@/components/seo/FAQSection';
+import nowaArchitekturaOkladka from '@/assets/nowa-architektura-compliance-okladka.png';
 
 const CANONICAL = 'https://quantifier.ai/pl/ksc-dla-samorzadow/';
 const TITLE = 'SZBI dla urzędu: audyt KRI i KSC po grancie | Quantifier';
@@ -528,10 +529,10 @@ const KscSamorzady = () => {
                   className="relative z-10 h-[300px] w-auto -rotate-6 drop-shadow-[0_24px_48px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-3 hover:-rotate-2 md:h-[340px]"
                 />
                 <img
-                  src="/images/nowa-architektura-compliance-okladka.png"
+                  src={nowaArchitekturaOkladka}
                   alt="Książka Nowa architektura compliance — C.H. Beck"
-                  width={270}
-                  height={380}
+                  width={768}
+                  height={1430}
                   loading="lazy"
                   className="relative z-20 -ml-10 h-[300px] w-auto rotate-[4deg] drop-shadow-[0_24px_48px_rgba(0,0,0,0.55)] transition-transform duration-500 hover:-translate-y-4 hover:rotate-1 md:h-[340px]"
                 />
