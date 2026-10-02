@@ -486,6 +486,37 @@ const KscSamorzady = () => {
         </section>
 
 
+        {/* Kompetencje + Certyfikowane i zaufane rozwiązanie */}
+        <section className="bg-foreground border-y" aria-labelledby="kompetencje-h2">
+          <div className="container mx-auto px-4 py-12 md:py-16">
+            <div className="max-w-3xl mb-12">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
+              <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold text-white mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
+              <p className="text-background/80">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h3>
+            <div className="mb-10 h-1 w-32 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+              {CERTIFICATES.map((item) => (
+                <article key={item.title} className="group">
+                  <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-white p-5 shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
+                    <img src={item.image} alt={item.alt} width={350} height={219} loading="lazy" className="max-h-full w-full object-contain" />
+                  </div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">{item.eyebrow}</p>
+                  <h3 className="mb-3 text-lg md:text-xl font-bold text-white">{item.title}</h3>
+                  <p className="text-sm text-background/80">{item.description}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-12 flex flex-col items-center">
+              <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+              <p className="text-center text-xl md:text-2xl font-bold text-white">Standardy, które wdrażamy u klientów, potwierdzamy u siebie.</p>
+            </div>
+          </div>
+        </section>
+
+
         {/* Autorzy książek — ciemny band */}
         <section className="relative overflow-hidden bg-foreground" aria-labelledby="autorzy-h2">
           <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full blur-3xl" style={{ background: 'hsl(221 83% 53% / 0.18)' }} aria-hidden />
@@ -543,35 +574,6 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Kompetencje + Certyfikowane i zaufane rozwiązanie */}
-        <section className="bg-foreground border-y" aria-labelledby="kompetencje-h2">
-          <div className="container mx-auto px-4 py-12 md:py-16">
-            <div className="max-w-3xl mb-12">
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
-              <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold text-white mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
-              <p className="text-background/80">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h3>
-            <div className="mb-10 h-1 w-32 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
-
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-              {CERTIFICATES.map((item) => (
-                <article key={item.title} className="group">
-                  <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-white p-5 shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
-                    <img src={item.image} alt={item.alt} width={350} height={219} loading="lazy" className="max-h-full w-full object-contain" />
-                  </div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">{item.eyebrow}</p>
-                  <h3 className="mb-3 text-lg md:text-xl font-bold text-white">{item.title}</h3>
-                  <p className="text-sm text-background/80">{item.description}</p>
-                </article>
-              ))}
-            </div>
-            <div className="mt-12 flex flex-col items-center">
-              <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
-              <p className="text-center text-xl md:text-2xl font-bold text-white">Standardy, które wdrażamy u klientów, potwierdzamy u siebie.</p>
-            </div>
-          </div>
-        </section>
 
 
         <FAQSection title="Najczęstsze pytania urzędów" faqs={faqs} pageUrl={CANONICAL} />
