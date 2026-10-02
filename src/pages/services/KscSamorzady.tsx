@@ -558,14 +558,42 @@ const KscSamorzady = () => {
         </section>
 
         {/* Zaufanie */}
-        <section className="bg-muted/40 border-y">
-          <div className="container mx-auto px-4 py-12" aria-label="Bezpieczna realizacja">
-          <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Bezpieczna realizacja dla sektora publicznego</h2>
-            <ul className="space-y-3">
-              {['Hosting danych w Unii Europejskiej', 'Umowa powierzenia przetwarzania danych', 'Kwalifikacje i CV audytorów dostępne na potrzeby postępowania', 'Mapowanie KRI–ISO 27001–KSC–RODO w jednym raporcie'].map((t) => <li key={t} className="flex gap-3"><ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden />{t}</li>)}
-            </ul>
-          </div>
+        <section className="bg-muted/40 border-y" aria-labelledby="zaufanie-h2">
+          <div className="container mx-auto px-4 py-12 md:py-16">
+            <div className="mb-10 text-center">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" aria-hidden />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" aria-hidden />
+                </span>
+                Gwarancja bezpieczeństwa
+              </div>
+              <h2 id="zaufanie-h2" className="text-2xl md:text-4xl font-bold text-foreground">Bezpieczna realizacja dla <span className="text-primary">sektora publicznego</span></h2>
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {TRUST_ITEMS.map((item, i) => (
+                <article key={item.title} className="group relative rounded-2xl border bg-card p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10" style={i % 2 === 1 ? { ['--tw-shadow-color' as string]: 'hsl(263 70% 50% / 0.1)' } : undefined}>
+                  <div className="flex items-start gap-5 md:gap-6">
+                    <div className={`flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-xl bg-muted transition-colors ${i % 2 === 1 ? 'text-accent group-hover:bg-accent/10' : 'text-primary group-hover:bg-primary/10'}`}>
+                      <item.icon className="h-7 w-7 md:h-8 md:w-8" strokeWidth={1.5} aria-hidden />
+                    </div>
+                    <div>
+                      <h3 className="mb-2 text-lg md:text-xl font-bold text-foreground">{item.title}</h3>
+                      <p className="leading-relaxed text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 border-t pt-6 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              <span>Wymogi KSC</span>
+              <span>ISO 27001</span>
+              <span>Hosting w UE</span>
+              <span>RODO</span>
+            </div>
           </div>
         </section>
 
