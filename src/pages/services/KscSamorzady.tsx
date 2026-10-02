@@ -475,14 +475,6 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Kompetencje i publikacje */}
-        <section className="container mx-auto px-4 py-12 md:py-16" aria-labelledby="kompetencje-h2">
-          <div className="max-w-3xl mb-10">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
-            <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
-            <p className="text-muted-foreground">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
-          </div>
-        </section>
 
         {/* Autorzy książek — ciemny band */}
         <section className="relative overflow-hidden bg-foreground" aria-labelledby="autorzy-h2">
