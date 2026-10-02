@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import {
-  Activity, ArrowRight, Award, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileText,
+  Activity, ArrowRight, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileText,
   FolderCheck, Landmark, Layers3, Network, Scale, ShieldCheck, Sparkles,
 } from 'lucide-react';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
@@ -72,10 +72,11 @@ const COOPERATION = [
   },
 ];
 
-const RECOGNITION = [
-  { title: 'NCC-PL i Ministerstwo Cyfryzacji', description: 'Obecność w krajowej społeczności kompetencji cyberbezpieczeństwa.' },
-  { title: 'OT Cyber Challenge', description: 'Praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.' },
-  { title: 'ATLAS', description: 'Jesteśmy częścią ekosystemu łączącego wiedzę, technologię i odporność organizacji.' },
+const CERTIFICATES = [
+  { eyebrow: 'System bezpieczeństwa', title: 'Zgodność z ISO/IEC 27001', description: 'System zarządzania bezpieczeństwem informacji prowadzony zgodnie z wymaganiami normy.', image: '/images/jst/tuv-nord-iso-27001.png', alt: 'Certyfikat TÜV NORD ISO 27001' },
+  { eyebrow: 'Certyfikaty produktowe', title: '3 × Produkt Sprawdzony', description: 'Kontrola procesu i testy produktu potwierdzone przez TÜV NORD Polska.', image: '/images/jst/produkt-sprawdzony-3x.png', alt: 'Trzy certyfikaty TÜV NORD Produkt Sprawdzony' },
+  { eyebrow: 'Ekosystem europejski', title: 'Społeczność Kompetentna', description: 'Wniosek złożony w NCC-PL przy Ministerstwie Cyfryzacji, z rejestracją danych w portalu ATLAS (UE i EOG).', image: '/images/jst/ncc-ministerstwo.png', alt: 'NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa i Ministerstwo Cyfryzacji' },
+  { eyebrow: 'Wyróżnienie', title: 'Top AI Driven Companies', description: 'Quantifier.ai w zestawieniu firm budujących produkty w oparciu o AI.', image: '/featured/top-ai-driven-companies.png', alt: 'Top AI Driven Companies' },
 ];
 
 const JST = [
@@ -472,23 +473,6 @@ const KscSamorzady = () => {
             <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
             <p className="text-muted-foreground">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
           </div>
-          <div className="mb-10 grid grid-cols-3 gap-3" aria-label="Trzy certyfikaty TÜV NORD ISO 27001">
-            {[1, 2, 3].map((number) => <img key={number} src="/images/jst/tuv-nord-iso-27001.png" alt={`Certyfikat TÜV NORD ISO 27001 — ${number} z 3`} width={630} height={634} loading="lazy" className="mx-auto aspect-square w-full max-w-[230px] object-contain shadow-md transition-transform duration-300 hover:-translate-y-2" />)}
-          </div>
-          <div className="mb-12 flex flex-wrap items-center justify-center gap-8 border-y py-8 md:gap-14">
-            <img src="/featured/ministerstwo-cyfryzacji.png" alt="Ministerstwo Cyfryzacji" width={280} height={90} loading="lazy" className="h-16 w-auto object-contain transition-transform hover:scale-105" />
-            <img src="/featured/ncc-pl.png" alt="NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa" width={280} height={90} loading="lazy" className="h-16 w-auto object-contain transition-transform hover:scale-105" />
-            <img src="/images/jst/cyber-challenge.jpg" alt="OT Cyber Challenge" width={447} height={447} loading="lazy" className="h-28 w-28 rounded-md object-cover shadow-md transition-transform hover:scale-105" />
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4 mb-12">
-            {RECOGNITION.map((item) => (
-              <article key={item.title} className="group border-t-2 border-primary bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <Award className="h-6 w-6 text-primary mb-4" aria-hidden />
-                <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </article>
-            ))}
-          </div>
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-8 items-center">
             <div>
               <BookOpen className="h-8 w-8 text-primary mb-4" aria-hidden />
@@ -498,6 +482,34 @@ const KscSamorzady = () => {
             <div className="flex items-center justify-center gap-4 overflow-hidden rounded-lg bg-muted/40 p-6 sm:gap-8">
               <img src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png" alt="Książka Analiza podwójnej istotności" width={256} height={360} loading="lazy" className="h-[260px] w-[42%] max-w-[190px] rotate-[-2deg] object-contain drop-shadow-xl transition-all duration-300 hover:-translate-y-3 hover:rotate-0" />
               <img src="/images/nowa-architektura-compliance-okladka.png" alt="Książka Nowa architektura compliance" width={270} height={380} loading="lazy" className="h-[260px] w-[42%] max-w-[190px] rotate-2 object-contain drop-shadow-xl transition-all duration-300 hover:-translate-y-3 hover:rotate-0" />
+            </div>
+          </div>
+        </section>
+
+        {/* Certyfikowane i zaufane rozwiązanie */}
+        <section className="bg-foreground border-y" aria-labelledby="certyfikaty-h2">
+          <div className="container mx-auto px-4 py-12 md:py-16">
+            <h2 id="certyfikaty-h2" className="text-2xl md:text-4xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h2>
+            <div className="mb-10 h-1 w-32 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              {CERTIFICATES.map((item) => (
+                <article key={item.title} className="group">
+                  <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-white p-5 shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
+                    <img src={item.image} alt={item.alt} width={350} height={219} loading="lazy" className="max-h-full w-full object-contain" />
+                  </div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">{item.eyebrow}</p>
+                  <h3 className="mb-3 text-lg md:text-xl font-bold text-white">{item.title}</h3>
+                  <p className="text-sm text-background/80">{item.description}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 border-t border-background/10 pt-8">
+              <img src="/images/jst/cyber-challenge.jpg" alt="OT Cyber Challenge" width={447} height={447} loading="lazy" className="h-16 w-16 rounded-md object-cover shadow-md transition-transform hover:scale-105" />
+              <p className="text-sm text-background/80">OT Cyber Challenge — praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.</p>
+            </div>
+            <div className="mt-12 flex flex-col items-center">
+              <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+              <p className="text-center text-xl md:text-2xl font-bold text-white">Standardy, które wdrażamy u klientów, potwierdzamy u siebie.</p>
             </div>
           </div>
         </section>
