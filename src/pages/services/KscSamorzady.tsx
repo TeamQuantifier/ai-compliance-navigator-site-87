@@ -5,6 +5,7 @@ import {
   Activity, ArrowRight, Award, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileText,
   FolderCheck, Landmark, Layers3, Network, Scale, ShieldCheck, Sparkles,
 } from 'lucide-react';
+import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -194,8 +195,23 @@ const LeadForm = ({ officeType, setOfficeType }: { officeType: OfficeType | ''; 
 };
 
 /* ---------- teczka urzędu (interaktywny mockup) ---------- */
+const PRIMARY = 'hsl(221 83% 53%)';
+
+const AREA_READINESS = [
+  { area: 'Dokumentacja', value: 92 },
+  { area: 'Rejestry', value: 85 },
+  { area: 'Szkolenia', value: 100 },
+  { area: 'Audyt KRI', value: 60 },
+  { area: 'Dostawcy', value: 74 },
+];
+
+const EVIDENCE_STATUS = [
+  { name: 'Kompletne', value: 10 },
+  { name: 'W toku', value: 2 },
+];
+
 const EvidenceFolder = () => {
-  const [view, setView] = useState<'dowody' | 'zadania'>('dowody');
+  const [view, setView] = useState<'dashboard' | 'dowody' | 'zadania'>('dashboard');
   const rows = [
     { name: 'Analiza ryzyka 2026', ref: 'KRI § 20 ust. 2 pkt 3 · KSC art. 8', ok: true },
     { name: 'Rejestr incydentów', ref: 'KSC art. 11 · RODO art. 33', ok: true },
@@ -216,11 +232,67 @@ const EvidenceFolder = () => {
           <div key={label} className="bg-card p-4"><strong className="block text-2xl text-primary">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>
         ))}
       </div>
-      <div className="flex border-b px-4 pt-3">
-        {([['dowody', 'Dowody i rejestry'], ['zadania', 'Plan działań']] as const).map(([id, label]) => (
+      <div className="flex flex-wrap border-b px-4 pt-3">
+        {([['dashboard', 'Dashboard'], ['dowody', 'Dowody i rejestry'], ['zadania', 'Plan działań']] as const).map(([id, label]) => (
           <Button key={id} type="button" variant="ghost" size="sm" onClick={() => setView(id)} className={`rounded-none border-b-2 ${view === id ? 'border-primary text-primary' : 'border-transparent text-muted-foreground'}`}>{label}</Button>
         ))}
       </div>
+      {view === 'dashboard' && (
+        <div className="space-y-5 p-5">
+          <div>
+            <p className="mb-2 text-sm font-semibold">Gotowość obszarów SZBI</p>
+            <div className="h-40">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={AREA_READINESS} margin={{ top: 8, right: 4, bottom: 0, left: -18 }}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(214 32% 91%)" />
+                  <XAxis dataKey="area" tick={{ fontSize: 10 }} interval={0} height={28} />
+                  <YAxis domain={[0, 100]} tick={{ fontSize: 10 }} unit="%" />
+                  <Tooltip formatter={(value: number) => [`${value}%`, 'Gotowość']} />
+                  <Bar dataKey="value" barSize={24} radius={[4, 4, 0, 0]}>
+                    {AREA_READINESS.map((entry) => (
+                      <Cell key={entry.area} fill={entry.value >= 80 ? PRIMARY : entry.value >= 60 ? 'hsl(221 70% 66%)' : 'hsl(45 93% 47%)'} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div>
+              <p className="mb-2 text-sm font-semibold">Status dowodów</p>
+              <div className="h-36">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie data={EVIDENCE_STATUS} dataKey="value" nameKey="name" innerRadius={30} outerRadius={50} cx="50%" cy="50%" isAnimationActive={false}>
+                      <Cell fill={PRIMARY} />
+                      <Cell fill="hsl(45 93% 47%)" />
+                    </Pie>
+                    <Legend layout="vertical" align="right" verticalAlign="middle" iconSize={9} wrapperStyle={{ fontSize: 11, paddingLeft: 4 }} />
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <p className="text-xs text-muted-foreground">10 dowodów kompletnych · 2 w toku</p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm font-semibold">Zgodność z wymaganiami</p>
+              <ul className="space-y-3">
+                {[
+                  { label: 'KRI § 19 (audyt roczny)', pct: 78 },
+                  { label: 'KSC art. 8e (szkolenia)', pct: 100 },
+                  { label: 'KSC rejestry i zgłoszenia', pct: 85 },
+                ].map((row) => (
+                  <li key={row.label}>
+                    <div className="mb-1 flex items-center justify-between text-xs"><span>{row.label}</span><span className="font-semibold text-primary">{row.pct}%</span></div>
+                    <div className="h-2 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary transition-all duration-500" style={{ width: `${row.pct}%` }} /></div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 flex items-center gap-1.5 text-xs text-muted-foreground"><Activity className="h-3.5 w-3.5 text-primary" aria-hidden /> Dane z ostatnich 30 dni</p>
+            </div>
+          </div>
+        </div>
+      )}
       {view === 'dowody' ? (
         <ul>{rows.map((r) => (
           <li key={r.name} className="flex items-center justify-between gap-4 border-b px-5 py-3 last:border-0">
@@ -228,13 +300,13 @@ const EvidenceFolder = () => {
             <span className={`whitespace-nowrap rounded px-2 py-1 text-xs font-semibold ${r.ok ? 'bg-primary/10 text-primary' : 'bg-secondary text-secondary-foreground'}`}>{r.ok ? 'Kompletny' : 'Zaplanowany'}</span>
           </li>
         ))}</ul>
-      ) : (
+      ) : view === 'zadania' ? (
         <div className="space-y-3 p-5">
           {['Zatwierdzenie analizy ryzyka', 'Przegląd rejestru dostawców', 'Audyt wewnętrzny KRI'].map((task, index) => (
             <div key={task} className="flex items-center gap-3 rounded-md border p-3"><span className="grid h-7 w-7 place-items-center rounded-full bg-primary/10 text-xs font-bold text-primary">{index + 1}</span><span className="text-sm font-medium">{task}</span></div>
           ))}
         </div>
-      )}
+      ) : null}
       <figcaption className="flex items-center justify-between bg-muted px-5 py-3 text-xs text-muted-foreground"><span>Stan udokumentowany w jednym miejscu</span><span className="flex items-center gap-1 text-primary"><Activity className="h-3.5 w-3.5" /> 78% gotowości</span></figcaption>
     </figure>
   );
