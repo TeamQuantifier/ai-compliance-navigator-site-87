@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import {
-  ArrowRight, Award, BookOpen, Building, Building2, CheckCircle2, ClipboardCheck, Download, FileText,
-  FolderCheck, Landmark, Layers3, Network, Scale, ShieldCheck, Sparkles, Users,
+  Activity, ArrowRight, Award, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileText,
+  FolderCheck, Landmark, Layers3, Network, Scale, ShieldCheck, Sparkles,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
@@ -72,8 +72,6 @@ const COOPERATION = [
 ];
 
 const RECOGNITION = [
-  { title: '3 certyfikaty TÜV NORD', description: 'Niezależne potwierdzenie kompetencji i jakości naszych rozwiązań.' },
-  { title: 'ISO 27001', description: 'Pracujemy w oparciu o uznany międzynarodowy standard bezpieczeństwa informacji.' },
   { title: 'NCC-PL i Ministerstwo Cyfryzacji', description: 'Obecność w krajowej społeczności kompetencji cyberbezpieczeństwa.' },
   { title: 'OT Cyber Challenge', description: 'Praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.' },
   { title: 'ATLAS', description: 'Jesteśmy częścią ekosystemu łączącego wiedzę, technologię i odporność organizacji.' },
@@ -195,8 +193,9 @@ const LeadForm = ({ officeType, setOfficeType }: { officeType: OfficeType | ''; 
   );
 };
 
-/* ---------- teczka dowodowa (mockup) ---------- */
+/* ---------- teczka urzędu (interaktywny mockup) ---------- */
 const EvidenceFolder = () => {
+  const [view, setView] = useState<'dowody' | 'zadania'>('dowody');
   const rows = [
     { name: 'Analiza ryzyka 2026', ref: 'KRI § 20 ust. 2 pkt 3 · KSC art. 8', ok: true },
     { name: 'Rejestr incydentów', ref: 'KSC art. 11 · RODO art. 33', ok: true },
@@ -204,25 +203,39 @@ const EvidenceFolder = () => {
     { name: 'Audyt KRI 2026', ref: 'KRI § 19', ok: false },
   ];
   return (
-    <figure className="rounded-lg border bg-card shadow-sm overflow-hidden" aria-label="Przykład teczki dowodowej w systemie">
-      <div className="flex items-center gap-2 border-b px-4 py-3 bg-muted">
-        <FolderCheck className="h-5 w-5 text-primary" aria-hidden />
-        <span className="font-semibold">Teczka dowodowa — Urząd Gminy (przykład)</span>
+    <figure className="overflow-hidden rounded-lg border bg-card shadow-xl" aria-label="Przykład teczki Urzędu Gminy w systemie">
+      <div className="flex items-center justify-between gap-4 border-b bg-foreground px-5 py-4 text-background">
+        <div className="flex items-center gap-3">
+          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary"><Landmark className="h-5 w-5" aria-hidden /></span>
+          <div><span className="block font-semibold">Teczka Urzędu Gminy</span><span className="block text-xs text-background/60">SZBI · KRI · KSC</span></div>
+        </div>
+        <span className="flex items-center gap-2 text-xs text-background/70"><span className="h-2 w-2 rounded-full bg-primary" />Aktualizowana na żywo</span>
       </div>
-      <ul>
-        {rows.map((r) => (
-          <li key={r.name} className="flex items-center justify-between gap-4 px-4 py-3 border-b last:border-0">
-            <div>
-              <p className="font-medium">{r.name}</p>
-              <p className="text-xs text-muted-foreground">{r.ref}</p>
-            </div>
-            <span className={`text-xs font-semibold px-2 py-1 rounded ${r.ok ? 'bg-primary/10 text-primary' : 'bg-secondary text-secondary-foreground'}`}>
-              {r.ok ? 'Dowód kompletny' : 'Zaplanowany: XI 2026'}
-            </span>
-          </li>
+      <div className="grid grid-cols-3 gap-px border-b bg-border">
+        {[['78%', 'gotowość SZBI'], ['12', 'aktywnych dowodów'], ['3', 'zadania na ten miesiąc']].map(([value, label]) => (
+          <div key={label} className="bg-card p-4"><strong className="block text-2xl text-primary">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>
         ))}
-      </ul>
-      <figcaption className="px-4 py-3 text-xs text-muted-foreground bg-muted">Gotowość do kontroli: 3 z 4 obszarów udokumentowane</figcaption>
+      </div>
+      <div className="flex border-b px-4 pt-3">
+        {([['dowody', 'Dowody i rejestry'], ['zadania', 'Plan działań']] as const).map(([id, label]) => (
+          <Button key={id} type="button" variant="ghost" size="sm" onClick={() => setView(id)} className={`rounded-none border-b-2 ${view === id ? 'border-primary text-primary' : 'border-transparent text-muted-foreground'}`}>{label}</Button>
+        ))}
+      </div>
+      {view === 'dowody' ? (
+        <ul>{rows.map((r) => (
+          <li key={r.name} className="flex items-center justify-between gap-4 border-b px-5 py-3 last:border-0">
+            <div><p className="font-medium">{r.name}</p><p className="text-xs text-muted-foreground">{r.ref}</p></div>
+            <span className={`whitespace-nowrap rounded px-2 py-1 text-xs font-semibold ${r.ok ? 'bg-primary/10 text-primary' : 'bg-secondary text-secondary-foreground'}`}>{r.ok ? 'Kompletny' : 'Zaplanowany'}</span>
+          </li>
+        ))}</ul>
+      ) : (
+        <div className="space-y-3 p-5">
+          {['Zatwierdzenie analizy ryzyka', 'Przegląd rejestru dostawców', 'Audyt wewnętrzny KRI'].map((task, index) => (
+            <div key={task} className="flex items-center gap-3 rounded-md border p-3"><span className="grid h-7 w-7 place-items-center rounded-full bg-primary/10 text-xs font-bold text-primary">{index + 1}</span><span className="text-sm font-medium">{task}</span></div>
+          ))}
+        </div>
+      )}
+      <figcaption className="flex items-center justify-between bg-muted px-5 py-3 text-xs text-muted-foreground"><span>Stan udokumentowany w jednym miejscu</span><span className="flex items-center gap-1 text-primary"><Activity className="h-3.5 w-3.5" /> 78% gotowości</span></figcaption>
     </figure>
   );
 };
@@ -248,8 +261,7 @@ const KscSamorzady = () => {
 
   const toForm = () => document.getElementById('przeglad')?.scrollIntoView({ behavior: 'smooth' });
   const pickType = (t: OfficeType) => {
-    setOfficeType(t);
-    document.getElementById('zakresy')?.scrollIntoView({ behavior: 'smooth' });
+    setOfficeType(officeType === t ? '' : t);
   };
 
   return (
@@ -272,19 +284,14 @@ const KscSamorzady = () => {
         {/* Hero */}
         <section className="relative overflow-hidden border-b bg-foreground text-background" aria-labelledby="hero-h1">
           <div className="absolute inset-x-0 top-0 h-1 bg-primary" aria-hidden />
-          <div className="container relative mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-[1.15fr_.85fr] gap-12 items-center">
+          <div className="container relative mx-auto grid items-center gap-10 px-4 py-14 md:py-16 lg:grid-cols-[1.15fr_.85fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">Dla urzędów i jednostek samorządu terytorialnego</p>
               <h1 id="hero-h1" className="text-3xl md:text-5xl font-bold leading-tight mb-6">{h1}</h1>
               <p className="text-lg text-background/80 mb-8 max-w-2xl">
-                Audytorzy, prawnicy i eksperci pomagają utrzymać SZBI po grancie. Doradztwo, platforma albo oba modele razem — zależnie od potrzeb urzędu.
+                Pomożemy wdrożyć cyberbezpieczeństwo w Państwa urzędzie przy wsparciu doświadczonych prawników, ekspertów, audytorów i nowoczesnej technologii.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button size="lg" onClick={toForm}>Bezpłatny przegląd: co zostało po grancie (30 min) <ArrowRight className="ml-2 h-4 w-4" aria-hidden /></Button>
-                <Button size="lg" variant="outline" onClick={toForm} className="border-background/40 bg-transparent text-background hover:bg-background hover:text-foreground">
-                  <Download className="mr-2 h-4 w-4" aria-hidden /> Pobierz uzasadnienie wydatku do budżetu 2027
-                </Button>
-              </div>
+              <Button size="lg" onClick={toForm}>Bezpłatny przegląd: co zostało po grancie <ArrowRight className="ml-2 h-4 w-4" aria-hidden /></Button>
             </div>
             <ul className="grid gap-3">
               {[
@@ -301,46 +308,33 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Typ urzędu */}
-        <section className="container mx-auto px-4 py-16" aria-labelledby="typ-h2">
-          <h2 id="typ-h2" className="text-2xl md:text-3xl font-bold mb-2">Jaki to urząd?</h2>
-          <p className="text-muted-foreground mb-8">Wybierz typ, aby zobaczyć zakres i pakiet dla Państwa urzędu.</p>
-          <div className="grid md:grid-cols-3 gap-4">
-            {TYPES.map(({ id, icon: I, title, desc }) => (
-              <button key={id} type="button" onClick={() => pickType(id)} aria-pressed={officeType === id}
-                className={`group text-left rounded-lg border p-6 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${officeType === id ? 'border-primary bg-primary/5 shadow-lg -translate-y-1' : 'bg-card hover:-translate-y-1 hover:border-primary/50 hover:shadow-md'}`}>
-                <I className="h-7 w-7 text-primary mb-3" aria-hidden />
-                <h3 className="font-semibold text-lg mb-1">{title}</h3>
-                <p className="text-sm text-muted-foreground">{desc}</p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">Zobacz zakres <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></span>
-              </button>
+        {/* Typ urzędu + zakres */}
+        <section className="container mx-auto px-4 py-12" aria-labelledby="typ-h2">
+          <h2 id="typ-h2" className="text-2xl md:text-3xl font-bold mb-2">Zakres dopasowany do Państwa urzędu</h2>
+          <p className="text-muted-foreground mb-8">Proszę wybrać typ urzędu, aby rozwinąć właściwy zakres wsparcia.</p>
+          <div className="space-y-3">
+            {TYPES.map(({ id, icon: I, title, desc, pkg, items }) => (
+              <article key={id} className={`overflow-hidden rounded-lg border bg-card transition-all duration-300 ${officeType === id ? 'border-primary shadow-lg' : 'hover:border-primary/50'}`}>
+                <button type="button" onClick={() => pickType(id)} aria-expanded={officeType === id} className="flex w-full items-center gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-primary/10"><I className="h-6 w-6 text-primary" aria-hidden /></span>
+                  <span className="min-w-0 flex-1"><strong className="block text-lg">{title}</strong><span className="block text-sm text-muted-foreground">{desc}</span></span>
+                  <ChevronDown className={`h-5 w-5 text-primary transition-transform duration-300 ${officeType === id ? 'rotate-180' : ''}`} aria-hidden />
+                </button>
+                {officeType === id && (
+                  <div className="grid gap-6 border-t bg-muted/40 p-5 md:grid-cols-[1fr_auto] md:items-end">
+                    <div><h3 className="font-bold">{pkg}</h3><ul className="mt-3 grid gap-2 sm:grid-cols-2">{items.map((item) => <li key={item} className="flex gap-2 text-sm"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{item}</li>)}</ul></div>
+                    <Button onClick={toForm}>Zapytaj o zakres <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                  </div>
+                )}
+              </article>
             ))}
           </div>
         </section>
 
-        {/* Problem */}
-        <section className="bg-muted/40 border-y" aria-labelledby="problem-h2">
-          <div className="container mx-auto px-4 py-16">
-            <h2 id="problem-h2" className="text-2xl md:text-3xl font-bold mb-8">Trzy obowiązki, które zostały po grancie</h2>
-            <ol className="grid md:grid-cols-3 gap-6">
-              {[
-                { t: 'Trwałość projektu CS — 2 lata', d: 'Wdrożone rozwiązania trzeba utrzymać i udokumentować przez cały okres trwałości.' },
-                { t: 'Coroczny audyt — § 19 KRI', d: 'Audyt bezpieczeństwa informacji co najmniej raz w roku.' },
-                { t: 'KSC', d: 'Osobista odpowiedzialność kierownika, zgłaszanie incydentów w 24 h, coroczne szkolenie kierownika.' },
-              ].map((p, i) => (
-                <li key={p.t} className="rounded-lg border bg-card p-6">
-                  <span className="text-3xl font-bold text-primary" aria-hidden>{i + 1}</span>
-                  <h3 className="font-semibold text-lg mt-2 mb-1">{p.t}</h3>
-                  <p className="text-sm text-muted-foreground">{p.d}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
         {/* Oś czasu */}
-        <section className="container mx-auto px-4 py-16" aria-labelledby="czas-h2">
-          <h2 id="czas-h2" className="text-2xl md:text-3xl font-bold mb-8">Terminy</h2>
+        <section className="container mx-auto px-4 py-12" aria-labelledby="czas-h2">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Droga do gotowego SZBI</p>
+          <h2 id="czas-h2" className="text-2xl md:text-3xl font-bold mb-8">Najważniejsze daty, które wyznaczają plan działania urzędu</h2>
           <ol className="relative grid md:grid-cols-5 gap-6 md:gap-4">
             {TIMELINE.map((e) => {
               const d = daysTo(e.date);
@@ -358,7 +352,7 @@ const KscSamorzady = () => {
 
         {/* Model współpracy */}
         <section className="bg-foreground text-background border-y" aria-labelledby="wspolpraca-h2">
-          <div className="container mx-auto px-4 py-16 md:py-20">
+          <div className="container mx-auto px-4 py-12 md:py-16">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Elastyczny model współpracy</p>
             <h2 id="wspolpraca-h2" className="text-2xl md:text-4xl font-bold mb-3">Doradztwo, platforma lub oba rozwiązania razem</h2>
             <p className="text-background/70 max-w-3xl mb-10">Nie narzucamy jednego modelu. Uzupełniamy kompetencje urzędu tam, gdzie są potrzebne, i porządkujemy pracę w jednym systemie.</p>
@@ -379,7 +373,7 @@ const KscSamorzady = () => {
 
         {/* Co dostajecie */}
         <section className="bg-muted/40 border-y" aria-labelledby="zakres-h2">
-          <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-start">
+          <div className="container mx-auto grid items-start gap-10 px-4 py-12 lg:grid-cols-2">
             <div>
               <h2 id="zakres-h2" className="text-2xl md:text-3xl font-bold mb-6">Przedmiot zamówienia</h2>
               <ul className="space-y-3">
@@ -392,63 +386,22 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Jak kupić */}
-        <section className="container mx-auto px-4 py-16" aria-labelledby="zakup-h2">
-          <h2 id="zakup-h2" className="text-2xl md:text-3xl font-bold mb-2">Jak kupić</h2>
-          <p className="text-muted-foreground mb-8">Przejrzysty zakres, neutralny OPZ i sprawny proces dopasowany do zasad zakupowych urzędu.</p>
-          <ol className="grid md:grid-cols-4 gap-4 mb-10">
-            {['Bezpłatny przegląd (30 min)', 'Zapytanie ofertowe urzędu', 'Umowa i umowa powierzenia', 'Realizacja zdalna'].map((s, i) => (
-              <li key={s} className="rounded-lg border bg-card p-5">
-                <span className="text-sm font-semibold text-primary">Krok {i + 1}</span>
-                <p className="font-semibold mt-1">{s}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { t: 'Wzór opisu przedmiotu zamówienia (OPZ)', d: 'Neutralny — bez warunków dopasowanych pod jednego wykonawcę.' },
-              { t: 'Lista kwalifikacji wykonawcy', d: 'Referencje, certyfikaty i CV audytorów, o które urzędy pytają w zapytaniach.' },
-            ].map((f) => (
-              <div key={f.t} className="flex items-start gap-4 rounded-lg border p-5">
-                <FileText className="h-6 w-6 text-primary shrink-0" aria-hidden />
-                <div className="flex-1">
-                  <h3 className="font-semibold">{f.t}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{f.d}</p>
-                  <Button variant="outline" size="sm" onClick={toForm} className="hover:text-foreground">Otrzymaj e-mailem</Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Zakresy */}
-        <section id="zakresy" className="bg-muted/40 border-y scroll-mt-20" aria-labelledby="pakiety-h2">
-          <div className="container mx-auto px-4 py-16">
-            <h2 id="pakiety-h2" className="text-2xl md:text-3xl font-bold mb-2">Zakres dopasowany do urzędu</h2>
-            <p className="text-muted-foreground mb-8">Zakres ustalamy po krótkim przeglądzie potrzeb, bez publikowania sztywnych cenników.</p>
-            <div className="grid md:grid-cols-3 gap-4">
-              {TYPES.map((t) => (
-                <article key={t.id} className={`rounded-lg border p-6 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${officeType === t.id ? 'ring-2 ring-primary shadow-lg' : ''}`}>
-                  <p className="text-sm text-muted-foreground">{t.title}</p>
-                  <h3 className="text-xl font-bold mt-1">{t.pkg}</h3>
-                  <ul className="mt-4 space-y-2 text-sm">
-                    {t.items.map((i) => <li key={i} className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" aria-hidden />{i}</li>)}
-                  </ul>
-                  <Button className="w-full mt-6" variant={officeType === t.id ? 'default' : 'outline'} onClick={() => { setOfficeType(t.id); toForm(); }}>Zapytaj o ofertę</Button>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Kompetencje i publikacje */}
-        <section className="container mx-auto px-4 py-16 md:py-20" aria-labelledby="kompetencje-h2">
+        <section className="container mx-auto px-4 py-12 md:py-16" aria-labelledby="kompetencje-h2">
           <div className="max-w-3xl mb-10">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
-            <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
-            <p className="text-muted-foreground">Łączymy interpretację prawa, praktykę audytową i technologię. Dzięki temu rekomendacje można od razu przełożyć na zadania, dowody i raporty.</p>
+            <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
+            <p className="text-muted-foreground">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+          <div className="mb-10 grid grid-cols-3 gap-3" aria-label="Trzy certyfikaty TÜV NORD ISO 27001">
+            {[1, 2, 3].map((number) => <img key={number} src="/images/jst/tuv-nord-iso-27001.png" alt={`Certyfikat TÜV NORD ISO 27001 — ${number} z 3`} width={630} height={634} loading="lazy" className="mx-auto aspect-square w-full max-w-[230px] object-contain shadow-md transition-transform duration-300 hover:-translate-y-2" />)}
+          </div>
+          <div className="mb-12 flex flex-wrap items-center justify-center gap-8 border-y py-8 md:gap-14">
+            <img src="/featured/ministerstwo-cyfryzacji.png" alt="Ministerstwo Cyfryzacji" width={280} height={90} loading="lazy" className="h-16 w-auto object-contain transition-transform hover:scale-105" />
+            <img src="/featured/ncc-pl.png" alt="NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa" width={280} height={90} loading="lazy" className="h-16 w-auto object-contain transition-transform hover:scale-105" />
+            <img src="/images/jst/cyber-challenge.jpg" alt="OT Cyber Challenge" width={447} height={447} loading="lazy" className="h-28 w-28 rounded-md object-cover shadow-md transition-transform hover:scale-105" />
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4 mb-12">
             {RECOGNITION.map((item) => (
               <article key={item.title} className="group border-t-2 border-primary bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <Award className="h-6 w-6 text-primary mb-4" aria-hidden />
@@ -457,40 +410,27 @@ const KscSamorzady = () => {
               </article>
             ))}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 border-y py-8 mb-12">
-            <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="Certyfikat TÜV NORD" width={220} height={90} loading="lazy" className="h-14 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
-            <img src="/featured/ministerstwo-cyfryzacji.png" alt="Ministerstwo Cyfryzacji" width={220} height={70} loading="lazy" className="h-12 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
-            <img src="/featured/ncc-pl.png" alt="NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa" width={220} height={70} loading="lazy" className="h-12 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
-          </div>
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-8 items-center">
             <div>
               <BookOpen className="h-8 w-8 text-primary mb-4" aria-hidden />
               <h2 className="text-2xl md:text-3xl font-bold mb-3">Autorzy praktycznych książek o compliance</h2>
               <p className="text-muted-foreground">Nasz zespół jest autorem dwóch publikacji wydanych przez C.H. Beck: „Analiza podwójnej istotności” oraz „Nowa architektura compliance”. Wiedzę z projektów, audytów i regulacji przekładamy na metodykę pracy dla organizacji.</p>
             </div>
-            <div className="flex items-end justify-center gap-5 min-h-[300px] bg-muted/40 p-6 rounded-lg">
-              <img src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png" alt="Książka Analiza podwójnej istotności" width={256} height={360} loading="lazy" className="w-[38%] max-w-[190px] h-auto object-contain drop-shadow-xl transition-transform duration-300 hover:-translate-y-2" />
-              <img src="/images/nowa-architektura-compliance-okladka.png" alt="Książka Nowa architektura compliance" width={270} height={380} loading="lazy" className="w-[42%] max-w-[210px] h-auto object-contain drop-shadow-xl transition-transform duration-300 hover:-translate-y-2" />
+            <div className="flex items-center justify-center gap-4 overflow-hidden rounded-lg bg-muted/40 p-6 sm:gap-8">
+              <img src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png" alt="Książka Analiza podwójnej istotności" width={256} height={360} loading="lazy" className="h-[260px] w-[42%] max-w-[190px] rotate-[-2deg] object-contain drop-shadow-xl transition-all duration-300 hover:-translate-y-3 hover:rotate-0" />
+              <img src="/images/nowa-architektura-compliance-okladka.png" alt="Książka Nowa architektura compliance" width={270} height={380} loading="lazy" className="h-[260px] w-[42%] max-w-[190px] rotate-2 object-contain drop-shadow-xl transition-all duration-300 hover:-translate-y-3 hover:rotate-0" />
             </div>
           </div>
         </section>
 
-        {/* Zaufanie + LCC */}
+        {/* Zaufanie */}
         <section className="bg-muted/40 border-y">
-          <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12" aria-label="Zaufanie i partnerstwa">
-          <div>
+          <div className="container mx-auto px-4 py-12" aria-label="Bezpieczna realizacja">
+          <div className="max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Bezpieczna realizacja dla sektora publicznego</h2>
             <ul className="space-y-3">
               {['Hosting danych w Unii Europejskiej', 'Umowa powierzenia przetwarzania danych', 'Kwalifikacje i CV audytorów dostępne na potrzeby postępowania', 'Mapowanie KRI–ISO 27001–KSC–RODO w jednym raporcie'].map((t) => <li key={t} className="flex gap-3"><ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden />{t}</li>)}
             </ul>
-          </div>
-          <div className="rounded-lg border bg-card p-8">
-            <Users className="h-8 w-8 text-primary mb-3" aria-hidden />
-            <h2 className="text-2xl font-bold mb-3">Dla liderów partnerstw LCC</h2>
-            <p className="text-muted-foreground mb-4">Jedna platforma dla całego partnerstwa: każdy urząd prowadzi własny SZBI, a lider widzi stan wszystkich jednostek w jednym widoku.</p>
-            <Button variant="outline" onClick={() => { setOfficeType('lcc'); toForm(); }} className="hover:text-foreground">
-              <Building2 className="mr-2 h-4 w-4" aria-hidden /> Porozmawiajmy o partnerstwie
-            </Button>
           </div>
           </div>
         </section>
@@ -499,7 +439,7 @@ const KscSamorzady = () => {
 
         {/* Formularz */}
         <section id="przeglad" className="bg-muted/40 border-t scroll-mt-20" aria-labelledby="form-h2">
-          <div className="container mx-auto px-4 py-16 max-w-xl">
+          <div className="container mx-auto max-w-xl px-4 py-12">
             <h2 id="form-h2" className="text-2xl md:text-3xl font-bold mb-2">Bezpłatny przegląd: co zostało po grancie</h2>
             <p className="text-muted-foreground mb-6">30 minut online. Wskażemy, co trzeba utrzymać, i prześlemy uzasadnienie wydatku do budżetu 2027 oraz wzór OPZ.</p>
             <div className="rounded-lg border bg-card p-6">

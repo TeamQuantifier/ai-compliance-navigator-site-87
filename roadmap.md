@@ -1,1 +1,5 @@
 - [x] Zmienić H1 strony samorządowej na: SZBI w urzędzie: KRI i KSC w jednym systemie
+- [x] Uprościć i uatrakcyjnić stronę JST zgodnie z listą zmian treści i sekcji
+- [x] Dodać przesłane materiały TÜV NORD i Cyber Challenge
+- [x] Połączyć wybór typu urzędu z rozwijanym zakresem
+- [x] Ulepszyć ekran „Teczka Urzędu Gminy” i wyrównać prezentację książek
