@@ -517,35 +517,63 @@ const KscSamorzady = () => {
         </section>
 
 
-        {/* Kompetencje + Certyfikowane i zaufane rozwiązanie */}
-        <section className="bg-foreground border-y" aria-labelledby="kompetencje-h2">
-          <div className="container mx-auto px-4 py-12 md:py-16">
-            <div className="max-w-3xl mb-12">
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
-              <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold text-white mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
-              <p className="text-background/80">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h3>
-            <div className="mb-10 h-1 w-32 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
-
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-              {CERTIFICATES.map((item) => (
-                <article key={item.title} className="group">
-                  <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-white p-5 shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
-                    <img src={item.image} alt={item.alt} width={350} height={219} loading="lazy" className="max-h-full w-full object-contain" />
-                  </div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">{item.eyebrow}</p>
-                  <h3 className="mb-3 text-lg md:text-xl font-bold text-white">{item.title}</h3>
-                  <p className="text-sm text-background/80">{item.description}</p>
-                </article>
-              ))}
-            </div>
-            <div className="mt-12 flex flex-col items-center">
-              <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
-              <p className="text-center text-xl md:text-2xl font-bold text-white">Standardy, które wdrażamy u klientów, potwierdzamy u siebie.</p>
+        {/* Autorzy książek — ciemny band */}
+        <section className="relative overflow-hidden bg-foreground" aria-labelledby="autorzy-h2">
+          <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full blur-3xl" style={{ background: 'hsl(221 83% 53% / 0.18)' }} aria-hidden />
+          <div className="pointer-events-none absolute -bottom-40 -left-24 h-72 w-72 rounded-full blur-3xl" style={{ background: 'hsl(263 70% 50% / 0.12)' }} aria-hidden />
+          <div className="container relative mx-auto px-4 py-12 md:py-16">
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div>
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider" style={{ background: 'hsl(221 83% 53% / 0.12)', color: 'hsl(221 90% 70%)' }}>
+                  <BookOpen className="h-4 w-4" aria-hidden />
+                  Publikacje eksperckie
+                </div>
+                <h2 id="autorzy-h2" className="mb-4 text-2xl font-bold text-white md:text-4xl md:leading-tight">
+                  Autorzy praktycznych książek o <span className="text-primary">compliance</span>
+                </h2>
+                <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
+                <p className="max-w-xl text-background/80">Nasz zespół jest autorem dwóch publikacji wydanych przez C.H. Beck. Wiedzę z projektów, audytów i regulacji przekładamy na metodykę pracy dla organizacji — także urzędów.</p>
+                <ul className="mt-8 space-y-5">
+                  {[
+                    { no: '01', title: 'Analiza podwójnej istotności' },
+                    { no: '02', title: 'Nowa architektura compliance' },
+                  ].map((b) => (
+                    <li key={b.no} className="group flex items-center gap-4">
+                      <span className="w-1 shrink-0 rounded-full bg-primary transition-all duration-300 group-hover:h-14 h-12" aria-hidden />
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-white/50">Publikacja {b.no}</p>
+                        <p className="text-lg font-semibold text-white">{b.title}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-8 text-sm text-white/50">
+                  Wydane przez <span className="font-bold tracking-tight text-white/80">C.H.BECK</span>
+                </p>
+              </div>
+              <div className="relative flex items-center justify-center py-6 md:py-10">
+                <div className="absolute inset-x-8 top-1/2 h-40 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'hsl(221 83% 53% / 0.22)' }} aria-hidden />
+                <img
+                  src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png"
+                  alt="Książka Analiza podwójnej istotności — C.H. Beck"
+                  width={256}
+                  height={360}
+                  loading="lazy"
+                  className="relative z-10 h-[300px] w-auto -rotate-6 drop-shadow-[0_24px_48px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-3 hover:-rotate-2 md:h-[340px]"
+                />
+                <img
+                  src={nowaArchitekturaOkladka}
+                  alt="Książka Nowa architektura compliance — C.H. Beck"
+                  width={768}
+                  height={1430}
+                  loading="lazy"
+                  className="relative z-20 -ml-10 h-[300px] w-auto rotate-[4deg] drop-shadow-[0_24px_48px_rgba(0,0,0,0.55)] transition-transform duration-500 hover:-translate-y-4 hover:rotate-1 md:h-[340px]"
+                />
+              </div>
             </div>
           </div>
         </section>
+
 
 
         <FAQSection title="Najczęstsze pytania urzędów" faqs={faqs} pageUrl={CANONICAL} />
