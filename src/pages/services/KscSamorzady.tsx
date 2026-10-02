@@ -492,7 +492,7 @@ const KscSamorzady = () => {
           <div className="container mx-auto px-4 py-12 md:py-16">
             <h2 id="certyfikaty-h2" className="text-2xl md:text-4xl font-bold text-white mb-6">Certyfikowane i <span className="text-primary">zaufane</span> rozwiązanie</h2>
             <div className="mb-10 h-1 w-32 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
               {CERTIFICATES.map((item) => (
                 <article key={item.title} className="group">
                   <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-white p-5 shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
@@ -503,10 +503,6 @@ const KscSamorzady = () => {
                   <p className="text-sm text-background/80">{item.description}</p>
                 </article>
               ))}
-            </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 border-t border-background/10 pt-8">
-              <img src="/images/jst/cyber-challenge.jpg" alt="OT Cyber Challenge" width={447} height={447} loading="lazy" className="h-16 w-16 rounded-md object-cover shadow-md transition-transform hover:scale-105" />
-              <p className="text-sm text-background/80">OT Cyber Challenge — praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.</p>
             </div>
             <div className="mt-12 flex flex-col items-center">
               <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden />
