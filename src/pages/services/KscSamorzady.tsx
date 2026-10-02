@@ -312,18 +312,25 @@ const KscSamorzady = () => {
         <section className="container mx-auto px-4 py-12" aria-labelledby="typ-h2">
           <h2 id="typ-h2" className="text-2xl md:text-3xl font-bold mb-2">Zakres dopasowany do Państwa urzędu</h2>
           <p className="text-muted-foreground mb-8">Proszę wybrać typ urzędu, aby rozwinąć właściwy zakres wsparcia.</p>
-          <div className="space-y-3">
+          <div className="grid gap-4 md:grid-cols-3 md:items-start">
             {TYPES.map(({ id, icon: I, title, desc, pkg, items }) => (
-              <article key={id} className={`overflow-hidden rounded-lg border bg-card transition-all duration-300 ${officeType === id ? 'border-primary shadow-lg' : 'hover:border-primary/50'}`}>
-                <button type="button" onClick={() => pickType(id)} aria-expanded={officeType === id} className="flex w-full items-center gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-primary/10"><I className="h-6 w-6 text-primary" aria-hidden /></span>
-                  <span className="min-w-0 flex-1"><strong className="block text-lg">{title}</strong><span className="block text-sm text-muted-foreground">{desc}</span></span>
-                  <ChevronDown className={`h-5 w-5 text-primary transition-transform duration-300 ${officeType === id ? 'rotate-180' : ''}`} aria-hidden />
+              <article key={id} className={`flex flex-col overflow-hidden rounded-lg border bg-card transition-all duration-300 ${officeType === id ? 'border-primary shadow-lg md:-translate-y-1' : 'hover:border-primary/50 hover:shadow-md'}`}>
+                <button type="button" onClick={() => pickType(id)} aria-expanded={officeType === id} className="flex flex-1 flex-col items-start gap-3 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <span className="grid h-11 w-11 place-items-center rounded-md bg-primary/10"><I className="h-6 w-6 text-primary" aria-hidden /></span>
+                  <strong className="block text-lg leading-snug">{title}</strong>
+                  <span className="block text-sm text-muted-foreground">{desc}</span>
+                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    {officeType === id ? 'Zwiń zakres' : 'Pokaż zakres'}
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${officeType === id ? 'rotate-180' : ''}`} aria-hidden />
+                  </span>
                 </button>
                 {officeType === id && (
-                  <div className="grid gap-6 border-t bg-muted/40 p-5 md:grid-cols-[1fr_auto] md:items-end">
-                    <div><h3 className="font-bold">{pkg}</h3><ul className="mt-3 grid gap-2 sm:grid-cols-2">{items.map((item) => <li key={item} className="flex gap-2 text-sm"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{item}</li>)}</ul></div>
-                    <Button onClick={toForm}>Zapytaj o zakres <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                  <div className="border-t bg-muted/40 p-5">
+                    <h3 className="font-bold">{pkg}</h3>
+                    <ul className="mt-3 space-y-2">
+                      {items.map((item) => <li key={item} className="flex gap-2 text-sm"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{item}</li>)}
+                    </ul>
+                    <Button onClick={toForm} className="mt-5 w-full">Zapytaj o zakres <ArrowRight className="ml-2 h-4 w-4" /></Button>
                   </div>
                 )}
               </article>
