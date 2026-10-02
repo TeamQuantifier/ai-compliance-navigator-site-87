@@ -77,6 +77,7 @@ const CERTIFICATES = [
   { eyebrow: 'Certyfikaty produktowe', title: '3 × Produkt Sprawdzony', description: 'Kontrola procesu i testy produktu potwierdzone przez TÜV NORD Polska.', image: '/images/jst/produkt-sprawdzony-3x.png', alt: 'Trzy certyfikaty TÜV NORD Produkt Sprawdzony' },
   { eyebrow: 'Ekosystem europejski', title: 'Społeczność Kompetentna', description: 'Wniosek złożony w NCC-PL przy Ministerstwie Cyfryzacji, z rejestracją danych w portalu ATLAS (UE i EOG).', image: '/images/jst/ncc-ministerstwo.png', alt: 'NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa i Ministerstwo Cyfryzacji' },
   { eyebrow: 'Wyróżnienie', title: 'Top AI Driven Companies', description: 'Quantifier.ai w zestawieniu firm budujących produkty w oparciu o AI.', image: '/featured/top-ai-driven-companies.png', alt: 'Top AI Driven Companies' },
+  { eyebrow: 'Program', title: 'OT Cyber Challenge', description: 'Praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.', image: '/images/jst/cyber-challenge.jpg', alt: 'OT Cyber Challenge' },
 ];
 
 const JST = [
