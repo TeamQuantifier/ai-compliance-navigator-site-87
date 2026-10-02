@@ -312,7 +312,7 @@ const KscSamorzady = () => {
                 <I className="h-7 w-7 text-primary mb-3" aria-hidden />
                 <h3 className="font-semibold text-lg mb-1">{title}</h3>
                 <p className="text-sm text-muted-foreground">{desc}</p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">Zobacz pakiet <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></span>
+                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">Zobacz zakres <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></span>
               </button>
             ))}
           </div>
