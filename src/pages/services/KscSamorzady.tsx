@@ -236,7 +236,7 @@ const KscSamorzady = () => {
 
   const h1 = abmOffice
     ? `${abmOffice}: utrzymanie SZBI${abmUnits ? ` dla ${abmUnits} jednostek` : ''}`
-    : 'SZBI w urzędzie po Cyberbezpiecznym Samorządzie: KRI i KSC w jednym systemie';
+    : 'SZBI w urzędzie: KRI i KSC w jednym systemie';
 
   const breadcrumbs = useMemo(() => ({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',

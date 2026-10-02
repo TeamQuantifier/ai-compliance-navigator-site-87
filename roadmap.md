@@ -1,0 +1,1 @@
+- [x] Zmienić H1 strony samorządowej na: SZBI w urzędzie: KRI i KSC w jednym systemie
