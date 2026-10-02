@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import {
-  ArrowRight, Building, Building2, CheckCircle2, ClipboardCheck, Download, FileText,
-  FolderCheck, Landmark, Network, ShieldCheck, Users,
+  ArrowRight, Award, BookOpen, Building, Building2, CheckCircle2, ClipboardCheck, Download, FileText,
+  FolderCheck, Landmark, Layers3, Network, Scale, ShieldCheck, Sparkles, Users,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
@@ -17,22 +17,21 @@ const DESC =
 
 type OfficeType = 'maly' | 'kluczowy' | 'lcc';
 
-const TYPES: { id: OfficeType; icon: typeof Building; title: string; desc: string; pkg: string; price: string; items: string[] }[] = [
+const TYPES: { id: OfficeType; icon: typeof Building; title: string; desc: string; pkg: string; items: string[] }[] = [
   {
     id: 'maly', icon: Building, title: 'Urząd gminy do 50 etatów',
-    desc: 'Podmiot ważny — uproszczony SZBI.', pkg: 'Pakiet Gmina', price: 'od 9 900 zł netto / rok',
+    desc: 'Podmiot ważny — uproszczony SZBI.', pkg: 'Zakres dla gminy',
     items: ['Dokumentacja SZBI i analiza ryzyka', 'Coroczny audyt KRI', 'Szkolenie kierownika (art. 8e)', 'Raport roczny dla kierownika'],
   },
   {
     id: 'kluczowy', icon: Landmark, title: 'Urząd kluczowy',
     desc: 'Gmina od 50 etatów, starostwo, miasto na prawach powiatu, urząd marszałkowski — audyt do 3.04.2028.',
-    pkg: 'Pakiet Urząd kluczowy', price: 'od 24 000 zł netto / rok',
-    items: ['Wszystko z Pakietu Gmina', 'Przygotowanie do audytu KSC 2028', 'Rejestry aktywów, incydentów, dostawców', 'Mapowanie KRI–ISO–KSC–RODO'],
+    pkg: 'Zakres dla urzędu kluczowego',
+    items: ['Pełny zakres dla gminy', 'Przygotowanie do audytu KSC 2028', 'Rejestry aktywów, incydentów, dostawców', 'Mapowanie KRI–ISO–KSC–RODO'],
   },
   {
     id: 'lcc', icon: Network, title: 'Lider partnerstwa LCC',
-    desc: 'Jedna platforma dla całego partnerstwa i jednostek podległych.', pkg: 'Pakiet Partnerstwo',
-    price: 'wycena wg liczby jednostek (poniżej 130 tys. zł netto)',
+    desc: 'Jedna platforma dla całego partnerstwa i jednostek podległych.', pkg: 'Zakres dla partnerstwa',
     items: ['Osobny SZBI dla każdego urzędu', 'Widok lidera: stan wszystkich jednostek', 'Wspólne szkolenia i harmonogram audytów', 'Raport zbiorczy'],
   },
 ];
@@ -51,6 +50,35 @@ const DELIVERABLES = [
   'Mapowanie KRI–ISO 27001–KSC–RODO w jednym raporcie',
 ];
 
+const COOPERATION = [
+  {
+    icon: Scale,
+    title: 'Doradztwo',
+    description: 'Audytorzy, prawnicy i eksperci prowadzą urząd od analizy luk przez SZBI i audyt KRI po przygotowanie dowodów.',
+    points: ['Interpretacja wymagań KRI i KSC', 'Audyt, dokumentacja i szkolenia', 'Wsparcie przed kontrolą'],
+  },
+  {
+    icon: Layers3,
+    title: 'Platforma',
+    description: 'Zespół urzędu pracuje na jednym, stale aktualnym systemie zamiast w rozproszonych plikach i segregatorach.',
+    points: ['Rejestry, zadania i właściciele', 'Repozytorium dowodów', 'Raportowanie stanu SZBI'],
+  },
+  {
+    icon: Sparkles,
+    title: 'Doradztwo + platforma',
+    description: 'Eksperci odpowiadają za metodykę i jakość, a platforma utrzymuje ciągłość pracy między audytami.',
+    points: ['Jeden zespół i jedno środowisko', 'Stałe utrzymanie zgodności', 'Gotowość audytowa przez cały rok'],
+  },
+];
+
+const RECOGNITION = [
+  { title: '3 certyfikaty TÜV NORD', description: 'Niezależne potwierdzenie kompetencji i jakości naszych rozwiązań.' },
+  { title: 'ISO 27001', description: 'Pracujemy w oparciu o uznany międzynarodowy standard bezpieczeństwa informacji.' },
+  { title: 'NCC-PL i Ministerstwo Cyfryzacji', description: 'Obecność w krajowej społeczności kompetencji cyberbezpieczeństwa.' },
+  { title: 'OT Cyber Challenge', description: 'Praktyczne zaangażowanie w rozwój kompetencji cyberbezpieczeństwa.' },
+  { title: 'ATLAS', description: 'Jesteśmy częścią ekosystemu łączącego wiedzę, technologię i odporność organizacji.' },
+];
+
 const JST = [
   'Urząd Miasta Gliwice', 'Urząd Miasta Krakowa', 'Urząd m.st. Warszawy', 'Urząd Miejski Wrocławia',
   'Urząd Miasta Poznania', 'Urząd Miasta Gdańska', 'Urząd Miasta Katowice', 'Urząd Miasta Łodzi',
@@ -62,7 +90,7 @@ const faqs = [
   { question: 'Czy gmina podlega KSC?', answer: 'Tak. Nowelizacja ustawy o krajowym systemie cyberbezpieczeństwa obejmuje jednostki samorządu terytorialnego. Urzędy do 50 etatów są zwykle podmiotami ważnymi (uproszczony SZBI), większe urzędy, starostwa, miasta na prawach powiatu i urzędy marszałkowskie — podmiotami kluczowymi.' },
   { question: 'Czym audyt KRI różni się od audytu KSC?', answer: 'Audyt z § 19 rozporządzenia KRI urząd przeprowadza co najmniej raz w roku we własnym zakresie. Audyt KSC dotyczy podmiotów kluczowych, jest wykonywany przez uprawnionego audytora, a pierwszy przypada do 3.04.2028 r. Jeden SZBI może pokrywać oba wymagania.' },
   { question: 'Co po Cyberbezpiecznym Samorządzie?', answer: 'Grant się skończył, obowiązki zostały: dwuletnia trwałość projektu, coroczny audyt KRI i wymagania KSC. Utrzymanie SZBI oznacza aktualizację dokumentacji, rejestrów, analizy ryzyka i dowodów — nie jednorazowe wdrożenie.' },
-  { question: 'Czy można kupić bez przetargu?', answer: 'Tak, jeśli wartość zamówienia nie przekracza 130 tys. zł netto — wtedy wystarcza zapytanie ofertowe zgodnie z regulaminem urzędu. Udostępniamy neutralny wzór opisu przedmiotu zamówienia.' },
+  { question: 'Jak sprawnie przygotować zakup?', answer: 'Pomagamy precyzyjnie określić zakres i udostępniamy neutralny wzór opisu przedmiotu zamówienia. Tryb zakupu urząd dobiera zgodnie ze swoim regulaminem i obowiązującymi przepisami.' },
   { question: 'Kto w urzędzie odpowiada za SZBI?', answer: 'Kierownik urzędu (wójt, burmistrz, prezydent, starosta, marszałek). Zadania można delegować, ale odpowiedzialność pozostaje osobista — stąd znaczenie dowodów i raportu rocznego.' },
 ];
 
@@ -221,7 +249,7 @@ const KscSamorzady = () => {
   const toForm = () => document.getElementById('przeglad')?.scrollIntoView({ behavior: 'smooth' });
   const pickType = (t: OfficeType) => {
     setOfficeType(t);
-    document.getElementById('pakiety')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('zakresy')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -242,30 +270,31 @@ const KscSamorzady = () => {
 
       <main className="bg-background text-foreground">
         {/* Hero */}
-        <section className="border-b bg-muted/40" aria-labelledby="hero-h1">
-          <div className="container mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
+        <section className="relative overflow-hidden border-b bg-foreground text-background" aria-labelledby="hero-h1">
+          <div className="absolute inset-x-0 top-0 h-1 bg-primary" aria-hidden />
+          <div className="container relative mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-[1.15fr_.85fr] gap-12 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">Dla urzędów i jednostek samorządu terytorialnego</p>
               <h1 id="hero-h1" className="text-3xl md:text-5xl font-bold leading-tight mb-6">{h1}</h1>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-                Coroczny audyt KRI, obowiązki KSC i dowody gotowe na kontrolę — w trybie zapytania ofertowego, z realizacją zdalną.
+              <p className="text-lg text-background/80 mb-8 max-w-2xl">
+                Audytorzy, prawnicy i eksperci pomagają utrzymać SZBI po grancie. Doradztwo, platforma albo oba modele razem — zależnie od potrzeb urzędu.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" onClick={toForm}>Bezpłatny przegląd: co zostało po grancie (30 min) <ArrowRight className="ml-2 h-4 w-4" aria-hidden /></Button>
-                <Button size="lg" variant="outline" onClick={toForm} className="hover:text-foreground">
+                <Button size="lg" variant="outline" onClick={toForm} className="border-background/40 bg-transparent text-background hover:bg-background hover:text-foreground">
                   <Download className="mr-2 h-4 w-4" aria-hidden /> Pobierz uzasadnienie wydatku do budżetu 2027
                 </Button>
               </div>
             </div>
-            <ul className="grid gap-4">
+            <ul className="grid gap-3">
               {[
                 { icon: ClipboardCheck, t: 'Ciągłość', d: 'Grant się skończył, obowiązki zostały: dwuletnia trwałość, coroczny audyt KRI i wymagania KSC.' },
                 { icon: FolderCheck, t: 'Dowody', d: 'Kierownik urzędu odpowiada osobiście — potrzebuje dowodów, a nie segregatora.' },
-                { icon: FileText, t: 'Prosty zakup', d: 'Poniżej 130 tys. zł netto, z gotowym opisem przedmiotu zamówienia.' },
+                { icon: FileText, t: 'Prosty zakup', d: 'Gotowy, neutralny opis przedmiotu zamówienia i jasno określony zakres.' },
               ].map(({ icon: I, t, d }) => (
-                <li key={t} className="flex gap-4 rounded-lg border bg-card p-5">
+                <li key={t} className="group flex gap-4 rounded-lg border border-background/20 bg-background/5 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-background/10">
                   <I className="h-6 w-6 text-primary shrink-0" aria-hidden />
-                  <div><p className="font-semibold">{t}</p><p className="text-sm text-muted-foreground">{d}</p></div>
+                  <div><p className="font-semibold text-background">{t}</p><p className="text-sm text-background/70">{d}</p></div>
                 </li>
               ))}
             </ul>
@@ -279,11 +308,11 @@ const KscSamorzady = () => {
           <div className="grid md:grid-cols-3 gap-4">
             {TYPES.map(({ id, icon: I, title, desc }) => (
               <button key={id} type="button" onClick={() => pickType(id)} aria-pressed={officeType === id}
-                className={`text-left rounded-lg border p-6 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${officeType === id ? 'border-primary bg-primary/5' : 'bg-card hover:border-primary/50'}`}>
+                className={`group text-left rounded-lg border p-6 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${officeType === id ? 'border-primary bg-primary/5 shadow-lg -translate-y-1' : 'bg-card hover:-translate-y-1 hover:border-primary/50 hover:shadow-md'}`}>
                 <I className="h-7 w-7 text-primary mb-3" aria-hidden />
                 <h3 className="font-semibold text-lg mb-1">{title}</h3>
                 <p className="text-sm text-muted-foreground">{desc}</p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">Zobacz pakiet <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></span>
+                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">Zobacz zakres <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></span>
               </button>
             ))}
           </div>
@@ -327,6 +356,27 @@ const KscSamorzady = () => {
           </ol>
         </section>
 
+        {/* Model współpracy */}
+        <section className="bg-foreground text-background border-y" aria-labelledby="wspolpraca-h2">
+          <div className="container mx-auto px-4 py-16 md:py-20">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Elastyczny model współpracy</p>
+            <h2 id="wspolpraca-h2" className="text-2xl md:text-4xl font-bold mb-3">Doradztwo, platforma lub oba rozwiązania razem</h2>
+            <p className="text-background/70 max-w-3xl mb-10">Nie narzucamy jednego modelu. Uzupełniamy kompetencje urzędu tam, gdzie są potrzebne, i porządkujemy pracę w jednym systemie.</p>
+            <div className="grid md:grid-cols-3 gap-5">
+              {COOPERATION.map(({ icon: Icon, title, description, points }) => (
+                <article key={title} className="group border border-background/20 bg-background/5 p-6 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:bg-background/10">
+                  <Icon className="h-8 w-8 text-primary mb-5 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                  <h3 className="text-xl font-bold text-background mb-2">{title}</h3>
+                  <p className="text-sm text-background/70 mb-5">{description}</p>
+                  <ul className="space-y-2 text-sm">
+                    {points.map((point) => <li key={point} className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" aria-hidden />{point}</li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Co dostajecie */}
         <section className="bg-muted/40 border-y" aria-labelledby="zakres-h2">
           <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-start">
@@ -345,7 +395,7 @@ const KscSamorzady = () => {
         {/* Jak kupić */}
         <section className="container mx-auto px-4 py-16" aria-labelledby="zakup-h2">
           <h2 id="zakup-h2" className="text-2xl md:text-3xl font-bold mb-2">Jak kupić</h2>
-          <p className="text-muted-foreground mb-8">Zamówienie poniżej 130 tys. zł netto — tryb zapytania ofertowego, bez przetargu.</p>
+          <p className="text-muted-foreground mb-8">Przejrzysty zakres, neutralny OPZ i sprawny proces dopasowany do zasad zakupowych urzędu.</p>
           <ol className="grid md:grid-cols-4 gap-4 mb-10">
             {['Bezpłatny przegląd (30 min)', 'Zapytanie ofertowe urzędu', 'Umowa i umowa powierzenia', 'Realizacja zdalna'].map((s, i) => (
               <li key={s} className="rounded-lg border bg-card p-5">
@@ -371,16 +421,16 @@ const KscSamorzady = () => {
           </div>
         </section>
 
-        {/* Pakiety */}
-        <section id="pakiety" className="bg-muted/40 border-y scroll-mt-20" aria-labelledby="pakiety-h2">
+        {/* Zakresy */}
+        <section id="zakresy" className="bg-muted/40 border-y scroll-mt-20" aria-labelledby="pakiety-h2">
           <div className="container mx-auto px-4 py-16">
-            <h2 id="pakiety-h2" className="text-2xl md:text-3xl font-bold mb-8">Pakiety i ceny</h2>
+            <h2 id="pakiety-h2" className="text-2xl md:text-3xl font-bold mb-2">Zakres dopasowany do urzędu</h2>
+            <p className="text-muted-foreground mb-8">Zakres ustalamy po krótkim przeglądzie potrzeb, bez publikowania sztywnych cenników.</p>
             <div className="grid md:grid-cols-3 gap-4">
               {TYPES.map((t) => (
-                <article key={t.id} className={`rounded-lg border p-6 bg-card ${officeType === t.id ? 'ring-2 ring-primary' : ''}`}>
+                <article key={t.id} className={`rounded-lg border p-6 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${officeType === t.id ? 'ring-2 ring-primary shadow-lg' : ''}`}>
                   <p className="text-sm text-muted-foreground">{t.title}</p>
                   <h3 className="text-xl font-bold mt-1">{t.pkg}</h3>
-                  <p className="text-lg font-semibold text-primary mt-2">{t.price}</p>
                   <ul className="mt-4 space-y-2 text-sm">
                     {t.items.map((i) => <li key={i} className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" aria-hidden />{i}</li>)}
                   </ul>
@@ -388,23 +438,50 @@ const KscSamorzady = () => {
                 </article>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mt-4">Ceny orientacyjne netto. Ostateczna wycena po przeglądzie, zależnie od liczby jednostek i zakresu.</p>
+          </div>
+        </section>
+
+        {/* Kompetencje i publikacje */}
+        <section className="container mx-auto px-4 py-16 md:py-20" aria-labelledby="kompetencje-h2">
+          <div className="max-w-3xl mb-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
+            <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
+            <p className="text-muted-foreground">Łączymy interpretację prawa, praktykę audytową i technologię. Dzięki temu rekomendacje można od razu przełożyć na zadania, dowody i raporty.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+            {RECOGNITION.map((item) => (
+              <article key={item.title} className="group border-t-2 border-primary bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <Award className="h-6 w-6 text-primary mb-4" aria-hidden />
+                <h3 className="font-bold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8 border-y py-8 mb-12">
+            <img src="/lovable-uploads/edcfd427-dd46-414b-a937-7fcf86b91e04.png" alt="Certyfikat TÜV NORD" width={220} height={90} loading="lazy" className="h-14 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
+            <img src="/featured/ministerstwo-cyfryzacji.png" alt="Ministerstwo Cyfryzacji" width={220} height={70} loading="lazy" className="h-12 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
+            <img src="/featured/ncc-pl.png" alt="NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa" width={220} height={70} loading="lazy" className="h-12 w-auto object-contain grayscale opacity-80 transition-all hover:grayscale-0 hover:opacity-100" />
+          </div>
+          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-8 items-center">
+            <div>
+              <BookOpen className="h-8 w-8 text-primary mb-4" aria-hidden />
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">Autorzy praktycznych książek o compliance</h2>
+              <p className="text-muted-foreground">Nasz zespół jest autorem dwóch publikacji wydanych przez C.H. Beck: „Analiza podwójnej istotności” oraz „Nowa architektura compliance”. Wiedzę z projektów, audytów i regulacji przekładamy na metodykę pracy dla organizacji.</p>
+            </div>
+            <div className="flex items-end justify-center gap-5 min-h-[300px] bg-muted/40 p-6 rounded-lg">
+              <img src="/lovable-uploads/book-analiza-podwojnej-istotnosci.png" alt="Książka Analiza podwójnej istotności" width={256} height={360} loading="lazy" className="w-[38%] max-w-[190px] h-auto object-contain drop-shadow-xl transition-transform duration-300 hover:-translate-y-2" />
+              <img src="/images/nowa-architektura-compliance-okladka.png" alt="Książka Nowa architektura compliance" width={270} height={380} loading="lazy" className="w-[42%] max-w-[210px] h-auto object-contain drop-shadow-xl transition-transform duration-300 hover:-translate-y-2" />
+            </div>
           </div>
         </section>
 
         {/* Zaufanie + LCC */}
-        <section className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12" aria-label="Zaufanie i partnerstwa">
+        <section className="bg-muted/40 border-y">
+          <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12" aria-label="Zaufanie i partnerstwa">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Dlaczego Quantifier</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Bezpieczna realizacja dla sektora publicznego</h2>
             <ul className="space-y-3">
-              {[
-                'BNP Paribas jako inwestor',
-                'Publikacja „Nowa architektura compliance” w wydawnictwie C.H. Beck',
-                'Hosting danych w Unii Europejskiej',
-                'Umowa powierzenia przetwarzania danych',
-                'Audytorzy z kwalifikacjami (CV na żądanie)',
-                'Mapowanie KRI–ISO–KSC–RODO w jednym raporcie — zamiast dokumentacji w szufladzie',
-              ].map((t) => <li key={t} className="flex gap-3"><ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden />{t}</li>)}
+              {['Hosting danych w Unii Europejskiej', 'Umowa powierzenia przetwarzania danych', 'Kwalifikacje i CV audytorów dostępne na potrzeby postępowania', 'Mapowanie KRI–ISO 27001–KSC–RODO w jednym raporcie'].map((t) => <li key={t} className="flex gap-3"><ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden />{t}</li>)}
             </ul>
           </div>
           <div className="rounded-lg border bg-card p-8">
@@ -414,6 +491,7 @@ const KscSamorzady = () => {
             <Button variant="outline" onClick={() => { setOfficeType('lcc'); toForm(); }} className="hover:text-foreground">
               <Building2 className="mr-2 h-4 w-4" aria-hidden /> Porozmawiajmy o partnerstwie
             </Button>
+          </div>
           </div>
         </section>
 
