@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import {
-  Activity, ArrowRight, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileText,
-  FolderCheck, Landmark, Layers3, Network, Scale, ShieldCheck, Sparkles,
+  Activity, ArrowRight, BookOpen, Building, CheckCircle2, ChevronDown, ClipboardCheck, FileSignature,
+  FileText, FolderCheck, Landmark, Layers3, Network, Scale, Server, ShieldCheck, Sparkles, UserCheck,
 } from 'lucide-react';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Button } from '@/components/ui/button';
