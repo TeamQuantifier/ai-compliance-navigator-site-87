@@ -9,8 +9,6 @@ import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import FAQSection from '@/components/seo/FAQSection';
-import tuvNordAsset from '@/assets/jst/tuv-nord-iso-27001.png.asset.json';
-import cyberChallengeAsset from '@/assets/jst/cyber-challenge.jpg.asset.json';
 
 const CANONICAL = 'https://quantifier.ai/pl/ksc-dla-samorzadow/';
 const TITLE = 'SZBI dla urzędu: audyt KRI i KSC po grancie | Quantifier';
@@ -286,7 +284,7 @@ const KscSamorzady = () => {
         {/* Hero */}
         <section className="relative overflow-hidden border-b bg-foreground text-background" aria-labelledby="hero-h1">
           <div className="absolute inset-x-0 top-0 h-1 bg-primary" aria-hidden />
-          <div className="container relative mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-[1.15fr_.85fr] gap-12 items-center">
+          <div className="container relative mx-auto grid items-center gap-10 px-4 py-14 md:py-16 lg:grid-cols-[1.15fr_.85fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">Dla urzędów i jednostek samorządu terytorialnego</p>
               <h1 id="hero-h1" className="text-3xl md:text-5xl font-bold leading-tight mb-6">{h1}</h1>
@@ -311,7 +309,7 @@ const KscSamorzady = () => {
         </section>
 
         {/* Typ urzędu + zakres */}
-        <section className="container mx-auto px-4 py-16" aria-labelledby="typ-h2">
+        <section className="container mx-auto px-4 py-12" aria-labelledby="typ-h2">
           <h2 id="typ-h2" className="text-2xl md:text-3xl font-bold mb-2">Zakres dopasowany do Państwa urzędu</h2>
           <p className="text-muted-foreground mb-8">Proszę wybrać typ urzędu, aby rozwinąć właściwy zakres wsparcia.</p>
           <div className="space-y-3">
@@ -334,7 +332,7 @@ const KscSamorzady = () => {
         </section>
 
         {/* Oś czasu */}
-        <section className="container mx-auto px-4 py-16" aria-labelledby="czas-h2">
+        <section className="container mx-auto px-4 py-12" aria-labelledby="czas-h2">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Droga do gotowego SZBI</p>
           <h2 id="czas-h2" className="text-2xl md:text-3xl font-bold mb-8">Najważniejsze daty, które wyznaczają plan działania urzędu</h2>
           <ol className="relative grid md:grid-cols-5 gap-6 md:gap-4">
@@ -354,7 +352,7 @@ const KscSamorzady = () => {
 
         {/* Model współpracy */}
         <section className="bg-foreground text-background border-y" aria-labelledby="wspolpraca-h2">
-          <div className="container mx-auto px-4 py-16 md:py-20">
+          <div className="container mx-auto px-4 py-12 md:py-16">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Elastyczny model współpracy</p>
             <h2 id="wspolpraca-h2" className="text-2xl md:text-4xl font-bold mb-3">Doradztwo, platforma lub oba rozwiązania razem</h2>
             <p className="text-background/70 max-w-3xl mb-10">Nie narzucamy jednego modelu. Uzupełniamy kompetencje urzędu tam, gdzie są potrzebne, i porządkujemy pracę w jednym systemie.</p>
@@ -375,7 +373,7 @@ const KscSamorzady = () => {
 
         {/* Co dostajecie */}
         <section className="bg-muted/40 border-y" aria-labelledby="zakres-h2">
-          <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-start">
+          <div className="container mx-auto grid items-start gap-10 px-4 py-12 lg:grid-cols-2">
             <div>
               <h2 id="zakres-h2" className="text-2xl md:text-3xl font-bold mb-6">Przedmiot zamówienia</h2>
               <ul className="space-y-3">
@@ -389,19 +387,19 @@ const KscSamorzady = () => {
         </section>
 
         {/* Kompetencje i publikacje */}
-        <section className="container mx-auto px-4 py-16 md:py-20" aria-labelledby="kompetencje-h2">
+        <section className="container mx-auto px-4 py-12 md:py-16" aria-labelledby="kompetencje-h2">
           <div className="max-w-3xl mb-10">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Kompetencje potwierdzone w praktyce</p>
             <h2 id="kompetencje-h2" className="text-2xl md:text-4xl font-bold mb-3">Quantifier to audytorzy, prawnicy i eksperci technologiczni w jednym zespole</h2>
             <p className="text-muted-foreground">Jesteśmy polskim podmiotem. Łączymy interpretację prawa, praktykę audytową i technologię, aby rekomendacje od razu przekładać na zadania, dowody i raporty.</p>
           </div>
           <div className="mb-10 grid grid-cols-3 gap-3" aria-label="Trzy certyfikaty TÜV NORD ISO 27001">
-            {[1, 2, 3].map((number) => <img key={number} src={tuvNordAsset.url} alt={`Certyfikat TÜV NORD ISO 27001 — ${number} z 3`} width={630} height={634} loading="lazy" className="mx-auto aspect-square w-full max-w-[230px] object-contain shadow-md transition-transform duration-300 hover:-translate-y-2" />)}
+            {[1, 2, 3].map((number) => <img key={number} src="/images/jst/tuv-nord-iso-27001.png" alt={`Certyfikat TÜV NORD ISO 27001 — ${number} z 3`} width={630} height={634} loading="lazy" className="mx-auto aspect-square w-full max-w-[230px] object-contain shadow-md transition-transform duration-300 hover:-translate-y-2" />)}
           </div>
           <div className="mb-12 flex flex-wrap items-center justify-center gap-8 border-y py-8 md:gap-14">
             <img src="/featured/ministerstwo-cyfryzacji.png" alt="Ministerstwo Cyfryzacji" width={280} height={90} loading="lazy" className="h-16 w-auto object-contain transition-transform hover:scale-105" />
             <img src="/featured/ncc-pl.png" alt="NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa" width={280} height={90} loading="lazy" className="h-16 w-auto object-contain transition-transform hover:scale-105" />
-            <img src={cyberChallengeAsset.url} alt="OT Cyber Challenge" width={447} height={447} loading="lazy" className="h-28 w-28 rounded-md object-cover shadow-md transition-transform hover:scale-105" />
+            <img src="/images/jst/cyber-challenge.jpg" alt="OT Cyber Challenge" width={447} height={447} loading="lazy" className="h-28 w-28 rounded-md object-cover shadow-md transition-transform hover:scale-105" />
           </div>
           <div className="grid sm:grid-cols-3 gap-4 mb-12">
             {RECOGNITION.map((item) => (
@@ -427,7 +425,7 @@ const KscSamorzady = () => {
 
         {/* Zaufanie */}
         <section className="bg-muted/40 border-y">
-          <div className="container mx-auto px-4 py-16" aria-label="Bezpieczna realizacja">
+          <div className="container mx-auto px-4 py-12" aria-label="Bezpieczna realizacja">
           <div className="max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Bezpieczna realizacja dla sektora publicznego</h2>
             <ul className="space-y-3">
@@ -441,7 +439,7 @@ const KscSamorzady = () => {
 
         {/* Formularz */}
         <section id="przeglad" className="bg-muted/40 border-t scroll-mt-20" aria-labelledby="form-h2">
-          <div className="container mx-auto px-4 py-16 max-w-xl">
+          <div className="container mx-auto max-w-xl px-4 py-12">
             <h2 id="form-h2" className="text-2xl md:text-3xl font-bold mb-2">Bezpłatny przegląd: co zostało po grancie</h2>
             <p className="text-muted-foreground mb-6">30 minut online. Wskażemy, co trzeba utrzymać, i prześlemy uzasadnienie wydatku do budżetu 2027 oraz wzór OPZ.</p>
             <div className="rounded-lg border bg-card p-6">
