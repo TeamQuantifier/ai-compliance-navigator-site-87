@@ -470,6 +470,16 @@ const KscSamorzady = () => {
                   <li key={d} className="flex gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden />{d}</li>
                 ))}
               </ul>
+              <h3 className="mt-10 mb-4 text-xl font-bold text-foreground">Bezpieczna realizacja dla <span className="text-primary">sektora publicznego</span></h3>
+              <ul className="space-y-3">
+                {TRUST_ITEMS.map((item) => (
+                  <li key={item.title} className="flex gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden />
+                    <span><span className="font-semibold text-foreground">{item.title}</span> <span className="text-muted-foreground">— {item.desc}</span></span>
+                  </li>
+                ))}
+              </ul>
+
             </div>
             <EvidenceFolder />
           </div>
