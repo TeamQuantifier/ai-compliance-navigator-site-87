@@ -1,33 +1,34 @@
-
 import React from 'react';
 import { CheckCircle, AlertCircle, Calendar, BrainCircuit } from 'lucide-react';
+import { useMockupText } from '@/lib/mockup-text';
 
 const QuickStatsBar = () => {
+  const mt = useMockupText();
   return (
     <div className="bg-white rounded-lg border border-slate-200 p-2 sm:p-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
       <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-        <StatItem 
-          icon={<CheckCircle className="h-4 w-4 text-green-600" />} 
-          label="Compliance" 
-          value="87%" 
+        <StatItem
+          icon={<CheckCircle className="h-4 w-4 text-green-600" />}
+          label={mt({ en: 'Compliance', pl: 'Zgodność', cs: 'Shoda' })}
+          value="87%"
           bgColor="bg-green-100"
         />
-        <StatItem 
-          icon={<AlertCircle className="h-4 w-4 text-amber-600" />} 
-          label="Open Issues" 
-          value="12" 
+        <StatItem
+          icon={<AlertCircle className="h-4 w-4 text-amber-600" />}
+          label={mt({ en: 'Open Issues', pl: 'Otwarte sprawy' })}
+          value="12"
           bgColor="bg-amber-100"
         />
-        <StatItem 
-          icon={<Calendar className="h-4 w-4 text-blue-600" />} 
-          label="Next Audit" 
-          value="15d" 
+        <StatItem
+          icon={<Calendar className="h-4 w-4 text-blue-600" />}
+          label={mt({ en: 'Next Audit', pl: 'Kolejny audyt' })}
+          value="15d"
           bgColor="bg-blue-100"
         />
       </div>
       <div className="flex items-center gap-2 text-xs text-[#7E69AB]">
         <BrainCircuit className="h-4 w-4" />
-        <span>AI Assistant</span>
+        <span>{mt({ en: 'AI Assistant', pl: 'Asystent AI' })}</span>
       </div>
     </div>
   );
