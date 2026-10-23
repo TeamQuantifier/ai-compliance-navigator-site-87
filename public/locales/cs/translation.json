@@ -4857,7 +4857,6 @@
       "mainDriver": "Hlavní hnací síla",
       "yourChallenges": "Vaše výzvy",
       "whatYouGain": "Co získáte s ISO 27001",
-      "concreteExample": "Konkrétní příklad",
       "bookDemo": "Rezervovat demo pro váš obor",
       "checkReadiness": "Zkontrolovat připravenost",
       "industries": {
@@ -4874,8 +4873,7 @@
             "ISO 27001 jako důkazní základna pro DORA a GDPR — jeden ISMS, více regulací",
             "Zkrácení procesu due diligence při spolupráci s bankami a pojišťovnami",
             "Nižší pojistné na kybernetická rizika po předložení certifikátu"
-          ],
-          "example": "Platební instituce po certifikaci ISO 27001 zkrátila onboarding dodavatelů v bankách ze 4 na 6 týdnů — dříve byla blokována bezpečnostními částmi v dotaznících."
+          ]
         },
         "tech": {
           "label": "Technologie a IT služby",
@@ -4890,8 +4888,7 @@
             "Zkrácení prodejního cyklu o 30–60 % — certifikát nahrazuje většinu otázek v dotaznících",
             "Otevření dveří k enterprise kontraktům a veřejnému sektoru",
             "Jednou zavedené ISO 27001 pokrývá ~70 % SOC 2 — dvě certifikace za cenu jedné"
-          ],
-          "example": "B2B softwarová společnost (50 lidí) uzavřela smlouvu s bankou 3 měsíce po certifikaci — dříve dvakrát neprošla bezpečnostní prověrkou."
+          ]
         },
         "industry": {
           "label": "Průmysl a výroba",
@@ -4906,8 +4903,7 @@
             "Splnění požadavků NIS2 v rámci jedné implementace",
             "Základ pro TISAX — rychlá cesta ke kontraktům s automobilovými OEM",
             "Plán kontinuity činností (BCP) chrání výrobní linky před ochromením"
-          ],
-          "example": "Výrobce automobilových komponent se vyhnul ztrátě kontraktu s VW po zavedení ISO 27001 — hodnocení TISAX kleslo z červené na žlutou za 4 měsíce."
+          ]
         },
         "tsl": {
           "label": "Doprava, logistika a dodavatelský řetězec",
@@ -4922,8 +4918,7 @@
             "Shoda s NIS2 bez budování samostatného programu",
             "Status preferovaného dodavatele pro obchodní řetězce a tržiště",
             "Ochrana systémů WMS/TMS proti ransomwaru = ochrana kontinuity dodávek"
-          ],
-          "example": "Provozovatel skladu pro e-commerce získal ISO 27001 jako podmínku pro prodloužení smlouvy s tržištěm — zavedení trvalo 7 měsíců s Quantifierem."
+          ]
         },
         "retail": {
           "label": "Maloobchod a e-commerce",
@@ -4938,8 +4933,7 @@
             "Nižší riziko regulačních pokut — zdokumentovaný systém řízení bezpečnosti",
             "Ochrana pověsti značky — úniky stojí zákazníky, nejen peníze",
             "Shoda s PCI DSS a GDPR v jednom rámci"
-          ],
-          "example": "Maloobchodní řetězec po zavedení ISO 27001 uzavřel 12 z 18 připomínek z regulační kontroly — čímž se vyhnul správním pokutám."
+          ]
         },
         "health": {
           "label": "Zdravotnictví a vědy o živé přírodě",
@@ -4954,8 +4948,7 @@
             "Splnění požadavků NIS2 pro poskytovatele zdravotní péče a dodavatele MedTech",
             "Důkaz o shodě s GDPR čl. 9 pro údaje pacientů",
             "Důvěra nemocnic, pojišťoven a národních fondů jako dodavatele"
-          ],
-          "example": "Síť klinik získala kontrakt s velkým zaměstnavatelem po zavedení ISO 27001 — bezpečnostní prověrka trvala 2 týdny místo 2 měsíců."
+          ]
         },
         "energy": {
           "label": "Energetika a kritická infrastruktura",
@@ -4970,8 +4963,7 @@
             "Shoda s vnitrostátními zákony o kybernetické bezpečnosti a NIS2 pro provozovatele základních služeb",
             "Rámec pro řízení rizik ICT a OT/SCADA",
             "Nižší riziko správních sankcí"
-          ],
-          "example": "Provozovatel vytápění pro 80 000 obyvatel zavedl ISO 27001 jako základ pro shodu s předpisy — po první kontrole se vyhnul pokutám."
+          ]
         },
         "services": {
           "label": "Profesionální a poradenské služby",
@@ -4986,8 +4978,7 @@
             "Status preferovaného dodavatele v enterprise a veřejných tendrech",
             "Splnění požadavků doložek DPA (GDPR čl. 28) bez vyjednávání s každým klientem",
             "Vyšší ocenění služeb — bezpečnost je prodejní argument, ne náklad"
-          ],
-          "example": "Advokátní kancelář (40 právníků) se po certifikaci ISO 27001 dostala do panelu dodavatelů banky — dříve dvakrát propadla v bezpečnostním dotazníku."
+          ]
         }
       }
     }
