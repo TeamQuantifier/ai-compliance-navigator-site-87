@@ -1,5 +1,12 @@
-- [x] Zmienić H1 strony samorządowej na: SZBI w urzędzie: KRI i KSC w jednym systemie
-- [x] Uprościć i uatrakcyjnić stronę JST zgodnie z listą zmian treści i sekcji
-- [x] Dodać przesłane materiały TÜV NORD i Cyber Challenge
-- [x] Połączyć wybór typu urzędu z rozwijanym zakresem
-- [x] Ulepszyć ekran „Teczka Urzędu Gminy” i wyrównać prezentację książek
+# Roadmap
+
+## Open
+- [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
+
+## Done
+- [x] Dashboardy na stronach PL po polsku (13 komponentów, helper `useMockupText`, build + Playwright na /pl i /en)
+- [x] H1 strony samorządowej: SZBI w urzędzie: KRI i KSC w jednym systemie
+- [x] Uproszczenie i uatrakcyjnienie strony JST
+- [x] Materiały TÜV NORD i Cyber Challenge
+- [x] Wybór typu urzędu połączony z rozwijanym zakresem
+- [x] Ekran „Teczka Urzędu Gminy” i prezentacja książek

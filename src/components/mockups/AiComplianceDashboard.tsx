@@ -5,6 +5,7 @@ import QuickStatsBar from './components/QuickStatsBar';
 import KeyCharts from './components/KeyCharts';
 import ComplianceStatus from './components/ComplianceStatus';
 import AIInsights from './components/AIInsights';
+import { useMockupText } from '@/lib/mockup-text';
 
 interface AiComplianceDashboardProps {
   title?: string;
@@ -12,18 +13,20 @@ interface AiComplianceDashboardProps {
   variant?: 'default' | 'compact';
 }
 
-const AiComplianceDashboard = ({ 
-  title = "Quantifier AI Compliance",
+const AiComplianceDashboard = ({
+  title,
   themeColor = "#7E69AB",
   variant = 'default'
 }: AiComplianceDashboardProps) => {
+  const mt = useMockupText();
+  const resolvedTitle = title ?? mt({ en: 'Quantifier AI Compliance', pl: 'Quantifier Zgodność AI' });
   return (
     <div className="w-full bg-slate-100 rounded-lg overflow-hidden border border-slate-200 shadow-lg">
       {/* Dashboard Header */}
       <div className="bg-white px-4 py-3 border-b border-slate-200 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5" style={{ color: themeColor }} />
-          <h2 className="font-semibold text-base">{title}</h2>
+          <h2 className="font-semibold text-base">{resolvedTitle}</h2>
         </div>
         <div className="flex items-center gap-3">
           <div className="relative">

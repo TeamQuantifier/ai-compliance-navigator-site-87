@@ -1,10 +1,12 @@
-
 import React from 'react';
 import { BarChart4, PieChart } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart as RePieChart, Pie, Cell, Legend } from 'recharts';
+import { useMockupText } from '@/lib/mockup-text';
 
 const KeyCharts = () => {
+  const mt = useMockupText();
+
   const frameworkData = [
     { name: 'SOC 2', value: 78 },
     { name: 'NIS II', value: 65 },
@@ -12,21 +14,21 @@ const KeyCharts = () => {
   ];
 
   const riskData = [
-    { name: 'Critical', value: 2 },
-    { name: 'High', value: 5 },
-    { name: 'Medium', value: 8 },
-    { name: 'Low', value: 14 }
+    { name: mt({ en: 'Critical', pl: 'Krytyczne', cs: 'Kritická' }), value: 2 },
+    { name: mt({ en: 'High', pl: 'Wysokie', cs: 'Vysoká' }), value: 5 },
+    { name: mt({ en: 'Medium', pl: 'Średnie', cs: 'Střední' }), value: 8 },
+    { name: mt({ en: 'Low', pl: 'Niskie', cs: 'Nízká' }), value: 14 }
   ];
 
   const RISK_COLORS = ['#ef4444', '#f97316', '#3b82f6', '#22c55e'];
-  
+
   const complianceData = [
-    { month: 'Jan', value: 65 },
-    { month: 'Feb', value: 70 },
-    { month: 'Mar', value: 75 },
-    { month: 'Apr', value: 72 },
-    { month: 'May', value: 80 },
-    { month: 'Jun', value: 87 }
+    { month: mt({ en: 'Jan', pl: 'sty', cs: 'led' }), value: 65 },
+    { month: mt({ en: 'Feb', pl: 'lut', cs: 'úno' }), value: 70 },
+    { month: mt({ en: 'Mar', pl: 'mar', cs: 'bře' }), value: 75 },
+    { month: mt({ en: 'Apr', pl: 'kwi', cs: 'dub' }), value: 72 },
+    { month: mt({ en: 'May', pl: 'maj', cs: 'kvě' }), value: 80 },
+    { month: mt({ en: 'Jun', pl: 'cze', cs: 'čvn' }), value: 87 }
   ];
 
   return (
@@ -35,16 +37,16 @@ const KeyCharts = () => {
       <div className="bg-white rounded-lg border border-slate-200 p-3">
         <div className="flex items-center gap-2 mb-2">
           <BarChart4 className="h-4 w-4 text-[#7E69AB]" />
-          <h3 className="text-xs font-medium">Cybersecurity Compliance Trend</h3>
+          <h3 className="text-xs font-medium">{mt({ en: 'Cybersecurity Compliance Trend', pl: 'Trend zgodności w cyberbezpieczeństwie' })}</h3>
         </div>
         <div className="h-36 sm:h-32">
           <ChartContainer
             config={{
-              compliance: { 
-                theme: { 
+              compliance: {
+                theme: {
                   light: '#9b87f5',
                   dark: '#7E69AB'
-                } 
+                }
               }
             }}
           >
@@ -62,16 +64,16 @@ const KeyCharts = () => {
       <div className="bg-white rounded-lg border border-slate-200 p-3">
         <div className="flex items-center gap-2 mb-2">
           <PieChart className="h-4 w-4 text-[#7E69AB]" />
-          <h3 className="text-xs font-medium">Cybersecurity Risk Distribution</h3>
+          <h3 className="text-xs font-medium">{mt({ en: 'Cybersecurity Risk Distribution', pl: 'Rozkład ryzyka w cyberbezpieczeństwie' })}</h3>
         </div>
         <div className="h-36 sm:h-32 flex items-center">
           <ChartContainer
             config={{
-              risk: { 
-                theme: { 
+              risk: {
+                theme: {
                   light: '#7E69AB',
                   dark: '#7E69AB'
-                } 
+                }
               }
             }}
             className="w-full h-full"
@@ -92,9 +94,9 @@ const KeyCharts = () => {
                     <Cell key={`cell-${index}`} fill={RISK_COLORS[index % RISK_COLORS.length]} />
                   ))}
                 </Pie>
-                <Legend 
-                  layout="vertical" 
-                  verticalAlign="middle" 
+                <Legend
+                  layout="vertical"
+                  verticalAlign="middle"
                   align="right"
                   wrapperStyle={{ fontSize: '10px', lineHeight: '18px' }}
                 />

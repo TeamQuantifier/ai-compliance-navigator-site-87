@@ -8,6 +8,7 @@ import {
   FileText,
   Sparkles,
 } from "lucide-react";
+import { useMockupText } from "@/lib/mockup-text";
 import leonOfficer from "@/assets/leon-compliance-officer.png";
 
 /**
@@ -16,6 +17,7 @@ import leonOfficer from "@/assets/leon-compliance-officer.png";
  * snapshot of the platform.
  */
 const StaticAiOfficerDashboard = () => {
+  const mt = useMockupText();
   return (
     <div className="w-full rounded-xl bg-slate-950 border border-white/10 shadow-2xl overflow-hidden ring-1 ring-white/5">
       {/* Window chrome */}
@@ -28,7 +30,7 @@ const StaticAiOfficerDashboard = () => {
         <div className="flex-1 text-center">
           <span className="text-[10px] text-white/50 font-mono">platform.quantifier.ai/dashboard</span>
         </div>
-        <span className="text-[9px] uppercase tracking-wider text-white/40 font-semibold">Officer</span>
+        <span className="text-[9px] uppercase tracking-wider text-white/40 font-semibold">{mt({ en: 'Officer', pl: 'Inspektor' })}</span>
       </div>
 
       {/* App header */}
@@ -36,8 +38,8 @@ const StaticAiOfficerDashboard = () => {
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5 text-emerald-300" />
           <div>
-            <div className="text-white text-sm font-semibold leading-tight">Dashboard zgodności</div>
-            <div className="text-[10px] text-white/50">Przegląd · 4 frameworki · 12 polityk</div>
+            <div className="text-white text-sm font-semibold leading-tight">{mt({ en: 'Compliance dashboard', pl: 'Panel zgodności' })}</div>
+            <div className="text-[10px] text-white/50">{mt({ en: 'Overview · 4 frameworks · 12 policies', pl: 'Przegląd · 4 standardy · 12 polityk' })}</div>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -57,10 +59,10 @@ const StaticAiOfficerDashboard = () => {
         {/* Stat tiles */}
         <div className="grid grid-cols-4 gap-2">
           {[
-            { v: "94%", l: "Zgodność", c: "text-emerald-300", icon: CheckCircle2 },
-            { v: "7", l: "Alerty", c: "text-amber-300", icon: AlertTriangle },
-            { v: "12", l: "Otwarte taski", c: "text-blue-300", icon: Clock },
-            { v: "+8 pp", l: "Trend 30 dni", c: "text-purple-300", icon: TrendingUp },
+            { v: "94%", l: mt({ en: 'Compliance', pl: 'Zgodność' }), c: "text-emerald-300", icon: CheckCircle2 },
+            { v: "7", l: mt({ en: 'Alerts', pl: 'Alerty' }), c: "text-amber-300", icon: AlertTriangle },
+            { v: "12", l: mt({ en: 'Open tasks', pl: 'Otwarte zadania' }), c: "text-blue-300", icon: Clock },
+            { v: "+8 pp", l: mt({ en: '30-day trend', pl: 'Trend 30 dni' }), c: "text-purple-300", icon: TrendingUp },
           ].map((s) => {
             const Icon = s.icon;
             return (
@@ -79,8 +81,8 @@ const StaticAiOfficerDashboard = () => {
           {/* Frameworks status */}
           <div className="lg:col-span-2 bg-white/[0.03] border border-white/10 rounded-lg p-3">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-white text-xs font-semibold">Status frameworków</span>
-              <span className="text-[9px] text-white/40 uppercase tracking-wider">live</span>
+              <span className="text-white text-xs font-semibold">{mt({ en: 'Framework status', pl: 'Status standardów' })}</span>
+              <span className="text-[9px] text-white/40 uppercase tracking-wider">{mt({ en: 'live', pl: 'na żywo' })}</span>
             </div>
             <div className="space-y-2.5">
               {[
@@ -110,22 +112,22 @@ const StaticAiOfficerDashboard = () => {
                 <img src={leonOfficer} alt="Leon" className="h-full w-full object-cover scale-110" />
               </div>
               <div>
-                <div className="text-white text-[11px] font-semibold leading-tight">Leon · Daily brief</div>
-                <div className="text-[9px] text-emerald-300">poniedziałek, 09:00</div>
+                <div className="text-white text-[11px] font-semibold leading-tight">{mt({ en: 'Leon · Daily brief', pl: 'Leon · Poranny przegląd' })}</div>
+                <div className="text-[9px] text-emerald-300">{mt({ en: 'Monday, 09:00', pl: 'poniedziałek, 09:00' })}</div>
               </div>
             </div>
             <ul className="space-y-1.5 text-[10px] text-white/80">
               <li className="flex items-start gap-1.5">
                 <Sparkles className="h-3 w-3 text-emerald-300 mt-0.5 flex-shrink-0" />
-                <span>14 dowodów odświeżonych w nocy</span>
+                <span>{mt({ en: '14 evidence items refreshed overnight', pl: '14 dowodów odświeżonych w nocy' })}</span>
               </li>
               <li className="flex items-start gap-1.5">
                 <AlertTriangle className="h-3 w-3 text-amber-300 mt-0.5 flex-shrink-0" />
-                <span>Polityka BCM wygasa za 9 dni · draft v3.2 gotowy</span>
+                <span>{mt({ en: 'BCM policy expires in 9 days · draft v3.2 ready', pl: 'Polityka BCM wygasa za 9 dni · wersja robocza v3.2 gotowa' })}</span>
               </li>
               <li className="flex items-start gap-1.5">
                 <FileText className="h-3 w-3 text-blue-300 mt-0.5 flex-shrink-0" />
-                <span>3 przypomnienia wysłane do ownerów kontroli</span>
+                <span>{mt({ en: '3 reminders sent to control owners', pl: '3 przypomnienia wysłane do osób odpowiedzialnych' })}</span>
               </li>
             </ul>
           </div>
@@ -134,15 +136,15 @@ const StaticAiOfficerDashboard = () => {
         {/* Audit trail */}
         <div className="bg-white/[0.03] border border-white/10 rounded-lg">
           <div className="px-3 py-2 border-b border-white/10 flex items-center justify-between">
-            <span className="text-white text-xs font-semibold">Ostatnia aktywność</span>
-            <span className="text-[9px] text-white/40 uppercase tracking-wider">audit trail</span>
+            <span className="text-white text-xs font-semibold">{mt({ en: 'Recent activity', pl: 'Ostatnia aktywność' })}</span>
+            <span className="text-[9px] text-white/40 uppercase tracking-wider">{mt({ en: 'audit trail', pl: 'ślad audytu' })}</span>
           </div>
           <div className="divide-y divide-white/5">
             {[
-              { who: "Leon (AI)", what: "wygenerował dowód MFA dla ISO 27001 A.9", when: "08:14" },
-              { who: "A. Kowalska", what: "podpisała politykę BCM v3.1 (e-IDAS)", when: "wczoraj" },
-              { who: "M. Nowak", what: "zatwierdził ocenę ryzyka dostawcy Acme", when: "12.05" },
-              { who: "Leon (AI)", what: "zsynchronizował 187 rekordów z Workday", when: "12.05" },
+              { who: "Leon (AI)", what: mt({ en: 'generated MFA evidence for ISO 27001 A.9', pl: 'wygenerował dowód MFA dla ISO 27001 A.9' }), when: "08:14" },
+              { who: "A. Kowalska", what: mt({ en: 'signed BCM policy v3.1 (e-IDAS)', pl: 'podpisała politykę BCM v3.1 (e-IDAS)' }), when: mt({ en: 'yesterday', pl: 'wczoraj' }) },
+              { who: "M. Nowak", what: mt({ en: 'approved supplier risk assessment for Acme', pl: 'zatwierdził ocenę ryzyka dostawcy Acme' }), when: "12.05" },
+              { who: "Leon (AI)", what: mt({ en: 'synchronized 187 records from Workday', pl: 'zsynchronizował 187 rekordów z Workday' }), when: "12.05" },
             ].map((e, i) => (
               <div key={i} className="flex items-center gap-2 px-3 py-2 text-[10px]">
                 <CheckCircle2 className="h-3 w-3 text-emerald-400 flex-shrink-0" />
