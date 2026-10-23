@@ -66,13 +66,13 @@ const agenda = [
 const painPoints = [
   {
     icon: CalendarClock,
-    title: 'KSC 2.0 już obowiązuje',
-    desc: 'Nowelizacja ustawy o KSC weszła w życie 3 kwietnia 2026 r. (Dz.U. 2026 poz. 252). Wcześniejsi operatorzy usług kluczowych automatycznie stają się podmiotami kluczowymi.',
+    title: 'KSC już obowiązuje',
+    desc: 'Nowelizacja ustawy o Krajowym Systemie Cyberbezpieczeństwa, wdrażająca NIS2 w Polsce, weszła w życie 3 kwietnia 2026 r. (Dz.U. 2026 poz. 252).',
   },
   {
     icon: Clock,
-    title: 'Samoidentyfikacja do 3.10.2026',
-    desc: 'Firmy muszą same wpisać się do wykazu w systemie S46. To pierwszy obowiązek z konkretną datą — zostało mniej niż 4 miesiące.',
+    title: 'Sprawdź status swojej firmy',
+    desc: 'Ustal, czy Twoja organizacja jest podmiotem kluczowym lub ważnym oraz jakie obowiązki dotyczą jej wpisu do wykazu KSC. Na szkoleniu omówimy proces samoidentyfikacji.',
   },
   {
     icon: Gavel,
@@ -196,7 +196,7 @@ const Nis2TrainingLanding = () => {
               Akcja wsparcia poziomu <span className="text-primary">cyberbezpieczeństwa</span> polskich przedsiębiorstw
             </h1>
             <p className="text-base md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Wspieramy <strong className="text-white">100 firm</strong> we wzmocnieniu przygotowania do NIS2 / KSC 2.0. 1 godzina praktyki z ekspertami i prawnikami — wychodzisz z konkretnym planem działania, nie ze stosem slajdów.
+              Nowelizacja KSC wdrażająca NIS2 w Polsce obowiązuje od 3 kwietnia 2026 r. Wspieramy <strong className="text-white">100 firm</strong> w ustaleniu obowiązków i zaplanowaniu wdrożenia. 1 godzina praktyki z ekspertami i prawnikami — od statusu firmy do konkretnych zadań.
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-9">
@@ -244,11 +244,19 @@ const Nis2TrainingLanding = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              KSC 2.0 już obowiązuje. Większość firm nie wie nawet, czy ich dotyczy.
+              KSC już obowiązuje. Sprawdź, co oznacza dla Twojej firmy.
             </h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Pierwszy konkretny termin — samoidentyfikacja w systemie S46 — wypada 3.10.2026. Zostało mniej niż 4 miesiące, a kary i odpowiedzialność osobista zarządu są realne.
+              To nie projekt ustawy ani przyszły obowiązek. Nowelizacja KSC weszła w życie 3 kwietnia 2026 r. Na szkoleniu omówimy status Twojej organizacji, wymagania oraz kolejne kroki wdrożenia.
             </p>
+            <a
+              href="https://www.dziennikustaw.gov.pl/DU/2026/252"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 text-sm text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              Źródło: Dz.U. 2026 poz. 252 — nowelizacja ustawy o KSC
+            </a>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
