@@ -5551,7 +5551,6 @@
       "mainDriver": "Główny driver",
       "yourChallenges": "Twoje wyzwania",
       "whatYouGain": "Co zyskujesz z ISO 27001",
-      "concreteExample": "Konkretny przykład",
       "bookDemo": "Umów demo dla Twojej branży",
       "checkReadiness": "Sprawdź swoją gotowość",
       "industries": {
@@ -5568,8 +5567,7 @@
             "ISO 27001 jako baza dowodowa dla DORA, KNF i RODO — jeden ISMS, wiele regulacji",
             "Skrócenie procesu due diligence przy współpracy z bankami i ubezpieczycielami",
             "Niższa składka cyber insurance po przedstawieniu certyfikatu"
-          ],
-          "example": "Instytucja płatnicza po certyfikacji ISO 27001 skróciła vendor onboarding w bankach z 4 do 6 tygodni — wcześniej blokowała ich sekcja security w ankietach."
+          ]
         },
         "tech": {
           "label": "Technologie i usługi IT",
@@ -5584,8 +5582,7 @@
             "Skrócenie sales cycle o 30–60% — certyfikat zastępuje większość pytań w ankietach",
             "Otwarcie drzwi do kontraktów enterprise i sektora publicznego",
             "Raz wdrożone ISO 27001 pokrywa ~70% SOC 2 — dwie certyfikacje za cenę jednej"
-          ],
-          "example": "Polski software house B2B (50 osób) zamknął kontrakt z bankiem 3 mies. po certyfikacji — wcześniej dwa razy odpadał na security review."
+          ]
         },
         "industry": {
           "label": "Przemysł i produkcja",
@@ -5600,8 +5597,7 @@
             "Spełnienie wymagań NIS 2 i KSC w jednym wdrożeniu",
             "Baza pod TISAX — szybka droga do kontraktów z OEM motoryzacyjnymi",
             "Plan ciągłości działania (BCP) chroni linie produkcyjne przed paraliżem"
-          ],
-          "example": "Producent komponentów dla automotive uniknął utraty kontraktu z VW po wdrożeniu ISO 27001 — TISAX-owa ocena spadła z czerwonej do żółtej w 4 miesiące."
+          ]
         },
         "tsl": {
           "label": "Transport, logistyka i łańcuch dostaw",
@@ -5616,8 +5612,7 @@
             "Zgodność z NIS 2 i UKSC bez budowania osobnego programu",
             "Status preferred vendor dla sieci handlowych i marketplace",
             "Ochrona systemów WMS/TMS przed ransomware = ochrona ciągłości dostaw"
-          ],
-          "example": "Operator magazynowy obsługujący e-commerce dostał ISO 27001 jako warunek przedłużenia umowy z marketplace — wdrożenie zajęło 7 mies. z Quantifierem."
+          ]
         },
         "retail": {
           "label": "Handel i e-commerce",
@@ -5632,8 +5627,7 @@
             "Niższe ryzyko kar UODO — udokumentowany system zarządzania bezpieczeństwem",
             "Ochrona reputacji marki — wycieki kosztują klientów, nie tylko pieniądze",
             "Zgodność z PCI DSS i RODO w jednym frameworku"
-          ],
-          "example": "Sieć retail (omnichannel) po wdrożeniu ISO 27001 zamknęła 12 z 18 obserwacji UODO z kontroli — bez konieczności kary administracyjnej."
+          ]
         },
         "health": {
           "label": "Ochrona zdrowia i life sciences",
@@ -5648,8 +5642,7 @@
             "Spełnienie NIS 2 dla podmiotów leczniczych i dostawców MedTech",
             "Dowód na zgodność z RODO art. 9 dla danych pacjentów",
             "Zaufanie szpitali, NFZ i ubezpieczycieli zdrowotnych jako kontrahenta"
-          ],
-          "example": "Sieć przychodni po wdrożeniu ISO 27001 dostała kontrakt z dużym pracodawcą na medycynę pracy — security review trwał 2 tygodnie zamiast 2 miesięcy."
+          ]
         },
         "energy": {
           "label": "Energetyka i infrastruktura krytyczna",
@@ -5664,8 +5657,7 @@
             "Zgodność z UKSC i NIS 2 dla operatorów usług kluczowych (OUK)",
             "Framework do zarządzania ryzykiem ICT i OT/SCADA",
             "Niższe ryzyko sankcji administracyjnych z UKSC (do 100 tys. PLN dziennie)"
-          ],
-          "example": "Operator ciepłowniczy dla 80 tys. mieszkańców wdrożył ISO 27001 jako fundament zgodności z UKSC — uniknął kary po pierwszej kontroli organu nadzoru."
+          ]
         },
         "services": {
           "label": "Usługi profesjonalne i doradcze",
@@ -5680,8 +5672,7 @@
             "Status preferred vendor w przetargach enterprise i sektora publicznego",
             "Spełnienie wymagań klauzul DPA (RODO art. 28) bez negocjacji per klient",
             "Wyższa wycena usług — bezpieczeństwo to argument sprzedażowy, nie koszt"
-          ],
-          "example": "Kancelaria prawna (40 prawników) po certyfikacji ISO 27001 weszła do panelu dostawców banku — wcześniej dwukrotnie odpadała na security questionnaire."
+          ]
         }
       }
     }
