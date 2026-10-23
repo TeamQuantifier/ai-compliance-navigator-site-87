@@ -166,52 +166,56 @@ export const Iso27001RiskHeatmapMockup = () => {
 };
 
 /* ═══════════════ STEP 4 — POLICIES ═══════════════ */
-export const Iso27001PoliciesMockup = () => (
-  <Frame>
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <div>
-          <h4 className="text-sm font-semibold text-white">Polityki ISMS · Repozytorium</h4>
-          <p className="text-[10px] text-white/40">Generowane z szablonów ISO 27001 i wersjonowane automatycznie.</p>
+export const Iso27001PoliciesMockup = () => {
+  const mt = useMockupText();
+  return (
+    <Frame>
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <h4 className="text-sm font-semibold text-white">{mt({ en: 'ISMS policies · Repository', pl: 'Polityki ISMS · Repozytorium' })}</h4>
+            <p className="text-[10px] text-white/40">{mt({ en: 'Generated from ISO 27001 templates and versioned automatically.', pl: 'Generowane z szablonów ISO 27001 i wersjonowane automatycznie.' })}</p>
+          </div>
+          <span className="text-[10px] px-3 py-1.5 rounded-md bg-primary/20 text-primary border border-primary/30 font-medium">{mt({ en: '+ New policy', pl: '+ Nowa polityka' })}</span>
         </div>
-        <span className="text-[10px] px-3 py-1.5 rounded-md bg-primary/20 text-primary border border-primary/30 font-medium">+ Nowa polityka</span>
-      </div>
 
-      <div className="grid grid-cols-4 gap-2">
-        {[
-          { label: 'Aktywne', value: '18', color: 'text-emerald-400' },
-          { label: 'Review', value: '4', color: 'text-amber-400' },
-          { label: 'Draft', value: '3', color: 'text-blue-400' },
-          { label: 'Wygasłe', value: '1', color: 'text-red-400' },
-        ].map((s) => (
-          <div key={s.label} className="rounded-lg border border-white/10 bg-white/[0.02] p-2.5 text-center">
-            <p className={`text-lg font-bold ${s.color}`}>{s.value}</p>
-            <p className="text-[9px] text-white/40 uppercase tracking-wider">{s.label}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="rounded-lg border border-white/10 bg-white/[0.02] divide-y divide-white/5">
-        {[
-          { name: 'Polityka Bezpieczeństwa Informacji', ver: 'v3.2', owner: 'CISO', status: 'active' as const },
-          { name: 'Polityka Kontroli Dostępu', ver: 'v2.1', owner: 'IT Manager', status: 'active' as const },
-          { name: 'Polityka Backupu i DR', ver: 'v1.4', owner: 'IT Ops', status: 'review' as const },
-          { name: 'Polityka Zarządzania Incydentami', ver: 'v2.0', owner: 'CISO', status: 'active' as const },
-          { name: 'Polityka Zarządzania Dostawcami', ver: 'v1.0', owner: 'Procurement', status: 'draft' as const },
-        ].map((p) => (
-          <div key={p.name} className="flex items-center gap-3 px-3 py-2">
-            <FileText className="h-3.5 w-3.5 text-primary shrink-0" />
-            <div className="flex-1 min-w-0">
-              <p className="text-[10px] font-medium text-white/80 truncate">{p.name}</p>
-              <p className="text-[9px] text-white/40">{p.ver} · {p.owner}</p>
+        <div className="grid grid-cols-4 gap-2">
+          {[
+            { label: mt({ en: 'Active', pl: 'Aktywne' }), value: '18', color: 'text-emerald-400' },
+            { label: mt({ en: 'Review', pl: 'Do przeglądu' }), value: '4', color: 'text-amber-400' },
+            { label: mt({ en: 'Draft', pl: 'Robocze' }), value: '3', color: 'text-blue-400' },
+            { label: mt({ en: 'Expired', pl: 'Wygasłe' }), value: '1', color: 'text-red-400' },
+          ].map((s) => (
+            <div key={s.label} className="rounded-lg border border-white/10 bg-white/[0.02] p-2.5 text-center">
+              <p className={`text-lg font-bold ${s.color}`}>{s.value}</p>
+              <p className="text-[9px] text-white/40 uppercase tracking-wider">{s.label}</p>
             </div>
-            <StatusBadge status={p.status} />
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] divide-y divide-white/5">
+          {[
+            { name: mt({ en: 'Information Security Policy', pl: 'Polityka Bezpieczeństwa Informacji' }), ver: 'v3.2', owner: 'CISO', status: 'active' as const },
+            { name: mt({ en: 'Access Control Policy', pl: 'Polityka Kontroli Dostępu' }), ver: 'v2.1', owner: mt({ en: 'IT Manager', pl: 'Administrator IT' }), status: 'active' as const },
+            { name: mt({ en: 'Backup & DR Policy', pl: 'Polityka Kopii Zapasowej i DR' }), ver: 'v1.4', owner: mt({ en: 'IT Ops', pl: 'Eksploatacja IT' }), status: 'review' as const },
+            { name: mt({ en: 'Incident Management Policy', pl: 'Polityka Zarządzania Incydentami' }), ver: 'v2.0', owner: 'CISO', status: 'active' as const },
+            { name: mt({ en: 'Supplier Management Policy', pl: 'Polityka Zarządzania Dostawcami' }), ver: 'v1.0', owner: mt({ en: 'Procurement', pl: 'Zakupy' }), status: 'draft' as const },
+          ].map((p) => (
+            <div key={p.name} className="flex items-center gap-3 px-3 py-2">
+              <FileText className="h-3.5 w-3.5 text-primary shrink-0" />
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-medium text-white/80 truncate">{p.name}</p>
+                <p className="text-[9px] text-white/40">{p.ver} · {p.owner}</p>
+              </div>
+              <StatusBadge status={p.status} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </Frame>
-);
+    </Frame>
+  );
+};
+
 
 /* ═══════════════ STEP 5 — CONTROLS ═══════════════ */
 export const Iso27001ControlsMockup = () => {
