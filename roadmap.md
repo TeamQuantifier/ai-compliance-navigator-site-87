@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Open
+- [ ] Aktualizacja stanu KSC na stronie darmowego szkolenia i propozycja lepszego układu
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
 ## Done
