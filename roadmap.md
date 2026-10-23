@@ -1,10 +1,10 @@
 # Roadmap
 
 ## Open
-- [ ] Aktualizacja stanu KSC na stronie darmowego szkolenia i propozycja lepszego układu
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
 ## Done
+- [x] Aktualizacja komunikacji o obowiązującej KSC i usunięcie nieaktualnego odliczania na stronie darmowego szkolenia; propozycja układu
 - [x] Usunięcie zapisu do newslettera ze stopki (wszystkie strony, PL/EN/CS)
 - [x] Pasek logotypów instytucjonalnych (NCC-PL, Ministerstwo Cyfryzacji, ISO 27001, ATLAS) na podstronie NIS2
 - [x] Dashboardy na stronach PL po polsku (13 komponentów, helper `useMockupText`, build + Playwright na /pl i /en)
