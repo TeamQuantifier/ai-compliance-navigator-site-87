@@ -2615,7 +2615,7 @@
     },
     "tabs": {
       "managers": "Zarząd & Leadership",
-      "contributors": "Zespoły operacyjne",
+      "contributors": "Zespoły: operacje, legal, IT",
       "auditors": "Audyt wewnętrzny & zewnętrzny"
     },
     "managers": {
@@ -2726,7 +2726,7 @@
         "title": "Dla Zarządu i Leadershipu"
       },
       "contributors": {
-        "title": "Dla Zespołów Operacyjnych"
+        "title": "Dla zespołów: operacje, legal, IT"
       },
       "auditors": {
         "title": "Dla Audytorów"
