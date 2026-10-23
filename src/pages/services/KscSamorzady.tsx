@@ -588,6 +588,32 @@ const KscSamorzady = () => {
             </div>
           </div>
         </section>
+
+        {/* Cybersecurity Competence Community */}
+        <section className="bg-foreground border-t" aria-labelledby="ccc-h2">
+          <div className="container mx-auto px-4 py-12">
+            <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between md:gap-12">
+              <div className="max-w-2xl text-center md:text-left">
+                <h2 id="ccc-h2" className="text-xl md:text-2xl font-bold text-white mb-3">
+                  Jesteśmy członkiem <span className="text-primary">Cybersecurity Competence Community</span>
+                </h2>
+                <p className="text-background/80">
+                  Europejska sieć instytucji, firm i ekspertów powołana rozporządzeniem (UE) 2021/887.
+                  Wspiera misję Europejskiego Centrum Kompetencji Cyberbezpieczeństwa, łącząc przemysł,
+                  naukę i administrację publiczną.
+                </p>
+              </div>
+              <img
+                src="/featured/european-commission.svg"
+                alt="European Commission"
+                width={290}
+                height={72}
+                loading="lazy"
+                className="h-14 w-auto shrink-0 md:h-16"
+              />
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
