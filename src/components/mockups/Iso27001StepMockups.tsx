@@ -109,7 +109,7 @@ export const Iso27001RiskHeatmapMockup = () => {
     if (v >= 5) return 'bg-yellow-500/40 text-white';
     return 'bg-emerald-500/40 text-white';
   };
-  const scale = mt({ en: ['VH', 'H', 'M', 'L', 'VL'], pl: ['B.W', 'W', 'Ś', 'N', 'B.N'] });
+  const scale = mt({ en: 'VH|H|M|L|VL', pl: 'B.W|W|Ś|N|B.N' }).split('|');
   const scaleRev = [...scale].reverse();
   return (
     <Frame>
