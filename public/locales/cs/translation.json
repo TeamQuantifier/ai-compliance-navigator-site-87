@@ -8430,5 +8430,26 @@
       "primary": "Domluvit demo",
       "checklist": "Stáhnout kontrolní seznam připravenosti PPWR"
     }
+  },
+  "trustBand": {
+    "label": "Institucionálně ověřeno",
+    "items": {
+      "ncc": {
+        "alt": "NCC-PL — Polské národní centrum kompetencí pro kybernetickou bezpečnost",
+        "caption": "Žádost podaná u NCC-PL"
+      },
+      "ministry": {
+        "alt": "Ministerstvo digitalizace (Polsko)",
+        "caption": "NCC-PL působí při Ministerstvu digitalizace"
+      },
+      "iso27001": {
+        "alt": "TÜV NORD Polska — certifikát ISO/IEC 27001",
+        "caption": "Certifikovaný ISMS — TÜV NORD Polska"
+      },
+      "atlas": {
+        "alt": "Portál ATLAS",
+        "caption": "Registrace v portálu ATLAS (EU a EHP)"
+      }
+    }
   }
 }

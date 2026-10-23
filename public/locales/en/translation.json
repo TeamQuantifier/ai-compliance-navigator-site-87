@@ -9847,5 +9847,26 @@
       "primary": "Book a demo",
       "checklist": "Download the PPWR readiness checklist"
     }
+  },
+  "trustBand": {
+    "label": "Institutionally verified",
+    "items": {
+      "ncc": {
+        "alt": "NCC-PL — Polish National Cybersecurity Competence Centre",
+        "caption": "Application filed with NCC-PL"
+      },
+      "ministry": {
+        "alt": "Ministry of Digital Affairs (Poland)",
+        "caption": "NCC-PL operates under the Ministry of Digital Affairs"
+      },
+      "iso27001": {
+        "alt": "TÜV NORD Polska — ISO/IEC 27001 certificate",
+        "caption": "Certified ISMS — TÜV NORD Polska"
+      },
+      "atlas": {
+        "alt": "ATLAS portal",
+        "caption": "Registered in the ATLAS portal (EU and EEA)"
+      }
+    }
   }
 }

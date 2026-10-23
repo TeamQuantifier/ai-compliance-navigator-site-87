@@ -9799,5 +9799,26 @@
       "primary": "Umów demo",
       "checklist": "Pobierz checklistę gotowości PPWR"
     }
+  },
+  "trustBand": {
+    "label": "Potwierdzone instytucjonalnie",
+    "items": {
+      "ncc": {
+        "alt": "NCC-PL — Krajowe Centrum Kompetencji Cyberbezpieczeństwa",
+        "caption": "Wniosek złożony w NCC-PL"
+      },
+      "ministry": {
+        "alt": "Ministerstwo Cyfryzacji",
+        "caption": "NCC-PL działa przy Ministerstwie Cyfryzacji"
+      },
+      "iso27001": {
+        "alt": "TÜV NORD Polska — certyfikat ISO/IEC 27001",
+        "caption": "Certyfikowany ISMS — TÜV NORD Polska"
+      },
+      "atlas": {
+        "alt": "Portal ATLAS",
+        "caption": "Rejestracja w portalu ATLAS (UE i EOG)"
+      }
+    }
   }
 }
