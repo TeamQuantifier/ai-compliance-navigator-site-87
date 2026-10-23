@@ -222,6 +222,21 @@ const Footer = () => {
           <p className="text-xs text-muted-foreground mt-3 text-center">{t('footer.newsletter.disclaimer')}</p>
         </div>
         
+        <div className="flex flex-col sm:flex-row items-center gap-5 rounded-xl border border-border bg-card p-5 mb-8">
+          <img
+            src="/featured/tuv-nord-iso-27001.jpg"
+            alt={t('footer.certification.alt')}
+            width={536}
+            height={533}
+            loading="lazy"
+            className="h-24 w-24 shrink-0 rounded object-cover"
+          />
+          <div className="text-center sm:text-left">
+            <p className="font-semibold text-foreground">{t('footer.certification.title')}</p>
+            <p className="text-sm text-muted-foreground mt-1">{t('footer.certification.desc')}</p>
+          </div>
+        </div>
+
         <Separator className="mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
