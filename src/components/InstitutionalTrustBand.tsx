@@ -28,9 +28,9 @@ const PANELS: TrustPanel[] = [
   },
   {
     key: 'iso27001',
-    src: '/featured/tuv-nord-iso-27001.jpg',
-    width: 536,
-    height: 533,
+    src: '/images/jst/tuv-nord-iso-27001.png',
+    width: 630,
+    height: 634,
     imgClass: 'h-14 md:h-16 rounded',
   },
   // No ATLAS logo file in the repo — rendered as a wordmark panel instead.
