@@ -132,14 +132,6 @@ export default function IndustryWhySection({ currentLocale }: { currentLocale: s
                 </div>
               </div>
 
-              {/* Example */}
-              <div className="bg-brand-blue/5 border-l-4 border-brand-blue rounded-r-lg p-5 mb-6">
-                <div className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-2">
-                  {t("iso27001Page.industryWhy.concreteExample")}
-                </div>
-                <p className="text-slate-700 italic">„{translatedCurrent.example}"</p>
-              </div>
-
               {/* CTA */}
               <div className="flex flex-wrap gap-3">
                 <Button
