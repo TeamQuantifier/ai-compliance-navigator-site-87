@@ -609,6 +609,11 @@
     "viewPricing": "Zobrazit ceny"
   },
   "footer": {
+    "certification": {
+      "title": "Máme certifikát ISO/IEC 27001",
+      "desc": "Systém managementu bezpečnosti informací certifikovaný TÜV NORD Polska.",
+      "alt": "TÜV NORD Polska — certifikát ISO 27001"
+    },
     "description": "Quantifier nově definuje přístup firem ke compliance—s nepřetržitou, autonomní AI platformou, která monitoruje, prosazuje a řídí regulační akce napříč celým podnikem.",
     "solutions": {
       "title": "Řešení",
