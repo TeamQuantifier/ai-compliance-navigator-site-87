@@ -4,6 +4,7 @@
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
 ## Done
+- [x] Pasek logotypów instytucjonalnych (NCC-PL, Ministerstwo Cyfryzacji, ISO 27001, ATLAS) na podstronie NIS2
 - [x] Dashboardy na stronach PL po polsku (13 komponentów, helper `useMockupText`, build + Playwright na /pl i /en)
 - [x] H1 strony samorządowej: SZBI w urzędzie: KRI i KSC w jednym systemie
 - [x] Uproszczenie i uatrakcyjnienie strony JST
