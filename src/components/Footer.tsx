@@ -1,57 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
-import { newsletterClient } from '@/lib/newsletter-client';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getLocalizedPathWithLocale, PARTNERS_PATHS } from '@/lib/localized-routes';
 
 const Footer = () => {
   const { t, currentLocale } = useLanguage();
-  const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email.trim()) {
-      toast({
-        title: t('footer.toast.emailRequired'),
-        description: t('footer.toast.emailRequiredDesc'),
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsLoading(true);
-    
-    try {
-      await newsletterClient.subscribe(email, currentLocale, {
-        source: 'website_footer',
-        origin: window.location.origin,
-        tags: ['newsletter', 'footer_signup']
-      });
-      
-      toast({
-        title: t('footer.toast.subscribeSuccess'),
-        description: t('footer.toast.subscribeSuccessDesc'),
-      });
-      
-      setEmail('');
-    } catch (error) {
-      toast({
-        title: t('footer.toast.subscribeFailed'),
-        description: error instanceof Error ? error.message : t('footer.toast.subscribeFailedDesc'),
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return <footer className="bg-muted border-t border-border">
       <div className="container mx-auto px-4 pt-16 pb-8">
@@ -203,24 +157,6 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="max-w-2xl mx-auto bg-card rounded-xl p-5 border border-border mb-12">
-          <h3 className="font-semibold text-foreground mb-2 text-center">{t('footer.newsletter.title')}</h3>
-          <p className="text-muted-foreground mb-4 text-center text-sm">{t('footer.newsletter.subtitle')}</p>
-          <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-            <Input 
-              type="email" 
-              placeholder={t('footer.newsletter.placeholder')}
-              className="flex-1"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={isLoading}
-            />
-            <Button type="submit" disabled={isLoading}>
-              {isLoading ? t('footer.newsletter.subscribing') : t('footer.newsletter.subscribe')}
-            </Button>
-          </form>
-          <p className="text-xs text-muted-foreground mt-3 text-center">{t('footer.newsletter.disclaimer')}</p>
-        </div>
         
         <div className="flex flex-col sm:flex-row items-center gap-5 rounded-xl border border-border bg-card p-5 mb-8">
           <img
