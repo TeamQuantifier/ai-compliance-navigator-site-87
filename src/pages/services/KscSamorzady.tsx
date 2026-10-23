@@ -595,7 +595,7 @@ const KscSamorzady = () => {
             <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between md:gap-12">
               <div className="max-w-2xl text-center md:text-left">
                 <h2 id="ccc-h2" className="text-xl md:text-2xl font-bold text-white mb-3">
-                  Jesteśmy członkiem <span className="text-primary">Cybersecurity Competence Community</span>
+                  Jesteśmy członkiem <span className="text-compliance-300">Cybersecurity Competence Community</span>
                 </h2>
                 <p className="text-background/80">
                   Europejska sieć instytucji, firm i ekspertów powołana rozporządzeniem (UE) 2021/887.
