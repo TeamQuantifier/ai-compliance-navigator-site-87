@@ -1,12 +1,10 @@
 # Roadmap
 
 ## Open
-- [ ] Panele/dashboards na stronach PL mają być po polsku (mockupy: home, NIS2, role, AI compliance)
+- [ ] Panele/dashboards na stronach PL mają być po polsku — kod gotowy, potwierdzony w przeglądarce; do zatwierdzenia przez użytkownika
   - [x] Wspólne narzędzie `useMockupText` (src/lib/mockup-text.ts)
-  - [ ] HomePlatformMockup.tsx
-  - [ ] Nis2PlatformMockups.tsx
-  - [ ] Manager/Contributor/Auditor + AiAgent + AiComplianceDashboard
-  - [ ] Weryfikacja: build + Playwright na /pl
+  - [x] HomePlatformMockup, Nis2PlatformMockups, role (Manager/Contributor/Auditor), AiAgent, AiComplianceDashboard + podkomponenty, dashboardy governance
+  - [x] Weryfikacja: build OK + Playwright na /pl i /en
 
 ## Done
 - [x] H1 strony samorządowej: SZBI w urzędzie: KRI i KSC w jednym systemie
