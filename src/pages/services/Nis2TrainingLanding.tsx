@@ -66,13 +66,13 @@ const agenda = [
 const painPoints = [
   {
     icon: CalendarClock,
-    title: 'KSC 2.0 już obowiązuje',
-    desc: 'Nowelizacja ustawy o KSC weszła w życie 3 kwietnia 2026 r. (Dz.U. 2026 poz. 252). Wcześniejsi operatorzy usług kluczowych automatycznie stają się podmiotami kluczowymi.',
+    title: 'KSC już obowiązuje',
+    desc: 'Nowelizacja ustawy o Krajowym Systemie Cyberbezpieczeństwa, wdrażająca NIS2 w Polsce, weszła w życie 3 kwietnia 2026 r. (Dz.U. 2026 poz. 252).',
   },
   {
     icon: Clock,
-    title: 'Samoidentyfikacja do 3.10.2026',
-    desc: 'Firmy muszą same wpisać się do wykazu w systemie S46. To pierwszy obowiązek z konkretną datą — zostało mniej niż 4 miesiące.',
+    title: 'Sprawdź status swojej firmy',
+    desc: 'Ustal, czy Twoja organizacja jest podmiotem kluczowym lub ważnym oraz jakie obowiązki dotyczą jej wpisu do wykazu KSC. Na szkoleniu omówimy proces samoidentyfikacji.',
   },
   {
     icon: Gavel,
