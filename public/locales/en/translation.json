@@ -2662,7 +2662,7 @@
     },
     "tabs": {
       "managers": "Leadership & Executive",
-      "contributors": "Operational Teams",
+      "contributors": "Teams: operations, legal, IT",
       "auditors": "Internal & External Audit"
     },
     "managers": {
@@ -2773,7 +2773,7 @@
         "title": "For Leadership & Executives"
       },
       "contributors": {
-        "title": "For Operational Teams"
+        "title": "For teams: operations, legal, IT"
       },
       "auditors": {
         "title": "For Auditors"

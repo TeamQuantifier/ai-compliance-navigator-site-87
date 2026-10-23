@@ -2601,7 +2601,7 @@
     },
     "tabs": {
       "managers": "Vedení & Leadership",
-      "contributors": "Operační týmy",
+      "contributors": "Týmy: operace, právní, IT",
       "auditors": "Interní & externí audit"
     },
     "managers": {
@@ -2712,7 +2712,7 @@
         "title": "Pro vedení a management"
       },
       "contributors": {
-        "title": "Pro operativní týmy"
+        "title": "Pro týmy: operace, právní, IT"
       },
       "auditors": {
         "title": "Pro auditory"
