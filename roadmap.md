@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Open
+- [ ] Osobny landing Quantamental zgodny z układem PDF, niewidoczny w nawigacji i poza indeksowaniem; weryfikacja desktop/mobile
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
 ## Done
