@@ -13,8 +13,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
  */
 export type MockupText = { en: string; pl?: string; cs?: string };
 
-export const useMockupText = () => {
+export const useMockupText = (localeOverride?: 'pl' | 'en' | 'cs') => {
   const { currentLocale } = useLanguage();
   return (text: MockupText) =>
-    (text as Record<string, string>)[currentLocale] || text.en;
+    (text as Record<string, string>)[localeOverride || currentLocale] || text.en;
 };
