@@ -39,6 +39,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Nis2PlatformMockups from '@/components/mockups/Nis2PlatformMockups';
+import InstitutionalTrustBand from '@/components/InstitutionalTrustBand';
 import { useTranslation } from 'react-i18next';
 
 /* ───────────────────────── sticky CTA bar ───────────────────────── */
@@ -482,6 +483,9 @@ const Nis2Ksc = () => {
           </div>
         </div>
       </section>
+
+      {/* ────── INSTITUTIONAL TRUST BAND ────── */}
+      <InstitutionalTrustBand />
 
       {/* ────── URGENCY ────── */}
       <section className="py-12 md:py-16 bg-slate-50 text-foreground">

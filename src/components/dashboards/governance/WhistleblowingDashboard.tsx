@@ -5,46 +5,48 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell, 
 import { FileText, Shield, CheckCircle2, AlertTriangle, BrainCircuit, Clock, MessageSquare, Lock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+import { useMockupText } from '@/lib/mockup-text';
 
 const WhistleblowingDashboard = () => {
+  const mt = useMockupText();
   // Sample data for Whistleblowing dashboard
   const caseResolutionData = [
-    { month: 'Jan', value: 85 },
-    { month: 'Feb', value: 82 },
-    { month: 'Mar', value: 90 },
-    { month: 'Apr', value: 86 },
-    { month: 'May', value: 92 },
-    { month: 'Jun', value: 95 }
+    { month: mt({ en: 'Jan', pl: 'sty', cs: 'led' }), value: 85 },
+    { month: mt({ en: 'Feb', pl: 'lut', cs: 'úno' }), value: 82 },
+    { month: mt({ en: 'Mar', pl: 'mar', cs: 'bře' }), value: 90 },
+    { month: mt({ en: 'Apr', pl: 'kwi', cs: 'dub' }), value: 86 },
+    { month: mt({ en: 'May', pl: 'maj', cs: 'kvě' }), value: 92 },
+    { month: mt({ en: 'Jun', pl: 'cze', cs: 'čvn' }), value: 95 }
   ];
 
   const casesByStatusData = [
-    { name: 'Resolved', value: 24 },
-    { name: 'In Progress', value: 9 },
-    { name: 'New', value: 3 },
+    { name: mt({ en: 'Resolved', pl: 'Zakończone' }), value: 24 },
+    { name: mt({ en: 'In Progress', pl: 'W toku' }), value: 9 },
+    { name: mt({ en: 'New', pl: 'Nowe' }), value: 3 },
   ];
-  
+
   const COLORS = ['#22c55e', '#f97316', '#ef4444'];
-  
+
   const reportTrendData = [
-    { month: 'Jan', reports: 8 },
-    { month: 'Feb', reports: 12 },
-    { month: 'Mar', reports: 7 },
-    { month: 'Apr', reports: 10 },
-    { month: 'May', reports: 6 },
-    { month: 'Jun', reports: 4 }
+    { month: mt({ en: 'Jan', pl: 'sty', cs: 'led' }), reports: 8 },
+    { month: mt({ en: 'Feb', pl: 'lut', cs: 'úno' }), reports: 12 },
+    { month: mt({ en: 'Mar', pl: 'mar', cs: 'bře' }), reports: 7 },
+    { month: mt({ en: 'Apr', pl: 'kwi', cs: 'dub' }), reports: 10 },
+    { month: mt({ en: 'May', pl: 'maj', cs: 'kvě' }), reports: 6 },
+    { month: mt({ en: 'Jun', pl: 'cze', cs: 'čvn' }), reports: 4 }
   ];
-  
+
   const caseCategories = [
-    { name: 'Ethical Concerns', count: 12 },
-    { name: 'Workplace Safety', count: 8 },
-    { name: 'Compliance Issues', count: 16 }
+    { name: mt({ en: 'Ethical Concerns', pl: 'Zagadnienia etyczne' }), count: 12 },
+    { name: mt({ en: 'Workplace Safety', pl: 'Bezpieczeństwo w pracy' }), count: 8 },
+    { name: mt({ en: 'Compliance Issues', pl: 'Niezgodności' }), count: 16 }
   ];
 
   const aiAgentActions = [
-    { action: 'Anonymous report triage completed', time: '1 hour ago' },
-    { action: 'Follow-up questionnaire sent to reporter', time: '1 day ago' },
-    { action: 'Case #245 evidence package prepared for review', time: 'Yesterday' },
-    { action: 'Regulatory submission requirements verified', time: '2 days ago' },
+    { action: mt({ en: 'Anonymous report triage completed', pl: 'Zakończono wstępną ocenę zgłoszenia anonimowego' }), time: mt({ en: '1 hour ago', pl: '1 godz. temu' }) },
+    { action: mt({ en: 'Follow-up questionnaire sent to reporter', pl: 'Wysłano anketę uzupełniającą do zgłaszającego' }), time: mt({ en: '1 day ago', pl: '1 dzień temu' }) },
+    { action: mt({ en: 'Case #245 evidence package prepared for review', pl: 'Przygotowano pakiet dowodów w sprawie #245' }), time: mt({ en: 'Yesterday', pl: 'wczoraj' }) },
+    { action: mt({ en: 'Regulatory submission requirements verified', pl: 'Zweryfikowano wymagania zgłoszenia do organu' }), time: mt({ en: '2 days ago', pl: '2 dni temu' }) },
   ];
 
   return (
@@ -55,20 +57,20 @@ const WhistleblowingDashboard = () => {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
               <FileText className="h-4 w-4 mr-2 text-indigo-600" />
-              Case Resolution Rate
+              {mt({ en: 'Case Resolution Rate', pl: 'Skuteczność zamykania spraw' })}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-indigo-600 mb-2">95%</div>
-            <p className="text-xs text-slate-500 mb-2">Average time to resolution: 14 days</p>
+            <p className="text-xs text-slate-500 mb-2">{mt({ en: 'Average time to resolution: 14 days', pl: 'Średni czas rozwiązania: 14 dni' })}</p>
             <div className="h-32">
               <ChartContainer
                 config={{
-                  resolution: { 
-                    theme: { 
+                  resolution: {
+                    theme: {
                       light: '#818cf8',
                       dark: '#6366f1'
-                    } 
+                    }
                   }
                 }}
               >
@@ -76,7 +78,7 @@ const WhistleblowingDashboard = () => {
                   <XAxis dataKey="month" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} />
                   <YAxis hide domain={[80, 100]} />
                   <ChartTooltip content={<ChartTooltipContent />} />
-                  <Bar dataKey="value" name="resolution" radius={[4, 4, 0, 0]} barSize={12} />
+                  <Bar dataKey="value" name={mt({ en: 'resolution', pl: 'zamknięcia' })} radius={[4, 4, 0, 0]} barSize={12} />
                 </BarChart>
               </ChartContainer>
             </div>
@@ -88,18 +90,18 @@ const WhistleblowingDashboard = () => {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
               <CheckCircle2 className="h-4 w-4 mr-2 text-indigo-600" />
-              Cases by Status
+              {mt({ en: 'Cases by Status', pl: 'Sprawy wg statusu' })}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-48">
               <ChartContainer
                 config={{
-                  status: { 
-                    theme: { 
+                  status: {
+                    theme: {
                       light: '#818cf8',
                       dark: '#6366f1'
-                    } 
+                    }
                   }
                 }}
               >
@@ -118,9 +120,9 @@ const WhistleblowingDashboard = () => {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Pie>
-                    <Legend 
-                      layout="vertical" 
-                      verticalAlign="middle" 
+                    <Legend
+                      layout="vertical"
+                      verticalAlign="middle"
                       align="right"
                       wrapperStyle={{ fontSize: '10px' }}
                     />
@@ -137,7 +139,7 @@ const WhistleblowingDashboard = () => {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
               <Shield className="h-4 w-4 mr-2 text-indigo-600" />
-              Report Categories
+              {mt({ en: 'Report Categories', pl: 'Kategorie zgłoszeń' })}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -146,7 +148,9 @@ const WhistleblowingDashboard = () => {
                 <div key={category.name}>
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-xs font-medium">{category.name}</span>
-                    <span className="text-xs font-semibold">{category.count} cases</span>
+                    <span className="text-xs font-semibold">
+                      {mt({ en: `${category.count} cases`, pl: `${category.count} spraw` })}
+                    </span>
                   </div>
                   <Progress value={category.count * 100 / 20} className="h-1.5" />
                 </div>
@@ -162,43 +166,43 @@ const WhistleblowingDashboard = () => {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
               <MessageSquare className="h-4 w-4 mr-2 text-indigo-600" />
-              Report Submission Trend
+              {mt({ en: 'Report Submission Trend', pl: 'Trend zgłoszeń' })}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-64">
               <ChartContainer
                 config={{
-                  reports: { 
-                    theme: { 
+                  reports: {
+                    theme: {
                       light: '#818cf8',
                       dark: '#6366f1'
-                    } 
+                    }
                   }
                 }}
               >
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={reportTrendData}>
-                    <XAxis 
-                      dataKey="month" 
-                      tick={{ fontSize: 10 }} 
-                      axisLine={false} 
-                      tickLine={false} 
+                    <XAxis
+                      dataKey="month"
+                      tick={{ fontSize: 10 }}
+                      axisLine={false}
+                      tickLine={false}
                     />
-                    <YAxis 
-                      tick={{ fontSize: 10 }} 
-                      axisLine={false} 
-                      tickLine={false} 
+                    <YAxis
+                      tick={{ fontSize: 10 }}
+                      axisLine={false}
+                      tickLine={false}
                       width={30}
                     />
                     <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line 
-                      type="monotone" 
-                      dataKey="reports" 
-                      name="reports" 
-                      stroke="#818cf8" 
-                      strokeWidth={2} 
-                      dot={{ r: 3 }} 
+                    <Line
+                      type="monotone"
+                      dataKey="reports"
+                      name={mt({ en: 'reports', pl: 'zgłoszenia' })}
+                      stroke="#818cf8"
+                      strokeWidth={2}
+                      dot={{ r: 3 }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -212,7 +216,7 @@ const WhistleblowingDashboard = () => {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
               <BrainCircuit className="h-4 w-4 mr-2 text-indigo-600" />
-              AI Agent Activity
+              {mt({ en: 'AI Agent Activity', pl: 'Aktywność agenta AI' })}
             </CardTitle>
           </CardHeader>
           <CardContent>

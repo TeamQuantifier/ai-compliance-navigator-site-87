@@ -268,6 +268,11 @@
     "viewPricing": "Zobacz cennik"
   },
   "footer": {
+    "certification": {
+      "title": "Posiadamy certyfikat ISO/IEC 27001",
+      "desc": "System zarządzania bezpieczeństwem informacji certyfikowany przez TÜV NORD Polska.",
+      "alt": "TÜV NORD Polska — certyfikat ISO 27001"
+    },
     "description": "Quantifier na nowo definiuje podejście firm do zgodności—dzięki działającej 24/7 autonomicznej platformie AI, która monitoruje, egzekwuje i napędza działania regulacyjne w całym przedsiębiorstwie.",
     "solutions": {
       "title": "Rozwiązania",

@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { lazy, Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -117,6 +118,8 @@ import EventsHub from "./pages/events/EventsHub";
 import EventDetail from "./pages/events/EventDetail";
 
 const queryClient = new QueryClient();
+const QuantamentalLanding = lazy(() => import('./pages/quantamental/QuantamentalLanding'));
+const EuProject = lazy(() => import('./pages/quantamental/EuProject'));
 
 // Loading spinner component
 const LoadingSpinner = () => (
@@ -287,6 +290,9 @@ const MainRoutes = () => (
 
 // App content that requires translations
 const AppContent = () => {
+  const { pathname } = useLocation();
+  const projectRoute = /^\/(projekt-ue|en\/eu-project|de\/eu-projekt|es\/proyecto-ue)\/?$/.test(pathname);
+  const isQuantamental = /^\/quantamental\/?$/.test(pathname) || projectRoute;
   const isCyberCheck = typeof window !== 'undefined' && /\/(en|cs)\/(cybersecurity-check)|\/pl\/(sprawdz-cyberbezpieczenstwo)/.test(window.location.pathname);
   return (
     <>
@@ -294,6 +300,8 @@ const AppContent = () => {
       <Toaster />
       <Sonner />
       <Routes>
+        <Route path="/quantamental/" element={pathname.endsWith('/') ? <Suspense fallback={<LoadingSpinner />}><QuantamentalLanding /></Suspense> : <Navigate to="/quantamental/" replace />} />
+        {['/projekt-ue/', '/en/eu-project/', '/de/eu-projekt/', '/es/proyecto-ue/'].map(path => <Route key={path} path={path} element={pathname.endsWith('/') ? <Suspense fallback={<LoadingSpinner />}><EuProject /></Suspense> : <Navigate to={path} replace />} />)}
         {/* Cybersecurity Check — standalone, no Navbar/Footer, multilang */}
         <Route path="/pl/sprawdz-cyberbezpieczenstwo" element={<FormularzPage />} />
         <Route path="/pl/sprawdz-cyberbezpieczenstwo/dziekujemy" element={<FormularzPage />} />
@@ -307,7 +315,7 @@ const AppContent = () => {
         {/* All other routes */}
         <Route path="/*" element={<MainRoutes />} />
       </Routes>
-      <CookieConsentBanner />
+      {!isQuantamental && <CookieConsentBanner />}
       {/* {!isCyberCheck && <BookPromoPopup />} */}
     </>
   );
