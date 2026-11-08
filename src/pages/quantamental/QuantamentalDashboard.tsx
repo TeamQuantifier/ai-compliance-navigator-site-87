@@ -20,9 +20,9 @@ const series = [
 const benchmark = [100, 101, 100, 102, 103, 105, 104, 106, 107, 108, 110, 111];
 function points(values: number[]) { return values.map((v, i) => `${35 + i * 38},${190 - (v - 95) * 3}`).join(' '); }
 
-export default function QuantamentalDashboard() {
-  const mt = useMockupText('pl');
-  const [active, setActive] = useState(0);
+export default function QuantamentalDashboard({ initialTab = 0, compact = false, locale = 'pl', instanceId = 'q' }: { initialTab?: number; compact?: boolean; locale?: 'pl' | 'en'; instanceId?: string }) {
+  const mt = useMockupText(locale);
+  const [active, setActive] = useState(initialTab);
   const titles = [
     { en: 'Strategy backtest', pl: 'Backtest strategii' },
     { en: 'Selection performance', pl: 'Wyniki selekcji spółek' },
@@ -34,13 +34,13 @@ export default function QuantamentalDashboard() {
     <div className="rounded-lg border border-border bg-card q-shadow overflow-hidden q-reveal">
       <div className="flex items-center gap-2 border-b border-border px-5 py-3">
         <img src="/logo-sygnet.png" alt="" width="24" height="24" className="h-6 w-6 object-contain" />
-        <span className="font-bold text-sm">Quantamental</span>
+        <span className="font-bold text-sm">{compact ? mt(tabs[active]) : 'Quantamental'}</span>
         <span className="ml-auto text-[10px] uppercase text-muted-foreground">{mt({ en: 'Demo data', pl: 'Dane demonstracyjne' })}</span>
       </div>
-      <div className="grid grid-cols-5 gap-1 p-3 bg-muted/50" role="tablist" aria-label={mt({ en: 'Platform modules', pl: 'Moduły platformy' })}>
-        {tabs.map((tab, i) => <Button key={tab.en} size="sm" variant={active === i ? 'secondary' : 'ghost'} role="tab" aria-selected={active === i} aria-controls="q-dashboard-panel" id={`q-tab-${i}`} className={`h-8 px-1 text-[10px] sm:text-xs ${active === i ? 'bg-accent text-primary' : 'text-muted-foreground'}`} onClick={() => setActive(i)}>{mt(tab)}</Button>)}
-      </div>
-      <div id="q-dashboard-panel" role="tabpanel" aria-labelledby={`q-tab-${active}`} className="p-5">
+      {!compact && <div className="grid grid-cols-5 gap-1 p-3 bg-muted/50" role="tablist" aria-label={mt({ en: 'Platform modules', pl: 'Moduły platformy' })}>
+        {tabs.map((tab, i) => <Button key={tab.en} size="sm" variant={active === i ? 'secondary' : 'ghost'} role="tab" aria-selected={active === i} aria-controls={`${instanceId}-dashboard-panel`} id={`${instanceId}-tab-${i}`} className={`h-8 px-1 text-[10px] sm:text-xs ${active === i ? 'bg-accent text-primary' : 'text-muted-foreground'}`} onClick={() => setActive(i)}>{mt(tab)}</Button>)}
+      </div>}
+      <div id={`${instanceId}-dashboard-panel`} role={compact ? undefined : 'tabpanel'} aria-labelledby={compact ? undefined : `${instanceId}-tab-${active}`} className="p-5">
         <div className="flex justify-between items-start gap-3">
           <div><p className="font-bold text-sm">{mt(titles[active])}</p><p className="text-[11px] text-muted-foreground mt-1">{mt({ en: 'January – December · sample strategy', pl: 'Styczeń – grudzień · przykładowa strategia' })}</p></div>
           <div className="text-right"><p className="q-positive text-lg font-bold inline-flex items-center">+{series[active][11] - 100},0%<ArrowUpRight size={16} /></p><p className="text-[10px] text-muted-foreground">{mt({ en: 'Simulated return', pl: 'Symulowana stopa zwrotu' })}</p></div>

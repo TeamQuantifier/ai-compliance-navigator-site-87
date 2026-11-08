@@ -1,11 +1,12 @@
 # Roadmap
 
 ## Open
-- [ ] Podstrona Projekt UE dla Quantamental: wymagane znaki, dane projektu, cele/efekty, moduły, etapy i linki; potwierdzenie brakujących danych z dokumentacji
-- [ ] Quantamental: uruchomienie sprzedaży/logowania/newslettera czeka na adres aplikacji, płatności i dedykowane dokumenty; finalne oznaczenia UE czekają na oficjalne pliki znaków
+- [ ] Projekt UE: oficjalny tytuł, kwoty, okres realizacji oraz zatwierdzenie celów, efektów i etapów czekają na dokumentację od użytkownika
+- [ ] Quantamental: uruchomienie sprzedaży czeka na adres aplikacji, płatności i dedykowane dokumenty
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
 ## Done
+- [x] Projekt UE: osobna strona PL/EN/DE/ES, znaki z oficjalnej karty POPW, pięć widoków modułów, trzy etapy, data aktualizacji i cztery wejścia tylko z Quantamental; 10 testów i sprawdzenie telefonu oraz screeningu
 - [x] Osobny landing /quantamental/ według PDF, bez linków z głównego serwisu; noindex, własna nawigacja/stopka, screening demo, wykres, moduły, cennik i FAQ; 5 testów i Playwright desktop/mobile bez błędów
 - [x] Usunięcie sekcji „Konkretny przykład” z podstrony ISO 27001 (PL/EN/CS: komponent + klucze w bundle)
 - [x] Aktualizacja komunikacji o obowiązującej KSC i usunięcie nieaktualnego odliczania na stronie darmowego szkolenia; propozycja układu
