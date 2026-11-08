@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Independent investment-product theme; never leaks into the compliance site. */
+.quantamental-theme {
+  --background: 0 0% 100%;
+  --foreground: 225 35% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 225 35% 14%;
+  --primary: 227 65% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 151 39% 93%;
+  --secondary-foreground: 153 55% 28%;
+  --muted: 225 30% 97%;
+  --muted-foreground: 221 14% 43%;
+  --accent: 225 55% 95%;
+  --accent-foreground: 227 65% 32%;
+  --border: 224 24% 90%;
+  --input: 224 24% 87%;
+  --ring: 227 65% 40%;
+  --q-positive: 153 55% 35%;
+  --q-benchmark: 220 17% 65%;
+  --q-shadow: 0 18px 55px hsl(225 35% 14% / 0.09);
+  font-family: 'Manrope', Arial, sans-serif;
+  letter-spacing: 0;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+.quantamental-theme .q-wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.quantamental-theme .q-band { padding-block: 72px; scroll-margin-top: 90px; }
+.quantamental-theme .q-heading { font-size: 30px; line-height: 1.25; font-weight: 750; }
+.quantamental-theme .q-description { color: hsl(var(--muted-foreground)); font-size: 15px; line-height: 1.8; }
+.quantamental-theme .q-chart { color: hsl(var(--primary)); }
+.quantamental-theme .q-benchmark { color: hsl(var(--q-benchmark)); }
+.quantamental-theme .q-positive { color: hsl(var(--q-positive)); }
+.quantamental-theme .q-shadow { box-shadow: var(--q-shadow); }
+.quantamental-theme .q-hero-title { font-size: 46px; font-weight: 800; line-height: 1.14; }
+.quantamental-theme .q-flag { background: hsl(225 65% 33%); color: hsl(48 100% 60%); }
+.quantamental-theme .q-rp-flag { background: linear-gradient(to bottom, hsl(0 0% 100%) 50%, hsl(350 80% 45%) 50%); border: 1px solid hsl(var(--border)); }
+.quantamental-theme .q-reveal { animation: q-reveal 600ms ease-out both; }
+@keyframes q-reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) {
+  .quantamental-theme .q-wrap { width: calc(100% - 32px); }
+  .quantamental-theme .q-band { padding-block: 48px; }
+  .quantamental-theme .q-hero-title { font-size: 34px; }
+  .quantamental-theme .q-heading { font-size: 26px; }
+}
+@media (prefers-reduced-motion: reduce) { .quantamental-theme .q-reveal { animation: none; } }
+
 @layer base {
   :root {
     --background: 220 33% 98%;
