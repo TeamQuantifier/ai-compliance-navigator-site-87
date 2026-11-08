@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { lazy, Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -117,6 +118,7 @@ import EventsHub from "./pages/events/EventsHub";
 import EventDetail from "./pages/events/EventDetail";
 
 const queryClient = new QueryClient();
+const QuantamentalLanding = lazy(() => import('./pages/quantamental/QuantamentalLanding'));
 
 // Loading spinner component
 const LoadingSpinner = () => (
@@ -287,6 +289,8 @@ const MainRoutes = () => (
 
 // App content that requires translations
 const AppContent = () => {
+  const { pathname } = useLocation();
+  const isQuantamental = /^\/quantamental\/?$/.test(pathname);
   const isCyberCheck = typeof window !== 'undefined' && /\/(en|cs)\/(cybersecurity-check)|\/pl\/(sprawdz-cyberbezpieczenstwo)/.test(window.location.pathname);
   return (
     <>
@@ -294,6 +298,8 @@ const AppContent = () => {
       <Toaster />
       <Sonner />
       <Routes>
+        <Route path="/quantamental" element={<Navigate to="/quantamental/" replace />} />
+        <Route path="/quantamental/" element={<Suspense fallback={<LoadingSpinner />}><QuantamentalLanding /></Suspense>} />
         {/* Cybersecurity Check — standalone, no Navbar/Footer, multilang */}
         <Route path="/pl/sprawdz-cyberbezpieczenstwo" element={<FormularzPage />} />
         <Route path="/pl/sprawdz-cyberbezpieczenstwo/dziekujemy" element={<FormularzPage />} />
@@ -307,7 +313,7 @@ const AppContent = () => {
         {/* All other routes */}
         <Route path="/*" element={<MainRoutes />} />
       </Routes>
-      <CookieConsentBanner />
+      {!isQuantamental && <CookieConsentBanner />}
       {/* {!isCyberCheck && <BookPromoPopup />} */}
     </>
   );
