@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Open
+- [ ] Podstrona Projekt UE dla Quantamental: wymagane znaki, dane projektu, cele/efekty, moduły, etapy i linki; potwierdzenie brakujących danych z dokumentacji
 - [ ] Quantamental: uruchomienie sprzedaży/logowania/newslettera czeka na adres aplikacji, płatności i dedykowane dokumenty; finalne oznaczenia UE czekają na oficjalne pliki znaków
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
