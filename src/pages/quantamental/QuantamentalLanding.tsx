@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import FundingMarks from './FundingMarks';
 import { Helmet } from 'react-helmet-async';
 import { Activity, Search, BarChart3, PieChart, Leaf, ArrowRight, ArrowUpRight, Check, Menu, X, Mail, ShieldCheck, Smartphone, SlidersHorizontal, Eye } from 'lucide-react';
@@ -35,6 +35,12 @@ const faqs = [
 const navigation = [['Produkt', 'produkt'], ['Jak to działa', 'jak-to-dziala'], ['Dla kogo', 'dla-kogo'], ['Cennik', 'cennik'], ['Projekt UE', 'projekt-ue']];
 
 export default function QuantamentalLanding() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) { window.scrollTo(0, 0); return; }
+    const timer = window.setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' }), 100);
+    return () => window.clearTimeout(timer);
+  }, [hash]);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [dialog, setDialog] = useState<string | null>(null);
   const { showBanner, acceptAll } = useCookieConsent();
