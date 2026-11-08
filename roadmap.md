@@ -1,10 +1,11 @@
 # Roadmap
 
 ## Open
-- [ ] Osobny landing Quantamental zgodny z układem PDF, niewidoczny w nawigacji i poza indeksowaniem; weryfikacja desktop/mobile
+- [ ] Quantamental: uruchomienie sprzedaży/logowania/newslettera czeka na adres aplikacji, płatności i dedykowane dokumenty; finalne oznaczenia UE czekają na oficjalne pliki znaków
 - [ ] Karty typów urzędów — weryfikacja wizualna przez użytkownika
 
 ## Done
+- [x] Osobny landing /quantamental/ według PDF, bez linków z głównego serwisu; noindex, własna nawigacja/stopka, screening demo, wykres, moduły, cennik i FAQ; 5 testów i Playwright desktop/mobile bez błędów
 - [x] Usunięcie sekcji „Konkretny przykład” z podstrony ISO 27001 (PL/EN/CS: komponent + klucze w bundle)
 - [x] Aktualizacja komunikacji o obowiązującej KSC i usunięcie nieaktualnego odliczania na stronie darmowego szkolenia; propozycja układu
 - [x] Usunięcie zapisu do newslettera ze stopki (wszystkie strony, PL/EN/CS)
