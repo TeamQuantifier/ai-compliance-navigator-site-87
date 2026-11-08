@@ -298,8 +298,7 @@ const AppContent = () => {
       <Toaster />
       <Sonner />
       <Routes>
-        <Route path="/quantamental" element={<Navigate to="/quantamental/" replace />} />
-        <Route path="/quantamental/" element={<Suspense fallback={<LoadingSpinner />}><QuantamentalLanding /></Suspense>} />
+        <Route path="/quantamental/" element={pathname.endsWith('/') ? <Suspense fallback={<LoadingSpinner />}><QuantamentalLanding /></Suspense> : <Navigate to="/quantamental/" replace />} />
         {/* Cybersecurity Check — standalone, no Navbar/Footer, multilang */}
         <Route path="/pl/sprawdz-cyberbezpieczenstwo" element={<FormularzPage />} />
         <Route path="/pl/sprawdz-cyberbezpieczenstwo/dziekujemy" element={<FormularzPage />} />
